@@ -30,7 +30,8 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('welcome');
+		$name = 'John';
+		return view('welcome', compact('name'));
 	}
 
 }
