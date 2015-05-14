@@ -26,7 +26,7 @@ class HomeController extends Controller {
 	}
 	public function login()
 	{
-		Socialite::with('facebook')->redirect();
+		return Socialite::with('facebook')->redirect();
 	}
 
 
