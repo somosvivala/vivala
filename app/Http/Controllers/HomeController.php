@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
+use Socialite;
 class HomeController extends Controller {
 
 	/*
@@ -20,8 +22,13 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		$this->middleware('auth');
+		/*$this->middleware('auth');*/
 	}
+	public function login()
+	{
+		Socialite::with('facebook')->redirect();
+	}
+
 
 	/**
 	 * Show the application dashboard to the user.
@@ -30,6 +37,10 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+		if(Auth::check())
+		 return 'Welcome back ,' .Auth::user()->username;
+
+		return 'Hi guest <a href="'.url('/login').'">Logar com feice</a>';
 		return view('home');
 	}
 
