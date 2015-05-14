@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use Auth;
-use Socialite;
 class HomeController extends Controller {
 
 	/*
@@ -24,13 +23,6 @@ class HomeController extends Controller {
 	{
 		/*$this->middleware('auth');*/
 	}
-
-	
-	public function login()
-	{
-		return Socialite::with('facebook')->redirect();
-	}
-
 
 	/**
 	 * Show the application dashboard to the user.
