@@ -14,7 +14,7 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
-Route::get('FBLogin', 'AuthController@FBLogin');
+Route::get('fbLogin', 'FacebookController@fbLogin');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

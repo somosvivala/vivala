@@ -34,7 +34,7 @@ class HomeController extends Controller {
 		if(Auth::check())
 		 return 'Welcome back ,' .Auth::user()->username;
 
-		return 'Hi guest <a href="'.url('/login').'">Logar com feice</a>';
+		return 'Hi guest <a href="'.url('/fbLogin').'">Logar com feice</a>';
 		return view('home');
 	}
 
