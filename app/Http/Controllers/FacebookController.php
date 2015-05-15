@@ -19,7 +19,7 @@ class FacebookController extends Controller {
 		if(!$request->has('code')) //testa se o request veio com um codigo de retorno do fb
 		{
 			//não tem código, redireciona pra autorização do fb
-			return Socialite::with('facebook')->redirect();
+			return $this->socialite->driver('facebook')->redirect();
 		}
 
 		$user = $this->socialite->driver('facebook')->user();
