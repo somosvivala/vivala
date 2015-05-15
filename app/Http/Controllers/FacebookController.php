@@ -8,6 +8,11 @@ use Socialite;
 
 class FacebookController extends Controller {
 
+	public function __construct(Socialite $socialite)
+	{
+		$this->socialite = $socialite;
+	}
+
 	public function fbLogin(Request $request)
 	{
 
