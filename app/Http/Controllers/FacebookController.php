@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Socialite;
+use Laravel\Socialite\Contracts\Factory as Socialite; 
 
 class FacebookController extends Controller {
 
