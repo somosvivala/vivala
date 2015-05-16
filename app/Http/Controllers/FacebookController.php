@@ -25,16 +25,9 @@ class FacebookController extends Controller {
 		}
 
 		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
-		$userData = $this->socialite->driver('facebook')->user();
-		$user = User::firstOrCreate([
-			'email' => $userData->email,
-			'username' => $userData->name,
-			'avatar' => $userData->avatar,
-			'fb_token' => $userData->token
-		]);
-		//$user = $this->findByEmailOrCreate($this->getFacebookUser());
+		$user = $this->findByEmailOrCreate($this->getFacebookUser());
 
-		$this->auth->login($user, true);
+		$this->auth->login($user);
 	}
 
 	private function getFacebookUser()
@@ -47,8 +40,7 @@ class FacebookController extends Controller {
 		return User::firstOrCreate([
 			'email' => $userData->email,
 			'username' => $userData->name,
-			'avatar' => $userData->avatar,
-			'fb_token' => $userData->fb_token
+			'avatar' => $userData->avatar
 		]);
 	}
 
