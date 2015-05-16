@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Laravel\Socialite\Contracts\Factory as Socialite; 
+use Auth;
 
 class FacebookController extends Controller {
 
@@ -15,89 +16,31 @@ class FacebookController extends Controller {
 
 	public function fbLogin(Request $request)
 	{
-
 		if(!$request->has('code')) //testa se o request veio com um codigo de retorno do fb
 		{
 			//não tem código, redireciona pra autorização do fb
 			return $this->socialite->driver('facebook')->redirect();
 		}
 
-		$user = $this->socialite->driver('facebook')->user();
-		dd($user);
+		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
+		$user = $this->findByEmailOrCreate($this->getFacebookUser());
+
+		$this->auth->login($user, true);
 	}
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+	private function getFacebookUser()
 	{
-		//
+		return $this->socialite->driver('facebook')->user();
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+	private function findByEmailOrCreate($userData)
 	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		return User::firstOrCreate([
+			'email' => $userData->email,
+			'username' => $userData->name,
+			'avatar' => $userData->avatar,
+			'fb_token' => $userData->fb_token
+		]);
 	}
 
 }

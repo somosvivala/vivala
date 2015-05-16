@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use Auth;
 class HomeController extends Controller {
 
 	/*
@@ -21,7 +20,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		/*$this->middleware('auth');*/
+		$this->middleware('auth');
 	}
 
 	/**
@@ -31,10 +30,6 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		if(Auth::check())
-		 return 'Welcome back ,' .Auth::user()->username;
-
-		return 'Hi guest <a href="'.url('/fbLogin').'">Logar com feice</a>';
 		return view('home');
 	}
 

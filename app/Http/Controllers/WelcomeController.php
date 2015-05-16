@@ -29,7 +29,7 @@ class WelcomeController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{
+	{	
 		$name = 'John Snow';
 		return view('welcome', compact('name'));
 	}
