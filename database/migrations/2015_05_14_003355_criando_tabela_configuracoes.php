@@ -29,7 +29,7 @@ class CriandoTabelaConfiguracoes extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('configuracao');
+		Schema::drop('configuracaos');
 	}
 
 }
