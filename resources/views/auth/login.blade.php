@@ -48,7 +48,9 @@
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">Login</button>
-
+								<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
+									<i class="fa fa-facebook"></i> Entrar com o facebook
+								</a>
 								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
 							</div>
 						</div>
