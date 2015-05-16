@@ -9,7 +9,7 @@ use Auth;
 
 class FacebookController extends Controller {
 
-	public function __construct(Socialite $socialite, Authenticator $auth)
+	public function __construct(Socialite $socialite, Auth $auth)
 	{
 		$this->socialite = $socialite;
 		$this->auth = $auth;
@@ -25,7 +25,7 @@ class FacebookController extends Controller {
 
 		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
 		$userData = $this->socialite->driver('facebook')->user();
-		$user = return User::firstOrCreate([
+		$user = User::firstOrCreate([
 			'email' => $userData->email,
 			'username' => $userData->name,
 			'avatar' => $userData->avatar,
