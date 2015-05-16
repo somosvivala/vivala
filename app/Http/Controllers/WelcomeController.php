@@ -30,8 +30,10 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		$name = 'John Snow';
-		return view('welcome', compact('name'));
+		//recuperando alguma informacao da tabela de configurações
+		$title = ConfiguracaoController::get('title');
+
+		return view('welcome')->with('name', $title);
 	}
 
 }

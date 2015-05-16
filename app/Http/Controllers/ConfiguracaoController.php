@@ -10,12 +10,14 @@ use Illuminate\Http\Request;
 
 		
 	public function index() {
-		$configuracoes = Configuracao::all(); 
+
+		$configuracoes = Configuracao::all();
+
 		return $configuracoes;
 	}
 
-	
-	public function get($configuracao_nome) {
+
+	public static function get($configuracao_nome) {
 		$valor_configuracao = Configuracao::where('char_nome_configuracao', '=', $configuracao_nome)
 			->firstOrFail()
 			->text_valor_configuracao;

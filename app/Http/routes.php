@@ -17,6 +17,7 @@ Route::get('home', 'HomeController@index');
 Route::get('login', 'HomeController@login');
 
 Route::get('configuracoes', 'ConfiguracaoController@index');
+Route::get('configuracoes/{indice_configuracao}', 'ConfiguracaoController@get');
 
 
 Route::controllers([

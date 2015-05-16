@@ -30,5 +30,4 @@ class AppServiceProvider extends ServiceProvider {
 			'App\Services\Registrar'
 		);
 	}
-
 }

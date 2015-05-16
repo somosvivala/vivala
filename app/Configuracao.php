@@ -8,5 +8,4 @@ class Configuracao extends Model {
 		'char_nome_configuracao',
 		'text_valor_configuracao'
 	];
-
 }
