@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Laravel\Socialite\Contracts\Factory as Socialite; 
-use Auth;
 use App\User;
 
 class FacebookController extends Controller {
@@ -27,7 +26,8 @@ class FacebookController extends Controller {
 		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
 		$user = $this->findByEmailOrCreate($this->getFacebookUser());
 
-		$this->auth->login($user);
+		//$this->auth->login($user);
+		Auth::login($user);
 	}
 
 	private function getFacebookUser()
