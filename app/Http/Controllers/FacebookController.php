@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Contracts\Factory as Socialite; 
 use Auth;
+use App\User;
 
 class FacebookController extends Controller {
 
@@ -29,7 +30,7 @@ class FacebookController extends Controller {
 			'email' => $userData->email,
 			'username' => $userData->name,
 			'avatar' => $userData->avatar,
-			'fb_token' => $userData->fb_token
+			'fb_token' => $userData->token
 		]);
 		//$user = $this->findByEmailOrCreate($this->getFacebookUser());
 
