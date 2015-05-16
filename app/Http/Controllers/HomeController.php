@@ -24,6 +24,8 @@ class HomeController extends Controller {
 	{
 		/*$this->middleware('auth');*/
 	}
+
+	
 	public function login()
 	{
 		return Socialite::with('facebook')->redirect();
