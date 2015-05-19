@@ -10,10 +10,9 @@ use App\User;
 
 class FacebookController extends Controller {
 
-	public function __construct(Socialite $socialite, Auth $auth)
+	public function __construct(Socialite $socialite)
 	{
 		$this->socialite = $socialite;
-		$this->auth = $auth;
 	}
 
 	public function fbLogin(Request $request)
@@ -27,8 +26,9 @@ class FacebookController extends Controller {
 		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
 		$user = $this->findByEmailOrCreate($this->getFacebookUser());
 
-		//$this->auth->login($user);
 		Auth::login($user);
+
+		return view('home');
 	}
 
 	private function getFacebookUser()
