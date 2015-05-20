@@ -48,14 +48,14 @@ class FacebookController extends Controller {
 		$user->avatar = $userData->avatar;
 		$user->save();
 		$userData->user_birthday = '21-12-1990';
-		
+
 		//Atualiza a tabela de dados do Fb
-		$facebookData = $user->facebookData();
+		$facebookData = $user->facebookData;
 		$facebookData->user_birthday = $userData->user_birthday;
 		$facebookData->user_hometown = $userData->user_hometown;
 		$facebookData->user_likes = $userData->user_likes;
 		$facebookData->user_location = $userData->user_location;
-		$facebookData->save();
+		$user->facebookData()->save($facebookData);
 			
 		return $user;
 	}
