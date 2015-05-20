@@ -31,7 +31,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 		//Traz as informações do facebook salvas
-		$facebookData = stdClass();
+		$facebookData = array();
 		return view('home', compact('facebookData'));
 	}
 
