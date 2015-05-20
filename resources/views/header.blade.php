@@ -11,7 +11,8 @@
 
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		<ul class="nav navbar-nav">
-			<li><a href="{{ url('/') }}">Perfil</a></li>
+			<li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
+			<li><a href="{{ url('configuracao') }}">{{ trans("menu.settings") }}</a></li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">

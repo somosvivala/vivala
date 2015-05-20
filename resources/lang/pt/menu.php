@@ -11,7 +11,10 @@ return [
     |
     */
 
-    'perfil' => 'Perfil',
+    'profile' => 'Perfil',
+
+    'settings' => 'Configura&ccedil;&otilde;es',
+
 
     'login'     => 'Login',
     
