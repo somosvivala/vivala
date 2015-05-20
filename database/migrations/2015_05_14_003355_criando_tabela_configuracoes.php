@@ -15,7 +15,7 @@ class CriandoTabelaConfiguracoes extends Migration {
 		//Criando tabela de Configuracoes, para padronização de código
 		//e evitar valores hardcoded
 		Schema::create('configuracaos', function(Blueprint $table){
-			$table->increments('ainc_id_configuracao');
+			$table->increments('id');
 			$table->string('char_nome_configuracao');
 			$table->text('text_valor_configuracao');
 			$table->timestamps();
