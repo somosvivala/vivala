@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Contracts\Factory as Socialite; 
 use Auth;
 use App\User;
+use App\FacebookData;
 
 class FacebookController extends Controller {
 
@@ -50,7 +51,7 @@ class FacebookController extends Controller {
 		$userData->user_birthday = '21-12-1990';
 
 		//Atualiza a tabela de dados do Fb
-		$facebookData = $user->facebookData;
+		$facebookData = $user->facebookData ? $user->facebookData : new FacebookData();
 		$facebookData->user_birthday = $userData->user_birthday;
 		$facebookData->user_hometown = $userData->user_hometown;
 		$facebookData->user_likes = $userData->user_likes;

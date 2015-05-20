@@ -33,6 +33,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
 	public function facebookData()
 	{
-		$this->hasOne('App\FacebookData');
+		return $this->hasOne('App\FacebookData');
 	}
 }
