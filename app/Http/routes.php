@@ -19,6 +19,10 @@ Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('configuracoes', 'ConfiguracaoController@index');
 Route::get('configuracoes/{indice_configuracao}', 'ConfiguracaoController@get');
 
+Route::post('perfil/editar/{id}', 'PerfilController@update');
+Route::get('perfil', 'PerfilController@index');
+Route::get('perfil/editar', 'PerfilController@edit');
+Route::post('perfil/editar', 'PerfilController@update');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
