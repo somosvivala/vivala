@@ -53,9 +53,12 @@ class FacebookController extends Controller {
 		//Atualiza a tabela de dados do Fb
 		$facebookData = $user->facebookData ? $user->facebookData : new FacebookData();
 		$facebookData->user_birthday = $userData->user_birthday;
-		$facebookData->user_hometown = $userData->user_hometown;
-		$facebookData->user_likes = $userData->user_likes;
-		$facebookData->user_location = $userData->user_location;
+		if($userData->user_hometown)
+			$facebookData->user_hometown = $userData->user_hometown;
+		if($userData->user_likes)
+			$facebookData->user_likes = $userData->user_likes;
+		if($userData->user_location)
+			$facebookData->user_location = $userData->user_location;
 		$user->facebookData()->save($facebookData);
 			
 		return $user;
