@@ -7,6 +7,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<h1>Alô {{ Auth::user()->username }}</h1>
+					<h2>Facebook data {{ $facebookData }}</h2>
 				</div>
 			</div>
 		</div>

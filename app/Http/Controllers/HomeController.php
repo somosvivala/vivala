@@ -32,7 +32,6 @@ class HomeController extends Controller {
 	{
 		//Traz as informações do facebook salvas
 		$facebookData = Auth::user()->facebookData();
-		var_dump($facebookData);
 		return view('home', compact('facebookData'));
 	}
 
