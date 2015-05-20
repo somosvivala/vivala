@@ -25,7 +25,7 @@ class FacebookController extends Controller {
 
 		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
 		$user = $this->findByEmailOrCreate($this->getFacebookUser());
-
+		
 		Auth::login($user);
 
 		return view('home');
@@ -39,11 +39,26 @@ class FacebookController extends Controller {
 	private function findByEmailOrCreate($userData)
 	{
 		//Cria o usuário com base no email cadastrado no Fb
-		return User::firstOrCreate([
-			'email' => $userData->email,
-			'username' => $userData->name,
-			'avatar' => $userData->avatar
+		$user = User::firstOrCreate([
+			'email' => $userData->email
 		]);
+/*
+		$user->username = $userData->name;
+		$user->avatar = $userData->avatar;
+		$user->save();
+*/
+		$facebookData = $user->facebookData();
+/*
+		$facebookData->save();
+			*/
+			echo "userdata";
+		var_dump($userData);
+
+			echo "user";
+		var_dump($user);
+			echo "facebookData";
+		var_dump($facebookData);
+		return $user;
 	}
 
 }
