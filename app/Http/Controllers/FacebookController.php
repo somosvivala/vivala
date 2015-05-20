@@ -38,26 +38,25 @@ class FacebookController extends Controller {
 
 	private function findByEmailOrCreate($userData)
 	{
-		//Cria o usuário com base no email cadastrado no Fb
+		//Procura/Cria o usuário com base no email cadastrado no Fb
 		$user = User::firstOrCreate([
 			'email' => $userData->email
 		]);
-/*
+
+		//Atualiza o usuário com os dados do Fb
 		$user->username = $userData->name;
 		$user->avatar = $userData->avatar;
 		$user->save();
-*/
+		$userData->user_birthday = '21-12-1990';
+		
+		//Atualiza a tabela de dados do Fb
 		$facebookData = $user->facebookData();
-/*
+		$facebookData->user_birthday = $userData->user_birthday;
+		$facebookData->user_hometown = $userData->user_hometown;
+		$facebookData->user_likes = $userData->user_likes;
+		$facebookData->user_location = $userData->user_location;
 		$facebookData->save();
-			*/
-			echo "userdata";
-		var_dump($userData);
-
-			echo "user";
-		var_dump($user);
-			echo "facebookData";
-		var_dump($facebookData);
+			
 		return $user;
 	}
 
