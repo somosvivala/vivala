@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Auth;
 
 class HomeController extends Controller {
 
@@ -31,7 +32,7 @@ class HomeController extends Controller {
 	public function index()
 	{
 		//Traz as informações do facebook salvas
-		$facebookData = Auth::user()->facebookData();
+		$facebookData = Auth::user()->facebookData;
 		return view('home', compact('facebookData'));
 	}
 

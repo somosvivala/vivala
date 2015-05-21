@@ -29,7 +29,7 @@ class FacebookController extends Controller {
 		
 		Auth::login($user);
 
-		return view('home');
+		return	redirect('/home');
 	}
 
 	private function getFacebookUser()
