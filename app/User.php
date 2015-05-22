@@ -35,4 +35,8 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasOne('App\FacebookData');
 	}
+	public function perfil()
+	{
+		return $this->hasOne('App\Perfil');
+	}
 }

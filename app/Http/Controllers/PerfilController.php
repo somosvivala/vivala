@@ -28,7 +28,9 @@ class PerfilController extends Controller {
 	public function index()
 	{
 		$user = Auth::user();
-		return view('perfil.index', compact('user'));
+		$perfil = $user->perfil;
+
+		return view('perfil.index', compact('user', 'perfil'));
 	}
 
 	/**
@@ -40,7 +42,9 @@ class PerfilController extends Controller {
 	public function edit($id=0)
 	{
 		$user = Auth::user();
-		return view('perfil.edit', compact('user'));
+		$perfil = $user->perfil;
+
+		return view('perfil.edit', compact('user', 'perfil'));
 	}
 
 	/**

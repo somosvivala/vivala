@@ -32,8 +32,11 @@ class HomeController extends Controller {
 	public function index()
 	{
 		//Traz as informações do facebook salvas
-		$facebookData = Auth::user()->facebookData;
-		return view('home', compact('facebookData'));
+		$user = Auth::user();
+		// $facebookData = $user->facebookData;
+		$perfil = $user->perfil;
+
+		return view('home', compact('facebookData','perfil'));
 	}
 
 }
