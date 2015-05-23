@@ -11,6 +11,11 @@
 |
 */
 
+
+
+
+
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
@@ -27,3 +32,24 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::bind('user', function($value, $route)
+{
+    return App\User::where('string_prettyUrl', $value)->first();
+});
+
+Route::get('perfil/{user}', 'PerfilController@showUserProfile');
+
+Route::get('/{user}', function(App\User $user)
+{
+	if ( $user->exists ) {
+		if ($user->string_prettyUrl == Auth::user()->string_prettyUrl) {
+			return Redirect::to('perfil');	
+		}
+
+		return Redirect::to('perfil/'.$user->string_prettyUrl)->with( 'user', $user );		
+	} else {
+		return 'nao tem esse user nao';
+	}
+});
