@@ -66,7 +66,7 @@ class PerfilSeeder extends Seeder {
 
         $dodo = Perfil::create([
         	'user_id' 			=> '1', 
-        	'stri_aniversario' 	=> '21-12-1990',
+        	'stri_aniversario' 	=> '21-12-1990 07:30:00',
         	'stri_cidade_natal' => 'Bauru'
         ]);
 
