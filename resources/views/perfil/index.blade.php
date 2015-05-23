@@ -6,9 +6,11 @@
 	<h1 class="perfil-title">
 	<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
 		Perfil de: {{ $user->username }}
-		<a href="perfil/editar">
-				<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
-		</a>
+		@if (Auth::user()->id == $user->id) 
+			<a href="/perfil/editar">
+					<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
+			</a>
+		@endif
 	</h1>
 
 

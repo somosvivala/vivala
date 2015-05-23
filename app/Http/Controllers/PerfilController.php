@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\EditarPerfilRequest;
 use App\User;
 use Auth;
+use Session;
 
 class PerfilController extends Controller {
 
@@ -60,5 +61,20 @@ class PerfilController extends Controller {
 		$user->update($request->all());
 		return redirect('home');
 	}
+
+	public function showUserProfile($user) {
+		
+		if (!$user) {
+			if (Session::has('user')) {
+				$user = Session::get('user');
+			}
+		} 
+
+		$perfil = $user->perfil;
+		$follow = $perfil->follow;
+		$followedBy = $perfil->followedBy;
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
+	}
+
 
 }

@@ -16,6 +16,12 @@
 				{!! Form::text("username",  null , ['class' => 'form-control']) !!} 	
 			</div>
 
+			<!-- Adiciona um text field para o form, user PrettyUrl -->
+			<div class="form-group"> 
+				{!! Form::label("string_prettyUrl", "prettyUrl:") !!}
+				{!! Form::text("string_prettyUrl", null, ['class' => 'form-control']) !!}
+			</div>
+
 			<!-- Adiciona submit button ara o form de Edicao-->
 			<div class="form-group"> 
 				{!! Form::submit("Submit", ['class' => 'form-control btn btn-primary']) !!}

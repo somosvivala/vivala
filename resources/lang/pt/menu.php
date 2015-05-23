@@ -15,7 +15,6 @@ return [
 
     'settings' => 'Configura&ccedil;&otilde;es',
 
-
     'login'     => 'Login',
     
     'signup'     => 'Registrar',
