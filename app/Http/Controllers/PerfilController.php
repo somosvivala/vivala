@@ -29,8 +29,9 @@ class PerfilController extends Controller {
 	{
 		$user = Auth::user();
 		$perfil = $user->perfil;
-
-		return view('perfil.index', compact('user', 'perfil'));
+		$follow = $perfil->follow;
+		$followedBy = $perfil->followedBy;
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
 	}
 
 	/**

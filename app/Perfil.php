@@ -12,4 +12,13 @@ class Perfil extends Model {
 		return $this->belongsTo('App\User');
 	}
 
+	public function follow()
+    {
+        return $this->belongsToMany('App\Perfil', 'perfil_perfil', 'perfil_id', 'follow_id')->withTimestamps();
+    }
+    public function followedBy()
+    {
+        return $this->belongsToMany('App\Perfil', 'perfil_perfil', 'follow_id', 'perfil_id')->withTimestamps();
+    }
+
 }
