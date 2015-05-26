@@ -17,7 +17,7 @@
 				@endif
 
 				@if (isset($perfil))
-					<h2> Informações do seu Perfil <a href="{{url('perfil')}}">{{trans('acoes.edit')}}</a></h2>
+					<h2> Informações do seu Perfil <a href="{{url('perfil')}}">{{trans('acoes.visualizarperfil')}}</a></h2>
 					Data de Aniversário:
 					{{ $perfil->stri_aniversario }}<br>
 					Cidade Natal:

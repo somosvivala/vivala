@@ -5,11 +5,11 @@
 	<div class="container-fluid">
 	<div class="col-md-6">
 	<div class="panel panel-default">
-	<div class="panel-heading"><h1>Editando: {{ $user->username }}</h1></div>
-			<div class="panel-body">
-			
+		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
+		<div class="panel-body">
+		
 			{!! Form::model($user, ['url' => ['perfil/editar',  $user->id ]]) !!}
-	
+
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 
 				{!! Form::label("username", "Nome:") !!}
@@ -21,25 +21,39 @@
 				{!! Form::label("string_prettyUrl", "prettyUrl:") !!}
 				{!! Form::text("string_prettyUrl", null, ['class' => 'form-control']) !!}
 			</div>
+		</div>
+		
+		<div class="panel-heading"><h4>Dados Pessoais</h4></div>
+		<div class="panel-body">
+			<!-- Adiciona txtfield para o aniversário do Perfil -->
+			<div class="form-group"> 
+				{!! Form::label("stri_aniversario", "Data de Nascimento:") !!}
+				{!! Form::text("stri_aniversario",  $perfil->stri_aniversario , ['class' => 'form-control']) !!} 	
+			</div>
 
-			<!-- Adiciona submit button ara o form de Edicao-->
+			<!-- Adiciona txtfield para a cidade natal do Perfil -->
+			<div class="form-group"> 
+				{!! Form::label("stri_cidade_natal", "Cidade Natal:") !!}
+				{!! Form::text("stri_cidade_natal",  $perfil->stri_cidade_natal , ['class' => 'form-control']) !!} 	
+			</div>
+
+			<!-- Adiciona submit button para o form de Edicao -->
 			<div class="form-group"> 
 				{!! Form::submit("Submit", ['class' => 'form-control btn btn-primary']) !!}
 			</div>
 
 			{!! Form::close() !!}
+		</div>
 
-			</div>
+		@if ($errors->any())
+			<ul class="alert alert-danger">
+				@foreach ($errors->all() as $error) 
+					<li>{{$error}}</li>		
+				@endforeach
+			</ul>	
+		@endif
 
-			@if ($errors->any())
-				<ul class="alert alert-danger">
-					@foreach ($errors->all() as $error) 
-						<li>{{$error}}</li>		
-					@endforeach
-				</ul>	
-			@endif
-
-	</div>
+		</div>
 	</div>
 @endsection
  
