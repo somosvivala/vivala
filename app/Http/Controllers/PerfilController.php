@@ -57,8 +57,18 @@ class PerfilController extends Controller {
 	 */
 	public function update($id, EditarPerfilRequest $request)	
 	{
+		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
-		$user->update($request->all());
+		$user->username = $request->input('username');
+		$user->string_prettyUrl = $request->input('string_prettyUrl');
+		$user->save();
+
+		//Salva dados referentes ao User
+		$perfil = $user->perfil;
+		$perfil->stri_aniversario = $request->input('stri_aniversario');
+		$perfil->stri_cidade_natal = $request->input('stri_cidade_natal');
+		$perfil->save();
+
 		return redirect('home');
 	}
 

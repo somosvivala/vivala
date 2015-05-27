@@ -57,6 +57,12 @@
 							</div>
 						</div>
 					</form>
+
+					<div class="row text-center">
+						<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
+							<i class="fa fa-facebook"></i> {{ trans('facebook.register') }}
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

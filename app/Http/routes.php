@@ -11,14 +11,11 @@
 |
 */
 
-
-
-
-
-
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
+
+//Autoriza o login através do facebook ou redireciona pra pagina do facebook pedindo autorização do App
 Route::get('fbLogin', 'FacebookController@fbLogin');
 
 Route::resource('configuracao','ConfiguracaoController');
