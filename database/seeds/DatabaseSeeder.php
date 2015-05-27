@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Configuracao;
 use App\User;
 use App\Perfil;
+use App\PrettyUrl;
 
 class DatabaseSeeder extends Seeder {
 
@@ -19,9 +20,9 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('ConfiguracaoSeeder');
 		$this->call('UserSeeder');
-		$this->call('PerfilSeeder');
+        $this->call('PerfilSeeder');
+		$this->call('PrettyUrlSeeder');
 	}
-
 }
 
 class ConfiguracaoSeeder extends Seeder {
@@ -32,7 +33,6 @@ class ConfiguracaoSeeder extends Seeder {
 
         Configuracao::create(['char_nome_configuracao' => 'title', 'text_valor_configuracao' => 'Vivalá']);
     }
-
 }
 
 class UserSeeder extends Seeder {
@@ -43,7 +43,6 @@ class UserSeeder extends Seeder {
 
         User::create([
             'username'           => 'evandro', 
-        	'string_prettyUrl'   => 'evandrin2000', 
         	'email' 	         => 'evandro.carreira@gmail.com',
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca', //123321
         	'avatar' 	         => 'https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/10881937_10205138988501966_880908969196321312_n.jpg?oh=4036e3ead0d2629c86b5228d343c69d9&oe=55FAD9BB&__gda__=1442687024_c8e9de1eff4318206fde21b4a418e3c8'
@@ -51,13 +50,28 @@ class UserSeeder extends Seeder {
 
         User::create([
         	'username' 	         => 'zord', 
-            'string_prettyUrl'   => 'zord', 
         	'email' 	         => 'zord@gmail.com',
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca', //123321
         	'avatar' 	         => 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/10374994_706677562743225_4888707270232254721_n.jpg?oh=d4f0daa8f62f27904266b4eb48876ae0&oe=55C2EE6F&__gda__=1438591338_31d1bca33986c333c0434e1ce01cd8a4'
         ]);
     }
+}
 
+class PrettyUrlSeeder extends Seeder {
+    public function run()
+    {
+        DB::table('pretty_urls')->delete();
+
+        PrettyUrl::create([
+            'stri_url_prettyUrls'    => 'zord',
+            'enum_tipo_prettyUrls'   => 'user'
+        ]);
+
+        PrettyUrl::create([
+            'stri_url_prettyUrls'    => 'evandro',
+            'enum_tipo_prettyUrls'   => 'user'
+        ]);
+    }
 }
 
 class PerfilSeeder extends Seeder {
@@ -74,6 +88,7 @@ class PerfilSeeder extends Seeder {
 
         $zord = Perfil::create([
         	'user_id' 			=> '2', 
+            'stri_aniversario'  => '1992-05-08 07:43:00',
         	'stri_cidade_natal' => 'Rio Preto'
         ]);
 
@@ -81,3 +96,4 @@ class PerfilSeeder extends Seeder {
     }
 
 }
+

@@ -6,6 +6,7 @@ use App\Http\Requests\EditarPerfilRequest;
 use App\User;
 use Auth;
 use Session;
+use App;
 
 class PerfilController extends Controller {
 
@@ -57,11 +58,12 @@ class PerfilController extends Controller {
 	 */
 	public function update($id, EditarPerfilRequest $request)	
 	{
+
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
 		$user->username = $request->input('username');
-		$user->string_prettyUrl = $request->input('string_prettyUrl');
 		$user->save();
+		$user->string_prettyUrl = $request->input('string_prettyUrl');
 
 		//Salva dados referentes ao User
 		$perfil = $user->perfil;
@@ -72,11 +74,13 @@ class PerfilController extends Controller {
 		return redirect('home');
 	}
 
-	public function showUserProfile($user) {
+	public function showUserProfile($user = null) {
 		
 		if (!$user) {
 			if (Session::has('user')) {
 				$user = Session::get('user');
+			} else {
+				App::abort(404);
 			}
 		} 
 

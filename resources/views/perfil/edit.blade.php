@@ -8,7 +8,7 @@
 		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
 		<div class="panel-body">
 		
-			{!! Form::model($user, ['url' => ['perfil/editar',  $user->id ]]) !!}
+			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
 
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 

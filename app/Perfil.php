@@ -20,5 +20,10 @@ class Perfil extends Model {
     {
         return $this->belongsToMany('App\Perfil', 'perfil_perfil', 'follow_id', 'perfil_id')->withTimestamps();
     }
+    public function prettyUrl()
+    {
+		return $this->hasOne('App\PrettyUrl');
+    }
+
 
 }

@@ -14,39 +14,25 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
-
-//Autoriza o login através do facebook ou redireciona pra pagina do facebook pedindo autorização do App
 Route::get('fbLogin', 'FacebookController@fbLogin');
 
 Route::resource('configuracao','ConfiguracaoController');
-
-Route::post('perfil/editar/{id}', 'PerfilController@update');
-Route::get('perfil', 'PerfilController@index');
-Route::get('perfil/editar', 'PerfilController@edit');
-Route::post('perfil/editar', 'PerfilController@update');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
-
 Route::bind('user', function($value, $route)
 {
     return App\User::where('string_prettyUrl', $value)->first();
 });
 
-Route::get('perfil/{user}', 'PerfilController@showUserProfile');
-
-Route::get('/{user}', function(App\User $user)
-{
-	if ( $user->exists ) {
-		if ($user->string_prettyUrl == Auth::user()->string_prettyUrl) {
-			return Redirect::to('perfil');	
-		}
-
-		return Redirect::to('perfil/'.$user->string_prettyUrl)->with( 'user', $user );		
-	} else {
-		return 'nao tem esse user nao';
-	}
+Route::group(['before' => 'auth'], function() {
+	Route::get('perfil', 'PerfilController@index');
+	Route::get('editarPerfil', 'PerfilController@edit');
+	Route::post('editarPerfil/{id}', 'PerfilController@update');
+	Route::get('{user}', 'PerfilController@showUserProfile');
 });
+
+
