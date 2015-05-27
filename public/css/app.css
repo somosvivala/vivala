@@ -6226,8 +6226,32 @@ button.close {
     display: none !important;
   }
 }
+.foto-perfil {
+  width: 200px;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.foto-perfil img {
+  width: 200px;
+}
+.lista-usuarios {
+  list-style: none;
+}
+.lista-usuarios li {
+  float: left;
+}
+.foto-user {
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.foto-user img {
+  width: 100px;
+}
 body,
 label,
 .checkbox label {
   font-weight: 300;
 }
+
+/*# sourceMappingURL=app.css.map */

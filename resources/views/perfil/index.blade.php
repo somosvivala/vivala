@@ -4,7 +4,12 @@
 @section('content')
 	{{-- Provisorio --}}
 	<h1 class="perfil-title">
-	<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
+		<div class="foto-perfil">
+			<a href="{{ url($user->string_prettyUrl) }}" title="{{ $user->username }}">
+				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
+			</a>
+		</div>
+
 		Perfil de: {{ $user->username }}
 		@if (Auth::user()->id == $user->id) 
 			<a href="/perfil/editar">
@@ -26,19 +31,36 @@
 		{{ $perfil->stri_ultimo_local }}<br>
 	@endif
 	    
-	<h3> Followed by </h3>
-	@forelse($followedBy as $perfil)
-		<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
-	@empty
-	    <p>Ninguém :(</p>
-	@endforelse
-
-	<h3> Following </h3>
-	@forelse($follow as $perfil)
-		<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
-	@empty
-	    <p>Ninguém :(</p>
-	@endforelse
+	<div class="row">
+		<div class="col-sm-6">
+			<h3> Followed by </h3>
+			@forelse($followedBy as $perfil)
+				<ul class="lista-usuarios">
+					<li class="foto-user">
+						<a href="{{ url($perfil->user->string_prettyUrl) }}" title="{{ $perfil->user->username }}">
+							<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
+						</a>
+					</li>
+				</ul>
+			@empty
+			    <p>Ninguém :(</p>
+			@endforelse
+		</div>
+		<div class="col-sm-6">
+			<h3> Following </h3>
+			@forelse($follow as $perfil)
+				<ul class="lista-usuarios">
+					<li class="foto-user">
+						<a href="{{ url($perfil->user->string_prettyUrl) }}" title="{{ $perfil->user->username }}">
+							<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
+						</a>
+					</li>
+				</ul>
+			@empty
+			    <p>Ninguém :(</p>
+			@endforelse
+		</div>
+	</div>
 
 @endsection
  
