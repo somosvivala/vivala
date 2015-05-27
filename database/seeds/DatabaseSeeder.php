@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('ConfiguracaoSeeder');
 		$this->call('UserSeeder');
-        $this->call('PerfilSeeder');
 		$this->call('PrettyUrlSeeder');
+        $this->call('PerfilSeeder');
 	}
 }
 

@@ -14,7 +14,7 @@ class AddingPrettyUrlToPerfils extends Migration {
 	{
 		Schema::table('perfils', function(Blueprint $table)
 		{
-			$table->integer('prettyUrl_id');
+			$table->integer('prettyUrl_id')->unsigned()->nullable();
 			$table->foreign('prettyUrl_id')
 				->references('id')
 				->on('pretty_urls')
@@ -31,7 +31,7 @@ class AddingPrettyUrlToPerfils extends Migration {
 	{
 		Schema::table('perfils', function(Blueprint $table)
 		{
-			$table->dropColumn('prettyUrl_id');
+			$table->dropForeign('prettyUrl_id');
 		});
 	}
 
