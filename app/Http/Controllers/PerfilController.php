@@ -63,12 +63,16 @@ class PerfilController extends Controller {
 		$user = User::findOrFail($id);
 		$user->username = $request->input('username');
 		$user->save();
-		$user->string_prettyUrl = $request->input('string_prettyUrl');
 
 		//Salva dados referentes ao User
 		$perfil = $user->perfil;
 		$perfil->stri_aniversario = $request->input('stri_aniversario');
 		$perfil->stri_cidade_natal = $request->input('stri_cidade_natal');
+		$perfil->prettyUrl()->update([
+			'stri_url_prettyUrls' => $request->input('string_prettyUrl'),
+			'enum_tipo_prettyUrls' => 'usuario'
+			]);
+
 		$perfil->save();
 
 		return redirect('home');

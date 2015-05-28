@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('ConfiguracaoSeeder');
 		$this->call('UserSeeder');
-		$this->call('PrettyUrlSeeder');
         $this->call('PerfilSeeder');
+        $this->call('PrettyUrlSeeder');
 	}
 }
 
@@ -57,23 +57,6 @@ class UserSeeder extends Seeder {
     }
 }
 
-class PrettyUrlSeeder extends Seeder {
-    public function run()
-    {
-        DB::table('pretty_urls')->delete();
-
-        PrettyUrl::create([
-            'stri_url_prettyUrls'    => 'zord',
-            'enum_tipo_prettyUrls'   => 'user'
-        ]);
-
-        PrettyUrl::create([
-            'stri_url_prettyUrls'    => 'evandro',
-            'enum_tipo_prettyUrls'   => 'user'
-        ]);
-    }
-}
-
 class PerfilSeeder extends Seeder {
 
     public function run()
@@ -81,15 +64,15 @@ class PerfilSeeder extends Seeder {
         DB::table('perfils')->delete();
 
         $dodo = Perfil::create([
-        	'user_id' 			=> '1', 
-        	'stri_aniversario' 	=> '1990-12-21 07:30:00',
-        	'stri_cidade_natal' => 'Bauru'
+            'user_id'               => '1', 
+        	'stri_aniversario' 	    => '1990-12-21 07:30:00',
+        	'stri_cidade_natal'     => 'Bauru'
         ]);
 
         $zord = Perfil::create([
-        	'user_id' 			=> '2', 
-            'stri_aniversario'  => '1992-05-08 07:43:00',
-        	'stri_cidade_natal' => 'Rio Preto'
+            'user_id'               => '2', 
+            'stri_aniversario'      => '1992-05-08 07:43:00',
+        	'stri_cidade_natal'     => 'Rio Preto'
         ]);
 
 		$dodo->follow()->attach($zord->id);
@@ -97,3 +80,21 @@ class PerfilSeeder extends Seeder {
 
 }
 
+class PrettyUrlSeeder extends Seeder {
+    public function run()
+    {
+        DB::table('pretty_urls')->delete();
+
+        PrettyUrl::create([
+            'perfil_id'               => '1', 
+            'stri_url_prettyUrls'    => 'evandro',
+            'enum_tipo_prettyUrls'   => 'usuario'
+        ]);
+
+        PrettyUrl::create([
+            'perfil_id'               => '2', 
+            'stri_url_prettyUrls'    => 'zord',
+            'enum_tipo_prettyUrls'   => 'usuario'
+        ]);
+    }
+}

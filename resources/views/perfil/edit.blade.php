@@ -19,7 +19,7 @@
 			<!-- Adiciona um text field para o form, user PrettyUrl -->
 			<div class="form-group"> 
 				{!! Form::label("string_prettyUrl", "prettyUrl:") !!}
-				{!! Form::text("string_prettyUrl", null, ['class' => 'form-control']) !!}
+				{!! Form::text("string_prettyUrl", $perfil->prettyUrl->stri_url_prettyUrls, ['class' => 'form-control']) !!}
 			</div>
 		</div>
 		

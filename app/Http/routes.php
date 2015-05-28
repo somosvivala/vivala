@@ -25,7 +25,13 @@ Route::controllers([
 
 Route::bind('user', function($value, $route)
 {
-    return App\User::where('string_prettyUrl', $value)->first();
+	$user = 
+	App\PrettyUrl::where('stri_url_prettyUrls', $value)
+		->firstOrFail()
+		->perfil
+		->user;
+
+    return $user;
 });
 
 Route::group(['before' => 'auth'], function() {
