@@ -5,7 +5,7 @@
 	{{-- Provisorio --}}
 	<h1 class="perfil-title">
 		<div class="foto-perfil">
-			<a href="{{ url($user->string_prettyUrl) }}" title="{{ $user->username }}">
+			<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $user->username }}">
 				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
 			</a>
 		</div>
@@ -37,7 +37,7 @@
 			@forelse($followedBy as $perfil)
 				<ul class="lista-usuarios">
 					<li class="foto-user">
-						<a href="{{ url($perfil->user->string_prettyUrl) }}" title="{{ $perfil->user->username }}">
+						<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $perfil->user->username }}">
 							<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
 						</a>
 					</li>
@@ -51,7 +51,7 @@
 			@forelse($follow as $perfil)
 				<ul class="lista-usuarios">
 					<li class="foto-user">
-						<a href="{{ url($perfil->user->string_prettyUrl) }}" title="{{ $perfil->user->username }}">
+						<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $perfil->user->username }}">
 							<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
 						</a>
 					</li>

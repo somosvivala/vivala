@@ -71,7 +71,7 @@ class PerfilController extends Controller {
 		$perfil->prettyUrl()->update([
 			'stri_url_prettyUrls' => $request->input('string_prettyUrl'),
 			'enum_tipo_prettyUrls' => 'usuario'
-			]);
+		]);
 
 		$perfil->save();
 

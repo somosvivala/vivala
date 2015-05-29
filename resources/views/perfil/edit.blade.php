@@ -12,6 +12,10 @@
 
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 
+			<input type="file" name="img">
+			</div>
+			<!-- Adiciona um text field para o form-->
+			<div class="form-group"> 
 				{!! Form::label("username", "Nome:") !!}
 				{!! Form::text("username",  null , ['class' => 'form-control']) !!} 	
 			</div>
