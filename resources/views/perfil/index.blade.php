@@ -6,7 +6,7 @@
 	<h1 class="perfil-title">
 		<div class="foto-perfil">
 			<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $user->username }}">
-				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
+				<img src="../../../public/uploads/{{ $user->avatar }}" alt="{{ $user->username }}">
 			</a>
 		</div>
 
