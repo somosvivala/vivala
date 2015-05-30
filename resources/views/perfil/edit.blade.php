@@ -7,13 +7,15 @@
 	<div class="panel panel-default">
 		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
 		<div class="panel-body">
-		
+
 			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ],  'files'=>true]) !!}
 
-			<!-- Adiciona um text field para o form-->
-			<div class="form-group"> 
-				{!! Form::file('image') !!}
+			<!-- Adiciona um formulario pra upload de foto-->
+			<div class="row col-sm-12"> 
+				<form action="editarPerfil" class="dropzone" id="foto-perfil"></form>
 			</div>
+
+			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 
 				{!! Form::label("username", "Nome:") !!}
