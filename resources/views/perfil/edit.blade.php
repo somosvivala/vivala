@@ -8,11 +8,11 @@
 		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
 		<div class="panel-body">
 
-			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ],  'files'=>true]) !!}
 
 			<!-- Adiciona um formulario pra upload de foto-->
 			<div class="row col-sm-12"> 
-				<form action="editarPerfil" class="dropzone" id="foto-perfil"></form>
+				{!! Form::open(['url' => ['editarPerfilFoto',  $user->id ],  'files'=>true, 'class'=>"dropzone", 'id'=>"foto-perfil"]) !!}
+				{!! Form::close() !!}	
 			</div>
 
 			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}

@@ -61,8 +61,6 @@ class PerfilController extends Controller {
 	public function update($id, EditarPerfilRequest $request)	
 	{
 
-		return base_path();
-
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
 		$user->username = $request->input('username');
@@ -110,6 +108,26 @@ class PerfilController extends Controller {
 		$follow = $perfil->follow;
 		$followedBy = $perfil->followedBy;
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
+	}
+
+
+	public function updatePhoto($id) {
+		
+		//Salva dados referentes ao User
+		$user = User::findOrFail($id);
+
+		//Salvando imagem no avatar do usuario;
+		$file = Input::file('file');
+	    if ($file) {
+
+	        $destinationPath = public_path() . '/uploads/';
+	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+	        $upload_success = $file->move($destinationPath, $filename);
+
+	        if ($upload_success) {
+	        	$user->update(['avatar' => $destinationPath . $filename]);
+	        }
+	    }
 	}
 
 
