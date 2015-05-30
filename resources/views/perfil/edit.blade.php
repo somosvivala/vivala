@@ -8,11 +8,11 @@
 		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
 		<div class="panel-body">
 		
-			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
+			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ],  'files'=>true]) !!}
 
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 
-			<input type="file" name="img">
+				{!! Form::file('image') !!}
 			</div>
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 

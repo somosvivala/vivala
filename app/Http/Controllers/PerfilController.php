@@ -7,6 +7,8 @@ use App\User;
 use Auth;
 use Session;
 use App;
+use Input;
+use Carbon\Carbon;
 
 class PerfilController extends Controller {
 
@@ -59,6 +61,8 @@ class PerfilController extends Controller {
 	public function update($id, EditarPerfilRequest $request)	
 	{
 
+		return base_path();
+
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
 		$user->username = $request->input('username');
@@ -72,13 +76,27 @@ class PerfilController extends Controller {
 			'stri_url_prettyUrls' => $request->input('string_prettyUrl'),
 			'enum_tipo_prettyUrls' => 'usuario'
 		]);
+		
+		//Salvando imagem no avatar do usuario;
+		$file = Input::file('image');
+	    if ($file) {
+
+	        $destinationPath = public_path() . '/uploads/';
+	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+	        $upload_success = $file->move($destinationPath, $filename);
+
+	        if ($upload_success) {
+	        	$perfil->user()->update(['avatar' => $destinationPath . $filename]);
+	        }
+	    }
 
 		$perfil->save();
 
 		return redirect('home');
 	}
 
-	public function showUserProfile($user = null) {
+	public function showUserProfile($user = null) 
+	{
 		
 		if (!$user) {
 			if (Session::has('user')) {
@@ -93,6 +111,17 @@ class PerfilController extends Controller {
 		$followedBy = $perfil->followedBy;
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
 	}
+
+
+	private function formatFileNameWithUserAndTimestamps($filename) 
+	{
+		$timestamp = Carbon::now()->getTimestamp() . '_';
+		$user_preffix = Auth::id() . '_';
+
+		return $user_preffix . $timestamp .$filename;
+	}
+
+
 
 
 }
