@@ -1,4 +1,4 @@
-@import "bootstrap/bootstrap";
+@import "../bower/bootstrap/less/bootstrap";
 @import "user";
 
 @btn-font-weight: 300;
@@ -6,4 +6,15 @@
 
 body, label, .checkbox label {
 	font-weight: 300;
+}
+
+@cor-primaria : "#FF6D20";
+
+form.dropzone {
+	border-color: @cor-primaria;
+	border-style: dashed;
+	min-height: 100px;
+	min-width: 100px;
+	border-radius: 5px;
+	border-width:3px;
 }
