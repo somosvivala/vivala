@@ -125,7 +125,7 @@ class PerfilController extends Controller {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	$user->update(['avatar' => $destinationPath . $filename]);
+	        	$user->update(['avatar' => $filename]);
 	        }
 	    }
 	}
