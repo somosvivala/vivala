@@ -16,10 +16,16 @@ class Perfil extends Model {
     {
         return $this->belongsToMany('App\Perfil', 'perfil_perfil', 'perfil_id', 'follow_id')->withTimestamps();
     }
+
     public function followedBy()
     {
         return $this->belongsToMany('App\Perfil', 'perfil_perfil', 'follow_id', 'perfil_id')->withTimestamps();
     }
+
+    /**
+     * Um Perfl tem uma prettyUrl.
+     * @return [type] [description]
+     */
     public function prettyUrl()
     {
 		return $this->hasOne('App\PrettyUrl');

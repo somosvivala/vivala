@@ -10,6 +10,12 @@ class PrettyUrl extends Model {
 		'enum_tipo_prettyUrls'
 	];
 
+
+	/**
+	 * A prettyUrl pertence a um perfil. 
+	 * todo: e quanto as paginas (ongs/empresas?)
+	 * @return [type] [description]
+	 */
 	public function perfil()
 	{
 		return $this->belongsTo('App\Perfil');
