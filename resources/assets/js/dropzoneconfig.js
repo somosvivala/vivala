@@ -5,5 +5,16 @@ Dropzone.options.fotoPerfil = {
   acceptedFiles: "image/*",
   uploadMultiple: false,
   maxFiles: 1,
-  dictDefaultMessage: "Coloque sua foto aqui"
+  dictDefaultMessage: "Coloque sua foto aqui",
+  accept: function(file, done) {
+    console.log("uploaded");
+    done();
+  },
+  init: function() {
+    this.on("addedfile", function() {
+      if (this.files[1]!=null){
+        this.removeFile(this.files[0]);
+      }
+    });
+  }
 };
