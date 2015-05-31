@@ -23,7 +23,6 @@ class PerfilController extends Controller {
 		$this->middleware('auth');
 	}
 
-
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -93,6 +92,11 @@ class PerfilController extends Controller {
 		return redirect('home');
 	}
 
+	/**
+	 * [showUserProfile description]
+	 * @param  [type] $user [description]
+	 * @return [type]       [description]
+	 */
 	public function showUserProfile($user = null) 
 	{
 		

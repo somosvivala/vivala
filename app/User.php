@@ -35,19 +35,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	{
 		return $this->hasOne('App\FacebookData');
 	}
+
+
+	/**
+	 * Um usuario tem um perfil
+	 */
 	public function perfil()
 	{
 		return $this->hasOne('App\Perfil');
 	}
 
-	public function prettyUrl()
+    /**
+	 * Um usuario pode ter muitas ONGS
+	 * 
+	 */
+    public function ongs()
     {
-		return $this->hasOne('App\PrettyUrl');
-    }
-    
-    public function ong()
-    {
-		return $this->hasOne('App\Ong');
+		return $this->hasMany('App\Ong');
     }
 
     public function getAvatarAttribute($value)
