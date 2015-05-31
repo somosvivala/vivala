@@ -6,6 +6,7 @@ use App\Configuracao;
 use App\User;
 use App\Perfil;
 use App\PrettyUrl;
+use App\Ong;
 
 class DatabaseSeeder extends Seeder {
 
@@ -22,6 +23,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserSeeder');
         $this->call('PerfilSeeder');
         $this->call('PrettyUrlSeeder');
+        $this->call('OngSeeder');
 	}
 }
 
@@ -95,6 +97,23 @@ class PrettyUrlSeeder extends Seeder {
             'perfil_id'               => '2', 
             'stri_url_prettyUrls'    => 'zord',
             'enum_tipo_prettyUrls'   => 'usuario'
+        ]);
+    }
+}
+
+class OngSeeder extends Seeder {
+    public function run()
+    {
+        DB::table('ongs')->delete();
+
+        Ong::create([
+            'user_id'           => '1', 
+            'stri_nome_ongs'    => 'evandrONG',
+        ]);
+
+        Ong::create([
+            'user_id'           => '2', 
+            'stri_nome_ongs'    => 'zordONG',
         ]);
     }
 }
