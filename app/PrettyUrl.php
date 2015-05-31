@@ -4,7 +4,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class PrettyUrl extends Model {
 
-	//
 	//mass assigned fields
 	protected $fillable = [
 		'str_url_prettyUrls',
@@ -15,8 +14,4 @@ class PrettyUrl extends Model {
 	{
 		return $this->belongsTo('App\Perfil');
 	}
-
-	
-
-
 }
