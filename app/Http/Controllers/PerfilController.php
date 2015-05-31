@@ -110,7 +110,11 @@ class PerfilController extends Controller {
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
 	}
 
-
+	/**
+	 * [updatePhoto description]
+	 * @param  Integer Id do usuário
+	 * @return ??
+	 */
 	public function updatePhoto($id) {
 		
 		//Salva dados referentes ao User
