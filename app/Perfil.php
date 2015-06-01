@@ -28,8 +28,9 @@ class Perfil extends Model {
      */
     public function prettyUrl()
     {
-		return $this->hasOne('App\PrettyUrl');
+        return $this->morphMany('App\PrettyUrl', 'prettyUrl');
     }
+
 
 
 }

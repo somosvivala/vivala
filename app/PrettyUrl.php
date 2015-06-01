@@ -11,13 +11,29 @@ class PrettyUrl extends Model {
 	];
 
 
-	/**
-	 * A prettyUrl pertence a um perfil. 
-	 * todo: e quanto as paginas (ongs/empresas?)
-	 * @return [type] [description]
-	 */
-	public function perfil()
+	// /**
+	//  * A prettyUrl pertence a um perfil. 
+	//  * todo: e quanto as paginas (ongs/empresas?)
+	//  * @return [type] [description]
+	//  */
+	// public function perfil()
+	// {
+	// 	return $this->belongsTo('App\Perfil');
+	// }
+
+	// /**
+	//  * A prettyUrl pertence a uma ong. 
+	//  * @return [type] [description]
+	//  */
+	// public function ong()
+	// {
+	// 	return $this->belongsTo('App\Ong');
+	// }
+
+
+	public function prettyUrl() 
 	{
-		return $this->belongsTo('App\Perfil');
+		 return $this->morphTo();
 	}
+
 }

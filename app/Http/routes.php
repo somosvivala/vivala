@@ -23,13 +23,38 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
-Route::bind('user', function($value, $route)
+
+/**
+ * Aqui faço o tratamento para a prettyUrl, retornando um 
+ */
+Route::bind('prettyURL', function($value, $route)
 {
-	$user = 
-	App\PrettyUrl::where('stri_url_prettyUrls', $value)
-		->firstOrFail()
-		->perfil
-		->user;
+	$user = '';
+	$ong = '';
+
+	try {	
+		$user = App\PrettyUrl::where('stri_url_prettyUrls', $value)
+			->firstOrFail()
+			->perfil
+			->user;
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+
+	try {	
+		$ong = App\Ong::where('stri_url_prettyUrls', $value)
+			->firstOrFail()
+			->ong;
+	} catch (Exception $e) {
+		echo $e->getMessage();
+	}
+
+	
+
+	dd($user, $ong);
+
+
+
 
     return $user;
 });
@@ -41,7 +66,7 @@ Route::group(['before' => 'auth'], function() {
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
 
 
-	Route::get('{user}', 'PerfilController@showUserProfile');
+	Route::get('{prettyURL}', 'PerfilController@showUserProfile');
 });
 
 

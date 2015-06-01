@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ConfiguracaoSeeder');
 		$this->call('UserSeeder');
         $this->call('PerfilSeeder');
-        $this->call('PrettyUrlSeeder');
         $this->call('OngSeeder');
+        $this->call('PrettyUrlSeeder');
 	}
 }
 
@@ -82,25 +82,6 @@ class PerfilSeeder extends Seeder {
 
 }
 
-class PrettyUrlSeeder extends Seeder {
-    public function run()
-    {
-        DB::table('pretty_urls')->delete();
-
-        PrettyUrl::create([
-            'perfil_id'               => '1', 
-            'stri_url_prettyUrls'    => 'evandro',
-            'enum_tipo_prettyUrls'   => 'usuario'
-        ]);
-
-        PrettyUrl::create([
-            'perfil_id'               => '2', 
-            'stri_url_prettyUrls'    => 'zord',
-            'enum_tipo_prettyUrls'   => 'usuario'
-        ]);
-    }
-}
-
 class OngSeeder extends Seeder {
     public function run()
     {
@@ -117,3 +98,30 @@ class OngSeeder extends Seeder {
         ]);
     }
 }
+
+class PrettyUrlSeeder extends Seeder {
+    public function run()
+    {
+        DB::table('pretty_urls')->delete();
+
+        PrettyUrl::create([
+            'perfil_id'               => '1', 
+            'stri_url_prettyUrls'    => 'evandro',
+            'enum_tipo_prettyUrls'   => 'usuario'
+        ]);
+
+        PrettyUrl::create([
+            'perfil_id'               => '2', 
+            'stri_url_prettyUrls'    => 'zord',
+            'enum_tipo_prettyUrls'   => 'usuario'
+        ]);
+
+        PrettyUrl::create([
+            'ong_id'                 => '2', 
+            'stri_url_prettyUrls'    => 'zordONG',
+            'enum_tipo_prettyUrls'   => 'ong'
+        ]);
+    }
+}
+
+
