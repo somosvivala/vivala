@@ -53,4 +53,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\Ong');
     }
 
+    public function getAvatarAttribute($value)
+    {
+    	$urlBase = "../../../uploads/";
+    	
+    	//Testa se o valor é uma URL
+    	if( preg_match ( '/^https?:\/\//' , $value) ) {
+    		return $value;
+    	} else {
+    		return $urlBase.$value;
+    	}
+    }
+
 }

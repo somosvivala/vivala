@@ -24,8 +24,8 @@
 
 			<!-- Adiciona um text field para o form, user PrettyUrl -->
 			<div class="form-group"> 
-				{!! Form::label("string_prettyUrl", "prettyUrl:") !!}
-				{!! Form::text("string_prettyUrl", $perfil->prettyUrl->stri_url_prettyUrls, ['class' => 'form-control']) !!}
+				{!! Form::label("url", "Seu endereço:") !!}
+				{!! Form::text("url", $perfil->prettyUrl->url, ['class' => 'form-control']) !!}
 			</div>
 		</div>
 		
@@ -33,14 +33,14 @@
 		<div class="panel-body">
 			<!-- Adiciona txtfield para o aniversário do Perfil -->
 			<div class="form-group"> 
-				{!! Form::label("stri_aniversario", "Data de Nascimento:") !!}
-				{!! Form::text("stri_aniversario",  $perfil->stri_aniversario , ['class' => 'form-control']) !!} 	
+				{!! Form::label("aniversario", "Data de Nascimento:") !!}
+				{!! Form::text("aniversario",  $perfil->aniversario , ['class' => 'form-control']) !!} 	
 			</div>
 
 			<!-- Adiciona txtfield para a cidade natal do Perfil -->
 			<div class="form-group"> 
-				{!! Form::label("stri_cidade_natal", "Cidade Natal:") !!}
-				{!! Form::text("stri_cidade_natal",  $perfil->stri_cidade_natal , ['class' => 'form-control']) !!} 	
+				{!! Form::label("cidade_natal", "Cidade Natal:") !!}
+				{!! Form::text("cidade_natal",  $perfil->cidade_natal , ['class' => 'form-control']) !!} 	
 			</div>
 
 			<!-- Adiciona submit button para o form de Edicao -->

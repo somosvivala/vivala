@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ong extends Model {
 
-	protected $fillable = ['user_id', 'stri_nome_ongs'];
+	protected $fillable = ['nome', 'user_id'];
 	
 	/**
 	 * Uma ONG pertence a um usuário.

@@ -29,6 +29,7 @@ Route::controllers([
  */
 Route::bind('prettyURL', function($value, $route)
 {
+
 	$user = '';
 	$ong = '';
 
@@ -41,20 +42,17 @@ Route::bind('prettyURL', function($value, $route)
 		echo $e->getMessage();
 	}
 
-	try {	
-		$ong = App\Ong::where('stri_url_prettyUrls', $value)
-			->firstOrFail()
-			->ong;
-	} catch (Exception $e) {
-		echo $e->getMessage();
-	}
+	// try {	
+	// 	$ong = App\Ong::where('stri_url_prettyUrls', $value)
+	// 		->firstOrFail()
+	// 		->ong;
+	// } catch (Exception $e) {
+	// 	echo $e->getMessage();
+	// }
 
 	
 
-	dd($user, $ong);
-
-
-
+	// dd($user, $ong);
 
     return $user;
 });

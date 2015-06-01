@@ -93,9 +93,9 @@ class ConfiguracaoController extends Controller {
 	 * @return String                    			valor da configuracao
 	 */
 	public static function get($configuracao_nome) {
-		$valor_configuracao = Configuracao::where('char_nome_configuracao', '=', $configuracao_nome)
+		$valor_configuracao = Configuracao::where('nome', '=', $configuracao_nome)
 			->firstOrFail()
-			->text_valor_configuracao;
+			->valor;
 
 		return $valor_configuracao;
 	}

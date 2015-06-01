@@ -5,8 +5,8 @@
 	{{-- Provisorio --}}
 	<h1 class="perfil-title">
 		<div class="foto-perfil">
-			<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $user->username }}">
-				<img src="../../../uploads/{{ $user->avatar }}" alt="{{ $user->username }}">
+			<a href="{{ url($perfil->prettyUrl->url) }}" title="{{ $user->username }}">
+				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
 			</a>
 		</div>
 
@@ -24,11 +24,11 @@
 	@if (isset($perfil))
 		<h2> Informações do Perfil</h2>
 		Data de Aniversário:
-		{{ $perfil->stri_aniversario }}<br>
+		{{ $perfil->aniversario }}<br>
 		Cidade Natal:
-		{{ $perfil->stri_cidade_natal }}<br>
+		{{ $perfil->cidade_natal }}<br>
 		Último local registrado:
-		{{ $perfil->stri_ultimo_local }}<br>
+		{{ $perfil->ultimo_local }}<br>
 	@endif
 	    
 	<div class="row">
@@ -37,8 +37,8 @@
 			@forelse($followedBy as $perfil)
 				<ul class="lista-usuarios">
 					<li class="foto-user">
-						<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $perfil->user->username }}">
-							<img src="../../../uploads/{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
+						<a href="{{ url($perfil->prettyUrl->url) }}" title="{{ $perfil->user->username }}">
+							<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
 						</a>
 					</li>
 				</ul>
@@ -51,8 +51,8 @@
 			@forelse($follow as $perfil)
 				<ul class="lista-usuarios">
 					<li class="foto-user">
-						<a href="{{ url($perfil->prettyUrl->stri_url_prettyUrls) }}" title="{{ $perfil->user->username }}">
-							<img src="../../../uploads/{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
+						<a href="{{ url($perfil->prettyUrl->url) }}" title="{{ $perfil->user->username }}">
+							<img src="{{ $perfil->user->avatar }}" alt="{{ $perfil->user->username }}">
 						</a>
 					</li>
 				</ul>

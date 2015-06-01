@@ -33,7 +33,7 @@ class ConfiguracaoSeeder extends Seeder {
     {
         DB::table('configuracaos')->delete();
 
-        Configuracao::create(['char_nome_configuracao' => 'title', 'text_valor_configuracao' => 'Vivalá']);
+        Configuracao::create(['nome' => 'title', 'valor' => 'Vivalá']);
     }
 }
 
@@ -67,14 +67,14 @@ class PerfilSeeder extends Seeder {
 
         $dodo = Perfil::create([
             'user_id'               => '1', 
-        	'stri_aniversario' 	    => '1990-12-21 07:30:00',
-        	'stri_cidade_natal'     => 'Bauru'
+        	'aniversario' 	    => '1990-12-21 07:30:00',
+        	'cidade_natal'     => 'Bauru'
         ]);
 
         $zord = Perfil::create([
             'user_id'               => '2', 
-            'stri_aniversario'      => '1992-05-08 07:43:00',
-        	'stri_cidade_natal'     => 'Rio Preto'
+            'aniversario'      => '1992-05-08 07:43:00',
+        	'cidade_natal'     => 'Rio Preto'
         ]);
 
 		$dodo->follow()->attach($zord->id);
@@ -88,13 +88,13 @@ class OngSeeder extends Seeder {
         DB::table('ongs')->delete();
 
         Ong::create([
-            'user_id'           => '1', 
-            'stri_nome_ongs'    => 'evandrONG',
+            'user_id'     => '1', 
+            'nome'        => 'evandrONG',
         ]);
 
         Ong::create([
-            'user_id'           => '2', 
-            'stri_nome_ongs'    => 'zordONG',
+            'user_id'     => '2', 
+            'nome'        => 'zordONG',
         ]);
     }
 }
@@ -106,21 +106,20 @@ class PrettyUrlSeeder extends Seeder {
 
         PrettyUrl::create([
             'perfil_id'               => '1', 
-            'stri_url_prettyUrls'    => 'evandro',
-            'enum_tipo_prettyUrls'   => 'usuario'
+            'url'    => 'evandro',
+            'tipo'   => 'usuario'
         ]);
 
         PrettyUrl::create([
             'perfil_id'               => '2', 
-            'stri_url_prettyUrls'    => 'zord',
-            'enum_tipo_prettyUrls'   => 'usuario'
+            'url'    => 'zord',
+            'tipo'   => 'usuario'
         ]);
 
         PrettyUrl::create([
             'ong_id'                 => '2', 
             'stri_url_prettyUrls'    => 'zordONG',
             'enum_tipo_prettyUrls'   => 'ong'
-        ]);
     }
 }
 

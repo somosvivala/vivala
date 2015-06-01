@@ -3,16 +3,17 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOngsTable extends Migration {
+class CreateEmpresasTable extends Migration {
 
 	/**
-	 * Creating ongs table.
+	 * Run the migrations.
 	 *
 	 * @return void
 	 */
 	public function up()
-	{	
-		Schema::create('ongs', function(Blueprint $table) {
+	{
+		Schema::create('empresas', function(Blueprint $table)
+		{
 			$table->increments('id');
 			$table->string('nome');
 			$table->timestamps();
@@ -26,13 +27,13 @@ class CreateOngsTable extends Migration {
 	}
 
 	/**
-	 * Drop ongs table
+	 * Reverse the migrations.
 	 *
 	 * @return void
 	 */
 	public function down()
 	{
-		Schema::drop('ongs');
+		Schema::drop('empresas');
 	}
 
 }
