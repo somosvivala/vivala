@@ -30,27 +30,13 @@ Route::controllers([
 Route::bind('prettyURL', function($value, $route)
 {
 
-	$user = '';
-	$ong = '';
-
-	try {	
-		$user = App\PrettyUrl::where('stri_url_prettyUrls', $value)
-			->firstOrFail()
-			->perfil
-			->user;
-	} catch (Exception $e) {
-		echo $e->getMessage();
-	}
-
-	// try {	
-	// 	$ong = App\Ong::where('stri_url_prettyUrls', $value)
-	// 		->firstOrFail()
-	// 		->ong;
-	// } catch (Exception $e) {
-	// 	echo $e->getMessage();
-	// }
+	$prettyUrl = App\PrettyUrl::all()->where('url', $value)->first();
 
 	
+
+	dd($prettyUrl);
+
+
 
 	// dd($user, $ong);
 

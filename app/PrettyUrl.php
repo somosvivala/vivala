@@ -31,7 +31,7 @@ class PrettyUrl extends Model {
 	// }
 
 
-	public function prettyUrl() 
+	public function prettyurlable() 
 	{
 		 return $this->morphTo();
 	}

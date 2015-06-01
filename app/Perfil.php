@@ -28,7 +28,7 @@ class Perfil extends Model {
      */
     public function prettyUrl()
     {
-        return $this->morphMany('App\PrettyUrl', 'prettyUrl');
+        return $this->morphMany('App\PrettyUrl', 'prettyurlable');
     }
 
 
