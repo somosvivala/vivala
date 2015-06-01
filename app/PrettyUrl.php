@@ -6,8 +6,8 @@ class PrettyUrl extends Model {
 
 	//mass assigned fields
 	protected $fillable = [
-		'str_url_prettyUrls',
-		'enum_tipo_prettyUrls'
+		'url',
+		'tipo'
 	];
 
 

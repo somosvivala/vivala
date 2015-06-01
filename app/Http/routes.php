@@ -26,7 +26,7 @@ Route::controllers([
 Route::bind('user', function($value, $route)
 {
 	$user = 
-	App\PrettyUrl::where('stri_url_prettyUrls', $value)
+	App\PrettyUrl::where('url', $value)
 		->firstOrFail()
 		->perfil
 		->user;

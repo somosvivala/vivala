@@ -16,9 +16,9 @@ class CreatePerfilsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
-			$table->date('stri_aniversario')->nullable();
-			$table->string('stri_cidade_natal')->nullable();
-			$table->string('stri_ultimo_local')->nullable();
+			$table->date('aniversario')->nullable();
+			$table->string('cidade_natal')->nullable();
+			$table->string('ultimo_local')->nullable();
 			$table->timestamps();
 
 
@@ -28,7 +28,7 @@ class CreatePerfilsTable extends Migration {
 				->onDelete('cascade');
 		});
 
-		Schema::create('perfil_perfil', function(Blueprint $table)
+		Schema::create('follow_perfil', function(Blueprint $table)
 		{
 			$table->integer('perfil_id')->unsigned()->index();
 			$table->foreign('perfil_id')
@@ -53,7 +53,7 @@ class CreatePerfilsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('perfil_perfil');
+		Schema::drop('follow_perfil');
 		Schema::drop('perfils');
 	}
 

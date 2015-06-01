@@ -19,11 +19,11 @@
 				@if (isset($perfil))
 					<h2> Informações do seu Perfil <a href="{{url('perfil')}}">{{trans('acoes.visualizarperfil')}}</a></h2>
 					Data de Aniversário:
-					{{ $perfil->stri_aniversario }}<br>
+					{{ $perfil->aniversario }}<br>
 					Cidade Natal:
-					{{ $perfil->stri_cidade_natal }}<br>
+					{{ $perfil->cidade_natal }}<br>
 					Último local registrado:
-					{{ $perfil->stri_ultimo_local }}<br>
+					{{ $perfil->ultimo_local }}<br>
 				@endif
 
 				</div>

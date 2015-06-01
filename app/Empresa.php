@@ -2,12 +2,12 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Ong extends Model {
+class Empresa extends Model {
 
 	protected $fillable = ['nome'];
 	
 	/**
-	 * Uma ong pertence a um usuário.
+	 * Uma empresa pertence a um usuário.
 	 */
 	public function user()
 	{

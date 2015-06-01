@@ -57,6 +57,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function getAvatarAttribute($value)
     {
     	$urlBase = "../../../uploads/";
+    	
     	//Testa se o valor é uma URL
     	if( preg_match ( '/^https?:\/\//' , $value) ) {
     		return $value;

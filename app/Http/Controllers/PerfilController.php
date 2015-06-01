@@ -67,11 +67,11 @@ class PerfilController extends Controller {
 
 		//Salva dados referentes ao User
 		$perfil = $user->perfil;
-		$perfil->stri_aniversario = $request->input('stri_aniversario');
-		$perfil->stri_cidade_natal = $request->input('stri_cidade_natal');
+		$perfil->aniversario = $request->input('aniversario');
+		$perfil->cidade_natal = $request->input('cidade_natal');
 		$perfil->prettyUrl()->update([
-			'stri_url_prettyUrls' => $request->input('string_prettyUrl'),
-			'enum_tipo_prettyUrls' => 'usuario'
+			'url' => $request->input('url'),
+			'tipo' => 'usuario'
 		]);
 		
 		//Salvando imagem no avatar do usuario;

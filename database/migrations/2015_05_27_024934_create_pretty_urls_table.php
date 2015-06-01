@@ -16,8 +16,8 @@ class CreatePrettyUrlsTable extends Migration {
 		Schema::create('pretty_urls', function(Blueprint $table){
 			$table->increments('id');
 			$table->integer('perfil_id')->unsigned();
-			$table->string('stri_url_prettyUrls', 50)->unique();
-			$table->enum('enum_tipo_prettyUrls', ['usuario', 'pagina'])->nullable();
+			$table->string('url', 50)->unique();
+			$table->enum('tipo', ['usuario', 'pagina'])->nullable();
 			$table->timestamps();
 
 		$table->foreign('perfil_id')
