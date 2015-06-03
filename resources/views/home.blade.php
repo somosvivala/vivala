@@ -3,9 +3,35 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-10 col-md-offset-1">
+
+		<div class="col-md-2">
+
+			<h4> Suas ONGS <a href="{{ url('ong/create') }}">+</a></h4>
+			@forelse($ongs as $ong)
+				@if ($ong->prettyUrl()->first())
+					<a href="{{ url($ong->prettyUrl()->first()->url) }}" title="{{ $ong->nome }}">
+						<img src="{{ $ong->nome }}" alt="{{ $ong->nome  }}">
+					</a>
+				@endif
+			@empty
+			    <p>Nenhuma ong.</p>
+			@endforelse
+			<h4> Suas empresas <a href="{{ url('empresa/create') }}">+</a></h4>
+			@forelse($empresas as $empresa)
+				<a href="{{ url($empresa->nome) }}" title="{{ $empresa->nome }}">
+					<img src="{{ $empresa->nome }}" alt="{{ $empresa->nome  }}">
+				</a>
+			@empty
+			    <p>Nenhuma empresas.</p>
+			@endforelse
+		</div>
+		<div class="col-md-10">
 			<div class="panel panel-default">
 				<div class="panel-body">
+				<a href="{{url('perfil')}}">
+					<img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->username }}" style="width:100px;">
+					{{trans('acoes.visualizarperfil')}}
+				</a>
 				<h1>Alô {{ Auth::user()->username }}</h1>
 				
 				@if (isset($facebookData))
@@ -17,7 +43,7 @@
 				@endif
 
 				@if (isset($perfil))
-					<h2> Informações do seu Perfil <a href="{{url('perfil')}}">{{trans('acoes.visualizarperfil')}}</a></h2>
+					<h2> Informações do seu Perfil </h2>
 					Data de Aniversário:
 					{{ $perfil->aniversario }}<br>
 					Cidade Natal:

@@ -16,8 +16,7 @@ elixir(function(mix) {
     mix.scripts([
 	    '../../assets/bower/jquery/dist/jquery.js',
 	    '../../assets/bower/bootstrap/dist/js/bootstrap.js',
-	    '../../assets/bower/dropzone/dist/min/dropzone.min.js',
-
-	    '../../assets/js/dropzoneconfig.js'
-	], 'public/js/vendor.js');
+	    '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
+	    '../../assets/js/edicaofotoperfil.js'
+	], 'public/js/vendor.js');	
 });

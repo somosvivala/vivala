@@ -6480,11 +6480,13 @@ button.close {
 }
 .foto-perfil {
   width: 200px;
+  height: 200px;
+  text-align: center;
   border-radius: 100px;
   overflow: hidden;
 }
 .foto-perfil img {
-  width: 200px;
+  max-width: 200px;
 }
 .lista-usuarios {
   list-style: none;
@@ -6499,6 +6501,11 @@ button.close {
 }
 .foto-user img {
   width: 100px;
+}
+#foto-perfil {
+  max-width: 500px;
+  position: relative;
+  /* or fixed or absolute */
 }
 body,
 label,

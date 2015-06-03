@@ -111,26 +111,23 @@ class PrettyUrlSeeder extends Seeder {
         $dodo->prettyUrl()->save($dodoURL);
 
         $zord = Perfil::find(2);
-        $zordURL = PrettyUrl::create([
-            'url'    => 'zord',
-            'tipo'   => 'usuario'
-        ]);
+        $zordURL = new PrettyUrl();
+        $zordURL->url = 'zord';
+        $zordURL->tipo = 'usuario';
         $zord->prettyUrl()->save($zordURL);
 
 
         $evandrONG  = Ong::find(1);
-        $evandrONG_url = PrettyUrl::create([
-            'url'    => 'evandrong',
-            'tipo'   => 'ong'
-        ]);
+        $evandrONG_url = new PrettyUrl();
+        $evandrONG_url->url = 'evandrong';
+        $evandrONG_url->tipo = 'ong';
 
         
         $zordONG  = Ong::find(2);
-        $zordONG_url = PrettyUrl::create([
-            'url'    => 'zordong',
-            'tipo'   => 'ong'
-        ]);
-
+        $zordONG_url = new PrettyUrl();
+        $zordONG_url->url = 'zordong';
+        $zordONG_url->tipo = 'ong';
+        
         $zordONG->prettyUrl()->save($zordONG_url);
         $evandrONG->prettyUrl()->save($evandrONG_url);
     }

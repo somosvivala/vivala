@@ -3,7 +3,11 @@
 
 .foto-perfil {
 	width: @foto-width;
-	img { width: @foto-width; }
+	height: @foto-width;
+	text-align: center;
+	img { 
+		max-width: @foto-width; 
+	}
 	border-radius: @foto-radius;
 	overflow:hidden;
 }
@@ -17,4 +21,8 @@
 	img { width: @foto-width/2; }
 	border-radius: @foto-radius/2;
 	overflow:hidden;	
+}
+#foto-perfil {
+	max-width: 500px;
+	position:relative; /* or fixed or absolute */
 }

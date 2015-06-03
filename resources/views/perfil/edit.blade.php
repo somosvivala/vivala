@@ -8,14 +8,23 @@
 		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
 		<div class="panel-body">
 
-
-			<!-- Adiciona um formulario pra upload de foto-->
 			<div class="row col-sm-12"> 
-				{!! Form::open(['url' => ['editarPerfilFoto',  $user->id ],  'files'=>true, 'class'=>"dropzone", 'id'=>"foto-perfil"]) !!}
-				{!! Form::close() !!}	
+				<img src="{{ $user->avatar }}" id="foto-perfil">
 			</div>
-
+			<!-- Adiciona um formulario pra upload de foto-->
+			<div class="jc_coords">
+				<form action="demos/crop.php" method="post" onsubmit="return checkCoords();">
+					<input value="216" id="x" name="x" type="hidden">
+					<input value="111" id="y" name="y" type="hidden">
+					<input value="235" id="w" name="w" type="hidden">
+					<input value="235" id="h" name="h" type="hidden">
+					<input value="Crop Image" type="submit">
+				</form>
+			</div>
 			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
+
+
+			
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 
 				{!! Form::label("username", "Nome:") !!}

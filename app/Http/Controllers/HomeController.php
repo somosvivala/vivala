@@ -35,8 +35,10 @@ class HomeController extends Controller {
 		$user = Auth::user();
 		// $facebookData = $user->facebookData;
 		$perfil = $user->perfil;
+		$ongs = $user->ongs;
+		$empresas = $user->empresas;
 
-		return view('home', compact('facebookData','perfil'));
+		return view('home', compact('facebookData','perfil','ongs','empresas'));
 	}
 
 }

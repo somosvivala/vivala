@@ -45,7 +45,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	}
 
     /**
-	 * Um usuario pode ter muitas ONGS
+	 * Um usuario pode ter várias ONGS
 	 * 
 	 */
     public function ongs()
@@ -54,15 +54,13 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
     /**
-	 * Um usuario pode ter muitas Empresas
+	 * Um usuario pode ter várias Empresas
 	 * 
 	 */
     public function empresas()
     {
 		return $this->hasMany('App\Empresa');
     }
-
-
 
     public function getAvatarAttribute($value)
     {
