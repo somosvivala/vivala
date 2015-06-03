@@ -146,18 +146,15 @@ class PrettyUrlSeeder extends Seeder {
          * Empresas
          */
         $dodobusiness  = Empresa::find(1);
-        $dodobusiness_url = PrettyUrl::create([
-            'url'    => 'dodobusiness',
-            'tipo'   => 'empresa'
-        ]);
+        $dodobusiness_url = new PrettyUrl();
+        $dodobusiness_url->url   = 'dodobusiness';
+        $dodobusiness_url->tipo  = 'empresa';
+        $dodobusiness->prettyUrl()->save($dodobusiness_url);
         
         $zordenterprise  = Empresa::find(2);
-        $zordenterprise_url = PrettyUrl::create([
-            'url'    => 'zordenterprise',
-            'tipo'   => 'empresa'
-        ]);
-
-        $dodobusiness->prettyUrl()->save($dodobusiness_url);
+        $zordenterprise_url = new PrettyUrl();
+        $zordenterprise_url->url   = 'zordenterprise';
+        $zordenterprise_url->tipo  = 'empresa';        
         $zordenterprise->prettyUrl()->save($zordenterprise_url);
 
 
@@ -169,7 +166,6 @@ class PrettyUrlSeeder extends Seeder {
         $evandrONG_url->url = 'evandrong';
         $evandrONG_url->tipo = 'ong';
 
-        
         $zordONG  = Ong::find(2);
         $zordONG_url = new PrettyUrl();
         $zordONG_url->url = 'zordong';
