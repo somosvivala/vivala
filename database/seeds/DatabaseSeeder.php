@@ -128,10 +128,9 @@ class PrettyUrlSeeder extends Seeder {
          * Perfil
          */
         $dodo = Perfil::find(1);
-        $dodoURL = PrettyUrl::create([
-            'url'    => 'evandro',
-            'tipo'   => 'usuario'
-        ]);
+        $dodoURL = new PrettyUrl();
+        $dodoURL->url   = 'evandro';
+        $dodoURL->tipo  = 'usuario';        
         $dodo->prettyUrl()->save($dodoURL);
 
         $zord = Perfil::find(2);
