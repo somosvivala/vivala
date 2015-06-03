@@ -7,6 +7,7 @@ use App\User;
 use App\Perfil;
 use App\PrettyUrl;
 use App\Ong;
+use App\Empresa;
 
 class DatabaseSeeder extends Seeder {
 
@@ -23,6 +24,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserSeeder');
         $this->call('PerfilSeeder');
         $this->call('OngSeeder');
+        $this->call('EmpresaSeeder');
         $this->call('PrettyUrlSeeder');
 	}
 }
@@ -99,15 +101,37 @@ class OngSeeder extends Seeder {
     }
 }
 
+class EmpresaSeeder extends Seeder {
+    public function run()
+    {
+        DB::table('empresas')->delete();
+
+        Empresa::create([
+            'user_id'     => '1', 
+            'nome'        => 'dodobusiness',
+        ]);
+
+        Empresa::create([
+            'user_id'     => '2', 
+            'nome'        => 'zordenterprise',
+        ]);
+    }
+}
+
 class PrettyUrlSeeder extends Seeder {
     public function run()
     {
         DB::table('pretty_urls')->delete();
 
+
+        /**
+         * Perfil
+         */
         $dodo = Perfil::find(1);
-        $dodoURL = new PrettyUrl();
-        $dodoURL->url = 'evandro';
-        $dodoURL->tipo = 'usuario';
+        $dodoURL = PrettyUrl::create([
+            'url'    => 'evandro',
+            'tipo'   => 'usuario'
+        ]);
         $dodo->prettyUrl()->save($dodoURL);
 
         $zord = Perfil::find(2);
@@ -117,6 +141,29 @@ class PrettyUrlSeeder extends Seeder {
         $zord->prettyUrl()->save($zordURL);
 
 
+
+        /**
+         * Empresas
+         */
+        $dodobusiness  = Empresa::find(1);
+        $dodobusiness_url = PrettyUrl::create([
+            'url'    => 'dodobusiness',
+            'tipo'   => 'empresa'
+        ]);
+        
+        $zordenterprise  = Empresa::find(2);
+        $zordenterprise_url = PrettyUrl::create([
+            'url'    => 'zordenterprise',
+            'tipo'   => 'empresa'
+        ]);
+
+        $dodobusiness->prettyUrl()->save($dodobusiness_url);
+        $zordenterprise->prettyUrl()->save($zordenterprise_url);
+
+
+        /**
+         *  ONGS
+         */
         $evandrONG  = Ong::find(1);
         $evandrONG_url = new PrettyUrl();
         $evandrONG_url->url = 'evandrong';
@@ -128,8 +175,9 @@ class PrettyUrlSeeder extends Seeder {
         $zordONG_url->url = 'zordong';
         $zordONG_url->tipo = 'ong';
         
-        $zordONG->prettyUrl()->save($zordONG_url);
         $evandrONG->prettyUrl()->save($evandrONG_url);
+        $zordONG->prettyUrl()->save($zordONG_url);
+
     }
 }
 

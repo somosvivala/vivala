@@ -45,7 +45,7 @@ Route::group(['before' => 'auth'], function() {
 /**
  * Aqui fica a rota que redireciona a prettyUrl para os Controllers
  */
-Route::get('{prettyURL}', function($prettyUrl='') { 
+Route::get('{prettyURL}', function($prettyUrl=null) { 
 	
 	if (!is_null($prettyUrl)) {
 		switch ($prettyUrl->prettyurlable_type) {
@@ -67,7 +67,7 @@ Route::get('{prettyURL}', function($prettyUrl='') {
 		}
 	}
 
-	dd("rota até o fim", $prettyUrl); 
+	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl); 
 });
 
 
