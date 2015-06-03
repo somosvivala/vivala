@@ -11,7 +11,17 @@ class Empresa extends Model {
 	 */
 	public function user()
 	{
-		return $this->belongsTo('App\User')->withTimestamps();
+		return $this->belongsTo('App\User');
 	}
+
+	/**
+     * Uma Empresa tem uma prettyUrl.
+     * @return [type] [description]
+     */
+    public function prettyUrl()
+    {
+		return $this->morphMany('App\PrettyUrl', 'prettyurlable');
+    }
+
 
 }

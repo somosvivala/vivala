@@ -34,6 +34,7 @@ class PerfilController extends Controller {
 		$perfil = $user->perfil;
 		$follow = $perfil->follow;
 		$followedBy = $perfil->followedBy;
+
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
 	}
 
@@ -93,22 +94,26 @@ class PerfilController extends Controller {
 	}
 
 	/**
-	 * [showUserProfile description]
-	 * @param  [type] $user [description]
-	 * @return [type]       [description]
+	 * Mostra o perfil de um usuario.
+	 * @param   String		$prettyUrl       se acessado diretamente, passa a suposta prettyUrl 
+	 * @return  View       	Perfil do usuario em questao
 	 */
-	public function showUserProfile($user = null) 
+	public function showUserProfile($prettyUrl = null) 
 	{
-		
-		if (!$user) {
-			if (Session::has('user')) {
-				$user = Session::get('user');
+
+		if (Session::has('perfil')) {
+			$perfil = Session::get('perfil');
+		} else {
+			$prettyUrl = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
+
+			if (!is_null($prettyUrl)) {
+				$perfil = App\Perfil::find($prettyUrl->prettyurlable_id);
 			} else {
 				App::abort(404);
 			}
-		} 
-
-		$perfil = $user->perfil;
+		}
+		
+		$user = $perfil->user;
 		$follow = $perfil->follow;
 		$followedBy = $perfil->followedBy;
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));

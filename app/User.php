@@ -53,6 +53,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\Ong');
     }
 
+    /**
+	 * Um usuario pode ter muitas Empresas
+	 * 
+	 */
+    public function empresas()
+    {
+		return $this->hasMany('App\Empresa');
+    }
+
+
+
     public function getAvatarAttribute($value)
     {
     	$urlBase = "../../../uploads/";

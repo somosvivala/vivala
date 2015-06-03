@@ -25,7 +25,7 @@
 			<!-- Adiciona um text field para o form, user PrettyUrl -->
 			<div class="form-group"> 
 				{!! Form::label("url", "Seu endereço:") !!}
-				{!! Form::text("url", $perfil->prettyUrl->url, ['class' => 'form-control']) !!}
+				{!! Form::text("url", $perfil->prettyUrl->first()->url, ['class' => 'form-control']) !!}
 			</div>
 		</div>
 		

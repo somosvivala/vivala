@@ -12,45 +12,65 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-
 Route::get('home', 'HomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
-
 Route::resource('configuracao','ConfiguracaoController');
-
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
-
 /**
- * Aqui faço o tratamento para a prettyUrl, retornando um 
+ * Aqui faço o tratamento para a prettyUrl, retornando um objeto da classe PrettyUrl
  */
 Route::bind('prettyURL', function($value, $route)
 {
-
 	$prettyUrl = App\PrettyUrl::all()->where('url', $value)->first();
-
-	
-
-	dd($prettyUrl);
-
-
-
-	// dd($user, $ong);
-
-    return $user;
+	return $prettyUrl;
 });
 
+/**
+ * Aqui ficam as rotas que vao passar por autenticação. (filtro auth)
+ */
 Route::group(['before' => 'auth'], function() {
 	Route::get('perfil', 'PerfilController@index');
 	Route::get('editarPerfil', 'PerfilController@edit');
 	Route::post('editarPerfil/{id}', 'PerfilController@update');
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
-
-
-	Route::get('{prettyURL}', 'PerfilController@showUserProfile');
 });
+
+
+/**
+ * Aqui fica a rota que redireciona a prettyUrl para os Controllers
+ */
+Route::get('{prettyURL}', function($prettyUrl='') { 
+	
+	if (!is_null($prettyUrl)) {
+		switch ($prettyUrl->prettyurlable_type) {
+			case 'App\Ong':
+				$ong = App\Ong::find($prettyUrl->prettyurlable_id);
+				return redirect('ong/'.$prettyUrl->url);
+				break;
+			case 'App\Perfil':
+				$user = App\Perfil::find($prettyUrl->prettyurlable_id);
+				return redirect('perfil/'.$prettyUrl->url)->with('perfil', $user);
+				break;
+			case 'App\Empresa':
+				$empresa = App\Empresa::find($prettyUrl->prettyurlable_id);
+				return redirect('empresa/'.$prettyUrl->url);
+				break;
+			
+			default:
+				break;
+		}
+	}
+
+	dd("rota até o fim", $prettyUrl); 
+});
+
+
+Route::get("ong/{ong}", "OngController@index");
+Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
+Route::get("empresa/{empresa}", "EmpresaController@index");
 
 
