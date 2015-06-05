@@ -1,6 +1,8 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\PrettyUrl;
+
 
 class Empresa extends Model {
 

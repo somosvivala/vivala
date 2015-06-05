@@ -9,6 +9,7 @@ use App;
 use App\Empresa;
 use Auth;
 use Request;
+use App\PrettyUrl;
 
 class EmpresaController extends Controller {
 	
@@ -19,26 +20,26 @@ class EmpresaController extends Controller {
 	 */
 	public function index($prettyUrl = null) {
 
-		if(is_numeric($prettyUrl) ) {
-			$empresa = App\Empresa::find($prettyUrl);
-			dd($empresa);
-		}
-	/*	if(!$prettyUrl && !Session::has('empresa')) {
-			App::abort(404);
-		}
-
-		if (Session::has('empresa')) {
-			$empresa = Session::get('empresa');
-		} else {
-			$prettyUrl = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
-			if (!is_null($prettyUrl)) {
+			/**
+			 * Procurando tanto uma prettyUrl quanto uma empresa com o ID..
+			 */
+			$prettyUrlObj = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
+			
+			//Se parametro for uma prettyURL, pegar objeto Empresa.
+			//Se nao, procura por um match de ID em empresas.
+			if (!is_null($prettyUrlObj)) {
 				$empresa = App\Empresa::find($prettyUrl->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$prettyUrlObj = App\PrettyUrl::find($prettyUrl);
+				if (!is_null($prettyUrlObj)) {
+					$empresa = App\Empresa::find($prettyUrlObj->prettyurlable_id);
+				} else {
+					App::abort(404);
+				}
 			}
 		}
 	
-		dd('inside index of EmpresaController.php -> ', $empresa);*/
+		dd('inside index of EmpresaController.php -> ', $empresa);
 
 	}
 
@@ -59,8 +60,17 @@ class EmpresaController extends Controller {
 	 */
 	public function store()
 	{
-		Auth::user()->empresas()->create(Request::all());
-		
+		$novaEmpresa = Auth::user()->empresas()->create(Request::all());
+
+		$novaPrettyUrl = new PrettyUrl();
+        $novaPrettyUrl->tipo = 'empresa';
+
+        //se ja nao existir uma ong com essa prettyUrl
+        $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaEmpresa->nome);
+        $novaEmpresa->prettyUrl()->save($novaPrettyUrl);
+
+        $novaEmpresa->prettyUrl()->save($novaPrettyUrl);
+
 		return redirect('home');
 	}
 

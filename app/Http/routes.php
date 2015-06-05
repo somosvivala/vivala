@@ -51,7 +51,7 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 		switch ($prettyUrl->prettyurlable_type) {
 			case 'App\Ong':
 				$ong = App\Ong::find($prettyUrl->prettyurlable_id);
-				return redirect('ong/'.$prettyUrl->url);
+				return redirect('ong/'.$prettyUrl->url)->with('ong', $ong);
 				break;
 			case 'App\Perfil':
 				$user = App\Perfil::find($prettyUrl->prettyurlable_id);
@@ -59,7 +59,7 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 				break;
 			case 'App\Empresa':
 				$empresa = App\Empresa::find($prettyUrl->prettyurlable_id);
-				return redirect('empresa/'.$prettyUrl->url);
+				return redirect('empresa/'.$prettyUrl->url)->with('empresa', $empresa);
 				break;
 			
 			default:

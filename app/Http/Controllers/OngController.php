@@ -8,6 +8,8 @@ use App\Ong;
 use Auth;
 use Request;
 use App;
+use Carbon\Carbon;
+use App\PrettyUrl;
 
 
 class OngController extends Controller {
@@ -26,11 +28,24 @@ class OngController extends Controller {
 		if (Session::has('ong')) {
 			$ong = Session::get('ong');
 		} else {
-			$prettyUrl = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
-			if (!is_null($prettyUrl)) {
+			
+			/**
+			 * Procurando tanto uma prettyUrl quanto uma ong com o ID..
+			 * TODO: ao salvar ong criar PrettyUrl hash(id) ??
+			 */
+			$prettyUrlObj = PrettyUrl::all()->where('url', $prettyUrl)->first();
+			
+			//Se parametro for uma prettyURL, pegar objeto Ong.
+			//Se nao, procura por um match de ID em Ongs.
+			if (!is_null($prettyUrlObj)) {
 				$ong = App\Ong::find($prettyUrl->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$prettyUrlObj = PrettyUrl::find($prettyUrl);
+				if (!is_null($prettyUrlObj)) {
+					$ong = App\Ong::find($prettyUrlObj->prettyurlable_id);
+				} else {
+					App::abort(404);
+				}
 			}
 		}
 	
@@ -54,7 +69,14 @@ class OngController extends Controller {
 	 */
 	public function store()
 	{
-		Auth::user()->ongs()->create(Request::all());
+		$novaOng = Auth::user()->ongs()->create(Request::all());
+
+		$novaPrettyUrl = new PrettyUrl();
+        $novaPrettyUrl->tipo = 'ong';
+
+        //se ja nao existir uma ong com essa prettyUrl
+        $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);
+        $novaOng->prettyUrl()->save($novaPrettyUrl);
 		
 		return redirect('home');
 	}

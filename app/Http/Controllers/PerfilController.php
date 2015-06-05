@@ -9,6 +9,7 @@ use Session;
 use App;
 use Input;
 use Carbon\Carbon;
+use App\PrettyUrl;
 
 class PerfilController extends Controller {
 
@@ -104,12 +105,24 @@ class PerfilController extends Controller {
 		if (Session::has('perfil')) {
 			$perfil = Session::get('perfil');
 		} else {
-			$prettyUrl = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
-
-			if (!is_null($prettyUrl)) {
+			
+			/**
+			 * Procurando tanto uma prettyUrl quanto uma ong com o ID..
+			 * TODO: ao salvar ong criar PrettyUrl hash(id) ??
+			 */
+			$prettyUrlObj = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
+			
+			//Se parametro for uma prettyURL, pegar objeto Perfil.
+			//Se nao, procura por um match de ID em Perfils.
+			if (!is_null($prettyUrlObj)) {
 				$perfil = App\Perfil::find($prettyUrl->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$prettyUrlObj = App\PrettyUrl::find($prettyUrl);
+				if (!is_null($prettyUrlObj)) {
+					$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
+				} else {
+					App::abort(404);
+				}
 			}
 		}
 		
