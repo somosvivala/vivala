@@ -8,17 +8,15 @@
 
 			<h4> Suas ONGS <a href="{{ url('ong/create') }}">+</a></h4>
 			@forelse($ongs as $ong)
-				@if ($ong->prettyUrl()->first())
-					<a href="{{ url($ong->prettyUrl()->first()->url) }}" title="{{ $ong->nome }}">
+					<a href="{{ url($ong->getUrl()) }}" title="{{ $ong->nome }}">
 						<img src="{{ $ong->nome }}" alt="{{ $ong->nome  }}">
 					</a>
-				@endif
 			@empty
 			    <p>Nenhuma ong.</p>
 			@endforelse
 			<h4> Suas empresas <a href="{{ url('empresa/create') }}">+</a></h4>
 			@forelse($empresas as $empresa)
-				<a href="{{ url($empresa->nome) }}" title="{{ $empresa->nome }}">
+				<a href="{{ url($empresa->getUrl()) }}" title="{{ $empresa->nome }}">
 					<img src="{{ $empresa->nome }}" alt="{{ $empresa->nome  }}">
 				</a>
 			@empty

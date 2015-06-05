@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Session;
 use App;
 
-use App\Ong;
+use App\Empresa;
 use Auth;
 use Request;
 
@@ -19,7 +19,11 @@ class EmpresaController extends Controller {
 	 */
 	public function index($prettyUrl = null) {
 
-		if(!$prettyUrl && !Session::has('empresa')) {
+		if(is_numeric($prettyUrl) ) {
+			$empresa = App\Empresa::find($prettyUrl);
+			dd($empresa);
+		}
+	/*	if(!$prettyUrl && !Session::has('empresa')) {
 			App::abort(404);
 		}
 
@@ -34,7 +38,8 @@ class EmpresaController extends Controller {
 			}
 		}
 	
-		dd('inside index of EmpresaController.php -> ', $empresa);
+		dd('inside index of EmpresaController.php -> ', $empresa);*/
+
 	}
 
 	/**
@@ -67,7 +72,23 @@ class EmpresaController extends Controller {
 	 */
 	public function show($id)
 	{
-		$ong = Empresa::findOrFail($id);
-		return view('empresa.show', compact('ong'));
+		$empresa = Empresa::findOrFail($id);
+		return view('empresa.show', compact('empresa'));
 	}
+
+	public function edit($id)
+    {
+        $empresa = Empresa::findOrFail($id);
+        return view('empresa.edit', compact('empresa') );
+    }
+  
+    public function update($id, Requests\EmpresaRequest $request)
+    {
+        $empresa = Empresa::findOrFail($id);
+
+        $empresa->update($request->all());
+
+        return redirect('empresa');
+    }
+  
 }

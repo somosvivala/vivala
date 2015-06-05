@@ -70,7 +70,5 @@ class OngController extends Controller {
 		$ong = Ong::findOrFail($id);
 		return view('ong.show', compact('ong'));
 	}
-
-
-
+	
 }

@@ -139,8 +139,6 @@ class PrettyUrlSeeder extends Seeder {
         $zordURL->tipo = 'usuario';
         $zord->prettyUrl()->save($zordURL);
 
-
-
         /**
          * Empresas
          */

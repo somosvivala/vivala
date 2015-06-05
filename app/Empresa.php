@@ -24,4 +24,18 @@ class Empresa extends Model {
     }
 
 
+	/**
+	 * Retorna a pretty Url
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function getUrl()
+	{
+		if($this->prettyUrl()->first())
+			return $this->prettyUrl()->first()->url;
+		 else
+		 	return "empresa/show/".$this->id;
+	}
+
 }
