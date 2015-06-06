@@ -21,35 +21,27 @@ class OngController extends Controller {
 	 */
 	public function index($prettyUrl = null) {
 
+		//se nao veio nada na sessao e nem na url
 		if(!$prettyUrl && !Session::has('ong')) {
 			App::abort(404);
 		}
 
-		if (Session::has('ong')) {
-			$ong = Session::get('ong');
-		} else {
-			
-			/**
-			 * Procurando tanto uma prettyUrl quanto uma ong com o ID..
-			 * TODO: ao salvar ong criar PrettyUrl hash(id) ??
-			 */
+		//se o dado da sessao for diferente da prettyUrl digitada, pegar da url
+		$ong = Session::get('ong', null);
+		if (is_null($ong) || $prettyUrl != $ong->getUrl()) {
+			Session::forget('ong');
 			$prettyUrlObj = PrettyUrl::all()->where('url', $prettyUrl)->first();
-			
+
 			//Se parametro for uma prettyURL, pegar objeto Ong.
-			//Se nao, procura por um match de ID em Ongs.
 			if (!is_null($prettyUrlObj)) {
-				$ong = App\Ong::find($prettyUrl->prettyurlable_id);
+				$ong = App\Ong::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				$prettyUrlObj = PrettyUrl::find($prettyUrl);
-				if (!is_null($prettyUrlObj)) {
-					$ong = App\Ong::find($prettyUrlObj->prettyurlable_id);
-				} else {
-					App::abort(404);
-				}
-			}
+				App::abort(404);
+			}			
 		}
-	
-		dd('inside index of OngController.php -> ', $ong);
+		
+
+		dd('inside index of OngController.php -> ', $ong, $prettyUrl, Session::all());
 	}
 
 	/**
@@ -63,7 +55,8 @@ class OngController extends Controller {
 	}
 
 	/**
-	 * Salva a Ong no BD e redireciona pra home
+	 * Salva a Ong no BD e redireciona pra home, 
+	 * criando também a prettyUrl associada com essa Ong
 	 *
 	 * @return Response
 	 */

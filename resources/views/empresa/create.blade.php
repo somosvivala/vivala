@@ -7,12 +7,8 @@
 	<div class="panel panel-default">
 	<div class="panel-heading"><h1>Adicionando Empresa</h1></div>
 			<div class="panel-body">
-			{!! Form::open(['url'=> 'empresa']) !!}
-
-    			@include('empresa.form', ['btnSubmit' => 'Cadastrar Empresa']);
-
-  			{!! Form::close() !!}
-
+			
+			{!! Form::open(['url' => 'empresa']) !!}
 	
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 

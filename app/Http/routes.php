@@ -31,6 +31,8 @@ Route::bind('prettyURL', function($value, $route)
 	return $prettyUrl;
 });
 
+
+
 /**
  * Aqui ficam as rotas que vao passar por autenticação. (filtro auth)
  */
@@ -51,15 +53,18 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 		switch ($prettyUrl->prettyurlable_type) {
 			case 'App\Ong':
 				$ong = App\Ong::find($prettyUrl->prettyurlable_id);
-				return redirect('ong/'.$prettyUrl->url)->with('ong', $ong);
+				Session::put('ong', $ong);
+				return redirect('ong/'.$prettyUrl->url);
 				break;
 			case 'App\Perfil':
 				$user = App\Perfil::find($prettyUrl->prettyurlable_id);
-				return redirect('perfil/'.$prettyUrl->url)->with('perfil', $user);
+				Session::put('perfil', $user);
+				return redirect('perfil/'.$prettyUrl->url);
 				break;
 			case 'App\Empresa':
 				$empresa = App\Empresa::find($prettyUrl->prettyurlable_id);
-				return redirect('empresa/'.$prettyUrl->url)->with('empresa', $empresa);
+				Session::put('empresa', $empresa);
+				return redirect('empresa/'.$prettyUrl->url);
 				break;
 			
 			default:

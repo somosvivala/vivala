@@ -20,28 +20,29 @@ class EmpresaController extends Controller {
 	 */
 	public function index($prettyUrl = null) {
 
-			/**
-			 * Procurando tanto uma prettyUrl quanto uma empresa com o ID..
-			 */
-			$prettyUrlObj = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
-			
-			//Se parametro for uma prettyURL, pegar objeto Empresa.
-			//Se nao, procura por um match de ID em empresas.
-			if (!is_null($prettyUrlObj)) {
-				$empresa = App\Empresa::find($prettyUrl->prettyurlable_id);
-			} else {
-				$prettyUrlObj = App\PrettyUrl::find($prettyUrl);
-				if (!is_null($prettyUrlObj)) {
-					$empresa = App\Empresa::find($prettyUrlObj->prettyurlable_id);
-				} else {
-					App::abort(404);
-				}
-			}
+		//se nao veio nada na sessao e nem na url
+		if(!$prettyUrl && !Session::has('empresa')) {
+			App::abort(404);
 		}
-	
-		dd('inside index of EmpresaController.php -> ', $empresa);
 
+		//se o dado da sessao for diferente da prettyUrl digitada, pegar da url
+		$empresa = Session::get('empresa', null);
+		if (is_null($empresa) || $prettyUrl != $empresa->getUrl()) {
+			Session::forget('empresa');
+			
+			$prettyUrlObj = PrettyUrl::all()->where('url', $prettyUrl)->first();
+
+			//Se parametro for uma prettyURL, pegar objeto Empresa.
+			if (!is_null($prettyUrlObj)) {
+				$empresa = App\Empresa::find($prettyUrlObj->prettyurlable_id);
+			} else {
+				App::abort(404);
+			}			
+		}
+
+		dd('inside index of EmpresaController.php -> ', $empresa, $prettyUrl, Session::all());
 	}
+
 
 	/**
 	 * Form de inserir Empresa.
@@ -55,6 +56,7 @@ class EmpresaController extends Controller {
 
 	/**
 	 * Salva a Empresa no BD e redireciona pra home
+	 * Criando tam´bém a prettyUrl associada a essa Empresa
 	 *
 	 * @return Response
 	 */
@@ -65,10 +67,8 @@ class EmpresaController extends Controller {
 		$novaPrettyUrl = new PrettyUrl();
         $novaPrettyUrl->tipo = 'empresa';
 
-        //se ja nao existir uma ong com essa prettyUrl
+        //se ja nao existir essa prettyUrl
         $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaEmpresa->nome);
-        $novaEmpresa->prettyUrl()->save($novaPrettyUrl);
-
         $novaEmpresa->prettyUrl()->save($novaPrettyUrl);
 
 		return redirect('home');

@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Perfil extends Model {
 
-	//
+	
 	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local'];
 	
 	public function user()
@@ -31,6 +31,19 @@ class Perfil extends Model {
         return $this->morphMany('App\PrettyUrl', 'prettyurlable');
     }
 
+    /**
+     * Retorna a pretty Url
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function getUrl()
+    {
+        if($this->prettyUrl()->first())
+            return $this->prettyUrl()->first()->url;
+        else
+            return "perfil/".$this->id;
+    }
 
 
 }

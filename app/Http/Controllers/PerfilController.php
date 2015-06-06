@@ -101,29 +101,23 @@ class PerfilController extends Controller {
 	 */
 	public function showUserProfile($prettyUrl = null) 
 	{
+		//se nao veio nada na sessao e nem na url
+		if(!$prettyUrl && !Session::has('perfil')) {
+			App::abort(404);
+		}
 
-		if (Session::has('perfil')) {
-			$perfil = Session::get('perfil');
-		} else {
-			
-			/**
-			 * Procurando tanto uma prettyUrl quanto uma ong com o ID..
-			 * TODO: ao salvar ong criar PrettyUrl hash(id) ??
-			 */
-			$prettyUrlObj = App\PrettyUrl::all()->where('url', $prettyUrl)->first();
-			
+		//se o dado da sessao for diferente da prettyUrl digitada, pegar da url
+		$perfil = Session::get('perfil', null);
+		if (is_null($perfil) || $prettyUrl != $perfil->getUrl()) {
+			Session::forget('perfil');
+			$prettyUrlObj = PrettyUrl::all()->where('url', $prettyUrl)->first();
+
 			//Se parametro for uma prettyURL, pegar objeto Perfil.
-			//Se nao, procura por um match de ID em Perfils.
 			if (!is_null($prettyUrlObj)) {
-				$perfil = App\Perfil::find($prettyUrl->prettyurlable_id);
+				$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				$prettyUrlObj = App\PrettyUrl::find($prettyUrl);
-				if (!is_null($prettyUrlObj)) {
-					$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
-				} else {
-					App::abort(404);
-				}
-			}
+				App::abort(404);
+			}			
 		}
 		
 		$user = $perfil->user;
