@@ -1,6 +1,12 @@
 @extends('app');
 
 @section('content')
+
+	@if ( $empresa->podeEditar )
+	<a href="/empresa/{{$empresa->id}}/edit">
+		<small>Editar</small>		
+	</a>
+	@endif
 	<table class= "table-striped">
 		<caption><h1 class="title">Empresa</h1></caption>
 		<thead>

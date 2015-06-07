@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\EditarOngRequest;
 use App\Http\Controllers\Controller;
 
 use Session;
@@ -39,7 +40,15 @@ class OngController extends Controller {
 				App::abort(404);
 			}			
 		}
-		
+
+
+		// Verifica se o usuário logado tem permissão de edição da Ong.
+		// Caso possua, habilita uma flag de edição para a view.
+		if (Auth::user()->id == $ong->user->id) {
+			$ong->podeEditar = true;
+		} else {
+			$ong->podeEditar = false;
+		}
 		return view('ong.show', compact('ong'));
 	}
 
@@ -84,5 +93,22 @@ class OngController extends Controller {
 		$ong = Ong::findOrFail($id);
 		return view('ong.show', compact('ong'));
 	}
+
+	public function edit($id=0)
+	{
+		$user = Auth::user();
+		$ong = Ong::findOrFail($id);
+
+		return view('ong.edit', compact('user', 'ong'));
+	}
+
+    public function update($id, Requests\EditarOngRequest $request)
+    {
+        $ong = Ong::findOrFail($id);
+
+        $ong->update($request->all());
+
+		return view('ong.show', compact('ong'));
+    }
 	
 }

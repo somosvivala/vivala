@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\EditarEmpresaRequest;
 use App\Http\Controllers\Controller;
 
 use Session;
@@ -40,6 +41,13 @@ class EmpresaController extends Controller {
 			}			
 		}
 
+		// Verifica se o usuário logado tem permissão de edição da Empresa
+		// Caso possua, habilita uma flag de edição para a view.
+		if (Auth::user()->id == $empresa->user->id) {
+			$empresa->podeEditar = true;
+		} else {
+			$empresa->podeEditar = false;
+		}
 		return view('empresa.show', compact('empresa'));
 	}
 
@@ -88,17 +96,19 @@ class EmpresaController extends Controller {
 
 	public function edit($id)
     {
+		$user = Auth::user();
         $empresa = Empresa::findOrFail($id);
-        return view('empresa.edit', compact('empresa') );
+
+        return view('empresa.edit', compact('empresa', 'user') );
     }
-  
-    public function update($id, Requests\EmpresaRequest $request)
+
+    public function update($id, Requests\EditarEmpresaRequest $request)
     {
         $empresa = Empresa::findOrFail($id);
 
         $empresa->update($request->all());
 
-        return redirect('empresa');
+		return view('empresa.show', compact('empresa'));
     }
   
 }
