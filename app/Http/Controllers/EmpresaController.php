@@ -40,7 +40,7 @@ class EmpresaController extends Controller {
 			}			
 		}
 
-		dd('inside index of EmpresaController.php -> ', $empresa, $prettyUrl, Session::all());
+		return view('empresa.show', compact('empresa'));
 	}
 
 

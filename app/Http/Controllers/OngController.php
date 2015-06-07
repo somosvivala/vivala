@@ -40,8 +40,7 @@ class OngController extends Controller {
 			}			
 		}
 		
-
-		dd('inside index of OngController.php -> ', $ong, $prettyUrl, Session::all());
+		return view('ong.show', compact('ong'));
 	}
 
 	/**
