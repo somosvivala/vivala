@@ -98,16 +98,24 @@ class OngController extends Controller {
 	{
 		$user = Auth::user();
 		$ong = Ong::findOrFail($id);
-
+        $ong->url = $ong->getUrl();
 		return view('ong.edit', compact('user', 'ong'));
 	}
 
+	/**
+	 * Atualiza a Ong e a prettyUrl da ong
+	 * @param  Integer                    $id      Id da Ong
+	 * @param  Requests\EditarOngRequest $request Request personalizado da Ong (trata tamanho do input)
+	 * @return View                             View da Ong modificada
+	 */
     public function update($id, Requests\EditarOngRequest $request)
     {
         $ong = Ong::findOrFail($id);
 
         $ong->update($request->all());
 
+        //Atualiza a url correspondente
+        $ong->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('ong.show', compact('ong'));
     }
 	

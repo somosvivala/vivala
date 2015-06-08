@@ -98,16 +98,23 @@ class EmpresaController extends Controller {
     {
 		$user = Auth::user();
         $empresa = Empresa::findOrFail($id);
-
+        $empresa->url = $empresa->getUrl();
         return view('empresa.edit', compact('empresa', 'user') );
     }
 
+	/**
+	 * Atualiza a Empresa e a prettyUrl da empresa
+	 * @param  Integer                    $id      Id da Empresa
+	 * @param  Requests\EditarEmpresaRequest $request Request personalizado da Empresa (trata tamanho do input)
+	 * @return View                             View da Empresa modificada
+	 */
     public function update($id, Requests\EditarEmpresaRequest $request)
     {
         $empresa = Empresa::findOrFail($id);
-
         $empresa->update($request->all());
 
+        //Atualiza a url correspondente
+        $empresa->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('empresa.show', compact('empresa'));
     }
   
