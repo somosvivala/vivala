@@ -6514,3 +6514,35 @@ label,
 }
 
 /*# sourceMappingURL=app.css.map */
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.foto-perfil img {
+  max-width: 200px;
+}
+.lista-usuarios {
+  list-style: none;
+}
+.lista-usuarios li {
+  float: left;
+}
+.foto-user {
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.foto-user img {
+  width: 100px;
+}
+#foto-perfil {
+  max-width: 500px;
+  position: relative;
+  /* or fixed or absolute */
+}
+
+/*# sourceMappingURL=user.css.map */
+/*# sourceMappingURL=all.css.map */
