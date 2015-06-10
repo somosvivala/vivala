@@ -46,7 +46,17 @@ body {
 		@include('header')
 	</nav>
 
-	@yield('content')
+	<nav class="col-sm-2">
+		@include('menulateral')
+	</nav>
+
+	<nav class="col-sm-8">
+		@yield('content')
+	</nav>
+
+	<nav class="col-sm-2">
+		@include('menulateral')
+  	</nav>
 
   	<footer class="footer">
 		@include('footer')
