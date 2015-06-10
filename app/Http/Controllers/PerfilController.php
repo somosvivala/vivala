@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CropPhotoRequest;
 use App\Http\Requests\EditarPerfilRequest;
 use App\User;
 use Auth;
@@ -148,6 +149,45 @@ class PerfilController extends Controller {
 	        	$user->update(['avatar' => $filename]);
 	        }
 	    }
+	}
+
+	/**
+	 * [updatePhoto description]
+	 * @param  Integer Id do usuário
+	 * @return ??
+	 */
+	public function cropPhoto($id, CropPhotoRequest $request) {
+		dd($request);
+		/*
+		$targ_w = $targ_h = 150;
+		$jpeg_quality = 90;
+
+		$src = 'demo_files/pool.jpg';
+		$img_r = imagecreatefromjpeg($src);
+		$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+
+		imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
+		$targ_w,$targ_h,$_POST['w'],$_POST['h']);
+
+		header('Content-type: image/jpeg');
+		imagejpeg($dst_r,null,$jpeg_quality);
+*/
+/*
+		//Salva dados referentes ao User
+		$user = User::findOrFail($id);
+
+		//Salvando imagem no avatar do usuario;
+		$file = Input::file('file');
+	    if ($file) {
+
+	        $destinationPath = public_path() . '/uploads/';
+	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+	        $upload_success = $file->move($destinationPath, $filename);
+
+	        if ($upload_success) {
+	        	$user->update(['avatar' => $filename]);
+	        }
+	    }*/	
 	}
 
 

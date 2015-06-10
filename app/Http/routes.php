@@ -41,6 +41,7 @@ Route::group(['before' => 'auth'], function() {
 	Route::get('editarPerfil', 'PerfilController@edit');
 	Route::post('editarPerfil/{id}', 'PerfilController@update');
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
+	Route::post('cropPhoto/{id}', 'PerfilController@cropPhoto');
 });
 
 

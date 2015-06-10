@@ -11,19 +11,21 @@
 			<div class="row col-sm-12"> 
 				<img src="{{ $user->avatar }}" id="foto-perfil">
 			</div>
+
 			<!-- Adiciona um formulario pra upload de foto-->
 			<div class="jc_coords">
-				<form action="demos/crop.php" method="post" onsubmit="return checkCoords();">
-					<input value="216" id="x" name="x" type="hidden">
-					<input value="111" id="y" name="y" type="hidden">
-					<input value="235" id="w" name="w" type="hidden">
-					<input value="235" id="h" name="h" type="hidden">
-					<input value="Crop Image" type="submit">
-				</form>
+			{!! Form::open(['url' => ['cropPhoto',  $user->id ], 'files'=>true]) !!}
+
+				{!! Form::hidden("x",  0) !!} 	
+				{!! Form::hidden("y",  0) !!} 	
+				{!! Form::hidden("w",  0) !!} 	
+				{!! Form::hidden("h",  0) !!} 	
+				{!! Form::submit("Recortar Imagem", ['class' => 'btn btn-primary']) !!}
+			{!! Form::close() !!}
+
 			</div>
+
 			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
-
-
 			
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group"> 
