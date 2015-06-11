@@ -8,8 +8,29 @@ body, label, .checkbox label {
 	font-weight: 300;
 }
 
-@cor-primaria : "#FF6D20";
+/* Definição das cores */
+@cor-pele-zumbi : "#8BA6AC";
+@cor-primaria : "#F16F2B";
+@cor-secundaria : @cor-pele-zumbi;
 
+/* Definição das cores dos elementos */
+@cor-bg-btn : @cor-primaria;
+@cor-txt-btn : @cor-primaria;
+
+@cor-bg-header : @cor-secundaria;
+@cor-txt-header : white;
+
+/* Classes css */
+
+h4.titulo-suave {
+	background-color: @cor-bg-header;
+	color: @cor-txt-header;
+}
+
+.btn-primario {
+	background-color: @cor-bg-header;
+	color: @cor-txt-header;
+}
 
 #menu-principal {
 	width: 100%;
@@ -28,4 +49,3 @@ body, label, .checkbox label {
 		  	margin-left: 7%;
 		}
 	}
-}
