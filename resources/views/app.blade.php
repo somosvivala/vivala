@@ -12,7 +12,7 @@
 	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -46,7 +46,7 @@ body {
 		@include('header')
 	</nav>
 
-	<nav class="col-sm-2">
+	<nav class="col-sm-2 left-panel">
 		@include('menulateral')
 	</nav>
 
@@ -54,7 +54,7 @@ body {
 		@yield('content')
 	</nav>
 
-	<nav class="col-sm-2">
+	<nav class="col-sm-2 right-panel">
 		@include('menulateral')
   	</nav>
 

@@ -1065,7 +1065,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -5753,7 +5753,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5860,7 +5860,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6507,10 +6507,80 @@ button.close {
   position: relative;
   /* or fixed or absolute */
 }
-body,
-label,
-.checkbox label {
-  font-weight: 300;
+/* Fontes */
+/* Definição das cores */
+/* Definição das cores dos elementos */
+/* Definição de tempo de efeitos */
+/* Classes css */
+body {
+  background-color: #e2e2e2;
+  font-size: 14px;
+}
+h4.titulo-suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 9.8px;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+nav.menu-lateral {
+  line-height: 3.5em;
+}
+nav.menu-lateral ul {
+  list-style: none;
+  margin: 0px;
+  padding-top: 1em;
+  padding-left: 1.6em;
+}
+nav.menu-lateral ul li {
+  display: block;
+  float: left;
+  text-align: center;
+  text-transform: uppercase;
+}
+nav.menu-lateral ul li a {
+  text-decoration: none;
+  color: #5d5d5d;
+  font-weight: bold;
+  transition: 0.3s all ease-out;
+}
+nav.menu-lateral ul li a:hover {
+  color: #f16f2b;
+}
+nav.menu-lateral ul li a i {
+  color: #f16f2b;
+  padding-right: 0.6em;
+  font-size: 1.2em;
+  padding-top: 0.1em;
+}
+.left-panel,
+.right-panel {
+  background-color: white;
+  padding: 1.5em;
+}
+.btn-primario {
+  background-color: #8ba6ac;
+  color: white;
+}
+#menu-principal {
+  width: 100%;
+}
+#menu-principal li {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+#menu-principal li > a {
+  padding-left: 0;
+  padding-right: 0;
+}
+#menu-principal li + li {
+  margin-left: 7%;
 }
 
 /*# sourceMappingURL=app.css.map */
