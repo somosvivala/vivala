@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<div class="navbar-header">
+	<div class="navbar-header col-sm-1">
 		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 			<span class="sr-only">Toggle Navigation</span>
 			<span class="icon-bar"></span>
@@ -9,16 +9,26 @@
 		<a class="navbar-brand" href="{{ url('home') }}">Vivalá</a>
 	</div>
 
-	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		<ul class="nav navbar-nav">
-			<li><a href="{{ url('configuracao') }}">{{ trans("menu.settings") }}</a></li>
-		</ul>
-
-		<ul class="nav navbar-nav navbar-right">
-			@if (Auth::guest())
+	<div class="col-sm-10">
+		<ul class="nav navbar-nav" id="menu-principal">		
+			@if (Auth::guest()) 
 				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.login") }}</a></li>
 				<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 			@else
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.profile") }}</a></li>
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.trips") }}</a></li>
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.social") }}</a></li>
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.ongs") }}</a></li>
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.more") }}</a></li>
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.contact") }}</a></li>
+				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.search") }}</a></li>
+			@endif
+		</ul>
+	</div>
+
+	<div class="col-sm-1">
+		<ul class="nav navbar-nav ">
+			@if (Auth::user()) 			
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->username }} <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
