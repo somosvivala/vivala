@@ -11,7 +11,7 @@
 
 	<div class="col-sm-10">
 		<ul class="nav navbar-nav" id="menu-principal">		
-			@if (Auth::guest()) 
+			@if (Auth::guest()) 	
 				<li><a href="{{ url('/auth/login') }}">{{ trans("menu.login") }}</a></li>
 				<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 			@else
