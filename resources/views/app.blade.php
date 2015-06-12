@@ -42,7 +42,7 @@ body {
 
 </style>
 <body>
-	<nav class="navbar navbar-default">
+	<nav class="navbar navbar-default menu-top">
 		@include('header')
 	</nav>
 

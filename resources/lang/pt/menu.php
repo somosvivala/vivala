@@ -18,6 +18,8 @@ return [
     'more' => 'saiba mais',
     'contact' => 'fale aqui!',
     'search' => 'buscar',
+    'hello' => 'olá',
+
 
     'settings' => 'Configura&ccedil;&otilde;es',
 

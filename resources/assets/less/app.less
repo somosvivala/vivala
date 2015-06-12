@@ -26,6 +26,9 @@
 @cor-bg-header : @cor-secundaria;
 @cor-txt-header : white;
 
+@cor-menu-superior : @cor-txt;
+@cor-menu-superior-hover : @cor-pele-zumbi;
+
 /* Definição de tempo de efeitos */
 @anima-rapido : 0.3s all ease-out;
 
@@ -88,21 +91,72 @@ nav.menu-lateral {
 	color: @cor-txt-header;
 }
 
-#menu-principal {
-	width: 100%;
-	li {
-		text-align: center;
-		text-transform: uppercase;
-		// width: 14%;
-		font-weight: bold;
 
-		> a {
-			padding-left: 0;
-			padding-right: 0;
-		}
+nav.menu-top {
+	background-color: @cor-bg-painel;
+	border-color: @cor-bg-body;
+	min-height: 72px;
+	padding: 10px;
 
-		+ li {
-		  	margin-left: 7%;
+	.menu-esquerda {
+		padding: 0px;
+		width: 10%;
+	}
+
+	.menu-principal {
+		width: 78%;
+		padding: 0px;
+		ul {
+			width: 100%;	
+			li {
+				text-align: center;
+				text-transform: uppercase;
+				width: 12%;
+				font-weight: bold;
+
+				&:nth-child(2) {  	width: 17%;	}
+				&:nth-child(3) {	width: 19%;	}
+				&:nth-child(4) { 	width: 17%;	}
+				&:nth-child(5) { 	width: 13%;	}
+				&:last-child { 	width: 10%;	}
+
+				a {
+					color: @cor-menu-superior;
+					padding-left: 0;
+					padding-right: 0;
+					
+					&:hover, &:active {	
+						color: @cor-menu-superior-hover; 
+						&:before {
+							content: "\f041";
+						  	font-family: "FontAwesome";
+						  	margin-right: 2px;
+						}
+					}
+				}
+			}
 		}
 	}
+
+	.menu-direita {
+		float: right;
+		padding: 0px 10px 0px 0px;
+		width: 12%;
+		ul {
+			float: right;
+			text-transform: capitalize;
+			li {
+				a {
+					padding: 0px;
+					img {
+						margin-left: 10px;
+						width: 45px;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
+
+
 }
