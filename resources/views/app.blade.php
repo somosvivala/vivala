@@ -55,7 +55,7 @@ body {
 	</nav>
 
 	<nav class="col-sm-2 right-panel">
-		@include('menulateral')
+		@include('sugestoes')
   	</nav>
 
   	<footer class="footer">

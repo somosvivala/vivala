@@ -6558,6 +6558,16 @@ nav.menu-lateral ul li a i {
   font-size: 1.2em;
   padding-top: 0.1em;
 }
+ul.sugestoes {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+ul.sugestoes img {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 50%;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -6573,14 +6583,12 @@ nav.menu-lateral ul li a i {
 #menu-principal li {
   text-align: center;
   text-transform: uppercase;
+  width: 14%;
   font-weight: bold;
 }
 #menu-principal li > a {
   padding-left: 0;
   padding-right: 0;
-}
-#menu-principal li + li {
-  margin-left: 7%;
 }
 
 /*# sourceMappingURL=app.css.map */
