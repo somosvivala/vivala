@@ -23,11 +23,22 @@
 @cor-menu-lateral : #5D5D5D;
 @cor-menu-lateral-hover : @cor-primaria;
 
-@cor-bg-header : @cor-secundaria;
-@cor-txt-header : white;
+@cor-bg-suave : @cor-secundaria;
+@cor-txt-suave : white;
+@cor-txt-suave-hover : black;
+
+@cor-txt-link : white;
+@cor-txt-link-hover : black;
 
 @cor-menu-superior : @cor-txt;
 @cor-menu-superior-hover : @cor-pele-zumbi;
+
+@cor-sugestao-botao-bg : @cor-primaria;
+@cor-sugestao-botao-txt : white;
+
+@cor-sugestao-titulo-txt: black;
+
+@cor-foto-fundo-txt : white;
 
 /* Definição de tempo de efeitos */
 @anima-rapido : 0.3s all ease-out;
@@ -38,19 +49,34 @@ body {
 	font-size: @font-size-rem;
 }
 
-h4.titulo-suave {
+.bg-suave {
 	text-align: center;
 	text-transform: uppercase;
-	padding: 0.7 * @font-size-rem;
+	padding: 0.7em;
 	font-size: 1em;
-	background-color: @cor-bg-header;
-	color: @cor-txt-header;
+	background-color: @cor-bg-suave;
+	color: @cor-txt-suave;
 	font-weight: bold;
 	line-height: 1.5em;
 	margin-top: 0px;
 	margin-bottom: 0px;
+	border:0px solid transparent;
 }
-
+h4.titulo-suave {
+	.bg-suave();
+}
+.btn-suave {
+	.bg-suave();
+	padding: 0.2em 0.5em;
+	cursor: pointer;
+}
+a.btn-suave {
+	padding: 0.2em 1em;
+	text-decoration: none;
+	&:hover {
+		color: @cor-txt-suave-hover;
+	}
+}
 nav.menu-lateral {
 	line-height: 3.5em;
 	ul {
@@ -81,25 +107,111 @@ nav.menu-lateral {
 		}
 	}
 }
+.foto-fundo {
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	color: @cor-foto-fundo-txt;
+}
+.foto-fundo.header {
+	width:100%;
+	height: 25em;
+	h2, h3 {
+		text-shadow: 0em 0em 0.2em black;
+		display: block;
+	}
+	h2 {
+		padding-top: 3em;
+		font-size: 3em;
+		margin-top: 0;
+	}
+	h3 {
+		font-size: 1em;
+	}
+	div {
+		margin: 2em auto;
 
-ul.sugestoes {	
-	padding:0px;
-	margin:0px;
-	list-style: none;
-	img {
-		width:100%;
-		max-width:150px;
-		border-radius: 50%;
 	}
 }
+div.foto-fundo a{
+	color: @cor-txt-link;
+	text-decoration: none;
+	h4 {
+		font-size: 2em;
+		font-weight: bold;
+		padding: 4em 0;
+	}
+	&:hover {
+		color: @cor-txt-link-hover;
+	}
+}
+.secao-sem-bg {
+	h3 {
+		text-transform: uppercase;
+		color: @cor-txt;
+		font-weight: bold;
+	}
 
+}
+ul.sugestoes {	
+	padding:1em 0px 2em;
+	margin:0px;
+	list-style: none;
+	text-align: center;
+	li {
+		position: relative;
+		padding: 0px 0px 2em;
+		a {
+			div { /* Remove o padding das class col-* do bootstrap */
+				padding:0px;
+			}
+			text-decoration: none;
+			color: @cor-sugestao-titulo-txt;
+			.foto-bg {
+				width: 7em;
+				height: 7em;
+				margin: 0 auto;
+				background-size: cover;
+				background-position: center center;
+				border-radius: 50%;
+			}
+			strong {
+				font-weight: bold;
+				text-transform: uppercase;
+			}
+			i {
+				color: @cor-primaria;
+				padding-right: 0.2em;
+			}
+		}
+	}
+}
+ul.sugestoes-empresas {
+	button {
+		border: 0px solid transparent;
+		background-color: @cor-sugestao-botao-bg;
+		color: @cor-sugestao-botao-txt;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-size: 0.9em;
+		padding: 0.35em 0.5em;
+		position: absolute;
+		right:0px;
+		top: 0.7em;
+	}
+}
+ul.sugestoes-pacotes {
+	button {
+		font-size: 10px;
+	}
+}
 .left-panel, .right-panel {
 	background-color: @cor-bg-painel;
 	padding: 1.5em;
 }
 .btn-primario {
-	background-color: @cor-bg-header;
-	color: @cor-txt-header;
+	background-color: @cor-bg-suave;
+	color: @cor-txt-suave;
 }
 
 
