@@ -46,15 +46,15 @@ body {
 		@include('header')
 	</nav>
 
-	<nav class="col-sm-2 left-panel">
+	<nav class="col-sm-3 col-md-2 left-panel">
 		@include('menulateral')
 	</nav>
 
-	<nav class="col-sm-8">
+	<nav class="col-sm-6 col-md-8">
 		@yield('content')
 	</nav>
 
-	<nav class="col-sm-2 right-panel">
+	<nav class="col-sm-3 col-md-2 right-panel">
 		@include('sugestoes')
   	</nav>
 

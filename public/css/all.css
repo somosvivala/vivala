@@ -2956,7 +2956,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-  touch-action: manipulation;
+      touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5648,12 +5648,14 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -6514,10 +6516,10 @@ body {
   background-color: #e2e2e2;
   font-size: 14px;
 }
-h4.titulo-suave {
+.bg-suave {
   text-align: center;
   text-transform: uppercase;
-  padding: 9.8px;
+  padding: 0.7em;
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
@@ -6525,6 +6527,42 @@ h4.titulo-suave {
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
+  border: 0px solid transparent;
+}
+h4.titulo-suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+}
+.btn-suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.2em 0.5em;
+  cursor: pointer;
+}
+a.btn-suave {
+  padding: 0.2em 1em;
+  text-decoration: none;
+}
+a.btn-suave:hover {
+  color: black;
 }
 nav.menu-lateral {
   line-height: 3.5em;
@@ -6556,15 +6594,97 @@ nav.menu-lateral ul li a i {
   font-size: 1.2em;
   padding-top: 0.1em;
 }
+.foto-fundo {
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+}
+.foto-fundo.header {
+  width: 100%;
+  height: 25em;
+}
+.foto-fundo.header h2,
+.foto-fundo.header h3 {
+  text-shadow: 0em 0em 0.2em black;
+  display: block;
+}
+.foto-fundo.header h2 {
+  padding-top: 3em;
+  font-size: 3em;
+  margin-top: 0;
+}
+.foto-fundo.header h3 {
+  font-size: 1em;
+}
+.foto-fundo.header div {
+  margin: 2em auto;
+}
+div.foto-fundo a {
+  color: white;
+  text-decoration: none;
+}
+div.foto-fundo a h4 {
+  font-size: 2em;
+  font-weight: bold;
+  padding: 4em 0;
+}
+div.foto-fundo a:hover {
+  color: black;
+}
+.secao-sem-bg h3 {
+  text-transform: uppercase;
+  color: black;
+  font-weight: bold;
+}
 ul.sugestoes {
-  padding: 0px;
+  padding: 1em 0px 2em;
   margin: 0px;
   list-style: none;
+  text-align: center;
 }
-ul.sugestoes img {
-  width: 100%;
-  max-width: 150px;
+ul.sugestoes li {
+  position: relative;
+  padding: 0px 0px 2em;
+}
+ul.sugestoes li a {
+  text-decoration: none;
+  color: black;
+}
+ul.sugestoes li a div {
+  /* Remove o padding das class col-* do bootstrap */
+  padding: 0px;
+}
+ul.sugestoes li a .foto-bg {
+  width: 7em;
+  height: 7em;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center center;
   border-radius: 50%;
+}
+ul.sugestoes li a strong {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+ul.sugestoes li a i {
+  color: #f16f2b;
+  padding-right: 0.2em;
+}
+ul.sugestoes-empresas button {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.9em;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+}
+ul.sugestoes-pacotes button {
+  font-size: 10px;
 }
 .left-panel,
 .right-panel {
@@ -6644,36 +6764,6 @@ nav.menu-top .menu-direita ul li a img {
   margin-left: 10px;
   width: 45px;
   border-radius: 50%;
-}
-
-.foto-perfil {
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  border-radius: 100px;
-  overflow: hidden;
-}
-.foto-perfil img {
-  max-width: 200px;
-}
-.lista-usuarios {
-  list-style: none;
-}
-.lista-usuarios li {
-  float: left;
-}
-.foto-user {
-  width: 100px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.foto-user img {
-  width: 100px;
-}
-#foto-perfil {
-  max-width: 500px;
-  position: relative;
-  /* or fixed or absolute */
 }
 
 /*# sourceMappingURL=app.css.map */

@@ -147,6 +147,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		'Orangehill\Iseed\IseedServiceProvider'
 	],
 
 	/*
