@@ -137,6 +137,7 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 		'Laravel\Socialite\SocialiteServiceProvider',
 		'Illuminate\Html\HtmlServiceProvider',
+		'Orangehill\Iseed\IseedServiceProvider',
 
 		/*
 		 * Application Service Providers...
