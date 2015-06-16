@@ -1,10 +1,10 @@
-<h4 class="titulo-suave">
+<h4 class="suave">
 	Empresas bacanas para seguir
 </h4>
 <ul class="sugestoes sugestoes-empresas">
 	<li>
 		<a href="/home">
-			<button type="button">seguir</button>
+			<button type="button" class="suave">seguir</button>
 			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
 			<strong class="col-sm-12">Restaurante Dulce</strong>
 			<div class="row localizacao-cidade">
@@ -19,7 +19,7 @@
 	</li>
 	<li>
 		<a href="/home">
-			<button type="button">seguir</button>
+			<button type="button" class="suave">seguir</button>
 			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
 			<strong class="col-sm-12">Restaurante Dulce</strong>
 			<div class="row localizacao-cidade">
@@ -34,7 +34,7 @@
 	</li>
 	<li>
 		<a href="/home">
-			<button type="button">seguir</button>
+			<button type="button"  class="suave">seguir</button>
 			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
 			<strong class="col-sm-12">Restaurante Dulce</strong>
 			<div class="row localizacao-cidade">

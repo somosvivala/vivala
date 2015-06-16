@@ -49,7 +49,7 @@ body {
 	font-size: @font-size-rem;
 }
 
-.bg-suave {
+.suave {
 	text-align: center;
 	text-transform: uppercase;
 	padding: 0.7em;
@@ -62,11 +62,11 @@ body {
 	margin-bottom: 0px;
 	border:0px solid transparent;
 }
-h4.titulo-suave {
-	.bg-suave();
+h4.suave {
+	.suave();
 }
-.btn-suave {
-	.bg-suave();
+button.btn-suave {
+	.suave();
 	padding: 0.2em 0.5em;
 	cursor: pointer;
 }
@@ -113,7 +113,7 @@ nav.menu-lateral {
 	text-align: center;
 	color: @cor-foto-fundo-txt;
 }
-.foto-fundo.header {
+.foto-fundo.foto-header {
 	width:100%;
 	height: 25em;
 	h2, h3 {
@@ -153,6 +153,14 @@ div.foto-fundo a{
 	}
 
 }
+.foto-bg {
+	width:100%;
+	height: 100%;
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center center;
+	border-radius: 50%;
+}
 ul.sugestoes {	
 	padding:1em 0px 2em;
 	margin:0px;
@@ -170,10 +178,6 @@ ul.sugestoes {
 			.foto-bg {
 				width: 7em;
 				height: 7em;
-				margin: 0 auto;
-				background-size: cover;
-				background-position: center center;
-				border-radius: 50%;
 			}
 			strong {
 				font-weight: bold;
@@ -205,6 +209,7 @@ ul.sugestoes-pacotes {
 		font-size: 10px;
 	}
 }
+
 .left-panel, .right-panel {
 	background-color: @cor-bg-painel;
 	padding: 1.5em;

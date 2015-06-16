@@ -1,4 +1,4 @@
-<h4 class="titulo-suave">
+<h4 class="suave">
 	Você está em:<br>
 	Quero Viajar!
 </h4>
