@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Vivalá</title>
 
-	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/bootstrap-social.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
-	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,24 +21,13 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
+
 <style>
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
   min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
 }
 
 
@@ -48,21 +38,118 @@ body {
 	background-size: cover;
 }
 </style>
+
 <body>
-	<nav class="navbar navbar-default">
-		@include('header')
+	<nav class="navbar welcome-navbar">
+		<div class="col-sm-4">
+			<a class="navbar-brand" href="{{ url('home') }}">Vivalá</a>
+		</div>
+		<div class="col-sm-8">
+	      		<div class="col-sm-3">
+					<label class="control-label">IDIOMA</label>
+	      			<input type="text" class="form-control" placeholder="PORTUGUÊS">
+	      		</div>
+				<div class="col-sm-8">
+		      		<div class="col-sm-6">
+						<label class="control-label">FAZER LOGIN</label>
+		      			<div class="input-wrapper">
+		      				<input type="text" class="form-control" placeholder="E-MAIL">
+		      			</div>
+		      			<div class="checkbox">
+							<label>
+								<input type="checkbox" name="remember"> Mantenha-me logado
+							</label>
+						</div>
+		      		</div>
+		      		<div class="col-sm-6 input-group">
+						<label class="control-label">&nbsp;</label>
+		      			<div class="input-wrapper input-group">
+				      		<input type="text" class="form-control" placeholder="SENHA">
+				      		<span class="input-group-btn">
+				      		  	<button class="btn-default btn loginbtn" type="button">OK</button>
+				      		</span>
+		      			</div>
+						<a class="forgot-password" href="{{ url('/password/email') }}">Esqueceu a senha?</a>
+
+		      		</div>
+				</div>
+		</div>
 	</nav>
 
-	@yield('content')
+	<div class="row welcome-content">
+		<div class="container">
+			<div class="col-sm-6 welcome-left">
+				<h2>Cadastre-se na Vivalá e<br>conheça o Brasil de verdade.</h2>
+				<p>Conecte-se com pessoas que tem interesse em viajar no Brasil.</p>
+				<p>Compre seu transport, hospedagem, alimentação e entretenimento na plataforma de viagens brasileiras mais completa da web.</p>
+				<p>Faça trabalhos voluntários e desenvolva o Brasil.</p>
+			</div>
 
-  	<footer class="footer">
-		@include('footer')
-    </footer>
-	<!-- Scripts -->
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+			<div class="col-sm-6">
+				<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
-	<!-- Iubenda (link de Privacy Policy) -->
-	<script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+					<div class="form-group">
+						<div class="col-md-6">
+							<h3>CADASTRE-SE</h3>
+							<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
+								<i class="fa fa-facebook"></i> {{ trans('facebook.login') }}
+							</a>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+		      				<input type="text" class="form-control" placeholder="NOME">
+						</div>						
+						<div class="col-sm-6">
+		      				<input type="text" class="form-control" placeholder="SOBRENOME">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-6">
+		      				<input type="text" class="form-control" placeholder="MASCULINO">
+						</div>						
+						<div class="col-sm-6">
+		      				<input type="text" class="form-control" placeholder="FEMININO">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-12">
+		      				<input type="text" class="form-control" placeholder="DATA DE NASCIMENTO">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-12">
+		      				<input type="text" class="form-control" placeholder="E-MAIL">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-12">
+		      				<input type="text" class="form-control" placeholder="CONFIRMAÇÃO DE E-MAIL">
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-12">
+		      				<input type="text" class="form-control" placeholder="SENHA">
+						</div>
+					</div>
+					
+					<p>Ao clicar em confirmar, você concirda com nossos Termos e Politica de Dados, incluindo nosso Uso de Cookies</p>
+					<a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
+					
+					<button type="submit" class="btn btn-default">CONFIRMAR</button>
+
+				</form>
+
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

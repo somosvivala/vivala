@@ -2956,7 +2956,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5648,14 +5648,12 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -6768,6 +6766,137 @@ nav.menu-top .menu-direita ul li a img {
   margin-left: 10px;
   width: 45px;
   border-radius: 50%;
+}
+
+.foto-perfil {
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  border-radius: 100px;
+  overflow: hidden;
+}
+.foto-perfil img {
+  max-width: 200px;
+}
+.lista-usuarios {
+  list-style: none;
+}
+.lista-usuarios li {
+  float: left;
+}
+.foto-user {
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.foto-user img {
+  width: 100px;
+}
+#foto-perfil {
+  max-width: 500px;
+  position: relative;
+  /* or fixed or absolute */
+}
+
+nav.welcome-navbar {
+  height: 100px;
+  background-color: rgba(241, 111, 43, 0.5);
+  padding: 10px;
+}
+nav.welcome-navbar a.navbar-brand {
+  font-size: 45px;
+  color: white;
+  line-height: 35px;
+}
+nav.welcome-navbar a.forgot-password {
+  color: white;
+  line-height: 28px;
+  font-size: 13px;
+}
+nav.welcome-navbar label {
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: bold;
+}
+nav.welcome-navbar input,
+nav.welcome-navbar button.loginbtn {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+nav.welcome-navbar div.checkbox {
+  margin-top: 5px;
+}
+nav.welcome-navbar div.checkbox > label {
+  font-weight: 100;
+  text-transform: none;
+  font-size: 13px;
+}
+nav.welcome-navbar ::-webkit-input-placeholder {
+  color: white;
+}
+nav.welcome-navbar :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+nav.welcome-navbar ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+nav.welcome-navbar :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content ::-webkit-input-placeholder {
+  color: white;
+}
+div.welcome-content :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+div.welcome-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+div.welcome-content :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content h2 {
+  color: white;
+  font-size: 36px;
+  line-height: 36px;
+}
+div.welcome-content p {
+  color: white;
+  font-size: 14px;
+}
+div.welcome-content .welcome-left {
+  margin-top: 50px;
+}
+div.welcome-content a.anchor-tour {
+  text-decoration: underline;
+  color: white;
+  font-size: 13px;
+}
+div.welcome-content button[type='submit'] {
+  margin-left: 15px;
+  background-color: white;
+  color: #f16f2b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+div.welcome-content input {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0px;
+  border-radius: 0px;
 }
 
 /*# sourceMappingURL=app.css.map */

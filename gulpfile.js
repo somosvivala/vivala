@@ -14,7 +14,8 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix.less([
         'app.less',
-        'user.less'
+        'user.less',
+        'welcome.less'
     ], 'resources/assets/css/');
 
     mix.styles([

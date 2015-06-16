@@ -1,0 +1,123 @@
+@cor-placeholder-inputs: white;
+@cor-texto-btn-login : #F16F2B;
+
+nav.welcome-navbar {
+	height: 100px;
+	background-color: rgba(241, 111, 43, 0.5);
+  	padding: 10px;
+
+	a {
+		&.navbar-brand {
+			font-size: 45px;
+			color: white;  
+			line-height: 35px;
+		}
+
+		&.forgot-password {
+			color: white;
+			line-height: 28px;
+			font-size: 13px;
+		}
+	}
+
+	label {
+		color: white;
+		text-transform: uppercase;
+		background-color: transparent;
+		font-weight: bold;
+	}
+
+	input, button.loginbtn {
+		font-weight: bold;
+		color: @cor-placeholder-inputs;
+		text-transform: uppercase;
+		background-color: transparent;	
+		border: 1px solid @cor-placeholder-inputs;
+		border-radius: 0px;
+	}
+
+	div.checkbox {
+		margin-top: 5px;
+		> label {
+			font-weight: 100;
+			text-transform: none;
+			font-size: 13px;
+		}
+	}
+
+	::-webkit-input-placeholder {
+	   color: @cor-placeholder-inputs;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: @cor-placeholder-inputs;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: @cor-placeholder-inputs;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: @cor-placeholder-inputs;  
+	}
+}
+
+div.welcome-content {
+	::-webkit-input-placeholder {
+	   color: @cor-placeholder-inputs;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   color: @cor-placeholder-inputs;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: @cor-placeholder-inputs;  
+	}
+
+	:-ms-input-placeholder {  
+	   color: @cor-placeholder-inputs;  
+	}
+
+
+	h2 {
+		color: @cor-placeholder-inputs;
+		font-size: 36px;
+		line-height: 36px;
+	}
+	p {
+		color: @cor-placeholder-inputs;
+		font-size: 14px;
+	}
+
+	.welcome-left {
+		margin-top: 50px;
+	}
+
+	a.anchor-tour {
+		text-decoration: underline;
+		color: white;
+		font-size: 13px;
+	}
+
+	button[type='submit'] {
+		margin-left: 15px;
+		background-color: white;
+		color: @cor-texto-btn-login;
+		font-weight: bold;
+		text-transform: uppercase;
+		border: 1px solid white;
+		border-radius: 0px;
+	}
+
+	input {
+		font-weight: bold;
+		color: @cor-placeholder-inputs;
+		text-transform: uppercase;
+		background-color: rgba(255, 255, 255, 0.25);
+		border: 0px;
+		border-radius: 0px;
+	}
+
+
+}
