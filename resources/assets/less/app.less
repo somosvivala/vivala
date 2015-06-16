@@ -39,6 +39,7 @@
 @cor-sugestao-titulo-txt: black;
 
 @cor-foto-fundo-txt : white;
+@cor-foto-comentario-txt : black;
 
 /* Definição de tempo de efeitos */
 @anima-rapido : 0.3s all ease-out;
@@ -49,6 +50,9 @@ body {
 	font-size: @font-size-rem;
 }
 
+.round {
+	border-radius: 50%;
+}
 .suave {
 	text-align: center;
 	text-transform: uppercase;
@@ -65,12 +69,11 @@ body {
 h4.suave {
 	.suave();
 }
-button.btn-suave {
-	.suave();
+button.suave {
 	padding: 0.2em 0.5em;
 	cursor: pointer;
 }
-a.btn-suave {
+a.suave {
 	padding: 0.2em 1em;
 	text-decoration: none;
 	&:hover {
@@ -112,8 +115,9 @@ nav.menu-lateral {
 	background-position: center center;
 	text-align: center;
 	color: @cor-foto-fundo-txt;
+	padding: 1em;
 }
-.foto-fundo.foto-header {
+.foto-header {
 	width:100%;
 	height: 25em;
 	h2, h3 {
@@ -133,34 +137,64 @@ nav.menu-lateral {
 
 	}
 }
-div.foto-fundo a{
-	color: @cor-txt-link;
-	text-decoration: none;
-	h4 {
-		font-size: 2em;
-		font-weight: bold;
-		padding: 4em 0;
+/* Links que são uma imagem com texto centralizado */
+.foto-link{
+	::before{
+		background-color: rgba(255,0,0,0.2);
+		position: absolute;
+		content:'';
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
-	&:hover {
-		color: @cor-txt-link-hover;
+	a {
+		transition: color 0.2s ease;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		color: @cor-foto-fundo-txt;
+		h4 {
+			font-size: 2em;
+			font-weight: bold;
+			padding: 4em 0;
+			margin: 0;
+		}
+		&:hover {
+			color: @cor-txt-link-hover;
+		}
 	}
 }
+
 .secao-sem-bg {
 	h3 {
 		text-transform: uppercase;
 		color: @cor-txt;
 		font-weight: bold;
 	}
-
 }
+
 .foto-bg {
 	width:100%;
 	height: 100%;
 	margin: 0 auto;
 	background-size: cover;
 	background-position: center center;
-	border-radius: 50%;
 }
+
+.foto-comentario {
+	height: 6em;
+	position:absolute;
+	top:0px;
+	color: @cor-foto-comentario-txt;
+	background-color: rgba(255,255,255,0.5);
+	.foto-bg {
+		width:5em;
+		height:5em;
+		margin:0.5em;
+	}
+}
+
 ul.sugestoes {	
 	padding:1em 0px 2em;
 	margin:0px;
