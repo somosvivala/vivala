@@ -1,0 +1,102 @@
+nav.welcome-navbar {
+  height: 100px;
+  background-color: rgba(241, 111, 43, 0.5);
+  padding: 10px;
+}
+nav.welcome-navbar a.navbar-brand {
+  font-size: 45px;
+  color: white;
+  line-height: 35px;
+}
+nav.welcome-navbar a.forgot-password {
+  color: white;
+  line-height: 28px;
+  font-size: 13px;
+}
+nav.welcome-navbar label {
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: bold;
+}
+nav.welcome-navbar input,
+nav.welcome-navbar button.loginbtn {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+nav.welcome-navbar div.checkbox {
+  margin-top: 5px;
+}
+nav.welcome-navbar div.checkbox > label {
+  font-weight: 100;
+  text-transform: none;
+  font-size: 13px;
+}
+nav.welcome-navbar ::-webkit-input-placeholder {
+  color: white;
+}
+nav.welcome-navbar :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+nav.welcome-navbar ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+nav.welcome-navbar :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content ::-webkit-input-placeholder {
+  color: white;
+}
+div.welcome-content :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+div.welcome-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+div.welcome-content :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content h2 {
+  color: white;
+  font-size: 36px;
+  line-height: 36px;
+}
+div.welcome-content p {
+  color: white;
+  font-size: 14px;
+}
+div.welcome-content .welcome-left {
+  margin-top: 50px;
+}
+div.welcome-content a.anchor-tour {
+  text-decoration: underline;
+  color: white;
+  font-size: 13px;
+}
+div.welcome-content button[type='submit'] {
+  margin-left: 15px;
+  background-color: white;
+  color: #f16f2b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+div.welcome-content input {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0px;
+  border-radius: 0px;
+}
+
+/*# sourceMappingURL=welcome.css.map */

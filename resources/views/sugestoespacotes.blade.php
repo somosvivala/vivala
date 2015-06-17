@@ -4,7 +4,11 @@
 <ul class="sugestoes sugestoes-pacotes">
 	<li>
 		<a href="/home">
-			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
+			<div class="round foto">
+				<div class="cover">
+					<img src="/img/dummy.jpg">
+				</div>
+			</div>
 			<strong class="col-sm-12">Salvador</strong>
 			<span class="col-sm-12">Uma viagem para entrar em contato com alto astral e cultura.</span>
 			<button class="suave" type="button">Ver mais</button>
@@ -12,7 +16,11 @@
 	</li>
 	<li>
 		<a href="/home">
-			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
+			<div class="round foto">
+				<div class="cover">
+					<img src="/img/dummy.jpg">
+				</div>
+			</div>
 			<strong class="col-sm-12">Salvador</strong>
 			<span class="col-sm-12">Uma viagem para entrar em contato com alto astral e cultura.</span>
 			<button class="suave" type="button">Ver mais</button>
@@ -20,7 +28,11 @@
 	</li>
 	<li>
 		<a href="/home">
-			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
+			<div class="round foto">
+				<div class="cover">
+					<img src="/img/dummy.jpg">
+				</div>
+			</div>
 			<strong class="col-sm-12">Salvador</strong>
 			<span class="col-sm-12">Uma viagem para entrar em contato com alto astral e cultura.</span>
 			<button class="suave" type="button">Ver mais</button>

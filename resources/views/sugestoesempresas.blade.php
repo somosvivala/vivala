@@ -5,7 +5,11 @@
 	<li>
 		<a href="/home">
 			<button type="button" class="suave">seguir</button>
-			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
+			<div class="round foto">
+				<div class="cover">
+					<img src="/img/dummy.jpg">
+				</div>
+			</div>
 			<strong class="col-sm-12">Restaurante Dulce</strong>
 			<div class="row localizacao-cidade">
 				<div class="col-sm-4 text-right">
@@ -20,7 +24,11 @@
 	<li>
 		<a href="/home">
 			<button type="button" class="suave">seguir</button>
-			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
+			<div class="round foto">
+				<div class="cover">
+					<img src="/img/dummy.jpg">
+				</div>
+			</div>
 			<strong class="col-sm-12">Restaurante Dulce</strong>
 			<div class="row localizacao-cidade">
 				<div class="col-sm-4 text-right">
@@ -34,8 +42,12 @@
 	</li>
 	<li>
 		<a href="/home">
-			<button type="button"  class="suave">seguir</button>
-			<div class="foto-bg" style="background-image:url('/img/dummy.jpg');"></div>
+			<button type="button" class="suave">seguir</button>
+			<div class="round foto">
+				<div class="cover">
+					<img src="/img/dummy.jpg">
+				</div>
+			</div>
 			<strong class="col-sm-12">Restaurante Dulce</strong>
 			<div class="row localizacao-cidade">
 				<div class="col-sm-4 text-right">
