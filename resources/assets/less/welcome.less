@@ -1,9 +1,23 @@
 @cor-placeholder-inputs: white;
 @cor-texto-btn-login : #F16F2B;
 
+#welcome-html {
+	position: relative;
+	min-height: 100%;
+
+	body {
+		overflow: hidden;
+		background-image: url("../../img/dummy.jpg");
+		background-position: center center;
+		background-size: cover;
+	}
+}
+
+
+
 nav.welcome-navbar {
 	height: 100px;
-	background-color: rgba(241, 111, 43, 0.5);
+	background-color: rgba(241, 111, 43, 0.45);
   	padding: 10px;
 
 	a {
@@ -34,6 +48,13 @@ nav.welcome-navbar {
 		background-color: transparent;	
 		border: 1px solid @cor-placeholder-inputs;
 		border-radius: 0px;
+
+		// &:-webkit-autofill {
+		// 	-webkit-box-shadow: 0 0 0px 1000px transparent inset!important;
+		// 	background-color: rgba(0,0,0,0)!important;	
+		// 	-webkit-text-fill-color: white !important;
+		// }
+
 	}
 
 	div.checkbox {
@@ -79,12 +100,22 @@ div.welcome-content {
 	   color: @cor-placeholder-inputs;  
 	}
 
-
 	h2 {
 		color: @cor-placeholder-inputs;
-		font-size: 36px;
-		line-height: 36px;
+		font-size: 38px;
+		line-height: 42px;
+		margin-bottom: 30px;
 	}
+	
+	h3 {
+		color: @cor-placeholder-inputs;
+		font-size: 32px;
+		line-height: 32px;
+	}
+
+
+
+
 	p {
 		color: @cor-placeholder-inputs;
 		font-size: 14px;
@@ -92,6 +123,10 @@ div.welcome-content {
 
 	.welcome-left {
 		margin-top: 50px;
+	}
+
+	.welcome-right {
+		margin-left: 8%;
 	}
 
 	a.anchor-tour {
@@ -117,6 +152,7 @@ div.welcome-content {
 		background-color: rgba(255, 255, 255, 0.25);
 		border: 0px;
 		border-radius: 0px;
+		padding: 21px 12px;
 	}
 
 

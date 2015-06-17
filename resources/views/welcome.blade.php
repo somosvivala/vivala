@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="welcome-html">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,24 +21,6 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-
-<style>
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-
-
-body {
-	background-color: #d28020;
-	background-image: url("{{ asset('/img/dummy.jpg') }}");
-	background-position: center center;
-	background-size: cover;
-}
-</style>
-
 <body>
 	<nav class="navbar welcome-navbar">
 		<div class="col-sm-4">
@@ -50,28 +32,30 @@ body {
 	      			<input type="text" class="form-control" placeholder="PORTUGUÊS">
 	      		</div>
 				<div class="col-sm-8">
-		      		<div class="col-sm-6">
-						<label class="control-label">FAZER LOGIN</label>
-		      			<div class="input-wrapper">
-		      				<input type="text" class="form-control" placeholder="E-MAIL">
-		      			</div>
-		      			<div class="checkbox">
-							<label>
-								<input type="checkbox" name="remember"> Mantenha-me logado
-							</label>
-						</div>
-		      		</div>
-		      		<div class="col-sm-6 input-group">
-						<label class="control-label">&nbsp;</label>
-		      			<div class="input-wrapper input-group">
-				      		<input type="text" class="form-control" placeholder="SENHA">
-				      		<span class="input-group-btn">
-				      		  	<button class="btn-default btn loginbtn" type="button">OK</button>
-				      		</span>
-		      			</div>
-						<a class="forgot-password" href="{{ url('/password/email') }}">Esqueceu a senha?</a>
-
-		      		</div>
+					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			      		<div class="col-sm-6">
+							<label class="control-label">FAZER LOGIN</label>
+			      			<div class="input-wrapper">
+			      				<input type="email" class="form-control" placeholder="E-MAIL" name="email" value="{{ old('email') }}">
+			      			</div>
+			      			<div class="checkbox">
+								<label>
+									<input type="checkbox" name="remember"> Mantenha-me logado
+								</label>
+							</div>
+			      		</div>
+			      		<div class="col-sm-6 input-group">
+							<label class="control-label">&nbsp;</label>
+			      			<div class="input-wrapper input-group">
+					      		<input type="password" class="form-control" placeholder="SENHA" name="password">
+					      		<span class="input-group-btn">
+					      		  	<button class="btn-default btn loginbtn" type="submit">OK</button>
+					      		</span>
+			      			</div>
+							<a class="forgot-password" href="{{ url('/password/email') }}">Esqueceu a senha?</a>
+			      		</div>
+					</form>
 				</div>
 		</div>
 	</nav>
@@ -85,7 +69,7 @@ body {
 				<p>Faça trabalhos voluntários e desenvolva o Brasil.</p>
 			</div>
 
-			<div class="col-sm-6">
+			<div class="col-sm-5 welcome-right">
 				<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -93,7 +77,7 @@ body {
 						<div class="col-md-6">
 							<h3>CADASTRE-SE</h3>
 							<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
-								<i class="fa fa-facebook"></i> {{ trans('facebook.login') }}
+								<i class="fa fa-facebook"></i> {{ trans('acoes.fblogin') }}
 							</a>
 						</div>
 					</div>
@@ -118,29 +102,29 @@ body {
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="text" class="form-control" placeholder="DATA DE NASCIMENTO">
+		      				<input type="date" class="form-control" placeholder="DATA DE NASCIMENTO">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="text" class="form-control" placeholder="E-MAIL">
+		      				<input type="email" class="form-control" placeholder="E-MAIL">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="text" class="form-control" placeholder="CONFIRMAÇÃO DE E-MAIL">
+		      				<input type="email" class="form-control" placeholder="CONFIRMAÇÃO DE E-MAIL">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="text" class="form-control" placeholder="SENHA">
+		      				<input type="password" class="form-control" placeholder="SENHA">
 						</div>
 					</div>
 					
-					<p>Ao clicar em confirmar, você concirda com nossos Termos e Politica de Dados, incluindo nosso Uso de Cookies</p>
+					<p>Ao clicar em confirmar, você concorda com nossos Termos e Politica de Dados, incluindo nosso Uso de Cookies</p>
 					<a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
 					
 					<button type="submit" class="btn btn-default">CONFIRMAR</button>
