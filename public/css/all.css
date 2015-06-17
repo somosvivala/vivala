@@ -13431,14 +13431,6 @@ button.close {
 .lista-usuarios li {
   float: left;
 }
-.foto-user {
-  width: 100px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.foto-user img {
-  width: 100px;
-}
 #foto-perfil {
   max-width: 500px;
   position: relative;
@@ -13452,6 +13444,31 @@ button.close {
 body {
   background-color: #e2e2e2;
   font-size: 14px;
+}
+div.cover {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+.cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+.round {
+  border-radius: 50%;
+  overflow: hidden;
 }
 .suave {
   text-align: center;
@@ -13479,26 +13496,15 @@ h4.suave {
   margin-bottom: 0px;
   border: 0px solid transparent;
 }
-button.btn-suave {
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0.7em;
-  font-size: 1em;
-  background-color: #8ba6ac;
-  color: white;
-  font-weight: bold;
-  line-height: 1.5em;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border: 0px solid transparent;
+button.suave {
   padding: 0.2em 0.5em;
   cursor: pointer;
 }
-a.btn-suave {
+a.suave {
   padding: 0.2em 1em;
   text-decoration: none;
 }
-a.btn-suave:hover {
+a.suave:hover {
   color: black;
 }
 nav.menu-lateral {
@@ -13531,56 +13537,86 @@ nav.menu-lateral ul li a i {
   font-size: 1.2em;
   padding-top: 0.1em;
 }
-.foto-fundo {
+div.foto-fundo {
   background-size: cover;
   background-position: center center;
   text-align: center;
   color: white;
 }
-.foto-fundo.foto-header {
+.foto-header {
   width: 100%;
   height: 25em;
 }
-.foto-fundo.foto-header h2,
-.foto-fundo.foto-header h3 {
+.foto-header h2,
+.foto-header h3 {
   text-shadow: 0em 0em 0.2em black;
   display: block;
 }
-.foto-fundo.foto-header h2 {
+.foto-header h2 {
   padding-top: 3em;
   font-size: 3em;
   margin-top: 0;
 }
-.foto-fundo.foto-header h3 {
+.foto-header h3 {
   font-size: 1em;
 }
-.foto-fundo.foto-header div {
+.foto-header div {
   margin: 2em auto;
 }
-div.foto-fundo a {
-  color: white;
-  text-decoration: none;
+.foto-link {
+  overflow: hidden;
 }
-div.foto-fundo a h4 {
+.foto-link a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: white;
+}
+.foto-link a h4 {
   font-size: 2em;
   font-weight: bold;
   padding: 4em 0;
+  margin: 0;
 }
-div.foto-fundo a:hover {
-  color: black;
+.foto-link a > .cover {
+  transition: all 1s ease;
+  background-color: black;
 }
-.secao-sem-bg h3 {
+.foto-link a > .cover img {
+  transition: all 1s ease;
+}
+.foto-link a:hover > .cover {
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+}
+.foto-link a:hover > .cover img {
+  opacity: 0.5;
+}
+h3.subtitulo {
   text-transform: uppercase;
   color: black;
   font-weight: bold;
 }
-.foto-bg {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  background-size: cover;
-  background-position: center center;
-  border-radius: 50%;
+.foto-comentario {
+  width: 94%;
+  margin: 3%;
+  height: 6em;
+  position: absolute;
+  top: 0px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.foto-comentario .foto {
+  width: 5em;
+  height: 5em;
+  position: relative;
+  margin: .5em auto;
+}
+.foto-comentario .foto .cover {
+  z-index: 0;
 }
 ul.sugestoes {
   padding: 1em 0px 2em;
@@ -13600,9 +13636,14 @@ ul.sugestoes li a div {
   /* Remove o padding das class col-* do bootstrap */
   padding: 0px;
 }
-ul.sugestoes li a .foto-bg {
+ul.sugestoes li a .foto {
   width: 7em;
   height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+ul.sugestoes li a .foto .cover {
+  z-index: 0;
 }
 ul.sugestoes li a strong {
   font-weight: bold;
@@ -13623,6 +13664,7 @@ ul.sugestoes-empresas button {
   position: absolute;
   right: 0px;
   top: 0.7em;
+  z-index: 1;
 }
 ul.sugestoes-pacotes button {
   font-size: 10px;
@@ -13722,14 +13764,6 @@ nav.menu-top .menu-direita ul li a img {
 }
 .lista-usuarios li {
   float: left;
-}
-.foto-user {
-  width: 100px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.foto-user img {
-  width: 100px;
 }
 #foto-perfil {
   max-width: 500px;
@@ -13981,14 +14015,6 @@ div.welcome-content input {
 .lista-usuarios li {
   float: left;
 }
-.foto-user {
-  width: 100px;
-  border-radius: 50px;
-  overflow: hidden;
-}
-.foto-user img {
-  width: 100px;
-}
 #foto-perfil {
   max-width: 500px;
   position: relative;
@@ -13996,4 +14022,106 @@ div.welcome-content input {
 }
 
 /*# sourceMappingURL=user.css.map */
+nav.welcome-navbar {
+  height: 100px;
+  background-color: rgba(241, 111, 43, 0.5);
+  padding: 10px;
+}
+nav.welcome-navbar a.navbar-brand {
+  font-size: 45px;
+  color: white;
+  line-height: 35px;
+}
+nav.welcome-navbar a.forgot-password {
+  color: white;
+  line-height: 28px;
+  font-size: 13px;
+}
+nav.welcome-navbar label {
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: bold;
+}
+nav.welcome-navbar input,
+nav.welcome-navbar button.loginbtn {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+nav.welcome-navbar div.checkbox {
+  margin-top: 5px;
+}
+nav.welcome-navbar div.checkbox > label {
+  font-weight: 100;
+  text-transform: none;
+  font-size: 13px;
+}
+nav.welcome-navbar ::-webkit-input-placeholder {
+  color: white;
+}
+nav.welcome-navbar :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+nav.welcome-navbar ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+nav.welcome-navbar :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content ::-webkit-input-placeholder {
+  color: white;
+}
+div.welcome-content :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+div.welcome-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+div.welcome-content :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content h2 {
+  color: white;
+  font-size: 36px;
+  line-height: 36px;
+}
+div.welcome-content p {
+  color: white;
+  font-size: 14px;
+}
+div.welcome-content .welcome-left {
+  margin-top: 50px;
+}
+div.welcome-content a.anchor-tour {
+  text-decoration: underline;
+  color: white;
+  font-size: 13px;
+}
+div.welcome-content button[type='submit'] {
+  margin-left: 15px;
+  background-color: white;
+  color: #f16f2b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+div.welcome-content input {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0px;
+  border-radius: 0px;
+}
+
+/*# sourceMappingURL=welcome.css.map */
 /*# sourceMappingURL=all.css.map */
