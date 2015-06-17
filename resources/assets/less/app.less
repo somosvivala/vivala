@@ -188,8 +188,26 @@ div.foto-fundo {
 			padding: 4em 0;
 			margin: 0;
 		}
+		> .cover {
+			transition: all 1s ease;
+			img {
+				transition: all 1s ease;
+			}
+			// Seta como preto pra que quando a opacidade da imagem diminuir parecer que escurece
+			background-color: black;
+		}
 		&:hover {
-			color: @cor-txt-link-hover;
+			//color: @cor-txt-link-hover;
+			// zoom na imagem (aumentando a porcentagem do div container) 
+			> .cover {
+				width:300%;
+				height:300%;
+				top: -100%;
+				left: -100%;
+				img {
+					opacity: 0.5;
+				}
+			}
 		}
 	}
 }
@@ -203,15 +221,22 @@ h3.subtitulo {
 
 // Comentario dentro do link com foto
 .foto-comentario {
+	width: 94%;
+	margin: 3%;
 	height: 6em;
 	position:absolute;
 	top:0px;
 	color: @cor-foto-comentario-txt;
 	background-color: rgba(255,255,255,0.5);
-	.cover {
-		width:5em;
-		height:5em;
-		margin:0.5em;
+	.foto {
+		width: 5em;
+		height: 5em;
+		position: relative;
+		margin: .5em auto;
+		.cover {
+			// Reseta o z-index pra 0 (nos links grandes fica como -1)
+			z-index: 0;
+		}
 	}
 }
 

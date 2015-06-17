@@ -55,7 +55,11 @@
 				<h4>Brasília</h4>
 				<div class="foto-comentario">
 					<div class="col-sm-5">
-						<div class="foto-bg round" style="background-image:url('/img/dummy.jpg');"></div>
+						<div class="round foto">
+							<div class="cover">
+								<img src="/img/dummy.jpg">
+							</div>
+						</div>
 					</div>
 					<div class="col-sm-7">
 						Uma viagem para entrar em contato com a cultura local
@@ -65,22 +69,46 @@
 		</div>
 	</div>
 	<div class="col-sm-4">
-		<div class="foto-fundo">
+		<div class="foto-link">
 			<a href="/rio">
 				<div class="cover">
 					<img src="/img/dummy.jpg">
 				</div>
 				<h4>Brasília</h4>
+				<div class="foto-comentario">
+					<div class="col-sm-5">
+						<div class="round foto">
+							<div class="cover">
+								<img src="/img/dummy.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						Uma viagem para entrar em contato com a cultura local
+					</div>
+				</div>
 			</a>
 		</div>
 	</div>
 	<div class="col-sm-4">
-		<div class="foto-fundo">
+		<div class="foto-link">
 			<a href="/rio">
 				<div class="cover">
 					<img src="/img/dummy.jpg">
 				</div>
 				<h4>Brasília</h4>
+				<div class="foto-comentario">
+					<div class="col-sm-5">
+						<div class="round foto">
+							<div class="cover">
+								<img src="/img/dummy.jpg">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-7">
+						Uma viagem para entrar em contato com a cultura local
+					</div>
+				</div>
 			</a>
 		</div>
 	</div>
