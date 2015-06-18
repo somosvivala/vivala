@@ -58,7 +58,8 @@ nav.welcome-navbar {
 	}
 
 	div.checkbox {
-		margin-top: 5px;
+		margin-top: 0px;
+		padding-top: 3px;
 		> label {
 			font-weight: 100;
 			text-transform: none;
@@ -109,7 +110,7 @@ div.welcome-content {
 	
 	h3 {
 		color: @cor-placeholder-inputs;
-		font-size: 32px;
+		font-size: 28px;
 		line-height: 32px;
 	}
 
@@ -127,6 +128,12 @@ div.welcome-content {
 
 	.welcome-right {
 		margin-left: 8%;
+		float: right;
+
+		.col-sm-6, .col-sm-12 {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
 	}
 
 	a.anchor-tour {

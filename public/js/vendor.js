@@ -11566,4 +11566,10 @@ $(function(){
   };
 
 });
+$(function() {
+  $('.datepicker').click(function(event) {
+	alert("escutei");	
+  });
+
+});
 //# sourceMappingURL=vendor.js.map

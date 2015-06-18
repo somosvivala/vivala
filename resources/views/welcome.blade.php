@@ -28,14 +28,14 @@
 		</div>
 		<div class="col-sm-8">
 	      		<div class="col-sm-3">
-					<label class="control-label">IDIOMA</label>
-	      			<input type="text" class="form-control" placeholder="PORTUGUÊS">
+					<label for='idioma'>IDIOMA</label>
+	      			<input type="text" class="form-control" name='idioma' placeholder="PORTUGUÊS">
 	      		</div>
 				<div class="col-sm-8">
 					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			      		<div class="col-sm-6">
-							<label class="control-label">FAZER LOGIN</label>
+							<label for='email'>FAZER LOGIN</label>
 			      			<div class="input-wrapper">
 			      				<input type="email" class="form-control" placeholder="E-MAIL" name="email" value="{{ old('email') }}">
 			      			</div>
@@ -46,7 +46,7 @@
 							</div>
 			      		</div>
 			      		<div class="col-sm-6 input-group">
-							<label class="control-label">&nbsp;</label>
+							<label>&nbsp;</label>
 			      			<div class="input-wrapper input-group">
 					      		<input type="password" class="form-control" placeholder="SENHA" name="password">
 					      		<span class="input-group-btn">
@@ -70,7 +70,7 @@
 			</div>
 
 			<div class="col-sm-5 welcome-right">
-				<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
+				<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 					<div class="form-group">
@@ -82,12 +82,28 @@
 						</div>
 					</div>
 
+					<div class="panel panel-default">
+						<div class="panel-heading">Register</div>
+						<div class="panel-body">
+							@if (count($errors) > 0)
+								<div class="alert alert-danger">
+									<strong>Whoops!</strong> There were some problems with your input.<br><br>
+									<ul>
+										@foreach ($errors->all() as $error)
+											<li>{{ $error }}</li>
+										@endforeach
+									</ul>
+								</div>
+							@endif
+						</div>
+					</div>
+
 					<div class="form-group">
 						<div class="col-sm-6">
-		      				<input type="text" class="form-control" placeholder="NOME">
+		      				<input type="text" class="form-control" name='username' placeholder="NOME">
 						</div>						
 						<div class="col-sm-6">
-		      				<input type="text" class="form-control" placeholder="SOBRENOME">
+		      				<input type="text" class="form-control" name='username_last' placeholder="SOBRENOME">
 						</div>
 					</div>
 
@@ -102,38 +118,39 @@
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="date" class="form-control" placeholder="DATA DE NASCIMENTO">
+		      				<input type="text" class="datepicker form-control" placeholder="DATA DE NASCIMENTO" data-date-format="mm/dd/yyyy">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="email" class="form-control" placeholder="E-MAIL">
+		      				<input type="email" class="form-control" name='email' placeholder="E-MAIL">
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="email" class="form-control" placeholder="CONFIRMAÇÃO DE E-MAIL">
+		      				<input type="email" class="form-control" name='email_confirmation' placeholder="CONFIRMAÇÃO DE E-MAIL" autocomplete="off">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="password" class="form-control" placeholder="SENHA">
+		      				<input type="password" class="form-control" name='password' placeholder="SENHA" autocomplete="off">
 						</div>
 					</div>
 					
-					<p>Ao clicar em confirmar, você concorda com nossos Termos e Politica de Dados, incluindo nosso Uso de Cookies</p>
+					<p>Ao clicar em confirmar, você concorda com nossos Termos e Política de Dados, incluindo nosso Uso de Cookies.</p>
 					<a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
 					
 					<button type="submit" class="btn btn-default">CONFIRMAR</button>
 
 				</form>
-
 			</div>
 		</div>
 	</div>
 
+	<!-- Scripts -->
+	<script src="{{ asset('/js/vendor.js') }}"></script>
 </body>
 </html>
