@@ -4,7 +4,7 @@
 <ul class="sugestoes sugestoes-empresas">
 	<li>
 		<a href="/home">
-			<button type="button" class="suave">seguir</button>
+			<button type="button">seguir</button>
 			<div class="round foto">
 				<div class="cover">
 					<img src="/img/dummy.jpg">
@@ -23,7 +23,7 @@
 	</li>
 	<li>
 		<a href="/home">
-			<button type="button" class="suave">seguir</button>
+			<button type="button" class="suave">seguindo</button>
 			<div class="round foto">
 				<div class="cover">
 					<img src="/img/dummy.jpg">
@@ -42,7 +42,7 @@
 	</li>
 	<li>
 		<a href="/home">
-			<button type="button" class="suave">seguir</button>
+			<button type="button" class="">seguir</button>
 			<div class="round foto">
 				<div class="cover">
 					<img src="/img/dummy.jpg">

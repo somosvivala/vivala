@@ -6564,6 +6564,7 @@ button.suave {
 a.suave {
   padding: 0.2em 1em;
   text-decoration: none;
+  cursor: pointer;
 }
 a.suave:hover {
   color: black;
@@ -6720,12 +6721,25 @@ ul.sugestoes-empresas button {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 0.9em;
   padding: 0.35em 0.5em;
   position: absolute;
   right: 0px;
   top: 0.7em;
   z-index: 1;
+}
+ul.sugestoes-empresas button.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-weight: bold;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
 }
 ul.sugestoes-pacotes button {
   font-size: 10px;

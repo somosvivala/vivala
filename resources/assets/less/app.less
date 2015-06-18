@@ -106,6 +106,7 @@ button.suave {
 a.suave {
 	padding: 0.2em 1em;
 	text-decoration: none;
+	cursor: pointer;
 	&:hover {
 		color: @cor-txt-suave-hover;
 	}
@@ -169,7 +170,6 @@ div.foto-fundo {
 	}
 	div {
 		margin: 2em auto;
-
 	}
 }
 
@@ -283,12 +283,16 @@ ul.sugestoes-empresas {
 		color: @cor-sugestao-botao-txt;
 		text-transform: uppercase;
 		font-weight: bold;
-		font-size: 0.9em;
 		padding: 0.35em 0.5em;
 		position: absolute;
 		right:0px;
 		top: 0.7em;
 		z-index: 1; // Coloca o botão por cima
+		&.suave {
+			.suave();	// Sobrescreve o bg de cima, pra evitar !important
+			padding: 0.35em 0.5em;
+		}
+
 	}
 }
 ul.sugestoes-pacotes {
