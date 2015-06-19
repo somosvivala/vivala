@@ -157,37 +157,33 @@ class PerfilController extends Controller {
 	 * @return ??
 	 */
 	public function cropPhoto($id, CropPhotoRequest $request) {
-		dd($request);
-		/*
-		$targ_w = $targ_h = 150;
-		$jpeg_quality = 90;
 
-		$src = 'demo_files/pool.jpg';
-		$img_r = imagecreatefromjpeg($src);
-		$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
-
-		imagecopyresampled($dst_r,$img_r,0,0,$_POST['x'],$_POST['y'],
-		$targ_w,$targ_h,$_POST['w'],$_POST['h']);
-
-		header('Content-type: image/jpeg');
-		imagejpeg($dst_r,null,$jpeg_quality);
-*/
-/*
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
 
-		//Salvando imagem no avatar do usuario;
-		$file = Input::file('file');
-	    if ($file) {
+		$file = Input::file('image_file_upload');
+	    if ($file->isValid()) {
+	       
+			$widthCrop = $request->input('w');
+			$heightCrop = $request->input('h');
+			$xSuperior = $request->input('x');
+			$ySuperior = $request->input('y');
 
-	        $destinationPath = public_path() . '/uploads/';
-	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
-	        $upload_success = $file->move($destinationPath, $filename);
+			$destinationPath = public_path() . '/uploads/';
+			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
+			$fileName = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension; 
 
+			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
+	        $upload_success = $file->save($destinationPath.$fileName);
+
+			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
-	        	$user->update(['avatar' => $filename]);
+	        	$user->update(['avatar' => $fileName]);
+	      		
+	      		return redirect('editarPerfil');
+
 	        }
-	    }*/	
+	    }
 	}
 
 

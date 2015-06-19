@@ -22,7 +22,8 @@ class EditarPerfilRequest extends Request {
 	public function rules()
 	{
 		return [
-			"username" => "required|min:2"		
+			"username" 				=> "required|min:2"	,
+			"image_file_upload"    	=> 'mimes:png,jpg'	
 		];
 	}
 

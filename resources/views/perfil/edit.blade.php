@@ -3,27 +3,35 @@
 
 @section('content')
 	<div class="container-fluid">
-	<div class="col-md-6">
+	<div class="col-md-12">
 	<div class="panel panel-default">
 		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
 		<div class="panel-body">
 
-			<div class="row col-sm-12"> 
-				<img src="{{ $user->avatar }}" id="foto-perfil">
-			</div>
 
 			<!-- Adiciona um formulario pra upload de foto-->
-			<div class="jc_coords">
-			{!! Form::open(['url' => ['cropPhoto',  $user->id ], 'files'=>true]) !!}
+			<div class="jc_coords row col-sm-12">
 
-				{!! Form::hidden("x",  0) !!} 	
-				{!! Form::hidden("y",  0) !!} 	
-				{!! Form::hidden("w",  0) !!} 	
-				{!! Form::hidden("h",  0) !!} 	
-				{!! Form::submit("Recortar Imagem", ['class' => 'btn btn-primary']) !!}
-			{!! Form::close() !!}
+				{!! Form::open(['url' => ['cropPhoto',  $user->id ], 'files' => true, 'onsubmit' => 'verificaRecorteImagem(this);']) !!}
 
+					{!! Form::label("image_file_upload", "Escolha outra imagem:") !!}
+					{!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}
+
+					{!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!} 	
+					{!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!} 	
+					{!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!} 	
+					{!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!} 	
+
+					<div class="erros">
+					</div>
+					{!! Form::submit("Recortar Imagem", ['class' => 'btn btn-primary']) !!}
+				<img id="preview" />
 			</div>
+				{!! Form::close() !!}
+			<div class="row col-sm-12" id="foto-atual-display"> 
+				<img src="{{ $user->avatar }}" id="foto-perfil">
+			</div>
+			
 
 			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
 			

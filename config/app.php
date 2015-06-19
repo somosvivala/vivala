@@ -148,7 +148,8 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
-		'Orangehill\Iseed\IseedServiceProvider'
+		'Orangehill\Iseed\IseedServiceProvider',
+		'Intervention\Image\ImageServiceProvider'
 	],
 
 	/*
@@ -199,7 +200,7 @@ return [
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
-
+		'Image' 	=> 'Intervention\Image\Facades\Image'
 	],
 
 ];
