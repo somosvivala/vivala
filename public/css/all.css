@@ -6956,9 +6956,19 @@ nav.menu-top .menu-direita ul li a img {
 }
 
 /*# sourceMappingURL=user.css.map */
+#welcome-html {
+  position: relative;
+  min-height: 100%;
+}
+#welcome-html body {
+  overflow: hidden;
+  background-image: url("../../img/dummy.jpg");
+  background-position: center center;
+  background-size: cover;
+}
 nav.welcome-navbar {
   height: 100px;
-  background-color: rgba(241, 111, 43, 0.5);
+  background-color: rgba(241, 111, 43, 0.45);
   padding: 10px;
 }
 nav.welcome-navbar a.navbar-brand {
@@ -6987,7 +6997,8 @@ nav.welcome-navbar button.loginbtn {
   border-radius: 0px;
 }
 nav.welcome-navbar div.checkbox {
-  margin-top: 5px;
+  margin-top: 0px;
+  padding-top: 3px;
 }
 nav.welcome-navbar div.checkbox > label {
   font-weight: 100;
@@ -7024,8 +7035,14 @@ div.welcome-content :-ms-input-placeholder {
 }
 div.welcome-content h2 {
   color: white;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 38px;
+  line-height: 42px;
+  margin-bottom: 30px;
+}
+div.welcome-content h3 {
+  color: white;
+  font-size: 28px;
+  line-height: 32px;
 }
 div.welcome-content p {
   color: white;
@@ -7033,6 +7050,15 @@ div.welcome-content p {
 }
 div.welcome-content .welcome-left {
   margin-top: 50px;
+}
+div.welcome-content .welcome-right {
+  margin-left: 8%;
+  float: right;
+}
+div.welcome-content .welcome-right .col-sm-6,
+div.welcome-content .welcome-right .col-sm-12 {
+  padding-left: 8px;
+  padding-right: 8px;
 }
 div.welcome-content a.anchor-tour {
   text-decoration: underline;
@@ -7055,6 +7081,7 @@ div.welcome-content input {
   background-color: rgba(255, 255, 255, 0.25);
   border: 0px;
   border-radius: 0px;
+  padding: 21px 12px;
 }
 
 /*# sourceMappingURL=welcome.css.map */

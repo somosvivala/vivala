@@ -11,5 +11,6 @@ return [
     |
     */
 
-    'visualizarperfil' => 'Profile'
+    'visualizarperfil' => 'Profile',
+    'fblogin' => 'Conecte-se via Facebook'
 ];

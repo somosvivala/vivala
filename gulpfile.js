@@ -15,7 +15,8 @@ elixir(function(mix) {
     mix.less([
         'app.less',
         'user.less',
-        'welcome.less'
+        'welcome.less',
+        '../../assets/bower/bootstrap/less/bootstrap.less'
     ], 'resources/assets/css/');
 
     mix.styles([
@@ -26,6 +27,7 @@ elixir(function(mix) {
 	    '../../assets/bower/jquery/dist/jquery.js',
 	    '../../assets/bower/bootstrap/dist/js/bootstrap.js',
 	    '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
-	    '../../assets/js/edicaofotoperfil.js'
+        '../../assets/js/edicaofotoperfil.js',
+	    '../../assets/js/welcome.js'
 	], 'public/js/vendor.js');	
 });

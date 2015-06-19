@@ -2,6 +2,8 @@
 
 use App\User;
 use App\Perfil;
+use App\PrettyUrl;
+use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
@@ -18,7 +20,7 @@ class Registrar implements RegistrarContract {
 		return Validator::make($data, [
 			'username' => 'required|max:255',
 			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|confirmed|min:6',
+			'password' => 'required|min:6',
 		]);
 	}
 
@@ -39,6 +41,15 @@ class Registrar implements RegistrarContract {
 	 	$perfil = new Perfil;
         $perfil->user_id = $user->id;
         $perfil->save();
+
+        /**
+         * Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
+         */
+        $prettyUrl = new PrettyUrl();
+        $prettyUrl->url = $user->username . '_' . Carbon::now()->getTimestamp();
+        $prettyUrl->tipo = 'usuario';
+        
+        $perfil->prettyUrl()->save($prettyUrl);
 
 		return $user;
 	}
