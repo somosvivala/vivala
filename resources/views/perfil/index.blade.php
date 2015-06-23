@@ -1,24 +1,44 @@
 @extends('app')
 
+@section('barra-topo')
 
-@section('content')
-	<h1 class="perfil-title">
-		<div class="foto-perfil">
-			<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="">
-				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
-			</a>
-		</div>
+<div class="row infos-topo">
+	<div class="col-md-1">
+		&nbsp;
+	</div>
+	<div class="col-md-4">
+		<h1 class="perfil-title">{{ $user->username }}
 
-		Perfil de: {{ $user->username }}
 		@if (Auth::user()->id == $user->id) 
 			<a href="/editarPerfil">
 				<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
 			</a>
 		@endif
-	</h1>
+		</h1>
+		<p>Diretora de criação.Ama tudo que é visual, gosta de viajar para entrar em contato com a energia de cada lugar. Curte fotografar pessoas, sem ser vista! </p>
+	</div>
+	<div class="col-md-2">
+		<div class="foto-perfil">
+			<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="">
+				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
+			</a>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<ul>
+		<li>10k seguidores</li>
+		<li>679 seguindo</li>
+		<li>Viajante</li>
+		</ul>
+	</div>
+	<div class="col-md-1">
+	</div>
+	
+</div>
+@endsection
 
+@section('content')
 
-	{{-- nao sabia que tinha comentario do laravel--}}
 	{{-- Infos do perfil até agora--}}
 	@if (isset($perfil))
 		<h2> Informações do Perfil</h2>

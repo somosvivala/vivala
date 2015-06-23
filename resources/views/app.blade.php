@@ -21,30 +21,13 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<style>
-/* Sticky footer styles
--------------------------------------------------- */
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-}
 
-</style>
 <body>
 	<nav class="navbar navbar-default menu-top">
 		@include('header')
 	</nav>
+	{{-- Seção do topo com infos (a principio só do usuario) --}}
+	@yield('barra-topo')
 
 	<nav class="col-sm-3 col-md-2 left-panel">
 		@include('menulateral')
