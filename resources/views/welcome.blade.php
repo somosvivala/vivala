@@ -29,33 +29,31 @@
 		<div class="col-sm-8">
 	      		<div class="col-sm-3">
 					<label for='idioma'>IDIOMA</label>
-	      			<input type="text" class="form-control" name='idioma' placeholder="PORTUGUÊS">
+	      			<div class="input-wrapper select-wrapper">
+	      				{!! Form::select('idioma', array('pt' => 'PORTUGUÊS', 'en' => 'INGLÊS')) !!}
+	      			</div>
 	      		</div>
 				<div class="col-sm-8">
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			      		<div class="col-sm-6">
-							<label for='email'>FAZER LOGIN</label>
+
+					<!-- Adiciona a abertura do Form -->
+					{!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal']) !!}
+							{!! Form::label('email', 'FAZER LOGIN') !!}
 			      			<div class="input-wrapper">
-			      				<input type="email" class="form-control" placeholder="E-MAIL" name="email" value="{{ old('email') }}">
+								{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => 'E-MAIL']) !!}
+			      			</div>
+			      			<div class="input-wrapper input-group">
+		      		  			{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
+					      		<span class="input-group-btn">
+			      		  			{!! Form::submit("OK", ['class' => 'btn-default btn loginbtn']) !!}
+					      		</span>
 			      			</div>
 			      			<div class="checkbox">
 								<label>
 									<input type="checkbox" name="remember"> Mantenha-me logado
 								</label>
 							</div>
-			      		</div>
-			      		<div class="col-sm-6 input-group">
-							<label>&nbsp;</label>
-			      			<div class="input-wrapper input-group">
-					      		<input type="password" class="form-control" placeholder="SENHA" name="password">
-					      		<span class="input-group-btn">
-					      		  	<button class="btn-default btn loginbtn" type="submit">OK</button>
-					      		</span>
-			      			</div>
 							<a class="forgot-password" href="{{ url('/password/email') }}">Esqueceu a senha?</a>
-			      		</div>
-					</form>
+					{!! Form::close() !!}
 				</div>
 		</div>
 	</nav>
@@ -70,8 +68,8 @@
 			</div>
 
 			<div class="col-sm-5 welcome-right">
-				<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/register') }}">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<!-- Adiciona a abertura do Form -->
+				{!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
 
 					<div class="form-group">
 						<div class="col-md-6">
@@ -82,10 +80,10 @@
 						</div>
 					</div>
 
-					<div class="panel panel-default">
-						<div class="panel-heading">Register</div>
-						<div class="panel-body">
-							@if (count($errors) > 0)
+					@if (count($errors) > 0)
+						<div class="panel panel-default">
+							<div class="panel-heading">Register</div>
+							<div class="panel-body">
 								<div class="alert alert-danger">
 									<strong>Whoops!</strong> There were some problems with your input.<br><br>
 									<ul>
@@ -94,16 +92,19 @@
 										@endforeach
 									</ul>
 								</div>
-							@endif
+							</div>
 						</div>
-					</div>
+					@endif		
+
 
 					<div class="form-group">
 						<div class="col-sm-6">
-		      				<input type="text" class="form-control" name='username' placeholder="NOME">
+		      				<!-- Adiciona um text field para o form-->
+							{!! Form::text("username", null, ['class' => 'form-control', 'placeholder' => 'NOME']) !!}
 						</div>						
 						<div class="col-sm-6">
-		      				<input type="text" class="form-control" name='username_last' placeholder="SOBRENOME">
+		      				<!-- Adiciona um text field para o form-->
+							{!! Form::text("username_last", null, ['class' => 'form-control', 'placeholder' => 'SOBRENOME']) !!}		      				
 						</div>
 					</div>
 
@@ -124,28 +125,28 @@
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="email" class="form-control" name='email' placeholder="E-MAIL">
+							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => 'E-MAIL']) !!}
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="email" class="form-control" name='email_confirmation' placeholder="CONFIRMAÇÃO DE E-MAIL" autocomplete="off">
+							{!! Form::email("email_confirmation", old('email'), ['class' => 'form-control', 'placeholder' => 'CONFIRMAÇÃO DE E-MAIL']) !!}
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="password" class="form-control" name='password' placeholder="SENHA" autocomplete="off">
+		      				{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
 						</div>
 					</div>
 					
 					<p>Ao clicar em confirmar, você concorda com nossos Termos e Política de Dados, incluindo nosso Uso de Cookies.</p>
 					<a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
 					
-					<button type="submit" class="btn btn-default">CONFIRMAR</button>
+					{!!Form::submit("CONFIRMAR", ['class' => 'btn btn-default']) !!}
 
-				</form>
+				{!! Form::close() !!}
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,3 @@
 $(function() {
-  $('.datepicker').click(function(event) {
-	alert("escutei");	
-  });
-
+  $('.datepicker').datepicker();
 });
