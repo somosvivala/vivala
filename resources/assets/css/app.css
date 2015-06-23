@@ -6823,6 +6823,10 @@ nav.menu-top .menu-direita ul li a img {
   width: 45px;
   border-radius: 50%;
 }
+.infos-topo {
+  background-color: #333131;
+  color: white;
+}
 
 .foto-perfil {
   width: 200px;
