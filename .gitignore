@@ -4,3 +4,5 @@
 .env
 npm-debug.log
 composer.lock
+config/app.php
+public/.htaccess
