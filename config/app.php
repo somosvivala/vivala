@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://dev.vivalabrasil.com.br',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', 'kq9IsxSWa4Slae98Dzh8f1G3kOmSYQoi'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 

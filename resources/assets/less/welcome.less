@@ -29,9 +29,44 @@ nav.welcome-navbar {
 
 		&.forgot-password {
 			color: white;
-			line-height: 28px;
+			line-height: 33px;
 			font-size: 13px;
+			margin-left: 20px;
 		}
+	}
+
+	.input-wrapper {
+		  margin-top: 0px;
+		  padding-top: 5px;
+		  float: left;
+		  width: 48%;
+
+		  &.input-group {
+		  	padding-left: 20px;
+		  }
+
+		  &.select-wrapper {
+		  	width: 100%;
+
+		  	select {
+		  		width: 100%;
+		  		height: 35px;
+		  		font-weight: bold;
+		  		background-color: transparent;
+		  		border: 1px solid @cor-placeholder-inputs;		
+		  		color: @cor-placeholder-inputs;
+				
+				&:focus {
+			  		border: 1px solid @cor-placeholder-inputs;		
+				}
+
+		  		option {
+		  			background-color: rgba(255,255,255,0);
+		  			border: 1px solid @cor-placeholder-inputs;		
+
+		  		}
+		  	}
+		  }
 	}
 
 	label {
@@ -39,6 +74,7 @@ nav.welcome-navbar {
 		text-transform: uppercase;
 		background-color: transparent;
 		font-weight: bold;
+		width: 100%;
 	}
 
 	input, button.loginbtn {
@@ -48,6 +84,10 @@ nav.welcome-navbar {
 		background-color: transparent;	
 		border: 1px solid @cor-placeholder-inputs;
 		border-radius: 0px;
+		
+		&:focus {
+	  		border: 1px solid @cor-placeholder-inputs;		
+		}
 
 		// &:-webkit-autofill {
 		// 	-webkit-box-shadow: 0 0 0px 1000px transparent inset!important;
@@ -58,8 +98,10 @@ nav.welcome-navbar {
 	}
 
 	div.checkbox {
-		margin-top: 0px;
-		padding-top: 3px;
+		  margin-top: 0px;
+		  padding-top: 5px;
+		  float: left;
+		  width: 48%;
 		> label {
 			font-weight: 100;
 			text-transform: none;
@@ -114,9 +156,6 @@ div.welcome-content {
 		line-height: 32px;
 	}
 
-
-
-
 	p {
 		color: @cor-placeholder-inputs;
 		font-size: 14px;
@@ -142,16 +181,6 @@ div.welcome-content {
 		font-size: 13px;
 	}
 
-	button[type='submit'] {
-		margin-left: 15px;
-		background-color: white;
-		color: @cor-texto-btn-login;
-		font-weight: bold;
-		text-transform: uppercase;
-		border: 1px solid white;
-		border-radius: 0px;
-	}
-
 	input {
 		font-weight: bold;
 		color: @cor-placeholder-inputs;
@@ -160,7 +189,20 @@ div.welcome-content {
 		border: 0px;
 		border-radius: 0px;
 		padding: 21px 12px;
+
+		&:focus {
+	  		border: 1px solid @cor-placeholder-inputs;		
+		}
+	
+		&[type='submit'] {
+			margin-left: 15px;
+			background-color: white;
+			color: @cor-texto-btn-login;
+			font-weight: bold;
+			text-transform: uppercase;
+			border: 1px solid white;
+			border-radius: 0px;
+			padding: 10px 12px;
+		}
 	}
-
-
 }
