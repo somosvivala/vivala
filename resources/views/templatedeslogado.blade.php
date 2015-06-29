@@ -23,31 +23,13 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-default menu-top">
-		@include('header')
-	</nav>
-	{{-- Seção do topo com infos (a principio só do usuario) --}}
-	@yield('barra-topo')
 
-	<nav class="col-sm-3 col-md-2 left-panel">
-		@include('menulateral')
-	</nav>
-
-	<nav class="col-sm-6 col-md-8">
+	<nav class="col-sm-12 col-md-12">
 		@yield('content')
 	</nav>
 
-	<nav class="col-sm-3 col-md-2 right-panel">
-		@include('sugestoes')
-  	</nav>
-
-  	<footer class="footer">
-		@include('footer')
-    </footer>
 	<!-- Scripts -->
 	<script src="{{ asset('/js/vendor.js') }}"></script>
 
-	<!-- Iubenda (link de Privacy Policy) -->
-	<!-- <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> -->
 </body>
 </html>
