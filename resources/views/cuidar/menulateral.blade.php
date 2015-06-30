@@ -1,15 +1,22 @@
 <h4 class="suave">
-	Você está em:<br>
-	Quero Viajar!
+	Conheça ONGs super legais!
 </h4>
 <nav class="menu-lateral">
 	<ul>
-		<li><a href="/home"><i class="fa fa-home"></i>Página Inicial</a></li>
-		<li><a href="/montarviagem"><i class="fa fa-binoculars"></i>Montar Viagem</a></li>
-		<li><a href="/verpacotes"><i class="fa fa-eye"></i>Ver Pacotes</a></li>
-		<li><a href="/verpacotes"><i class="fa fa-heart"></i>Meus Favoritos</a></li>
-		<li><a href="/verpacotes"><i class="fa fa-briefcase"></i>Minhas Compras</a></li>
-		<li><a href="/verpacotes"><i class="fa fa-star"></i>Meus Pontos</a></li>
-		<li><a href="/verpacotes"><i class="fa fa-search"></i>Buscas Recentes</a></li>
+		<li><a href="/home"><i class="fa fa-home"></i>Linha do tempo</a></li>
+		<li><a href="/montarviagem"><i class="fa fa-binoculars"></i>Perfil atuante</a></li>
+		<li><a href="/verpacotes"><i class="fa fa-eye"></i>Vagas</a></li>
+		<li><a href="/verpacotes"><i class="fa fa-heart"></i>Álbuns</a></li>
+	</ul>
+</nav>
+
+
+<h4 class="suave">
+	Conecte-se com os voluntários
+</h4>
+<nav class="menu-lateral">
+	<ul>
+		<li><a href="/home"><i class="fa fa-home"></i>Feed de notícias</a></li>
+		<li><a href="/montarviagem"><i class="fa fa-binoculars"></i>Chat</a></li>
 	</ul>
 </nav>

@@ -1,1 +1,3 @@
-Sugestões no marketplace
+@include('viajar.sugestoesempresas')
+
+@include('viajar.sugestoespacotes')

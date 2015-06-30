@@ -120,10 +120,12 @@ nav.menu-lateral {
 		margin: 0px;
 		padding-top: 1em;
 		padding-left: 1.6em;
+		display: inline-block;
 		li {
 			display: block;
 			float:left;
-			text-align: center;
+			width:100%;
+			text-align: left;
 			text-transform: uppercase;
 			a {
 				text-decoration: none;
@@ -295,7 +297,27 @@ ul.sugestoes-empresas {
 
 	}
 }
-ul.sugestoes-pacotes {
+ul.sugestoes-viajantes,
+ul.sugestoes-ongs {
+	button {
+		border: 0px solid transparent;
+		background-color: @cor-sugestao-botao-bg;
+		color: @cor-sugestao-botao-txt;
+		text-transform: uppercase;
+		font-weight: bold;
+		padding: 0.35em 0.5em;
+		position: absolute;
+		right:0px;
+		top: 0.7em;
+		z-index: 1; // Coloca o botão por cima
+		&.suave {
+			.suave();	// Sobrescreve o bg de cima, pra evitar !important
+			padding: 0.35em 0.5em;
+		}
+	}
+}
+ul.sugestoes-pacotes,
+ul.viagens-comentadas {
 	button {
 		font-size: 10px;
 	}

@@ -1,1 +1,3 @@
-Sugestões na ong
+@include('cuidar.sugestoesongs')
+
+@include('cuidar.ultimosposts')

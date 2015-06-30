@@ -1,3 +1,3 @@
-@include('conectar.sugestoesempresas')
+@include('conectar.sugestoesviajantes')
 
-@include('conectar.sugestoespacotes')
+@include('conectar.viagenscomentadas')
