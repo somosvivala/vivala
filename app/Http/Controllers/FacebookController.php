@@ -8,6 +8,8 @@ use Laravel\Socialite\Contracts\Factory as Socialite;
 use Auth;
 use App\User;
 use App\FacebookData;
+use App\PrettyUrl;
+use App\Perfil;
 
 class FacebookController extends Controller {
 
