@@ -37,7 +37,10 @@ class PerfilController extends Controller {
 		$follow = $perfil->follow;
 		$followedBy = $perfil->followedBy;
 
-		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
+		$empresas = $user->empresas;
+
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'))
+		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
 	}
 
 	/**

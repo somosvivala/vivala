@@ -1,3 +1,0 @@
-@include('sugestoesempresas')
-
-@include('sugestoespacotes')

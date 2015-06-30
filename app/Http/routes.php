@@ -48,7 +48,7 @@ Route::group(['before' => 'auth'], function() {
 /**
  * Aqui fica a rota que redireciona a prettyUrl para os Controllers
  */
-Route::get('{prettyURL}', function($prettyUrl=null) { 
+Route::get('{prettyURL}', function($prettyUrl=null) {
 	
 	if (!is_null($prettyUrl)) {
 		switch ($prettyUrl->prettyurlable_type) {

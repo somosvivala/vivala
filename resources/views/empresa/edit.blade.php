@@ -1,4 +1,4 @@
-@extends('app')
+@extends('viajar')
 
 @section('content')
   <h1>Edite a Empresa</h1>

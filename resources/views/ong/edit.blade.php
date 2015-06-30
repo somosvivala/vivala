@@ -1,4 +1,4 @@
-@extends('app')
+@extends('cuidar')
 
 @section('content')
   <h1>Edite a Ong</h1>

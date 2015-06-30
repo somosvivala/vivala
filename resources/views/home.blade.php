@@ -1,4 +1,4 @@
-@extends('app')
+@extends('conectar')
 
 @section('content')
 <div class="foto-fundo foto-header" style="background-image:url('/img/dummy.jpg');">

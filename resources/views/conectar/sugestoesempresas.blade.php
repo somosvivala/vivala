@@ -2,6 +2,13 @@
 	Empresas bacanas para seguir
 </h4>
 <ul class="sugestoes sugestoes-empresas">
+	@forelse($sugestoesEmpresas as $empresa)
+		<a href="{{ url($empresa->getUrl()) }}" title="{{ $empresa->nome }}">
+			<img src="{{ $empresa->nome }}" alt="{{ $empresa->nome  }}">
+		</a>
+	@empty
+	    <p>Nenhuma empresas.</p>
+	@endforelse
 	<li>
 		<a href="/home">
 			<button type="button">seguir</button>

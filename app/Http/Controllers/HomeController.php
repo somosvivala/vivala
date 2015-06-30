@@ -38,7 +38,9 @@ class HomeController extends Controller {
 		$ongs = $user->ongs;
 		$empresas = $user->empresas;
 
-		return view('home', compact('facebookData','perfil','ongs','empresas'));
+		return view('home', compact('facebookData','perfil','ongs','empresas'))
+		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
+		
 	}
 
 }

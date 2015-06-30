@@ -1,4 +1,4 @@
-@extends('app')
+@extends('templatedeslogado')
 
 @section('content')
 <div class="container-fluid">
