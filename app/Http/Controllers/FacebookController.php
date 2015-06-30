@@ -50,6 +50,21 @@ class FacebookController extends Controller {
 		$user->avatar = $userData->avatar;
 		$user->save();
 
+		$perfil = new Perfil;
+        $perfil->user_id = $user->id;
+        $perfil->save();
+
+        /**
+         * Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
+         */
+        $prettyUrl = new PrettyUrl();
+        $prettyUrl->url = $user->username . '_' . Carbon::now()->getTimestamp();
+        $prettyUrl->tipo = 'usuario';
+        
+        $perfil->prettyUrl()->save($prettyUrl);
+
+
+
 		//Atualiza a tabela de dados do Fb
 		$facebookData = $user->facebookData ? $user->facebookData : new FacebookData();
 
