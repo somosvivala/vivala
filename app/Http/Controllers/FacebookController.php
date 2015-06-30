@@ -9,6 +9,7 @@ use Auth;
 use App\User;
 use App\FacebookData;
 use App\PrettyUrl;
+use Carbon\Carbon;
 use App\Perfil;
 
 class FacebookController extends Controller {
