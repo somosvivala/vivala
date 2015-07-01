@@ -52,7 +52,7 @@
 			<!-- Adiciona txtfield para o aniversário do Perfil -->
 			<div class="form-group"> 
 				{!! Form::label("aniversario", "Data de Nascimento:") !!}
-				{!! Form::text("aniversario",  $perfil->aniversario , ['class' => 'form-control']) !!} 	
+				{!! Form::text("aniversario",  $perfil->aniversario , ['class' => 'form-control datepicker']) !!}
 			</div>
 
 			<!-- Adiciona txtfield para a cidade natal do Perfil -->

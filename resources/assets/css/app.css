@@ -2956,7 +2956,7 @@ select[multiple].form-group-lg .form-control {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5648,14 +5648,12 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -6859,6 +6857,173 @@ nav.menu-top .menu-direita ul li a img {
 .infos-topo {
   background-color: #333131;
   color: white;
+}
+
+#welcome-html {
+  position: relative;
+  min-height: 100%;
+}
+#welcome-html body {
+  overflow: hidden;
+  background-image: url("../../img/dummy.jpg");
+  background-position: center center;
+  background-size: cover;
+}
+nav.welcome-navbar {
+  height: 100px;
+  background-color: rgba(241, 111, 43, 0.45);
+  padding: 10px;
+}
+nav.welcome-navbar a.navbar-brand {
+  font-size: 45px;
+  color: white;
+  line-height: 35px;
+}
+nav.welcome-navbar a.forgot-password {
+  color: white;
+  line-height: 33px;
+  font-size: 13px;
+  margin-left: 20px;
+}
+nav.welcome-navbar .input-wrapper {
+  margin-top: 0px;
+  padding-top: 5px;
+  float: left;
+  width: 48%;
+}
+nav.welcome-navbar .input-wrapper.input-group {
+  padding-left: 20px;
+}
+nav.welcome-navbar .input-wrapper.select-wrapper {
+  width: 100%;
+}
+nav.welcome-navbar .input-wrapper.select-wrapper select {
+  width: 100%;
+  height: 35px;
+  font-weight: bold;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+nav.welcome-navbar .input-wrapper.select-wrapper select:focus {
+  border: 1px solid white;
+}
+nav.welcome-navbar .input-wrapper.select-wrapper select option {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid white;
+}
+nav.welcome-navbar label {
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  font-weight: bold;
+  width: 100%;
+}
+nav.welcome-navbar input,
+nav.welcome-navbar button.loginbtn {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+nav.welcome-navbar input:focus,
+nav.welcome-navbar button.loginbtn:focus {
+  border: 1px solid white;
+}
+nav.welcome-navbar div.checkbox {
+  margin-top: 0px;
+  padding-top: 5px;
+  float: left;
+  width: 48%;
+}
+nav.welcome-navbar div.checkbox > label {
+  font-weight: 100;
+  text-transform: none;
+  font-size: 13px;
+}
+nav.welcome-navbar ::-webkit-input-placeholder {
+  color: white;
+}
+nav.welcome-navbar :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+nav.welcome-navbar ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+nav.welcome-navbar :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content ::-webkit-input-placeholder {
+  color: white;
+}
+div.welcome-content :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+div.welcome-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+div.welcome-content :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content h2 {
+  color: white;
+  font-size: 38px;
+  line-height: 42px;
+  margin-bottom: 30px;
+}
+div.welcome-content h3 {
+  color: white;
+  font-size: 28px;
+  line-height: 32px;
+}
+div.welcome-content p {
+  color: white;
+  font-size: 14px;
+}
+div.welcome-content .welcome-left {
+  margin-top: 50px;
+}
+div.welcome-content .welcome-right {
+  margin-left: 8%;
+  float: right;
+}
+div.welcome-content .welcome-right .col-sm-6,
+div.welcome-content .welcome-right .col-sm-12 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+div.welcome-content a.anchor-tour {
+  text-decoration: underline;
+  color: white;
+  font-size: 13px;
+}
+div.welcome-content input {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0px;
+  border-radius: 0px;
+  padding: 21px 12px;
+}
+div.welcome-content input:focus {
+  border: 1px solid white;
+}
+div.welcome-content input[type='submit'] {
+  margin-left: 15px;
+  background-color: white;
+  color: #f16f2b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 0px;
+  padding: 10px 12px;
 }
 
 /*# sourceMappingURL=app.css.map */
