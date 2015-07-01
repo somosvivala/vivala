@@ -8,8 +8,6 @@
 
 	<link rel="icon" href="/favicon-16.png" sizes="16x16"/>
     <link rel="icon" href="/favicon-32.png" sizes="32x32"/>
-	<link href="{{ asset('/css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/bootstrap-social.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
