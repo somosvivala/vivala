@@ -2,20 +2,25 @@
 
 @section('barra-topo')
 
-<div class="row infos-topo">
+<div class="row perfil-topo">
 	<div class="col-md-1">
 		&nbsp;
 	</div>
 	<div class="col-md-4">
-		<h1 class="perfil-title">{{ $user->username }}
+		<div class="row">
+			<h1 class="perfil-title col-sm-6">{{ $user->username }}
 
-		@if (Auth::user()->id == $user->id) 
-			<a href="/editarPerfil">
-				<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
-			</a>
-		@endif
-		</h1>
-		<p>Diretora de criação.Ama tudo que é visual, gosta de viajar para entrar em contato com a energia de cada lugar. Curte fotografar pessoas, sem ser vista! </p>
+			@if (Auth::user()->id == $user->id) 
+				<a href="/editarPerfil">
+					<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
+				</a>
+			@endif
+			</h1>
+			<small class="col-sm-6">
+				>> Vive em Bauru, SP
+			</small>
+		</div>
+		<p class="col-sm-12">Diretora de criação.Ama tudo que é visual, gosta de viajar para entrar em contato com a energia de cada lugar. Curte fotografar pessoas, sem ser vista! </p>
 	</div>
 	<div class="col-md-2">
 		<div class="foto-perfil">
@@ -26,9 +31,9 @@
 	</div>
 	<div class="col-md-4">
 		<ul>
-		<li>10k seguidores</li>
-		<li>679 seguindo</li>
-		<li>Viajante</li>
+			<li class="col-sm-4">10k seguidores</li>
+			<li class="col-sm-4">679 seguindo</li>
+			<li class="col-sm-4">Viajante</li>
 		</ul>
 	</div>
 	<div class="col-md-1">
