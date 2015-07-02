@@ -7,6 +7,11 @@
 	<title>Vivalá</title>
 
 	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+	
+
+	
+
+
 
 	<!-- Fonts -->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,400' rel='stylesheet' type='text/css'>
