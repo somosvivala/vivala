@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Perfil;
+
 use Illuminate\Http\Request;
 
 class ConectarController extends Controller {
@@ -14,8 +16,12 @@ class ConectarController extends Controller {
 	 */
 	public function index()
 	{
+		// Seria daora fazer com que ele sempre chamasse as sugestões
+		// independente de qual função/controller está invocando
+		// ou chamar em um controller assíncronamente
+		$sugestoesViajantes = Perfil::all();
 		
-		return view('conectar.index', []);
+		return view('conectar.index', compact('sugestoesViajantes') );
 	}
 
 	/**
