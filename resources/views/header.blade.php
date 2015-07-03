@@ -15,9 +15,9 @@
 			<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 		@else
 			<li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
-			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.trips") }}</a></li>
-			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.social") }}</a></li>
-			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.ongs") }}</a></li>
+			<li><a href="{{ url('/viajar') }}">{{ trans("menu.trips") }}</a></li>
+			<li><a href="{{ url('/conectar') }}">{{ trans("menu.social") }}</a></li>
+			<li><a href="{{ url('/cuidar') }}">{{ trans("menu.ongs") }}</a></li>
 			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.more") }}</a></li>
 			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.contact") }}</a></li>
 			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.search") }}</a></li>

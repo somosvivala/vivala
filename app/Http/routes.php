@@ -17,6 +17,11 @@ Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
+
+Route::resource('viajar','ViajarController');
+Route::resource('cuidar','CuidarController');
+Route::resource('conectar','ConectarController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
