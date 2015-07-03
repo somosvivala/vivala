@@ -3,6 +3,8 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Empresa;
+
 use Illuminate\Http\Request;
 
 class ViajarController extends Controller {
@@ -14,7 +16,12 @@ class ViajarController extends Controller {
 	 */
 	public function index()
 	{
-		return view('viajar.index', []);
+		// Seria daora fazer com que ele sempre chamasse as sugestões
+		// independente de qual função/controller está invocando
+		// ou chamar em um controller assíncronamente
+		$sugestoesEmpresas = Empresa::all();
+
+		return view('viajar.index', compact('sugestoesEmpresas') );
 	}
 
 	/**
