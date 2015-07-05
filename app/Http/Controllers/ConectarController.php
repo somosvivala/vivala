@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use View;
 
 use App\Perfil;
 
@@ -9,6 +10,11 @@ use Illuminate\Http\Request;
 
 class ConectarController extends Controller {
 
+	public function __construct(){
+			// Compartilha as sugestões com as views que forem chamadas por esse controller
+			$sugestoesViajantes = Perfil::all();
+			View::share('sugestoesViajantes', $sugestoesViajantes);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -16,12 +22,7 @@ class ConectarController extends Controller {
 	 */
 	public function index()
 	{
-		// Seria daora fazer com que ele sempre chamasse as sugestões
-		// independente de qual função/controller está invocando
-		// ou chamar em um controller assíncronamente
-		$sugestoesViajantes = Perfil::all();
-		
-		return view('conectar.index', compact('sugestoesViajantes') );
+		return view('conectar.index');
 	}
 
 	/**

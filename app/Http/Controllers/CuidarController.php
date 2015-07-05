@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use View;
 
 use App\Ong;
 
@@ -9,6 +10,11 @@ use Illuminate\Http\Request;
 
 class CuidarController extends Controller {
 
+	public function __construct(){
+			// Compartilha as sugestões com as views que forem chamadas por esse controller
+			$sugestoesOngs = Ong::all();
+			View::share('sugestoesOngs', $sugestoesOngs);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -16,12 +22,7 @@ class CuidarController extends Controller {
 	 */
 	public function index()
 	{
-		// Seria daora fazer com que ele sempre chamasse as sugestões
-		// independente de qual função/controller está invocando
-		// ou chamar em um controller assíncronamente
-		$sugestoesOngs = Ong::all();
-
-		return view('cuidar.index', compact('sugestoesOngs') );
+		return view('cuidar.index');
 	}
 
 	/**
