@@ -1,3 +1,6 @@
 $(function() {
-  $('.datepicker').datetimepicker();
+  $('.datepicker').datetimepicker({
+  	locale: 'pt-br',
+  	format: 'DD/MM/YYYY'
+  });
 });

@@ -25,7 +25,7 @@ elixir(function(mix) {
     mix.scripts([
 	    '../../assets/bower/jquery/dist/jquery.js',
         '../../assets/bower/bootstrap/dist/js/bootstrap.js',
-        '../../assets/bower/moment/min/moment.min.js',
+        '../../assets/bower/moment/min/moment-with-locales.min.js',
         '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 	    '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
         '../../assets/js/edicaofotoperfil.js',
