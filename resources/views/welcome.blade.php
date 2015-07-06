@@ -121,7 +121,7 @@
 
 					<div class="form-group">
 						<div class="col-sm-12">
-		      				<input type="text" class="datepicker form-control" placeholder="DATA DE NASCIMENTO">
+		      				<input type="text" name='aniversario' class="datepicker form-control" placeholder="DATA DE NASCIMENTO">
 						</div>
 					</div>
 

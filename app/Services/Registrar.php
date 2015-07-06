@@ -32,6 +32,7 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+
 		$user = User::create([
 			'username' => $data['username'],
 			'email' => $data['email'],
@@ -40,6 +41,7 @@ class Registrar implements RegistrarContract {
 
 	 	$perfil = new Perfil;
         $perfil->user_id = $user->id;
+        $perfil->aniversario = Carbon::createFromFormat('d/m/Y', $data['aniversario']);
         $perfil->save();
 
         /**

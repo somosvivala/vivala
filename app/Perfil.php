@@ -6,7 +6,9 @@ class Perfil extends Model {
 
 	
 	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local'];
-	
+	protected $dates = ['aniversario'];
+
+
 	public function user()
 	{
 		return $this->belongsTo('App\User');
