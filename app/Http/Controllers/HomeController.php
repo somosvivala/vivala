@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 use Auth;
 
-class HomeController extends Controller {
+class HomeController extends ConectarController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -21,6 +21,7 @@ class HomeController extends Controller {
 	 */
 	public function __construct()
 	{
+		parent::__construct();
 		$this->middleware('auth');
 	}
 
@@ -40,7 +41,7 @@ class HomeController extends Controller {
 
 		return view('home', compact('facebookData','perfil','ongs','empresas'))
 		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
-		
+
 	}
 
 }

@@ -18,9 +18,16 @@ Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
 
+// Rotas dos três pilares do sistema
 Route::resource('viajar','ViajarController');
 Route::resource('cuidar','CuidarController');
 Route::resource('conectar','ConectarController');
+
+//Rotas especificas das áreas internas
+Route::controller('perfilviajante','Conectar\PerfilViajanteController');
+Route::controller('roteiros','Conectar\RoteirosController');
+Route::controller('interesses','Conectar\InteressesController');
+Route::controller('chat','Conectar\ChatController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
@@ -54,7 +61,7 @@ Route::group(['before' => 'auth'], function() {
  * Aqui fica a rota que redireciona a prettyUrl para os Controllers
  */
 Route::get('{prettyURL}', function($prettyUrl=null) {
-	
+
 	if (!is_null($prettyUrl)) {
 		switch ($prettyUrl->prettyurlable_type) {
 			case 'App\Ong':
@@ -72,18 +79,16 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 				Session::put('empresa', $empresa);
 				return redirect('empresa/'.$prettyUrl->url);
 				break;
-			
+
 			default:
 				break;
 		}
 	}
 
-	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl); 
+	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
 });
 
 
 Route::get("ong/{ong}", "OngController@index");
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
-
-

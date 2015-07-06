@@ -12,7 +12,7 @@ use Input;
 use Carbon\Carbon;
 use App\PrettyUrl;
 
-class PerfilController extends Controller {
+class PerfilController extends ConectarController {
 
 
 	/**
@@ -22,6 +22,7 @@ class PerfilController extends Controller {
 	 */
 	public function __construct()
 	{
+		parent::__construct();
 		$this->middleware('auth');
 	}
 
@@ -59,11 +60,11 @@ class PerfilController extends Controller {
 
 	/**
 	 * Update the User in the database
-	 * @param  Integer                $id  		id do usuario   
+	 * @param  Integer                $id  		id do usuario
 	 * @param  EditarPerfilRequest    $request  Request do form
-	 * @return 									Redireciona para home                          
+	 * @return 									Redireciona para home
 	 */
-	public function update($id, EditarPerfilRequest $request)	
+	public function update($id, EditarPerfilRequest $request)
 	{
 
 		//Salva dados referentes ao User
@@ -79,7 +80,7 @@ class PerfilController extends Controller {
 			'url' => $request->input('url'),
 			'tipo' => 'usuario'
 		]);
-		
+
 		//Salvando imagem no avatar do usuario;
 		$file = Input::file('image');
 	    if ($file) {
@@ -100,10 +101,10 @@ class PerfilController extends Controller {
 
 	/**
 	 * Mostra o perfil de um usuario.
-	 * @param   String		$prettyUrl       se acessado diretamente, passa a suposta prettyUrl 
+	 * @param   String		$prettyUrl       se acessado diretamente, passa a suposta prettyUrl
 	 * @return  View       	Perfil do usuario em questao
 	 */
-	public function showUserProfile($prettyUrl = null) 
+	public function showUserProfile($prettyUrl = null)
 	{
 		//se nao veio nada na sessao e nem na url
 		if(!$prettyUrl && !Session::has('perfil')) {
@@ -121,9 +122,9 @@ class PerfilController extends Controller {
 				$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
 			} else {
 				App::abort(404);
-			}			
+			}
 		}
-		
+
 		$user = $perfil->user;
 		$follow = $perfil->follow;
 		$followedBy = $perfil->followedBy;
@@ -136,7 +137,7 @@ class PerfilController extends Controller {
 	 * @return ??
 	 */
 	public function updatePhoto($id) {
-		
+
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
 
@@ -166,7 +167,7 @@ class PerfilController extends Controller {
 
 		$file = Input::file('image_file_upload');
 	    if ($file->isValid()) {
-	       
+
 			$widthCrop = $request->input('w');
 			$heightCrop = $request->input('h');
 			$xSuperior = $request->input('x');
@@ -174,7 +175,7 @@ class PerfilController extends Controller {
 
 			$destinationPath = public_path() . '/uploads/';
 			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
-			$fileName = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension; 
+			$fileName = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
 
 			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
 	        $upload_success = $file->save($destinationPath.$fileName);
@@ -182,7 +183,7 @@ class PerfilController extends Controller {
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
 	        	$user->update(['avatar' => $fileName]);
-	      		
+
 	      		return redirect('editarPerfil');
 
 	        }
@@ -190,7 +191,7 @@ class PerfilController extends Controller {
 	}
 
 
-	private function formatFileNameWithUserAndTimestamps($filename) 
+	private function formatFileNameWithUserAndTimestamps($filename)
 	{
 		$timestamp = Carbon::now()->getTimestamp() . '_';
 		$user_preffix = Auth::id() . '_';
