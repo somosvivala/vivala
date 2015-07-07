@@ -29,6 +29,13 @@ Route::controller('roteiros','Conectar\RoteirosController');
 Route::controller('interesses','Conectar\InteressesController');
 Route::controller('chat','Conectar\ChatController');
 
+Route::controller('montarviagem','Viajar\MontarViagemController');
+Route::controller('verpacotes','Viajar\VerPacotesController');
+Route::controller('meusfavoritos','Viajar\MeusFavoritosController');
+Route::controller('minhascompras','Viajar\MinhasComprasController');
+Route::controller('meuspontos','Viajar\MeusPontosController');
+Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
