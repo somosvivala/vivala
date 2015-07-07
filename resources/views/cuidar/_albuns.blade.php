@@ -1,7 +1,7 @@
-@extends('viajar')
+@extends('cuidar')
 
 @section('content')
 <h4 class="suave">
-	Meus Pontos
+	Álbuns
 </h4>
 @endsection

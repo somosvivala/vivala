@@ -1,12 +1,12 @@
-<?php namespace App\Http\Controllers\Viajar;
+<?php namespace App\Http\Controllers\Cuidar;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\ViajarController;
+use App\Http\Controllers\CuidarController;
 
 use Illuminate\Http\Request;
 
-class BuscasRecentesController extends ViajarController {
+class PerfilAtuanteController extends CuidarController {
 
 	/**
 	 * Exibe a view referente aos Interesses.
@@ -15,7 +15,7 @@ class BuscasRecentesController extends ViajarController {
 	 */
 	public function getIndex()
 	{
-		return view('viajar._buscasrecentes');
+		return view('cuidar._perfilatuante');
 	}
 
 }

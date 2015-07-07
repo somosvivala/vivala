@@ -36,6 +36,11 @@ Route::controller('minhascompras','Viajar\MinhasComprasController');
 Route::controller('meuspontos','Viajar\MeusPontosController');
 Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
 
+Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
+Route::controller('vagas','Cuidar\VagasController');
+Route::controller('albuns','Cuidar\AlbunsController');
+Route::controller('feed','Cuidar\FeedController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

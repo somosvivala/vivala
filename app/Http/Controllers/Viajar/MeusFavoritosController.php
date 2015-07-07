@@ -2,10 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\ViajarController;
 
 use Illuminate\Http\Request;
 
-class MeusFavoritosController extends Controller {
+class MeusFavoritosController extends ViajarController {
 
 	/**
 	 * Exibe a view referente aos Interesses.

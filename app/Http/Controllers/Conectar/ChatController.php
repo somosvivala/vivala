@@ -6,7 +6,7 @@ use App\Http\Controllers\ConectarController;
 
 use Illuminate\Http\Request;
 
-class ChatController extends Controller {
+class ChatController extends ConectarController {
 
 	/**
 	 * Exibe a view referente aos Interesses.
