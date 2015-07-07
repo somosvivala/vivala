@@ -15,17 +15,6 @@ class HomeController extends ConectarController {
 	*/
 
 	/**
-	 * Create a new controller instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		parent::__construct();
-		$this->middleware('auth');
-	}
-
-	/**
 	 * Show the application dashboard to the user.
 	 *
 	 * @return Response

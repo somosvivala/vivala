@@ -11,10 +11,16 @@ use Illuminate\Http\Request;
 class CuidarController extends Controller {
 
 	public function __construct(){
-			// Compartilha as sugestões com as views que forem chamadas por esse controller
-			$sugestoesOngs = Ong::all();
-			View::share('sugestoesOngs', $sugestoesOngs);
+		//Só passa se estiver logado
+		$this->middleware('auth');
 	}
+
+	// Compartilha as sugestões com as views que forem chamadas por esse controller
+	public function getSugestoesOngs($view){
+		$sugestoesOngs = Ong::all();
+		$view->with('sugestoesOngs', $sugestoesOngs);
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
