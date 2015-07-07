@@ -74,7 +74,8 @@ class PerfilController extends ConectarController {
 
 		//Salva dados referentes ao User
 		$perfil = $user->perfil;
-		$perfil->aniversario = $request->input('aniversario');
+		$aniversario = $request->input('aniversario');
+		$perfil->aniversario = Carbon::createFromFormat('d/m/Y', $aniversario);
 		$perfil->cidade_natal = $request->input('cidade_natal');
 		$perfil->prettyUrl()->update([
 			'url' => $request->input('url'),
