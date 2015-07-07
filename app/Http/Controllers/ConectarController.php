@@ -11,10 +11,16 @@ use Illuminate\Http\Request;
 class ConectarController extends Controller {
 
 	public function __construct(){
-		// Compartilha as sugestões com as views que forem chamadas por esse controller
-		$sugestoesViajantes = Perfil::all();
-		View::share('sugestoesViajantes', $sugestoesViajantes);
+		//Só passa se estiver logado
+		$this->middleware('auth');
 	}
+
+	// Compartilha as sugestões com as views que forem chamadas por esse controller
+	public function getSugestoesViajantes($view){
+		$sugestoesViajantes = Perfil::all();
+		$view->with('sugestoesViajantes', $sugestoesViajantes);
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *

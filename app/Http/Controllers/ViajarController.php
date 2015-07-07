@@ -12,10 +12,16 @@ class ViajarController extends Controller {
 	var $sugestoesEmpresas;
 
 	public function __construct(){
-		// Compartilha as sugestões com as views que forem chamadas por esse controller
-		$sugestoesEmpresas = Empresa::all();
-		View::share('sugestoesEmpresas', $sugestoesEmpresas);
+		//Só passa se estiver logado
+		$this->middleware('auth');
 	}
+
+	// Compartilha as sugestões com as views que forem chamadas por esse controller
+	public function getSugestoesEmpresas($view){
+		$sugestoesEmpresas = Empresa::all();
+		$view->with('sugestoesEmpresas', $sugestoesEmpresas);
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
