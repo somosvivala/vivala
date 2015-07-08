@@ -38,7 +38,7 @@ class ConfiguracaoController extends Controller {
 	public function store()
 	{
 		Configuracao::create(Request::all());
-		
+
 		return redirect('configuracao');
 	}
 

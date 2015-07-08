@@ -9,8 +9,8 @@
 </div>
 
 <div class="col-sm-9 menu-principal">
-	<ul class="nav navbar-nav">		
-		@if (Auth::guest()) 	
+	<ul class="nav navbar-nav">
+		@if (Auth::guest())
 			<li><a href="{{ url('/auth/login') }}">{{ trans("menu.login") }}</a></li>
 			<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 		@else
@@ -27,13 +27,14 @@
 
 <div class="col-sm-2 menu-direita">
 	<ul class="nav navbar-nav ">
-		@if (Auth::user()) 			
-			<li class="dropdown">	
+		@if (Auth::user())
+			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 					{{ trans("menu.hello") }} {{ Auth::user()->username }}
 					<img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->username }}">
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
+						<li><a href="{{ url('config') }}">{{ trans("menu.config") }}</a></li>
 						<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 					</ul>
 				</a>
