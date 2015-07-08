@@ -41,6 +41,8 @@ Route::controller('vagas','Cuidar\VagasController');
 Route::controller('albuns','Cuidar\AlbunsController');
 Route::controller('feed','Cuidar\FeedController');
 
+Route::controller('ajax', 'AjaxController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

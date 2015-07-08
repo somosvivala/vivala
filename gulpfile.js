@@ -29,6 +29,7 @@ elixir(function(mix) {
         '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
 	    '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
         '../../assets/js/edicaofotoperfil.js',
+        '../../assets/js/ajaxCalls.js',
 	    '../../assets/js/welcome.js'
 	], 'public/js/vendor.js');	
 });

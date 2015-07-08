@@ -91,7 +91,6 @@ class PerfilSeeder extends Seeder {
         	'cidade_natal'     => 'Rio Preto'
         ]);
 
-		$dodo->follow()->attach($zord->id);
     }
 
 }

@@ -6,14 +6,15 @@
 	@if(isset($sugestoesViajantes))
 	@forelse($sugestoesViajantes as $Perfil)
 		<li>
-			<a href="/home">
-				<button type="button">seguir</button>
+			<a href="#">
+				<button id='btn_seguir' type="button" data-id="{{$Perfil->id}}">seguir</button>
+				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
 						<img src="{{ $Perfil->user->avatar }}">
 					</div>
 				</div>
-				<strong class="col-sm-12">{{ $Perfil->nome }}</strong>
+				<strong class="col-sm-12">{{ $Perfil->user->username }}</strong>
 				<div class="row localizacao-cidade">
 					<div class="col-sm-4 text-right">
 						<i class="fa fa-map-marker"></i>

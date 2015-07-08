@@ -6881,6 +6881,10 @@ nav.menu-top .menu-direita ul li a img {
 .perfil-topo ul li + li {
   border-left: 1px solid white;
 }
+ul.lista-usuarios li.foto-user img {
+  max-width: 100px;
+  border-radius: 50%;
+}
 
 #welcome-html {
   position: relative;
