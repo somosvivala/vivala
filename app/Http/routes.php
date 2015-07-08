@@ -14,6 +14,8 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
+Route::get('config', 'ConfigController@index');
+
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
