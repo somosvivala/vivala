@@ -8,6 +8,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller {
+	
+	public function __construct(){
+	    //Só passa se estiver logado
+	    $this->middleware('auth');
+	}
+
 	/**
 	* Show the application dashboard to the user.
 	*
