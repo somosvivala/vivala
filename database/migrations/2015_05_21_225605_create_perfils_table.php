@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Carbon\Carbon;
 
 class CreatePerfilsTable extends Migration {
 
@@ -16,7 +17,7 @@ class CreatePerfilsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
-			$table->date('aniversario')->nullable();
+			$table->date('aniversario')->default(Carbon::now());
 			$table->string('cidade_natal')->nullable();
 			$table->string('ultimo_local')->nullable();
 			$table->timestamps();
