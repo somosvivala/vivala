@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Perfil extends Model {
 
-	
+
 	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local'];
 	protected $dates = ['aniversario'];
 
@@ -33,6 +33,19 @@ class Perfil extends Model {
         return $this->morphMany('App\PrettyUrl', 'prettyurlable');
     }
 
+    /**
+     * Um Perfil tem muitos Posts
+     * @return [type] [description]
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
+	public function likePost()
+	{
+		return $this->belongsToMany('App\Post', 'entidade_like_post', 'perfil_id', 'post_id')->withTimestamps();
+	}
     /**
      * Retorna a pretty Url
      *

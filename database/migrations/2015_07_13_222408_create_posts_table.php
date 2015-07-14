@@ -15,6 +15,61 @@ class CreatePostsTable extends Migration {
 		Schema::create('posts', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('titulo', 140);
+			$table->string('descricao', 500);
+			$table->string('foto')->nullable();
+			$table->string('video')->nullable();
+			$table->enum('tipoEntidade', ['perfil', 'ong', 'empresa'])->nullable();
+			$table->enum('tipoPost', ['foto', 'publicidade', 'status', 'local'])->nullable();
+			$table->timestamps();
+
+			$table->integer('perfil_id')->unsigned()->nullable();
+			$table->foreign('perfil_id')
+				->references('id')
+				->on('perfils')
+				->onDelete('cascade');
+
+			$table->integer('ong_id')->unsigned()->nullable();
+			$table->foreign('ong_id')
+			->references('id')
+			->on('ongs')
+			->onDelete('cascade');
+
+			$table->integer('empresa_id')->unsigned()->nullable();
+			$table->foreign('empresa_id')
+			->references('id')
+			->on('empresas')
+			->onDelete('cascade');
+		});
+
+		Schema::create('entidade_like_post', function(Blueprint $table)
+		{
+			$table->integer('post_id')->unsigned()->index();
+			$table->foreign('post_id')
+				->references('id')
+				->on('posts')
+				->onDelete('cascade');
+
+			$table->integer('perfil_id')->unsigned()->index()->nullable();
+			$table->foreign('perfil_id')
+				->references('id')
+				->on('perfils')
+				->onDelete('cascade');
+
+
+			$table->integer('ong_id')->unsigned()->index()->nullable();
+			$table->foreign('ong_id')
+			->references('id')
+			->on('ongs')
+			->onDelete('cascade');
+
+
+			$table->integer('empresa_id')->unsigned()->index()->nullable();
+			$table->foreign('empresa_id')
+			->references('id')
+			->on('empresas')
+			->onDelete('cascade');
+
 			$table->timestamps();
 		});
 	}
@@ -26,6 +81,7 @@ class CreatePostsTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::drop('entidade_like_post');
 		Schema::drop('posts');
 	}
 

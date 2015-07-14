@@ -7,7 +7,7 @@ use App\PrettyUrl;
 class Empresa extends Model {
 
 	protected $fillable = ['nome'];
-	
+
 	/**
 	 * Uma empresa pertence a um usuário.
 	 */
@@ -18,13 +18,31 @@ class Empresa extends Model {
 
 	/**
      * Uma Empresa tem uma prettyUrl.
-     * @return [type] [description]
      */
     public function prettyUrl()
     {
 		return $this->morphMany('App\PrettyUrl', 'prettyurlable');
     }
 
+
+    /**
+     * Uma Empresa tem muitos Posts
+     * @return [type] [description]
+     */
+    public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
+
+    /**
+     * Uma Empresa pode dar Like em muitos Posts
+     * @return [type] [description]
+     */
+	public function likePost()
+	{
+		return $this->belongsToMany('App\Post', 'entidade_like_post', 'empresa_id', 'post_id')->withTimestamps();
+	}
 
 	/**
 	 * Retorna a pretty Url
