@@ -3,7 +3,6 @@
 use Illuminate\Database\Eloquent\Model;
 use App\PrettyUrl;
 
-
 class Empresa extends Model {
 
 	protected $fillable = ['nome'];
@@ -57,5 +56,32 @@ class Empresa extends Model {
 		 else
 		 	return "empresa/show/".$this->id;
 	}
+
+	/**
+	 * Retorna todos os perfils que seguem essa Empresa
+	 * @return [type] [description]
+	 */
+    public function followedBy()
+    {
+        return $this->belongsToMany('App\Perfil', 'perfil_follow_empresa', 'empresa_seguido_id', 'perfil_seguidor_id')->withTimestamps();
+    }
+
+    /**
+     * Retorna sugestoes de empresas que o usuario nao esteja seguindo.
+     * @param  User 	   $user 
+     * @return Collection  Collection de empresas para sugestao
+     */
+    public static function getSugestoes($user) {
+
+        //empresas que nao sejam minhas
+        $result = Empresa::whereNotIn('user_id', [$user->perfil->id])
+            //empresas que eu nao esteja seguindo
+            ->whereNotIn('id', $user->perfil->followEmpresa()->lists('id'))
+            ->limit(3)
+            ->get();
+
+        return $result;
+    }
+
 
 }

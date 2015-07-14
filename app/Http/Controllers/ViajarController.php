@@ -2,9 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use View;
-
 use App\Empresa;
+use View;
+use Auth;
 use Illuminate\Http\Request;
 
 class ViajarController extends Controller {
@@ -18,7 +18,7 @@ class ViajarController extends Controller {
 
 	// Compartilha as sugestões com as views que forem chamadas por esse controller
 	public function getSugestoesEmpresas($view){
-		$sugestoesEmpresas = Empresa::all();
+		$sugestoesEmpresas = Empresa::getSugestoes(Auth::user());
 		$view->with('sugestoesEmpresas', $sugestoesEmpresas);
 	}
 

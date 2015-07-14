@@ -29,16 +29,16 @@ class CreatePerfilsTable extends Migration {
 				->onDelete('cascade');
 		});
 
-		Schema::create('follow_perfil', function(Blueprint $table)
+		Schema::create('perfil_follow_perfil', function(Blueprint $table)
 		{
-			$table->integer('perfil_id')->unsigned()->index();
-			$table->foreign('perfil_id')
+			$table->integer('perfil_seguidor_id')->unsigned()->index();
+			$table->foreign('perfil_seguidor_id')
 				->references('id')
 				->on('perfils')
 				->onDelete('cascade');
 
-			$table->integer('follow_id')->unsigned()->index();
-			$table->foreign('follow_id')
+			$table->integer('perfil_seguido_id')->unsigned()->index();
+			$table->foreign('perfil_seguido_id')
 				->references('id')
 				->on('perfils')
 				->onDelete('cascade');
@@ -54,7 +54,7 @@ class CreatePerfilsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('follow_perfil');
+		Schema::drop('perfil_follow_perfil');
 		Schema::drop('perfils');
 	}
 

@@ -7,7 +7,7 @@
 	@forelse($sugestoesViajantes as $Perfil)
 		<li>
 			<a href="#">
-				<button id='btn_seguir' type="button" data-id="{{$Perfil->id}}">seguir</button>
+				<button id='btn_seguir' type="button" class='btn_seguir_viajante' data-id="{{$Perfil->id}}">seguir</button>
 				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">

@@ -12,7 +12,8 @@ class CreateOngsTable extends Migration {
 	 */
 	public function up()
 	{	
-		Schema::create('ongs', function(Blueprint $table) {
+		Schema::create('ongs', function(Blueprint $table) 
+		{
 			$table->increments('id');
 			$table->string('nome');
 			$table->timestamps();
@@ -22,6 +23,24 @@ class CreateOngsTable extends Migration {
 				->references('id')
 				->on('users')
 				->onDelete('cascade');	
+		});
+	
+
+		Schema::create('perfil_follow_ong', function(Blueprint $table)
+		{
+			$table->integer('perfil_seguidor_id')->unsigned()->index();
+			$table->foreign('perfil_seguidor_id')
+				->references('id')
+				->on('ongs')
+				->onDelete('cascade');
+
+			$table->integer('ong_seguido_id')->unsigned()->index();
+			$table->foreign('ong_seguido_id')
+				->references('id')
+				->on('ongs')
+				->onDelete('cascade');
+
+			$table->timestamps();
 		});
 	}
 
@@ -33,6 +52,8 @@ class CreateOngsTable extends Migration {
 	public function down()
 	{
 		Schema::drop('ongs');
+		Schema::drop('perfil_follow_ong');
+
 	}
 
 }

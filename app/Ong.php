@@ -50,4 +50,30 @@ class Ong extends Model {
 		else
 			return "ong/".$this->id;
 	}
+
+	/**
+	 * Retorna todos os perfils que seguem essa Ong
+	 * @return [type] [description]
+	 */
+    public function followedBy()
+    {
+        return $this->belongsToMany('App\Perfil', 'perfil_follow_ong', 'ong_seguido_id', 'perfil_seguidor_id')->withTimestamps();
+    }
+
+   /**
+     * Retorna sugestoes de ongs que o usuario nao esteja seguindo.
+     * @param  User 	   $user 
+     * @return Collection  Collection de ongs para sugestao
+     */
+    public static function getSugestoes($user) {
+
+        //ongs que nao sejam minhas
+        $result = Ong::whereNotIn('user_id', [$user->perfil->id])
+            //ongs que eu nao esteja seguindo
+            ->whereNotIn('id', $user->perfil->followOng()->lists('id'))
+            ->limit(3)
+            ->get();
+
+        return $result;
+    }
 }

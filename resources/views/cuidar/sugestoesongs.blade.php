@@ -7,7 +7,8 @@
 	@forelse($sugestoesOngs as $Ong)
 		<li>
 			<a href="{{ url($Ong->getUrl()) }}">
-				<button type="button">seguir</button>
+				<button type="button" class='btn_seguir_ong' data-id="{{$Ong->id}}">seguir</button>
+				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
 						<img src="/img/dummy.jpg">

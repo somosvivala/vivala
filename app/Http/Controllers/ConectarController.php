@@ -2,10 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use View;
-
 use App\Perfil;
-
+use View;
+use Auth;
 use Illuminate\Http\Request;
 
 class ConectarController extends Controller {
@@ -17,7 +16,7 @@ class ConectarController extends Controller {
 
 	// Compartilha as sugestões com as views que forem chamadas por esse controller
 	public function getSugestoesViajantes($view){
-		$sugestoesViajantes = Perfil::all();
+		$sugestoesViajantes = Perfil::getSugestoes(Auth::user());
 		$view->with('sugestoesViajantes', $sugestoesViajantes);
 	}
 
