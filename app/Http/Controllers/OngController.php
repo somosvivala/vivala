@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Requests\EditarOngRequest;
 use App\Http\Controllers\Controller;
-
+use App\Http\Requests\CropPhotoRequest;
 use Session;
 use App\Ong;
 use Auth;
@@ -11,6 +11,8 @@ use Request;
 use App;
 use Carbon\Carbon;
 use App\PrettyUrl;
+use Input;
+
 
 
 class OngController extends Controller {
@@ -114,9 +116,67 @@ class OngController extends Controller {
 
         $ong->update($request->all());
 
+        //Salvando foto da ong;
+		$file = Input::file('image');
+	    if ($file) {
+
+	        $destinationPath = public_path() . '/uploads/';
+	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+	        $upload_success = $file->move($destinationPath, $filename);
+
+	        if ($upload_success) {
+	        	$ong->foto = $destinationPath . $filename;
+	        	$ong->save();
+	        }
+	    }
+
         //Atualiza a url correspondente
         $ong->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('ong.show', compact('ong'));
     }
+
+
+    /**
+	 * [updatePhoto description]
+	 * @param  Integer Id do usuário
+	 * @return ??
+	 */
+	public function cropPhoto($id, CropPhotoRequest $request) {
+
+		$ong = Ong::findOrFail($id);
+
+		$file = Input::file('image_file_upload');
+	    if ($file->isValid()) {
+
+			$widthCrop = $request->input('w');
+			$heightCrop = $request->input('h');
+			$xSuperior = $request->input('x');
+			$ySuperior = $request->input('y');
+
+			$destinationPath = public_path() . '/uploads/';
+			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
+			$fileName = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
+
+			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
+	        $upload_success = $file->save($destinationPath.$fileName);
+
+			//Salvando imagem no avatar do usuario;
+	        if ($upload_success) {
+	        	$ong->foto = $fileName;
+				$ong->save();
+	      		return redirect('ong/'.$ong->id.'/edit');
+
+	        }
+	    }
+	}
+
+
+	private function formatFileNameWithUserAndTimestamps($filename)
+	{
+		$timestamp = Carbon::now()->getTimestamp() . '_';
+		$user_preffix = Auth::id() . '_';
+
+		return $user_preffix . $timestamp .$filename;
+	}
 	
 }

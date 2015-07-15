@@ -20,6 +20,8 @@ class CreatePerfilsTable extends Migration {
 			$table->date('aniversario')->default(Carbon::now());
 			$table->string('cidade_natal')->nullable();
 			$table->string('ultimo_local')->nullable();
+			$table->string('foto')->nullable();
+
 			$table->timestamps();
 
 

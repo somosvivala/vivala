@@ -26,7 +26,7 @@
 			</div>
 				{!! Form::close() !!}
 			<div class="row col-sm-12" id="foto-atual-display"> 
-				<img src="{{ $user->avatar }}" id="foto-perfil">
+				<img src="{{ $perfil->foto }}" id="foto-perfil">
 			</div>
 			
 

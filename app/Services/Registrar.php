@@ -49,7 +49,7 @@ class Registrar implements RegistrarContract {
          * Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
          */
         $prettyUrl = new PrettyUrl();
-        $prettyUrl->url = $user->username . '_' . Carbon::now()->getTimestamp();
+        $prettyUrl->url = str_replace(" ", "", $user->username) . '_' . Carbon::now()->getTimestamp();
         $prettyUrl->tipo = 'usuario';
         
         $perfil->prettyUrl()->save($prettyUrl);

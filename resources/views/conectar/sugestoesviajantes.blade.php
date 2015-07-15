@@ -11,7 +11,7 @@
 				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
-						<img src="{{ $Perfil->user->avatar }}">
+						<img src="{{ $Perfil->foto }}" >
 					</div>
 				</div>
 				<strong class="col-sm-12">{{ $Perfil->user->username }}</strong>

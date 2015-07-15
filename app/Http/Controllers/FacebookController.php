@@ -50,10 +50,10 @@ class FacebookController extends Controller {
 		//Atualiza o usuário com os dados do Fb
 		$user->username = $userData->name;
 		$user->fb_token = $userData->token;
-		$user->avatar = $userData->avatar;
 		$user->save();
 
 		$perfil = new Perfil;
+		$perfil->foto = $userData->avatar;
         $perfil->user_id = $user->id;
         $perfil->save();
 

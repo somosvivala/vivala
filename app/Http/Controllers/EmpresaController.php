@@ -1,16 +1,18 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
 use App\Http\Requests\EditarEmpresaRequest;
+use App\Http\Requests\CropPhotoRequest;
 use App\Http\Controllers\Controller;
-
-use Session;
-use App;
-
-use App\Empresa;
-use Auth;
-use Request;
+use App\Http\Requests;
 use App\PrettyUrl;
+use App\Empresa;
+use Request;
+use Session;
+use Input;
+use Auth;
+use App;
+use Carbon\Carbon;
+
 
 class EmpresaController extends Controller {
 	
@@ -113,9 +115,66 @@ class EmpresaController extends Controller {
         $empresa = Empresa::findOrFail($id);
         $empresa->update($request->all());
 
+        //Salvando foto da empresa;
+		$file = Input::file('image');
+	    if ($file) {
+
+	        $destinationPath = public_path() . '/uploads/';
+	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+	        $upload_success = $file->move($destinationPath, $filename);
+
+	        if ($upload_success) {
+	        	$empresa->foto = $destinationPath . $filename;
+	        	$empresa->save();
+	        }
+	    }
+
         //Atualiza a url correspondente
         $empresa->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('empresa.show', compact('empresa'));
     }
+
+    /**
+	 * [updatePhoto description]
+	 * @param  Integer Id do usuário
+	 * @return ??
+	 */
+	public function cropPhoto($id, CropPhotoRequest $request) {
+
+		$empresa = Empresa::findOrFail($id);
+
+		$file = Input::file('image_file_upload');
+	    if ($file->isValid()) {
+
+			$widthCrop = $request->input('w');
+			$heightCrop = $request->input('h');
+			$xSuperior = $request->input('x');
+			$ySuperior = $request->input('y');
+
+			$destinationPath = public_path() . '/uploads/';
+			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
+			$fileName = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
+
+			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
+	        $upload_success = $file->save($destinationPath.$fileName);
+
+			//Salvando imagem no avatar do usuario;
+	        if ($upload_success) {
+	        	$empresa->foto = $fileName;
+				$empresa->save();
+	      		return redirect('empresa/'.$empresa->id.'/edit');
+
+	        }
+	    }
+	}
+
+
+	private function formatFileNameWithUserAndTimestamps($filename)
+	{
+		$timestamp = Carbon::now()->getTimestamp() . '_';
+		$user_preffix = Auth::id() . '_';
+
+		return $user_preffix . $timestamp .$filename;
+	}
   
 }

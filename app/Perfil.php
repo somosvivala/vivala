@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Perfil extends Model {
 
 
-	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local'];
+	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local', 'foto' ];
 	protected $dates = ['aniversario'];
 
 
@@ -93,6 +93,21 @@ class Perfil extends Model {
             ->get();
 
         return $result;
+    }
+
+    /**
+     * Accessor para a propriedade Foto, passando o caminho do public
+     */
+    public function getFotoAttribute($value)
+    {
+        $urlBase = "../../../uploads/";
+        
+        //Testa se o valor é uma URL
+        if( preg_match ( '/^https?:\/\//' , $value) ) {
+            return $value;
+        } else {
+            return $urlBase.$value;
+        }
     }
 
 
