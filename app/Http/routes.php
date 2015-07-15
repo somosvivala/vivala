@@ -19,6 +19,7 @@ Route::get('config', 'ConfigController@index');
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
+Route::resource('post','PostController');
 
 // Rotas dos três pilares do sistema
 Route::resource('viajar','ViajarController');

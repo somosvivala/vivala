@@ -15,12 +15,12 @@ class CreatePostsTable extends Migration {
 		Schema::create('posts', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('titulo', 140);
-			$table->string('descricao', 500);
+			$table->string('titulo', 140)->nullable();
+			$table->string('descricao', 500)->nullable();
 			$table->string('foto')->nullable();
 			$table->string('video')->nullable();
 			$table->enum('tipoEntidade', ['perfil', 'ong', 'empresa'])->nullable();
-			$table->enum('tipoPost', ['foto', 'publicidade', 'status', 'local'])->nullable();
+			$table->enum('tipoPost', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
 			$table->timestamps();
 
 			$table->integer('perfil_id')->unsigned()->nullable();
