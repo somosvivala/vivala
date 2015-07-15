@@ -2,10 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use View;
-
 use App\Ong;
-
+use View;
+use Auth;
 use Illuminate\Http\Request;
 
 class CuidarController extends Controller {
@@ -17,7 +16,7 @@ class CuidarController extends Controller {
 
 	// Compartilha as sugestões com as views que forem chamadas por esse controller
 	public function getSugestoesOngs($view){
-		$sugestoesOngs = Ong::all();
+		$sugestoesOngs = Ong::getSugestoes(Auth::user());
 		$view->with('sugestoesOngs', $sugestoesOngs);
 	}
 

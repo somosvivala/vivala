@@ -22,15 +22,47 @@ class AjaxController extends Controller {
 	 * @param  String 	    $id 		Id do perfil a ser seguido
 	 * @return JSON     	Resultado da requisicao
 	 */
-	public function getFollow($id) {
+	public function getFollowperfil($id) {
 
 		//$perfil do usuario logado.
 		$perfil = Auth::user()->perfil;
-		$perfil->follow()->attach($id);
+		$perfil->followPerfil()->attach($id);
 		$perfil->save();
-
 		$return['success'] = true;
 
 		return json_encode($return);
 	}
+
+	/**
+	 * Estabele a relação de seguir uma empresa
+	 * @param  String 	    $id 		Id da empresa a ser seguida
+	 * @return JSON     	Resultado da requisicao
+	 */
+	public function getFollowempresa($id) {
+
+		//$perfil do usuario logado.
+		$perfil = Auth::user()->perfil;
+		$perfil->followEmpresa()->attach($id);
+		$perfil->save();
+		$return['success'] = true;
+
+		return json_encode($return);
+	}
+
+	/**
+	 * Estabele a relação de seguir uma ong
+	 * @param  String 	    $id 		Id da ong a ser seguida
+	 * @return JSON     	Resultado da requisicao
+	 */
+	public function getFollowong($id) {
+
+		//$perfil do usuario logado.
+		$perfil = Auth::user()->perfil;
+		$perfil->followOng()->attach($id);
+		$perfil->save();
+		$return['success'] = true;
+
+		return json_encode($return);
+	}
+
 }

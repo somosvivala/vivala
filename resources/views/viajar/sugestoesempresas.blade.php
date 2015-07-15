@@ -6,7 +6,8 @@
 	@forelse($sugestoesEmpresas as $Empresa)
 		<li>
 			<a href="{{ url($Empresa->getUrl()) }}">
-				<button type="button">seguir</button>
+				<button type="button" class='btn_seguir_empresa' data-id="{{$Empresa->id}}">seguir</button>
+				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
 						<img src="/img/dummy.jpg">
