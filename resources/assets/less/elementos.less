@@ -1,0 +1,40 @@
+.left-panel, .right-panel {
+	background-color: @cor-bg-painel;
+	padding: 1.5em;
+}
+.btn-primario {
+	background-color: @cor-bg-suave;
+	color: @cor-txt-suave;
+}
+.btn-acao {
+	background-color: @cor-bg-btn;
+	color: @cor-txt-btn;
+}
+button.btn,
+input.btn,
+a.btn {
+	border-radius: 0px;
+}
+// Define o titulo usados nas sidebars
+h4.suave {
+	.suave();
+}
+// Define os botões que vão seguir o mesmo esquema de cor
+button.suave {
+	padding: 0.2em 0.5em;
+	cursor: pointer;
+}
+a.suave {
+	padding: 0.2em 1em;
+	text-decoration: none;
+	cursor: pointer;
+	&:hover {
+		color: @cor-txt-suave-hover;
+	}
+}
+
+.lista-intervalo-preto {
+	a {
+		color: black;
+	}
+}
