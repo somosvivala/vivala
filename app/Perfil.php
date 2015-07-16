@@ -9,6 +9,11 @@ class Perfil extends Model {
 	protected $dates = ['aniversario'];
 
 
+	public function getNomeAttribute()
+	{
+		return $this->nome_completo;
+	}
+
 	public function user()
 	{
 		return $this->belongsTo('App\User');
@@ -37,7 +42,7 @@ class Perfil extends Model {
     /**
      * Retorna se já está seguindo o usuario com esse $id
      * @param  Integer    $id   Id do usuario
-     * @return boolean    
+     * @return boolean
      */
     public function isFollowing($id) {
         return ($this->followPerfil()->find($id) ? true : false);
@@ -101,7 +106,7 @@ class Perfil extends Model {
     public function getFotoAttribute($value)
     {
         $urlBase = "../../../uploads/";
-        
+
         //Testa se o valor é uma URL
         if( preg_match ( '/^https?:\/\//' , $value) ) {
             return $value;

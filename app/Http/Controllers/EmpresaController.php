@@ -96,6 +96,10 @@ class EmpresaController extends Controller {
 		return view('empresa.show', compact('empresa'));
 	}
 
+	/**
+	 * Tela de edição da empresa
+	 *
+	 */
 	public function edit($id)
     {
 		$user = Auth::user();
@@ -176,5 +180,5 @@ class EmpresaController extends Controller {
 
 		return $user_preffix . $timestamp .$filename;
 	}
-  
+
 }

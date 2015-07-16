@@ -54,7 +54,7 @@ class Post extends Model {
 	{
 		return $this->belongsTo('App\Perfil');
 	}
-	
+
 	/**
 	* Um Post pode ser feito por uma empresa
 	*/
@@ -73,7 +73,20 @@ class Post extends Model {
 
 	public function entidade()
 	{
-		return $this->tipoEntidade;
+
+		if($this->tipoEntidade = "perfil") {
+			return $this->perfil();
+		}
+		if($this->tipoEntidade = "empresa") {
+			return $this->empresa();
+		}
+		if($this->tipoEntidade = "ong") {
+			return $this->ong();
+		}
 	}
 
+	static public function getUltimos()
+	{
+		return Post::all();
+	}
 }

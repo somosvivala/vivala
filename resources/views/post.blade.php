@@ -12,7 +12,7 @@
         </ul>
         {!! Form::open(['url' => 'post']) !!}
 
-        {!! Form::textarea("url", null, ['title'=>'O que você quer compartilhar?', 'aria-label'=>'O que você quer compartilhar?', 'placeholder'=>'O que você quer compartilhar?', 'class'=>'col-sm-12']) !!}
+        {!! Form::textarea("descricao", null, ['title'=>'O que você quer compartilhar?', 'aria-label'=>'O que você quer compartilhar?', 'placeholder'=>'O que você quer compartilhar?', 'class'=>'col-sm-12']) !!}
         <div class="row">
             <div class="col-sm-10">
                 <ul class="lista-intervalo-preto">
