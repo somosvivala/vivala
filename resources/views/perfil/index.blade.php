@@ -25,7 +25,7 @@
 	<div class="col-md-2">
 		<div class="foto-perfil">
 			<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="">
-				<img src="{{ $user->avatar }}" alt="{{ $user->username }}">
+				<img src="{{ $perfil->foto }}" alt="{{ $user->username }}">
 			</a>
 		</div>
 	</div>

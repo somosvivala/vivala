@@ -16,6 +16,7 @@ class CreateOngsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('nome');
+			$table->string('foto')->nullable();
 			$table->timestamps();
 
 			$table->integer('user_id')->unsigned();

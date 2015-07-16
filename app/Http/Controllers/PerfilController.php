@@ -82,7 +82,7 @@ class PerfilController extends ConectarController {
 			'tipo' => 'usuario'
 		]);
 
-		//Salvando imagem no avatar do usuario;
+		//Salvando foto de perfil;
 		$file = Input::file('image');
 	    if ($file) {
 
@@ -91,7 +91,7 @@ class PerfilController extends ConectarController {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	$perfil->user()->update(['avatar' => $destinationPath . $filename]);
+	        	$perfil->foto = $destinationPath . $filename;
 	        }
 	    }
 
@@ -151,6 +151,7 @@ class PerfilController extends ConectarController {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
+	        	dd("UPDATE NAO");
 	        	$user->update(['avatar' => $filename]);
 	        }
 	    }
@@ -183,8 +184,8 @@ class PerfilController extends ConectarController {
 
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
-	        	$user->update(['avatar' => $fileName]);
-
+	        	$user->perfil->foto = $fileName;
+				$user->perfil->save();
 	      		return redirect('editarPerfil');
 
 	        }

@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['username', 'email', 'password', 'avatar' ];
+	protected $fillable = ['username', 'email', 'password'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -62,16 +62,6 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 		return $this->hasMany('App\Empresa');
     }
 
-    public function getAvatarAttribute($value)
-    {
-    	$urlBase = "../../../uploads/";
-    	
-    	//Testa se o valor é uma URL
-    	if( preg_match ( '/^https?:\/\//' , $value) ) {
-    		return $value;
-    	} else {
-    		return $urlBase.$value;
-    	}
-    }
+
 
 }

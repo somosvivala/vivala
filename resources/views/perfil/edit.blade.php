@@ -9,7 +9,7 @@
 			<!-- Adiciona um formulario pra upload de foto-->
 			<div class="jc_coords row col-sm-12">
 
-				{!! Form::open(['url' => ['cropPhoto',  $user->id ], 'files' => true, 'onsubmit' => 'verificaRecorteImagem(this);']) !!}
+				{!! Form::open(['url' => ['cropPhotoPerfil',  $user->id ], 'files' => true, 'onsubmit' => 'verificaRecorteImagem(this);']) !!}
 
 					{!! Form::label("image_file_upload", "Escolha outra imagem:") !!}
 					{!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}
@@ -26,7 +26,7 @@
 			</div>
 				{!! Form::close() !!}
 			<div class="row col-sm-12" id="foto-atual-display"> 
-				<img src="{{ $user->avatar }}" id="foto-perfil">
+				<img src="{{ $perfil->foto }}" id="foto-perfil">
 			</div>
 			
 

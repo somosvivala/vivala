@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration {
 			$table->string('email')->unique();
 			$table->string('password', 60)->nullable();
 			$table->string('fb_token')->nullable();
-			$table->string('avatar')->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});
