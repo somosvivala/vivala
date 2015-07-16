@@ -6585,6 +6585,7 @@ a.suave:hover {
 body {
   background-color: #e2e2e2;
   font-size: 14px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 .foto-avatar,
 img.foto-avatar {
@@ -6897,6 +6898,27 @@ nav.menu-top .menu-direita ul li a img {
 ul.lista-usuarios li.foto-user img {
   max-width: 100px;
   border-radius: 50%;
+}
+/* Rede Social */
+.lista-posts {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.lista-posts article {
+  position: relative;
+}
+.hora-post {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+article.status .status {
+  font-size: 2em;
+}
+.post .like-btn {
+  cursor: pointer;
+  color: #f16f2b;
 }
 
 /*# sourceMappingURL=app.css.map */

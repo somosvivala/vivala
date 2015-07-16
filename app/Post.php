@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class Post extends Model {
 
@@ -30,6 +31,19 @@ class Post extends Model {
 		'tipoEntidade',
 		'tipoPost'
 	];
+
+	// Definindo a propriedades que nao existem no bd
+	public function getDataPostagemDiffAttribute()
+	{
+		$date = new Date($this->created_at);
+		return $date->diffForHumans();
+	}
+
+	// Definindo a propriedades que nao existem no bd
+	public function getQuantidadeLikes()
+	{
+		return 689;
+	}
 
 
 	public function likedByPerfil()
@@ -73,7 +87,6 @@ class Post extends Model {
 
 	public function entidade()
 	{
-
 		if($this->tipoEntidade = "perfil") {
 			return $this->perfil();
 		}

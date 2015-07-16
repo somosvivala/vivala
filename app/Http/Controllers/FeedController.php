@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Post;
-
+use Jenssegers\Date\Date;
 use Illuminate\Http\Request;
 
 class FeedController extends Controller {
@@ -15,6 +15,7 @@ class FeedController extends Controller {
 
 	// Compartilha os posts para a view de feed
 	public function getFeeds($view){
+
 		$posts = Post::getUltimos();
 		$view->with('posts', $posts);
 	}
