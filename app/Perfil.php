@@ -96,21 +96,25 @@ class Perfil extends Model {
     }
 
     /**
-     * Accessor para a propriedade Foto, passando o caminho do public
+     * Accessor para a propriedade avatar
      */
-    public function getFotoAttribute($value)
-    {
-        $urlBase = "../../../uploads/";
-        
-        //Testa se o valor é uma URL
-        if( preg_match ( '/^https?:\/\//' , $value) ) {
-            return $value;
-        } else {
-            return $urlBase.$value;
-        }
+    public function getAvatarAttribute() {
+        return $this->fotoAvatar;
+
     }
 
+    /**
+     * Um Perfl tem varias fotos.
+     */
+    public function fotos()
+    {
+        return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
+    }
 
+    public function fotoAvatar()
+    {
+        return $this->fotos()->where('tipo', 'avatar');
+    }
 
 
 }

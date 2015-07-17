@@ -77,19 +77,11 @@ class Ong extends Model {
         return $result;
     }
 
-
     /**
-     * Accessor para a propriedade Foto, passando o caminho do public
+     * Uma Ong pode ter muitas fotos
      */
-    public function getFotoAttribute($value)
+    public function foto()
     {
-        $urlBase = "../../../uploads/";
-        
-        //Testa se o valor é uma URL
-        if( preg_match ( '/^https?:\/\//' , $value) ) {
-            return $value;
-        } else {
-            return $urlBase.$value;
-        } 
+        return $this->hasMany('App\Foto')->withTimestamps();
     }
 }

@@ -76,4 +76,8 @@ class Post extends Model {
 		return $this->tipoEntidade;
 	}
 
+	public function foto() {
+		return $this->hasOne('App\Foto');
+	}
+
 }

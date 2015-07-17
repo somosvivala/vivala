@@ -11,6 +11,7 @@ use App;
 use Input;
 use Carbon\Carbon;
 use App\PrettyUrl;
+use App\Foto;
 
 class PerfilController extends ConectarController {
 
@@ -91,7 +92,9 @@ class PerfilController extends ConectarController {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	$perfil->foto = $destinationPath . $filename;
+	        	
+	        	$foto = new Foto(['path'=> $destinationPath . $filename]);
+	        	$foto->save();
 	        }
 	    }
 
@@ -151,7 +154,6 @@ class PerfilController extends ConectarController {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	dd("UPDATE NAO");
 	        	$user->update(['avatar' => $filename]);
 	        }
 	    }
@@ -184,8 +186,7 @@ class PerfilController extends ConectarController {
 
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
-	        	$user->perfil->foto = $fileName;
-				$user->perfil->save();
+	        	$user->perfil->foto->update(['path' => $fileName]);
 	      		return redirect('editarPerfil');
 
 	        }

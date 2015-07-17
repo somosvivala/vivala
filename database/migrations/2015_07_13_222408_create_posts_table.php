@@ -17,7 +17,6 @@ class CreatePostsTable extends Migration {
 			$table->increments('id');
 			$table->string('titulo', 140)->nullable();
 			$table->string('descricao', 500)->nullable();
-			$table->string('foto')->nullable();
 			$table->string('video')->nullable();
 			$table->enum('tipoEntidade', ['perfil', 'ong', 'empresa'])->nullable();
 			$table->enum('tipoPost', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
