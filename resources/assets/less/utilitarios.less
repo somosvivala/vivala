@@ -1,0 +1,61 @@
+/* Definição de tempo de efeitos */
+@anima-rapido : 0.3s all ease-out;
+
+// Simula um background-cover pra tag img
+div.cover {
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	z-index: -1;
+}
+.cover img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 50%;
+	max-width: 100%;
+	min-height: 50%;
+	max-height: 100%;
+	overflow-x: hidden;
+}
+// Arredonda as bordas (usando nas fotos)
+.round {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+// Classe com azul-zumbi de fundo, texto branco
+.suave {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0.7em;
+	font-size: 1em;
+	background-color: @cor-bg-suave;
+	color: @cor-txt-suave;
+	font-weight: bold;
+	line-height: 1.5em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	border:0px solid transparent;
+}
+
+.lista-intervalo-preto {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: black;
+	li {
+		padding:0;
+	}
+	li+li {
+		border-left: 2px solid black;
+	}
+}

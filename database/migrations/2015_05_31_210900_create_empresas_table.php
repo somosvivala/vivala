@@ -21,7 +21,7 @@ class CreateEmpresasTable extends Migration {
 			$table->foreign('user_id')
 				->references('id')
 				->on('users')
-				->onDelete('cascade');	
+				->onDelete('cascade');
 		});
 
 		Schema::create('perfil_follow_empresa', function(Blueprint $table)
@@ -49,6 +49,8 @@ class CreateEmpresasTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::drop('perfil_follow_empresa');
+
 		Schema::drop('empresas');
 	}
 

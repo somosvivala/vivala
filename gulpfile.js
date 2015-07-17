@@ -18,10 +18,10 @@ elixir(function(mix) {
     ], 'resources/assets/css/');
 
     mix.styles([
-        '*.css',
-        '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css'
+        '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+        '*.css'
     ], null, 'resources/assets/css');
-    
+
     mix.scripts([
 	    '../../assets/bower/jquery/dist/jquery.js',
         '../../assets/bower/bootstrap/dist/js/bootstrap.js',
@@ -31,5 +31,5 @@ elixir(function(mix) {
         '../../assets/js/edicaofotoperfil.js',
         '../../assets/js/ajaxCalls.js',
 	    '../../assets/js/welcome.js'
-	], 'public/js/vendor.js');	
+	], 'public/js/vendor.js');
 });

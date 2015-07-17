@@ -11,8 +11,8 @@ class CreateOngsTable extends Migration {
 	 * @return void
 	 */
 	public function up()
-	{	
-		Schema::create('ongs', function(Blueprint $table) 
+	{
+		Schema::create('ongs', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('nome');
@@ -22,9 +22,9 @@ class CreateOngsTable extends Migration {
 			$table->foreign('user_id')
 				->references('id')
 				->on('users')
-				->onDelete('cascade');	
+				->onDelete('cascade');
 		});
-	
+
 
 		Schema::create('perfil_follow_ong', function(Blueprint $table)
 		{
@@ -51,8 +51,8 @@ class CreateOngsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('ongs');
 		Schema::drop('perfil_follow_ong');
+		Schema::drop('ongs');
 
 	}
 

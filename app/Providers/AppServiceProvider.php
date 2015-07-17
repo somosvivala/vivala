@@ -15,6 +15,7 @@ class AppServiceProvider extends ServiceProvider {
 		view()->composer('conectar.sugestoesviajantes', 'App\Http\Controllers\ConectarController@getSugestoesViajantes');
 		view()->composer('cuidar.sugestoesongs', 'App\Http\Controllers\CuidarController@getSugestoesOngs');
 		view()->composer('viajar.sugestoesempresas', 'App\Http\Controllers\ViajarController@getSugestoesempresas');
+		view()->composer('feed', 'App\Http\Controllers\FeedController@getFeeds');
 	}
 
 	/**

@@ -1,116 +1,19 @@
 @import "../bower/bootstrap/less/bootstrap";
-@import "user";
-
-/* Fontes */
-@font-size-rem: 14px;
-
-@btn-font-weight: 300;
-@font-family-sans-serif: "Open Sans", Helvetica, Arial, sans-serif;
-
-/* Definição das cores */
-@cor-pele-zumbi : #8BA6AC;
-@cor-primaria : #F16F2B;
-@cor-secundaria : @cor-pele-zumbi;
-
-/* Definição das cores dos elementos */
-@cor-txt : black;
-
-@cor-bg-body : #e2e2e2;
-@cor-bg-painel : white;
-@cor-bg-btn : @cor-primaria;
-@cor-txt-btn : @cor-primaria;
-
-@cor-menu-lateral : #5D5D5D;
-@cor-menu-lateral-hover : @cor-primaria;
-
-@cor-bg-suave : @cor-secundaria;
-@cor-txt-suave : white;
-@cor-txt-suave-hover : black;
-
-@cor-txt-link : white;
-@cor-txt-link-hover : black;
-
-@cor-menu-superior : @cor-txt;
-@cor-menu-superior-hover : @cor-pele-zumbi;
-
-@cor-sugestao-botao-bg : @cor-primaria;
-@cor-sugestao-botao-txt : white;
-
-@cor-sugestao-titulo-txt: black;
-
-@cor-foto-fundo-txt : white;
-@cor-foto-comentario-txt : black;
-
-/* Definição de tempo de efeitos */
-@anima-rapido : 0.3s all ease-out;
-
+@import "coresefontes";
+@import "utilitarios";
+@import "elementos";
 
 /* Classes css */
 body {
 	background-color: @cor-bg-body;
 	font-size: @font-size-rem;
+	font-family: @font-family-sans-serif;
 }
 
-// Simula um background-cover pra tag img
-div.cover {
-	position: absolute;
-	top: -50%;
-	left: -50%;
-	width: 200%;
-	height: 200%;
-	z-index: -1;
-}
-.cover img{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	margin: auto;
-	min-width: 50%;
-	max-width: 100%;
-	min-height: 50%;
-	max-height: 100%;
-	overflow-x: hidden;
-}
-
-// Arredonda as bordas (usando nas fotos)
-.round {
+.foto-avatar,
+img.foto-avatar {
+	max-width: 100px;
 	border-radius: 50%;
-	overflow: hidden;
-}
-
-// Classe com azul-zumbi de fundo, texto branco
-.suave {
-	text-align: center;
-	text-transform: uppercase;
-	padding: 0.7em;
-	font-size: 1em;
-	background-color: @cor-bg-suave;
-	color: @cor-txt-suave;
-	font-weight: bold;
-	line-height: 1.5em;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	border:0px solid transparent;
-}
-
-// Define o titulo usados nas sidebars
-h4.suave {
-	.suave();
-}
-// Define os botões que vão seguir o mesmo esquema de cor
-button.suave {
-	padding: 0.2em 0.5em;
-	cursor: pointer;
-}
-a.suave {
-	padding: 0.2em 1em;
-	text-decoration: none;
-	cursor: pointer;
-	&:hover {
-		color: @cor-txt-suave-hover;
-	}
 }
 
 // Menu de navegação lateral (da esquerda)
@@ -324,15 +227,6 @@ ul.viagens-comentadas {
 	}
 }
 
-.left-panel, .right-panel {
-	background-color: @cor-bg-painel;
-	padding: 1.5em;
-}
-.btn-primario {
-	background-color: @cor-bg-suave;
-	color: @cor-txt-suave;
-}
-
 
 nav.menu-top {
 	background-color: @cor-bg-painel;
@@ -428,15 +322,36 @@ nav.menu-top {
 		}
 	}
 }
-.foto-avatar,
-img.foto-avatar {
-	max-width: 100px;
-	border-radius: 50%;
-}
+
+
 ul.lista-usuarios {
 	li.foto-user {
 		img {
 			.foto-avatar()
 		}
 	}
+}
+
+
+/* Rede Social */
+.lista-posts {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.lista-posts article {
+	position: relative;
+}
+.hora-post {
+	position:absolute;
+	right:1em;
+	top:1em;
+}
+article.status .status {
+	font-size: 2em;
+}
+
+.post .like-btn {
+	cursor: pointer;
+	color: @cor-primaria;
 }

@@ -15,7 +15,7 @@ use Carbon\Carbon;
 
 
 class EmpresaController extends Controller {
-	
+
 	/**
 	 * Mostra a pagina inicial da Empresa
 	 * @param   String 			 $prettyUrl 	  Se acessado diretamente, leva a suposta prettyUrl
@@ -32,7 +32,7 @@ class EmpresaController extends Controller {
 		$empresa = Session::get('empresa', null);
 		if (is_null($empresa) || $prettyUrl != $empresa->getUrl()) {
 			Session::forget('empresa');
-			
+
 			$prettyUrlObj = PrettyUrl::all()->where('url', $prettyUrl)->first();
 
 			//Se parametro for uma prettyURL, pegar objeto Empresa.
@@ -40,7 +40,7 @@ class EmpresaController extends Controller {
 				$empresa = App\Empresa::find($prettyUrlObj->prettyurlable_id);
 			} else {
 				App::abort(404);
-			}			
+			}
 		}
 
 		// Verifica se o usuário logado tem permissão de edição da Empresa
@@ -66,7 +66,7 @@ class EmpresaController extends Controller {
 
 	/**
 	 * Salva a Empresa no BD e redireciona pra home
-	 * Criando tam´bém a prettyUrl associada a essa Empresa
+	 * Criando também a prettyUrl associada a essa Empresa
 	 *
 	 * @return Response
 	 */
@@ -96,6 +96,10 @@ class EmpresaController extends Controller {
 		return view('empresa.show', compact('empresa'));
 	}
 
+	/**
+	 * Tela de edição da empresa
+	 *
+	 */
 	public function edit($id)
     {
 		$user = Auth::user();
@@ -176,5 +180,5 @@ class EmpresaController extends Controller {
 
 		return $user_preffix . $timestamp .$filename;
 	}
-  
+
 }

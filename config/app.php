@@ -149,7 +149,8 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 		'Orangehill\Iseed\IseedServiceProvider',
-		'Intervention\Image\ImageServiceProvider'
+		'Intervention\Image\ImageServiceProvider',
+		'Jenssegers\Date\DateServiceProvider'
 	],
 
 	/*

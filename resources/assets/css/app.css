@@ -6476,36 +6476,10 @@ button.close {
     display: none !important;
   }
 }
-.foto-perfil {
-  width: 200px;
-  height: 200px;
-  text-align: center;
-  border-radius: 100px;
-  overflow: hidden;
-}
-.foto-perfil img {
-  max-width: 200px;
-}
-.lista-usuarios {
-  list-style: none;
-}
-.lista-usuarios li {
-  float: left;
-}
-#foto-perfil {
-  max-width: 500px;
-  position: relative;
-  /* or fixed or absolute */
-}
-/* Fontes */
-/* Definição das cores */
+/* Definição do nome das cores principais */
 /* Definição das cores dos elementos */
+/* Fontes */
 /* Definição de tempo de efeitos */
-/* Classes css */
-body {
-  background-color: #e2e2e2;
-  font-size: 14px;
-}
 div.cover {
   position: absolute;
   top: -50%;
@@ -6544,6 +6518,39 @@ div.cover {
   margin-bottom: 0px;
   border: 0px solid transparent;
 }
+.lista-intervalo-preto {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: black;
+}
+.lista-intervalo-preto li {
+  padding: 0;
+}
+.lista-intervalo-preto li + li {
+  border-left: 2px solid black;
+}
+.left-panel,
+.right-panel {
+  background-color: white;
+  padding: 1.5em;
+}
+.btn-primario {
+  background-color: #8ba6ac;
+  color: white;
+}
+.btn-acao {
+  background-color: #f16f2b;
+  color: white;
+}
+button.btn,
+input.btn,
+a.btn {
+  border-radius: 0px;
+}
 h4.suave {
   text-align: center;
   text-transform: uppercase;
@@ -6568,6 +6575,20 @@ a.suave {
 }
 a.suave:hover {
   color: black;
+}
+.lista-intervalo-preto a {
+  color: black;
+}
+/* Classes css */
+body {
+  background-color: #e2e2e2;
+  font-size: 14px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.foto-avatar,
+img.foto-avatar {
+  max-width: 100px;
+  border-radius: 50%;
 }
 nav.menu-lateral {
   line-height: 3.5em;
@@ -6775,15 +6796,6 @@ ul.sugestoes-pacotes button,
 ul.viagens-comentadas button {
   font-size: 10px;
 }
-.left-panel,
-.right-panel {
-  background-color: white;
-  padding: 1.5em;
-}
-.btn-primario {
-  background-color: #8ba6ac;
-  color: white;
-}
 nav.menu-top {
   background-color: white;
   border-color: #e2e2e2;
@@ -6881,14 +6893,30 @@ nav.menu-top .menu-direita ul li a img {
 .perfil-topo ul li + li {
   border-left: 1px solid white;
 }
-.foto-avatar,
-img.foto-avatar {
-  max-width: 100px;
-  border-radius: 50%;
-}
 ul.lista-usuarios li.foto-user img {
   max-width: 100px;
   border-radius: 50%;
+}
+/* Rede Social */
+.lista-posts {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.lista-posts article {
+  position: relative;
+}
+.hora-post {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+}
+article.status .status {
+  font-size: 2em;
+}
+.post .like-btn {
+  cursor: pointer;
+  color: #f16f2b;
 }
 
 #welcome-html {
