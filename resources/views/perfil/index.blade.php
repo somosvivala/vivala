@@ -25,7 +25,7 @@
 	<div class="col-md-2">
 		<div class="foto-perfil">
 			<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="">
-				<img src="{{ $perfil->foto->path }}" alt="{{ $user->username }}">
+				<img src="{{ $perfil->avatar->path }}" alt="{{ $user->username }}">
 			</a>
 		</div>
 	</div>
@@ -62,7 +62,7 @@
 				<ul class="lista-usuarios">
 					<li class="foto-user">
 						<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="{{ $perfil->user->username }}">
-							<img src="{{ $perfil->foto->path }}" alt="{{ $perfil->user->username }}">
+							<img src="{{ $perfil->avatar->path }}" alt="{{ $perfil->user->username }}">
 						</a>
 					</li>
 				</ul>
@@ -76,7 +76,7 @@
 				<ul class="lista-usuarios">
 					<li class="foto-user">
 						<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="{{ $perfil->user->username }}">
-							<img src="{{ $perfil->foto->path }}" alt="{{ $perfil->user->username }}">
+							<img src="{{ $perfil->avatar->path }}" alt="{{ $perfil->user->username }}">
 						</a>
 					</li>
 				</ul>

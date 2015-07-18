@@ -16,8 +16,8 @@ class CreatePerfilsTable extends Migration {
 		Schema::create('perfils', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('nome_completo')->unsigned();
-			$table->string('apelido')->unsigned();
+			$table->string('nome_completo')->nullable();
+			$table->string('apelido')->nullable();
 			$table->integer('user_id')->unsigned();
 			$table->date('aniversario')->default(Carbon::now());
 			$table->string('cidade_natal')->nullable();

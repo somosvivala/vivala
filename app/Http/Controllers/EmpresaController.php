@@ -128,8 +128,18 @@ class EmpresaController extends Controller {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	$empresa->foto = $destinationPath . $filename;
-	        	$empresa->save();
+
+	        	/* Settando tipo da foto atual para null */
+	        	$currentAvatar = $empresa->avatar;
+	        	$currentAvatar->tipo = null;
+	        	$currentAvatar->save();
+
+	        	$foto = new Foto([
+	        			'path' => $destinationPath . $filename,
+	        			'tipo' => 'avatar' ]);
+	        	$empresa->fotos()->save($foto);
+
+
 	        }
 	    }
 
@@ -164,8 +174,17 @@ class EmpresaController extends Controller {
 
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
-	        	$empresa->foto = $fileName;
-				$empresa->save();
+
+	        	/* Settando tipo da foto atual para null */
+	        	$currentAvatar = $empresa->avatar;
+	        	$currentAvatar->tipo = null;
+	        	$currentAvatar->save();
+
+	        	$foto = new Foto([
+	        			'path' => $filename,
+	        			'tipo' => 'avatar' ]);
+	        	$empresa->fotos()->save($foto);
+
 	      		return redirect('empresa/'.$empresa->id.'/edit');
 
 	        }

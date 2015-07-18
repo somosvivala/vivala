@@ -93,8 +93,15 @@ class PerfilController extends ConectarController {
 
 	        if ($upload_success) {
 	        	
-	        	$foto = new Foto(['path'=> $destinationPath . $filename]);
-	        	$foto->save();
+	        	/* Settando tipo da foto atual para null */
+	        	$currentAvatar = $perfil->avatar;
+	        	$currentAvatar->tipo = null;
+	        	$currentAvatar->save();
+
+	        	$foto = new Foto([
+	        			'path' => $destinationPath . $filename,
+	        			'tipo' => 'avatar' ]);
+	        	$perfil->fotos()->save($foto);
 	        }
 	    }
 
@@ -155,6 +162,12 @@ class PerfilController extends ConectarController {
 
 	        if ($upload_success) {
 	        	$user->update(['avatar' => $filename]);
+
+	        	//essa rota esta sendo usada?
+	        	//
+	        	dd('se pa nao, updatePhoto');
+
+
 	        }
 	    }
 	}
@@ -168,6 +181,7 @@ class PerfilController extends ConectarController {
 
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
+		$perfil = $user->perfil;
 
 		$file = Input::file('image_file_upload');
 	    if ($file->isValid()) {
@@ -186,9 +200,18 @@ class PerfilController extends ConectarController {
 
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
-	        	$user->perfil->foto->update(['path' => $fileName]);
-	      		return redirect('editarPerfil');
 
+	        	/* Settando tipo da foto atual para null */
+	        	$currentAvatar = $perfil->avatar;
+	        	$currentAvatar->tipo = null;
+	        	$currentAvatar->save();
+
+	        	$foto = new Foto([
+	        			'path' => $fileName,
+	        			'tipo' => 'avatar' ]);
+	        	$perfil->fotos()->save($foto);
+
+	      		return redirect('editarPerfil');
 	        }
 	    }
 	}

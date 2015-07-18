@@ -125,8 +125,16 @@ class OngController extends Controller {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	$ong->foto = $destinationPath . $filename;
-	        	$ong->save();
+	        	
+	        	/* Settando tipo da foto atual para null */
+	        	$currentAvatar = $ong->avatar;
+	        	$currentAvatar->tipo = null;
+	        	$currentAvatar->save();
+
+	        	$foto = new Foto([
+	        			'path' => $destinationPath . $filename,
+	        			'tipo' => 'avatar' ]);
+	        	$ong->fotos()->save($foto);
 	        }
 	    }
 
@@ -162,8 +170,17 @@ class OngController extends Controller {
 
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
-	        	$ong->foto = $fileName;
-				$ong->save();
+
+	      		/* Settando tipo da foto atual para null */
+	        	$currentAvatar = $ong->avatar;
+	        	$currentAvatar->tipo = null;
+	        	$currentAvatar->save();
+
+	        	$foto = new Foto([
+	        			'path' => $fileName,
+	        			'tipo' => 'avatar' ]);
+	        	$ong->fotos()->save($foto);
+
 	      		return redirect('ong/'.$ong->id.'/edit');
 
 	        }

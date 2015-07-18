@@ -22,7 +22,7 @@
 	</div>
 	{!! Form::close() !!}		
 	<div class="row col-sm-12" id="foto-atual-display"> 
-		<img src="{{ $empresa->foto }}" id="foto-perfil" alt="Foto da empresa">
+		<img src="{{ $empresa->avatar->path }}" id="foto-perfil" alt="Foto da empresa">
 	</div>
 
   	{!! Form::model($empresa, ['method' => 'PATCH', 'action' => ['EmpresaController@update', $empresa->id] ]) !!}

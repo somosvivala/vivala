@@ -103,22 +103,28 @@ class Perfil extends Model {
     /**
      * Accessor para a propriedade avatar
      */
-    public function getAvatarAttribute() {
-        return $this->fotoAvatar;
+    public function getAvatarAttribute() 
+    {
+        return $this->fotoAvatar();
     }
 
     /**
-     * Um Perfl tem varias fotos.
+     * Um Perfil tem varias fotos.
      */
     public function fotos()
     {
         return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
 
+    /**
+     * Um Perfil tem apenas uma foto de avatar;
+     */
     public function fotoAvatar()
     {
-        return $this->fotos()->where('tipo', 'avatar');
+        return $this->fotos()->where('tipo', 'avatar')->get()->first();
     }
+
+
 
 
 }

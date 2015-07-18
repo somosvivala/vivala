@@ -85,11 +85,27 @@ class Empresa extends Model {
 
 
     /**
-     * Uma Empresa pode ter muitas fotos
+     * Accessor para a propriedade avatar
      */
-    public function foto()
+    public function getAvatarAttribute() 
     {
-        return $this->hasOne('App\Foto')->withTimestamps();
+        return $this->fotoAvatar();
+    }
+
+    /**
+     * Uma Empresa tem varias fotos.
+     */
+    public function fotos()
+    {
+        return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
+    }
+
+    /**
+     * Uma Empresa tem apenas uma foto de avatar;
+     */
+    public function fotoAvatar()
+    {
+        return $this->fotos()->where('tipo', 'avatar')->get()->first();
     }
 
 
