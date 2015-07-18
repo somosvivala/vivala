@@ -37,7 +37,7 @@ class PostController extends Controller {
 	{
 		$novoPost = Auth::user()->perfil->posts()->create(Request::all());
 
-		return redirect('home');
+		return redirect('conectar');
 	}
 
 	/**

@@ -100,6 +100,6 @@ class Post extends Model {
 
 	static public function getUltimos()
 	{
-		return Post::all();
+		return Post::latest()->get();
 	}
 }
