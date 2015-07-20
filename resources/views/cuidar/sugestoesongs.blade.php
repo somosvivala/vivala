@@ -11,7 +11,7 @@
 				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
-						<img src="/img/dummy.jpg">
+						<img src="{{ $Ong->getAvatarUrl() }}" alt=" {{ $Ong->nome }}">
 					</div>
 				</div>
 				<strong class="col-sm-12">{{ $Ong->nome }}</strong>

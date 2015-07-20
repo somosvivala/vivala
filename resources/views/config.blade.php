@@ -10,7 +10,7 @@
 			<h4> Suas ONGS <a href="{{ url('ong/create') }}">+</a></h4>
 			@forelse($ongs as $ong)
 					<a href="{{ url($ong->getUrl()) }}" title="{{ $ong->nome }}">
-						<img src="{{ $ong->nome }}" alt="{{ $ong->nome  }}">
+						<img src="{{ $ong->getAvatarUrl() }}" alt="{{ $ong->nome  }}">
 					</a>
 			@empty
 			    <p>Nenhuma ong.</p>
@@ -18,7 +18,7 @@
 			<h4> Suas empresas <a href="{{ url('empresa/create') }}">+</a></h4>
 			@forelse($empresas as $empresa)
 				<a href="{{ url($empresa->getUrl()) }}" title="{{ $empresa->nome }}">
-					<img src="{{ $empresa->nome }}" alt="{{ $empresa->nome  }}">
+					<img src="{{ $empresa->getAvatarUrl() }}" alt="{{ $empresa->nome  }}">
 				</a>
 			@empty
 			    <p>Nenhuma empresas.</p>
@@ -28,7 +28,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 				<a href="{{url('perfil')}}">
-					<img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->username }}" style="width:100px;">
+					<img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}" style="width:100px;">
 					{{trans('acoes.visualizarperfil')}}
 				</a>
 				<h1>Alô {{ Auth::user()->username }}</h1>

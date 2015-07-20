@@ -23,7 +23,7 @@
 	</div>
 	{!! Form::close() !!}		
 	<div class="row col-sm-12" id="foto-atual-display"> 
-		<img src="{{ $ong->avatar->path }}" id="foto-perfil" alt="Foto da ong">
+		<img src="{{ $ong->getAvatarUrl() }}" id="foto-perfil" alt="Foto da ong">
 	</div>
 
 

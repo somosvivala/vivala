@@ -8,5 +8,5 @@
 	</a>
 	@endif
 	<h1 class="title">Nome: {{ $empresa->nome }}</h1>
-	<img src="{{ $empresa->avatar->path }}" alt="Foto da Empresa">
+	<img src="{{ $empresa->getAvatarUrl() }}" alt="Foto da Empresa">
 @endsection

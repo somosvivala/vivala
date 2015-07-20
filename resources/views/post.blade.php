@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-2">
-        <img class="foto-avatar" src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->username }}">
+        <img class="foto-avatar" src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}">
     </div>
     <div class="col-sm-10">
         <ul id="tipo-post" class="row lista-intervalo-preto">

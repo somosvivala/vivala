@@ -20,7 +20,7 @@ $(function() {
       btn_seguir.addClass('suave')
         .text('seguindo')
         .show();
-      alert(data);
+      // alert(data);
   	})
   	.fail(function(data) {
   	  alert('erro seguir perfil'); 
@@ -47,7 +47,7 @@ $(function() {
       btn_seguir.addClass('suave')
         .text('seguindo')
         .show();
-      alert(data);
+      // alert(data);
     })
     .fail(function(data) {
       alert('erro seguir empresa'); 
@@ -74,7 +74,7 @@ $(function() {
       btn_seguir.addClass('suave')
         .text('seguindo')
         .show();
-      alert(data);
+      // alert(data);
     })
     .fail(function(data) {
       alert('erro seguir perfil'); 

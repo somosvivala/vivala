@@ -12,7 +12,7 @@ use App;
 use Carbon\Carbon;
 use App\PrettyUrl;
 use Input;
-
+use App\Foto;
 
 
 class OngController extends Controller {
@@ -171,10 +171,12 @@ class OngController extends Controller {
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
 
-	      		/* Settando tipo da foto atual para null */
-	        	$currentAvatar = $ong->avatar;
-	        	$currentAvatar->tipo = null;
-	        	$currentAvatar->save();
+	      		/* Settando tipo da foto atual para null, checando se existe antes */
+	      		if ($ong->avatar) {	
+		        	$currentAvatar = $ong->avatar;
+		        	$currentAvatar->tipo = null;
+		        	$currentAvatar->save();
+	      		}
 
 	        	$foto = new Foto([
 	        			'path' => $fileName,

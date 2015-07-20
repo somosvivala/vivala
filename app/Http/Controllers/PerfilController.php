@@ -93,10 +93,12 @@ class PerfilController extends ConectarController {
 
 	        if ($upload_success) {
 	        	
-	        	/* Settando tipo da foto atual para null */
-	        	$currentAvatar = $perfil->avatar;
-	        	$currentAvatar->tipo = null;
-	        	$currentAvatar->save();
+	        	if ($perfil->avatar) {
+		        	/* Settando tipo da foto atual para null */
+		        	$currentAvatar = $perfil->avatar;
+		        	$currentAvatar->tipo = null;
+		        	$currentAvatar->save();
+	        	}
 
 	        	$foto = new Foto([
 	        			'path' => $destinationPath . $filename,

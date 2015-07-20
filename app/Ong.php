@@ -102,4 +102,17 @@ class Ong extends Model {
         return $this->fotos()->where('tipo', 'avatar')->get()->first();
     }
 
+    /**
+     * Metodo para recuperar a url do avatar da ong
+     * @return String 
+     */
+    public function getAvatarUrl() 
+    {
+        if ($this->fotoAvatar()) {
+            return $this->fotoAvatar()->path;
+        }
+
+        return '';
+    }
+
 }

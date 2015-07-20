@@ -2,7 +2,7 @@
 	<div class="hora-post"> {{ $Post->data_postagem_diff }} </div>
 	<div class="row">
 		<div class="col-sm-2">
-			<img class="foto-avatar" src="{{ $Post->entidade->avatar }}" alt="{{ $Post->entidade->nome }}">
+			<img class="foto-avatar" src="{{ $Post->entidade->getAvatarUrl() }}" alt="{{ $Post->entidade->nome }}">
 			<div>{{$Post->entidade->apelido }}</div>
 		</div>
 		<div class="col-sm-10">

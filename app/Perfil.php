@@ -49,7 +49,7 @@ class Perfil extends Model {
     }
 
     /**
-     * Um Perfl tem uma prettyUrl.
+     * Um Perfil tem uma prettyUrl.
      * @return [type] [description]
      */
     public function prettyUrl()
@@ -124,6 +124,18 @@ class Perfil extends Model {
         return $this->fotos()->where('tipo', 'avatar')->get()->first();
     }
 
+    /**
+     * Metodo para recuperar a url do avatar do perfil
+     * @return String 
+     */
+    public function getAvatarUrl() 
+    {
+        if ($this->fotoAvatar()) {
+            return $this->fotoAvatar()->path;
+        }
+
+        return '';
+    }
 
 
 

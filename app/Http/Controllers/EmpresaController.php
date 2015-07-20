@@ -12,7 +12,7 @@ use Input;
 use Auth;
 use App;
 use Carbon\Carbon;
-
+use App\Foto;
 
 class EmpresaController extends Controller {
 
@@ -175,13 +175,15 @@ class EmpresaController extends Controller {
 			//Salvando imagem no avatar do usuario;
 	        if ($upload_success) {
 
-	        	/* Settando tipo da foto atual para null */
-	        	$currentAvatar = $empresa->avatar;
-	        	$currentAvatar->tipo = null;
-	        	$currentAvatar->save();
+	      		/* Settando tipo da foto atual para null, checando se existe antes */
+	      		if ($empresa->avatar) {	
+		        	$currentAvatar = $empresa->avatar;
+		        	$currentAvatar->tipo = null;
+		        	$currentAvatar->save();
+	      		}
 
 	        	$foto = new Foto([
-	        			'path' => $filename,
+	        			'path' => $fileName,
 	        			'tipo' => 'avatar' ]);
 	        	$empresa->fotos()->save($foto);
 

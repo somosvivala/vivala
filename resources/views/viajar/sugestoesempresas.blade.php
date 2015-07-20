@@ -10,7 +10,7 @@
 				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
-						<img src="/img/dummy.jpg">
+						<img src="{{ $Empresa->getAvatarUrl() }}"  alt="{{ $Empresa->nome }}">
 					</div>
 				</div>
 				<strong class="col-sm-12">{{ $Empresa->nome }}</strong>

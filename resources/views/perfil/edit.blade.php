@@ -26,7 +26,7 @@
 			</div>
 				{!! Form::close() !!}
 			<div class="row col-sm-12" id="foto-atual-display"> 
-				<img src="{{ $perfil->avatar->path }}" id="foto-perfil">
+				<img src="{{ $perfil->getAvatarUrl() }}" id="foto-perfil">
 			</div>
 			
 
