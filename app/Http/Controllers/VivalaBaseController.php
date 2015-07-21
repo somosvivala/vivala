@@ -35,8 +35,6 @@ class VivalaBaseController extends Controller {
 		$entidade = null;
 		$pathRetorno = null;
 
-
-
 		/**
 		 * Pegando tipo da entidade a partir da rota
 		 */

@@ -103,4 +103,12 @@ class Post extends Model {
 		return Post::latest()->get();
 	}
 
+	/**
+     * Um Post tem uma foto.
+     */
+    public function foto()
+    {
+        return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
+    }
+
 }
