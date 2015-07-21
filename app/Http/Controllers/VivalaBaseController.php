@@ -28,7 +28,7 @@ class VivalaBaseController extends Controller {
 	 * [updatePhoto description]
 	 * @param  Integer Id do usuário
 	 * @return ??
-	 */	
+	 */
 	public function cropPhoto($id, CropPhotoRequest $request) {
 
 		$currentRoute = Route::current();
@@ -47,6 +47,9 @@ class VivalaBaseController extends Controller {
 		} else if (strstr($currentRoute->getUri(), 'Perfil')) {
 			$entidade = Perfil::findOrFail($id);
 			$pathRetorno = 'editarPerfil';
+		} else if (strstr($currentRoute->getUri(), 'Post')) {
+			$entidade = Post::findOrFail($id);
+			$pathRetorno = 'home';
 		}
 
 		$file = Input::file('image_file_upload');
@@ -68,7 +71,7 @@ class VivalaBaseController extends Controller {
 	        if ($upload_success) {
 
 	      		/* Settando tipo da foto atual para null, checando se existe antes */
-	      		if ($entidade->avatar) {	
+	      		if ($entidade->avatar) {
 		        	$currentAvatar = $entidade->avatar;
 		        	$currentAvatar->tipo = null;
 		        	$currentAvatar->save();
@@ -77,6 +80,7 @@ class VivalaBaseController extends Controller {
 	        	$foto = new Foto([
 	        			'path' => $fileName,
 	        			'tipo' => 'avatar' ]);
+
 	        	$entidade->fotos()->save($foto);
 
 	      		return redirect($pathRetorno);

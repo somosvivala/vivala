@@ -2,15 +2,15 @@
   function verificaRecorteImagem(evt) {
 
     if(
-      jQuery('#wJcropPerfil').val() == 0 || 
-      jQuery('#hJcropPerfil').val() == 0 
-      ) 
+      jQuery('#wJcropPerfil').val() == 0 ||
+      jQuery('#hJcropPerfil').val() == 0
+      )
     {
       alert('Ops, nada para recortar, voce delimitou uma area dentro da nova imagem?');
       return false;
     }
   };
-$(function(){ 
+$(function(){
 
   function updateCoords(c) {
     jQuery('input[name=x]').val(c.x);
@@ -23,7 +23,7 @@ $(function(){
   var jcrop_api, boundx, boundy;
 
   /**
-   * Handler para quando uma foto é adicionada 
+   * Handler para quando uma foto é adicionada
    * @return {?} [description]
    */
   function fotoUploadHandler() {
@@ -57,8 +57,8 @@ $(function(){
       oImage.onload = function () { // onload event handler
 
         // Esconde foto atual e mostra a nova
-        $('#foto-atual-display').fadeOut(300);  
-        $('#foto-edit-display').removeClass('hide').fadeIn(500);  
+        $('#foto-atual-display').fadeOut(300);
+        $('#foto-edit-display').removeClass('hide').fadeIn(500);
 
         // destroy Jcrop if it is existed
         if (typeof jcrop_api != 'undefined') {
@@ -74,8 +74,8 @@ $(function(){
           minSize: [ 100, 100 ],
           onSelect: updateCoords,
           onSelect: updateCoords,
-          bgFade: true, 
-          bgOpacity: .3, 
+          bgFade: true,
+          bgOpacity: .3,
         }, function(){
           // Store the Jcrop API in the jcrop_api variable
           jcrop_api = this;
