@@ -60,7 +60,6 @@
                 </li>
             </ul>
 
-
             <div class="row">
                 {!! Form::textarea("descricao", null, ['title'=>'O que você quer compartilhar?', 'aria-label'=>'O que você quer compartilhar?', 'placeholder'=>'O que você quer compartilhar?']) !!}
             </div>
