@@ -11,6 +11,7 @@ use App\FacebookData;
 use App\PrettyUrl;
 use Carbon\Carbon;
 use App\Perfil;
+use App\Foto;
 
 class FacebookController extends Controller {
 
