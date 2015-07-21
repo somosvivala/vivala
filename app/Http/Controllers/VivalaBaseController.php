@@ -52,7 +52,7 @@ class VivalaBaseController extends Controller {
 		}
 
 		$file = Input::file('image_file_upload');
-	    if ($file->isValid()) {
+	    if ($file && $file->isValid()) {
 
 			$widthCrop = $request->input('w');
 			$heightCrop = $request->input('h');

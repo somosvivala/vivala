@@ -100,6 +100,14 @@ class OngController extends CuidarController {
 	{
 		$user = Auth::user();
 		$ong = Ong::findOrFail($id);
+
+		//Verificando se usuario logado é owner da ong atual
+        //TODO: Model de permissoes.. 
+        if ($ong->user->id != $user->id) {
+        	//Criar mensagens de erro padrão em configurações??
+	        App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
+        }
+
         $ong->url = $ong->getUrl();
 		return view('ong.edit', compact('user', 'ong'));
 	}
@@ -113,7 +121,6 @@ class OngController extends CuidarController {
     public function update($id, Requests\EditarOngRequest $request)
     {
         $ong = Ong::findOrFail($id);
-
         $ong->update($request->all());
 
         //Salvando foto da ong;

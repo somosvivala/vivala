@@ -104,6 +104,14 @@ class EmpresaController extends ViajarController {
     {
 		$user = Auth::user();
         $empresa = Empresa::findOrFail($id);
+
+        //Verificando se usuario logado é owner da empresa atual
+        //TODO: Model de permissoes.. 
+        if ($empresa->user->id != $user->id) {
+        	//Criar mensagens de erro padrão em configurações??
+	        App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa empresa');
+        }
+
         $empresa->url = $empresa->getUrl();
         return view('empresa.edit', compact('empresa', 'user') );
     }

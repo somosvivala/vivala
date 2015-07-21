@@ -1,17 +1,16 @@
 /* Trocar essa merda de função por jquery */
-  function verificaRecorteImagem() {
-    evt.preventDefault(); 
+  function verificaRecorteImagem(evt) {
+
     if(
       jQuery('#wJcropPerfil').val() == 0 || 
       jQuery('#hJcropPerfil').val() == 0 
       ) 
     {
-      alert('Recorta a imagem carai');
+      alert('Ops, nada para recortar, voce delimitou uma area dentro da nova imagem?');
       return false;
     }
   };
 $(function(){ 
- 
 
   function updateCoords(c) {
     jQuery('input[name=x]').val(c.x);
