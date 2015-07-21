@@ -53,7 +53,8 @@ class FacebookController extends Controller {
 		$user->save();
 
 		$perfil = new Perfil;
-		$perfil->foto = $userData->avatar;
+		$fotoPerfil = new Foto(['path' => $userData->avatar, 'tipo' => 'avatar']);
+		$perfil->fotos->save($fotoPerfil);
         $perfil->user_id = $user->id;
         $perfil->save();
 

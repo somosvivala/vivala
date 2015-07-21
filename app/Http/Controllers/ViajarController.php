@@ -7,7 +7,7 @@ use View;
 use Auth;
 use Illuminate\Http\Request;
 
-class ViajarController extends Controller {
+class ViajarController extends VivalaBaseController {
 
 	var $sugestoesEmpresas;
 

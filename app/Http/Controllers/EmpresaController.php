@@ -14,7 +14,7 @@ use App;
 use Carbon\Carbon;
 use App\Foto;
 
-class EmpresaController extends Controller {
+class EmpresaController extends ViajarController {
 
 	/**
 	 * Mostra a pagina inicial da Empresa
@@ -138,8 +138,6 @@ class EmpresaController extends Controller {
 	        			'path' => $destinationPath . $filename,
 	        			'tipo' => 'avatar' ]);
 	        	$empresa->fotos()->save($foto);
-
-
 	        }
 	    }
 
@@ -147,59 +145,5 @@ class EmpresaController extends Controller {
         $empresa->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('empresa.show', compact('empresa'));
     }
-
-    /**
-	 * [updatePhoto description]
-	 * @param  Integer Id do usuário
-	 * @return ??
-	 */
-	public function cropPhoto($id, CropPhotoRequest $request) {
-
-		$empresa = Empresa::findOrFail($id);
-
-		$file = Input::file('image_file_upload');
-	    if ($file->isValid()) {
-
-			$widthCrop = $request->input('w');
-			$heightCrop = $request->input('h');
-			$xSuperior = $request->input('x');
-			$ySuperior = $request->input('y');
-
-			$destinationPath = public_path() . '/uploads/';
-			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
-			$fileName = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
-
-			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
-	        $upload_success = $file->save($destinationPath.$fileName);
-
-			//Salvando imagem no avatar do usuario;
-	        if ($upload_success) {
-
-	      		/* Settando tipo da foto atual para null, checando se existe antes */
-	      		if ($empresa->avatar) {	
-		        	$currentAvatar = $empresa->avatar;
-		        	$currentAvatar->tipo = null;
-		        	$currentAvatar->save();
-	      		}
-
-	        	$foto = new Foto([
-	        			'path' => $fileName,
-	        			'tipo' => 'avatar' ]);
-	        	$empresa->fotos()->save($foto);
-
-	      		return redirect('empresa/'.$empresa->id.'/edit');
-
-	        }
-	    }
-	}
-
-
-	private function formatFileNameWithUserAndTimestamps($filename)
-	{
-		$timestamp = Carbon::now()->getTimestamp() . '_';
-		$user_preffix = Auth::id() . '_';
-
-		return $user_preffix . $timestamp .$filename;
-	}
 
 }

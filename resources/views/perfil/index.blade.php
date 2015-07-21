@@ -11,7 +11,7 @@
 			<h1 class="perfil-title col-sm-6">{{ $user->username }}
 
 			@if (Auth::user()->id == $user->id) 
-				<a href="/editarPerfil">
+				<a href="{{ url('editarPerfil') }}">
 					<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
 				</a>
 			@endif

@@ -7,7 +7,7 @@ use View;
 use Auth;
 use Illuminate\Http\Request;
 
-class ConectarController extends Controller {
+class ConectarController extends VivalaBaseController {
 
 	public function __construct(){
 		//Só passa se estiver logado
