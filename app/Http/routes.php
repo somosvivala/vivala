@@ -74,6 +74,7 @@ Route::group(['before' => 'auth'], function() {
 
 	Route::post('cropPhotoOng/{id}', 'OngController@cropPhoto');
 	Route::post('cropPhotoEmpresa/{id}', 'EmpresaController@cropPhoto');
+	Route::post('cropPhotoPost/{id}', 'PostController@cropPhoto');
 });
 
 

@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Request;
 
-class PostController extends Controller {
+class PostController extends VivalaBaseController {
 
 	/**
 	 * Display a listing of the resource.

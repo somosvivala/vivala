@@ -106,7 +106,7 @@ class Post extends Model {
 	/**
      * Um Post tem uma foto.
      */
-    public function foto()
+    public function fotos()
     {
         return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
     }

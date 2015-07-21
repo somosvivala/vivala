@@ -4,12 +4,12 @@ $(function() {
    * Ajax para o botao de seguir viajante
    */
   $('.btn_seguir_viajante').click(function(event) {
-    
+
     //esconde seguir mostra loading
     var btn_seguir = $(this);
     var loading = btn_seguir.next();
-    
-    btn_seguir.hide();    
+
+    btn_seguir.hide();
     loading.toggleClass('hidden');
 
   	$.ajax({
@@ -23,7 +23,7 @@ $(function() {
       // alert(data);
   	})
   	.fail(function(data) {
-  	  alert('erro seguir perfil'); 
+  	  alert('erro seguir perfil');
     })
   });
 
@@ -31,12 +31,12 @@ $(function() {
    * Ajax para o botao de seguir empresa
    */
   $('.btn_seguir_empresa').click(function(event) {
-    
+
     //esconde seguir mostra loading
     var btn_seguir = $(this);
     var loading = btn_seguir.next();
-    
-    btn_seguir.hide();    
+
+    btn_seguir.hide();
     loading.toggleClass('hidden');
 
     $.ajax({
@@ -50,7 +50,7 @@ $(function() {
       // alert(data);
     })
     .fail(function(data) {
-      alert('erro seguir empresa'); 
+      alert('erro seguir empresa');
     })
   });
 
@@ -58,12 +58,12 @@ $(function() {
    * Ajax para o botao de seguir ong
    */
   $('.btn_seguir_ong').click(function(event) {
-    
+
     //esconde seguir mostra loading
     var btn_seguir = $(this);
     var loading = btn_seguir.next();
-    
-    btn_seguir.hide();    
+
+    btn_seguir.hide();
     loading.toggleClass('hidden');
 
     $.ajax({
@@ -77,7 +77,7 @@ $(function() {
       // alert(data);
     })
     .fail(function(data) {
-      alert('erro seguir perfil'); 
+      alert('erro seguir perfil');
     })
   });
 
