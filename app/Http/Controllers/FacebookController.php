@@ -58,7 +58,7 @@ class FacebookController extends Controller {
         $perfil->save();
 
 		$fotoPerfil = new Foto(['path' => $userData->avatar, 'tipo' => 'avatar']);
-		$perfil->fotos->save($fotoPerfil);
+		$perfil->fotos()->save($fotoPerfil);
 
         /**
          * Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
