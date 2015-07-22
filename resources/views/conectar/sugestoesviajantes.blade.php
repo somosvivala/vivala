@@ -6,8 +6,10 @@
 	@if(isset($sugestoesViajantes))
 	@forelse($sugestoesViajantes as $Perfil)
 		<li>
+			{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET']) !!}
+			<button id='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
 			<a href="{{ url($Perfil->getUrl()) }}">
-				<button id='btn_seguir' type="button" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
+				
 				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
@@ -24,6 +26,7 @@
 					</div>
 				</div>
 			</a>
+			{!! Form::close() !!}
 		</li>
 	@empty
 	    <p>Sem viajantes pra seguir! :o</p>

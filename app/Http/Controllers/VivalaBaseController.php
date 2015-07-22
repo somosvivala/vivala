@@ -29,30 +29,15 @@ class VivalaBaseController extends Controller {
 	 * @param  Integer Id do usuário
 	 * @return ??
 	 */
-	public function cropPhoto($id, CropPhotoRequest $request) {
-
-		$currentRoute = Route::current();
-		$entidade = null;
-		$pathRetorno = null;
-
-		/**
-		 * Pegando tipo da entidade a partir da rota
-		 */
-		if (strstr($currentRoute->getUri(), 'Ong')) {
-			$entidade = Ong::findOrFail($id);
-			$pathRetorno = 'ong/'.$id.'/edit';
-		} else if (strstr($currentRoute->getUri(), 'Empresa')) {
-			$entidade = Empresa::findOrFail($id);
-			$pathRetorno = 'empresa/'.$id.'/edit';
-		} else if (strstr($currentRoute->getUri(), 'Perfil')) {
-			$entidade = Perfil::findOrFail($id);
-			$pathRetorno = 'editarPerfil';
-		} else if (strstr($currentRoute->getUri(), 'Post')) {
-			$entidade = Post::findOrFail($id);
-			$pathRetorno = 'home';
+	public function cropPhotoEntidade($entidade, CropPhotoRequest $request) {
+		
+		if (!$entidade) {
+			App::abort(500, 'Erro durante o processamento do crop');
 		}
+		dd(Input::all());
 
 		$file = Input::file('image_file_upload');
+
 	    if ($file && $file->isValid()) {
 
 			$widthCrop = $request->input('w');
@@ -83,7 +68,9 @@ class VivalaBaseController extends Controller {
 
 	        	$entidade->fotos()->save($foto);
 
-	      		return redirect($pathRetorno);
+	      		return true;
+	        } else {
+	        	return false;
 	        }
 	    }
 	}
