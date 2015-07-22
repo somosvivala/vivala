@@ -6514,7 +6514,6 @@ div.cover {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
-  font-weight: bold;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6525,7 +6524,6 @@ div.cover {
   padding: 0;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
   color: black;
 }
 .lista-intervalo-preto li {
@@ -6551,7 +6549,6 @@ div.cover {
 }
 .foto-label .titulo-label {
   font-size: 1.4em;
-  font-weight: bolder;
   text-transform: uppercase;
 }
 .left-panel,
@@ -6571,7 +6568,6 @@ button.btn,
 input.btn,
 a.btn {
   border-radius: 0px;
-  font-weight: bold;
   text-transform: uppercase;
 }
 textarea {
@@ -6584,7 +6580,6 @@ h4.suave {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
-  font-weight: bold;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6610,6 +6605,7 @@ body {
   background-color: #e2e2e2;
   font-size: 12.6px;
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 .foto-avatar,
 img.foto-avatar {
@@ -6636,7 +6632,6 @@ nav.menu-lateral ul li {
 nav.menu-lateral ul li a {
   text-decoration: none;
   color: #5d5d5d;
-  font-weight: bold;
   transition: 0.3s all ease-out;
 }
 nav.menu-lateral ul li a:hover {
@@ -6686,7 +6681,6 @@ div.foto-fundo {
 }
 .foto-link a h4 {
   font-size: 2em;
-  font-weight: bold;
   padding: 4em 0;
   margin: 0;
 }
@@ -6709,7 +6703,6 @@ div.foto-fundo {
 h3.subtitulo {
   text-transform: uppercase;
   color: black;
-  font-weight: bold;
 }
 .foto-comentario {
   width: 94%;
@@ -6757,7 +6750,6 @@ ul.sugestoes li a .foto .cover {
   z-index: 0;
 }
 ul.sugestoes li a strong {
-  font-weight: bold;
   text-transform: uppercase;
 }
 ul.sugestoes li a i {
@@ -6769,7 +6761,6 @@ ul.sugestoes-empresas button {
   background-color: #f16f2b;
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
   padding: 0.35em 0.5em;
   position: absolute;
   right: 0px;
@@ -6783,7 +6774,6 @@ ul.sugestoes-empresas button.suave {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
-  font-weight: bold;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6796,7 +6786,6 @@ ul.sugestoes-ongs button {
   background-color: #f16f2b;
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
   padding: 0.35em 0.5em;
   position: absolute;
   right: 0px;
@@ -6811,7 +6800,6 @@ ul.sugestoes-ongs button.suave {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
-  font-weight: bold;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6843,7 +6831,6 @@ nav.menu-top .menu-principal ul li {
   text-align: center;
   text-transform: uppercase;
   width: 12%;
-  font-weight: bold;
 }
 nav.menu-top .menu-principal ul li:nth-child(2) {
   width: 17%;
