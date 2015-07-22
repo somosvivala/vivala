@@ -138,5 +138,14 @@ class Perfil extends Model {
     }
 
 
+    /**
+     * Um Perfil pode ter varios albums
+     * @return [type] [description]
+     */
+    public function albums()
+    {
+        return $this->morphMany('App\Album', 'owner', 'owner_type', 'owner_id');
+    }
+
 
 }

@@ -111,4 +111,14 @@ class Post extends Model {
         return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
 
+    /**
+     * Um Post pode ter varios albums
+     * @return [type] [description]
+     */
+    public function albums()
+    {
+        return $this->morphMany('App\Album', 'owner', 'owner_type', 'owner_id');
+    }
+
+
 }

@@ -123,4 +123,15 @@ class Empresa extends Model {
     }
 
 
+    /**
+     * Uma Empresa pode ter varios albums
+     * @return [type] [description]
+     */
+    public function albums()
+    {
+        return $this->morphMany('App\Album', 'owner', 'owner_type', 'owner_id');
+    }
+
+
+
 }

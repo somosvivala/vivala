@@ -5,7 +5,6 @@ use App\Http\Controllers\Controller;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\CropPhotoRequest;
-use Route;
 
 use App\Ong;
 use App\Perfil;
@@ -34,8 +33,7 @@ class VivalaBaseController extends Controller {
 		if (!$entidade) {
 			App::abort(500, 'Erro durante o processamento do crop');
 		}
-		dd(Input::all());
-
+		
 		$file = Input::file('image_file_upload');
 
 	    if ($file && $file->isValid()) {
