@@ -14,10 +14,21 @@ $( document ).ready(function() {
         },
         progressall: function (e, data) {
             var progress = parseInt(data.loaded / data.total * 100, 10);
-            $('#progress .bar').css(
+            $('#progress-photo-upload .bar').css(
                 'width',
                 progress + '%'
             );
         }
     });
+
+    // Bind de clique dos radio buttons
+    // Exibe o campo de adicionar fotos quando clica em Adicionar Foto
+    $('.tipo-post-criar input:radio[name="tipoPost"]').change(function(){
+        if ($(this).val() == 'foto') {
+            $('.adicionar-foto-container').show();
+        }
+        else {
+            $('.adicionar-foto-container').hide();
+        }
     });
+});

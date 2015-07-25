@@ -5,13 +5,6 @@
     <div class="col-sm-10">
         {!! Form::open(['url' => 'post', 'class'=>'form-ajax']) !!}
 
-            <div class="row foto">
-                <input id="fileupload" type="file" name="files[]" data-url="/uploadPhoto" multiple>
-                <div id="progress-photo-upload">
-                    <div class="bar" style="width: 0%;"></div>
-                </div>
-            </div>
-
             <ul class="row lista-intervalo-preto radio-hidden tipo-post-criar">
                 <li class="col-sm-2">
                     <input type="radio" name="tipoPost" value="status" id="status" checked>
@@ -44,7 +37,12 @@
                     </label>
                 </li>
             </ul>
-
+            <div class="row adicionar-foto-container">
+                <input id="fileupload" type="file" name="files[]" data-url="/uploadPhoto" multiple>
+                <div id="progress-photo-upload">
+                    <div class="bar" style="width: 0%;"></div>
+                </div>
+            </div>
             <div class="row">
                 {!! Form::textarea("descricao", null, ['title'=>'O que você quer compartilhar?', 'aria-label'=>'O que você quer compartilhar?', 'placeholder'=>'O que você quer compartilhar?']) !!}
             </div>

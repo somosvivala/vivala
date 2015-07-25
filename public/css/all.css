@@ -6992,6 +6992,9 @@ ul.lista-usuarios li.foto-user img {
   height: 18px;
   background: #f16f2b;
 }
+.adicionar-foto-container {
+  display: none;
+}
 .lista-posts {
   list-style: none;
   padding: 0px;
