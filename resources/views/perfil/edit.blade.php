@@ -18,6 +18,8 @@
 					{!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
 					{!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
 					{!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
+					{!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
+{{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
 
 					<div class="erros">
 					</div>

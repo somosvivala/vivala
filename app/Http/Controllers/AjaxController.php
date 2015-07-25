@@ -70,6 +70,9 @@ class AjaxController extends VivalaBaseController {
 		$perfil = Perfil::findOrFail($id);
 		$retorno = $this->cropPhotoEntidade($perfil, $request);
 
+		dd(Input::all());
+
+
   		return json_encode($retorno);
 	}
 
