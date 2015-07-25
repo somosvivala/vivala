@@ -12,17 +12,17 @@ return [
     */
 
     'profile' => 'my profile',
-    'trips' => 'quero viajar!',
-    'social' => 'quero me conectar!',
-    'ongs' => 'quero cuidar!',
+    'trips' => 'wanna travel',
+    'social' => 'wanna connect',
+    'ongs' => 'wanna care',
     'more' => 'saiba mais',
-    'contact' => 'fale aqui!',
+    'contact' => 'fale aqui',
     'search' => 'buscar',
 
     'perfil' => 'Perfil',
 
     'login'     => 'Login',
-    
+
     'signup'     => 'Sign Up',
 
 ];
