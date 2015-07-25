@@ -19,6 +19,7 @@ img.foto-avatar {
 
 // Menu de navegação lateral (da esquerda)
 nav.menu-lateral {
+	font-family: @font-family-sans-serif-bold;
 	line-height: 3.5em;
 	ul {
 		list-style: none;
@@ -35,7 +36,6 @@ nav.menu-lateral {
 			a {
 				text-decoration: none;
 				color: @cor-menu-lateral;
-				//font-weight: bold;
 				transition: @anima-rapido;
 				&:hover {
 					color: @cor-menu-lateral-hover;
@@ -91,7 +91,7 @@ div.foto-fundo {
 		color: @cor-foto-fundo-txt;
 		h4 {
 			font-size: 2em;
-			//font-weight: bold;
+			font-family: @font-family-sans-serif-bold;
 			padding: 4em 0;
 			margin: 0;
 		}
@@ -123,7 +123,7 @@ div.foto-fundo {
 h3.subtitulo {
 	text-transform: uppercase;
 	color: @cor-txt;
-	//font-weight: bold;
+	font-family: @font-family-sans-serif-bold;
 }
 
 // Comentario dentro do link com foto
@@ -173,7 +173,7 @@ ul.sugestoes {
 				}
 			}
 			strong {
-				//font-weight: bold;
+				font-family: @font-family-sans-serif-bold;
 				text-transform: uppercase;
 			}
 			i {
@@ -189,7 +189,7 @@ ul.sugestoes-empresas {
 		background-color: @cor-sugestao-botao-bg;
 		color: @cor-sugestao-botao-txt;
 		text-transform: uppercase;
-		//font-weight: bold;
+		font-family: @font-family-sans-serif-bold;
 		padding: 0.35em 0.5em;
 		position: absolute;
 		right:0px;
@@ -209,7 +209,7 @@ ul.sugestoes-ongs {
 		background-color: @cor-sugestao-botao-bg;
 		color: @cor-sugestao-botao-txt;
 		text-transform: uppercase;
-		//font-weight: bold;
+		font-family: @font-family-sans-serif-bold;
 		padding: 0.35em 0.5em;
 		position: absolute;
 		right:0px;
@@ -228,54 +228,48 @@ ul.viagens-comentadas {
 	}
 }
 
-
+a.logo {
+	padding: 0px;
+	width:100%;
+	img {
+		margin:0 auto;
+		height:100%;
+	}
+}
+.hello {
+	padding-top: 1.2em;
+	font-size: 1em;
+}
+.busca-geral-menu {
+	width:100%;
+	background-color: @cor-fundo;
+	border:0px solid transparent;
+	padding:0.3em 1em 0.4em;
+}
 nav.menu-top {
 	background-color: @cor-bg-painel;
 	border-color: @cor-bg-body;
-	min-height: 72px;
-	padding: 10px;
-
-	.menu-esquerda {
-		padding: 0px;
-		width: 10%;
-		}
+	min-height: 52px;
 
 	.menu-principal {
-		width: 78%;
-		padding: 0px;
+		padding:0.9em;
 		ul {
-			width: 100%;
+			padding:0.3em;
+			font-size: 1em;
 			li {
-				text-align: center;
 				text-transform: uppercase;
-				width: 12%;
-				//font-weight: bold;
-
-				&:nth-child(2) {  	width: 17%;	}
-				&:nth-child(3) {	width: 19%;	}
-				&:nth-child(4) { 	width: 17%;	}
-				&:nth-child(5) { 	width: 13%;	}
-				&:last-child { 	width: 10%;	}
-
 				a {
 					color: @cor-menu-superior;
-					padding-left: 0;
-					padding-right: 0;
-
+					padding: 0;
 					&:hover, &:active {
 						color: @cor-menu-superior-hover;
-						&:before {
-							content: "\f041";
-						  	font-family: "FontAwesome";
-						  	margin-right: 2px;
-						}
 					}
 				}
 			}
 		}
 		}
 
-	.menu-direita {
+	.menu-usuario {
 		float: right;
 		padding: 0px 10px 0px 0px;
 		width: 12%;
@@ -286,9 +280,20 @@ nav.menu-top {
 				a {
 					padding: 0px;
 					img {
-						margin-left: 10px;
-						width: 45px;
+						margin: 0.2em 1em 0 1em;
+						width: 3em;
 						border-radius: 50%;
+					}
+					span {
+						line-height: 2em;
+					}
+				}
+				ul.dropdown-menu {
+					min-width: 10em;
+					text-align: right;
+					padding: 1em 0.1em;
+					li {
+						padding: 0.1em 1em;
 					}
 				}
 			}

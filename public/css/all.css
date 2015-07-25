@@ -1070,7 +1070,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -5758,7 +5758,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5865,7 +5865,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
@@ -6519,6 +6519,7 @@ div.cover {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6529,6 +6530,7 @@ div.cover {
   padding: 0;
   text-align: center;
   text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   color: black;
 }
 .lista-intervalo-preto li {
@@ -6554,6 +6556,7 @@ div.cover {
 }
 .foto-label .titulo-label {
   font-size: 1.4em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 .left-panel,
@@ -6569,10 +6572,19 @@ div.cover {
   background-color: #f16f2b;
   color: white;
 }
+strong {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+label {
+  font-weight: normal;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
 button.btn,
 input.btn,
 a.btn {
   border-radius: 0px;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 textarea {
@@ -6585,6 +6597,7 @@ h4.suave {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6609,7 +6622,7 @@ a.suave:hover {
 body {
   background-color: #e2e2e2;
   font-size: 12.6px;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 .foto-avatar,
@@ -6618,6 +6631,7 @@ img.foto-avatar {
   border-radius: 50%;
 }
 nav.menu-lateral {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 3.5em;
 }
 nav.menu-lateral ul {
@@ -6686,6 +6700,7 @@ div.foto-fundo {
 }
 .foto-link a h4 {
   font-size: 2em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   padding: 4em 0;
   margin: 0;
 }
@@ -6708,6 +6723,7 @@ div.foto-fundo {
 h3.subtitulo {
   text-transform: uppercase;
   color: black;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
 }
 .foto-comentario {
   width: 94%;
@@ -6755,6 +6771,7 @@ ul.sugestoes li a .foto .cover {
   z-index: 0;
 }
 ul.sugestoes li a strong {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
 }
 ul.sugestoes li a i {
@@ -6766,6 +6783,7 @@ ul.sugestoes-empresas button {
   background-color: #f16f2b;
   color: white;
   text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   padding: 0.35em 0.5em;
   position: absolute;
   right: 0px;
@@ -6779,6 +6797,7 @@ ul.sugestoes-empresas button.suave {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6791,6 +6810,7 @@ ul.sugestoes-ongs button {
   background-color: #f16f2b;
   color: white;
   text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   padding: 0.35em 0.5em;
   position: absolute;
   right: 0px;
@@ -6805,6 +6825,7 @@ ul.sugestoes-ongs button.suave {
   font-size: 1em;
   background-color: #8ba6ac;
   color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 1.5em;
   margin-top: 0px;
   margin-bottom: 0px;
@@ -6815,74 +6836,74 @@ ul.sugestoes-pacotes button,
 ul.viagens-comentadas button {
   font-size: 10px;
 }
+a.logo {
+  padding: 0px;
+  width: 100%;
+}
+a.logo img {
+  margin: 0 auto;
+  height: 100%;
+}
+.hello {
+  padding-top: 1.2em;
+  font-size: 1em;
+}
+.busca-geral-menu {
+  width: 100%;
+  background-color: #e2e2e2;
+  border: 0px solid transparent;
+  padding: 0.3em 1em 0.4em;
+}
 nav.menu-top {
   background-color: white;
   border-color: #e2e2e2;
-  min-height: 72px;
-  padding: 10px;
-}
-nav.menu-top .menu-esquerda {
-  padding: 0px;
-  width: 10%;
+  min-height: 52px;
 }
 nav.menu-top .menu-principal {
-  width: 78%;
-  padding: 0px;
+  padding: 0.9em;
 }
 nav.menu-top .menu-principal ul {
-  width: 100%;
+  padding: 0.3em;
+  font-size: 1em;
 }
 nav.menu-top .menu-principal ul li {
-  text-align: center;
   text-transform: uppercase;
-  width: 12%;
-}
-nav.menu-top .menu-principal ul li:nth-child(2) {
-  width: 17%;
-}
-nav.menu-top .menu-principal ul li:nth-child(3) {
-  width: 19%;
-}
-nav.menu-top .menu-principal ul li:nth-child(4) {
-  width: 17%;
-}
-nav.menu-top .menu-principal ul li:nth-child(5) {
-  width: 13%;
-}
-nav.menu-top .menu-principal ul li:last-child {
-  width: 10%;
 }
 nav.menu-top .menu-principal ul li a {
   color: black;
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0;
 }
 nav.menu-top .menu-principal ul li a:hover,
 nav.menu-top .menu-principal ul li a:active {
   color: #8ba6ac;
 }
-nav.menu-top .menu-principal ul li a:hover:before,
-nav.menu-top .menu-principal ul li a:active:before {
-  content: "\f041";
-  font-family: "FontAwesome";
-  margin-right: 2px;
-}
-nav.menu-top .menu-direita {
+nav.menu-top .menu-usuario {
   float: right;
   padding: 0px 10px 0px 0px;
   width: 12%;
 }
-nav.menu-top .menu-direita ul {
+nav.menu-top .menu-usuario ul {
   float: right;
   text-transform: capitalize;
 }
-nav.menu-top .menu-direita ul li a {
+nav.menu-top .menu-usuario ul li a {
   padding: 0px;
 }
-nav.menu-top .menu-direita ul li a img {
-  margin-left: 10px;
-  width: 45px;
+nav.menu-top .menu-usuario ul li a img {
+  margin: 0.2em 1em 0 1em;
+  width: 3em;
   border-radius: 50%;
+}
+nav.menu-top .menu-usuario ul li a span {
+  line-height: 2em;
+}
+nav.menu-top .menu-usuario ul li ul.dropdown-menu {
+  min-width: 10em;
+  text-align: right;
+  padding: 1em 0.1em;
+}
+nav.menu-top .menu-usuario ul li ul.dropdown-menu li {
+  padding: 0.1em 1em;
 }
 .perfil-topo {
   background-color: #333131;
