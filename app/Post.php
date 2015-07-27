@@ -39,10 +39,22 @@ class Post extends Model {
 		return $date->diffForHumans();
 	}
 
-	// Definindo a propriedades que nao existem no bd
 	public function getQuantidadeLikes()
 	{
-		return 689;
+		$qtdPerfil = count($this->likedByPerfil->toArray());
+		$qtdEmpresa = count($this->likedByEmpresa->toArray());
+		$qtdOng = count($this->likedByOng->toArray());
+		$qtdTotal = $qtdPerfil + $qtdEmpresa + $qtdOng;
+		return $qtdTotal;
+	}
+
+	public function like()
+	{
+		$qtdPerfil = count($this->likedByPerfil->toArray());
+		$qtdEmpresa = count($this->likedByEmpresa->toArray());
+		$qtdOng = count($this->likedByOng->toArray());
+		$qtdTotal = $qtdPerfil + $qtdEmpresa + $qtdOng;
+		return $qtdTotal;
 	}
 
 

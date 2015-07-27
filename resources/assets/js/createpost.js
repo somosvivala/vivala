@@ -26,8 +26,7 @@ $( document ).ready(function() {
     $('.tipo-post-criar input:radio[name="tipoPost"]').change(function(){
         if ($(this).val() == 'foto') {
             $('.adicionar-foto-container').show();
-        }
-        else {
+        } else {
             $('.adicionar-foto-container').hide();
         }
     });
