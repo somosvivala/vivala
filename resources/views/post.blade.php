@@ -3,28 +3,6 @@
         <img class="foto-avatar" src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}">
     </div>
     <div class="col-sm-10">
-        <div class="row foto">
-            <!-- Adiciona um formulario pra upload de foto-->
-            <div class="jc_coords row col-sm-12">
-
-                {!! Form::open(['url' => ['cropPhotoPost',  Auth::user()->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);']) !!}
-
-                    {!! Form::label("image_file_upload", "Escolha outra imagem:") !!}
-                    {!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}
-
-                    {!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
-                    {!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
-                    {!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
-                    {!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
-
-                    <div class="erros">
-                    </div>
-                    {!! Form::submit("Recortar Imagem", ['class' => 'btn btn-primary']) !!}
-                <img id="preview" />
-                {!! Form::close() !!}
-            </div>
-        </div>
-
         {!! Form::open(['url' => 'post', 'class'=>'form-ajax']) !!}
 
             <ul class="row lista-intervalo-preto radio-hidden tipo-post-criar">
@@ -59,7 +37,12 @@
                     </label>
                 </li>
             </ul>
-
+            <div class="row adicionar-foto-container">
+                <input id="fileupload" type="file" name="files[]" data-url="/uploadPhoto" multiple>
+                <div id="progress-photo-upload">
+                    <div class="bar" style="width: 0%;"></div>
+                </div>
+            </div>
             <div class="row">
                 {!! Form::textarea("descricao", null, ['title'=>'O que você quer compartilhar?', 'aria-label'=>'O que você quer compartilhar?', 'placeholder'=>'O que você quer compartilhar?']) !!}
             </div>

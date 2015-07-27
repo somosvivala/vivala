@@ -12,19 +12,20 @@ return [
     */
 
     'profile' => 'meu perfil',
-    'trips' => 'quero viajar!',
-    'social' => 'quero me conectar!',
-    'ongs' => 'quero cuidar!',
+    'trips' => 'quero viajar',
+    'social' => 'quero me conectar',
+    'ongs' => 'quero cuidar',
     'more' => 'saiba mais',
-    'contact' => 'fale aqui!',
+    'contact' => 'fale aqui',
     'search' => 'buscar',
     'hello' => 'olá',
+    'config' => 'Configurações',
 
 
     'settings' => 'Configura&ccedil;&otilde;es',
 
     'login'     => 'Login',
-    
+
     'signup'     => 'Registrar',
 
 ];
