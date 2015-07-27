@@ -33,12 +33,12 @@ class FotoController extends VivalaBaseController {
 			$entidade = $this->getEntidade($id);
 			$destinationPath = public_path() . '/uploads/';
 			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
-			
+
 			$widthCrop = $request->input('w');
 			$heightCrop = $request->input('h');
 			$xSuperior = $request->input('x');
 			$ySuperior = $request->input('y');
-			
+
 			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
 			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
 			$upload_success = $file->move($destinationPath.$fileName);
@@ -69,16 +69,19 @@ class FotoController extends VivalaBaseController {
 		$file = Input::file('image_file_upload');
 	    if ($file && $file->isValid()) {
 
-			$entidade = $this->getEntidade($id);
-
 			$destinationPath = public_path() . '/uploads/';
 			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
 			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
 			$upload_success = $file->move($destinationPath.$fileName);
-	        if ($upload_success) {
 
-	        	$foto = new Foto(['path' => $fileName]);
+			// Testa se o arquivo foi uploaded
+			if ($upload_success) {
 
+				// Cria um objeto de foto
+				$foto = new Foto(['path' => $fileName]);
+
+				// Associa a foto à entidade
+				$entidade = $this->getEntidade($id);
 				if ($entidade) {
 	        		$entidade->fotos()->save($foto);
 	        	} else {
@@ -86,6 +89,7 @@ class FotoController extends VivalaBaseController {
 	        	}
 
 	      		return $foto;
+
 	        } else {
 	        	return false;
 	        }
