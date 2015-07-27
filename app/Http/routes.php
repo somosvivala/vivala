@@ -45,6 +45,7 @@ Route::controller('vagas','Cuidar\VagasController');
 Route::controller('albuns','Cuidar\AlbunsController');
 Route::controller('feed','Cuidar\FeedController');
 
+Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
 
 Route::controllers([

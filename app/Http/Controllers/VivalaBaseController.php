@@ -73,11 +73,46 @@ class VivalaBaseController extends Controller {
 	    }
 	}
 
-	private function formatFileNameWithUserAndTimestamps($filename)
+	public function formatFileNameWithUserAndTimestamps($filename)
 	{
 		$timestamp = Carbon::now()->getTimestamp() . '_';
 		$user_preffix = Auth::id() . '_';
 
 		return $user_preffix . $timestamp .$filename;
 	}
+
+
+	/**
+	 * Metodo para se recuperar a entidade que tem o $id passado por parametro
+	 * OBS: necessita do input hidden tipoEntidade;
+	 */
+	public function getEntidade($id) {
+		$tipoEntidade = Input::get('tipoEntidade', '');
+
+		switch ($tipoEntidade) {
+			case 'App\Perfil':
+				$entidade = Perfil::findOrFail($id);
+				break;
+
+			case 'App\Ong':
+				$entidade = Ong::findOrFail($id);
+				break;
+
+			case 'App\Empresa':
+				$entidade = Empresa::findOrFail($id);
+				break;
+
+			case 'App\Post':
+				$entidade = Post::findOrFail($id);
+				break;
+			
+			default:
+				App::abort(500, 'Entidade nao identificada');
+				break;
+		}
+
+		return ($entidade ? $entidade : false);
+	} 
+
+
 }

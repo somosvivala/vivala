@@ -38,7 +38,7 @@
                 </li>
             </ul>
             <div class="row adicionar-foto-container">
-                <input id="fileupload" type="file" name="files[]" data-url="/uploadPhoto" multiple>
+                <input id="fileupload" type="file" name="files[]" data-url="/foto/uploadPhoto" multiple>
                 <div id="progress-photo-upload">
                     <div class="bar" style="width: 0%;"></div>
                 </div>

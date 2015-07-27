@@ -66,38 +66,4 @@ class AjaxController extends VivalaBaseController {
 		return json_encode($return);
 	}
 
-	public function postCropphotoperfil($id, Requests\CropPhotoRequest $request) {
-		$perfil = Perfil::findOrFail($id);
-		$retorno = $this->cropPhotoEntidade($perfil, $request);
-
-  		return json_encode($retorno);
-	}
-
-	public function postCropphotoong($id, Requests\CropPhotoRequest $request) {
-		$perfil = Ong::findOrFail($id);
-		$retorno = $this->cropPhotoEntidade($perfil, $request);
-
-  		return json_encode($retorno);
-	}
-
-	public function postCropphotoempresa($id, Requests\CropPhotoRequest $request) {
-		$perfil = Empresa::findOrFail($id);
-		$retorno = $this->cropPhotoEntidade($perfil, $request);
-
-  		return json_encode($retorno);
-	}
-
-	public function postCropphotopost($id, Requests\CropPhotoRequest $request) {
-		$perfil = Post::findOrFail($id);
-		$retorno = $this->cropPhotoEntidade($perfil, $request);
-
-  		return json_encode($retorno);
-	}
-
-
-
-
-
-
-
 }
