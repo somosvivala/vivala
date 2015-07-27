@@ -182,7 +182,6 @@ class PerfilController extends ConectarController {
 	 * @return
 	 */
 	public function getLikepost($id) {
-
 		//Verifica se o post existe
 		$post = Post::findOrFail($id);
 		//Testo se o usuário está logado
@@ -190,7 +189,7 @@ class PerfilController extends ConectarController {
 		$perfil = $user->perfil;
 		//Salvando relação (Dando o like finalmente!)
 		$perfil->likePost()->attach($post->id);
-	    return "success";
+	    return $post->getQuantidadeLikes();
 	}
 
 }
