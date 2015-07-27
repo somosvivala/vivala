@@ -103,7 +103,7 @@ class Perfil extends Model {
     /**
      * Accessor para a propriedade avatar
      */
-    public function getAvatarAttribute() 
+    public function getAvatarAttribute()
     {
         return $this->fotoAvatar();
     }
@@ -126,9 +126,9 @@ class Perfil extends Model {
 
     /**
      * Metodo para recuperar a url do avatar do perfil
-     * @return String 
+     * @return String
      */
-    public function getAvatarUrl() 
+    public function getAvatarUrl()
     {
         if ($this->fotoAvatar()) {
             return $this->fotoAvatar()->path;

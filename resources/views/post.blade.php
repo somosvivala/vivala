@@ -3,7 +3,7 @@
         <img class="foto-avatar" src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}">
     </div>
     <div class="col-sm-10">
-        {!! Form::open(['url' => 'post', 'class'=>'form-ajax']) !!}
+        {!! Form::open(['url' => 'post', 'class'=>'']) !!}
 
             <ul class="row lista-intervalo-preto radio-hidden tipo-post-criar">
                 <li class="col-sm-2">

@@ -12,6 +12,7 @@ use Input;
 use Carbon\Carbon;
 use App\PrettyUrl;
 use App\Foto;
+use App\Post;
 
 class PerfilController extends ConectarController {
 
@@ -92,7 +93,7 @@ class PerfilController extends ConectarController {
 	        $upload_success = $file->move($destinationPath, $filename);
 
 	        if ($upload_success) {
-	        	
+
 	        	if ($perfil->avatar) {
 		        	/* Settando tipo da foto atual para null */
 		        	$currentAvatar = $perfil->avatar;
@@ -172,6 +173,24 @@ class PerfilController extends ConectarController {
 
 	        }
 	    }
+	}
+
+	/**
+	 * seta o like do perfil atual pra um post específico
+	 *
+	 * @param  [integer] id do post
+	 * @return
+	 */
+	public function getLikepost($id) {
+
+		//Verifica se o post existe
+		$post = Post::findOrFail($id);
+		//Testo se o usuário está logado
+		$user = Auth::user();
+		$perfil = $user->perfil;
+		//Salvando relação (Dando o like finalmente!)
+		$perfil->likePost()->attach($post->id);
+	    return "success";
 	}
 
 }
