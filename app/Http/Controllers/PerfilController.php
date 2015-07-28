@@ -189,6 +189,7 @@ class PerfilController extends ConectarController {
 		$perfil = $user->perfil;
 		//Salvando relação (Dando o like finalmente!)
 		$perfil->likePost()->attach($post->id);
+		// Retorna a quantidade de likes para utilizar na view
 	    return $post->getQuantidadeLikes();
 	}
 

@@ -6976,6 +6976,9 @@ article.status .status {
 }
 .post .like-btn {
   cursor: pointer;
+  color: #e2e2e2;
+}
+.post .like-btn i.liked {
   color: #f16f2b;
 }
 

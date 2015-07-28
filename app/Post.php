@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Date\Date;
-
+use Auth;
 class Post extends Model {
 
 	public static function boot()
@@ -48,13 +48,15 @@ class Post extends Model {
 		return $qtdTotal;
 	}
 
-	public function like()
+	public function likedByMe()
 	{
-		$qtdPerfil = count($this->likedByPerfil->toArray());
-		$qtdEmpresa = count($this->likedByEmpresa->toArray());
-		$qtdOng = count($this->likedByOng->toArray());
-		$qtdTotal = $qtdPerfil + $qtdEmpresa + $qtdOng;
-		return $qtdTotal;
+		$user = Auth::user();
+		$perfil = $user->perfil;
+		if( $this->likedByPerfil->find($perfil->id) ){
+			return 'liked';
+		} else {
+			return '';
+		}
 	}
 
 
