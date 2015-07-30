@@ -45,8 +45,10 @@ class PostController extends VivalaBaseController {
 
 		// Adiciona a foto no post através do id recebido
 		$idFoto = Request::input('fotos');//ta no plural mas vem só uma por enquanto
-		$Foto = Foto::find($idFoto);
-		$novoPost->fotos()->save($Foto);
+		if(is_numeric($idFoto)) {
+			$Foto = Foto::find($idFoto);
+			$novoPost->fotos()->save($Foto);
+		}
 
 		return redirect('conectar');
 	}
