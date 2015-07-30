@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Auth;
 use Request;
+use App\Post;
+use App\Foto;
 
 class PostController extends VivalaBaseController {
 
@@ -35,7 +37,16 @@ class PostController extends VivalaBaseController {
 	 */
 	public function store()
 	{
-		$novoPost = Auth::user()->perfil->posts()->create(Request::all());
+		$novoPost = new Post();
+		$novoPost->descricao = Request::input('descricao');
+		$novoPost->tipoPost = Request::input('tipoPost');
+		//Salva o post com o id do perfil do usuário que está logado
+		Auth::user()->perfil->posts()->save($novoPost);
+
+		// Adiciona a foto no post através do id recebido
+		$idFoto = Request::input('fotos');//ta no plural mas vem só uma por enquanto
+		$Foto = Foto::find($idFoto);
+		$novoPost->fotos()->save($Foto);
 
 		return redirect('conectar');
 	}

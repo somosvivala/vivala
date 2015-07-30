@@ -2,15 +2,18 @@ $( document ).ready(function() {
     $('#fileupload').fileupload({
         dataType: 'json',
         add: function (e, data) {
-            data.context = $('<p/>').text('Uploading...').appendTo(document.body);
+            console.log(data);
+            //data.context = $('<p/>').text('Uploading...').appendTo(document.body);
             data.submit();
         },
         done: function (e, data) {
-            data.context.text('Upload finished.');
-
+            idFoto = data.result.id;
+            console.log(data.result.id);
+            $(".cria-post-container #fotos").val(data.result.id);
+            /*
             $.each(data.result.files, function (index, file) {
                 $('<p/>').text(file.name).appendTo(document.body);
-            });
+            });*/
         },
         progressall: function (e, data) {
             var progress = parseInt(data.loaded / data.total * 100, 10);

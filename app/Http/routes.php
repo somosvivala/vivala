@@ -16,7 +16,6 @@ Route::get('home', 'HomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
 
-Route::controller('perfilcontroller','PerfilController');
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
@@ -47,6 +46,7 @@ Route::controller('feed','Cuidar\FeedController');
 
 Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
+Route::controller('perfilcontroller','PerfilController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

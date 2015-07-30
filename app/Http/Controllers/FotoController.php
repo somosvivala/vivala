@@ -64,15 +64,15 @@ class FotoController extends VivalaBaseController {
 	/**
 	 * Metodo para salvar uma foto
 	 */
-	public function postUploadphoto($id) {
+	public function postUploadphoto() {
 
-		$file = Input::file('image_file_upload');
+		$file = Input::file('foto');
 	    if ($file && $file->isValid()) {
 
 			$destinationPath = public_path() . '/uploads/';
-			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
-			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
-			$upload_success = $file->move($destinationPath.$fileName);
+			$extension = $file->getClientOriginalExtension(); // Pega o formato da imagem
+			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+			$upload_success = $file->move($destinationPath,$fileName);
 
 			// Testa se o arquivo foi uploaded
 			if ($upload_success) {
@@ -80,13 +80,16 @@ class FotoController extends VivalaBaseController {
 				// Cria um objeto de foto
 				$foto = new Foto(['path' => $fileName]);
 
+				//Associa a foto ao Perfil
+				Auth::user()->perfil->fotos()->save($foto);
 				// Associa a foto à entidade
+				/*
 				$entidade = $this->getEntidade($id);
 				if ($entidade) {
 	        		$entidade->fotos()->save($foto);
 	        	} else {
 	        		$foto->save();
-	        	}
+	        	}*/
 
 	      		return $foto;
 
