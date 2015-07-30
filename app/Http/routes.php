@@ -47,6 +47,7 @@ Route::controller('feed','Cuidar\FeedController');
 Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
 Route::controller('perfilcontroller','PerfilController');
+Route::controller('comentario', 'ComentariosController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

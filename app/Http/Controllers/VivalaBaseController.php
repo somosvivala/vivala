@@ -107,7 +107,9 @@ class VivalaBaseController extends Controller {
 				break;
 			
 			default:
-				App::abort(500, 'Entidade nao identificada');
+				$entidade = '';
+				// Se nao encontrar nenhuma entidade, quebrar?
+				// App::abort(500, 'Entidade nao identificada');
 				break;
 		}
 

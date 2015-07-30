@@ -32,4 +32,11 @@ $( document ).ready(function() {
             $('.adicionar-foto-container').hide();
         }
     });
+
+
+    //TODO: remover essa fita :D
+    $('.ReplyBtn').click(function(event) {
+        $('.comment_wrapper').toggleClass('hidden');
+    });
+
 });

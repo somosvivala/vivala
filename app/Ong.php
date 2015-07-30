@@ -119,13 +119,20 @@ class Ong extends Model {
 
     /**
      * Uma Ong pode ter varios albums
-     * @return [type] [description]
      */
     public function albums()
     {
         return $this->morphMany('App\Album', 'owner', 'owner_type', 'owner_id');
     }
 
+
+    /**
+     * Uma Ong pode ter varios comentarios
+     */
+    public function comentarios() 
+    {
+        return $this->morphMany('App\Comentario', 'author', 'author_type', 'author_id');
+    }
 
 
 }

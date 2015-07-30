@@ -135,4 +135,14 @@ class Post extends Model {
     }
 
 
+    /**
+     * Um Post pode ter muitos Comentarios
+     * @return [type] [description]
+     */
+    public function comentarios() {
+    	return $this->hasMany('App\Comentario');
+    }
+
+
+
 }
