@@ -6981,5 +6981,8 @@ article.status .status {
 .post .like-btn i.liked {
   color: #f16f2b;
 }
+.post .barra-post {
+  background-color: white;
+}
 
 /*# sourceMappingURL=app.css.map */
