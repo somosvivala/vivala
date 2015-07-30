@@ -25,9 +25,11 @@ elixir(function(mix) {
 
     mix.scripts([
 	    '../../assets/bower/jquery/dist/jquery.js',
-        '../../assets/bower/bootstrap/dist/js/bootstrap.js',/*
+        '../../assets/bower/bootstrap/dist/js/bootstrap.js',
+        /*
         '../../assets/bower/moment/min/moment-with-locales.min.js',
-        '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',*/
+        '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js',
+        */
 	    '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
 
 	    '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
@@ -38,7 +40,7 @@ elixir(function(mix) {
         '../../assets/js/createpost.js',
         '../../assets/js/postbarra.js',
         '../../assets/js/edicaofotoperfil.js',
-        '../../assets/js/ajaxCalls.js',
+        '../../assets/js/ajaxCalls.js'
 	    //'../../assets/js/welcome.js'
 	], 'public/js/vendor.js');
 });
