@@ -6,7 +6,7 @@ $( document ).ready(function() {
             data.submit();
         },
         done: function (e, data) {
-            idFoto = data.result.id;
+            var idFoto = data.result.id;
             console.log(data.result.id);
             $(".cria-post-container #fotos").val(data.result.id);
             /*
@@ -31,12 +31,6 @@ $( document ).ready(function() {
         } else {
             $('.adicionar-foto-container').hide();
         }
-    });
-
-
-    //TODO: remover essa fita :D
-    $('.ReplyBtn').click(function(event) {
-        $('.comment_wrapper').toggleClass('hidden');
     });
 
 });

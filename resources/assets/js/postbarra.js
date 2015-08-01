@@ -12,7 +12,7 @@ $( document ).ready(function() {
     	.done(function(data) {
             var msgQtdCurtidas,
                 qtdLikes = data;
-            $("#barra-post-"+idPost).find("i").addClass('liked');
+            $("#barra-post-"+idPost+" .like-btn").addClass('liked');
     	    if(qtdLikes > 1)
     			msgQtdCurtidas = qtdLikes+' Curtidas';
         	else if(qtdLikes == 1)

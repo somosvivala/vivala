@@ -37,6 +37,7 @@ elixir(function(mix) {
 	    '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
 	    '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
 
+        '../../assets/js/comentaPost.js',
         '../../assets/js/createpost.js',
         '../../assets/js/postbarra.js',
         '../../assets/js/edicaofotoperfil.js',

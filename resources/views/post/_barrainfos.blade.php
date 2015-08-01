@@ -1,4 +1,4 @@
-<div class="row barra-post" id="barra-post-{{ $Post->id }}">
+<div class="row barra-post fundo-cheio" id="barra-post-{{ $Post->id }}">
 
 	<div class="tag col-sm-4">
 		<a href="#perfilcontroller/likepost/{{ $Post->id }}" class="like-btn"><i class="fa fa-tag {{ $Post->likedByMe() }}"></i></a>
@@ -7,7 +7,7 @@
 		</span>
 	</div>
 	<div class="like col-sm-2">
-		<a href="#perfilcontroller/likepost/{{ $Post->id }}" class="like-btn"><i class="fa fa-heart {{ $Post->likedByMe() }}"></i></a>
+		<a href="#perfilcontroller/likepost/{{ $Post->id }}" class="like-btn {{ $Post->likedByMe() }}"><i class="fa fa-heart"></i></a>
 		<span class="qtd-likes">
 			@if($Post->getQuantidadeLikes() > 1)
 				 {{ $Post->getQuantidadeLikes() }} Curtidas

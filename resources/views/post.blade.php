@@ -1,4 +1,4 @@
-<div class="col-sm-12 cria-post-container">
+<div class="col-sm-12 cria-post-container fundo-cheio">
     <div class="col-sm-2">
         <img class="foto-avatar" src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}">
     </div>
