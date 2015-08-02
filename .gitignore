@@ -9,3 +9,5 @@ composer.lock
 /public/uploads/*
 *.css
 *.map
+/node_modules
+/assets/bower
