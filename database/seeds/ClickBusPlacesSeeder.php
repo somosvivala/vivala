@@ -2,15 +2,10 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
-use Phaza\LaravelPostgis\Eloquent\PostgisTrait;
-use Phaza\LaravelPostgis\Geometries\Point;
 
 class ClickBusPlacesSeeder extends Seeder {
     public function run()
     {
-        /**
-         * Seeder somente para PostgreSQL
-         */
         DB::table('clickbus_places')->delete();
 
         $clickbusPlaces = file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/places');

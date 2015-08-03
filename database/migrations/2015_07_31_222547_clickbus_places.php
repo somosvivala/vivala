@@ -29,6 +29,7 @@ class ClickbusPlaces extends Migration {
 			$table->string('state_code')->nullable();
 			$table->string('state_name')->nullable();
 		});
+		
 		if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
 			DB::statement('ALTER TABLE clickbus_places ADD COLUMN place_position geometry(Point,4326) NULL;');
         }

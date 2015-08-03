@@ -15,8 +15,8 @@ class ClickbusPlacesController extends Controller {
 	 */
 	public function index()
 	{
-		$point = new Point(37.422009, -122.084047);
-		echo toWKT($point);
+        $meta = json_decode(file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/buscompanies'))->meta->totalPages;
+        print_r($meta);
 	}
 
 	/**
