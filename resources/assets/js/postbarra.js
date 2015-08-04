@@ -25,7 +25,5 @@ $( document ).ready(function() {
     	.fail(function(data) {
     	  console.log('Erro no ajax de like');
         });
-
-
     });
 });

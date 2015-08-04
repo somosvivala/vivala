@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Auth;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -8,7 +10,6 @@ use App\Post;
 use App\Comentario;
 
 use Input;
-use Auth;
 
 class ComentariosController extends VivalaBaseController {
 
@@ -46,5 +47,30 @@ class ComentariosController extends VivalaBaseController {
 		$perfil->comentarios()->save($comentario);
 
 		return json_encode(['success'=>true]);
+	}
+
+	/**
+	 * seta o like do perfil atual pra um comentario específico
+	 *
+	 * @param  [integer] id do comentario
+	 * @return
+	 */
+	public function getLikecomentario($id) {
+		//Verifica se o comentario existe
+		$comentario = Comentario::findOrFail($id);
+		//Testo se o usuário está logado
+		$user = Auth::user();
+		$perfil = $user->perfil;
+
+		//Se já tiver dado like no comentario com esse id,
+		//consigo encontralo pelo Collention->find()
+		$alreadyLiked = $perfil->likeComentario->find($comentario->id);
+
+		if (!$alreadyLiked) {
+			//Salvando relação (Dando o like finalmente!)
+			$perfil->likeComentario()->attach($comentario->id);
+		}
+		// Retorna a quantidade de likes para utilizar na view
+	    return $comentario->getQuantidadeLikes();
 	}
 }

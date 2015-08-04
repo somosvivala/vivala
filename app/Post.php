@@ -107,7 +107,7 @@ class Post extends Model {
 		if($this->tipoEntidade = "empresa") {
 			return $this->empresa();
 		}
-		if($this->tipoEntidade = "ong") {
+		if($this->tipoEntidade = "ong") {	
 			return $this->ong();
 		}
 	}
