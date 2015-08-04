@@ -73,4 +73,17 @@ class ComentariosController extends VivalaBaseController {
 		// Retorna a quantidade de likes para utilizar na view
 	    return $comentario->getQuantidadeLikes();
 	}
+
+
+	/**
+	 * Devolve ate 3 ultimos comentarios de um post
+	 * @param  String 	    	id do Post
+	 */
+	public function getUltimoscomentarios($id) {
+		//Verifica se o post existe
+		$post = Post::findOrFail($id);
+		return $post->comentarios()->orderBy('created_at','DESC')->limit(3)->get();
+	}
+
+
 }
