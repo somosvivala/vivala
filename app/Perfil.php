@@ -70,6 +70,10 @@ class Perfil extends Model {
 	{
 		return $this->belongsToMany('App\Post', 'entidade_like_post', 'perfil_id', 'post_id')->withTimestamps();
 	}
+
+
+
+
     /**
      * Retorna a pretty Url
      *
@@ -152,6 +156,15 @@ class Perfil extends Model {
     public function comentarios() 
     {
         return $this->morphMany('App\Comentario', 'author', 'author_type', 'author_id');
+    }
+
+
+    /**
+     * Um perfil pode dar varios likes em comentarios
+     */
+    public function likeComentario()
+    {
+        return $this->belongsToMany('App\Post', 'entidade_like_comentario', 'perfil_id', 'comentario_id')->withTimestamps();
     }
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
 
-	@include('post')
+	@include('post.create')
 	@include('feed')
 
 @endsection

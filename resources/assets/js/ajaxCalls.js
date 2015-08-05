@@ -1,10 +1,11 @@
 $(function() {
 
-$.ajaxSetup({
+    //token do laravel para ajax 
+    $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
-  /** Funcões para Upload */
+    /** Funcões para Upload */
     $('.form-ajax').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),

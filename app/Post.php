@@ -107,7 +107,7 @@ class Post extends Model {
 		if($this->tipoEntidade = "empresa") {
 			return $this->empresa();
 		}
-		if($this->tipoEntidade = "ong") {
+		if($this->tipoEntidade = "ong") {	
 			return $this->ong();
 		}
 	}
@@ -144,5 +144,21 @@ class Post extends Model {
     }
 
 
+    /**
+     * Retorna todos os comentarios ordenados do mais recente para o mais antigo
+     * @return Collection 
+     */
+    public function comentariosByDate() {
+    	return $this->comentarios()->orderBy('created_at', 'DESC')->get();
+    }
+
+    /**
+     * Retorna os ultimos 2 comentarios ordenados do mais recente para o mais antigo
+     * @return Collection 
+     */
+    public function novosComentariosByDate() {
+    	return $this->comentarios()->orderBy('created_at', 'DESC')->limit(2)->get();
+    }
+    
 
 }

@@ -5,7 +5,6 @@ $( document ).ready(function() {
             urlArray = link.split('/'),
             idPost = urlArray[2];
 
-
         $.ajax({
     		url: link
     	})
@@ -25,7 +24,5 @@ $( document ).ready(function() {
     	.fail(function(data) {
     	  console.log('Erro no ajax de like');
         });
-
-
     });
 });
