@@ -207,7 +207,7 @@ class FotoSeeder extends Seeder {
             $zordPerfil = Perfil::find(2);
             $fotoZord = new Foto();
             $fotoZord->tipo = 'avatar';
-            $fotoZord->path = 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/10374994_706677562743225_4888707270232254721_n.jpg?oh=d4f0daa8f62f27904266b4eb48876ae0&oe=55C2EE6F&__gda__=1438591338_31d1bca33986c333c0434e1ce01cd8a4';
+            $fotoZord->path = 'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10374994_706677562743225_4888707270232254721_n.jpg?oh=0b62f6d66c4c708a561daed00b2456d5&oe=56539E2E&__gda__=1447231894_5ca196c8540f1311b6f5e996440c8cd5';
             $zordPerfil->fotos()->save($fotoZord);
     }
 }
