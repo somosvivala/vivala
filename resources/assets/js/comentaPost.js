@@ -1,18 +1,16 @@
+var commentPost = function() {
+    console.log (' /comentario/ultimoscomentarios/$idPost ');
+    alert('comentario criado');
+};
+
+
 $(function() {
-
-    var commentPost = function() {
-        console.log('Aqui deveria recarregar os comentários');
-    }
-
-
     //ajax para like do comentario
     $(".like-btn-comentario").click(function(){
         var href = $(this).prop("hash"),
             link = href.substr(1),
             urlArray = link.split('/'),
             idComentario = urlArray[2];
-
-
         $.ajax({
     		url: link
     	})
@@ -33,5 +31,9 @@ $(function() {
     	  console.log('Erro no ajax de like');
         });
     });
+
+
+
+
 
 });

@@ -61,7 +61,8 @@ class PostController extends VivalaBaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$Post = Post::findOrFail($id);
+		return view('post.show', compact('Post'));
 	}
 
 	/**
