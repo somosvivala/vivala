@@ -101,12 +101,10 @@
 				</div>
 
 				@if (count($errors) > 0)
-				<div class="panel panel-default">
-					<div class="panel-heading">Register</div>
-					<div class="panel-body">
+				<div class="row">
+					<div class="col-sm-12">
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
+							<ul class="">
 								@foreach ($errors->all() as $error)
 								<li>{{ $error }}</li>
 								@endforeach
@@ -151,13 +149,13 @@
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::email("email_confirmation", old('email'), ['class' => 'form-control', 'placeholder' => 'CONFIRMAÇÃO DE E-MAIL']) !!}
+						{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
+						{!! Form::password("password_confirmation", ['class' => 'form-control', "placeholder" => "CONFIRMAÇÃO DE SENHA"]) !!}
 					</div>
 				</div>
 				<div class="row">
@@ -168,7 +166,7 @@
 
 				<div class="row">
 					<div class="col-sm-8">
-						<a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
+						<!-- <a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a> -->
 					</div>
 					<div class="col-sm-4">
 						{!!Form::submit("CONFIRMAR", ['class' => 'btn btn-default']) !!}
