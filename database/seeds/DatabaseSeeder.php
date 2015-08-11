@@ -9,6 +9,7 @@ use App\PrettyUrl;
 use App\Ong;
 use App\Empresa;
 use App\Foto;
+use App\Interesse;
 
 class DatabaseSeeder extends Seeder {
 
@@ -28,6 +29,11 @@ class DatabaseSeeder extends Seeder {
         $this->call('EmpresaSeeder');
         $this->call('PrettyUrlSeeder');
         $this->call('FotoSeeder');
+        $this->call('InteresseSeeder');
+
+
+
+
 /*
         #iseed_start
         // here all the calls for newly generated seeds will be stored.
@@ -209,6 +215,25 @@ class FotoSeeder extends Seeder {
             $fotoZord->tipo = 'avatar';
             $fotoZord->path = 'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10374994_706677562743225_4888707270232254721_n.jpg?oh=0b62f6d66c4c708a561daed00b2456d5&oe=56539E2E&__gda__=1447231894_5ca196c8540f1311b6f5e996440c8cd5';
             $zordPerfil->fotos()->save($fotoZord);
+    }
+}
+
+class InteresseSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('interesses')->delete();
+
+        Interesse::create(['nome' => 'Interesse 01']);
+        Interesse::create(['nome' => 'Interesse 02']);
+        Interesse::create(['nome' => 'Interesse 03']);
+        Interesse::create(['nome' => 'Interesse 04']);
+        Interesse::create(['nome' => 'Interesse 05']);
+        Interesse::create(['nome' => 'Interesse 06']);
+        Interesse::create(['nome' => 'Interesse 07']);
+        Interesse::create(['nome' => 'Interesse 08']);
+        Interesse::create(['nome' => 'Interesse 09']);
+        Interesse::create(['nome' => 'Interesse 10']);
     }
 }
 

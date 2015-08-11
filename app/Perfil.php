@@ -168,6 +168,15 @@ class Perfil extends Model {
     }
 
 
+    /**
+     * Um Perfil tem muitos Interesses
+     */
+    public function interesses() 
+    {
+        return $this->belongsToMany('App\Interesse', 'interesse_perfil')->withTimestamps();
+    }
+
+
 
 
 
