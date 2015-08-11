@@ -48,6 +48,7 @@ Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
 Route::controller('perfilcontroller','PerfilController');
 Route::controller('comentario', 'ComentariosController');
+Route::controller('quiz', 'QuizController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
