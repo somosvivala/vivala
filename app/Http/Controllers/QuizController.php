@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Interesse;
 
 class QuizController extends VivalaBaseController {
 
@@ -14,7 +15,9 @@ class QuizController extends VivalaBaseController {
 
 
 	public function getIndex() {
-		return view("quiz.interesses");
+
+		$interesses = Interesse::all();
+		return view("quiz.interesses", compact('interesses'));
 	}
 
 }

@@ -8,11 +8,11 @@
 		<h2>Quais são seus interesses?	</h2>
 		<h3>Escolha uma ou mais opções abaixo e iremos sugerir algumas coisas boas para você.</h3>
 		<ul class="interesses col-sm-12">
-		@if(isset($sugestoesEmpresas))
-		{!! Form::open(['url' => ['ajax/followempresa', $Empresa->id], 'class' => 'form-ajax', 'method' => 'GET']) !!}
-		@forelse($sugestoesEmpresas as $Interesse)
+		{!! Form::open(['url' => ['quiz/interesses', Auth::user()->id], 'class' => 'form-ajax', 'method' => 'POST']) !!}
+		@if(isset($interesses))
+		@forelse($interesses as $Interesse)
 			<li>
-				<label>{{ $Interesse->id }}</label>
+				<label>{{ $Interesse->id }} - {{ $Interesse->nome }}</label>
 			</li>
 		@empty
 		    <p>Nenhuma interesse cadastrado.</p>
