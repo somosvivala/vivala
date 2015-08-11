@@ -1,0 +1,80 @@
+// Menu lateral de sugestões
+ul.sugestoes {
+	padding:1em 0px 2em;
+	margin:0px;
+	list-style: none;
+	text-align: center;
+	li {
+		position: relative;
+		padding: 0px 0px 2em;
+		a {
+			div { /* Remove o padding das class col-* do bootstrap */
+				padding:0px;
+			}
+			text-decoration: none;
+			color: @cor-sugestao-titulo-txt;
+			.foto {
+				width: 7em;
+				height: 7em;
+				position: relative;
+				margin: 0 auto;
+				.cover {
+					// Reseta o z-index pra 0 (nos links grandes fica como -1)
+					z-index: 0;
+				}
+			}
+			strong {
+				font-family: @font-family-sans-serif-bold;
+				text-transform: uppercase;
+			}
+			i {
+				color: @cor-primaria;
+				padding-right: 0.2em;
+			}
+		}
+	}
+}
+ul.sugestoes-empresas {
+	button {
+		border: 0px solid transparent;
+		background-color: @cor-sugestao-botao-bg;
+		color: @cor-sugestao-botao-txt;
+		text-transform: uppercase;
+		font-family: @font-family-sans-serif-bold;
+		padding: 0.35em 0.5em;
+		position: absolute;
+		right:0px;
+		top: 0.7em;
+		z-index: 1; // Coloca o botão por cima
+		&.suave {
+			.suave();	// Sobrescreve o bg de cima, pra evitar !important
+			padding: 0.35em 0.5em;
+		}
+
+	}
+}
+ul.sugestoes-viajantes,
+ul.sugestoes-ongs {
+	button {
+		border: 0px solid transparent;
+		background-color: @cor-sugestao-botao-bg;
+		color: @cor-sugestao-botao-txt;
+		text-transform: uppercase;
+		font-family: @font-family-sans-serif-bold;
+		padding: 0.35em 0.5em;
+		position: absolute;
+		right:0px;
+		top: 0.7em;
+		z-index: 1; // Coloca o botão por cima
+		&.suave {
+			.suave();	// Sobrescreve o bg de cima, pra evitar !important
+			padding: 0.35em 0.5em;
+		}
+	}
+}
+ul.sugestoes-pacotes,
+ul.viagens-comentadas {
+	button {
+		font-size: 10px;
+	}
+}
