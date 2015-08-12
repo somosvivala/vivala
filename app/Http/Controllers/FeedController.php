@@ -17,6 +17,7 @@ class FeedController extends Controller {
 	public function getFeeds($view){
 
 		$posts = Post::getUltimos();
+
 		$view->with('posts', $posts);
 	}
 

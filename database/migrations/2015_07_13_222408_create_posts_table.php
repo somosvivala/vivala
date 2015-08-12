@@ -18,27 +18,15 @@ class CreatePostsTable extends Migration {
 			$table->string('titulo', 140)->nullable();
 			$table->string('descricao', 500)->nullable();
 			$table->string('video')->nullable();
-			$table->enum('tipoEntidade', ['perfil', 'ong', 'empresa'])->nullable();
 			$table->enum('tipoPost', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
 			$table->timestamps();
 
-			$table->integer('perfil_id')->unsigned()->nullable();
-			$table->foreign('perfil_id')
-				->references('id')
-				->on('perfils')
-				->onDelete('cascade');
+			//Campos para a relacao polimorfica,
+			//assim posts podem pertencer a qualquer entidade que implemente
+			//morphOne() ou morphMany()
+			$table->integer('author_id');
+			$table->string('author_type');
 
-			$table->integer('ong_id')->unsigned()->nullable();
-			$table->foreign('ong_id')
-			->references('id')
-			->on('ongs')
-			->onDelete('cascade');
-
-			$table->integer('empresa_id')->unsigned()->nullable();
-			$table->foreign('empresa_id')
-			->references('id')
-			->on('empresas')
-			->onDelete('cascade');
 		});
 
 		Schema::create('entidade_like_post', function(Blueprint $table)

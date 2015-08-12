@@ -45,7 +45,7 @@ class ComentariosController extends VivalaBaseController {
 
 		//depois as relacoes polimorficas
 		$perfil->comentarios()->save($comentario);
-
+		
 		return json_encode(['success'=>true]);
 	}
 

@@ -21,7 +21,9 @@ class Comentario extends Model {
 		return $this->belongsTo('App\Post');
 	}
 
-	
+	/**
+	 * @return Quantidade de Likes
+	 */
 	public function getQuantidadeLikes()
 	{
 		$qtdPerfil = count($this->likedByPerfil->toArray());
