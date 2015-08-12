@@ -13,7 +13,7 @@
 		@forelse($interesses as $Interesse)
 			<li>
 				<label>{{ $Interesse->id }} - {{ $Interesse->nome }}</label>
-				{!! Form::checkbox("$Interesse->id", "$Interesse->nome"); !!}
+				{!! Form::checkbox("interesses[]", "$Interesse->nome"); !!}
 			</li>
 		@empty
 		    <p>Nenhuma interesse cadastrado.</p>
