@@ -40,8 +40,9 @@ class PostController extends VivalaBaseController {
 		$novoPost = new Post();
 		$novoPost->descricao = Request::input('descricao');
 		$novoPost->tipoPost = Request::input('tipoPost');
-		//Salva o post com o id do perfil do usuário que está logado
-		Auth::user()->perfil->posts()->save($novoPost);
+		
+		//Pegando entidadeAtiva
+		Auth::user()->entidadeAtiva->posts()->save($novoPost);
 
 		// Adiciona a foto no post através do id recebido
 		$idFoto = Request::input('fotos');//ta no plural mas vem só uma por enquanto

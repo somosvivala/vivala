@@ -26,11 +26,10 @@ class Empresa extends Model {
 
     /**
      * Uma Empresa tem muitos Posts
-     * @return [type] [description]
      */
     public function posts()
     {
-        return $this->hasMany('App\Post');
+        return $this->morphMany('App\Post', 'author', 'author_type', 'author_id');
     }
 
 

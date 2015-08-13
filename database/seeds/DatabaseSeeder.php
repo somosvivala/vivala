@@ -114,12 +114,14 @@ class OngSeeder extends Seeder {
 
         Ong::create([
             'user_id'     => '1',
-            'nome'        => 'evandrONG',
+            'nome'        => 'evandrONG Ltda',
+            'apelido'     => 'evandrONG'
         ]);
 
         Ong::create([
             'user_id'     => '2',
-            'nome'        => 'zordONG',
+            'nome'        => 'zordONG Ltda',
+            'apelido'     => 'zordONG'
         ]);
     }
 }
@@ -131,12 +133,14 @@ class EmpresaSeeder extends Seeder {
 
         Empresa::create([
             'user_id'     => '1',
-            'nome'        => 'dodobusiness',
+            'nome'        => 'dodobusiness  Ltda',
+            'apelido'     => 'dodobusiness'
         ]);
 
         Empresa::create([
             'user_id'     => '2',
-            'nome'        => 'zordenterprise',
+            'nome'        => 'zordenterprise  Ltda',
+            'apelido'     => 'zordenterprise'
         ]);
     }
 }

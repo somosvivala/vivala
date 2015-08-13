@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'WelcomeController@index');
-Route::get('home', 'HomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
 
@@ -44,6 +43,7 @@ Route::controller('vagas','Cuidar\VagasController');
 Route::controller('albuns','Cuidar\AlbunsController');
 Route::controller('feed','Cuidar\FeedController');
 
+Route::controller('home', 'HomeController');
 Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
 Route::controller('perfilcontroller','PerfilController');
