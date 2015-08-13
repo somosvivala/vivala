@@ -1,6 +1,6 @@
 <div class="col-sm-12 cria-post-container fundo-cheio">
     <div class="col-sm-2">
-        <img class="foto-avatar" src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}">
+        <img class="foto-avatar" src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
     </div>
     <div class="col-sm-10">
         {!! Form::open(['url' => 'post', 'class'=>'']) !!}

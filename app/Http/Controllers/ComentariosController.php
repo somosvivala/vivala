@@ -29,7 +29,7 @@ class ComentariosController extends VivalaBaseController {
 	 */
 	public function postSavecomentario($id) {
 
-		$perfil = Auth::user()->perfil;
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
 		$post = Post::findOrFail($id);
 		$conteudo = Input::get('conteudo', null);
 
@@ -44,7 +44,7 @@ class ComentariosController extends VivalaBaseController {
 		//$post->comentarios()->save($comentario); //comentado pq tava dando erro
 
 		//depois as relacoes polimorficas
-		$perfil->comentarios()->save($comentario);
+		$entidadeAtiva->comentarios()->save($comentario);
 		
 		return json_encode(['success'=>true]);
 	}
