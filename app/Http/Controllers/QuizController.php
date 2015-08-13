@@ -15,7 +15,7 @@ class QuizController extends VivalaBaseController {
 	/**
 	 * Construtor seguro
 	 */
-	public function __construct() 
+	public function __construct()
 	{
 		//Só passa se estiver logado
 		$this->middleware('auth');
@@ -24,24 +24,50 @@ class QuizController extends VivalaBaseController {
 	/**
 	 * Retorna a view inicial do Quiz
 	 */
-	public function getIndex() 
+	public function getIndex()
 	{
 		$interesses = Interesse::all();
-		return view("quiz.interesses", compact('interesses'));
+		return view("quiz.interesses", compact('interesses'))->with(['passo'=>1]);
 	}
+
+	/**
+	 * Retorna a view de adicionar uma foto
+	 */
+	public function getPersonalize()
+	{
+		return view("quiz.personalizefoto")->with(['passo'=>2]);
+	}
+
+
+	/**
+	* Retorna a view de adicionar detalhes (Apelido, cidade de origem, etc)
+	*/
+	public function getContemais()
+	{
+		return view("quiz.contemais")->with(['passo'=>3]);
+	}
+
+	/**
+	 * Retorna a view de asugestão de viajantes
+	 */
+	public function getPessoasinteressantes()
+	{
+		return view("quiz.pessoasinteressantes")->with(['passo'=>4]);
+	}
+
 
 	/**
 	 * Recebe por POST o $id do Perfil e atrela a esse perfil a lista de Interesses
 	 * dentro de  do array 'interesses'
 	 */
-	public function postInteresses($id, Request $request) 
+	public function postInteresses($id, Request $request)
 	{
 		$perfil = Perfil::findOrFail($id);
 		$interesses = $request->get('interesses');
 
 		//Iterando sob os valores do checkbox de interesses
 		foreach ($interesses as $interesse) {
-			
+
 			$int = Interesse::all()->where('nome', $interesse)->first();
 			if ($int) {
 

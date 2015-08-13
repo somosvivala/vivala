@@ -12,7 +12,7 @@
 	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
 	<!-- Fonts -->
-	<link href='fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+	<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,21 +33,21 @@
         	<a class="navbar-brand logo" href="{{ url('home') }}"><img src="/logo.png" alt="Vivalá" title="Vivalá"></a>
         </div>
 
-        <div class="col-sm-10">
-            Pergunta 1 de 4
+        <div class="col-sm-10 text-right">
+            <span class="laranja absolute-top-right">Passo {{ $passo }} de 4</span>
         </div>
 	</nav>
 
 
-	<div class="col-sm-2 col-md-3">
+	<div class="col-sm-2 col-md-2">
         &nbsp;
 	</div>
 
-	<div class="col-sm-8 col-md-6">
+	<div class="col-sm-8 col-md-8">
 		@yield('pergunta')
 	</div>
 
-	<div class="col-sm-2 col-md-3">
+	<div class="col-sm-2 col-md-2">
         &nbsp;
 	</div>
 	<!-- Scripts -->

@@ -176,6 +176,18 @@ ul.lista-usuarios li.foto-user img {
   border-color: transparent	;
   color: black;
 }
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+a.laranja,
+span.laranja,
+.laranja {
+  color: #f16f2b;
+  text-decoration: none;
+}
 #welcome-html {
   position: relative;
   min-height: 100%;
