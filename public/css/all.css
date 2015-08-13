@@ -6699,6 +6699,18 @@ ul.lista-usuarios li.foto-user img {
   border-color: transparent	;
   color: black;
 }
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+a.laranja,
+span.laranja,
+.laranja {
+  color: #f16f2b;
+  text-decoration: none;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -6985,6 +6997,40 @@ ul.sugestoes-ongs button.suave {
 ul.sugestoes-pacotes button,
 ul.viagens-comentadas button {
   font-size: 10px;
+}
+.pergunta {
+  background-color: white;
+  padding: 2em 5em 5em;
+  text-align: center;
+}
+.pergunta h2 {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+.pergunta h3 {
+  text-align: left;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+.pergunta ul {
+  padding: 1em 0 2em;
+  margin: 0;
+  list-style: none;
+}
+.pergunta ul label {
+  padding: 0.2em 0;
+  text-transform: uppercase;
+  color: #535353;
+}
+.pergunta ul label span {
+  top: -0.2em;
+  position: relative;
+}
+.pergunta ul input[type="checkbox"] {
+  border: 1px solid #535353;
+  height: 1em;
 }
 .cria-post-container {
   padding: 15px;
@@ -7346,6 +7392,18 @@ ul.lista-usuarios li.foto-user img {
   background-color: rgba(255, 255, 255, 0.7);
   border-color: transparent	;
   color: black;
+}
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+a.laranja,
+span.laranja,
+.laranja {
+  color: #f16f2b;
+  text-decoration: none;
 }
 #welcome-html {
   position: relative;
