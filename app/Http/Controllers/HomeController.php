@@ -54,7 +54,6 @@ class HomeController extends ConectarController {
 					break;
 				
 				default:
-					# Retorna o perfil do usuario
 					break;
 			}
 
