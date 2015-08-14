@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Input;
 
-class FotoController extends VivalaBaseController {entidade
+class FotoController extends VivalaBaseController {
 
 	/**
 	 * construtor seguro.
@@ -26,7 +26,7 @@ class FotoController extends VivalaBaseController {entidade
 	}
 
 	public function postCropandsave($id, CropPhotoRequest $request) {
-
+	
 		$file = Input::file('image_file_upload');
 	    if ($file && $file->isValid()) {
 
@@ -85,9 +85,9 @@ class FotoController extends VivalaBaseController {entidade
 
 				//Associa a foto ao Perfil
 				// Auth::user()->perfil->fotos()->save($foto);
-				
+
 				// Associa a foto à entidade
-				
+
 				$entidade = Auth::user()->entidadeAtiva;
 				if ($entidade) {
 	        		$entidade->fotos()->save($foto);
