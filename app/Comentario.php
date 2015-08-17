@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
 
 class Comentario extends Model {
 
@@ -19,4 +20,41 @@ class Comentario extends Model {
 	public function post() {
 		return $this->belongsTo('App\Post');
 	}
+
+	
+	public function getQuantidadeLikes()
+	{
+		$qtdPerfil = count($this->likedByPerfil->toArray());
+		$qtdEmpresa = count($this->likedByEmpresa->toArray());
+		$qtdOng = count($this->likedByOng->toArray());
+		$qtdTotal = $qtdPerfil + $qtdEmpresa + $qtdOng;
+		return $qtdTotal;
+	}
+
+	public function likedByMe()
+	{
+		$user = Auth::user();
+		$perfil = $user->perfil;
+		if( $this->likedByPerfil->find($perfil->id) ){
+			return 'liked';
+		} else {
+			return '';
+		}
+	}
+
+	public function likedByPerfil()
+	{
+		return $this->belongsToMany('App\Perfil', 'entidade_like_comentario', 'comentario_id', 'perfil_id')->withTimestamps();
+	}
+
+	public function likedByEmpresa()
+	{
+		return $this->belongsToMany('App\Empresa', 'entidade_like_comentario', 'comentario_id', 'empresa_id')->withTimestamps();
+	}
+
+	public function likedByOng()
+	{
+		return $this->belongsToMany('App\Ong', 'entidade_like_comentario', 'comentario_id', 'ong_id')->withTimestamps();
+	}
+
 }

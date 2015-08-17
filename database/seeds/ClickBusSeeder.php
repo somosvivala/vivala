@@ -2,8 +2,9 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use App\Configuracao;
 
-class ClickBusPlacesSeeder extends Seeder {
+class ClickBusSeeder extends Seeder {
     public function run()
     {
         DB::table('clickbus_places')->delete();
@@ -11,6 +12,11 @@ class ClickBusPlacesSeeder extends Seeder {
         $clickbusPlaces = file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/places');
 
         $clickbusHash = md5($clickbusPlaces);
+
+        $configuracao = Configuracao::firstOrCreate(['nome'  => 'clickbus_places_hash']);
+        $configuracao->valor = $clickbusHash;
+        $configuracao->save();
+
         $clickbusPlaces = (array)json_decode($clickbusPlaces)->items;
 
         foreach ($clickbusPlaces as $place) {
@@ -34,6 +40,28 @@ class ClickBusPlacesSeeder extends Seeder {
             }
             DB::table('clickbus_places')->insert($array_insert);
         }
+
+        DB::table('clickbus_companies')->delete();
+
+        $pages = json_decode(file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/buscompanies'))->meta->totalPages;
+        $busCompaniesHash = '';
+        for ($i = 1; $i <= intval($pages); $i++) { 
+            $companies = file_get_contents("https://api-evaluation.clickbus.com.br/api/v1/buscompanies?page={$i}");
+            $busCompaniesHash .= $companies;
+            $companies = json_decode($companies)->busCompanies;
+
+            foreach ($companies as $company) {
+                DB::table('clickbus_companies')->insert(array(
+                    'id'       => $company->id,
+                    'nome'     => $company->name,
+                    'logo_url' => $company->logo->url
+                ));       
+            }            
+        }
+
+        $configuracaobusCompany = Configuracao::firstOrCreate(['nome'  => 'clickbus_buscompanies_hash']);
+        $configuracaobusCompany->valor = md5($busCompaniesHash);
+        $configuracaobusCompany->save();
     }
 }
 

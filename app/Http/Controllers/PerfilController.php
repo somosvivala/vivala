@@ -187,8 +187,16 @@ class PerfilController extends ConectarController {
 		//Testo se o usuário está logado
 		$user = Auth::user();
 		$perfil = $user->perfil;
-		//Salvando relação (Dando o like finalmente!)
-		$perfil->likePost()->attach($post->id);
+		
+		//Se já tiver dado like no post com esse id,
+		//consigo encontralo pelo Collention->find()
+		$alreadyLiked = $perfil->likePost->find($post->id);
+
+		if (!$alreadyLiked) {
+			//Salvando relação (Dando o like finalmente!)
+			$perfil->likePost()->attach($post->id);
+		}
+		
 		// Retorna a quantidade de likes para utilizar na view
 	    return $post->getQuantidadeLikes();
 	}
