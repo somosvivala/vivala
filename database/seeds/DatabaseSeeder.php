@@ -9,6 +9,7 @@ use App\PrettyUrl;
 use App\Ong;
 use App\Empresa;
 use App\Foto;
+use App\Interesse;
 
 class DatabaseSeeder extends Seeder {
 
@@ -28,6 +29,11 @@ class DatabaseSeeder extends Seeder {
         $this->call('EmpresaSeeder');
         $this->call('PrettyUrlSeeder');
         $this->call('FotoSeeder');
+        $this->call('InteresseSeeder');
+
+
+
+
 /*
         #iseed_start
         // here all the calls for newly generated seeds will be stored.
@@ -121,12 +127,14 @@ class OngSeeder extends Seeder {
 
         Ong::create([
             'user_id'     => '1',
-            'nome'        => 'evandrONG',
+            'nome'        => 'evandrONG Ltda',
+            'apelido'     => 'evandrONG'
         ]);
 
         Ong::create([
             'user_id'     => '2',
-            'nome'        => 'zordONG',
+            'nome'        => 'zordONG Ltda',
+            'apelido'     => 'zordONG'
         ]);
     }
 }
@@ -138,12 +146,14 @@ class EmpresaSeeder extends Seeder {
 
         Empresa::create([
             'user_id'     => '1',
-            'nome'        => 'dodobusiness',
+            'nome'        => 'dodobusiness  Ltda',
+            'apelido'     => 'dodobusiness'
         ]);
 
         Empresa::create([
             'user_id'     => '2',
-            'nome'        => 'zordenterprise',
+            'nome'        => 'zordenterprise  Ltda',
+            'apelido'     => 'zordenterprise'
         ]);
     }
 }
@@ -228,6 +238,25 @@ class FotoSeeder extends Seeder {
         $fotoZord->tipo = 'avatar';
         $fotoZord->path = 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/10374994_706677562743225_4888707270232254721_n.jpg?oh=d4f0daa8f62f27904266b4eb48876ae0&oe=55C2EE6F&__gda__=1438591338_31d1bca33986c333c0434e1ce01cd8a4';
         $zordPerfil->fotos()->save($fotoZord);
+    }
+}
+
+class InteresseSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('interesses')->delete();
+
+        Interesse::create(['nome' => 'Interesse 01']);
+        Interesse::create(['nome' => 'Interesse 02']);
+        Interesse::create(['nome' => 'Interesse 03']);
+        Interesse::create(['nome' => 'Interesse 04']);
+        Interesse::create(['nome' => 'Interesse 05']);
+        Interesse::create(['nome' => 'Interesse 06']);
+        Interesse::create(['nome' => 'Interesse 07']);
+        Interesse::create(['nome' => 'Interesse 08']);
+        Interesse::create(['nome' => 'Interesse 09']);
+        Interesse::create(['nome' => 'Interesse 10']);
     }
 }
 

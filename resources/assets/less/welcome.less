@@ -1,178 +1,186 @@
-@cor-placeholder-inputs: white;
-@cor-texto-btn-login : #F16F2B;
+@import "coresefontes";
+@import "utilitarios";
 
 #welcome-html {
 	position: relative;
 	min-height: 100%;
 
 	body {
-		overflow: hidden;
-		background-image: url("../../img/dummy.jpg");
+		background-image: url("../../img/riolaranja.png");
 		background-position: center center;
 		background-size: cover;
 	}
 }
-
-
-
-nav.welcome-navbar {
-	height: 100px;
-	background-color: rgba(241, 111, 43, 0.45);
-  	padding: 10px;
-
+@cor-fundo-welcome : rgb(255, 245, 210);
+.welcome-header {
+	height: 11rem;
+	background-color: rgba(255, 245, 210, 0.95);
+	font-size: @font-size-rem*0.9;
+	font-family: @font-family-sans-serif;
+	font-weight: normal;
+	.form-login .row {
+		line-height: 0.5em;
+		> div{
+			padding:0.2em;
+		}
+	}
 	a {
-		&.navbar-brand {
-			font-size: 45px;
-			color: white;  
-			line-height: 35px;
-		}
-
-		&.forgot-password {
-			color: white;
-			line-height: 33px;
-			font-size: 13px;
-			margin-left: 20px;
-		}
+		color: @cor-primaria;
 	}
-
-	.input-wrapper {
-		  margin-top: 0px;
-		  padding-top: 5px;
-		  float: left;
-		  width: 48%;
-
-		  &.input-group {
-		  	padding-left: 20px;
-		  }
-
-		  &.select-wrapper {
-		  	width: 100%;
-
-		  	select {
-		  		width: 100%;
-		  		height: 35px;
-		  		font-weight: bold;
-		  		background-color: transparent;
-		  		border: 1px solid @cor-placeholder-inputs;		
-		  		color: @cor-placeholder-inputs;
-				
-				&:focus {
-			  		border: 1px solid @cor-placeholder-inputs;		
-				}
-
-		  		option {
-		  			background-color: rgba(255,255,255,0);
-		  			border: 1px solid @cor-placeholder-inputs;		
-
-		  		}
-		  	}
-		  }
-	}
-
-	label {
-		color: white;
+	label.titulo {
+		margin: 1em 0 0;
+		line-height: 0.8em;
 		text-transform: uppercase;
-		background-color: transparent;
-		font-weight: bold;
-		width: 100%;
+		color: @cor-primaria;
+		font-family: @font-family-sans-serif-bold;
 	}
+	label.rememberme {
+		font-family: @font-family-sans-serif;
+	}
+	.btn-submit {
+		position: absolute;
+		right: 0.2em;
+		top: 0.2em;
+		border-left: 1px solid @cor-fundo-welcome;
+	}
+	.rememberme {
+		word-wrap:break-word;
+		color: @cor-primaria;
+		label {
+			padding:0.2em;
+		}
+	}
+	input[type="checkbox"] {
+		text-align: left;
+		float: left;
+		vertical-align: bottom;
+		position: relative;
+		width: auto;
+		height: 1em;
+		margin:0;
+		border:0px solid white;
+		background-color: @cor-primaria;
+		//corrigindo o desnivel com o label
+		margin-top:-0.2em;
 
-	input, button.loginbtn {
-		font-weight: bold;
-		color: @cor-placeholder-inputs;
+	}
+	select, input {
+		font-family: @font-family-sans-serif-bold;
 		text-transform: uppercase;
-		background-color: transparent;	
-		border: 1px solid @cor-placeholder-inputs;
+
+		//Tira a borda redonda do bootstrap
 		border-radius: 0px;
-		
+		width: 100%;
+		height: 3.6rem;
+		border: 1px solid @cor-primaria;
+		background-color: @cor-primaria;
+		color: white;
+		padding: 0.8rem 1rem;;
 		&:focus {
-	  		border: 1px solid @cor-placeholder-inputs;		
+			border: 1px solid @cor-primaria;
 		}
 
-		// &:-webkit-autofill {
-		// 	-webkit-box-shadow: 0 0 0px 1000px transparent inset!important;
-		// 	background-color: rgba(0,0,0,0)!important;	
-		// 	-webkit-text-fill-color: white !important;
-		// }
-
-	}
-
-	div.checkbox {
-		  margin-top: 0px;
-		  padding-top: 5px;
-		  float: left;
-		  width: 48%;
-		> label {
-			font-weight: 100;
-			text-transform: none;
-			font-size: 13px;
+		option {
+			background-color: rgba(255,255,255,0);
+			border: 1px solid @cor-primaria;
 		}
 	}
 
 	::-webkit-input-placeholder {
-	   color: @cor-placeholder-inputs;
+	   color: white;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-	   color: @cor-placeholder-inputs;  
+	   color: white;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-	   color: @cor-placeholder-inputs;  
+	   color: white;
 	}
 
-	:-ms-input-placeholder {  
-	   color: @cor-placeholder-inputs;  
+	:-ms-input-placeholder {
+	   color: white;
+	}
+
+	.nav-logo {
+		height: 9rem;
+		padding: 0px;
+		img {
+			height:100%;
+		}
 	}
 }
-
+.brasilwelcome {
+	max-width:70%;
+	padding-top: 2em;
+}
+.balao-flutuante {
+	background-color: rgba(255, 255, 255, 0.25);
+	padding: 1em;
+	color:white;
+	position: absolute;
+	max-width: 18rem;
+	&.balao-1 {
+		bottom: 20%;
+		left:0;
+	};
+	&.balao-2 {
+		bottom: 6%;
+		max-width: 14rem;
+		right:30%;
+	};
+	&.balao-3 {
+		top: 50%;
+		right:10%;
+	}
+}
 div.welcome-content {
 	::-webkit-input-placeholder {
-	   color: @cor-placeholder-inputs;
+	   color: white;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-	   color: @cor-placeholder-inputs;  
+	   color: white;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-	   color: @cor-placeholder-inputs;  
+	   color: white;
 	}
 
-	:-ms-input-placeholder {  
-	   color: @cor-placeholder-inputs;  
+	:-ms-input-placeholder {
+	   color: white;
 	}
 
-	h2 {
-		color: @cor-placeholder-inputs;
-		font-size: 38px;
-		line-height: 42px;
-		margin-bottom: 30px;
-	}
-	
+
 	h3 {
-		color: @cor-placeholder-inputs;
-		font-size: 28px;
-		line-height: 32px;
+		color: white;
+		font-family: @font-family-sans-serif-bold;
+		font-weight: normal;
+		font-size: 2.5em;
 	}
 
 	p {
-		color: @cor-placeholder-inputs;
-		font-size: 14px;
+		color: white;
+		font-size: 1.2rem;
 	}
 
-	.welcome-left {
-		margin-top: 50px;
-	}
-
-	.welcome-right {
-		margin-left: 8%;
-		float: right;
-
-		.col-sm-6, .col-sm-12 {
-			padding-left: 8px;
-			padding-right: 8px;
+	.welcome-cadastrar {
+		> div {
+			height: 4em;
 		}
+		.btn-facebook {
+			position: absolute;
+			bottom: 0;
+			right: 10%;
+			text-transform: none;
+			font-family: @font-family-sans-serif;
+		}
+		padding-top: 4em;
+		padding-bottom: 2em;
+	}
+
+	.form-cadastro-wrapper {
+		margin:0;
 	}
 
 	a.anchor-tour {
@@ -183,26 +191,30 @@ div.welcome-content {
 
 	input {
 		font-weight: bold;
-		color: @cor-placeholder-inputs;
+		color: white;
 		text-transform: uppercase;
 		background-color: rgba(255, 255, 255, 0.25);
 		border: 0px;
 		border-radius: 0px;
-		padding: 21px 12px;
+		padding: 0 0.5em;
+		font-size: @font-size-rem*0.8;
+		font-family: @font-family-sans-serif-bold;
+		font-weight: normal;
 
 		&:focus {
-	  		border: 1px solid @cor-placeholder-inputs;		
+	  		border: 1px solid @cor-primaria;
 		}
-	
+
 		&[type='submit'] {
-			margin-left: 15px;
 			background-color: white;
-			color: @cor-texto-btn-login;
+			color: @cor-primaria;
 			font-weight: bold;
 			text-transform: uppercase;
 			border: 1px solid white;
 			border-radius: 0px;
-			padding: 10px 12px;
+			padding: 0.5rem;
+			font-size:1.2rem;
+			width: 100%;
 		}
 	}
 }

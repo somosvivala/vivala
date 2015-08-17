@@ -6776,109 +6776,6 @@ div.cover {
 .fundo-cheio {
   background-color: white;
 }
-.left-panel,
-.right-panel {
-  background-color: white;
-  padding: 1.5em;
-}
-.btn-primario {
-  background-color: #8ba6ac;
-  color: white;
-}
-.btn-acao {
-  background-color: #f16f2b;
-  color: white;
-}
-strong {
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-}
-label {
-  font-weight: normal;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-}
-button.btn,
-input.btn,
-a.btn {
-  border-radius: 0px;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-}
-textarea {
-  border: 1px solid #e2e2e2;
-}
-h4.suave {
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0.7em;
-  font-size: 1em;
-  background-color: #8ba6ac;
-  color: white;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5em;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border: 0px solid transparent;
-}
-button.suave {
-  padding: 0.2em 0.5em;
-  cursor: pointer;
-}
-a.suave {
-  padding: 0.2em 1em;
-  text-decoration: none;
-  cursor: pointer;
-}
-a.suave:hover {
-  color: black;
-}
-.lista-intervalo-preto a {
-  color: black;
-}
-/* Classes css */
-body {
-  background-color: #e2e2e2;
-  font-size: 12.6px;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-weight: normal;
-}
-.foto-avatar,
-img.foto-avatar {
-  max-width: 100%;
-  border-radius: 50%;
-}
-nav.menu-lateral {
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 3.5em;
-}
-nav.menu-lateral ul {
-  list-style: none;
-  margin: 0px;
-  padding-top: 1em;
-  padding-left: 1.6em;
-  display: inline-block;
-}
-nav.menu-lateral ul li {
-  display: block;
-  float: left;
-  width: 100%;
-  text-align: left;
-  text-transform: uppercase;
-}
-nav.menu-lateral ul li a {
-  text-decoration: none;
-  color: #5d5d5d;
-  transition: 0.3s all ease-out;
-}
-nav.menu-lateral ul li a:hover {
-  color: #f16f2b;
-}
-nav.menu-lateral ul li a i {
-  color: #f16f2b;
-  padding-right: 0.6em;
-  font-size: 1.2em;
-  padding-top: 0.1em;
-}
 div.foto-fundo {
   background-size: cover;
   background-position: center center;
@@ -6960,54 +6857,67 @@ h3.subtitulo {
 .foto-comentario .foto .cover {
   z-index: 0;
 }
-ul.sugestoes {
-  padding: 1em 0px 2em;
-  margin: 0px;
-  list-style: none;
-  text-align: center;
+.foto-avatar,
+img.foto-avatar {
+  max-width: 100%;
+  border-radius: 50%;
 }
-ul.sugestoes li {
-  position: relative;
-  padding: 0px 0px 2em;
+ul.lista-usuarios li.foto-user img {
+  max-width: 100%;
+  border-radius: 50%;
 }
-ul.sugestoes li a {
-  text-decoration: none;
+.alert {
+  padding: 1em;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: transparent	;
   color: black;
 }
-ul.sugestoes li a div {
-  /* Remove o padding das class col-* do bootstrap */
-  padding: 0px;
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
 }
-ul.sugestoes li a .foto {
-  width: 7em;
-  height: 7em;
-  position: relative;
-  margin: 0 auto;
-}
-ul.sugestoes li a .foto .cover {
-  z-index: 0;
-}
-ul.sugestoes li a strong {
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-}
-ul.sugestoes li a i {
+a.laranja,
+span.laranja,
+.laranja {
   color: #f16f2b;
-  padding-right: 0.2em;
+  text-decoration: none;
 }
-ul.sugestoes-empresas button {
-  border: 0px solid transparent;
+.left-panel,
+.right-panel {
+  background-color: white;
+  padding: 1.5em;
+}
+.btn-primario {
+  background-color: #8ba6ac;
+  color: white;
+}
+.btn-acao {
   background-color: #f16f2b;
   color: white;
-  text-transform: uppercase;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  padding: 0.35em 0.5em;
-  position: absolute;
-  right: 0px;
-  top: 0.7em;
-  z-index: 1;
 }
-ul.sugestoes-empresas button.suave {
+strong {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+label {
+  font-weight: normal;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+button.btn,
+input.btn,
+a.btn {
+  border-radius: 0px;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+textarea {
+  border: 1px solid #e2e2e2;
+}
+h4.suave {
   text-align: center;
   text-transform: uppercase;
   padding: 0.7em;
@@ -7019,39 +6929,28 @@ ul.sugestoes-empresas button.suave {
   margin-top: 0px;
   margin-bottom: 0px;
   border: 0px solid transparent;
-  padding: 0.35em 0.5em;
 }
-ul.sugestoes-viajantes button,
-ul.sugestoes-ongs button {
-  border: 0px solid transparent;
-  background-color: #f16f2b;
-  color: white;
-  text-transform: uppercase;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  padding: 0.35em 0.5em;
-  position: absolute;
-  right: 0px;
-  top: 0.7em;
-  z-index: 1;
+button.suave {
+  padding: 0.2em 0.5em;
+  cursor: pointer;
 }
-ul.sugestoes-viajantes button.suave,
-ul.sugestoes-ongs button.suave {
-  text-align: center;
-  text-transform: uppercase;
-  padding: 0.7em;
-  font-size: 1em;
-  background-color: #8ba6ac;
-  color: white;
-  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
-  line-height: 1.5em;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  border: 0px solid transparent;
-  padding: 0.35em 0.5em;
+a.suave {
+  padding: 0.2em 1em;
+  text-decoration: none;
+  cursor: pointer;
 }
-ul.sugestoes-pacotes button,
-ul.viagens-comentadas button {
-  font-size: 10px;
+a.suave:hover {
+  color: black;
+}
+.lista-intervalo-preto a {
+  color: black;
+}
+/* Classes css */
+body {
+  background-color: #e2e2e2;
+  font-size: 12.6px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 a.logo {
   padding: 0px;
@@ -7149,11 +7048,165 @@ nav.menu-top .menu-usuario ul li ul.dropdown-menu li {
 .perfil-topo ul li + li {
   border-left: 1px solid white;
 }
-ul.lista-usuarios li.foto-user img {
-  max-width: 100%;
-  border-radius: 50%;
+nav.menu-lateral {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 3.5em;
 }
-/* Rede Social */
+nav.menu-lateral ul {
+  list-style: none;
+  margin: 0px;
+  padding-top: 1em;
+  padding-left: 1.6em;
+  display: inline-block;
+}
+nav.menu-lateral ul li {
+  display: block;
+  float: left;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+}
+nav.menu-lateral ul li a {
+  text-decoration: none;
+  color: #5d5d5d;
+  transition: 0.3s all ease-out;
+}
+nav.menu-lateral ul li a:hover {
+  color: #f16f2b;
+}
+nav.menu-lateral ul li a i {
+  color: #f16f2b;
+  padding-right: 0.6em;
+  font-size: 1.2em;
+  padding-top: 0.1em;
+}
+ul.sugestoes {
+  padding: 1em 0px 2em;
+  margin: 0px;
+  list-style: none;
+  text-align: center;
+}
+ul.sugestoes li {
+  position: relative;
+  padding: 0px 0px 2em;
+}
+ul.sugestoes li a {
+  text-decoration: none;
+  color: black;
+}
+ul.sugestoes li a div {
+  /* Remove o padding das class col-* do bootstrap */
+  padding: 0px;
+}
+ul.sugestoes li a .foto {
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+ul.sugestoes li a .foto .cover {
+  z-index: 0;
+}
+ul.sugestoes li a strong {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+ul.sugestoes li a i {
+  color: #f16f2b;
+  padding-right: 0.2em;
+}
+ul.sugestoes-empresas button {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+  z-index: 1;
+}
+ul.sugestoes-empresas button.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
+}
+ul.sugestoes-viajantes button,
+ul.sugestoes-ongs button {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+  z-index: 1;
+}
+ul.sugestoes-viajantes button.suave,
+ul.sugestoes-ongs button.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
+}
+ul.sugestoes-pacotes button,
+ul.viagens-comentadas button {
+  font-size: 10px;
+}
+.pergunta {
+  background-color: white;
+  padding: 2em 5em 5em;
+  text-align: center;
+}
+.pergunta h2 {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+.pergunta h3 {
+  text-align: left;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+.pergunta ul {
+  padding: 1em 0 2em;
+  margin: 0;
+  list-style: none;
+}
+.pergunta ul label {
+  padding: 0.2em 0;
+  text-transform: uppercase;
+  color: #535353;
+}
+.pergunta ul label span {
+  top: -0.2em;
+  position: relative;
+}
+.pergunta ul input[type="checkbox"] {
+  border: 1px solid #535353;
+  height: 1em;
+}
 .cria-post-container {
   padding: 15px;
 }
@@ -7193,14 +7246,6 @@ ul.lista-usuarios li.foto-user img {
 	text-shadow: 0px 0px 2px white;
 	color:black;*/
 }
-article.status .status {
-  margin-top: 3rem;
-  font-size: 1.4em;
-  font-weight: lighter;
-}
-article.foto .foto-fundo {
-  min-height: 33rem;
-}
 .post .like-btn {
   cursor: pointer;
 }
@@ -7229,104 +7274,330 @@ article.foto .foto-fundo {
   border-left: 0.2rem solid #e2e2e2;
   margin-right: -0.2rem;
 }
+article.status .status {
+  margin-top: 3rem;
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+article.foto .foto-fundo {
+  min-height: 33rem;
+}
 
+/* Definição do nome das cores principais */
+/* Definição das cores dos elementos */
+/* Fontes */
+/* Definição de tempo de efeitos */
+div.cover {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+.cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+}
+.lista-intervalo-preto {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  color: black;
+}
+.lista-intervalo-preto li {
+  padding: 0;
+}
+.lista-intervalo-preto li + li {
+  border-left: 2px solid black;
+}
+.radio-hidden input[type="radio"] {
+  display: none;
+}
+.radio-hidden label {
+  cursor: pointer;
+}
+.radio-hidden input[type="radio"]:checked + label {
+  color: #f16f2b;
+}
+.foto-label {
+  padding: 1em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e2e2e2;
+  color: black;
+}
+.foto-label .titulo-label {
+  font-size: 1.4em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.fundo-cheio {
+  background-color: white;
+}
+div.foto-fundo {
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+}
+.foto-header {
+  width: 100%;
+  height: 25em;
+}
+.foto-header h2,
+.foto-header h3 {
+  text-shadow: 0em 0em 0.2em black;
+  display: block;
+}
+.foto-header h2 {
+  padding-top: 3em;
+  font-size: 3em;
+  margin-top: 0;
+}
+.foto-header h3 {
+  font-size: 1em;
+}
+.foto-header div {
+  margin: 2em auto;
+}
+.foto-link {
+  overflow: hidden;
+}
+.foto-link a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: white;
+}
+.foto-link a h4 {
+  font-size: 2em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 4em 0;
+  margin: 0;
+}
+.foto-link a > .cover {
+  transition: all 1s ease;
+  background-color: black;
+}
+.foto-link a > .cover img {
+  transition: all 1s ease;
+}
+.foto-link a:hover > .cover {
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+}
+.foto-link a:hover > .cover img {
+  opacity: 0.5;
+}
+h3.subtitulo {
+  text-transform: uppercase;
+  color: black;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+.foto-comentario {
+  width: 94%;
+  margin: 3%;
+  height: 6em;
+  position: absolute;
+  top: 0px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.foto-comentario .foto {
+  width: 5em;
+  height: 5em;
+  position: relative;
+  margin: .5em auto;
+}
+.foto-comentario .foto .cover {
+  z-index: 0;
+}
+.foto-avatar,
+img.foto-avatar {
+  max-width: 100%;
+  border-radius: 50%;
+}
+ul.lista-usuarios li.foto-user img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.alert {
+  padding: 1em;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: transparent	;
+  color: black;
+}
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+a.laranja,
+span.laranja,
+.laranja {
+  color: #f16f2b;
+  text-decoration: none;
+}
 #welcome-html {
   position: relative;
   min-height: 100%;
 }
 #welcome-html body {
-  overflow: hidden;
-  background-image: url("../../img/dummy.jpg");
+  background-image: url("../../img/riolaranja.png");
   background-position: center center;
   background-size: cover;
 }
-nav.welcome-navbar {
-  height: 100px;
-  background-color: rgba(241, 111, 43, 0.45);
-  padding: 10px;
+.welcome-header {
+  height: 11rem;
+  background-color: rgba(255, 245, 210, 0.95);
+  font-size: 12.6px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
-nav.welcome-navbar a.navbar-brand {
-  font-size: 45px;
-  color: white;
-  line-height: 35px;
+.welcome-header .form-login .row {
+  line-height: 0.5em;
 }
-nav.welcome-navbar a.forgot-password {
-  color: white;
-  line-height: 33px;
-  font-size: 13px;
-  margin-left: 20px;
+.welcome-header .form-login .row > div {
+  padding: 0.2em;
 }
-nav.welcome-navbar .input-wrapper {
-  margin-top: 0px;
-  padding-top: 5px;
+.welcome-header a {
+  color: #f16f2b;
+}
+.welcome-header label.titulo {
+  margin: 1em 0 0;
+  line-height: 0.8em;
+  text-transform: uppercase;
+  color: #f16f2b;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+.welcome-header label.rememberme {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.welcome-header .btn-submit {
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+  border-left: 1px solid #fff5d2;
+}
+.welcome-header .rememberme {
+  word-wrap: break-word;
+  color: #f16f2b;
+}
+.welcome-header .rememberme label {
+  padding: 0.2em;
+}
+.welcome-header input[type="checkbox"] {
+  text-align: left;
   float: left;
-  width: 48%;
+  vertical-align: bottom;
+  position: relative;
+  width: auto;
+  height: 1em;
+  margin: 0;
+  border: 0px solid white;
+  background-color: #f16f2b;
+  margin-top: -0.2em;
 }
-nav.welcome-navbar .input-wrapper.input-group {
-  padding-left: 20px;
-}
-nav.welcome-navbar .input-wrapper.select-wrapper {
-  width: 100%;
-}
-nav.welcome-navbar .input-wrapper.select-wrapper select {
-  width: 100%;
-  height: 35px;
-  font-weight: bold;
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-}
-nav.welcome-navbar .input-wrapper.select-wrapper select:focus {
-  border: 1px solid white;
-}
-nav.welcome-navbar .input-wrapper.select-wrapper select option {
-  background-color: rgba(255, 255, 255, 0);
-  border: 1px solid white;
-}
-nav.welcome-navbar label {
-  color: white;
+.welcome-header select,
+.welcome-header input {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  background-color: transparent;
-  font-weight: bold;
-  width: 100%;
-}
-nav.welcome-navbar input,
-nav.welcome-navbar button.loginbtn {
-  font-weight: bold;
-  color: white;
-  text-transform: uppercase;
-  background-color: transparent;
-  border: 1px solid white;
   border-radius: 0px;
+  width: 100%;
+  height: 3.6rem;
+  border: 1px solid #f16f2b;
+  background-color: #f16f2b;
+  color: white;
+  padding: 0.8rem 1rem;
 }
-nav.welcome-navbar input:focus,
-nav.welcome-navbar button.loginbtn:focus {
-  border: 1px solid white;
+.welcome-header select:focus,
+.welcome-header input:focus {
+  border: 1px solid #f16f2b;
 }
-nav.welcome-navbar div.checkbox {
-  margin-top: 0px;
-  padding-top: 5px;
-  float: left;
-  width: 48%;
+.welcome-header select option,
+.welcome-header input option {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #f16f2b;
 }
-nav.welcome-navbar div.checkbox > label {
-  font-weight: 100;
-  text-transform: none;
-  font-size: 13px;
-}
-nav.welcome-navbar ::-webkit-input-placeholder {
+.welcome-header ::-webkit-input-placeholder {
   color: white;
 }
-nav.welcome-navbar :-moz-placeholder {
+.welcome-header :-moz-placeholder {
   /* Firefox 18- */
   color: white;
 }
-nav.welcome-navbar ::-moz-placeholder {
+.welcome-header ::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
 }
-nav.welcome-navbar :-ms-input-placeholder {
+.welcome-header :-ms-input-placeholder {
   color: white;
+}
+.welcome-header .nav-logo {
+  height: 9rem;
+  padding: 0px;
+}
+.welcome-header .nav-logo img {
+  height: 100%;
+}
+.brasilwelcome {
+  max-width: 70%;
+  padding-top: 2em;
+}
+.balao-flutuante {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1em;
+  color: white;
+  position: absolute;
+  max-width: 18rem;
+}
+.balao-flutuante.balao-1 {
+  bottom: 20%;
+  left: 0;
+}
+.balao-flutuante.balao-2 {
+  bottom: 6%;
+  max-width: 14rem;
+  right: 30%;
+}
+.balao-flutuante.balao-3 {
+  top: 50%;
+  right: 10%;
 }
 div.welcome-content ::-webkit-input-placeholder {
   color: white;
@@ -7342,32 +7613,32 @@ div.welcome-content ::-moz-placeholder {
 div.welcome-content :-ms-input-placeholder {
   color: white;
 }
-div.welcome-content h2 {
-  color: white;
-  font-size: 38px;
-  line-height: 42px;
-  margin-bottom: 30px;
-}
 div.welcome-content h3 {
   color: white;
-  font-size: 28px;
-  line-height: 32px;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
 }
 div.welcome-content p {
   color: white;
-  font-size: 14px;
+  font-size: 1.2rem;
 }
-div.welcome-content .welcome-left {
-  margin-top: 50px;
+div.welcome-content .welcome-cadastrar {
+  padding-top: 4em;
+  padding-bottom: 2em;
 }
-div.welcome-content .welcome-right {
-  margin-left: 8%;
-  float: right;
+div.welcome-content .welcome-cadastrar > div {
+  height: 4em;
 }
-div.welcome-content .welcome-right .col-sm-6,
-div.welcome-content .welcome-right .col-sm-12 {
-  padding-left: 8px;
-  padding-right: 8px;
+div.welcome-content .welcome-cadastrar .btn-facebook {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  text-transform: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+div.welcome-content .form-cadastro-wrapper {
+  margin: 0;
 }
 div.welcome-content a.anchor-tour {
   text-decoration: underline;
@@ -7381,20 +7652,24 @@ div.welcome-content input {
   background-color: rgba(255, 255, 255, 0.25);
   border: 0px;
   border-radius: 0px;
-  padding: 21px 12px;
+  padding: 0 0.5em;
+  font-size: 11.2px;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
 }
 div.welcome-content input:focus {
-  border: 1px solid white;
+  border: 1px solid #f16f2b;
 }
 div.welcome-content input[type='submit'] {
-  margin-left: 15px;
   background-color: white;
   color: #f16f2b;
   font-weight: bold;
   text-transform: uppercase;
   border: 1px solid white;
   border-radius: 0px;
-  padding: 10px 12px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=app.css.map */

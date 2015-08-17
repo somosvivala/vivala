@@ -26,11 +26,11 @@ class FotoController extends VivalaBaseController {
 	}
 
 	public function postCropandsave($id, CropPhotoRequest $request) {
-
+	
 		$file = Input::file('image_file_upload');
 	    if ($file && $file->isValid()) {
 
-			$entidade = $this->getEntidade($id);
+			$entidade = Auth::user()->entidadeAtiva;
 			$destinationPath = public_path() . '/uploads/';
 			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
 
@@ -49,7 +49,7 @@ class FotoController extends VivalaBaseController {
 				if ($entidade) {
 	        		$entidade->fotos()->save($foto);
 	        	} else {
-	        		$foto->save();
+	        		$entidade->push();
 	        	}
 
 	      		return $foto;
@@ -66,7 +66,10 @@ class FotoController extends VivalaBaseController {
 	 */
 	public function postUploadphoto() {
 
+
+
 		$file = Input::file('foto');
+
 	    if ($file && $file->isValid()) {
 
 			$destinationPath = public_path() . '/uploads/';
@@ -81,15 +84,17 @@ class FotoController extends VivalaBaseController {
 				$foto = new Foto(['path' => $fileName]);
 
 				//Associa a foto ao Perfil
-				Auth::user()->perfil->fotos()->save($foto);
+				// Auth::user()->perfil->fotos()->save($foto);
+
 				// Associa a foto à entidade
-				/*
-				$entidade = $this->getEntidade($id);
+
+				$entidade = Auth::user()->entidadeAtiva;
 				if ($entidade) {
 	        		$entidade->fotos()->save($foto);
 	        	} else {
-	        		$foto->save();
-	        	}*/
+	        		$entidade->push();
+	        	}
+
 
 	      		return $foto;
 

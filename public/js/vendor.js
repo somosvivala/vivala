@@ -13807,21 +13807,19 @@ var widget = $.widget;
 
 }));
 
+var commentPost = function() {
+    console.log (' /comentario/ultimoscomentarios/$idPost ');
+    alert('comentario criado');
+};
+
+
 $(function() {
-
-    var commentPost = function() {
-        console.log('Aqui deveria recarregar os comentários');
-    }
-
-
     //ajax para like do comentario
     $(".like-btn-comentario").click(function(){
         var href = $(this).prop("hash"),
             link = href.substr(1),
             urlArray = link.split('/'),
             idComentario = urlArray[2];
-
-
         $.ajax({
     		url: link
     	})
@@ -13842,6 +13840,10 @@ $(function() {
     	  console.log('Erro no ajax de like');
         });
     });
+
+
+
+
 
 });
 
@@ -13888,7 +13890,6 @@ $( document ).ready(function() {
             link = href.substr(1),
             urlArray = link.split('/'),
             idPost = urlArray[2];
-
 
         $.ajax({
     		url: link
@@ -14011,20 +14012,23 @@ $(function(){
 
 $(function() {
 
-$.ajaxSetup({
+    //token do laravel para ajax
+    $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
-  /** Funcões para Upload */
+    /** Funcões para Upload */
     $('.form-ajax').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),
-            dataForm = frm.serialize(),
+            dataForm = new FormData(this),
             callbackFunction = frm.data('callback');
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
             data: dataForm,
+            contentType: false, //file
+            processData: false,  //file
             success: function (data) {
                 console.log("Formulário submetido com sucesso:");
                 console.log(data);

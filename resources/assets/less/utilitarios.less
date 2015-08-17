@@ -76,7 +76,7 @@ div.cover {
 .foto-label {
 	padding: 1em;
 	text-align: center;
-	background-color: rgba(255,255,255,0.7);
+	background-color: @cor-semi-transparente;
 	border: 1px solid @cor-fundo;
 	color: black;
 	.titulo-label {
@@ -88,4 +88,140 @@ div.cover {
 
 .fundo-cheio {
 	background-color: white;
+}
+
+// Classe para imagem de background
+div.foto-fundo {
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	color: @cor-foto-fundo-txt;
+}
+
+// Imagem de topo que contém um título, um subtítulo e um botão de "como funciona"
+.foto-header {
+	width:100%;
+	height: 25em;
+	h2, h3 {
+		text-shadow: 0em 0em 0.2em black;
+		display: block;
+	}
+	h2 {
+		padding-top: 3em;
+		font-size: 3em;
+		margin-top: 0;
+	}
+	h3 {
+		font-size: 1em;
+	}
+	div {
+		margin: 2em auto;
+	}
+}
+
+// Links que são uma imagem de fundo com texto centralizado
+.foto-link{
+	overflow: hidden;
+	a {
+		transition: color 0.2s ease;
+		text-decoration: none;
+		position: relative;
+		display: block;
+		color: @cor-foto-fundo-txt;
+		h4 {
+			font-size: 2em;
+			font-family: @font-family-sans-serif-bold;
+			padding: 4em 0;
+			margin: 0;
+		}
+		> .cover {
+			transition: all 1s ease;
+			img {
+				transition: all 1s ease;
+			}
+			// Seta como preto pra que quando a opacidade da imagem diminuir parecer que escurece
+			background-color: black;
+		}
+		&:hover {
+			//color: @cor-txt-link-hover;
+			// zoom na imagem (aumentando a porcentagem do div container)
+			> .cover {
+				width:300%;
+				height:300%;
+				top: -100%;
+				left: -100%;
+				img {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+}
+
+// Subtitulo
+h3.subtitulo {
+	text-transform: uppercase;
+	color: @cor-txt;
+	font-family: @font-family-sans-serif-bold;
+}
+
+// Comentario com foto, dentro do link com foto
+.foto-comentario {
+	width: 94%;
+	margin: 3%;
+	height: 6em;
+	position:absolute;
+	top:0px;
+	color: @cor-foto-comentario-txt;
+	background-color: rgba(255,255,255,0.5);
+	.foto {
+		width: 5em;
+		height: 5em;
+		position: relative;
+		margin: .5em auto;
+		.cover {
+			// Reseta o z-index pra 0 (nos links grandes fica como -1)
+			z-index: 0;
+		}
+	}
+}
+
+.foto-avatar,
+img.foto-avatar {
+	max-width: 100%;
+	border-radius: 50%;
+}
+
+ul.lista-usuarios {
+	li.foto-user {
+		img {
+			.foto-avatar()
+		}
+	}
+}
+
+
+.alert {
+	padding: 1em;
+	border: 0px solid transparent;
+	border-radius: 0px;
+	background-color: @cor-semi-transparente;
+	border-color: transparent	;
+	color: black;
+}
+
+// Classe para facilitar posicionar no cantinho da direita de cima
+.absolute-top-right {
+	position: absolute;
+	top:0;
+	right:0;
+	padding:1em;
+}
+
+//Texto laranja
+a.laranja,
+span.laranja,
+.laranja {
+	color: @cor-primaria;
+	text-decoration: none;
 }

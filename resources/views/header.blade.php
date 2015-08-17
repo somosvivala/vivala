@@ -29,8 +29,8 @@
 		@if (Auth::user())
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-					<div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->username }}</div>
-					<img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}">
+					<div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
+					<img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
 					<ul class="dropdown-menu" role="menu">
 						<li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
 						<li><a href="{{ url('config') }}">{{ trans("menu.config") }}</a></li>

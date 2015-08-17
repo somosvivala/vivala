@@ -20,7 +20,7 @@ class Registrar implements RegistrarContract {
 		return Validator::make($data, [
 			'username' => 'required|max:255',
 			'email' => 'required|email|max:255|unique:users',
-			'password' => 'required|min:6',
+			'password' => 'required|min:6|confirmed',
 			'aniversario' => 'required|date'
 		]);
 	}
@@ -51,7 +51,7 @@ class Registrar implements RegistrarContract {
         $prettyUrl = new PrettyUrl();
         $prettyUrl->url = str_replace(" ", "", $user->username) . '_' . Carbon::now()->getTimestamp();
         $prettyUrl->tipo = 'usuario';
-        
+
         $perfil->prettyUrl()->save($prettyUrl);
 
 		return $user;

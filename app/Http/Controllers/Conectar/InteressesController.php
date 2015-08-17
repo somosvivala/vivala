@@ -6,6 +6,8 @@ use App\Http\Controllers\ConectarController;
 
 use Illuminate\Http\Request;
 
+use App\Interesse;
+
 class InteressesController extends ConectarController {
 
 	/**
@@ -16,6 +18,12 @@ class InteressesController extends ConectarController {
 	public function getIndex()
 	{
 		return view('conectar._interesses');
+	}
+
+
+	public function getAllinteresses()
+	{
+		return Interesse::all();
 	}
 
 }

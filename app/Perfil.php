@@ -58,21 +58,17 @@ class Perfil extends Model {
     }
 
     /**
-     * Um Perfil tem muitos Posts
-     * @return [type] [description]
+     * Um Perfil pode ter varios posts
      */
     public function posts()
     {
-        return $this->hasMany('App\Post');
+        return $this->morphMany('App\Post', 'author', 'author_type', 'author_id');
     }
 
 	public function likePost()
 	{
 		return $this->belongsToMany('App\Post', 'entidade_like_post', 'perfil_id', 'post_id')->withTimestamps();
 	}
-
-
-
 
     /**
      * Retorna a pretty Url
@@ -166,6 +162,20 @@ class Perfil extends Model {
     {
         return $this->belongsToMany('App\Post', 'entidade_like_comentario', 'perfil_id', 'comentario_id')->withTimestamps();
     }
+
+
+    /**
+     * Um Perfil tem muitos Interesses
+     */
+    public function interesses() 
+    {
+        return $this->belongsToMany('App\Interesse', 'interesse_perfil')->withTimestamps();
+    }
+
+
+
+
+    
 
 
 

@@ -9,9 +9,13 @@
 
 			<h4> Suas ONGS <a href="{{ url('ong/create') }}">+</a></h4>
 			@forelse($ongs as $ong)
-					<a href="{{ url($ong->getUrl()) }}" title="{{ $ong->nome }}">
-						<img src="{{ $ong->getAvatarUrl() }}" alt="{{ $ong->nome  }}">
-					</a>
+				<a href="{{ url($ong->getUrl()) }}" title="{{ $ong->nome }}">
+					<img src="{{ $ong->getAvatarUrl() }}" alt="{{ $ong->nome  }}">
+				</a>
+				{!! Form::open(array('url' => array('home/trocaentidadeativa', $ong->id)))!!}
+				{!! Form::hidden('entidadeAtiva_tipo','ong') !!}
+				{!! Form::submit('Acessar como ' . $ong->nome) !!}
+				{!! Form::close() !!}
 			@empty
 			    <p>Nenhuma ong.</p>
 			@endforelse
@@ -20,6 +24,11 @@
 				<a href="{{ url($empresa->getUrl()) }}" title="{{ $empresa->nome }}">
 					<img src="{{ $empresa->getAvatarUrl() }}" alt="{{ $empresa->nome  }}">
 				</a>
+				{!! Form::open(array('url' => array('home/trocaentidadeativa', $empresa->id)))!!}
+				{!! Form::hidden('entidadeAtiva_tipo','empresa') !!}
+				{!! Form::submit('Acessar como ' . $empresa->nome) !!}
+				{!! Form::close() !!}
+
 			@empty
 			    <p>Nenhuma empresas.</p>
 			@endforelse
@@ -28,7 +37,7 @@
 			<div class="panel panel-default">
 				<div class="panel-body">
 				<a href="{{url('perfil')}}">
-					<img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->username }}" style="width:100px;">
+					<img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->username }}" style="width:100px;">
 					{{trans('acoes.visualizarperfil')}}
 				</a>
 				<h1>Alô {{ Auth::user()->username }}</h1>

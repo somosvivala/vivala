@@ -5,30 +5,12 @@ use Jenssegers\Date\Date;
 use Auth;
 class Post extends Model {
 
-	public static function boot()
-    {
-        parent::boot();
-
-        // Setup event bindings...
-		Post::creating(function($post)
-		{
-		    if ( $post->perfil_id )
-				$post->tipoEntidade = "perfil";
-		    if ( $post->empresa_id )
-				$post->tipoEntidade = "empresa";
-		    if ( $post->ong_id )
-				$post->tipoEntidade = "ong";
-			return true;
-		});
-    }
-
 	//mass assigned fields
 	protected $fillable = [
 		'titulo',
 		'descricao',
 		'foto',
 		'video',
-		'tipoEntidade',
 		'tipoPost'
 	];
 
@@ -59,7 +41,7 @@ class Post extends Model {
 		}
 	}
 
-
+	
 	public function likedByPerfil()
 	{
 		return $this->belongsToMany('App\Perfil', 'entidade_like_post', 'post_id', 'perfil_id')->withTimestamps();
@@ -76,42 +58,23 @@ class Post extends Model {
 	}
 
 	/**
-	* Um Post pode ser feito por um usuário
-	*/
-	public function perfil()
-	{
-		return $this->belongsTo('App\Perfil');
+	 * Um Post pode ser feito por varias entidades 
+	 */
+	public function author() {
+		return $this->morphTo();
 	}
 
 	/**
-	* Um Post pode ser feito por uma empresa
-	*/
-	public function empresa()
+	 * @return Accessor para a relacao author
+	 */
+	public function getEntidadeAttribute()
 	{
-		return $this->belongsTo('App\Empresa');
+		return $this->author;
 	}
 
 	/**
-	* Um Post pode ser feito por uma ong
-	*/
-	public function ong()
-	{
-		return $this->belongsTo('App\Ong');
-	}
-
-	public function entidade()
-	{
-		if($this->tipoEntidade = "perfil") {
-			return $this->perfil();
-		}
-		if($this->tipoEntidade = "empresa") {
-			return $this->empresa();
-		}
-		if($this->tipoEntidade = "ong") {	
-			return $this->ong();
-		}
-	}
-
+	 * Retorna os ultimos posts
+	 */
 	static public function getUltimos()
 	{
 		return Post::latest()->get();
@@ -144,5 +107,21 @@ class Post extends Model {
     }
 
 
+    /**
+     * Retorna todos os comentarios ordenados do mais recente para o mais antigo
+     * @return Collection 
+     */
+    public function comentariosByDate() {
+    	return $this->comentarios()->orderBy('created_at', 'DESC')->get();
+    }
+
+    /**
+     * Retorna os ultimos 2 comentarios ordenados do mais recente para o mais antigo
+     * @return Collection 
+     */
+    public function novosComentariosByDate() {
+    	return $this->comentarios()->orderBy('created_at', 'DESC')->limit(2)->get();
+    }
+    
 
 }

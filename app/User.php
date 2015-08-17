@@ -6,6 +6,8 @@ use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use Session;
+
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
 	use Authenticatable, CanResetPassword;
@@ -60,6 +62,41 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function empresas()
     {
 		return $this->hasMany('App\Empresa');
+    }
+
+
+    /**
+     * Acessor para a propriedade entidadeAtiva
+     * @return   Instancia de Perfil|Ong|Empresa
+     */
+    public function getEntidadeAtivaAttribute() {
+
+    	if (Session::has('entidadeAtiva_tipo')) {
+
+    		$entidadeAtiva_id = Session::get('entidadeAtiva_id', null);
+    		$entidadeAtiva_tipo = Session::get('entidadeAtiva_tipo', 'perfil');
+    		
+			switch ($entidadeAtiva_tipo)  {
+				case 'ong':
+					# Retorna a ong na lista de ongs do usuario, ou o perfil 
+	    			$ong = $this->ongs->find($entidadeAtiva_id);
+	    			return $ong ? $ong : $this->perfil;
+					break;
+				
+				case 'empresa':
+					# Retorna a empresa na lista de empresas do usuario, ou o perfil
+					$empresa = $this->empresas->find($entidadeAtiva_id);
+    				return $empresa ? $empresa : $this->perfil;
+					break;
+				
+				default:
+					# Retorna o perfil do usuario
+					return  $this->perfil;
+					break;
+			}
+    	}
+		
+		return  $this->perfil;
     }
 
 
