@@ -6,8 +6,7 @@
 	<!-- Adiciona um formulario pra upload de foto-->
 	<div class="jc_coords row col-sm-12">
 
-	{!! Form::open(['url' => ['foto/uploadphoto',  $empresa->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
-		{!! Form::hidden("tipoEntidade",  "App\Empresa") !!}
+	{!! Form::open(['url' => ['foto/cropandsave',  $empresa->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
 
 		{!! Form::label("image_file_upload", "Escolha outra imagem:") !!}
 		{!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}

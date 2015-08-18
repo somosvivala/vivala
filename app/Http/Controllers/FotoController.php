@@ -41,16 +41,23 @@ class FotoController extends VivalaBaseController {
 
 			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
 			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
-			$upload_success = $file->move($destinationPath.$fileName);
+			$upload_success = $file->save($destinationPath.$fileName);
 	        if ($upload_success) {
 
 	        	$foto = new Foto(['path' => $fileName]);
 
-				if ($entidade) {
-	        		$entidade->fotos()->save($foto);
-	        	} else {
-	        		$entidade->push();
-	        	}
+	      		/* Settando tipo da foto atual para null, checando se existe antes */
+	      		if ($entidade->avatar) {
+		        	$currentAvatar = $entidade->avatar;
+		        	$currentAvatar->tipo = null;
+		        	$currentAvatar->save();
+	      		}
+
+	        	$foto = new Foto([
+	        			'path' => $fileName,
+	        			'tipo' => 'avatar' ]);
+
+	        	$entidade->fotos()->save($foto);
 
 	      		return $foto;
 	        } else {

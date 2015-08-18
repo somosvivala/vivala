@@ -7,5 +7,13 @@ composer.lock
 /config/app.php
 /public/.htaccess
 /public/uploads/*
+<<<<<<< Updated upstream
 *.css
 *.map
+/node_modules
+/assets/bower
+=======
+/public/js/vendor.*
+/resources/assets/bower
+
+>>>>>>> Stashed changes

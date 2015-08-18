@@ -14,6 +14,7 @@
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
+Route::get('test', 'ClickbusPlacesController@index');
 
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');

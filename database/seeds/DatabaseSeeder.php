@@ -76,6 +76,12 @@ class UserSeeder extends Seeder {
         	'email' 	         => 'zord@gmail.com',
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
+
+        User::create([
+            'username'           => 'kuririn',
+            'email'              => 'kuririn@gmail.com',
+            'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+        ]);
     }
 }
 
@@ -101,6 +107,13 @@ class PerfilSeeder extends Seeder {
             'apelido'     => 'Zordoido'
         ]);
 
+        $kuririn = Perfil::create([
+            'user_id'               => '3',
+            'aniversario'      => '1991-09-22 07:43:00',
+            'cidade_natal'     => 'Itapeva',
+            'nome_completo'     => 'Rodrigo Yasuhiro Ueda',
+            'apelido'     => 'Kuririn'
+        ]);
     }
 
 }
@@ -166,6 +179,12 @@ class PrettyUrlSeeder extends Seeder {
         $zordURL->tipo = 'usuario';
         $zord->prettyUrl()->save($zordURL);
 
+        $kuririn = Perfil::find(3);
+        $kuririnURL = new PrettyUrl();
+        $kuririnURL->url = 'kuririn';
+        $kuririnURL->tipo = 'usuario';
+        $kuririn->prettyUrl()->save($kuririnURL);
+
         /**
          * Empresas
          */
@@ -207,18 +226,18 @@ class FotoSeeder extends Seeder {
     {
         DB::table('fotos')->delete();
 
-            $dodoPerfil = Perfil::find(1);
-            $fotoDodo = new Foto();
-            $fotoDodo->tipo = 'avatar';
-            $fotoDodo->path = 'https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/10881937_10205138988501966_880908969196321312_n.jpg?oh=4036e3ead0d2629c86b5228d343c69d9&oe=55FAD9BB&__gda__=1442687024_c8e9de1eff4318206fde21b4a418e3c8';
-            $dodoPerfil->fotos()->save($fotoDodo);
+        $dodoPerfil = Perfil::find(1);
+        $fotoDodo = new Foto();
+        $fotoDodo->tipo = 'avatar';
+        $fotoDodo->path = 'https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/10881937_10205138988501966_880908969196321312_n.jpg?oh=4036e3ead0d2629c86b5228d343c69d9&oe=55FAD9BB&__gda__=1442687024_c8e9de1eff4318206fde21b4a418e3c8';
+        $dodoPerfil->fotos()->save($fotoDodo);
 
 
-            $zordPerfil = Perfil::find(2);
-            $fotoZord = new Foto();
-            $fotoZord->tipo = 'avatar';
-            $fotoZord->path = 'https://fbcdn-sphotos-e-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10374994_706677562743225_4888707270232254721_n.jpg?oh=0b62f6d66c4c708a561daed00b2456d5&oe=56539E2E&__gda__=1447231894_5ca196c8540f1311b6f5e996440c8cd5';
-            $zordPerfil->fotos()->save($fotoZord);
+        $zordPerfil = Perfil::find(2);
+        $fotoZord = new Foto();
+        $fotoZord->tipo = 'avatar';
+        $fotoZord->path = 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/10374994_706677562743225_4888707270232254721_n.jpg?oh=d4f0daa8f62f27904266b4eb48876ae0&oe=55C2EE6F&__gda__=1438591338_31d1bca33986c333c0434e1ce01cd8a4';
+        $zordPerfil->fotos()->save($fotoZord);
     }
 }
 
