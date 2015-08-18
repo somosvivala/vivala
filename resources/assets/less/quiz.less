@@ -34,21 +34,36 @@
 	}
 
 	::-webkit-input-placeholder {
-	color: black;
+		color:  @cor-cinza-escuro;
 	}
 
 	:-moz-placeholder { /* Firefox 18- */
-	color: black;
-   opacity:  1;
+		color:  @cor-cinza-escuro;
+		opacity:  1;
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
-	color: black;
-   opacity:  1;
+		color:  @cor-cinza-escuro;
+		opacity:  1;
 	}
 
 	:-ms-input-placeholder {
-	color: black;
+		color:  @cor-cinza-escuro;
 	}
 
+	input[type="text"], textarea {
+		color: @cor-cinza-escuro;
+		background-color: @cor-fundo;
+		border: 0px;
+		width:100%;
+		font-size: 1.3rem;
+		font-weight:bold;
+	}
+	input+input{
+		margin-top:0.9em;
+	}
+	textarea {
+		padding:0.5em;
+		height: 9.5em;
+	}
 }

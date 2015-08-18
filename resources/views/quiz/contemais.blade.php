@@ -12,18 +12,23 @@
 		{!! Form::open(['url' => ['perfil/patch',  Auth::user()->perfil->id ], 'class' => '']) !!}
 			<div class="erros">
 			</div>
-			<div class="col-sm-4">
-				{!! Form::text("apelido", null, ['class' => 'form-control', 'placeholder' => 'COMO QUER SER CHAMADO']) !!}
-				{!! Form::text("cidade", null, ['class' => 'form-control', 'placeholder' => 'QUAL SUA CIDADE DE ORIGEM']) !!}
-				{!! Form::text("cidade", null, ['class' => 'form-control', 'placeholder' => 'QUAL SUA CIDADE ATUAL']) !!}
+			<div class="row">
+				<div class="col-sm-4">
+					{!! Form::text("apelido", null, ['class' => 'form-control', 'placeholder' => 'COMO QUER SER CHAMADO?']) !!}
+					{!! Form::text("cidade", null, ['class' => 'form-control', 'placeholder' => 'QUAL SUA CIDADE DE ORIGEM?']) !!}
+					{!! Form::text("cidade", null, ['class' => 'form-control', 'placeholder' => 'QUAL SUA CIDADE ATUAL?']) !!}
+				</div>
+				<div class="col-sm-4">
+					{!! Form::textarea("descricao_curta", null, ['title'=>'Descrição curta', 'aria-label'=>'Descrição curta', 'placeholder'=>'DESCRIÇÃO CURTA']) !!}
+				</div>
+				<div class="col-sm-4">
+					{!! Form::textarea("descricao_longa", null, ['title'=>'Descrição longa', 'aria-label'=>'Descrição longa', 'placeholder'=>'DESCRIÇÃO LONGA']) !!}
+				</div>
 			</div>
-			<div class="col-sm-4">
-				{!! Form::textarea("descricao_curta", null, ['title'=>'Descrição curta', 'aria-label'=>'Descrição curta', 'placeholder'=>'DESCRIÇÃO CURTA']) !!}
-			</div>
-			<div class="col-sm-4">
-				{!! Form::textarea("descricao_longa", null, ['title'=>'Descrição longa', 'aria-label'=>'Descrição longa', 'placeholder'=>'DESCRIÇÃO LONGA']) !!}
-			</div>
-			{!! Form::submit("Continuar", ['class' => 'btn btn-acao']) !!}
+				<div class="col-sm-12">
+					<br>
+					{!! Form::submit("Continuar", ['class' => 'btn btn-acao']) !!}
+				</div>
 		{!! Form::close() !!}
 
 	</div>
