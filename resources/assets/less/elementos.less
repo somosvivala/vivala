@@ -18,6 +18,9 @@ label {
 	font-weight: normal;
 	font-family: @font-family-sans-serif-bold;
 }
+input.form-control {
+	border-radius: 0px;
+}
 button.btn,
 input.btn,
 a.btn {
@@ -50,4 +53,40 @@ a.suave {
 	a {
 		color: black;
 	}
+}
+
+// Define uma classe pra input de arquivo
+// onde aparece só o botão, sem o campo com o nome/caminho do arquivo
+.file-upload {
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+	label {
+		text-transform: uppercase;
+		p {
+			text-transform: none;
+			font-family:@font-family-sans-serif;
+		}
+	}
+	input.upload {
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    margin: 0;
+	    padding: 0;
+	    font-size: 20px;
+	    cursor: pointer;
+	    opacity: 0;
+	    filter: alpha(opacity=0);
+	}
+}
+
+// Limita o tamanho do preview da foto, pra nao passar o elemento pai em largura
+.foto-preview {
+	max-width:100%;
+	max-height: 70vh;
+}
+// Centraliza os previews de foto
+.jcrop-holder {
+	margin:0 auto;
 }

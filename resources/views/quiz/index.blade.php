@@ -51,6 +51,7 @@
         &nbsp;
 	</div>
 	<!-- Scripts -->
+	<link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
 	<script src="{{ asset('/js/vendor.js') }}"></script>
 </body>
 </html>

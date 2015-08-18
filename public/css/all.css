@@ -6732,6 +6732,9 @@ label {
   font-weight: normal;
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
 }
+input.form-control {
+  border-radius: 0px;
+}
 button.btn,
 input.btn,
 a.btn {
@@ -6769,6 +6772,36 @@ a.suave:hover {
 }
 .lista-intervalo-preto a {
   color: black;
+}
+.file-upload {
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+}
+.file-upload label {
+  text-transform: uppercase;
+}
+.file-upload label p {
+  text-transform: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.file-upload input.upload {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.foto-preview {
+  max-width: 100%;
+  max-height: 70vh;
+}
+.jcrop-holder {
+  margin: 0 auto;
 }
 /* Classes css */
 body {
@@ -7031,6 +7064,22 @@ ul.viagens-comentadas button {
 .pergunta ul input[type="checkbox"] {
   border: 1px solid #535353;
   height: 1em;
+}
+.pergunta ::-webkit-input-placeholder {
+  color: black;
+}
+.pergunta :-moz-placeholder {
+  /* Firefox 18- */
+  color: black;
+  opacity: 1;
+}
+.pergunta ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: black;
+  opacity: 1;
+}
+.pergunta :-ms-input-placeholder {
+  color: black;
 }
 .cria-post-container {
   padding: 15px;
