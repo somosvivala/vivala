@@ -42,6 +42,10 @@ class PerfilController extends ConectarController {
 
 		$empresas = $user->empresas;
 
+		Session::put('entidadeAtiva_id', $perfil->id);
+    	Session::put('entidadeAtiva_tipo', 'perfil');
+
+
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'))
 		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
 	}
