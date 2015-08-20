@@ -35,7 +35,8 @@ class QuizController extends VivalaBaseController {
 	 */
 	public function getPersonalize()
 	{
-		return view("quiz.personalizefoto")->with(['passo'=>2]);
+		$foto = Auth::user()->perfil->getAvatarUrl();
+		return view("quiz.personalizefoto", compact("foto") )->with(['passo'=>2]);
 	}
 
 
@@ -52,7 +53,8 @@ class QuizController extends VivalaBaseController {
 	 */
 	public function getPessoasinteressantes()
 	{
-		return view("quiz.pessoasinteressantes")->with(['passo'=>4]);
+		$sugestoesPessoasInteressantes = Perfil::getSugestoes(Auth::user());
+		return view("quiz.pessoasinteressantes", compact("sugestoesPessoasInteressantes") )->with(['passo'=>4]);
 	}
 
 

@@ -12,7 +12,7 @@
 		{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
 			{!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
 
-			<img id="preview" src="/img/interrogacao.png" class="foto-preview"/>
+			<img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>
 
 			<div class="file-upload">
 				<label for="image_file_upload">
