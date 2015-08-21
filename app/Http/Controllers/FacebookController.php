@@ -67,6 +67,8 @@ class FacebookController extends Controller {
 	        $prettyUrl->tipo = 'usuario';
 	        
 	        $perfil->prettyUrl()->save($prettyUrl);
+		} else {
+			$perfil = $user->perfil;
 		}
 
 		$fotoPerfil = new Foto(['path' => $userData->avatar, 'tipo' => 'avatar']);
