@@ -45,7 +45,6 @@ class PerfilController extends ConectarController {
 		Session::put('entidadeAtiva_id', $perfil->id);
     	Session::put('entidadeAtiva_tipo', 'perfil');
 
-
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'))
 		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
 	}
@@ -180,7 +179,7 @@ class PerfilController extends ConectarController {
 	}
 
 	/**
-	 * seta o like do perfil atual pra um post específico
+	 * Seta o like da entidadeAtiva atual para um post específico
 	 *
 	 * @param  [integer] id do post
 	 * @return
@@ -190,15 +189,15 @@ class PerfilController extends ConectarController {
 		$post = Post::findOrFail($id);
 		//Testo se o usuário está logado
 		$user = Auth::user();
-		$perfil = $user->perfil;
+		$entidadeAtiva = $user->entidadeAtiva;
 		
 		//Se já tiver dado like no post com esse id,
 		//consigo encontralo pelo Collention->find()
-		$alreadyLiked = $perfil->likePost->find($post->id);
+		$alreadyLiked = $entidadeAtiva->likePost->find($post->id);
 
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
-			$perfil->likePost()->attach($post->id);
+			$entidadeAtiva->likePost()->attach($post->id);
 		}
 		
 		// Retorna a quantidade de likes para utilizar na view

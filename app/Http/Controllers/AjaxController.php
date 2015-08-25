@@ -19,16 +19,16 @@ class AjaxController extends VivalaBaseController {
 	}
 
 	/**
-	 * Estabele a relação de seguir outro perfil
+	 * Estabele a relação de seguir um perfil
 	 * @param  String 	    $id 		Id do perfil a ser seguido
 	 * @return JSON     	Resultado da requisicao
 	 */
 	public function getFollowperfil($id) {
 
-		//$perfil do usuario logado.
-		$perfil = Auth::user()->perfil;
-		$perfil->followPerfil()->attach($id);
-		$perfil->save();
+		//$entidadeAtiva do usuario logado.
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		$entidadeAtiva->followPerfil()->attach($id);
+		$entidadeAtiva->save();
 		$return['success'] = true;
 
 		return json_encode($return);
@@ -41,10 +41,10 @@ class AjaxController extends VivalaBaseController {
 	 */
 	public function getFollowempresa($id) {
 
-		//$perfil do usuario logado.
-		$perfil = Auth::user()->perfil;
-		$perfil->followEmpresa()->attach($id);
-		$perfil->save();
+		//$entidadeAtiva do usuario logado.
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		$entidadeAtiva->followEmpresa()->attach($id);
+		$entidadeAtiva->save();
 		$return['success'] = true;
 
 		return json_encode($return);
@@ -57,10 +57,10 @@ class AjaxController extends VivalaBaseController {
 	 */
 	public function getFollowong($id) {
 
-		//$perfil do usuario logado.
-		$perfil = Auth::user()->perfil;
-		$perfil->followOng()->attach($id);
-		$perfil->save();
+		//$entidadeAtiva do usuario logado.
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		$entidadeAtiva->followOng()->attach($id);
+		$entidadeAtiva->save();
 		$return['success'] = true;
 
 		return json_encode($return);

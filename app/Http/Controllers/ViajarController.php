@@ -18,7 +18,7 @@ class ViajarController extends VivalaBaseController {
 
 	// Compartilha as sugestões com as views que forem chamadas por esse controller
 	public function getSugestoesEmpresas($view){
-		$sugestoesEmpresas = Empresa::getSugestoes(Auth::user());
+		$sugestoesEmpresas = Empresa::getSugestoes(Auth::user()->entidadeAtiva);
 		$view->with('sugestoesEmpresas', $sugestoesEmpresas);
 	}
 
