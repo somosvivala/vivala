@@ -102,19 +102,17 @@ class Perfil extends Model {
      * @return Collection  <Perfil|Ong|Empresa>
      */
     public function getFollowedByAttribute() {
-        $listaPerfils = $this->followedByPerfil;
-        $listaEmpresas = $this->followedByEmpresa;
-        $listaOngs = $this->followedByOng;
         
-        $listaEmpresas->each(function ($item, $key) {
-            $listaPerfils->push($item);
-        });
+        //Obtendo listas de entidades que seguem esse perfil
+        $listaPerfils = $this->followedByPerfil->toArray();
+        $listaEmpresas = $this->followedByEmpresa->toArray();
+        $listaOngs = $this->followedByOng->toArray();
+        
+        //mergeando listas em um unico array
+        $listaSeguidores =  array_merge_recursive($listaPerfils, $listaOngs);
+        $listaSeguidores =  array_merge_recursive($listaSeguidores, $listaEmpresas);
 
-        $listaOngs->each(function ($item, $key) {
-            $listaPerfils->push($item);
-        });
-
-        return $listaPerfils;
+        return $listaSeguidores;
     }
 
     /**
@@ -123,21 +121,17 @@ class Perfil extends Model {
      * @return Collection  <Perfil|Ong|Empresa>
      */
     public function getFollowingAttribute() {
-        $listaPerfils = $this->followPerfil;
-        $listaEmpresas = $this->followEmpresa;
-        $listaOngs = $this->followOng;
 
-        $collection = $listaPerfils;
+        //Obtendo listas de entidades esse perfil segue
+        $listaPerfils = $this->followPerfil->toArray();
+        $listaEmpresas = $this->followEmpresa->toArray();
+        $listaOngs = $this->followOng->toArray();
 
-        // $collection = $listaPerfils->each(function($item) {
-            
-        // });
+        //mergeando as listas em um unico array
+        $listaSeguidos =  array_merge_recursive($listaPerfils, $listaOngs);
+        $listaSeguidos =  array_merge_recursive($listaSeguidos, $listaEmpresas);
 
-
-        // return ->merge($listaOngs);
-        // return $listaPerfils;
-        return $collection;
-
+        return $listaSeguidos;
     }
 
 
