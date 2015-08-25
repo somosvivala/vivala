@@ -7041,102 +7041,6 @@ body {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
-a.logo {
-  padding: 0px;
-  width: 100%;
-}
-a.logo img {
-  margin: 0 auto;
-  height: 100%;
-}
-.hello {
-  padding-top: 1.2em;
-  font-size: 1em;
-}
-.busca-geral-menu {
-  width: 100%;
-  background-color: #e2e2e2;
-  border: 0px solid transparent;
-  padding: 0.3em 1em 0.4em;
-}
-nav.menu-top {
-  background-color: white;
-  border-color: #e2e2e2;
-  min-height: 52px;
-}
-nav.menu-top .menu-principal {
-  padding: 0.9em;
-}
-nav.menu-top .menu-principal ul {
-  padding: 0.3em;
-  font-size: 1em;
-}
-nav.menu-top .menu-principal ul li {
-  text-transform: uppercase;
-}
-nav.menu-top .menu-principal ul li a {
-  color: black;
-  padding: 0;
-}
-nav.menu-top .menu-principal ul li a:hover,
-nav.menu-top .menu-principal ul li a:active {
-  color: #8ba6ac;
-}
-nav.menu-top .menu-usuario {
-  float: right;
-  padding: 0px 10px 0px 0px;
-  width: 12%;
-}
-nav.menu-top .menu-usuario ul {
-  float: right;
-  text-transform: capitalize;
-}
-nav.menu-top .menu-usuario ul li a {
-  padding: 0px;
-}
-nav.menu-top .menu-usuario ul li a img {
-  margin: 0.2em 1em 0 1em;
-  width: 3em;
-  border-radius: 50%;
-}
-nav.menu-top .menu-usuario ul li a span {
-  line-height: 2em;
-}
-nav.menu-top .menu-usuario ul li ul.dropdown-menu {
-  min-width: 10em;
-  text-align: right;
-  padding: 1em 0.1em;
-}
-nav.menu-top .menu-usuario ul li ul.dropdown-menu li {
-  padding: 0.1em 1em;
-}
-.perfil-topo {
-  background-color: #333131;
-  color: white;
-  padding: 1em 0;
-}
-.perfil-topo h1 {
-  text-transform: uppercase;
-  padding: 0;
-  margin: 0;
-}
-.perfil-topo ul {
-  padding: 0.5em;
-  list-style: none;
-  border: 1px solid white;
-  display: block;
-  overflow: hidden;
-  margin-top: 5em;
-}
-.perfil-topo ul li {
-  display: inline-block;
-  float: left;
-  height: 2em;
-  text-align: center;
-}
-.perfil-topo ul li + li {
-  border-left: 1px solid white;
-}
 nav.menu-lateral {
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 3.5em;
@@ -7329,6 +7233,127 @@ ul.viagens-comentadas button {
 .pergunta textarea {
   padding: 0.5em;
   height: 9.5em;
+}
+.icon36 {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0.5em 2em 0.5em 0;
+  margin: 0;
+}
+.icon-viajar {
+  background-image: url('/img/viajaricon.png');
+  margin-right: 0.2em;
+}
+.icon-conectar {
+  background-image: url('/img/conectaricon.png');
+  margin-right: 0.1em;
+}
+.icon-cuidar {
+  background-image: url('/img/cuidaricon.png');
+}
+.menu-viajar,
+.menu-cuidar {
+  width: 30%;
+}
+.menu-conectar {
+  width: 40%;
+}
+a.logo {
+  padding: 0px;
+  width: 100%;
+}
+a.logo img {
+  margin: 0 auto;
+  height: 100%;
+}
+.hello {
+  padding-top: 1.2em;
+  font-size: 1em;
+}
+.busca-geral-menu {
+  width: 100%;
+  background-color: #e2e2e2;
+  border: 0px solid transparent;
+  padding: 0.3em 1em 0.4em;
+}
+nav.menu-top {
+  background-color: white;
+  border-color: #e2e2e2;
+  min-height: 52px;
+}
+nav.menu-top .menu-principal {
+  padding: 0.9em;
+}
+nav.menu-top .menu-principal ul {
+  padding: 0.3em;
+  font-size: 1em;
+}
+nav.menu-top .menu-principal ul li {
+  text-transform: uppercase;
+}
+nav.menu-top .menu-principal ul li a {
+  color: black;
+  padding: 0;
+}
+nav.menu-top .menu-principal ul li a:hover,
+nav.menu-top .menu-principal ul li a:active {
+  color: #8ba6ac;
+}
+nav.menu-top .menu-usuario {
+  float: right;
+  padding: 0px 10px 0px 0px;
+  width: 12%;
+}
+nav.menu-top .menu-usuario ul {
+  float: right;
+  text-transform: capitalize;
+}
+nav.menu-top .menu-usuario ul li a {
+  padding: 0px;
+}
+nav.menu-top .menu-usuario ul li a img {
+  margin: 0.2em 1em 0 1em;
+  width: 3em;
+  border-radius: 50%;
+}
+nav.menu-top .menu-usuario ul li a span {
+  line-height: 2em;
+}
+nav.menu-top .menu-usuario ul li ul.dropdown-menu {
+  min-width: 10em;
+  text-align: right;
+  padding: 1em 0.1em;
+}
+nav.menu-top .menu-usuario ul li ul.dropdown-menu li {
+  padding: 0.1em 1em;
+}
+.perfil-topo {
+  background-color: #333131;
+  color: white;
+  padding: 1em 0;
+}
+.perfil-topo h1 {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+}
+.perfil-topo ul {
+  padding: 0.5em;
+  list-style: none;
+  border: 1px solid white;
+  display: block;
+  overflow: hidden;
+  margin-top: 5em;
+}
+.perfil-topo ul li {
+  display: inline-block;
+  float: left;
+  height: 2em;
+  text-align: center;
+}
+.perfil-topo ul li + li {
+  border-left: 1px solid white;
 }
 .cria-post-container {
   padding: 15px;
