@@ -56,6 +56,8 @@ class FacebookController extends Controller {
 		//Se o usuario nao tiver um perfil (1º login)
 		if (!$user->perfil) {
 			$perfil = new Perfil;
+			$perfil->nome_completo = $userData->name;
+			$perfil->apelido = $userData->name;
         	$perfil->user_id = $user->id;
         	$perfil->save();
 	
@@ -67,6 +69,8 @@ class FacebookController extends Controller {
 	        $prettyUrl->tipo = 'usuario';
 	        
 	        $perfil->prettyUrl()->save($prettyUrl);
+		} else {
+			$perfil = $user->perfil;
 		}
 
 		$fotoPerfil = new Foto(['path' => $userData->avatar, 'tipo' => 'avatar']);
