@@ -215,13 +215,39 @@ class Empresa extends Model {
     }
 
     /**
-     * Acessor para a propriedade FollowedBy, que retorna uma lista com 
+     * Acessor para a propriedade followedBy, que retorna uma lista com 
      * todas as entidades que seguem essa Empresa
-     * @return Collection  <Perfil|Ong|Empresa>
+     * @return Collection <Perfil|Ong|Empresa>
      */
     public function getFollowedByAttribute() 
     {
-        return $this->followedByPerfil->merge($this->followedByOng->merge($this->followedByOng));
+        //Obtendo listas de entidades que seguem essa Empresa
+        $listaPerfils = $this->followedByPerfil->toArray();
+        $listaEmpresas = $this->followedByEmpresa->toArray();
+        $listaOngs = $this->followedByOng->toArray();
+        
+        //mergeando listas em um unico array
+        $listaSeguidores =  array_merge_recursive($listaPerfils, $listaOngs);
+        $listaSeguidores =  array_merge_recursive($listaSeguidores, $listaEmpresas);
+        return $listaSeguidores;
+    }
+
+    /**
+     * Acessor para a propriedade following que retorna uma lista com 
+     * todas as entidades que seguem essa Empresa
+     * @return Collection <Perfil|Ong|Empresa>
+     */
+    public function getFollowingAttribute() 
+    {
+        //Obtendo listas de entidades essa Empresa segue
+        $listaPerfils = $this->followPerfil->toArray();
+        $listaEmpresas = $this->followEmpresa->toArray();
+        $listaOngs = $this->followOng->toArray();
+
+        //mergeando as listas em um unico array
+        $listaSeguidos =  array_merge_recursive($listaPerfils, $listaOngs);
+        $listaSeguidos =  array_merge_recursive($listaSeguidos, $listaEmpresas);
+        return $listaSeguidos;
     }
 
 

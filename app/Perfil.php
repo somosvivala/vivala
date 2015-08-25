@@ -43,7 +43,6 @@ class Perfil extends Model {
         return $this->belongsToMany('App\Ong', 'perfil_follow_ong', 'perfil_seguidor_id', 'ong_seguido_id')->withTimestamps();
     }
 
-
     /**
      * Relacao de ser seguido por perfils
      */
@@ -101,8 +100,8 @@ class Perfil extends Model {
      * todas as entidades que seguem esse Perfil
      * @return Collection  <Perfil|Ong|Empresa>
      */
-    public function getFollowedByAttribute() {
-        
+    public function getFollowedByAttribute() 
+    {
         //Obtendo listas de entidades que seguem esse perfil
         $listaPerfils = $this->followedByPerfil->toArray();
         $listaEmpresas = $this->followedByEmpresa->toArray();
@@ -120,8 +119,8 @@ class Perfil extends Model {
      * todas as entidades que seguem esse Perfil
      * @return Collection  <Perfil|Ong|Empresa>
      */
-    public function getFollowingAttribute() {
-
+    public function getFollowingAttribute() 
+    {
         //Obtendo listas de entidades esse perfil segue
         $listaPerfils = $this->followPerfil->toArray();
         $listaEmpresas = $this->followEmpresa->toArray();
@@ -133,7 +132,6 @@ class Perfil extends Model {
 
         return $listaSeguidos;
     }
-
 
 
     /**
@@ -176,8 +174,8 @@ class Perfil extends Model {
      * Retorna sugestoes de perfils que já o usuario ja nao esteja seguindo.
      * @return Collection  Collection de perfils para sugestao
      */
-    public static function getSugestoes($entidadeAtiva) {
-
+    public static function getSugestoes($entidadeAtiva) 
+    {
         //perfils que nao tenham meu ID
         $result = Perfil::whereNotIn('id', [$entidadeAtiva->id])
             //perfils que eu nao esteja seguindo
