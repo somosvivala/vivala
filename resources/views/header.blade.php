@@ -17,9 +17,9 @@
 			<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans("menu.login") }}</a></li>
 			<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 		@else
-			<li class="col-sm-4"><a href="{{ url('/viajar') }}">{{ trans("menu.trips") }}</a></li>
+			<li class="col-sm-4"><a href="{{ url('/viajar') }}" class="desativado">{{ trans("menu.trips") }}</a></li>
 			<li class="col-sm-4"><a href="{{ url('/conectar') }}">{{ trans("menu.social") }}</a></li>
-			<li class="col-sm-4"><a href="{{ url('/cuidar') }}">{{ trans("menu.ongs") }}</a></li>
+			<li class="col-sm-4"><a href="{{ url('/cuidar') }}" class="desativado">{{ trans("menu.ongs") }}</a></li>
 		@endif
 	</ul>
 </div>

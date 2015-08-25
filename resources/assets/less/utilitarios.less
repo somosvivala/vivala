@@ -1,4 +1,4 @@
-/* Definição de tempo de efeitos */
+	/* Definição de tempo de efeitos */
 @anima-rapido : 0.3s all ease-out;
 
 // Simula um background-cover pra tag img
@@ -70,6 +70,9 @@ div.cover {
 	}
 	input[type="radio"]:checked + label {
 		color:@cor-primaria;
+	}
+	input[type="radio"]:disabled + label {
+		color:grey;
 	}
 }
 
@@ -224,4 +227,12 @@ span.laranja,
 .laranja {
 	color: @cor-primaria;
 	text-decoration: none;
+}
+
+a.desativado,
+a.desativado:hover {
+	color: grey !important;
+	i {
+		color: grey !important;
+	}
 }
