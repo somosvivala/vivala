@@ -63,6 +63,9 @@ div.cover {
 .radio-hidden input[type="radio"]:checked + label {
   color: #f16f2b;
 }
+.radio-hidden input[type="radio"]:disabled + label {
+  color: grey;
+}
 .foto-label {
   padding: 1em;
   text-align: center;
@@ -187,6 +190,14 @@ span.laranja,
 .laranja {
   color: #f16f2b;
   text-decoration: none;
+}
+a.desativado,
+a.desativado:hover {
+  color: grey !important;
+}
+a.desativado i,
+a.desativado:hover i {
+  color: grey !important;
 }
 #welcome-html {
   position: relative;

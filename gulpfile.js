@@ -41,7 +41,8 @@ elixir(function(mix) {
         '../../assets/js/createpost.js',
         '../../assets/js/postbarra.js',
         '../../assets/js/edicaofotoperfil.js',
-        '../../assets/js/ajaxCalls.js'
+        '../../assets/js/ajaxCalls.js',
+        '../../assets/js/desativalinks.js'
 	    //'../../assets/js/welcome.js'
 	], 'public/js/vendor.js');
 });

@@ -19,19 +19,19 @@
                     </label>
                 </li>
                 <li class="col-sm-3">
-                    <input type="radio" name="tipoPost" value="video" id="video">
+                    <input type="radio" name="tipoPost" value="video" id="video" disabled="disabled">
                     <label for="video">
                         Adicionar Vídeo
                     </label>
                 </li>
                 <li class="col-sm-2">
-                    <input type="radio" name="tipoPost" value="album" id="album">
+                    <input type="radio" name="tipoPost" value="album" id="album" disabled="disabled">
                     <label for="album">
                         Criar Álbum
                     </label>
                 </li>
                 <li class="col-sm-2">
-                    <input type="radio" name="tipoPost" value="localizacao" id="localizacao">
+                    <input type="radio" name="tipoPost" value="localizacao" id="localizacao" disabled="disabled">
                     <label for="localizacao">
                         Localização
                     </label>
@@ -50,9 +50,9 @@
             <div class="row">
                 <div class="col-sm-10">
                     <ul class="lista-intervalo-preto">
-                        <li class="col-sm-4"><a href="#adicionar-roteiro">Adicionar Roteiro</a></li>
-                        <li class="col-sm-5"><a href="#adicionar-diario">Adicionar Diário de Viagem</a></li>
-                        <li class="col-sm-3"><a href="#marcar-amigos">Marcar Amigos</a></li>
+                        <li class="col-sm-4"><a href="#adicionar-roteiro" class="desativado">Adicionar Roteiro</a></li>
+                        <li class="col-sm-5"><a href="#adicionar-diario" class="desativado">Adicionar Diário de Viagem</a></li>
+                        <li class="col-sm-3"><a href="#marcar-amigos" class="desativado">Marcar Amigos</a></li>
                     </ul>
                 </div>
 

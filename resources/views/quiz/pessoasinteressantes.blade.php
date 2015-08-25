@@ -39,7 +39,9 @@
 			    <p>Não encontramos nenhuma sugestão.</p>
 			@endforelse
 			@endif
-
+		</ul>
+		<div class="col-sm-12 text-center">
+			<a class="btn btn-acao" href="/home">Continuar</a>
 		</div>
 	</div>
 
