@@ -67,15 +67,15 @@ class Empresa extends Model {
 
     /**
      * Retorna sugestoes de empresas que o usuario nao esteja seguindo.
-     * @param  User 	   $user 
+     * @param  User 	   $entidadeAtiva 
      * @return Collection  Collection de empresas para sugestao
      */
-    public static function getSugestoes($user) {
+    public static function getSugestoes($entidadeAtiva) {
 
         //empresas que nao sejam minhas
-        $result = Empresa::whereNotIn('user_id', [$user->perfil->id])
+        $result = Empresa::whereNotIn('user_id', [$entidadeAtiva->id])
             //empresas que eu nao esteja seguindo
-            ->whereNotIn('id', $user->perfil->followEmpresa()->lists('id'))
+            ->whereNotIn('id', $entidadeAtiva->followEmpresa()->lists('id'))
             ->limit(3)
             ->get();
 
@@ -137,5 +137,92 @@ class Empresa extends Model {
     {
         return $this->morphMany('App\Comentario', 'author', 'author_type', 'author_id');
     }
+
+    /**
+     * Relacao de seguir perfils
+     */
+    public function followPerfil()
+    {
+        return $this->belongsToMany('App\Perfil', 'empresa_follow_perfil', 'empresa_seguidor_id', 'perfil_seguido_id')->withTimestamps();
+    }
+
+    /**
+     * Relacao de seguir empresas
+     */
+    public function followEmpresa()
+    {
+        return $this->belongsToMany('App\Empresa', 'empresa_follow_empresa', 'empresa_seguidor_id', 'empresa_seguido_id')->withTimestamps();
+    }
+
+    /**
+     * Relacao de seguir ongs
+     */
+    public function followOng()
+    {
+        return $this->belongsToMany('App\Ong', 'empresa_follow_ong', 'empresa_seguidor_id', 'ong_seguido_id')->withTimestamps();
+    }
+
+    /**
+     * Relacao de ser seguido por perfils
+     */
+    public function followedByPerfil()
+    {
+        return $this->belongsToMany('App\Perfil', 'perfil_follow_empresa', 'empresa_seguido_id', 'perfil_seguidor_id')->withTimestamps();
+    }
+
+    /**
+     * Relacao de ser seguido por ongs
+     */
+    public function followedByOng()
+    {
+        return $this->belongsToMany('App\Ong', 'ong_follow_empresa', 'empresa_seguido_id', 'ong_seguidor_id')->withTimestamps();
+    }
+
+    /**
+     * Relacao de ser seguido por empresas
+     */
+    public function followedByEmpresa()
+    {
+        return $this->belongsToMany('App\Empresa', 'empresa_follow_empresa', 'empresa_seguido_id', 'empresa_seguidor_id')->withTimestamps();
+    }
+
+    /**
+     * Retorna se já está seguindo a entidade de tipo $tipo com esse $id
+     * @param  Integer    $id       Id da entidade
+     * @param  Integer    $tipo     tipo da entidade
+     * @return boolean
+     */
+    public function isFollowing($id, $tipo) 
+    {
+        switch ($tipo) {
+            case 'App\Perfil':
+                return ($this->followPerfil()->find($id) ? true : false);
+                break;
+            
+            case 'App\Ong':
+                return ($this->followOng()->find($id) ? true : false);
+                break;
+            
+            case 'App\Empresa':
+                return ($this->followEmpresa()->find($id) ? true : false);
+                break;
+            
+            default:
+                return null;
+                break;
+        }
+        return null;
+    }
+
+    /**
+     * Acessor para a propriedade FollowedBy, que retorna uma lista com 
+     * todas as entidades que seguem essa Empresa
+     * @return Collection  <Perfil|Ong|Empresa>
+     */
+    public function getFollowedByAttribute() 
+    {
+        return $this->followedByPerfil->merge($this->followedByOng->merge($this->followedByOng));
+    }
+
 
 }

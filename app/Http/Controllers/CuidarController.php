@@ -16,7 +16,7 @@ class CuidarController extends VivalaBaseController {
 
 	// Compartilha as sugestões com as views que forem chamadas por esse controller
 	public function getSugestoesOngs($view){
-		$sugestoesOngs = Ong::getSugestoes(Auth::user());
+		$sugestoesOngs = Ong::getSugestoes(Auth::user()->entidadeAtiva);
 		$view->with('sugestoesOngs', $sugestoesOngs);
 	}
 

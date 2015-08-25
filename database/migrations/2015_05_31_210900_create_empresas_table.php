@@ -24,23 +24,6 @@ class CreateEmpresasTable extends Migration {
 				->on('users')
 				->onDelete('cascade');
 		});
-
-		Schema::create('perfil_follow_empresa', function(Blueprint $table)
-		{
-			$table->integer('perfil_seguidor_id')->unsigned()->index();
-			$table->foreign('perfil_seguidor_id')
-				->references('id')
-				->on('empresas')
-				->onDelete('cascade');
-
-			$table->integer('empresa_seguido_id')->unsigned()->index();
-			$table->foreign('empresa_seguido_id')
-				->references('id')
-				->on('empresas')
-				->onDelete('cascade');
-
-			$table->timestamps();
-		});
 	}
 
 	/**
@@ -50,8 +33,6 @@ class CreateEmpresasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('perfil_follow_empresa');
-
 		Schema::drop('empresas');
 	}
 
