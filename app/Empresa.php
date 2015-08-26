@@ -5,7 +5,7 @@ use App\PrettyUrl;
 
 class Empresa extends Model {
 
-	protected $fillable = ['nome'];
+	protected $fillable = ['nome', 'user_id', 'apelido'];
 
 	/**
 	 * Uma empresa pertence a um usuário.

@@ -72,6 +72,7 @@ class OngController extends CuidarController {
 	 */
 	public function store()
 	{
+
 		$novaOng = Auth::user()->ongs()->create(Request::all());
 
 		$novaPrettyUrl = new PrettyUrl();
@@ -107,6 +108,11 @@ class OngController extends CuidarController {
         	//Criar mensagens de erro padrão em configurações??
 	        App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
         }
+
+		//Trocando entidadeAtiva para essa ong
+        Session::put('entidadeAtiva_id', $ong->id);
+    	Session::put('entidadeAtiva_tipo', 'ong');
+
 
         $ong->url = $ong->getUrl();
 		return view('ong.edit', compact('user', 'ong'));

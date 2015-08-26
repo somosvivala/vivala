@@ -21,7 +21,7 @@ class Registrar implements RegistrarContract {
 			'username' => 'required|max:255',
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|min:6|confirmed',
-			'aniversario' => 'required|date'
+			'aniversario' => 'required'
 		]);
 	}
 
@@ -36,6 +36,7 @@ class Registrar implements RegistrarContract {
 
 		$user = User::create([
 			'username' => $data['username'],
+			'apelido' => $data['username'],
 			'email' => $data['email'],
 			'password' => bcrypt($data['password']),
 		]);

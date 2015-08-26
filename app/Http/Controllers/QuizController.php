@@ -53,7 +53,7 @@ class QuizController extends VivalaBaseController {
 	 */
 	public function getPessoasinteressantes()
 	{
-		$sugestoesPessoasInteressantes = Perfil::getSugestoes(Auth::user());
+		$sugestoesPessoasInteressantes = Perfil::getSugestoes(Auth::user()->entidadeAtiva);
 		return view("quiz.pessoasinteressantes", compact("sugestoesPessoasInteressantes") )->with(['passo'=>4]);
 	}
 

@@ -39,6 +39,12 @@
 				{!! Form::text("username",  null , ['class' => 'form-control']) !!}
 			</div>
 
+			<!-- Adiciona um text field para o form-->
+			<div class="form-group">
+				{!! Form::label("apelido", "Apelido:") !!}
+				{!! Form::text("apelido",  null , ['class' => 'form-control']) !!}
+			</div>
+
 			<div class="form-group">
 				{!! Form::label("aniversario", "Data de Nascimento:") !!}
 				{!! Form::text("aniversario",  $perfil->aniversario , ['class' => 'form-control datepicker']) !!}

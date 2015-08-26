@@ -8,9 +8,9 @@
 	<div class="panel-heading"><h1>Adicionando Ong</h1></div>
 		<div class="panel-body">
 		
-		{!! Form::open(['url' => 'empresa']) !!}
+		{!! Form::open(['url' => 'ong']) !!}
 
-			@include('empresa.form', ['btnSubmit' => 'Atualizar Dados']);
+			@include('ong.form', ['btnSubmit' => 'Atualizar Dados']);
 
 		{!! Form::close() !!}
 

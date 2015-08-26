@@ -95,7 +95,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 					break;
 			}
     	}
-		
+
+    	Session::put('entidadeAtiva_id', $this->perfil->id);
+    	Session::put('entidadeAtiva_tipo', 'perfil');
 		return  $this->perfil;
     }
 

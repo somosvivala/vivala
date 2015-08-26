@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Perfil extends Model {
 
 
-	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local', 'foto' ];
+	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local', 'foto', 'apelido' ];
 	protected $dates = ['aniversario'];
 
 

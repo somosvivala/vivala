@@ -112,6 +112,10 @@ class EmpresaController extends ViajarController {
 	        App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa empresa');
         }
 
+		//Trocando entidadeAtiva para essa empresa
+        Session::put('entidadeAtiva_id', $empresa->id);
+    	Session::put('entidadeAtiva_tipo', 'empresa');
+
         $empresa->url = $empresa->getUrl();
         return view('empresa.edit', compact('empresa', 'user') );
     }

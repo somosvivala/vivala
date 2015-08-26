@@ -41,20 +41,29 @@ class FacebookController extends Controller {
 		return $this->socialite->driver('facebook')->user();
 	}
 
+	/**
+	 * Se nao encontrar, cria um novo usuario e redireciona-o para o quiz
+	 * @return User | Redirect           
+	 */
 	private function findByEmailOrCreate($userData)
 	{
 		//Procura/Cria o usuário com base no email cadastrado no Fb
-		$user = User::firstOrCreate([
-			'email' => $userData->email
-		]);
+		$user = User::first();
+		$isNewUser = ($user == null);
 
-		//Atualiza o usuário com os dados do Fb
-		$user->username = $userData->name;
-		$user->fb_token = $userData->token;
-		$user->save();
+		//Se for um novo usuario
+		if ($isNewUser) {
 
-		//Se o usuario nao tiver um perfil (1º login)
-		if (!$user->perfil) {
+			$user = User::firstOrCreate([
+				'email' => $userData->email
+			]);
+
+			//Atualiza o usuário com os dados do Fb
+			$user->username = $userData->name;
+			$user->fb_token = $userData->token;
+			$user->save();
+
+			//criando perfil para usuario		
 			$perfil = new Perfil;
 			$perfil->nome_completo = $userData->name;
 			$perfil->apelido = $userData->name;
@@ -67,8 +76,9 @@ class FacebookController extends Controller {
 	        $prettyUrl = new PrettyUrl();
 	        $prettyUrl->url = $user->username . '_' . Carbon::now()->getTimestamp();
 	        $prettyUrl->tipo = 'usuario';
-	        
 	        $perfil->prettyUrl()->save($prettyUrl);
+
+	    //Caso o usuario ja exista, só ainda nao tinha feito login com o facebook
 		} else {
 			$perfil = $user->perfil;
 		}
@@ -89,7 +99,13 @@ class FacebookController extends Controller {
 			$facebookData->user_location = $userData->user_location;
 
 		$user->facebookData()->save($facebookData);
-			
+		
+
+		if ($isNewUser) {
+			Auth::login($user);
+			return redirect('/quiz');
+		}
+
 		return $user;
 	}
 

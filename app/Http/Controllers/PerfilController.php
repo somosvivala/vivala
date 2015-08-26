@@ -60,6 +60,10 @@ class PerfilController extends ConectarController {
 		$user = Auth::user();
 		$perfil = $user->perfil;
 
+		//Trocando entidadeAtiva para perfil
+		Session::put('entidadeAtiva_id', $perfil->id);
+    	Session::put('entidadeAtiva_tipo', 'perfil');
+
 		return view('perfil.edit', compact('user', 'perfil'));
 	}
 
