@@ -1,5 +1,5 @@
 <div class="col-sm-2 menu-esquerda">
-	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 	data-target="#bs-example-navbar-collapse-1">
 		<span class="sr-only">Toggle Navigation</span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
@@ -9,17 +9,32 @@
 </div>
 
 <div class="col-sm-8 menu-principal">
-	<div class="col-sm-5">
+	<div class="col-sm-4">
 		<input class="busca-geral-menu" placeholder="Digite aqui sua busca" type="search">
 	</div>
-	<ul class="col-sm-7 nav navbar-nav lista-intervalo-preto">
+	<ul class="col-sm-8 nav navbar-nav lista-intervalo-preto">
 		@if (Auth::guest())
 			<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans("menu.login") }}</a></li>
 			<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 		@else
-			<li class="col-sm-4"><a href="{{ url('/viajar') }}" class="desativado">{{ trans("menu.trips") }}</a></li>
-			<li class="col-sm-4"><a href="{{ url('/conectar') }}">{{ trans("menu.social") }}</a></li>
-			<li class="col-sm-4"><a href="{{ url('/cuidar') }}" class="desativado">{{ trans("menu.ongs") }}</a></li>
+			<li class="menu-viajar">
+				<a href="{{ url('/viajar') }}" class="desativado">
+					<i class="icon36 icon-viajar"></i>
+					<span>{{ trans("menu.trips") }}</span>
+				</a>
+			</li>
+			<li class="menu-conectar">
+				<a href="{{ url('/conectar') }}">
+					<i class="icon36 icon-conectar"></i>
+					<span>{{ trans("menu.social") }}</span>
+				</a>
+			</li>
+			<li class="menu-cuidar">
+				<a href="{{ url('/cuidar') }}" class="desativado">
+					<i class="icon36 icon-cuidar"></i>
+					<span>{{ trans("menu.ongs") }}</span>
+				</a>
+			</li>
 		@endif
 	</ul>
 </div>
