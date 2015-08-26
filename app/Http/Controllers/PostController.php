@@ -51,7 +51,7 @@ class PostController extends VivalaBaseController {
 			$novoPost->fotos()->save($Foto);
 		}
 
-		return true;
+		return redirect('conectar');
 	}
 
 	/**
