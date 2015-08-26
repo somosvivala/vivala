@@ -20,6 +20,8 @@ Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
 Route::resource('post','PostController');
+Route::controller('post','PostController');
+
 
 // Rotas dos três pilares do sistema
 Route::resource('viajar','ViajarController');

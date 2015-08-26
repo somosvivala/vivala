@@ -11,7 +11,7 @@ class Post extends Model {
 		'descricao',
 		'foto',
 		'video',
-		'tipoPost'
+		'tipo_post'
 	];
 
 	// Definindo a propriedades que nao existem no bd

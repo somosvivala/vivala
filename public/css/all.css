@@ -3017,7 +3017,7 @@ select[multiple].input-lg {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -5890,14 +5890,12 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -7404,6 +7402,406 @@ article.status .status {
 }
 article.foto .foto-fundo {
   min-height: 33rem;
+}
+
+/* Definição do nome das cores principais */
+/* Definição das cores dos elementos */
+/* Fontes */
+/* Definição de tempo de efeitos */
+div.cover {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+.cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+}
+.lista-intervalo-preto {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  color: black;
+}
+.lista-intervalo-preto li {
+  padding: 0;
+}
+.lista-intervalo-preto li + li {
+  border-left: 2px solid black;
+}
+.radio-hidden input[type="radio"] {
+  display: none;
+}
+.radio-hidden label {
+  cursor: pointer;
+}
+.radio-hidden input[type="radio"]:checked + label {
+  color: #f16f2b;
+}
+.radio-hidden input[type="radio"]:disabled + label {
+  color: grey;
+}
+.foto-label {
+  padding: 1em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e2e2e2;
+  color: black;
+}
+.foto-label .titulo-label {
+  font-size: 1.4em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.fundo-cheio {
+  background-color: white;
+}
+div.foto-fundo {
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+}
+.foto-header {
+  width: 100%;
+  height: 25em;
+}
+.foto-header h2,
+.foto-header h3 {
+  text-shadow: 0em 0em 0.2em black;
+  display: block;
+}
+.foto-header h2 {
+  padding-top: 3em;
+  font-size: 3em;
+  margin-top: 0;
+}
+.foto-header h3 {
+  font-size: 1em;
+}
+.foto-header div {
+  margin: 2em auto;
+}
+.foto-link {
+  overflow: hidden;
+}
+.foto-link a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: white;
+}
+.foto-link a h4 {
+  font-size: 2em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 4em 0;
+  margin: 0;
+}
+.foto-link a > .cover {
+  transition: all 1s ease;
+  background-color: black;
+}
+.foto-link a > .cover img {
+  transition: all 1s ease;
+}
+.foto-link a:hover > .cover {
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+}
+.foto-link a:hover > .cover img {
+  opacity: 0.5;
+}
+h3.subtitulo {
+  text-transform: uppercase;
+  color: black;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+.foto-comentario {
+  width: 94%;
+  margin: 3%;
+  height: 6em;
+  position: absolute;
+  top: 0px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.foto-comentario .foto {
+  width: 5em;
+  height: 5em;
+  position: relative;
+  margin: .5em auto;
+}
+.foto-comentario .foto .cover {
+  z-index: 0;
+}
+.foto-avatar,
+img.foto-avatar {
+  max-width: 100%;
+  border-radius: 50%;
+}
+ul.lista-usuarios li.foto-user img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.alert {
+  padding: 1em;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: transparent	;
+  color: black;
+}
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+a.laranja,
+span.laranja,
+.laranja {
+  color: #f16f2b;
+  text-decoration: none;
+}
+a.desativado,
+a.desativado:hover {
+  color: grey !important;
+}
+a.desativado i,
+a.desativado:hover i {
+  color: grey !important;
+}
+#welcome-html {
+  position: relative;
+  min-height: 100%;
+}
+#welcome-html body {
+  background-image: url("../../img/riolaranja.png");
+  background-position: center center;
+  background-size: cover;
+}
+.welcome-header {
+  height: 11rem;
+  background-color: rgba(255, 245, 210, 0.95);
+  font-size: 12.6px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+.welcome-header .form-login .row {
+  line-height: 0.5em;
+}
+.welcome-header .form-login .row > div {
+  padding: 0.2em;
+}
+.welcome-header a {
+  color: #f16f2b;
+}
+.welcome-header label.titulo {
+  margin: 1em 0 0;
+  line-height: 0.8em;
+  text-transform: uppercase;
+  color: #f16f2b;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+.welcome-header label.rememberme {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.welcome-header .btn-submit {
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+  border-left: 1px solid #fff5d2;
+}
+.welcome-header .rememberme {
+  word-wrap: break-word;
+  color: #f16f2b;
+}
+.welcome-header .rememberme label {
+  padding: 0.2em;
+}
+.welcome-header input[type="checkbox"] {
+  text-align: left;
+  float: left;
+  vertical-align: bottom;
+  position: relative;
+  width: auto;
+  height: 1em;
+  margin: 0;
+  border: 0px solid white;
+  background-color: #f16f2b;
+  margin-top: -0.2em;
+}
+.welcome-header select,
+.welcome-header input {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  border-radius: 0px;
+  width: 100%;
+  height: 3.6rem;
+  border: 1px solid #f16f2b;
+  background-color: #f16f2b;
+  color: white;
+  padding: 0.8rem 1rem;
+}
+.welcome-header select:focus,
+.welcome-header input:focus {
+  border: 1px solid #f16f2b;
+}
+.welcome-header select option,
+.welcome-header input option {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #f16f2b;
+}
+.welcome-header ::-webkit-input-placeholder {
+  color: white;
+}
+.welcome-header :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+.welcome-header ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+.welcome-header :-ms-input-placeholder {
+  color: white;
+}
+.welcome-header .nav-logo {
+  height: 9rem;
+  padding: 0px;
+}
+.welcome-header .nav-logo img {
+  height: 100%;
+}
+.brasilwelcome {
+  max-width: 70%;
+  padding-top: 2em;
+}
+.balao-flutuante {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1em;
+  color: white;
+  position: absolute;
+  max-width: 18rem;
+}
+.balao-flutuante.balao-1 {
+  bottom: 20%;
+  left: 0;
+}
+.balao-flutuante.balao-2 {
+  bottom: 6%;
+  max-width: 14rem;
+  right: 30%;
+}
+.balao-flutuante.balao-3 {
+  top: 50%;
+  right: 10%;
+}
+div.welcome-content ::-webkit-input-placeholder {
+  color: white;
+}
+div.welcome-content :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+div.welcome-content ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+div.welcome-content :-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content h3 {
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
+}
+div.welcome-content p {
+  color: white;
+  font-size: 1.2rem;
+}
+div.welcome-content .welcome-cadastrar {
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+div.welcome-content .welcome-cadastrar > div {
+  height: 4em;
+}
+div.welcome-content .welcome-cadastrar .btn-facebook {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  text-transform: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+div.welcome-content .form-cadastro-wrapper {
+  margin: 0;
+}
+div.welcome-content a.anchor-tour {
+  text-decoration: underline;
+  color: white;
+  font-size: 13px;
+}
+div.welcome-content input {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0px;
+  border-radius: 0px;
+  padding: 0 0.5em;
+  font-size: 11.2px;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+div.welcome-content input:focus {
+  border: 1px solid #f16f2b;
+}
+div.welcome-content input[type='submit'] {
+  background-color: white;
+  color: #f16f2b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 0px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
 }
 
 /*# sourceMappingURL=app.css.map */

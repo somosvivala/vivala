@@ -39,9 +39,9 @@ class PostController extends VivalaBaseController {
 	{
 		$novoPost = new Post();
 		$novoPost->descricao = Request::input('descricao');
-		$novoPost->tipoPost = Request::input('tipoPost');
+		$novoPost->tipo_post = Request::input('tipo_post');
 		
-		//Pegando entidadeAtiva
+		//Salvando novoPost para entidadeAtiva
 		Auth::user()->entidadeAtiva->posts()->save($novoPost);
 
 		// Adiciona a foto no post através do id recebido
@@ -51,7 +51,7 @@ class PostController extends VivalaBaseController {
 			$novoPost->fotos()->save($Foto);
 		}
 
-		return redirect('conectar');
+		return true;
 	}
 
 	/**
@@ -99,4 +99,63 @@ class PostController extends VivalaBaseController {
 		//
 	}
 
+
+	/**
+	 * Metodo para dar Share em posts, replica o post com $id
+	 * @param  $id 			Id do post a ser shareado
+	 */
+	public function getSharepost($id) 
+	{
+		$sourcePost = Post::findOrFail($id);
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		
+		//Se o post a ser shareado for da entidadeAtiva em questão...
+		if ($entidadeAtiva == $sourcePost->author) {
+			App::abort(403, 'Voce nao tem permissão para sharear os proprios posts!');
+		} 
+
+		//Criando novo post, presenvando relações. e setando o shared_from
+		$novoPost = $sourcePost->replicate();
+		$novoPost->shared_from = $id;
+		
+		//Salvando o post para a entidadeAtiva atual
+		$entidadeAtiva->posts()->save($novoPost);
+
+		//Se tiver foto copiar ela tambem
+		if ($sourcePost->fotos != null) {
+			$novaFoto = $sourcePost->fotos->replicate();
+			$novoPost->fotos()->save($novaFoto);
+		}
+		
+		//Assegurando que as relações foram atualizadas
+		Auth::user()->entidadeAtiva->push();
+		return redirect('conectar');
+	}
+
+	/**
+	 * Seta o like da entidadeAtiva atual para um post específico
+	 *
+	 * @param  [integer] id do post
+	 * @return
+	 */
+	public function getLikepost($id) 
+	{
+		//Verifica se o post existe
+		$post = Post::findOrFail($id);
+		//Testo se o usuário está logado
+		$user = Auth::user();
+		$entidadeAtiva = $user->entidadeAtiva;
+		
+		//Se já tiver dado like no post com esse id,
+		//consigo encontralo pelo Collention->find()
+		$alreadyLiked = $entidadeAtiva->likePost->find($post->id);
+
+		if (!$alreadyLiked) {
+			//Salvando relação (Dando o like finalmente!)
+			$entidadeAtiva->likePost()->attach($post->id);
+		}
+		
+		// Retorna a quantidade de likes para utilizar na view
+	    return $post->getQuantidadeLikes();
+	}
 }

@@ -3,9 +3,9 @@
 
 	@forelse($posts as $Post)
         <li class="post col-sm-12">
-			@if($Post->tipoPost == 'status')
+			@if($Post->tipo_post == 'status')
             	@include('feed.status')
-			@elseif($Post->tipoPost == 'foto')
+			@elseif($Post->tipo_post == 'foto')
             	@include('feed.foto')
 			@endif
         </li>

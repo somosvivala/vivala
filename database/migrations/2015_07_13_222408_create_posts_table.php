@@ -15,10 +15,11 @@ class CreatePostsTable extends Migration {
 		Schema::create('posts', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('shared_from')->nullable();
 			$table->string('titulo', 140)->nullable();
 			$table->string('descricao', 500)->nullable();
 			$table->string('video')->nullable();
-			$table->enum('tipoPost', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
+			$table->enum('tipo_post', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
 			$table->timestamps();
 
 			//Campos para a relacao polimorfica,

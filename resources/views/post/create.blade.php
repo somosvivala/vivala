@@ -7,31 +7,31 @@
 
             <ul class="row lista-intervalo-preto radio-hidden tipo-post-criar">
                 <li class="col-sm-2">
-                    <input type="radio" name="tipoPost" value="status" id="status" checked>
+                    <input type="radio" name="tipo_post" value="status" id="status" checked>
                     <label for="status">
                         Status
                     </label>
                 </li>
                 <li class="col-sm-3">
-                    <input type="radio" name="tipoPost" value="foto" id="foto">
+                    <input type="radio" name="tipo_post" value="foto" id="foto">
                     <label for="foto">
                         Adicionar Foto
                     </label>
                 </li>
                 <li class="col-sm-3">
-                    <input type="radio" name="tipoPost" value="video" id="video" disabled="disabled">
+                    <input type="radio" name="tipo_post" value="video" id="video" disabled="disabled">
                     <label for="video">
                         Adicionar Vídeo
                     </label>
                 </li>
                 <li class="col-sm-2">
-                    <input type="radio" name="tipoPost" value="album" id="album" disabled="disabled">
+                    <input type="radio" name="tipo_post" value="album" id="album" disabled="disabled">
                     <label for="album">
                         Criar Álbum
                     </label>
                 </li>
                 <li class="col-sm-2">
-                    <input type="radio" name="tipoPost" value="localizacao" id="localizacao" disabled="disabled">
+                    <input type="radio" name="tipo_post" value="localizacao" id="localizacao" disabled="disabled">
                     <label for="localizacao">
                         Localização
                     </label>

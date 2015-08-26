@@ -1,4 +1,6 @@
 $( document ).ready(function() {
+
+    //Like
     $(".like-btn").click(function(){
         var href = $(this).prop("hash"),
             link = href.substr(1),
@@ -25,4 +27,25 @@ $( document ).ready(function() {
     	  console.log('Erro no ajax de like');
         });
     });
+
+
+    //Share
+    $(".share-btn").click(function(){
+        var href = $(this).prop("hash"),
+            link = href.substr(1),
+            urlArray = link.split('/'),
+            idPost = urlArray[2];
+
+        $.ajax({
+            url: link
+        })
+        .done(function(data) {
+            location.reload();
+        })
+        .fail(function(data) {
+            alert('YOOOOU SHALL NOT SHARE THY POST!!!!!!');
+            console.log('Erro no ajax de share');
+        });
+    });
+
 });

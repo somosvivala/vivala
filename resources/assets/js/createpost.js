@@ -25,7 +25,7 @@ $( document ).ready(function() {
 
     // Bind de clique dos radio buttons
     // Exibe o campo de adicionar fotos quando clica em Adicionar Foto
-    $('.tipo-post-criar input:radio[name="tipoPost"]').change(function(){
+    $('.tipo-post-criar input:radio[name="tipo_post"]').change(function(){
         if ($(this).val() == 'foto') {
             $('.adicionar-foto-container').show();
         } else {
