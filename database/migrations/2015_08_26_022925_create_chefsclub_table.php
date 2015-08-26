@@ -15,14 +15,15 @@ class CreateChefsclubTable extends Migration {
 		Schema::create('chefsclub', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('enedereco');
+			$table->string('restaurante');
+			$table->string('endereco');
 			$table->string('tipo_cozinha');
 			$table->integer('preco');
 			$table->string('imagem');
 			$table->string('beneficio');
 			$table->string('horario');
 			$table->string('telefone');
-			$table->timestamps();
+			$table->string('desconto');
 		});
 
 		if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
