@@ -24,6 +24,7 @@ class CreateChefsclubTable extends Migration {
 			$table->string('horario');
 			$table->string('telefone');
 			$table->string('desconto');
+			$table->string('url');
 		});
 
 		if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
