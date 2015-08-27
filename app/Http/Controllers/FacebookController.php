@@ -15,6 +15,8 @@ use App\Foto;
 
 class FacebookController extends Controller {
 
+	private $criouNovoUsuario = false;
+
 	public function __construct(Socialite $socialite)
 	{
 		$this->socialite = $socialite;
@@ -28,12 +30,15 @@ class FacebookController extends Controller {
 			return $this->socialite->driver('facebook')->redirect();
 		}
 
-		//procura se tem algum email cadastrado nesse perfil, se nao tiver cadastra um novo
+		//procura se tem algum usuario com esse email recebido do facebook  
+		//se nao tiver cadastra um novo usuario com esse email
 		$user = $this->findByEmailOrCreate($this->getFacebookUser());
 		
 		Auth::login($user);
-
-		return	redirect('/home');
+		
+		//Se criou um novo usuario, entao preciso redirecionar para o quiz		
+		//se nao, redirecionar para a home
+		return $this->criouNovoUsuario ? redirect('/quiz') : redirect('/home');
 	}
 
 	private function getFacebookUser()
@@ -48,11 +53,11 @@ class FacebookController extends Controller {
 	private function findByEmailOrCreate($userData)
 	{
 		//Procura/Cria o usuário com base no email cadastrado no Fb
-		$user = User::first();
-		$isNewUser = ($user == null);
+		$user = User::where('email', '=', $userData->email)->first();
+		$this->criouNovoUsuario = ($user == null);
 
 		//Se for um novo usuario
-		if ($isNewUser) {
+		if ($this->criouNovoUsuario) {
 
 			$user = User::firstOrCreate([
 				'email' => $userData->email
@@ -100,12 +105,6 @@ class FacebookController extends Controller {
 
 		$user->facebookData()->save($facebookData);
 		
-
-		if ($isNewUser) {
-			Auth::login($user);
-			return redirect('/quiz');
-		}
-
 		return $user;
 	}
 
