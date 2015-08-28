@@ -68,12 +68,13 @@ class QuizController extends VivalaBaseController {
 		$interesses = $request->get('interesses');
 
 		//Iterando sob os valores do checkbox de interesses
-		foreach ($interesses as $interesse) {
+		foreach ($interesses as $interesseID) {
 
-			$int = Interesse::all()->where('nome', $interesse)->first();
+			$int = Interesse::findOrFail($interesseID);
 			if ($int) {
 
-				//Se ja nao tive esse interesse adiciona-o a lista de interesses
+				//Se ja nao tiver esse acossiado a esse perfil
+				//adiciona-o a lista de interesses desse perfil
 				if (!$perfil->interesses->find($int)) {
 					$perfil->interesses()->attach($int);
 				}

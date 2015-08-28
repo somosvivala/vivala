@@ -33,26 +33,26 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-
+		//Criando perfil, usando dos atributos dentro de fillable[]
 		$user = User::create([
 			'username' => $data['username'],
-			'apelido' => $data['username'],
 			'email' => $data['email'],
-			'password' => bcrypt($data['password']),
+			'password' => bcrypt($data['password'])
 		]);
 
+		//Criando perfil usando as informações da tela de registro.
 	 	$perfil = new Perfil;
         $perfil->user_id = $user->id;
+        $perfil->nome_completo = $data['username'] . $data['username_last'];
+		$perfil->apelido = $data['username'];
         $perfil->aniversario = Carbon::createFromFormat('d/m/Y', $data['aniversario']);
         $perfil->save();
 
-        /**
-         * Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
-         */
+        
+        //Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
         $prettyUrl = new PrettyUrl();
         $prettyUrl->url = str_replace(" ", "", $user->username) . '_' . Carbon::now()->getTimestamp();
         $prettyUrl->tipo = 'usuario';
-
         $perfil->prettyUrl()->save($prettyUrl);
 
 		return $user;
