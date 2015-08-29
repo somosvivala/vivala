@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Collection;
 
 class Perfil extends Model {
 
@@ -171,22 +172,73 @@ class Perfil extends Model {
     }
 
     /**
-     * Retorna sugestoes de perfils que já o usuario ja nao esteja seguindo.
+     * Retorna sugestoes de perfils que já oa entidadeAtiva ja nao esteja seguindo.
+     * @param  Perfil|Ong|Empresa  		$entidadeAtiva 
+     * @param  integer 					$minSugestoes
+     * @param  integer 					$maxSugestoes
      * @return Collection  Collection de perfils para sugestao
      */
-    public static function getSugestoes($entidadeAtiva) 
+    public static function getSugestoes($entidadeAtiva, $minSugestoes = 3, $maxSugestoes = 3) 
     {
-        //perfils que nao tenham meu ID
-        $result = Perfil::whereNotIn('id', [$entidadeAtiva->id])
-            //perfils que eu nao esteja seguindo
-            ->whereNotIn('id', $entidadeAtiva->followPerfil()->lists('id'))
-            ->limit(3)
-            ->get();
+    	//Obtendo um array de Collections de Perfils que tem interesses em comum
+		$arrayCollectionPerfil = $entidadeAtiva->interesses()->with('perfil')->get()->lists('perfil');
+		
+		//Obtendo um array de ids dos perfils que já sigo
+		$notAllowed_ids  = $entidadeAtiva->followPerfil()->lists('id');
+		
+		//Adicionando o meu $perfil->id para a lista de ids nao permitidos
+		array_push($notAllowed_ids, $entidadeAtiva->id);
+		$sugestoes = Collection::make();
 
-        return $result;
+		//Iterando sob o array de collections e mergeando as collections em uma collection final
+		//TODO: melhorar isso Collection::flat?
+		foreach ($arrayCollectionPerfil as $key => $collection) 
+		{
+			//Se for primeira iteração...
+			if ($sugestoes->isEmpty()) {
+				$sugestoes = $collection;
+			} else {
+				$sugestoes = $sugestoes->merge($collection);
+			}
+		}
+
+		//pegando lista de ids de perfils com interesses em comum
+		$arraySugestoes = $sugestoes->lists('id');
+
+		//Removendo lista de ids nao permitidos da lista de sugestoes
+		$arrayFinal = array_diff($arraySugestoes, $notAllowed_ids);
+		$totalSugestoes = count($arrayFinal);
+
+		//Criando uma Collection $extra, que ira conter sugestoes extras caso numero de 
+		//sugestoes insuficiente
+		$extras = Collection::make();
+		if ($totalSugestoes < $minSugestoes) 
+		{
+			$diferença = $minSugestoes - $totalSugestoes;
+			
+			//Obtendo lista de ids que nao quero, (todos que ja me sugeriram + todos que nao posso seguir)
+			$merged = array_merge_recursive($notAllowed_ids, $arraySugestoes);
+			$notAllowed_ids = array_unique($merged);
+			
+			//Pegando perfils extras para sugerir..
+			$extras = Perfil::whereNotIn('id', $notAllowed_ids)->limit($diferença)->get();
+		}
+		
+		//Pegando Collection de perfils para retornar
+		$sugestaoFinal = Perfil::whereIn('id', $arrayFinal)->get()->merge($extras);
+		
+		//Limitando o total de elementos ao valor de $maxSugestoes ou o total da query
+		$qnt = count($sugestaoFinal);
+		$max =  $qnt < $maxSugestoes ? $qnt : $maxSugestoes;
+		
+		//Se tiver apenas 1 elemento, nao aplicar random(), pois perco a collection externa
+		$sugestaoFinal = $qnt == 1 ? $sugestaoFinal : $sugestaoFinal->random($max);
+
+        return $sugestaoFinal;
     }
 
     /**
+     * 
      * Accessor para a propriedade avatar
      */
     public function getAvatarAttribute()
