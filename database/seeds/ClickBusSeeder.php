@@ -7,7 +7,7 @@ use App\Configuracao;
 class ClickBusSeeder extends Seeder {
     public function run()
     {
-        DB::table('clickbus_places')->delete();
+        DB::table('clickbusplaces')->delete();
 
         $clickbusPlaces = file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/places');
 
@@ -38,25 +38,25 @@ class ClickBusSeeder extends Seeder {
             if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0 && count($place->place->longitude) > 0 && count($place->place->latitude) > 0) {
                 $array_insert['place_position'] = DB::raw("ST_GeomFromText('POINT({$place->place->longitude} {$place->place->latitude})', 4326)");
             }
-            DB::table('clickbus_places')->insert($array_insert);
+            DB::table('clickbusplaces')->insert($array_insert);
         }
 
-        DB::table('clickbus_companies')->delete();
+        DB::table('clickbuscompanies')->delete();
 
         $pages = json_decode(file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/buscompanies'))->meta->totalPages;
         $busCompaniesHash = '';
-        for ($i = 1; $i <= intval($pages); $i++) { 
+        for ($i = 1; $i <= intval($pages); $i++) {
             $companies = file_get_contents("https://api-evaluation.clickbus.com.br/api/v1/buscompanies?page={$i}");
             $busCompaniesHash .= $companies;
             $companies = json_decode($companies)->busCompanies;
 
             foreach ($companies as $company) {
-                DB::table('clickbus_companies')->insert(array(
+                DB::table('clickbuscompanies')->insert(array(
                     'id'       => $company->id,
                     'nome'     => $company->name,
                     'logo_url' => $company->logo->url
-                ));       
-            }            
+                ));
+            }
         }
 
         $configuracaobusCompany = Configuracao::firstOrCreate(['nome'  => 'clickbus_buscompanies_hash']);

@@ -12,7 +12,7 @@ class CreateClickbusCompaniesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('clickbus_companies', function(Blueprint $table)
+		Schema::create('clickbuscompanies', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('nome');
@@ -27,7 +27,7 @@ class CreateClickbusCompaniesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('clickbus_companies');
+		Schema::drop('clickbuscompanies');
 	}
 
 }

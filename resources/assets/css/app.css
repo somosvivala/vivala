@@ -7257,11 +7257,6 @@ nav.menu-top .menu-principal ul li a:hover,
 nav.menu-top .menu-principal ul li a:active {
   color: #8ba6ac;
 }
-nav.menu-top .menu-usuario {
-  float: right;
-  padding: 0px 10px 0px 0px;
-  width: 12%;
-}
 nav.menu-top .menu-usuario ul {
   float: right;
   text-transform: capitalize;
