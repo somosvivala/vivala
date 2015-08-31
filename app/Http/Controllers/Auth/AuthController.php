@@ -7,6 +7,8 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Illuminate\Support\Facades\Session;
+
 class AuthController extends Controller {
 
 	/*
@@ -40,6 +42,7 @@ class AuthController extends Controller {
 	
 	public function postRegister(Request $request)
     {
+
         $validator = $this->registrar->validator($request->all());
         if ($validator->fails())
         {
@@ -49,7 +52,16 @@ class AuthController extends Controller {
         }
 
         $this->auth->login($this->registrar->create($request->all()));
+        $user = $this->auth->user();
+        
+        Session::put('entidadeAtiva_id', $user->perfil->id);
+    	Session::put('entidadeAtiva_tipo', "perfil");
         return redirect('/quiz');
+    }
+
+    public function postLogout(Request $request) 
+    {
+    	$request->session()->flush();
     }
 
 }

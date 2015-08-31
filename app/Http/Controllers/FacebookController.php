@@ -48,7 +48,7 @@ class FacebookController extends Controller {
 
 	/**
 	 * Se nao encontrar, cria um novo usuario e redireciona-o para o quiz
-	 * @return User | Redirect           
+	 * @return User | Redirect           	
 	 */
 	private function findByEmailOrCreate($userData)
 	{
