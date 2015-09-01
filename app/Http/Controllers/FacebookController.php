@@ -65,6 +65,9 @@ class FacebookController extends Controller {
 
 			//Atualiza o usuário com os dados do Fb
 			$user->username = $userData->name;
+
+			//Usando do translate do Laravel.
+			$user->username = trans("fb.".$userData->{'user'}['gender']);
 			$user->fb_token = $userData->token;
 			$user->save();
 
@@ -76,6 +79,7 @@ class FacebookController extends Controller {
         	$perfil->save();
 	
 	        /**
+	         * 
 	         * Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
 	         */
 	        $prettyUrl = new PrettyUrl();
