@@ -85,6 +85,13 @@ class UserSeeder extends Seeder {
             'email'              => 'kuririn@gmail.com',
             'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
+
+        User::create([
+            'username'           => 'Brunol',
+            'genero'             => 'masculino',
+            'email'              => 'brunol@gmail.com',
+            'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+        ]);
     }
 }
 
@@ -116,6 +123,14 @@ class PerfilSeeder extends Seeder {
             'cidade_natal'     => 'Itapeva',
             'nome_completo'     => 'Rodrigo Yasuhiro Ueda',
             'apelido'     => 'Kuririn'
+        ]);
+
+        $brunol = Perfil::create([
+            'user_id'               => '4',
+            'aniversario'      => '1991-09-22 07:43:00',
+            'cidade_natal'     => '',
+            'nome_completo'     => 'Bruno Gordo',
+            'apelido'     => 'Brunol'
         ]);
     }
 
@@ -188,6 +203,12 @@ class PrettyUrlSeeder extends Seeder {
         $kuririnURL->tipo = 'usuario';
         $kuririn->prettyUrl()->save($kuririnURL);
 
+        $brunol = Perfil::find(4);
+        $brunolURL = new PrettyUrl();
+        $brunolURL->url = 'brunol';
+        $brunolURL->tipo = 'usuario';
+        $brunol->prettyUrl()->save($brunolURL);
+
         /**
          * Empresas
          */
@@ -224,7 +245,7 @@ class PrettyUrlSeeder extends Seeder {
 }
 
 class FotoSeeder extends Seeder {
-    
+
     public function run()
     {
         DB::table('fotos')->delete();
@@ -262,5 +283,3 @@ class InteresseSeeder extends Seeder {
         Interesse::create(['nome' => 'Interesse 10']);
     }
 }
-
-
