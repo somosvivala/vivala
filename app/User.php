@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Auth\Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
@@ -10,7 +11,7 @@ use Session;
 
 class User extends Model implements AuthenticatableContract, CanResetPasswordContract {
 
-	use Authenticatable, CanResetPassword;
+	use Authenticatable, CanResetPassword, SoftDeletes;
 
 	/**
 	 * The database table used by the model.
@@ -18,6 +19,12 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var string
 	 */
 	protected $table = 'users';
+
+	/**
+	 * Attr for softDelete
+	 * @var array
+	 */
+    protected $dates = ['deleted_at'];
 
 	/**
 	 * The attributes that are mass assignable.
@@ -32,6 +39,28 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+
+
+	public static function boot()
+	{
+	    User::deleting(function($user) {
+
+	        foreach(['ongs', 'empresas'] as $relation)
+	        {
+	            foreach($user->{$relation} as $item)
+	            {
+	                $item->delete();
+	            }
+	        }
+
+	    	$fbData = $user->facebookData != null ? $user->facebookData->delete() : false;
+	    	$user->perfil->delete();
+	    });
+	}
+
+
+
+
 
 	public function facebookData()
 	{

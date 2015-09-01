@@ -1,10 +1,14 @@
 <?php namespace App;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Date\Date;
 use Auth;
+
 class Post extends Model {
 
+	use SoftDeletes;
+	
 	//mass assigned fields
 	protected $fillable = [
 		'titulo',
@@ -13,6 +17,12 @@ class Post extends Model {
 		'video',
 		'tipo_post'
 	];
+	
+	/**
+	 * Attr for softDelete
+	 * @var array
+	 */
+    protected $dates = ['deleted_at'];
 
 	// Definindo a propriedades que nao existem no bd
 	public function getDataPostagemDiffAttribute()

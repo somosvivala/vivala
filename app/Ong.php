@@ -1,10 +1,38 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Interesse;
 
 class Ong extends Model {
+    
+    use SoftDeletes;
+
+    /**
+     * Attr for softDelete
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
 	protected $fillable = ['nome', 'user_id', 'apelido'];
+
+    public static function boot()
+    {
+        Ong::deleting(function($ong) {
+
+            foreach(['posts'] as $relation)
+            {
+                foreach($ong->{$relation} as $item)
+                {
+                    $item->delete();
+                }
+            }
+            
+        });
+    }
+
+
+
 
 	/**
 	 * Uma ONG pertence a um usuário.
@@ -235,6 +263,10 @@ class Ong extends Model {
             ->get();
 
         return $result;
+    }
+
+    public static function interesses() {
+        return Interesse::where('id', '>', '0');
     }
 
 }

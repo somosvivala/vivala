@@ -74,7 +74,7 @@ class FacebookController extends Controller {
 			//criando perfil para usuario		
 			$perfil = new Perfil;
 			$perfil->nome_completo = $userData->name;
-			$perfil->apelido = $userData->name;
+			$perfil->apelido = $userData->{'user'}['first_name'];
         	$perfil->user_id = $user->id;
         	$perfil->save();
 	

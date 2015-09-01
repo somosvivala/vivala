@@ -1,11 +1,37 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\PrettyUrl;
+use App\Interesse;
+
 
 class Empresa extends Model {
+    use SoftDeletes;
 
-	protected $fillable = ['nome', 'user_id', 'apelido'];
+    /**
+     * Attr for softDelete
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
+
+    protected $fillable = ['nome', 'user_id', 'apelido'];
+
+    public static function boot()
+    {
+        Empresa::deleting(function($empresa) {
+
+            foreach(['posts'] as $relation)
+            {
+                foreach($empresa->{$relation} as $item)
+                {
+                    $item->delete();
+                }
+            }
+            
+        });
+    }
+
 
 	/**
 	 * Uma empresa pertence a um usuário.
@@ -250,5 +276,9 @@ class Empresa extends Model {
         return $listaSeguidos;
     }
 
+
+    public static function interesses() {
+        return Interesse::where('id', '>', '0');
+    }
 
 }

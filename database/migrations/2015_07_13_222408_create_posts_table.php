@@ -21,6 +21,7 @@ class CreatePostsTable extends Migration {
 			$table->string('video')->nullable();
 			$table->enum('tipo_post', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
 			$table->timestamps();
+			$table->softDeletes();
 
 			//Campos para a relacao polimorfica,
 			//assim posts podem pertencer a qualquer entidade que implemente

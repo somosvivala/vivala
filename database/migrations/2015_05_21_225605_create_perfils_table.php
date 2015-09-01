@@ -23,6 +23,7 @@ class CreatePerfilsTable extends Migration {
 			$table->string('cidade_natal')->nullable();
 			$table->string('ultimo_local')->nullable();
 
+			$table->softDeletes();
 			$table->timestamps();
 
 			$table->foreign('user_id')
