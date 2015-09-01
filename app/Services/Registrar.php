@@ -33,8 +33,8 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
-		$nome = ucwords($data['username']);
-		$sobrenome = ucwords($data['username_last']);
+		$nome = ucwords(strtolower($data['username']));
+		$sobrenome = ucwords(strtolower($data['username_last']));
 		
 		//Criando perfil, usando dos atributos dentro de fillable[]
 		$user = User::create([
