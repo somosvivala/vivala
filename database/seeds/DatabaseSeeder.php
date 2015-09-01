@@ -207,7 +207,7 @@ class PrettyUrlSeeder extends Seeder {
         $brunolURL = new PrettyUrl();
         $brunolURL->url = 'brunol';
         $brunolURL->tipo = 'usuario';
-        $brunol->prettyUrl()->save($kuririnURL);
+        $brunol->prettyUrl()->save($brunolURL);
 
         /**
          * Empresas
