@@ -33,19 +33,23 @@ class Registrar implements RegistrarContract {
 	 */
 	public function create(array $data)
 	{
+		$nome = ucwords($data['username']);
+		$sobrenome = ucwords($data['username_last']);
+		
 		//Criando perfil, usando dos atributos dentro de fillable[]
 		$user = User::create([
-			'username' => $data['username'],
+			'username' => $nome,
 			'email' => $data['email'],
 			'genero' => $data['genero'],
 			'password' => bcrypt($data['password'])
 		]);
 
+
 		//Criando perfil usando as informações da tela de registro.
 	 	$perfil = new Perfil;
         $perfil->user_id = $user->id;
-        $perfil->nome_completo = $data['username'] . $data['username_last'];
-		$perfil->apelido = $data['username'];
+        $perfil->nome_completo = $nome .' '. $sobrenome;
+		$perfil->apelido = $nome;
         $perfil->aniversario = Carbon::createFromFormat('d/m/Y', $data['aniversario']);
         $perfil->save();
 

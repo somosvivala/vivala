@@ -46,6 +46,8 @@
 						<div class="col-sm-4">
 							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => 'E-MAIL']) !!}
 						</div>
+							
+
 						<div class="col-sm-4">
 							{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
 							<span class="btn-submit">
@@ -88,6 +90,7 @@
 			<div class="col-sm-5 form-cadastro-wrapper">
 				<!-- Adiciona a abertura do Form -->
 				{!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
+					{!! Form::hidden("genero", "x") !!}
 
 				<div class="welcome-cadastrar row">
 					<div class="col-md-6">

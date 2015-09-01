@@ -66,19 +66,22 @@ class UserSeeder extends Seeder {
         DB::table('users')->delete();
 
         User::create([
-            'username'           => 'evandro',
+            'username'           => 'Evandro',
+            'genero'             => 'masculino',
         	'email' 	         => 'evandro.carreira@gmail.com',
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
 
         User::create([
-        	'username' 	         => 'zord',
+        	'username' 	         => 'Zord',
+            'genero'             => 'masculino',
         	'email' 	         => 'zord@gmail.com',
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
 
         User::create([
-            'username'           => 'kuririn',
+            'username'           => 'Kuririn',
+            'genero'             => 'masculino',
             'email'              => 'kuririn@gmail.com',
             'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
