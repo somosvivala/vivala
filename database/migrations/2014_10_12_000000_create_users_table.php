@@ -16,6 +16,7 @@ class CreateUsersTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('username')->nullable();
+			$table->string('genero')->nullable();
 			$table->string('email')->unique();
 			$table->string('password', 60)->nullable();
 			$table->string('fb_token')->nullable();
