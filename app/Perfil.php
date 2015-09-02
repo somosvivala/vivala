@@ -7,26 +7,8 @@ use Illuminate\Database\Eloquent\Collection;
 
 class Perfil extends Model {
 
-	use SoftDeletes;
-
 	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local', 'foto', 'apelido' ];
 	protected $dates = ['aniversario'];
-
-
-
-	public static function boot()
-	{
-	    Perfil::deleting(function($perfil) {
-	        foreach(['posts'] as $relation)
-	        {
-	            foreach($perfil->{$relation} as $item)
-	            {
-	                $item->delete();
-	            }
-	        }
-	    });
-	}
-
 
 
 	public function getNomeAttribute()

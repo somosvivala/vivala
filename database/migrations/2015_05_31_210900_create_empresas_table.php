@@ -17,7 +17,6 @@ class CreateEmpresasTable extends Migration {
 			$table->string('nome');
 			$table->string('apelido')->nullable();
 			$table->timestamps();
-			$table->softDeletes();
 
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')
