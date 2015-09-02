@@ -46,7 +46,7 @@
 						<div class="col-sm-4">
 							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => 'E-MAIL']) !!}
 						</div>
-							
+
 
 						<div class="col-sm-4">
 							{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
@@ -90,7 +90,6 @@
 			<div class="col-sm-5 form-cadastro-wrapper">
 				<!-- Adiciona a abertura do Form -->
 				{!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
-					{!! Form::hidden("genero", "x") !!}
 
 				<div class="welcome-cadastrar row">
 					<div class="col-md-6">
@@ -131,10 +130,16 @@
 
 				<div class="form-group">
 					<div class="col-sm-6">
-						<input type="text" class="form-control" placeholder="MASCULINO">
+						<label class="radio-button radio-hidden">
+							{!! Form::radio("genero", "masculino") !!}
+							<span>MASCULINO</span>
+						</label>
 					</div>
 					<div class="col-sm-6">
-						<input type="text" class="form-control" placeholder="FEMININO">
+						<label class="radio-button radio-hidden">
+							{!! Form::radio("genero", "feminino") !!}
+							<span>FEMININO</span>
+						</label>
 					</div>
 				</div>
 

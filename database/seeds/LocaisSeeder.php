@@ -1,5 +1,9 @@
 <?php
 
+use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use App\Cidade;
+
 class EstadosTableSeeder extends Seeder {
 
     /**
@@ -44779,5 +44783,16 @@ class CidadesTableSeeder extends Seeder {
                 'estado_id' => 27,
             ),
         ));
+        
+        if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
+            $geoJson = json_decode(file_get_contents('http://www.geoservicos.ibge.gov.br/geoserver/wms?service=WFS&version=1.0.0&request=GetFeature&typeName=CCAR:BCIM_Cidade&outputFormat=JSON'));
+            foreach ($geoJson->features as $cidade) {
+                $cidadeRow = Cidade::where('nome', $cidade->properties->nome)->first();
+                if (isset($cidadeRow)) {
+                    $cidadeRow->posicao = DB::raw("ST_GeomFromText('POINT({$cidade->geometry->coordinates[0]} {$cidade->geometry->coordinates[1]})', 4326)");
+                    $cidadeRow->save();
+                }
+            }
+        }
     }
 }

@@ -18,6 +18,7 @@ class CreatePerfilsTable extends Migration {
 			$table->increments('id');
 			$table->string('nome_completo')->nullable();
 			$table->string('apelido')->nullable();
+			$table->string('genero')->nullable();
 			$table->integer('user_id')->unsigned();
 			$table->date('aniversario')->default(Carbon::now());
 			$table->string('cidade_natal')->nullable();

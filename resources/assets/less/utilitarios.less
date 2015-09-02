@@ -236,3 +236,23 @@ a.desativado:hover {
 		color: grey !important;
 	}
 }
+
+// Radio Button hidden (que parece um input)
+label.radio-button {
+	width:100%;
+	cursor: pointer;
+	margin-bottom: 0; //o Bootstrap põe uma margem de 5px por padrão
+	span {
+		display: block;
+		width:100%;
+		border: 2px solid transparent;
+		background-color: @cor-quase-transparente;
+		padding:0.5em;
+		color: white;
+	}
+	input[type="radio"]:checked + span {
+		background-color: @cor-quase-transparente;
+		border: 2px solid white;
+	}
+
+}
