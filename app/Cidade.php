@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cidade extends Model {
 
-	protected $fillable = ['nome'];
+	protected $fillable = ['nome', 'posicao'];
 
 	/**
 	 * Estabelece a relaçao entre a entidade cidade e a entidade estado,

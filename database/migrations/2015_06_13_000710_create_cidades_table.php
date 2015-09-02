@@ -23,6 +23,10 @@ class CreateCidadesTable extends Migration {
 				->references('id')
 				->on('estados');
 		});
+
+		if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
+			DB::statement('ALTER TABLE cidades ADD COLUMN posicao geometry(Point,4326) NULL;');
+        }
 	}
 
 	/**
