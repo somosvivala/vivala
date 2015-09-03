@@ -83,7 +83,7 @@ var sortFilterTrip = function(select) {
     for (var i = 0; i < filters.length; i++) {
         var option = document.createElement("option");
         $(option).val(filters[i][0]).html(filters[i][1]);
-        select.appendChild(option);
+        $(select).append(option);
     }
     return select;
 };
