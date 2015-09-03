@@ -295,11 +295,11 @@ class Perfil extends Model {
 
 
     /**
-     * Um perfil pode dar varios likes em comentarios
+     * Um Perfil pode dar varios likes em comentarios
      */
     public function likeComentario()
     {
-        return $this->belongsToMany('App\Post', 'entidade_like_comentario', 'perfil_id', 'comentario_id')->withTimestamps();
+        return $this->belongsToMany('App\Comentario', 'entidade_like_comentario', 'perfil_id', 'comentario_id')->withTimestamps();
     }
 
 

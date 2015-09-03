@@ -110,6 +110,15 @@ class Ong extends Model {
     }
 
     /**
+     * Um Ong pode dar varios likes em comentarios
+     */
+    public function likeComentario()
+    {
+        return $this->belongsToMany('App\Comentario', 'entidade_like_comentario', 'ong_id', 'comentario_id')->withTimestamps();
+    }
+
+
+    /**
      * Relacao de seguir perfils
      */
     public function followPerfil()

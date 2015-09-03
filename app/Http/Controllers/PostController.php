@@ -153,6 +153,8 @@ class PostController extends VivalaBaseController {
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likePost()->attach($post->id);
+		} else {
+			$entidadeAtiva->likePost()->detach($post->id);
 		}
 		
 		// Retorna a quantidade de likes para utilizar na view
