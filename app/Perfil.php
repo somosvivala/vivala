@@ -1,10 +1,11 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Collection;
 
-class Perfil extends Model {
 
+class Perfil extends Model {
 
 	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local', 'foto', 'apelido' ];
 	protected $dates = ['aniversario'];
@@ -141,7 +142,7 @@ class Perfil extends Model {
      */
     public function prettyUrl()
     {
-        return $this->morphMany('App\PrettyUrl', 'prettyurlable');
+        return $this->morphOne('App\PrettyUrl', 'prettyurlable');
     }
 
     /**

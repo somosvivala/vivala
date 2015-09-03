@@ -1,11 +1,15 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\PrettyUrl;
+use App\Interesse;
+
 
 class Empresa extends Model {
 
-	protected $fillable = ['nome', 'user_id', 'apelido'];
+    protected $fillable = ['nome', 'user_id', 'apelido'];
+
 
 	/**
 	 * Uma empresa pertence a um usuário.
@@ -250,5 +254,9 @@ class Empresa extends Model {
         return $listaSeguidos;
     }
 
+
+    public static function interesses() {
+        return Interesse::where('id', '>', '0');
+    }
 
 }

@@ -3,6 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Date\Date;
 use Auth;
+
 class Post extends Model {
 
 	//mass assigned fields
@@ -13,6 +14,7 @@ class Post extends Model {
 		'video',
 		'tipo_post'
 	];
+	
 
 	// Definindo a propriedades que nao existem no bd
 	public function getDataPostagemDiffAttribute()

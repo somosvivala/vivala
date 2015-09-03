@@ -1,10 +1,12 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Interesse;
 
 class Ong extends Model {
-
+    
 	protected $fillable = ['nome', 'user_id', 'apelido'];
+
 
 	/**
 	 * Uma ONG pertence a um usuário.
@@ -20,7 +22,7 @@ class Ong extends Model {
      */
     public function prettyUrl()
     {
-		return $this->morphMany('App\PrettyUrl', 'prettyurlable');
+		return $this->morphOne('App\PrettyUrl', 'prettyurlable');
     }
 
     /**
@@ -235,6 +237,10 @@ class Ong extends Model {
             ->get();
 
         return $result;
+    }
+
+    public static function interesses() {
+        return Interesse::where('id', '>', '0');
     }
 
 }
