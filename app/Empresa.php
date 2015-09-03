@@ -7,30 +7,8 @@ use App\Interesse;
 
 
 class Empresa extends Model {
-    use SoftDeletes;
-
-    /**
-     * Attr for softDelete
-     * @var array
-     */
-    protected $dates = ['deleted_at'];
 
     protected $fillable = ['nome', 'user_id', 'apelido'];
-
-    public static function boot()
-    {
-        Empresa::deleting(function($empresa) {
-
-            foreach(['posts'] as $relation)
-            {
-                foreach($empresa->{$relation} as $item)
-                {
-                    $item->delete();
-                }
-            }
-            
-        });
-    }
 
 
 	/**

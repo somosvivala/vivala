@@ -38,7 +38,7 @@ class PerfilController extends ConectarController {
 		$user = Auth::user();
 		$perfil = $user->perfil;
 		$follow = $perfil->followPerfil;
-		$followedBy = $perfil->followedBy;
+		$followedBy = $perfil->followedByPerfil;
 
 		$empresas = $user->empresas;
 
@@ -148,7 +148,7 @@ class PerfilController extends ConectarController {
 
 		$user = $perfil->user;
 		$follow = $perfil->followPerfil;
-		$followedBy = $perfil->followedBy;
+		$followedBy = $perfil->followedByPerfil;
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
 	}
 

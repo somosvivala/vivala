@@ -142,7 +142,7 @@ class Perfil extends Model {
      */
     public function prettyUrl()
     {
-        return $this->morphMany('App\PrettyUrl', 'prettyurlable');
+        return $this->morphOne('App\PrettyUrl', 'prettyurlable');
     }
 
     /**

@@ -27,10 +27,14 @@ class AjaxController extends VivalaBaseController {
 
 		//$entidadeAtiva do usuario logado.
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
-		$entidadeAtiva->followPerfil()->attach($id);
-		$entidadeAtiva->save();
-		$return['success'] = true;
 
+		//se ja nao seguir esse perfil
+		if (!$entidadeAtiva->followPerfil->find($id)) {
+			$entidadeAtiva->followPerfil()->attach($id);
+			$entidadeAtiva->save();
+		}
+
+		$return['success'] = true;
 		return json_encode($return);
 	}
 
@@ -43,10 +47,14 @@ class AjaxController extends VivalaBaseController {
 
 		//$entidadeAtiva do usuario logado.
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
-		$entidadeAtiva->followEmpresa()->attach($id);
-		$entidadeAtiva->save();
-		$return['success'] = true;
 
+		//se ja nao seguir essa empresa
+		if (!$entidadeAtiva->followEmpresa->find($id)) {
+			$entidadeAtiva->followEmpresa()->attach($id);
+			$entidadeAtiva->save();
+		}
+
+		$return['success'] = true;
 		return json_encode($return);
 	}
 
@@ -59,11 +67,78 @@ class AjaxController extends VivalaBaseController {
 
 		//$entidadeAtiva do usuario logado.
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
-		$entidadeAtiva->followOng()->attach($id);
-		$entidadeAtiva->save();
-		$return['success'] = true;
 
+		//se ja nao seguir essa ong
+		if (!$entidadeAtiva->followOng->find($id)) {
+			$entidadeAtiva->followOng()->attach($id);
+			$entidadeAtiva->save();
+		}
+
+		$return['success'] = true;
 		return json_encode($return);
 	}
+
+
+	/**
+	 * Remove a relação de seguir uma ong
+	 * @param  String 	    $id 		Id da ong a ser ser unfollowed
+	 * @return JSON     	Resultado da requisicao
+	 */
+	public function getUnfollowong($id) {
+
+		//$entidadeAtiva do usuario logado.
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+
+		//se ja nao seguir essa ong
+		if ($entidadeAtiva->followOng->find($id)) {
+			$entidadeAtiva->followOng()->detach($id);
+			$entidadeAtiva->save();
+		}
+
+		$return['success'] = true;
+		return json_encode($return);
+	}
+
+	/**
+	 * Remove a relação de seguir uma empresa
+	 * @param  String 	    $id 		Id da empresa a ser ser unfollowed
+	 * @return JSON     	Resultado da requisicao
+	 */
+	public function getUnfollowempresa($id) {
+
+		//$entidadeAtiva do usuario logado.
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+
+		//se ja nao seguir essa ong
+		if ($entidadeAtiva->followEmpresa->find($id)) {
+			$entidadeAtiva->followEmpresa()->detach($id);
+			$entidadeAtiva->save();
+		}
+
+		$return['success'] = true;
+		return json_encode($return);
+	}
+
+	/**
+	 * Remove a relação de seguir uma empresa
+	 * @param  String 	    $id 		Id da empresa a ser ser unfollowed
+	 * @return JSON     	Resultado da requisicao
+	 */
+	public function getUnfollowempresa($id) {
+
+		//$entidadeAtiva do usuario logado.
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+
+		//se ja nao seguir essa ong
+		if ($entidadeAtiva->followEmpresa->find($id)) {
+			$entidadeAtiva->followEmpresa()->detach($id);
+			$entidadeAtiva->save();
+		}
+
+		$return['success'] = true;
+		return json_encode($return);
+	}
+
+
 
 }

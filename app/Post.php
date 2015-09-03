@@ -15,9 +15,6 @@ class Post extends Model {
 		'tipo_post'
 	];
 	
-	
-
-
 
 	// Definindo a propriedades que nao existem no bd
 	public function getDataPostagemDiffAttribute()
