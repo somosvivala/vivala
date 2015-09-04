@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CropPhotoRequest;
 use App\Http\Requests\EditarPerfilRequest;
+
 use App\User;
 use Auth;
 use Session;
@@ -68,8 +69,8 @@ class PerfilController extends ConectarController {
 	}
 
 	/**
-	 * Update the User in the database
-	 * @param  Integer                $id  		id do usuario
+	 * Update the Perfil in the database
+	 * @param  Integer                $id  		id do Usuario
 	 * @param  EditarPerfilRequest    $request  Request do form
 	 * @return 									Redireciona para home
 	 */

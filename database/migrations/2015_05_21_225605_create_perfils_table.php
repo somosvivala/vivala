@@ -20,10 +20,15 @@ class CreatePerfilsTable extends Migration {
 			$table->string('apelido')->nullable();
 			$table->string('genero')->nullable();
 			$table->integer('user_id')->unsigned();
-			$table->date('aniversario')->default(Carbon::now());
+			$table->date('aniversario')->nullable();
+
+			//cidade atual / natal / ultimo local
+			$table->string('cidade_atual')->nullable();
 			$table->string('cidade_natal')->nullable();
 			$table->string('ultimo_local')->nullable();
 
+			$table->text('descricao_curta')->nullable();
+			$table->text('descricao_longa')->nullable();
 			$table->timestamps();
 
 			$table->foreign('user_id')

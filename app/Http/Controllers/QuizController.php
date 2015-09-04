@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\QuizConteMaisRequest;
 
 use Illuminate\Http\Request;
 use App\Interesse;
@@ -83,6 +84,17 @@ class QuizController extends VivalaBaseController {
 
 		$perfil->push();
 	}
+
+	/**
+	 * Recebe por POST o $id do Perfil e faz update das informações do perfil
+	 */
+	public function postContemais($id, QuizConteMaisRequest $request)
+	{
+		$perfil = Perfil::findOrFail($id);
+		$perfil->update($request->all());
+		$perfil->push();
+	}
+
 
 
 }
