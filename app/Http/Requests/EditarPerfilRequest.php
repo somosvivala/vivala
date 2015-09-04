@@ -28,3 +28,4 @@ class EditarPerfilRequest extends Request {
 	}
 
 }
+							
