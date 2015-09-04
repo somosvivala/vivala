@@ -44,12 +44,12 @@
 							{!! Form::select('idioma', array('pt' => 'PORTUGUÊS', 'en' => 'INGLÊS')) !!}
 						</div>
 						<div class="col-sm-4">
-							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => 'E-MAIL']) !!}
+							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.email.caps')]) !!}
 						</div>
 
 
 						<div class="col-sm-4">
-							{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
+							{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('welcome.senha.caps')]) !!}
 							<span class="btn-submit">
 								{!! Form::submit("OK", ['class' => 'btn-default btn loginbtn']) !!}
 							</span>
