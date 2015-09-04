@@ -7918,6 +7918,9 @@ div.welcome-content p {
   color: white;
   font-size: 1.2rem;
 }
+div.welcome-content .panel {
+  background-color: transparent;
+}
 div.welcome-content .welcome-cadastrar {
   padding-top: 4em;
   padding-bottom: 2em;
