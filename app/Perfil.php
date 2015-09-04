@@ -7,7 +7,19 @@ use Illuminate\Database\Eloquent\Collection;
 
 class Perfil extends Model {
 
-	protected $fillable = ['aniversario', 'cidade_natal', 'ultimo_local', 'foto', 'apelido' ];
+	protected $fillable = 
+    [
+        'nome_completo', 
+        'apelido', 
+        'genero', 
+        'aniversario', 
+        'cidade_natal', 
+        'cidade_atual', 
+        'ultimo_local', 
+        'descricao_curta', 
+        'descricao_longa' 
+    ];
+
 	protected $dates = ['aniversario'];
 
 
@@ -295,11 +307,11 @@ class Perfil extends Model {
 
 
     /**
-     * Um perfil pode dar varios likes em comentarios
+     * Um Perfil pode dar varios likes em comentarios
      */
     public function likeComentario()
     {
-        return $this->belongsToMany('App\Post', 'entidade_like_comentario', 'perfil_id', 'comentario_id')->withTimestamps();
+        return $this->belongsToMany('App\Comentario', 'entidade_like_comentario', 'perfil_id', 'comentario_id')->withTimestamps();
     }
 
 

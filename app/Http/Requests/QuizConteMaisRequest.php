@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class EditarPerfilRequest extends Request {
+class QuizConteMaisRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -22,8 +22,11 @@ class EditarPerfilRequest extends Request {
 	public function rules()
 	{
 		return [
-			"username" 				=> "required|min:2",
-			"image_file_upload"    	=> 'mimes:png,jpg'	
+			"apelido" 				=> "string|max:20",
+		    "cidade_natal" 			=> "string|max:20",
+		    "cidade_atual" 			=> "string|max:20",
+		    "descricao_curta" 		=> "string|max:255",
+		    "descricao_longa" 		=> "string"
 		];
 	}
 

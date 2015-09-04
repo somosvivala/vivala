@@ -46,6 +46,15 @@ class Empresa extends Model {
 		return $this->belongsToMany('App\Post', 'entidade_like_post', 'empresa_id', 'post_id')->withTimestamps();
 	}
 
+    /**
+     * Um Empresa pode dar varios likes em comentarios
+     */
+    public function likeComentario()
+    {
+        return $this->belongsToMany('App\Comentario', 'entidade_like_comentario', 'empresa_id', 'comentario_id')->withTimestamps();
+    }
+
+
 	/**
 	 * Retorna a pretty Url
 	 *

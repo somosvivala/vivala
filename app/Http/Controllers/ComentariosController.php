@@ -50,7 +50,7 @@ class ComentariosController extends VivalaBaseController {
 	}
 
 	/**
-	 * seta o like do perfil atual pra um comentario específico
+	 * seta o like da entidadeAtiva atual pra um comentario específico
 	 *
 	 * @param  [integer] id do comentario
 	 * @return
@@ -60,16 +60,20 @@ class ComentariosController extends VivalaBaseController {
 		$comentario = Comentario::findOrFail($id);
 		//Testo se o usuário está logado
 		$user = Auth::user();
-		$perfil = $user->perfil;
+		$entidadeAtiva = $user->entidadeAtiva;
 
 		//Se já tiver dado like no comentario com esse id,
 		//consigo encontralo pelo Collention->find()
-		$alreadyLiked = $perfil->likeComentario->find($comentario->id);
+		$alreadyLiked = $entidadeAtiva->likeComentario->find($comentario->id);
 
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
-			$perfil->likeComentario()->attach($comentario->id);
+			$entidadeAtiva->likeComentario()->attach($comentario->id);
+		} else {
+			//se ja estiver dando like, remover like
+			$entidadeAtiva->likeComentario()->detach($comentario->id);
 		}
+
 		// Retorna a quantidade de likes para utilizar na view
 	    return $comentario->getQuantidadeLikes();
 	}
