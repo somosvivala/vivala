@@ -119,26 +119,4 @@ class AjaxController extends VivalaBaseController {
 		return json_encode($return);
 	}
 
-	/**
-	 * Remove a relação de seguir uma empresa
-	 * @param  String 	    $id 		Id da empresa a ser ser unfollowed
-	 * @return JSON     	Resultado da requisicao
-	 */
-	public function getUnfollowempresa($id) {
-
-		//$entidadeAtiva do usuario logado.
-		$entidadeAtiva = Auth::user()->entidadeAtiva;
-
-		//se ja nao seguir essa ong
-		if ($entidadeAtiva->followEmpresa->find($id)) {
-			$entidadeAtiva->followEmpresa()->detach($id);
-			$entidadeAtiva->save();
-		}
-
-		$return['success'] = true;
-		return json_encode($return);
-	}
-
-
-
 }
