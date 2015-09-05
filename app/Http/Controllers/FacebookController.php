@@ -52,6 +52,8 @@ class FacebookController extends Controller {
 	 */
 	private function findByEmailOrCreate($userData)
 	{
+
+		dd($userData);
 		//Procura/Cria o usuário com base no email cadastrado no Fb
 		$user = User::where('email', '=', $userData->email)->first();
 		$this->criouNovoUsuario = ($user == null);
@@ -67,7 +69,7 @@ class FacebookController extends Controller {
 			$user->username = $userData->name;
 
 			//Usando do translate do Laravel.
-			$user->username = trans("fb.".$userData->{'user'}['gender']);
+			$user->gender = trans("fb.".$userData->{'user'}['gender']);
 			$user->fb_token = $userData->token;
 			$user->save();
 
