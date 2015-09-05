@@ -41,15 +41,15 @@
 
 					<div class="row">
 						<div class="col-sm-4">
-							{!! Form::select('idioma', array('pt' => 'PORTUGUÊS', 'en' => 'INGLÊS')) !!}
+							{!! Form::select('idioma', array('pt' => trans('welcome.portugues'), 'en' => trans('welcome.ingles') )) !!}
 						</div>
 						<div class="col-sm-4">
-							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.email.caps')]) !!}
+							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.email')]) !!}
 						</div>
 
 
 						<div class="col-sm-4">
-							{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('welcome.senha.caps')]) !!}
+							{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('welcome.senha')]) !!}
 							<span class="btn-submit">
 								{!! Form::submit("OK", ['class' => 'btn-default btn loginbtn']) !!}
 							</span>
@@ -60,10 +60,10 @@
 							&nbsp;
 						</div>
 						<div class="col-sm-4">
-							<label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">Mantenha-me logado</label>
+							<label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">{{trans('welcome.mantenhamelogado')}}</label>
 						</div>
 						<div class="col-sm-4">
-							<a href="{{ url('/password/email') }}">Esqueceu a senha?</a>
+							<a href="{{ url('/password/email') }}">{{trans('welcome.esqueceuasenha')}}</a>
 						</div>
 					</div>
 					{!! Form::close() !!}
@@ -120,11 +120,11 @@
 				<div class="form-group">
 					<div class="col-sm-6">
 						<!-- Adiciona um text field para o form-->
-						{!! Form::text("username", null, ['class' => 'form-control', 'placeholder' => 'NOME']) !!}
+						{!! Form::text("username", null, ['class' => 'form-control', 'placeholder' => trans('welcome.nome')]) !!}
 					</div>
 					<div class="col-sm-6">
 						<!-- Adiciona um text field para o form-->
-						{!! Form::text("username_last", null, ['class' => 'form-control', 'placeholder' => 'SOBRENOME']) !!}
+						{!! Form::text("username_last", null, ['class' => 'form-control', 'placeholder' => trans('welcome.sobrenome')]) !!}
 					</div>
 				</div>
 
@@ -132,38 +132,38 @@
 					<div class="col-sm-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "masculino") !!}
-							<span>MASCULINO</span>
+							<span>{{trans('welcome.masculino')}}</span>
 						</label>
 					</div>
 					<div class="col-sm-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "feminino") !!}
-							<span>FEMININO</span>
+							<span>{{trans('welcome.feminino')}}</span>
 						</label>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text" name='aniversario' class="datepicker form-control" placeholder="DATA DE NASCIMENTO">
+						<input type="text" name='aniversario' class="mask-data form-control" placeholder="{{trans('welcome.nascimento')}}">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => 'E-MAIL']) !!}
+						{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.email')]) !!}
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::password("password", ['class' => 'form-control', "placeholder" => "SENHA"]) !!}
+						{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('welcome.senha')]) !!}
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::password("password_confirmation", ['class' => 'form-control', "placeholder" => "CONFIRMAÇÃO DE SENHA"]) !!}
+						{!! Form::password("password_confirmation", ['class' => 'form-control', "placeholder" => trans('welcome.confirmacaodesenha')]) !!}
 					</div>
 				</div>
 				<div class="row">
@@ -177,7 +177,7 @@
 						<!-- <a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a> -->
 					</div>
 					<div class="col-sm-4">
-						{!!Form::submit("CONFIRMAR", ['class' => 'btn btn-default']) !!}
+						{!!Form::submit(trans('welcome.confirmar'), ['class' => 'btn btn-default']) !!}
 					</div>
 				</div>
 				{!! Form::close() !!}

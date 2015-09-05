@@ -4,6 +4,6 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.4",
     "Jcrop": "~0.9.12",
-    "eonasdan-bootstrap-datetimepicker": "~4.14.30"
+    "jQuery-Mask-Plugin": "~1.13.4"
   }
 }
