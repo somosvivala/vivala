@@ -324,6 +324,21 @@ class Perfil extends Model {
     }
 
 
+    /**
+     * Acessor para a propriedade aniversario
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function getDatanascimentoAttribute()
+    {
+        if($this->aniversario)
+            return $this->aniversario->format('d/m/Y');
+        else
+            return false;
+    }
+
+
 
 
 

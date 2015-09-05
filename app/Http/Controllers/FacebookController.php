@@ -67,16 +67,18 @@ class FacebookController extends Controller {
 			$user->username = $userData->name;
 
 			//Usando do translate do Laravel.
-			$user->username = trans("fb.".$userData->{'user'}['gender']);
+			$user->genero = trans("fb.".$userData->{'user'}['gender']);
 			$user->fb_token = $userData->token;
+			
 			$user->save();
 
 			//criando perfil para usuario		
 			$perfil = new Perfil;
 			$perfil->nome_completo = $userData->name;
+			$perfil->genero = trans("fb.".$userData->{'user'}['gender']);
 			$perfil->apelido = $userData->{'user'}['first_name'];
-        	$perfil->user_id = $user->id;
-        	$perfil->save();
+ 		       	$perfil->user_id = $user->id;
+        		$perfil->save();
 	
 	        /**
 	         * 

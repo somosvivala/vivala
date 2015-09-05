@@ -47,8 +47,12 @@
 	{{-- Infos do perfil até agora--}}
 	@if (isset($perfil))
 		<h2> Informações do Perfil</h2>
-		Data de Aniversário:
-		{{ $perfil->aniversario->format('d/M/Y') }}<br>
+		
+		@if ($perfil->datanascimento)
+			Data de Aniversário:
+			{{ $perfil->datanascimento }}<br>
+		@endif
+		
 		Cidade Natal:
 		{{ $perfil->cidade_natal }}<br>
 		Último local registrado:
