@@ -239,7 +239,7 @@ class Ong extends Model {
     public static function getSugestoes($entidadeAtiva) 
     {
         //ongs que nao sejam minhas
-        $result = Ong::whereNotIn('user_id', [$entidadeAtiva->id])
+        $result = Ong::whereNotIn('user_id', [$entidadeAtiva->user->id])
             //ongs que eu nao esteja seguindo
             ->whereNotIn('id', $entidadeAtiva->followOng()->lists('id'))
             ->limit(3)

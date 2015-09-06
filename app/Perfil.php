@@ -200,7 +200,8 @@ class Perfil extends Model {
 		$notAllowed_ids  = $entidadeAtiva->followPerfil()->lists('id');
 
 		//Adicionando o meu $perfil->id para a lista de ids nao permitidos
-		array_push($notAllowed_ids, $entidadeAtiva->id);
+        //fix adicionando id do perfil associado a conta dessa entidadeAtiva 
+		array_push($notAllowed_ids, $entidadeAtiva->user->perfil->id);
 		$sugestoes = Collection::make();
 
 		//Iterando sob o array de collections e mergeando as collections em uma collection final

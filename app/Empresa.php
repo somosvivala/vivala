@@ -86,7 +86,7 @@ class Empresa extends Model {
     public static function getSugestoes($entidadeAtiva) {
 
         //empresas que nao sejam minhas
-        $result = Empresa::whereNotIn('user_id', [$entidadeAtiva->id])
+        $result = Empresa::whereNotIn('user_id', [$entidadeAtiva->user->id])
             //empresas que eu nao esteja seguindo
             ->whereNotIn('id', $entidadeAtiva->followEmpresa()->lists('id'))
             ->limit(3)
