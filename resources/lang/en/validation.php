@@ -89,7 +89,17 @@ return [
 		'attribute-name' => [
 			'rule-name' => 'custom-message',
 		],
+		'url' => [
+			'pretty_url' => 'This url has already been taken.',
+		],
+
 	],
+
+
+
+
+
+
 
 	/*
 	|--------------------------------------------------------------------------

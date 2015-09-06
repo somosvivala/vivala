@@ -89,6 +89,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'url' => [
+            'pretty_url' => 'Já existe alguem com essa url.',
+        ],
     ],
 
     /*

@@ -42,12 +42,12 @@
 			<!-- Adiciona um text field para o form-->
 			<div class="form-group">
 				{!! Form::label("apelido", "Apelido:") !!}
-				{!! Form::text("apelido",  null , ['class' => 'form-control']) !!}
+				{!! Form::text("apelido",  $perfil->apelido , ['class' => 'form-control']) !!}
 			</div>
 
 			<div class="form-group">
 				{!! Form::label("aniversario", "Data de Nascimento:") !!}
-				{!! Form::text("aniversario",  $perfil->aniversario , ['class' => 'form-control datepicker']) !!}
+				{!! Form::text("aniversario",  $perfil->datanascimento , ['class' => 'form-control datepicker']) !!}
 			</div>
 
 			<!-- Adiciona txtfield para a cidade natal do Perfil -->
@@ -59,7 +59,7 @@
 			<!-- Adiciona um text field para o form, user PrettyUrl -->
 			<div class="form-group">
 				{!! Form::label("url", "Seu endereço:") !!}
-				{!! Form::text("url", $perfil->prettyUrl->first()->url, ['class' => 'form-control']) !!}
+				{!! Form::text("url", $perfil->getUrl(), ['class' => 'form-control']) !!}
 			</div>
 
 			<!-- Adiciona submit button para o form de Edicao -->
