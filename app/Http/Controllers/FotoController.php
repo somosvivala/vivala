@@ -26,7 +26,7 @@ class FotoController extends VivalaBaseController {
 	}
 
 	public function postCropandsave($id, CropPhotoRequest $request) {
-	
+
 		$file = Input::file('image_file_upload');
 	    if ($file && $file->isValid()) {
 
@@ -34,10 +34,10 @@ class FotoController extends VivalaBaseController {
 			$destinationPath = public_path() . '/uploads/';
 			$extension = Input::file('image_file_upload')->getClientOriginalExtension(); // Pega o formato da imagem
 
-			$widthCrop = $request->input('w');
-			$heightCrop = $request->input('h');
-			$xSuperior = $request->input('x');
-			$ySuperior = $request->input('y');
+			$widthCrop = round($request->input('w'));
+			$heightCrop = round($request->input('h'));
+			$xSuperior = round($request->input('x'));
+			$ySuperior = round($request->input('y'));
 
 			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
 			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
