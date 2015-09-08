@@ -8,7 +8,7 @@
 		<h2>Quais são seus interesses?	</h2>
 		<h3>Escolha uma ou mais opções abaixo e iremos sugerir algumas coisas boas para você.</h3>
 		<ul class="interesses col-sm-12">
-			{!! Form::open(['url' => ['quiz/interesses', Auth::user()->perfil->id], 'class' => 'form-ajax', 'method' => 'POST']) !!}
+			{!! Form::open(['url' => ['quiz/interesses', Auth::user()->perfil->id], 'class' => 'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/personalize']) !!}
 			@if(isset($interesses))
 			@forelse($interesses as $Interesse)
 				<li class="col-sm-3">

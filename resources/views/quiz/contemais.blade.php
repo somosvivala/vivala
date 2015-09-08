@@ -9,7 +9,7 @@
 		<h2>Conte mais sobre você</h2>
 		<h3>Vamos ficar mais íntimos?</h3>
 
-		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST']) !!}
+		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/pessoasinteressantes']) !!}
 			<div class="erros">
 			</div>
 			<div class="row">

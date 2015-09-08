@@ -22,7 +22,7 @@ class Registrar implements RegistrarContract {
 			'email' => 'required|email|max:255|unique:users',
 			'password' => 'required|min:6|confirmed',
 			'genero' => 'required',
-			'aniversario' => 'required|date|date_format:"d/m/Y"'
+			'aniversario' => 'required|date_format:"d/m/Y"'
 		]);
 	}
 
@@ -36,7 +36,7 @@ class Registrar implements RegistrarContract {
 	{
 		$nome = ucwords(strtolower($data['username']));
 		$sobrenome = ucwords(strtolower($data['username_last']));
-		
+
 		//Criando perfil, usando dos atributos dentro de fillable[]
 		$user = User::create([
 			'username' => $nome,
@@ -54,7 +54,7 @@ class Registrar implements RegistrarContract {
         $perfil->aniversario = Carbon::createFromFormat('d/m/Y', $data['aniversario']);
         $perfil->save();
 
-        
+
         //Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
         $prettyUrl = new PrettyUrl();
         $prettyUrl->url = str_replace(" ", "", $user->username) . '_' . Carbon::now()->getTimestamp();
