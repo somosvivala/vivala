@@ -20,7 +20,7 @@
 						<p>{{ $album->descricao }}</p>
 						<ul>
 							@forelse($album->fotos as $foto)
-							<li><img src="{{$foto}}" alt="lalal"></li>
+							<li><img src="{{$foto->path}}" alt="lalal"></li>
 							@empty
 							@endforelse
 						</ul>

@@ -252,4 +252,14 @@ class Ong extends Model {
         return Interesse::where('id', '>', '0');
     }
 
+    /**
+     * Acessor para a propriedade numeroSeguidores da entidade.
+     * @return  O numero de entidades que seguem essa entidade[
+     */
+    public function getNumeroSeguidoresAttribute() {
+        $seguidores = $this->followedBy;
+        return count($seguidores);
+    }
+
+
 }

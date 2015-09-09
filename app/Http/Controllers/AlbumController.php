@@ -96,13 +96,16 @@ class AlbumController extends VivalaBaseController {
 	{
 		$album = Album::findOrFail($id);
 		$album->update(Request::all());
-		$fotos_array = (array) Request::get('fotos');
-		$fotos = Foto::whereIn('id', $fotos_array)->get();
+		$fotos_array = Request::get('fotos');
 
-		if ($fotos) 
-		{
-			foreach ($fotos as $key => $foto) {
-				$album->fotos()->save($foto);
+		if ($fotos_array && count($fotos_array) > 0) {
+			$fotos = Foto::whereIn('id', $fotos_array)->get();
+
+			if ($fotos) 
+			{
+				foreach ($fotos as $key => $foto) {
+					$album->fotos()->save($foto);
+				}
 			}
 		}
 

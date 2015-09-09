@@ -339,7 +339,14 @@ class Perfil extends Model {
             return false;
     }
 
-
+    /**
+     * Acessor para a propriedade numeroSeguidores da entidade.
+     * @return  O numero de entidades que seguem essa entidade[
+     */
+    public function getNumeroSeguidoresAttribute() {
+        $seguidores = $this->followedBy;
+        return count($seguidores);
+    }
 
 
 

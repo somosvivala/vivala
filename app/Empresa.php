@@ -69,15 +69,6 @@ class Empresa extends Model {
 		 	return "empresa/show/".$this->id;
 	}
 
-	/**
-	 * Retorna todos os perfils que seguem essa Empresa
-	 * @return [type] [description]
-	 */
-    public function followedBy()
-    {
-        return $this->belongsToMany('App\Perfil', 'perfil_follow_empresa', 'empresa_seguido_id', 'perfil_seguidor_id')->withTimestamps();
-    }
-
     /**
      * Retorna sugestoes de empresas que o usuario nao esteja seguindo.
      * @param  User 	   $entidadeAtiva 
@@ -267,5 +258,15 @@ class Empresa extends Model {
     public static function interesses() {
         return Interesse::where('id', '>', '0');
     }
+
+    /**
+     * Acessor para a propriedade numeroSeguidores da entidade.
+     * @return  O numero de entidades que seguem essa entidade[
+     */
+    public function getNumeroSeguidoresAttribute() {
+        $seguidores = $this->followedBy;
+        return count($seguidores);
+    }
+
 
 }
