@@ -27,13 +27,12 @@ elixir(function(mix) {
 	    '../../assets/bower/jquery/dist/jquery.js',
         '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
 
+        '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
 
-	    '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
+        '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
 
-	    '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
-
-	    '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
-	    '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
+        '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
+        '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
 
         '../../assets/js/comentaPost.js',
         '../../assets/js/createpost.js',
@@ -42,7 +41,8 @@ elixir(function(mix) {
         '../../assets/js/ajaxCalls.js',
         '../../assets/js/desativalinks.js',
 
-          '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
+        '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
+        '../../assets/js/uploadFoto.js',
 
 
 	      '../../assets/js/welcome.js'

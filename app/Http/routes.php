@@ -19,7 +19,10 @@ Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
 Route::resource('post','PostController');
+Route::resource('albums','AlbumController');
+
 Route::controller('post','PostController');
+Route::controller('albums','AlbumController');
 
 
 // Rotas dos três pilares do sistema
@@ -42,7 +45,6 @@ Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
 
 Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
 Route::controller('vagas','Cuidar\VagasController');
-Route::controller('albuns','Cuidar\AlbunsController');
 Route::controller('feed','Cuidar\FeedController');
 
 Route::controller('home', 'HomeController');
