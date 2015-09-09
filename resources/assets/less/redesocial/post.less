@@ -1,11 +1,16 @@
-.post .like-btn,
-.post .share-btn {
-	cursor: pointer;
-	i {
-		color: @cor-primaria;
-	}
-	&.liked + span {
-		color: @cor-primaria;
+.post {
+
+		.like-btn,
+			.tag-btn,
+				.comment-btn,
+	.share-btn {
+		cursor: pointer;
+		i {
+			color: @cor-primaria;
+		}
+		&.liked + span {
+			color: @cor-primaria;
+		}
 	}
 }
 .qtd-likes {
