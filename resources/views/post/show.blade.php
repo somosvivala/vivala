@@ -2,7 +2,7 @@
 
 @section('content')
 	<ul class="lista-posts">
-	    <li class="post col-sm-12">
+	    <li class="col-sm-12 post">
 			@if($Post->tipo_post == 'status')
 	        	@include('post.tipo.status')
 			@elseif($Post->tipo_post == 'foto')
@@ -11,4 +11,3 @@
 	    </li>
 	</ul>
 @endsection
-

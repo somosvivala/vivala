@@ -9,12 +9,12 @@
 
 		<!-- Adiciona um text field para o form-->
 		<div class="form-group">
-			{!! Form::text("conteudo", null,['class' => 'form-control']) !!}
+			{!! Form::text("conteudo", null,['class' => 'form-control', 'placeholder'=>'Comentar...']) !!}
 		</div>
 
 		<!-- Adiciona submit button para o form -->
 		<div class="form-group">
-			{!! Form::submit("Submit", ['class' => 'form-control btn btn-primary']) !!}
+			{!! Form::submit("Enviar", ['class' => 'form-control btn btn-acao']) !!}
 		</div>
 
 		{!! Form::close() !!}
