@@ -31,7 +31,7 @@
 	</div>
 	<div class="col-md-4">
 		<ul>
-			<li class="col-sm-4">10k seguidores</li>
+			<li class="colres</li>
 			<li class="col-sm-4">679 seguindo</li>
 			<li class="col-sm-4">Viajante</li>
 		</ul>
@@ -52,7 +52,7 @@
 			Data de Aniversário:
 			{{ $perfil->datanascimento }}<br>
 		@endif
-		
+
 		Cidade Natal:
 		{{ $perfil->cidade_natal }}<br>
 		Último local registrado:

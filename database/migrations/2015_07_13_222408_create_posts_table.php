@@ -25,8 +25,8 @@ class CreatePostsTable extends Migration {
 			//Campos para a relacao polimorfica,
 			//assim posts podem pertencer a qualquer entidade que implemente
 			//morphOne() ou morphMany()
-			$table->integer('author_id');
-			$table->string('author_type');
+			$table->integer('author_id')->nullable();
+			$table->string('author_type')->nullable();
 
 		});
 

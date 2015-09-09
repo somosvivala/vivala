@@ -22,8 +22,8 @@ class CreateAlbumsTable extends Migration {
 			//Campos para a relacao polimorfica,
 			//assim album pode pertencer a qualquer entidade que implemente
 			//MorphOne() ou MorphMany()
-			$table->integer('owner_id');
-			$table->string('owner_type');
+			$table->integer('owner_id')->nullable();
+			$table->string('owner_type')->nullable();
 		});
 	}
 

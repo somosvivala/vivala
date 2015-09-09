@@ -73,8 +73,6 @@ class FotoController extends VivalaBaseController {
 	 */
 	public function postUploadphoto() {
 
-
-
 		$file = Input::file('foto');
 
 	    if ($file && $file->isValid()) {

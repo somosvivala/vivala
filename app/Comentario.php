@@ -26,9 +26,9 @@ class Comentario extends Model {
 	 */
 	public function getQuantidadeLikes()
 	{
-		$qtdPerfil = count($this->likedByPerfil->toArray());
-		$qtdEmpresa = count($this->likedByEmpresa->toArray());
-		$qtdOng = count($this->likedByOng->toArray());
+		$qtdPerfil = count($this->likedByPerfil);
+		$qtdEmpresa = count($this->likedByEmpresa);
+		$qtdOng = count($this->likedByOng);
 		$qtdTotal = $qtdPerfil + $qtdEmpresa + $qtdOng;
 		return $qtdTotal;
 	}
