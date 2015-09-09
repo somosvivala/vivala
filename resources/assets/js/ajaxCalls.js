@@ -10,7 +10,8 @@ $(function() {
         ev.preventDefault();
         var frm = $(this),
             dataForm = new FormData(this),
-            callbackFunction = frm.data('callback');
+            callbackFunction = frm.data('callback'),
+            redirect = frm.data('redirect');
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -20,8 +21,13 @@ $(function() {
             success: function (data) {
                 console.log("Formulário submetido com sucesso:");
                 console.log(data);
+                // Executa uma função de javascript
                 if(callbackFunction) {
                     eval(callbackFunction+"()");
+                }
+                // Redireciona para outra pagina
+                if(redirect) {
+                    window.location = redirect;
                 }
             }
         });

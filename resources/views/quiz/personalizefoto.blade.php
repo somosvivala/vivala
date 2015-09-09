@@ -9,7 +9,7 @@
 		<h2>Personalize o seu perfil</h2>
 		<h3>Adicione uma foto para mostrar sua personalidade e estilo.</h3>
 
-		{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
+		{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/quiz/contemais']) !!}
 			{!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
 
 			<img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>

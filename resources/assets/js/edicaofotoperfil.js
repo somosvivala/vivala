@@ -76,6 +76,7 @@ $(function(){
           onSelect: updateCoords,
           bgFade: true,
           bgOpacity: .3,
+          trueSize: [oImage.naturalWidth,oImage.naturalHeight]
         }, function(){
           // Store the Jcrop API in the jcrop_api variable
           jcrop_api = this;
