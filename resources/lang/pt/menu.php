@@ -11,21 +11,21 @@ return [
     |
     */
 
-    'profile' => 'meu perfil',
-    'trips' => 'quero viajar',
-    'social' => 'quero me conectar',
-    'ongs' => 'quero cuidar',
-    'more' => 'saiba mais',
-    'contact' => 'fale aqui',
-    'search' => 'buscar',
-    'hello' => 'olá',
+    'login' => 'Login',
+    'signup' => 'Registrar',
+    'trips' => 'Quero Viajar',
+    'social' => 'Quero Me Conectar',
+    'ongs' => 'Quero Cuidar',
+    'follows' => 'Seguidores',
+    'messages' => 'Mensagens',
+    'warns' => 'Avisos',
+    'hello' => 'Olá',
+    'profile' => 'Perfil',
     'config' => 'Configurações',
+    'logout' => 'Sair',
 
-
-    'settings' => 'Configura&ccedil;&otilde;es',
-
-    'login'     => 'Login',
-
-    'signup'     => 'Registrar',
+    'more' => 'read more',
+    'contact' => 'contact',
+    'search' => 'search',
 
 ];

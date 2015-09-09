@@ -9,31 +9,31 @@
                 <li class="col-sm-2">
                     <input type="radio" name="tipo_post" value="status" id="status" checked>
                     <label for="status">
-                        Status
+                        {{trans("post.status")}}
                     </label>
                 </li>
                 <li class="col-sm-3">
                     <input type="radio" name="tipo_post" value="foto" id="foto">
                     <label for="foto">
-                        Adicionar Foto
+                        {{trans("post.addphoto")}}
                     </label>
                 </li>
                 <li class="col-sm-3">
                     <input type="radio" name="tipo_post" value="video" id="video" disabled="disabled">
                     <label for="video">
-                        Adicionar Vídeo
+                        {{trans("post.addvideo")}}
                     </label>
                 </li>
                 <li class="col-sm-2">
                     <input type="radio" name="tipo_post" value="album" id="album" disabled="disabled">
                     <label for="album">
-                        Criar Álbum
+                        {{trans("post.createalbum")}}
                     </label>
                 </li>
                 <li class="col-sm-2">
                     <input type="radio" name="tipo_post" value="localizacao" id="localizacao" disabled="disabled">
                     <label for="localizacao">
-                        Localização
+                        {{trans("post.localization")}}
                     </label>
                 </li>
             </ul>
@@ -45,18 +45,18 @@
                 </div>
             </div>
             <div class="row">
-                {!! Form::textarea("descricao", null, ['title'=>'O que você quer compartilhar?', 'aria-label'=>'O que você quer compartilhar?', 'placeholder'=>'O que você quer compartilhar?']) !!}
+                {!! Form::textarea("descricao", null, ['title'=> trans("post.shareph"), 'aria-label'=> trans("post.shareph"), 'placeholder'=> trans("post.shareph"), 'class' => 'sem-resize']) !!}
             </div>
             <div class="row">
                 <div class="col-sm-10">
                     <ul class="lista-intervalo-preto">
-                        <li class="col-sm-4"><a href="#adicionar-roteiro" class="desativado">Adicionar Roteiro</a></li>
-                        <li class="col-sm-5"><a href="#adicionar-diario" class="desativado">Adicionar Diário de Viagem</a></li>
-                        <li class="col-sm-3"><a href="#marcar-amigos" class="desativado">Marcar Amigos</a></li>
+                        <li class="col-sm-4"><a href="#adicionar-roteiro" class="desativado">{{ trans("post.addroute") }}</a></li>
+                        <li class="col-sm-5"><a href="#adicionar-diario" class="desativado">{{ trans("post.addjourneylog") }}</a></li>
+                        <li class="col-sm-3"><a href="#marcar-amigos" class="desativado">{{ trans("post.tagfriends") }}</a></li>
                     </ul>
                 </div>
 
-                {!! Form::submit( 'Publicar', ['class' => 'col-sm-2 btn btn-acao']) !!}
+                {!! Form::submit( trans("post.publish"), ['class' => 'col-sm-2 btn btn-acao']) !!}
             </div>
 
         {!! Form::close() !!}

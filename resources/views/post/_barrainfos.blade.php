@@ -10,24 +10,24 @@
 		<a href="#post/likepost/{{ $Post->id }}" class="like-btn {{ $Post->likedByMe() }}"><i class="fa fa-heart"></i></a>
 		<span class="qtd-likes">
 			@if($Post->getQuantidadeLikes() > 1)
-				 {{ $Post->getQuantidadeLikes() }} Curtidas
+				 {{ $Post->getQuantidadeLikes() }} {{ trans("post.likes") }}
 			@elseif($Post->getQuantidadeLikes() == 1)
-				 {{ $Post->getQuantidadeLikes() }} Curtida
+				 {{ $Post->getQuantidadeLikes() }} {{ trans("post.like") }}
 			@else
-				Curtir
+				{{ trans("post.like") }}
 			@endif
 		</span>
 	</div>
 	<div class="col-sm-2 comentario">
 		<a href="#post/likepost/{{ $Post->id }}" class="like-btn"><i class="fa fa-comment {{ $Post->likedByMe() }}"></i></a>
 		<span class="qtd-likes">
-			0 Comentários
+			0 {{ trans("post.comments") }}
 		</span>
 	</div>
 	<div class="col-sm-2 share">
 		<a href="#post/sharepost/{{ $Post->id }}" class="share-btn"><i class="fa fa-share"></i></a>
 		<span class="qtd-likes">
-			Compartilhar
+			{{ trans("post.share") }}
 		</span>
 	</div>
 </div>

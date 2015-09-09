@@ -40,9 +40,9 @@
 </div>
 
 <div class="col-sm-2">
-	<button type="button">follows</button>
-	<button type="button">msg</button>
-	<button type="button">warns</button>
+	<button type="button">{{ trans("menu.follows") }}</button>
+	<button type="button">{{ trans("menu.messages") }}</button>
+	<button type="button">{{ trans("menu.warns") }}</button>
 	<div class="menu-usuario">
 		<ul class="nav navbar-nav">
 			@if (Auth::user())
@@ -53,7 +53,7 @@
 						<ul class="dropdown-menu" role="menu">
 							<li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
 							<li><a href="{{ url('config') }}">{{ trans("menu.config") }}</a></li>
-							<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
+							<li><a href="{{ url('/auth/logout') }}">{{ trans("menu.logout") }}</a></li>
 						</ul>
 					</a>
 				</li>
