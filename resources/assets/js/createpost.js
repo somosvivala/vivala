@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $('#fileupload').fileupload({
+    $('.fileupload').fileupload({
         dataType: 'json',
         add: function (e, data) {
             console.log(data);
