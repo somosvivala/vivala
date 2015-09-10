@@ -44,9 +44,11 @@ class PerfilController extends ConectarController {
 		$empresas = $user->empresas;
 
 		Session::put('entidadeAtiva_id', $perfil->id);
-    	Session::put('entidadeAtiva_tipo', 'perfil');
+    Session::put('entidadeAtiva_tipo', 'perfil');
 
-		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'))
+		$posts = Post::getUltimos();
+
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'))
 		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
 	}
 
@@ -150,7 +152,10 @@ class PerfilController extends ConectarController {
 		$user = $perfil->user;
 		$follow = $perfil->followPerfil;
 		$followedBy = $perfil->followedByPerfil;
-		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy'));
+
+		$posts = Post::getUltimos();
+
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'));
 	}
 
 	/**
@@ -195,7 +200,7 @@ class PerfilController extends ConectarController {
 		//Testo se o usuário está logado
 		$user = Auth::user();
 		$entidadeAtiva = $user->entidadeAtiva;
-		
+
 		//Se já tiver dado like no post com esse id,
 		//consigo encontralo pelo Collention->find()
 		$alreadyLiked = $entidadeAtiva->likePost->find($post->id);
@@ -204,7 +209,7 @@ class PerfilController extends ConectarController {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likePost()->attach($post->id);
 		}
-		
+
 		// Retorna a quantidade de likes para utilizar na view
 	    return $post->getQuantidadeLikes();
 	}

@@ -5,90 +5,81 @@
 <div class="row perfil-topo">
 	<div class="col-md-1">
 		&nbsp;
+		@if (Auth::user()->id == $user->id)
+			<a class="link-claro edit-profile" href="{{ url('editarPerfil') }}">
+				<i class="fa fa-edit"></i> Editar
+			</a>
+		@endif
 	</div>
 	<div class="col-md-4">
-		<div class="row">
-			<h1 class="perfil-title col-sm-6">{{ $user->username }}
-
-			@if (Auth::user()->id == $user->id) 
-				<a href="{{ url('editarPerfil') }}">
-					<small style='margin-left:25px; font-size:13px; color: #337ab7;'>Editar</small>
-				</a>
-			@endif
+		<div class="row perfil-title">
+			<h1 class="col-sm-6 font-bold-upper">
+				{{ $perfil->apelido }}
 			</h1>
-			<small class="col-sm-6">
-				>> Vive em Bauru, SP
-			</small>
+			<span class="col-sm-6">
+				@if($perfil->cidade_atual)
+					<i class="fa fa-map-marker"></i> Vive em {{ $perfil->cidade_atual }}
+				@endif
+			</span>
 		</div>
-		<p class="col-sm-12">Diretora de criação.Ama tudo que é visual, gosta de viajar para entrar em contato com a energia de cada lugar. Curte fotografar pessoas, sem ser vista! </p>
+		<p class="col-sm-12 row">{{ $perfil->descricao_longa }}</p>
 	</div>
 	<div class="col-md-2">
-		<div class="foto-perfil">
-			<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="">
-				<img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $user->username }}">
-			</a>
+		<div class="round foto">
+			<div class="cover">
+					<img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $user->username }}">
+			</div>
 		</div>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4 font-bold-upper">
 		<ul>
-			<li class="colres</li>
-			<li class="col-sm-4">679 seguindo</li>
-			<li class="col-sm-4">Viajante</li>
+			<li class="col-sm-4">
+				{{ $perfil->numeroSeguidores }} <br>
+				Seguidores
+				<div class="col-sm-6 hidden">
+					<h3> Followed by </h3>
+					@forelse($followedBy as $perfil)
+						<ul class="lista-usuarios">
+							<li class="foto-user">
+								<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="{{ $perfil->user->username }}">
+									<img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $perfil->user->username }}">
+								</a>
+							</li>
+						</ul>
+					@empty
+					    <p>Ninguém :(</p>
+					@endforelse
+				</div>
+			</li>
+			<li class="col-sm-4">
+				{{ $perfil->numeroSeguidores }} <br>
+				seguindo
+				<div class="col-sm-6 hidden">
+					<h3> Following </h3>
+					@forelse($follow as $perfil)
+						<ul class="lista-usuarios">
+							<li class="foto-user">
+								<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="{{ $perfil->user->username }}">
+									<img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $perfil->user->username }}">
+								</a>
+							</li>
+						</ul>
+					@empty
+					    <p>Ninguém :(</p>
+					@endforelse
+				</div>
+			</li>
+			<li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>Viajante</li>
 		</ul>
 	</div>
 	<div class="col-md-1">
 	</div>
-	
+
 </div>
 @endsection
 
 @section('content')
 
-	{{-- Infos do perfil até agora--}}
-	@if (isset($perfil))
-		<h2> Informações do Perfil</h2>
-		
-		@if ($perfil->datanascimento)
-			Data de Aniversário:
-			{{ $perfil->datanascimento }}<br>
-		@endif
-
-		Cidade Natal:
-		{{ $perfil->cidade_natal }}<br>
-		Último local registrado:
-		{{ $perfil->ultimo_local }}<br>
-	@endif
-	    
-	<div class="row">
-		<div class="col-sm-6">
-			<h3> Followed by </h3>
-			@forelse($followedBy as $perfil)
-				<ul class="lista-usuarios">
-					<li class="foto-user">
-						<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="{{ $perfil->user->username }}">
-							<img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $perfil->user->username }}">
-						</a>
-					</li>
-				</ul>
-			@empty
-			    <p>Ninguém :(</p>
-			@endforelse
-		</div>
-		<div class="col-sm-6">
-			<h3> Following </h3>
-			@forelse($follow as $perfil)
-				<ul class="lista-usuarios">
-					<li class="foto-user">
-						<a href="{{ url($perfil->prettyUrl->first()->url) }}" title="{{ $perfil->user->username }}">
-							<img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $perfil->user->username }}">
-						</a>
-					</li>
-				</ul>
-			@empty
-			    <p>Ninguém :(</p>
-			@endforelse
-		</div>
-	</div>
+	@include('feed')
 
 @endsection
- 

@@ -19,7 +19,7 @@
 </h4>
 <nav class="menu-lateral">
 	<ul>
-		<li><a href="/home" class="desativado"><i class="fa fa-home"></i>Feed de notícias</a></li>
+		<li><a href="/home"><i class="fa fa-home"></i>Feed de notícias</a></li>
 		<li><a href="/chat" class="desativado"><i class="fa fa-binoculars"></i>Chat com amigos</a></li>
 	</ul>
 </nav>

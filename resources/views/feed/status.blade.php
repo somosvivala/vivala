@@ -10,13 +10,13 @@
 			<p class="status text-center">"{{$Post->descricao}}"</p>
 		</div>
 	</div>
-	<div class="hora-post"> 
-		<a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a> 
+	<div class="hora-post">
+		<a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a>
 	</div>
 	@include('post._barrainfos')
 		<div class="row box-post">
 			<div class="col-sm-6 fundo-cheio">
-				@include('feed._comentarios')
+				@include('feed._comentarios', ["qtdComentariosExibicao" => 3])
 			</div>
 			<div class="col-sm-6 fundo-cheio">
 				@include('post._novocomentario')

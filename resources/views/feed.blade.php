@@ -1,4 +1,4 @@
-@if(isset($posts))
+@if(isset($posts) && count($posts)>0 )
 <ul class="lista-posts">
 
 	@forelse($posts as $Post)

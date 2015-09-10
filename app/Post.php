@@ -14,7 +14,7 @@ class Post extends Model {
 		'video',
 		'tipo_post'
 	];
-	
+
 
 	// Definindo a propriedades que nao existem no bd
 	public function getDataPostagemDiffAttribute()
@@ -43,7 +43,7 @@ class Post extends Model {
 		}
 	}
 
-	
+
 	public function likedByPerfil()
 	{
 		return $this->belongsToMany('App\Perfil', 'entidade_like_post', 'post_id', 'perfil_id')->withTimestamps();
@@ -60,7 +60,7 @@ class Post extends Model {
 	}
 
 	/**
-	 * Um Post pode ser feito por varias entidades 
+	 * Um Post pode ser feito por varias entidades
 	 */
 	public function author() {
 		return $this->morphTo();
@@ -111,7 +111,7 @@ class Post extends Model {
 
     /**
      * Retorna todos os comentarios ordenados do mais recente para o mais antigo
-     * @return Collection 
+     * @return Collection
      */
     public function comentariosByDate() {
     	return $this->comentarios()->orderBy('created_at', 'DESC')->get();
@@ -119,11 +119,11 @@ class Post extends Model {
 
     /**
      * Retorna os ultimos 2 comentarios ordenados do mais recente para o mais antigo
-     * @return Collection 
+     * @return Collection
      */
-    public function novosComentariosByDate() {
-    	return $this->comentarios()->orderBy('created_at', 'DESC')->limit(2)->get();
+    public function novosComentariosByDate($qtd = 2) {
+    	return $this->comentarios()->orderBy('created_at', 'DESC')->limit($qtd)->get();
     }
-    
+
 
 }

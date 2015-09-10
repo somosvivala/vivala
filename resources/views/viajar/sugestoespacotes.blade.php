@@ -5,7 +5,7 @@
 	<li>
 		<a href="/home">
 			<div class="round foto">
-				<div class="cover">
+				<div class="cover-explode">
 					<img src="/img/dummy.jpg">
 				</div>
 			</div>
@@ -17,7 +17,7 @@
 	<li>
 		<a href="/home">
 			<div class="round foto">
-				<div class="cover">
+				<div class="cover-explode">
 					<img src="/img/dummy.jpg">
 				</div>
 			</div>
@@ -29,7 +29,7 @@
 	<li>
 		<a href="/home">
 			<div class="round foto">
-				<div class="cover">
+				<div class="cover-explode">
 					<img src="/img/dummy.jpg">
 				</div>
 			</div>
