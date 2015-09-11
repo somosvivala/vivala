@@ -4,6 +4,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\PrettyUrl;
 use App\Interesse;
+use Illuminate\Database\Eloquent\Collection;
+use DB;
 
 
 class Empresa extends Model {
@@ -267,6 +269,82 @@ class Empresa extends Model {
         $seguidores = $this->followedBy;
         return count($seguidores);
     }
+
+    /**
+     * Retorna uma Collection de Empresas ordenadas por numero de seguidores
+     * @return Collection
+     */
+    public static function getMaisSeguidos() {
+        $maisSeguidosByPerfils = DB::select('
+            SELECT empresa_seguido_id, COUNT(empresa_seguido_id) AS quantidade 
+            FROM perfil_follow_empresa
+            GROUP BY empresa_seguido_id 
+            ORDER BY quantidade DESC
+            LIMIT 30
+            ');
+
+        $maisSeguidosByOngs = DB::select('
+            SELECT empresa_seguido_id, COUNT(empresa_seguido_id) AS quantidade 
+            FROM ong_follow_empresa
+            GROUP BY empresa_seguido_id 
+            ORDER BY quantidade DESC
+            LIMIT 30
+            ');
+
+        $maisSeguidosByEmpresas = DB::select('
+            SELECT empresa_seguido_id, COUNT(empresa_seguido_id) AS quantidade 
+            FROM empresa_follow_empresa 
+            GROUP BY empresa_seguido_id 
+            ORDER BY quantidade DESC
+            LIMIT 30
+            ');
+
+        //Collections contendo objetos com empresa_seguido_id e quantidade
+        $colPerfils = Collection::make($maisSeguidosByPerfils);
+        $colOngs = Collection::make($maisSeguidosByOngs);
+        $colEmpresas = Collection::make($maisSeguidosByEmpresas);
+
+        // arrays contendo os ids das empresas com mais seguidores
+        $listaPerfils = $colPerfils->lists('empresa_seguido_id');
+        $listaOngs  = $colOngs->lists('empresa_seguido_id');
+        $listaEmpresas = $colEmpresas->lists('empresa_seguido_id');
+
+        //Juntando os ids em um unico array e eliminando ids duplicados
+        $listaTodos = array_merge(array_merge($listaPerfils, $listaOngs), $listaEmpresas);
+        $listaIds = array_unique($listaTodos);
+        
+        //Pegando collection de Empresas com todos as empresas mais seguidos
+        $colSugestoes = Empresa::whereIn('id',$listaIds)->get();
+
+        //Iterando sob o array de ids de empresas mais seguidos
+        foreach ($listaIds as $id) {
+            $totalSeguidores = 0;
+
+            //Pegando objetos com campo quantidade de seguidores
+            $obj1 = $colPerfils->keyBy('empresa_seguido_id')->get($id);
+            $obj2 = $colOngs->keyBy('empresa_seguido_id')->get($id);
+            $obj3 = $colEmpresas->keyBy('empresa_seguido_id')->get($id);
+
+            //Testando se essas ongs tem seguidores dos tipos Perfil,Ong.Empresa
+            if($obj1)   $totalSeguidores += $obj1->quantidade;
+            if($obj2)   $totalSeguidores += $obj2->quantidade;
+            if($obj3)   $totalSeguidores += $obj3->quantidade;
+
+            //Adicionando numeroTotal de seguidores a empresa com $id
+            $empresa = $colSugestoes->find($id);
+            if ($empresa) {
+                $empresa->quantidadeSeguidores = $totalSeguidores;
+            }
+        }
+
+        $colSugestoes = $colSugestoes->sortBy(function($item) 
+        {
+            return $item->quantidadeSeguidores;
+        })->reverse();
+
+        return $colSugestoes;
+    }
+
 
 
 }
