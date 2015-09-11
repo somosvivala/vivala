@@ -20,31 +20,34 @@ elixir(function(mix) {
     mix.styles([
         '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
+        '../../assets/bower/lightbox2/dist/css/lightbox.css',
         '*.css'
     ], null, 'resources/assets/css');
 
     mix.scripts([
 	    '../../assets/bower/jquery/dist/jquery.js',
-        '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
+      '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
 
-        '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
+      '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
 
-        '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
+      '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
 
-        '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
-        '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
-
-        '../../assets/js/comentaPost.js',
-        '../../assets/js/createpost.js',
-        '../../assets/js/postbarra.js',
-        '../../assets/js/edicaofotoperfil.js',
-        '../../assets/js/ajaxCalls.js',
-        '../../assets/js/desativalinks.js',
-
-        '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
-        '../../assets/js/uploadFoto.js',
+      '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
+      '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
 
 
-	      '../../assets/js/welcome.js'
+      '../../assets/js/comentaPost.js',
+      '../../assets/js/createpost.js',
+      '../../assets/js/postbarra.js',
+      '../../assets/js/edicaofotoperfil.js',
+      '../../assets/js/ajaxCalls.js',
+      '../../assets/js/desativalinks.js',
+
+      '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
+      '../../assets/js/uploadFoto.js',
+
+      '../../assets/bower/lightbox2/dist/js/lightbox.min.js',
+
+      '../../assets/js/welcome.js'
 	], 'public/js/vendor.js');
 });

@@ -4,6 +4,7 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.4",
     "Jcrop": "~0.9.12",
-    "jQuery-Mask-Plugin": "~1.13.4"
+    "jQuery-Mask-Plugin": "~1.13.4",
+    "lightbox2": "~2.8.1"
   }
 }

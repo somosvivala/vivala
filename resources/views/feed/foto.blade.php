@@ -2,6 +2,11 @@
 	<div class="hora-post">
 		<a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a>
 	</div>
+
+	@if($Post->fotos)
+	<a href="{{$Post->fotos->path}}" data-lightbox="foto-{{ $Post->id }}" data-title="{{ $Post->titulo }}">
+	@endif
+
 	<div class="row principal foto-fundo"
 	@if($Post->fotos)
 	 style="background-image:url('{{ $Post->fotos->path }}')"
@@ -16,6 +21,10 @@
 			</div>
 		</div>
 	</div>
+	@if($Post->fotos)
+</a>
+	@endif
+
 	@include('post._barrainfos')
 	<div class="row box-post">
 		<div class="col-sm-6 fundo-cheio">
