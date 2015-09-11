@@ -1,0 +1,40 @@
+.perfil-topo {
+	background-color: #333131;
+	color:white;
+	padding: 1em 0;
+	.perfil-title {
+		margin-top: 2rem;
+		vertical-align: text-bottom;
+	}
+	h1 {
+		text-transform: uppercase;
+		margin:0;
+	}
+	ul {
+		padding: 0.5em;
+		list-style: none;
+		border: 1px solid white;
+		display: block;
+		overflow:hidden;
+		margin-top: 2em;
+		li {
+			display: inline-block;
+			float: left;
+			text-align: center;
+			+li{
+				border-left: 1px solid white;
+			}
+		}
+	}
+	.foto {
+		width: 10em;
+		height: 10em;
+		margin: 0 auto;
+	}
+	a.edit-profile {
+		margin-top:0rem;
+		padding: 0.5em;
+		display: block;
+		text-align: right;
+	}
+}

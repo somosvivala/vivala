@@ -23,7 +23,7 @@ $(function() {
                 console.log(data);
                 // Executa uma função de javascript
                 if(callbackFunction) {
-                    eval(callbackFunction+"()");
+                    eval(callbackFunction);
                 }
                 // Redireciona para outra pagina
                 if(redirect) {
@@ -32,4 +32,7 @@ $(function() {
             }
         });
     });
+
+    // Muda o ícone de javascript ativo
+    $('#javascript-ativo').css("color", "#6a6");
 });

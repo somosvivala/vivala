@@ -40,7 +40,7 @@ class PostController extends VivalaBaseController {
 		$novoPost = new Post();
 		$novoPost->descricao = Request::input('descricao');
 		$novoPost->tipo_post = Request::input('tipo_post');
-		
+
 		//Salvando novoPost para entidadeAtiva
 		Auth::user()->entidadeAtiva->posts()->save($novoPost);
 
@@ -60,10 +60,18 @@ class PostController extends VivalaBaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, $secao = null)
 	{
 		$Post = Post::findOrFail($id);
-		return view('post.show', compact('Post'));
+		$comentarios = $Post->comentariosByDate();
+		$view = view('post.show', compact('Post', 'comentarios'));
+
+		if(Request::ajax() && $secao == "comentarios") {
+			$viewComentarios = view('post._comentarios', compact('comentarios'));
+      return $viewComentarios; // this will only return whats in the content section
+    }
+
+		return $view;
 	}
 
 	/**
@@ -104,20 +112,20 @@ class PostController extends VivalaBaseController {
 	 * Metodo para dar Share em posts, replica o post com $id
 	 * @param  $id 			Id do post a ser shareado
 	 */
-	public function getSharepost($id) 
+	public function getSharepost($id)
 	{
 		$sourcePost = Post::findOrFail($id);
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
-		
+
 		//Se o post a ser shareado for da entidadeAtiva em questão...
 		if ($entidadeAtiva == $sourcePost->author) {
 			App::abort(403, 'Voce nao tem permissão para sharear os proprios posts!');
-		} 
+		}
 
 		//Criando novo post, presenvando relações. e setando o shared_from
 		$novoPost = $sourcePost->replicate();
 		$novoPost->shared_from = $id;
-		
+
 		//Salvando o post para a entidadeAtiva atual
 		$entidadeAtiva->posts()->save($novoPost);
 
@@ -126,7 +134,7 @@ class PostController extends VivalaBaseController {
 			$novaFoto = $sourcePost->fotos->replicate();
 			$novoPost->fotos()->save($novaFoto);
 		}
-		
+
 		//Assegurando que as relações foram atualizadas
 		Auth::user()->entidadeAtiva->push();
 		return redirect('conectar');
@@ -138,14 +146,14 @@ class PostController extends VivalaBaseController {
 	 * @param  [integer] id do post
 	 * @return
 	 */
-	public function getLikepost($id) 
+	public function getLikepost($id)
 	{
 		//Verifica se o post existe
 		$post = Post::findOrFail($id);
 		//Testo se o usuário está logado
 		$user = Auth::user();
 		$entidadeAtiva = $user->entidadeAtiva;
-		
+
 		//Se já tiver dado like no post com esse id,
 		//consigo encontralo pelo Collention->find()
 		$alreadyLiked = $entidadeAtiva->likePost->find($post->id);
@@ -156,7 +164,7 @@ class PostController extends VivalaBaseController {
 		} else {
 			$entidadeAtiva->likePost()->detach($post->id);
 		}
-		
+
 		// Retorna a quantidade de likes para utilizar na view
 	    return $post->getQuantidadeLikes();
 	}

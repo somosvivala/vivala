@@ -23,7 +23,7 @@
 </head>
 
 <body>
-
+	<i id="javascript-ativo" class="fa fa-circle" style="color:#e55; font-size: 20px; position:absolute; top:5px;left:3px;z-index:10;"></i>
 	@yield('pilar')
 
 	<!-- Scripts -->

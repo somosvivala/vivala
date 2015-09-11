@@ -25,7 +25,7 @@ class CreateComentariosTable extends Migration {
 			$table->string('author_type');
 
 
-			//FK para onde qual post o comentario pertence 
+			//FK para onde qual post o comentario pertence
 			$table->integer('post_id')->unsigned();
 			$table->foreign('post_id')
 				->references('id')
@@ -37,7 +37,7 @@ class CreateComentariosTable extends Migration {
 			$table->integer('comentario_id')->unsigned()->index();
 			$table->foreign('comentario_id')
 				->references('id')
-				->on('posts')
+				->on('comentarios')
 				->onDelete('cascade');
 
 			$table->integer('perfil_id')->unsigned()->index()->nullable();

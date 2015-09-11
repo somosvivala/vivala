@@ -6,6 +6,7 @@ use App\Empresa;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Session;
+use App\Post;
 
 class HomeController extends ConectarController {
 
@@ -26,7 +27,9 @@ class HomeController extends ConectarController {
 	 */
 	public function getIndex()
 	{
-		return view('home');
+		$posts = Post::getUltimos();
+
+		return view('home', compact('posts'));
 
 	}
 
@@ -42,17 +45,17 @@ class HomeController extends ConectarController {
 			$entidadeExiste = false;
 			switch ($entidadeAtiva_tipo)  {
 				case 'ong':
-					# Retorna a ong na lista de ongs do usuario, ou o perfil 
+					# Retorna a ong na lista de ongs do usuario, ou o perfil
 	    			$ong = Ong::find($entidadeAtiva_id);
 	    			$entidadeExiste = $ong ? true : false;
 					break;
-				
+
 				case 'empresa':
 					# Retorna a empresa na lista de empresas do usuario, ou o perfil
 					$empresa = Empresa::find($entidadeAtiva_id);
 	    			$entidadeExiste = $empresa ? true : false;
 					break;
-				
+
 				default:
 					break;
 			}

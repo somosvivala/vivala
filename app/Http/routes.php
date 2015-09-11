@@ -21,7 +21,10 @@ Route::resource('empresa','EmpresaController');
 Route::resource('post','PostController');
 Route::resource('albums','AlbumController');
 
+// Mostra dados do post por ajax
+Route::get('post/{id}/{secao}', 'PostController@show');
 Route::controller('post','PostController');
+
 Route::controller('albums','AlbumController');
 
 

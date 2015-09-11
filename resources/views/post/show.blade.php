@@ -2,7 +2,7 @@
 
 @section('content')
 	<ul class="lista-posts">
-	    <li class="col-sm-12 post">
+	    <li class="col-sm-12 post" data-id="{{$Post->id}}">
 			@if($Post->tipo_post == 'status')
 	        	@include('post.tipo.status')
 			@elseif($Post->tipo_post == 'foto')
