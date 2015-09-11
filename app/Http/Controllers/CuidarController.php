@@ -6,6 +6,7 @@ use App\Ong;
 use View;
 use Auth;
 use Illuminate\Http\Request;
+use Session;
 
 class CuidarController extends VivalaBaseController {
 
