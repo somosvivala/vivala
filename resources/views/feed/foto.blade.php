@@ -22,7 +22,9 @@
 			<p class="status text-center">{{$Post->descricao}}</p>
 		</div>
 		<div class="col-sm-6 fundo-cheio">
-			@include('feed._comentarios', ["qtdComentariosExibicao" => 2])
+			<div class="comentarios-wrapper">
+				@include('feed._comentarios', ["qtdComentariosExibicao" => 2])
+			</div>
 			@include('post._novocomentario')
 		</div>
 	</div>

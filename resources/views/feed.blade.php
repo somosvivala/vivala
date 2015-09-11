@@ -2,7 +2,7 @@
 <ul class="lista-posts">
 
 	@forelse($posts as $Post)
-        <li class="post col-sm-12">
+        <li class="post col-sm-12" data-id="{{$Post->id}}">
 			@if($Post->tipo_post == 'status')
             	@include('feed.status')
 			@elseif($Post->tipo_post == 'foto')

@@ -60,11 +60,18 @@ class PostController extends VivalaBaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($id, $secao = null)
 	{
 		$Post = Post::findOrFail($id);
 		$comentarios = $Post->comentariosByDate();
-		return view('post.show', compact('Post', 'comentarios'));
+		$view = view('post.show', compact('Post', 'comentarios'));
+
+		if(Request::ajax() && $secao == "comentarios") {
+			$viewComentarios = view('post._comentarios', compact('comentarios'));
+      return $viewComentarios; // this will only return whats in the content section
+    }
+
+		return $view;
 	}
 
 	/**

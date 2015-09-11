@@ -117,11 +117,19 @@ class Post extends Model {
     	return $this->comentarios()->orderBy('created_at', 'DESC')->get();
     }
 
-    /**
+		/**
      * Retorna os ultimos 2 comentarios ordenados do mais recente para o mais antigo
      * @return Collection
      */
     public function novosComentariosByDate($qtd = 2) {
+    	return $this->comentarios()->orderBy('created_at', 'DESC')->limit($qtd)->get();
+    }
+
+		/**
+     * Retorna os ultimos 2 comentarios ordenados do mais recente para o mais antigo
+     * @return Collection
+     */
+    public function getNovoscomentariosbydate($qtd) {
     	return $this->comentarios()->orderBy('created_at', 'DESC')->limit($qtd)->get();
     }
 

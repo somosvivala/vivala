@@ -20,7 +20,9 @@
 			<p class="status text-center">{{$Post->descricao}}</p>
 		</div>
 		<div class="col-sm-6 fundo-cheio">
-			@include('post._comentarios')
+			<div class="comentarios-wrapper">
+				@include('post._comentarios')
+			</div>
 			@include('post._novocomentario')
 		</div>
 	</div>

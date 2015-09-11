@@ -1,6 +1,12 @@
-var commentPost = function() {
-    console.log (' /comentario/ultimoscomentarios/$idPost ');
-    alert('comentario criado');
+var commentPost = function(idPost) {
+    $.ajax({
+      url: "/post/"+idPost+"/comentarios"
+    })
+    .done(function(data) {
+      var comentariosWrapper = $('li.post[data-id="'+idPost+'"] div.comentarios').parent();
+      console.log('li.post[data-id="'+idPost+'"]');
+      comentariosWrapper.html(data);
+    });
 };
 
 
