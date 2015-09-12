@@ -31,7 +31,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir esse perfil
 		if (!$entidadeAtiva->followPerfil->find($id)) {
 			$entidadeAtiva->followPerfil()->attach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -51,7 +51,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa empresa
 		if (!$entidadeAtiva->followEmpresa->find($id)) {
 			$entidadeAtiva->followEmpresa()->attach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -71,7 +71,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if (!$entidadeAtiva->followOng->find($id)) {
 			$entidadeAtiva->followOng()->attach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -92,7 +92,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if ($entidadeAtiva->followOng->find($id)) {
 			$entidadeAtiva->followOng()->detach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -112,7 +112,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if ($entidadeAtiva->followEmpresa->find($id)) {
 			$entidadeAtiva->followEmpresa()->detach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -132,7 +132,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if ($entidadeAtiva->followPerfil->find($id)) {
 			$entidadeAtiva->followPerfil()->detach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
