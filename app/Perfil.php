@@ -502,29 +502,31 @@ class Perfil extends Model {
     }
 
     /**
-     * Acessor para pegar uma Collection de Perfil ordenados pela quantidade de amigos em comum
+     * Acessor para pegar uma Collection de Perfil ordenados pela quantidade de seguindo em comum
      * @return Collection 
      */
     public function getSugestaoBySeguindoEmComumAttribute() 
     {
-        //Collection com toos os perfils que eu nao sigo
+        //Collection com todos os perfils que eu nao sigo
         $colNaoSeguindo = Perfil::all()->diff($this->followPerfil)->diff([$this]);
         $seguindo = $this->followPerfil;
 
         foreach ($colNaoSeguindo as $key => $perfil) {
             
-            //Se esse perfil tiver amigos, vejo se eles os amigos desse perfil 
+            //Se esse perfil seguir outras pessoas, checo so seguindo desse perfil
             $seguindoDessePerfil = $perfil->followPerfil;
             if ($seguindoDessePerfil) {
                 $seguindoEmComum = $seguindoDessePerfil->intersect($seguindo);  
             }
 
+            //Adicionando o parametro quantidadeSeguidores em comum em cada perfil da collection
             $perfilRetorno = $colNaoSeguindo->find($perfil->id);
             if ($perfilRetorno) {
                 $perfilRetorno->quantidadeSeguindoEmComum = count($seguindoEmComum);
             }
         }
 
+        //Ordenando a collection
         $colNaoSeguindo = $colNaoSeguindo->sortBy(function($item) 
         {
             return $item->quantidadeSeguindoEmComum;
@@ -533,7 +535,21 @@ class Perfil extends Model {
         return $colNaoSeguindo;
     }
 
+    /**
+     * Um Perfil é alvo de varias notificacoes.
+     */
+    public function notificacoes()
+    {
+        return $this->morphMany('App\Notificacao', 'target', 'target_type', 'target_id');
+    }
 
+    /**
+     * Um Perfil pode gerar varias notificacoes.
+     */
+    public function fromNotificacoes()
+    {
+        return $this->morphMany('App\Notificacao', 'from', 'from_type', 'from_id');
+    }
 
 
 }
