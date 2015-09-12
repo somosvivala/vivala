@@ -551,5 +551,14 @@ class Perfil extends Model {
         return $this->morphMany('App\Notificacao', 'from', 'from_type', 'from_id');
     }
 
+    /**
+     * Acessor para as ultimas notificacoes dessa entidade
+     * @return Collection de Notificacoes
+     */
+    public function getUltimasNotificacoesAttribute()
+    {
+        return $this->notificacoes()->latest()->get();
+    }
+
 
 }

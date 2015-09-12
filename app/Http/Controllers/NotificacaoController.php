@@ -2,17 +2,33 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
+use Auth;
 
 class NotificacaoController extends Controller {
 
-	public function __construct(){
+	public function __construct()
+	{
     	//Só passa se estiver logado
     	$this->middleware('auth');
 	}
 
-	
+	public function getChecarnovas() 
+	{
+		$notificacoes = Auth::user()->entidadeAtiva->notificacoes()->where('readed', false)->get();
+		$quantidadeNotificacoes = $notificacoes ? count($notificacoes) : false;
+		return $quantidadeNotificacoes;
+	}
 
+	public function getMarcartodascomolidas() 
+	{
+		$notificacoes = Auth::user()->entidadeAtiva->ultimasNotificacoes;
 
+		if ($notificacoes) 
+		{
+			foreach ($notificacoes as $notificacao) {
+				$notificacao->update(['readed' => true]);
+			}
+		}
+	}
 }

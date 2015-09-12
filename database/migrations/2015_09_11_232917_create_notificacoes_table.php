@@ -22,6 +22,7 @@ class CreateNotificacoesTable extends Migration {
 			$table->enum('tipo_notificacao', ['post', 'comentario', 'seguidor', 'share', 'like_post', 'like_comentario'])->nullable();
 			$table->string('url')->nullable();
 
+			$table->boolean('readed')->default(false);
 
 			//fk para relacao polimorfica
 			$table->integer('from_id')->nullable();

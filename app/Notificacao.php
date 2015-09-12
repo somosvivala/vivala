@@ -10,7 +10,7 @@ class Notificacao extends Model {
 	 * @var string
 	 */
 	protected $table = 'notificacoes';
-	protected $fillable = ['titulo', 'mensagem', 'tipo_notificacao', 'url'];
+	protected $fillable = ['titulo', 'mensagem', 'tipo_notificacao', 'url', 'readed'];
 
 
 	//Uma Notificacao sempre VEM DE uma entidade
@@ -24,14 +24,4 @@ class Notificacao extends Model {
 	{
 		 return $this->morphTo();
 	}
-
-	/**
-	 * Acessor para a propriedade ultimas
-	 * @return [type] [description]
-	 */
-	public function getUltimasAttribute() {
-		return Notificacao::with('target')->where('target_id', $this->target->id)->get();
-	}
-
-
 }
