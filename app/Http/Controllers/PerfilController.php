@@ -228,7 +228,7 @@ class PerfilController extends ConectarController {
 			$sugestoes = $perfil->sugestaoByAmigosEmComum;
 		}elseif($filtro == "seguindo"){
 			echo "Seguindo em comum:<br>";
-			$sugestoes = $perfil->getSugestaoBySeguindoEmComum;
+			$sugestoes = $perfil->sugestaoBySeguindoEmComum;
 		}
 			dd($sugestoes);
 	}
