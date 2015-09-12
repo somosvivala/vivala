@@ -31,3 +31,6 @@
 	@endforelse
 	@endif
 </ul>
+<div class="row text-center">
+	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao">Ver mais</a>
+</div><br>
