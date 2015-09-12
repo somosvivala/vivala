@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 use App\Post;
 use App\Comentario;
+use App\Notificacao;
 
 use Input;
 
@@ -40,11 +41,26 @@ class ComentariosController extends VivalaBaseController {
 		$comentario = new Comentario();
 		$comentario->conteudo = $conteudo;
 		$comentario->post_id = $post->id;
-		//Salvando primeiro as relacoes com fk direto na tabela de comentarios
-		//$post->comentarios()->save($comentario); //comentado pq tava dando erro
 
 		//depois as relacoes polimorficas
 		$entidadeAtiva->comentarios()->save($comentario);
+
+		//Só levantar uma notificacao se nao for em um post seu ou de alguma de suas entidades
+		if($entidadeAtiva->user->id != $post->author->user->id)
+		{
+			//Criando nova notificacao
+			$novaNotificacao = Notificacao::create([
+				'titulo'			=>	'Comentaram seu post',
+				'mensagem' 			=> 	$entidadeAtiva->apelido . ' comentou no seu post',
+				'tipo_notificacao'	=>	'comentario',
+				'url'				=>	$post->url
+				]);
+	
+			//associando a entidadeAtiva com o from e o autor do post comentado como target
+			$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+			$post->author->notificacoes()->save($novaNotificacao);
+			$novaNotificacao->push();
+		}
 		
 		return json_encode(['success'=>true]);
 	}
@@ -69,6 +85,26 @@ class ComentariosController extends VivalaBaseController {
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likeComentario()->attach($comentario->id);
+
+			//Só levantar uma notificacao se o like for em um 
+			//comentario que nao seja seu ou de alguma de suas entidades
+			if($entidadeAtiva->user->id != $comentario->author->user->id)
+			{
+				//Criando nova notificacao
+				$novaNotificacao = Notificacao::create([
+					'titulo'			=>	'Curtiram seu comentario',
+					'mensagem' 			=> 	$entidadeAtiva->apelido . ' curtiu seu comentario',
+					'tipo_notificacao'	=>	'like_comentario',
+					'url'				=>	$comentario->post->url
+					]);
+			
+				//associando a entidadeAtiva com o from e o autor do comentario likeado como target
+				$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+				$comentario->author->notificacoes()->save($novaNotificacao);
+				$novaNotificacao->push();
+			}
+
+
 		} else {
 			//se ja estiver dando like, remover like
 			$entidadeAtiva->likeComentario()->detach($comentario->id);
