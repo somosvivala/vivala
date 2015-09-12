@@ -6,11 +6,9 @@
 	@if(isset($sugestoesViajantes))
 	@forelse($sugestoesViajantes as $Perfil)
 		<li>
-			{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET']) !!}
-			<button id='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
+			{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
+			<button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
 			<a href="{{ url($Perfil->getUrl()) }}">
-				
-				<img class="hidden" title='Carregando' alt='Carregando...'>
 				<div class="round foto">
 					<div class="cover">
 						<img src="{{ $Perfil->getAvatarUrl() }}" alt=" {{ $Perfil->nome }}">
@@ -33,3 +31,6 @@
 	@endforelse
 	@endif
 </ul>
+<div class="row text-center">
+	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao">Ver mais</a>
+</div><br>

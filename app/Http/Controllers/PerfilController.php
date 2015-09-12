@@ -214,4 +214,23 @@ class PerfilController extends ConectarController {
 	    return $post->getQuantidadeLikes();
 	}
 
+	/**
+	* Retorna a sugestão de seguidores
+	*
+	* @param  [integer] id do post
+	* @return
+	*/
+	public function getSugestoes($filtro = "amigo") {
+		$user = Auth::user();
+		$perfil = $user->perfil;
+		if($filtro == "amigo") {
+			echo "Amigos em comum:<br>";
+			$sugestoes = $perfil->sugestaoByAmigosEmComumAttribute;
+		}elseif($filtro == "seguindo"){
+			echo "Seguindo em comum:<br>";
+			$sugestoes = $perfil->getSugestaoBySeguindoEmComumAttribute;
+		}
+			dd($sugestoes);
+	}
+
 }

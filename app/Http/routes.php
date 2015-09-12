@@ -34,6 +34,8 @@ Route::resource('cuidar','CuidarController');
 Route::resource('conectar','ConectarController');
 
 //Rotas especificas das áreas internas
+Route::get('sugestoesviajantes/{filtro}','PerfilController@getSugestoes');
+
 Route::controller('perfilviajante','Conectar\PerfilViajanteController');
 Route::controller('roteiros','Conectar\RoteirosController');
 Route::controller('interesses','Conectar\InteressesController');
