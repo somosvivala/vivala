@@ -24,8 +24,8 @@ Route::resource('albums','AlbumController');
 // Mostra dados do post por ajax
 Route::get('post/{id}/{secao}', 'PostController@show');
 Route::controller('post','PostController');
-
 Route::controller('albums','AlbumController');
+Route::controller('notificacoes','NotificacaoController');
 
 
 // Rotas dos três pilares do sistema
@@ -34,6 +34,8 @@ Route::resource('cuidar','CuidarController');
 Route::resource('conectar','ConectarController');
 
 //Rotas especificas das áreas internas
+Route::get('sugestoesviajantes/{filtro}','PerfilController@getSugestoes');
+
 Route::controller('perfilviajante','Conectar\PerfilViajanteController');
 Route::controller('roteiros','Conectar\RoteirosController');
 Route::controller('interesses','Conectar\InteressesController');

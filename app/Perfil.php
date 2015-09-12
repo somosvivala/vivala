@@ -6,17 +6,17 @@ use DB;
 
 class Perfil extends Model {
 
-	protected $fillable = 
+	protected $fillable =
     [
-        'nome_completo', 
-        'apelido', 
-        'genero', 
-        'aniversario', 
-        'cidade_natal', 
-        'cidade_atual', 
-        'ultimo_local', 
-        'descricao_curta', 
-        'descricao_longa' 
+        'nome_completo',
+        'apelido',
+        'genero',
+        'aniversario',
+        'cidade_natal',
+        'cidade_atual',
+        'ultimo_local',
+        'descricao_curta',
+        'descricao_longa'
     ];
 
 	protected $dates = ['aniversario'];
@@ -199,7 +199,7 @@ class Perfil extends Model {
 		$notAllowed_ids  = $entidadeAtiva->followPerfil()->lists('id');
 
 		//Adicionando o meu $perfil->id para a lista de ids nao permitidos
-        //fix adicionando id do perfil associado a conta dessa entidadeAtiva 
+        //fix adicionando id do perfil associado a conta dessa entidadeAtiva
 		array_push($notAllowed_ids, $entidadeAtiva->user->perfil->id);
 		$sugestoes = Collection::make();
 
@@ -342,7 +342,7 @@ class Perfil extends Model {
      * Acessor para a propriedade numeroSeguidores da entidade.
      * @return  O numero de entidades que seguem essa entidade[
      */
-    public function getNumeroSeguidoresAttribute() 
+    public function getNumeroSeguidoresAttribute()
     {
         $seguidores = $this->followedBy;
         return count($seguidores);
@@ -353,28 +353,28 @@ class Perfil extends Model {
      * Retorna uma Collection de perfils ordenados por numero de seguidores
      * @return Collection
      */
-    public static function getMaisSeguidos() 
+    public static function getMaisSeguidos()
     {
         $maisSeguidosByPerfils = DB::select('
-            SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade 
-            FROM perfil_follow_perfil 
-            GROUP BY perfil_seguido_id 
+            SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade
+            FROM perfil_follow_perfil
+            GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
             LIMIT 30
             ');
 
         $maisSeguidosByOngs = DB::select('
-            SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade 
-            FROM ong_follow_perfil 
-            GROUP BY perfil_seguido_id 
+            SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade
+            FROM ong_follow_perfil
+            GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
             LIMIT 30
             ');
 
         $maisSeguidosByEmpresas = DB::select('
-            SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade 
-            FROM empresa_follow_perfil 
-            GROUP BY perfil_seguido_id 
+            SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade
+            FROM empresa_follow_perfil
+            GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
             LIMIT 30
             ');
@@ -392,7 +392,7 @@ class Perfil extends Model {
         //Juntando os ids em um unico array e eliminando ids duplicados
         $listaTodos = array_merge(array_merge($listaPerfils, $listaOngs), $listaEmpresas);
         $listaIds = array_unique($listaTodos);
-        
+
         //Pegando collection de Perfils com todos os perfils mais seguidos
         $colSugestoes = Perfil::whereIn('id',$listaIds)->get();
 
@@ -417,7 +417,7 @@ class Perfil extends Model {
             }
         }
 
-        $colSugestoes = $colSugestoes->sortBy(function($item) 
+        $colSugestoes = $colSugestoes->sortBy(function($item)
         {
             return $item->quantidadeSeguidores;
         })->reverse();
@@ -430,7 +430,7 @@ class Perfil extends Model {
      * Retornas os Perfils que eu sigo e me seguem
      * @return [type] [description]
      */
-    public function getAmigosAttribute() 
+    public function getAmigosAttribute()
     {
         $perfilsSeguindo   = $this->followPerfil;
         $perfilsSeguidores = $this->followedByPerfil;
@@ -442,16 +442,16 @@ class Perfil extends Model {
     /**
      * Retorna uma Collection de Perfil amigos em comum se existirem
      * @param  $id              Id do perfil em questao
-     * @return  Collection de Perfil 
+     * @return  Collection de Perfil
      */
-    public function getAmigosEmComum($id) 
+    public function getAmigosEmComum($id)
     {
         $perfil = Perfil::findOrFail($id);
         $amigos = $this->amigos;
 
         $amigosDessePerfil = $perfil->amigos;
         if ($amigos && $amigosDessePerfil) {
-            $amigosEmComum = $amigosDessePerfil->intersect($amigos);  
+            $amigosEmComum = $amigosDessePerfil->intersect($amigos);
         }
 
         return $amigosEmComum;
@@ -462,7 +462,7 @@ class Perfil extends Model {
      * @param  $id          Id do perfil em questao
      * @return Integer
      */
-    public function getQuantidadeAmigosEmComum($id) 
+    public function getQuantidadeAmigosEmComum($id)
     {
         $amigos = $this->getAmigosEmComum($id);
         return $amigos ? count($amigos) : 0 ;
@@ -471,20 +471,20 @@ class Perfil extends Model {
 
     /**
      * Acessor para pegar uma Collection de Perfil ordenados pela quantidade de amigos em comum
-     * @return Collection 
+     * @return Collection
      */
-    public function getSugestaoByAmigosEmComumAttribute() 
+    public function getSugestaoByAmigosEmComumAttribute()
     {
         //Collection com toos os perfils que eu nao sigo
         $colNaoAmigos = Perfil::all()->diff($this->followPerfil)->diff([$this]);
         $amigos = $this->amigos;
 
         foreach ($colNaoAmigos as $key => $perfil) {
-            
-            //Se esse perfil tiver amigos, vejo se eles os amigos desse perfil 
+
+            //Se esse perfil tiver amigos, vejo se eles os amigos desse perfil
             $amigosDessePerfil = $perfil->amigos;
             if ($amigosDessePerfil) {
-                $amigosEmComum = $amigosDessePerfil->intersect($amigos);  
+                $amigosEmComum = $amigosDessePerfil->intersect($amigos);
             }
 
             $perfilRetorno = $colNaoAmigos->find($perfil->id);
@@ -493,7 +493,7 @@ class Perfil extends Model {
             }
         }
 
-        $colNaoAmigos = $colNaoAmigos->sortBy(function($item) 
+        $colNaoAmigos = $colNaoAmigos->sortBy(function($item)
         {
             return $item->quantidadeAmigosEmComum;
         })->reverse();
@@ -502,38 +502,64 @@ class Perfil extends Model {
     }
 
     /**
-     * Acessor para pegar uma Collection de Perfil ordenados pela quantidade de amigos em comum
-     * @return Collection 
+     * Acessor para pegar uma Collection de Perfil ordenados pela quantidade de seguindo em comum
+     * @return Collection
      */
-    public function getSugestaoBySeguindoEmComumAttribute() 
+    public function getSugestaoBySeguindoEmComumAttribute()
     {
-        //Collection com toos os perfils que eu nao sigo
+        //Collection com todos os perfils que eu nao sigo
         $colNaoSeguindo = Perfil::all()->diff($this->followPerfil)->diff([$this]);
         $seguindo = $this->followPerfil;
 
         foreach ($colNaoSeguindo as $key => $perfil) {
-            
-            //Se esse perfil tiver amigos, vejo se eles os amigos desse perfil 
+
+            //Se esse perfil seguir outras pessoas, checo so seguindo desse perfil
             $seguindoDessePerfil = $perfil->followPerfil;
             if ($seguindoDessePerfil) {
-                $seguindoEmComum = $seguindoDessePerfil->intersect($seguindo);  
+                $seguindoEmComum = $seguindoDessePerfil->intersect($seguindo);
             }
 
+            //Adicionando o parametro quantidadeSeguidores em comum em cada perfil da collection
             $perfilRetorno = $colNaoSeguindo->find($perfil->id);
             if ($perfilRetorno) {
                 $perfilRetorno->quantidadeSeguindoEmComum = count($seguindoEmComum);
             }
         }
 
-        $colNaoSeguindo = $colNaoSeguindo->sortBy(function($item) 
+        //Ordenando a collection
+        $colNaoSeguindo = $colNaoSeguindo->sortBy(function($item)
         {
             return $item->quantidadeSeguindoEmComum;
         })->reverse();
 
         return $colNaoSeguindo;
     }
+		
 
+    /**
+     * Um Perfil é alvo de varias notificacoes.
+     */
+    public function notificacoes()
+    {
+        return $this->morphMany('App\Notificacao', 'target', 'target_type', 'target_id');
+    }
 
+    /**
+     * Um Perfil pode gerar varias notificacoes.
+     */
+    public function fromNotificacoes()
+    {
+        return $this->morphMany('App\Notificacao', 'from', 'from_type', 'from_id');
+    }
+
+    /**
+     * Acessor para as ultimas notificacoes dessa entidade
+     * @return Collection de Notificacoes
+     */
+    public function getUltimasNotificacoesAttribute()
+    {
+        return $this->notificacoes()->latest()->get();
+    }
 
 
 }

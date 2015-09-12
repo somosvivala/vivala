@@ -19,8 +19,6 @@ $(function() {
             contentType: false, //file
             processData: false,  //file
             success: function (data) {
-                console.log("Formulário submetido com sucesso:");
-                console.log(data);
                 // Executa uma função de javascript
                 if(callbackFunction) {
                     eval(callbackFunction);

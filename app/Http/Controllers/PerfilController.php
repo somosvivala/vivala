@@ -44,9 +44,9 @@ class PerfilController extends ConectarController {
 		$empresas = $user->empresas;
 
 		Session::put('entidadeAtiva_id', $perfil->id);
-    Session::put('entidadeAtiva_tipo', 'perfil');
+    	Session::put('entidadeAtiva_tipo', 'perfil');
 
-		$posts = Post::getUltimos();
+		$posts = $perfil->posts;
 
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'))
 		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
@@ -145,7 +145,7 @@ class PerfilController extends ConectarController {
 			if (!is_null($prettyUrlObj)) {
 				$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$perfil = App\Perfil::findOrFail($prettyUrl);
 			}
 		}
 
@@ -212,6 +212,25 @@ class PerfilController extends ConectarController {
 
 		// Retorna a quantidade de likes para utilizar na view
 	    return $post->getQuantidadeLikes();
+	}
+
+	/**
+	* Retorna a sugestão de seguidores
+	*
+	* @param  [integer] id do post
+	* @return
+	*/
+	public function getSugestoes($filtro = "amigo") {
+		$user = Auth::user();
+		$perfil = $user->perfil;
+		if($filtro == "amigo") {
+			echo "Amigos em comum:<br>";
+			$sugestoes = $perfil->sugestaoByAmigosEmComum;
+		}elseif($filtro == "seguindo"){
+			echo "Seguindo em comum:<br>";
+			$sugestoes = $perfil->sugestaoBySeguindoEmComum;
+		}
+			dd($sugestoes);
 	}
 
 }

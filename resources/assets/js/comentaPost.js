@@ -1,3 +1,9 @@
+/*
+  Funções de comentário dos Posts.
+  Envia o comentario por ajax e atualiza o conteúdo da div,
+  com todos os comentários do post.
+*/
+
 var commentPost = function(idPost) {
     $.ajax({
       url: "/post/"+idPost+"/comentarios"
