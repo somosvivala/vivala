@@ -59,6 +59,8 @@ Route::controller('perfilcontroller','PerfilController');
 Route::controller('comentario', 'ComentariosController');
 Route::controller('quiz', 'QuizController');
 
+Route::resource('quimera', 'QuimeraController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
