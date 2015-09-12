@@ -86,12 +86,40 @@ class UserSeeder extends Seeder {
             'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
 
-        User::create([
-            'username'           => 'Brunol',
-            'genero'             => 'masculino',
-            'email'              => 'brunol@gmail.com',
-            'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-        ]);
+				User::create([
+					'username'           => 'Brunol',
+					'genero'             => 'masculino',
+					'email'              => 'brunol@gmail.com',
+					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+				]);
+
+				User::create([
+					'username'           => 'Rafael',
+					'genero'             => 'masculino',
+					'email'              => 'rafa.carreira@gmail.com',
+					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+				]);
+
+				User::create([
+					'username'           => 'Goiaba',
+					'genero'             => 'masculino',
+					'email'              => 'narolol@gmail.com',
+					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+				]);
+
+				User::create([
+					'username'           => 'Atchim',
+					'genero'             => 'masculino',
+					'email'              => 'atchim@gmail.com',
+					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+				]);
+
+				User::create([
+					'username'           => 'Mateus',
+					'genero'             => 'masculino',
+					'email'              => 'mateus@gmail.com',
+					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+				]);
     }
 }
 
@@ -132,6 +160,38 @@ class PerfilSeeder extends Seeder {
             'nome_completo'     => 'Bruno Gordo',
             'apelido'     => 'Brunol'
         ]);
+
+	      $rafa = Perfil::create([
+	          'user_id'               => '5',
+	          'aniversario'      => '1994-04-23 07:43:00',
+	          'cidade_natal'     => '',
+	          'nome_completo'     => 'Rafael Carreira',
+	          'apelido'     => 'Rafa'
+	      ]);
+
+	      $goiaba = Perfil::create([
+	          'user_id'               => '6',
+	          'aniversario'      => '1994-04-23 07:43:00',
+	          'cidade_natal'     => '',
+	          'nome_completo'     => 'Gabriel Naro',
+	          'apelido'     => 'Goiaba'
+	      ]);
+
+	      $atchim = Perfil::create([
+	          'user_id'               => '7',
+	          'aniversario'      => '1994-04-23 07:43:00',
+	          'cidade_natal'     => '',
+	          'nome_completo'     => 'Fernando Fernandes',
+	          'apelido'     => 'Atchim'
+	      ]);
+
+	      $mateus = Perfil::create([
+	          'user_id'               => '8',
+	          'aniversario'      => '1994-04-23 07:43:00',
+	          'cidade_natal'     => '',
+	          'nome_completo'     => 'Mateus Batista',
+	          'apelido'     => 'Mateni'
+	      ]);
     }
 
 }
@@ -154,6 +214,12 @@ class OngSeeder extends Seeder {
             'nome'        => 'zordONG Ltda',
             'apelido'     => 'zordONG'
         ]);
+
+        Ong::create([
+            'user_id'     => '8',
+            'nome'        => 'Projeto Formiguinha',
+            'apelido'     => 'Formiguinha'
+        ]);
     }
 }
 
@@ -172,6 +238,24 @@ class EmpresaSeeder extends Seeder {
             'user_id'     => '2',
             'nome'        => 'zordenterprise  Ltda',
             'apelido'     => 'zordenterprise'
+        ]);
+
+        Empresa::create([
+            'user_id'     => '6',
+            'nome'        => 'RedNoise',
+            'apelido'     => 'RedNoise'
+        ]);
+
+        Empresa::create([
+            'user_id'     => '5',
+            'nome'        => 'Turbina Loca',
+            'apelido'     => 'TL'
+        ]);
+
+        Empresa::create([
+            'user_id'     => '5',
+            'nome'        => 'Water Energy Ltda.',
+            'apelido'     => 'we'
         ]);
     }
 }
@@ -253,14 +337,14 @@ class FotoSeeder extends Seeder {
         $dodoPerfil = Perfil::find(1);
         $fotoDodo = new Foto();
         $fotoDodo->tipo = 'avatar';
-        $fotoDodo->path = 'https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/10881937_10205138988501966_880908969196321312_n.jpg?oh=4036e3ead0d2629c86b5228d343c69d9&oe=55FAD9BB&__gda__=1442687024_c8e9de1eff4318206fde21b4a418e3c8';
+        $fotoDodo->path = 'https://avatars2.githubusercontent.com/u/192278?v=3&s=460';
         $dodoPerfil->fotos()->save($fotoDodo);
 
 
         $zordPerfil = Perfil::find(2);
         $fotoZord = new Foto();
         $fotoZord->tipo = 'avatar';
-        $fotoZord->path = 'https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xap1/v/t1.0-1/p160x160/10374994_706677562743225_4888707270232254721_n.jpg?oh=d4f0daa8f62f27904266b4eb48876ae0&oe=55C2EE6F&__gda__=1438591338_31d1bca33986c333c0434e1ce01cd8a4';
+        $fotoZord->path = 'https://avatars1.githubusercontent.com/u/9811888?v=3&s=400';
         $zordPerfil->fotos()->save($fotoZord);
     }
 }
@@ -271,15 +355,15 @@ class InteresseSeeder extends Seeder {
     {
         DB::table('interesses')->delete();
 
-        Interesse::create(['nome' => 'Interesse 01']);
-        Interesse::create(['nome' => 'Interesse 02']);
-        Interesse::create(['nome' => 'Interesse 03']);
-        Interesse::create(['nome' => 'Interesse 04']);
-        Interesse::create(['nome' => 'Interesse 05']);
-        Interesse::create(['nome' => 'Interesse 06']);
-        Interesse::create(['nome' => 'Interesse 07']);
-        Interesse::create(['nome' => 'Interesse 08']);
-        Interesse::create(['nome' => 'Interesse 09']);
-        Interesse::create(['nome' => 'Interesse 10']);
+        Interesse::create(['nome' => 'Breja']);
+        Interesse::create(['nome' => 'Café']);
+        Interesse::create(['nome' => 'Whiskey']);
+        Interesse::create(['nome' => 'Whisky']);
+        Interesse::create(['nome' => 'Badegão']);
+        Interesse::create(['nome' => 'Narcos']);
+        Interesse::create(['nome' => 'Macarrão']);
+        Interesse::create(['nome' => 'Banho']);
+        Interesse::create(['nome' => 'Dormir']);
+        Interesse::create(['nome' => '%7}ºª¢¬6#$@']);
     }
 }
