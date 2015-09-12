@@ -145,7 +145,12 @@ class PerfilController extends ConectarController {
 			if (!is_null($prettyUrlObj)) {
 				$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				$perfil = App\Perfil::findOrFail($prettyUrl);
+
+				if (is_numeric($prettyUrl)) {
+					$perfil = App\Perfil::findOrFail($prettyUrl);
+				} else {
+					App::abort(404);
+				}
 			}
 		}
 

@@ -346,7 +346,7 @@ class Empresa extends Model {
     }
 
     /**
-     * Uma Empresa é alvo de varias notificacoes.
+     * Um Perfil é alvo de varias notificacoes.
      */
     public function notificacoes()
     {
@@ -354,7 +354,7 @@ class Empresa extends Model {
     }
 
     /**
-     * Uma Empresa pode gerar varias notificacoes.
+     * Um Perfil pode gerar varias notificacoes.
      */
     public function fromNotificacoes()
     {
@@ -369,5 +369,8 @@ class Empresa extends Model {
     {
         return $this->notificacoes()->latest()->get();
     }
+
+    
+
 
 }

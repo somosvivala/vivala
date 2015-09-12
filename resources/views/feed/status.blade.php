@@ -11,7 +11,7 @@
 		</div>
 	</div>
 	<div class="hora-post">
-		<a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a>
+		<a href="{{ $Post->url }}"> {{ $Post->data_postagem_diff }} </a>
 	</div>
 	@include('post._barrainfos')
 		<div class="row box-post">
