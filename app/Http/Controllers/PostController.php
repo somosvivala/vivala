@@ -163,7 +163,7 @@ class PostController extends VivalaBaseController {
 	 * @param  [integer] id do post
 	 * @return
 	 */
-	public function postLikepost($id)
+	public function getLikepost($id)
 	{
 		//Verifica se o post existe
 		$post = Post::findOrFail($id);
