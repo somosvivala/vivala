@@ -40,13 +40,14 @@ elixir(function(mix) {
       '../../assets/js/createpost.js',
       '../../assets/js/postbarra.js',
       '../../assets/js/edicaofotoperfil.js',
+      '../../assets/js/follow.js',
       '../../assets/js/ajaxCalls.js',
       '../../assets/js/desativalinks.js',
 
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/js/uploadFoto.js',
 
-      '../../assets/bower/lightbox2/dist/js/lightbox.min.js',
+//      '../../assets/bower/lightbox2/dist/js/lightbox.min.js',
 
       '../../assets/js/welcome.js'
 	], 'public/js/vendor.js');

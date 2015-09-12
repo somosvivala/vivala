@@ -13,7 +13,7 @@
 			@forelse($sugestoesPessoasInteressantes as $Perfil)
 			<li class="col-sm-4 col-md-2">
 
-				{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET']) !!}
+				{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
 				<button id='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
 				<a href="{{ url($Perfil->getUrl()) }}">
 
