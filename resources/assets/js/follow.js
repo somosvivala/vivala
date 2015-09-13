@@ -6,7 +6,7 @@ $( document ).ready(function() {
       console.log(btnSeguir);
       btnSeguir.html('seguindo');
       btnSeguir.addClass('suave');
-      btnSeguir.parent('form').get(0).setAttribute('action', 'ajax/unfollowperfil/'+idPerfil+);
+      btnSeguir.parent('form').get(0).setAttribute('action', 'ajax/unfollowperfil/'+idPerfil);
   };
 
 
