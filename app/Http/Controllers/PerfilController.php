@@ -145,7 +145,12 @@ class PerfilController extends ConectarController {
 			if (!is_null($prettyUrlObj)) {
 				$perfil = App\Perfil::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				App::abort(404);
+
+				if (is_numeric($prettyUrl)) {
+					$perfil = App\Perfil::findOrFail($prettyUrl);
+				} else {
+					App::abort(404);
+				}
 			}
 		}
 
@@ -228,7 +233,7 @@ class PerfilController extends ConectarController {
 			$sugestoes = $perfil->sugestaoByAmigosEmComum;
 		}elseif($filtro == "seguindo"){
 			echo "Seguindo em comum:<br>";
-			$sugestoes = $perfil->getSugestaoBySeguindoEmComum;
+			$sugestoes = $perfil->sugestaoBySeguindoEmComum;
 		}
 			dd($sugestoes);
 	}

@@ -7,6 +7,9 @@ use Auth;
 use Request;
 use App\Post;
 use App\Foto;
+use App\Notificacao;
+
+
 
 class PostController extends VivalaBaseController {
 
@@ -114,6 +117,7 @@ class PostController extends VivalaBaseController {
 	 */
 	public function getSharepost($id)
 	{
+
 		$sourcePost = Post::findOrFail($id);
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
 
@@ -134,6 +138,19 @@ class PostController extends VivalaBaseController {
 			$novaFoto = $sourcePost->fotos->replicate();
 			$novoPost->fotos()->save($novaFoto);
 		}
+
+		//Criando nova notificacao
+		$novaNotificacao = Notificacao::create([
+			'titulo'			=>	'Compartilharam seu post',
+			'mensagem' 			=> 	$entidadeAtiva->apelido . ' compartilhou seu post',
+			'tipo_notificacao'	=>	'share',
+			'url'				=>	$novoPost->url
+			]);
+	
+		//associando a entidadeAtiva com o from e o autor do comentario likeado como target
+		$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+		$sourcePost->author->notificacoes()->save($novaNotificacao);
+		$novaNotificacao->push();
 
 		//Assegurando que as relações foram atualizadas
 		Auth::user()->entidadeAtiva->push();
@@ -161,6 +178,24 @@ class PostController extends VivalaBaseController {
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likePost()->attach($post->id);
+
+			//Só levantar uma notificacao se nao for em um post seu ou de alguma de suas entidades
+			if($entidadeAtiva->user->id != $post->author->user->id)
+			{
+				$novaNotificacao = Notificacao::create([
+					'titulo'			=>	'Curtiram seu post',
+					'mensagem' 			=> 	$entidadeAtiva->apelido . ' curtiu seu post',
+					'tipo_notificacao'	=>	'like_post',
+					'url'				=>	$post->url
+					]);
+				
+				//associando a entidadeAtiva com o from e o autor do comentario likeado como target
+				$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+				$post->author->notificacoes()->save($novaNotificacao);
+				$novaNotificacao->push();
+			}
+
+
 		} else {
 			$entidadeAtiva->likePost()->detach($post->id);
 		}

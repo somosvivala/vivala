@@ -133,5 +133,14 @@ class Post extends Model {
     	return $this->comentarios()->orderBy('created_at', 'DESC')->limit($qtd)->get();
     }
 
+    /**
+     * Acessor para a propriedade url
+     * @return [type] [description]
+     */
+    public function getUrlAttribute()
+    {
+    	return "/post/".$this->id;
+    }
+
 
 }

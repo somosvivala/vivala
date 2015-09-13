@@ -4,9 +4,16 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//Facades
 use Auth;
-use App\Perfil;
 use Input;
+
+//Models
+use App\Perfil;
+use App\Ong;
+use App\Empresa;
+use App\Notificacao;
+
 
 class AjaxController extends VivalaBaseController {
 
@@ -27,11 +34,25 @@ class AjaxController extends VivalaBaseController {
 
 		//$entidadeAtiva do usuario logado.
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		$perfil = Perfil::findOrFail($id);
 
 		//se ja nao seguir esse perfil
-		if (!$entidadeAtiva->followPerfil->find($id)) {
-			$entidadeAtiva->followPerfil()->attach($id);
-			$entidadeAtiva->save();
+		if (!$entidadeAtiva->followPerfil->find($perfil->id)) {
+			$entidadeAtiva->followPerfil()->attach($perfil->id);
+			$entidadeAtiva->push();
+
+			//Criando nova notificacao
+			$novaNotificacao = Notificacao::create([
+				'titulo'			=>	'Voce tem um novo seguidor',
+				'mensagem' 			=> 	$entidadeAtiva->apelido . ' agora está te seguindo e vai receber seus posts',
+				'tipo_notificacao'	=>	'seguidor',
+				'url'				=>	$entidadeAtiva->getUrl()
+				]);
+
+			//associando a entidadeAtiva com o from e o $perfil seguido como target
+			$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+			$perfil->notificacoes()->save($novaNotificacao);
+			$novaNotificacao->push();
 		}
 
 		$return['success'] = true;
@@ -47,11 +68,25 @@ class AjaxController extends VivalaBaseController {
 
 		//$entidadeAtiva do usuario logado.
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		$empresa = Empresa::findOrFail($id);
 
 		//se ja nao seguir essa empresa
-		if (!$entidadeAtiva->followEmpresa->find($id)) {
-			$entidadeAtiva->followEmpresa()->attach($id);
-			$entidadeAtiva->save();
+		if (!$entidadeAtiva->followEmpresa->find($empresa->id)) {
+			$entidadeAtiva->followEmpresa()->attach($empresa->id);
+			$entidadeAtiva->push();
+
+			//Criando nova notificacao
+			$novaNotificacao = Notificacao::create([
+				'titulo'			=>	'Voce tem um novo seguidor',
+				'mensagem' 			=> 	$entidadeAtiva->apelido . ' agora está te seguindo e vai receber seus posts',
+				'tipo_notificacao'	=>	'seguidor',
+				'url'				=>	$entidadeAtiva->getUrl()
+				]);
+
+			//associando a entidadeAtiva com o from e o $empresa seguido como target
+			$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+			$empresa->notificacoes()->save($novaNotificacao);
+			$novaNotificacao->push();
 		}
 
 		$return['success'] = true;
@@ -67,11 +102,26 @@ class AjaxController extends VivalaBaseController {
 
 		//$entidadeAtiva do usuario logado.
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
+		$ong = Ong::findOrFail($id);
 
 		//se ja nao seguir essa ong
-		if (!$entidadeAtiva->followOng->find($id)) {
-			$entidadeAtiva->followOng()->attach($id);
-			$entidadeAtiva->save();
+		if (!$entidadeAtiva->followOng->find($ong->id)) {
+			$entidadeAtiva->followOng()->attach($ong->id);
+			$entidadeAtiva->push();
+
+			//Criando nova notificacao
+			$novaNotificacao = Notificacao::create([
+				'titulo'			=>	'Voce tem um novo seguidor',
+				'mensagem' 			=> 	$entidadeAtiva->apelido . ' agora está te seguindo e vai receber seus posts',
+				'tipo_notificacao'	=>	'seguidor',
+				'url'				=>	$entidadeAtiva->getUrl()
+				]);
+
+			//associando a entidadeAtiva com o from e o $ong seguido como target
+			$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
+			$ong->notificacoes()->save($novaNotificacao);
+			$novaNotificacao->push();
+
 		}
 
 		$return['success'] = true;
@@ -92,7 +142,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if ($entidadeAtiva->followOng->find($id)) {
 			$entidadeAtiva->followOng()->detach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -112,7 +162,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if ($entidadeAtiva->followEmpresa->find($id)) {
 			$entidadeAtiva->followEmpresa()->detach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
@@ -132,7 +182,7 @@ class AjaxController extends VivalaBaseController {
 		//se ja nao seguir essa ong
 		if ($entidadeAtiva->followPerfil->find($id)) {
 			$entidadeAtiva->followPerfil()->detach($id);
-			$entidadeAtiva->save();
+			$entidadeAtiva->push();
 		}
 
 		$return['success'] = true;
