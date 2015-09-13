@@ -15,14 +15,14 @@
 					</div>
 				</div>
 				<strong class="col-sm-12">{{ $Perfil->user->username }}</strong>
-				<div class="row localizacao-cidade">
+				{{-- <div class="row localizacao-cidade">
 					<div class="col-sm-4 text-right">
 						<i class="fa fa-map-marker"></i>
 					</div>
 					<div class="col-sm-8 text-left">
 						São Paulo, BR
 					</div>
-				</div>
+				</div> --}}
 			</a>
 			{!! Form::close() !!}
 		</li>
