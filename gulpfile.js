@@ -49,6 +49,8 @@ elixir(function(mix) {
 
 //      '../../assets/bower/lightbox2/dist/js/lightbox.min.js',
 
-      '../../assets/js/welcome.js'
+      '../../assets/js/welcome.js',
+
+      '../../assets/js/quimera.js'
 	], 'public/js/vendor.js');
 });

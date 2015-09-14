@@ -4,15 +4,18 @@
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
 var autocomplete = function(query) {
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
 
     $.ajax({
         url: '/quimera',
         type: 'POST',
         dataType: 'json',
         data: {
-            query: query, 
+            params: {query}, 
             url: 'https://www.e-agencias.com.br/jano-flights/api/autocomplete/cities_airports',
-            method: 'get'
+            method: 'GET'
         },
     })
     .done(function(data) {
@@ -25,7 +28,7 @@ var autocomplete = function(query) {
  */
 var searchTrip = function(params) {
     var
-        base_url      = 'https://www.e-agencias.com.br/jano-flights/api/flights',
+        url = 'https://www.e-agencias.com.br/jano-flights/api/flights',
         defaultParams = {
             currency: 'BRL',
             site: 'BR',
@@ -47,16 +50,32 @@ var searchTrip = function(params) {
 
     $.extend(defaultParams, params);
 
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
     $.ajax({
         url: base_url,
-        type: 'GET',
-        dataType: 'jsonp',
-        data: defaultParams,
-        jsonpCallback: 'callback',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            params: defaultParams,
+            url: url,
+            method: 'GET'
+        },
     })
     .done(function(data) {
         console.log(data);
     }); 
+};
+
+testSearchTrip = function() {
+    searchTrip({
+        from: 'RIO',
+        to: 'SAO',
+        departureDate: '2015/09/30',
+        adults: 1,
+    });
 };
 
 /**
