@@ -94,3 +94,42 @@ nav.menu-top {
 		}
 	}
 }
+
+nav.header {
+    div {
+        float:left;
+    }
+}
+div.logo-menu {
+    width:10%;
+}
+div.menu-principal {
+    width:60%;
+}
+div.menu-usuario {
+    width: 14%;
+}
+div.notificacoes {
+    width: 15%;
+    button {
+        max-width:33%;
+        border: 0px solid transparent;
+        position: relative;
+        margin: 1rem 0;
+        img {
+            max-width:100%;
+        }
+        &:before {
+            content: attr(data-unread);
+            position:absolute;
+            top:0px;
+            right:0px;
+            color: white;
+            background: @cor-primaria;
+            padding:0rem 0.3rem 0rem;
+            .font-bold-upper();
+        }
+    }
+}
+
+

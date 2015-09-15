@@ -13,9 +13,9 @@ class NotificacaoController extends Controller {
     	$this->middleware('auth');
 	}
 
-	public function getChecarnovas() 
+	public function getChecarnovas($tipo = 'seguidor') 
 	{
-		$notificacoes = Auth::user()->entidadeAtiva->notificacoes()->where('readed', false)->get();
+		$notificacoes = Auth::user()->entidadeAtiva->notificacoes()->where('readed', false)->where('tipo_notificacao',$tipo)->get();
 		$quantidadeNotificacoes = $notificacoes ? count($notificacoes) : false;
 		return $quantidadeNotificacoes;
 	}
