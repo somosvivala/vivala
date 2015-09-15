@@ -133,6 +133,8 @@ class PerfilSeeder extends Seeder {
             'user_id'               => '1',
         	'aniversario' 	    => '1990-12-21 07:30:00',
             'cidade_natal'     => 'Bauru',
+            'descricao_curta'     => 'Internet Lurker, curte um BBB, tem uma descrição um pouco maior pra testar quebras de linha.',
+            'descricao_longa'     => 'Era uma vez em uma terra distante um aspirante a samurai que ao iniciar sua jornada pelo mundo da mais valia, foi terrivelmente tentado a se juntar à gangue dos suits, seres dominados pela energia do mal.',
             'nome_completo'     => 'Evandro Barbosa Carreira',
             'apelido'     => 'Dodoido'
         ]);
@@ -142,6 +144,8 @@ class PerfilSeeder extends Seeder {
             'aniversario'      => '1992-05-08 07:43:00',
             'cidade_natal'     => 'Rio Preto',
             'nome_completo'     => 'Antônio Renato Apolinário Gomes',
+            'descricao_curta'     => 'Nobre aspirante a Samurai, curte um BBB.',
+            'descricao_longa'     => 'Era uma vez em uma terra distante um aspirante a samurai que ao iniciar sua jornada pelo mundo da mais valia, foi terrivelmente tentado a se juntar à gangue dos suits, seres dominados pela energia do mal.',
             'apelido'     => 'Zordoido'
         ]);
 
