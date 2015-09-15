@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
+use App\Perfil;
 
 
 class SugestaoController extends ConectarController {
@@ -26,12 +27,17 @@ class SugestaoController extends ConectarController {
     */
     public function getViajantes($filtro = "amigo") {
             $user = Auth::user();
+            $entidadeAtiva = $user->entidadeAtiva;
             $perfil = $user->perfil;
+            
             if($filtro == "amigo") {
-                    $sugestoes = $perfil->sugestaoByAmigosEmComum;
-            }elseif($filtro == "seguindo"){
-                    $sugestoes = $perfil->sugestaoBySeguindoEmComum;
+                $sugestoes = $entidadeAtiva->sugestaoByAmigosEmComum;
+            } else if ($filtro == "seguindo") {
+                $sugestoes = $entidadeAtiva->sugestaoBySeguindoEmComum;
+            } else if ($filtro == "numseguidores") {
+                $sugestoes = Perfil::getMaisSeguidos($entidadeAtiva);
             }
+
             return view('conectar.sugestoes.index', compact('sugestoes', 'filtro', 'user', 'perfil'));
     }
 

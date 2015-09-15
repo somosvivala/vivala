@@ -353,7 +353,7 @@ class Perfil extends Model {
      * Retorna uma Collection de perfils ordenados por numero de seguidores
      * @return Collection
      */
-    public static function getMaisSeguidos()
+    public static function getMaisSeguidos($entidadeAtiva)
     {
         $maisSeguidosByPerfils = DB::select('
             SELECT perfil_seguido_id, COUNT(perfil_seguido_id) AS quantidade
@@ -392,7 +392,16 @@ class Perfil extends Model {
         //Juntando os ids em um unico array e eliminando ids duplicados
         $listaTodos = array_merge(array_merge($listaPerfils, $listaOngs), $listaEmpresas);
         $listaIds = array_unique($listaTodos);
-
+        $listaIdSeguidos = Collection::make($entidadeAtiva->following);
+        
+        if (count($listaIdSeguidos)) 
+        {
+            //pegando lista de ids para fazer diff e nao recomendar ids que eu ja sigo
+            $listaIdSeguidos = $listaIdSeguidos->lists('id');
+            
+            //fazendo diff dos ids que ja sigo
+            $listaIds = array_diff($listaIds, $listaIdSeguidos);
+        }
         //Pegando collection de Perfils com todos os perfils mais seguidos
         $colSugestoes = Perfil::whereIn('id',$listaIds)->get();
 
@@ -534,7 +543,6 @@ class Perfil extends Model {
 
         return $colNaoSeguindo;
     }
-		
 
     /**
      * Um Perfil é alvo de varias notificacoes.
@@ -587,6 +595,5 @@ class Perfil extends Model {
     {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
-
 
 }

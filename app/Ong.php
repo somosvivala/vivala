@@ -268,7 +268,7 @@ class Ong extends Model {
      * Retorna uma Collection de Ongs ordenadas por numero de seguidores
      * @return Collection
      */
-    public static function getMaisSeguidos() {
+    public static function getMaisSeguidos($entidadeAtiva) {
         $maisSeguidosByPerfils = DB::select('
             SELECT ong_seguido_id, COUNT(ong_seguido_id) AS quantidade 
             FROM perfil_follow_ong 
@@ -306,7 +306,17 @@ class Ong extends Model {
         //Juntando os ids em um unico array e eliminando ids duplicados
         $listaTodos = array_merge(array_merge($listaPerfils, $listaOngs), $listaEmpresas);
         $listaIds = array_unique($listaTodos);
-        
+        $listaIdSeguidos = Collection::make($entidadeAtiva->following);
+
+        if (count($listaIdSeguidos)) 
+        {
+            //pegando lista de ids para fazer diff e nao recomendar ids que eu ja sigo
+            $listaIdSeguidos = $listaIdSeguidos->lists('id');
+            
+            //fazendo diff dos ids que ja sigo
+            $listaIds = array_diff($listaIds, $listaIdSeguidos);
+        }
+
         //Pegando collection de Ongs com todos os perfils mais seguidos
         $colSugestoes = Ong::whereIn('id',$listaIds)->get();
 
