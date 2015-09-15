@@ -281,3 +281,21 @@ label.radio-button {
 	}
 
 }
+
+.borda-fundo {
+    border: 1px solid @cor-fundo;
+}
+
+// Ul de filtro usada nas sugestoes
+ul.filtro {
+    padding:1em;
+    margin:0;
+    list-style: none;
+    color: @cor-cinza-escuro;
+    .font-bold-upper();
+    .borda-fundo();
+    a {
+        text-decoration: none;
+        color: @cor-cinza-escuro;
+    }
+}

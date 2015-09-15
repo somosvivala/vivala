@@ -17,7 +17,7 @@
 	</nav>
 
 	<nav class="col-sm-3 col-md-2 right-panel">
-		@include('conectar.sugestoes')
+		@include('conectar._sugestoes')
 	</nav>
 
 	<footer class="footer">

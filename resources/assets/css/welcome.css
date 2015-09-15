@@ -242,6 +242,22 @@ label.radio-button input[type="radio"]:checked + span {
   background-color: rgba(255, 255, 255, 0.25);
   border: 2px solid white;
 }
+.borda-fundo {
+  border: 1px solid #e2e2e2;
+}
+ul.filtro {
+  padding: 1em;
+  margin: 0;
+  list-style: none;
+  color: #535353;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  border: 1px solid #e2e2e2;
+}
+ul.filtro a {
+  text-decoration: none;
+  color: #535353;
+}
 #welcome-html {
   position: relative;
   min-height: 100%;
