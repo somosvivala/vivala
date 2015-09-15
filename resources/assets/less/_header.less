@@ -143,6 +143,18 @@ div.notificacoes {
             padding:0rem 0.3rem 0rem;
             .font-bold-upper();
         }
+        div {
+            display:none;
+            position: absolute;
+            top:100%;
+            right: 0;
+            min-width:9em;
+            max-height: 30vh;
+            background-color: white;
+        }
+        &:focus div {
+            display: block;
+        }
     }
 }
 
