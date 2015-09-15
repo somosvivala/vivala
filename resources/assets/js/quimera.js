@@ -25,6 +25,37 @@ var autocomplete = function(query) {
 };
 
 /**
+ * Autocomplete para a pesquisa de hotéis
+ */
+var autocompleteHotels = function(query) {
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            params: {
+                query: query,
+                filtered: true
+            }, 
+            url: 'hotelscomplete',
+            method: 'GET',
+            process: false,
+            headers: {
+                "agency-domain": 'vivala',
+                "Accept-Language": 'pt-BR'
+            }
+        },
+    })
+    .done(function(data) {
+        console.log(data);
+    });
+};
+
+/**
  *  Busca de passagens
  */
 var searchTrip = function(params) {

@@ -15,14 +15,15 @@ class QuimeraController extends Controller {
 		$params  = Input::get('params');
 		$method  = Input::get('method');
 		$process = Input::get('process');
+		$headers = Input::get('headers');
 
-		$url    = QuimeraRepository::urlDecoder($type);
-		$params = QuimeraRepository::serializeParams($params);
+		$url     = QuimeraRepository::urlDecoder($type);
+		$params  = QuimeraRepository::serializeParams($params);
+		$headers = isset($headers) ? QuimeraRepository::createHeader($method, $headers) : [];
 
-		$response = file_get_contents("{$url}?{$params}");
+		$response = isset($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
 
-		if ($process) {
-			echo "{$url}?{$params}";
+		if ($process == 'true') {
 			echo QuimeraRepository::processResponse($response, $type);
 		}
 		else {

@@ -22,6 +22,8 @@ class QuimeraRepository {
         switch ($type) {
             case 'autocomplete':
                 return 'https://www.e-agencias.com.br/jano-flights/api/autocomplete/cities_airports';
+            case 'hotelscomplete':
+                return 'https://www.e-agencias.com.br/jano-hotels/autocomplete';
             case 'trip':
                 return 'https://www.e-agencias.com.br/jano-flights/api/flights';
         }
@@ -36,6 +38,22 @@ class QuimeraRepository {
                 return self::_tripToHTML($response);
         }
     } 
+
+    public static function createHeader($method, $headers)
+    {
+        $output = '';
+        foreach ($headers as $key => $value) {
+            $output .= "{$key}: {$value}\r\n";
+        }
+        $options = array(
+            'http'=>array(
+                'method'=> strtoupper($method),
+                'header'=> $output
+            )
+        );
+
+        return stream_context_create($options);
+    }
 
     private static function _tripToHTML($data)
     {
