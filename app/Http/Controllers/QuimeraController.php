@@ -16,7 +16,6 @@ class QuimeraController extends Controller {
 		$method = Input::get('method');
 
 		$params = QuimeraRepository::paramsToGet($params);
-
 		$response = file_get_contents("{$url}?{$params}");
 		echo $response;
 	}

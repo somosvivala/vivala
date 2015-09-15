@@ -55,7 +55,7 @@ var searchTrip = function(params) {
     });
 
     $.ajax({
-        url: base_url,
+        url: '/quimera',
         type: 'POST',
         dataType: 'json',
         data: {
@@ -73,8 +73,8 @@ testSearchTrip = function() {
     searchTrip({
         from: 'RIO',
         to: 'SAO',
-        departureDate: '2015/09/30',
-        adults: 1,
+        departureDate: '2015-09-30',
+        adults: 1
     });
 };
 

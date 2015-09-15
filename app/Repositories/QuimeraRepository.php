@@ -6,8 +6,14 @@ class QuimeraRepository {
     {
         $output = '';
         foreach ($params as $key => $value) {
-            $output .= "{$key}={$value}";
+            if (is_array($value)) {
+                $output .= self::paramsToGet($value);
+            }
+            else if (isset($value) && $value != '') {
+                $output .= "{$key}={$value}&";
+            }
         }
+        $output = trim($output, '&');
         return $output;
     }
 }
