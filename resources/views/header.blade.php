@@ -34,7 +34,7 @@
 </div>
 
 <div class="notificacoes">
-	<button type="button" data-unread="1"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}"></button>
+	<button type="button" data-unread="0"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}"></button>
 	<button type="button" data-unread="2"><img src="/images/iconmsg.png" title="{{ trans("menu.messages") }}"></button>
 	<button type="button" data-unread="3"><img src="/images/iconbr.png" title="{{ trans("menu.warns") }}"></button>
 </div>
