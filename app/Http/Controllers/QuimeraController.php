@@ -11,13 +11,23 @@ class QuimeraController extends Controller {
 
 	public function quimera()
 	{
-		$url    = Input::get('url');
-		$params = Input::get('params');
-		$method = Input::get('method');
+		$type    = Input::get('url');
+		$params  = Input::get('params');
+		$method  = Input::get('method');
+		$process = Input::get('process');
 
-		$params = QuimeraRepository::paramsToGet($params);
+		$url    = QuimeraRepository::urlDecoder($type);
+		$params = QuimeraRepository::serializeParams($params);
+
 		$response = file_get_contents("{$url}?{$params}");
-		echo $response;
+
+		if ($process) {
+			echo "{$url}?{$params}";
+			echo QuimeraRepository::processResponse($response, $type);
+		}
+		else {
+			echo $response;
+		}
 	}
 
 }
