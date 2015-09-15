@@ -19,7 +19,7 @@ class CreateNotificacoesTable extends Migration {
 
 			$table->string('titulo', 85)->nullable();
 			$table->string('mensagem', 200)->nullable();
-			$table->enum('tipo_notificacao', ['post', 'comentario', 'seguidor', 'share', 'like_post', 'like_comentario'])->nullable();
+			$table->enum('tipo_notificacao', ['post', 'comentario', 'seguidor', 'share', 'like_post', 'like_comentario', 'chat'])->nullable();
 			$table->string('url')->nullable();
 
 

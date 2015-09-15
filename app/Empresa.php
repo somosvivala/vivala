@@ -370,7 +370,32 @@ class Empresa extends Model {
         return $this->notificacoes()->latest()->get();
     }
 
-    
+    /**
+     * Acessor para as ultimas notificacoes do tipo seguidor
+     * @return Collection
+     */
+    public function getNotificacoesFollowAttribute() 
+    {
+        return $this->notificacoes()->where('tipo_notificacao', 'seguidor')->latest()->get();
+    }
+
+     /**
+     * Acessor para as ultimas notificacoes do tipo chat
+     * @return Collection
+     */
+    public function getNotificacoesChatAttribute() 
+    {
+        return $this->notificacoes()->where('tipo_notificacao', 'chat')->latest()->get();
+    }
+
+    /**
+     * Acessor para as ultimas notificacoes do tipo 'warning', na verdade todos tipos menos seguidor e chat
+     * @return Collection
+     */
+    public function getNotificacoesWarningAttribute() 
+    {
+        return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
+    }
 
 
 }
