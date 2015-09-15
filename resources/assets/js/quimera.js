@@ -14,8 +14,9 @@ var autocomplete = function(query) {
         dataType: 'json',
         data: {
             params: {query}, 
-            url: 'https://www.e-agencias.com.br/jano-flights/api/autocomplete/cities_airports',
-            method: 'GET'
+            url: 'autocomplete',
+            method: 'GET',
+            process: true
         },
     })
     .done(function(data) {
@@ -28,7 +29,7 @@ var autocomplete = function(query) {
  */
 var searchTrip = function(params) {
     var
-        url = 'https://www.e-agencias.com.br/jano-flights/api/flights',
+        url = 'trip',
         defaultParams = {
             currency: 'BRL',
             site: 'BR',
@@ -45,6 +46,7 @@ var searchTrip = function(params) {
                 stops: null,
                 airlines: null,
                 inboundTime: null,
+                total_price_range: null      /*{(int)preço minimo}-{(int)preço maximo}*/
             }
         };
 
@@ -57,11 +59,12 @@ var searchTrip = function(params) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        /*dataType: 'html',*/
         data: {
             params: defaultParams,
             url: url,
-            method: 'GET'
+            method: 'GET',
+            process: true,
         },
     })
     .done(function(data) {
