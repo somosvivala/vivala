@@ -111,11 +111,25 @@ div.menu-usuario {
 }
 div.notificacoes {
     width: 15%;
-    button {
+    button {        
         max-width:33%;
         border: 0px solid transparent;
         position: relative;
         margin: 1rem 0;
+        &[data-unread="0"] {  
+            &:before {
+                display:none;
+                content: attr(data-unread);
+                position:absolute;
+                top:0px;
+                right:0px;
+                color: white;
+                background: @cor-primaria;
+                padding:0rem 0.3rem 0rem;
+                .font-bold-upper();
+            }
+
+        }
         img {
             max-width:100%;
         }
@@ -128,6 +142,18 @@ div.notificacoes {
             background: @cor-primaria;
             padding:0rem 0.3rem 0rem;
             .font-bold-upper();
+        }
+        div {
+            display:none;
+            position: absolute;
+            top:100%;
+            right: 0;
+            min-width:9em;
+            max-height: 30vh;
+            background-color: white;
+        }
+        &:focus div {
+            display: block;
         }
     }
 }
