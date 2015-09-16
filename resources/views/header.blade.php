@@ -35,15 +35,19 @@
 
 <div class="notificacoes">
         <button type="button" data-unread="0"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}">      
-            <div class="notificacoes-follow">
-                @include('_notificacoes', ['notificacoes' => $notificacoesFollow]);
-            </div>
         </button>
+        <div class="notificacoes-follow">
+            @include('_notificacoesFollow')
+        </div>
 
-	<button type="button" data-unread="2"><img src="/images/iconmsg.png" title="{{ trans("menu.messages") }}"></button>
-        <div class="notificacoes-msg"></div>
-	<button type="button" data-unread="3"><img src="/images/iconbr.png" title="{{ trans("menu.warns") }}"></button>
-        <div class="notificacoes-geral"></div>
+	<button type="button" data-unread="0"><img src="/images/iconmsg.png" title="{{ trans("menu.messages") }}"></button>
+        <div class="notificacoes-msg">
+            @include('_notificacoesMsg')
+        </div>
+	<button type="button" data-unread="0"><img src="/images/iconbr.png" title="{{ trans("menu.warns") }}"></button>
+        <div class="notificacoes-geral">
+            @include('_notificacoesGeral')
+        </div>
 </div>
 <div class="menu-usuario">
     <ul class="nav navbar-nav">

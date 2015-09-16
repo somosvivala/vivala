@@ -209,8 +209,16 @@ h3.subtitulo {
 
 .foto-avatar,
 img.foto-avatar {
-	max-width: 100%;
-	border-radius: 50%;
+    max-width: 100%;
+    border-radius: 50%;
+    width: 7em;
+    height: 7em;
+    position: relative;
+    margin: 0 auto;
+    .cover {
+        // Reseta o z-index pra 0 (nos links grandes fica como -1)
+        z-index: 0;
+    }
 }
 
 ul.lista-usuarios {

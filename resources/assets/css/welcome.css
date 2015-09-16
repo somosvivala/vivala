@@ -185,10 +185,25 @@ h3.subtitulo {
 img.foto-avatar {
   max-width: 100%;
   border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+.foto-avatar .cover,
+img.foto-avatar .cover {
+  z-index: 0;
 }
 ul.lista-usuarios li.foto-user img {
   max-width: 100%;
   border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+ul.lista-usuarios li.foto-user img .cover {
+  z-index: 0;
 }
 .alert {
   padding: 1em;

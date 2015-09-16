@@ -111,6 +111,7 @@ div.menu-usuario {
 }
 div.notificacoes {
     width: 15%;
+    position: relative;
     button {        
         max-width:33%;
         border: 0px solid transparent;
@@ -143,17 +144,23 @@ div.notificacoes {
             padding:0rem 0.3rem 0rem;
             .font-bold-upper();
         }
-        div {
-            display:none;
+        + div {
             position: absolute;
             top:100%;
             right: 0;
-            min-width:9em;
-            max-height: 30vh;
+            min-width:29em;
+            max-height: 0vh;
             background-color: white;
+            z-index:10;
+            overflow:hidden;
+            opacity: 0;
+           transition: 0.5s max-height ease,
+                       0.5s opacity linear;
         }
-        &:focus div {
-            display: block;
+        &:focus + div {
+           max-height: 30vh;
+           opacity: 1;
+            overflow-y:scroll;
         }
     }
 }

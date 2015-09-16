@@ -47,4 +47,19 @@ class NotificacaoController extends Controller {
 			}
 		}
 	}
+
+        public function getNotificacoesFollow($view){
+            $notificacoes = Auth::user()->entidadeAtiva->notificacoesFollow;
+            $view->with('notificacoes', $notificacoes);
+        }
+        
+        public function getNotificacoesMsg($view){
+            $notificacoes = Auth::user()->entidadeAtiva->notificacoesChat;
+            $view->with('notificacoes', $notificacoes);
+        }
+
+        public function getNotificacoesGeral($view){
+            $notificacoes = Auth::user()->entidadeAtiva->notificacoesWarning;
+            $view->with('notificacoes', $notificacoes);
+        }
 }
