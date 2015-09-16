@@ -124,7 +124,7 @@ class Empresa extends Model {
             return $this->fotoAvatar()->path;
         }
 
-        return '';
+        return '/img/nophoto.png';
     }
 
 
@@ -318,7 +318,8 @@ class Empresa extends Model {
         {
             //pegando lista de ids para fazer diff e nao recomendar ids que eu ja sigo
             $listaIdSeguidos = $listaIdSeguidos->lists('id');
-
+            $listaIdSeguidos[] = $entidadeAtiva->id;
+            
             //fazendo diff dos ids que ja sigo
             $listaIds = array_diff($listaIds, $listaIdSeguidos);
         }

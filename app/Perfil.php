@@ -21,7 +21,6 @@ class Perfil extends Model {
 
 	protected $dates = ['aniversario'];
 
-
 	public function getNomeAttribute()
 	{
 		return $this->nome_completo;
@@ -398,7 +397,8 @@ class Perfil extends Model {
         {
             //pegando lista de ids para fazer diff e nao recomendar ids que eu ja sigo
             $listaIdSeguidos = $listaIdSeguidos->lists('id');
-            
+            $listaIdSeguidos[] = $entidadeAtiva->id;
+
             //fazendo diff dos ids que ja sigo
             $listaIds = array_diff($listaIds, $listaIdSeguidos);
         }
