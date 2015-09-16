@@ -28,6 +28,10 @@ class QuimeraRepository {
                 return 'https://www.e-agencias.com.br/jano-flights/api/flights';
             case 'hotel':
                 return 'https://www.e-agencias.com.br/jano-hotels/api/search';
+            case 'hotelDetail':
+                return 'https://www.e-agencias.com.br/jano-hotels/api/details/hotel';
+            case 'hotelAvaiability':
+                return 'https://www.e-agencias.com.br/jano-hotels/api/details/availability';
         }
     }
 
