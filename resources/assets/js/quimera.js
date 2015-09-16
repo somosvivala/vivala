@@ -139,6 +139,41 @@ var sortFilterTrip = function(select) {
     return select;
 };
 
-var getFlightCompanies = function(data) {
-    console.log(data);
+/**
+ * Pesquisa de hotéis
+ */
+var searchHotels = function(params) {
+    var
+        url = 'hotel',
+        defaultParams = {
+            destination: null,
+            checkin: null,
+            checkout: null,
+            distribution: null
+        };
+
+    $.extend(defaultParams, params);
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            params: defaultParams, 
+            url: url,
+            method: 'GET',
+            process: false,
+            headers: {
+                "agency-domain": 'vivala',
+                "Accept-Language": 'pt-BR'
+            }
+        },
+    })
+    .done(function(data) {
+        console.log(data);
+    });
 };
