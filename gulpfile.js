@@ -47,7 +47,7 @@ elixir(function(mix) {
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/js/uploadFoto.js',
 
-//      '../../assets/bower/lightbox2/dist/js/lightbox.min.js',
+      '../../assets/js/notificacoes.js',
 
       '../../assets/js/welcome.js',
 

@@ -16,9 +16,9 @@ class AppServiceProvider extends ServiceProvider {
 		view()->composer('cuidar.sugestoesongs', 'App\Http\Controllers\CuidarController@getSugestoesOngs');
 		view()->composer('viajar.sugestoesempresas', 'App\Http\Controllers\ViajarController@getSugestoesempresas');
 		//view()->composer('feed', 'App\Http\Controllers\FeedController@getFeeds'); //comentado pra não poluir as outras paginas
-                view()->composer('_notificacoesFollow', 'App\Http\Controllers\NotificacaoController@getNotificacoesFollow');
+                view()->composer('_notificacoesFollow', 'App\Http\Controllers\NotificacaoController@getNotificacoesfollow');
                 view()->composer('_notificacoesMsg', 'App\Http\Controllers\NotificacaoController@getNotificacoesMsg');
-                view()->composer('_notificacoesGeral', 'App\Http\Controllers\NotificacaoController@getNotificacoesGeral');
+                view()->composer('_notificacoesGeral', 'App\Http\Controllers\NotificacaoController@getNotificacoesgeral');
 	}
 
 	/**

@@ -2,8 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Auth;
+use Request;
 
 class NotificacaoController extends Controller {
 
@@ -48,18 +48,24 @@ class NotificacaoController extends Controller {
 		}
 	}
 
-        public function getNotificacoesFollow($view){
+        public function getNotificacoesfollow($view = null){
             $notificacoes = Auth::user()->entidadeAtiva->notificacoesFollow;
+            if(Request::ajax()) {
+                return view('_notificacoesFollow')->with('notificacoes', $notificacoes);
+            }
             $view->with('notificacoes', $notificacoes);
         }
-        
+
         public function getNotificacoesMsg($view){
             $notificacoes = Auth::user()->entidadeAtiva->notificacoesChat;
             $view->with('notificacoes', $notificacoes);
         }
 
-        public function getNotificacoesGeral($view){
+        public function getNotificacoesgeral($view = null){
             $notificacoes = Auth::user()->entidadeAtiva->notificacoesWarning;
+            if(Request::ajax()) {
+                return view('_notificacoesGeral')->with('notificacoes', $notificacoes);
+            }
             $view->with('notificacoes', $notificacoes);
         }
 }
