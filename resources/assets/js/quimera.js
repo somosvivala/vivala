@@ -161,12 +161,12 @@ var searchHotels = function(params) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: {
             params: defaultParams, 
             url: url,
             method: 'GET',
-            process: false,
+            process: true,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -174,7 +174,7 @@ var searchHotels = function(params) {
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('.cria-post-container').html(data);
     });
 };
 
