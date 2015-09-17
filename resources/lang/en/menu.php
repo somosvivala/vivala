@@ -1,20 +1,28 @@
 <?php
 
 return [
-    'login' => 'Login',
-    'signup' => 'Sign Up',
-    'trips' => 'Wanna Travel',
-    'social' => 'Wanna Connect',
-    'ongs' => 'Wanna Care',
-    'follows' => 'Follows',
-    'messages' => 'Messages',
-    'warns' => 'Warns',
-    'hello' => 'Hello',
-    'profile' => 'Profile',
-    'config' => 'Settings',
-    'logout' => 'Logout',
+  /*
+  |--------------------------------------------------------------------------
+  | MENUs - As linhas a seguir são utilizadas para traduzir todos os menus
+  | EN-US
+  |--------------------------------------------------------------------------
+  */
+  // Menu Superior
 
-    'more' => 'read more',
-    'contact' => 'contact',
-    'search' => 'search',
+  // Visitante
+  'login' => 'Login',
+  'signup' => 'Sign Up',
+
+  // Usuário Logado
+  'ph_searchbar' => 'Search here...',
+  'trips' => 'Wanna Travel',
+  'social' => 'Wanna Connect',
+  'ongs' => 'Wanna Care',
+  'follows' => 'Follows',
+  'messages' => 'Messages',
+  'warns' => 'Warns',
+  'hello' => 'Hello',
+  'profile' => 'Profile',
+  'config' => 'Settings',
+  'logout' => 'Logout',
 ];

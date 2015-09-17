@@ -4,7 +4,7 @@
 
 <div class="menu-principal">
 	<div class="col-sm-4">
-		<input class="busca-geral-menu" placeholder="Digite aqui sua busca" type="search">
+		<input class="busca-geral-menu" placeholder='{{ trans("menu.ph_searchbar") }}' type="search">
 	</div>
 	<ul class="col-sm-8 nav navbar-nav lista-intervalo-preto">
 		@if (Auth::guest())
@@ -34,7 +34,7 @@
 </div>
 
 <div class="notificacoes">
-        <button type="button" id="notificacoes-follow" data-unread="0"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}">      
+        <button type="button" id="notificacoes-follow" data-unread="0"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}">
         </button>
         <div class="notificacoes-follow">
             @include('_notificacoesFollow')

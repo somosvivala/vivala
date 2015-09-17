@@ -32,26 +32,24 @@
 					{!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal form-login']) !!}
 					<div class="row">
 						<div class="col-sm-4">
-							{!! Form::label('idioma', 'Idioma', ['class' => 'titulo']) !!}
+							{!! Form::label('idioma', trans('welcome.language'), ['class' => 'titulo']) !!}
 						</div>
 						<div class="col-sm-3">
-							{!! Form::label('email', 'Fazer login', ['class' => 'titulo']) !!}
+							{!! Form::label('email', trans('welcome.login'), ['class' => 'titulo']) !!}
 						</div>
 					</div>
 
 					<div class="row">
 						<div class="col-sm-4">
-							{!! Form::select('idioma', array('pt' => trans('welcome.portugues'), 'en' => trans('welcome.ingles') )) !!}
+							{!! Form::select('idioma', array('pt' => trans('welcome.pt-BR'), 'en' => trans('welcome.en-US') )) !!}
 						</div>
 						<div class="col-sm-4">
-							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.email')]) !!}
+							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.ph_email') ]) !!}
 						</div>
-
-
 						<div class="col-sm-4">
-							{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('welcome.senha')]) !!}
+							{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('welcome.ph_password') ]) !!}
 							<span class="btn-submit">
-								{!! Form::submit("OK", ['class' => 'btn-default btn loginbtn']) !!}
+								{!! Form::submit( trans('welcome.btn_ok'), ['class' => 'btn-default btn loginbtn']) !!}
 							</span>
 						</div>
 					</div>
@@ -60,10 +58,10 @@
 							&nbsp;
 						</div>
 						<div class="col-sm-4">
-							<label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">{{trans('welcome.mantenhamelogado')}}</label>
+							<label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">{{trans('welcome.keeplogged')}}</label>
 						</div>
 						<div class="col-sm-4">
-							<a href="{{ url('/password/email') }}">{{trans('welcome.esqueceuasenha')}}</a>
+							<a href="{{ url('/password/email') }}">{{trans('welcome.forgotpassword')}}</a>
 						</div>
 					</div>
 					{!! Form::close() !!}
@@ -75,15 +73,15 @@
 	<div class="col-sm-12 welcome-content">
 		<div class="container">
 			<div class="col-sm-7 welcome-left">
-				<img class="brasilwelcome" src="/img/brasilwelcome.png" alt="Conheça o Brasil!" title="Cadastre-se na Vivalá e conheça o Brasil de verdade">
+				<img class="brasilwelcome" src="/img/brasilwelcome.png" alt="{{ trans('welcome.img_alt_vivalameet') }}" title="{{ trans('welcome.img_t_vivalaregister') }}">
 				<div class="balao-flutuante balao-1">
-					Compre seu transporte, hospedagem, alimentação e entretenimento na plataforma de viagens brasileiras mais completa da web.
+					{{ trans('welcome.floatingballon1') }}
 				</div>
 				<div class="balao-flutuante balao-2">
-					Faça trabalhos voluntários e desenvolva o Brasil.
+					{{ trans('welcome.floatingballon2') }}
 				</div>
 				<div class="balao-flutuante balao-3">
-					Conecte-se com pessoas que tem interesse em viajar no Brasil.
+					{{ trans('welcome.floatingballon3') }}
 				</div>
 			</div>
 
@@ -93,15 +91,14 @@
 
 				<div class="welcome-cadastrar row">
 					<div class="col-md-6">
-						<h3>Cadastre-se</h3>
+						<h3>{{ trans('welcome.signup') }}</h3>
 					</div>
 					<div class="col-md-6">
 						<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook btn-xs">
-							<i class="fa fa-facebook"></i> {{ trans('acoes.fblogin') }}
+							<i class="fa fa-facebook"></i> {{ trans('welcome.btn_fblogin') }}
 						</a>
 					</div>
 				</div>
-
 				@if (count($errors) > 0)
 				<div class="row">
 					<div class="col-sm-12">
@@ -120,11 +117,11 @@
 				<div class="form-group">
 					<div class="col-sm-6">
 						<!-- Adiciona um text field para o form-->
-						{!! Form::text("username", null, ['class' => 'form-control', 'placeholder' => trans('welcome.nome')]) !!}
+						{!! Form::text("username", null, ['class' => 'form-control', 'placeholder' => trans('welcome.ph_name')]) !!}
 					</div>
 					<div class="col-sm-6">
 						<!-- Adiciona um text field para o form-->
-						{!! Form::text("username_last", null, ['class' => 'form-control', 'placeholder' => trans('welcome.sobrenome')]) !!}
+						{!! Form::text("username_last", null, ['class' => 'form-control', 'placeholder' => trans('welcome.ph_lastname')]) !!}
 					</div>
 				</div>
 
@@ -132,26 +129,26 @@
 					<div class="col-sm-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "masculino") !!}
-							<span>{{trans('welcome.masculino')}}</span>
+							<span>{{trans('welcome.ph_male')}}</span>
 						</label>
 					</div>
 					<div class="col-sm-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "feminino") !!}
-							<span>{{trans('welcome.feminino')}}</span>
+							<span>{{trans('welcome.ph_female')}}</span>
 						</label>
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text" name='aniversario' class="mask-data form-control" placeholder="{{trans('welcome.nascimento')}}">
+						<input type="text" name='aniversario' class="mask-data form-control" placeholder="{{ trans('welcome.ph_birthday') }}">
 					</div>
 				</div>
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.email')]) !!}
+						{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('welcome.ph_email')]) !!}
 					</div>
 				</div>
 
@@ -163,12 +160,18 @@
 
 				<div class="form-group">
 					<div class="col-sm-12">
-						{!! Form::password("password_confirmation", ['class' => 'form-control', "placeholder" => trans('welcome.confirmacaodesenha')]) !!}
+						{!! Form::password("password_confirmation", ['class' => 'form-control', "placeholder" => trans('welcome.ph_passwordconfirmation') ]) !!}
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-12">
-						<p>Ao clicar em confirmar, você concorda com nossos Termos e Política de Dados, incluindo nosso Uso de Cookies.</p>
+					<div class="col-sm-12 welcome-privacy">
+						<p>{{ trans('welcome.aboutprivacy1') }}
+							<a href="#"> {{ trans('welcome.a_privacyterms') }}</a>
+							 {{ trans('welcome.aboutprivacy2') }}
+							<a href="#"> {{ trans('welcome.a_datapolicy') }}</a>
+							 {{ trans('welcome.aboutprivacy3') }}
+							<a href="#"> {{ trans('welcome.a_cookie') }}</a>.
+						</p>
 					</div>
 				</div>
 
@@ -177,14 +180,13 @@
 						<!-- <a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a> -->
 					</div>
 					<div class="col-sm-4">
-						{!!Form::submit(trans('welcome.confirmar'), ['class' => 'btn btn-default']) !!}
+						{!!Form::submit( trans('welcome.btn_signup'), ['class' => 'btn btn-default']) !!}
 					</div>
 				</div>
 				{!! Form::close() !!}
 			</div>
 		</div>
 	</div>
-
 	<!-- Scripts -->
 	<script src="{{ asset('/js/vendor.js') }}"></script>
 </body>

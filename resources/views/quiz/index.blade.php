@@ -34,15 +34,13 @@
         </div>
 
         <div class="col-sm-10 text-right">
-            <span class="laranja absolute-top-right">Passo {{ $passo }} de 4</span>
+            <span class="laranja absolute-top-right">{{ trans("quiz.step") }} {{ $passo }} {{ trans("quiz.offour") }}</span>
         </div>
 	</nav>
-
-
 	<div class="col-sm-2 col-md-2">
         &nbsp;
 	</div>
-
+	
 	<div class="col-sm-8 col-md-8">
 		@yield('pergunta')
 	</div>

@@ -22,7 +22,7 @@
 			</div>
         </li>
 	@empty
-	    <p>{{ trans("post.nocomments") }}</p>
+	    <p class="col-sm-12">{{ trans("post.nocomments") }}</p>
 	@endforelse
 	@endif
 </div>

@@ -1,18 +1,20 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
-    | Menu Language Lines
+    | MENUs - As linhas a seguir são utilizadas para traduzir todos os menus
+    | PT-BR
     |--------------------------------------------------------------------------
-    |
-    | As linhas a seguir são utilizadas para traduzir o menu
-    |
     */
+    // Menu Superior
 
+    // Visitante
     'login' => 'Login',
     'signup' => 'Registrar',
+
+    // Usuário Logado
+    'ph_searchbar' => 'Digite aqui sua busca...',
     'trips' => 'Quero Viajar',
     'social' => 'Quero Me Conectar',
     'ongs' => 'Quero Cuidar',
@@ -23,9 +25,4 @@ return [
     'profile' => 'Perfil',
     'config' => 'Configurações',
     'logout' => 'Sair',
-
-    'more' => 'read more',
-    'contact' => 'contact',
-    'search' => 'search',
-
 ];
