@@ -18,12 +18,17 @@ class NotificacaoController extends Controller {
 	 * @param  $tipo 		[seguidor|comentario|like_comentario|like_post|post]
 	 * @return integer   
 	 */
-	public function getChecarnovas($tipo = 'seguidor') 
+	public function getChecarnovas($tipo = 'warning') 
 	{
-		$notificacoes = Auth::user()->entidadeAtiva->notificacoes()
-			->where('readed', false)
-			->where('tipo_notificacao',$tipo)
-			->get();
+		$notificacoes = Auth::user()->entidadeAtiva->notificacoes()->where('readed', false);
+		
+		//Se nao forneceu o tipo, entao retornar as notificacoes gerais (sem follow e chat)
+		if ($tipo == 'warning') {
+			$warning = ['seguidor', 'chat'];
+			$notificacoes->whereNotIn('tipo_notificacao', $warning)->get();
+		} else {
+			$notificacoes->where('tipo_notificacao', $tipo)->get();
+		}
 		
 		$quantidadeNotificacoes = $notificacoes ? count($notificacoes) : false;
 		return $quantidadeNotificacoes;
