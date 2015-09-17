@@ -24,7 +24,12 @@ class QuimeraController extends Controller {
 		$response = isset($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
 
 		if ($process == 'true') {
-			echo QuimeraRepository::processResponse($response, $type);
+			$output = QuimeraRepository::processResponse($response, $type);
+			if (array_key_exists('blade', $output)) {
+				$data = $output['data'];
+				$output = view($output['blade'], compact('data'));
+			}
+			return $output;
 		}
 		else {
 			echo $response;

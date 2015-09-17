@@ -83,6 +83,9 @@ class QuimeraRepository {
 
     private static function _hotelToHTML($data)
     {
-        return $data;
+        return array(
+            'data'  => json_decode($data)->items,
+            'blade' => 'quimera._hotels'
+        );
     }
 }
