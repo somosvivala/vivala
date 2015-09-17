@@ -161,6 +161,77 @@ var searchHotels = function(params) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
+        dataType: 'html',
+        data: {
+            params: defaultParams, 
+            url: url,
+            method: 'GET',
+            process: true,
+            headers: {
+                "agency-domain": 'vivala',
+                "Accept-Language": 'pt-BR'
+            }
+        },
+    })
+    .done(function(data) {
+        $('.cria-post-container').html(data);
+    });
+};
+
+/**
+ * Procurar por informações detalhadas de um hotel pelo seu ID
+ */
+var hotelDetail = function(id) {
+    var
+        url = 'hotelDetail';
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            params: {id: id}, 
+            url: url,
+            method: 'GET',
+            process: false,
+            headers: {
+                "agency-domain": 'vivala',
+                "Accept-Language": 'pt-BR'
+            }
+        },
+    })
+    .done(function(data) {
+        console.log(data);
+    });
+};
+
+/**
+ * Verificar disponibilidade de vagas no hotel
+ */
+var hotelAvaiability = function(params) {
+    var
+        url = 'hotelAvaiability',
+        defaultParams = {
+            id: null,
+            checkin: null,
+            checkout: null,
+            distribution: null,
+            currency: 'BRL'
+        };
+
+    $.extend(defaultParams, params);
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
         dataType: 'json',
         data: {
             params: defaultParams, 

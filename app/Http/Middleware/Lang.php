@@ -20,7 +20,12 @@ class Lang {
      */
     public function handle($request, Closure $next)
     {
-        if(!Session::has('locale') || $request->input('idioma') !== null )
+        if(!Session::has('locale'))
+        {
+            Session::put('locale', 'pt');
+        }
+
+        if( $request->input('idioma') !== null )
         {
             Session::put('locale', $request->input('idioma'));
         }

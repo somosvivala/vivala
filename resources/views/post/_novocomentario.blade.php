@@ -1,7 +1,7 @@
 <div class="row novo-comentario">
 
 	<div class="col-sm-2">
-        <img class="foto-avatar" src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
+        <img class="foto-avatar-comentario" src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
     </div>
     <div class="col-sm-10">
 

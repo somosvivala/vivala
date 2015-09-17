@@ -34,17 +34,17 @@
 </div>
 
 <div class="notificacoes">
-        <button type="button" data-unread="0"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}">      
+        <button type="button" id="notificacoes-follow" data-unread="0"><img src="/images/iconperson.png" title="{{ trans("menu.follows") }}">      
         </button>
         <div class="notificacoes-follow">
             @include('_notificacoesFollow')
         </div>
 
-	<button type="button" data-unread="0"><img src="/images/iconmsg.png" title="{{ trans("menu.messages") }}"></button>
+	<button type="button" id="notificacoes-msg" data-unread="0"><img src="/images/iconmsg.png" title="{{ trans("menu.messages") }}"></button>
         <div class="notificacoes-msg">
             @include('_notificacoesMsg')
         </div>
-	<button type="button" data-unread="0"><img src="/images/iconbr.png" title="{{ trans("menu.warns") }}"></button>
+	<button type="button" id="notificacoes-geral" data-unread="0"><img src="/images/iconbr.png" title="{{ trans("menu.warns") }}"></button>
         <div class="notificacoes-geral">
             @include('_notificacoesGeral')
         </div>

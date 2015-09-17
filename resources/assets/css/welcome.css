@@ -183,7 +183,6 @@ h3.subtitulo {
 }
 .foto-avatar,
 img.foto-avatar {
-  max-width: 100%;
   border-radius: 50%;
   width: 7em;
   height: 7em;
@@ -194,8 +193,18 @@ img.foto-avatar {
 img.foto-avatar .cover {
   z-index: 0;
 }
-ul.lista-usuarios li.foto-user img {
+.foto-avatar-comentario {
   max-width: 100%;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  position: relative;
+  margin: 0 auto;
+}
+.foto-avatar-comentario .cover {
+  z-index: 0;
+}
+ul.lista-usuarios li.foto-user img {
   border-radius: 50%;
   width: 7em;
   height: 7em;
