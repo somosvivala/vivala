@@ -402,5 +402,15 @@ class Ong extends Model {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
 
+    /**
+     * Uma Ong pode ter varias Causas
+     */
+    public function Causas()
+    {
+        return $this->morphMany('App\Causa', 'owner', 'owner_type', 'owner_id');
+    }
+
+
+
 
 }

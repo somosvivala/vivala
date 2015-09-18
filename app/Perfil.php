@@ -596,4 +596,13 @@ class Perfil extends Model {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
 
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Causa,
+     * um Perfil pode ser responsavel por muitas causas (projetos)
+     */
+    public function causasResponsavel() {
+        return $this->hasMany('App\Causa');
+    }
+
+
 }

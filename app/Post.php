@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace App;"asdasdasd"
 
 use Illuminate\Database\Eloquent\Model;
 use Jenssegers\Date\Date;
