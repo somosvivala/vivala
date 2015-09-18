@@ -18,6 +18,7 @@
                 <p>{{ $Notificacao->mensagem }}</p>
             </a>
         </div>
+        <span>{{ $Notificacao->data_postagem_diff}}
     </li>
     @empty
         <p>Nenhuma notificação nova. :(</p>

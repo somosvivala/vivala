@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Date\Date;
 
 class Notificacao extends Model {
 
@@ -24,4 +25,13 @@ class Notificacao extends Model {
 	{
 		 return $this->morphTo();
 	}
+
+      	// Definindo a propriedades que nao existem no bd
+	public function getDataPostagemDiffAttribute()
+	{
+		$date = new Date($this->created_at);
+		return $date->diffForHumans();
+	}
+
+
 }
