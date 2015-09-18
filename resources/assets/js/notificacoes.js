@@ -58,7 +58,7 @@ $(function() {
     // binda o clique dos botões de notificação para mark all as read
     $("button#notificacoes-geral").click(function() {
         $.ajax({
-            url: 'notificacoes/marcartodascomolidas/geral'
+            url: 'notificacoes/marcartodascomolidas/'
         }).done(function (data) {
             $("button#notificacoes-geral").attr("data-unread", 0);
         });
