@@ -410,7 +410,15 @@ class Ong extends Model {
         return $this->morphMany('App\Causa', 'owner', 'owner_type', 'owner_id');
     }
 
-
+    /**
+     * Acessor para o tipo dessa entidade
+     * @return [type] [description]
+     */
+    public function getTipoAttribute() 
+    {
+        preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
+        return strtolower($retorno);
+    }
 
 
 }

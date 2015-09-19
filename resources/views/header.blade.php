@@ -66,7 +66,7 @@
                     @endif
                     <li class="subsubmenu">
                         <ul>
-                            <li><i class="fa fa-plus"></i> Criar página </li>
+                            <li><i class="fa fa-plus"></i> <a href="/paginas/criarpagina">Criar página </a></li>
                             <li><i class="fa fa-gear"></i> Gerenciar páginas </li>
                         </ul>
                     </li>
