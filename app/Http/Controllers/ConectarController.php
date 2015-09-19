@@ -7,6 +7,7 @@ use View;
 use Auth;
 use Illuminate\Http\Request;
 use App\Post;
+use Session;
 
 class ConectarController extends VivalaBaseController {
 
@@ -30,6 +31,7 @@ class ConectarController extends VivalaBaseController {
 	{
 		$posts = Post::getUltimos();
 
+                dd(Session::all());
 		return view('conectar.index', compact('posts'));
 
 	}

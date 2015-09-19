@@ -56,7 +56,20 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu submenu" role="menu">
+                    @if( isset($paginas) && count($paginas) > 0 )
+                    <li> <span> Usar Vivalá como: </span> </li>
+                    @foreach($paginas as $Pagina)
+                    <li>{{ $Pagina->nome }}</li>
+                    @endforeach
+                    <li> Ver mais... </li>
+                    @endif
+                    <li class="subsubmenu">
+                        <ul>
+                            <li><i class="fa fa-plus"></i> Criar página </li>
+                            <li><i class="fa fa-gear"></i> Gerenciar páginas </li>
+                        </ul>
+                    </li>
                     <li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
                     <li><a href="{{ url('config') }}">{{ trans("menu.config") }}</a></li>
                     <li><a href="{{ url('/auth/logout') }}">{{ trans("menu.logout") }}</a></li>
