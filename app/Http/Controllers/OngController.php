@@ -155,5 +155,7 @@ class OngController extends CuidarController {
         $ong->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('ong.show', compact('ong'));
     }
+
+
 	
 }
