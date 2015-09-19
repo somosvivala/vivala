@@ -56,7 +56,16 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu submenu" role="menu">
+                    <li> <span> Usar Vivalá como: </span> </li>
+                    <li></li>
+                    <li> Ver mais... </li>
+                    <li class="subsubmenu">
+                        <ul>
+                            <li> Criar página </li>
+                            <li> Gerenciar páginas </li>
+                        </ul>
+                    </li>
                     <li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
                     <li><a href="{{ url('config') }}">{{ trans("menu.config") }}</a></li>
                     <li><a href="{{ url('/auth/logout') }}">{{ trans("menu.logout") }}</a></li>

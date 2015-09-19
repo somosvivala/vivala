@@ -19,6 +19,11 @@ class AppServiceProvider extends ServiceProvider {
                 view()->composer('_notificacoesFollow', 'App\Http\Controllers\NotificacaoController@getNotificacoesfollow');
                 view()->composer('_notificacoesMsg', 'App\Http\Controllers\NotificacaoController@getNotificacoesMsg');
                 view()->composer('_notificacoesGeral', 'App\Http\Controllers\NotificacaoController@getNotificacoesgeral');
+
+                // Passa outras páginas do usuario e dados da entidade ativa no 
+                // momento
+                view()->composer('_header', 'App\Http\Controllers\PaginaController@getMenu');
+
 	}
 
 	/**
