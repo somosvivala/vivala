@@ -10,7 +10,7 @@ use DB;
 
 class Empresa extends Model {
 
-    protected $fillable = ['nome', 'user_id', 'apelido'];
+    protected $fillable = ['nome', 'user_id', 'apelido', 'categoria'];
 
 
 	/**
