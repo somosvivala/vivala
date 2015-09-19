@@ -6,31 +6,33 @@ class Causa extends Model {
 
 	//mass assigned fields
 	protected $fillable = [
-		'titulo',
 		'descricao',
 		'habilidades',
 		'sobre_trabalho',
-		'local',
-		'perfil_id'
+		'local'
 		];	
 
 	/**
-	 * Estabelece a relaçao entre a entidade causa e a entidade Perfil,
-	 * uma causa pertende a uma Perfil.
+	 * Estabelece a relaçao entre a entidade Causa e a entidade Perfil,
+	 * uma Causa sempre tem um responsavel Perfil.
 	 */
 	public function responsavel() {
 		return $this->belongsTo('App\Perfil');
 	}
 
 	/**
-	 * Estabelece a relaçao entre a entidade causa e a entidade Perfil,
-	 * uma causa tem muitos voluntarios do tipo Perfil.
+	 * Estabelece a relaçao entre a entidade Causa e a entidade Perfil,
+	 * uma Causa tem muitos voluntarios do tipo Perfil, que podem
+	 * se voluntariar em varias Causas
 	 */
 	public function voluntarios() {
-		return $this->hasMany('App\Perfil');
+		return $this->belongsToMany('App\Perfil');
 	}
 
-
+	/**
+	 * Relacao polimorfica de owner,
+	 * @todo Por enquanto só Ong implementa essa relaçao.      
+	 */
 	public function owner() {
 		return $this->morphTo();
 	}
