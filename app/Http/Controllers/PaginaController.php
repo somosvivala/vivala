@@ -2,8 +2,11 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Auth;
 use Illuminate\Http\Request;
+use Auth;
+use App\Ong;
+use App\Empresa;
+
 
 class PaginaController extends Controller {
 
@@ -25,7 +28,13 @@ class PaginaController extends Controller {
 	{
             $paginas = Auth::user()->paginas;
             $paginas = $paginas->take(3);
+            // dd($paginas);
             $view->with('paginas', $paginas);
+	}
+
+	public function getCriarPagina() 
+	{
+
 	}
 
 }

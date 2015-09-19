@@ -57,7 +57,7 @@
                 <div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
                 <ul class="dropdown-menu submenu" role="menu">
-                    @if( isset($paginas) && count($paginas > 0) )
+                    @if( isset($paginas) && count($paginas) > 0 )
                     <li> <span> Usar Vivalá como: </span> </li>
                     @foreach($paginas as $Pagina)
                     <li>{{ $Pagina->nome }}</li>
