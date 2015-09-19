@@ -7,7 +7,7 @@ use DB;
 
 class Ong extends Model {
     
-	protected $fillable = ['nome', 'user_id', 'apelido'];
+	protected $fillable = ['nome', 'user_id', 'apelido', 'categoria'];
 
 
 	/**

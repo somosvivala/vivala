@@ -26,6 +26,7 @@ Route::get('postajax/{id}/{secao}', 'PostController@show');
 Route::controller('post','PostController');
 Route::controller('albums','AlbumController');
 Route::controller('notificacoes','NotificacaoController');
+Route::controller('paginas','PaginaController');
 
 
 // Rotas dos três pilares do sistema
