@@ -19,8 +19,14 @@ class CreateOngsTable extends Migration {
 			$table->string('apelido')->nullable();
 			$table->timestamps();
 
-			$table->enum('categoria', ['tipo1', 'tipo2', 'tipo3'])->nullable();			
+			//FK para categoria_ong
+			$table->integer('categoria_id')->unsigned();
+			$table->foreign('categoria_id')
+				->references('id')
+				->on('categoria_ong')
+				->onDelete('cascade');
 
+			//Fk para usuario, uma ong sempre pertence a um usuario
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')
 				->references('id')

@@ -408,5 +408,13 @@ class Empresa extends Model {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
 
-
+    /**
+     * Acessor para o tipo dessa entidade
+     * @return [type] [description]
+     */
+    public function getTipoAttribute() 
+    {
+        preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
+        return strtolower($retorno);
+    }
 }
