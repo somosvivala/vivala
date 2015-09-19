@@ -9,8 +9,8 @@ class NotificacaoController extends Controller {
 
 	public function __construct()
 	{
-    	//Só passa se estiver logado
-    	$this->middleware('auth');
+            //Só passa se estiver logado
+            $this->middleware('auth');
 	}
 
 	/**

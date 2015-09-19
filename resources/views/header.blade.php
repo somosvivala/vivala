@@ -60,14 +60,31 @@
                     @if( isset($paginas) && count($paginas) > 0 )
                     <li> <span> Usar Vivalá como: </span> </li>
                     @foreach($paginas as $Pagina)
-                    <li>{{ $Pagina->nome }}</li>
+                        <li class="row">
+                            <a href="{{ action('HomeController@getTrocaentidadeativa', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
+                                <div class="col-sm-4">
+                                    <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
+                                </div>
+                                <div class="col-sm-8">
+                                    {{ $Pagina->nome }}
+                                </div>
+                            </a>
+                        </li>
                     @endforeach
-                    <li> Ver mais... </li>
+                    <li><a href="{{ url('paginas/gerenciar') }}"> Ver mais...  </a> </li>
                     @endif
                     <li class="subsubmenu">
                         <ul>
-                            <li><i class="fa fa-plus"></i> Criar página </li>
-                            <li><i class="fa fa-gear"></i> Gerenciar páginas </li>
+                            <li>
+                                <a href="{{ url('paginas/criarpagina') }}"> 
+                                    <i class="fa fa-plus"></i> Criar página 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('paginas/gerenciar') }}">
+                                    <i class="fa fa-gear"></i> Gerenciar páginas 
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
