@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class PaginaController extends Controller {
@@ -14,7 +14,6 @@ class PaginaController extends Controller {
 	 */
 	public function __construct()
 	{
-		parent::__construct();
 		$this->middleware('auth');
 	}
 
@@ -24,9 +23,9 @@ class PaginaController extends Controller {
 	 */
 	public function getMenu($view = null) 
 	{
-		$paginas = Auth::user()->paginas;
-		$paginas = $paginas->take(3);
-		return $paginas;
+            $paginas = Auth::user()->paginas;
+            $paginas = $paginas->take(3);
+            $view->with('paginas', $paginas);
 	}
 
 }

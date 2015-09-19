@@ -57,13 +57,17 @@
                 <div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
                 <ul class="dropdown-menu submenu" role="menu">
+                    @if( isset($paginas) && count($paginas > 0) )
                     <li> <span> Usar Vivalá como: </span> </li>
-                    <li></li>
+                    @foreach($paginas as $Pagina)
+                    <li>{{ $Pagina->nome }}</li>
+                    @endforeach
                     <li> Ver mais... </li>
+                    @endif
                     <li class="subsubmenu">
                         <ul>
-                            <li> Criar página </li>
-                            <li> Gerenciar páginas </li>
+                            <li><i class="fa fa-plus"></i> Criar página </li>
+                            <li><i class="fa fa-gear"></i> Gerenciar páginas </li>
                         </ul>
                     </li>
                     <li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>

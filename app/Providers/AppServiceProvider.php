@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider {
 
                 // Passa outras páginas do usuario e dados da entidade ativa no 
                 // momento
-                view()->composer('_header', 'App\Http\Controllers\PaginaController@getMenu');
+                view()->composer('header', 'App\Http\Controllers\PaginaController@getMenu');
 
 	}
 
