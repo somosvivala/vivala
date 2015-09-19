@@ -189,19 +189,4 @@ class AjaxController extends VivalaBaseController {
 		return json_encode($return);
 	}
 
-	/**
-	 * Retorna ate 3 paginas dentre as Ongs/Empresas de um Usuario
-	 * @return Array<Ong|Empresa> 
-	 */
-	public function getPaginasmenu() 
-	{
-		$paginas = Auth::user()->paginas;
-		$paginas = $paginas->take(3);
-		return $paginas;
-	}
-
-
-
-
-
 }
