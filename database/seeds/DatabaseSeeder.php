@@ -10,6 +10,8 @@ use App\Ong;
 use App\Empresa;
 use App\Foto;
 use App\Interesse;
+use App\CategoriaOng;
+use App\CategoriaEmpresa;
 
 class DatabaseSeeder extends Seeder {
 
@@ -25,26 +27,13 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ConfiguracaoSeeder');
 		$this->call('UserSeeder');
         $this->call('PerfilSeeder');
+        $this->call('CategoriasOngSeeder');
         $this->call('OngSeeder');
+        $this->call('CategoriasEmpresaSeeder');
         $this->call('EmpresaSeeder');
         $this->call('PrettyUrlSeeder');
         $this->call('FotoSeeder');
         $this->call('InteresseSeeder');
-
-
-
-
-/*
-        #iseed_start
-        // here all the calls for newly generated seeds will be stored.
-
-
-
-        $this->call('EstadosTableSeeder');
-		$this->call('CidadesTableSeeder');
-
-		#iseed_end
-*/
 
 	}
 }
@@ -369,5 +358,45 @@ class InteresseSeeder extends Seeder {
         Interesse::create(['nome' => 'Banho']);
         Interesse::create(['nome' => 'Dormir']);
         Interesse::create(['nome' => '%7}ºª¢¬6#$@']);
+    }
+}
+
+
+
+class CategoriasOngSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('categoria_ongs')->delete();
+
+        CategoriaOng::create(['nome' => 'categoria 1']);
+        CategoriaOng::create(['nome' => 'categoria 2']);
+        CategoriaOng::create(['nome' => 'categoria 3']);
+        CategoriaOng::create(['nome' => 'categoria 2']);
+        CategoriaOng::create(['nome' => 'categoria 3']);
+        CategoriaOng::create(['nome' => 'categoria 4']);
+        CategoriaOng::create(['nome' => 'categoria 5']);
+        CategoriaOng::create(['nome' => 'categoria 6']);
+        CategoriaOng::create(['nome' => 'categoria 7']);
+        CategoriaOng::create(['nome' => 'categoria 8']);
+    }
+}
+
+class CategoriasEmpresaSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('categoria_empresas')->delete();
+
+        CategoriaEmpresa::create(['nome' => 'categoria 1']);
+        CategoriaEmpresa::create(['nome' => 'categoria 2']);
+        CategoriaEmpresa::create(['nome' => 'categoria 3']);
+        CategoriaEmpresa::create(['nome' => 'categoria 2']);
+        CategoriaEmpresa::create(['nome' => 'categoria 3']);
+        CategoriaEmpresa::create(['nome' => 'categoria 4']);
+        CategoriaEmpresa::create(['nome' => 'categoria 5']);
+        CategoriaEmpresa::create(['nome' => 'categoria 6']);
+        CategoriaEmpresa::create(['nome' => 'categoria 7']);
+        CategoriaEmpresa::create(['nome' => 'categoria 8']);
     }
 }

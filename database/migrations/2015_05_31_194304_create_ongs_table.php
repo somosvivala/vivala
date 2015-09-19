@@ -20,10 +20,10 @@ class CreateOngsTable extends Migration {
 			$table->timestamps();
 
 			//FK para categoria_ong
-			$table->integer('categoria_id')->unsigned();
-			$table->foreign('categoria_id')
+			$table->integer('categoria_ong_id')->unsigned()->nullable();
+			$table->foreign('categoria_ong_id')
 				->references('id')
-				->on('categoria_ong')
+				->on('categoria_ongs')
 				->onDelete('cascade');
 
 			//Fk para usuario, uma ong sempre pertence a um usuario

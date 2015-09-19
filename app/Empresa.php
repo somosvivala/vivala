@@ -10,7 +10,7 @@ use DB;
 
 class Empresa extends Model {
 
-    protected $fillable = ['nome', 'user_id', 'apelido', 'categoria'];
+    protected $fillable = ['nome', 'user_id', 'apelido', 'categoria_id'];
 
 
 	/**
@@ -415,6 +415,14 @@ class Empresa extends Model {
     public function getTipoAttribute() 
     {
         preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
-        return strtolower($retorno);
+        return strtolower($retorno[1]);
     }
+
+    
+    public function categoria() {
+        return $this->belongsTo('App\CategoriaEmpresa', 'categoria_empresa_id');
+    }
+
+
+
 }

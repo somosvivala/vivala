@@ -189,4 +189,5 @@ class AjaxController extends VivalaBaseController {
 		return json_encode($return);
 	}
 
+
 }

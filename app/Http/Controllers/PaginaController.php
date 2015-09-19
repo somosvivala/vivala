@@ -32,13 +32,10 @@ class PaginaController extends Controller {
             $view->with('paginas', $paginas);
 	}
 
-	public function getCriarpagina() 
+	public function getCriarPagina() 
 	{
-            $categoriasOngs = [];
-            $categoriasEmpresas = [];
-            
-            return view('paginas.criar', compact('categoriasOngs','categoriasEmpresas'));
-            
+		
+
 	}
 
 }

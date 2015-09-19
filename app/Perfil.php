@@ -621,7 +621,7 @@ class Perfil extends Model {
     public function getTipoAttribute() 
     {
         preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
-        return strtolower($retorno);
+        return strtolower($retorno[1]);
     }    
 
 

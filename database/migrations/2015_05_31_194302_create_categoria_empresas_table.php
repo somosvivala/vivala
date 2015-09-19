@@ -16,6 +16,9 @@ class CreateCategoriaEmpresasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+
+			$table->string('nome', 100);
+			$table->string('descricao')->nullable();
 		});
 	}
 

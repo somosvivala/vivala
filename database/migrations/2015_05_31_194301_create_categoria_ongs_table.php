@@ -19,7 +19,6 @@ class CreateCategoriaOngsTable extends Migration {
 
 			$table->string('nome', 100);
 			$table->string('descricao')->nullable();
-			
 		});
 	}
 

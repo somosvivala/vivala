@@ -7,7 +7,7 @@ use DB;
 
 class Ong extends Model {
     
-	protected $fillable = ['nome', 'user_id', 'apelido', 'categoria'];
+	protected $fillable = ['nome', 'user_id', 'apelido', 'categoria_id'];
 
 
 	/**
@@ -417,8 +417,13 @@ class Ong extends Model {
     public function getTipoAttribute() 
     {
         preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
-        return strtolower($retorno);
+        return strtolower($retorno[1]);
     }
+
+    public function categoria() {
+        return $this->belongsTo('App\CategoriaOng', 'categoria_ong_id');
+    }
+
 
 
 }
