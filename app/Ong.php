@@ -405,7 +405,7 @@ class Ong extends Model {
     /**
      * Uma Ong pode ter varias Causas
      */
-    public function Causas()
+    public function causas()
     {
         return $this->morphMany('App\Causa', 'owner', 'owner_type', 'owner_id');
     }

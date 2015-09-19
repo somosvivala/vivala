@@ -604,5 +604,17 @@ class Perfil extends Model {
         return $this->hasMany('App\Causa');
     }
 
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Causa,
+     * um Perfil pode ser voluntario em muitas Causas, que pode ter muitos
+     * perfils como voluntario.
+     */
+    public function causasVoluntario() {
+        return $this->belongsToMany('App\Causa');
+    }
+
+
+    
+
 
 }

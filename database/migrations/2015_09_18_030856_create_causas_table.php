@@ -27,17 +27,26 @@ class CreateCausasTable extends Migration {
 			$table->string('local')->nullable();
 
 			//uma causa sempre tem um perfil responsavel
-			$table->integer('perfil_id')->unsigned()->nullable();
+			$table->integer('responsavel_id')->unsigned()->nullable();
+			$table->foreign('responsavel_id')
+				->references('id')
+				->on('perfils');
+		});
+
+		Schema::create('causa_perfil', function(Blueprint $table)
+		{
+			//uma causa sempre tem um perfil responsavel
+			$table->integer('perfil_id')->unsigned();
 			$table->foreign('perfil_id')
 				->references('id')
 				->on('perfils');
 
-
-
-
-
-
+			$table->integer('causa_id')->unsigned();
+			$table->foreign('causa_id')
+				->references('id')
+				->on('causas');
 		});
+
 	}
 
 	/**
@@ -47,6 +56,7 @@ class CreateCausasTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::drop('causa_perfil');
 		Schema::drop('causas');
 	}
 
