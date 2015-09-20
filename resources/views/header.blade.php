@@ -61,7 +61,7 @@
                     <li> <span> Usar Vivalá como: </span> </li>
                     @foreach($paginas as $Pagina)
                         <li class="row">
-                            <a href="{{ action('HomeController@getTrocaentidadeativa', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
+                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
                                 <div class="col-sm-4">
                                     <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
                                 </div>

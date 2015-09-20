@@ -30,8 +30,6 @@ class ConectarController extends VivalaBaseController {
 	public function index()
 	{
 		$posts = Post::getUltimos();
-
-                dd(Session::all());
 		return view('conectar.index', compact('posts'));
 
 	}
