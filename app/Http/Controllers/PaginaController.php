@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Auth;
+use App\Perfil;
 use App\Ong;
 use App\Empresa;
 use App\CategoriaEmpresa;
@@ -69,24 +70,31 @@ class PaginaController extends Controller {
                 case 'ong':
 					# Retorna a ong na lista de ongs do usuario, ou o perfil
                 	$ong = Ong::find($entidadeAtiva_id);
-                	$entidadeExiste = $ong ? true : false;
+                	$entidadeExiste = ($ong && Auth::user()->ongs->find($id)) ? true : false;
                     break;
 
                 case 'empresa':
                 	# Retorna a empresa na lista de empresas do usuario, ou o perfil
                 	$empresa = Empresa::find($entidadeAtiva_id);
-                	$entidadeExiste = $empresa ? true : false;
+                	$entidadeExiste = ($empresa && Auth::user()->empresas->find($id)) ? true : false;
                 	break;
 
+            	case 'perfil':
+            		# Retorna a empresa na lista de empresas do usuario, ou o perfil
+            		$perfil = Perfil::find($entidadeAtiva_id);
+            		$entidadeExiste = ($perfil && Auth::user()->perfil->id == $id) ? true : false;
+            		break;
+             
                 default:
-                        break;
+            		break;
             }
 
             if ($entidadeExiste) {
             	Session::put('entidadeAtiva_id', $entidadeAtiva_id);
             	Session::put('entidadeAtiva_tipo', $entidadeAtiva_tipo);
-            	return redirect('conectar');
-            }
+            } 
+            
+            return redirect('conectar');
         }
     }
 
