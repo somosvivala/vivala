@@ -57,8 +57,24 @@
                 <div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
                 <ul class="dropdown-menu submenu" role="menu">
+                    @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
+                        <li> <span> Usar Vivalá como: </span> </li>
+                    @endif 
+
+                    {{-- Se a entidade ativa não for um perfil lista o perfil para ativar --}}
+                    @if ( strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil" )
+                        <li class="row">
+                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => Auth::user()->perfil->id , 'tipo' => 'perfil' ]) }}">
+                                <div class="col-sm-4">
+                                    <img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->perfil->apelido }}">
+                                </div>
+                                <div class="col-sm-8">
+                                    {{ Auth::user()->perfil->apelido }}
+                                </div>
+                            </a>
+                        </li>
+                    @endif 
                     @if( isset($paginas) && count($paginas) > 0 )
-                    <li> <span> Usar Vivalá como: </span> </li>
                     @foreach($paginas as $Pagina)
                         <li class="row">
                             <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
