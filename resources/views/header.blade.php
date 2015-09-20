@@ -24,7 +24,7 @@
 				</a>
 			</li>
 			<li class="menu-cuidar">
-				<a href="{{ url('/cuidar') }}" class="desativado">
+				<a href="{{ url('/cuidar') }}"> 
 					<i class="icon36 icon-cuidar"></i>
 					<span>{{ trans("menu.ongs") }}</span>
 				</a>
