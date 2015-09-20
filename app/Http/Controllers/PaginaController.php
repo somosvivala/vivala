@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Ong;
 use App\Empresa;
+use App\CategoriaEmpresa;
+use App\CategoriaOng;
 
 
 class PaginaController extends Controller {
@@ -32,10 +34,13 @@ class PaginaController extends Controller {
             $view->with('paginas', $paginas);
 	}
 
-	public function getCriarPagina() 
+	public function getCriarpagina() 
 	{
-		
-
+        $categoriasOngs = CategoriaOng::all();
+        $categoriasEmpresas = CategoriaEmpresa::all();
+        
+        return view('paginas.criar', compact('categoriasOngs','categoriasEmpresas'));
+        
 	}
 
 }

@@ -23,6 +23,31 @@
     </div>
     <div class="col-sm-4">
     </div>
-
 </div>
+    
+
+    @if(isset($categoriasOngs))
+            @forelse($categoriasOngs as $Categoria)
+                <li class="col-sm-3">
+                    <label>
+                        <span>{{ $Categoria->nome }}</span>
+                    </label>
+                </li>
+            @empty
+                <p>Sem categorias</p>
+            @endforelse
+    @endif
+
+    @if(isset($categoriasEmpresas))
+            @forelse($categoriasEmpresas as $Categoria)
+                <li class="col-sm-3">
+                    <label>
+                        <span>{{ $Categoria->nome }}</span>
+                    </label>
+                </li>
+            @empty
+                <p>Sem categorias</p>
+            @endforelse
+    @endif
+
 @endsection
