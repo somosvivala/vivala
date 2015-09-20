@@ -8,6 +8,7 @@ use App\Ong;
 use App\Empresa;
 use App\CategoriaEmpresa;
 use App\CategoriaOng;
+use Session;
 
 
 class PaginaController extends Controller {
@@ -43,11 +44,50 @@ class PaginaController extends Controller {
         
 	}
 
-        public function getGerenciar() 
+    public function getGerenciar() 
 	{
-            $paginas = Auth::user()->paginas;
-         
-            return view('paginas.gerenciar', compact('paginas'));
+        $paginas = Auth::user()->paginas;
+     
+        return view('paginas.gerenciar', compact('paginas'));
+    }
+
+    /**
+     * Metodo para trocar a entidadeAtiva atual
+     * @param  $id   		Id da entidade a ser acessada
+     * @param  $tipo 		Tipo da entidade (ong|empresa|perfil)
+     */
+    public function getAcessarcomo ($id , $tipo) 
+    {
+    
+        $entidadeAtiva_id = $id;
+        $entidadeAtiva_tipo = $tipo;
+
+        if ($entidadeAtiva_tipo && $entidadeAtiva_id) {
+
+            $entidadeExiste = false;
+            switch ($entidadeAtiva_tipo)  {
+                case 'ong':
+					# Retorna a ong na lista de ongs do usuario, ou o perfil
+                	$ong = Ong::find($entidadeAtiva_id);
+                	$entidadeExiste = $ong ? true : false;
+                    break;
+
+                case 'empresa':
+                	# Retorna a empresa na lista de empresas do usuario, ou o perfil
+                	$empresa = Empresa::find($entidadeAtiva_id);
+                	$entidadeExiste = $empresa ? true : false;
+                	break;
+
+                default:
+                        break;
+            }
+
+            if ($entidadeExiste) {
+            	Session::put('entidadeAtiva_id', $entidadeAtiva_id);
+            	Session::put('entidadeAtiva_tipo', $entidadeAtiva_tipo);
+            	return redirect('conectar');
+            }
         }
+    }
 
 }

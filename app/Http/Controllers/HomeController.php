@@ -33,74 +33,43 @@ class HomeController extends ConectarController {
 
 	}
 
+    /**
+     * Rota para ser acessada por post para trocar a entidadeAtiva, 
+     * @param  $id  id da entidade a ser acessada
+     * @todo a ser deprecated, criado um metodo PaginaController@getAcessarcomo($id, $tipo) 
+     */
+    public function postTrocaentidadeativa($id, Request $request)
+    {
 
-        public function getTrocaentidadeativa ($id , $tipo) {
-        
-            $entidadeAtiva_id = $id;
-            $entidadeAtiva_tipo = $tipo;
+        $entidadeAtiva_id = $id;
+        $entidadeAtiva_tipo = $request->get('entidadeAtiva_tipo');
 
+        if ($entidadeAtiva_tipo && $entidadeAtiva_id) 
+        {
+            $entidadeExiste = false;
+            switch ($entidadeAtiva_tipo)  {
+                case 'ong':
+                        # Retorna a ong na lista de ongs do usuario, ou o perfil
+                $ong = Ong::find($entidadeAtiva_id);
+                $entidadeExiste = $ong ? true : false;
+                        break;
 
-            if ($entidadeAtiva_tipo && $entidadeAtiva_id) {
+                case 'empresa':
+                        # Retorna a empresa na lista de empresas do usuario, ou o perfil
+                        $empresa = Empresa::find($entidadeAtiva_id);
+                $entidadeExiste = $empresa ? true : false;
+                        break;
 
-                $entidadeExiste = false;
-                switch ($entidadeAtiva_tipo)  {
-                    case 'ong':
-                            # Retorna a ong na lista de ongs do usuario, ou o perfil
-                    $ong = Ong::find($entidadeAtiva_id);
-                    $entidadeExiste = $ong ? true : false;
-                            break;
+                default:
+                        break;
+            }
 
-                    case 'empresa':
-                            # Retorna a empresa na lista de empresas do usuario, ou o perfil
-                            $empresa = Empresa::find($entidadeAtiva_id);
-                    $entidadeExiste = $empresa ? true : false;
-                            break;
-
-                    default:
-                            break;
-                }
-
-                if ($entidadeExiste) {
+            if ($entidadeExiste) {
                 Session::put('entidadeAtiva_id', $entidadeAtiva_id);
                 Session::put('entidadeAtiva_tipo', $entidadeAtiva_tipo);
-                        return redirect('conectar');
-                }
+                return redirect('conectar');
             }
         }
-
-        public function postTrocaentidadeativa($id, Request $request)
-        {
-
-            $entidadeAtiva_id = $id;
-            $entidadeAtiva_tipo = $request->get('entidadeAtiva_tipo');
-
-
-            if ($entidadeAtiva_tipo && $entidadeAtiva_id) {
-
-                    $entidadeExiste = false;
-                    switch ($entidadeAtiva_tipo)  {
-                            case 'ong':
-                                    # Retorna a ong na lista de ongs do usuario, ou o perfil
-                            $ong = Ong::find($entidadeAtiva_id);
-                            $entidadeExiste = $ong ? true : false;
-                                    break;
-
-                            case 'empresa':
-                                    # Retorna a empresa na lista de empresas do usuario, ou o perfil
-                                    $empresa = Empresa::find($entidadeAtiva_id);
-                            $entidadeExiste = $empresa ? true : false;
-                                    break;
-
-                            default:
-                                    break;
-                    }
-
-                    if ($entidadeExiste) {
-                    Session::put('entidadeAtiva_id', $entidadeAtiva_id);
-                    Session::put('entidadeAtiva_tipo', $entidadeAtiva_tipo);
-                            return redirect('conectar');
-                    }
-            }
 	}
 
 
