@@ -15,39 +15,52 @@
         <div class="form-criar">
             {!! Form::open(array('url' => array('empresa/create')))!!}
             <span> Junte-se as pessoas que apoiam você na Vivalá! </span>
-            {!! Form::submit('Começar') !!}
+            @if(isset($categoriasEmpresas))
+            <select name="categoriaEmpresa" class="suave">
+                <option value="null">Escolha uma categoria</option>
+            @forelse($categoriasEmpresas as $Categoria)
+                <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
+            @empty
+                <option>Sem categorias</option>
+            @endforelse
+            </select>
+            @endif
+            {!! Form::text("nome",  null , ['class' => 'form-control suave', 'placeholder'=>'Nome da Empresa']) !!} 
+            <span>Ao clicar em Começar, você concorda com os <a href="{{ url('PaginaController@getTermos') }}">Termos das Páginas da Vivalá</a></span>        
+            {!! Form::submit('Começar', ['class' => 'btn']) !!}
             {!! Form::close() !!}
         </div>
     </div>
     <div class="col-sm-4">
+        <div class="box-criar">
+            <img src="/images/iconcriarong.png" alt="Criar Projeto Social">
+            <h4>Projeto Social</h4>
+        </div>
+        <div class="form-criar">
+            {!! Form::open(array('url' => array('ong/create')))!!}
+            <span> Junte-se as pessoas que apoiam você na Vivalá! </span>
+            @if(isset($categoriasOngs))
+            <select name="categoriaOng" class="suave">
+                <option value="null">Escolha uma categoria</option>
+            @forelse($categoriasOngs as $Categoria)
+                <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
+            @empty
+                <option>Sem categorias</option>
+            @endforelse
+            </select>
+            @endif
+            {!! Form::text("nome",  null , ['class' => 'form-control suave', 'placeholder'=>'Nome da Empresa']) !!} 
+            <span>Ao clicar em Começar, você concorda com os <a href="{{ url('PaginaController@getTermos') }}">Termos das Páginas da Vivalá</a></span>        
+            {!! Form::submit('Começar', ['class' => 'btn']) !!}
+            {!! Form::close() !!}
+        </div>
     </div>
     <div class="col-sm-4">
+        <div class="box-criar">
+            <img src="/images/iconcriarcultura.png" alt="Fomentar Cultura">
+            <h4>Cultura</h4>
+        </div>
     </div>
 </div>
-    
-
-    @if(isset($categoriasOngs))
-            @forelse($categoriasOngs as $Categoria)
-                <li class="col-sm-3">
-                    <label>
-                        <span>{{ $Categoria->nome }}</span>
-                    </label>
-                </li>
-            @empty
-                <p>Sem categorias</p>
-            @endforelse
-    @endif
-
-    @if(isset($categoriasEmpresas))
-            @forelse($categoriasEmpresas as $Categoria)
-                <li class="col-sm-3">
-                    <label>
-                        <span>{{ $Categoria->nome }}</span>
-                    </label>
-                </li>
-            @empty
-                <p>Sem categorias</p>
-            @endforelse
-    @endif
 
 @endsection
