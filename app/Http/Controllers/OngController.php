@@ -14,6 +14,7 @@ use App\PrettyUrl;
 use Input;
 use App\Foto;
 
+use App\CategoriaOng;
 
 class OngController extends CuidarController {
 
@@ -61,7 +62,8 @@ class OngController extends CuidarController {
 	 */
 	public function create()
 	{
-		return view('ong.create');
+            $categoriasOngs = CategoriaOng::all();
+	    return view('ong.create', compact('categoriasOngs') );
 	}
 
 	/**

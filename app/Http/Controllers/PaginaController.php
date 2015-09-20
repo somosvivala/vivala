@@ -43,4 +43,11 @@ class PaginaController extends Controller {
         
 	}
 
+        public function getGerenciar() 
+	{
+            $paginas = Auth::user()->paginas;
+         
+            return view('paginas.gerenciar', compact('paginas'));
+        }
+
 }

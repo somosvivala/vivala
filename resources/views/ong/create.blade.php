@@ -2,24 +2,21 @@
 
 
 @section('content')
-	<div class="container-fluid">
-	<div class="col-md-6">
 	<div class="panel panel-default">
-	<div class="panel-heading"><h1>Adicionando Ong</h1></div>
-		<div class="panel-body">
-		
-		{!! Form::open(['url' => 'ong']) !!}
+            <div class="panel-heading"><h1>Criar Projeto Social</h1></div>
+            <div class="panel-body">
+            
+            {!! Form::open(['url' => 'ong']) !!}
 
-			@include('ong.form', ['btnSubmit' => 'Atualizar Dados']);
+                    @include('ong.form', ['btnSubmit' => 'Criar Projeto Social'])
 
-		{!! Form::close() !!}
+            {!! Form::close() !!}
 
-		</div>
+            </div>
 
-    	@include('errors.list')
+            @include('errors.list')
 
 
-	</div>
 	</div>
 @endsection
  
