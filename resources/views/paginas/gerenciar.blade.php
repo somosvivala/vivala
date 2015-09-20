@@ -13,7 +13,7 @@
     
     <div class="col-sm-4">
         <div class="box-criar">
-            <a href="{{ action('HomeController@getTrocaentidadeativa', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
+            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
                 <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
                 <h4>{{ $Pagina->nome }}</h4>
             </a>
