@@ -37,19 +37,19 @@ class PerfilController extends ConectarController {
 	public function index()
 	{
 		$user = Auth::user();
-		$perfil = $user->perfil;
-		$follow = $perfil->followPerfil;
-		$followedBy = $perfil->followedByPerfil;
+		$entidadeAtiva = $user->entidadeAtiva;
+		$follow = $entidadeAtiva->followPerfil;
+		$followedBy = $entidadeAtiva->followedByPerfil;
+		$posts = $entidadeAtiva->posts;
 
-		$empresas = $user->empresas;
 
-		Session::put('entidadeAtiva_id', $perfil->id);
-    	Session::put('entidadeAtiva_tipo', 'perfil');
+		// $empresas = $user->empresas;
+		// Session::put('entidadeAtiva_id', $perfil->id);
+    	// Session::put('entidadeAtiva_tipo', 'perfil');
 
-		$posts = $perfil->posts;
 
-		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'))
-		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
+		return view('perfil.index', compact('user', 'entidadeAtiva', 'follow', 'followedBy', 'posts'));
+		// ->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
 	}
 
 	/**

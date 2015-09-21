@@ -271,6 +271,16 @@ class Empresa extends Model {
     }
 
     /**
+     * Acessor para a propriedade numeroSeguindo da entidade.
+     * @return  O numero de entidades que essa entidade segue
+     */
+    public function getNumeroSeguindoAttribute()
+    {
+        $seguidos = $this->following;
+        return count($seguidos);
+    }
+
+    /**
      * Retorna uma Collection de Empresas ordenadas por numero de seguidores
      * @return Collection
      */

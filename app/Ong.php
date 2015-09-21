@@ -263,6 +263,15 @@ class Ong extends Model {
         return count($seguidores);
     }
 
+    /**
+     * Acessor para a propriedade numeroSeguindo da entidade.
+     * @return  O numero de entidades que essa entidade segue
+     */
+    public function getNumeroSeguindoAttribute()
+    {
+        $seguidos = $this->following;
+        return count($seguidos);
+    }
 
     /**
      * Retorna uma Collection de Ongs ordenadas por numero de seguidores

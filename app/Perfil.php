@@ -339,12 +339,22 @@ class Perfil extends Model {
 
     /**
      * Acessor para a propriedade numeroSeguidores da entidade.
-     * @return  O numero de entidades que seguem essa entidade[
+     * @return  O numero de entidades que seguem essa entidade
      */
     public function getNumeroSeguidoresAttribute()
     {
         $seguidores = $this->followedBy;
         return count($seguidores);
+    }
+
+    /**
+     * Acessor para a propriedade numeroSeguindo da entidade.
+     * @return  O numero de entidades que essa entidade segue
+     */
+    public function getNumeroSeguindoAttribute()
+    {
+        $seguidos = $this->following;
+        return count($seguidos);
     }
 
 
