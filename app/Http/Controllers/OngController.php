@@ -99,6 +99,19 @@ class OngController extends CuidarController {
 		return view('ong.show', compact('ong'));
 	}
 
+        /**
+	 * Mostra todas as ongs e um filtro
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function ongs()
+	{
+		$ongs = Ong::all();
+		$categorias = CategoriaOng::all();
+		return view('cuidar.ongs', compact('ongs','categorias'));
+	}
+
 	public function edit($id=0)
 	{
 		$user = Auth::user();

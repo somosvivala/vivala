@@ -55,6 +55,8 @@ Route::controller('meuspontos','Viajar\MeusPontosController');
 Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
 
 Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
+Route::get('ongs','OngController@ongs');
+Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
 Route::controller('vagas','Cuidar\VagasController');
 Route::controller('feed','Cuidar\FeedController');
 
