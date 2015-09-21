@@ -1,9 +1,9 @@
-<ul class="lista-ongs row col-sm-12">
+<ul class="lista-ongs row col-sm-12<F6>">
 
     @if(isset($ongs))
     @forelse($ongs as $Ong)
         <li>
-            <a href="{{ url($Ong->getUrl()) }}">
+            <a href="{{ url('ongs/sobre/'.$Ong->id) }}">
                 <div class="foto">
                     <div class="cover">
                         <img src="{{ $Ong->getAvatarUrl() }}" alt=" {{ $Ong->nome }}">

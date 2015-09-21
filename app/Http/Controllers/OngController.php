@@ -110,6 +110,18 @@ class OngController extends CuidarController {
 		$ongs = Ong::all();
 		$categorias = CategoriaOng::all();
 		return view('cuidar.ongs', compact('ongs','categorias'));
+        }
+
+	/**
+	 * Mostra todas as ongs e um filtro
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function sobre($id)
+	{
+		$Ong = Ong::findOrFail($id);
+		return view('cuidar.sobreong', compact('Ong'));
 	}
 
 	public function edit($id=0)
