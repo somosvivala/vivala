@@ -130,7 +130,7 @@ class OngController extends CuidarController {
 	public function edit($id=0)
 	{
 		$user = Auth::user();
-		$ong = Ong::findOrFail($id);
+		$ong = Ong::findOrFail($user->entidadeAtiva->id);
 
 		//Verificando se usuario logado é owner da ong atual
         //TODO: Model de permissoes.. 
