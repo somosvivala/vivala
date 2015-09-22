@@ -44,10 +44,8 @@ class OngController extends CuidarController {
 				if (!$ong) {
 					App::abort(404);
 				}
-
 			}			
 		}
-
 
 		// Verifica se o usuário logado tem permissão de edição da Ong.
 		// Caso possua, habilita uma flag de edição para a view.
@@ -144,7 +142,6 @@ class OngController extends CuidarController {
 		//Trocando entidadeAtiva para essa ong
         Session::put('entidadeAtiva_id', $ong->id);
     	Session::put('entidadeAtiva_tipo', 'ong');
-
 
         $ong->url = $ong->getUrl();
 		return view('ong.edit', compact('user', 'ong'));

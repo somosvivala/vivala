@@ -37,6 +37,14 @@ class Causa extends Model {
 		return $this->morphTo();
 	}
 
+	/**
+	 * Acessor para o atributo numeroVoluntarios de Causa
+	 * @return Integer    numero de voluntarios dessa Causa
+	 */
+	public function getNumeroVoluntariosAttribute() 
+	{
+	    return count($this->voluntarios);
+	}
 
 
 
