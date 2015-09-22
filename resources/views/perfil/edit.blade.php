@@ -4,30 +4,32 @@
 	<div class="container-fluid">
 	<div class="col-md-12">
 	<div class="panel panel-default">
-		<div class="panel-heading"><h4>Dados de Acesso</h4></div>
+		<div class="panel-heading"><h4>Altere sua informações</h4></div>
 		<div class="panel-body">
 			<!-- Adiciona um formulario pra upload de foto-->
-			<div class="jc_coords row col-sm-12">
+			<div class="text-center jc_coords row col-sm-12">
 
-				{!! Form::open(['url' => ['foto/cropandsave',  $perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
+                            {!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/home']) !!}
+                            {!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
 
-					{!! Form::label("image_file_upload", "Escolha outra imagem:") !!}
-					{!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}
+                            <img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>
 
-					{!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
-					{!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
-					{!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
-					{!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
-					{!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
-
-					<div class="erros">
-					</div>
-					{!! Form::submit("Recortar Imagem", ['class' => 'btn btn-primary']) !!}
-				<img id="preview" />
-				{!! Form::close() !!}
-			</div>
-			<div class="row col-sm-12" id="foto-atual-display">
-				<img src="{{ $perfil->getAvatarUrl() }}" id="foto-perfil">
+                            <div class="file-upload">
+                                <label for="image_file_upload">
+                                    {{ trans("quiz.sendphoto") }}
+                                    <p>{{ trans("quiz.fromrcomputer") }}</p>
+                                    {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'class' => 'upload']) !!}
+                                </label>
+                            </div>
+                            {!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
+                            {!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
+                            {!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
+                            {!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
+                            {!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
+                            <div class="erros">
+                            </div>
+                            {!! Form::submit( trans("Atualizar foto"), ['class' => 'btn btn-acao']) !!}
+                            {!! Form::close() !!}
 			</div>
 
 
@@ -63,8 +65,8 @@
 			</div>
 
 			<!-- Adiciona submit button para o form de Edicao -->
-			<div class="form-group">
-				{!! Form::submit("Submit", ['class' => 'form-control btn btn-primary']) !!}
+			<div class="form-group text-right">
+				{!! Form::submit("Atualizar Perfil", ['class' => 'btn btn-primary']) !!}
 			</div>
 
 			{!! Form::close() !!}
