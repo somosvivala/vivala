@@ -190,5 +190,4 @@ class AjaxController extends VivalaBaseController {
 	}
 
 
-
 }

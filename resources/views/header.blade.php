@@ -24,7 +24,7 @@
 				</a>
 			</li>
 			<li class="menu-cuidar">
-				<a href="{{ url('/cuidar') }}" class="desativado">
+				<a href="{{ url('/cuidar') }}"> 
 					<i class="icon36 icon-cuidar"></i>
 					<span>{{ trans("menu.ongs") }}</span>
 				</a>
@@ -56,7 +56,53 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 <div class="pull-left hello">{{ trans("menu.hello") }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
-                <ul class="dropdown-menu" role="menu">
+                <ul class="dropdown-menu submenu" role="menu">
+                    @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
+                        <li> <span> Usar Vivalá como: </span> </li>
+                    @endif 
+
+                    {{-- Se a entidade ativa não for um perfil lista o perfil para ativar --}}
+                    @if ( strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil" )
+                        <li class="row">
+                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => Auth::user()->perfil->id , 'tipo' => 'perfil' ]) }}">
+                                <div class="col-sm-4">
+                                    <img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->perfil->apelido }}">
+                                </div>
+                                <div class="col-sm-8">
+                                    {{ Auth::user()->perfil->apelido }}
+                                </div>
+                            </a>
+                        </li>
+                    @endif 
+                    @if( isset($paginas) && count($paginas) > 0 )
+                    @foreach($paginas as $Pagina)
+                        <li class="row">
+                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
+                                <div class="col-sm-4">
+                                    <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
+                                </div>
+                                <div class="col-sm-8">
+                                    {{ $Pagina->nome }}
+                                </div>
+                            </a>
+                        </li>
+                    @endforeach
+                    <li><a href="{{ url('paginas/gerenciar') }}"> Ver mais...  </a> </li>
+                    @endif
+                    <li class="subsubmenu">
+                        <ul>
+                            <li>
+                                <a href="{{ url('paginas/criarpagina') }}"> 
+                                    <i class="fa fa-plus"></i> Criar página 
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ url('paginas/gerenciar') }}">
+                                    <i class="fa fa-gear"></i> Gerenciar páginas 
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a href="{{ url('perfil') }}">{{ trans("menu.profile") }}</a></li>
                     <li><a href="{{ url('config') }}">{{ trans("menu.config") }}</a></li>
                     <li><a href="{{ url('/auth/logout') }}">{{ trans("menu.logout") }}</a></li>

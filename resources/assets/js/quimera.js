@@ -99,16 +99,17 @@ var searchTrip = function(params) {
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('.cria-post-container').html(data);
     }); 
 };
 
 testSearchTrip = function() {
     searchTrip({
-        from: 'RIO',
-        to: 'SAO',
-        departureDate: '2015-09-30',
-        adults: 1
+        from: 'SAO',
+        to: 'RIO',
+        departureDate: '2015-12-09',
+        returnDate: '2015-12-12',
+        adults: 2
     });
 };
 

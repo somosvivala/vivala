@@ -67,8 +67,10 @@ class QuimeraRepository {
 
     private static function _tripToHTML($data)
     {
-        $data = json_decode($data);
-        return json_encode($data->items);
+        return array(
+            'data'  => json_decode($data)->items,
+            'blade' => 'quimera._trips'
+        );
     }
 
     private static function _processAutocomplete($data)

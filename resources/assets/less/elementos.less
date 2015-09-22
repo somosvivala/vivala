@@ -17,6 +17,12 @@
 .sem-resize {
     resize: none;
 }
+strong {
+	font-family: @font-family-sans-serif-bold;
+	font-weight: normal;
+}
+
+// Sobrescrevendo a cor dos link
 a {
     text-decoration:none;
     color: @cor-txt;
@@ -25,26 +31,38 @@ a {
         color: @cor-txt;
     }
 }
-strong {
-	font-family: @font-family-sans-serif-bold;
-	font-weight: normal;
-}
+// Sobrescrevendo os campos de formulário
+
 label {
 	font-weight: normal;
 	font-family: @font-family-sans-serif-bold;
 }
-input.form-control {
-	border-radius: 0px;
-}
+input,
+input.form-control ,
+textarea,
+textarea.form-control,
+form input {
+    border-radius: 0px;
+    text-align: left;
+}   
 button.btn,
 input.btn,
 a.btn {
 	border-radius: 0px;
 	font-family: @font-family-sans-serif-bold;
-	text-transform: uppercase;
+	text-transform:uppercase;
+        background-color: @cor-primaria;
+        color:white;
+}
+select {
+    width: 100%;
+    border-radius:0px;
+    border: 1px solid #CCC;
+    padding:0.2em 0.5em 0.4em;
 }
 textarea {
 	border: 1px solid @cor-fundo;
+        border-radius: 0px;
 }
 // Define o titulo usados nas sidebars
 h4.suave {

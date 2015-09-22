@@ -28,7 +28,7 @@ class SugestaoController extends ConectarController {
     public function getViajantes($filtro = "amigo") {
             $user = Auth::user();
             $entidadeAtiva = $user->entidadeAtiva;
-            $perfil = $user->perfil;
+            $entidadeAtiva = $user->entidadeAtiva;
             
             if($filtro == "amigo") {
                 $sugestoes = $entidadeAtiva->sugestaoByAmigosEmComum;
@@ -38,7 +38,7 @@ class SugestaoController extends ConectarController {
                 $sugestoes = Perfil::getMaisSeguidos($entidadeAtiva);
             }
 
-            return view('conectar.sugestoes.index', compact('sugestoes', 'filtro', 'user', 'perfil'));
+            return view('conectar.sugestoes.index', compact('sugestoes', 'filtro', 'user', 'entidadeAtiva'));
     }
 
 }

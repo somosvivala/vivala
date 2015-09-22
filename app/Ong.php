@@ -7,7 +7,15 @@ use DB;
 
 class Ong extends Model {
     
-	protected $fillable = ['nome', 'user_id', 'apelido'];
+	protected $fillable = [
+        'nome',
+        'apelido',
+        'horario_funcionamento',
+        'local',
+        'user_id',
+        'responsavel_id',
+        'categoria_ong_id'
+        ];
 
 
 	/**
@@ -263,6 +271,15 @@ class Ong extends Model {
         return count($seguidores);
     }
 
+    /**
+     * Acessor para a propriedade numeroSeguindo da entidade.
+     * @return  O numero de entidades que essa entidade segue
+     */
+    public function getNumeroSeguindoAttribute()
+    {
+        $seguidos = $this->following;
+        return count($seguidos);
+    }
 
     /**
      * Retorna uma Collection de Ongs ordenadas por numero de seguidores
@@ -401,6 +418,62 @@ class Ong extends Model {
     {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
+
+    /**
+     * Uma Ong pode ter varias Causas
+     */
+    public function causas()
+    {
+        return $this->morphMany('App\Causa', 'owner', 'owner_type', 'owner_id');
+    }
+
+    /**
+     * Acessor para o tipo dessa entidade
+     * @return [type] [description]
+     */
+    public function getTipoAttribute() 
+    {
+        preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
+        return strtolower($retorno[1]);
+    }
+
+    /**
+     * Uma ong pertence a uma CategoriaOng
+     * @return [type] [description]
+     */
+    public function categoria() 
+    {
+        return $this->belongsTo('App\CategoriaOng', 'categoria_ong_id');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Ong e a entidade Perfil,
+     * uma Ong sempre tem um responsavel Perfil.
+     */
+    public function responsavel() 
+    {
+        return $this->belongsTo('App\Perfil');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Ong e a entidade Perfil,
+     * uma Ong tem muitos voluntarios do tipo Perfil, que podem
+     * se voluntariar em varias Causas
+     */
+    public function voluntarios() 
+    {
+        return $this->belongsToMany('App\Perfil');
+    }
+
+    /**
+     * Acessor para o atributo numeroVoluntarios de Ong
+     * @return Integer    numero de voluntarios dessa ong
+     */
+    public function getNumeroVoluntariosAttribute() 
+    {
+        return count($this->voluntarios);
+    }
+
 
 
 }

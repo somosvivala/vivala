@@ -37,19 +37,18 @@ class PerfilController extends ConectarController {
 	public function index()
 	{
 		$user = Auth::user();
-		$perfil = $user->perfil;
-		$follow = $perfil->followPerfil;
-		$followedBy = $perfil->followedByPerfil;
+		$entidadeAtiva = $user->entidadeAtiva;
+		$follow = $entidadeAtiva->followPerfil;
+		$followedBy = $entidadeAtiva->followedByPerfil;
+		$posts = $entidadeAtiva->posts;
 
-		$empresas = $user->empresas;
+		//Nao adicionando entidadeAtiva como sendo perfil, ou seja, mostrando o perfil
+		//da entidadeAtiva logada.
+		
+		// Session::put('entidadeAtiva_id', $perfil->id);
+    	// Session::put('entidadeAtiva_tipo', 'perfil');
 
-		Session::put('entidadeAtiva_id', $perfil->id);
-    	Session::put('entidadeAtiva_tipo', 'perfil');
-
-		$posts = $perfil->posts;
-
-		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'))
-		->with('sugestoesEmpresas', $empresas); // Menu lateral de sugestoes
+		return view('perfil.index', compact('user', 'entidadeAtiva', 'follow', 'followedBy', 'posts'));
 	}
 
 	/**
@@ -157,10 +156,11 @@ class PerfilController extends ConectarController {
 		$user = $perfil->user;
 		$follow = $perfil->followPerfil;
 		$followedBy = $perfil->followedByPerfil;
+		$entidadeAtiva = $perfil;
 
 		$posts = Post::getUltimos();
 
-		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'));
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
 	}
 
 	/**
@@ -187,8 +187,6 @@ class PerfilController extends ConectarController {
 	        	//essa rota esta sendo usada?
 	        	//
 	        	dd('se pa nao, updatePhoto');
-
-
 	        }
 	    }
 	}

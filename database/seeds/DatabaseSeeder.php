@@ -10,6 +10,8 @@ use App\Ong;
 use App\Empresa;
 use App\Foto;
 use App\Interesse;
+use App\CategoriaOng;
+use App\CategoriaEmpresa;
 
 class DatabaseSeeder extends Seeder {
 
@@ -25,26 +27,13 @@ class DatabaseSeeder extends Seeder {
 		$this->call('ConfiguracaoSeeder');
 		$this->call('UserSeeder');
         $this->call('PerfilSeeder');
+        $this->call('CategoriasOngSeeder');
         $this->call('OngSeeder');
+        $this->call('CategoriasEmpresaSeeder');
         $this->call('EmpresaSeeder');
         $this->call('PrettyUrlSeeder');
         $this->call('FotoSeeder');
         $this->call('InteresseSeeder');
-
-
-
-
-/*
-        #iseed_start
-        // here all the calls for newly generated seeds will be stored.
-
-
-
-        $this->call('EstadosTableSeeder');
-		$this->call('CidadesTableSeeder');
-
-		#iseed_end
-*/
 
 	}
 }
@@ -86,40 +75,40 @@ class UserSeeder extends Seeder {
             'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
 
-				User::create([
-					'username'           => 'Brunol',
-					'genero'             => 'masculino',
-					'email'              => 'brunol@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Brunol',
+			'genero'             => 'masculino',
+			'email'              => 'brunol@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Rafael',
-					'genero'             => 'masculino',
-					'email'              => 'rafa.carreira@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Rafael',
+			'genero'             => 'masculino',
+			'email'              => 'rafa.carreira@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Goiaba',
-					'genero'             => 'masculino',
-					'email'              => 'narolol@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Goiaba',
+			'genero'             => 'masculino',
+			'email'              => 'narolol@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Atchim',
-					'genero'             => 'masculino',
-					'email'              => 'atchim@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Atchim',
+			'genero'             => 'masculino',
+			'email'              => 'atchim@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Mateus',
-					'genero'             => 'masculino',
-					'email'              => 'mateus@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Mateus',
+			'genero'             => 'masculino',
+			'email'              => 'mateus@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
     }
 }
 
@@ -208,21 +197,33 @@ class OngSeeder extends Seeder {
         DB::table('ongs')->delete();
 
         Ong::create([
-            'user_id'     => '1',
-            'nome'        => 'evandrONG Ltda',
-            'apelido'     => 'evandrONG'
+            'user_id'               => '1',
+            'nome'                  => 'evandrONG Ltda',
+            'apelido'               => 'evandrONG',
+            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
+            'local'                 => 'Casa do evandro',
+            'responsavel_id'        => '1',
+            'categoria_ong_id'      => '1'            
         ]);
 
         Ong::create([
-            'user_id'     => '2',
-            'nome'        => 'zordONG Ltda',
-            'apelido'     => 'zordONG'
+            'user_id'               => '2',
+            'nome'                  => 'zordONG Ltda',
+            'apelido'               => 'zordONG',
+            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
+            'local'                 => 'Casa do Zord',
+            'responsavel_id'        => '2',
+            'categoria_ong_id'      => '2'
         ]);
 
         Ong::create([
-            'user_id'     => '8',
-            'nome'        => 'Projeto Formiguinha',
-            'apelido'     => 'Formiguinha'
+            'user_id'               => '8',
+            'nome'                  => 'Projeto Formiguinha',
+            'apelido'               => 'Formiguinha',
+            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
+            'local'                 => 'Sede do Formiguinha',
+            'responsavel_id'        => '8',
+            'categoria_ong_id'      => '3'
         ]);
     }
 }
@@ -369,5 +370,45 @@ class InteresseSeeder extends Seeder {
         Interesse::create(['nome' => 'Banho']);
         Interesse::create(['nome' => 'Dormir']);
         Interesse::create(['nome' => '%7}ºª¢¬6#$@']);
+    }
+}
+
+
+
+class CategoriasOngSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('categoria_ongs')->delete();
+
+        CategoriaOng::create(['nome' => 'categoria 1']);
+        CategoriaOng::create(['nome' => 'categoria 2']);
+        CategoriaOng::create(['nome' => 'categoria 3']);
+        CategoriaOng::create(['nome' => 'categoria 2']);
+        CategoriaOng::create(['nome' => 'categoria 3']);
+        CategoriaOng::create(['nome' => 'categoria 4']);
+        CategoriaOng::create(['nome' => 'categoria 5']);
+        CategoriaOng::create(['nome' => 'categoria 6']);
+        CategoriaOng::create(['nome' => 'categoria 7']);
+        CategoriaOng::create(['nome' => 'categoria 8']);
+    }
+}
+
+class CategoriasEmpresaSeeder extends Seeder {
+
+    public function run()
+    {
+        DB::table('categoria_empresas')->delete();
+
+        CategoriaEmpresa::create(['nome' => 'categoria 1']);
+        CategoriaEmpresa::create(['nome' => 'categoria 2']);
+        CategoriaEmpresa::create(['nome' => 'categoria 3']);
+        CategoriaEmpresa::create(['nome' => 'categoria 2']);
+        CategoriaEmpresa::create(['nome' => 'categoria 3']);
+        CategoriaEmpresa::create(['nome' => 'categoria 4']);
+        CategoriaEmpresa::create(['nome' => 'categoria 5']);
+        CategoriaEmpresa::create(['nome' => 'categoria 6']);
+        CategoriaEmpresa::create(['nome' => 'categoria 7']);
+        CategoriaEmpresa::create(['nome' => 'categoria 8']);
     }
 }

@@ -67,31 +67,64 @@ nav.menu-top {
 		}
 
 	.menu-usuario {
-		ul {
-			float: right;
-			text-transform: capitalize;
-			li {
-				a {
-					padding: 0px;
-					img {
-						margin: 0.2em 1em 0 1em;
-						width: 3em;
-						border-radius: 50%;
-					}
-					span {
-						line-height: 2em;
-					}
-				}
-				ul.dropdown-menu {
-					min-width: 10em;
-					text-align: right;
-					padding: 1em 0.1em;
-					li {
-						padding: 0.1em 1em;
-					}
-				}
-			}
-		}
+            ul {
+                float: right;
+                text-transform: capitalize;
+                li {
+                    a {
+                        padding: 0px;
+                        img {
+                                margin: 0.2em 1em 0 1em;
+                                width: 3em;
+                                border-radius: 50%;
+                        }
+                        span {
+                                line-height: 2em;
+                        }
+                    }
+                    ul.submenu {
+                        min-width: 20em;
+                        text-align: left;
+                        padding: 1em 0.1em;
+                        background-color: @cor-pele-zumbi;
+                        position: absolute;
+                        top: 110%;
+                        left: -12em;
+
+
+                        // subdivisão do menu
+                        li.subsubmenu {
+                            float:left;
+                            margin:0.5em 4%;
+                            text-align:left;
+                            padding:0.5em 0;
+                            width:92%;
+                            ul {
+                                padding:0;
+                                width:100%;
+                                margin:0;
+                                li {
+                                    list-style:none;
+                                    padding:0;
+                                    margin:0;
+                                }
+                            }
+
+                            border-top: 1px solid white;
+                            &:last-child {
+                                border-bottom: 1px solid white;
+                            }
+                        }
+                        li {
+                            padding: 0.1em 1em;
+                            color: white;
+                            a {
+                                color:white;
+                            }
+                        }
+                    }
+                }
+            }
 	}
 }
 

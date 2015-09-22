@@ -10,7 +10,7 @@ use DB;
 
 class Empresa extends Model {
 
-    protected $fillable = ['nome', 'user_id', 'apelido'];
+    protected $fillable = ['nome', 'user_id', 'apelido', 'categoria_id'];
 
 
 	/**
@@ -271,6 +271,16 @@ class Empresa extends Model {
     }
 
     /**
+     * Acessor para a propriedade numeroSeguindo da entidade.
+     * @return  O numero de entidades que essa entidade segue
+     */
+    public function getNumeroSeguindoAttribute()
+    {
+        $seguidos = $this->following;
+        return count($seguidos);
+    }
+
+    /**
      * Retorna uma Collection de Empresas ordenadas por numero de seguidores
      * @return Collection
      */
@@ -407,6 +417,22 @@ class Empresa extends Model {
     {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
+
+    /**
+     * Acessor para o tipo dessa entidade
+     * @return [type] [description]
+     */
+    public function getTipoAttribute() 
+    {
+        preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
+        return strtolower($retorno[1]);
+    }
+
+    
+    public function categoria() {
+        return $this->belongsTo('App\CategoriaEmpresa', 'categoria_empresa_id');
+    }
+
 
 
 }

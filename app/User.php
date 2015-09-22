@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Database\Eloquent\Collection;
 
 use Session;
 
@@ -104,5 +105,30 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     }
 
 
+    /**
+     * Acessor para as paginas desse usuario.
+     * @return Collection <Ong|Empresa> , todas as ongs e empresas desse usuario
+     */
+    public function getPaginasAttribute() 
+    {
+    	$ongs = $this->ongs;
+    	$empresas = $this->empresas;
+		$paginas = new Collection();
 
+    	if (count($ongs)) 
+    	{
+	    	foreach ($ongs as $key => $ong) {
+	    		$paginas->add($ong);
+	    	}
+		}
+
+		if (count($empresas)) 
+		{
+			foreach ($empresas as $key => $empresa) {
+				$paginas->add($empresa);
+			}
+		}
+
+    	return $paginas;
+    }
 }

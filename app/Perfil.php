@@ -339,12 +339,22 @@ class Perfil extends Model {
 
     /**
      * Acessor para a propriedade numeroSeguidores da entidade.
-     * @return  O numero de entidades que seguem essa entidade[
+     * @return  O numero de entidades que seguem essa entidade
      */
     public function getNumeroSeguidoresAttribute()
     {
         $seguidores = $this->followedBy;
         return count($seguidores);
+    }
+
+    /**
+     * Acessor para a propriedade numeroSeguindo da entidade.
+     * @return  O numero de entidades que essa entidade segue
+     */
+    public function getNumeroSeguindoAttribute()
+    {
+        $seguidos = $this->following;
+        return count($seguidos);
     }
 
 
@@ -595,5 +605,51 @@ class Perfil extends Model {
     {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
+
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Causa,
+     * um Perfil pode ser responsavel por muitas causas (projetos)
+     */
+    public function causasResponsavel() {
+        return $this->hasMany('App\Causa');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Causa,
+     * um Perfil pode ser voluntario em muitas Causas, que pode ter muitos
+     * perfils como voluntario.
+     */
+    public function causasVoluntario() {
+        return $this->belongsToMany('App\Causa');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Ong,
+     * um Perfil pode ser responsavel por muitas Ongs
+     */
+    public function ongsResponsavel() {
+        return $this->hasMany('App\Ong');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Ong,
+     * um Perfil pode ser voluntario em muitas Ongs, que pode ter muitos
+     * perfils como voluntario.
+     */
+    public function ongsVoluntario() {
+        return $this->belongsToMany('App\Ong');
+    }
+
+
+    /**
+     * Acessor para o tipo dessa entidade
+     * @return String   'ong'|'perfil'|'empresa'
+     */
+    public function getTipoAttribute() 
+    {
+        preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
+        return strtolower($retorno[1]);
+    }    
+
 
 }

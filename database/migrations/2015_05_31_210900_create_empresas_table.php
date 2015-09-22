@@ -18,6 +18,13 @@ class CreateEmpresasTable extends Migration {
 			$table->string('apelido')->nullable();
 			$table->timestamps();
 
+			//FK para categoria_empresa
+			$table->integer('categoria_empresa_id')->unsigned()->nullable();
+			$table->foreign('categoria_empresa_id')
+				->references('id')
+				->on('categoria_empresas')
+				->onDelete('cascade');
+
 			$table->integer('user_id')->unsigned();
 			$table->foreign('user_id')
 				->references('id')

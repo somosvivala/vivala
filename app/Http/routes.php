@@ -26,6 +26,7 @@ Route::get('postajax/{id}/{secao}', 'PostController@show');
 Route::controller('post','PostController');
 Route::controller('albums','AlbumController');
 Route::controller('notificacoes','NotificacaoController');
+Route::controller('paginas','PaginaController');
 
 
 // Rotas dos três pilares do sistema
@@ -54,6 +55,10 @@ Route::controller('meuspontos','Viajar\MeusPontosController');
 Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
 
 Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
+Route::get('ongs/sobre/{id}','OngController@sobre');
+Route::get('ongs','OngController@ongs');
+Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
+Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::controller('vagas','Cuidar\VagasController');
 Route::controller('feed','Cuidar\FeedController');
 
