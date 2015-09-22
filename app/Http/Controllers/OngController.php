@@ -129,15 +129,6 @@ class OngController extends CuidarController {
 	}
 
 
-	public function sobre($id) {
-		$ong = Ong::findOrFail($id);
-		return $ong;
-	}
-
-
-
-
-
 	public function edit($id=0)
 	{
 		$user = Auth::user();
