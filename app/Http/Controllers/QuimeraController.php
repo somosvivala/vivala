@@ -21,11 +21,11 @@ class QuimeraController extends Controller {
 		$params  = QuimeraRepository::serializeParams($params);
 		$headers = isset($headers) ? QuimeraRepository::createHeader($method, $headers) : [];
 
-		$response = isset($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
+		$response = !is_array($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
 
 		if ($process == 'true') {
 			$output = QuimeraRepository::processResponse($response, $type);
-			if (array_key_exists('blade', $output)) {
+			if (is_array($output) && array_key_exists('blade', $output)) {
 				$data = $output['data'];
 				$output = view($output['blade'], compact('data'));
 			}
@@ -34,6 +34,11 @@ class QuimeraController extends Controller {
 		else {
 			echo $response;
 		}
+	}
+
+	public function procurarhoteis()
+	{
+		return view('quimera.hotels');
 	}
 
 }

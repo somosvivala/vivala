@@ -1,0 +1,42 @@
+@tripazul:    #8CA6AD;
+@tripcinza:   #E3E3E3;
+@triplaranja: #F2702B;
+@tripbranco:  #FFF;
+@triptext:    #5D5D5D;
+
+div.trip-wrapper {
+    div.flight-header {
+        font-size: 1.2em;
+        background-color: @tripazul;
+        color: @tripbranco;
+        font-weight: bold;
+        padding-bottom: 0.1em;
+        padding-top: 0.1em;
+    }
+    div.flight-description {
+        background-color: @tripcinza;
+        color: @triptext;
+        padding-bottom: 0.1em;
+        padding-top: 0.1em;
+    }
+    div.flight-choice {
+        background-color: @tripbranco;
+        color: @triptext;
+        height: 2.2em;
+        line-height: 2.2em;
+        vertical-align: middle;
+        span.choice-detail {
+            color: @triplaranja;
+        }
+        span.choice-time {
+            font-size: 1.3em;
+            color: inherit;
+            font-weight: bold;
+        }
+        span.airline-company {
+            color: inherit;
+            font-weight: bold;
+        }
+    }
+    margin-bottom: 2em;
+}
