@@ -15,16 +15,15 @@ class CreateCausasTable extends Migration {
 		Schema::create('causas', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('habilidades')->nullable();
+			$table->string('sobre_trabalho')->nullable();
+			$table->string('local')->nullable();
 			$table->timestamps();
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong
 			$table->integer('owner_id')->nullable();
 			$table->string('owner_type')->nullable();
-
-			$table->string('habilidades')->nullable();
-			$table->string('sobre_trabalho')->nullable();
-			$table->string('local')->nullable();
 
 			//uma causa sempre tem um perfil responsavel
 			$table->integer('responsavel_id')->unsigned()->nullable();
@@ -35,7 +34,7 @@ class CreateCausasTable extends Migration {
 
 		Schema::create('causa_perfil', function(Blueprint $table)
 		{
-			//uma causa sempre tem um perfil responsavel
+			//uma causa tem varios perfils voluntarios
 			$table->integer('perfil_id')->unsigned();
 			$table->foreign('perfil_id')
 				->references('id')

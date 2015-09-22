@@ -39,7 +39,10 @@ class EmpresaController extends ViajarController {
 			if (!is_null($prettyUrlObj)) {
 				$empresa = App\Empresa::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$empresa = App\Empresa::find($prettyUrl);
+				if (!$empresa) {
+					App::abort(404);
+				}
 			}
 		}
 

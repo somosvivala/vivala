@@ -40,10 +40,12 @@ class OngController extends CuidarController {
 			if (!is_null($prettyUrlObj)) {
 				$ong = App\Ong::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$ong = App\Ong::find($prettyUrl);
+				if (!$ong) {
+					App::abort(404);
+				}
 			}			
 		}
-
 
 		// Verifica se o usuário logado tem permissão de edição da Ong.
 		// Caso possua, habilita uma flag de edição para a view.
@@ -99,6 +101,32 @@ class OngController extends CuidarController {
 		return view('ong.show', compact('ong'));
 	}
 
+    /**
+	 * Mostra todas as ongs e um filtro
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function ongs()
+	{
+		$ongs = Ong::all();
+		$categorias = CategoriaOng::all();
+		return view('cuidar.ongs', compact('ongs','categorias'));
+        }
+
+	/**
+	 * Mostra todas as ongs e um filtro
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function sobre($id)
+	{
+		$Ong = Ong::findOrFail($id);
+		return view('cuidar.sobreong', compact('Ong'));
+	}
+
+
 	public function edit($id=0)
 	{
 		$user = Auth::user();
@@ -114,7 +142,6 @@ class OngController extends CuidarController {
 		//Trocando entidadeAtiva para essa ong
         Session::put('entidadeAtiva_id', $ong->id);
     	Session::put('entidadeAtiva_tipo', 'ong');
-
 
         $ong->url = $ong->getUrl();
 		return view('ong.edit', compact('user', 'ong'));

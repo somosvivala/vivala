@@ -7,7 +7,15 @@ use DB;
 
 class Ong extends Model {
     
-	protected $fillable = ['nome', 'user_id', 'apelido', 'categoria_id'];
+	protected $fillable = [
+        'nome',
+        'apelido',
+        'horario_funcionamento',
+        'local',
+        'user_id',
+        'responsavel_id',
+        'categoria_ong_id'
+        ];
 
 
 	/**
@@ -429,8 +437,41 @@ class Ong extends Model {
         return strtolower($retorno[1]);
     }
 
-    public function categoria() {
+    /**
+     * Uma ong pertence a uma CategoriaOng
+     * @return [type] [description]
+     */
+    public function categoria() 
+    {
         return $this->belongsTo('App\CategoriaOng', 'categoria_ong_id');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Ong e a entidade Perfil,
+     * uma Ong sempre tem um responsavel Perfil.
+     */
+    public function responsavel() 
+    {
+        return $this->belongsTo('App\Perfil');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Ong e a entidade Perfil,
+     * uma Ong tem muitos voluntarios do tipo Perfil, que podem
+     * se voluntariar em varias Causas
+     */
+    public function voluntarios() 
+    {
+        return $this->belongsToMany('App\Perfil');
+    }
+
+    /**
+     * Acessor para o atributo numeroVoluntarios de Ong
+     * @return Integer    numero de voluntarios dessa ong
+     */
+    public function getNumeroVoluntariosAttribute() 
+    {
+        return count($this->voluntarios);
     }
 
 

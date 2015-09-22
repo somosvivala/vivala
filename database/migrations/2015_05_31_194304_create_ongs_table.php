@@ -17,6 +17,9 @@ class CreateOngsTable extends Migration {
 			$table->increments('id');
 			$table->string('nome');
 			$table->string('apelido')->nullable();
+			$table->string('descricao')->nullable();
+			$table->string('horario_funcionamento')->nullable();
+			$table->string('local')->nullable();
 			$table->timestamps();
 
 			//FK para categoria_ong
@@ -32,6 +35,28 @@ class CreateOngsTable extends Migration {
 				->references('id')
 				->on('users')
 				->onDelete('cascade');
+
+			//uma ong sempre tem um perfil responsavel
+			$table->integer('responsavel_id')->unsigned()->nullable();
+			$table->foreign('responsavel_id')
+				->references('id')
+				->on('perfils');
+
+		});
+
+
+		Schema::create('ong_perfil', function(Blueprint $table)
+		{
+			//uma ong tem varios perfils voluntarios
+			$table->integer('perfil_id')->unsigned();
+			$table->foreign('perfil_id')
+				->references('id')
+				->on('perfils');
+
+			$table->integer('ong_id')->unsigned();
+			$table->foreign('ong_id')
+				->references('id')
+				->on('ongs');
 		});
 	}
 
@@ -42,6 +67,7 @@ class CreateOngsTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::drop('ong_perfil');
 		Schema::drop('ongs');
 	}
 

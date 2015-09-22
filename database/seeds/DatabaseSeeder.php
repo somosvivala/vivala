@@ -75,40 +75,40 @@ class UserSeeder extends Seeder {
             'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
 
-				User::create([
-					'username'           => 'Brunol',
-					'genero'             => 'masculino',
-					'email'              => 'brunol@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Brunol',
+			'genero'             => 'masculino',
+			'email'              => 'brunol@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Rafael',
-					'genero'             => 'masculino',
-					'email'              => 'rafa.carreira@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Rafael',
+			'genero'             => 'masculino',
+			'email'              => 'rafa.carreira@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Goiaba',
-					'genero'             => 'masculino',
-					'email'              => 'narolol@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Goiaba',
+			'genero'             => 'masculino',
+			'email'              => 'narolol@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Atchim',
-					'genero'             => 'masculino',
-					'email'              => 'atchim@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Atchim',
+			'genero'             => 'masculino',
+			'email'              => 'atchim@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
 
-				User::create([
-					'username'           => 'Mateus',
-					'genero'             => 'masculino',
-					'email'              => 'mateus@gmail.com',
-					'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-				]);
+		User::create([
+			'username'           => 'Mateus',
+			'genero'             => 'masculino',
+			'email'              => 'mateus@gmail.com',
+			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+		]);
     }
 }
 
@@ -197,21 +197,33 @@ class OngSeeder extends Seeder {
         DB::table('ongs')->delete();
 
         Ong::create([
-            'user_id'     => '1',
-            'nome'        => 'evandrONG Ltda',
-            'apelido'     => 'evandrONG'
+            'user_id'               => '1',
+            'nome'                  => 'evandrONG Ltda',
+            'apelido'               => 'evandrONG',
+            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
+            'local'                 => 'Casa do evandro',
+            'responsavel_id'        => '1',
+            'categoria_ong_id'      => '1'            
         ]);
 
         Ong::create([
-            'user_id'     => '2',
-            'nome'        => 'zordONG Ltda',
-            'apelido'     => 'zordONG'
+            'user_id'               => '2',
+            'nome'                  => 'zordONG Ltda',
+            'apelido'               => 'zordONG',
+            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
+            'local'                 => 'Casa do Zord',
+            'responsavel_id'        => '2',
+            'categoria_ong_id'      => '2'
         ]);
 
         Ong::create([
-            'user_id'     => '8',
-            'nome'        => 'Projeto Formiguinha',
-            'apelido'     => 'Formiguinha'
+            'user_id'               => '8',
+            'nome'                  => 'Projeto Formiguinha',
+            'apelido'               => 'Formiguinha',
+            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
+            'local'                 => 'Sede do Formiguinha',
+            'responsavel_id'        => '8',
+            'categoria_ong_id'      => '3'
         ]);
     }
 }
