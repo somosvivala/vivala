@@ -61,12 +61,12 @@ class PerfilController extends ConectarController {
 	{
 		$user = Auth::user();
 		$perfil = $user->perfil;
-
+                $foto = $perfil->getAvatarUrl();
 		//Trocando entidadeAtiva para perfil
 		Session::put('entidadeAtiva_id', $perfil->id);
-    	Session::put('entidadeAtiva_tipo', 'perfil');
+                Session::put('entidadeAtiva_tipo', 'perfil');
 
-		return view('perfil.edit', compact('user', 'perfil'));
+		return view('perfil.edit', compact('user', 'perfil', 'foto'));
 	}
 
 	/**
