@@ -40,7 +40,11 @@ class OngController extends CuidarController {
 			if (!is_null($prettyUrlObj)) {
 				$ong = App\Ong::find($prettyUrlObj->prettyurlable_id);
 			} else {
-				App::abort(404);
+				$ong = App\Ong::find($prettyUrl);
+				if (!$ong) {
+					App::abort(404);
+				}
+
 			}			
 		}
 
@@ -99,7 +103,7 @@ class OngController extends CuidarController {
 		return view('ong.show', compact('ong'));
 	}
 
-        /**
+    /**
 	 * Mostra todas as ongs e um filtro
 	 *
 	 * @param  int  $id
@@ -123,6 +127,16 @@ class OngController extends CuidarController {
 		$Ong = Ong::findOrFail($id);
 		return view('cuidar.sobreong', compact('Ong'));
 	}
+
+
+	public function sobre($id) {
+		$ong = Ong::findOrFail($id);
+		return $ong;
+	}
+
+
+
+
 
 	public function edit($id=0)
 	{

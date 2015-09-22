@@ -623,10 +623,27 @@ class Perfil extends Model {
         return $this->belongsToMany('App\Causa');
     }
 
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Ong,
+     * um Perfil pode ser responsavel por muitas Ongs
+     */
+    public function ongsResponsavel() {
+        return $this->hasMany('App\Ong');
+    }
+
+    /**
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Ong,
+     * um Perfil pode ser voluntario em muitas Ongs, que pode ter muitos
+     * perfils como voluntario.
+     */
+    public function ongsVoluntario() {
+        return $this->belongsToMany('App\Ong');
+    }
+
 
     /**
      * Acessor para o tipo dessa entidade
-     * @return [type] [description]
+     * @return String   'ong'|'perfil'|'empresa'
      */
     public function getTipoAttribute() 
     {

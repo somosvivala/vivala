@@ -58,6 +58,7 @@ Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::get('ongs','OngController@ongs');
 Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
+Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::controller('vagas','Cuidar\VagasController');
 Route::controller('feed','Cuidar\FeedController');
 

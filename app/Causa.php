@@ -6,10 +6,10 @@ class Causa extends Model {
 
 	//mass assigned fields
 	protected $fillable = [
-		'descricao',
 		'habilidades',
 		'sobre_trabalho',
-		'local'
+		'local',
+		'responsavel_id'
 		];	
 
 	/**
