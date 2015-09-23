@@ -64,7 +64,7 @@ class OngController extends CuidarController {
 	 */
 	public function create()
 	{
-            $categoriasOngs = CategoriaOng::all();
+        $categoriasOngs = CategoriaOng::all();
 	    return view('ong.create', compact('categoriasOngs') );
 	}
 

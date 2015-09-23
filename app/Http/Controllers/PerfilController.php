@@ -61,10 +61,10 @@ class PerfilController extends ConectarController {
 	{
 		$user = Auth::user();
 		$perfil = $user->perfil;
-                $foto = $perfil->getAvatarUrl();
+    	$foto = $perfil->getAvatarUrl();
 		//Trocando entidadeAtiva para perfil
 		Session::put('entidadeAtiva_id', $perfil->id);
-                Session::put('entidadeAtiva_tipo', 'perfil');
+        Session::put('entidadeAtiva_tipo', 'perfil');
 
 		return view('perfil.edit', compact('user', 'perfil', 'foto'));
 	}
@@ -111,8 +111,8 @@ class PerfilController extends ConectarController {
 	        	}
 
 	        	$foto = new Foto([
-	        			'path' => $destinationPath . $filename,
-	        			'tipo' => 'avatar' ]);
+        			'path' => $destinationPath . $filename,
+        			'tipo' => 'avatar' ]);
 	        	$perfil->fotos()->save($foto);
 	        }
 	    }
