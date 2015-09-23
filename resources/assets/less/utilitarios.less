@@ -1,6 +1,30 @@
 	/* Definição de tempo de efeitos */
 @anima-rapido : 0.3s all ease-out;
 
+.margin-0 ,
+ul.margin-0
+{ // Declara todas explicitamente pra dar override;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+.height-18 {
+    height: 18em;
+}
+.margin-t-1 {
+    margin-top: 1em;
+}
+.margin-t-2 {
+    margin-top: 2em;
+}
+.margin-t-10 {
+    margin-top: 10em;
+}
+.quadrado7em {
+    width: 7em;
+    height: 7em;
+}
 // Simula um background-cover pra tag img
 div.cover {
 	position: absolute;
@@ -33,6 +57,43 @@ div.foto {
 	min-height: 50%;
 	max-height: 100%;
 	overflow-x: hidden;
+}
+.follow-perfil {
+    a {
+        div { /* Remove o padding das class col-* do bootstrap */
+            padding:0px;
+        }
+        text-decoration: none;
+        color: @cor-sugestao-titulo-txt;
+        .foto {
+            .foto-avatar();
+        }
+        strong {
+            font-family: @font-family-sans-serif-bold;
+            text-transform: uppercase;
+        }
+        i {
+            color: @cor-primaria;
+            padding-right: 0.2em;
+        }
+    }
+    button {
+        border: 0px solid transparent;
+        background-color: @cor-sugestao-botao-bg;
+        color: @cor-sugestao-botao-txt;
+        text-transform: uppercase;
+        font-family: @font-family-sans-serif-bold;
+        padding: 0.35em 0.5em;
+        position: absolute;
+        right:0px;
+        top: 0.7em;
+        z-index: 1; // Coloca o botão por cima
+        &.suave {
+            .suave();	// Sobrescreve o bg de cima, pra evitar !important
+            padding: 0.35em 0.5em;
+        }
+
+    }
 }
 // Arredonda as bordas (usando nas fotos)
 .round {

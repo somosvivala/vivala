@@ -2,6 +2,29 @@
 /* Definição das cores dos elementos */
 /* Fontes */
 /* Definição de tempo de efeitos */
+.margin-0,
+ul.margin-0 {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.height-18 {
+  height: 18em;
+}
+.margin-t-1 {
+  margin-top: 1em;
+}
+.margin-t-2 {
+  margin-top: 2em;
+}
+.margin-t-10 {
+  margin-top: 10em;
+}
+.quadrado7em {
+  width: 7em;
+  height: 7em;
+}
 div.cover {
   position: absolute;
   top: 0%;
@@ -33,6 +56,58 @@ div.foto {
   min-height: 50%;
   max-height: 100%;
   overflow-x: hidden;
+}
+.follow-perfil a {
+  text-decoration: none;
+  color: black;
+}
+.follow-perfil a div {
+  /* Remove o padding das class col-* do bootstrap */
+  padding: 0px;
+}
+.follow-perfil a .foto {
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+.follow-perfil a .foto .cover {
+  z-index: 0;
+}
+.follow-perfil a strong {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.follow-perfil a i {
+  color: #f16f2b;
+  padding-right: 0.2em;
+}
+.follow-perfil button {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+  z-index: 1;
+}
+.follow-perfil button.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
 }
 .round {
   border-radius: 50%;

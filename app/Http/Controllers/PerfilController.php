@@ -37,10 +37,10 @@ class PerfilController extends ConectarController {
 	public function index()
 	{
 		$user = Auth::user();
-		$entidadeAtiva = $user->entidadeAtiva;
-		$follow = $entidadeAtiva->followPerfil;
-		$followedBy = $entidadeAtiva->followedByPerfil;
-		$posts = $entidadeAtiva->posts;
+		$perfil = $user->entidadeAtiva;
+		$follow = $perfil->followPerfil;
+		$followedBy = $perfil->followedByPerfil;
+		$posts = $perfil->posts;
 
 		//Nao adicionando entidadeAtiva como sendo perfil, ou seja, mostrando o perfil
 		//da entidadeAtiva logada.
@@ -48,7 +48,7 @@ class PerfilController extends ConectarController {
 		// Session::put('entidadeAtiva_id', $perfil->id);
     	// Session::put('entidadeAtiva_tipo', 'perfil');
 
-		return view('perfil.index', compact('user', 'entidadeAtiva', 'follow', 'followedBy', 'posts'));
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts'));
 	}
 
 	/**
