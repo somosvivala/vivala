@@ -7,7 +7,7 @@ use App\Causa;
 use Auth;
 use App;
 
-class CausaController extends Controller {
+class CausaController extends CuidarController {
 
 	/**
 	 * Display a listing of the resource.
@@ -68,7 +68,8 @@ class CausaController extends Controller {
 	public function show($id)
 	{
 		$causa = Causa::findOrFail($id);
-		return view('causa.show', compact('causa'));
+		$voluntarios = $causa->voluntarios;
+		return view('causa.show', compact('causa', 'voluntarios'));
 	}
 
 	/**
@@ -114,6 +115,33 @@ class CausaController extends Controller {
 	public function destroy($id)
 	{
 		//
+	}
+
+
+	/**
+	 * Setta o Perfil de $id como voluntario na Causa de $causaId
+	 * @param  [type] $id      [description]
+	 * @param  [type] $causaId [description]
+	 */
+	public function getVoluntariarse($causaId) 
+	{
+		//pegando a entidadeAtiva para testa seu tipo
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+
+		//@TODO: Por enquanto apenas perfil pode se voluntariar
+		if ($entidadeAtiva->tipo != 'perfil') {
+			return redirect("causas/$causaId/sobre");
+		}
+
+		$perfil = $entidadeAtiva;
+		$causa = Causa::findOrFail($causaId);
+		
+		//Se ja nao for voluntario, tornar-se voluntario
+		if (!$causa->voluntarios->find($entidadeAtiva->id)) {
+			$causa->voluntarios()->save($perfil);
+		}
+
+		return redirect("causas/$causaId");
 	}
 
 }

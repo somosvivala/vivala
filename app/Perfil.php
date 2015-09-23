@@ -611,7 +611,7 @@ class Perfil extends Model {
      * um Perfil pode ser responsavel por muitas causas (projetos)
      */
     public function causasResponsavel() {
-        return $this->hasMany('App\Causa');
+        return $this->hasMany('App\Causa', 'responsavel_id');
     }
 
     /**
@@ -628,7 +628,7 @@ class Perfil extends Model {
      * um Perfil pode ser responsavel por muitas Ongs
      */
     public function ongsResponsavel() {
-        return $this->hasMany('App\Ong');
+        return $this->hasMany('App\Ong', 'responsavel_id');
     }
 
     /**
