@@ -2,8 +2,8 @@
 <div class="row perfil-topo">
 	<div class="col-md-1">
 		&nbsp;
-		@if (Auth::user()->id == $user->id)
-			<a class="link-claro edit-profile" href="{{ url('editarPerfil') }}">
+		@if ($entidadeAtiva->user->id == Auth::user()->id)
+			<a class="link-claro edit-profile" href="{{ url($entidadeAtiva->tipo.'/'.$entidadeAtiva->id.'/edit') }}">
 				<i class="fa fa-edit"></i> Editar
 			</a>
 		@endif

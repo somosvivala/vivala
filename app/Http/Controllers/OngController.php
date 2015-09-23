@@ -123,29 +123,32 @@ class OngController extends CuidarController {
 	public function sobre($id)
 	{
 		$Ong = Ong::findOrFail($id);
-		return view('cuidar.sobreong', compact('Ong'));
+		$voluntarios = $Ong->voluntarios;
+		$responsavel = $Ong->responsavel;
+
+		return view('cuidar.sobreong', compact('Ong', 'responsavel', 'voluntarios'));
 	}
 
 
 	public function edit($id=0)
 	{
-            $user = Auth::user();
-            $ong = Ong::findOrFail($id);
-            $foto = $ong->getAvatarUrl();
+		$user = Auth::user();
+		$ong = Ong::findOrFail($user->entidadeAtiva->id);
+        $foto = $ong->getAvatarUrl();
 
-            //Verificando se usuario logado é owner da ong atual
-            //TODO: Model de permissoes.. 
-            if ($ong->user->id != $user->id) {
-                //Criar mensagens de erro padrão em configurações??
-                App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
-            }
+        //Verificando se usuario logado é owner da ong atual
+        //TODO: Model de permissoes.. 
+        if ($ong->user->id != $user->id) {
+            //Criar mensagens de erro padrão em configurações??
+            App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
+        }
 
-            //Trocando entidadeAtiva para essa ong
-            Session::put('entidadeAtiva_id', $ong->id);
-            Session::put('entidadeAtiva_tipo', 'ong');
+        //Trocando entidadeAtiva para essa ong
+        Session::put('entidadeAtiva_id', $ong->id);
+        Session::put('entidadeAtiva_tipo', 'ong');
 
-            $ong->url = $ong->getUrl();
-            return view('ong.edit', compact('user', 'ong', 'foto'));
+        $ong->url = $ong->getUrl();
+        return view('ong.edit', compact('user', 'ong', 'foto'));
 	}
 
 	/**
@@ -185,6 +188,23 @@ class OngController extends CuidarController {
         $ong->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('ong.show', compact('ong'));
     }
+
+
+    /**
+     * Supostamente pega voluntarios de uma ong por POST falta testar
+     * @param  [type] $idOng          [description]
+     * @param  [type] $numVoluntarios [description]
+     * @return [type]                 [description]
+     */
+    public function postGetvoluntarios($idOng, $numVoluntarios)
+    {
+    	$ong = Auth::user()->ongs->find($idOng);
+    	$voluntarios = ($ong != null) ? $ong->voluntarios->take($numVoluntarios) : [];
+    }
+
+
+    
+
 
 
 	

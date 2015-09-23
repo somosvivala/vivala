@@ -18,6 +18,7 @@ Route::get('config', 'ConfigController@index');
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
+Route::resource('perfil','PerfilController');
 Route::resource('post','PostController');
 Route::resource('albums','AlbumController');
 
