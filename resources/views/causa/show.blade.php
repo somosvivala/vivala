@@ -3,7 +3,7 @@
 @section('content')
 	
 	@if ( $causa->podeEditar )
-	<a href="/causa/{{$causa->id}}/edit">
+	<a href="/causas/{{$causa->id}}/edit">
 		<small>Editar</small>		
 	</a>
 	@endif

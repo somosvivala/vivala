@@ -11,6 +11,7 @@
     <img src="{{ asset('img/casacomunal.png') }}">
     <h4>Sobre a organização</h4>
     {{ $Ong->descricao }}
+    <a class='button' href="{{url('causas/create')}}">Criar Causa</a>
 </div>
 
 @endsection

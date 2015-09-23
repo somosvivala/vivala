@@ -1,6 +1,8 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Auth;
+
 
 class Causa extends Model {
 
@@ -47,5 +49,8 @@ class Causa extends Model {
 	}
 
 
-
+	public function getPodeEditarAttribute() 
+	{
+		return (Auth::user()->entidadeAtiva->causas->find($this->id) != null);
+	}
 }

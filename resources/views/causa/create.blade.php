@@ -8,7 +8,7 @@
             
             {!! Form::open(['url' => 'causas']) !!}
 
-                    @include('causas.form', ['btnSubmit' => 'Criar Causa'])
+                    @include('causa.form', ['btnSubmit' => 'Criar Causa'])
 
             {!! Form::close() !!}
 
