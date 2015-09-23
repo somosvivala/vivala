@@ -123,7 +123,10 @@ class OngController extends CuidarController {
 	public function sobre($id)
 	{
 		$Ong = Ong::findOrFail($id);
-		return view('cuidar.sobreong', compact('Ong'));
+		$voluntarios = $Ong->voluntarios;
+		$responsavel = $Ong->responsavel;
+
+		return view('cuidar.sobreong', compact('Ong', 'responsavel', 'voluntarios'));
 	}
 
 
@@ -185,6 +188,23 @@ class OngController extends CuidarController {
         $ong->prettyUrl()->update([ 'url' => $request->url ]);
 		return view('ong.show', compact('ong'));
     }
+
+
+    /**
+     * Supostamente pega voluntarios de uma ong por POST falta testar
+     * @param  [type] $idOng          [description]
+     * @param  [type] $numVoluntarios [description]
+     * @return [type]                 [description]
+     */
+    public function postGetvoluntarios($idOng, $numVoluntarios)
+    {
+    	$ong = Auth::user()->ongs->find($idOng);
+    	$voluntarios = ($ong != null) ? $ong->voluntarios->take($numVoluntarios) : [];
+    }
+
+
+    
+
 
 
 	

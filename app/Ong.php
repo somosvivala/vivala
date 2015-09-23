@@ -474,6 +474,15 @@ class Ong extends Model {
         return count($this->voluntarios);
     }
 
+    /**
+     * Retorna um numero até $qnt voluntarios nessa ong
+     * @param  [type] $qnt [description]
+     * @return Collection  [description]
+     */
+    public function getVoluntarios($qnt) 
+    {
+        return $this->voluntarios->take($qnt);
+    }
 
 
 }
