@@ -82,6 +82,7 @@ class Ong extends Model {
         return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
 
+
     /**
      * Uma Ong tem apenas uma foto de avatar;
      */
@@ -98,6 +99,27 @@ class Ong extends Model {
     {
         if ($this->fotoAvatar()) {
             return $this->fotoAvatar()->path;
+        }
+
+        return '/img/nophoto.png';
+    }
+
+    /**
+     * Uma Ong tem apenas uma foto de avatar;
+     */
+    public function fotoCapa()
+    {
+        return $this->fotos()->where('tipo', 'capa')->get()->first();
+    }
+
+    /**
+     * Metodo para recuperar a url do avatar da ong
+     * @return String 
+     */
+    public function getCapaUrl() 
+    {
+        if ($this->fotoCapa()) {
+            return $this->fotoCapa()->path;
         }
 
         return '/img/nophoto.png';

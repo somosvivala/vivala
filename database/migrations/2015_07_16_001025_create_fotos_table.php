@@ -16,7 +16,7 @@ class CreateFotosTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('path');
-			$table->enum('tipo', ['avatar'])->nullable();
+			$table->enum('tipo', ['avatar','capa'])->nullable();
 			$table->timestamps();
 
 			$table->integer('owner_id');

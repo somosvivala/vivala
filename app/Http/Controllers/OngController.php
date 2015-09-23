@@ -135,7 +135,7 @@ class OngController extends CuidarController {
 		$user = Auth::user();
 		$ong = Ong::findOrFail($user->entidadeAtiva->id);
         $foto = $ong->getAvatarUrl();
-
+        $fotoCapa = $ong->getCapaUrl();
         //Verificando se usuario logado é owner da ong atual
         //TODO: Model de permissoes.. 
         if ($ong->user->id != $user->id) {
@@ -148,7 +148,7 @@ class OngController extends CuidarController {
         Session::put('entidadeAtiva_tipo', 'ong');
 
         $ong->url = $ong->getUrl();
-        return view('ong.edit', compact('user', 'ong', 'foto'));
+        return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa'));
 	}
 
 	/**
