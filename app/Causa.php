@@ -49,8 +49,12 @@ class Causa extends Model {
 	}
 
 
-	public function getPodeEditarAttribute() 
+	public function podeEditarAttributte() 
 	{
-		return (Auth::user()->entidadeAtiva->causas->find($this->id) != null);
+		$entidadeAtiva = Auth::user()->entidadeAtiva;
+
+		return $entidadeAtiva->tipo != 'ong' 
+			? $entidadeAtiva->causas->find($this->id) != null 
+			: false;
 	}
 }
