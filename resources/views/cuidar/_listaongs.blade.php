@@ -1,15 +1,11 @@
-<ul class="lista-ongs row col-sm-12<F6>">
+<ul class="lista-ongs row">
 
     @if(isset($ongs))
     @forelse($ongs as $Ong)
-        <li>
+        <li class="col-sm-4">
+            <div class="foto-fundo" style="background-image:url('{{ $Ong->getCapaUrl() }}');">
             <a href="{{ url('ongs/sobre/'.$Ong->id) }}">
-                <div class="foto">
-                    <div class="cover">
-                        <img src="{{ $Ong->getAvatarUrl() }}" alt=" {{ $Ong->nome }}">
-                    </div>
-                </div>
-                <h3 class="font-family-sans-serif-bold">{{ $Ong->nome }}</h3>
+                <h3 class="font-bold-upper">{{ $Ong->nome }}</h3>
             </a>
         </li>
     @empty
