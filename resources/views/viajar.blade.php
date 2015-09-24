@@ -2,7 +2,7 @@
 
 @section('pilar')
 
-	<nav class="navbar navbar-default menu-top">
+	<nav class="navbar navbar-default menu-top header">
 		@include('header')
 	</nav>
 	{{-- Seção do topo com infos (a principio só do usuario) --}}

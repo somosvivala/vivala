@@ -12,7 +12,7 @@
 			<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
 		@else
 			<li class="menu-viajar">
-				<a href="{{ url('/viajar') }}" class="desativado">
+				<a href="{{ url('/viajar') }}" >
 					<i class="icon36 icon-viajar"></i>
 					<span>{{ trans('global.lbl_wanna_travel') }}</span>
 				</a>

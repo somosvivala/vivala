@@ -104,24 +104,25 @@ class EmpresaController extends ViajarController {
 	 *
 	 */
 	public function edit($id)
-    {
-		$user = Auth::user();
-        $empresa = Empresa::findOrFail($id);
+        {
+            $user = Auth::user();
+            $empresa = Empresa::findOrFail($id);
+            $foto = $empresa->getAvatarUrl();
 
-        //Verificando se usuario logado é owner da empresa atual
-        //TODO: Model de permissoes.. 
-        if ($empresa->user->id != $user->id) {
-        	//Criar mensagens de erro padrão em configurações??
-	        App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa empresa');
+            //Verificando se usuario logado é owner da empresa atual
+            //TODO: Model de permissoes.. 
+            if ($empresa->user->id != $user->id) {
+                //Criar mensagens de erro padrão em configurações??
+                App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa empresa');
+            }
+
+            //Trocando entidadeAtiva para essa empresa
+            Session::put('entidadeAtiva_id', $empresa->id);
+            Session::put('entidadeAtiva_tipo', 'empresa');
+
+            $empresa->url = $empresa->getUrl();
+            return view('empresa.edit', compact('empresa', 'user', 'foto' ) );
         }
-
-		//Trocando entidadeAtiva para essa empresa
-        Session::put('entidadeAtiva_id', $empresa->id);
-    	Session::put('entidadeAtiva_tipo', 'empresa');
-
-        $empresa->url = $empresa->getUrl();
-        return view('empresa.edit', compact('empresa', 'user') );
-    }
 
 	/**
 	 * Atualiza a Empresa e a prettyUrl da empresa

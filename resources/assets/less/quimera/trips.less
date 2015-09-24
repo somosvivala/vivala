@@ -4,7 +4,7 @@
 @tripbranco:  #FFF;
 @triptext:    #5D5D5D;
 
-div.trip-wrapper {
+div.flight-wrapper {
     div.flight-header {
         font-size: 1.2em;
         background-color: @tripazul;
@@ -19,24 +19,36 @@ div.trip-wrapper {
         padding-bottom: 0.1em;
         padding-top: 0.1em;
     }
-    div.flight-choice {
-        background-color: @tripbranco;
-        color: @triptext;
-        height: 2.2em;
-        line-height: 2.2em;
-        vertical-align: middle;
-        span.choice-detail {
-            color: @triplaranja;
+    div.choices-wrapper {
+        div.flight-choice {
+            border-left: 1px solid @tripcinza;
+            background-color: @tripbranco;
+            color: @triptext;
+            height: 2.2em;
+            line-height: 2.2em;
+            vertical-align: middle;
+            span.choice-detail {
+                color: @triplaranja;
+            }
+            span.choice-time {
+                font-size: 1.3em;
+                color: inherit;
+                font-weight: bold;
+            }
+            span.airline-company {
+                color: inherit;
+                font-weight: bold;
+            }
         }
-        span.choice-time {
-            font-size: 1.3em;
-            color: inherit;
-            font-weight: bold;
+        &>div:last-child {
+            border-bottom: 1px solid @tripcinza;
         }
-        span.airline-company {
-            color: inherit;
-            font-weight: bold;
-        }
+    }
+    div.flight-pricing {
+        background-color: @tripcinza;
+        height: 100%;
+        right: 0;
+        position: absolute;
     }
     margin-bottom: 2em;
 }

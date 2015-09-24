@@ -4,32 +4,41 @@
 	<div class="container-fluid">
 	<div class="col-md-12">
 	<div class="panel panel-default">
+
+<<<<<<< HEAD
 		<div class="panel-heading"><h4>{{ trans('global.lbl_acess_data') }}</h4></div>
 		<div class="panel-body">
 			<!-- Adiciona um formulario pra upload de foto-->
 			<div class="jc_coords row col-sm-12">
 
-				{!! Form::open(['url' => ['foto/cropandsave',  $perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
+				{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/home']) !!}
+				{!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
 
-					{!! Form::label("image_file_upload", trans('global.lbl_img_choose_other')) !!}
-					{!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}
+				<img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>
 
-					{!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
-					{!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
-					{!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
-					{!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
-					{!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
+				<div class="file-upload">
+						<label for="image_file_upload">
+								{{ trans('global.lbl_photo_send') }}
+								<p>{{ trans('global.quiz_fromcomputer') }}</p>
+								{!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'class' => 'upload']) !!}
+						</label>
+				</div>
 
-					<div class="erros">
-					</div>
-					{!! Form::submit( trans('global.lbl_photo_crop'), ['class' => 'btn btn-primary btn-acao']) !!}
-				<img id="preview" />
+				{!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
+				{!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
+				{!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
+				{!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
+				{!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
+
+				<div class="erros">
+				</div>
+
+				{!! Form::submit( trans('global.lbl_photo_send'), ['class' => 'btn btn-acao']) !!}
 				{!! Form::close() !!}
 			</div>
 			<div class="row col-sm-12" id="foto-atual-display">
 				<img src="{{ $perfil->getAvatarUrl() }}" id="foto-perfil">
 			</div>
-
 
 			{!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
 
@@ -63,8 +72,13 @@
 			</div>
 
 			<!-- Adiciona submit button para o form de Edicao -->
+<<<<<<< HEAD
 			<div class="form-group">
 				{!! Form::submit( trans('global.lbl_submit'), ['class' => 'form-control btn btn-acao']) !!}
+=======
+			<div class="form-group text-right">
+				{!! Form::submit("Atualizar Perfil", ['class' => 'btn btn-primary']) !!}
+>>>>>>> 945bfa51f8cf49407e41a5c20bc8bf800f9bf51a
 			</div>
 
 			{!! Form::close() !!}

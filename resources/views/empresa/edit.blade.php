@@ -4,32 +4,36 @@
   <h1>Edite a Empresa</h1>
 
 	<!-- Adiciona um formulario pra upload de foto-->
-	<div class="jc_coords row col-sm-12">
+        <div class="text-center jc_coords row col-sm-12">
 
-	{!! Form::open(['url' => ['foto/cropandsave',  $empresa->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax']) !!}
+            {!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/home']) !!}
+            {!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
 
-		{!! Form::label("image_file_upload", "Escolha outra imagem:") !!}
-		{!! Form::file("image_file_upload", ['id' => 'image_file_upload']) !!}
+            <img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>
 
-		{!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!} 	
-		{!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!} 	
-		{!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!} 	
-		{!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!} 	
+            <div class="file-upload">
+                <label for="image_file_upload">
+                    {{ trans('global.lbl_photo_send') }}
+                    <p>{{ trans('global.quiz_fromcomputer') }}</p>
+                    {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'class' => 'upload']) !!}
+                </label>
+            </div>
+            {!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
+            {!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
+            {!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
+            {!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
+            {!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
+            <div class="erros">
+            </div>
+            {!! Form::submit( trans('global.lbl_photo_update'), ['class' => 'btn btn-acao']) !!}
+            {!! Form::close() !!}
+        </div>
 
-		<div class="erros"></div>
-		{!! Form::submit("Recortar Imagem", ['class' => 'btn btn-primary']) !!}
-		<img id="preview" />
-	</div>
-	{!! Form::close() !!}		
-	<div class="row col-sm-12" id="foto-atual-display"> 
-		<img src="{{ $empresa->getAvatarUrl() }}" id="foto-perfil" alt="Foto da empresa">
-	</div>
+        {!! Form::model($empresa, ['method' => 'PATCH', 'action' => ['EmpresaController@update', $empresa->id] ]) !!}
 
-  	{!! Form::model($empresa, ['method' => 'PATCH', 'action' => ['EmpresaController@update', $empresa->id] ]) !!}
+		@include('empresa.form', ['btnSubmit' => trans('global.lbl_submit')]);
 
-		@include('empresa.form', ['btnSubmit' => 'Atualizar Dados']);
-
-    {!! Form::close() !!}
+        {!! Form::close() !!}
 
     @include('errors.list')
 @stop

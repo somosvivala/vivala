@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('ong/trocacapa','OngController@trocaCapa');
 
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
@@ -18,8 +19,10 @@ Route::get('config', 'ConfigController@index');
 Route::resource('configuracao','ConfiguracaoController');
 Route::resource('ong','OngController');
 Route::resource('empresa','EmpresaController');
+Route::resource('perfil','PerfilController');
 Route::resource('post','PostController');
 Route::resource('albums','AlbumController');
+Route::resource('causas','CausaController');
 
 // Mostra dados do post por ajax
 Route::get('postajax/{id}/{secao}', 'PostController@show');
@@ -27,6 +30,7 @@ Route::controller('post','PostController');
 Route::controller('albums','AlbumController');
 Route::controller('notificacoes','NotificacaoController');
 Route::controller('paginas','PaginaController');
+Route::controller('causas','CausaController');
 
 
 // Rotas dos três pilares do sistema

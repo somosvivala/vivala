@@ -39,7 +39,12 @@ class FotoController extends VivalaBaseController {
 			$xSuperior = round($request->input('x'));
 			$ySuperior = round($request->input('y'));
 
-			$fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
+                        // pega o tipo da foto (avatar, capa, etc)
+                        $tipo = $request->input('tipo');
+                        if(!$tipo) {
+                            $tipo = 'avatar';
+                        }
+                        $fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
 			$file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
 			$upload_success = $file->save($destinationPath.$fileName);
 	        if ($upload_success) {
@@ -55,7 +60,7 @@ class FotoController extends VivalaBaseController {
 
 	        	$foto = new Foto([
 	        			'path' => $fileName,
-	        			'tipo' => 'avatar' ]);
+	        			'tipo' => $tipo ]);
 
 	        	$entidade->fotos()->save($foto);
 
