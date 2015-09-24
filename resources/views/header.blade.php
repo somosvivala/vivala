@@ -12,7 +12,7 @@
 			<li><a href="{{ url('/auth/register') }}">{{ trans("menu.signup") }}</a></li>
 		@else
 			<li class="menu-viajar">
-				<a href="{{ url('/viajar') }}" class="desativado">
+				<a href="{{ url('/viajar') }}" >
 					<i class="icon36 icon-viajar"></i>
 					<span>{{ trans("menu.trips") }}</span>
 				</a>
