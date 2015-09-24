@@ -4,10 +4,18 @@
 @endsection
 
 @section('content')
+<div class="col-sm-12 margin-b-1">
+<div class="col-sm-12 foto-fundo foto-header" style="background-image:url('{{ $Ong->getCapaUrl() }}');">
+
+    @if ($Ong->user->id == Auth::user()->id)
+        <div class="hora-post"><a class="btn btn-action" href="{{ url('ong/trocacapa') }}">Trocar foto de capa</a></div>
+    @endif
+</div>
+</div>
+
 <h3 class="font-bold-upper text-center">
     {{ $Ong->nome }}            
 </h3>
-
 <div class="col-sm-12 sobre-ong">
 <div class="text-center fundo-cheio">
     <img src="{{ asset('img/casacomunal.png') }}">

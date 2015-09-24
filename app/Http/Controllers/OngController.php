@@ -130,7 +130,26 @@ class OngController extends CuidarController {
 	}
 
 
-	public function edit($id=0)
+        public function trocaCapa($id=0)
+        {
+            $user = Auth::user();
+            $ong = Ong::findOrFail($user->entidadeAtiva->id);
+            $fotoCapa = $ong->getCapaUrl();
+            //Verificando se usuario logado é owner da ong atual
+            if ($ong->user->id != $user->id) {
+                //Criar mensagens de erro padrão em configurações??
+                App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
+            }
+
+            //Trocando entidadeAtiva para essa ong
+            Session::put('entidadeAtiva_id', $ong->id);
+            Session::put('entidadeAtiva_tipo', 'ong');
+
+            $ong->url = $ong->getUrl();
+            return view('ong.trocacapa', compact('user', 'ong', 'fotoCapa'));
+        }
+
+        public function edit($id=0)
 	{
 		$user = Auth::user();
 		$ong = Ong::findOrFail($user->entidadeAtiva->id);

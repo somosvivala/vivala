@@ -12,6 +12,15 @@ ul.margin-0 {
 .height-18 {
   height: 18em;
 }
+.margin-b-1 {
+  margin-bottom: 1em;
+}
+.margin-b-2 {
+  margin-bottom: 2em;
+}
+.margin-b-10 {
+  margin-bottom: 10em;
+}
 .margin-t-1 {
   margin-top: 1em;
 }

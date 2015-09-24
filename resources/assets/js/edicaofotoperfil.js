@@ -27,9 +27,13 @@ $(function(){
    * @return {?} [description]
    */
   function fotoUploadHandler() {
-    // Pega arquivo que foi selecionado
-    var oFile = $('#image_file_upload')[0].files[0];
-    console.log(oFile);
+    var inputFile = $('#image_file_upload'),
+        // Pega arquivo que foi selecionado
+        oFile = inputFile[0].files[0],
+        // Proporção da foto
+        imgRatio = inputFile.data("ratio");
+    console.log(imgRatio);
+        if(!imgRatio) imgRatio = 1;
     // Esconde o div de erros
     $('.erros').hide();
     // Filtra imagens que não são png ou jpg
@@ -70,7 +74,7 @@ $(function(){
 
         // Seta o JCrop pra imagem
         $('#preview').Jcrop({
-          aspectRatio: 1,
+          aspectRatio: imgRatio,
           minSize: [ 100, 100 ],
           onSelect: updateCoords,
           onSelect: updateCoords,

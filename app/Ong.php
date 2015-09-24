@@ -109,7 +109,7 @@ class Ong extends Model {
      */
     public function fotoCapa()
     {
-        return $this->fotos()->where('tipo', 'capa')->get()->first();
+        return $this->fotos()->where('tipo', 'capa')->get()->last();
     }
 
     /**
