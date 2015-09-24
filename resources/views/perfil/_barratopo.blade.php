@@ -4,7 +4,7 @@
 		&nbsp;
 		@if (Auth::user()->id == $user->id)
 			<a class="link-claro edit-profile" href="{{ url('editarPerfil') }}">
-				<i class="fa fa-edit"></i> Editar
+				<i class="fa fa-edit"></i> {{ trans('global.lbl_edit') }}
 			</a>
 		@endif
 	</div>
@@ -15,7 +15,7 @@
 			</h1>
 			<span class="col-sm-6">
 				@if($entidadeAtiva->cidade_atual)
-					<i class="fa fa-map-marker"></i> Vive em {{ $entidadeAtiva->cidade_atual }}
+					<i class="fa fa-map-marker"></i> {{ trans('global.lbl_live_in') }} {{ $entidadeAtiva->cidade_atual }}
 				@endif
 			</span>
 		</div>
@@ -32,9 +32,9 @@
 		<ul>
 			<li class="col-sm-4">
 				{{ $entidadeAtiva->numeroSeguidores }} <br>
-				Seguidores
+				{{ trans('global.lbl_follower_') }}
 				<div class="col-sm-6 hidden">
-                        {{--		<h3> Followed by </h3>
+                        {{--		<h3>{{ trans('global.lbl_followed_by') }}</h3>
 					@forelse($followedBy as $entidadeAtiva)
 						<ul class="lista-usuarios">
 							<li class="foto-user">
@@ -44,16 +44,16 @@
 							</li>
 						</ul>
 					@empty
-					    <p>Ninguém :(</p>
+					    <p>{{ trans('global.lbl_followed_by_none') }} :(</p>
                                             @endforelse
                                         --}}
 				</div>
 			</li>
 			<li class="col-sm-4">
 				{{ $entidadeAtiva->numeroSeguindo }} <br>
-				seguindo
+				{{ trans('global.lbl_following') }}
 				<div class="col-sm-6 hidden">
-                        {{--		<h3> Following </h3>
+                        {{--		<h3>{{ trans('global.lbl_following') }}</h3>
 					@forelse($follow as $perfil)
 						<ul class="lista-usuarios">
 							<li class="foto-user">
@@ -63,16 +63,15 @@
 							</li>
 						</ul>
 					@empty
-					    <p>Ninguém :(</p>
+					    <p>{{ trans('global.lbl_followed_by_none') }} :(</p>
 					@endforelse
                         --}}
                                 </div>
 			</li>
-			<li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>Viajante</li>
+			<li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>{{ trans('global.lbl_traveller') }}</li>
 		</ul>
 	</div>
 	<div class="col-md-1">
 	</div>
 
 </div>
-

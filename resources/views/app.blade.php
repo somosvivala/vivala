@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Vivalá</title>
+	<title>{{ trans('global.title_vivala') }}</title>
 
 	<link rel="icon" href="/favicon-16.png" sizes="16x16"/>
     <link rel="icon" href="/favicon-32.png" sizes="32x32"/>

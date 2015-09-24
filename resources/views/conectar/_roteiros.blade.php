@@ -3,6 +3,6 @@
 
 @section('content')
 <h4 class="suave">
-	Roteiros
+  {{ trans('global.lbl_travel_guide_') }}
 </h4>
 @endsection

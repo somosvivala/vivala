@@ -12,11 +12,11 @@
 				<a href="#comentario/likecomentario/{{ $Comentario->id }}" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}"><i class="fa fa-heart"></i></a>
 				<span class="qtd-likes">
 					@if($Comentario->getQuantidadeLikes() > 1)
-						 {{ $Comentario->getQuantidadeLikes() }} {{ trans("post.likes") }}
+						 {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like_') }}
 					@elseif($Comentario->getQuantidadeLikes() == 1)
-						 {{ $Comentario->getQuantidadeLikes() }} {{ trans("post.like") }}
+						 {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like') }}
 					@else
-						{{ trans("post.liker") }}
+						{{ trans('global.lbl_liker') }}
 					@endif
 				</span>
 			</div>
@@ -24,6 +24,6 @@
 	@empty
 	    <p class="col-sm-12">{{ trans("post.nocomments") }}</p>
 	@endforelse
-	<a class="col-sm-12" href="/post/{{ $Post->id }}">Ver postagem completa.</a>
+	<a class="col-sm-12" href="/post/{{ $Post->id }}">{{ trans('global.lbl_post_see_complete') }}</a>
 	@endif
 </div>
