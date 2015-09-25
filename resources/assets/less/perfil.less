@@ -11,24 +11,14 @@
 		margin:0;
 	}
 	ul {
-		padding: 0.5em;
-		list-style: none;
-		border: 1px solid white;
-		display: block;
-		overflow:hidden;
+            .lista-border();
+            border-color: white;
 		margin-top: 2em;
 		li {
-			display: inline-block;
-			float: left;
-			text-align: center;
-			+li{
-				border-left: 1px solid white;
-			}
-                        a {
-                            color: white;
-                            text-decoration: none;
-                        }
-		}
+		    a {
+                        color: white;
+                    }
+                }
 	}
 	.foto {
 		width: 10em;

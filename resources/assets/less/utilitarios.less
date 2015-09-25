@@ -104,6 +104,25 @@ div.foto {
 
     }
 }
+.lista-border{
+    padding: 0.5em;
+    list-style: none;
+    border: 1px solid @cor-primaria;
+    display: block;
+    overflow:hidden;
+    li {
+        display: inline-block;
+        float: left;
+        text-align: center;
+        +li{
+            border-left: 1px solid @cor-primaria;
+        }
+        a {
+            text-decoration: none;
+        }
+
+    }
+}
 // Arredonda as bordas (usando nas fotos)
 .round {
 	border-radius: 50%;
