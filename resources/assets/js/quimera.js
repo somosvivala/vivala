@@ -106,9 +106,9 @@ var searchTrip = function(params) {
 testSearchTrip = function() {
     searchTrip({
         from: 'SAO',
-        to: 'RIO',
-        departureDate: '2015-12-09',
-        returnDate: '2015-12-12',
+        to: 'SYD',
+        departureDate: '2016-01-29',
+        returnDate: '2016-02-10',
         adults: 2
     });
 };
@@ -150,8 +150,10 @@ var searchHotels = function(params) {
             destination: null,
             checkin: null,
             checkout: null,
-            distribution: null
-
+            distribution: null,
+            facets: {
+                subtotalPriceRange: null
+            }
         };
 
     $.extend(defaultParams, params);

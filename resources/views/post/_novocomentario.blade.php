@@ -10,12 +10,12 @@
 
 		<!-- Adiciona um text field para o form-->
 		<div class="form-group">
-			{!! Form::text("conteudo", null,['class' => 'form-control', 'title'=> trans("post.commentsph"), 'aria-label'=> trans("post.commentsph"), 'placeholder'=> trans("post.commentsph")]) !!}
+			{!! Form::text("conteudo", null,['class' => 'form-control', 'title'=> trans('global.lbl_comment'), 'aria-label'=> trans('global.lbl_comment'), 'placeholder'=> trans('global.lbl_commentr1')]) !!}
 		</div>
 
 		<!-- Adiciona submit button para o form -->
 		<div class="form-group">
-			{!! Form::submit(trans("post.submit"), ['class' => 'form-control btn btn-acao']) !!}
+			{!! Form::submit(trans('global.lbl_publish'), ['class' => 'form-control btn btn-acao']) !!}
 		</div>
 
 		<!-- Fecha o form-->

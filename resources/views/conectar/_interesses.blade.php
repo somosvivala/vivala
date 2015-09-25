@@ -3,6 +3,6 @@
 
 @section('content')
 <h4 class="suave">
-	Interesses
+  {{ trans('global.lbl_interest_') }}
 </h4>
 @endsection

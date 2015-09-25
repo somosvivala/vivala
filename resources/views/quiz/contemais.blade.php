@@ -3,29 +3,29 @@
 @section('pergunta')
 	<div class="col-sm-12 pergunta">
 		<span class="absolute-top-right laranja">
-			<a href="{{ url ('quiz/personalize')}}" class="absolute-top-left laranja">{{ trans("quiz.backstep") }}</a> | <a href="{{ url ('quiz/pessoasinteressantes')}}" class="laranja">{{ trans("quiz.skipstep") }}</a>
+			<a href="{{ url ('quiz/personalize')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('quiz/pessoasinteressantes')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
 		</span>
-		<h2>{{ trans("quiz.tellusmore") }}</h2>
-		<h3>{{ trans("quiz.getintimacy") }}</h3>
+		<h2>{{ trans("global.quiz_tell_us_more") }}</h2>
+		<h3>{{ trans("global.quiz_get_intimacy") }}</h3>
 		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/pessoasinteressantes']) !!}
 			<div class="erros">
 			</div>
 			<div class="row">
 				<div class="col-sm-4">
-					{!! Form::text("apelido", null, ['class' => 'form-control', 'placeholder' => trans("quiz.nickname") ]) !!}
-					{!! Form::text("cidade_natal", null, ['class' => 'form-control', 'placeholder' => trans("quiz.hometown") ]) !!}
-					{!! Form::text("cidade_atual", null, ['class' => 'form-control', 'placeholder' => trans("quiz.currentcity") ]) !!}
+					{!! Form::text("apelido", null, ['class' => 'form-control', 'placeholder' => trans("global.quiz_nickname") ]) !!}
+					{!! Form::text("cidade_natal", null, ['class' => 'form-control', 'placeholder' => trans("global.quiz_hometown") ]) !!}
+					{!! Form::text("cidade_atual", null, ['class' => 'form-control', 'placeholder' => trans("global.quiz_currentcity") ]) !!}
 				</div>
 				<div class="col-sm-4">
-					{!! Form::textarea("descricao_curta", null, ['title'=> trans("quiz.t_shortdesc"), 'aria-label'=>'Descrição curta', 'placeholder'=> trans("quiz.ph_shortdesc") ]) !!}
+					{!! Form::textarea("descricao_curta", null, ['title'=> trans("global.quiz_shortdesc"), 'aria-label'=> trans("global.quiz_shortdesc"), 'placeholder'=> trans("global.quiz_shortdesc_ph") ]) !!}
 				</div>
 				<div class="col-sm-4">
-					{!! Form::textarea("descricao_longa", null, ['title'=> trans("quiz.t_longdesc"), 'aria-label'=>'Descrição longa', 'placeholder'=> trans("quiz.ph_longdesc") ]) !!}
+					{!! Form::textarea("descricao_longa", null, ['title'=> trans("global.quiz_longdesc"), 'aria-label'=> trans("global.quiz_longdesc"), 'placeholder'=> trans("global.quiz_longdesc_ph") ]) !!}
 				</div>
 			</div>
 				<div class="col-sm-12">
 					<br>
-					{!! Form::submit( trans("quiz.continue"), ['class' => 'btn btn-acao']) !!}
+					{!! Form::submit( trans("global.lbl_continue"), ['class' => 'btn btn-acao']) !!}
 				</div>
 		{!! Form::close() !!}
 	</div>

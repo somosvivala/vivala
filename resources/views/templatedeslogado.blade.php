@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Vivalá</title>
+	<title>{{ trans('global.title_vivala') }}</title>
 
 	<link rel="icon" href="/favicon-16.png" sizes="16x16"/>
 	<link rel="icon" href="/favicon-32.png" sizes="32x32"/>
@@ -26,7 +26,7 @@
 	<div class="col-sm-12 welcome-header">
 		<div class="container">
 			<div class="col-sm-5">
-				<a class="navbar-brand nav-logo" href="{{ url('home') }}"><img src="/img/vivalogo.png" alt="Vivalá" title="Vivalá"></a>
+				<a class="navbar-brand nav-logo" href="{{ url('home') }}"><img src="/img/vivalogo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
 			</div>
 			<div class="col-sm-7">
 				<div class="col-sm-10">

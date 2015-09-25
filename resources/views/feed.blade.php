@@ -10,7 +10,7 @@
 			@endif
         </li>
 	@empty
-	    <p>Que silêncio, fala alguma coisa aí! :)</p>
+	    <p>{{ trans('global.feed_kinda_silence') }} :)</p>
 	@endforelse
 </ul>
 @endif

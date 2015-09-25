@@ -3,6 +3,6 @@
 
 @section('content')
 <h4 class="suave">
-	Perfil Viajante
+	{{ trans('global.lbl_traveller_profile') }}
 </h4>
 @endsection

@@ -20,7 +20,7 @@
         </div>
     </li>
     @empty
-        <p>Nenhuma mensagem nova.</p>
+        <p>{{ trans('global.lbl_message_no') }}</p>
     @endforelse
     @endif
-</ul> 
+</ul>

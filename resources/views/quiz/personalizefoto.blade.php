@@ -4,10 +4,10 @@
 
 	<div class="col-sm-12 pergunta">
 		<span class="absolute-top-right laranja">
-			<a href="{{ url ('quiz')}}" class="absolute-top-left laranja">{{ trans("quiz.backstep") }}</a> | <a href="{{ url ('quiz/contemais')}}" class="laranja">{{ trans("quiz.skipstep") }}</a>
+			<a href="{{ url ('quiz')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('quiz/contemais')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
 		</span>
-		<h2>{{ trans("quiz.customizeprofile") }}</h2>
-		<h3>{{ trans("quiz.customizephoto") }}</h3>
+		<h2>{{ trans("global.quiz_profile_customize") }}</h2>
+		<h3>{{ trans("global.quiz_photo_customize") }}</h3>
 
 		{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/quiz/contemais']) !!}
 		{!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
@@ -16,8 +16,8 @@
 
 			<div class="file-upload">
 				<label for="image_file_upload">
-					{{ trans("quiz.sendphoto") }}
-					<p>{{ trans("quiz.fromrcomputer") }}</p>
+					{{ trans("global.lbl_photo_send") }}
+					<p>{{ trans("global.quiz_fromcomputer") }}</p>
 					{!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'class' => 'upload']) !!}
 				</label>
 			</div>
@@ -28,7 +28,7 @@
 				{!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
 			<div class="erros">
 			</div>
-			{!! Form::submit( trans("quiz.continue"), ['class' => 'btn btn-acao']) !!}
+			{!! Form::submit( trans("global.lbl_continue"), ['class' => 'btn btn-acao']) !!}
 		{!! Form::close() !!}
 	</div>
 @endsection
