@@ -118,6 +118,24 @@ div.foto {
   border: 0px solid transparent;
   padding: 0.35em 0.5em;
 }
+.lista-border {
+  padding: 0.5em;
+  list-style: none;
+  border: 1px solid #f16f2b;
+  display: block;
+  overflow: hidden;
+}
+.lista-border li {
+  display: inline-block;
+  float: left;
+  text-align: center;
+}
+.lista-border li + li {
+  border-left: 1px solid #f16f2b;
+}
+.lista-border li a {
+  text-decoration: none;
+}
 .round {
   border-radius: 50%;
   overflow: hidden;

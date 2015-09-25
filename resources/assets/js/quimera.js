@@ -151,6 +151,7 @@ var searchHotels = function(params) {
             checkin: null,
             checkout: null,
             distribution: null
+
         };
 
     $.extend(defaultParams, params);
