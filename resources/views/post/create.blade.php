@@ -9,31 +9,31 @@
                 <li class="col-sm-2">
                     <input type="radio" name="tipo_post" value="status" id="status" checked>
                     <label for="status">
-                        {{trans("post.status")}}
+                        {{ trans('global.lbl_status') }}
                     </label>
                 </li>
                 <li class="col-sm-3">
                     <input type="radio" name="tipo_post" value="foto" id="foto">
                     <label for="foto">
-                        {{trans("post.addphoto")}}
+                        {{ trans('global.lbl_photo_add') }}
                     </label>
                 </li>
                 <li class="col-sm-3">
                     <input type="radio" name="tipo_post" value="video" id="video" disabled="disabled">
                     <label for="video">
-                        {{trans("post.addvideo")}}
+                        {{ trans('global.lbl_video_add')}}
                     </label>
                 </li>
                 <li class="col-sm-2">
                     <input type="radio" name="tipo_post" value="album" id="album" disabled="disabled">
                     <label for="album">
-                        {{trans("post.createalbum")}}
+                        {{ trans('global.lbl_album_create') }}
                     </label>
                 </li>
                 <li class="col-sm-2">
                     <input type="radio" name="tipo_post" value="localizacao" id="localizacao" disabled="disabled">
                     <label for="localizacao">
-                        {{trans("post.localization")}}
+                        {{trans('global.lbl_localization')}}
                     </label>
                 </li>
             </ul>
@@ -45,18 +45,18 @@
                 </div>
             </div>
             <div class="row">
-                {!! Form::textarea("descricao", null, ['title'=> trans("post.shareph"), 'aria-label'=> trans("post.shareph"), 'placeholder'=> trans("post.shareph"), 'class' => 'sem-resize']) !!}
+                {!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_share'), 'aria-label'=> trans('global.lbl_share'), 'placeholder'=> trans('global.lbl_share'), 'class' => 'sem-resize']) !!}
             </div>
             <div class="row">
                 <div class="col-sm-10">
                     <ul class="lista-intervalo-preto">
-                        <li class="col-sm-4"><a href="#adicionar-roteiro" class="desativado">{{ trans("post.addroute") }}</a></li>
-                        <li class="col-sm-5"><a href="#adicionar-diario" class="desativado">{{ trans("post.addjourneylog") }}</a></li>
-                        <li class="col-sm-3"><a href="#marcar-amigos" class="desativado">{{ trans("post.tagfriends") }}</a></li>
+                          <li class="col-sm-4"><a href="#adicionar-roteiro" class="desativado">{{ trans('global.lbl_travel_guide_add') }}</a></li>
+                        <li class="col-sm-5"><a href="#adicionar-diario" class="desativado">{{ trans('global.lbl_travel_log_add') }}</a></li>
+                        <li class="col-sm-3"><a href="#marcar-amigos" class="desativado">{{ trans('global.lbl_tag_friends') }}</a></li>
                     </ul>
                 </div>
 
-                {!! Form::submit( trans("post.publish"), ['class' => 'col-sm-2 btn btn-acao']) !!}
+                {!! Form::submit( trans('global.lbl_publish'), ['class' => 'col-sm-2 btn btn-acao']) !!}
             </div>
 
         {!! Form::close() !!}

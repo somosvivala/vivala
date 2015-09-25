@@ -13,8 +13,8 @@
 
             <div class="file-upload">
                 <label for="image_file_upload">
-                    {{ trans("quiz.sendphoto") }}
-                    <p>{{ trans("quiz.fromrcomputer") }}</p>
+                    {{ trans('global.lbl_photo_send') }}
+                    <p>{{ trans('global.quiz_fromcomputer') }}</p>
                     {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'class' => 'upload']) !!}
                 </label>
             </div>
@@ -25,13 +25,13 @@
             {!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
             <div class="erros">
             </div>
-            {!! Form::submit( trans("Atualizar foto"), ['class' => 'btn btn-acao']) !!}
+            {!! Form::submit( trans('global.lbl_photo_update'), ['class' => 'btn btn-acao']) !!}
             {!! Form::close() !!}
         </div>
-   
+
         {!! Form::model($empresa, ['method' => 'PATCH', 'action' => ['EmpresaController@update', $empresa->id] ]) !!}
 
-		@include('empresa.form', ['btnSubmit' => 'Atualizar Dados']);
+		@include('empresa.form', ['btnSubmit' => trans('global.lbl_submit')]);
 
         {!! Form::close() !!}
 

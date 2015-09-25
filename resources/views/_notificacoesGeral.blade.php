@@ -21,7 +21,7 @@
         <span>{{ $Notificacao->data_postagem_diff}}
     </li>
     @empty
-        <p>Nenhuma notificação nova. :(</p>
+        <p>{{ trans('global.lbl_notification_no') }}</p>
     @endforelse
     @endif
-</ul> 
+</ul>

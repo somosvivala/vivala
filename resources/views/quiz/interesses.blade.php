@@ -2,9 +2,9 @@
 
 @section('pergunta')
 	<div class="col-sm-12 pergunta">
-		<a href="{{ url ('quiz/personalize')}}" class="absolute-top-right laranja">{{ trans("quiz.skipstep") }}</a>
-		<h2>{{ trans("quiz.yourinterests") }}</h2>
-		<h3>{{ trans("quiz.chooseinterests") }}</h3>
+		<a href="{{ url ('quiz/personalize')}}" class="absolute-top-right laranja">{{ trans("global.lbl_step_skip") }}</a>
+		<h2>{{ trans("global.quiz_interests_yours") }}</h2>
+		<h3>{{ trans("global.quiz_interests_choose") }}</h3>
 		<ul class="interesses col-sm-12">
 			{!! Form::open(['url' => ['quiz/interesses', Auth::user()->perfil->id], 'class' => 'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/personalize']) !!}
 			@if(isset($interesses))
@@ -16,10 +16,10 @@
 					</label>
 				</li>
 			@empty
-			    <p>{{ trans("quiz.nointerests") }}</p>
+			    <p>{{ trans("global.quiz_nosuggests") }}</p>
 			@endforelse
 		</ul>
-		{!!Form::submit(trans("quiz.continue"), ['class' => 'btn btn-acao']) !!}
+		{!!Form::submit(trans("global.lbl_continue"), ['class' => 'btn btn-acao']) !!}
 		{!! Form::close() !!}
 		@endif
 	</div>

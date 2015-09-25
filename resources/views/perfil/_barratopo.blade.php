@@ -2,9 +2,10 @@
 <div class="row perfil-topo">
 	<div class="col-md-1">
 		&nbsp;
+
 		@if ($perfil->user->id == Auth::user()->id)
 			<a class="link-claro edit-profile" href="{{ url($perfil->tipo.'/'.$perfil->id.'/edit') }}">
-				<i class="fa fa-edit"></i> Editar
+				<i class="fa fa-edit"></i> {{ trans('global.lbl_edit') }}
 			</a>
 		@endif
 	</div>
@@ -15,7 +16,7 @@
 			</h1>
 			<span class="col-sm-6">
 				@if($perfil->cidade_atual)
-					<i class="fa fa-map-marker"></i> Vive em {{ $perfil->cidade_atual }}
+					<i class="fa fa-map-marker"></i> {{ trans('global.lbl_live_in') }} {{ $perfil->cidade_atual }}
 				@endif
 			</span>
 		</div>
@@ -32,9 +33,9 @@
 		<ul>
 			<li class="col-sm-4">
 				{{ $perfil->numeroSeguidores }} <br>
-                                Seguidores
+				{{ trans('global.lbl_follower_') }}
 				<div class="col-sm-6 hidden">
-                        {{--		<h3> Followed by </h3>
+                        {{--		<h3>{{ trans('global.lbl_followed_by') }}</h3>
 					@forelse($followedBy as $perfil)
 						<ul class="lista-usuarios">
 							<li class="foto-user">
@@ -44,16 +45,16 @@
 							</li>
 						</ul>
 					@empty
-					    <p>Ninguém :(</p>
+					    <p>{{ trans('global.lbl_followed_by_none') }} :(</p>
                                             @endforelse
                                         --}}
 				</div>
 			</li>
 			<li class="col-sm-4">
 				{{ $perfil->numeroSeguindo }} <br>
-				seguindo
+				{{ trans('global.lbl_following') }}
 				<div class="col-sm-6 hidden">
-                        {{--		<h3> Following </h3>
+                        {{--		<h3>{{ trans('global.lbl_following') }}</h3>
 					@forelse($follow as $perfil)
 						<ul class="lista-usuarios">
 							<li class="foto-user">
@@ -63,20 +64,19 @@
 							</li>
 						</ul>
 					@empty
-					    <p>Ninguém :(</p>
+					    <p>{{ trans('global.lbl_followed_by_none') }} :(</p>
 					@endforelse
                         --}}
                                 </div>
 			</li>
-			<li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>Viajante</li>
+			<li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>{{ trans('global.lbl_traveller') }}</li>
 		</ul>
 		<ul class="margin-0">
                         <li class="col-sm-6"><a href="{{ $perfil->tipo == 'ong'?url('ongs/sobre/'.$perfil->id):'' }}">Saiba mais coisas</a></li>
-                        <li class="col-sm-6"><a href="#" class="desativado">Enviar mensagem</a></li>
+                        <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_message_send') }}m</a></li>
 		</ul>
 	</div>
 	<div class="col-md-1">
 	</div>
 
 </div>
-

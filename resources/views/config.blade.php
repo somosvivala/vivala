@@ -41,9 +41,9 @@
 					{{trans('acoes.visualizarperfil')}}
 				</a>
 				<h1>Alô {{ Auth::user()->username }}</h1>
-				
+
 				@if (isset($facebookData))
-					<h2> Informações do Facebook </h2>
+					<h2>{{ trans('global.fb_info') }}</h2>
 					user_birthday:{{ $facebookData->user_birthday }}<br>
 					user_hometown:{{ $facebookData->user_hometown }}<br>
 					user_location:{{ $facebookData->user_location }}<br>
@@ -51,10 +51,10 @@
 				@endif
 
 				@if (isset($perfil))
-					<h2> Informações do seu Perfil </h2>
-					Data de Aniversário:
+					<h2> {{ trans('global.lbl_profile_info_') }} </h2>
+					{{ trans('global.lbl_birthday1') }}:
 					{{ $perfil->aniversario }}<br>
-					Cidade Natal:
+					{{ trans('global.lbl_hometown') }}
 					{{ $perfil->cidade_natal }}<br>
 					Último local registrado:
 					{{ $perfil->ultimo_local }}<br>

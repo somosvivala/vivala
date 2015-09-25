@@ -2,5 +2,7 @@
 @extends('conectar')
 
 @section('content')
-Chatline
+<h4 class="suave">
+  {{ trans('global.lbl_chatline') }}
+</h4>
 @endsection

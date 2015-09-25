@@ -1,5 +1,5 @@
 <h4 class="suave">
-	Sugestão de viajantes
+	{{ trans('global.lbl_traveller_suggest_') }}
 </h4>
 
 <ul class="sugestoes sugestoes-viajantes">
@@ -7,7 +7,7 @@
 	@forelse($sugestoesViajantes as $Perfil)
 		<li>
 			{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
-			<button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
+			<button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
 			<a href="{{ url($Perfil->getUrl()) }}">
 				<div class="round foto">
 					<div class="cover">
@@ -27,10 +27,10 @@
 			{!! Form::close() !!}
 		</li>
 	@empty
-	    <p>Sem viajantes pra seguir! :o</p>
+	    <p>{{ trans('global.lbl_follower_no') }} :o</p>
 	@endforelse
 	@endif
 </ul>
 <div class="row text-center">
-	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao">Ver mais</a>
+	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao">{{ trans('global.lbl_seemore') }}</a>
 </div><br>
