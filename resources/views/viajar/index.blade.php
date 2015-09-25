@@ -13,19 +13,38 @@
 </div>
 
 <div class="fundo-cheio col-sm-12">
-    <h3 class="font-bold-upper text-center">
-        Sugestão de viajantes para seguir
+    <h3 class="font-bold-upper text-center">Já sabe para onde ir?
+        <small class=".sub-titulo">Monte sua viagem! </small>
     </h3>
 
-    <ul class="lista-border">
-    <li class="col-sm-4">
-        Seguidores
-    </li>
-    <li class="col-sm-4">
-            seguindo
-    </li>
-    <li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>Viajante</li>
+    <ul class="lista-border pesquisa-viajar">
+        <li class="col-sm-3">
+           <a href="#hospedagem"> 
+                Hospedagem
+            </a>
+        </li>
+        <li class="col-sm-3">
+            <a href="#voos"> 
+                Vôos
+            </a>
+        </li>
+        <li class="col-sm-3">
+           <a href="#carros"> 
+               Carros 
+            </a> 
+        </li>
+        <li class="col-sm-3">
+           <a href="#montarviagem" class="desativado"> 
+                Montar viagem
+            </a> 
+        </li>
     </ul>
+    <div class="form-hospedagem">
+        {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
+        <form>
+            @include('quimera._formhotels')  
+        </form>
+    </div>
 </div>
 <section class="secao-sem-bg text-center">
 	<h3 class="subtitulo col-sm-12">Explore novos ares e mares</h3>
