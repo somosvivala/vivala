@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Requests\EditarOngRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CriarOngRequest;
 use App\Http\Requests\CropPhotoRequest;
 use Session;
 use App\Ong;
@@ -13,6 +14,7 @@ use Carbon\Carbon;
 use App\PrettyUrl;
 use Input;
 use App\Foto;
+
 
 use App\CategoriaOng;
 
@@ -74,10 +76,10 @@ class OngController extends CuidarController {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(CriarOngRequest $request)
 	{
 
-		$novaOng = Auth::user()->ongs()->create(Request::all());
+		$novaOng = Auth::user()->ongs()->create($request->all());
 
 		$novaPrettyUrl = new PrettyUrl();
         $novaPrettyUrl->tipo = 'ong';
