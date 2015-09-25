@@ -1,6 +1,9 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Validator;
+use App\PrettyUrl;
+use Auth;
 
 class CriarOngRequest extends Request {
 
@@ -21,6 +24,13 @@ class CriarOngRequest extends Request {
 	 */
 	public function rules()
 	{
+		Validator::extend('pretty_url', function($attribute, $value, $parameters)
+		{
+			$prettyUrl = PrettyUrl::where("url", $value)->get()->first();
+			$isMyUrl = $prettyUrl ? ($prettyUrl->prettyurlable == Auth::user()->entidadeAtiva) : true;
+		    return ($prettyUrl ? $isMyUrl : true);
+		});
+
 		return [
 			'nome' 					=> "string|required|min:2",
 			'apelido' 				=> "string|required|min:2",
