@@ -58,7 +58,7 @@ var autocompleteHotels = function(query) {
 /**
  *  Busca de passagens
  */
-var searchTrip = function(params) {
+var searchFlight = function(params) {
     var
         url = 'trip',
         defaultParams = {
@@ -103,20 +103,10 @@ var searchTrip = function(params) {
     }); 
 };
 
-testSearchTrip = function() {
-    searchTrip({
-        from: 'SAO',
-        to: 'SYD',
-        departureDate: '2016-01-29',
-        returnDate: '2016-02-10',
-        adults: 2
-    });
-};
-
 /**
  * Select com todos os filtros de viagens
  */
-var sortFilterTrip = function(select) {
+var sortFilterFlight = function(select) {
     var filters = [ 
         ['personal_ascending',     'Mais vendidos'],
         ['duration_ascending',     'Duração'],
@@ -151,6 +141,7 @@ var searchHotels = function(params) {
             checkin: null,
             checkout: null,
             distribution: null,
+            sortBy: 'best_selling_descending', // [stars_descending|stars_ascending|subtotal_price_descending|subtotal_price_ascending|best_selling_descending]
             facets: {
                 subtotalPriceRange: null
             }
@@ -170,7 +161,7 @@ var searchHotels = function(params) {
             params: defaultParams, 
             url: url,
             method: 'GET',
-            process: true,
+            process: false,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -252,3 +243,31 @@ var hotelAvaiability = function(params) {
         console.log(data);
     });
 };
+
+var testHotelAvaiability = function () {
+    hotelAvaiability({
+        id: '331030',
+        checkin: '2015-10-14',
+        checkout: '2015-10-20',
+        distribution: '1!1'
+    });
+};
+
+var testSearchFlight = function() {
+    searchFlight({
+        from: 'SAO',
+        to: 'SYD',
+        departureDate: '2016-01-29',
+        returnDate: '2016-02-10',
+        adults: 2
+    });
+};
+
+var testSearchHotels = function () {
+    searchHotels({
+        destination: '6574',
+        checkin: '2016-01-20',
+        checkout: '2016-01-25',
+        distribution: '1'
+    });
+}
