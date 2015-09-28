@@ -41,11 +41,10 @@
     </ul>
     <div class="form-hospedagem">
         {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
-        <form>
-            @include('quimera._formhotels')  
-        </form>
+        @include('quimera._formvoos')  
     </div>
 </div>
+{{--
 <section class="secao-sem-bg text-center">
 	<h3 class="subtitulo col-sm-12">Explore novos ares e mares</h3>
 	<small class="col-sm-12">Descubra lugares novos e inspiradores</small>
@@ -151,5 +150,6 @@
 		</div>
 	</div>
 </section>
+--}}
 
 @endsection

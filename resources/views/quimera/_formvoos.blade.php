@@ -1,6 +1,7 @@
 <div class="advanced-searchbox">
     <form name="search" id="search" action="flightSearchOneWay" >
         <div class="hidden">        
+            {{-- Checado somente o ida e volta, que foi testado nos envios de request --}}
             <input id="roundTripType" name="tripType" value="1" onclick="idaVuelta()" checked="checked" type="radio">
             <label for="roundTripType" id="lbl-round">Ida e volta</label>
 
@@ -22,53 +23,68 @@
                 });
             </script>
 
-            <div class="col-sm-6">	<!--Origin city input-->
-                <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origen" name="origin" class="city-input required ui-autocomplete-input" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
-                <input id="origenID" style="display:none" name="originId" class="required" value="" type="hidden">
+            <div class="col-sm-6">
 
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origen" name="origin" class="city-input required ui-autocomplete-input" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
+                        <input id="origenID" style="display:none" name="originId" class="required" value="" type="hidden">
+                    </div>
+                </div>
 
-                <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
-                <input id="destinoID" style="display:none" name="destinationId" class="required" value="" type="hidden">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
+                        <input id="destinoID" style="display:none" name="destinationId" class="required" value="" type="hidden">
+                    </div>
+                </div>
 
                 {{-- Esse campo é preenchido por js? --}}
                 <input id="flightsMinDays" class="ignore" value="0" type="hidden">
 
-                <label id="fromDateLabel" for="fromCalendar">Ida</label><br>
-                <input placeholder="dd-mm-aaaa" class="input-date required hasDatepicker" id="fromCalendar" name="fromDate" type="text">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <input placeholder="Quando vai? (dd-mm-aaaa)" class="hasDatepicker" id="fromCalendar" name="fromDate" type="text">
+                    </div>
 
-                <label id="toDateLabel" for="toCalendar">Volta</label><br>
-                <input placeholder="dd-mm-aaaa" class="input-date required hasDatepicker" id="toCalendar" name="toDate" type="text">
+                    <div class="col-sm-6">
+                        <input placeholder="Quando volta? (dd-mm-aaaa)  " class="input-date required hasDatepicker" id="toCalendar" name="toDate" type="text">
+                    </div>
+                </div>
 
             </div>
 
-        </div>
-        
-        <div id="passengers">
-
-            <select class="selectNum valid" id="adultsSelect" name="adultsSelect">
-                <option value="" selected="selected">Adultos</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-            </select>
-            <select class="selectNum" id="childrenSelect" name="childrenSelect" onchange="mostrarInputsChildren(false)">
-                <option value="">Crianças</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-            </select>
-
-            <div class="children-container hidden">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <select class="selectNum valid" id="adultsSelect" name="adultsSelect">
+                            <option value="" selected="selected">Adultos</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6">
+                        <select class="selectNum" id="childrenSelect" name="childrenSelect" onchange="mostrarInputsChildren(false)">
+                            <option value="">Crianças</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 children-container hidden">
                 <label id="agesAtReturn" style="display: none;">Idade ao finalizar a viagem</label>
                 @for ($i = 0; $i < 8; $i++)
                     <select name="child{{ $i }}" data-child-id="{{ $i }}" onchange="minorSelected(1,false)" class="required">
@@ -81,8 +97,7 @@
                 @endfor
             </div>
         </div>
-
-
+        
         <input style="display:none" name="children" id="children" value="0" type="hidden">
         <input style="display:none" name="childAdults" id="childAdults" value="0" type="hidden">
         <input style="display:none" name="infants" id="infants" value="0" type="hidden">
@@ -90,16 +105,15 @@
         <input style="display:none" name="adults" id="adults" value="1" type="hidden">
 
         <script>
-        $(document).ready(function () {	
-        // falta el servicio de autocompletar aerolineas
-        var url = absolutePath + "autocompleteAirline/";
-        autocompleteField("airline", url, "airlineID",null, null,null,null);
-        });
+            $(document).ready(function () {	
+                // falta el servicio de autocompletar aerolineas
+                var url = absolutePath + "autocompleteAirline/";
+                autocompleteField("airline", url, "airlineID",null, null,null,null);
+            });
         </script>
         <!-- advancedOptions.ftl -->
 
-        <div style="display: block;" id="advancedOptions" class="advanced-options">
-
+        <div style="display: block;" id="advancedOptions" class="col-sm-12 advanced-options hidden">
             <div class="advanced-options-select-container">	
                 <label for="escalasSelect">Paradas</label>
                 <select class="select-advanced-options" id="escalasSelect" name="stopsAdvanced">
@@ -128,7 +142,7 @@
             </div>
         </div> <!-- Fin div opcionesAvanzadas-->			
             
-        <a class="buttonContainer">
+        <a class="buttonContainer btn absolute-bottom-right">
                 <span onclick="submitSearchForm()">Procurar</span>
         </a>
     </form>

@@ -330,6 +330,12 @@ ul.lista-usuarios li.foto-user img .cover {
   right: 0;
   padding: 1em;
 }
+.absolute-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+}
 a.laranja,
 span.laranja,
 .laranja {

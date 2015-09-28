@@ -39,13 +39,35 @@ label {
 }
 input,
 input.form-control ,
+select,
 textarea,
 textarea.form-control,
 form input {
     border-radius: 0px;
     text-align: left;
-    border: 1px solid @cord-fundo;
+    border: 1px solid @cor-fundo;
+    width: 100%;
+    height: 3.6rem;
+    padding: 0.8rem 1rem;
+    font-family: @font-family-sans-serif-bold;
+    text-transform:uppercase;
+    &:focus {
+        border: 1px solid @cor-primaria;
+    }
+    &::-webkit-input-placeholder {
+        color: black;
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: black;
+    }
+    &::-moz-placeholder {  /* Firefox 19+ */
+        color: black;
+    }
+    &:-ms-input-placeholder {
+        color: black;
+    }
 }   
+
 button.btn,
 input.btn,
 a.btn {
