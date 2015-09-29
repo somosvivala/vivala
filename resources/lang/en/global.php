@@ -304,6 +304,8 @@ return[
     'lbl_page_manage' => 'Gerenciar Páginas',
     'lbl_page_submit' => 'Enviar Página',
     'lbl_page_update' => 'Atualizar Página',
+    'lbl_pagination_next' => 'Próxima &raquo;',
+    'lbl_pagination_previous' => '&laquo; Anterior'
     'lbl_password' => 'Senha',
     'lbl_password_' => 'Senhas',
     'lbl_password_confirmation' => 'Confirmação de Senha',
@@ -422,8 +424,6 @@ return[
     'lbl_wanna_connect' => 'Quero me Conectar',
     'lbl_wanna_volunteer' => 'Quero Cuidar',
 
-
-
     // Línguas
     'lang_en-us' => 'Inglês',
     'lang_es-es' => 'Espanhol',
@@ -476,26 +476,25 @@ return[
       'lbl_ongsicare' => 'Cuidei',
       'lbl_tripresources' => 'Uma viagem para entrar em contato com alto astral e cultura.',
 
-  // View: Emails
+  /* View: Emails */
 
-  // View: Empresa
+  /* View: Empresa */
 
-  // View: Errors
+  /* View: Errors */
 
-  // View: Feed
+  /* View: Feed */
 
-  // View: Ong
+  /* View: Ong */
 
-  // View: Páginas
+  /* View: Páginas */
 
   /* View: Perfil */
-    'perfil_lives_in' => 'Vive em',
 
   /* View: Post */
 
-  // View: Quimera
+  /* View: Quimera */
 
-  // View: Quiz
+  /* View: Quiz */
     /* Etapa 1 - Interesses */
       'quiz_interests_yours' => 'Quais são seus interesses?',
       'quiz_interests_choose' => 'Escolha uma ou mais opções abaixo e iremos sugerir algumas coisas boas para você.',
@@ -520,9 +519,9 @@ return[
       'quiz_nicesuggests' => 'Sugestões mais que belas!',
       'quiz_nosuggests' => 'Não encontramos nenhuma sugestão.',
 
-  // View: Vendor
+  /* View: Vendor */
 
-  // View: Viajar
+  /* View: Viajar */
 
   /* feed.blade */
       'feed_kinda_silence' => 'Que silêncio, fala alguma coisa aí!',
