@@ -129,13 +129,13 @@
 					<div class="col-sm-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "masculino") !!}
-							<span class="text-uppercase">{{ trans('global.gen_male') }}</span>
+							<span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_male') }}</span>
 						</label>
 					</div>
 					<div class="col-sm-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "feminino") !!}
-							<span class="text-uppercase">{{ trans('global.gen_female') }}</span>
+							<span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_female') }}</span>
 						</label>
 					</div>
 				</div>

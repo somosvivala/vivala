@@ -10,10 +10,10 @@ return [
   | has failed, such as for an invalid token or invalid new password.
   |
   */
-    "password" => "A senha deverá conter pelo menos seis carateres e ser igual à confirmação.",
-    "reset"    => "Sua senha foi redefinida!",
-    "sent"     => "Nós enviamos um link de recuperação de senha por e-mail.",
-    "token"    => "Este código de recuperação de senha é inválido.",
-    "user"     => "Não conseguimos encontrar nenhum usuário com o endereço de e-mail especificado."
+    "password" => "Las contraseñas deben contener al menos 6 caracteres y coincidir.",
+    "reset"    => "¡Tu contraseña ha sido restablecida!",
+    "sent"     => "¡Recordatorio de contraseña enviado!",
+    "token"    => "Este token de recuperación de contraseña es inválido.",
+    "user"     => "No podemos encontrar a un usuario con ese correo electrónico."
 ];
 ?>

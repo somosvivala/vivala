@@ -4,7 +4,7 @@
 
 	@if ( $empresa->podeEditar )
 	<a href="/empresa/{{$empresa->id}}/edit">
-		<small>Editar</small>
+		<small>{{ trans('global.lbl_edit') }}</small>
 	</a>
 	@endif
 	<h1 class="title">trans('global.lbl_name'): {{ $empresa->nome }}</h1>
