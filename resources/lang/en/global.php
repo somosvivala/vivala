@@ -305,7 +305,7 @@ return[
     'lbl_page_submit' => 'Enviar Página',
     'lbl_page_update' => 'Atualizar Página',
     'lbl_pagination_next' => 'Próxima &raquo;',
-    'lbl_pagination_previous' => '&laquo; Anterior'
+    'lbl_pagination_previous' => '&laquo; Anterior',
     'lbl_password' => 'Senha',
     'lbl_password_' => 'Senhas',
     'lbl_password_confirmation' => 'Confirmação de Senha',
