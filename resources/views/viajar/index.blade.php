@@ -55,6 +55,9 @@
     </div>
 
 </div>
+<div class="fundo-cheio col-sm-12 resultados-busca">
+    
+</div>
 {{--
 <section class="secao-sem-bg text-center">
 	<h3 class="subtitulo col-sm-12">Explore novos ares e mares</h3>

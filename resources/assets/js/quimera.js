@@ -107,7 +107,7 @@ var searchFlight = function(params, type) {
     })
     .done(function(data) {
         console.log(base_url);
-        $('.cria-post-container').html(data);
+        $('.resultados-busca').html(data);
     }); 
 };
 
@@ -320,3 +320,45 @@ var testSearchHotels = function () {
         distribution: '1'
     });
 };
+
+$(".mostraCriancasVoos").change(function() {
+  var qtdCriancas = this.value;
+  $(".idade-criancas").hide();
+  for(var i=0;i<=qtdCriancas;i++) {
+      $('.idade-criancas[data-child-id="'+i+'"]').show();
+  }
+});
+
+$("form#buscaVoos").submit(function(e){
+    e.preventDefault();
+
+    var form = $(this),
+        origem = 'SAO',
+        destino = 'RIO',
+        dataPartida = form.find("#dataPartidaVoos").val(),
+        dataRetorno = form.find("#dataRetornoVoos").val(),
+        qtdAdultos = form.find("#qtdAdultosVoos").val(),
+        qtdCriancas = form.find("#qtdCriancasVoos").val(),
+        qtdJovensTotal = 0,
+        qtdBebesTotal = 0,
+        qtdAdultosTotal = qtdAdultos;
+
+    // Conta quantas tarifas de crianças jovens e adultos serão cobradas
+    for(var i=0;i<=qtdCriancas;i++) {
+        var tipoTarifa = form.find('.idade-criancas[data-child-id="'+i+'"]').val();
+        if(tipoTarifa == "b")
+          qtdBebesTotal++;
+        else if(tipoTarifa == "j")
+          qtdJovensTotal++;
+        else if (tipoTarifa == "a")
+          qtdAdultosTotal++;
+    }
+
+    searchFlight({
+        from: 'SAO',
+        to: 'RIO',
+        departureDate: '2015-09-29',
+        returnDate: '2015-10-07',
+        adults: 2
+    });
+});
