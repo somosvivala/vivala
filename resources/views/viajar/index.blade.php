@@ -18,31 +18,42 @@
     </h3>
 
     <ul class="lista-border pesquisa-viajar">
-        <li class="col-sm-3">
-           <a href="#hospedagem"> 
+        <li class="col-sm-3 active">
+           <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab"> 
                 Hospedagem
             </a>
         </li>
         <li class="col-sm-3">
-            <a href="#voos"> 
+            <a href="#voos" aria-controls="voos" role="tab" data-toggle="tab"> 
                 Vôos
             </a>
         </li>
         <li class="col-sm-3">
-           <a href="#carros"> 
+           <a href="#carros" aria-controls="carros" role="tab" data-toggle="tab"> 
                Carros 
             </a> 
         </li>
         <li class="col-sm-3">
-           <a href="#montarviagem" class="desativado"> 
+           <a href="#montarviagem" class="desativado" aria-controls="montar" role="tab" data-toggle="tab"> 
                 Montar viagem
             </a> 
         </li>
     </ul>
-    <div class="form-hospedagem">
-        {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
-        @include('quimera._formvoos')  
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="hospedagem">
+            {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
+            @include('quimera._formhotels')  
+        </div>
+        <div role="tabpanel" class="tab-pane" id="voos">
+            @include('quimera._formvoos')          
+        </div>
+        <div role="tabpanel" class="tab-pane" id="carros">
+            {{-- @include('quimera._formcarros') --}}
+        </div>
     </div>
+
 </div>
 {{--
 <section class="secao-sem-bg text-center">
