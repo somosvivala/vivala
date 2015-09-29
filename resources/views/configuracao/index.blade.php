@@ -1,24 +1,23 @@
 @extends('app')
 
 @section('content')
-	
 	<ul>
 		<li>
-			<a href="configuracao/create">Criar nova configuracão</a>
+			<a href="configuracao/create">{{ trans('global.lbl_setting_create') }}</a>
 		</li>
 	</ul>
 	<div class="panel panel-default">
 		<div class="panel-heading">
-				<caption><h1 class="title">Configurações</h1></caption>
+				<caption><h1 class="title">{{ trans('global.lbl_setting_') }}</h1></caption>
 		</div>
 		<div class="panel-body">
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Indice</th>
-						<th>Valor</th>
-						<th>Created at</th>
-						<th>Updated at</th>
+						<th>{{ trans('global.lbl_index') }}</th>
+						<th>{{ trans('global.lbl_value') }}</th>
+						<th>{{ trans('global.lbl_created_at') }}</th>
+						<th>{{ trans('global.lbl_updated_at') }}</th>
 					</tr>
 				</thead>
 				<tbody>

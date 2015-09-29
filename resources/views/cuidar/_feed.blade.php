@@ -2,6 +2,6 @@
 
 @section('content')
 <h4 class="suave">
-	Feed
+	{{ trans('global.lbl_feed') }}
 </h4>
 @endsection

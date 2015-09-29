@@ -27,7 +27,7 @@
 			{!! Form::close() !!}
 		</li>
 	@empty
-	    <p>{{ trans('global.lbl_follower_no') }} :o</p>
+	    <p>{{ trans('global.lbl_traveller_suggest_to_follow_no') }} :o</p>
 	@endforelse
 	@endif
 </ul>

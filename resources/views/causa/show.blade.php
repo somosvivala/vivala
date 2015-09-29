@@ -1,32 +1,32 @@
 @extends('cuidar')
 
 @section('content')
-	
-	@if ( $causa->podeEditar )
+
+	@if($causa->podeEditar)
 	<a href="/causas/{{$causa->id}}/edit">
-		<small>Editar</small>		
+		<small>{{ trans('global.lbl_edit') }}</small>
 	</a>
 	@endif
-	<h1 class="title">Causa</h1>
+	<h1 class="title">{{ trans('global.lbl_cause') }}</h1>
 	<ul>
-		<li>habilidades:     {{$causa->habilidades}}</li>
-		<li>sobre_trabalho:     {{$causa->sobre_trabalho}}</li>
-		<li>local:     {{$causa->local}}</li>
-		<li>Ong:     {{$causa->owner}}</li>
-		<li>responsavel:     {{$causa->responsavel}}</li>
+		<li>{{ trans('global.lbl_cause_job_habilities') }}:     {{$causa->habilidades}}</li>
+		<li>{{ trans('global.lbl_cause_description') }}:     {{$causa->sobre_trabalho}}</li>
+		<li>{{ trans('global.lbl_cause_job_localization') }}:     {{$causa->local}}</li>
+		<li>{{ trans('global.lbl_ong') }}:     {{$causa->owner}}</li>
+		<li>{{ trans('global.lbl_cause_job_supervisor') }}:     {{$causa->responsavel}}</li>
 	</ul>
 
-	
-	<a href="{{action('CausaController@getVoluntariarse')}}/{{$causa->id}}">Seja um Voluntário</a>
+
+	<a href="{{action('CausaController@getVoluntariarse')}}/{{$causa->id}}">{{ trans('global.lbl_volunteer_be') }}</a>
 
 	<hr>
-	<h3>Voluntarios</h3>
+	<h3>{{ trans('global.volunteer_') }}</h3>
 
 	<ul class="sugestoes sugestoes-viajantes">
-		@forelse($voluntarios as $Voluntario) 
+		@forelse($voluntarios as $Voluntario)
 			<li>
 				{!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
-				<button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">seguir</button>
+				<button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
 				<a href="{{ url($Voluntario->getUrl()) }}">
 					<div class="round foto">
 						<div class="cover">
@@ -46,7 +46,7 @@
 				{!! Form::close() !!}
 			</li>
 		@empty
-			<p>Sem voluntarios</p>
+			<p>{{ trans('global.lbl_volunteer_not_found') }}</p>
 		@endforelse
 	</ul>
 

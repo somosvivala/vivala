@@ -2,13 +2,13 @@
 
 @section('content')
 	<table class= "table-striped">
-		<caption><h1 class="title">Configurações</h1></caption>
+		<caption><h1 class="title">{{ trans('global.lbl_setting_') }}</h1></caption>
 		<thead>
 			<tr>
-				<th class='col-md-4'>Indice</th>
-				<th class='col-md-4'>Valor</th>
-				<th class='col-md-4'>Created at</th>
-				<th class='col-md-4'>Updated at</th>
+				<th class='col-md-4'>{{ trans('global.lbl_index') }}</th>
+				<th class='col-md-4'>{{ trans('global.lbl_value') }}</th>
+				<th class='col-md-4'>{{ trans('global.lbl_created_at') }}</th>
+				<th class='col-md-4'>{{ trans('global.lbl_updated_at') }}</th>
 			</tr>
 		</thead>
 		<tbody>

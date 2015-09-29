@@ -22,7 +22,7 @@
 			</div>
         </li>
 	@empty
-	    <p class="col-sm-12">{{ trans('global.lbl_comment_no') }}</p>
+	    <p class="col-sm-12">{{ trans('global.lbl_comment_not_found') }}</p>
 	@endforelse
 	@endif
 </div>
