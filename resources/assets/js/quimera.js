@@ -58,9 +58,10 @@ var autocompleteHotels = function(query) {
 /**
  *  Busca de passagens
  */
-var searchFlight = function(params) {
+var searchFlight = function(params, type) {
     var
-        url = 'trip',
+        base_url      = 'https://www.e-agencias.com.br/vivala/flights/search/',
+        url           = 'trip',
         defaultParams = {
             currency: 'BRL',
             site: 'BR',
@@ -83,6 +84,12 @@ var searchFlight = function(params) {
 
     $.extend(defaultParams, params);
 
+    if (defaultParams.returnDate) {
+        base_url += 'RoundTrip/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.returnDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA';
+    } else {
+        base_url += 'OneWay/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA';
+    }
+
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -95,10 +102,11 @@ var searchFlight = function(params) {
             params: defaultParams,
             url: url,
             method: 'GET',
-            process: true,
+            process: false,
         },
     })
     .done(function(data) {
+        console.log(base_url);
         $('.cria-post-container').html(data);
     }); 
 };
@@ -232,7 +240,7 @@ var hotelAvaiability = function(params) {
             params: defaultParams, 
             url: url,
             method: 'GET',
-            process: false,
+            process: true,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -242,6 +250,47 @@ var hotelAvaiability = function(params) {
     .done(function(data) {
         console.log(data);
     });
+};
+
+var flightCheckout = function(params) {
+    var 
+        base_url = 'https://www.e-agencias.com.br/vivala/flights/checkout/',
+        output   = 'Parâmetros Inválidos',
+        defaultParams = {
+            id: null,
+            type: null, //[RoundTrip|OneWay]
+            currency: 'BRL',
+            url: null
+        };
+
+    $.extend(defaultParams, params);
+
+    defaultParams.url = btoa(defaultParams.url);
+
+    if (defaultParams.type == 'RoundTrip') {
+        output = base_url+defaultParams.type+'/'+defaultParams.id+'/1/1/'+defaultParams.currency+'/'+defaultParams.url;
+    } else if (defaultParams.type == 'OneWay'){
+        output = base_url+defaultParams.type+'/'+defaultParams.id+'/1/'+defaultParams.currency+'/'+defaultParams.url;
+    }
+
+    return output;
+};
+
+var hotelCheckout = function(params) {
+    var 
+        base_url = 'https://www.e-agencias.com.br/vivala/hotels/checkout/start/',
+        output   = 'Parâmetros Inválidos',
+        defaultParams = {
+            key: null,
+            arriveDate: null, 
+            checkin: null,
+            checkout: null,
+            hotelId: null,
+            roomId: null,
+            currency: 'BRL',
+            orderType: 'DOMESTIC'
+        };
+    return base_url+key+'/'+defaultParams.checkin+'/'+defaultParams.checkout+'/'+defaultParams.distribution+'/'+defaultParams.hotelId+'/'+defaultParams.roomId+'/'+defaultParams.orderType+'/'+defaultParams.currency;
 };
 
 var testHotelAvaiability = function () {
@@ -256,9 +305,9 @@ var testHotelAvaiability = function () {
 var testSearchFlight = function() {
     searchFlight({
         from: 'SAO',
-        to: 'SYD',
-        departureDate: '2016-01-29',
-        returnDate: '2016-02-10',
+        to: 'RIO',
+        departureDate: '2015-09-29',
+        returnDate: '2015-10-07',
         adults: 2
     });
 };
@@ -270,4 +319,4 @@ var testSearchHotels = function () {
         checkout: '2016-01-25',
         distribution: '1'
     });
-}
+};
