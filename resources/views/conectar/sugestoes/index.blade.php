@@ -7,13 +7,13 @@
 @section('content')
 <div class="fundo-cheio col-sm-12">
     <h3 class="font-bold-upper text-center">
-            Sugestão de viajantes para seguir
+      {{ trans('global.lbl_traveller_suggest_to_follow') }}
     </h3>
     <ul class="filtro col-sm-12">
-        <li class="col-sm-3">Filtrar por &gt;</li>
-        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/amigo') }}">Melhor classificação</a></li>
-        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/numseguidores') }}">Número de seguidores</a></li>
-        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/seguindo') }}">Seguidores em comum</a></li>
+        <li class="col-sm-3">{{ trans('global.lbl_filter_by') }} &gt;</li>
+        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/amigo') }}">{{ trans('global.lbl_best_rank') }}</a></li>
+        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/numseguidores') }}">{{ trans('global.lbl_follower_number') }}</a></li>
+        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/seguindo') }}">{{ trans('global.lbl_follower_in_common') }}</a></li>
     </ul>
     <ul class="col-sm-12 sugestoes sugestoes-viajantes pagina-sugestoes">
         @if(isset($sugestoes))
@@ -21,7 +21,7 @@
         <li class="col-sm-6">
             <div class="col-sm-4">
                 {!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
-                <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">seguir</button>
+                <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
                 <a href="{{ url($Perfil->getUrl()) }}">
                     <div class="round foto">
                         <div class="cover">
@@ -39,10 +39,9 @@
             </div>
         </li>
         @empty
-            <p>Sem viajantes pra seguir! :o</p>
+            <p>{{ trans('globa.lbl_traveller_suggest_to_follow_no') }} :o</p>
         @endforelse
         @endif
-    </ul>   
+    </ul>
 </div>
 @endsection
-

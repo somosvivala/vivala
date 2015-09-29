@@ -1,7 +1,7 @@
 @extends('viajar')
 
 @section('content')
-  <h1>Edite a Empresa</h1>
+  <h1>{{ trans('global.lbl_company_editing') }}</h1>
 
 	<!-- Adiciona um formulario pra upload de foto-->
         <div class="text-center jc_coords row col-sm-12">

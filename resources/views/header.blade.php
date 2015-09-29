@@ -104,7 +104,7 @@
                         </ul>
                     </li>
                     <li><a href="{{ url('perfil') }}">{{ trans('global.lbl_profile') }}</a></li>
-                    <li><a href="{{ url('config') }}">{{ trans('global.lbl_settings') }}</a></li>
+                    <li><a href="{{ url('config') }}">{{ trans('global.lbl_setting_') }}</a></li>
                     <li><a href="{{ url('/auth/logout') }}">{{ trans('global.lbl_logout') }}</a></li>
                 </ul>
             </a>

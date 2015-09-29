@@ -2,6 +2,6 @@
 
 @section('content')
 <h4 class="suave">
-	Álbuns
+	{{ trans('global.lbl_album_') }}
 </h4>
 @endsection

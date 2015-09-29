@@ -8,9 +8,9 @@
 		<li>
 			<!-- Adiciona a abertura do Form -->
 			{!! Form::open(['url' => ['ajax/followong', $Ong->id], 'class' => 'form-ajax', 'method' => 'GET']) !!}
-				<button type="submit" class='btn_seguir_ong' data-id="{{$Ong->id}}">seguir</button>
+				<button type="submit" class='btn_seguir_ong' data-id="{{$Ong->id}}">{{ trans('global.lbl_follow') }}</button>
 				<a href="{{ url($Ong->getUrl()) }}">
-					<img class="hidden" title='Carregando' alt='Carregando...'>
+					<img class="hidden" title='trans("global.lbl_loading")' alt='trans("global.lbl_loading1")'>
 					<div class="round foto">
 						<div class="cover">
 							<img src="{{ $Ong->getAvatarUrl() }}" alt=" {{ $Ong->nome }}">
@@ -29,7 +29,7 @@
 			{!! Form::close() !!}
 		</li>
 	@empty
-	    <p>Nenhuma ong.</p>
+	    <p>{{ trans('global.lbl_ong_no_') }}</p>
 	@endforelse
 	@endif
 </ul>
