@@ -37,12 +37,12 @@ label {
 	font-weight: normal;
 	font-family: @font-family-sans-serif-bold;
 }
-input,
-input.form-control ,
+input[type="text"],
+input[type="text"].form-control ,
 select,
 textarea,
 textarea.form-control,
-form input {
+form input[type="text"] {
     border-radius: 0px;
     text-align: left;
     border: 1px solid @cor-fundo;
@@ -56,15 +56,19 @@ form input {
     }
     &::-webkit-input-placeholder {
         color: black;
+        opacity: 1 !important;
     }
     &:-moz-placeholder { /* Firefox 18- */
         color: black;
+        opacity: 1 !important;
     }
     &::-moz-placeholder {  /* Firefox 19+ */
         color: black;
+        opacity: 1 !important;
     }
     &:-ms-input-placeholder {
         color: black;
+        opacity: 1 !important;
     }
 }   
 
@@ -80,7 +84,7 @@ a.btn {
 select {
     width: 100%;
     border-radius:0px;
-    border: 1px solid #CCC;
+    border: 1px solid @cor-fundo;
     padding:0.2em 0.5em 0.4em;
 }
 textarea {
@@ -145,4 +149,10 @@ a.suave {
 // Centraliza os previews de foto
 .jcrop-holder {
 	margin:0 auto;
+}
+
+iframe {
+   width: 100%;
+   height: 100%;
+   min-height: 500px;
 }

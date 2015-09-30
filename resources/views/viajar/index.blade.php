@@ -58,6 +58,23 @@
 <div class="fundo-cheio col-sm-12 resultados-busca">
     
 </div>
+
+<!-- Modal com iframe pra fechamento de pedido -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <div class="modal-content">
+      <div class="modal-body">
+        <iframe class="checkout">
+        </iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 {{--
 <section class="secao-sem-bg text-center">
 	<h3 class="subtitulo col-sm-12">Explore novos ares e mares</h3>

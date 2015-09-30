@@ -364,7 +364,15 @@ $("form#buscaVoos").submit(function(e){
         returnDate: '2015-10-07',
         adults: 2
     });
+
 });
+
+var chamaCheckout = function(url) {
+    $('.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+      $(this).find('iframe').attr('src', url)
+    });
+    $('.modal').modal({show:true});
+}
 
 var bindFlight = function() {
     $('button.flight-checkout').on('click', function() {
@@ -374,7 +382,7 @@ var bindFlight = function() {
             radioInbound  = $('input[name=inbound-'+count+']:checked').val(),
             url           = $('#flight-url').val();
 
-        console.log(flightCheckout({
+        chamaCheckout(flightCheckout({
             id: id,
             type: 'RoundTrip',
             url: url,

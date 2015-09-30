@@ -25,13 +25,14 @@
                         <input id="origenID" style="display:none" name="originId" class="required" value="" type="hidden">
                     </div>
                 </div>
-
+                <br>
                 <div class="row">
                     <div class="col-sm-12">
                         <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
                         <input id="destinoID" style="display:none" name="destinationId" class="required" value="" type="hidden">
                     </div>
                 </div>
+                <br>
 
                 {{-- Esse campo é preenchido por js? --}}
                 <input id="flightsMinDays" class="ignore" value="0" type="hidden">
@@ -78,18 +79,20 @@
                         </select>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 children-container">
-                <label id="agesAtReturn" style="display: none;">Idade ao finalizar a viagem</label>
-                @for ($i = 1; $i < 9; $i++)
-                    <select id="crianca-voos-{{ $i }}" name="crianca-voos-{{ $i }}" data-child-id="{{ $i }}" onchange="minorSelected(1,false)" class="required idade-criancas">
-                            <option value="">Selecione a idade da criança {{ $i }}</option>
-                            <option data-tarifa="Tarifa bebê" value="b">0 a 24 meses (nos braços)</option>
-                            <option data-tarifa="Tarifa de crianças" value="j">0 a 24 meses (no assento) </option>
-                            <option data-tarifa="Tarifa de crianças" value="j">Até 11 anos </option>
-                            <option data-tarifa="Tarifa adulto" value="a">12 anos ou mais</option>
-                    </select>
-                @endfor
+                <div class="row">
+                    <div class="col-sm-8 children-container">
+                        <label id="crianca-voos-mensagem" style="display: none;">Idade ao finalizar a viagem</label>
+                        @for ($i = 1; $i < 9; $i++)
+                            <select id="crianca-voos-{{ $i }}" name="crianca-voos-{{ $i }}" data-child-id="{{ $i }}" onchange="minorSelected(1,false)" class="col-sm-12 required idade-criancas">
+                                    <option value="">idade da criança {{ $i }}</option>
+                                    <option data-tarifa="Tarifa bebê" value="b">0 a 24 meses (nos braços)</option>
+                                    <option data-tarifa="Tarifa de crianças" value="j">0 a 24 meses (no assento) </option>
+                                    <option data-tarifa="Tarifa de crianças" value="j">Até 11 anos </option>
+                                    <option data-tarifa="Tarifa adulto" value="a">12 anos ou mais</option>
+                            </select>
+                        @endfor
+                    </div>
+                </div>
             </div>
         </div>
         
@@ -131,7 +134,7 @@
         </div> <!-- Fin div opcionesAvanzadas-->			
             
         <div class="row">
-            <div class="col-sm-12 text-center">
+            <div class="col-sm-12 text-center margin-b-2 margin-t-2">
                 <button class="btn">Procurar</button>
             </div>
         </div>
