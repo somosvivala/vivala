@@ -97,17 +97,18 @@ var searchFlight = function(params, type) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        /*dataType: 'html',*/
+        dataType: 'html',
         data: {
             params: defaultParams,
             url: url,
             method: 'GET',
-            process: false,
+            process: true,
         },
     })
     .done(function(data) {
-        console.log(base_url);
+        $('#flight-url').val(base_url);
         $('.resultados-busca').html(data);
+        bindFlight();
     }); 
 };
 
@@ -260,7 +261,9 @@ var flightCheckout = function(params) {
             id: null,
             type: null, //[RoundTrip|OneWay]
             currency: 'BRL',
-            url: null
+            url: null,
+            radioDeparture: null,
+            radioArrival: null
         };
 
     $.extend(defaultParams, params);
@@ -268,9 +271,9 @@ var flightCheckout = function(params) {
     defaultParams.url = btoa(defaultParams.url);
 
     if (defaultParams.type == 'RoundTrip') {
-        output = base_url+defaultParams.type+'/'+defaultParams.id+'/1/1/'+defaultParams.currency+'/'+defaultParams.url;
+        output = base_url+defaultParams.type+'/'+defaultParams.id+'/'+defaultParams.radioDeparture+'/'+defaultParams.radioArrival+'/'+defaultParams.currency+'/'+defaultParams.url;
     } else if (defaultParams.type == 'OneWay'){
-        output = base_url+defaultParams.type+'/'+defaultParams.id+'/1/'+defaultParams.currency+'/'+defaultParams.url;
+        output = base_url+defaultParams.type+'/'+defaultParams.id+'/'+defaultParams.radioDeparture+'/'+defaultParams.currency+'/'+defaultParams.url;
     }
 
     return output;
@@ -362,3 +365,21 @@ $("form#buscaVoos").submit(function(e){
         adults: 2
     });
 });
+
+var bindFlight = function() {
+    $('button.flight-checkout').on('click', function() {
+        var count         = $(this).val(),
+            id            = $(this).parent('.flight-pricing').find('input.flight-id').val(),
+            radioOutbound = $('input[name=outbound-'+count+']:checked').val(),
+            radioInbound  = $('input[name=inbound-'+count+']:checked').val(),
+            url           = $('#flight-url').val();
+
+        console.log(flightCheckout({
+            id: id,
+            type: 'RoundTrip',
+            url: url,
+            radioDeparture: radioOutbound,
+            radioArrival: radioInbound
+        }));
+    });
+};
