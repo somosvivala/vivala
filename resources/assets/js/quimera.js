@@ -3,7 +3,7 @@
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
-var autocomplete = function(query) {
+var autocomplete = function(query, inputId) {
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -11,7 +11,7 @@ var autocomplete = function(query) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: {
             params: {query},
             url: 'autocomplete',
@@ -20,7 +20,9 @@ var autocomplete = function(query) {
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('.cria-post-container').append(data);
+        $('div.list-group').attr('data-input', inputId);
+        bindAutoCompleteFlights();
     });
 };
 
@@ -399,3 +401,9 @@ $(".mostraQuartosHotel").change(function() {
       $('.qtd-quartos[data-room-id="'+i+'"]').show();
   }
 });
+
+var bindAutoCompleteFlights = function() {
+    $('a.autocomplete-flight').on('click', function(e) {
+        e.preventDefault();
+    });
+};

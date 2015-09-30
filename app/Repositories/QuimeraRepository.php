@@ -75,7 +75,20 @@ class QuimeraRepository {
 
     private static function _processAutocomplete($data)
     {
-        return json_encode(json_decode($data)->autocomplete);
+        $cities   = array();
+        $airports = array();
+
+        $autocomplete = json_decode($data)->autocomplete;
+        
+        foreach ($autocomplete as $value) {
+            if (strcasecmp($value->type, 'CITY') == 0) {
+                array_push($cities, $value);
+            } else {
+                array_push($airports, $value);
+            }
+        }
+
+        return array('data' => compact('airports', 'cities'), 'blade' => 'quimera._listAutocomplete');
     }
 
     private static function _processHotelsComplete($data)
