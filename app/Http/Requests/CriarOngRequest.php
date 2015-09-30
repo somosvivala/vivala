@@ -36,8 +36,13 @@ class CriarOngRequest extends Request {
 			'apelido' 				=> "string|required|min:2",
 			'descricao' 			=> "string|required|min:2",
 			'horario_funcionamento' => "string|required|min:2",
-			'local' 				=> "string|required|min:2",
-			"url"  					=> "required|alpha_dash|min:2|pretty_url"			
+			'url'  					=> "required|alpha_dash|min:2|pretty_url",
+			'logradouro'			=> "string|required|min:2",
+			'cep'					=> "integer|required|min:2",
+			'bairro'				=> "string|required|min:2",
+			'complemento'			=> "string|required|min:2",
+			'estado'				=> "string|required|min:2",
+			'cidade'				=> "string|required|min:2"			
 		];
 	}
 

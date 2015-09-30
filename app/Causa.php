@@ -10,8 +10,14 @@ class Causa extends Model {
 	protected $fillable = [
 		'habilidades',
 		'sobre_trabalho',
-		'local',
-		'responsavel_id'
+		'responsavel_id',
+                'logradouro',
+                'cep', 	
+		'bairro',
+		'complemento',
+		'estado',
+                'cidade',
+                'quantidade_vagas'
 		];	
 
 	/**

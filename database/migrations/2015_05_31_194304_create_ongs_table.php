@@ -19,9 +19,26 @@ class CreateOngsTable extends Migration {
 			$table->string('apelido')->nullable();
 			$table->string('descricao')->nullable();
 			$table->string('horario_funcionamento')->nullable();
-			$table->string('local')->nullable();
 			$table->timestamps();
+			
+			//endereço
+			$table->string('logradouro')->nullable();
+			$table->integer('cep')->nullable();
+			$table->string('bairro')->nullable();
+			$table->string('complemento')->nullable();
 
+			//TODO: substituir colunas por relacao com os models Cidade e Estado
+			$table->string('estado')->nullable();
+			$table->string('cidade')->nullable();
+
+			// Urls dessa ong, futuramente podemos extrair dados dessas 
+			// fontes para popular a base
+			$table->string('url_facebook')->nullable();
+			$table->string('url_gplus')->nullable();
+			$table->string('url_instagram')->nullable();
+			$table->string('url_site')->nullable();
+
+			
 			//FK para categoria_ong
 			$table->integer('categoria_ong_id')->unsigned()->nullable();
 			$table->foreign('categoria_ong_id')
