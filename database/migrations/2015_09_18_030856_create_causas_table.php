@@ -17,8 +17,18 @@ class CreateCausasTable extends Migration {
 			$table->increments('id');
 			$table->string('habilidades')->nullable();
 			$table->string('sobre_trabalho')->nullable();
-			$table->string('local')->nullable();
 			$table->timestamps();
+
+			//endereço
+			$table->string('logradouro')->nullable();
+			$table->integer('cep')->nullable(); 	
+			$table->string('bairro')->nullable();
+			$table->string('complemento')->nullable();
+
+			//TODO: substituir colunas por relacao com os models Cidade e Estado
+			$table->string('estado')->nullable();
+			$table->string('cidade')->nullable();
+			$table->integer('quantidade_vagas')->nullable();
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong

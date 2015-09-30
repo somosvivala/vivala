@@ -4,7 +4,7 @@ use App\Http\Requests\Request;
 use Auth;
 use Route;
 
-class EditarCausaRequest extends Request {
+class CriarCausaRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
