@@ -11,10 +11,14 @@ class Ong extends Model {
         'nome',
         'apelido',
         'horario_funcionamento',
-        'local',
         'user_id',
         'responsavel_id',
-        'categoria_ong_id'
+        'categoria_ong_id',
+	'logradouro',
+	'cep',
+	'bairro',
+	'complemento',
+	'estado'
         ];
 
 

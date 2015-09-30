@@ -201,7 +201,7 @@ class OngSeeder extends Seeder {
             'nome'                  => 'evandrONG Ltda',
             'apelido'               => 'evandrONG',
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
-            'local'                 => 'Casa do evandro',
+            'logradouro'            => 'Casa do evandro',
             'responsavel_id'        => '1',
             'categoria_ong_id'      => '1'            
         ]);
@@ -211,7 +211,7 @@ class OngSeeder extends Seeder {
             'nome'                  => 'zordONG Ltda',
             'apelido'               => 'zordONG',
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
-            'local'                 => 'Casa do Zord',
+            'logradouro'            => 'Casa do Zord',
             'responsavel_id'        => '2',
             'categoria_ong_id'      => '2'
         ]);
@@ -221,7 +221,7 @@ class OngSeeder extends Seeder {
             'nome'                  => 'Projeto Formiguinha',
             'apelido'               => 'Formiguinha',
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
-            'local'                 => 'Sede do Formiguinha',
+            'logradouro'            => 'Sede do Formiguinha',
             'responsavel_id'        => '8',
             'categoria_ong_id'      => '3'
         ]);
