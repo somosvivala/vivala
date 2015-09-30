@@ -21,7 +21,7 @@ var autocomplete = function(query, inputId) {
     })
     .done(function(data) {
         $('div.flight-list').remove();
-        $('.cria-post-container').append(data);
+        $('#buscaVoos').append(data);
         $('div.flight-list').attr('data-input', inputId);
         bindAutoCompleteFlights();
     });
@@ -409,6 +409,11 @@ $(".mostraQuartosHotel").change(function() {
 var bindAutoCompleteFlights = function() {
     $('a.autocomplete-flight').on('click', function(e) {
         e.preventDefault();
+        var 
+            input = $(this).parent('.flight-list').attr('data-input'),
+            value = $(this).html();
+
+        $(input).val(value);
     });
 };
 
@@ -417,3 +422,21 @@ var bindAutoCompleteHotels = function() {
         e.preventDefault();
     });
 };
+
+$('input#origen').on('keydown', function() {
+    var value = $(this).val();
+    if (value.length >= 3) {
+        autocomplete(value, '#origem');
+    } else {
+        $('div.flight-list').remove();
+    }
+});
+
+$('input#destino').on('keydown', function() {
+    var value = $(this).val();
+    if (value.length >= 3) {
+        autocomplete(value, '#destino');
+    } else {
+        $('div.flight-list').remove();
+    }
+});
