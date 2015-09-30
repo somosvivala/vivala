@@ -357,7 +357,7 @@ $("form#buscaVoos").submit(function(e){
     searchFlight({
         from: 'SAO',
         to: 'RIO',
-        departureDate: '2015-09-29',
+        departureDate: '2015-10-01',
         returnDate: '2015-10-07',
         adults: 2
     });

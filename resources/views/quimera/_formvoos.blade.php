@@ -1,5 +1,6 @@
 <div class="advanced-searchbox">
-    <form name="buscaVoos" id="buscaVoos" action="flightSearchOneWay" >
+    <form name="buscaVoos" id="buscaVoos" action="flightSearchOneWay">
+        <input type="hidden" name="_token" value="{{\Session::token() }}">
         <div class="hidden">        
             {{-- Checado somente o ida e volta, que foi testado nos envios de request --}}
             <input id="roundTripType" name="tripType" value="1" onclick="idaVuelta()" checked="checked" type="radio">
