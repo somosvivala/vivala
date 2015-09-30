@@ -13,7 +13,7 @@ var autocomplete = function(query) {
         type: 'POST',
         dataType: 'json',
         data: {
-            params: {query}, 
+            params: {query},
             url: 'autocomplete',
             method: 'GET',
             process: true
@@ -40,7 +40,7 @@ var autocompleteHotels = function(query) {
             params: {
                 query: query,
                 filtered: true
-            }, 
+            },
             url: 'hotelscomplete',
             method: 'GET',
             process: false,
@@ -109,14 +109,14 @@ var searchFlight = function(params, type) {
         $('#flight-url').val(base_url);
         $('.resultados-busca').html(data);
         bindFlight();
-    }); 
+    });
 };
 
 /**
  * Select com todos os filtros de viagens
  */
 var sortFilterFlight = function(select) {
-    var filters = [ 
+    var filters = [
         ['personal_ascending',     'Mais vendidos'],
         ['duration_ascending',     'Duração'],
         ['stopscount_ascending',   'Paradas: baixa à alta'],
@@ -167,7 +167,7 @@ var searchHotels = function(params) {
         type: 'POST',
         dataType: 'html',
         data: {
-            params: defaultParams, 
+            params: defaultParams,
             url: url,
             method: 'GET',
             process: false,
@@ -198,7 +198,7 @@ var hotelDetail = function(id) {
         type: 'POST',
         dataType: 'json',
         data: {
-            params: {id: id}, 
+            params: {id: id},
             url: url,
             method: 'GET',
             process: false,
@@ -238,7 +238,7 @@ var hotelAvaiability = function(params) {
         type: 'POST',
         dataType: 'json',
         data: {
-            params: defaultParams, 
+            params: defaultParams,
             url: url,
             method: 'GET',
             process: true,
@@ -254,7 +254,7 @@ var hotelAvaiability = function(params) {
 };
 
 var flightCheckout = function(params) {
-    var 
+    var
         base_url = 'https://www.e-agencias.com.br/vivala/flights/checkout/',
         output   = 'Parâmetros Inválidos',
         defaultParams = {
@@ -280,12 +280,12 @@ var flightCheckout = function(params) {
 };
 
 var hotelCheckout = function(params) {
-    var 
+    var
         base_url = 'https://www.e-agencias.com.br/vivala/hotels/checkout/start/',
         output   = 'Parâmetros Inválidos',
         defaultParams = {
             key: null,
-            arriveDate: null, 
+            arriveDate: null,
             checkin: null,
             checkout: null,
             hotelId: null,
@@ -391,3 +391,11 @@ var bindFlight = function() {
         }));
     });
 };
+
+$(".mostraQuartosHotel").change(function() {
+  var qtdQuartos = this.value;
+  $('.qtd-quartos').hide();
+  for(var i=0; i<=qtdQuartos; i++) {
+      $('.qtd-quartos[data-room-id="'+i+'"]').show();
+  }
+});

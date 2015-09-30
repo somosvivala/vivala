@@ -2,6 +2,6 @@
 
 @section('content')
 <h4 class="suave">
-	Buscas Recentes
+	{{ trans('global.lbl_search_recent_') }}
 </h4>
 @endsection

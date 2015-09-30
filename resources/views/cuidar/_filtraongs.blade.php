@@ -38,6 +38,6 @@
     @endif
 </div>
 <div class="col-sm-12 text-center">
-    {!! Form::submit(tras('global.lbl_search'), ['class' => 'btn']) !!}
+    {!! Form::submit(trans('global.lbl_searchr'), ['class' => 'btn']) !!}
 </div>
 {!! Form::close() !!}

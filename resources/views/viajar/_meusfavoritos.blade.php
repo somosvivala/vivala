@@ -3,6 +3,6 @@
 
 @section('content')
 <h4 class="suave">
-	Meus Favoritos
+	{{ trans('global.lbl_bookmark_my_') }}
 </h4>
 @endsection
