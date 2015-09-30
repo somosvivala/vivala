@@ -20,8 +20,9 @@ var autocomplete = function(query, inputId) {
         },
     })
     .done(function(data) {
+        $('div.flight-list').remove();
         $('.cria-post-container').append(data);
-        $('div.list-group').attr('data-input', inputId);
+        $('div.flight-list').attr('data-input', inputId);
         bindAutoCompleteFlights();
     });
 };
@@ -29,7 +30,7 @@ var autocomplete = function(query, inputId) {
 /**
  * Autocomplete para a pesquisa de hotéis
  */
-var autocompleteHotels = function(query) {
+var autocompleteHotels = function(query, inputId) {
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -37,7 +38,7 @@ var autocompleteHotels = function(query) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: {
             params: {
                 query: query,
@@ -45,7 +46,7 @@ var autocompleteHotels = function(query) {
             },
             url: 'hotelscomplete',
             method: 'GET',
-            process: false,
+            process: true,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -53,7 +54,10 @@ var autocompleteHotels = function(query) {
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('div.hotel-list').remove();
+        $('.cria-post-container').append(data);
+        $('div.hotel-list').attr('data-input', inputId);
+        bindAutoCompleteHotels();
     });
 };
 
@@ -404,6 +408,12 @@ $(".mostraQuartosHotel").change(function() {
 
 var bindAutoCompleteFlights = function() {
     $('a.autocomplete-flight').on('click', function(e) {
+        e.preventDefault();
+    });
+};
+
+var bindAutoCompleteHotels = function() {
+    $('a.autocomplete-hotel').on('click', function(e) {
         e.preventDefault();
     });
 };
