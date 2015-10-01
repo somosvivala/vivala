@@ -3,7 +3,7 @@
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
-var autocomplete = function(query, inputId) {
+var autocompleteFlights = function(query, inputId) {
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -100,6 +100,7 @@ var searchFlight = function(params, type) {
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
+    $('.resultados-busca-voos').html("<i class='fa fa-spin fa-spinner'></i>")
     $.ajax({
         url: '/quimera',
         type: 'POST',
@@ -113,8 +114,10 @@ var searchFlight = function(params, type) {
     })
     .done(function(data) {
         $('#flight-url').val(base_url);
-        $('.resultados-busca').html(data);
+        $('.resultados-busca-voos').html(data);
         bindFlight();
+    }).fail(function(){
+        $('resultados-busca-voos').html("Nenhum vôo foi encontrado");
     });
 };
 
@@ -342,8 +345,8 @@ $("form#buscaVoos").submit(function(e){
     e.preventDefault();
 
     var form = $(this),
-        origem = 'SAO',
-        destino = 'RIO',
+        origem = form.find("#origenID").val(),
+        destino = form.find("#destinoID").val(),
         dataPartida = form.find("#dataPartidaVoos").val(),
         dataRetorno = form.find("#dataRetornoVoos").val(),
         qtdAdultos = form.find("#qtdAdultosVoos").val(),
@@ -352,6 +355,9 @@ $("form#buscaVoos").submit(function(e){
         qtdBebesTotal = 0,
         qtdAdultosTotal = qtdAdultos;
 
+    // Formata a data
+    dataPartida = dataPartida.split('/').reverse().join('-');  
+    dataRetorno = dataRetorno.split('/').reverse().join('-');  
     // Conta quantas tarifas de crianças jovens e adultos serão cobradas
     for(var i=0;i<=qtdCriancas;i++) {
         var tipoTarifa = form.find('.idade-criancas[data-child-id="'+i+'"]').val();
@@ -363,13 +369,26 @@ $("form#buscaVoos").submit(function(e){
           qtdAdultosTotal++;
     }
 
-    searchFlight({
-        from: 'SAO',
-        to: 'RIO',
-        departureDate: '2015-10-01',
-        returnDate: '2015-10-07',
-        adults: 2
-    });
+    var opcoes = {
+        from:           'SAO',
+        to:             'RIO',
+        adults:         parseInt(qtdAdultosTotal),
+        infant:         parseInt(qtdJovensTotal),                       /* Quantidade de crianças até 11 anos */
+        children:       parseInt(qtdCriancas),                     /* Quantidade de crianças até 24 meses viajando no colo */
+        departureDate:  dataPartida,               /* YYYY-mm-dd */
+        returnDate:     dataRetorno,                /* YYYY-mm-dd */
+        sortBy: 'total_price_ascending', /* ['personal_ascending'|'duration_ascending'|'stopscount_ascending'|'stopscount_descending'|'total_price_ascending'|'total_price_descending'] */
+        facet: {
+            stops: null,
+            airlines: null,
+            inboundTime: null,
+            total_price_range: null      /*{(int)preço minimo}-{(int)preço maximo}*/
+        }
+    };
+    console.log(opcoes);
+    console.log(origem);
+    console.log(destino);
+    searchFlight(opcoes);
 
 });
 
@@ -423,20 +442,20 @@ var bindAutoCompleteHotels = function() {
     });
 };
 
-$('input#origen').on('keydown', function() {
+$('input#origemVoo').on('keydown', function() {
     var value = $(this).val();
     if (value.length >= 3) {
-        autocomplete(value, '#origem');
+        autocompleteFlights(value, '#origem'); 
     } else {
-        $('div.flight-list').remove();
+        $('lista-origem.flight-list').remove();
     }
 });
 
-$('input#destino').on('keydown', function() {
+$('input#destinoVoo').on('keydown', function() {
     var value = $(this).val();
     if (value.length >= 3) {
-        autocomplete(value, '#destino');
+        autocompleteFlights(value, '#destino');
     } else {
-        $('div.flight-list').remove();
+        $('#lista-destino.flight-list').remove();
     }
 });

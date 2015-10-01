@@ -21,15 +21,19 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origen" name="origin" class="city-input required ui-autocomplete-input" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origemVoo" name="origin" class="city-input required ui-autocomplete-input" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
                         <input id="origenID" style="display:none" name="originId" class="required" value="" type="hidden">
+                        <div class="flight-list" id="lista-origem">     
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destinoVoo" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
                         <input id="destinoID" style="display:none" name="destinationId" class="required" value="" type="hidden">
+                        <div class="flight-list" id="lista-destino">     
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -39,11 +43,11 @@
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <input placeholder="Quando vai? (dd/mm/aaaa)" class="hasDatepicker" id="dataPartidaVoos" name="fromDate" type="text">
+                        <input placeholder="Quando vai? (dd/mm/aaaa)" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataPartidaVoos" name="fromDate" type="text">
                     </div>
 
                     <div class="col-sm-6">
-                        <input placeholder="Quando volta? (dd/mm/aaaa)  " class="input-date required hasDatepicker" id="dataRetornoVoos" name="toDate" type="text">
+                        <input placeholder="Quando volta? (dd/mm/aaaa)"  data-provide="datepicker" data-date-format="dd/mm/yyyy"  class="input-date required hasDatepicker" id="dataRetornoVoos" name="toDate" type="text">
                     </div>
                 </div>
 

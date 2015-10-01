@@ -45,18 +45,18 @@
         <div role="tabpanel" class="tab-pane active" id="hospedagem">
             {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
             @include('quimera._formhotels')  
+            <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="voos">
             @include('quimera._formvoos')          
+            <div class="fundo-cheio col-sm-12 resultados-busca-voos text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="carros">
             {{-- @include('quimera._formcarros') --}}
+            <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
         </div>
     </div>
 
-</div>
-<div class="fundo-cheio col-sm-12 resultados-busca">
-    
 </div>
 
 <!-- Modal com iframe pra fechamento de pedido -->
