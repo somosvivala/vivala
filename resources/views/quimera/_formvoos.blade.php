@@ -1,8 +1,8 @@
 <div class="advanced-searchbox">
-    <form name="buscaVoos" id="buscaVoos" action="flightSearchOneWay">
+    <form name="buscaVoos" id="buscaVoos" action="flightSearchOneWay" class="form-voos">
         <input type="hidden" name="_token" value="{{\Session::token() }}">
         <input type="hidden" id="flight-url">
-        <div class="hidden">        
+        <div class="hidden">
             {{-- Checado somente o ida e volta, que foi testado nos envios de request --}}
             <input id="roundTripType" name="tripType" value="1" onclick="idaVuelta()" checked="checked" type="radio">
             <label for="roundTripType" id="lbl-round">Ida e volta</label>
@@ -14,7 +14,7 @@
             <label for="multipleDestinationsTripType" id="lbl-multiple">Múltiplos destinos </label>
 
             <input value="1" id="selectedTripType" type="hidden">
-        </div> 
+        </div>
         <div class="contenedorCiudades" id="contenedorCiudades">
 
             <div class="col-sm-6">
@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        
+
         <input style="display:none" name="children" id="children" value="0" type="hidden">
         <input style="display:none" name="childAdults" id="childAdults" value="0" type="hidden">
         <input style="display:none" name="infants" id="infants" value="0" type="hidden">
@@ -109,18 +109,18 @@
         <!-- advancedOptions.ftl -->
 
         <div style="display: block;" id="advancedOptions" class="col-sm-12 advanced-options hidden">
-            <div class="advanced-options-select-container">	
+            <div class="advanced-options-select-container">
                 <label for="escalasSelect">Paradas</label>
                 <select class="select-advanced-options" id="escalasSelect" name="stopsAdvanced">
                     <option value="">Sem preferências</option>
                     <option value="NONE">Somente vôo directo</option>
                     <option value="ONE">Até 1 parada</option>
                     <option value="MORE_THAN_ONE">2 paradas ou mais</option>
-                </select>	
+                </select>
             </div>
 
 
-            <div class="advanced-options-select-container">	
+            <div class="advanced-options-select-container">
                 <label for="ticketSelect">Classe de bilhete</label>
                 <select class="select-advanced-options" id="ticketSelect" name="ticketClass">
                     <option value="">Sem preferências</option>
@@ -130,16 +130,16 @@
                 </select>
             </div>
 
-            <div id="airlineContainer" class="airline-container">	
+            <div id="airlineContainer" class="airline-container">
                 <label id="airlineLabel" for="origen">Companhias</label>
                 <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" id="airline" name="airline" class="city-input ui-autocomplete-input" data-provide="typeahead" placeholder="Digite uma companhia aérea" value="" type="text">
                 <input id="airlineID" style="display:none" name="airlineId" class="required" value="" type="hidden">
             </div>
-        </div> <!-- Fin div opcionesAvanzadas-->			
-            
+        </div> <!-- Fin div opcionesAvanzadas-->
+
         <div class="row">
             <div class="col-sm-12 text-center margin-b-2 margin-t-2">
-                <button class="btn">Procurar</button>
+                <button class="btn btn-acao">Procurar</button>
             </div>
         </div>
     </form>
