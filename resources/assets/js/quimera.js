@@ -3,7 +3,7 @@
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
-var autocompleteFlights = function(query, inputId) {
+var autocompleteFlights = function(query, inputId, lista) {
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -20,9 +20,9 @@ var autocompleteFlights = function(query, inputId) {
         },
     })
     .done(function(data) {
-        $('div.flight-list').remove();
+        $(lista).remove();
         $('#buscaVoos').append(data);
-        $('div.flight-list').attr('data-input', inputId);
+        $(lista).attr('data-input', inputId);
         bindAutoCompleteFlights();
     });
 };
@@ -430,7 +430,7 @@ var bindAutoCompleteFlights = function() {
         e.preventDefault();
         var 
             input = $(this).parent('.flight-list').attr('data-input'),
-            value = $(this).html();
+            value = $(this).text();
 
         $(input).val(value);
     });
@@ -443,18 +443,21 @@ var bindAutoCompleteHotels = function() {
 };
 
 $('input#origemVoo').on('keydown', function() {
-    var value = $(this).val();
+    var value = $(this).val(),
+        lista = $('#lista-destino.flight-list');
+
     if (value.length >= 3) {
-        autocompleteFlights(value, '#origem'); 
+        autocompleteFlights(value, '#origemVoo', lista); 
     } else {
         $('lista-origem.flight-list').remove();
     }
 });
 
 $('input#destinoVoo').on('keydown', function() {
-    var value = $(this).val();
+    var value = $(this).val(),
+        lista = $('#lista-destino.flight-list');
     if (value.length >= 3) {
-        autocompleteFlights(value, '#destino');
+        autocompleteFlights(value, '#destinoVoo', lista);
     } else {
         $('#lista-destino.flight-list').remove();
     }
