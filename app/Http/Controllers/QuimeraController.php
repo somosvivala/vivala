@@ -19,6 +19,7 @@ class QuimeraController extends Controller {
 
 		if (substr($type, 0, 4) == 'http') {
 			$response = utf8_encode(file_get_contents($type));
+			$type     = Input::get('type');
 		} else {
 			$url     = QuimeraRepository::urlDecoder($type);
 			$params  = QuimeraRepository::serializeParams($params);

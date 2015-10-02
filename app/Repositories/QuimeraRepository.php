@@ -46,6 +46,8 @@ class QuimeraRepository {
                 return self::_processHotelsComplete($response);
             case 'hotel':
                 return self::_hotelToHTML($response);
+            case 'autocompleteCars':
+                return self::_processCarsComplete($response);
         }
     } 
 
@@ -107,6 +109,24 @@ class QuimeraRepository {
         }
 
         return array('data' => compact('hotels', 'cities'), 'blade' => 'quimera._listAutocompleteHotels');
+    }
+
+    private static function _processCarsComplete($data)
+    {
+       $cities   = array();
+        $airports = array();
+
+        $autocomplete = json_decode($data)->autocomplete;
+        
+        foreach ($autocomplete as $value) {
+            if (strcasecmp($value->type, 'city') == 0) {
+                array_push($cities, $value);
+            } else {
+                array_push($airports, $value);
+            }
+        }
+
+        return array('data' => compact('airports', 'cities'), 'blade' => 'quimera._listAutocompleteCars');
     }
 
     private static function _hotelToHTML($data)

@@ -68,15 +68,16 @@ var autocompleteCars = function(query) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: {
             url: base_url+query+suffix,
+            type: 'autocompleteCars',
             method: 'GET',
-            proccess: false
+            process: true
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('#buscaVoos').append(data);
     });
     
 };
