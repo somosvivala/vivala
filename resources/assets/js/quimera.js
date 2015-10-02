@@ -3,11 +3,13 @@
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
-var autocompleteFlights = function(query, inputId, lista) {
+var autocompleteFlights = function(query, inputId, container, lista) {
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
+
+    // Procura o que foi inserido
     $.ajax({
         url: '/quimera',
         type: 'POST',
@@ -20,9 +22,10 @@ var autocompleteFlights = function(query, inputId, lista) {
         },
     })
     .done(function(data) {
-        $(lista).remove();
-        $('#buscaVoos').append(data);
-        $(lista).attr('data-input', inputId);
+
+        lista.remove(); 
+        container.append(data);
+        lista.attr('data-input', inputId);
         bindAutoCompleteFlights();
     });
 };
@@ -523,23 +526,29 @@ var bindAutoCompleteHotels = function() {
     });
 };
 
+
+// Binda keydown da origem pra procurar aeroportos 
+// e cidades quando entrar mais que 3 chars
 $('input#origemVoo').on('keydown', function() {
     var value = $(this).val(),
-        lista = $('#lista-destino.flight-list');
+        lista = $('#lista-origem .flight-list'),
+        container = $('#lista-origem');
 
     if (value.length >= 3) {
-        autocompleteFlights(value, '#origemVoo', lista); 
+        autocompleteFlights(value, '#origemVoo', container, lista); 
     } else {
-        $('#lista-origem.flight-list').remove();
+        lista.remove();
     }
 });
 
 $('input#destinoVoo').on('keydown', function() {
     var value = $(this).val(),
-        lista = $('#lista-destino.flight-list');
+        lista = $('#lista-destino.flight-list'),
+        container = $('#lista-destino');
+
     if (value.length >= 3) {
-        autocompleteFlights(value, '#destinoVoo', lista);
+        autocompleteFlights(value, '#destinoVoo', container, lista);
     } else {
-        $('#lista-destino.flight-list').remove();
+        lista.remove();
     }
 });
