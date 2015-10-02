@@ -262,6 +262,49 @@ var hotelAvaiability = function(params) {
     });
 };
 
+var searchCars = function(params) {
+    var
+        base_url = 'https://www.e-agencias.com.br/vivala/search/carList/',
+        defaultParams = {
+            pickup: {
+                type: null,    // [city|airport]
+                code: null,    // [A-Z]{3}
+                date: null,    // [YYY-mm-dd]
+                time: null     // [0-9]{1,2}:[0-9]{2}
+            },
+            dropoff: {
+                type: null,    // [city|airport]
+                code: null,    // [A-Z]{3}
+                date: null,    // [YYY-mm-dd]
+                time: null     // [0-9]{1,2}:[0-9]{2}
+            }
+        };
+
+    $.extend(defaultParams, params);
+    params = defaultParams;
+
+    base_url += params.pickup.type+'/'+params.pickup.code+'/'+params.pickup.date+'T'+params.pickup.time+'/'+params.dropoff.type+'/'+params.dropoff.code+'/'+params.dropoff.date+'T'+params.dropoff.time+'/ARS';
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            url: base_url,
+            method: 'GET',
+            proccess: false
+        },
+    })
+    .done(function(data) {
+        console.log("success");
+    });
+    
+};
+
 var flightCheckout = function(params) {
     var
         base_url = 'https://www.e-agencias.com.br/vivala/flights/checkout/',
@@ -330,6 +373,23 @@ var testSearchHotels = function () {
         checkin: '2016-01-20',
         checkout: '2016-01-25',
         distribution: '1'
+    });
+};
+
+var testSearchCars = function () {
+    searchCars({
+        pickup: {
+            type: 'airport',   
+            code: 'GRU',   
+            date: '2015-11-17',   
+            time: '13:00'    
+        },
+        dropoff: {
+            type: 'city',   
+            code: 'SAO',   
+            date: '2015-12-02',   
+            time: '15:00'    
+        }
     });
 };
 
@@ -449,7 +509,7 @@ $('input#origemVoo').on('keydown', function() {
     if (value.length >= 3) {
         autocompleteFlights(value, '#origemVoo', lista); 
     } else {
-        $('lista-origem.flight-list').remove();
+        $('#lista-origem.flight-list').remove();
     }
 });
 

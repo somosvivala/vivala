@@ -17,12 +17,15 @@ class QuimeraController extends Controller {
 		$process = Input::get('process');
 		$headers = Input::get('headers');
 
-		$url     = QuimeraRepository::urlDecoder($type);
-		$params  = QuimeraRepository::serializeParams($params);
-		$headers = isset($headers) ? QuimeraRepository::createHeader($method, $headers) : [];
-		
-		$response = !is_array($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
-
+		if (substr($type, 0, 4) == 'http') {
+			$response = file_get_contents($type); 
+		} else {
+			$url     = QuimeraRepository::urlDecoder($type);
+			$params  = QuimeraRepository::serializeParams($params);
+			$headers = isset($headers) ? QuimeraRepository::createHeader($method, $headers) : [];
+			
+			$response = !is_array($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
+		}
 		if ($process == 'true') {
 			$output = QuimeraRepository::processResponse($response, $type);
 			if (is_array($output) && array_key_exists('blade', $output)) {
