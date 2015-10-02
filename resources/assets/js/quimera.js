@@ -61,6 +61,26 @@ var autocompleteHotels = function(query, inputId) {
     });
 };
 
+var autocompleteCars = function(query) {
+    var base_url = 'https://www.e-agencias.com.br/vivala/autocomplete/',
+        suffix   = '/cars/airports,cities/filtered=true';
+    query = escape(query);
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            url: base_url+query+suffix,
+            method: 'GET',
+            proccess: false
+        },
+    })
+    .done(function(data) {
+        console.log(data);
+    });
+    
+};
+
 /**
  *  Busca de passagens
  */
@@ -300,7 +320,7 @@ var searchCars = function(params) {
         },
     })
     .done(function(data) {
-        console.log("success");
+        console.logdi(data);
     });
     
 };
