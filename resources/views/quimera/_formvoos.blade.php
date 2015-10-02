@@ -21,8 +21,8 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origemVoo" name="origin" class="city-input required ui-autocomplete-input" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
-                        <input id="origenID" style="display:none" name="originId" class="required" value="" type="hidden">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origem-voo" name="origem-voo" class="autocomplete completing" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
+                        <input id="origem-voo-id" style="display:none" name="originId" class="required" value="" type="hidden">
                         <div id="lista-origem">     
                             <div class="flight-list"> 
                             </div>
@@ -32,8 +32,8 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destinoVoo" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
-                        <input id="destinoID" style="display:none" name="destinationId" class="required" value="" type="hidden">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-voo" name="destination" class="city-input required autocomplete valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
+                        <input id="destino-voo-id" style="display:none" name="destinationId" class="required" value="" type="hidden">
                         <div id="lista-destino">     
                             <div class="flight-list"> 
                             </div>
@@ -136,7 +136,7 @@
 
             <div id="airlineContainer" class="airline-container">
                 <label id="airlineLabel" for="origen">Companhias</label>
-                <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" id="airline" name="airline" class="city-input ui-autocomplete-input" data-provide="typeahead" placeholder="Digite uma companhia aérea" value="" type="text">
+                <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" id="airline" name="airline" class="city-input autocomplete" data-provide="typeahead" placeholder="Digite uma companhia aérea" value="" type="text">
                 <input id="airlineID" style="display:none" name="airlineId" class="required" value="" type="hidden">
             </div>
         </div> <!-- Fin div opcionesAvanzadas-->
