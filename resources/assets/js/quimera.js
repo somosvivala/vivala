@@ -438,8 +438,8 @@ $("form#buscaVoos").submit(function(e){
     e.preventDefault();
 
     var form = $(this),
-        origem = form.find("#origenID").val(),
-        destino = form.find("#destinoID").val(),
+        origem = form.find("#origem-voo-id").val(),
+        destino = form.find("#destino-voo-id").val(),
         dataPartida = form.find("#dataPartidaVoos").val(),
         dataRetorno = form.find("#dataRetornoVoos").val(),
         qtdAdultos = form.find("#qtdAdultosVoos").val(),

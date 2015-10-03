@@ -23,7 +23,7 @@
                     <div class="col-sm-12">
                         <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origem-voo" name="origem-voo" class="autocomplete completing" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
                         <input id="origem-voo-id" style="display:none" name="originId" class="required" value="" type="hidden">
-                        <div id="lista-origem">     
+                        <div id="lista-origem" class="lista-autocomplete">     
                             <div class="flight-list"> 
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                     <div class="col-sm-12">
                         <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-voo" name="destination" class="city-input required autocomplete valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
                         <input id="destino-voo-id" style="display:none" name="destinationId" class="required" value="" type="hidden">
-                        <div id="lista-destino">     
+                        <div id="lista-destino" class="lista-autocomplete">     
                             <div class="flight-list"> 
                             </div>
                         </div>
