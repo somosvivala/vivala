@@ -32,9 +32,7 @@ var autocompleteFlights = function(query, inputId, container, lista) {
         lista.remove(); 
         container.append(data);
 
-        // nao consegui bindar o clique certo :(
-        console.log(inputId);
-        lista.attr('data-input', inputId);
+        $('.flight-list').attr('data-input', inputId);
         
         bindAutoCompleteFlights();
     });
@@ -532,6 +530,8 @@ var bindAutoCompleteFlights = function() {
         console.log(value);
 
         $(input).val(value);
+
+        $(this).parent('.flight-list').remove();
     });
 };
 
@@ -554,7 +554,7 @@ $(document).ready(function($) {
             clearTimeout(autocompleteTimeout);
         }
         if (value.length >= 3) {
-            autocompleteTimeout = setTimeout(autocompleteFlights, 800, value, '#origem-voo-id', container, lista); 
+            autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista); 
         } else {
             lista.remove();
         }
@@ -569,7 +569,7 @@ $(document).ready(function($) {
             clearTimeout(autocompleteTimeout);
         }
         if (value.length >= 3) {
-            autocompleteTimeout = setTimeout(autocompleteFlights, 800, value, '#destino-voo-id', container, lista);
+            autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#destino-voo', container, lista);
         } else {
             lista.remove();
         }
