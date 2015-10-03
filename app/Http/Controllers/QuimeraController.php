@@ -27,6 +27,7 @@ class QuimeraController extends Controller {
 			
 			$response = !is_array($headers) ? file_get_contents("{$url}?{$params}", false, $headers) : file_get_contents("{$url}?{$params}");
 		}
+
 		if ($process == 'true') {
 			$output = QuimeraRepository::processResponse($response, $type);
 			if (is_array($output) && array_key_exists('blade', $output)) {

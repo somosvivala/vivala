@@ -3,8 +3,9 @@
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
+var ajaxCall = null;
 var autocompleteFlights = function(query, inputId, container, lista) {
-    
+    query = escape(query);
     //Insere icone de loading
     lista.html("<i class='fa-spin fa-spinner fa'></i>");
     
@@ -12,8 +13,11 @@ var autocompleteFlights = function(query, inputId, container, lista) {
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
+    if (ajaxCall != null && ajaxCall.state() == 'pending') {
+        ajaxCall.abort();
+    }
     // Procura o que foi inserido
-    $.ajax({
+    ajaxCall = $.ajax({
         url: '/quimera',
         type: 'POST',
         dataType: 'html',
@@ -40,6 +44,7 @@ var autocompleteFlights = function(query, inputId, container, lista) {
  * Autocomplete para a pesquisa de hotéis
  */
 var autocompleteHotels = function(query, inputId) {
+    query = escape(query);
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -536,29 +541,37 @@ var bindAutoCompleteHotels = function() {
     });
 };
 
+$(document).ready(function($) {
+    // Binda keydown da origem pra procurar aeroportos 
+    // e cidades quando entrar mais que 3 chars
+    var autocompleteTimeout = null;
+    $('input#origem-voo').on('keyup', function() {
+        var value = $(this).val(),
+            lista = $('#lista-origem .flight-list'),
+            container = $('#lista-origem');
 
-// Binda keydown da origem pra procurar aeroportos 
-// e cidades quando entrar mais que 3 chars
-$('input#origem-voo').on('keydown', function() {
-    var value = $(this).val(),
-        lista = $('#lista-origem .flight-list'),
-        container = $('#lista-origem');
+        if (autocompleteTimeout > 0) {
+            clearTimeout(autocompleteTimeout);
+        }
+        if (value.length >= 3) {
+            autocompleteTimeout = setTimeout(autocompleteFlights, 800, value, '#origem-voo-id', container, lista); 
+        } else {
+            lista.remove();
+        }
+    });
 
-    if (value.length >= 3) {
-        autocompleteFlights(value, '#origem-voo-id', container, lista); 
-    } else {
-        lista.remove();
-    }
-});
+    $('input#destino-voo').on('keyup', function() {
+        var value = $(this).val(),
+            lista = $('#lista-destino .flight-list'),
+            container = $('#lista-destino');
 
-$('input#destino-voo').on('keydown', function() {
-    var value = $(this).val(),
-        lista = $('#lista-destino .flight-list'),
-        container = $('#lista-destino');
-
-    if (value.length >= 3) {
-        autocompleteFlights(value, '#destino-voo-id', container, lista);
-    } else {
-        lista.remove();
-    }
+        if (autocompleteTimeout > 0) {
+            clearTimeout(autocompleteTimeout);
+        }
+        if (value.length >= 3) {
+            autocompleteTimeout = setTimeout(autocompleteFlights, 800, value, '#destino-voo-id', container, lista);
+        } else {
+            lista.remove();
+        }
+    });
 });
