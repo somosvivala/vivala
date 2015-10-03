@@ -124,9 +124,9 @@ var searchFlight = function(params, type) {
     $.extend(defaultParams, params);
 
     if (defaultParams.returnDate) {
-        base_url += 'RoundTrip/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.returnDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA';
+        base_url += 'RoundTrip/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.returnDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA/';
     } else {
-        base_url += 'OneWay/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA';
+        base_url += 'OneWay/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA/';
     }
 
     $.ajaxSetup({
