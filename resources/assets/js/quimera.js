@@ -523,13 +523,11 @@ var bindAutoCompleteFlights = function() {
         e.preventDefault();
         var 
             input = $(this).parent('.flight-list').attr('data-input'),
-            value = $(this).text();
-
-        console.log("Input e valor:");
-        console.log(input);
-        console.log(value);
+            value = $(this).find('span.autocomplete-text').text(),
+            code  = $(this).attr('data-value');
 
         $(input).val(value);
+        $(input+'-id').val(code);
 
         $(this).parent('.flight-list').remove();
     });
