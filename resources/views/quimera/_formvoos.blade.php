@@ -15,7 +15,7 @@
 
             <input value="1" id="selectedTripType" type="hidden">
         </div>
-        <div class="contenedorCiudades" id="contenedorCiudades">
+        <div>
 
             <div class="col-sm-6">
 
