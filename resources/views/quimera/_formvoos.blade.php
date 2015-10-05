@@ -1,8 +1,8 @@
 <div class="advanced-searchbox">
-    <form name="buscaVoos" id="buscaVoos" action="flightSearchOneWay">
+    <form name="buscaVoos" id="buscaVoos" action="flightSearchOneWay" class="form-voos">
         <input type="hidden" name="_token" value="{{\Session::token() }}">
         <input type="hidden" id="flight-url">
-        <div class="hidden">        
+        <div class="hidden">
             {{-- Checado somente o ida e volta, que foi testado nos envios de request --}}
             <input id="roundTripType" name="tripType" value="1" onclick="idaVuelta()" checked="checked" type="radio">
             <label for="roundTripType" id="lbl-round">Ida e volta</label>
@@ -14,22 +14,30 @@
             <label for="multipleDestinationsTripType" id="lbl-multiple">Múltiplos destinos </label>
 
             <input value="1" id="selectedTripType" type="hidden">
-        </div> 
+        </div>
         <div class="contenedorCiudades" id="contenedorCiudades">
 
             <div class="col-sm-6">
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origen" name="origin" class="city-input required ui-autocomplete-input" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
-                        <input id="origenID" style="display:none" name="originId" class="required" value="" type="hidden">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origem-voo" name="origem-voo" class="autocomplete completing" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
+                        <input id="origem-voo-id" style="display:none" name="originId" class="required" value="" type="hidden">
+                        <div id="lista-origem" class="lista-autocomplete">     
+                            <div class="flight-list"> 
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino" name="destination" class="city-input required ui-autocomplete-input valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
-                        <input id="destinoID" style="display:none" name="destinationId" class="required" value="" type="hidden">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-voo" name="destination" class="city-input required autocomplete valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
+                        <input id="destino-voo-id" style="display:none" name="destinationId" class="required" value="" type="hidden">
+                        <div id="lista-destino" class="lista-autocomplete">     
+                            <div class="flight-list"> 
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <br>
@@ -39,11 +47,11 @@
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <input placeholder="Quando vai? (dd/mm/aaaa)" class="hasDatepicker" id="dataPartidaVoos" name="fromDate" type="text">
+                        <input placeholder="Quando vai? (dd/mm/aaaa)" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataPartidaVoos" name="fromDate" type="text">
                     </div>
 
                     <div class="col-sm-6">
-                        <input placeholder="Quando volta? (dd/mm/aaaa)  " class="input-date required hasDatepicker" id="dataRetornoVoos" name="toDate" type="text">
+                        <input placeholder="Quando volta? (dd/mm/aaaa)"  data-provide="datepicker" data-date-format="dd/mm/yyyy"  class="input-date required hasDatepicker" id="dataRetornoVoos" name="toDate" type="text">
                     </div>
                 </div>
 
@@ -95,7 +103,7 @@
                 </div>
             </div>
         </div>
-        
+
         <input style="display:none" name="children" id="children" value="0" type="hidden">
         <input style="display:none" name="childAdults" id="childAdults" value="0" type="hidden">
         <input style="display:none" name="infants" id="infants" value="0" type="hidden">
@@ -105,18 +113,18 @@
         <!-- advancedOptions.ftl -->
 
         <div style="display: block;" id="advancedOptions" class="col-sm-12 advanced-options hidden">
-            <div class="advanced-options-select-container">	
+            <div class="advanced-options-select-container">
                 <label for="escalasSelect">Paradas</label>
                 <select class="select-advanced-options" id="escalasSelect" name="stopsAdvanced">
                     <option value="">Sem preferências</option>
                     <option value="NONE">Somente vôo directo</option>
                     <option value="ONE">Até 1 parada</option>
                     <option value="MORE_THAN_ONE">2 paradas ou mais</option>
-                </select>	
+                </select>
             </div>
 
 
-            <div class="advanced-options-select-container">	
+            <div class="advanced-options-select-container">
                 <label for="ticketSelect">Classe de bilhete</label>
                 <select class="select-advanced-options" id="ticketSelect" name="ticketClass">
                     <option value="">Sem preferências</option>
@@ -126,16 +134,16 @@
                 </select>
             </div>
 
-            <div id="airlineContainer" class="airline-container">	
+            <div id="airlineContainer" class="airline-container">
                 <label id="airlineLabel" for="origen">Companhias</label>
-                <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" id="airline" name="airline" class="city-input ui-autocomplete-input" data-provide="typeahead" placeholder="Digite uma companhia aérea" value="" type="text">
+                <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" id="airline" name="airline" class="city-input autocomplete" data-provide="typeahead" placeholder="Digite uma companhia aérea" value="" type="text">
                 <input id="airlineID" style="display:none" name="airlineId" class="required" value="" type="hidden">
             </div>
-        </div> <!-- Fin div opcionesAvanzadas-->			
-            
+        </div> <!-- Fin div opcionesAvanzadas-->
+
         <div class="row">
             <div class="col-sm-12 text-center margin-b-2 margin-t-2">
-                <button class="btn">Procurar</button>
+                <button class="btn btn-acao">Procurar</button>
             </div>
         </div>
     </form>

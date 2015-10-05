@@ -21,6 +21,7 @@ elixir(function(mix) {
         '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
         '../../assets/bower/lightbox2/dist/css/lightbox.css',
+        '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
         '*.css'
     ], null, 'resources/assets/css');
 
@@ -34,6 +35,8 @@ elixir(function(mix) {
 
       '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
       '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
+      
+      '../../assets/bower/bootstrap-datepicker/js/bootstrap-datepicker.js',
 
 
       '../../assets/js/comentaPost.js',

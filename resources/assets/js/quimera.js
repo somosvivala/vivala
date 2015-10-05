@@ -3,12 +3,21 @@
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
  */
-var autocomplete = function(query, inputId) {
+var ajaxCall = null;
+var autocompleteFlights = function(query, inputId, container, lista) {
+    query = escape(query);
+    //Insere icone de loading
+    lista.html("<i class='fa-spin fa-spinner fa'></i>");
+    
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
-    $.ajax({
+    if (ajaxCall != null && ajaxCall.state() == 'pending') {
+        ajaxCall.abort();
+    }
+    // Procura o que foi inserido
+    ajaxCall = $.ajax({
         url: '/quimera',
         type: 'POST',
         dataType: 'html',
@@ -20,9 +29,11 @@ var autocomplete = function(query, inputId) {
         },
     })
     .done(function(data) {
-        $('div.flight-list').remove();
-        $('#buscaVoos').append(data);
-        $('div.flight-list').attr('data-input', inputId);
+        lista.remove(); 
+        container.append(data);
+
+        $('.flight-list').attr('data-input', inputId);
+        
         bindAutoCompleteFlights();
     });
 };
@@ -31,6 +42,7 @@ var autocomplete = function(query, inputId) {
  * Autocomplete para a pesquisa de hotéis
  */
 var autocompleteHotels = function(query, inputId) {
+    query = escape(query);
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -59,6 +71,27 @@ var autocompleteHotels = function(query, inputId) {
         $('div.hotel-list').attr('data-input', inputId);
         bindAutoCompleteHotels();
     });
+};
+
+var autocompleteCars = function(query) {
+    var base_url = 'https://www.e-agencias.com.br/vivala/autocomplete/',
+        suffix   = '/cars/airports,cities/filtered=true';
+    query = escape(query);
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'html',
+        data: {
+            url: base_url+query+suffix,
+            type: 'autocompleteCars',
+            method: 'GET',
+            process: true
+        },
+    })
+    .done(function(data) {
+        $('#buscaVoos').append(data);
+    });
+    
 };
 
 /**
@@ -91,15 +124,16 @@ var searchFlight = function(params, type) {
     $.extend(defaultParams, params);
 
     if (defaultParams.returnDate) {
-        base_url += 'RoundTrip/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.returnDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA';
+        base_url += 'RoundTrip/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.returnDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA/';
     } else {
-        base_url += 'OneWay/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA';
+        base_url += 'OneWay/'+defaultParams.from+'/'+defaultParams.to+'/'+defaultParams.departureDate+'/'+defaultParams.adults+'/'+defaultParams.infant+'/'+defaultParams.children+'/NA/NA/';
     }
 
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
+    $('.resultados-busca-voos').html("<i class='fa fa-spin fa-spinner'></i>")
     $.ajax({
         url: '/quimera',
         type: 'POST',
@@ -113,8 +147,10 @@ var searchFlight = function(params, type) {
     })
     .done(function(data) {
         $('#flight-url').val(base_url);
-        $('.resultados-busca').html(data);
+        $('.resultados-busca-voos').html(data);
         bindFlight();
+    }).fail(function(){
+        $('resultados-busca-voos').html("Nenhum vôo foi encontrado");
     });
 };
 
@@ -259,6 +295,49 @@ var hotelAvaiability = function(params) {
     });
 };
 
+var searchCars = function(params) {
+    var
+        base_url = 'https://www.e-agencias.com.br/vivala/search/carList/',
+        defaultParams = {
+            pickup: {
+                type: null,    // [city|airport]
+                code: null,    // [A-Z]{3}
+                date: null,    // [YYY-mm-dd]
+                time: null     // [0-9]{1,2}:[0-9]{2}
+            },
+            dropoff: {
+                type: null,    // [city|airport]
+                code: null,    // [A-Z]{3}
+                date: null,    // [YYY-mm-dd]
+                time: null     // [0-9]{1,2}:[0-9]{2}
+            }
+        };
+
+    $.extend(defaultParams, params);
+    params = defaultParams;
+
+    base_url += params.pickup.type+'/'+params.pickup.code+'/'+params.pickup.date+'T'+params.pickup.time+'/'+params.dropoff.type+'/'+params.dropoff.code+'/'+params.dropoff.date+'T'+params.dropoff.time+'/ARS';
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+    });
+
+    $.ajax({
+        url: '/quimera',
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            url: base_url,
+            method: 'GET',
+            proccess: false
+        },
+    })
+    .done(function(data) {
+        console.logdi(data);
+    });
+    
+};
+
 var flightCheckout = function(params) {
     var
         base_url = 'https://www.e-agencias.com.br/vivala/flights/checkout/',
@@ -330,6 +409,23 @@ var testSearchHotels = function () {
     });
 };
 
+var testSearchCars = function () {
+    searchCars({
+        pickup: {
+            type: 'airport',   
+            code: 'GRU',   
+            date: '2015-11-17',   
+            time: '13:00'    
+        },
+        dropoff: {
+            type: 'city',   
+            code: 'SAO',   
+            date: '2015-12-02',   
+            time: '15:00'    
+        }
+    });
+};
+
 $(".mostraCriancasVoos").change(function() {
   var qtdCriancas = this.value;
   $(".idade-criancas").hide();
@@ -342,8 +438,8 @@ $("form#buscaVoos").submit(function(e){
     e.preventDefault();
 
     var form = $(this),
-        origem = 'SAO',
-        destino = 'RIO',
+        origem = form.find("#origem-voo-id").val(),
+        destino = form.find("#destino-voo-id").val(),
         dataPartida = form.find("#dataPartidaVoos").val(),
         dataRetorno = form.find("#dataRetornoVoos").val(),
         qtdAdultos = form.find("#qtdAdultosVoos").val(),
@@ -352,6 +448,9 @@ $("form#buscaVoos").submit(function(e){
         qtdBebesTotal = 0,
         qtdAdultosTotal = qtdAdultos;
 
+    // Formata a data
+    dataPartida = dataPartida.split('/').reverse().join('-');  
+    dataRetorno = dataRetorno.split('/').reverse().join('-');  
     // Conta quantas tarifas de crianças jovens e adultos serão cobradas
     for(var i=0;i<=qtdCriancas;i++) {
         var tipoTarifa = form.find('.idade-criancas[data-child-id="'+i+'"]').val();
@@ -363,13 +462,26 @@ $("form#buscaVoos").submit(function(e){
           qtdAdultosTotal++;
     }
 
-    searchFlight({
-        from: 'SAO',
-        to: 'RIO',
-        departureDate: '2015-10-01',
-        returnDate: '2015-10-07',
-        adults: 2
-    });
+    var opcoes = {
+        from:           origem,
+        to:             destino,
+        adults:         parseInt(qtdAdultosTotal),
+        infant:         parseInt(qtdJovensTotal),                       /* Quantidade de crianças até 11 anos */
+        children:       parseInt(qtdCriancas),                     /* Quantidade de crianças até 24 meses viajando no colo */
+        departureDate:  dataPartida,               /* YYYY-mm-dd */
+        returnDate:     dataRetorno,                /* YYYY-mm-dd */
+        sortBy: 'total_price_ascending', /* ['personal_ascending'|'duration_ascending'|'stopscount_ascending'|'stopscount_descending'|'total_price_ascending'|'total_price_descending'] */
+        facet: {
+            stops: null,
+            airlines: null,
+            inboundTime: null,
+            total_price_range: null      /*{(int)preço minimo}-{(int)preço maximo}*/
+        }
+    };
+    console.log(opcoes);
+    console.log(origem);
+    console.log(destino);
+    searchFlight(opcoes);
 
 });
 
@@ -411,9 +523,13 @@ var bindAutoCompleteFlights = function() {
         e.preventDefault();
         var 
             input = $(this).parent('.flight-list').attr('data-input'),
-            value = $(this).html();
+            value = $(this).find('span.autocomplete-text').text(),
+            code  = $(this).attr('data-value');
 
         $(input).val(value);
+        $(input+'-id').val(code);
+
+        $(this).parent('.flight-list').remove();
     });
 };
 
@@ -423,20 +539,37 @@ var bindAutoCompleteHotels = function() {
     });
 };
 
-$('input#origen').on('keydown', function() {
-    var value = $(this).val();
-    if (value.length >= 3) {
-        autocomplete(value, '#origem');
-    } else {
-        $('div.flight-list').remove();
-    }
-});
+$(document).ready(function($) {
+    // Binda keydown da origem pra procurar aeroportos 
+    // e cidades quando entrar mais que 3 chars
+    var autocompleteTimeout = null;
+    $('input#origem-voo').on('keyup', function() {
+        var value = $(this).val(),
+            lista = $('#lista-origem .flight-list'),
+            container = $('#lista-origem');
 
-$('input#destino').on('keydown', function() {
-    var value = $(this).val();
-    if (value.length >= 3) {
-        autocomplete(value, '#destino');
-    } else {
-        $('div.flight-list').remove();
-    }
+        if (autocompleteTimeout > 0) {
+            clearTimeout(autocompleteTimeout);
+        }
+        if (value.length >= 3) {
+            autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista); 
+        } else {
+            lista.remove();
+        }
+    });
+
+    $('input#destino-voo').on('keyup', function() {
+        var value = $(this).val(),
+            lista = $('#lista-destino .flight-list'),
+            container = $('#lista-destino');
+
+        if (autocompleteTimeout > 0) {
+            clearTimeout(autocompleteTimeout);
+        }
+        if (value.length >= 3) {
+            autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#destino-voo', container, lista);
+        } else {
+            lista.remove();
+        }
+    });
 });
