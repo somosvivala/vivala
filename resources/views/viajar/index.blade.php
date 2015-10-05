@@ -19,24 +19,24 @@
 
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">
-           <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab"> 
+           <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab">
                 Hospedagem
             </a>
         </li>
         <li class="col-sm-3">
-            <a href="#voos" aria-controls="voos" role="tab" data-toggle="tab"> 
+            <a href="#voos" aria-controls="voos" role="tab" data-toggle="tab">
                 Vôos
             </a>
         </li>
         <li class="col-sm-3">
-           <a href="#carros" aria-controls="carros" role="tab" data-toggle="tab"> 
-               Carros 
-            </a> 
+           <a href="#carros" aria-controls="carros" role="tab" data-toggle="tab">
+               Carros
+            </a>
         </li>
         <li class="col-sm-3">
-           <a href="#montarviagem" class="desativado" aria-controls="montar" role="tab" data-toggle="tab"> 
+           <a href="#montarviagem" class="desativado" aria-controls="montar" role="tab" data-toggle="tab">
                 Montar viagem
-            </a> 
+            </a>
         </li>
     </ul>
 
@@ -44,15 +44,15 @@
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="hospedagem">
             {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
-            @include('quimera._formhotels')  
+            @include('quimera._formhotels')
             <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="voos">
-            @include('quimera._formvoos')          
+            @include('quimera._formvoos')
             <div class="fundo-cheio col-sm-12 resultados-busca-voos text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="carros">
-            {{-- @include('quimera._formcarros') --}}
+            @include('quimera._formcarros')
             <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
         </div>
     </div>
