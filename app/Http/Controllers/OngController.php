@@ -75,21 +75,6 @@ class OngController extends CuidarController {
 
 
 	/**
-	 * Form de inserir Ong.
-	 *
-	 * @return Response
-	 */
-	public function postCreate(Request $request)
-	{
-		dd($request);
-
-        $categoriasOngs = CategoriaOng::all();
-	    return view('ong.create', compact('categoriasOngs') );
-	}
-
-
-
-	/**
 	 * Salva a Ong no BD e redireciona pra home, 
 	 * criando também a prettyUrl associada com essa Ong
 	 *
@@ -99,7 +84,7 @@ class OngController extends CuidarController {
 	{
 
 		$novaOng = Auth::user()->ongs()->create($request->all());
-
+                $novaOng->responsavel()->associate(Auth::user()->perfil)->push();
 		$novaPrettyUrl = new PrettyUrl();
         $novaPrettyUrl->tipo = 'ong';
 
@@ -179,6 +164,7 @@ class OngController extends CuidarController {
         $nome = $ong->nome;
         $categoriaSelecionada = $ong->categoria->id;
         
+    	$categoriasOngs = CategoriaOng::all();
 
         //Verificando se usuario logado é owner da ong atual
         //TODO: Model de permissoes.. 
@@ -192,7 +178,7 @@ class OngController extends CuidarController {
         Session::put('entidadeAtiva_tipo', 'ong');
 
         $ong->url = $ong->getUrl();
-        return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa'));
+        return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs'));
 	}
 
 	/**
