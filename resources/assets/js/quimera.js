@@ -6,8 +6,6 @@
 var ajaxCall = null;
 var autocompleteFlights = function(query, inputId, container, lista) {
     query = escape(query);
-    //Insere icone de loading
-    lista.html("<i class='fa-spin fa-spinner fa'></i>");
     
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
@@ -41,8 +39,9 @@ var autocompleteFlights = function(query, inputId, container, lista) {
 /**
  * Autocomplete para a pesquisa de hotéis
  */
-var autocompleteHotels = function(query, inputId) {
+var autocompleteHotels = function(query, inputId, container, lista) {
     query = escape(query);
+
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -66,9 +65,10 @@ var autocompleteHotels = function(query, inputId) {
         },
     })
     .done(function(data) {
-        $('div.hotel-list').remove();
-        $('.cria-post-container').append(data);
-        $('div.hotel-list').attr('data-input', inputId);
+        lista.remove(); 
+        container.append(data);
+        $('.hotel-list').attr('data-input', inputId);
+
         bindAutoCompleteHotels();
     });
 };
@@ -539,6 +539,17 @@ var bindAutoCompleteFlights = function() {
 var bindAutoCompleteHotels = function() {
     $('a.autocomplete-hotel').on('click', function(e) {
         e.preventDefault();
+        var 
+            input = $(this).parent('.hotel-list').attr('data-input'),
+            value = $(this).find('span.autocomplete-text').text(),
+            code  = $(this).attr('data-value');
+
+            console.log(input);
+            console.log(value);
+        $(input).val(value);
+        $(input+'-id').val(code);
+
+        $(this).parent('.hotel-list').remove();
     });
 };
 
@@ -550,6 +561,9 @@ $(document).ready(function($) {
         var value = $(this).val(),
             lista = $('#lista-origem .flight-list'),
             container = $('#lista-origem');
+
+        //Insere icone de loading
+        lista.html("<i class='fa-spin fa-spinner fa'></i>");
 
         if (autocompleteTimeout > 0) {
             clearTimeout(autocompleteTimeout);
@@ -566,11 +580,33 @@ $(document).ready(function($) {
             lista = $('#lista-destino .flight-list'),
             container = $('#lista-destino');
 
+        //Insere icone de loading
+        lista.html("<i class='fa-spin fa-spinner fa'></i>");
+
         if (autocompleteTimeout > 0) {
             clearTimeout(autocompleteTimeout);
         }
         if (value.length >= 3) {
             autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#destino-voo', container, lista);
+        } else {
+            lista.remove();
+        }
+    });
+
+
+    $('input#destino-hotel').on('keyup', function() {
+        var value = $(this).val(),
+            lista = $('#lista-destino-hotel .hotel-list'),
+            container = $('#lista-destino-hotel');
+
+        //Insere icone de loading
+        lista.html("<i class='fa-spin fa-spinner fa'></i>");
+
+        if (autocompleteTimeout > 0) {
+            clearTimeout(autocompleteTimeout);
+        }
+        if (value.length >= 3) {
+            autocompleteTimeout = setTimeout(autocompleteHotels, 500, value, '#destino-hotel', container, lista);
         } else {
             lista.remove();
         }

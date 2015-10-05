@@ -39,7 +39,7 @@
                 @for ($i = 1; $i < 5; $i++)
                     <li id="room{{ $i }}" class="qtd-quartos @if ($i > 1) soft-hide @endif" data-room-id="{{ $i }}">
                         <label class="room-label roomLabel margin-b-1 soft-hide">{{ trans('global.quimera_travel_room') }} {{ $i }}</label>
-                        <div class="col-sm-12">
+                        <div class="row">
                             <div class="col-sm-6">
                                 <label for="adults{{ $i }}">{{ trans('global.quimera_adult_') }}</label>
                                 <input value="0" id="adultsRoom{{ $i }}" type="hidden">
@@ -107,8 +107,8 @@
 
 
     <div class="row">
-        <div class="mod-searchbutton col-md-12 margin-b-2">
-            <button class="buttonContainer col-md-6 btn btn-acao pull-right">
+        <div class="text-center mod-searchbutton col-md-12 margin-b-2">
+            <button class="btn">
                 <span onclick="submitHotelsForm()">{{ trans('global.quimera_searchr_lodge') }}</span>
             </button>
         </div>
