@@ -38,7 +38,7 @@
             <img src="/images/iconcriarong.png" alt="Criar Projeto Social">
             <h4>Projeto Social</h4>
             <div class="form-criar">
-                {!! Form::open(array('url' => array('ong/create')))!!}
+                {!! Form::open(array('url' => array('ong/create'), 'method' => 'GET' ))!!}
                 <span> Junte-se as pessoas que apoiam você na Vivalá! </span>
                 @if(isset($categoriasOngs))
                 <select name="categoriaOng" class="suave">
