@@ -27,6 +27,7 @@ class OngController extends CuidarController {
 	 */
 	public function index($prettyUrl = null) {
 
+
 		//se nao veio nada na sessao e nem na url
 		if(!$prettyUrl && !Session::has('ong')) {
 			App::abort(404);
@@ -66,9 +67,27 @@ class OngController extends CuidarController {
 	 */
 	public function create()
 	{
+		$nome = Request::get('nome');
+    	$categoriaSelecionada = Request::get('categoriaOng');
+        $categoriasOngs = CategoriaOng::all();
+	    return view('ong.create', compact('categoriasOngs', 'nome', 'categoriaSelecionada') );
+	}
+
+
+	/**
+	 * Form de inserir Ong.
+	 *
+	 * @return Response
+	 */
+	public function postCreate(Request $request)
+	{
+		dd($request);
+
         $categoriasOngs = CategoriaOng::all();
 	    return view('ong.create', compact('categoriasOngs') );
 	}
+
+
 
 	/**
 	 * Salva a Ong no BD e redireciona pra home, 
@@ -157,6 +176,10 @@ class OngController extends CuidarController {
 		$ong = Ong::findOrFail($user->entidadeAtiva->id);
         $foto = $ong->getAvatarUrl();
         $fotoCapa = $ong->getCapaUrl();
+        $nome = $ong->nome;
+        $categoriaSelecionada = $ong->categoria->id;
+        
+
         //Verificando se usuario logado é owner da ong atual
         //TODO: Model de permissoes.. 
         if ($ong->user->id != $user->id) {

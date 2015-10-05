@@ -384,13 +384,13 @@ class CategoriasOngSeeder extends Seeder {
         CategoriaOng::create(['nome' => 'categoria 1']);
         CategoriaOng::create(['nome' => 'categoria 2']);
         CategoriaOng::create(['nome' => 'categoria 3']);
-        CategoriaOng::create(['nome' => 'categoria 2']);
-        CategoriaOng::create(['nome' => 'categoria 3']);
         CategoriaOng::create(['nome' => 'categoria 4']);
         CategoriaOng::create(['nome' => 'categoria 5']);
         CategoriaOng::create(['nome' => 'categoria 6']);
         CategoriaOng::create(['nome' => 'categoria 7']);
         CategoriaOng::create(['nome' => 'categoria 8']);
+        CategoriaOng::create(['nome' => 'categoria 9']);
+        CategoriaOng::create(['nome' => 'categoria 10']);
     }
 }
 
@@ -403,12 +403,12 @@ class CategoriasEmpresaSeeder extends Seeder {
         CategoriaEmpresa::create(['nome' => 'categoria 1']);
         CategoriaEmpresa::create(['nome' => 'categoria 2']);
         CategoriaEmpresa::create(['nome' => 'categoria 3']);
-        CategoriaEmpresa::create(['nome' => 'categoria 2']);
-        CategoriaEmpresa::create(['nome' => 'categoria 3']);
         CategoriaEmpresa::create(['nome' => 'categoria 4']);
         CategoriaEmpresa::create(['nome' => 'categoria 5']);
         CategoriaEmpresa::create(['nome' => 'categoria 6']);
         CategoriaEmpresa::create(['nome' => 'categoria 7']);
         CategoriaEmpresa::create(['nome' => 'categoria 8']);
+        CategoriaEmpresa::create(['nome' => 'categoria 9']);
+        CategoriaEmpresa::create(['nome' => 'categoria 10']);
     }
 }
