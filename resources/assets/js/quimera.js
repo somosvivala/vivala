@@ -510,11 +510,14 @@ var bindFlight = function() {
     });
 };
 
-$(".mostraQuartosHotel").change(function() {
+$("#qtd-quartos-hotel").change(function() {
   var qtdQuartos = this.value;
   $('.qtd-quartos').hide();
   for(var i=0; i<=qtdQuartos; i++) {
       $('.qtd-quartos[data-room-id="'+i+'"]').show();
+      console.log($('.qtd-quartos[data-room-id="'+i+'"]'));
+      // Gambizinha pra esconder o quarto 1 quando abre o form
+      $('.qtd-quartos[data-room-id="'+i+'"] label').show();
   }
 });
 
