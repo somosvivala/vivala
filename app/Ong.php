@@ -18,11 +18,15 @@ class Ong extends Model {
 	'cep',
 	'bairro',
 	'complemento',
-	'estado'
+	'estado',
+        'cidade',
+        'url_facebook',
+        'url_gplus',
+       	'url_instagram',
+        'url_site'
         ];
 
-
-	/**
+        /**
 	 * Uma ONG pertence a um usuário.
 	 */
 	public function user()
