@@ -183,7 +183,10 @@ return[
     'lbl_company_update_' => 'Atualizar Empresas',
     'lbl_connect_with_others' => 'Conecte-se com outros viajantes',
     'lbl_confirm' => 'Confirmar',
+    'lbl_contact' => 'Contato',
+    'lbl_contact_' => 'Contatos',
     'lbl_continue' => 'Continuar',
+    'lbl_cellphone' => 'Celular',
     'lbl_cookie' => 'Cookie',
     'lbl_cookie_' => 'Cookies',
     'lbl_cookie_use' => 'Uso de Cookies',
@@ -300,8 +303,30 @@ return[
     'lbl_ok' => 'Ok',
     'lbl_ong' => 'ONG',
     'lbl_ong_' => 'ONGs',
+    'lbl_ong_add' => 'Adicionar ONG',
+    'lbl_ong_add_' => 'Adicionar ONGs',
+    'lbl_ong_adding' => 'Adicionando ONG',
+    'lbl_ong_adding_' => 'Adicionando ONGs',
+    'lbl_ong_create' => 'Criar ONG',
+    'lbl_ong_create_' => 'Criar ONGs',
+    'lbl_ong_creating' => 'Criando ONG',
+    'lbl_ong_creating_' => 'Criando ONGs',
+    'lbl_ong_delete' => 'Deletar ONG',
+    'lbl_ong_delete_' => 'Deletar ONGs',
+    'lbl_ong_deleting' => 'Deletando ONG',
+    'lbl_ong_deleting_' => 'Deletando ONGs',
+    'lbl_ong_edit' => 'Editar ONG',
+    'lbl_ong_edit_' => 'Editar ONGs',
+    'lbl_ong_editing' => 'Editando ONG',
+    'lbl_ong_editing_' => 'Editando ONGs',
     'lbl_ong_no' => 'Sem ong.',
     'lbl_ong_no_' => 'Nenhuma ong.',
+    'lbl_ong_register' => 'Registrar ONG',
+    'lbl_ong_register_' => 'Registrar ONGs',
+    'lbl_ong_register_xclam_sign' => 'Registrar Ong!',
+    'lbl_ong_register_intg_sign' => 'Registrar Ong?',
+    'lbl_organization' => 'Organização',
+    'lbl_organization_about' => 'Sobre a Organização',
     'lbl_page' => 'Página',
     'lbl_page_' => 'Páginas',
     'lbl_page_add' => 'Adicionar Página',
@@ -366,9 +391,12 @@ return[
     'lbl_sharer' => 'Compartilhar',
     'lbl_share' => 'Compartilhamento',
     'lbl_share_' => 'Compartilhamentos',
+    'lbl_sharing' => 'Compartilhando',
     'lbl_signin' => 'Entrar',
     'lbl_signup' => 'Cadastro',
     'lbl_signup1' => 'Cadastre-se',
+    'lbl_site' => 'Site',
+    'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
     'lbl_step' => 'Passo',
     'lbl_step_skip' => 'Pular etapa',
@@ -436,6 +464,8 @@ return[
     'lbl_you_are_in' => 'Você está em',
     'lbl_warning' => 'Aviso',
     'lbl_warning_' => 'Avisos',
+    'lbl_website' => 'Website',
+    'lbl_website_' => 'Websites',
 
     // Vertentes
     'lbl_wanna_travel' => 'Quero Viajar',
@@ -453,6 +483,7 @@ return[
     'fb_info_' => 'Informações do Facebook',
 
     // Datas
+    'date_time_and_date' => 'Datas e Horários'
     'date_dd_mm_yyyy' => 'DD-MM-AAAA',
     'date_mm_dd_yyyy' => 'MM-DD-AAAA',
     'date_yyyy_mm_dd' => 'YYYY-MM-DD',
@@ -514,6 +545,10 @@ return[
   /* View: Feed */
 
   /* View: Ong */
+  'ong_pretty_URL_ph' => 'vivala.com.br/ong/Nome-da-ONG',
+  'ong_fb_URL_ph' => 'facebook.com/Nome-da-ONG',
+  'ong_instagram_URL_ph' => 'instagram.com/Nome-da-ONG',
+  'ong_register_and_help_improve' => 'Cadastre sua ONG e ajude a transformar o país.',
 
   /* View: Páginas */
 
