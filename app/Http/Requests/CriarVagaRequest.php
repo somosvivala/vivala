@@ -25,14 +25,13 @@ class CriarVagaRequest extends Request {
 	public function rules()
 	{
 		return [
-			"habilidades" 			=> "string|required|min:2",
-			"sobre_trabalho" 		=> "string|required|min:2",
+			'habilidades' 			=> "string|required|min:2",
+			'sobre_trabalho' 		=> "string|required|min:2",
 			'logradouro'			=> "string|required|min:2",
 			'cep'					=> "integer|required|min:2",
 			'bairro'				=> "string|required|min:2",
-			'complemento'			=> "string|required|min:2",
-			'estado'				=> "string|required|min:2",
-			'cidade'				=> "string|required|min:2",
+			'complemento'			=> "string|min:2",
+			'cidade_id'				=> "integer|min:2",
 			'quantidade_vagas'		=> "integer|required|min:1"
 		];
 	}

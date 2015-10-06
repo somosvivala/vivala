@@ -42,7 +42,7 @@ class CriarOngRequest extends Request {
 			'bairro'				=> "string|required|min:2",
 			'complemento'			=> "string|required|min:2",
 			'estado'				=> "string|required|min:2",
-			'cidade_id'				=> "integer|required|min:2"			
+			'cidade_id'				=> "integer|min:2"			
 		];
 	}
 

@@ -32,11 +32,18 @@ class EditarOngRequest extends Request {
 		    return ($prettyUrl ? $isMyUrl : true);
 		});
 
+
 		return [
-			"nome" => "required|min:4",
-			"apelido" => "required|min:2",
-			"url"  => "required|alpha_dash|min:2|pretty_url"
-		];
+			'nome' 					=> "string|required|min:2",
+			'apelido' 				=> "string|required|min:2",
+			'descricao' 			=> "string|required|min:2",
+			'horario_funcionamento' => "string|required|min:2",
+			'url'  					=> "required|alpha_dash|min:2|pretty_url",
+			'logradouro'			=> "string|required|min:2",
+			'cep'					=> "integer|required|min:2",
+			'bairro'				=> "string|required|min:2",
+			'complemento'			=> "string|required|min:2",
+			'estado'				=> "string|required|min:2",
 	}
 
 }
