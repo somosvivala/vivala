@@ -5,9 +5,9 @@
 	<!-- Adiciona um formulario pra upload de foto-->
         <div class="text-center jc_coords row col-sm-12">
 
-  	{!! Form::model($causa, ['method' => 'PATCH', 'action' => ['CausaController@update', $causa->id] ]) !!}
+  	{!! Form::model($vaga, ['method' => 'PATCH', 'action' => ['VagaController@update', $vaga->id] ]) !!}
 
-		@include('causa.form', ['btnSubmit' => trans('global.lbl_cause_update')]);
+		@include('vaga.form', ['btnSubmit' => trans('global.lbl_cause_update')]);
 
     {!! Form::close() !!}
 

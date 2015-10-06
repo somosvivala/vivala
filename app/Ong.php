@@ -449,11 +449,11 @@ class Ong extends Model {
     }
 
     /**
-     * Uma Ong pode ter varias Causas
+     * Uma Ong pode ter varias Vagas
      */
-    public function causas()
+    public function vagas()
     {
-        return $this->morphMany('App\Causa', 'owner', 'owner_type', 'owner_id');
+        return $this->morphMany('App\Vaga', 'owner', 'owner_type', 'owner_id');
     }
 
     /**
@@ -487,7 +487,7 @@ class Ong extends Model {
     /**
      * Estabelece a relaçao entre a entidade Ong e a entidade Perfil,
      * uma Ong tem muitos voluntarios do tipo Perfil, que podem
-     * se voluntariar em varias Causas
+     * se voluntariar em varias Vagas
      */
     public function voluntarios() 
     {

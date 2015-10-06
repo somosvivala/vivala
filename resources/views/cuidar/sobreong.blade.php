@@ -78,7 +78,7 @@
         {{ $PerfilVoluntario->apelido }}
     @endforeach
     
-    <a class='button' href="{{url('causas/create')}}">Criar Causa</a>
+    <a class='button' href="{{url('vagas/create')}}">Criar Vaga</a>
 </div>
 @endif
 

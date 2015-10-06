@@ -607,20 +607,20 @@ class Perfil extends Model {
     }
 
     /**
-     * Estabelece a relaçao entre a entidade Perfil e a entidade Causa,
-     * um Perfil pode ser responsavel por muitas causas (projetos)
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Vaga,
+     * um Perfil pode ser responsavel por muitas vagas (projetos)
      */
-    public function causasResponsavel() {
-        return $this->hasMany('App\Causa', 'responsavel_id');
+    public function vagasResponsavel() {
+        return $this->hasMany('App\Vaga', 'responsavel_id');
     }
 
     /**
-     * Estabelece a relaçao entre a entidade Perfil e a entidade Causa,
-     * um Perfil pode ser voluntario em muitas Causas, que pode ter muitos
+     * Estabelece a relaçao entre a entidade Perfil e a entidade Vaga,
+     * um Perfil pode ser voluntario em muitas Vagas, que pode ter muitos
      * perfils como voluntario.
      */
-    public function causasVoluntario() {
-        return $this->belongsToMany('App\Causa');
+    public function vagasVoluntario() {
+        return $this->belongsToMany('App\Vaga');
     }
 
     /**

@@ -4,7 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use Auth;
 
 
-class Causa extends Model {
+class Vaga extends Model {
 
 	//mass assigned fields
 	protected $fillable = [
@@ -21,18 +21,18 @@ class Causa extends Model {
 		];	
 
 	/**
-	 * Estabelece a relaçao entre a entidade Causa e a entidade Perfil,
-	 * uma Causa sempre tem um responsavel Perfil.
+	 * Estabelece a relaçao entre a entidade Vaga e a entidade Perfil,
+	 * uma Vaga sempre tem um responsavel Perfil.
 	 */
 	public function responsavel() {
 		return $this->belongsTo('App\Perfil');
 	}
 
 	/**
-	 * Estabelece a relaçao entre a entidade Causa e a entidade Perfil,
-	 * uma Causa tem muitos voluntarios do tipo Perfil, que podem
-	 * se voluntariar em varias Causas
-	 */
+	 * Estabelece a relaçao entre a entidade Vaga e a entidade Perfil,
+	 * uma Vaga tem muitos voluntarios do tipo Perfil, que podem
+         * se voluntariar em varias Vagas
+         */
 	public function voluntarios() {
 		return $this->belongsToMany('App\Perfil');
 	}
@@ -46,9 +46,8 @@ class Causa extends Model {
 	}
 
 	/**
-	 * Acessor para o atributo numeroVoluntarios de Causa
-	 * @return Integer    numero de voluntarios dessa Causa
-	 */
+         * Acessor para o atributo numeroVoluntarios de Vaga
+         * @return Integer    numero de voluntarios dessa Vaga */
 	public function getNumeroVoluntariosAttribute() 
 	{
 	    return count($this->voluntarios);
@@ -60,7 +59,7 @@ class Causa extends Model {
 		$entidadeAtiva = Auth::user()->entidadeAtiva;
 
 		return $entidadeAtiva->tipo != 'ong' 
-			? $entidadeAtiva->causas->find($this->id) != null 
+			? $entidadeAtiva->vagas->find($this->id) != null 
 			: false;
 	}
 }

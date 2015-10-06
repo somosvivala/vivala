@@ -2,22 +2,22 @@
 
 @section('content')
 
-	@if($causa->podeEditar)
-	<a href="/causas/{{$causa->id}}/edit">
+	@if($vaga->podeEditar)
+        <a href="/vagas/{{$vaga->id}}/edit">
 		<small>{{ trans('global.lbl_edit') }}</small>
 	</a>
 	@endif
 	<h1 class="title">{{ trans('global.lbl_cause') }}</h1>
 	<ul>
-		<li>{{ trans('global.lbl_cause_job_habilities') }}:     {{$causa->habilidades}}</li>
-		<li>{{ trans('global.lbl_cause_description') }}:     {{$causa->sobre_trabalho}}</li>
-		<li>{{ trans('global.lbl_cause_job_localization') }}:     {{$causa->local}}</li>
-		<li>{{ trans('global.lbl_ong') }}:     {{$causa->owner}}</li>
-		<li>{{ trans('global.lbl_cause_job_supervisor') }}:     {{$causa->responsavel}}</li>
+		<li>{{ trans('global.lbl_cause_job_habilities') }}:     {{$vaga->habilidades}}</li>
+		<li>{{ trans('global.lbl_cause_description') }}:     {{$vaga->sobre_trabalho}}</li>
+		<li>{{ trans('global.lbl_cause_job_localization') }}:     {{$vaga->local}}</li>
+		<li>{{ trans('global.lbl_ong') }}:     {{$vaga->owner}}</li>
+		<li>{{ trans('global.lbl_cause_job_supervisor') }}:     {{$vaga->responsavel}}</li>
 	</ul>
 
 
-	<a href="{{action('CausaController@getVoluntariarse')}}/{{$causa->id}}">{{ trans('global.lbl_volunteer_be') }}</a>
+	<a href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">{{ trans('global.lbl_volunteer_be') }}</a>
 
 	<hr>
 	<h3>{{ trans('global.volunteer_') }}</h3>

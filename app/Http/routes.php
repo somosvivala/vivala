@@ -22,7 +22,7 @@ Route::resource('empresa','EmpresaController');
 Route::resource('perfil','PerfilController');
 Route::resource('post','PostController');
 Route::resource('albums','AlbumController');
-Route::resource('causas','CausaController');
+Route::resource('vagas','VagaController');
 
 // Mostra dados do post por ajax
 Route::get('postajax/{id}/{secao}', 'PostController@show');
@@ -30,7 +30,7 @@ Route::controller('post','PostController');
 Route::controller('albums','AlbumController');
 Route::controller('notificacoes','NotificacaoController');
 Route::controller('paginas','PaginaController');
-Route::controller('causas','CausaController');
+Route::controller('vagas','VagaController');
 
 
 // Rotas dos três pilares do sistema

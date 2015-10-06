@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCausasTable extends Migration {
+class CreateVagasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateCausasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('causas', function(Blueprint $table)
+		Schema::create('vagas', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('habilidades')->nullable();
@@ -25,10 +25,14 @@ class CreateCausasTable extends Migration {
 			$table->string('bairro')->nullable();
 			$table->string('complemento')->nullable();
 
-			//TODO: substituir colunas por relacao com os models Cidade e Estado
-			$table->string('estado')->nullable();
-			$table->string('cidade')->nullable();
-			$table->integer('quantidade_vagas')->nullable();
+                        //FK para cidades 
+			$table->integer('cidade_id')->unsigned()->nullable();
+			$table->foreign('cidade_id')
+				->references('id')
+				->on('cidades')
+				->onDelete('cascade');
+                        
+                        $table->integer('quantidade_vagas')->nullable();
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong
@@ -42,7 +46,7 @@ class CreateCausasTable extends Migration {
 				->on('perfils');
 		});
 
-		Schema::create('causa_perfil', function(Blueprint $table)
+		Schema::create('perfil_vaga', function(Blueprint $table)
 		{
 			//uma causa tem varios perfils voluntarios
 			$table->integer('perfil_id')->unsigned();
@@ -50,10 +54,10 @@ class CreateCausasTable extends Migration {
 				->references('id')
 				->on('perfils');
 
-			$table->integer('causa_id')->unsigned();
-			$table->foreign('causa_id')
+			$table->integer('vaga_id')->unsigned();
+			$table->foreign('vaga_id')
 				->references('id')
-				->on('causas');
+				->on('vagas');
 		});
 
 	}
@@ -65,8 +69,8 @@ class CreateCausasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('causa_perfil');
-		Schema::drop('causas');
+		Schema::drop('perfil_vaga');
+		Schema::drop('vagas');
 	}
 
 }

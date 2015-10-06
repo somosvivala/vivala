@@ -4,7 +4,7 @@ use App\Http\Requests\Request;
 use Auth;
 use Route;
 
-class CriarCausaRequest extends Request {
+class CriarVagaRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CriarCausaRequest extends Request {
 	 */
 	public function authorize()
 	{
-		//Auth::user()->entidadeAtiva->podeEditar; @TODO criar verificacao para editar a causa
+		//Auth::user()->entidadeAtiva->podeEditar; @TODO criar verificacao para editar a vaga
 		return true;
 	}
 

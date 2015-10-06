@@ -4,7 +4,7 @@ use App\Http\Requests\Request;
 use Auth;
 use Route;
 
-class EditarCausaRequest extends Request {
+class EditarVagaRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class EditarCausaRequest extends Request {
 	 */
 	public function authorize()
 	{
-		//Auth::user()->entidadeAtiva->podeEditar; @TODO criar verificacao para editar a causa
+		//Auth::user()->entidadeAtiva->podeEditar; @TODO criar verificacao para editar a vaga
 		return true;
 	}
 
@@ -31,8 +31,7 @@ class EditarCausaRequest extends Request {
 			'cep'					=> "integer|required|min:2",
 			'bairro'				=> "string|required|min:2",
 			'complemento'			=> "string|required|min:2",
-			'estado'				=> "string|required|min:2",
-			'cidade'				=> "string|required|min:2",
+			'cidade_id'				=> "integer|required|min:1",
 			'quantidade_vagas'		=> "integer|required|min:1"
 		];
 	}
