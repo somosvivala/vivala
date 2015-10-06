@@ -93,19 +93,32 @@
                         <ul>
                             <li>
                                 <a href="{{ url('paginas/criarpagina') }}">
-                                    <i class="fa fa-plus"></i> {{ trans('global.lbl_page_create') }}
+                                    <i class="fa fa-plus"></i>
+                                    <span> {{ trans('global.lbl_page_create') }} </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ url('paginas/gerenciar') }}">
-                                    <i class="fa fa-gear"></i> {{ trans('global.lbl_page_manage') }}
+                                    <i class="fa fa-star"></i> 
+                                    <span>{{ trans('global.lbl_page_manage') }}</span>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="{{ url('perfil') }}">{{ trans('global.lbl_profile') }}</a></li>
-                    <li><a href="{{ url('config') }}">{{ trans('global.lbl_setting_') }}</a></li>
-                    <li><a href="{{ url('/auth/logout') }}">{{ trans('global.lbl_logout') }}</a></li>
+                    <li>
+                        <a href="{{ url('perfil') }}">
+                            <i class="fa fa-user"></i>
+                            <span>{{ trans('global.lbl_profile') }}</span>
+                        </a>
+                    </li>
+                    <li><a href="{{ url('config') }}">
+                            <i class="fa fa-cogs"></i>
+                            <span>{{ trans('global.lbl_setting_') }}</span>
+                    </a></li>
+                    <li><a href="{{ url('/auth/logout') }}">
+                            <i class="fa fa-power-off"></i>
+                            <span>{{ trans('global.lbl_logout') }}</span>
+                    </a></li>
                 </ul>
             </a>
         </li>

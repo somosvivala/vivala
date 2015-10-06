@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origem-voo" name="origem-voo" class="autocomplete completing" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origem-voo" name="origem-voo" class="autocomplete completing form-control" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
                         <input id="origem-voo-id" style="display:none" name="originId" class="required" value="" type="hidden">
                         <div id="lista-origem" class="lista-autocomplete">     
                             <div class="flight-list"> 
@@ -32,7 +32,7 @@
                 <br>
                 <div class="row">
                     <div class="col-sm-12">
-                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-voo" name="destination" class="city-input required autocomplete valid" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
+                        <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-voo" name="destination" class="city-input required autocomplete valid form-control" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
                         <input id="destino-voo-id" style="display:none" name="destinationId" class="required" value="" type="hidden">
                         <div id="lista-destino" class="lista-autocomplete">     
                             <div class="flight-list"> 
@@ -42,16 +42,13 @@
                 </div>
                 <br>
 
-                {{-- Esse campo é preenchido por js? --}}
-                <input id="flightsMinDays" class="ignore" value="0" type="hidden">
-
                 <div class="row">
                     <div class="col-sm-6">
-                        <input placeholder="Quando vai? (dd/mm/aaaa)" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataPartidaVoos" name="fromDate" type="text">
+                        <input placeholder="Quando vai? (dd/mm/aaaa)" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataPartidaVoos" name="fromDate" class="form-control" type="text">
                     </div>
 
                     <div class="col-sm-6">
-                        <input placeholder="Quando volta? (dd/mm/aaaa)"  data-provide="datepicker" data-date-format="dd/mm/yyyy"  class="input-date required hasDatepicker" id="dataRetornoVoos" name="toDate" type="text">
+                        <input placeholder="Quando volta? (dd/mm/aaaa)"  data-provide="datepicker" data-date-format="dd/mm/yyyy"  class="input-date required hasDatepicker form-control" id="dataRetornoVoos" name="toDate" type="text">
                     </div>
                 </div>
 
@@ -60,7 +57,7 @@
             <div class="col-sm-6">
                 <div class="row">
                     <div class="col-sm-6">
-                        <select class="selectNum valid" id="qtdAdultosVoos" name="adultsSelect">
+                        <select class="form-control valid" id="qtdAdultosVoos" name="adultsSelect">
                             <option value="" selected="selected">Adultos</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -73,7 +70,7 @@
                         </select>
                     </div>
                     <div class="col-sm-6">
-                        <select class="mostraCriancasVoos" id="qtdCriancasVoos" name="childrenSelect">
+                        <select class="form-control mostraCriancasVoos" id="qtdCriancasVoos" name="childrenSelect">
                             <option value="">Crianças</option>
                             <option value="0">0</option>
                             <option value="1">1</option>
@@ -91,7 +88,7 @@
                     <div class="col-sm-8 children-container">
                         <label id="crianca-voos-mensagem" style="display: none;">Idade ao finalizar a viagem</label>
                         @for ($i = 1; $i < 9; $i++)
-                            <select id="crianca-voos-{{ $i }}" name="crianca-voos-{{ $i }}" data-child-id="{{ $i }}" onchange="minorSelected(1,false)" class="col-sm-12 required idade-criancas">
+                            <select id="crianca-voos-{{ $i }}" name="crianca-voos-{{ $i }}" data-child-id="{{ $i }}" onchange="minorSelected(1,false)" class=" form-control col-sm-12 required idade-criancas">
                                     <option value="">idade da criança {{ $i }}</option>
                                     <option data-tarifa="Tarifa bebê" value="b">0 a 24 meses (nos braços)</option>
                                     <option data-tarifa="Tarifa de crianças" value="j">0 a 24 meses (no assento) </option>

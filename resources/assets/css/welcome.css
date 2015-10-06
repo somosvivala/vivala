@@ -528,18 +528,32 @@ ul.filtro a {
   top: 50%;
   right: 10%;
 }
-div.welcome-content ::-webkit-input-placeholder {
+div.welcome-content form input[type="email"].form-control,
+div.welcome-content form input[type="password"].form-control,
+div.welcome-content form input[type="text"].form-control {
+  opacity: 1;
+  border: 0px solid transparent;
+}
+div.welcome-content form input[type="email"].form-control::-webkit-input-placeholder,
+div.welcome-content form input[type="password"].form-control::-webkit-input-placeholder,
+div.welcome-content form input[type="text"].form-control::-webkit-input-placeholder {
   color: white;
 }
-div.welcome-content :-moz-placeholder {
+div.welcome-content form input[type="email"].form-control:-moz-placeholder,
+div.welcome-content form input[type="password"].form-control:-moz-placeholder,
+div.welcome-content form input[type="text"].form-control:-moz-placeholder {
   /* Firefox 18- */
   color: white;
 }
-div.welcome-content ::-moz-placeholder {
+div.welcome-content form input[type="email"].form-control::-moz-placeholder,
+div.welcome-content form input[type="password"].form-control::-moz-placeholder,
+div.welcome-content form input[type="text"].form-control::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
 }
-div.welcome-content :-ms-input-placeholder {
+div.welcome-content form input[type="email"].form-control:-ms-input-placeholder,
+div.welcome-content form input[type="password"].form-control:-ms-input-placeholder,
+div.welcome-content form input[type="text"].form-control:-ms-input-placeholder {
   color: white;
 }
 div.welcome-content h3 {

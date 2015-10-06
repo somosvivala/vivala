@@ -10,7 +10,7 @@
 
 		<!-- Adiciona um text field para o form-->
 		<div class="form-group">
-			{!! Form::text("conteudo", null,['class' => 'form-control', 'title'=> trans('global.lbl_comment'), 'aria-label'=> trans('global.lbl_comment'), 'placeholder'=> trans('global.lbl_commentr1')]) !!}
+			{!! Form::text("conteudo", null,['class' => '', 'title'=> trans('global.lbl_comment'), 'aria-label'=> trans('global.lbl_comment'), 'placeholder'=> trans('global.lbl_commentr1')]) !!}
 		</div>
 
 		<!-- Adiciona submit button para o form -->

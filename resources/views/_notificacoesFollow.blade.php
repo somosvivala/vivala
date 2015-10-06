@@ -16,6 +16,7 @@
             <a href="{{ url($Notificacao->url) }}">
                 <strong class="font-bold-upper">{{ $Notificacao->titulo }}</strong>
                 <p>{{ $Notificacao->mensagem }}</p>
+                <small>{{ $Notificacao->data_postagem_diff }}</small>
             </a>
         </div>
     </li>

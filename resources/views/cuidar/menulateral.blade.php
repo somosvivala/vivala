@@ -1,10 +1,6 @@
 <h4 class="suave">
 	{{ trans('global.lbl_you_are_in')}}<br>{{ trans('global.lbl_wanna_volunteer') }}!
 </h4>
-<hr></hr>
-<h4 class="suave">
-	Conheça ONGs super legais!
-</h4>
 <nav class="menu-lateral">
 	<ul>
 		<li><a href="/cuidar"><i class="fa fa-home"></i>Página Inicial</a></li>
