@@ -213,7 +213,7 @@ var searchHotels = function(params) {
             params: defaultParams,
             url: url,
             method: 'GET',
-            process: false,
+            process: true,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -599,6 +599,7 @@ $(document).ready(function($) {
             lista = $('#lista-origem .flight-list'),
             container = $('#lista-origem');
 
+        container.show();
         //Insere icone de loading
         lista.html("<i class='fa-spin fa-spinner fa'></i>");
 
@@ -609,6 +610,7 @@ $(document).ready(function($) {
             autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista); 
         } else {
             lista.remove();
+            container.hide();
         }
     });
 
@@ -617,6 +619,7 @@ $(document).ready(function($) {
             lista = $('#lista-destino .flight-list'),
             container = $('#lista-destino');
 
+        container.show();
         //Insere icone de loading
         lista.html("<i class='fa-spin fa-spinner fa'></i>");
 
@@ -627,6 +630,7 @@ $(document).ready(function($) {
             autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#destino-voo', container, lista);
         } else {
             lista.remove();
+            container.hide();
         }
     });
 
@@ -636,6 +640,7 @@ $(document).ready(function($) {
             lista = $('#lista-destino-hotel .hotel-list'),
             container = $('#lista-destino-hotel');
 
+        container.show();
         //Insere icone de loading
         lista.html("<i class='fa-spin fa-spinner fa'></i>");
 
@@ -646,6 +651,7 @@ $(document).ready(function($) {
             autocompleteTimeout = setTimeout(autocompleteHotels, 500, value, '#destino-hotel', container, lista);
         } else {
             lista.remove();
+            container.hide();
         }
     });
 });

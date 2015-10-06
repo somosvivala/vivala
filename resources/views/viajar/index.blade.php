@@ -29,7 +29,7 @@
             </a>
         </li>
         <li class="col-sm-3">
-           <a href="#carros" aria-controls="carros" role="tab" data-toggle="tab">
+           <a href="#carros" class="desativado" aria-controls="carros" role="tab" data-toggle="tab">
                Carros
             </a>
         </li>
