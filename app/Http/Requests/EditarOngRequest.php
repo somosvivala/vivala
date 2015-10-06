@@ -35,7 +35,6 @@ class EditarOngRequest extends Request {
 
 		return [
 			'nome' 					=> "string|required|min:2",
-			'apelido' 				=> "string|required|min:2",
 			'descricao' 			=> "string|required|min:2",
 			'horario_funcionamento' => "string|required|min:2",
 			'url'  					=> "required|alpha_dash|min:2|pretty_url",

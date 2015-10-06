@@ -14,7 +14,8 @@ use Carbon\Carbon;
 use App\PrettyUrl;
 use Input;
 use App\Foto;
-
+use App\Cidade;
+use App\Estado;
 
 use App\CategoriaOng;
 
@@ -67,10 +68,12 @@ class OngController extends CuidarController {
 	 */
 	public function create()
 	{
-		$nome = Request::get('nome');
-    	$categoriaSelecionada = Request::get('categoriaOng');
-        $categoriasOngs = CategoriaOng::all();
-	    return view('ong.create', compact('categoriasOngs', 'nome', 'categoriaSelecionada') );
+	    $nome = Request::get('nome');
+    	    $categoriaSelecionada = Request::get('categoriaOng');
+            $categoriasOngs = CategoriaOng::all();
+            $cidades = Cidade::all();
+            $estados = Estado::all();
+            return view('ong.create', compact('categoriasOngs', 'nome', 'categoriaSelecionada', 'cidades', 'estados') );
 	}
 
 
@@ -163,9 +166,10 @@ class OngController extends CuidarController {
         $fotoCapa = $ong->getCapaUrl();
         $nome = $ong->nome;
         $categoriaSelecionada = $ong->categoria->id;
+        $categoriasOngs = CategoriaOng::all();
+        $cidades = Cidade::all();
+        $estados = Estado::all();
         
-    	$categoriasOngs = CategoriaOng::all();
-
         //Verificando se usuario logado é owner da ong atual
         //TODO: Model de permissoes.. 
         if ($ong->user->id != $user->id) {
@@ -178,7 +182,7 @@ class OngController extends CuidarController {
         Session::put('entidadeAtiva_tipo', 'ong');
 
         $ong->url = $ong->getUrl();
-        return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs'));
+        return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs', 'cidades', 'estados'));
 	}
 
 	/**
