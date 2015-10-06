@@ -17,10 +17,10 @@
 					{!! Form::text("cidade_atual", null, ['class' => 'form-control', 'placeholder' => trans("global.quiz_currentcity") ]) !!}
 				</div>
 				<div class="col-sm-4">
-					{!! Form::textarea("descricao_curta", null, ['title'=> trans("global.quiz_shortdesc"), 'aria-label'=> trans("global.quiz_shortdesc"), 'placeholder'=> trans("global.quiz_shortdesc_ph") ]) !!}
+					{!! Form::textarea("descricao_curta", null, ['title'=> trans("global.quiz_shortdesc"), 'aria-label'=> trans("global.quiz_shortdesc"), 'placeholder'=> trans("global.quiz_shortdesc_ph"), 'class'=> 'form-control']) !!}
 				</div>
 				<div class="col-sm-4">
-					{!! Form::textarea("descricao_longa", null, ['title'=> trans("global.quiz_longdesc"), 'aria-label'=> trans("global.quiz_longdesc"), 'placeholder'=> trans("global.quiz_longdesc_ph") ]) !!}
+					{!! Form::textarea("descricao_longa", null, ['title'=> trans("global.quiz_longdesc"), 'aria-label'=> trans("global.quiz_longdesc"), 'placeholder'=> trans("global.quiz_longdesc_ph"), 'class'=> 'form-control' ]) !!}
 				</div>
 			</div>
 				<div class="col-sm-12">

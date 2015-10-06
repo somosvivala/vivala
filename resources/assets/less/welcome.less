@@ -135,17 +135,24 @@
 	}
 }
 div.welcome-content {
-	::-webkit-input-placeholder {
-	   color: white;
-	}
-	:-moz-placeholder { /* Firefox 18- */
-	   color: white;
-	}
-	::-moz-placeholder {  /* Firefox 19+ */
-	   color: white;
-	}
-	:-ms-input-placeholder {
-	   color: white;
+        form input[type="email"].form-control,
+        form input[type="password"].form-control,
+        form input[type="text"].form-control
+        {
+            &::-webkit-input-placeholder {
+               color: white;
+            }
+            &:-moz-placeholder {  /* Firefox 18- */
+               color: white;
+            }
+            &::-moz-placeholder {  /* Firefox 19+ */
+               color: white;
+            }
+            &:-ms-input-placeholder {
+               color: white;
+            }
+            opacity: 1;
+            border: 0px solid transparent;
 	}
 
 	h3 {

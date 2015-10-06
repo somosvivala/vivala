@@ -24,6 +24,8 @@
 	@empty
 	    <p class="col-sm-12">{{ trans("post.nocomments") }}</p>
 	@endforelse
-	<a class="col-sm-12" href="/post/{{ $Post->id }}">{{ trans('global.lbl_post_see_complete') }}</a>
+        <div class="col-sm-12 text-center">
+            <a href="/post/{{ $Post->id }}">{{ trans('global.lbl_post_see_complete') }}</a>
+        </div>
 	@endif
 </div>
