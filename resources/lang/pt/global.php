@@ -504,6 +504,14 @@ return[
     'address_zipcode' => 'CEP',
     'address_additional' => 'Complemento',
 
+    // Social Networks
+    'social_network_facebook' => 'Facebook',
+    'social_network_github' => 'GitHub',
+    'social_network_gplus' => 'Google Plus',
+    'social_network_instagram' => 'Instagram',
+    'social_network_twitter' => 'Twitter',
+
+
   // View: Album
 
   // View: Auth
@@ -565,11 +573,21 @@ return[
     'ong_t_contact' => 'Contato',
     'ong_t_cover_photo' => 'Imagem de Capa',
     'ong_name' => 'Nome da ONG',
+    'ong_name_prettyurl' => 'Nome-da-ONG',
     'ong_pretty_URL' => 'URL amigável da ONG',
-    'ong_pretty_URL_ph' => 'vivala.com.br/ong/Nome-da-ONG',
-    'ong_fb_URL_ph' => 'facebook.com/Nome-da-ONG',
-    'ong_instagram_URL_ph' => 'instagram.com/Nome-da-ONG',
-    'ong_gplus_URL_ph' => 'plus.google.com/Nome-da-ONG',
+    'ong_vivala_URL_ph' => 'vivala.com.br/ong/',
+    'ong_address_zipcode' => 'CEP da ONG',
+    'ong_address_patio' => 'Logradouro da ONG',
+    'ong_address_additional' => 'Complemento do Endereço',
+    'ong_address_district' => 'Bairro da ONG',
+    'ong_address_state' => 'Estado onde fica a ONG',
+    'ong_address_city' => 'Cidade onde fica a ONG',
+    'ong_facebook_URL' => 'URL do Facebook',
+    'ong_facebook_URL_ph' => 'facebook.com/',
+    'ong_instagram_URL' => 'URL do Instagram',
+    'ong_instagram_URL_ph' => 'instagram.com/',
+    'ong_googleplus_URL' => 'URL do Google Plus',
+    'ong_googleplus_URL_ph' => 'plus.google.com/',
     'ong_contact_manager' => 'Selecionar Responsável',
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',

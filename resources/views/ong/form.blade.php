@@ -9,15 +9,22 @@
 	  </div>
 		<!-- PrettyURL -->
 	  <div class="form-group col-sm-12">
-	  	{!! Form::text("url", null, ['title' => trans('global.ong_pretty_URL'), 'placeholder' => trans('global.ong_pretty_URL_ph'), 'class' => 'form-control']) !!}
+			<div class="row">
+ 				<div class="col-sm-4 pretty-url-padd-r">
+					{!! Form::label("url_facebook", trans('global.ong_vivala_URL_ph'), ['class' => 'col-sm-12 prettyurl-input pretty-url-no-border-r']) !!}
+				</div>
+	  		<div class="col-sm-8 pretty-url-padd-l">
+					{!! Form::text("url", null, ['title' => trans('global.ong_pretty_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control']) !!}
+				</div>
+			</div>
 	  </div>
 		<!-- Sobre -->
 	  <div class="form-group col-sm-12">
-			{!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control' ]) !!}
+			{!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize' ]) !!}
 	  </div>
 		<!-- Horários de Funcionamento -->
 		<div class="form-group col-sm-12">
-			{!! Form::text("horario_funcionamento", null, ['title'=> ('global.date_time_and_date'), 'aria-label'=> trans('global.date_time_and_date'), 'placeholder'=> trans('global.date_time_and_date'), 'class'=> 'form-control' ]) !!}
+			{!! Form::text("horario_funcionamento", null, ['title'=> trans('global.date_time_and_date'), 'aria-label'=> trans('global.date_time_and_date'), 'placeholder'=> trans('global.date_time_and_date'), 'class'=> 'form-control' ]) !!}
 		</div>
 	</div>
 
@@ -26,27 +33,26 @@
 		<div class="col-sm-12">
 			<div class="row">
 				<div class="form-group col-sm-6">
-					{!! Form::text("cep", null, ['placeholder' => trans('global.address_zipcode'), 'class' => 'form-control']) !!}
+					{!! Form::text("cep", null, ['title' => trans('global.ong_address_zipcode'), 'placeholder' => trans('global.address_zipcode'), 'class' => 'form-control']) !!}
 				</div>
 		    <div class="form-group col-sm-6">
-	      	{!! Form::text("logradouro",  null , ['placeholder' => trans('global.address_street'), 'class' => 'form-control']) !!}
+	      	{!! Form::text("logradouro",  null , ['title' => trans('global.ong_address_patio'), 'placeholder' => trans('global.address_street'), 'class' => 'form-control']) !!}
 		    </div>
 			</div>
 			<div class="row">
 				<div class="form-group col-sm-6">
-					{!! Form::text("complemento", null, ['placeholder' => trans('global.address_additional'), 'class' => 'form-control']) !!}
+					{!! Form::text("complemento", null, ['title' => trans('global.ong_address_additional'), 'placeholder' => trans('global.address_additional'), 'class' => 'form-control']) !!}
 				</div>
 		    <div class="form-group col-sm-6">
-	        {!! Form::text("bairro",  null , ['placeholder' => trans('global.address_district'), 'class' => 'form-control']) !!}
+	        {!! Form::text("bairro",  null , ['title' => trans('global.ong_address_district'), 'placeholder' => trans('global.address_district'), 'class' => 'form-control']) !!}
 		    </div>
-
 			</div>
 			<div class="row">
 		    <div class="form-group col-sm-6">
-		            {!! Form::text("estado", null, ['placeholder' => trans('global.address_state'), 'class' => 'form-control']) !!}
+        	{!! Form::text("estado", null, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control']) !!}
 		    </div>
 		    <div class="form-group col-sm-6">
-		            {!! Form::text("cidade", null, ['placeholder' => trans('global.address_city'), 'class' => 'form-control']) !!}
+        	{!! Form::text("cidade", null, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control']) !!}
 		    </div>
 			</div>
 		</div>
@@ -76,31 +82,52 @@
 	<!-- Complemento - REDES SOCIAIS da ong -->
 	<div id="ong-redes-sociais" class="form-group row margin-t-2">
 		<h5 class="col-sm-12">{{ trans('global.ong_t_additional_social_networks') }}</h5>
-		<div class="form-group col-sm-12">
-	    {!! Form::text("url_facebook", null, ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.ong_fb_URL_ph')]) !!}
+		<div class="form-group ong-facebook col-sm-12">
+			<div class="row">
+ 				<div class="col-sm-4 pretty-url-padd-r">
+					{!! Form::label("url_facebook", trans('global.ong_facebook_URL_ph'), ['class' => 'col-sm-12 prettyurl-input pretty-url-no-border-r']) !!}
+				</div>
+	  		<div class="col-sm-8 pretty-url-padd-l">
+					{!! Form::text("url_facebook", null, ['title' => trans('global.ong_facebook_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control col-sm-12 pretty-url-no-border-l']) !!}
+				</div>
+			</div>
 		</div>
-	  <div class="form-group col-sm-12">
-	    {!! Form::text("url_gplus", null, ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.ong_gplus_URL_ph')]) !!}
-	  </div>
-    <div class="form-group col-sm-12">
-        {!! Form::text("url_instagram", null, ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.ong_instagram_URL_ph')]) !!}
-    </div>
-    <div class="form-group col-sm-12">
-        {!! Form::text("url_site",  null , ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.lbl_website')]) !!}
-    </div>
+	  <div class="form-group ong-gplus col-sm-12">
+			<div class="row">
+				<div class="col-sm-4 pretty-url-padd-r">
+					{!! Form::label("url_gplus", trans('global.ong_googleplus_URL_ph'), ['class' => 'col-sm-12 prettyurl-input pretty-url-no-border-r']) !!}
+				</div>
+				<div class="col-sm-8 pretty-url-padd-l">
+		    	{!! Form::text("url_gplus", null, ['title' => trans('global.ong_googleplus_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control col-sm-12 pretty-url-no-border-l']) !!}
+		  	</div>
+			</div>
+		</div>
+    <div class="form-group ong-instagram col-sm-12">
+			<div class="row">
+				<div class="col-sm-4 pretty-url-padd-r">
+					{!! Form::label("url_instagram", trans('global.ong_instagram_URL_ph'), ['class' => 'col-sm-12 prettyurl-input pretty-url-no-border-r']) !!}
+				</div>
+				<div class="col-sm-8 pretty-url-padd-l">
+					{!! Form::text("url_instagram", null, ['title' => trans('global.ong_instagram_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control col-sm-12 pretty-url-no-border-l',]) !!}
+	    	</div>
+			</div>
+		</div>
+    <div class="form-group ong-website col-sm-12">
+        {!! Form::text("url_site",  null , ['title'=> trans('global.lbl_website'), 'placeholder' => trans('global.lbl_website'), 'class' => 'form-control col-sm-12']) !!}
+		</div>
 	</div>
 
 	<!-- CONTATO da ong -->
 	<div id="ong_contato" class="form-group row margin-t-2">
 		<h5 class="col-sm-12">{{ trans('global.ong_t_contact') }}</h5>
 		<div class="form-group col-sm-12">
-				{!! Form::text("url_site",  null , ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.ong_contact_manager')]) !!}
+				{!! Form::text("ong_manager",  null , ['title' => trans('global.ong_contact_manager'), 'placeholder' => trans('global.ong_contact_manager'), 'class' => 'form-control col-sm-6']) !!}
 		</div>
 		<div class="form-group col-sm-12">
-				{!! Form::text("url_site",  null , ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.ong_contact_telephone')]) !!}
+				{!! Form::text("ong_telephone",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), 'class' => 'form-control col-sm-6']) !!}
 		</div>
 		<div class="form-group col-sm-12">
-				{!! Form::text("url_site",  null , ['class' => 'form-control col-sm-6', 'placeholder' => trans('global.ong_contact_email')]) !!}
+				{!! Form::text("ong_email",  null , ['title'=> trans('global.ong_contact_email'), 'placeholder' => trans('global.ong_contact_email'), 'class' => 'form-control col-sm-6']) !!}
 		</div>
 	</div>
 
