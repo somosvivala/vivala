@@ -44784,7 +44784,7 @@ class CidadesTableSeeder extends Seeder {
             ),
         ));
         
-        if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
+/*        if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
             $geoJson = json_decode(file_get_contents('http://www.geoservicos.ibge.gov.br/geoserver/wms?service=WFS&version=1.0.0&request=GetFeature&typeName=CCAR:BCIM_Cidade&outputFormat=JSON'));
             foreach ($geoJson->features as $cidade) {
                 $cidadeRow = Cidade::where('nome', $cidade->properties->nome)->first();
@@ -44793,6 +44793,7 @@ class CidadesTableSeeder extends Seeder {
                     $cidadeRow->save();
                 }
             }
-        }
+}
+ */
     }
 }

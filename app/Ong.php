@@ -18,8 +18,7 @@ class Ong extends Model {
 	'cep',
 	'bairro',
 	'complemento',
-	'estado',
-        'cidade',
+        'cidade_id',
         'url_facebook',
         'url_gplus',
        	'url_instagram',
@@ -514,5 +513,27 @@ class Ong extends Model {
         return $this->voluntarios->take($qnt);
     }
 
+    /**
+     * Estabelece a relaçao entre a entidade Ong e a entidade Cidade,
+     * uma Ong pertence a uma Cidade
+     */
+    public function cidade() 
+    {
+        return $this->belongsTo('App\Cidade');        
+    }
+
+
+    /**
+     * Acessor para o atributo Estado de Ong
+     * @return Estado   
+     */
+    public function getEstadoAttribute()
+    {
+        return ($this->cidade ? $this->cidade->estado : null);
+    }
+
+
+
 
 }
+

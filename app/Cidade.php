@@ -13,4 +13,17 @@ class Cidade extends Model {
 	public function estado() {
 		return $this->belongsTo('App\Estado');
 	}
+
+        
+        /**
+         * Cria uma relaçao entre a cidade e as Ongs, permitindo filtrar 
+         * geograficamente
+         */
+        public function ongs()
+        {
+            return $this->hasMany('App\Ong');
+        }
+
+
+
 }

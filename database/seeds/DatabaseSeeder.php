@@ -213,7 +213,8 @@ class OngSeeder extends Seeder {
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Casa do Zord',
             'responsavel_id'        => '2',
-            'categoria_ong_id'      => '2'
+            'categoria_ong_id'      => '2'            
+
         ]);
 
         Ong::create([
@@ -223,7 +224,8 @@ class OngSeeder extends Seeder {
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Sede do Formiguinha',
             'responsavel_id'        => '8',
-            'categoria_ong_id'      => '3'
+            'categoria_ong_id'      => '3'            
+        
         ]);
     }
 }
