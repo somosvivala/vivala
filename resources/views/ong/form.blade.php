@@ -49,10 +49,11 @@
 			</div>
 			<div class="row">
 		    <div class="form-group col-sm-6">
-        	{!! Form::text("estado", null, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control']) !!}
+        	{!! Form::select("estado", $estados, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control']) !!}
 		    </div>
 		    <div class="form-group col-sm-6">
-        	{!! Form::text("cidade", null, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control']) !!}
+        	{!! Form::select("cidade_id", $cidades, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control']) !!}
+
 		    </div>
 			</div>
 		</div>

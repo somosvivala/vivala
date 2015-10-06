@@ -9,7 +9,6 @@ class Ong extends Model {
     
 	protected $fillable = [
         'nome',
-        'apelido',
         'horario_funcionamento',
         'user_id',
         'responsavel_id',
@@ -533,6 +532,14 @@ class Ong extends Model {
     }
 
 
+    /**
+     * Acessor para a propriedade Apelido de Ong
+     * @return String
+     */
+    public function getApelidoAttribute()
+    {
+        return $this->nome;    
+    }
 
 
 }

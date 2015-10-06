@@ -16,7 +16,6 @@ class CreateOngsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('nome');
-			$table->string('apelido')->nullable();
 			$table->string('descricao')->nullable();
 			$table->string('horario_funcionamento')->nullable();
 			$table->timestamps();

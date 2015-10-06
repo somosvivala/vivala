@@ -71,8 +71,26 @@ class OngController extends CuidarController {
 	    $nome = Request::get('nome');
     	    $categoriaSelecionada = Request::get('categoriaOng');
             $categoriasOngs = CategoriaOng::all();
-            $cidades = Cidade::all();
+            
+            //@TODO: CARREGAR OPCOES DO SELECT DE CIDADES POR AJAX A PARTIR DO SELECT DE ESTADOS 
+            //Ordenando array de cidades para ficar cidadeID => cidadeNome 
+            $cidades = Cidade::all()->keyBy('id');
+            $cidadesArray = array();
+            foreach ($cidades as $key => $cidade)
+            {
+                $cidadesArray[$key] = $cidade->nome;
+            }
+            $cidades = $cidadesArray;
+
+            //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
+            $estadosArray = array();
+            foreach ($estados as $key => $estado)
+            {
+                $estadosArray[$key] = $estado->nome;
+            }
+            $estados = $estadosArray;
+            
             return view('ong.create', compact('categoriasOngs', 'nome', 'categoriaSelecionada', 'cidades', 'estados') );
 	}
 
@@ -85,7 +103,6 @@ class OngController extends CuidarController {
 	 */
 	public function store(CriarOngRequest $request)
 	{
-
 		$novaOng = Auth::user()->ongs()->create($request->all());
                 $novaOng->responsavel()->associate(Auth::user()->perfil)->push();
 		$novaPrettyUrl = new PrettyUrl();
