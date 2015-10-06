@@ -7,7 +7,7 @@
 @if(isset($categoriasOngs))
 <div class="form-group"> 
     {!! Form::label("categoriaOng", "Categoria:") !!}
-    <select name="categoriaOng" class="">
+    <select name="categoria_ong_id" class="">
         <option value="null">Escolha uma categoria</option>
     @forelse($categoriasOngs as $Categoria)
         @if ($categoriaSelecionada == $Categoria->id)
