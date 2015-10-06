@@ -5,7 +5,6 @@
 	<div class="col-md-12">
 	<div class="panel panel-default">
 
-<<<<<<< HEAD
 		<div class="panel-heading"><h4>{{ trans('global.lbl_acess_data') }}</h4></div>
 		<div class="panel-body">
 			<!-- Adiciona um formulario pra upload de foto-->
@@ -72,13 +71,10 @@
 			</div>
 
 			<!-- Adiciona submit button para o form de Edicao -->
-<<<<<<< HEAD
 			<div class="form-group">
 				{!! Form::submit( trans('global.lbl_submit'), ['class' => 'form-control btn btn-acao']) !!}
-=======
 			<div class="form-group text-right">
 				{!! Form::submit("Atualizar Perfil", ['class' => 'btn btn-primary']) !!}
->>>>>>> 945bfa51f8cf49407e41a5c20bc8bf800f9bf51a
 			</div>
 
 			{!! Form::close() !!}
