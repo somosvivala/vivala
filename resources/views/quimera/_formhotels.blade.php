@@ -1,5 +1,6 @@
-<form novalidate="novalidate" name="searchHotel" id="buscaHoteis">
+<form novalidate="novalidate" name="searchHotel" id="busca-hoteis">
 
+    <input type="hidden" name="_token" value="{{\Session::token() }}">
     <div class="col-sm-6">
         <div class="row">
             <div class="col-sm-12">
