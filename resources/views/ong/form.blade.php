@@ -64,7 +64,7 @@
 		<h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
 		<div class="row text-center">
 			<div class="col-sm-12">
-				{!! Form::image(../img/categorias-onu/onu-cat-1-fome-e-miseria.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-1-fome-e-miseria.png', 'alt', ['class' => 'col-sm-3']) !!}
 				{!! Form::image('../img/categorias-onu/onu-cat-2-educacao-basica-e-qualidade.png', 'alt', ['class' => 'col-sm-3']) !!}
 				{!! Form::image('../img/categorias-onu/onu-cat-3-igualdade-entre-sexos-e-valorizacao-mulher.png', 'alt', ['class' => 'col-sm-3']) !!}
 				{!! Form::image('../img/categorias-onu/onu-cat-4-reduzir-mortalidade-infantil.png', 'alt', ['class' => 'col-sm-3']) !!}
