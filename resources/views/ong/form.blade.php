@@ -62,6 +62,22 @@
 	@if(isset($categoriasOngs))
 	<div id="ong-categorias" class="form-group row margin-t-2">
 		<h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
+		<div class="row text-center">
+			<div class="col-sm-12">
+				{!! Form::image('../img/categorias-onu/onu-cat-1-fome-e-miseria.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-2-educacao-basica-e-qualidade.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-3-igualdade-entre-sexos-e-valorizacao-mulher.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-4-reduzir-mortalidade-infantil.png', 'alt', ['class' => 'col-sm-3']) !!}
+			</div>
+		</div>
+		<div class="row text-center">
+			<div class="col-sm-12">
+				{!! Form::image('../img/categorias-onu/onu-cat-5-melhorar-saude-gestantes.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-6-combater-malaria-aids-e-outras-doencas.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-7-qualidade-vida-e-respeito-meio-ambiente.png', 'alt', ['class' => 'col-sm-3']) !!}
+				{!! Form::image('../img/categorias-onu/onu-cat-8-todo-mundo-trabalhando-pro-desenvolvimento.png', 'alt', ['class' => 'col-sm-3']) !!}
+			</div>
+		</div>
 		<div class="col-sm-12">
 	    <select name="categoria_ong_id">
 	        <option value="null">Escolha uma categoria</option>
