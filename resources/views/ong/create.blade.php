@@ -6,7 +6,7 @@
 
             <div class="panel-heading">
 							<h1 class="text-center">{{ trans('global.lbl_ong_register') }}!</h1>
-							<h5 class="text-center">{{ trans('global.ong_register_and_help_improve') }}!</h5>
+							<h5 class="text-center">{{ trans('global.ong_register_and_help_improve') }}</h5>
 						</div>
 
             <div class="panel-body">

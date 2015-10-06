@@ -511,7 +511,6 @@ return[
     'social_network_instagram' => 'Instagram',
     'social_network_twitter' => 'Twitter',
 
-
   // View: Album
 
   // View: Auth
@@ -591,6 +590,16 @@ return[
     'ong_contact_manager' => 'Selecionar Responsável',
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',
+
+    // Categorias da ONU
+    'ong_onu_cat-1' => 'Erradicar a extrema pobreza e a fome',
+    'ong_onu_cat-2' => 'Atingir o ensino básico universal',
+    'ong_onu_cat-3' => 'Promover a igualdade entre os sexos e a autonomia das mulheres',
+    'ong_onu_cat-4' => 'Reduzir a mortalidade infantil',
+    'ong_onu_cat-5' => 'Melhorar a saúde materna',
+    'ong_onu_cat-6' => 'Combater o HIV/Aids, a malária e outras doenças',
+    'ong_onu_cat-7' => 'Garantir a sustentabilidade ambiental',
+    'ong_onu_cat-8' => 'Estabelecer uma Parceria Mundial para o Desenvolvimento',
 
   /* View: Páginas */
 
