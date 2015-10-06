@@ -5,8 +5,8 @@
             <div class="panel-heading"><h1>{{ trans('global.lbl_cause_create') }}</h1></div>
             <div class="panel-body">
 
-            {!! Form::open(['url' => 'causas']) !!}
-            	@include('causa.form', ['btnSubmit' => trans('global.lbl_create') ])
+            {!! Form::open(['url' => 'vagas']) !!}
+            	@include('vaga.form', ['btnSubmit' => trans('global.lbl_create') ])
             {!! Form::close() !!}
 
 						</div>

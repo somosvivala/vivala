@@ -25,5 +25,13 @@ class Cidade extends Model {
         }
 
 
-
+        /**
+         * Acessor para a propriedade NumeroOngs, que retorna a quantidade de 
+         * Ongs dessa cidade.
+         * @return Integer
+         */
+        public function getNumeroOngsAttribute()
+        {
+            return count($this->ongs);
+        }
 }
