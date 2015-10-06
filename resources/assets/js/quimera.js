@@ -204,6 +204,7 @@ var searchHotels = function(params) {
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
+    $('.resultados-busca-hospedagem').html("<i class='fa fa-spin fa-spinner'></i>")
     $.ajax({
         url: '/quimera',
         type: 'POST',
@@ -220,7 +221,9 @@ var searchHotels = function(params) {
         },
     })
     .done(function(data) {
-        $('.cria-post-container').html(data);
+        $('.resultados-busca-hospedagem').html(data);
+    }).fail(function(){
+        $('resultados-busca-hospedagem').html("Nenhum hotel foi encontrado");
     });
 };
 
@@ -479,9 +482,45 @@ $("form#buscaVoos").submit(function(e){
         }
     };
     console.log(opcoes);
-    console.log(origem);
-    console.log(destino);
     searchFlight(opcoes);
+
+});
+
+$("form#busca-hoteis").submit(function(e){
+    e.preventDefault();
+
+    var form = $(this),
+        destino = form.find("#destino-hotel-id").val(),
+        dataPartida = form.find("#data-partida-hotel").val(),
+        dataRetorno = form.find("#data-retorno-hotel").val();
+       /* qtdAdultos = form.find("#qtdAdultosVoos").val(),
+        qtdCriancas = form.find("#qtdCriancasVoos").val(),
+        qtdAdultosTotal = qtdAdultos;
+*/
+
+    // Formata a data
+    dataPartida = dataPartida.split('/').reverse().join('-');  
+    dataRetorno = dataRetorno.split('/').reverse().join('-');  
+    // Conta quantas tarifas de crianças jovens e adultos serão cobradas
+/*    for(var i=0;i<=qtdCriancas;i++) {
+        var tipoTarifa = form.find('.idade-criancas[data-child-id="'+i+'"]').val();
+        if(tipoTarifa == "b")
+          qtdBebesTotal++;
+        else if(tipoTarifa == "j")
+          qtdJovensTotal++;
+        else if (tipoTarifa == "a")
+          qtdAdultosTotal++;
+    }
+*/
+    var opcoes = {
+        destination:    destino,
+        checkin:        dataPartida,
+        checkout:       dataRetorno,
+        distribution:   '1'
+    };
+
+    console.log(opcoes);
+    searchHotels(opcoes);
 
 });
 
@@ -544,8 +583,6 @@ var bindAutoCompleteHotels = function() {
             value = $(this).find('span.autocomplete-text').text(),
             code  = $(this).attr('data-value');
 
-            console.log(input);
-            console.log(value);
         $(input).val(value);
         $(input+'-id').val(code);
 
