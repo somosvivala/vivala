@@ -15,7 +15,6 @@ class CreateEmpresasTable extends Migration {
 		Schema::create('empresas', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('nome');
-			$table->string('apelido')->nullable();
 			$table->timestamps();
 
 			//FK para categoria_empresa

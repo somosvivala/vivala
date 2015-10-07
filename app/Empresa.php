@@ -434,5 +434,13 @@ class Empresa extends Model {
     }
 
 
+    /**
+     * Acessor para a propriedade Apelido de Empresa 
+     * @return String
+     */
+    public function getApelidoAttribute()
+    {
+        return $this->nome;    
+    }
 
 }

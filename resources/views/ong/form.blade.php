@@ -5,7 +5,7 @@
 		<h5 class="form-group col-sm-12">{{ trans('global.ong_t_register_data') }}</h5>
 		<!-- Nome -->
 	  <div class="form-group col-sm-12">
-	    {!! Form::text("nome", null, ['title' => trans('global.ong_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control']) !!}
+	    {!! Form::text("nome", $nome, ['title' => trans('global.ong_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control']) !!}
 	  </div>
 		<!-- PrettyURL -->
 	  <div class="form-group col-sm-12">

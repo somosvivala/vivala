@@ -199,7 +199,6 @@ class OngSeeder extends Seeder {
         Ong::create([
             'user_id'               => '1',
             'nome'                  => 'evandrONG Ltda',
-            'apelido'               => 'evandrONG',
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Casa do evandro',
             'responsavel_id'        => '1',
@@ -209,7 +208,6 @@ class OngSeeder extends Seeder {
         Ong::create([
             'user_id'               => '2',
             'nome'                  => 'zordONG Ltda',
-            'apelido'               => 'zordONG',
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Casa do Zord',
             'responsavel_id'        => '2',
@@ -220,7 +218,6 @@ class OngSeeder extends Seeder {
         Ong::create([
             'user_id'               => '8',
             'nome'                  => 'Projeto Formiguinha',
-            'apelido'               => 'Formiguinha',
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Sede do Formiguinha',
             'responsavel_id'        => '8',
@@ -238,31 +235,26 @@ class EmpresaSeeder extends Seeder {
         Empresa::create([
             'user_id'     => '1',
             'nome'        => 'dodobusiness  Ltda',
-            'apelido'     => 'dodobusiness'
         ]);
 
         Empresa::create([
             'user_id'     => '2',
             'nome'        => 'zordenterprise  Ltda',
-            'apelido'     => 'zordenterprise'
         ]);
 
         Empresa::create([
             'user_id'     => '6',
             'nome'        => 'RedNoise',
-            'apelido'     => 'RedNoise'
         ]);
 
         Empresa::create([
             'user_id'     => '5',
             'nome'        => 'Turbina Loca',
-            'apelido'     => 'TL'
         ]);
 
         Empresa::create([
             'user_id'     => '5',
             'nome'        => 'Water Energy Ltda.',
-            'apelido'     => 'we'
         ]);
     }
 }
