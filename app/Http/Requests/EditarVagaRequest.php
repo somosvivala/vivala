@@ -28,11 +28,11 @@ class EditarVagaRequest extends Request {
 			'habilidades' 			=> "string|required|min:2",
 			'sobre_trabalho' 		=> "string|required|min:2",
 			'logradouro'			=> "string|required|min:2",
-			'cep'					=> "integer|required|min:2",
+			'cep'					=> "numeric|required|min:2",
 			'bairro'				=> "string|required|min:2",
 			'complemento'			=> "string|min:2",
-			'cidade_id'				=> "integer|min:2",
-			'quantidade_vagas'		=> "integer|required|min:1"
+			'cidade_id'				=> "numeric|min:2",
+			'quantidade_vagas'		=> "numeric|required|min:1"
 		];
 	}
 
