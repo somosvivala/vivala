@@ -54,6 +54,62 @@ ul.lista-ongs {
 .pretty-url-padd-l{
   padding-left: 0;
 }
+
+// Formulario de criação e edição de ongs/causas
+.form-ong {
+    input,
+    input[type="text"],
+    textarea,
+    select {
+        border: 1px solid black;
+        border-radius: 0;
+    }
+    select {
+        font-family: @font-family-sans-serif-bold;
+        text-transform: uppercase;
+    }
+    h5 {
+        color: @cor-pele-zumbi;
+        padding:0 1em;
+        margin:1em ;
+        font-family: @font-family-sans-serif-bold;
+        border-left: 1px solid @cor-pele-zumbi;
+        text-transform: uppercase;
+    }
+    .label-url {
+        position: absolute;
+        top:0;
+        left:0;
+        border: 1px solid black;
+        border-right: 0px;
+    }
+    .label-url-gplus {
+        width: 12em;
+    }
+    .input-url-gplus {
+        padding-left: 10.5em;
+    }
+    .label-url-facebook {
+        width: 10em;
+    }
+    .input-url-facebook {
+        padding-left: 9em;
+    }
+    .label-url-insta {
+        width: 10.4em;
+    }
+    .input-url-insta {
+        padding-left: 9.4em;
+    }
+    .label-url-pretty {
+        width: 12.4em;
+    }
+    .input-url-pretty {
+        padding-left: 11.4em;
+    }
+}
+
+
 // Esconder input-image - usado na criação de ongs - CATEGORIAS DA ONU
 .esconde-input {
   position: absolute;
