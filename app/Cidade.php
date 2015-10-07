@@ -34,4 +34,28 @@ class Cidade extends Model {
         {
             return count($this->ongs);
         }
+
+
+        /**
+         * Cria uma relaçao entre a cidade e as Vagas, permitindo filtrar 
+         * geograficamente
+         */
+        public function vagas()
+        {
+            return $this->hasMany('App\Vaga');
+        }
+
+
+        /**
+         * Acessor para a propriedade NumeroVagas, que retorna a quantidade de 
+         * Vagas dessa cidade.
+         * @return Integer
+         */
+        public function getNumeroVagasAttribute()
+        {
+            return count($this->vagas);
+        }
+
+
+
 }

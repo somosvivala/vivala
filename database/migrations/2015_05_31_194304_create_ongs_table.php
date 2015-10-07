@@ -33,6 +33,9 @@ class CreateOngsTable extends Migration {
 			$table->string('url_instagram')->nullable();
 			$table->string('url_site')->nullable();
 
+			$table->string('email_contato')->nullable();
+			$table->string('telefone_contato')->nullable();
+                        
                         //FK para cidades 
 			$table->integer('cidade_id')->unsigned()->nullable();
 			$table->foreign('cidade_id')

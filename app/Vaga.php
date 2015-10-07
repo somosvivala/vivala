@@ -15,8 +15,7 @@ class Vaga extends Model {
                 'cep', 	
 		'bairro',
 		'complemento',
-		'estado',
-                'cidade',
+                'cidade_id',
                 'quantidade_vagas'
 		];	
 
@@ -61,5 +60,31 @@ class Vaga extends Model {
 		return $entidadeAtiva->tipo != 'ong' 
 			? $entidadeAtiva->vagas->find($this->id) != null 
 			: false;
-	}
+        }
+
+
+        
+    /**
+     * Estabelece a relaçao entre a entidade Vaga e a entidade Cidade,
+     * uma Vaga pertence a uma Cidade
+     */
+    public function cidade() 
+    {
+        return $this->belongsTo('App\Cidade');        
+    }
+
+
+    /**
+     * Acessor para o atributo Estado de Vaga
+     * @return Estado   
+     */
+    public function getEstadoAttribute()
+    {
+        return ($this->cidade ? $this->cidade->estado : null);
+    }
+
+
+
+
+
 }

@@ -42,6 +42,8 @@ class EditarOngRequest extends Request {
 			'cep'					=> "integer|required|min:2",
 			'bairro'				=> "string|required|min:2",
 			'complemento'			=> "string|required|min:2",
+			'email_contato'			=> "email",
+			'telefone_contato'			=> "integer|min:8",
 			'estado'				=> "string|required|min:2",
 	}
 

@@ -39,7 +39,9 @@ class CriarOngRequest extends Request {
 			'logradouro'			=> "string|required|min:2",
 			'cep'					=> "integer|required|min:2",
 			'bairro'				=> "string|required|min:2",
-			'complemento'			=> "string|required|min:2",
+			'complemento'			=> "string|min:2",
+			'email_contato'			=> "email",
+			'telefone_contato'			=> "string|min:8",
 			'cidade_id'				=> "integer|min:2"			
 		];
 	}

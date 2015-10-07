@@ -26,13 +26,16 @@ class VagaController extends CuidarController {
 	 */
 	public function create()
 	{
-		//Checando se posso criar vagas
-		$entidadeAtiva = Auth::user()->entidadeAtiva;
-		if ($entidadeAtiva->tipo != 'ong') {
-			App::abort(403, "Apenas ongs tem permissão para criar Vagas");
-		}
 
+            //Checando se posso criar vagas, (se tenho ongs)
+            if (count(Auth::user()->ongs) > 0)
+            {
 		return view('vaga.create');
+            
+            } else {
+                App::abort(403, "Voce não possui nenhuma Ong cadastrada para criar novas Vagas");
+            }
+
 	}
 
 	/**

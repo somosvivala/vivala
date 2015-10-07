@@ -181,10 +181,10 @@
 				{!! Form::text("ong_manager",  null , ['title' => trans('global.ong_contact_manager'), 'placeholder' => trans('global.ong_contact_manager'), 'class' => 'form-control col-sm-6']) !!}
 		</div>
 		<div class="form-group col-sm-12">
-				{!! Form::text("ong_telephone",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), 'class' => 'form-control col-sm-6']) !!}
+				{!! Form::text("telefone_contato",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), 'class' => 'form-control col-sm-6']) !!}
 		</div>
 		<div class="form-group col-sm-12">
-				{!! Form::text("ong_email",  null , ['title'=> trans('global.ong_contact_email'), 'placeholder' => trans('global.ong_contact_email'), 'class' => 'form-control col-sm-6']) !!}
+				{!! Form::text("email_contato",  null , ['title'=> trans('global.ong_contact_email'), 'placeholder' => trans('global.ong_contact_email'), 'class' => 'form-control col-sm-6']) !!}
 		</div>
 	</div>
 

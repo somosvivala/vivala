@@ -31,6 +31,7 @@ Route::controller('albums','AlbumController');
 Route::controller('notificacoes','NotificacaoController');
 Route::controller('paginas','PaginaController');
 Route::controller('vagas','VagaController');
+Route::controller('busca','SearchController');
 
 
 // Rotas dos três pilares do sistema

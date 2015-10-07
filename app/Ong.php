@@ -17,6 +17,8 @@ class Ong extends Model {
 	'cep',
 	'bairro',
 	'complemento',
+	'telefone_contato',
+	'email_contato',
         'cidade_id',
         'url_facebook',
         'url_gplus',
