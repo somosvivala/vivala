@@ -75,19 +75,18 @@ class OngController extends CuidarController {
             //@TODO: CARREGAR OPCOES DO SELECT DE CIDADES POR AJAX A PARTIR DO SELECT DE ESTADOS 
             //Ordenando array de cidades para ficar cidadeID => cidadeNome 
             $cidades = Cidade::all()->keyBy('id');
-            $cidadesArray = array();
-            foreach ($cidades as $key => $cidade)
+            foreach ($cidades as $cidade)
             {
-                $cidadesArray[$key] = $cidade->nome;
+                $cidadesArray[$cidade->id] = $cidade->nome;
             }
             $cidades = $cidadesArray;
 
             //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
-            $estadosArray = array();
-            foreach ($estados as $key => $estado)
+            $estadosArray = array(0 => 'Selecione um Estado');
+            foreach ($estados as $estado)
             {
-                $estadosArray[$key] = $estado->nome;
+                $estadosArray[$estado->id] = $estado->nome;
             }
             $estados = $estadosArray;
             

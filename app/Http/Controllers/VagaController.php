@@ -30,6 +30,7 @@ class VagaController extends CuidarController {
             //Checando se posso criar vagas, (se tenho ongs)
             if (count(Auth::user()->ongs) > 0)
             {
+                $ongs = Auth::user()->ongs;
 		return view('vaga.create');
             
             } else {

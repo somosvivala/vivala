@@ -46,6 +46,7 @@ elixir(function(mix) {
       '../../assets/js/welcome.js',
       '../../assets/js/quimera.js',
       '../../assets/js/viajar.js',
+      '../../assets/js/search.js',
       '../../assets/js/ongs.js'
 	], 'public/js/vendor.js');
 });
