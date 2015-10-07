@@ -29,7 +29,8 @@ class QuimeraRepository {
             case 'hotel':
                 return 'https://www.e-agencias.com.br/jano-hotels/api/search';
             case 'hotelDetail':
-                return 'https://www.e-agencias.com.br/jano-hotels/api/details/hotel';
+                return '';
+               // return 'https://www.e-agencias.com.br/jano-hotels/api/details/hotel';
             case 'hotelAvaiability':
                 return 'https://www.e-agencias.com.br/jano-hotels/api/details/availability';
         }
@@ -46,6 +47,8 @@ class QuimeraRepository {
                 return self::_processHotelsComplete($response);
             case 'hotel':
                 return self::_hotelToHTML($response);
+            case 'hotelDetail':
+                return self::_hotelDetail($response);
             case 'autocompleteCars':
                 return self::_processCarsComplete($response);
         }
@@ -130,6 +133,15 @@ class QuimeraRepository {
     }
 
     private static function _hotelToHTML($data)
+    {
+        return array(
+            'data'  => json_decode($data)->items,
+            'blade' => 'quimera._hotels'
+        );
+    }
+
+    // Exibe a página de um hotel
+    private static function _hotelDetail($data)
     {
         return array(
             'data'  => json_decode($data)->items,
