@@ -72,7 +72,17 @@ class SearchController extends Controller {
             }
         }
 
-        return $ongs;
+        $categorias = CategoriaOng::all();
+        $cidades = Ong::getCidadesComOngs();
+        
+        $cidadesArray = array(0 => 'Selecione uma Cidade');
+        foreach ($cidades as $cidade)
+        {
+            $cidadesArray[$cidade->id] = $cidade->nome;
+        }
+        $cidades = $cidadesArray;
+    
+        return view('cuidar.ongs', compact('ongs','categorias', 'cidades'));
     }
     
 

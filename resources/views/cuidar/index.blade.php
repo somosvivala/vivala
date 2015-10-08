@@ -10,6 +10,8 @@
         </a>
     </div>
 </div>
-<h4> Já sabe qual causa ajudar? </h4>
+    <h3 class="font-bold-upper text-center"> Já sabe qual causa ajudar? 
+        <small class="sub-titulo">Encontre ONG's e projetos de impacto em 3 passos.</small>
+    </h3>
 {{-- Incluir filtro com resultados de causas --}}
 @endsection
