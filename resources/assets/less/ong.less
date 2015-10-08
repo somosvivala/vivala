@@ -83,10 +83,11 @@ ul.lista-ongs {
         border: 1px solid black;
         border-right: 0px;
     }
-    input + label {
+    input[type="radio"] + label {
         padding: 1em;
+        background-color: white;
     }
-    input:checked + label {
+    input[type="radio"]:checked + label {
         border: 2px solid @cor-primaria;
         padding: 0.2em;
     }
