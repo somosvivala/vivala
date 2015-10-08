@@ -21,7 +21,7 @@ class CreateVagasTable extends Migration {
 
 			//endereço
 			$table->string('logradouro')->nullable();
-			$table->integer('cep')->nullable(); 	
+			$table->string('cep')->nullable(); 	
 			$table->string('bairro')->nullable();
 			$table->string('complemento')->nullable();
 
@@ -33,6 +33,13 @@ class CreateVagasTable extends Migration {
 				->onDelete('cascade');
                         
                         $table->integer('quantidade_vagas')->nullable();
+                        $table->integer('numero_beneficiados')->nullable();
+
+			//FK para categoria_ong
+			$table->integer('categoria_ong_id')->unsigned()->nullable();
+			$table->foreign('categoria_ong_id')
+				->references('id')
+				->on('categoria_ongs')
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong

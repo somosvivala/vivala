@@ -367,7 +367,23 @@ class InteresseSeeder extends Seeder {
     }
 }
 
+class CategoriasVagaSeeder extends Seeder {
+    
+    public function run()
+    {
+        DB::table('categoria_vagas')->delete();
 
+        CategoriaVaga::create(['nome' => 'Acabar com fome e a miséria']);
+        CategoriaVaga::create(['nome' => 'Educação basica de qualidade para todos']);
+        CategoriaVaga::create(['nome' => 'Igualdade entre os sexos e a valorizacao mulher']);
+        CategoriaVaga::create(['nome' => 'Reduzir a mortalidade infantil']);
+        CategoriaVaga::create(['nome' => 'Melhorar a saude das gestantes']);
+        CategoriaVaga::create(['nome' => 'Combater a AIDS, a malária outras doencas']);
+        CategoriaVaga::create(['nome' => 'Qualidade de vida e respeito ao meio ambiente']);
+        CategoriaVaga::create(['nome' => 'Todo mundo trabalhando pelo desenvolvimento']);
+    }
+
+}
 
 class CategoriasOngSeeder extends Seeder {
 

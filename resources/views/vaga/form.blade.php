@@ -34,16 +34,16 @@
 	        {!! Form::text("bairro",  null , ['title' => trans('global.ong_address_district'), 'placeholder' => trans('global.address_district'), 'class' => 'form-control']) !!}
 		    </div>
 			</div>
-			<div class="row">
-		    <div class="form-group col-sm-6">
-        	{!! Form::select("estado", $estados, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control']) !!}
-		    </div>
-		    <div class="form-group col-sm-6">
-        	{!! Form::select("cidade_id", $cidades, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control']) !!}
+		<div class="row">
+                <div class="form-group col-sm-6">
+                    {!! Form::select("estado", $estados, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control'], ['id' => 'estado_select']) !!}
+                </div>
+                <div class="form-group col-sm-6">
+                    {!! Form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select', 'disabled'=>'true']) !!}
 
-		    </div>
-			</div>
-		</div>
+                </div>
+            </div>
+            </div>
 	</div>
 
 

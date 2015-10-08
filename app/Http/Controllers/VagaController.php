@@ -7,6 +7,11 @@ use App\Vaga;
 use Auth;
 use App;
 
+use App\Cidade;
+use App\Ong;
+use App\Estado;
+use App\CategoriaOng;
+
 class VagaController extends CuidarController {
 
 	/**
@@ -31,7 +36,27 @@ class VagaController extends CuidarController {
             if (count(Auth::user()->ongs) > 0)
             {
                 $ongs = Auth::user()->ongs;
-		return view('vaga.create');
+        
+        
+                //Ordenando array de cidades para ficar cidadeID => cidadeNome 
+                $cidades = Cidade::all()->keyBy('id');
+                foreach ($cidades as $cidade)
+                {
+                    $cidadesArray[$cidade->id] = $cidade->nome;
+                }
+                $cidades = $cidadesArray;
+
+                //Ordenando array de estados para ficar estadoID => estadoNome 
+                $estados = Estado::all();
+                $estadosArray = array(0 => 'Selecione um Estado');
+                foreach ($estados as $estado)
+                {
+                    $estadosArray[$estado->id] = $estado->nome;
+                }
+                $estados = $estadosArray; 
+        
+        
+                return view('vaga.create', compact('categoriasOngs', 'ongs', 'cidades', 'estados') );
             
             } else {
                 App::abort(403, "Voce não possui nenhuma Ong cadastrada para criar novas Vagas");
@@ -44,7 +69,7 @@ class VagaController extends CuidarController {
 	 *
 	 * @return Response
 	 */
-	public function store(EditarVagaRequest $request)
+	public function store(CriarVagaRequest $request)
 	{
 		//Checando se posso criar vagas
 		$entidadeAtiva = Auth::user()->entidadeAtiva;

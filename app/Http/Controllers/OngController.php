@@ -72,7 +72,6 @@ class OngController extends CuidarController {
     	    $categoriaSelecionada = Request::get('categoriaOng');
             $categoriasOngs = CategoriaOng::all();
             
-            //@TODO: CARREGAR OPCOES DO SELECT DE CIDADES POR AJAX A PARTIR DO SELECT DE ESTADOS 
             //Ordenando array de cidades para ficar cidadeID => cidadeNome 
             $cidades = Cidade::all()->keyBy('id');
             foreach ($cidades as $cidade)

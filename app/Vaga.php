@@ -10,13 +10,17 @@ class Vaga extends Model {
 	protected $fillable = [
 		'habilidades',
 		'sobre_trabalho',
+                'horario_funcionamento'
 		'responsavel_id',
                 'logradouro',
                 'cep', 	
 		'bairro',
 		'complemento',
                 'cidade_id',
-                'quantidade_vagas'
+                'quantidade_vagas',
+                'email_contato',
+                'telefone_contato',
+                'numero_beneficiados' 
 		];	
 
 	/**
@@ -84,7 +88,14 @@ class Vaga extends Model {
     }
 
 
-
+    /**
+     * Uma vaga pertence a uma CategoriaVaga (é o jeito)
+     * @return [type] [description]
+     */
+    public function categoria() 
+    {
+        return $this->belongsTo('App\CategoriaVaga', 'categoria_vaga_id');
+    }
 
 
 }
