@@ -12,6 +12,7 @@ use App\Foto;
 use App\Interesse;
 use App\CategoriaOng;
 use App\CategoriaEmpresa;
+use App\CategoriaVaga;
 
 class DatabaseSeeder extends Seeder {
 
@@ -28,6 +29,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('UserSeeder');
         $this->call('PerfilSeeder');
         $this->call('CategoriasOngSeeder');
+        $this->call('CategoriasVagaSeeder');
         $this->call('OngSeeder');
         $this->call('CategoriasEmpresaSeeder');
         $this->call('EmpresaSeeder');
