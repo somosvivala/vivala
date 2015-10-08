@@ -9,6 +9,7 @@ class Ong extends Model {
     
 	protected $fillable = [
         'nome',
+        'descricao',
         'horario_funcionamento',
         'user_id',
         'responsavel_id',
