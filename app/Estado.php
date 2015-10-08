@@ -22,26 +22,6 @@ class Estado extends Model {
          * estado.
          * @return Collection
          */
-        public function getOngsAttribute() {
-
-            $collection = new Collection();
-            foreach ($this->cidades as $cidade) {
-                
-                $ongsCidade = $cidade->ongs;
-
-                //Se essa cidade tiver ongs
-                if (count($ongsCidade) > 0) {
-
-                    //Adicionando cada ong a Collection que sera retornada
-                    foreach ($ongsCidade as $ong) {
-                        $collection->add($ong);
-                    } 
-                    
-                }
-            }
-
-            return $collection;
-        }
 
 
         /**
@@ -53,5 +33,12 @@ class Estado extends Model {
         {
             return count($this->ongs);
         }
+
+
+        public function ongs()
+        {
+            return $this->hasManyThrough('App\Ong', 'App\Cidade');
+        }
+
 
 }

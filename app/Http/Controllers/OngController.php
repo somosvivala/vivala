@@ -135,9 +135,18 @@ class OngController extends CuidarController {
 	 */
 	public function ongs()
 	{
-		$ongs = Ong::all();
-		$categorias = CategoriaOng::all();
-		return view('cuidar.ongs', compact('ongs','categorias'));
+            $ongs = Ong::all();
+            $categorias = CategoriaOng::all();
+            $cidades = Ong::getCidadesComOngs();
+            
+            $cidadesArray = array(0 => 'Selecione uma Cidade');
+            foreach ($cidades as $cidade)
+            {
+                $cidadesArray[$cidade->id] = $cidade->nome;
+            }
+            $cidades = $cidadesArray;
+        
+            return view('cuidar.ongs', compact('ongs','categorias', 'cidades'));
         }
 
 	/**
@@ -252,11 +261,6 @@ class OngController extends CuidarController {
     	$ong = Auth::user()->ongs->find($idOng);
     	$voluntarios = ($ong != null) ? $ong->voluntarios->take($numVoluntarios) : [];
     }
-
-
-    
-
-
 
 	
 }

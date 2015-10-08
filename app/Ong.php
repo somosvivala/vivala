@@ -545,5 +545,21 @@ class Ong extends Model {
     }
 
 
+    /**
+     * Metodo que retorna todas as cidades que tem Ongs atualmente.
+     * @return Collection
+     */
+    public static function getCidadesComOngs() 
+    {
+       //Obtendo a lista de todas as ongs com cidades.
+       $ongs = Ong::with('cidade')->whereNotNull('cidade_id')->get();
+
+       //se a Collection nao estiver vazia (nenhuma ong com cidade), entao 
+       //listar cidades
+       if (count($ongs)) 
+           $ongs = $ongs->lists('cidade'); 
+       
+       return $ongs;   
+    }
 }
 
