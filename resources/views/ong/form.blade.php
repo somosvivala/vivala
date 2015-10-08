@@ -69,37 +69,37 @@
     <!-- @if(isset($categoriasOngs)) -->
     <div id="ong-categorias" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
-				<div class="row text-center">
+        <div class="row text-center">
             @if(isset($categoriasOngs))
-						<div class="cat-ong" class="col-sm-12">
-								@foreach($categoriasOngs as $Categoria)
+            <ul class="cat-ong" class="col-sm-12">
+                @foreach($categoriasOngs as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
                     <input type="radio" name="categoria-ong" value="categoria-ong-{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
                         <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
                     </label>
                 </li>
-								@endforeach
-						</div>
-						@endif
+                @endforeach
+            </ul>
+            @endif
         </div>
-		</div>
-	<!-- ROLÊ ANTIGO
-		<div class="col-sm-12">
-	  <select name="categoria_ong_id">
-	      <option value="null">Escolha uma categoria</option>
-	      @forelse($categoriasOngs as $Categoria)
-	      @if ($categoriaSelecionada == $Categoria->id)
-	      <option value="{{ $Categoria->id }}" selected="selected">{{ $Categoria->nome }}</option>
-	      @else
-	      <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
-	      @endif
-	      @empty
-	      <option>Sem categorias</option>
-	      @endforelse
-	  </select>
-	</div> -->
-	<!-- @endif -->
+    </div>
+    <!-- ROLÊ ANTIGO
+    <div class="col-sm-12">
+        <select name="categoria_ong_id">
+            <option value="null">Escolha uma categoria</option>
+            @forelse($categoriasOngs as $Categoria)
+            @if ($categoriaSelecionada == $Categoria->id)
+            <option value="{{ $Categoria->id }}" selected="selected">{{ $Categoria->nome }}</option>
+            @else
+            <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
+            @endif
+            @empty
+            <option>Sem categorias</option>
+            @endforelse
+        </select>
+    </div> -->
+    <!-- @endif -->
     <!-- Complemento - REDES SOCIAIS da ong -->
     <div id="ong-redes-sociais" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_additional_social_networks') }}</h5>
