@@ -74,7 +74,7 @@
             <ul class="cat-ong" class="col-sm-12">
                 @foreach($categoriasOngs as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
+                    <input type="radio" name="categoria_ong_id" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
                         <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
                     </label>

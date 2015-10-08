@@ -22,7 +22,7 @@ class CreateOngsTable extends Migration {
 			
 			//endereço
 			$table->string('logradouro')->nullable();
-			$table->integer('cep')->nullable();
+			$table->string('cep')->nullable();
 			$table->string('bairro')->nullable();
 			$table->string('complemento')->nullable();
 

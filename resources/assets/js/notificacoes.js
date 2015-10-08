@@ -3,12 +3,12 @@ $(function() {
     // Função que pergunta se tem notificacoes de follow
     var temNovasNotificacoesFollow = function() {
         $.ajax({
-           url: 'notificacoes/checarnovas/seguidor'
+           url: '/notificacoes/checarnovas/seguidor'
         }).done(function (data){
             var qtdNovas = data;
             // Puxa o html das novas notificacoes
             $.ajax({
-                url: 'notificacoes/notificacoesfollow'
+                url: '/notificacoes/notificacoesfollow'
             }).done(function (data) {
                 // Atualiza a caixa de notificações (html)
                 $("div.notificacoes-follow").html(data);
@@ -21,12 +21,12 @@ $(function() {
     // Função que pergunta se tem notificacoes gerais
     temNovasNotificacoesGeral = function() {
         $.ajax({
-           url: 'notificacoes/checarnovas/'
+           url: '/notificacoes/checarnovas/'
         }).done(function (data){
             var qtdNovas = data;
             // Puxa o html das novas notificacoes
             $.ajax({
-                url: 'notificacoes/notificacoesgeral'
+                url: '/notificacoes/notificacoesgeral'
             }).done(function (data) {
                 // Atualiza a caixa de notificações (html)
                 $("div.notificacoes-geral").html(data);
@@ -49,7 +49,7 @@ $(function() {
     // binda o clique dos botões de notificação para mark all as read
     $("button#notificacoes-follow").click(function() {
         $.ajax({
-            url: 'notificacoes/marcartodascomolidas/seguidor'
+            url: '/notificacoes/marcartodascomolidas/seguidor'
         }).done(function (data) {
             $("button#notificacoes-follow").attr("data-unread", 0);
         });
@@ -58,7 +58,7 @@ $(function() {
     // binda o clique dos botões de notificação para mark all as read
     $("button#notificacoes-geral").click(function() {
         $.ajax({
-            url: 'notificacoes/marcartodascomolidas/'
+            url: '/notificacoes/marcartodascomolidas/'
         }).done(function (data) {
             $("button#notificacoes-geral").attr("data-unread", 0);
         });

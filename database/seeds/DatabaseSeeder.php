@@ -375,14 +375,14 @@ class CategoriasOngSeeder extends Seeder {
     {
         DB::table('categoria_ongs')->delete();
 
-        CategoriaOng::create(['nome' => 'acabar-com-fome-miseria']);
-        CategoriaOng::create(['nome' => 'educacao-basica-qualidade-para-todos']);
-        CategoriaOng::create(['nome' => 'igualdade-entre-sexos-valorizacao-mulher']);
-        CategoriaOng::create(['nome' => 'reduzir-mortalidade-infantil']);
-        CategoriaOng::create(['nome' => 'melhorar-saude-das-gestantes']);
-        CategoriaOng::create(['nome' => 'combater-aids-malaria-outras-doencas']);
-        CategoriaOng::create(['nome' => 'qualidade-de-vida-respeito-meio-ambiente']);
-        CategoriaOng::create(['nome' => 'todo-mundo-trabalhando-pelo-desenvolvimento']);
+        CategoriaOng::create(['nome' => 'Acabar com fome e a miséria']);
+        CategoriaOng::create(['nome' => 'Educação basica de qualidade para todos']);
+        CategoriaOng::create(['nome' => 'Igualdade entre os sexos e a valorizacao mulher']);
+        CategoriaOng::create(['nome' => 'Reduzir a mortalidade infantil']);
+        CategoriaOng::create(['nome' => 'Melhorar a saude das gestantes']);
+        CategoriaOng::create(['nome' => 'Combater a AIDS, a malária outras doencas']);
+        CategoriaOng::create(['nome' => 'Qualidade de vida e respeito ao meio ambiente']);
+        CategoriaOng::create(['nome' => 'Todo mundo trabalhando pelo desenvolvimento']);
     }
 }
 
