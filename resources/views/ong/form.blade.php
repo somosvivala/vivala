@@ -69,79 +69,37 @@
     <!-- @if(isset($categoriasOngs)) -->
     <div id="ong-categorias" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
-        <div class="row text-center">
-            <div class="cat-ong" class="col-sm-12">
-                <ul id="cat-ong-1" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-1" id="categoria-ong-1">
-                    <label for="categoria-ong-1">
-                        <img src='../img/categorias-onu/onu-cat-1-fome-e-miseria.png' alt='{{ trans('global.ong_onu_cat-1') }}' title='{{ trans('global.ong_onu_cat-1') }}' class='col-sm-12'/>
+				<div class="row text-center">
+            @if(isset($categoriasOngs))
+						<div class="cat-ong" class="col-sm-12">
+								@foreach($categoriasOngs as $Categoria)
+                <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
+                    <input type="radio" name="categoria-ong" value="categoria-ong-{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
+                    <label for="categoria-ong-{{$Categoria->id}}">
+                        <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
                     </label>
-                </ul>
-                <ul id="cat-ong-2" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-2" id="categoria-ong-2">
-                    <label for="categoria-ong-2">
-                        <img src='../img/categorias-onu/onu-cat-2-educacao-basica-e-qualidade.png' alt='{{ trans('global.ong_onu_cat-2') }}' title='{{ trans('global.ong_onu_cat-2') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-                <ul id="cat-ong-3" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-3" id="categoria-ong-3">
-                    <label for="categoria-ong-3">
-                        <img src='../img/categorias-onu/onu-cat-3-igualdade-entre-sexos-e-valorizacao-mulher.png' alt='{{ trans('global.ong_onu_cat-3') }}' title='{{ trans('global.ong_onu_cat-3') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-                <ul id="cat-ong-4" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-4" id="categoria-ong-4">
-                    <label for="categoria-ong-4">
-                        <img src='../img/categorias-onu/onu-cat-4-reduzir-mortalidade-infantil.png' alt='{{ trans('global.ong_onu_cat-4') }}' title='{{ trans('global.ong_onu_cat-4') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-            </div>
+                </li>
+								@endforeach
+						</div>
+						@endif
         </div>
-        <div class="row text-center">
-            <div class="cat-ong" class="col-sm-12">
-                <ul id="cat-ong-5" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-5" id="categoria-ong-5">
-                    <label for="categoria-ong-5">
-                        <img src='../img/categorias-onu/onu-cat-5-melhorar-saude-gestantes.png' alt='{{ trans('global.ong_onu_cat-5') }}' title='{{ trans('global.ong_onu_cat-5') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-                <ul id="cat-ong-6" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-6" id="categoria-ong-6">
-                    <label for="categoria-ong-6">
-                        <img src='../img/categorias-onu/onu-cat-6-combater-malaria-aids-e-outras-doencas.png' alt='{{ trans('global.ong_onu_cat-6') }}' title='{{ trans('global.ong_onu_cat-6') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-                <ul id="cat-ong-7" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-7" id="categoria-ong-7">
-                    <label for="categoria-ong-7">
-                        <img src='../img/categorias-onu/onu-cat-7-qualidade-vida-e-respeito-meio-ambiente.png' alt='{{ trans('global.ong_onu_cat-7') }}' title='{{ trans('global.ong_onu_cat-7') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-                <ul id="cat-ong-8" class="col-sm-3">
-                    <input type="radio" name="categoria-ong" value="categoria-ong-8" id="categoria-ong-8">
-                    <label for="categoria-ong-8">
-                        <img src='../img/categorias-onu/onu-cat-8-todo-mundo-trabalhando-pro-desenvolvimento.png' alt='{{ trans('global.ong_onu_cat-8') }}' title='{{ trans('global.ong_onu_cat-8') }}' class='col-sm-12'/>
-                    </label>
-                </ul>
-            </div>
-        </div>
-        <!-- <div class="col-sm-12">
-            <select name="categoria_ong_id">
-                <option value="null">Escolha uma categoria</option>
-                @forelse($categoriasOngs as $Categoria)
-                @if ($categoriaSelecionada == $Categoria->id)
-                <option value="{{ $Categoria->id }}" selected="selected">{{ $Categoria->nome }}</option>
-                @else
-                <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
-                @endif
-                @empty
-                <option>Sem categorias</option>
-                @endforelse
-            </select>
-        </div> -->
-    </div>
-    <!-- @endif -->
-
+		</div>
+	<!-- ROLÊ ANTIGO
+		<div class="col-sm-12">
+	  <select name="categoria_ong_id">
+	      <option value="null">Escolha uma categoria</option>
+	      @forelse($categoriasOngs as $Categoria)
+	      @if ($categoriaSelecionada == $Categoria->id)
+	      <option value="{{ $Categoria->id }}" selected="selected">{{ $Categoria->nome }}</option>
+	      @else
+	      <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
+	      @endif
+	      @empty
+	      <option>Sem categorias</option>
+	      @endforelse
+	  </select>
+	</div> -->
+	<!-- @endif -->
     <!-- Complemento - REDES SOCIAIS da ong -->
     <div id="ong-redes-sociais" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_additional_social_networks') }}</h5>

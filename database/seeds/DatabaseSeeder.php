@@ -202,7 +202,7 @@ class OngSeeder extends Seeder {
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Casa do evandro',
             'responsavel_id'        => '1',
-            'categoria_ong_id'      => '1'            
+            'categoria_ong_id'      => '1'
         ]);
 
         Ong::create([
@@ -211,7 +211,7 @@ class OngSeeder extends Seeder {
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Casa do Zord',
             'responsavel_id'        => '2',
-            'categoria_ong_id'      => '2'            
+            'categoria_ong_id'      => '2'
 
         ]);
 
@@ -221,8 +221,8 @@ class OngSeeder extends Seeder {
             'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
             'logradouro'            => 'Sede do Formiguinha',
             'responsavel_id'        => '8',
-            'categoria_ong_id'      => '3'            
-        
+            'categoria_ong_id'      => '3'
+
         ]);
     }
 }
@@ -375,16 +375,14 @@ class CategoriasOngSeeder extends Seeder {
     {
         DB::table('categoria_ongs')->delete();
 
-        CategoriaOng::create(['nome' => 'categoria 1']);
-        CategoriaOng::create(['nome' => 'categoria 2']);
-        CategoriaOng::create(['nome' => 'categoria 3']);
-        CategoriaOng::create(['nome' => 'categoria 4']);
-        CategoriaOng::create(['nome' => 'categoria 5']);
-        CategoriaOng::create(['nome' => 'categoria 6']);
-        CategoriaOng::create(['nome' => 'categoria 7']);
-        CategoriaOng::create(['nome' => 'categoria 8']);
-        CategoriaOng::create(['nome' => 'categoria 9']);
-        CategoriaOng::create(['nome' => 'categoria 10']);
+        CategoriaOng::create(['nome' => 'acabar-com-fome-miseria']);
+        CategoriaOng::create(['nome' => 'educacao-basica-qualidade-para-todos']);
+        CategoriaOng::create(['nome' => 'igualdade-entre-sexos-valorizacao-mulher']);
+        CategoriaOng::create(['nome' => 'reduzir-mortalidade-infantil']);
+        CategoriaOng::create(['nome' => 'melhorar-saude-das-gestantes']);
+        CategoriaOng::create(['nome' => 'combater-aids-malaria-outras-doencas']);
+        CategoriaOng::create(['nome' => 'qualidade-de-vida-respeito-meio-ambiente']);
+        CategoriaOng::create(['nome' => 'todo-mundo-trabalhando-pelo-desenvolvimento']);
     }
 }
 
