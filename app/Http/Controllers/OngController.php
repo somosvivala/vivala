@@ -113,7 +113,7 @@ class OngController extends CuidarController {
 
                 Session::put('entidadeAtiva_id', $novaOng->id);
                 Session::put('entidadeAtiva_tipo', 'ong');
-		return redirect('perfil');
+		return redirect('/ong/trocacapa');
 	}
 
 	/**
