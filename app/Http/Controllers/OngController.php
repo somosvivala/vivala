@@ -110,8 +110,10 @@ class OngController extends CuidarController {
         //se ja nao existir uma ong com essa prettyUrl
         $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);
         $novaOng->prettyUrl()->save($novaPrettyUrl);
-		
-		return redirect('home');
+
+                Session::put('entidadeAtiva_id', $novaOng->id);
+                Session::put('entidadeAtiva_tipo', 'ong');
+		return redirect('perfil');
 	}
 
 	/**
