@@ -86,4 +86,29 @@ class SearchController extends Controller {
     }
     
 
+    /**
+     * Metodo para filtrar Vagas por POST,
+     * @param categoriaOng  -> id da categoria a ser usada no filtro
+     * @param nome          -> nome a ser usado no filtro
+     * @param cidade_id      -> id da cidade a ser usado no filtro
+     */
+    public function postFiltrarvagas()
+    {
+        //   $causas = Vaga::all(); //ta quebrando
+        $causas = Ong::all();
+
+        $categorias = CategoriaOng::all();
+        $cidades = Ong::getCidadesComOngs();
+        
+        $cidadesArray = array(0 => 'Selecione uma Cidade');
+        foreach ($cidades as $cidade)
+        {
+            $cidadesArray[$cidade->id] = $cidade->nome;
+        }
+        $cidades = $cidadesArray;
+    
+        return view('cuidar.vagas', compact('causas','categorias', 'cidades'));
+    }
+    
+
 }

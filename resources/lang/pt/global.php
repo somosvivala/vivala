@@ -543,6 +543,7 @@ return[
 
     // _vagas.blade
       'lbl_spaceavaiable' => 'Vagas',
+    'lbl_causa_create' => 'Criar Vaga',
 
     // sugestoeseongs.blade
       'lbl_ongstofollowsuggests' => 'Sugestão de ONGs para seguir',

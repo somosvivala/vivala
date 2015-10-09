@@ -1,4 +1,4 @@
-{!! Form::open(array('url' => array('busca/filtrarongs')))!!}
+{!! Form::open(array('url' => array('busca/filtrarvagas')))!!}
 <div class="col-sm-12 filtro-cuidar">
     <div class="col-sm-3 col-sm-offset-2">
         @if(isset($categorias))

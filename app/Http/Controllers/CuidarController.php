@@ -44,5 +44,4 @@ class CuidarController extends VivalaBaseController {
         
             return view('cuidar.index', compact('causas','categorias', 'cidades'));
 	}
-
 }
