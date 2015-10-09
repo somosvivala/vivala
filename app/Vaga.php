@@ -58,13 +58,12 @@ class Vaga extends Model {
 	}
 
 
-	public function podeEditarAttributte() 
+        //Se o user_id associado ao owner (ong / perfil / empresa) dessa
+        //Vaga for igual ao id do usuario atualmente logado.
+	public function getPodeEditarAttribute() 
 	{
-		$entidadeAtiva = Auth::user()->entidadeAtiva;
-
-		return $entidadeAtiva->tipo != 'ong' 
-			? $entidadeAtiva->vagas->find($this->id) != null 
-			: false;
+		$user = Auth::user();
+		return $user->id == $this->owner->user->id;
         }
 
 
@@ -108,5 +107,36 @@ class Vaga extends Model {
     {
         $this->attributes['numero_beneficiados'] = intval($value);
     }
+
+
+    /**
+     * Uma Vaga tem apenas uma foto de avatar;
+     */
+    public function fotoCapa()
+    {
+        return $this->fotos()->where('tipo', 'capa')->get()->last();
+    }
+
+    /**
+     * Metodo para recuperar a url da foto de capa da Vaga 
+     * @return String 
+     */
+    public function getCapaUrl() 
+    {
+        if ($this->fotoCapa()) {
+            return $this->fotoCapa()->path;
+        }
+
+        return '/img/querocuidar.png';
+    }
+
+    /**
+     * Uma Vaga tem varias fotos.
+     */
+    public function fotos()
+    {
+        return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
+    }
+
 
 }

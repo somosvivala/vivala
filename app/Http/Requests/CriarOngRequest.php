@@ -43,7 +43,8 @@ class CriarOngRequest extends Request {
 			'complemento'			=> "string|min:2",
 			'email_contato'			=> "email",
 			'telefone_contato'			=> "numeric|min:8",
-			'cidade_id'				=> "numeric|min:2"			
+			'cidade_id'				=> "required|exists:cidades,id",	
+			'categoria_ong_id'			=> "required|exists:categoria_ongs,id"			
 		];
 	}
 

@@ -26,9 +26,9 @@ class VagaController extends CuidarController {
 	 */
 	public function index()
 	{
-         //   $causas = Vaga::all(); //ta quebrando
-            $causas = Ong::all();
-            $categorias = CategoriaOng::all();
+            $causas = Vaga::all(); //ta quebrando
+            //$causas = Ong::all();
+            $categorias = CategoriaVaga::all();
             $cidades = Ong::getCidadesComOngs();
             
             $cidadesArray = array(0 => 'Selecione uma Cidade');
@@ -138,11 +138,42 @@ class VagaController extends CuidarController {
 	public function edit($id)
 	{
 		$vaga = Vaga::findOrFail($id);
-		if (!$vaga->podeEditar) {
+                
+                if (!$vaga->podeEditar) {
 			App::abort(403, "Voce não tem permissao para editar essa Vaga");
 		}
 
-		return view('vaga.edit', compact('vaga'));
+                //Obtendo ongs do usuario 
+                $ongs = Auth::user()->ongs;
+
+                //Montando array de ongs para select 
+                $ongsArray = array(0 => 'Selecione uma Ong');
+                foreach ($ongs as $ong)
+                {
+                    $ongsArray[$ong->id] = $ong->nome;
+                }
+                $ongs = $ongsArray;
+
+                $categoriasVaga = CategoriaVaga::all();
+
+                //Ordenando array de cidades para ficar cidadeID => cidadeNome 
+                $cidades = Cidade::all()->keyBy('id');
+                foreach ($cidades as $cidade)
+                {
+                    $cidadesArray[$cidade->id] = $cidade->nome;
+                }
+                $cidades = $cidadesArray;
+
+                //Ordenando array de estados para ficar estadoID => estadoNome 
+                $estados = Estado::all();
+                $estadosArray = array(0 => 'Selecione um Estado');
+                foreach ($estados as $estado)
+                {
+                    $estadosArray[$estado->id] = $estado->nome;
+                }
+                $estados = $estadosArray; 
+
+		return view('vaga.edit', compact('vaga', 'categoriasVaga', 'ongs', 'cidades', 'estados'));
 	}
 
 	/**
