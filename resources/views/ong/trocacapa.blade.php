@@ -1,11 +1,12 @@
 @extends('cuidar')
 
 @section('content')
-  <h1>Edite a foto de capa</h1>
+<div class="fundo-cheio col-sm-12 padding-b-2">
+    <h3 class="font-bold-upper text-center margin-t-2 margin-b-2">Edite a foto de capa</h3>
 	<!-- Adiciona um formulario pra upload de foto de capa-->
         <div class="text-center jc_coords row col-sm-12">
 
-            {!! Form::open(['url' => ['foto/cropandsave', $ong->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/perfil']) !!}
+            {!! Form::open(['url' => ['foto/cropandsave', $ong->id ], 'files' => true, 'onsubmit' => 'return false;', 'class' => 'form-ajax', 'data-redirect' => '/perfil']) !!}
             {!! Form::hidden("tipoEntidade",  "App\Ong") !!}
 
             <img id="preview" src="{{ isset($fotoCapa)?$fotoCapa:'/img/interrogacao.png' }}" class="foto-preview"/>
@@ -28,6 +29,7 @@
             </div>
             {!! Form::submit( trans("Atualizar foto de capa"), ['class' => 'btn btn-acao']) !!}
             {!! Form::close() !!}
+        </div>
         </div>
 
 @stop

@@ -74,7 +74,7 @@
             <ul class="cat-ong" class="col-sm-12">
                 @foreach($categoriasOngs as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
-                    <input type="radio" name="categoria_ong_id" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
+                    <input type="radio" name="categoria_ong_id" @if ($categoriaSelecionada == $Categoria->id) echo "selected='selected'"; @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
                         <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
                     </label>
@@ -126,9 +126,6 @@
     <!-- CONTATO da ong -->
     <div id="ong_contato" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_contact') }}</h5>
-        <div class="form-group col-sm-12 ph-cor-cinza-escuro">
-            {!! Form::text("ong_manager",  null , ['title' => trans('global.ong_contact_manager'), 'placeholder' => trans('global.ong_contact_manager'), 'class' => 'form-control col-sm-6']) !!}
-        </div>
         <div class="form-group col-sm-12 ph-cor-cinza-escuro">
             {!! Form::text("telefone_contato",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), 'class' => 'form-control col-sm-6']) !!}
         </div>
