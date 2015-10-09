@@ -37,7 +37,8 @@ class SearchController extends Controller {
         $nome = Request::get('nome');
         $cidade_id = Request::get('cidade_id');
         $ongs = new Collection();
-
+        
+        
         //Filtrando resultados pelas categorias
         if ($categoriaOng && $categoriaOng != "null") {
             $ongsByCategoria = CategoriaOng::findOrFail($categoriaOng)->ongs;
@@ -81,7 +82,14 @@ class SearchController extends Controller {
             $cidadesArray[$cidade->id] = $cidade->nome;
         }
         $cidades = $cidadesArray;
-    
+
+
+        //Se nao vier nenhum filtro, mostrar todas as ongs
+        if (!$nome && (!$categoriaOng != "null") && !$cidade_id) {
+            $ongs = Ong::all();
+        }
+        
+
         return view('cuidar.ongs', compact('ongs','categorias', 'cidades'));
     }
     
