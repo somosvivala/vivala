@@ -24,6 +24,7 @@ class CreateVagasTable extends Migration {
 			$table->string('cep')->nullable(); 	
 			$table->string('bairro')->nullable();
 			$table->string('complemento')->nullable();
+			$table->string('horario_funcionamento')->nullable();
 
                         //FK para cidades 
 			$table->integer('cidade_id')->unsigned()->nullable();

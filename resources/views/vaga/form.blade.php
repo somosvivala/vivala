@@ -38,8 +38,13 @@
                     {!! Form::select("estado", $estados, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control'], ['id' => 'estado_select']) !!}
                 </div>
                 <div class="form-group col-sm-6">
-                    {!! Form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select', 'disabled'=>'true']) !!}
-
+                    {!! form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select', 'disabled'=>'true']) !!}
+                </div>
+                <div class="form-group col-sm-6">
+                    {!! form::text("quantidade_vagas", null, ['title' => trans('global.ong_address_zipcode'), 'placeholder' => 'Numero de vagas', 'class' => 'form-control']) !!}
+                </div>
+                <div class="form-group col-sm-6">
+                    {!! form::text("numero_beneficiados", null, ['title' => trans('global.ong_address_zipcode'), 'placeholder' => 'Numero de beneficiados', 'class' => 'form-control']) !!}
                 </div>
             </div>
         </div>
@@ -49,11 +54,11 @@
     <div id="causa-categorias" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
         <div class="row text-center">
-            @if(isset($categoriasOngs))
+            @if(isset($categoriasVaga))
             <ul class="cat-ong" class="col-sm-12">
-                @foreach($categoriasOngs as $Categoria)
+                @foreach($categoriasVaga as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
-                    <input type="radio" name="categoria_ong_id" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
+                    <input type="radio" name="categoria_vaga_id" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
                         <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
                     </label>

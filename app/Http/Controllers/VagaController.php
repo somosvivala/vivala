@@ -3,14 +3,19 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\EditarVagaRequest;
+use App\Http\Requests\CriarVagaRequest;
 use App\Vaga;
 use Auth;
 use App;
 
+use Illuminate\Database\Eloquent\Collection;
 use App\Cidade;
 use App\Ong;
 use App\Estado;
-use App\CategoriaOng;
+use App\CategoriaVaga;
+
+use Request;
+
 
 class VagaController extends CuidarController {
 
@@ -47,9 +52,19 @@ class VagaController extends CuidarController {
             //Checando se posso criar vagas, (se tenho ongs)
             if (count(Auth::user()->ongs) > 0)
             {
+                //Obtendo ongs do usuario 
                 $ongs = Auth::user()->ongs;
-        
-        
+
+                //Montando array de ongs para select 
+                $ongsArray = array(0 => 'Selecione uma Ong');
+                foreach ($ongs as $ong)
+                {
+                    $ongsArray[$ong->id] = $ong->nome;
+                }
+                $ongs = $ongsArray;
+
+                $categoriasVaga = CategoriaVaga::all();
+
                 //Ordenando array de cidades para ficar cidadeID => cidadeNome 
                 $cidades = Cidade::all()->keyBy('id');
                 foreach ($cidades as $cidade)
@@ -68,7 +83,7 @@ class VagaController extends CuidarController {
                 $estados = $estadosArray; 
         
         
-                return view('vaga.create', compact('categoriasOngs', 'ongs', 'cidades', 'estados') );
+                return view('vaga.create', compact('categoriasVaga', 'ongs', 'cidades', 'estados') );
             
             } else {
                 App::abort(403, "Voce não possui nenhuma Ong cadastrada para criar novas Vagas");
@@ -83,14 +98,18 @@ class VagaController extends CuidarController {
 	 */
 	public function store(CriarVagaRequest $request)
 	{
-		//Checando se posso criar vagas
-		$entidadeAtiva = Auth::user()->entidadeAtiva;
-		if ($entidadeAtiva->tipo != 'ong') {
+
+                $ongResponsavel = Ong::find($request->get('ong'));
+                
+                //Checando se posso criar vagas
+		if (!($ongResponsavel->user->id === Auth::user()->id)) {
 			App::abort(403, "Apenas ongs tem permissão para criar Vagas");
 		}
 
 		//Criando uma vaga com os campos do formulario
-		$novaVaga = new Vaga($request->all());
+		$novaVaga = $ongResponsavel->vagas()->create($request->all());
+
+               dd($novaVaga); 
 
 		//Setta o responsavel da vaga como sendo o perfil da ong
 		$novaVaga->owner()->associate($entidadeAtiva);

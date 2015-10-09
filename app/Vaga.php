@@ -10,7 +10,7 @@ class Vaga extends Model {
 	protected $fillable = [
 		'habilidades',
 		'sobre_trabalho',
-                'horario_funcionamento'
+                'horario_funcionamento',
 		'responsavel_id',
                 'logradouro',
                 'cep', 	
