@@ -131,7 +131,7 @@ class Ong extends Model {
             return $this->fotoCapa()->path;
         }
 
-        return '/img/nophoto.png';
+        return '/img/querocuidar.png';
     }
 
     /**

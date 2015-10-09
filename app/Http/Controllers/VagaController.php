@@ -21,7 +21,19 @@ class VagaController extends CuidarController {
 	 */
 	public function index()
 	{
-		//
+         //   $causas = Vaga::all(); //ta quebrando
+            $causas = Ong::all();
+            $categorias = CategoriaOng::all();
+            $cidades = Ong::getCidadesComOngs();
+            
+            $cidadesArray = array(0 => 'Selecione uma Cidade');
+            foreach ($cidades as $cidade)
+            {
+                $cidadesArray[$cidade->id] = $cidade->nome;
+            }
+            $cidades = $cidadesArray;
+        
+            return view('cuidar.vagas', compact('causas','categorias', 'cidades'));
 	}
 
 	/**

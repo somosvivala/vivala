@@ -105,6 +105,16 @@
                             </li>
                         </ul>
                     </li>
+                    <li class="subsubmenu">
+                        <ul>
+                            <li>
+                                <a href="{{ url('vagas/create') }}">
+                                    <i class="fa fa-plus"></i>
+                                    <span> {{ trans('global.lbl_causa_create') }} </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         <a href="{{ url('perfil') }}">
                             <i class="fa fa-user"></i>

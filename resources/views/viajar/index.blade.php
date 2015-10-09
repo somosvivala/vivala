@@ -14,7 +14,7 @@
 
 <div class="fundo-cheio col-sm-12">
     <h3 class="font-bold-upper text-center">Já sabe para onde ir?
-        <small class=".sub-titulo">Monte sua viagem! </small>
+        <small class="sub-titulo">Monte sua viagem! </small>
     </h3>
 
     <ul class="lista-border pesquisa-viajar">

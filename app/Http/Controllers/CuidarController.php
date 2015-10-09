@@ -7,6 +7,8 @@ use View;
 use Auth;
 use Illuminate\Http\Request;
 use Session;
+use App\Vaga;
+use App\CategoriaOng;
 
 class CuidarController extends VivalaBaseController {
 
@@ -28,7 +30,18 @@ class CuidarController extends VivalaBaseController {
 	 */
 	public function index()
 	{
-		return view('cuidar.index');
+         //   $causas = Vaga::all(); //ta quebrando
+            $causas = Ong::all();
+            $categorias = CategoriaOng::all();
+            $cidades = Ong::getCidadesComOngs();
+            
+            $cidadesArray = array(0 => 'Selecione uma Cidade');
+            foreach ($cidades as $cidade)
+            {
+                $cidadesArray[$cidade->id] = $cidade->nome;
+            }
+            $cidades = $cidadesArray;
+        
+            return view('cuidar.index', compact('causas','categorias', 'cidades'));
 	}
-
 }

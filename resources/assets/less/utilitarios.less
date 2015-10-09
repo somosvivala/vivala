@@ -14,7 +14,9 @@
     z-index: 3;
     background-color: white;
 }
-
+.floatnone{
+    float: none;
+}
 .margin-0 ,
 ul.margin-0
 { // Declara todas explicitamente pra dar override;
@@ -43,6 +45,12 @@ ul.margin-0
 }
 .margin-t-10 {
     margin-top: 10em;
+}
+.padding-b-1 {
+    padding-bottom: 1em;
+}
+.padding-b-2 {
+    padding-bottom: 2em;
 }
 a.padding-btn,
 .padding-btn {
@@ -291,6 +299,15 @@ h3.subtitulo {
 	text-transform: uppercase;
 	color: @cor-txt;
 	font-family: @font-family-sans-serif-bold;
+}
+
+//subtitulo da home de cuidar e viajar
+h3 .sub-titulo {
+	text-transform: none;
+	font-family: @font-family-sans-serif;
+        width:100%;
+        position:relative;
+        display:block;
 }
 
 // Comentario com foto, dentro do link com foto
