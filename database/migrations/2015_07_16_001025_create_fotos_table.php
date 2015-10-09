@@ -19,8 +19,8 @@ class CreateFotosTable extends Migration {
 			$table->enum('tipo', ['avatar','capa'])->nullable();
 			$table->timestamps();
 
-			$table->integer('owner_id');
-			$table->string('owner_type');
+			$table->integer('owner_id')->nullable();
+			$table->string('owner_type')->nullable();
 		});
 	}
 

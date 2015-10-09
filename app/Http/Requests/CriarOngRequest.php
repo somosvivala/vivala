@@ -31,6 +31,7 @@ class CriarOngRequest extends Request {
 		    return ($prettyUrl ? $isMyUrl : true);
 		});
 
+
 		return [
 			'nome' 					=> "string|required|min:2",
 			'descricao' 			=> "string|required|min:2",

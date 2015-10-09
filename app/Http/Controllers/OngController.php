@@ -101,14 +101,22 @@ class OngController extends CuidarController {
 	 */
 	public function store(CriarOngRequest $request)
 	{
-		$novaOng = Auth::user()->ongs()->create($request->all());
+                
+                $novaOng = Auth::user()->ongs()->create($request->all());
                 $novaOng->responsavel()->associate(Auth::user()->perfil)->push();
 		$novaPrettyUrl = new PrettyUrl();
-        $novaPrettyUrl->tipo = 'ong';
+                $novaPrettyUrl->tipo = 'ong';
 
-        //se ja nao existir uma ong com essa prettyUrl
-        $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);
-        $novaOng->prettyUrl()->save($novaPrettyUrl);
+                $foto = Request::input('foto');
+                
+                if ($foto && $foto > 0) {
+                    $novaOng->fotos()->save(Foto::find($foto));
+                }                
+
+
+                //se ja nao existir uma ong com essa prettyUrl
+                $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);
+                $novaOng->prettyUrl()->save($novaPrettyUrl);
 
                 Session::put('entidadeAtiva_id', $novaOng->id);
                 Session::put('entidadeAtiva_tipo', 'ong');

@@ -12,10 +12,11 @@
         {{-- Adicionando div de update da foto de perfil da ong --}}
         <div class="text-center jc_coords row col-sm-12">
 
-            {!! Form::open(['url' => ['foto/cropandsave'], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/home']) !!}
-            {!! Form::hidden("tipoEntidade",  "App\Ong") !!}
-
-{{--            <img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>  --}}
+            {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}
+            {!! Form::hidden("NoOwner",  true) !!}
+           
+            
+            <img id="preview" src="/img/interrogacao.png" class="foto-preview"/>  
 
             <div class="file-upload">
                 <label for="image_file_upload">
@@ -36,7 +37,9 @@
         </div>
 
         {!! Form::open(['url' => 'ong']) !!}
-        @include('ong.form', ['btnSubmit' => trans('global.lbl_ong_register')])
+             {!! Form::hidden("foto", false, ['id' => 'uploadedFoto' ]) !!}
+
+            @include('ong.form', ['btnSubmit' => trans('global.lbl_ong_register')])
         {!! Form::close() !!}
     </div>
 

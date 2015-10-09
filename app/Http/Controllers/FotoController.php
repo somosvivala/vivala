@@ -10,11 +10,10 @@ use App\Foto;
 use App\Http\Requests\CropPhotoRequest;
 
 
-use Illuminate\Http\Request;
 
 use Auth;
 use Input;
-
+use Request;
 class FotoController extends VivalaBaseController {
 
 	/**
@@ -25,8 +24,7 @@ class FotoController extends VivalaBaseController {
 	    $this->middleware('auth');
 	}
 
-	public function postCropandsave($id, CropPhotoRequest $request) {
-
+	public function postCropandsave($id=0, CropPhotoRequest $request) {
 		$file = Input::file('image_file_upload');
 	    if ($file && $file->isValid()) {
 
@@ -39,6 +37,9 @@ class FotoController extends VivalaBaseController {
 			$xSuperior = round($request->input('x'));
 			$ySuperior = round($request->input('y'));
 
+                        //Se tem owner, caso nao esteja pre criano uma foto para uma entidade
+                        $naoTemOwner = $request->input('NoOwner');
+
                         // pega o tipo da foto (avatar, capa, etc)
                         $tipo = $request->input('tipo');
                         if(!$tipo) {
@@ -49,20 +50,25 @@ class FotoController extends VivalaBaseController {
 			$upload_success = $file->save($destinationPath.$fileName);
 	        if ($upload_success) {
 
-	        	$foto = new Foto(['path' => $fileName]);
+                        //Se nao tiver owner, entao estou pre settando a foto de 
+                        //avatar antes de criar a entidade.
+                        if ($naoTemOwner) {
+                            $foto = Foto::create(['path' => $fileName, 'tipo' => $tipo]);
+                        
+                        //Se tiver um owner, entao ja salvar a foto para a 
+                        //entidade ativa
+                        } else {
+                            $foto = new Foto(['path' => $fileName, 'tipo' => $tipo]);        	
+                            
+                            /* Settando tipo da foto atual para null, checando se existe antes */
+                            if ($tipo == 'avatar' && $entidade->avatar) {
+                                    $currentAvatar = $entidade->avatar;
+                                    $currentAvatar->tipo = null;
+                                    $currentAvatar->save();
+                            }
 
-	      		/* Settando tipo da foto atual para null, checando se existe antes */
-	      		if ($entidade->avatar) {
-		        	$currentAvatar = $entidade->avatar;
-		        	$currentAvatar->tipo = null;
-		        	$currentAvatar->save();
-	      		}
-
-	        	$foto = new Foto([
-	        			'path' => $fileName,
-	        			'tipo' => $tipo ]);
-
-	        	$entidade->fotos()->save($foto);
+                            $entidade->fotos()->save($foto);
+                        }
 
 	      		return $foto;
 	        } else {
@@ -100,9 +106,9 @@ class FotoController extends VivalaBaseController {
 
 				$entidade = Auth::user()->entidadeAtiva;
 				if ($entidade) {
-	        		$entidade->fotos()->save($foto);
-	        	} else {
-	        		$entidade->push();
+	                	    $entidade->fotos()->save($foto);
+            	        	} else {
+                                    $entidade->push();
 	        	}
 
 
