@@ -113,8 +113,6 @@ class VagaController extends CuidarController {
 		$novaVaga->responsavel()->associate(Auth::user()->perfil);
 		$novaVaga->push();
                 
-                dd($novaVaga); 
-                
                 return redirect('vagas/'.$novaVaga->id);
 	}
 
