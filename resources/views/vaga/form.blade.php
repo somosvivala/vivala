@@ -82,12 +82,7 @@
         </div>
     </div>
 
-    <div id="causa-contato" class="row margin-t-2">
-        <h5 class="col-sm-12">Imagem de capa</h5>
-        <div class="col-sm-12">
-        </div>
-    </div>
-    <div class="form-group text-center">
+   <div class="form-group text-center">
         {!! Form::submit( $btnSubmit, ['class' => 'btn btn-primary btn-acao']) !!}
     </div>
 </div>

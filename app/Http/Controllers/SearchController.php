@@ -37,7 +37,8 @@ class SearchController extends Controller {
         $nome = Request::get('nome');
         $cidade_id = Request::get('cidade_id');
         $ongs = new Collection();
-        
+
+ 
         
         //Filtrando resultados pelas categorias
         if ($categoriaOng && $categoriaOng != "null") {
@@ -45,10 +46,12 @@ class SearchController extends Controller {
             $ongs = $ongs->merge($ongsByCategoria);            
         } 
 
+
+
         //Fitrando resultados com base no nome
         if ($nome) {
             $ongsByNome = Ong::where('nome', 'ILIKE', "%".$nome."%")->get();         
-            
+
             //Se ja tiver filtrado por categoria, entao interseccionar os 
             //resultados para maior relevancia
             if (count($ongs)) {
@@ -62,7 +65,7 @@ class SearchController extends Controller {
         //Filtrando resultados por Cidade
         if ($cidade_id) {
            $ongsByCidade = Cidade::findOrFail($cidade_id)->ongs;
-
+           
             //Se ja tiver filtrado, entao interseccionar os 
             //resultados para maior relevancia
             if (count($ongs)) {
@@ -85,10 +88,9 @@ class SearchController extends Controller {
 
 
         //Se nao vier nenhum filtro, mostrar todas as ongs
-        if (!$nome && (!$categoriaOng != "null") && !$cidade_id) {
+        if (!$nome && ($categoriaOng == "null") && !$cidade_id) {
             $ongs = Ong::all();
         }
-        
 
         return view('cuidar.ongs', compact('ongs','categorias', 'cidades'));
     }

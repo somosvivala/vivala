@@ -193,30 +193,48 @@ class OngController extends CuidarController {
         }
 
         public function edit($id=0)
-	{
-		$user = Auth::user();
-		$ong = Ong::findOrFail($user->entidadeAtiva->id);
-        $foto = $ong->getAvatarUrl();
-        $fotoCapa = $ong->getCapaUrl();
-        $nome = $ong->nome;
-        $categoriaSelecionada = $ong->categoria->id;
-        $categoriasOngs = CategoriaOng::all();
-        $cidades = Cidade::all();
-        $estados = Estado::all();
-        
-        //Verificando se usuario logado é owner da ong atual
-        //TODO: Model de permissoes.. 
-        if ($ong->user->id != $user->id) {
-            //Criar mensagens de erro padrão em configurações??
-            App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
-        }
+        {
+            $ong = Ong::findOrFail($id);
+            $user = Auth::user();
+           
+            //Verificando se usuario logado é owner da ong atual
+            //TODO: Model de permissoes.. 
+            if ($ong->user->id != $user->id) {
+                //Criar mensagens de erro padrão em configurações??
+                App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
+            }
 
-        //Trocando entidadeAtiva para essa ong
-        Session::put('entidadeAtiva_id', $ong->id);
-        Session::put('entidadeAtiva_tipo', 'ong');
+            $foto = $ong->getAvatarUrl();
+            $fotoCapa = $ong->getCapaUrl();
+            $categoriaSelecionada = ($ong->categoria ? $ong->categoria->id : null);
+            $categoriasOngs = CategoriaOng::all();
+            $nome = $ong->nome;
 
-        $ong->url = $ong->getUrl();
-        return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs', 'cidades', 'estados'));
+            //Ordenando array de cidades para ficar cidadeID => cidadeNome 
+            $cidades = Cidade::all()->keyBy('id');
+            foreach ($cidades as $cidade)
+            {
+                $cidadesArray[$cidade->id] = $cidade->nome;
+            }
+            $cidades = $cidadesArray;
+
+            //Ordenando array de estados para ficar estadoID => estadoNome 
+            $estados = Estado::all();
+            $estadosArray = array(0 => 'Selecione um Estado');
+            foreach ($estados as $estado)
+            {
+                $estadosArray[$estado->id] = $estado->nome;
+            }
+            $estados = $estadosArray;   
+            
+           
+
+            //Trocando entidadeAtiva para essa ong
+            Session::put('entidadeAtiva_id', $ong->id);
+            Session::put('entidadeAtiva_tipo', 'ong');
+
+            $ong->url = $ong->getUrl();
+            return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs', 'cidades', 'estados'));
 	}
 
 	/**

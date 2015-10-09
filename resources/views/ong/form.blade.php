@@ -59,7 +59,7 @@
                     {!! Form::select("estado", $estados, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control'], ['id' => 'estado_select']) !!}
                 </div>
                 <div class="form-group col-sm-6">
-                    {!! Form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select', 'disabled'=>'true']) !!}
+                    {!! Form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select' ]) !!}
 
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
                     <input type="radio" name="categoria_ong_id" @if ($categoriaSelecionada == $Categoria->id) echo "selected='selected'"; @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
-                        <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
+                        <img src='{{asset("/img/categorias-onu/cat-ong-".$Categoria->id.".png")}}' alt='' title='' class='col-sm-12'/>
                     </label>
                 </li>
                 @endforeach

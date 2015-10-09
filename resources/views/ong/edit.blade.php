@@ -1,7 +1,13 @@
 @extends('cuidar')
 
 @section('content')
-  <h1>{{ trans('global.lbl_volunteer_work_edit') }}</h1>
+  <div class="panel panel-default">
+
+    <div class="form-ong-head">
+        <h3 class="text-center margin-t-2">{{ trans('global.lbl_volunteer_work_edit') }}</h3>
+    </div>
+
+    <div class="panel-body">
 	<!-- Adiciona um formulario pra upload de foto-->
         <div class="text-center jc_coords row col-sm-12">
 
@@ -33,6 +39,8 @@
 		@include('ong.form', ['btnSubmit' => trans('global.lbl_submit') ]);
 
     {!! Form::close() !!}
+</div>
+</div>
 
     @include('errors.list')
 @stop
