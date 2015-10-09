@@ -9,7 +9,7 @@
             </a>
         </li>
     @empty
-        <p>Nenhuma ong.</p>
+        <p class="col-sm-12 text-center">Nenhuma ong encontrada.</p>
     @endforelse
     @endif
 </ul>

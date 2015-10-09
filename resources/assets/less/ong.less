@@ -3,7 +3,7 @@ div.sobre-ong {
 }
 ul.lista-ongs {
     list-style:none;
-
+    padding:0;
     li > div {
         height: 17em;
         overflow:hidden;
@@ -151,4 +151,16 @@ ul.lista-ongs {
 }
 .selecionado {
   background-color: @cor-fundo;
+}
+
+.filtro-cuidar {
+    select,
+    input {
+        font-family: @font-family-sans-serif-bold;
+        text-transform:uppercase;
+      &::-webkit-input-placeholder { color: black; }
+      &:-moz-placeholder { color: black; }
+      &::-moz-placeholder { color: black; }
+      &:-ms-input-placeholder { color: black; }
+    }
 }
