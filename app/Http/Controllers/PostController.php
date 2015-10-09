@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -107,7 +108,19 @@ class PostController extends VivalaBaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+            $post = Post::findOrFail($id);
+
+            $entidadeAtiva = Auth::user()->entidadeAtiva;
+
+            //Se o post a ser deletado não pertence à entidade ativa 
+            if ($entidadeAtiva == $post->author) {
+                $post->delete();
+            } else {
+                App::abort(403, 'Voce nao tem permissão para deletar um post que não te pertence.');
+            }
+
+
+            return view('home');
 	}
 
 
