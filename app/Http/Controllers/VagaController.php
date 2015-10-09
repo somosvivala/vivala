@@ -109,14 +109,13 @@ class VagaController extends CuidarController {
 		//Criando uma vaga com os campos do formulario
 		$novaVaga = $ongResponsavel->vagas()->create($request->all());
 
-               dd($novaVaga); 
-
 		//Setta o responsavel da vaga como sendo o perfil da ong
-		$novaVaga->owner()->associate($entidadeAtiva);
-		$novaVaga->responsavel()->associate($entidadeAtiva->user->perfil);
+		$novaVaga->responsavel()->associate(Auth::user()->perfil);
 		$novaVaga->push();
-
-		return redirect('vagas/'.$novaVaga->id);
+                
+                dd($novaVaga); 
+                
+                return redirect('vagas/'.$novaVaga->id);
 	}
 
 	/**

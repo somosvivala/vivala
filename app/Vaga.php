@@ -20,7 +20,8 @@ class Vaga extends Model {
                 'quantidade_vagas',
                 'email_contato',
                 'telefone_contato',
-                'numero_beneficiados' 
+                'numero_beneficiados',
+                'categoria_vaga_id' 
 		];	
 
 	/**
@@ -94,8 +95,18 @@ class Vaga extends Model {
      */
     public function categoria() 
     {
-        return $this->belongsTo('App\CategoriaVaga', 'categoria_vaga_id');
+        return $this->belongsto('app\categoriavaga', 'categoria_vaga_id');
     }
 
+    /**
+     * Definindo um Mutator para o campo numero_beneficiados,
+     * assim mesmo quando essa entidade for criada com Model::create([])
+     * a propriedade 'numero_beneficiados' vai passar por esse metodo antes da 
+     * insercao
+     */
+    public function setNumeroBeneficiadosAttribute($value)
+    {
+        $this->attributes['numero_beneficiados'] = intval($value);
+    }
 
 }

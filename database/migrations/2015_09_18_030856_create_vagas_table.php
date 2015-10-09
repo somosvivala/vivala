@@ -26,6 +26,11 @@ class CreateVagasTable extends Migration {
 			$table->string('complemento')->nullable();
 			$table->string('horario_funcionamento')->nullable();
 
+                        //Campos contato
+			$table->string('email_contato')->nullable();
+			$table->string('telefone_contato')->nullable();
+                        
+                        
                         //FK para cidades 
 			$table->integer('cidade_id')->unsigned()->nullable();
 			$table->foreign('cidade_id')
@@ -37,10 +42,10 @@ class CreateVagasTable extends Migration {
                         $table->integer('numero_beneficiados')->nullable();
 
 			//FK para categoria_ong
-			$table->integer('categoria_ong_id')->unsigned()->nullable();
-			$table->foreign('categoria_ong_id')
+			$table->integer('categoria_vaga_id')->unsigned()->nullable();
+			$table->foreign('categoria_vaga_id')
 				->references('id')
-				->on('categoria_ongs');
+				->on('categoria_vagas');
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong
