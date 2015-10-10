@@ -6,13 +6,13 @@
             {!! Form::select("ong", $ongs, ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control'], ['id' => 'ong_select']) !!}
         </div>
         <div class="form-group col-sm-12">
-            {!! Form::textarea("habilidades", null, ['title'=> trans('global.lbl_cause_job_habilities_ph'), 'aria-label'=> trans('global.lbl_cause_job_habilities_ph'), 'placeholder'=> trans('quiz.lbl_cause_job_habilities'), 'class' => 'form-control' ]) !!}
+            {!! Form::textarea("habilidades", null, ['title'=> trans('global.lbl_cause_job_habilities_ph'), 'aria-label'=> trans('global.lbl_cause_job_habilities_ph'), 'placeholder'=> trans('global.lbl_cause_job_habilities'), 'class' => 'form-control' ]) !!}
         </div>
     </div>
 
     <div class="row">
         <div class="form-group col-sm-12">
-            {!! Form::textarea("sobre_trabalho", null, ['title'=> trans('global.lbl_cause_job_description_ph'), 'aria-label'=> trans('global.lbl_cause_job_description_ph'), 'placeholder'=> trans('quiz.lbl_cause_job_description'), 'class'=> 'form-control' ]) !!}
+            {!! Form::textarea("sobre_trabalho", null, ['title'=> trans('global.lbl_cause_job_description_ph'), 'aria-label'=> trans('global.lbl_cause_job_description_ph'), 'placeholder'=> trans('global.lbl_cause_job_description'), 'class'=> 'form-control' ]) !!}
         </div>
 
         <!-- Horários de Funcionamento -->

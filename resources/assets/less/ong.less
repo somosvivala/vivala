@@ -27,8 +27,51 @@ ul.lista-ongs {
             margin: 10% auto;
             display:block;
             text-transformation: uppercase;
-            padding: 2em;
-            line-height:2em;
+            padding:2em 0em;
+            max-width:90%;
+            line-height:1.8em;
+        }
+    }
+}
+ul.lista-vagas   {
+    list-style:none;
+    padding:0;
+    li > div {
+        height: 17em;
+        overflow:hidden;
+        margin-bottom:1em;
+        a {
+            display:block;
+            border-top: 0.5em solid @cor-pele-zumbi;
+            width:100%;
+            height:100%;
+            background-color: rgba(255,255,255,0.8);
+            top:100%;
+            position:relative;
+            opacity:0;
+            transition: 1s ease top, 1s ease opacity;
+        }
+        &:hover a{
+            top:0;
+            opacity:1;
+        }
+        h3 {
+            margin: 10% auto;
+            display:block;
+            text-transformation: uppercase;
+            padding: 0em;
+            line-height:1em;
+        }
+        p {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            width:80%;
+            margin: 0 10%;
+            padding: 0.2em 1em 0.5em;   
+        }
+        span     {
+            display: block;
+            color:@cor-pele-zumbi;
         }
     }
 }
