@@ -35,9 +35,9 @@ class SearchController extends Controller {
      */
     public function postFiltrarongs()
     {
-        $categoriaOng = Request::get('categoriaOng');
+        $categoriaOng = Request::get('filtro_categoria');
         $nome = Request::get('nome');
-        $cidade_id = Request::get('cidade_id');
+        $cidade_id = Request::get('filtro_cidade');
         $ongs = new Collection();
 
  

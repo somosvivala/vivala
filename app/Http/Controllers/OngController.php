@@ -135,7 +135,7 @@ class OngController extends CuidarController {
 		return view('ong.show', compact('ong'));
 	}
 
-    /**
+        /**
 	 * Mostra todas as ongs e um filtro
 	 *
 	 * @param  int  $id
@@ -144,9 +144,10 @@ class OngController extends CuidarController {
 	public function ongs()
 	{
             $ongs = Ong::all();
-            $categorias = CategoriaOng::all();
+            $categorias = Ong::getCategoriasComOngs();
             $cidades = Ong::getCidadesComOngs();
-            
+
+            //Arrumando array de cidades para select 
             $cidadesArray = array(0 => 'Selecione uma Cidade');
             foreach ($cidades as $cidade)
             {
@@ -154,6 +155,13 @@ class OngController extends CuidarController {
             }
             $cidades = $cidadesArray;
         
+            $categoriasArray = array(0 => 'Selecione uma Categoria');
+            foreach ($categorias as $cidade)
+            {
+                $categoriasArray[$cidade->id] = $cidade->nome;
+            }
+            $categorias = $categoriasArray;
+
             return view('cuidar.ongs', compact('ongs','categorias', 'cidades'));
         }
 
