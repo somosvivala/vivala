@@ -47,6 +47,7 @@
 
 
             {!! Form::open(['url' => 'vagas']) !!}
+                {!! Form::hidden("foto", false, ['id' => 'uploadedFoto' ]) !!}
                 @include('vaga.form', ['btnSubmit' => trans('global.lbl_create') ])
             {!! Form::close() !!}
 

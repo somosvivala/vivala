@@ -94,7 +94,7 @@ class Vaga extends Model {
      */
     public function categoria() 
     {
-        return $this->belongsto('app\categoriavaga', 'categoria_vaga_id');
+        return $this->belongsto('App\CategoriaVaga', 'categoria_vaga_id');
     }
 
     /**

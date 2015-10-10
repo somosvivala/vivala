@@ -13,6 +13,7 @@ use App\Cidade;
 use App\Ong;
 use App\Estado;
 use App\CategoriaVaga;
+use App\Foto;
 
 use Request;
 
@@ -98,7 +99,6 @@ class VagaController extends CuidarController {
 	 */
 	public function store(CriarVagaRequest $request)
 	{
-
                 $ongResponsavel = Ong::find($request->get('ong'));
                 
                 //Checando se posso criar vagas
@@ -108,6 +108,13 @@ class VagaController extends CuidarController {
 
 		//Criando uma vaga com os campos do formulario
 		$novaVaga = $ongResponsavel->vagas()->create($request->all());
+
+                $foto = Request::input('foto');
+                
+                if ($foto && $foto > 0) {
+                    $novaVaga->fotos()->save(Foto::find($foto));
+                }                
+
 
 		//Setta o responsavel da vaga como sendo o perfil da ong
 		$novaVaga->responsavel()->associate(Auth::user()->perfil);
@@ -173,6 +180,7 @@ class VagaController extends CuidarController {
                 }
                 $estados = $estadosArray; 
 
+
 		return view('vaga.edit', compact('vaga', 'categoriasVaga', 'ongs', 'cidades', 'estados'));
 	}
 
@@ -190,7 +198,13 @@ class VagaController extends CuidarController {
 		}
 
 		$vaga->update($request->all());
-		
+
+                $foto = Request::input('foto');
+                
+                if ($foto && $foto > 0) {
+                    $vaga->fotos()->save(Foto::find($foto));
+                }                
+
 		return view('vaga.show', compact('vaga'));
 	}
 

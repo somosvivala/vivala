@@ -7,6 +7,7 @@
 
   	{!! Form::model($vaga, ['method' => 'PATCH', 'action' => ['VagaController@update', $vaga->id] ]) !!}
 
+                {!! Form::hidden("foto", false, ['id' => 'uploadedFoto' ]) !!}
 		@include('vaga.form', ['btnSubmit' => trans('global.lbl_cause_update')]);
 
     {!! Form::close() !!}
