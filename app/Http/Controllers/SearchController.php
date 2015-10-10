@@ -106,19 +106,79 @@ class SearchController extends Controller {
      */
     public function postFiltrarvagas()
     {
-        $causas = Vaga::all(); 
 
-        $categorias = CategoriaVaga::all();
+        $categoriaVaga = Request::get('filtro_categoria');
+        $cidade_id     = Request::get('filtro_cidade');
+        $filtro_ong    = Request::get('filtro_ong');
+
+        $categorias = Vaga::getCategoriasComVagas();
         $cidades = Vaga::getCidadesComVagas();
+        $ongs = Vaga::getOngsComVagas(); 
+        $causas = new Collection();
         
-        $cidadesArray = array(0 => 'Selecione uma Cidade');
+        //Montando array de ongs para select
+        $ongsArray = array(null => 'Selecione uma Ong');
+        foreach ($ongs as $ong)
+        {
+            $ongsArray[$ong->id] = $ong->nome;
+        }
+        $ongs = $ongsArray;
+ 
+
+        //Montando array de cidades para select
+        $cidadesArray = array(null => 'Selecione uma Cidade'); 
         foreach ($cidades as $cidade)
         {
             $cidadesArray[$cidade->id] = $cidade->nome;
         }
         $cidades = $cidadesArray;
-    
-        return view('cuidar.vagas', compact('causas','categorias', 'cidades'));
+
+        //Montando array de categorias para select
+        $categoriasArray = array(null => 'Selecione uma Categoria'); 
+        foreach ($categorias as $categoria)
+        {
+            $categoriasArray[$categoria->id] = $categoria->nome;
+        }
+        $categorias = $categoriasArray;
+
+        
+        //Filtrando resultados pelas categorias
+        if ($categoriaVaga && $categoriaVaga != "null") {
+            $vagasByCategoria = CategoriaVaga::findOrFail($categoriaVaga)->vagas;
+            $causas = $causas->merge($vagasByCategoria);            
+        }
+
+        //Filtrando resultados por Cidade
+        if ($cidade_id) {
+           $vagasByCidade = Cidade::findOrFail($cidade_id)->vagas;
+           
+            //Se ja tiver filtrado, entao interseccionar os 
+            //resultados para maior relevancia
+            if (count($causas)) {
+                $causas = $causas->intersect($vagasByCidade);            
+            
+            } else {    
+                $causas = $causas->merge($vagasByCidade);            
+            }
+        }
+
+        if ($filtro_ong) {
+            $causasByOng = Ong::findOrFail($filtro_ong)->vagas;
+
+            if (count($causas)) {
+                $causas = $causas->intersect($causasByOng);
+            } else {
+                $causas =  $causas->merge($causasByOng);
+            }
+        }
+
+
+        if (!$cidade_id && (!$categoriaVaga || $categoriaVaga == "null") && !$filtro_ong ) {
+            $causas = Vaga::all(); 
+        }
+
+        return view('cuidar.vagas', compact('causas','categorias', 'cidades', 'ongs'));
+        
     }
     
 

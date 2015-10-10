@@ -140,21 +140,55 @@ class Vaga extends Model {
 
 
     /**
-     * Metodo que retorna todas as cidades que tem  atualmente.
+     * Metodo que retorna todas as cidades que tem vagas
      * @return Collection
      */
     public static function getCidadesComVagas() 
     {
-       //Obtendo a lista de todas as ongs com cidades.
-       $vagas = Vaga::with('cidade')->whereNotNull('cidade_id')->get();
+       //Obtendo a lista de todas as vagas com cidades.
+       $cidades = Vaga::with('cidade')->whereNotNull('cidade_id')->get();
 
-       //se a Collection nao estiver vazia (nenhuma vaga com cidade), entao 
-       //listar cidades
-       if (count($vagas)) 
-           $vagas = $vagas->lists('cidade'); 
+       //se a Collection nao estiver vazia, entao listar cidades
+       if (count($cidades)) 
+           $cidades = array_unique($cidades->lists('cidade')); 
        
-       return $vagas;   
+       return $cidades;   
     }
+
+    /**
+     * Metodo que retorna todas as ongs(owners) que tem vagas.
+     * @return Collection
+     */
+    public static function getOngsComVagas() 
+    {
+       //Obtendo a lista de todas as ongs com cidades.
+       $ongs = Vaga::with('owner')->where('owner_type', 'App\Ong')->get();
+
+       //se a Collection nao estiver vazia, entao listar ongs
+       if (count($ongs)) {
+           $ongs = array_unique($ongs->lists('owner'));
+       }
+       
+       return $ongs;   
+    }
+
+    /**
+     * Metodo que retorna todas as Categorias atualmente usadas pelas Vagas.
+     * @return Collection
+     */
+    public static function getCategoriasComVagas() 
+    {
+       //Obtendo a lista de todas as ongs com cidades.
+       $categorias = Vaga::with('categoria')->whereNotNull('categoria_vaga_id')->get();
+
+       //se a Collection nao estiver vazia, entao listar categorias 
+       if (count($categorias)) {
+           $categorias = array_unique($categorias->lists('categoria'));
+       }
+       
+       return $categorias;   
+    }
+
 
 
 }
