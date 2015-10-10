@@ -139,4 +139,22 @@ class Vaga extends Model {
     }
 
 
+    /**
+     * Metodo que retorna todas as cidades que tem  atualmente.
+     * @return Collection
+     */
+    public static function getCidadesComVagas() 
+    {
+       //Obtendo a lista de todas as ongs com cidades.
+       $vagas = Vaga::with('cidade')->whereNotNull('cidade_id')->get();
+
+       //se a Collection nao estiver vazia (nenhuma vaga com cidade), entao 
+       //listar cidades
+       if (count($vagas)) 
+           $vagas = $vagas->lists('cidade'); 
+       
+       return $vagas;   
+    }
+
+
 }

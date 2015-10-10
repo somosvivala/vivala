@@ -8,7 +8,9 @@ use Request;
 use App\Estado;
 
 use App\CategoriaOng;
+use App\CategoriaVaga;
 use App\Ong;
+use App\Vaga;
 use App\Cidade;
 
 use Illuminate\Database\Eloquent\Collection;
@@ -104,11 +106,10 @@ class SearchController extends Controller {
      */
     public function postFiltrarvagas()
     {
-        //   $causas = Vaga::all(); //ta quebrando
-        $causas = Ong::all();
+        $causas = Vaga::all(); 
 
-        $categorias = CategoriaOng::all();
-        $cidades = Ong::getCidadesComOngs();
+        $categorias = CategoriaVaga::all();
+        $cidades = Vaga::getCidadesComVagas();
         
         $cidadesArray = array(0 => 'Selecione uma Cidade');
         foreach ($cidades as $cidade)
