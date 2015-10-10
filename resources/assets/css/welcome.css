@@ -51,6 +51,12 @@ ul.margin-0 {
 .padding-b-2 {
   padding-bottom: 2em;
 }
+.padding-t-1 {
+  padding-top: 1em;
+}
+.padding-t-2 {
+  padding-top: 2em;
+}
 a.padding-btn,
 .padding-btn {
   padding: 0.7em 1.2em 0.5em;
