@@ -82,7 +82,7 @@
         </div>
     </div>
 
-   <div class="form-group text-center">
+   <div class="form-group text-center margin-t-2">
         {!! Form::submit( $btnSubmit, ['class' => 'btn btn-primary btn-acao']) !!}
     </div>
 </div>
