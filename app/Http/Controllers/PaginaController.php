@@ -137,7 +137,7 @@ class PaginaController extends Controller {
     /**
      * Retorna a blade da pagina de Politicaprivacidade 
      */
-    public function getPoliticaprivacidade()
+    public function getPoliticadeprivacidade()
     {
         return view('paginas.politicaprivacidade');
     }
