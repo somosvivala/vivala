@@ -14,6 +14,7 @@ use App\Ong;
 use App\Estado;
 use App\CategoriaVaga;
 use App\Foto;
+use App\Post;
 
 use Request;
 
@@ -131,6 +132,13 @@ class VagaController extends CuidarController {
             $novaVaga->fotos()->save(Foto::find($foto));
         }                
 
+        // Faz um post de criação de vaga
+        $novoPost = new Post();
+        $novoPost->descricao = "<h1><i class='fa fa-heart'></i></h1><a href='".url('/vagas/'.$novaVaga->id)."' class=''>".$ongResponsavel->nome." criou uma vaga em ".$novaVaga->cidade->nome.",".$novaVaga->estado->sigla."</a>";
+        $novoPost->tipo_post = 'acontecimento';
+
+        //Salvando novoPost para entidadeAtiva
+        $ongResponsavel->posts()->save($novoPost);
 
         //Setta o responsavel da vaga como sendo o perfil da ong
         $novaVaga->responsavel()->associate(Auth::user()->perfil);
