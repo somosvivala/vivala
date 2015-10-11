@@ -5,6 +5,9 @@
 .soft-hide {
   display: none;
 }
+.texto-preto {
+  color: black;
+}
 .titulo-zumbi {
   color: #8ba6ac;
   padding: 0 1em;
