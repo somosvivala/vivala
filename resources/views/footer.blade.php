@@ -7,9 +7,9 @@
         </div>
         <div class="col-sm-3 text-left">
             <ul>
-                <li><a href="#"><i class="fa fa-plus"></i> nosso manifesto</a></li>
-                <li><a href="#"><i class="fa fa-plus"></i> quem somos</a></li>
-                <li><a href="#"><i class="fa fa-plus"></i> o que fazemos</a></li>
+                <li><a href="{{ url('/paginas/nossomanifesto') }}"><i class="fa fa-plus"></i> nosso manifesto</a></li>
+                <li><a href="{{ url('/paginas/quemsomos') }}"><i class="fa fa-plus"></i> quem somos</a></li>
+                <li><a href="{{ url('/paginas/oquefazemos') }}"><i class="fa fa-plus"></i> o que fazemos</a></li>
             </ul>
         </div>
         <div class="col-sm-3 text-right">
@@ -19,10 +19,10 @@
         </div>
         <div class="col-sm-3 text-left">
             <ul>
-                <li><a href="#"><i class="fa fa-plus"></i> contato</a></li>
-                <li><a href="#"><i class="fa fa-plus"></i> termos e condições</a></li>
-                <li><a href="#"><i class="fa fa-plus"></i> política de privacidade</a></li>
-                <li><a href="#"><i class="fa fa-plus"></i> parceiros</a></li>
+                <li><a href="{{ url('/paginas/contato') }}"><i class="fa fa-plus"></i> contato</a></li>
+                <li><a href="{{ url('/paginas/termosecondicoes') }}"><i class="fa fa-plus"></i> termos e condições</a></li>
+                <li><a href="{{ url('/paginas/politicadeprivacidade') }}"><i class="fa fa-plus"></i> política de privacidade</a></li>
+                <li><a href="{{ url('/paginas/parceiros') }}"><i class="fa fa-plus"></i> parceiros</a></li>
             </ul>
         </div>
     </div>
