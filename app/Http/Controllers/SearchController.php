@@ -117,7 +117,7 @@ class SearchController extends Controller {
         $causas = new Collection();
         
         //Montando array de ongs para select
-        $ongsArray = array(null => 'Selecione uma Ong');
+        $ongsArray = array(null => 'Selecione um Projeto');
         foreach ($ongs as $ong)
         {
             $ongsArray[$ong->id] = $ong->nome;
