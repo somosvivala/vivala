@@ -6,7 +6,7 @@
 		<li><a href="/cuidar"><i class="fa fa-home"></i>Página Inicial</a></li>
 		<li><a href="/ongs"><i class="fa fa-heart"></i>Ongs</a></li>
                 <li><a href="/vagas"><i class="fa fa-flag"></i>Vagas</a></li>
-                <li><a href="/paginas/porquecuidar" class="desativado"><i class="fa fa-question"></i>Porque cuidar</a></li>
+                <li><a href="/paginas/porquecuidar"><i class="fa fa-question"></i>Porque cuidar</a></li>
                 <li><a href="/paginas/resultados" class="desativado"><i class="fa fa-tasks"></i>Resultados</a></li>
                 <li><a href="/paginas/mapadobem" class="desativado"><i class="fa fa-map"></i>Mapa do bem</a></li>
 	</ul>

@@ -1,12 +1,12 @@
-@extends('conectar')
+@extends('cuidar')
 
 @section('content')
 
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
     <div class="col-sm-12">
 
-    <h3 class="font-bold-upper text-center margin-b-2">Termos e condições
-        <small class="sub-titulo">Regrinhas básicas da casa :-)</small>
+        <h3 class="font-bold-upper text-center margin-b-2"> Porque cuidar
+        <small class="sub-titulo"></small>
     </h3>
 
     <p class="col-sm-12">

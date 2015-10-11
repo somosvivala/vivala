@@ -18,10 +18,7 @@ class PaginaController extends Controller {
      * Create a new controller instance.
      *
      * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
+     */ public function __construct() { $this->middleware('auth');
     }
 
     /**
@@ -158,5 +155,13 @@ class PaginaController extends Controller {
         return view('paginas.termosecondicoes');
     }
 
+
+    /**
+     * Retorna a blade da pagina de Porque Cuidar  
+     */
+    public function getPorquecuidar()
+    {
+        return view('paginas.porquecuidar');
+    }
 
 }

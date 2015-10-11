@@ -13,6 +13,10 @@
   border-left: 1px solid #8ba6ac;
   text-transform: uppercase;
 }
+.text-justified {
+  text-align: justify;
+  text-justify: inter-word;
+}
 .box-shadow {
   position: absolute;
   top: 100%;
@@ -434,6 +438,95 @@ ul.filtro {
 }
 ul.filtro a {
   text-decoration: none;
+  color: #535353;
+}
+.form-borda-preta input,
+.form-borda-preta input[type="text"],
+.form-borda-preta textarea,
+.form-borda-preta select {
+  border: 1px solid black;
+  border-radius: 0;
+}
+.form-borda-preta select {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.form-borda-preta h5 {
+  color: #8ba6ac;
+  padding: 0 1em;
+  margin: 1em ;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  border-left: 1px solid #8ba6ac;
+  text-transform: uppercase;
+}
+.form-borda-preta .label-url {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  border-right: 0px;
+}
+.form-borda-preta input[type="radio"] + label {
+  padding: 1em;
+  background-color: white;
+}
+.form-borda-preta input[type="radio"]:checked + label {
+  border: 2px solid #f16f2b;
+  padding: 0.2em;
+}
+.form-borda-preta .input-url-pretty {
+  padding-left: 11.4em;
+  color: #f16f2b;
+}
+.form-borda-preta .label-url-pretty {
+  width: 12.4em;
+}
+.form-borda-preta .label-url-facebook {
+  width: 10em;
+  color: #535353;
+}
+.form-borda-preta .input-url-facebook {
+  padding-left: 9em;
+  color: #f16f2b;
+}
+.form-borda-preta .label-url-gplus {
+  width: 12em;
+  color: #535353;
+}
+.form-borda-preta .input-url-gplus {
+  padding-left: 10.5em;
+  color: #f16f2b;
+}
+.form-borda-preta .label-url-insta {
+  width: 10.4em;
+  color: #535353;
+}
+.form-borda-preta .input-url-insta {
+  padding-left: 9.4em;
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria ::-webkit-input-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria :-moz-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria ::-moz-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria :-ms-input-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-cinza-escuro ::-webkit-input-placeholder {
+  color: #535353;
+}
+.form-borda-preta .ph-cor-cinza-escuro :-moz-placeholder {
+  color: #535353;
+}
+.form-borda-preta .ph-cor-cinza-escuro ::-moz-placeholder {
+  color: #535353;
+}
+.form-borda-preta .ph-cor-cinza-escuro :-ms-input-placeholder {
   color: #535353;
 }
 #welcome-html {

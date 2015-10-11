@@ -14,6 +14,10 @@
     text-transform: uppercase;
 }
 
+.text-justified {
+    text-align: justify;
+    text-justify: inter-word;
+}
 .box-shadow {
     position: absolute;
     top: 100%;
@@ -466,3 +470,87 @@ ul.filtro {
         color: @cor-cinza-escuro;
     }
 }
+
+
+.form-borda-preta {
+    input,
+    input[type="text"],
+    textarea,
+    select {
+        border: 1px solid black;
+        border-radius: 0;
+    }
+    select {
+        font-family: @font-family-sans-serif-bold;
+        text-transform: uppercase;
+    }
+    h5 {
+        color: @cor-pele-zumbi;
+        padding:0 1em;
+        margin:1em ;
+        font-family: @font-family-sans-serif-bold;
+        border-left: 1px solid @cor-pele-zumbi;
+        text-transform: uppercase;
+    }
+    .label-url {
+        position: absolute;
+        top:0;
+        left:0;
+        border: 1px solid black;
+        border-right: 0px;
+    }
+    input[type="radio"] + label {
+        padding: 1em;
+        background-color: white;
+    }
+    input[type="radio"]:checked + label {
+        border: 2px solid @cor-primaria;
+        padding: 0.2em;
+    }
+    .input-url-pretty {
+      padding-left: 11.4em;
+      color: @cor-primaria;
+    }
+    .label-url-pretty {
+      width: 12.4em;
+    }
+    .label-url-facebook {
+      width: 10em;
+      color: @cor-cinza-escuro;
+    }
+    .input-url-facebook {
+      padding-left: 9em;
+      color: @cor-primaria;
+    }
+    .label-url-gplus {
+      width: 12em;
+      color: @cor-cinza-escuro;
+    }
+    .input-url-gplus {
+      padding-left: 10.5em;
+      color: @cor-primaria;
+    }
+    .label-url-insta {
+      width: 10.4em;
+      color: @cor-cinza-escuro;
+    }
+    .input-url-insta {
+      padding-left: 9.4em;
+      color: @cor-primaria;
+    }
+    // Placeholder coloridos | PS: é pseudoclasse e não pseudoelemento, usar na div externa ao input então
+    .ph-cor-primaria {
+      ::-webkit-input-placeholder { color: @cor-primaria; }
+      :-moz-placeholder { color: @cor-primaria; }
+      ::-moz-placeholder { color: @cor-primaria; }
+      :-ms-input-placeholder { color: @cor-primaria; }
+    }
+    .ph-cor-cinza-escuro {
+      ::-webkit-input-placeholder { color: @cor-cinza-escuro; }
+      :-moz-placeholder { color: @cor-cinza-escuro; }
+      ::-moz-placeholder { color: @cor-cinza-escuro; }
+      :-ms-input-placeholder { color: @cor-cinza-escuro; }
+    }
+}
+
+
