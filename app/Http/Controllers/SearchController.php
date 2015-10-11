@@ -78,7 +78,6 @@ class SearchController extends Controller {
             }
         }
 
-        $categorias = CategoriaOng::all();
         $cidades = Ong::getCidadesComOngs();
         
         $cidadesArray = array(0 => 'Selecione uma Cidade');
@@ -88,9 +87,16 @@ class SearchController extends Controller {
         }
         $cidades = $cidadesArray;
 
+        $categorias = Ong::getCategoriasComOngs();
+        $categoriasArray = array(0 => 'Selecione uma Categoria');
+        foreach ($categorias as $cidade)
+        {
+            $categoriasArray[$cidade->id] = $cidade->nome;
+        }
+        $categorias = $categoriasArray;
 
         //Se nao vier nenhum filtro, mostrar todas as ongs
-        if (!$nome && ($categoriaOng == "null") && !$cidade_id) {
+        if (!$nome && (!$categoriaOng || $categoriaOng == "null") && !$cidade_id) {
             $ongs = Ong::all();
         }
 
