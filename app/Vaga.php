@@ -127,6 +127,10 @@ class Vaga extends Model {
             return $this->fotoCapa()->path;
         }
 
+        if ($this->owner->fotoCapa()) {
+            return $this->owner->fotoCapa()->path;
+        }
+
         return '/img/querocuidar.png';
     }
 
