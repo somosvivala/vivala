@@ -27,7 +27,12 @@ class QuizController extends VivalaBaseController {
 	 */
 	public function getIndex()
 	{
-		$interesses = Interesse::all();
+            $interesses['estilo'] = Interesse::all()->where('categoria', 'estilo');
+            $interesses['companhia'] = Interesse::all()->where('categoria', 'companhia');
+            $interesses['ambiente'] = Interesse::all()->where('categoria', 'ambiente');
+            $interesses['regioes'] = Interesse::all()->where('categoria', 'regioes');
+            $interesses['motivacoes'] = Interesse::all()->where('categoria', 'motivacoes');
+            $interesses['eventos'] = Interesse::all()->where('categoria', 'eventos');
 		return view("quiz.interesses", compact('interesses'))->with(['passo'=>1]);
 	}
 

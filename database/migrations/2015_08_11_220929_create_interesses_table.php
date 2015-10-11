@@ -16,6 +16,7 @@ class CreateInteressesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('nome');
+			$table->enum('categoria', ['estilo', 'companhia', 'ambiente', 'regioes', 'motivacoes', 'eventos'])->nullable();
 			$table->timestamps();
 		});
 	

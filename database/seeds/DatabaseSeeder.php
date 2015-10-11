@@ -356,16 +356,49 @@ class InteresseSeeder extends Seeder {
     {
         DB::table('interesses')->delete();
 
-        Interesse::create(['nome' => 'Breja']);
-        Interesse::create(['nome' => 'Café']);
-        Interesse::create(['nome' => 'Whiskey']);
-        Interesse::create(['nome' => 'Whisky']);
-        Interesse::create(['nome' => 'Badegão']);
-        Interesse::create(['nome' => 'Narcos']);
-        Interesse::create(['nome' => 'Macarrão']);
-        Interesse::create(['nome' => 'Banho']);
-        Interesse::create(['nome' => 'Dormir']);
-        Interesse::create(['nome' => '%7}ºª¢¬6#$@']);
+        Interesse::create(['categoria' => 'estilo' , 'nome' => 'Mochileiro']);
+        Interesse::create(['categoria' => 'estilo' , 'nome' => 'Original']);
+        Interesse::create(['categoria' => 'estilo' , 'nome' => 'Conforto']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Sozinho']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Em família']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Com amigos']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Em casal']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Praia e sol']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Montanha']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Ecoturismo']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Cidades históricas']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Cidades Pequenas']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Cidades Grandes']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Retiros espirituais']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Centro oeste']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Nordeste']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Norte']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Sudeste']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Sul']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Conhecer locais famosos']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Explorar locais desconhecidos']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Ver realidades diferentes da minha']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Vivenciar realidades diferentes da minha']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Buscar experiências que mudem a minha atitude']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Achar respostas à questões existenciais']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Crescimento pessoal']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Imersão Cultural']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Diversão descompromissada e passatempos']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Descansar a mente para retomar o cotidiano']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Gosto de não fazer nada']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Eventos típicos (carnaval, festa junina)']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Bares']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Baladas']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Shows']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Festivais']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Cinema']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Espetáculos de tetro e musicais']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Museus']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Eventos esportivos']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Restaurantes renomados']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Restaurantes de comida típica']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Conhecer projetos sociais']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Ser voluntário em projetos sociais']);
     }
 }
 
