@@ -5,6 +5,14 @@
 .soft-hide {
   display: none;
 }
+.titulo-zumbi {
+  color: #8ba6ac;
+  padding: 0 1em;
+  margin: 1em ;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  border-left: 1px solid #8ba6ac;
+  text-transform: uppercase;
+}
 .box-shadow {
   position: absolute;
   top: 100%;
