@@ -12,17 +12,23 @@
 			{!! $Post->descricao !!}
 		</div>
 	</div>
-	<div class="hora-post">
-		<a href="{{ $Post->url }}"> {{ $Post->data_postagem_diff }} </a>
-	</div>
 	@include('post._barrainfos')
 		<div class="row box-post">
 			<div class="col-sm-6 fundo-cheio">
-				@include('feed._comentarios', ["qtdComentariosExibicao" => 3])
+				@include('post._comentarios')
 			</div>
 			<div class="col-sm-6 fundo-cheio">
 				@include('post._novocomentario')
 			</div>
 		</div>
 	</div>
+    <div class="hora-post"> 
+        {{ $Post->data_postagem_diff }}
+        @if ( Auth::user()->entidadeAtiva == $Post->entidade )
+                {!! Form::open([ 'method' => 'DELETE', 'route' => ['post.destroy', $Post->id] ]) !!}
+                    {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja remover esse post?');"]) !!}
+            
+                {!! Form::close() !!}
+        @endif
+    </div>
 </article>

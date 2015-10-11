@@ -3,6 +3,14 @@
 		<a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a>
 	</div>
 
+        <div class="col-sm-2 margin-t-2">
+                <div class="foto-label">
+                    <a href="{{ url($Post->entidade->getUrl()) }}">
+                        <img class="foto-avatar" src="{{ $Post->entidade->getAvatarUrl() }}" alt="{{ $Post->entidade->nome }}">
+                        <div class="titulo-label">{{$Post->entidade->apelido }}</div>
+                    </a>
+                </div>
+        </div>
 	@if($Post->fotos)
 	<a href="{{$Post->fotos->path}}" data-lightbox="foto-{{ $Post->id }}" data-title="{{ $Post->titulo }}">
 	@endif
@@ -14,12 +22,6 @@
 	>
 		<h4>{{ $Post->titulo }}</h4>
 
-		<div class="col-sm-2">
-			<div class="foto-label">
-				<img class="foto-avatar" src="{{ $Post->entidade->getAvatarUrl() }}" alt="{{ $Post->entidade->nome }}">
-				<div class="titulo-label">{{$Post->entidade->apelido }}</div>
-			</div>
-		</div>
 	</div>
 	@if($Post->fotos)
 </a>

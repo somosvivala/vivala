@@ -2,8 +2,10 @@
 	<div class="row principal">
 		<div class="col-sm-2">
 			<div class="foto-label">
+                            <a href="{{ url($Post->entidade->getUrl()) }}">
 				<img class="foto-avatar" src="{{ $Post->entidade->getAvatarUrl() }}" alt="{{ $Post->entidade->nome }}">
 				<div class="titulo-label">{{$Post->entidade->apelido }}</div>
+                            </a>
 			</div>
 		</div>
 		<div class="col-sm-10">
