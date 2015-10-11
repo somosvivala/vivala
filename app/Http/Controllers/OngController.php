@@ -120,7 +120,7 @@ class OngController extends CuidarController {
 
                 Session::put('entidadeAtiva_id', $novaOng->id);
                 Session::put('entidadeAtiva_tipo', 'ong');
-		return redirect('/ong/trocacapa');
+		return redirect('/ong/trocacapa/'.$novaOng->id);
 	}
 
 	/**
@@ -181,10 +181,10 @@ class OngController extends CuidarController {
 	}
 
 
-        public function trocaCapa($id=0)
+        public function getTrocacapa($id=0)
         {
             $user = Auth::user();
-            $ong = Ong::findOrFail($user->entidadeAtiva->id);
+            $ong = Ong::findOrFail($id);
             $fotoCapa = $ong->getCapaUrl();
             //Verificando se usuario logado é owner da ong atual
             if ($ong->user->id != $user->id) {
