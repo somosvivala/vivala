@@ -361,7 +361,7 @@ return[
     'lbl_profile' => 'Perfil',
     'lbl_profile_info' => 'Informação do seu Perfil',
     'lbl_profile_info_' => 'Informações do seu Perfil',
-    'lbl_publish' => 'Publicar',
+    'lbl_publish' => 'Enviar Comentário',
     'lbl_quiz' => 'Questionário',
     'lbl_read_more' => 'Ler Mais',
     'lbl_register' => 'Registrar',
