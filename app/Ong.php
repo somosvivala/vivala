@@ -554,12 +554,32 @@ class Ong extends Model {
        //Obtendo a lista de todas as ongs com cidades.
        $ongs = Ong::with('cidade')->whereNotNull('cidade_id')->get();
 
-       //se a Collection nao estiver vazia (nenhuma ong com cidade), entao 
-       //listar cidades
+       //se a Collection nao estiver vazia, entao listar cidades
        if (count($ongs)) 
            $ongs = $ongs->lists('cidade'); 
        
        return $ongs;   
     }
+
+
+    /**
+     * Metodo que retorna todas as Categorias que tem Ongs atualmente.
+     * @return Collection
+     */
+    public static function getCategoriasComOngs() 
+    {
+       //Obtendo a lista de todas as categorias com ongs.
+       $categorias = Ong::with('categoria')->whereNotNull('categoria_ong_id')->get();
+
+       //se a Collection nao estiver vazia, entao listar cidades
+       if (count($categorias)) 
+           $categorias = array_unique($categorias->lists('categoria')); 
+       
+       return $categorias;   
+    }
+
+
+
+
 }
 

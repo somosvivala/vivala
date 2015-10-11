@@ -10,7 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::get('ong/trocacapa','OngController@trocaCapa');
 
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
@@ -32,6 +31,7 @@ Route::controller('notificacoes','NotificacaoController');
 Route::controller('paginas','PaginaController');
 Route::controller('vagas','VagaController');
 Route::controller('busca','SearchController');
+Route::controller('ong','OngController');
 
 
 // Rotas dos três pilares do sistema

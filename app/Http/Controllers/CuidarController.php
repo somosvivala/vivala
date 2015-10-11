@@ -30,18 +30,34 @@ class CuidarController extends VivalaBaseController {
 	 */
 	public function index()
 	{
-         //   $causas = Vaga::all(); //ta quebrando
-            $causas = Ong::all();
-            $categorias = CategoriaOng::all();
-            $cidades = Ong::getCidadesComOngs();
-            
-            $cidadesArray = array(0 => 'Selecione uma Cidade');
+            $causas = Vaga::all(); 
+            $categorias = Vaga::getCategoriasComVagas();
+            $cidades = Vaga::getCidadesComVagas();
+            $ongs = Vaga::getOngsComVagas();            
+
+            $cidadesArray = array(null => 'Selecione uma Cidade');
             foreach ($cidades as $cidade)
             {
                 $cidadesArray[$cidade->id] = $cidade->nome;
             }
             $cidades = $cidadesArray;
-        
-            return view('cuidar.index', compact('causas','categorias', 'cidades'));
+
+            //Montando array de ongs para select
+            $ongsArray = array(null => 'Selecione uma Ong');
+            foreach ($ongs as $ong)
+            {
+                $ongsArray[$ong->id] = $ong->nome;
+            }
+            $ongs = $ongsArray;
+
+            //Montando array de categorias para select
+            $categoriasArray = array(null => 'Selecione uma Categoria'); 
+            foreach ($categorias as $categoria)
+            {
+                $categoriasArray[$categoria->id] = $categoria->nome;
+            }
+            $categorias = $categoriasArray;
+     
+            return view('cuidar.index', compact('causas','categorias', 'cidades', 'ongs'));
 	}
 }
