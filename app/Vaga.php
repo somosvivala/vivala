@@ -194,5 +194,10 @@ class Vaga extends Model {
     }
 
 
+    public function getLocalAttribute()
+    {
+        return ucfirst($this->logradouro).'. '.$this->bairro.', '.$this->cidade->nome.' '.$this->estado->sigla.',BR - '.$this->cep;
+    }
+
 
 }

@@ -33,7 +33,7 @@
 
 <div class="col-sm-4 sobre-ong">
 <div class="text-center fundo-cheio">
-    <img src="{{ asset('img/casacomunal.png') }}">
+    <img src="{{ asset('img/habilidades.png') }}">
     <b class="font-bold-upper col-sm-12">Sobre o trabalho</b>
     <p>
         {{ $vaga->sobre_trabalho?:"Sem descrição." }}
@@ -44,7 +44,7 @@
 
 <div class="col-sm-4 sobre-ong">
 <div class="text-center fundo-cheio">
-    <img src="{{ asset('img/casacomunal.png') }}">
+    <img src="{{ asset('img/pessoa.png') }}">
     <b class="font-bold-upper col-sm-12">Habilidades</b>
     <p>
         {{ $vaga->habilidades?:"Sem descrição de habilidades." }}
@@ -69,7 +69,7 @@
     <img src="{{ asset('img/mapmarker.png') }}">
     <b class="font-bold-upper col-sm-12">Localização</b>
     <p>
-        {{ $vaga->local }}
+        {{ $vaga->local?:$vaga->owner->local }}
     </p>
     <br><br>
 </div>
@@ -98,13 +98,13 @@
 </div>
 
 
-<div class="text-center fundo-cheio col-sm-12">
+<div class="text-center fundo-cheio col-sm-12 margin-b-2">
     <h3 class="font-bold-upper text-center">
         Voluntários nesta causa
 </h3>
-<ul class="sugestoes sugestoes-viajantes">
+<ul class="row sugestoes sugestoes-viajantes">
     @forelse($voluntarios as $Voluntario)
-    <li>
+    <li class="col-sm-4 col-md-3 col-lg-2">
         {!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
         <a href="{{ url($Voluntario->getUrl()) }}">
@@ -130,5 +130,26 @@
     @endforelse
 </ul>
 </div>
+
+@if($vaga->owner->vagas)
+<h3 class="font-bold-upper text-center margin-b-1">
+    Veja outras vagas desse projeto
+</h3>
+
+<ul class="lista-vagas row inside">
+@forelse($vaga->owner->vagas as $Causa)
+        <li class="col-sm-4">
+            <div class="foto-fundo" style="background-image:url('{{ $Causa->getCapaUrl() }}');">
+            <a href="{{ url('vagas/'.$Causa->id) }}">
+                <h3 class="font-bold-upper">{{ $Causa->owner->nome }}</h3>
+                <p>{{ $Causa->habilidades }}</p>
+                <span class="padding-t-1"><i class="fa fa-map-marker"></i> {{ $Causa->cidade->nome.",".$Causa->estado->sigla }}</span>
+            </a>
+        </li>
+    @empty
+        <p class="col-sm-12 text-center">Nenhuma causa encontrada.</p>
+    @endforelse
+</ul>
+@endif
 
 @endsection
