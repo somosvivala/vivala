@@ -7,6 +7,8 @@
             	@include('feed.status')
 			@elseif($Post->tipo_post == 'foto')
             	@include('feed.foto')
+			@elseif($Post->tipo_post == 'acontecimento')
+            	@include('feed.acontecimento')
 			@endif
         </li>
 	@empty

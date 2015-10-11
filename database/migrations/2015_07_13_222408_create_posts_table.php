@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration {
 			$table->string('titulo', 140)->nullable();
 			$table->string('descricao', 500)->nullable();
 			$table->string('video')->nullable();
-			$table->enum('tipo_post', ['foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
+			$table->enum('tipo_post', ['acontecimento', 'foto', 'video', 'album', 'publicidade', 'status', 'local'])->nullable();
 			$table->timestamps();
 
 			//Campos para a relacao polimorfica,

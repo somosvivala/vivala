@@ -22,13 +22,15 @@
 					</div>
 					<strong class="col-sm-12">{{ $Perfil->user->username }}</strong>
 					<div class="row localizacao-cidade">
-						<div class="col-sm-3 text-right">
+                                            {{--
+                                            <div class="col-sm-3 text-right">
 							<i class="fa fa-map-marker"></i>
 						</div>
 						<div class="col-sm-9 text-left">
 							<!-- Retorno da cidade do user, não traduzido por necessitar de uma tabela separada de países, cidades e afins -->
 							São Paulo, BR
 						</div>
+                                                --}}
 					</div>
 				</a>
 				{!! Form::close() !!}
