@@ -10,6 +10,7 @@ use App\Empresa;
 use App\CategoriaEmpresa;
 use App\CategoriaOng;
 use Session;
+use Mail;
 
 
 class PaginaController extends Controller {
@@ -163,5 +164,20 @@ class PaginaController extends Controller {
     {
         return view('paginas.porquecuidar');
     }
+
+
+
+    public function getTestesendmail()
+    {
+        $user = Auth::user();
+        Mail::send('emails.teste', ['user' => $user], function ($message) use ($user) {
+            $message->to($user->email, $user->name)->subject('Teste Email!');
+            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+        });   
+        
+        return "sended?";
+    }
+
+
 
 }
