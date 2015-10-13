@@ -17,6 +17,7 @@ use App\Foto;
 use App\Post;
 
 use Request;
+use Mail;
 
 
 class VagaController extends CuidarController {
@@ -250,15 +251,24 @@ class VagaController extends CuidarController {
      */
     public function getVoluntariarse($vagaId) 
     {
-        $perfil = Auth::user()->perfil;
+        $Candidato = Auth::user()->perfil;
         $vaga = Vaga::findOrFail($vagaId);
 
         //Se ja nao for voluntario, tornar-se voluntario
-        if (!$vaga->voluntarios->find($perfil->id)) {
-            $vaga->voluntarios()->save($perfil);
-        }
+        if (!$vaga->voluntarios->find($Candidato->id)) {
+            $vaga->voluntarios()->save($Candidato);
+            $vaga->push();
+            //Traz o responsável que será exibido como agradecendo pela vaga
+            $Responsavel = $vaga->responsavel;
 
-        return redirect("vagas/$vagaId");
+            //@todo Envio de email para o responsável avisando e para o candidato agradecendo
+          /*  Mail::send('emails.teste', ['user' => Auth::user()], function ($message) use ($user) {
+                $message->to($user->email, $user->username)->subject('Teste Email!');
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+          }); */  
+        }
+        $voluntarios = $vaga->voluntarios;
+        return view('vaga.show', compact('vaga', 'voluntarios', 'Candidato', 'Responsavel'));
     }
 
 }

@@ -94,9 +94,23 @@
 </div>
 </div>
 <div class="row text-center">
-<a class="btn margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">{{ trans('global.lbl_volunteer_be') }}</a>
+<a class="btn margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
 </div>
 
+@if(isset($Responsavel)) 
+<div class="text-left fundo-cheio col-sm-12 margin-b-2 padding-b-2 padding-t-2">
+    <div class="col-sm-2 text-center">
+
+        <a href="{{ url('perfil') }}">
+            <img class="foto-avatar" src="{{ $Responsavel->getAvatarUrl() }}" alt="{{ $Responsavel->apelido }}">
+            <div class="font-bold-upper">{{ $Responsavel->apelido }}</div>
+        </a>
+    </div>
+    <div class="col-sm-10">
+        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar aqui pelo chat Vivalá, pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }} 
+    </div>
+</div>
+@endif
 
 <div class="text-center fundo-cheio col-sm-12 margin-b-2">
     <h3 class="font-bold-upper text-center">
@@ -126,7 +140,7 @@
         {!! Form::close() !!}
     </li>
     @empty
-    <p>{{ trans('global.lbl_volunteer_not_found') }}</p>
+    <p>Nenhum voluntário se cadidatou a essa vaga, seja o primeiro! </p>
     @endforelse
 </ul>
 </div>
@@ -137,7 +151,7 @@
 </h3>
 
 <ul class="lista-vagas row inside">
-@forelse($vaga->owner->vagas as $Causa)
+    @forelse($vaga->owner->vagas as $Causa)
         <li class="col-sm-4">
             <div class="foto-fundo" style="background-image:url('{{ $Causa->getCapaUrl() }}');">
             <a href="{{ url('vagas/'.$Causa->id) }}">
