@@ -45,7 +45,8 @@ class CreateVagasTable extends Migration {
 			$table->integer('categoria_vaga_id')->unsigned()->nullable();
 			$table->foreign('categoria_vaga_id')
 				->references('id')
-				->on('categoria_vagas');
+				->on('categoria_vagas')
+                                ->onDelete('cascade');
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong
@@ -56,7 +57,8 @@ class CreateVagasTable extends Migration {
 			$table->integer('responsavel_id')->unsigned()->nullable();
 			$table->foreign('responsavel_id')
 				->references('id')
-				->on('perfils');
+				->on('perfils')
+                                ->onDelete('cascade');
 		});
 
 		Schema::create('perfil_vaga', function(Blueprint $table)
@@ -65,12 +67,14 @@ class CreateVagasTable extends Migration {
 			$table->integer('perfil_id')->unsigned();
 			$table->foreign('perfil_id')
 				->references('id')
-				->on('perfils');
+                                ->on('perfils')
+                                ->onDelete('cascade');
 
 			$table->integer('vaga_id')->unsigned();
 			$table->foreign('vaga_id')
 				->references('id')
-				->on('vagas');
+				->on('vagas')
+                                ->onDelete('cascade');
 		});
 
 	}
