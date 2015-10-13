@@ -251,7 +251,8 @@ class VagaController extends CuidarController {
      */
     public function getVoluntariarse($vagaId) 
     {
-        $Candidato = Auth::user()->perfil;
+        $User = Auth::user();
+        $Candidato = $User->perfil;
         $vaga = Vaga::findOrFail($vagaId);
 
         //Se ja nao for voluntario, tornar-se voluntario
@@ -262,13 +263,36 @@ class VagaController extends CuidarController {
             $Responsavel = $vaga->responsavel;
 
             //@todo Envio de email para o responsável avisando e para o candidato agradecendo
-          /*  Mail::send('emails.teste', ['user' => Auth::user()], function ($message) use ($user) {
-                $message->to($user->email, $user->username)->subject('Teste Email!');
+            Mail::send('emails.teste', ['user' => Auth::user()], function ($message) use ($User) {
+                $message->to($User->email, $User->username)->subject('Teste Email!');
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-          }); */  
+          });  
         }
         $voluntarios = $vaga->voluntarios;
         return view('vaga.show', compact('vaga', 'voluntarios', 'Candidato', 'Responsavel'));
     }
+
+
+    /**
+     * Remove o Perfil se o Perfil ja for voluntario na Vaga de $vagaId,
+     * @param  [type] $id      [description]
+     * @param  [type] $vagaId [description]
+     */
+    public function getUnvoluntariarse($vagaId) 
+    {
+        $User = Auth::user();
+        $Candidato = $User->perfil;
+        $vaga = Vaga::findOrFail($vagaId);
+
+        //Se ja for voluntario, unsubscribe 
+        if ($vaga->voluntarios->find($Candidato->id)) {
+            $vaga->voluntarios()->detach($Candidato->id);
+            $vaga->push();
+              
+        }
+        $voluntarios = $vaga->voluntarios;
+        return view('vaga.show', compact('vaga', 'voluntarios', 'Candidato'));
+    }
+
 
 }
