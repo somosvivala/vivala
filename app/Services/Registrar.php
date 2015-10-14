@@ -62,6 +62,12 @@ class Registrar implements RegistrarContract {
         $prettyUrl->tipo = 'usuario';
         $perfil->prettyUrl()->save($prettyUrl);
 
+        // Envia um email de boas vindas
+        Mail::send('emails.obrigadocandidato', ['user' => Auth::user()], function ($message) use ($User) {
+            $message->to($User->email, $User->username)->subject('Bem vindo à Vivalá');
+            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+        });  
+
         // Faz um post de criação de perfil
         $novoPost = new Post();
         $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." é a ".$perfil->id."ª pessoa a se juntar à Vivalá. Bem vindo!";
