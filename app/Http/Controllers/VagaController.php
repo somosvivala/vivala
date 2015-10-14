@@ -273,11 +273,15 @@ class VagaController extends CuidarController {
             //Traz o responsável que será exibido como agradecendo pela vaga
             $Responsavel = $vaga->responsavel;
 
-            //@todo Envio de email para o responsável avisando e para o candidato agradecendo
-            Mail::send('emails.teste', ['user' => Auth::user()], function ($message) use ($User) {
+            //Envio de email para o responsável avisando e para o candidato agradecendo
+            Mail::send('emails.obrigadocandidato', ['user' => Auth::user()], function ($message) use ($User) {
                 $message->to($User->email, $User->username)->subject('Teste Email!');
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-          });  
+            });  
+            Mail::send('emails.avisacontatoong', ['user' => Auth::user()], function ($message) use ($User) {
+                $message->to($User->email, $User->username)->subject('Teste Email!');
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+            });  
         }
         $voluntarios = $vaga->voluntarios;
         return view('vaga.show', compact('vaga', 'voluntarios', 'Candidato', 'Responsavel'));

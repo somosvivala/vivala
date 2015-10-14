@@ -35,8 +35,7 @@ class CreateVagasTable extends Migration {
 			$table->integer('cidade_id')->unsigned()->nullable();
 			$table->foreign('cidade_id')
 				->references('id')
-				->on('cidades')
-				->onDelete('cascade');
+				->on('cidades');
                         
                         $table->integer('quantidade_vagas')->nullable();
                         $table->integer('numero_beneficiados')->nullable();
@@ -45,8 +44,7 @@ class CreateVagasTable extends Migration {
 			$table->integer('categoria_vaga_id')->unsigned()->nullable();
 			$table->foreign('categoria_vaga_id')
 				->references('id')
-				->on('categoria_vagas')
-                                ->onDelete('cascade');
+				->on('categoria_vagas');
 
 			//FK para relacao polimorfica de 
 			//usando só para ong por enquanto. representa quem promove a ong
@@ -57,24 +55,21 @@ class CreateVagasTable extends Migration {
 			$table->integer('responsavel_id')->unsigned()->nullable();
 			$table->foreign('responsavel_id')
 				->references('id')
-				->on('perfils')
-                                ->onDelete('cascade');
+				->on('perfils');
 		});
 
 		Schema::create('perfil_vaga', function(Blueprint $table)
 		{
 			//uma causa tem varios perfils voluntarios
-			$table->integer('perfil_id')->unsigned();
+                        $table->integer('perfil_id')->unsigned()->nullable();
 			$table->foreign('perfil_id')
 				->references('id')
-                                ->on('perfils')
-                                ->onDelete('cascade');
+                                ->on('perfils');
 
-			$table->integer('vaga_id')->unsigned();
+                        $table->integer('vaga_id')->unsigned()->nullable();
 			$table->foreign('vaga_id')
 				->references('id')
-				->on('vagas')
-                                ->onDelete('cascade');
+				->on('vagas');
 		});
 
 	}

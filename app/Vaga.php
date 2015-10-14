@@ -24,6 +24,13 @@ class Vaga extends Model {
                 'categoria_vaga_id' 
 		];	
 
+        // Array com as relacoes polimorficas que devem ser deletados
+        // quando esse model for deletado.
+        public $relacoesPolimorficasDependentes = [
+            'fotos'        
+        ];
+
+
 	/**
 	 * Estabelece a relaçao entre a entidade Vaga e a entidade Perfil,
 	 * uma Vaga sempre tem um responsavel Perfil.
