@@ -70,47 +70,6 @@ class UserSeeder extends Seeder {
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
         ]);
 
-        User::create([
-            'username'           => 'Kuririn',
-            'genero'             => 'masculino',
-            'email'              => 'kuririn@gmail.com',
-            'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-        ]);
-
-		User::create([
-			'username'           => 'Brunol',
-			'genero'             => 'masculino',
-			'email'              => 'brunol@gmail.com',
-			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-		]);
-
-		User::create([
-			'username'           => 'Rafael',
-			'genero'             => 'masculino',
-			'email'              => 'rafa.carreira@gmail.com',
-			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-		]);
-
-		User::create([
-			'username'           => 'Goiaba',
-			'genero'             => 'masculino',
-			'email'              => 'narolol@gmail.com',
-			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-		]);
-
-		User::create([
-			'username'           => 'Atchim',
-			'genero'             => 'masculino',
-			'email'              => 'atchim@gmail.com',
-			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-		]);
-
-		User::create([
-			'username'           => 'Mateus',
-			'genero'             => 'masculino',
-			'email'              => 'mateus@gmail.com',
-			'password'           => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
-		]);
     }
 }
 
@@ -124,8 +83,8 @@ class PerfilSeeder extends Seeder {
             'user_id'               => '1',
         	'aniversario' 	    => '1990-12-21 07:30:00',
             'cidade_natal'     => 'Bauru',
-            'descricao_curta'     => 'Internet Lurker, curte um BBB, tem uma descrição um pouco maior pra testar quebras de linha.',
-            'descricao_longa'     => 'Era uma vez em uma terra distante um aspirante a samurai que ao iniciar sua jornada pelo mundo da mais valia, foi terrivelmente tentado a se juntar à gangue dos suits, seres dominados pela energia do mal.',
+            'descricao_curta'     => 'Developer, pirata e ta sempre viajando.',
+            'descricao_longa'     => 'Open Source Developer, acredita na propagação da informação como ferramenta de transformação social.',
             'nome_completo'     => 'Evandro Barbosa Carreira',
             'apelido'     => 'Dodoido'
         ]);
@@ -135,58 +94,11 @@ class PerfilSeeder extends Seeder {
             'aniversario'      => '1992-05-08 07:43:00',
             'cidade_natal'     => 'Rio Preto',
             'nome_completo'     => 'Antônio Renato Apolinário Gomes',
-            'descricao_curta'     => 'Nobre aspirante a Samurai, curte um BBB.',
-            'descricao_longa'     => 'Era uma vez em uma terra distante um aspirante a samurai que ao iniciar sua jornada pelo mundo da mais valia, foi terrivelmente tentado a se juntar à gangue dos suits, seres dominados pela energia do mal.',
+            'descricao_curta'     => 'Developer, samurai e ta sempre viajando',
+            'descricao_longa'     => '',
             'apelido'     => 'Zordoido'
         ]);
 
-        $kuririn = Perfil::create([
-            'user_id'               => '3',
-            'aniversario'      => '1991-09-22 07:43:00',
-            'cidade_natal'     => 'Itapeva',
-            'nome_completo'     => 'Rodrigo Yasuhiro Ueda',
-            'apelido'     => 'Kuririn'
-        ]);
-
-        $brunol = Perfil::create([
-            'user_id'               => '4',
-            'aniversario'      => '1991-09-22 07:43:00',
-            'cidade_natal'     => '',
-            'nome_completo'     => 'Bruno Gordo',
-            'apelido'     => 'Brunol'
-        ]);
-
-	      $rafa = Perfil::create([
-	          'user_id'               => '5',
-	          'aniversario'      => '1994-04-23 07:43:00',
-	          'cidade_natal'     => '',
-	          'nome_completo'     => 'Rafael Carreira',
-	          'apelido'     => 'Rafa'
-	      ]);
-
-	      $goiaba = Perfil::create([
-	          'user_id'               => '6',
-	          'aniversario'      => '1994-04-23 07:43:00',
-	          'cidade_natal'     => '',
-	          'nome_completo'     => 'Gabriel Naro',
-	          'apelido'     => 'Goiaba'
-	      ]);
-
-	      $atchim = Perfil::create([
-	          'user_id'               => '7',
-	          'aniversario'      => '1994-04-23 07:43:00',
-	          'cidade_natal'     => '',
-	          'nome_completo'     => 'Fernando Fernandes',
-	          'apelido'     => 'Atchim'
-	      ]);
-
-	      $mateus = Perfil::create([
-	          'user_id'               => '8',
-	          'aniversario'      => '1994-04-23 07:43:00',
-	          'cidade_natal'     => '',
-	          'nome_completo'     => 'Mateus Batista',
-	          'apelido'     => 'Mateni'
-	      ]);
     }
 
 }
@@ -198,34 +110,6 @@ class OngSeeder extends Seeder {
     {
         DB::table('ongs')->delete();
 
-        Ong::create([
-            'user_id'               => '1',
-            'nome'                  => 'evandrONG Ltda',
-            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
-            'logradouro'            => 'Casa do evandro',
-            'responsavel_id'        => '1',
-            'categoria_ong_id'      => '1'
-        ]);
-
-        Ong::create([
-            'user_id'               => '2',
-            'nome'                  => 'zordONG Ltda',
-            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
-            'logradouro'            => 'Casa do Zord',
-            'responsavel_id'        => '2',
-            'categoria_ong_id'      => '2'
-
-        ]);
-
-        Ong::create([
-            'user_id'               => '8',
-            'nome'                  => 'Projeto Formiguinha',
-            'horario_funcionamento' => 'Segunda a Sexta 08:00 as 18:00',
-            'logradouro'            => 'Sede do Formiguinha',
-            'responsavel_id'        => '8',
-            'categoria_ong_id'      => '3'
-
-        ]);
     }
 }
 
@@ -234,30 +118,6 @@ class EmpresaSeeder extends Seeder {
     {
         DB::table('empresas')->delete();
 
-        Empresa::create([
-            'user_id'     => '1',
-            'nome'        => 'dodobusiness  Ltda',
-        ]);
-
-        Empresa::create([
-            'user_id'     => '2',
-            'nome'        => 'zordenterprise  Ltda',
-        ]);
-
-        Empresa::create([
-            'user_id'     => '6',
-            'nome'        => 'RedNoise',
-        ]);
-
-        Empresa::create([
-            'user_id'     => '5',
-            'nome'        => 'Turbina Loca',
-        ]);
-
-        Empresa::create([
-            'user_id'     => '5',
-            'nome'        => 'Water Energy Ltda.',
-        ]);
     }
 }
 
@@ -282,50 +142,6 @@ class PrettyUrlSeeder extends Seeder {
         $zordURL->tipo = 'usuario';
         $zord->prettyUrl()->save($zordURL);
 
-        $kuririn = Perfil::find(3);
-        $kuririnURL = new PrettyUrl();
-        $kuririnURL->url = 'kuririn';
-        $kuririnURL->tipo = 'usuario';
-        $kuririn->prettyUrl()->save($kuririnURL);
-
-        $brunol = Perfil::find(4);
-        $brunolURL = new PrettyUrl();
-        $brunolURL->url = 'brunol';
-        $brunolURL->tipo = 'usuario';
-        $brunol->prettyUrl()->save($brunolURL);
-
-        /**
-         * Empresas
-         */
-        $dodobusiness  = Empresa::find(1);
-        $dodobusiness_url = new PrettyUrl();
-        $dodobusiness_url->url   = 'dodobusiness';
-        $dodobusiness_url->tipo  = 'empresa';
-        $dodobusiness->prettyUrl()->save($dodobusiness_url);
-
-        $zordenterprise  = Empresa::find(2);
-        $zordenterprise_url = new PrettyUrl();
-        $zordenterprise_url->url   = 'zordenterprise';
-        $zordenterprise_url->tipo  = 'empresa';
-        $zordenterprise->prettyUrl()->save($zordenterprise_url);
-
-
-        /**
-         *  ONGS
-         */
-        $evandrONG  = Ong::find(1);
-        $evandrONG_url = new PrettyUrl();
-        $evandrONG_url->url = 'evandrong';
-        $evandrONG_url->tipo = 'ong';
-
-        $zordONG  = Ong::find(2);
-        $zordONG_url = new PrettyUrl();
-        $zordONG_url->url = 'zordong';
-        $zordONG_url->tipo = 'ong';
-
-        $evandrONG->prettyUrl()->save($evandrONG_url);
-        $zordONG->prettyUrl()->save($zordONG_url);
-
     }
 }
 
@@ -334,12 +150,6 @@ class FotoSeeder extends Seeder {
     public function run()
     {
         DB::table('fotos')->delete();
-
-        $dodoPerfil = Perfil::find(1);
-        $fotoDodo = new Foto();
-        $fotoDodo->tipo = 'avatar';
-        $fotoDodo->path = 'https://avatars2.githubusercontent.com/u/192278?v=3&s=460';
-        $dodoPerfil->fotos()->save($fotoDodo);
 
 
         $zordPerfil = Perfil::find(2);
