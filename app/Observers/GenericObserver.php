@@ -1,10 +1,24 @@
 <?php namespace App\Observers;
 
+use Auth;
+use Session;
+
 class GenericObserver {
     public function deleting ($model) {
+
+        switch (get_class($model)) {
+            case "App\\Ong":
+                Session::put('entidadeAtiva_id', Auth::user()->perfil->id);
+                Session::put('entidadeAtiva_tipo', 'perfil');
+                break;
+
+            default:
+                break;
+        }
+
+
         if (count($model->relacoesPolimorficasDependentes)) {
             foreach ($model->relacoesPolimorficasDependentes as $relacao) {
-                echo 'deletando ->  ' . $relacao . '\r';
 
                 $objRelacionado = $model->{$relacao}; 
 
@@ -13,7 +27,6 @@ class GenericObserver {
                 case "Illuminate\\Database\\Eloquent\\Collection":
 
                     foreach ($objRelacionado as $objRelacao) {
-                        echo 'deletando Inner ->  ' . $objRelacao . '\r';
                         $objRelacao->delete();
                     }        
                     break;

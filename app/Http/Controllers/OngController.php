@@ -298,10 +298,8 @@ class OngController extends CuidarController {
 
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
+     * Deleta a Ong.
+     * @param $id -> id da ong a ser deletada
      */
     public function destroy($id)
     {
@@ -317,5 +315,5 @@ class OngController extends CuidarController {
 
         return view('home');
     }
-	
+
 }
