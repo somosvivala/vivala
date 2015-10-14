@@ -30,13 +30,13 @@ class EditarVagaRequest extends Request {
 			'sobre_trabalho' 		=> "string|required|min:2",
                         'horario_funcionamento' => "string|required|min:2",
                         'logradouro'			=> "string|required|min:2",
-			'cep'					=> "numeric|required|min:2",
+			'cep'					=> "required|min:2",
 			'bairro'				=> "string|required|min:2",
 			'complemento'			=> "string|min:2",
 			'cidade_id'				=> "required|exists:cidades,id",
 			'categoria_vaga_id'			=> "required|exists:categoria_vagas,id",
 			'email_contato'				=> "email",
-                        'telefone_contato'                      => "numeric|min:8",
+                        'telefone_contato'                      => "min:8",
                         'quantidade_vagas'		=> "numeric|required|min:1",
                         'numero_beneficiados'		=> "numeric"
                     ];

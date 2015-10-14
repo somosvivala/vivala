@@ -15,8 +15,8 @@ class CreateVagasTable extends Migration {
 		Schema::create('vagas', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('habilidades')->nullable();
-			$table->string('sobre_trabalho')->nullable();
+			$table->text('habilidades')->nullable();
+			$table->text('sobre_trabalho')->nullable();
 			$table->timestamps();
 
 			//endereço

@@ -25,7 +25,7 @@
                 </select>
                 @endif
                 {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Empresa']) !!} 
-                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('PaginaController@getTermos') }}">Termos das Páginas da Vivalá</a></span>        
+                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>        
                 <div class="col-sm-12 text-center">
                     {!! Form::submit('Começar', ['class' => 'btn']) !!}
                 </div>
@@ -51,7 +51,7 @@
                 </select>
                 @endif
                 {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Ong']) !!} 
-                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('PaginaController@getTermos') }}">Termos das Páginas da Vivalá</a></span>        
+                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>        
                 <div class="col-sm-12 text-center">
                     {!! Form::submit('Começar', ['class' => 'btn']) !!}
                 </div>

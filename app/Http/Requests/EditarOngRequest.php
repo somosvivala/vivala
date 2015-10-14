@@ -39,11 +39,11 @@ class EditarOngRequest extends Request {
 			'horario_funcionamento' => "string|required|min:2",
 			'url'  					=> "required|alpha_dash|min:2|pretty_url",
 			'logradouro'			=> "string|required|min:2",
-			'cep'					=> "numeric|required|min:2",
+			'cep'					=> "required|min:2",
 			'bairro'				=> "string|required|min:2",
 			'complemento'			=> "string|min:2",
 			'email_contato'			=> "email",
-			'telefone_contato'			=> "numeric|min:8",
+			'telefone_contato'			=> "min:8",
 			'cidade_id'				=> "required|exists:cidades,id",	
 			'categoria_ong_id'			=> "required|exists:categoria_ongs,id"			
 		];
