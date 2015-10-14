@@ -6,34 +6,48 @@ use Illuminate\Database\Eloquent\Collection;
 use DB;
 
 class Ong extends Model {
-    
-	protected $fillable = [
+
+    protected $fillable = [
         'nome',
         'descricao',
         'horario_funcionamento',
         'user_id',
         'responsavel_id',
         'categoria_ong_id',
-	'logradouro',
-	'cep',
-	'bairro',
-	'complemento',
-	'telefone_contato',
-	'email_contato',
+        'logradouro',
+        'cep',
+        'bairro',
+        'complemento',
+        'telefone_contato',
+        'email_contato',
         'cidade_id',
         'url_facebook',
         'url_gplus',
-       	'url_instagram',
+        'url_instagram',
         'url_site'
-        ];
+    ];
 
-        /**
-	 * Uma ONG pertence a um usuário.
-	 */
-	public function user()
-	{
-		return $this->belongsTo('App\User');
-	}
+    // Array com as relacoes polimorficas que devem ser deletados
+    // quando esse model for deletado.
+    public $relacoesPolimorficasDependentes = [
+        'prettyUrl',
+        'posts',
+        'fotos',
+        'notificacoes',
+        'fromNotificacoes',
+        'comentarios',
+        'albums',
+        'vagas'
+    ];
+
+
+    /**
+     * Uma ONG pertence a um usuário.
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     /**
      * Uma ONG tem uma prettyUrl.
@@ -41,17 +55,17 @@ class Ong extends Model {
      */
     public function prettyUrl()
     {
-		return $this->morphOne('App\PrettyUrl', 'prettyurlable');
+        return $this->morphOne('App\PrettyUrl', 'prettyurlable');
     }
 
     /**
      * Relação que representa todos os posts que a Ong deu like
      * @return [type] [description]
      */
-	public function likePost()
-	{
-		return $this->belongsToMany('App\Post', 'entidade_like_post', 'ong_id', 'post_id')->withTimestamps();
-	}
+    public function likePost()
+    {
+        return $this->belongsToMany('App\Post', 'entidade_like_post', 'ong_id', 'post_id')->withTimestamps();
+    }
 
     /**
      * Uma Ong pode ter varios posts
@@ -61,20 +75,20 @@ class Ong extends Model {
         return $this->morphMany('App\Post', 'author', 'author_type', 'author_id');
     }
 
-	/**
-	 * Retorna a pretty Url
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function getUrl()
-	{
-		if($this->prettyUrl()->first())
-			return $this->prettyUrl()->first()->url;
-		else
-			return "ong/".$this->id;
-	}
-   
+    /**
+     * Retorna a pretty Url
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function getUrl()
+    {
+        if($this->prettyUrl()->first())
+            return $this->prettyUrl()->first()->url;
+        else
+            return "ong/".$this->id;
+    }
+
     /**
      * Accessor para a propriedade avatar
      */
@@ -216,21 +230,21 @@ class Ong extends Model {
     public function isFollowing($id, $tipo) 
     {
         switch ($tipo) {
-            case 'App\Perfil':
-                return ($this->followPerfil()->find($id) ? true : false);
-                break;
-            
-            case 'App\Ong':
-                return ($this->followOng()->find($id) ? true : false);
-                break;
-            
-            case 'App\Empresa':
-                return ($this->followEmpresa()->find($id) ? true : false);
-                break;
-            
-            default:
-                return null;
-                break;
+        case 'App\Perfil':
+            return ($this->followPerfil()->find($id) ? true : false);
+            break;
+
+        case 'App\Ong':
+            return ($this->followOng()->find($id) ? true : false);
+            break;
+
+        case 'App\Empresa':
+            return ($this->followEmpresa()->find($id) ? true : false);
+            break;
+
+        default:
+            return null;
+            break;
         }
         return null;
     }
@@ -246,7 +260,7 @@ class Ong extends Model {
         $listaPerfils = $this->followedByPerfil->toArray();
         $listaEmpresas = $this->followedByEmpresa->toArray();
         $listaOngs = $this->followedByOng->toArray();
-        
+
         //mergeando listas em um unico array
         $listaSeguidores =  array_merge_recursive($listaPerfils, $listaOngs);
         $listaSeguidores =  array_merge_recursive($listaSeguidores, $listaEmpresas);
@@ -272,7 +286,7 @@ class Ong extends Model {
     }
 
 
-   /**
+    /**
      * Retorna sugestoes de ongs que o usuario nao esteja seguindo.
      * @param  Perfil|Ong|Empresa        $entidadeAtiva 
      * @return Collection  Collection de ongs para sugestao
@@ -361,7 +375,7 @@ class Ong extends Model {
             //pegando lista de ids para fazer diff e nao recomendar ids que eu ja sigo
             $listaIdSeguidos = $listaIdSeguidos->lists('id');
             $listaIdSeguidos[] = $entidadeAtiva->id;
-            
+
             //fazendo diff dos ids que ja sigo
             $listaIds = array_diff($listaIds, $listaIdSeguidos);
         }
@@ -391,9 +405,9 @@ class Ong extends Model {
         }
 
         $colSugestoes = $colSugestoes->sortBy(function($item) 
-        {
-            return $item->quantidadeSeguidores;
-        })->reverse();
+            {
+                return $item->quantidadeSeguidores;
+            })->reverse();
 
         return $colSugestoes;
     }
@@ -432,7 +446,7 @@ class Ong extends Model {
         return $this->notificacoes()->where('tipo_notificacao', 'seguidor')->latest()->get();
     }
 
-     /**
+    /**
      * Acessor para as ultimas notificacoes do tipo chat
      * @return Collection
      */
@@ -551,14 +565,14 @@ class Ong extends Model {
      */
     public static function getCidadesComOngs() 
     {
-       //Obtendo a lista de todas as ongs com cidades.
-       $ongs = Ong::with('cidade')->whereNotNull('cidade_id')->get();
+        //Obtendo a lista de todas as ongs com cidades.
+        $ongs = Ong::with('cidade')->whereNotNull('cidade_id')->get();
 
-       //se a Collection nao estiver vazia, entao listar cidades
-       if (count($ongs)) 
-           $ongs = $ongs->lists('cidade'); 
-       
-       return $ongs;   
+        //se a Collection nao estiver vazia, entao listar cidades
+        if (count($ongs)) 
+            $ongs = $ongs->lists('cidade'); 
+
+        return $ongs;   
     }
 
 
@@ -568,14 +582,14 @@ class Ong extends Model {
      */
     public static function getCategoriasComOngs() 
     {
-       //Obtendo a lista de todas as categorias com ongs.
-       $categorias = Ong::with('categoria')->whereNotNull('categoria_ong_id')->get();
+        //Obtendo a lista de todas as categorias com ongs.
+        $categorias = Ong::with('categoria')->whereNotNull('categoria_ong_id')->get();
 
-       //se a Collection nao estiver vazia, entao listar cidades
-       if (count($categorias)) 
-           $categorias = array_unique($categorias->lists('categoria')); 
-       
-       return $categorias;   
+        //se a Collection nao estiver vazia, entao listar cidades
+        if (count($categorias)) 
+            $categorias = array_unique($categorias->lists('categoria')); 
+
+        return $categorias;   
     }
 
 

@@ -241,16 +241,16 @@ class VagaController extends CuidarController {
      */
     public function destroy($id)
     {
-        $vaga = Post::findOrFail($id);
-        $entidadeAtiva = Auth::user()->entidadeAtiva;
+        $vaga = Vaga::findOrFail($id);
+        $user = Auth::user();
 
-        //Se a Vaga a ser deletada pertencer ao user da entidade ativa 
-        if ($entidadeAtiva->user->id == $vaga->owner->id) {
+        //Se a Vaga a ser deletada pertencer a alguma entidade do usuario 
+        //logado. 
+        if ($user->id == $vaga->owner->user->id) {
             $vaga->delete();
         } else {
             App::abort(403, 'Voce nao tem permissão para deletar uma vaga que não te pertence.');
         }
-
 
         return view('home');
     }
@@ -273,11 +273,15 @@ class VagaController extends CuidarController {
             //Traz o responsável que será exibido como agradecendo pela vaga
             $Responsavel = $vaga->responsavel;
 
-            //@todo Envio de email para o responsável avisando e para o candidato agradecendo
-            Mail::send('emails.teste', ['user' => Auth::user()], function ($message) use ($User) {
+            //Envio de email para o responsável avisando e para o candidato agradecendo
+            Mail::send('emails.obrigadocandidato', ['user' => Auth::user()], function ($message) use ($User) {
                 $message->to($User->email, $User->username)->subject('Teste Email!');
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-          });  
+            });  
+            Mail::send('emails.avisacontatoong', ['user' => Auth::user()], function ($message) use ($User) {
+                $message->to($User->email, $User->username)->subject('Teste Email!');
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+            });  
         }
         $voluntarios = $vaga->voluntarios;
         return view('vaga.show', compact('vaga', 'voluntarios', 'Candidato', 'Responsavel'));
