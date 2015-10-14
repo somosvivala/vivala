@@ -18,6 +18,7 @@ use App\Cidade;
 use App\Estado;
 
 use App\CategoriaOng;
+use Mail;
 
 class OngController extends CuidarController {
 
@@ -113,6 +114,11 @@ class OngController extends CuidarController {
                     $novaOng->fotos()->save(Foto::find($foto));
                 }                
 
+
+                Mail::send('emails.obrigadoong', ['user' => Auth::user()], function ($message) use ($User) {
+                    $message->to($User->email, $User->username)->subject('Teste Email!');
+                    $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+                });  
 
                 //se ja nao existir uma ong com essa prettyUrl
                 $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);

@@ -613,46 +613,46 @@
 
                                                                                                                         <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><tbody><tr>
                                                                                                                                     <td style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer" valign="top">
-                                                                                                                                </td>
-                                                                                                                            </tr>
-                                                                                                                    </tbody></table>
+                                                                                                                                    </td>
+                                                                                                                                </tr>
+                                                                                                                        </tbody></table>
 
 
 
 
-                                                                                                                                </td>
-                                                                                                                            </tr>
-                                                                                                                    </tbody></table>
+                                                                                                                    </td>
+                                                                                                                </tr>
+                                                                                                        </tbody></table>
 
 
-                                                                                                                    <!--[if mso]>
-                                                                                                                </td>
-                                                                                                            </tr>
-                                                                                                        </table>
-                                                                                                        <![endif]-->
+                                                                                                        <!--[if mso]>
                                                                                                     </td>
                                                                                                 </tr>
-                                                                                        </tbody></table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                        </tbody></table>
-                                                                    </td>
-                                                                </tr>
-                                                        </tbody></table>
+                                                                                            </table>
+                                                                                            <![endif]-->
+                                                                                        </td>
+                                                                                    </tr>
+                                                                            </tbody></table>
+                                                                        </td>
+                                                                    </tr>
+                                                            </tbody></table>
+                                                        </td>
+                                                    </tr>
+                                            </tbody></table>
 
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                    </table></td>
-                                </tr>
-                            </table>
-                            <!--[if gte mso 9]>
-                        </td>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                        </table></td>
                     </tr>
                 </table>
-                <![endif]-->
-                <!-- // END TEMPLATE -->
+                <!--[if gte mso 9]>
             </td>
+        </tr>
+    </table>
+    <![endif]-->
+    <!-- // END TEMPLATE -->
+</td>
         </tr>
     </table>
 </center>
