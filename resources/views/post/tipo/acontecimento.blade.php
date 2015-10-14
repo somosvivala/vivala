@@ -24,7 +24,7 @@
 	</div>
     <div class="hora-post"> 
         {{ $Post->data_postagem_diff }}
-        @if ( Auth::user()->entidadeAtiva == $Post->entidade )
+        @if ( Auth::user()->id == $Post->entidade->user->id )
                 {!! Form::open([ 'method' => 'DELETE', 'route' => ['post.destroy', $Post->id] ]) !!}
                     {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja remover esse post?');"]) !!}
             

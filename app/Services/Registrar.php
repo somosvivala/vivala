@@ -7,6 +7,7 @@ use App\PrettyUrl;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use Mail;
 
 class Registrar implements RegistrarContract {
 
@@ -61,6 +62,12 @@ class Registrar implements RegistrarContract {
         $prettyUrl->url = str_replace(" ", "", $user->username) . '_' . Carbon::now()->getTimestamp();
         $prettyUrl->tipo = 'usuario';
         $perfil->prettyUrl()->save($prettyUrl);
+
+        // Envia um email de boas vindas
+        Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
+            $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
+            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+        });  
 
         // Faz um post de criação de perfil
         $novoPost = new Post();

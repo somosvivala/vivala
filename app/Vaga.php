@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Auth;
-
+use App\Post;
 
 class Vaga extends Model {
 
@@ -23,6 +23,14 @@ class Vaga extends Model {
                 'numero_beneficiados',
                 'categoria_vaga_id' 
 		];	
+
+        // Array com as relacoes polimorficas que devem ser deletados
+        // quando esse model for deletado.
+        public $relacoesPolimorficasDependentes = [
+            'fotos',
+            'postCriacaoVaga' 
+        ];
+
 
 	/**
 	 * Estabelece a relaçao entre a entidade Vaga e a entidade Perfil,
@@ -197,6 +205,18 @@ class Vaga extends Model {
     public function getLocalAttribute()
     {
         return ucfirst($this->logradouro).'. '.$this->bairro.', '.$this->cidade->nome.' '.$this->estado->sigla.',BR - '.$this->cep;
+    }
+
+
+    /**
+     * Criando acessor que retorna em uma Collection o Post de criacao da Vaga.
+     * Esse acessor é utilizado no $relacoesPolimorficasDependentes, assim eu 
+     * consigo deletar o Post de criacao da Vaga quando a vaga é deletada.
+     * @return Collection<Post>
+     */
+    public function getPostCriacaoVagaAttribute()
+    {
+        return Post::where('descricao', 'ILIKE', "%vagas/".$this->id."%")->get();
     }
 
 

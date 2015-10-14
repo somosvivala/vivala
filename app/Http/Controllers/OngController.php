@@ -18,6 +18,7 @@ use App\Cidade;
 use App\Estado;
 
 use App\CategoriaOng;
+use Mail;
 
 class OngController extends CuidarController {
 
@@ -113,6 +114,12 @@ class OngController extends CuidarController {
                     $novaOng->fotos()->save(Foto::find($foto));
                 }                
 
+
+                $User = Auth::user();
+                Mail::send('emails.obrigadoong', ['user' => $User], function ($message) use ($User) {
+                    $message->to($User->email, $User->username)->subject('Teste Email!');
+                    $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+                });  
 
                 //se ja nao existir uma ong com essa prettyUrl
                 $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);
@@ -296,5 +303,24 @@ class OngController extends CuidarController {
     	$voluntarios = ($ong != null) ? $ong->voluntarios->take($numVoluntarios) : [];
     }
 
-	
+
+    /**
+     * Deleta a Ong.
+     * @param $id -> id da ong a ser deletada
+     */
+    public function destroy($id)
+    {
+        $ong = Ong::findOrFail($id);
+        $user = Auth::user();
+
+        //Se a Ong a ser deletada pertencer ao usuario logado. 
+        if ($user->id == $ong->user->id) {
+            $ong->delete();
+        } else {
+            App::abort(403, 'Voce nao tem permissão para deletar uma vaga que não te pertence.');
+        }
+
+        return view('home');
+    }
+
 }

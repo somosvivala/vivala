@@ -5,10 +5,16 @@
 
     <div class="form-ong-head">
         <h3 class="text-center margin-t-2">{{ trans('global.lbl_volunteer_work_edit') }}</h3>
+        {!! Form::open([ 'method' => 'DELETE', 'route' => ['ong.destroy', $ong->id] ]) !!}
+        {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja excluir esse projeto?');"]) !!}
+        {!! Form::close() !!}
+
+
     </div>
 
     <div class="panel-body">
-	<!-- Adiciona um formulario pra upload de foto-->
+
+        <!-- Adiciona um formulario pra upload de foto-->
         <div class="text-center jc_coords row col-sm-12">
 
             {!! Form::open(['url' => ['foto/cropandsave',  $ong->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/home']) !!}

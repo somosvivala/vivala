@@ -10,6 +10,11 @@
     <a class="btn btn-action" href="/vagas/{{$vaga->id}}/edit">
         <small>{{ trans('global.lbl_edit') }}</small>
     </a>
+
+    {!! Form::open([ 'method' => 'DELETE', 'route' => ['vagas.destroy', $vaga->id] ]) !!}
+    {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja excluir essa vaga?');"]) !!}
+    {!! Form::close() !!}
+
 </div>
 @endif
 </div>

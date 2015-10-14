@@ -1,5 +1,5 @@
 *.map
-public/css/all.css
+/public/css/all.css
 /vendor
 /node_modules
 .env
@@ -12,4 +12,5 @@ composer.lock
 /assets/bower
 /public/js/vendor.*
 /resources/assets/bower
+/resources/assets/css/app.css
 /config/mail.php
