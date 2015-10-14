@@ -241,16 +241,16 @@ class VagaController extends CuidarController {
      */
     public function destroy($id)
     {
-        $vaga = Post::findOrFail($id);
-        $entidadeAtiva = Auth::user()->entidadeAtiva;
+        $vaga = Vaga::findOrFail($id);
+        $user = Auth::user();
 
-        //Se a Vaga a ser deletada pertencer ao user da entidade ativa 
-        if ($entidadeAtiva->user->id == $vaga->owner->id) {
+        //Se a Vaga a ser deletada pertencer a alguma entidade do usuario 
+        //logado. 
+        if ($user->id == $vaga->owner->user->id) {
             $vaga->delete();
         } else {
             App::abort(403, 'Voce nao tem permissão para deletar uma vaga que não te pertence.');
         }
-
 
         return view('home');
     }

@@ -296,5 +296,26 @@ class OngController extends CuidarController {
     	$voluntarios = ($ong != null) ? $ong->voluntarios->take($numVoluntarios) : [];
     }
 
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $ong = Ong::findOrFail($id);
+        $user = Auth::user();
+
+        //Se a Ong a ser deletada pertencer ao usuario logado. 
+        if ($user->id == $ong->user->id) {
+            $ong->delete();
+        } else {
+            App::abort(403, 'Voce nao tem permissão para deletar uma vaga que não te pertence.');
+        }
+
+        return view('home');
+    }
 	
 }
