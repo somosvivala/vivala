@@ -69,7 +69,8 @@ class CreateVagasTable extends Migration {
                         $table->integer('vaga_id')->unsigned()->nullable();
 			$table->foreign('vaga_id')
 				->references('id')
-				->on('vagas');
+                                ->on('vagas')
+                                ->onDelete('cascade');
 		});
 
 	}
