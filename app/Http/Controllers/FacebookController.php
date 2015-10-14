@@ -104,7 +104,7 @@ class FacebookController extends Controller {
             $perfil = $user->perfil;
         }
 
-        $fotoPerfil = new Foto(['path' => $userData->avatar, 'tipo' => 'avatar']);
+        $fotoPerfil = new Foto(['path' => $userData->avatar_original, 'tipo' => 'avatar']);
         $perfil->fotos()->save($fotoPerfil);
 
         //Atualiza a tabela de dados do Fb
