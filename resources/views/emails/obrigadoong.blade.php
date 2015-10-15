@@ -514,7 +514,6 @@ Queremos deixar claro que ao criar sua página você se tornou responsável por 
                             <td class="mcnImageContent" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
 
 
-                                        <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/b71f42bf-fde8-45e8-95c0-901861e49af5.jpg" style="max-width: 1901px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="600">
 
 
                             </td>
@@ -650,7 +649,7 @@ h="524">
                                                                          
        <td class="mcnFollowIconContent" align="center" valign="middle" width="24" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                          
-           <a href="http://vivala.us11.list-manage1.com/track/click?u=7b5394cc8a27f4cfe5cb54cf9&id=42e2b164c9&e=5d3c19d148" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="" height="24" width="24"></a>
+           <a href="http://instagram.com/somosvivala" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="" height="24" width="24"></a>
                                                                          
        </td>
 

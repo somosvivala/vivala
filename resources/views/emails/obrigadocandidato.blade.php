@@ -450,7 +450,7 @@ g="0" cellpadding="0" width="600" style="width:600px;">
                             <td class="mcnImageContent" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
 
 
-                                        <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/eec6a5af-2e58-4c59-821a-efc6a3482caf.jpg" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564">
+                                <img alt<img alt="" src="http://precadastro.vivala.com.br/{{ $vaga->getCapaUrl()  }}" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564">
 
 
                             </td>
@@ -478,23 +478,23 @@ g="0" cellpadding="0" width="600" style="width:600px;">
                             <table class="mcnTextContentContainer" style="min-width: 100% ! important;background-color: #E6E6E6;border-collapse:collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" border="0" cellpadding="18" cellspacing="0">
                                 <tbody><tr>
                                     <td style="color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;" class="mcnTextContent" valign="top">
-                                        <h1 class="null" style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-family:Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 32px;letter-spacing: normal;"><span style="color:#000000"><span style="font-size:14px"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:26px">Olá, Daniel!</span></span></span></span></h1>
+                                        <h1 class="null" style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-family:Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 32px;letter-spacing: normal;"><span style="color:#000000"><span style="font-size:14px"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:26px">Olá, {{ ucfirst($user->perfil->apelido) }}!</span></span></span></span></h1>
 
 <div style="text-align: left;">&nbsp;</div>
 
 <div style="text-align: justify;"><span style="color:#000000"><span style="font-size:14px"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif">Queremos confirmar a inscrição de voluntariado e fazer com que essa experiência seja extremamente positiva! Para isso, aqui estão os dados de usuário e de projeto para que consigam se comunicar antes da data do voluntariado:</span></span><br>
 <br>
 <span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">Voluntário<br>
-Nome:<br>
-Email:<br>
-Perfil Vivalá:<br>
+Nome: {{ ucfirst($user->perfil->nome) }}<br>
+Email:{{ ucfirst($user->perfil->email) }}<br>
+Perfil Vivalá:{{ ucfirst($user->perfil->getUrl()) }}<br>
 <br>
 Projeto de Impacto<br>
-Nome:<br>
-Email:<br>
-Telefone:<br>
-Nome do responsável:<br>
-Email do responsável:</span></span></span></div>
+Nome: {{ ucfirst($vaga->ong->nome) }}<br>
+Email: {{ ucfirst($vaga->email_contato) }}<br>
+Telefone: {{ ucfirst($vaga->telefone_contato) }}<br>
+Nome do responsável: {{ ucfirst($vaga->responsavel->nome) }}<br>
+Email do responsável: {{ ucfirst($vaga->responsavel->email) }}</span></span></span></div>
 
                                     </td>
                                 </tr>
@@ -513,37 +513,6 @@ Email do responsável:</span></span></span></div>
             </td>
         </tr>
     </tbody>
-</table><table class="mcnImageGroupBlock" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><tbody class="mcnImageGroupBlockOuter">
-
-            <tr>
-                <td style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageGroupBlockInner" valign="top">
-
-                    <table class="mcnImageGroupContentContainer" align="left" width="273" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace:0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><tbody><tr>
-                                <td class="mcnImageGroupContent" style="padding-left: 9px;padding-top: 0;padding-bottom: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
-
-                                        <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/73961e80-886d-4ef3-b155-7a5c15ce2075.jpg" style="max-width: 4368px;padding-bottom: 0;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage" width="264">
-
-
-                                </td>
-                            </tr>
-                        </tbody></table>
-
-                    <table class="mcnImageGroupContentContainer" align="right" width="273" border="0" cellpadding="0" cellspacing="0"style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><tbody><tr>
-                                <td class="mcnImageGroupContent" style="padding-right: 9px;padding-top: 0;padding-bottom: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
-
-                                        <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/cd7715bf-2755-4253-8215-ce1ac20a0b72.jpg" style="max-width: 4368px;padding-bottom: 0;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;vertical-align: bottom;" class="mcnImage" width="264">
-
-
-                                </td>
-                            </tr>
-                        </tbody></table>
-
-                </td>
-            </tr>
-
-    </tbody>
 </table><table class="mcnTextBlock" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><tbody class="mcnTextBlockOuter">
         <tr>
             <td class="mcnTextBlockInner" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -552,7 +521,7 @@ Email do responsável:</span></span></span></div>
 
                         <td class="mcnTextContent" style="padding: 9px18px;line-height: 125%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;text-align: left;" valign="top">
 
-                            <div style="text-align: justify;"><br><span style="color:#000000"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">Agora cabe a vocês entrarem em contato para esclarecer qualquer dúvida restante sobre a vaga. Esperamos que aexperiência de vocês seja inspiradora e transformadora!<br>
+                            <div style="text-align: justify;"><br><span style="color:#000000"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">Agora cabe a vocês entrarem em contato para esclarecer qualquer dúvida restante sobre a vaga. Esperamos que a experiência de vocês seja inspiradora e transformadora!<br>
 &nbsp;<br>
 Pedimos para que essa vivência seja compartilhada em nossa plataforma, para que outros usuários consigam se motivar a participar nos próximos trabalhos voluntários que tivermos disponíveis!<br><br><strong>Contamos com vocês!</strong></span></span></span></div>
 
@@ -635,14 +604,14 @@ h="524">
                                                     <td style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer" valign="top">
                                                         <table class="mcnFollowContentItem" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                             <tbody><tr>
-                                                                <td style="padding-top: 5px;padding-right: 10px;padding-bottom: 5px;padding-left:9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="left" valign="middle">
+                                                                <td style="padding-right: 10px;padding-bottom: 5px;padding-left:9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="left" valign="middle">
                                                                     <table align="left" width="" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                         <tbody><tr>
 
                                                                          
        <td class="mcnFollowIconContent" align="center" valign="middle" width="24" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                                          
-           <a href="http://vivala.us11.list-manage1.com/track/click?u=7b5394cc8a27f4cfe5cb54cf9&id=2a0d38ac95&e=5d3c19d148" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="" height="24" width="24"></a>
+           <a href="http://instagram.com/somosvivala" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><img src="http://cdn-images.mailchimp.com/icons/social-block-v2/color-instagram-48.png" style="display: block;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="" height="24" width="24"></a>
                                                                          
        </td>
 
