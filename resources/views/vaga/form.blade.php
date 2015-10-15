@@ -60,7 +60,7 @@
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
                     <input type="radio" name="categoria_vaga_id" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
-                        <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt='' title='' class='col-sm-12'/>
+                        <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt="{{ trans($Categoria->id) }}" title="{{ trans($Categoria->id) }}" class='col-sm-12'/>
                     </label>
                 </li>
                 @endforeach

@@ -24,9 +24,9 @@ class PaginaController extends Controller {
 
     /**
      * Retorna ate 3 paginas dentre as Ongs/Empresas de um Usuario
-     * @return Array<Ong|Empresa> 
+     * @return Array<Ong|Empresa>
      */
-    public function getMenu($view = null) 
+    public function getMenu($view = null)
     {
         $paginas = Auth::user()->paginas;
         $paginas = $paginas->take(3);
@@ -34,7 +34,7 @@ class PaginaController extends Controller {
         $view->with('paginas', $paginas);
     }
 
-    public function getCriarpagina() 
+    public function getCriarpagina()
     {
         $categoriasOngs = CategoriaOng::all();
         $categoriasEmpresas = CategoriaEmpresa::all();
@@ -43,7 +43,7 @@ class PaginaController extends Controller {
 
     }
 
-    public function getGerenciar() 
+    public function getGerenciar()
     {
         $paginas = Auth::user()->paginas;
 
@@ -55,7 +55,7 @@ class PaginaController extends Controller {
      * @param  $id   		Id da entidade a ser acessada
      * @param  $tipo 		Tipo da entidade (ong|empresa|perfil)
      */
-    public function getAcessarcomo ($id , $tipo) 
+    public function getAcessarcomo ($id , $tipo)
     {
 
         $entidadeAtiva_id = $id;
@@ -90,7 +90,7 @@ class PaginaController extends Controller {
             if ($entidadeExiste) {
                 Session::put('entidadeAtiva_id', $entidadeAtiva_id);
                 Session::put('entidadeAtiva_tipo', $entidadeAtiva_tipo);
-            } 
+            }
 
             return redirect('conectar');
         }
@@ -101,7 +101,7 @@ class PaginaController extends Controller {
 
 
     /**
-     * Retorna a blade da pagina de Contato 
+     * Retorna a blade da pagina de Contato
      */
     public function getContato()
     {
@@ -109,7 +109,7 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Retorna a blade da pagina de ction getNossomanifesto  
+     * Retorna a blade da pagina de ction getNossomanifesto
      */
     public function getNossomanifesto()
     {
@@ -117,7 +117,7 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Retorna a blade da pagina de ction getOquefazemos 
+     * Retorna a blade da pagina de ction getOquefazemos
      */
     public function getOquefazemos()
     {
@@ -125,7 +125,7 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Retorna a blade da pagina de ction getParceiros  
+     * Retorna a blade da pagina de ction getParceiros
      */
     public function getParceiros()
     {
@@ -133,7 +133,7 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Retorna a blade da pagina de Politicaprivacidade 
+     * Retorna a blade da pagina de Politicaprivacidade
      */
     public function getPoliticadeprivacidade()
     {
@@ -141,7 +141,7 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Retorna a blade da pagina de Quemsomos 
+     * Retorna a blade da pagina de Quemsomos
      */
     public function getQuemsomos()
     {
@@ -149,7 +149,7 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Retorna a blade da pagina de Termosecondicoes  
+     * Retorna a blade da pagina de Termosecondicoes
      */
     public function getTermosecondicoes()
     {
@@ -158,14 +158,20 @@ class PaginaController extends Controller {
 
 
     /**
-     * Retorna a blade da pagina de Porque Cuidar  
+     * Retorna a blade da pagina de Porque Cuidar
      */
     public function getPorquecuidar()
     {
         return view('paginas.porquecuidar');
     }
 
-
+    /**
+     * Retorna a blade da pagina do Presskit para Mídia
+     */
+    public function getPresskit()
+    {
+        return view('paginas.presskit');
+    }
 
     public function getTestesendmail()
     {
@@ -173,8 +179,8 @@ class PaginaController extends Controller {
         Mail::send('emails.teste', ['user' => $user], function ($message) use ($user) {
             $message->to($user->email, $user->name)->subject('Teste Email!');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });   
-        
+        });
+
         return "sended?";
     }
 

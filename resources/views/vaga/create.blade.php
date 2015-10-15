@@ -36,7 +36,7 @@
                     <div class="erros">
                         @include('errors.list')
                     </div>
-                    {!! Form::submit( trans('global.lbl_photo_update'), ['class' => 'btn btn-acao']) !!}
+                    {!! Form::submit( trans('global.lbl_photo_update'), ['class' => 'btn btn-primario btn-acao']) !!}
                     {!! Form::close() !!}
                 </div>
 

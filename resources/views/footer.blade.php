@@ -10,6 +10,7 @@
                 <li><a href="{{ url('/paginas/nossomanifesto') }}"><i class="fa fa-plus"></i> nosso manifesto</a></li>
                 <li><a href="{{ url('/paginas/quemsomos') }}"><i class="fa fa-plus"></i> quem somos</a></li>
                 <li><a href="{{ url('/paginas/oquefazemos') }}"><i class="fa fa-plus"></i> o que fazemos</a></li>
+                <li><a href="{{ url('/paginas/presskit') }}"><i class="fa fa-plus"></i> presskit</a></li>
             </ul>
         </div>
         <div class="col-sm-3 text-right">
@@ -26,6 +27,9 @@
             </ul>
         </div>
     </div>
+    <div class="col-sm-12 margin-t-1 margin-b-1 text-center">
+    <h5>Todos os direitos reservados <span class="laranja"><strong>Vivalá Turismo e Serviços</strong></span> Ltda - CNPJ 22.693.622/0001-85</h5>
+    </div>
 </div>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -37,6 +41,3 @@
   ga('send', 'pageview');
 
 </script>
-<div class="col-sm-12 margin-t-1 margin-b-1 text-center">
-Todos os direitos reservados Vivalá Turismo e Serviços Ltda - CNPJ 22.693.622/0001-85
-</div>

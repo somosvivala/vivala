@@ -43,11 +43,11 @@
     <div class="col-sm-7 form-borda-preta">
 
         {!! Form::open(['url' => 'contato']) !!}
-            {!! Form::text("nome", '', ['title' => trans('global.ong_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
-            {!! Form::text("email", '', ['title' => trans('global.email'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
-            {!! Form::text("assunto", '', ['title' => trans('global.assunto'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
+            {!! Form::text("nome", '', ['title' => trans('global.lbl_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
+            {!! Form::text("email", '', ['title' => trans('global.lbl_email'), 'placeholder' => trans('global.lbl_email'), 'class' => 'form-control margin-b-1']) !!}
+            {!! Form::text("assunto", '', ['title' => trans('global.lbl_subject'), 'placeholder' => trans('global.lbl_subject'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::textarea("mensagem", null, ['title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize margin-b-1' ]) !!}
-            {!! Form::submit(trans('global.lbl_send'), ['class' => 'btn btn-acao pull-right']) !!}
+            {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao pull-right']) !!}
         {!! Form::close() !!}
     </div>
 </div>

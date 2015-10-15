@@ -4,12 +4,16 @@
 <div class="container-fluid welcome-login-passrec">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default margin-t-2">
-				<div class="panel-heading"><h5 class="texto-preto">{{ trans('global.lbl_login') }}</h4></div>
+			<div class="panel margin-t-2">
+				<div class="panel-heading row">
+					<div class="col-md-12">
+						<h3 class="text-left">{{ trans('global.lbl_login') }}</h3>
+					</div>
+				</div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
+							<strong>{{ trans('global.error_whops') }}</strong> {{ trans('global.error_input_problem') }}<br>{{ trans('global.error_input_again') }}<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>

@@ -99,7 +99,7 @@
 </div>
 </div>
 <div class="row text-center">
-<a class="btn margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
+<a class="btn btn-primario btn-acao margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
 </div>
 
 @if(isset($Responsavel))
