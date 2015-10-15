@@ -5,7 +5,20 @@
   display:none;
 }
 .texto-preto {
+  color:black;
+  &:active,
+  &:focus,
+  &:hover{
     color:black;
+  }
+}
+.texto-branco {
+  color: white;
+  &:active,
+  &:focus,
+  &:hover{
+    color: white;
+  }
 }
 .titulo-zumbi {
     color: @cor-pele-zumbi;
@@ -554,5 +567,3 @@ ul.filtro {
       :-ms-input-placeholder { color: @cor-cinza-escuro; }
     }
 }
-
-
