@@ -6970,6 +6970,19 @@ button.close {
 .texto-preto {
   color: black;
 }
+.texto-preto:active,
+.texto-preto:focus,
+.texto-preto:hover {
+  color: black;
+}
+.texto-branco {
+  color: white;
+}
+.texto-branco:active,
+.texto-branco:focus,
+.texto-branco:hover {
+  color: white;
+}
 .titulo-zumbi {
   color: #8ba6ac;
   padding: 0 1em;
@@ -7010,6 +7023,9 @@ ul.margin-0 {
 .margin-b-2 {
   margin-bottom: 2em;
 }
+.margin-b-3 {
+  margin-bottom: 3em;
+}
 .margin-b-10 {
   margin-bottom: 10em;
 }
@@ -7018,6 +7034,9 @@ ul.margin-0 {
 }
 .margin-t-2 {
   margin-top: 2em;
+}
+.margin-t-3 {
+  margin-top: 3em;
 }
 .margin-t-10 {
   margin-top: 10em;
@@ -7878,6 +7897,12 @@ ul.viagens-comentadas button {
 }
 div.sobre-ong {
   margin-bottom: 1em;
+}
+.sobre-vaga {
+  height: 19em;
+}
+.sobre-vaga > div {
+  height: 17em;
 }
 ul.lista-ongs {
   list-style: none;
@@ -10792,6 +10817,19 @@ div.flight-wrapper div.flight-pricing {
 .texto-preto {
   color: black;
 }
+.texto-preto:active,
+.texto-preto:focus,
+.texto-preto:hover {
+  color: black;
+}
+.texto-branco {
+  color: white;
+}
+.texto-branco:active,
+.texto-branco:focus,
+.texto-branco:hover {
+  color: white;
+}
 .titulo-zumbi {
   color: #8ba6ac;
   padding: 0 1em;
@@ -10832,6 +10870,9 @@ ul.margin-0 {
 .margin-b-2 {
   margin-bottom: 2em;
 }
+.margin-b-3 {
+  margin-bottom: 3em;
+}
 .margin-b-10 {
   margin-bottom: 10em;
 }
@@ -10840,6 +10881,9 @@ ul.margin-0 {
 }
 .margin-t-2 {
   margin-top: 2em;
+}
+.margin-t-3 {
+  margin-top: 3em;
 }
 .margin-t-10 {
   margin-top: 10em;

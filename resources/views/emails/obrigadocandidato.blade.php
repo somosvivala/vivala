@@ -486,7 +486,7 @@ g="0" cellpadding="0" width="600" style="width:600px;">
 <br>
 <span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">Voluntário<br>
 Nome: {{ ucfirst($user->perfil->nome) }}<br>
-Email:{{ ucfirst($user->perfil->email) }}<br>
+Email:{{ ucfirst($user->email) }}<br>
 Perfil Vivalá:{{ ucfirst($user->perfil->getUrl()) }}<br>
 <br>
 Projeto de Impacto<br>
@@ -494,7 +494,7 @@ Nome: {{ ucfirst($vaga->owner->nome) }}<br>
 Email: {{ ucfirst($vaga->email_contato) }}<br>
 Telefone: {{ ucfirst($vaga->telefone_contato) }}<br>
 Nome do responsável: {{ ucfirst($vaga->responsavel->nome) }}<br>
-Email do responsável: {{ ucfirst($vaga->responsavel->email) }}</span></span></span></div>
+Email do responsável: {{ ucfirst($vaga->responsavel->user->email) }}</span></span></span></div>
 
                                     </td>
                                 </tr>
