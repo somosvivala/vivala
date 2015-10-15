@@ -166,66 +166,71 @@ class InteresseSeeder extends Seeder {
     {
         DB::table('interesses')->delete();
 
-        Interesse::create(['categoria' => 'estilo' , 'nome' => 'Mochileiro']);
-        Interesse::create(['categoria' => 'estilo' , 'nome' => 'Original']);
-        Interesse::create(['categoria' => 'estilo' , 'nome' => 'Conforto']);
-        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Sozinho']);
-        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Em família']);
-        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Com amigos']);
-        Interesse::create(['categoria' => 'companhia' , 'nome' => 'Em casal']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Praia e sol']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Montanha']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Ecoturismo']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Cidades históricas']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Cidades Pequenas']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Cidades Grandes']);
-        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'Retiros espirituais']);
-        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Centro oeste']);
-        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Nordeste']);
-        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Norte']);
-        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Sudeste']);
-        Interesse::create(['categoria' => 'regioes' , 'nome' => 'Sul']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Conhecer locais famosos']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Explorar locais desconhecidos']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Ver realidades diferentes da minha']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Vivenciar realidades diferentes da minha']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Buscar experiências que mudem a minha atitude']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Achar respostas à questões existenciais']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Crescimento pessoal']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Imersão Cultural']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Diversão descompromissada e passatempos']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Descansar a mente para retomar o cotidiano']);
-        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'Gosto de não fazer nada']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Eventos típicos (carnaval, festa junina)']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Bares']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Baladas']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Shows']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Festivais']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Cinema']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Espetáculos de tetro e musicais']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Museus']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Eventos esportivos']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Restaurantes renomados']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Restaurantes de comida típica']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Conhecer projetos sociais']);
-        Interesse::create(['categoria' => 'eventos' , 'nome' => 'Ser voluntário em projetos sociais']);
+        Interesse::create(['categoria' => 'estilo' , 'nome' => 'global.quiz_traveller_style_cat-1']);
+        Interesse::create(['categoria' => 'estilo' , 'nome' => 'global.quiz_traveller_style_cat-2']);
+        Interesse::create(['categoria' => 'estilo' , 'nome' => 'global.quiz_traveller_style_cat-3']);
+				
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'global.quiz_traveller_partner_cat-1']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'global.quiz_traveller_partner_cat-2']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'global.quiz_traveller_partner_cat-3']);
+        Interesse::create(['categoria' => 'companhia' , 'nome' => 'global.quiz_traveller_partner_cat-4']);
+
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-1']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-2']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-3']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-4']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-5']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-6']);
+        Interesse::create(['categoria' => 'ambiente' , 'nome' => 'global.quiz_traveller_ambient_cat-7']);
+
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'global.quiz_traveller_region_cat-1']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'global.quiz_traveller_region_cat-2']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'global.quiz_traveller_region_cat-3']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'global.quiz_traveller_region_cat-4']);
+        Interesse::create(['categoria' => 'regioes' , 'nome' => 'global.quiz_traveller_region_cat-5']);
+
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-1']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-2']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-3']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-4']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-5']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-6']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-7']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-8']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-9']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-10']);
+        Interesse::create(['categoria' => 'motivacoes' , 'nome' => 'global.quiz_traveller_motivation_cat-11']);
+
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-1']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-2']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-3']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-4']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-5']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-6']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-7']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-8']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-9']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-10']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-11']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-12']);
+        Interesse::create(['categoria' => 'eventos' , 'nome' => 'global.quiz_traveller_events_cat-13']);
     }
 }
 
 class CategoriasVagaSeeder extends Seeder {
-    
+
     public function run()
     {
         DB::table('categoria_vagas')->delete();
 
-        CategoriaVaga::create(['nome' => 'Acabar com fome e a miséria']);
-        CategoriaVaga::create(['nome' => 'Educação basica de qualidade para todos']);
-        CategoriaVaga::create(['nome' => 'Igualdade entre os sexos e a valorizacao mulher']);
-        CategoriaVaga::create(['nome' => 'Reduzir a mortalidade infantil']);
-        CategoriaVaga::create(['nome' => 'Melhorar a saude das gestantes']);
-        CategoriaVaga::create(['nome' => 'Combater a AIDS, a malária outras doencas']);
-        CategoriaVaga::create(['nome' => 'Qualidade de vida e respeito ao meio ambiente']);
-        CategoriaVaga::create(['nome' => 'Todo mundo trabalhando pelo desenvolvimento']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-1']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-2']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-3']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-4']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-5']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-6']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-7']);
+        CategoriaVaga::create(['nome' => 'global.ong_job_slot_avaiable_cat-8']);
     }
 
 }
@@ -236,14 +241,14 @@ class CategoriasOngSeeder extends Seeder {
     {
         DB::table('categoria_ongs')->delete();
 
-        CategoriaOng::create(['nome' => 'Acabar com fome e a miséria']);
-        CategoriaOng::create(['nome' => 'Educação basica de qualidade para todos']);
-        CategoriaOng::create(['nome' => 'Igualdade entre os sexos e a valorizacao mulher']);
-        CategoriaOng::create(['nome' => 'Reduzir a mortalidade infantil']);
-        CategoriaOng::create(['nome' => 'Melhorar a saude das gestantes']);
-        CategoriaOng::create(['nome' => 'Combater a AIDS, a malária outras doencas']);
-        CategoriaOng::create(['nome' => 'Qualidade de vida e respeito ao meio ambiente']);
-        CategoriaOng::create(['nome' => 'Todo mundo trabalhando pelo desenvolvimento']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-1']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-2']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-3']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-4']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-5']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-6']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-7']);
+        CategoriaOng::create(['nome' => 'global.ong_onu_cat-8']);
     }
 }
 
@@ -253,15 +258,44 @@ class CategoriasEmpresaSeeder extends Seeder {
     {
         DB::table('categoria_empresas')->delete();
 
-        CategoriaEmpresa::create(['nome' => 'categoria 1']);
-        CategoriaEmpresa::create(['nome' => 'categoria 2']);
-        CategoriaEmpresa::create(['nome' => 'categoria 3']);
-        CategoriaEmpresa::create(['nome' => 'categoria 4']);
-        CategoriaEmpresa::create(['nome' => 'categoria 5']);
-        CategoriaEmpresa::create(['nome' => 'categoria 6']);
-        CategoriaEmpresa::create(['nome' => 'categoria 7']);
-        CategoriaEmpresa::create(['nome' => 'categoria 8']);
-        CategoriaEmpresa::create(['nome' => 'categoria 9']);
-        CategoriaEmpresa::create(['nome' => 'categoria 10']);
-    }
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-1']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-2']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-3']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-4']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-5']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-6']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-7']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-8']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-9']);
+        CategoriaEmpresa::create(['nome' => 'global.company_type-cat-10']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-11']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-12']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-13']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-14']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-15']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-16']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-17']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-18']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-19']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-20']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-21']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-21']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-22']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-23']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-24']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-25']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-26']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-27']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-28']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-29']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-30']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-31']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-32']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-33']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-34']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-35']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-36']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-37']);
+				CategoriaEmpresa::create(['nome' => 'global.company_type-cat-38']);
+		}
 }
