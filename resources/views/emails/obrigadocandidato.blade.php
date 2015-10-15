@@ -490,7 +490,7 @@ Email:{{ ucfirst($user->perfil->email) }}<br>
 Perfil Vivalá:{{ ucfirst($user->perfil->getUrl()) }}<br>
 <br>
 Projeto de Impacto<br>
-Nome: {{ ucfirst($vaga->ong->nome) }}<br>
+Nome: {{ ucfirst($vaga->owner->nome) }}<br>
 Email: {{ ucfirst($vaga->email_contato) }}<br>
 Telefone: {{ ucfirst($vaga->telefone_contato) }}<br>
 Nome do responsável: {{ ucfirst($vaga->responsavel->nome) }}<br>
