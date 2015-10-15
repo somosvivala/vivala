@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use App\Perfil;
 use App\Foto;
 use App\Post;
+use Mail;
 
 class FacebookController extends Controller {
 
@@ -80,7 +81,7 @@ class FacebookController extends Controller {
             $perfil->apelido = $userData->{'user'}['first_name'];
             $perfil->user_id = $user->id;
             $perfil->save();
-       
+
             // Faz um post de criação de perfil
             $novoPost = new Post();
             $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." é a ".$perfil->id."ª pessoa a se juntar à Vivalá. Bem vindo!";
@@ -99,7 +100,7 @@ class FacebookController extends Controller {
             $prettyUrl->tipo = 'usuario';
             $perfil->prettyUrl()->save($prettyUrl);
 
-        //Caso o usuario ja exista, só ainda nao tinha feito login com o facebook
+            //Caso o usuario ja exista, só ainda nao tinha feito login com o facebook
         } else {
             $perfil = $user->perfil;
         }
@@ -120,6 +121,13 @@ class FacebookController extends Controller {
             $facebookData->user_location = $userData->user_location;
 
         $user->facebookData()->save($facebookData);
+
+        // Envia um email de boas vindas
+        Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
+            $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
+            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+        });  
+
 
         return $user;
     }
