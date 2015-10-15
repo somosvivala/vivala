@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use App\PrettyUrl;
 use Input;
 use App\Foto;
+use App\Post;
 use App\Cidade;
 use App\Estado;
 
@@ -139,7 +140,19 @@ class OngController extends CuidarController {
 	public function show($id)
 	{
 		$ong = Ong::findOrFail($id);
-		return view('ong.show', compact('ong'));
+                Session::put('perfil', $ong);
+
+                $user  = $ong->user;
+                $perfil = $ong;
+
+                $follow = $perfil->followPerfil;
+		$followedBy = $perfil->followedByPerfil;
+		$entidadeAtiva = $perfil;
+
+		$posts = Post::getUltimos();
+
+		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
+                return view('ong.show', compact('ong'));
 	}
 
         /**

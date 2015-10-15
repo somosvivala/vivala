@@ -76,7 +76,7 @@
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
                     <input type="radio" name="categoria_ong_id" @if ($categoriaSelecionada == $Categoria->id) echo "selected='selected'"; @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
-                        <img src='{{asset("/img/categorias-onu/cat-ong-".$Categoria->id.".png")}}' alt='' title='' class='col-sm-12'/>
+                        <img src='{{asset("/img/categorias-onu/cat-ong-".$Categoria->id.".png")}}' alt="{{ trans($Categoria->nome) }}" title="{{ trans($Categoria->nome) }}" class='col-sm-12'/>
                     </label>
                 </li>
                 @endforeach

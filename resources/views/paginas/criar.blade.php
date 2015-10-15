@@ -4,7 +4,7 @@
 
 <div class="fundo-cheio col-sm-12">
     <h3 class="font-bold-upper text-center">
-        Criar página 
+        Criar página
     </h3>
 
     <div class="col-sm-4">
@@ -18,16 +18,16 @@
                 <select name="categoriaEmpresa" class="suave">
                     <option value="null">Escolha uma categoria</option>
                 @forelse($categoriasEmpresas as $Categoria)
-                    <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
+                    <option value="{{ $Categoria->id }}">{{ trans($Categoria->nome) }}</option>
                 @empty
                     <option>Sem categorias</option>
                 @endforelse
                 </select>
                 @endif
-                {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Empresa']) !!} 
-                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>        
+                {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Empresa']) !!}
+                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>
                 <div class="col-sm-12 text-center">
-                    {!! Form::submit('Começar', ['class' => 'btn']) !!}
+                    {!! Form::submit('Começar', ['class' => 'btn btn-primario btn-acao']) !!}
                 </div>
                 {!! Form::close() !!}
             </div>
@@ -44,16 +44,16 @@
                 <select name="categoriaOng" class="suave">
                     <option value="null">Escolha uma categoria</option>
                 @forelse($categoriasOngs as $Categoria)
-                    <option value="{{ $Categoria->id }}">{{ $Categoria->nome }}</option>
+                    <option value="{{ $Categoria->id }}">{{ trans($Categoria->nome) }}</option>
                 @empty
                     <option>Sem categorias</option>
                 @endforelse
                 </select>
                 @endif
-                {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Ong']) !!} 
-                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>        
+                {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Ong']) !!}
+                <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>
                 <div class="col-sm-12 text-center">
-                    {!! Form::submit('Começar', ['class' => 'btn']) !!}
+                    {!! Form::submit('Começar', ['class' => 'btn btn-primario btn-acao']) !!}
                 </div>
                 {!! Form::close() !!}
             </div>
