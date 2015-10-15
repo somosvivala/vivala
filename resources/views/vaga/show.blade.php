@@ -21,7 +21,7 @@
 </div>
 
 <h3 class="font-bold-upper text-center">
-    {{ $vaga->owner->nome }}            
+    {{ $vaga->owner->nome }}
 </h3>
 
 
@@ -102,7 +102,7 @@
 <a class="btn margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
 </div>
 
-@if(isset($Responsavel)) 
+@if(isset($Responsavel))
 <div class="text-left fundo-cheio col-sm-12 margin-b-2 padding-b-2 padding-t-2">
     <div class="col-sm-2 text-center">
 
@@ -112,7 +112,7 @@
         </a>
     </div>
     <div class="col-sm-10">
-        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar aqui pelo chat Vivalá, pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }} 
+        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar aqui pelo chat Vivalá, pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
     </div>
 </div>
 @endif

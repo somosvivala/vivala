@@ -592,16 +592,6 @@ return[
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',
 
-    // Categorias da ONU
-    'ong_onu_cat-1' => 'Erradicar a extrema pobreza e a fome',
-    'ong_onu_cat-2' => 'Atingir o ensino básico universal',
-    'ong_onu_cat-3' => 'Promover a igualdade entre os sexos e a autonomia das mulheres',
-    'ong_onu_cat-4' => 'Reduzir a mortalidade infantil',
-    'ong_onu_cat-5' => 'Melhorar a saúde materna',
-    'ong_onu_cat-6' => 'Combater o HIV/Aids, a malária e outras doenças',
-    'ong_onu_cat-7' => 'Garantir a sustentabilidade ambiental',
-    'ong_onu_cat-8' => 'Estabelecer uma Parceria Mundial para o Desenvolvimento',
-
   /* View: Páginas */
 
   /* View: Perfil */
@@ -672,6 +662,120 @@ return[
       'welcome_aboutprivacy2' => 'e confirma que leu nossa',
       'welcome_aboutprivacy3' => ', incluindo nosso',
   // Blades externas
+
+
+/*------------------------------------------------------------------------------
+//  Traduções com BD-mixed
+------------------------------------------------------------------------------*/
+/* Categorias do quiz */
+  'quiz_traveller_style_cat-1' => 'Mochileiro',
+  'quiz_traveller_style_cat-2' => 'Original',
+  'quiz_traveller_style_cat-3' => 'Conforto',
+
+  'quiz_traveller_partner_cat-1' => 'Sozinho',
+  'quiz_traveller_partner_cat-2' => 'Em Família',
+  'quiz_traveller_partner_cat-3' => 'Com Amigos',
+  'quiz_traveller_partner_cat-4' => 'Em Casal',
+
+  'quiz_traveller_ambient_cat-1' => 'Praia e Sol',
+  'quiz_traveller_ambient_cat-2' => 'Montanha',
+  'quiz_traveller_ambient_cat-3' => 'Ecoturismo',
+  'quiz_traveller_ambient_cat-4' => 'Cidades Históricas',
+  'quiz_traveller_ambient_cat-5' => 'Cidades Pequenas',
+  'quiz_traveller_ambient_cat-6' => 'Cidades Grandes',
+  'quiz_traveller_ambient_cat-7' => 'Retiros Espirituais',
+
+  'quiz_traveller_region_cat-1' => 'Norte',
+  'quiz_traveller_region_cat-2' => 'Nordeste',
+  'quiz_traveller_region_cat-3' => 'Centro-Oeste',
+  'quiz_traveller_region_cat-4' => 'Sul',
+  'quiz_traveller_region_cat-5' => 'Sudeste',
+
+  'quiz_traveller_motivation_cat-1' => 'Conhecer locais famosos',
+  'quiz_traveller_motivation_cat-2' => 'Explorar locais desconhecidos',
+  'quiz_traveller_motivation_cat-3' => 'Ver realidades diferentes da minha',
+  'quiz_traveller_motivation_cat-4' => 'Vivenciar realidades diferentes da minha',
+  'quiz_traveller_motivation_cat-5' => 'Buscar experiências que mudem a minha atitude',
+  'quiz_traveller_motivation_cat-6' => 'Achar respostas à questões existenciais',
+  'quiz_traveller_motivation_cat-7' => 'Crescimento pessoal',
+  'quiz_traveller_motivation_cat-8' => 'Imersão Cultural',
+  'quiz_traveller_motivation_cat-9' => 'Diversão descompromissada e passatempos',
+  'quiz_traveller_motivation_cat-10' => 'Descansar a mente para retomar o cotidiano',
+  'quiz_traveller_motivation_cat-11' => 'Gosto de não fazer nada',
+
+  'quiz_traveller_events_cat-1' => 'Eventos Típicos (Carnaval, Festa Junina, etc)',
+  'quiz_traveller_events_cat-2' => 'Bares',
+  'quiz_traveller_events_cat-3' => 'Baladas',
+  'quiz_traveller_events_cat-4' => 'Shows',
+  'quiz_traveller_events_cat-5' => 'Festivais',
+  'quiz_traveller_events_cat-6' => 'Cinema',
+  'quiz_traveller_events_cat-7' => 'Espetáculos de Tetro e Musicais',
+  'quiz_traveller_events_cat-8' => 'Museus',
+  'quiz_traveller_events_cat-9' => 'Eventos Esportivos',
+  'quiz_traveller_events_cat-10' => 'Restaurantes Renomados',
+  'quiz_traveller_events_cat-11' => 'Restaurantes de Comida Típica',
+  'quiz_traveller_events_cat-12' => 'Conhecer Projetos Sociais',
+  'quiz_traveller_events_cat-13' => 'Ser Voluntário em Projetos Sociais',
+
+/* Categorias de Empresas */
+  'company_type-cat-1' => 'Aeroespacial/Defesa',
+  'company_type_cat-2' => 'Alimentos/Bebidas',
+  'company_type-cat-3' => 'Automóveis e Peças',
+  'company_type_cat-4' => 'Banco/Instituição Financeira ',
+  'company_type-cat-5' => 'Biotecnologia',
+  'company_type_cat-6' => 'Causa',
+  'company_type-cat-7' => 'Computadores/Tecnologia',
+  'company_type_cat-8' => 'Consultoria/Serviços Empresariais',
+  'company_type-cat-9' => 'Cultivo/Agricultura',
+  'company_type_cat-10' => 'Educação',
+  'company_type_cat-11' => 'Empresa',
+  'company_type_cat-12' => 'Energia/Serviços Públicos',
+  'company_type_cat-13' => 'Engenharia/Construção',
+  'company_type_cat-14' => 'Ensino Fundamental',
+  'company_type_cat-15' => 'Ensino Fundamental II',
+  'company_type_cat-16' => 'Escola',
+  'company_type_cat-17' => 'Industriais',
+  'company_type_cat-18' => 'Internet/Software',
+  'company_type_cat-19' => 'Jurídico/Direito',
+  'company_type_cat-20' => 'Mercadoria de consumidor e varejo',
+  'company_type_cat-21' => 'Mídia/Notícias/Publicidade',
+  'company_type_cat-22' => 'Mineração/Materiais',
+  'company_type_cat-23' => 'Organização',
+  'company_type_cat-24' => 'Organização Comunitária',
+  'company_type_cat-25' => 'Organização Governamental',
+  'company_type_cat-26' => 'Organização Política',
+  'company_type_cat-27' => 'Organização Sem Fins Lucrativos',
+  'company_type_cat-28' => 'Partido Político',
+  'company_type_cat-29' => 'Pequena Empresa',
+  'company_type_cat-30' => 'Pré-Escola',
+  'company_type_cat-31' => 'Produtos Químicos',
+  'company_type_cat-32' => 'Saúde/Beleza',
+  'company_type_cat-33' => 'Saúde/Médico/Farmácia',
+  'company_type_cat-34' => 'Seguradora',
+  'company_type_cat-35' => 'Telecomunicações',
+  'company_type_cat-36' => 'Transporte/Frete',
+  'company_type_cat-37' => 'Universidade',
+  'company_type_cat-38' => 'Viagem/Lazer',
+
+/* Categorias da ONU */
+  'ong_onu_cat-1' => 'Erradicar a extrema pobreza e a fome',
+  'ong_onu_cat-2' => 'Atingir o ensino básico universal',
+  'ong_onu_cat-3' => 'Promover a igualdade entre os sexos e a autonomia das mulheres',
+  'ong_onu_cat-4' => 'Reduzir a mortalidade infantil',
+  'ong_onu_cat-5' => 'Melhorar a saúde materna',
+  'ong_onu_cat-6' => 'Combater o HIV/Aids, a malária e outras doenças',
+  'ong_onu_cat-7' => 'Garantir a sustentabilidade ambiental',
+  'ong_onu_cat-8' => 'Estabelecer uma Parceria Mundial para o Desenvolvimento',
+
+/* Categorias de Vagas */
+  'ong_job_slot_avaiable_cat-1' => 'Erradicar a extrema pobreza e a fome',
+  'ong_job_slot_avaiable_cat-2' => 'Atingir o ensino básico universal',
+  'ong_job_slot_avaiable_cat-3' => 'Promover a igualdade entre os sexos e a autonomia das mulheres',
+  'ong_job_slot_avaiable_cat-4' => 'Reduzir a mortalidade infantil',
+  'ong_job_slot_avaiable_cat-5' => 'Melhorar a saúde materna',
+  'ong_job_slot_avaiable_cat-6' => 'Combater o HIV/Aids, a malária e outras doenças',
+  'ong_job_slot_avaiable_cat-7' => 'Garantir a sustentabilidade ambiental',
+  'ong_job_slot_avaiable_cat-8' => 'Estabelecer uma Parceria Mundial para o Desenvolvimento',
 
 ];
 ?>
