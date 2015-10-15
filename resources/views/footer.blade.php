@@ -38,5 +38,5 @@
 
 </script>
 <div class="col-sm-12 margin-t-1 margin-b-1 text-center">
-Todos os direitos reservados Vivalá Turismo LTDA - CNPJ 22.693.622/0001-98
+Todos os direitos reservados Vivalá Turismo e Serviços Ltda - CNPJ 22.693.622/0001-85
 </div>
