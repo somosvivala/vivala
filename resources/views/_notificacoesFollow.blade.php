@@ -21,7 +21,7 @@
         </div>
     </li>
     @empty
-        <p>{{ trans('global.lbl_follower_no') }}:o</p>
+        <p>{{ trans('global.lbl_follower_no') }}</p>
     @endforelse
     @endif
 </ul>

@@ -41,7 +41,7 @@
 			@endif
 		</ul>
 		<div class="col-sm-12 text-center">
-			<a class="btn btn-acao" href="/home">{{ trans("global.lbl_continue") }}</a>
+			<a class="btn btn-primario btn-acao" href="/home">{{ trans("global.lbl_continue") }}</a>
 		</div>
 	</div>
 @endsection

@@ -25,7 +25,7 @@
 </h3>
 
 
-<div class="col-sm-4 sobre-ong">
+<div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
     <img src="{{ asset('img/casacomunal.png') }}">
     <b class="font-bold-upper col-sm-12">Sobre a organização</b>
@@ -36,7 +36,7 @@
 </div>
 </div>
 
-<div class="col-sm-4 sobre-ong">
+<div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
     <img src="{{ asset('img/habilidades.png') }}">
     <b class="font-bold-upper col-sm-12">Sobre o trabalho</b>
@@ -47,7 +47,7 @@
 </div>
 </div>
 
-<div class="col-sm-4 sobre-ong">
+<div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
     <img src="{{ asset('img/pessoa.png') }}">
     <b class="font-bold-upper col-sm-12">Habilidades</b>
@@ -58,7 +58,7 @@
 </div>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
     <img src="{{ asset('img/calendario.png') }}">
     <b class="font-bold-upper col-sm-12">Datas e horários</b>
@@ -69,7 +69,7 @@
 </div>
 </div>
 
-<div class="col-sm-4">
+<div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
     <img src="{{ asset('img/mapmarker.png') }}">
     <b class="font-bold-upper col-sm-12">Localização</b>
@@ -79,7 +79,7 @@
     <br><br>
 </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
     <b class="font-bold-upper col-sm-12 margin-t-2">Responsável</b>
     <div class="follow-perfil col-sm-8 col-sm-offset-2 margin-t-1">
@@ -99,7 +99,7 @@
 </div>
 </div>
 <div class="row text-center">
-<a class="btn margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
+<a class="btn btn-primario btn-acao margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
 </div>
 
 @if(isset($Responsavel))

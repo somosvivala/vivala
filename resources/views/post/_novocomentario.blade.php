@@ -15,7 +15,7 @@
 
 		<!-- Adiciona submit button para o form -->
 		<div class="form-group">
-			{!! Form::submit(trans('global.lbl_publish'), ['class' => 'alert text-right padding-btn font-bold-upper form-control']) !!}
+			{!! Form::submit(trans('global.lbl_commentr'), ['class' => 'alert text-right padding-btn font-bold-upper form-control']) !!}
 		</div>
 
 		<!-- Fecha o form-->

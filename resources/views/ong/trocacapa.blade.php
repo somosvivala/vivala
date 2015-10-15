@@ -13,8 +13,8 @@
 
             <div class="file-upload">
                 <label for="image_file_upload">
-                    {{ trans("quiz.sendphoto") }}
-                    <p>{{ trans("quiz.fromrcomputer") }}</p>
+                    {{ trans("global.lbl_photo_send") }}
+                    <p>{{ trans("global.quiz_fromcomputer") }}</p>
                     {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'data-ratio'=>'2', 'class' => 'upload']) !!}
                 </label>
             </div>

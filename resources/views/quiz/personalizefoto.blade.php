@@ -28,7 +28,7 @@
 				{!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
 			<div class="erros">
 			</div>
-			{!! Form::submit( trans("global.lbl_continue"), ['class' => 'btn btn-acao']) !!}
+			{!! Form::submit( trans("global.lbl_continue"), ['class' => 'btn btn-primario btn-acao']) !!}
 		{!! Form::close() !!}
 	</div>
 @endsection

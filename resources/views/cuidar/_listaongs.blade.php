@@ -4,7 +4,7 @@
     @forelse($ongs as $Ong)
         <li class="col-sm-4">
             <div class="foto-fundo" style="background-image:url('{{ $Ong->getCapaUrl() }}');">
-            <a href="{{ url('ongs/sobre/'.$Ong->id) }}">
+            <a href="{{ url($Ong->getUrl()) }}">
                 <h3 class="font-bold-upper">{{ $Ong->nome }}</h3>
             </a>
         </li>
