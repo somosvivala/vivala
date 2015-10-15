@@ -1,11 +1,11 @@
 @extends('templatedeslogado')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid welcome-login-passrec">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
+			<div class="panel panel-default margin-t-2">
+				<div class="panel-heading"><h5 class="texto-preto">{{ trans('global.lbl_login') }}</h4></div>
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
@@ -22,14 +22,14 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
+							<label class="col-md-4 control-label"><span class="texto-branco">{{ trans('global.lbl_email') }}</span></label>
 							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
+							<label class="col-md-4 control-label"><span class="texto-branco">{{ trans('global.lbl_password') }}</span></label>
 							<div class="col-md-6">
 								<input type="password" class="form-control" name="password">
 							</div>
@@ -39,7 +39,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<div class="checkbox">
 									<label>
-										<input type="checkbox" name="remember"> Remember Me
+										<input type="checkbox" name="remember"><span class="texto-branco">{{ trans('global.lbl_login_keepme') }}</span>
 									</label>
 								</div>
 							</div>
@@ -47,11 +47,15 @@
 
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
+								<button type="submit" class="btn btn-primario btn-acao">{{ trans('global.lbl_login') }}</button>
 								<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
-									<i class="fa fa-facebook"></i> {{ trans('facebook.login') }}
+									<i class="fa fa-facebook"></i>{{ trans('global.fb_login') }}
 								</a>
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
+								<div class="margin-t-1">
+									<a class="texto-branco" href="{{ url('/password/email') }}">
+										{{ trans('global.lbl_password_forgot') }}
+									</a>
+								</div>
 							</div>
 						</div>
 					</form>
