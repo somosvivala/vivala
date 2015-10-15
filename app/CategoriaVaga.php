@@ -10,4 +10,11 @@ class CategoriaVaga extends Model {
 		return $this->hasMany('App\Vaga');
 	}
 
+        /**
+         * Acessor para a proprieadade nomeTraduzido, que aplica o translate no 
+         * valor antes de devolvelo.
+         */   
+        public function getNomeTraduzidoAttribute() {
+            return trans($this->nome);
+        }
 }

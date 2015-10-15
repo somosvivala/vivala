@@ -84,7 +84,7 @@ class OngController extends CuidarController {
 
             //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
-            $estadosArray = array(0 => 'Selecione um Estado');
+            $estadosArray = array(0 => 'Estado');
             foreach ($estados as $estado)
             {
                 $estadosArray[$estado->id] = $estado->nome;
@@ -168,17 +168,17 @@ class OngController extends CuidarController {
             $cidades = Ong::getCidadesComOngs();
 
             //Arrumando array de cidades para select 
-            $cidadesArray = array(0 => 'Selecione uma Cidade');
+            $cidadesArray = array(0 => 'Cidade');
             foreach ($cidades as $cidade)
             {
                 $cidadesArray[$cidade->id] = $cidade->nome;
             }
             $cidades = $cidadesArray;
         
-            $categoriasArray = array(0 => 'Selecione uma Categoria');
-            foreach ($categorias as $cidade)
+            $categoriasArray = array(0 => 'Categoria');
+            foreach ($categorias as $categoria)
             {
-                $categoriasArray[$cidade->id] = $cidade->nome;
+                $categoriasArray[$categoria->id] = $categoria->nome;
             }
             $categorias = $categoriasArray;
 
@@ -248,7 +248,7 @@ class OngController extends CuidarController {
 
             //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
-            $estadosArray = array(0 => 'Selecione um Estado');
+            $estadosArray = array(0 => 'Estado');
             foreach ($estados as $estado)
             {
                 $estadosArray[$estado->id] = $estado->nome;
