@@ -11,8 +11,9 @@ class QuimeraController extends Controller {
 
 	public function quimera()
 	{
+		$params = $dataParams = Input::get('params');
+
 		$type    = Input::get('url');
-		$params  = Input::get('params');
 		$method  = Input::get('method');
 		$process = Input::get('process');
 		$headers = Input::get('headers');
@@ -31,7 +32,12 @@ class QuimeraController extends Controller {
 		if ($process == 'true') {
 			$output = QuimeraRepository::processResponse($response, $type);
 			if (is_array($output) && array_key_exists('blade', $output)) {
-				$data = $output['data'];
+				if (array_key_exists('data', $dataParams)) {
+					$data['data']  = $output['data'];
+					$data['extra'] = json_decode($dataParams['data']);
+				} else {
+					$data = $output['data'];
+				}
 				$output = view($output['blade'], compact('data'));
 			}
 			return $output;

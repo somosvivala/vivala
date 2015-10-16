@@ -247,12 +247,13 @@ var hotelDetail = function(id) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'html',
+        dataType: 'text',
+        async: false,
         data: {
             params: {id: id},
             url: url,
             method: 'GET',
-            process: true,
+            process: false,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -260,9 +261,7 @@ var hotelDetail = function(id) {
         },
     })
     .done(function(data) {
-        $('.resultados-busca-hospedagem').html(data);
-    }).fail(function(){
-        $('resultados-busca-hospedagem').html("Nenhum hotel foi encontrado");
+        hotelDetailData = data;
     });
 };
 
@@ -273,6 +272,7 @@ var hotelAvaiability = function(params) {
     var
         url = 'hotelAvaiability',
         defaultParams = {
+            data: null,
             id: null,
             checkin: null,
             checkout: null,
@@ -289,10 +289,10 @@ var hotelAvaiability = function(params) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'text',
         data: {
-            params: defaultParams,
-            url: url,
+            params: {id: defaultParams.id},
+            url: 'hotelDetail',
             method: 'GET',
             process: false,
             headers: {
@@ -302,8 +302,29 @@ var hotelAvaiability = function(params) {
         },
     })
     .done(function(data) {
-        $('div.resultados-busca-hospedagem').attr('data-token', data.availabilityToken);
+        defaultParams.data = data;
+        $.ajax({
+            url: '/quimera',
+            type: 'POST',
+            dataType: 'html',
+            data: {
+                params: defaultParams,
+                url: url,
+                method: 'GET',
+                process: true,
+                headers: {
+                    "agency-domain": 'vivala',
+                    "Accept-Language": 'pt-BR'
+                }
+            },
+        })
+        .done(function(data) {
+            $('.resultados-busca-hospedagem').html(data);
+        }).fail(function(){
+            $('resultados-busca-hospedagem').html("Nenhum hotel foi encontrado");
+        });    
     });
+
 };
 
 var searchCars = function(params) {
@@ -487,11 +508,11 @@ var bindAutoCompleteHotels = function() {
 
 var bindCliqueHotel = function(){
     $('a.abrehotel').on('click', function(){
-        var parent = $(this).parents('div.resultados-busca-hospedagem');
-
-        hotelDetail($(this).attr('data-id'));
+        var parent = $(this).parents('div.resultados-busca-hospedagem'),
+            hotelDetailData;
 
         hotelAvaiability({
+            data: hotelDetailData,
             id: $(this).attr('data-id'),
             checkin: $(parent).attr('data-checkin'),
             checkout: $(parent).attr('data-checkout'),
