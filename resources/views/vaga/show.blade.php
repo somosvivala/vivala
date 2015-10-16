@@ -63,7 +63,7 @@
     <img src="{{ asset('img/calendario.png') }}">
     <b class="font-bold-upper col-sm-12">Datas e horários</b>
     <p>
-        {{ $vaga->owner->horario_funcionamento }}
+        {{ $vaga->horario_funcionamento }}
     </p>
     <br><br>
 </div>
@@ -74,7 +74,7 @@
     <img src="{{ asset('img/mapmarker.png') }}">
     <b class="font-bold-upper col-sm-12">Localização</b>
     <p>
-        {{ $vaga->local?:$vaga->owner->local }}
+        {{ $vaga->local ? $vaga->local : $vaga->owner->local }}
     </p>
     <br><br>
 </div>

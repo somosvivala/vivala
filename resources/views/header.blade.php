@@ -121,10 +121,14 @@
                             <span>{{ trans('global.lbl_profile') }}</span>
                         </a>
                     </li>
+                    
+                    {{--
                     <li><a href="{{ url('config') }}">
                             <i class="fa fa-cogs"></i>
                             <span>{{ trans('global.lbl_setting_') }}</span>
                     </a></li>
+                    --}}
+
                     <li><a href="{{ url('/auth/logout') }}">
                             <i class="fa fa-power-off"></i>
                             <span>{{ trans('global.lbl_logout') }}</span>
