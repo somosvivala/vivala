@@ -1,6 +1,6 @@
 @foreach ($data as $hotel)
     <div class="col-sm-4">
-        <a href="#abrehotel" class="abrehotel">
+        <a href="#abrehotel" data-id="{{$hotel->id}}" class="abrehotel">
             <div class="quimera-hotel" style="background-image: url({!! $hotel->picture->url !!});">
             </div>
             <div class="hotel-header">

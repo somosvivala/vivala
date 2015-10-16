@@ -242,12 +242,12 @@ var hotelDetail = function(id) {
     $.ajax({
         url: '/quimera',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: {
             params: {id: id},
             url: url,
             method: 'GET',
-            process: false,
+            process: true,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -482,6 +482,6 @@ var bindAutoCompleteHotels = function() {
 
 var bindCliqueHotel = function(){
         $('a.abrehotel').on('click', function(){
-            hotelDetail(1);
+            hotelDetail($(this).attr('data-id'));
         });
     };
