@@ -158,7 +158,7 @@ class PerfilController extends ConectarController {
 		$followedBy = $perfil->followedByPerfil;
 		$entidadeAtiva = $perfil;
 
-                $posts = $entidadeAtiva->posts->latest();
+                $posts = $entidadeAtiva->posts;
 
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
 	}

@@ -35,7 +35,7 @@
                     {!! Form::text("bairro",  null , ['title' => trans('global.ong_address_district'), 'placeholder' => trans('global.address_district'), 'class' => 'form-control']) !!}
                 </div>
                 <div class="form-group col-sm-6">
-                    {!! Form::select("estado", $estados, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control'], ['id' => 'estado_select']) !!}
+                    {!! Form::select("estado", $estados, $ong->estado->id, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control'], ['id' => 'estado_select']) !!}
                 </div>
                 <div class="form-group col-sm-6">
                     {!! form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select', 'disabled'=>'true']) !!}
@@ -58,7 +58,7 @@
             <ul class="cat-ong" class="col-sm-12">
                 @foreach($categoriasVaga as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
-                    <input type="radio" name="categoria_vaga_id" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
+                    <input type="radio" name="categoria_vaga_id" @if ($categoriaSelecionada == $Categoria->id)  checked="checked" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" >
                     <label for="categoria-ong-{{$Categoria->id}}">
                         <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt="{{ trans($Categoria->id) }}" title="{{ trans($Categoria->id) }}" class='col-sm-12'/>
                     </label>

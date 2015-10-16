@@ -76,6 +76,8 @@ class OngController extends CuidarController {
             
             //Ordenando array de cidades para ficar cidadeID => cidadeNome 
             $cidades = Cidade::all()->keyBy('id');
+
+            $cidadesArray = array(null => 'Cidade');
             foreach ($cidades as $cidade)
             {
                 $cidadesArray[$cidade->id] = $cidade->nome;
@@ -84,14 +86,17 @@ class OngController extends CuidarController {
 
             //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
-            $estadosArray = array(0 => 'Estado');
+            $estadosArray = array(null => 'Estado');
             foreach ($estados as $estado)
             {
                 $estadosArray[$estado->id] = $estado->nome;
             }
             $estados = $estadosArray;
+
+            $estadoSelecionado = null;
+            $cidadeSelecionada = null;
             
-            return view('ong.create', compact('categoriasOngs', 'nome', 'categoriaSelecionada', 'cidades', 'estados') );
+            return view('ong.create', compact('categoriasOngs', 'nome', 'categoriaSelecionada', 'cidades', 'estados', 'cidadeSelecionada', 'estadoSelecionado') );
 	}
 
 
@@ -125,6 +130,7 @@ class OngController extends CuidarController {
                 //se ja nao existir uma ong com essa prettyUrl
                 $novaPrettyUrl->url = $novaPrettyUrl->giveAvailableUrl($novaOng->nome);
                 $novaOng->prettyUrl()->save($novaPrettyUrl);
+                $novaPrettyUrl->push();
 
                 Session::put('entidadeAtiva_id', $novaOng->id);
                 Session::put('entidadeAtiva_tipo', 'ong');
@@ -137,9 +143,26 @@ class OngController extends CuidarController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
-	{
-		$ong = Ong::findOrFail($id);
+	public function show($prettyUrl)
+        {
+
+                //se o dado da sessao for diferente da prettyUrl digitada, pegar da url
+		$ong = Session::get('ong', null);
+		if (is_null($ong) || $prettyUrl != $ong->getUrl()) {
+			Session::forget('ong');
+			$prettyUrlObj = PrettyUrl::all()->where('url', $prettyUrl)->first();
+
+			//Se parametro for uma prettyURL, pegar objeto Ong.
+			if (!is_null($prettyUrlObj)) {
+				$ong = App\Ong::find($prettyUrlObj->prettyurlable_id);
+			} else {
+				$ong = App\Ong::find($prettyUrl);
+				if (!$ong) {
+					App::abort(404);
+				}
+			}			
+                }
+                
                 Session::put('perfil', $ong);
 
                 $user  = $ong->user;
@@ -152,8 +175,7 @@ class OngController extends CuidarController {
 		$posts = Post::getUltimos();
 
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
-                return view('ong.show', compact('ong'));
-	}
+        }	
 
         /**
 	 * Mostra todas as ongs e um filtro
@@ -224,7 +246,8 @@ class OngController extends CuidarController {
         {
             $ong = Ong::findOrFail($id);
             $user = Auth::user();
-           
+      
+
             //Verificando se usuario logado é owner da ong atual
             //TODO: Model de permissoes.. 
             if ($ong->user->id != $user->id) {
@@ -236,6 +259,8 @@ class OngController extends CuidarController {
             $fotoCapa = $ong->getCapaUrl();
             $categoriaSelecionada = ($ong->categoria ? $ong->categoria->id : null);
             $categoriasOngs = CategoriaOng::all();
+            $cidadeSelecionada = ($ong->cidade ? $ong->cidade->id : null);
+            $estadoSelecionado = ($ong->estado ? $ong->estado->id : null);
             $nome = $ong->nome;
 
             //Ordenando array de cidades para ficar cidadeID => cidadeNome 
@@ -262,7 +287,7 @@ class OngController extends CuidarController {
             Session::put('entidadeAtiva_tipo', 'ong');
 
             $ong->url = $ong->getUrl();
-            return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs', 'cidades', 'estados'));
+            return view('ong.edit', compact('user', 'ong', 'foto', 'fotoCapa', 'nome', 'categoriaSelecionada', 'categoriasOngs', 'cidades', 'estados', 'cidadeSelecionada', 'estadoSelecionado'));
 	}
 
 	/**
@@ -277,30 +302,42 @@ class OngController extends CuidarController {
         $ong->update($request->all());
 
         //Salvando foto da ong;
-		$file = Input::file('image');
-	    if ($file) {
+        $file = Input::file('image');
+        if ($file) {
 
-	        $destinationPath = public_path() . '/uploads/';
-	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
-	        $upload_success = $file->move($destinationPath, $filename);
+            $destinationPath = public_path() . '/uploads/';
+            $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+            $upload_success = $file->move($destinationPath, $filename);
 
-	        if ($upload_success) {
-	        	
-	        	/* Settando tipo da foto atual para null */
-	        	$currentAvatar = $ong->avatar;
-	        	$currentAvatar->tipo = null;
-	        	$currentAvatar->save();
+            if ($upload_success) {
+                    
+                    /* Settando tipo da foto atual para null */
+                    $currentAvatar = $ong->avatar;
+                    $currentAvatar->tipo = null;
+                    $currentAvatar->save();
 
-	        	$foto = new Foto([
-	        			'path' => $destinationPath . $filename,
-	        			'tipo' => 'avatar' ]);
-	        	$ong->fotos()->save($foto);
-	        }
-	    }
+                    $foto = new Foto([
+                                    'path' => $destinationPath . $filename,
+                                    'tipo' => 'avatar' ]);
+                    $ong->fotos()->save($foto);
+            }
+        }
 
         //Atualiza a url correspondente
         $ong->prettyUrl()->update([ 'url' => $request->url ]);
-		return view('ong.show', compact('ong'));
+
+        Session::put('perfil', $ong);
+
+        $user  = $ong->user;
+        $perfil = $ong;
+
+        $follow = $perfil->followPerfil;
+        $followedBy = $perfil->followedByPerfil;
+        $entidadeAtiva = $perfil;
+
+        $posts = Post::getUltimos();
+
+        return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
     }
 
 

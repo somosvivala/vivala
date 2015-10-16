@@ -140,6 +140,5 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 });
 
 
-Route::get("ong/{ong}", "OngController@index");
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
