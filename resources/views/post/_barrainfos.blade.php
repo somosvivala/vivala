@@ -21,7 +21,7 @@
 	<div class="col-sm-2 comentario">
 		<a href="#post/likepost/{{ $Post->id }}" class="comment-btn"><i class="fa fa-comment {{ $Post->likedByMe() }}"></i></a>
 		<span class="qtd-comentarios">
-			0 {{ trans('global.lbl_comment_') }}
+		    {{ count($Post->comentarios) }} {{ trans('global.lbl_comment_') }}
 		</span>
 	</div>
 	<div class="col-sm-2 share">

@@ -24,7 +24,7 @@
 	@empty
 	    <p class="col-sm-12">{{ trans("global.lbl_comment_not_found") }}</p>
 	@endforelse
-        <div class="col-sm-12 text-center">
+        <div class="col-sm-12 text-center bottom-hide">
             <a href="/post/{{ $Post->id }}">{{ trans('global.lbl_post_see_complete') }}</a>
         </div>
 	@endif

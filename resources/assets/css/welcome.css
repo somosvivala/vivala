@@ -368,7 +368,6 @@ img.foto-avatar .cover {
   z-index: 0;
 }
 .foto-avatar-comentario {
-  max-width: 100%;
   border-radius: 50%;
   width: 3em;
   height: 3em;
@@ -550,6 +549,15 @@ ul.filtro a {
 }
 .form-borda-preta .ph-cor-cinza-escuro :-ms-input-placeholder {
   color: #535353;
+}
+.bottom-hide {
+  bottom: 1em;
+  position: absolute;
+  opacity: 0.2;
+  transition: opacity 0.5s ease;
+}
+.bottom-hide:hover {
+  opacity: 0.7;
 }
 #welcome-html {
   position: relative;
