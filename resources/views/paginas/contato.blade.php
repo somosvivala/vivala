@@ -4,9 +4,10 @@
 
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
 
-    <h3 class="font-bold-upper text-center margin-b-2">Contato
-        <small class="sub-titulo">Vem falar com a gente!</small>
+    <h3 class="font-bold-upper text-center margin-b-2">{{ trans('global.lbl_contact') }}
+        <small class="sub-titulo">{{ trans('global.contact_keep_in_contact') }}</small>
     </h3>
+
     <div class="col-sm-5">
         <p>
         Se estiver afim de dar um alô e bater um lero, é só dar uma ligada, mandar um e-mail ou fazer uma visitinha... Você quem decide! O que importa é que estamos sempre de braços abertos para te receber e te ouvir, escutar sua opinião e suas sugestões.
@@ -17,7 +18,7 @@
 
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
-                Nosso email:
+                {{ trans('global.contact_our_email') }}
             </div>
             <div class="col-sm-12">
                 <a class="laranja font-bold-upper" href="mailto:queroconversar@vivalabrasil.com.br">queroconversar@vivalabrasil.com.br</a>
@@ -25,7 +26,7 @@
         </div>
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
-                Nosso telefone:
+                {{ trans('global.contact_our_phone') }}
             </div>
             <div class="col-sm-12">
                 <a class="laranja font-bold-upper" href="tel:+55 11 3758 4726">(11) 3758-4726</a>
@@ -33,10 +34,10 @@
         </div>
         <div class="row padding-t-2 ">
             <div class="col-sm-12">
-                Nosso endereço:
+                {{ trans('global.contact_our_address') }}
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="#">Rua Aspicuelta, 345 - São Paulo, SP</a>
+                <a class="laranja font-bold-upper" href="https://www.google.com.br/maps/place/R.+Aspicuelta,+345+-+Alto+de+Pinheiros,+S%C3%A3o+Paulo+-+SP/@-22.8755115,-46.1800783,6z/data=!4m2!3m1!1s0x94ce57978b550665:0xc675435d412b5648" target="_blank">Rua Aspicuelta, 345 - São Paulo, SP</a>
             </div>
         </div>
     </div>
