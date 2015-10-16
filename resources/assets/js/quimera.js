@@ -222,6 +222,11 @@ var searchHotels = function(params) {
     })
     .done(function(data) {
         $('.resultados-busca-hospedagem').html(data);
+
+        $('.resultados-busca-hospedagem').attr('data-checkin', defaultParams.checkin);
+        $('.resultados-busca-hospedagem').attr('data-checkout', defaultParams.checkout);
+        $('.resultados-busca-hospedagem').attr('data-distribution', defaultParams.distribution);
+
         bindCliqueHotel();
     }).fail(function(){
         $('resultados-busca-hospedagem').html("Nenhum hotel foi encontrado");
@@ -289,7 +294,7 @@ var hotelAvaiability = function(params) {
             params: defaultParams,
             url: url,
             method: 'GET',
-            process: true,
+            process: false,
             headers: {
                 "agency-domain": 'vivala',
                 "Accept-Language": 'pt-BR'
@@ -297,7 +302,7 @@ var hotelAvaiability = function(params) {
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('div.resultados-busca-hospedagem').attr('data-token', data.availabilityToken);
     });
 };
 
@@ -481,7 +486,16 @@ var bindAutoCompleteHotels = function() {
 };
 
 var bindCliqueHotel = function(){
-        $('a.abrehotel').on('click', function(){
-            hotelDetail($(this).attr('data-id'));
+    $('a.abrehotel').on('click', function(){
+        var parent = $(this).parents('div.resultados-busca-hospedagem');
+
+        hotelDetail($(this).attr('data-id'));
+
+        hotelAvaiability({
+            id: $(this).attr('data-id'),
+            checkin: $(parent).attr('data-checkin'),
+            checkout: $(parent).attr('data-checkout'),
+            distribution: $(parent).attr('data-distribution')
         });
-    };
+    });
+};
