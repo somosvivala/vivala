@@ -29,8 +29,7 @@ class QuimeraRepository {
             case 'hotel':
                 return 'https://www.e-agencias.com.br/jano-hotels/api/search';
             case 'hotelDetail':
-                return '';
-               // return 'https://www.e-agencias.com.br/jano-hotels/api/details/hotel';
+               return 'https://www.e-agencias.com.br/jano-hotels/api/details/hotel';
             case 'hotelAvaiability':
                 return 'https://www.e-agencias.com.br/jano-hotels/api/details/availability';
         }
@@ -144,8 +143,8 @@ class QuimeraRepository {
     private static function _hotelDetail($data)
     {
         return array(
-            'data'  => json_decode($data)->items,
-            'blade' => 'quimera._hotels'
+            'data'  => json_decode($data),
+            'blade' => 'quimera._hotelDetail'
         );
     }
 }
