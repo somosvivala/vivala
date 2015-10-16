@@ -34,7 +34,7 @@ class VagaController extends CuidarController {
         $cidades = Vaga::getCidadesComVagas();
         $ongs = Vaga::getOngsComVagas();            
 
-        $cidadesArray = array(null => 'Selecione uma Cidade');
+        $cidadesArray = array(null => 'Cidade');
         foreach ($cidades as $cidade)
         {
             $cidadesArray[$cidade->id] = $cidade->nome;
@@ -42,7 +42,7 @@ class VagaController extends CuidarController {
         $cidades = $cidadesArray;
 
         //Montando array de ongs para select
-        $ongsArray = array(null => 'Selecione um Projeto');
+        $ongsArray = array(null => 'Projeto');
         foreach ($ongs as $ong)
         {
             $ongsArray[$ong->id] = $ong->nome;
@@ -50,10 +50,10 @@ class VagaController extends CuidarController {
         $ongs = $ongsArray;
 
         //Montando array de categorias para select
-        $categoriasArray = array(null => 'Selecione uma Categoria'); 
+        $categoriasArray = array(null => 'Categoria'); 
         foreach ($categorias as $categoria)
         {
-            $categoriasArray[$categoria->id] = $categoria->nome;
+            $categoriasArray[$categoria->id] = $categoria->nomeTraduzido;
         }
         $categorias = $categoriasArray;
 
@@ -75,7 +75,7 @@ class VagaController extends CuidarController {
             $ongs = Auth::user()->ongs;
 
             //Montando array de ongs para select 
-            $ongsArray = array(0 => 'Selecione um Projeto');
+            $ongsArray = array(0 => 'Projeto');
             foreach ($ongs as $ong)
             {
                 $ongsArray[$ong->id] = $ong->nome;
@@ -94,7 +94,7 @@ class VagaController extends CuidarController {
 
             //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
-            $estadosArray = array(0 => 'Selecione um Estado');
+            $estadosArray = array(0 => 'Estado');
             foreach ($estados as $estado)
             {
                 $estadosArray[$estado->id] = $estado->nome;
@@ -179,7 +179,7 @@ class VagaController extends CuidarController {
         $ongs = Auth::user()->ongs;
 
         //Montando array de ongs para select 
-        $ongsArray = array(0 => 'Selecione um Projeto');
+        $ongsArray = array(0 => 'Projeto');
         foreach ($ongs as $ong)
         {
             $ongsArray[$ong->id] = $ong->nome;
@@ -198,7 +198,7 @@ class VagaController extends CuidarController {
 
         //Ordenando array de estados para ficar estadoID => estadoNome 
         $estados = Estado::all();
-        $estadosArray = array(0 => 'Selecione um Estado');
+        $estadosArray = array(0 => 'Estado');
         foreach ($estados as $estado)
         {
             $estadosArray[$estado->id] = $estado->nome;

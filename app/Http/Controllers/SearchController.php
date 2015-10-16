@@ -80,7 +80,7 @@ class SearchController extends Controller {
 
         $cidades = Ong::getCidadesComOngs();
         
-        $cidadesArray = array(0 => 'Selecione uma Cidade');
+        $cidadesArray = array(0 => 'Cidade');
         foreach ($cidades as $cidade)
         {
             $cidadesArray[$cidade->id] = $cidade->nome;
@@ -88,10 +88,10 @@ class SearchController extends Controller {
         $cidades = $cidadesArray;
 
         $categorias = Ong::getCategoriasComOngs();
-        $categoriasArray = array(0 => 'Selecione uma Categoria');
-        foreach ($categorias as $cidade)
+        $categoriasArray = array(0 => 'Categoria');
+        foreach ($categorias as $categoria)
         {
-            $categoriasArray[$cidade->id] = $cidade->nome;
+            $categoriasArray[$categoria->id] = $categoria->nomeTraduzido;
         }
         $categorias = $categoriasArray;
 
@@ -123,7 +123,7 @@ class SearchController extends Controller {
         $causas = new Collection();
         
         //Montando array de ongs para select
-        $ongsArray = array(null => 'Selecione um Projeto');
+        $ongsArray = array(null => 'Projeto');
         foreach ($ongs as $ong)
         {
             $ongsArray[$ong->id] = $ong->nome;
@@ -132,7 +132,7 @@ class SearchController extends Controller {
  
 
         //Montando array de cidades para select
-        $cidadesArray = array(null => 'Selecione uma Cidade'); 
+        $cidadesArray = array(null => 'Cidade'); 
         foreach ($cidades as $cidade)
         {
             $cidadesArray[$cidade->id] = $cidade->nome;
@@ -140,10 +140,10 @@ class SearchController extends Controller {
         $cidades = $cidadesArray;
 
         //Montando array de categorias para select
-        $categoriasArray = array(null => 'Selecione uma Categoria'); 
+        $categoriasArray = array(null => 'Categoria'); 
         foreach ($categorias as $categoria)
         {
-            $categoriasArray[$categoria->id] = $categoria->nome;
+            $categoriasArray[$categoria->id] = $categoria->nomeTraduzido;
         }
         $categorias = $categoriasArray;
 
