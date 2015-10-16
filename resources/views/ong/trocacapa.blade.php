@@ -6,7 +6,7 @@
 	<!-- Adiciona um formulario pra upload de foto de capa-->
         <div class="text-center jc_coords row col-sm-12">
 
-            {!! Form::open(['url' => ['foto/cropandsave', $ong->id ], 'files' => true, 'onsubmit' => 'return false;', 'class' => 'form-ajax', 'data-redirect' => '/perfil']) !!}
+            {!! Form::open(['url' => ['foto/cropandsave', $ong->id ], 'files' => true, 'onsubmit' => 'return false;', 'class' => 'form-ajax', 'data-redirect' => '/conectar']) !!}
             {!! Form::hidden("tipoEntidade",  "App\Ong") !!}
 
             <img id="preview" src="{{ isset($fotoCapa)?$fotoCapa:'/img/interrogacao.png' }}" class="foto-preview"/>

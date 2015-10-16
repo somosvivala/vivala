@@ -152,8 +152,7 @@ class OngController extends CuidarController {
 		$posts = Post::getUltimos();
 
 		return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
-                return view('ong.show', compact('ong'));
-	}
+        }	
 
         /**
 	 * Mostra todas as ongs e um filtro
@@ -277,30 +276,42 @@ class OngController extends CuidarController {
         $ong->update($request->all());
 
         //Salvando foto da ong;
-		$file = Input::file('image');
-	    if ($file) {
+        $file = Input::file('image');
+        if ($file) {
 
-	        $destinationPath = public_path() . '/uploads/';
-	        $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
-	        $upload_success = $file->move($destinationPath, $filename);
+            $destinationPath = public_path() . '/uploads/';
+            $filename = self::formatFileNameWithUserAndTimestamps($file->getClientOriginalName());
+            $upload_success = $file->move($destinationPath, $filename);
 
-	        if ($upload_success) {
-	        	
-	        	/* Settando tipo da foto atual para null */
-	        	$currentAvatar = $ong->avatar;
-	        	$currentAvatar->tipo = null;
-	        	$currentAvatar->save();
+            if ($upload_success) {
+                    
+                    /* Settando tipo da foto atual para null */
+                    $currentAvatar = $ong->avatar;
+                    $currentAvatar->tipo = null;
+                    $currentAvatar->save();
 
-	        	$foto = new Foto([
-	        			'path' => $destinationPath . $filename,
-	        			'tipo' => 'avatar' ]);
-	        	$ong->fotos()->save($foto);
-	        }
-	    }
+                    $foto = new Foto([
+                                    'path' => $destinationPath . $filename,
+                                    'tipo' => 'avatar' ]);
+                    $ong->fotos()->save($foto);
+            }
+        }
 
         //Atualiza a url correspondente
         $ong->prettyUrl()->update([ 'url' => $request->url ]);
-		return view('ong.show', compact('ong'));
+
+        Session::put('perfil', $ong);
+
+        $user  = $ong->user;
+        $perfil = $ong;
+
+        $follow = $perfil->followPerfil;
+        $followedBy = $perfil->followedByPerfil;
+        $entidadeAtiva = $perfil;
+
+        $posts = Post::getUltimos();
+
+        return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
     }
 
 
