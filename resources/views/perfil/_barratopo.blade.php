@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </li>
-            <li class="col-sm-4"><i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i><br>{{ trans('global.lbl_traveller') }}</li>
+            <li class="col-sm-4">@if( $perfil->tipo == 'ong' ) Projeto de impacto @else <br>{{ trans('global.lbl_traveller') }} @endif</li>
         </ul>
         <ul class="margin-0">
             <li class="col-sm-6"><a href="{{ $perfil->tipo == 'ong'?url('ongs/sobre/'.$perfil->id):'' }}">Saiba mais coisas</a></li>
