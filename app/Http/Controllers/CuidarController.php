@@ -35,7 +35,7 @@ class CuidarController extends VivalaBaseController {
             $cidades = Vaga::getCidadesComVagas();
             $ongs = Vaga::getOngsComVagas();            
 
-            $cidadesArray = array(null => 'Selecione uma Cidade');
+            $cidadesArray = array(null => trans('global.lbl_city'));
             foreach ($cidades as $cidade)
             {
                 $cidadesArray[$cidade->id] = $cidade->nome;
@@ -43,7 +43,7 @@ class CuidarController extends VivalaBaseController {
             $cidades = $cidadesArray;
 
             //Montando array de ongs para select
-            $ongsArray = array(null => 'Selecione uma Ong');
+            $ongsArray = array(null => 'Ong');
             foreach ($ongs as $ong)
             {
                 $ongsArray[$ong->id] = $ong->nome;
@@ -51,7 +51,7 @@ class CuidarController extends VivalaBaseController {
             $ongs = $ongsArray;
 
             //Montando array de categorias para select
-            $categoriasArray = array(null => 'Selecione uma Categoria'); 
+            $categoriasArray = array(null => trans('global.lbl_category')); 
             foreach ($categorias as $categoria)
             {
                 $categoriasArray[$categoria->id] = $categoria->nome;

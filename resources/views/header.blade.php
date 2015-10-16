@@ -3,10 +3,10 @@
 </div>
 
 <div class="menu-principal">
-	<div class="col-sm-4">
+	<div class="hidden-md hidden-sm col-lg-4">
 		<input class="busca-geral-menu" placeholder='{{ trans("global.lbl_search1") }}' type="search">
 	</div>
-	<ul class="col-sm-8 nav navbar-nav lista-intervalo-preto">
+	<ul class="col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto">
 		@if (Auth::guest())
 			<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
 			<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
@@ -54,7 +54,7 @@
         @if (Auth::user())
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <div class="pull-left hello">{{ trans('global.lbl_hello') }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
+                <div class="pull-left hello hidden-sm hidden-md">{{ trans('global.lbl_hello') }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
                 <ul class="dropdown-menu submenu" role="menu">
                     @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")

@@ -65,9 +65,16 @@ class UserSeeder extends Seeder {
 
         User::create([
         	'username' 	         => 'Zord',
-            'genero'             => 'masculino',
+                'genero'             => 'masculino',
         	'email' 	         => 'zord@gmail.com',
         	'password' 	         => '$2y$10$3hu7mqV8vfotsxNsH7hWY./nUmWSIbUqmZVESqpmQn9onYJ5Et0ca' //123321
+        ]);
+
+        User::create([
+        	'username' 	         => 'Pedro Gayotto',
+            'genero'             => 'fb.male',
+        	'email' 	         => 'pedro_bpg@hotmail.com',
+        	'fb_token' 	         => 'CAAWuNGLcPe0BAHHYFrCCtBaWgDmwqUZBbmiHyYRuufbFLFwUgI5I80bZCiu6IO6PW47icEpi0AvEJVl68rN19cpkcDLdZCLE2MhLQdNAlsKX0I7YqJRZAFOS4GNAqJzeVnthrwZBTl5Y8dhbXPchO1JabdCCbJC6MZAcnA6elX7yQ4V4muoWPweR9uT2xtrtNdnF7bAv15ZAwZDZD' //123321
         ]);
 
     }
@@ -89,6 +96,7 @@ class PerfilSeeder extends Seeder {
             'apelido'     => 'Dodoido'
         ]);
 
+
         $zord = Perfil::create([
             'user_id'               => '2',
             'aniversario'      => '1992-05-08 07:43:00',
@@ -97,6 +105,16 @@ class PerfilSeeder extends Seeder {
             'descricao_curta'     => 'Developer, samurai e ta sempre viajando',
             'descricao_longa'     => '',
             'apelido'     => 'Zordoido'
+        ]);
+
+        $pg = Perfil::create([
+            'user_id'               => '3',
+            'aniversario'      => '1992-02-23 07:43:00',
+            'cidade_natal'     => 'São Paulo',
+            'nome_completo'     => 'Pedro Gayotto',
+            'descricao_curta'     => 'é nois que ta',
+            'descricao_longa'     => '',
+            'apelido'     => 'PG'
         ]);
 
     }
@@ -117,7 +135,12 @@ class EmpresaSeeder extends Seeder {
     public function run()
     {
         DB::table('empresas')->delete();
-
+/*
+        $vivala = Empresa::create([
+            'user_id'               => '3',
+            'nome'     => 'Vivalá',
+        ]);
+*/
     }
 }
 
