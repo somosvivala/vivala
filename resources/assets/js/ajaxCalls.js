@@ -32,5 +32,5 @@ $(function() {
     });
 
     // Muda o ícone de javascript ativo
-    $('#javascript-ativo').css("color", "#6a6");
+    $('#javascript-ativo').removeClass('fa-times').addClass('fa-thumbs-up').css("background-color", "#6a6");
 });

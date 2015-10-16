@@ -20,7 +20,7 @@
                 @endif
             </span>
         </div>
-        <p class="col-sm-12 row">{{ $perfil->descricao_longa }}</p>
+        <p class="col-sm-12 row">{{ $perfil->descricao_curta }}</p>
     </div>
     <div class="col-md-2">
         <div class="round foto">
@@ -96,7 +96,22 @@
                     </div>
                 </div>
             </li>
-            <li class="col-sm-4">@if( $perfil->tipo == 'ong' ) Projeto de impacto @else <br>{{ trans('global.lbl_traveller') }} @endif</li>
+            <li class="col-sm-4">
+                @if( $perfil->tipo == 'ong' ) 
+                    Projeto de impacto 
+                    @else 
+                    @if( $perfil->apoiador == 'B' )
+                    <i class="fa fa-star"></i>
+                    <br>APOIADOR
+                    @elseif ( $perfil->apoiador == 'A' )
+                    <i class="fa fa-star laranja"></i>
+                    <br>APOIADOR
+                    @else
+
+                    <br>
+                    {{ trans('global.lbl_traveller') }} 
+                    @endif
+                @endif</li>
         </ul>
         <ul class="margin-0">
             <li class="col-sm-6"><a href="{{ $perfil->tipo == 'ong'?url('ongs/sobre/'.$perfil->id):'' }}">Saiba mais coisas</a></li>

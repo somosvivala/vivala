@@ -8299,10 +8299,10 @@ div.menu-principal {
   width: 60%;
 }
 div.menu-usuario {
-  width: 14%;
+  width: 4%;
 }
 div.notificacoes {
-  width: 15%;
+  width: 25%;
   position: relative;
 }
 div.notificacoes button {
@@ -8362,6 +8362,22 @@ div.notificacoes button:focus + div {
   max-height: 30vh;
   opacity: 1;
   overflow-y: scroll;
+}
+@media screen and (min-width: 768px) {
+  div.notificacoes {
+    width: 21%;
+  }
+  div.menu-usuario {
+    width: 8%;
+  }
+}
+@media screen and (min-width: 1092px) {
+  div.notificacoes {
+    width: 15%;
+  }
+  div.menu-usuario {
+    width: 14%;
+  }
 }
 .footer li {
   padding: 0.2em 0;

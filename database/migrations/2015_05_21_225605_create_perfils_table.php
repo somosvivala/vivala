@@ -21,7 +21,7 @@ class CreatePerfilsTable extends Migration {
 			$table->string('genero')->nullable();
 			$table->integer('user_id')->unsigned();
 			$table->date('aniversario')->nullable();
-
+			$table->enum('apoiador', ['A', 'B'])->nullable();
 			//cidade atual / natal / ultimo local
 			$table->string('cidade_atual')->nullable();
 			$table->string('cidade_natal')->nullable();

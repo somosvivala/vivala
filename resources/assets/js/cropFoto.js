@@ -30,6 +30,4 @@ $(function() {
         });
     });
 
-    // Muda o ícone de javascript ativo
-    $('#javascript-ativo').css("color", "#6a6");
 });

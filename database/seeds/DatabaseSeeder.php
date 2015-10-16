@@ -93,6 +93,7 @@ class PerfilSeeder extends Seeder {
             'descricao_curta'     => 'Developer, pirata e ta sempre viajando.',
             'descricao_longa'     => 'Open Source Developer, acredita na propagação da informação como ferramenta de transformação social.',
             'nome_completo'     => 'Evandro Barbosa Carreira',
+            'apoiador' => 'A', 
             'apelido'     => 'Dodoido'
         ]);
 
@@ -104,6 +105,7 @@ class PerfilSeeder extends Seeder {
             'nome_completo'     => 'Antônio Renato Apolinário Gomes',
             'descricao_curta'     => 'Developer, samurai e ta sempre viajando',
             'descricao_longa'     => '',
+            'apoiador' => 'B', 
             'apelido'     => 'Zordoido'
         ]);
 
