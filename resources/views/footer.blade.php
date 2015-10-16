@@ -1,4 +1,4 @@
-<div class="col-sm-12 fundo-cheio margin-t-1 padding-t-1 footer">
+<div class="col-xs-12 col-sm-12 fundo-cheio margin-t-1 padding-t-1 footer">
     <div class="col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2">
         <div class="col-sm-3 text-right">
             <span class="font-bold-upper">

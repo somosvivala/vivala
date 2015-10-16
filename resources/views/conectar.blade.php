@@ -8,15 +8,15 @@
 	{{-- Seção do topo com infos (a principio só do usuario) --}}
 	@yield('barra-topo')
 
-	<nav class="col-sm-3 col-md-2 left-panel">
+	<nav class="col-xs-3 col-sm-3 col-md-2 left-panel">
 		@include('conectar.menulateral')
 	</nav>
 
-	<nav class="col-sm-6 col-md-8">
+	<nav class="col-xs-9 col-sm-6 col-md-8">
 		@yield('content')
 	</nav>
 
-	<nav class="col-sm-3 col-md-2 right-panel">
+	<nav class="hidden-xs col-sm-3 col-md-2 right-panel">
 		@include('conectar._sugestoes')
 	</nav>
 
