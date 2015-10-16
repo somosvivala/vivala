@@ -782,23 +782,31 @@ return[
     'company_type-cat-38' => 'Viagem/Lazer',
 
   /* Categorias da ONU */
-    'ong_onu_cat-1' => 'Erradicar a extrema pobreza e a fome',
-    'ong_onu_cat-2' => 'Atingir o ensino básico universal',
-    'ong_onu_cat-3' => 'Promover a igualdade entre os sexos e a autonomia das mulheres',
+    'ong_onu_cat-1' => 'Acabar com a fome e a miséria',
+    'ong_onu_cat-2' => 'Educação básica de qualidade para todos',
+    'ong_onu_cat-3' => 'Igualdade entre sexos e valorização da mulher',
     'ong_onu_cat-4' => 'Reduzir a mortalidade infantil',
-    'ong_onu_cat-5' => 'Melhorar a saúde materna',
-    'ong_onu_cat-6' => 'Combater o HIV/Aids, a malária e outras doenças',
-    'ong_onu_cat-7' => 'Garantir a sustentabilidade ambiental',
-    'ong_onu_cat-8' => 'Estabelecer uma Parceria Mundial para o Desenvolvimento',
+    'ong_onu_cat-5' => 'Melhorar a saúde das gestantes',
+    'ong_onu_cat-6' => 'Combater a AIDS, a malária e outras doenças',
+    'ong_onu_cat-7' => 'Qualidade de vida e respeito ao meio-ambiente',
+    'ong_onu_cat-8' => 'Todo mundo trabalhando pelo Desenvolvimento',
 
   /* Categorias de Vagas */
-    'ong_job_slot_avaiable_cat-1' => 'Erradicar a extrema pobreza e a fome',
-    'ong_job_slot_avaiable_cat-2' => 'Atingir o ensino básico universal',
-    'ong_job_slot_avaiable_cat-3' => 'Promover a igualdade entre os sexos e a autonomia das mulheres',
+    'ong_job_slot_avaiable_cat-1' => 'Acabar com a fome e a miséria',
+    'ong_job_slot_avaiable_cat-2' => 'Educação básica de qualidade para todos',
+    'ong_job_slot_avaiable_cat-3' => 'Igualdade entre sexos e valorização da mulher',
     'ong_job_slot_avaiable_cat-4' => 'Reduzir a mortalidade infantil',
-    'ong_job_slot_avaiable_cat-5' => 'Melhorar a saúde materna',
-    'ong_job_slot_avaiable_cat-6' => 'Combater o HIV/Aids, a malária e outras doenças',
-    'ong_job_slot_avaiable_cat-7' => 'Garantir a sustentabilidade ambiental',
-    'ong_job_slot_avaiable_cat-8' => 'Estabelecer uma Parceria Mundial para o Desenvolvimento',
+    'ong_job_slot_avaiable_cat-5' => 'Melhorar a saúde das gestantes',
+    'ong_job_slot_avaiable_cat-6' => 'Combater a AIDS, a malária e outras doenças',
+    'ong_job_slot_avaiable_cat-7' => 'Qualidade de vida e respeito ao meio-ambiente',
+    'ong_job_slot_avaiable_cat-8' => 'Todo mundo trabalhando pelo Desenvolvimento',
+
+  /* Páginas */
+    /* Contato */
+      'contact_keep_in_contact' => 'Vem falar com a gente!',
+      'contact_our_email' => 'Nosso email:',
+      'contact_our_phone' => 'Nosso telefone:',
+      'contact_our_address' => 'Nosso endereço',
+      ''
 ];
 ?>
