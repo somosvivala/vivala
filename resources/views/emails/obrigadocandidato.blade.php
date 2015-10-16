@@ -449,10 +449,6 @@ g="0" cellpadding="0" width="600" style="width:600px;">
                     <table class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="left" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
                             <td class="mcnImageContent" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
 
-
-                                <img alt<img alt="" src="http://precadastro.vivala.com.br/{{ $vaga->getCapaUrl()  }}" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564">
-
-
                             </td>
                         </tr>
                     </tbody></table>
