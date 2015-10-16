@@ -54,7 +54,7 @@ class CuidarController extends VivalaBaseController {
             $categoriasArray = array(null => trans('global.lbl_category')); 
             foreach ($categorias as $categoria)
             {
-                $categoriasArray[$categoria->id] = $categoria->nome;
+                $categoriasArray[$categoria->id] = $categoria->nomeTraduzido;
             }
             $categorias = $categoriasArray;
      
