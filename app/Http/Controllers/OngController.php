@@ -335,7 +335,7 @@ class OngController extends CuidarController {
         $followedBy = $perfil->followedByPerfil;
         $entidadeAtiva = $perfil;
 
-        $posts = $entidadeAtiva->posts;
+        $posts = $ong->posts;
 
         return view('perfil.index', compact('user', 'perfil', 'follow', 'followedBy', 'posts', 'entidadeAtiva'));
     }
