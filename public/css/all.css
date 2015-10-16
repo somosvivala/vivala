@@ -3236,7 +3236,7 @@ select[multiple].input-lg {
   text-align: center;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
@@ -6109,14 +6109,12 @@ button.close {
 }
 .modal.fade .modal-dialog {
   -webkit-transform: translate(0, -25%);
-  -ms-transform: translate(0, -25%);
   transform: translate(0, -25%);
   transition: -webkit-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
 }
 .modal.in .modal-dialog {
   -webkit-transform: translate(0, 0);
-  -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
 .modal-open .modal {
@@ -8694,6 +8692,786 @@ div.flight-wrapper div.flight-pricing {
 .idade-criancas {
   display: none;
   margin-top: 0.5em;
+}
+
+/* Definição do nome das cores principais */
+/* Definição das cores dos elementos */
+/* Fontes */
+/* Definição de tempo de efeitos */
+.soft-hide {
+  display: none;
+}
+.texto-preto {
+  color: black;
+}
+.texto-preto:active,
+.texto-preto:focus,
+.texto-preto:hover {
+  color: black;
+}
+.texto-branco {
+  color: white;
+}
+.texto-branco:active,
+.texto-branco:focus,
+.texto-branco:hover {
+  color: white;
+}
+.titulo-zumbi {
+  color: #8ba6ac;
+  padding: 0 1em;
+  margin: 1em ;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  border-left: 1px solid #8ba6ac;
+  text-transform: uppercase;
+}
+.text-justified {
+  text-align: justify;
+  text-justify: inter-word;
+}
+.box-shadow {
+  position: absolute;
+  top: 100%;
+  border: 1px solid #e2e2e2;
+  box-shadow: 2px 2px 5px;
+  width: 100%;
+  z-index: 3;
+  background-color: white;
+}
+.floatnone {
+  float: none;
+}
+.margin-0,
+ul.margin-0 {
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+}
+.height-18 {
+  height: 18em;
+}
+.margin-b-1 {
+  margin-bottom: 1em;
+}
+.margin-b-2 {
+  margin-bottom: 2em;
+}
+.margin-b-3 {
+  margin-bottom: 3em;
+}
+.margin-b-10 {
+  margin-bottom: 10em;
+}
+.margin-t-1 {
+  margin-top: 1em;
+}
+.margin-t-2 {
+  margin-top: 2em;
+}
+.margin-t-3 {
+  margin-top: 3em;
+}
+.margin-t-10 {
+  margin-top: 10em;
+}
+.padding-b-1 {
+  padding-bottom: 1em;
+}
+.padding-b-2 {
+  padding-bottom: 2em;
+}
+.padding-t-1 {
+  padding-top: 1em;
+}
+.padding-t-2 {
+  padding-top: 2em;
+}
+a.padding-btn,
+.padding-btn {
+  padding: 0.7em 1.2em 0.5em;
+}
+.quadrado7em {
+  width: 7em;
+  height: 7em;
+}
+div.cover {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+div.cover-explode {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 0;
+}
+div.foto {
+  position: relative;
+}
+.cover img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  max-width: 100%;
+  min-height: 50%;
+  max-height: 100%;
+  overflow-x: hidden;
+}
+.follow-perfil a {
+  text-decoration: none;
+  color: black;
+}
+.follow-perfil a div {
+  /* Remove o padding das class col-* do bootstrap */
+  padding: 0px;
+}
+.follow-perfil a .foto {
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+.follow-perfil a .foto .cover {
+  z-index: 0;
+}
+.follow-perfil a strong {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.follow-perfil a i {
+  color: #f16f2b;
+  padding-right: 0.2em;
+}
+.follow-perfil button {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+  z-index: 1;
+}
+.follow-perfil button.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
+}
+.lista-border {
+  padding: 0.5em;
+  list-style: none;
+  border: 1px solid #f16f2b;
+  display: block;
+  overflow: hidden;
+}
+.lista-border li {
+  display: inline-block;
+  float: left;
+  text-align: center;
+}
+.lista-border li + li {
+  border-left: 1px solid #f16f2b;
+}
+.lista-border li a {
+  text-decoration: none;
+}
+.round {
+  border-radius: 50%;
+  overflow: hidden;
+}
+.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+}
+.lista-intervalo-preto {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  color: black;
+}
+.lista-intervalo-preto li {
+  padding: 0;
+}
+.lista-intervalo-preto li + li {
+  border-left: 2px solid black;
+}
+.radio-hidden input[type="radio"] {
+  display: none;
+}
+.radio-hidden label {
+  cursor: pointer;
+}
+.radio-hidden input[type="radio"]:checked + label {
+  color: #f16f2b;
+}
+.radio-hidden input[type="radio"]:disabled + label {
+  color: grey;
+}
+.abs-left {
+  position: absolute;
+  left: 0;
+}
+.font-bold-upper {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.foto-label {
+  padding: 1em;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e2e2e2;
+  color: black;
+}
+.foto-label .titulo-label {
+  font-size: 1.4em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.fundo-cheio {
+  background-color: white;
+}
+div.foto-fundo {
+  background-size: cover;
+  background-position: center center;
+  text-align: center;
+  color: white;
+}
+.foto-header {
+  width: 100%;
+  height: 50vh;
+}
+.foto-header h2,
+.foto-header h3 {
+  text-shadow: 0em 0em 0.2em black;
+  display: block;
+}
+.foto-header h2 {
+  padding-top: 3em;
+  font-size: 3em;
+  margin-top: 0;
+}
+.foto-header h3 {
+  font-size: 1em;
+}
+.foto-header div {
+  margin: 2em auto;
+}
+.foto-link {
+  overflow: hidden;
+}
+.foto-link a {
+  transition: color 0.2s ease;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  color: white;
+}
+.foto-link a h4 {
+  font-size: 2em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 4em 0;
+  margin: 0;
+}
+.foto-link a > .cover {
+  transition: all 1s ease;
+  background-color: black;
+}
+.foto-link a > .cover img {
+  transition: all 1s ease;
+}
+.foto-link a:hover > .cover {
+  width: 300%;
+  height: 300%;
+  top: -100%;
+  left: -100%;
+}
+.foto-link a:hover > .cover img {
+  opacity: 0.5;
+}
+h3.subtitulo {
+  text-transform: uppercase;
+  color: black;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+h3 .sub-titulo {
+  text-transform: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+.foto-comentario {
+  width: 94%;
+  margin: 3%;
+  height: 6em;
+  position: absolute;
+  top: 0px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.foto-comentario .foto {
+  width: 5em;
+  height: 5em;
+  position: relative;
+  margin: .5em auto;
+}
+.foto-comentario .foto .cover {
+  z-index: 0;
+}
+.foto-avatar,
+img.foto-avatar {
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+.foto-avatar .cover,
+img.foto-avatar .cover {
+  z-index: 0;
+}
+.foto-avatar-comentario {
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+  position: relative;
+  margin: 0 auto;
+}
+.foto-avatar-comentario .cover {
+  z-index: 0;
+}
+ul.lista-usuarios li.foto-user img {
+  border-radius: 50%;
+  width: 7em;
+  height: 7em;
+  position: relative;
+  margin: 0 auto;
+}
+ul.lista-usuarios li.foto-user img .cover {
+  z-index: 0;
+}
+.alert {
+  padding: 1em;
+  border: 0px solid transparent;
+  border-radius: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-color: transparent	;
+  color: black;
+}
+.absolute-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+}
+.absolute-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1em;
+}
+a.laranja,
+span.laranja,
+.laranja {
+  color: #f16f2b;
+  text-decoration: none;
+}
+a.desativado,
+a.desativado:hover {
+  color: grey !important;
+}
+a.desativado i,
+a.desativado:hover i {
+  color: grey !important;
+}
+a.link-claro {
+  color: white;
+  text-decoration: none;
+}
+a.link-claro:hover {
+  color: #f16f2b;
+}
+label.radio-button {
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+label.radio-button span {
+  display: block;
+  width: 100%;
+  border: 2px solid transparent;
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 0.5em;
+  color: white;
+}
+label.radio-button input[type="radio"]:checked + span {
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 2px solid white;
+}
+.borda-fundo {
+  border: 1px solid #e2e2e2;
+}
+ul.filtro {
+  padding: 1em;
+  margin: 0;
+  list-style: none;
+  color: #535353;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  border: 1px solid #e2e2e2;
+}
+ul.filtro a {
+  text-decoration: none;
+  color: #535353;
+}
+.form-borda-preta input,
+.form-borda-preta input[type="text"],
+.form-borda-preta textarea,
+.form-borda-preta select {
+  border: 1px solid black;
+  border-radius: 0;
+}
+.form-borda-preta select {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+}
+.form-borda-preta h5 {
+  color: #8ba6ac;
+  padding: 0 1em;
+  margin: 1em ;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  border-left: 1px solid #8ba6ac;
+  text-transform: uppercase;
+}
+.form-borda-preta .label-url {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid black;
+  border-right: 0px;
+}
+.form-borda-preta input[type="radio"] + label {
+  padding: 1em;
+  background-color: white;
+}
+.form-borda-preta input[type="radio"]:checked + label {
+  border: 2px solid #f16f2b;
+  padding: 0.2em;
+}
+.form-borda-preta .input-url-pretty {
+  padding-left: 11.4em;
+  color: #f16f2b;
+}
+.form-borda-preta .label-url-pretty {
+  width: 12.4em;
+}
+.form-borda-preta .label-url-facebook {
+  width: 10em;
+  color: #535353;
+}
+.form-borda-preta .input-url-facebook {
+  padding-left: 9em;
+  color: #f16f2b;
+}
+.form-borda-preta .label-url-gplus {
+  width: 12em;
+  color: #535353;
+}
+.form-borda-preta .input-url-gplus {
+  padding-left: 10.5em;
+  color: #f16f2b;
+}
+.form-borda-preta .label-url-insta {
+  width: 10.4em;
+  color: #535353;
+}
+.form-borda-preta .input-url-insta {
+  padding-left: 9.4em;
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria ::-webkit-input-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria :-moz-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria ::-moz-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-primaria :-ms-input-placeholder {
+  color: #f16f2b;
+}
+.form-borda-preta .ph-cor-cinza-escuro ::-webkit-input-placeholder {
+  color: #535353;
+}
+.form-borda-preta .ph-cor-cinza-escuro :-moz-placeholder {
+  color: #535353;
+}
+.form-borda-preta .ph-cor-cinza-escuro ::-moz-placeholder {
+  color: #535353;
+}
+.form-borda-preta .ph-cor-cinza-escuro :-ms-input-placeholder {
+  color: #535353;
+}
+.bottom-hide {
+  bottom: 1em;
+  position: absolute;
+  opacity: 0.2;
+  transition: opacity 0.5s ease;
+}
+.bottom-hide:hover {
+  opacity: 0.7;
+}
+#welcome-html {
+  position: relative;
+  min-height: 100%;
+}
+#welcome-html body {
+  background-image: url("../../img/riolaranja.png");
+  background-position: center center;
+  background-size: cover;
+}
+.welcome-header {
+  height: 11rem;
+  background-color: rgba(255, 245, 210, 0.95);
+  font-size: 12.6px;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+.welcome-header .form-login .row {
+  line-height: 0.5em;
+}
+.welcome-header .form-login .row > div {
+  padding: 0.2em;
+}
+.welcome-header a {
+  color: #f16f2b;
+}
+.welcome-header label.titulo {
+  margin: 1em 0 0;
+  line-height: 0.8em;
+  text-transform: uppercase;
+  color: #f16f2b;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+}
+.welcome-header label.rememberme {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.welcome-header .btn-submit {
+  position: absolute;
+  right: 0.2em;
+  top: 0.2em;
+  border-left: 1px solid #fff5d2;
+}
+.welcome-header .rememberme {
+  word-wrap: break-word;
+  color: #f16f2b;
+}
+.welcome-header .rememberme label {
+  padding: 0.2em;
+}
+.welcome-header input[type="checkbox"] {
+  text-align: left;
+  float: left;
+  vertical-align: bottom;
+  position: relative;
+  width: auto;
+  height: 1em;
+  margin: 0;
+  border: 0px solid white;
+  background-color: #f16f2b;
+  margin-top: -0.2em;
+}
+.welcome-header select,
+.welcome-header input {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  border-radius: 0px;
+  width: 100%;
+  height: 3.6rem;
+  border: 1px solid #f16f2b;
+  background-color: #f16f2b;
+  color: white;
+  padding: 0.8rem 1rem;
+}
+.welcome-header select:focus,
+.welcome-header input:focus {
+  border: 1px solid #f16f2b;
+}
+.welcome-header select option,
+.welcome-header input option {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid #f16f2b;
+}
+.welcome-header ::-webkit-input-placeholder {
+  color: white;
+}
+.welcome-header :-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+.welcome-header ::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+.welcome-header :-ms-input-placeholder {
+  color: white;
+}
+.welcome-header .nav-logo {
+  height: 9rem;
+  padding: 0px;
+}
+.welcome-header .nav-logo img {
+  height: 100%;
+}
+.brasilwelcome {
+  max-width: 70%;
+  padding-top: 2em;
+}
+.balao-flutuante {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1em;
+  color: white;
+  position: absolute;
+  max-width: 18rem;
+}
+.balao-flutuante.balao-1 {
+  bottom: 20%;
+  left: 0;
+}
+.balao-flutuante.balao-2 {
+  bottom: 6%;
+  max-width: 14rem;
+  right: 30%;
+}
+.balao-flutuante.balao-3 {
+  top: 50%;
+  right: 10%;
+}
+div.welcome-content form input[type="email"].form-control,
+div.welcome-content form input[type="password"].form-control,
+div.welcome-content form input[type="text"].form-control {
+  opacity: 1;
+  border: 0px solid transparent;
+}
+div.welcome-content form input[type="email"].form-control::-webkit-input-placeholder,
+div.welcome-content form input[type="password"].form-control::-webkit-input-placeholder,
+div.welcome-content form input[type="text"].form-control::-webkit-input-placeholder {
+  color: white;
+}
+div.welcome-content form input[type="email"].form-control:-moz-placeholder,
+div.welcome-content form input[type="password"].form-control:-moz-placeholder,
+div.welcome-content form input[type="text"].form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: white;
+}
+div.welcome-content form input[type="email"].form-control::-moz-placeholder,
+div.welcome-content form input[type="password"].form-control::-moz-placeholder,
+div.welcome-content form input[type="text"].form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: white;
+}
+div.welcome-content form input[type="email"].form-control:-ms-input-placeholder,
+div.welcome-content form input[type="password"].form-control:-ms-input-placeholder,
+div.welcome-content form input[type="text"].form-control:-ms-input-placeholder {
+  color: white;
+}
+div.welcome-content h3 {
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 2.5em;
+}
+div.welcome-content p {
+  color: white;
+  font-size: 1.2rem;
+}
+div.welcome-content .panel {
+  background-color: transparent;
+}
+div.welcome-content .welcome-cadastrar {
+  padding-top: 4em;
+  padding-bottom: 2em;
+}
+div.welcome-content .welcome-cadastrar > div {
+  height: 4em;
+}
+div.welcome-content .welcome-cadastrar .btn-facebook {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+  text-transform: none;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+div.welcome-content .form-cadastro-wrapper {
+  margin: 0;
+}
+div.welcome-content a.anchor-tour {
+  text-decoration: underline;
+  color: white;
+  font-size: 13px;
+}
+div.welcome-content input {
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 0px;
+  border-radius: 0px;
+  padding: 0 0.5em;
+  font-size: 14px;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+div.welcome-content input:focus {
+  border: 1px solid #f16f2b;
+}
+div.welcome-content input[type='submit'] {
+  background-color: white;
+  color: #f16f2b;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 1px solid white;
+  border-radius: 0px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  width: 100%;
+}
+.welcome-privacy a {
+  color: #f16f2b;
 }
 
 /*# sourceMappingURL=app.css.map */

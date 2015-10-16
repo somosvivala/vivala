@@ -6,11 +6,13 @@ class QuimeraRepository {
     {
         $output = '';
         foreach ($params as $key => $value) {
-            if (is_array($value)) {
-                $output .= self::serializeParams($value, $key);
-            }
-            else if (isset($value) && $value != '') {
-                $output .= (isset($prefix)) ? "{$prefix}.{$key}={$value}&" : "{$key}={$value}&";
+            if ($key !== 'data') {
+                if (is_array($value)) {
+                    $output .= self::serializeParams($value, $key);
+                }
+                else if (isset($value) && $value != '') {
+                    $output .= (isset($prefix)) ? "{$prefix}.{$key}={$value}&" : "{$key}={$value}&";
+                }
             }
         }
         $output = trim($output, '&');
@@ -46,7 +48,7 @@ class QuimeraRepository {
                 return self::_processHotelsComplete($response);
             case 'hotel':
                 return self::_hotelToHTML($response);
-            case 'hotelDetail':
+            case 'hotelAvaiability':
                 return self::_hotelDetail($response);
             case 'autocompleteCars':
                 return self::_processCarsComplete($response);

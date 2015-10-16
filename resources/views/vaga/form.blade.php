@@ -3,7 +3,7 @@
         <!-- Título -->
         <h5 class="form-group col-sm-12">Informações</h5>
         <div class="form-group col-sm-12">
-            {!! Form::select("ong", $ongs, ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control'], ['id' => 'ong_select']) !!}
+            {!! Form::select("ong", $ongs, ($ongSelecionada ? $ongSelecionada : []), ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control', 'id' => 'ong_select']) !!}
         </div>
         <div class="form-group col-sm-12">
             {!! Form::textarea("habilidades", null, ['title'=> trans('global.lbl_cause_job_habilities_ph'), 'aria-label'=> trans('global.lbl_cause_job_habilities_ph'), 'placeholder'=> trans('global.lbl_cause_job_habilities'), 'class' => 'form-control' ]) !!}
@@ -35,10 +35,10 @@
                     {!! Form::text("bairro",  null , ['title' => trans('global.ong_address_district'), 'placeholder' => trans('global.address_district'), 'class' => 'form-control']) !!}
                 </div>
                 <div class="form-group col-sm-6">
-                    {!! Form::select("estado", $estados, $ong->estado->id, ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control'], ['id' => 'estado_select']) !!}
+                    {!! Form::select("estado", $estados, ($estadoSelecionado ? $estadoSelecionado : []), ['title' => trans('global.ong_address_state'), 'placeholder' => trans('global.address_state'), 'class' => 'form-control', 'id' => 'estado_select']) !!}
                 </div>
                 <div class="form-group col-sm-6">
-                    {!! form::select("cidade_id", [], ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control', 'disabled' => 'true'], ['id' => 'cidade_select', 'disabled'=>'true']) !!}
+                    {!! Form::select("cidade_id", $cidades, ($cidadeSelecionada ? $cidadeSelecionada : []), ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control',  'id' => 'cidade_select' ]) !!}
                 </div>
                 <div class="form-group col-sm-6">
                     {!! form::text("quantidade_vagas", null, ['title' => trans('global.ong_address_zipcode'), 'placeholder' => 'Numero de vagas', 'class' => 'form-control']) !!}
@@ -58,9 +58,9 @@
             <ul class="cat-ong" class="col-sm-12">
                 @foreach($categoriasVaga as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
-                    <input type="radio" name="categoria_vaga_id" @if ($categoriaSelecionada == $Categoria->id)  checked="checked" value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" >
+                    <input type="radio" name="categoria_vaga_id" @if ($categoriaSelecionada == $Categoria->id)  checked="checked" @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" >
                     <label for="categoria-ong-{{$Categoria->id}}">
-                        <img src='../img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt="{{ trans($Categoria->id) }}" title="{{ trans($Categoria->id) }}" class='col-sm-12'/>
+                        <img src='/img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt="{{ trans($Categoria->id) }}" title="{{ trans($Categoria->id) }}" class='col-sm-12'/>
                     </label>
                 </li>
                 @endforeach

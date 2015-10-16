@@ -73,9 +73,13 @@ class VagaController extends CuidarController {
         {
             //Obtendo ongs do usuario 
             $ongs = Auth::user()->ongs;
-
+            $ongSelecionada = null;
+            $estadoSelecionado = null;
+            $categoriaSelecionada = null;
+            $cidadeSelecionada = null;
+            
             //Montando array de ongs para select 
-            $ongsArray = array(0 => 'Projeto');
+            $ongsArray = array(null => 'Projeto');
             foreach ($ongs as $ong)
             {
                 $ongsArray[$ong->id] = $ong->nome;
@@ -86,6 +90,7 @@ class VagaController extends CuidarController {
 
             //Ordenando array de cidades para ficar cidadeID => cidadeNome 
             $cidades = Cidade::all()->keyBy('id');
+            $cidadesArray = array(null => 'Cidade');
             foreach ($cidades as $cidade)
             {
                 $cidadesArray[$cidade->id] = $cidade->nome;
@@ -94,7 +99,7 @@ class VagaController extends CuidarController {
 
             //Ordenando array de estados para ficar estadoID => estadoNome 
             $estados = Estado::all();
-            $estadosArray = array(0 => 'Estado');
+            $estadosArray = array(null => 'Estado');
             foreach ($estados as $estado)
             {
                 $estadosArray[$estado->id] = $estado->nome;
@@ -102,7 +107,7 @@ class VagaController extends CuidarController {
             $estados = $estadosArray; 
 
 
-            return view('vaga.create', compact('categoriasVaga', 'ongs', 'cidades', 'estados') );
+            return view('vaga.create', compact('categoriasVaga', 'ongs', 'cidades', 'estados', 'ongSelecionada', 'cidadeSelecionada', 'estadoSelecionado', 'categoriaSelecionada') );
 
         } else {
             App::abort(403, "Voce não possui nenhum Projeto cadastrado para criar novas Vagas");
@@ -118,7 +123,7 @@ class VagaController extends CuidarController {
     public function store(CriarVagaRequest $request)
     {
         $ongResponsavel = Ong::find($request->get('ong'));
-
+       
         //Checando se posso criar vagas
         if (!($ongResponsavel->user->id === Auth::user()->id)) {
             App::abort(403, "Apenas ongs tem permissão para criar Vagas");
@@ -170,6 +175,12 @@ class VagaController extends CuidarController {
     public function edit($id)
     {
         $vaga = Vaga::findOrFail($id);
+        $categoriaSelecionada = ($vaga->categoria ? $vaga->categoria->id : null);
+        $cidadeSelecionada = ($vaga->cidade ? $vaga->cidade->id : null);
+        $estadoSelecionado = ($vaga->estado ? $vaga->estado->id : null);
+       
+        //@TODO: Arranjar meio seguro de pegar ongs, se alguma outra entidade for owner talvez de problema.
+        $ongSelecionada = $vaga->owner->id;
 
         if (!$vaga->podeEditar) {
             App::abort(403, "Voce não tem permissao para editar essa Vaga");
@@ -206,7 +217,7 @@ class VagaController extends CuidarController {
         $estados = $estadosArray; 
 
 
-        return view('vaga.edit', compact('vaga', 'categoriasVaga', 'ongs', 'cidades', 'estados'));
+        return view('vaga.edit', compact('vaga', 'categoriasVaga', 'ongs', 'cidades', 'estados', 'categoriaSelecionada', 'cidadeSelecionada', 'estadoSelecionado', 'ongSelecionada'));
     }
 
     /**
