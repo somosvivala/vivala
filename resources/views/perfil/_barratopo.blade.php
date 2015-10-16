@@ -45,7 +45,7 @@
                                 <ul class="lista-usuarios row">
                                 @forelse($followedBy as $perfilSeguidor)
                                     <li class="foto-user col-sm-6 col-md-4 col-lg-3">
-                                        <a href="{{ url($perfilSeguidor->prettyUrl->first()->url) }}" title="{{ $perfilSeguidor->user->username }}">
+                                        <a href="{{ url($perfilSeguidor->getUrl()) }}" title="{{ $perfilSeguidor->user->username }}">
                                             <img src="{{ $perfilSeguidor->getAvatarUrl() }}" alt="{{ $perfilSeguidor->user->username }}">
                                             <h4 class="texto-preto">{{ $perfilSeguidor->apelido }}</h4>
                                         </a>
@@ -77,7 +77,7 @@
                                 <ul class="lista-usuarios row">
                                 @forelse($follow as $perfilSeguindo)
                                     <li class="foto-user col-sm-6 col-md-4 col-lg-3">
-                                        <a href="{{ url($perfilSeguindo->prettyUrl->first()->url) }}" title="{{ $perfilSeguindo->user->username }}">
+                                        <a href="{{ url($perfilSeguindo->getUrl()) }}" title="{{ $perfilSeguindo->user->username }}">
                                             <img src="{{ $perfilSeguindo->getAvatarUrl() }}" alt="{{ $perfilSeguindo->user->username }}">
                                             <h4 class="texto-preto">{{ $perfilSeguindo->apelido }}</h4>
 
