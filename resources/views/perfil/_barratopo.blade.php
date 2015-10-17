@@ -114,7 +114,7 @@
                 @endif</li>
         </ul>
         <ul class="margin-0">
-            <li class="col-sm-6"><a href="{{ $perfil->tipo == 'ong'?url('ongs/sobre/'.$perfil->id):'' }}">Saiba mais coisas</a></li>
+            <li class="col-sm-6"><a href="#" class="desativado">Saiba mais coisas</a></li>
             <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_message_send') }}m</a></li>
         </ul>
     </div>

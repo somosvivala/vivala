@@ -32,5 +32,5 @@
 	@endif
 </ul>
 <div class="row text-center">
-	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao">{{ trans('global.lbl_seemore') }}</a>
+	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao desativado">{{ trans('global.lbl_seemore') }}</a>
 </div><br>
