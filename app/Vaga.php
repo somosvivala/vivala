@@ -120,7 +120,7 @@ class Vaga extends Model {
     /**
      * Uma Vaga tem apenas uma foto de avatar;
      */
-    public function fotoCapa()
+    public function getFotoCapaAttribute()
     {
         return $this->fotos()->where('tipo', 'capa')->get()->last();
     }
@@ -131,12 +131,8 @@ class Vaga extends Model {
      */
     public function getCapaUrl() 
     {
-        if ($this->fotoCapa()) {
-            return $this->fotoCapa()->path;
-        }
-
-        if ($this->owner->fotoCapa()) {
-            return $this->owner->fotoCapa()->path;
+        if ($this->fotoCapa) {
+            return $this->fotoCapa->path;
         }
 
         return '/img/querocuidar.png';

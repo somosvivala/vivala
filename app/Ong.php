@@ -130,7 +130,7 @@ class Ong extends Model {
     /**
      * Uma Ong tem apenas uma foto de avatar;
      */
-    public function fotoCapa()
+    public function getFotoCapaAttribute()
     {
         return $this->fotos()->where('tipo', 'capa')->get()->last();
     }
@@ -141,8 +141,8 @@ class Ong extends Model {
      */
     public function getCapaUrl() 
     {
-        if ($this->fotoCapa()) {
-            return $this->fotoCapa()->path;
+        if ($this->fotoCapa) {
+            return $this->fotoCapa->path;
         }
 
         return '/img/querocuidar.png';

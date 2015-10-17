@@ -229,6 +229,8 @@ class VagaController extends CuidarController {
     public function update($id, EditarVagaRequest $request)
     {
         $vaga = Vaga::findOrFail($id);
+
+
         if (!$vaga->podeEditar) {
             App::abort(403, "Voce não tem permissao para editar essa Vaga");
         }
@@ -241,7 +243,8 @@ class VagaController extends CuidarController {
             $vaga->fotos()->save(Foto::find($foto));
         }                
 
-        return view('vaga.show', compact('vaga'));
+        $voluntarios = $vaga->voluntarios;
+        return view('vaga.show', compact('vaga', 'voluntarios'));
     }
 
     /**

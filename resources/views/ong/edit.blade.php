@@ -44,7 +44,7 @@
 
 		@include('ong.form', ['btnSubmit' => trans('global.lbl_submit') ]);
 
-    {!! Form::close() !!}
+        {!! Form::close() !!}
 </div>
 </div>
 

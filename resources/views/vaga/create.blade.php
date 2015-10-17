@@ -11,7 +11,7 @@
             <h5 class="col-sm-12">Imagem de capa</h5>
             <div class="col-sm-12">
 
-                {{-- Adicionando div de update da foto de perfil da ong --}}
+                {{-- Adicionando div de update da foto de capa da vaga --}} 
                 <div class="text-center jc_coords row col-sm-12">
 
                     {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}
