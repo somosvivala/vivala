@@ -16,12 +16,13 @@
     <h3 class="font-bold-upper text-center">Já sabe para onde ir?
         <small class="sub-titulo">Monte sua viagem! </small>
     </h3>
-
-    <div class="row text-center">
+    <iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;">
+    
+    <!--<div class="row text-center">
         <a  data-toggle="modal" class="btn btn-primario btn-acao margin-t-1 margin-b-1" data-target="#modal-quimera">
             {{ trans('global.lbl_wanna_travel') }} <br>
-        </a>
-    </div>
+        </a> -->
+    </div> 
 <!--
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">
@@ -74,7 +75,7 @@
                 </iframe>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button>
+                <!--button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button> -->
             </div>
         </div>
     </div>
