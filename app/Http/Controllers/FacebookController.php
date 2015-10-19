@@ -105,16 +105,16 @@ class FacebookController extends Controller {
                 $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
             }); 
-
+            
+            $fotoPerfil = new Foto(['path' => $userData->avatar_original, 'tipo' => 'avatar']);
+            $perfil->fotos()->save($fotoPerfil);
 
             //Caso o usuario ja exista, só ainda nao tinha feito login com o facebook
         } else {
             $perfil = $user->perfil;
         }
 
-        $fotoPerfil = new Foto(['path' => $userData->avatar_original, 'tipo' => 'avatar']);
-        $perfil->fotos()->save($fotoPerfil);
-
+        
         //Atualiza a tabela de dados do Fb
         $facebookData = $user->facebookData ? $user->facebookData : new FacebookData();
 
@@ -128,9 +128,6 @@ class FacebookController extends Controller {
             $facebookData->user_location = $userData->user_location;
 
         $user->facebookData()->save($facebookData);
-
-         
-
 
         return $user;
     }
