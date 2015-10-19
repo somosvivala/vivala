@@ -2,10 +2,14 @@
 
 @section('content')
 <div class="panel panel-default">
-    <h3 class="font-bold-upper text-center"> {{ trans('global.lbl_edit') }}
-        <small class="sub-titulo"></small>
-    </h3>
-    <div class="panel-heading"><h1></h1></div>
+    
+    <div class="form-ong-head">
+        <h3 class="text-center margin-t-2"> {{ trans('global.lbl_cause_edit') }}</h3>
+        {!! Form::open([ 'method' => 'DELETE', 'route' => ['vagas.destroy', $vaga->id] ]) !!}
+        {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja excluir essa vaga?');"]) !!}
+        {!! Form::close() !!}
+    </div>
+    
     <div class="panel-body">
         <div id="causa-contato" class="row margin-t-2 form-ong">
             <h5 class="col-sm-12">Imagem de capa</h5>
