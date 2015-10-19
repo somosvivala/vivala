@@ -100,6 +100,13 @@ class FacebookController extends Controller {
             $prettyUrl->tipo = 'usuario';
             $perfil->prettyUrl()->save($prettyUrl);
 
+            // Envia um email de boas vindas
+            Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
+                $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+            }); 
+
+
             //Caso o usuario ja exista, só ainda nao tinha feito login com o facebook
         } else {
             $perfil = $user->perfil;
@@ -122,11 +129,7 @@ class FacebookController extends Controller {
 
         $user->facebookData()->save($facebookData);
 
-        // Envia um email de boas vindas
-        Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
-            $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
-            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });  
+         
 
 
         return $user;
