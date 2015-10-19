@@ -17,6 +17,12 @@
         <small class="sub-titulo">Monte sua viagem! </small>
     </h3>
 
+    <div class="row text-center">
+        <a  data-toggle="modal" class="btn btn-primario btn-acao margin-t-1 margin-b-1" data-target="#modal-quimera">
+            {{ trans('global.lbl_wanna_travel') }} <br>
+        </a>
+    </div>
+<!--
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">
             <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab">
@@ -40,24 +46,44 @@
         </li>
     </ul>
 
-    <!-- Tab panes -->
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="hospedagem">
             {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
-            @include('quimera._formhotels')
+            {{--@include('quimera._formhotels') --}}
             <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="voos">
-            @include('quimera._formvoos')
+ {{--           @include('quimera._formvoos')--}}
             <div class="fundo-cheio col-sm-12 resultados-busca-voos text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="carros">
-            @include('quimera._formcarros')
+ {{--           @include('quimera._formcarros') --}}
             <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
         </div>
     </div>
-
+ -->
 </div>
+
+<!-- Modal com iframe da quimera -->
+<div id="modal-quimera" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;">
+                </iframe>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 
 <!-- Modal com iframe pra fechamento de pedido -->
 <div id="myModal" class="modal fade" role="dialog">
