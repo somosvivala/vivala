@@ -24,13 +24,13 @@
 <body>
 	<div class="col-sm-12 welcome-header">
 		<div class="container">
-			<div class="col-sm-5">
+			<div class="col-sm-5 col-xs-12 text-center">
 				<a class="navbar-brand nav-logo" href="{{ url('home') }}"><img src="/img/vivalogo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
 			</div>
-			<div class="col-sm-7">
+			<div class="col-sm-7 col-xs-12">
 				<div class="col-sm-10">
 					{!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal form-login']) !!}
-					<div class="row">
+					<div class="row hidden-xs">
 						<div class="col-sm-4">
 							{!! Form::label('idioma', trans('global.lbl_language'), ['class' => 'titulo']) !!}
 						</div>
@@ -40,13 +40,13 @@
 					</div>
 
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-4 col-xs-12">
 							{!! Form::select('idioma', array('pt' => trans('global.lang_pt-br'), 'en' => trans('global.lang_en-us'), 'es' => trans('global.lang_es-es') )) !!}
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4 col-xs-12">
 							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email') ]) !!}
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4 col-xs-12">
 							{!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('global.lbl_password') ]) !!}
 							<span class="btn-submit">
 								{!! Form::submit( trans('global.lbl_ok'), ['class' => 'btn-default btn loginbtn']) !!}
@@ -54,13 +54,13 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-4 hidden-xs">
 							&nbsp;
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4 col-xs-6">
 							<label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">&#8192;{{ trans('global.lbl_login_keepme') }}</label>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-sm-4 col-xs-6">
 							<a href="{{ url('/password/email') }}">{{ trans('global.lbl_password_forgot') }}</a>
 						</div>
 					</div>
@@ -72,7 +72,7 @@
 
 	<div class="col-sm-12 welcome-content">
 		<div class="container">
-			<div class="col-sm-7 welcome-left">
+			<div class="col-sm-7 welcome-left hidden-xs">
 				<img class="brasilwelcome" src="/img/brasilwelcome.png" alt="{{ trans('global.welcome_img_alt_vivalameet') }}" title="{{ trans('global.welcome_img_t_vivalaregister') }}">
 				<div class="balao-flutuante balao-1">
 					{{ trans('global.welcome_floatingballon1') }}
@@ -85,7 +85,7 @@
 				</div>
 			</div>
 
-			<div class="col-sm-5 form-cadastro-wrapper">
+			<div class="col-sm-5 form-cadastro-wrapper padding-b-2">
 				<!-- Adiciona a abertura do Form -->
 				{!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
 
@@ -115,24 +115,24 @@
 
 
 				<div class="form-group">
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-xs-6">
 						<!-- Adiciona um text field para o form-->
 						{!! Form::text("username", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name')]) !!}
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-xs-6">
 						<!-- Adiciona um text field para o form-->
 						{!! Form::text("username_last", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name_last')]) !!}
 					</div>
 				</div>
 
 				<div class="form-group">
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-xs-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "masculino") !!}
 							<span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_male') }}</span>
 						</label>
 					</div>
-					<div class="col-sm-6">
+					<div class="col-sm-6 col-xs-6">
 						<label class="radio-button radio-hidden">
 							{!! Form::radio("genero", "feminino") !!}
 							<span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_female') }}</span>

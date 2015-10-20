@@ -24,6 +24,56 @@ ul.quartos-hotel {
     list-style: none;
 }
 
+.hotel-detalhes {
+    .foto-header {
+        h2 {
+            max-width:50%;
+            margin: 0 25%;
+        }
+        .quarto-destaque {
+            position: absolute;
+            top: 1em;
+            left: 2em;
+            background-color:@cor-semi-transparente;
+            width:20%;
+            color: black;
+            padding: 1em;
+        }
+        div {
+            margin: 0;
+        }
+    }   
+    .fotos-detalhe {
+        height: 60px;
+        padding:5px 0;
+        overflow:hidden;
+        img {
+            float:left;
+            margin:3px;
+        }
+    }
+    .descricao {
+        text-align: left;
+    }
+    .room-cluster {
+        border: 1px solid @cor-cinza-escuro;
+        .roompacks .roompack:not(:last-child) {
+            border-bottom: 1px solid @cor-cinza-escuro;
+        }
+        .roompacks {
+            border-left: 1px solid @cor-cinza-escuro;
+        }
+        .tarifa {
+            background-color:@cor-fundo;
+        }
+    }
+    .servico {
+        height:2em;
+        text-align:left;
+        overflow:hidden;
+    }
+}
+
 #modal-quimera .modal-lg {
     width: 1040px; 
 }

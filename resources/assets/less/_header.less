@@ -49,9 +49,13 @@ nav.menu-top {
 	min-height: 52px;
 
 	.menu-principal {
-		padding:0.9em;
-		ul {
+                @media screen and (min-width: 768px) {
+                    padding:0.9em;
+                    ul {
 			padding:0.3em;
+                    }
+                }
+		ul {
 			font-size: 1em;
 			li {
 				text-transform: uppercase;
@@ -65,7 +69,7 @@ nav.menu-top {
 				}
 			}
 		}
-		}
+        }
 
 	.menu-usuario {
             ul {
@@ -147,14 +151,26 @@ nav.header {
     }
 }
 div.logo-menu {
-    width:10%;
+    width:18%;
 }
 div.menu-principal {
-    width:60%;
+    width:48%;
 }
 div.menu-usuario {
-    width: 4%;
+    width: 8%;
 }
+@media screen and (min-width: 768px) {
+    div.logo-menu {
+        width:10%;
+    }
+    div.menu-principal {
+        width:60%;
+    }
+    div.menu-usuario {
+        width: 4%;
+    }
+}
+
 div.notificacoes {
     width: 25%;
     position: relative;

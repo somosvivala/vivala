@@ -37,7 +37,7 @@ class QuimeraRepository {
         }
     }
 
-    public static function processResponse($response, $type)
+    public static function processResponse($response, $type, $extra = null)
     {
         switch ($type) {
             case 'autocomplete':
@@ -49,7 +49,7 @@ class QuimeraRepository {
             case 'hotel':
                 return self::_hotelToHTML($response);
             case 'hotelAvaiability':
-                return self::_hotelDetail($response);
+                return self::_hotelDetail($response, $extra);
             case 'autocompleteCars':
                 return self::_processCarsComplete($response);
         }
@@ -142,10 +142,27 @@ class QuimeraRepository {
     }
 
     // Exibe a página de um hotel
-    private static function _hotelDetail($data)
+    private static function _hotelDetail($data, $extra)
     {
+        $data  = json_decode($data);
+        $extra = json_decode($extra);
+        foreach ($data->roomClusters as &$roomCluster) {
+            foreach ($roomCluster->roompacks as &$roompack) {
+                foreach($roompack->rooms as &$room) {
+                    foreach ($extra->roomTypes as $roomType) {
+                        if ($roomType->id == $room->roomTypeId) {
+                            $room->roomDetails = $roomType;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        $data = array('data' => $data, 'extra' => $extra);
+
         return array(
-            'data'  => json_decode($data),
+            'data'  => $data,
             'blade' => 'quimera._hotelDetail'
         );
     }
