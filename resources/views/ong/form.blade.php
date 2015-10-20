@@ -138,6 +138,6 @@
 
     <!-- Botão Enviar -->
     <div id="ong-btn-submit" class="form-group text-center">
-        {!! Form::submit(trans('global.lbl_ong_register'), ['class' => 'btn btn-acao']) !!}
+        {!! Form::submit($btnSubmit, ['class' => 'btn btn-acao']) !!}
     </div>
 </div>

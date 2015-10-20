@@ -17,7 +17,7 @@
         <!-- Adiciona um formulario pra upload de foto-->
         <div class="text-center jc_coords row col-sm-12">
 
-            {!! Form::open(['url' => ['foto/cropandsave',  $ong->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/home']) !!}
+            {!! Form::open(['url' => ['foto/cropandsave',  $ong->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}
             {!! Form::hidden("tipoEntidade",  "App\Ong") !!}
 
             <img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>
@@ -42,7 +42,7 @@
 
   	{!! Form::model($ong, ['method' => 'PATCH', 'action' => ['OngController@update', $ong->id] ]) !!}
 
-		@include('ong.form', ['btnSubmit' => trans('global.lbl_submit') ]);
+		@include('ong.form', ['btnSubmit' => trans('global.lbl_ong_update') ]);
 
         {!! Form::close() !!}
 </div>
