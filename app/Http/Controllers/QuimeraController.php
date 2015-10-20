@@ -30,14 +30,13 @@ class QuimeraController extends Controller {
 		}
 
 		if ($process == 'true') {
-			$output = QuimeraRepository::processResponse($response, $type);
+			if (array_key_exists('data', $dataParams)) {
+				$output = QuimeraRepository::processResponse($response, $type, $dataParams['data']);
+			} else {
+				$output = QuimeraRepository::processResponse($response, $type);
+			}
 			if (is_array($output) && array_key_exists('blade', $output)) {
-				if (array_key_exists('data', $dataParams)) {
-					$data['data']  = $output['data'];
-					$data['extra'] = json_decode($dataParams['data']);
-				} else {
-					$data = $output['data'];
-				}
+				$data = $output['data'];
 				$output = view($output['blade'], compact('data'));
 			}
 			return $output;
