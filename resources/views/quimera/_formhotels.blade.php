@@ -12,18 +12,17 @@
                 </div>
             </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-sm-6">
-                <input placeholder="Quando vai? (dd/mm/aaaa)" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="data-partida-hotel" name="fromDate" class="form-control" type="text">
-            </div>
-
-            <div class="col-sm-6">
-                <input placeholder="Quando volta? (dd/mm/aaaa)"  data-provide="datepicker" data-date-format="dd/mm/yyyy"  class="input-date required hasDatepicker form-control" id="data-retorno-hotel" name="toDate" type="text">
+        <div class="row margin-t-2">
+            <div class="col-sm-12">
+                <div class="input-daterange input-group" id="idavolta-hotel">
+                    <input placeholder="Quando vai?" type="text" class="form-control" name="fromDate"/>
+                    <span class="input-group-addon"></span>
+                    <input placeholder="Quando volta?" type="text" class="form-control" name="toDate"/>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-6 margin-b-1">
+    <div class="col-md-6">
         <div class="row">
             <div class="col-sm-12">
                 <select id="qtd-quartos-hotel" class="form-control">
@@ -35,16 +34,16 @@
             </div>
         </div>
         <div class="row">
-            <ul class="quartos-hotel col-sm-12">
+            <ul class="quartos-hotel col-sm-12 margin-t-2">
                 {{-- Quatro quartos --}}
                 @for ($i = 1; $i < 5; $i++)
                     <li id="room{{ $i }}" class="qtd-quartos @if ($i > 1) soft-hide @endif" data-room-id="{{ $i }}">
                         <label class="room-label roomLabel margin-b-1 soft-hide">{{ trans('global.quimera_travel_room') }} {{ $i }}</label>
                         <div class="row">
                             <div class="col-sm-6">
-                                <label for="adults{{ $i }}">{{ trans('global.quimera_adult_') }}</label>
                                 <input value="0" id="adultsRoom{{ $i }}" type="hidden">
                                 <select id="adults{{ $i }}" name="adultsSelector" class="form-control">
+                                    <option value="1">Adultos</option>
                                     <option value="1">1</option>
                                     <option value="2" selected="selected">2</option>
                                     <option value="3">3</option>
@@ -56,8 +55,8 @@
                                 </select>
                             </div>
                             <div class="col-sm-6">
-                                <label for="childrenRoom{{ $i }}1">{{ trans('global.quimera_child_') }}</label>
                                 <select id="childrenRoom{{ $i }}1" name="childrenRoomSelector" class="form-control">
+                                    <option value="0">Crianças</option>
                                     <option value="0">0</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
