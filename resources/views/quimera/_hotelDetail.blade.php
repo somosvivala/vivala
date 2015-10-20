@@ -12,7 +12,11 @@
     {{ count($data['data']->roomClusters) }} Opções disponíveis
 
     @foreach($data['data']->roomClusters as $roomCluster)
+    <?php $details = $roomCluster->roompacks[0]->rooms[0]->roomDetails; ?>
     <div class="room-cluster">
+    <pre>
+        <?php var_dump($details); ?>
+    </pre>
         @foreach($roomCluster->roompacks as $roompack)
             @foreach($roompack->rooms as $room)
             {{ $room->name }}<br>
@@ -23,7 +27,6 @@
         @endforeach
     </div>
     @endforeach
-
 </div>
 <?php 
 /**
