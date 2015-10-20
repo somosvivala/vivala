@@ -5,7 +5,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="form-ong-head">
-                <h3 class="text-center margin-t-2">{{ trans('global.lbl_perfil_edit') }}</h3>
+                <h3 class="text-center margin-t-2">{{ trans('global.lbl_profile_edit') }}</h3>
             </div>
 
             <div class="panel-body">
@@ -38,7 +38,7 @@
                 @include('errors.list')
                 
                 {!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
-                    @include('perfil.form', ['btnSubmit' => trans('global.lbl_perfil_update')])
+                    @include('perfil.form', ['btnSubmit' => trans('global.lbl_profile_update')])
                 {!! Form::close() !!}
         </div>
     </div>
