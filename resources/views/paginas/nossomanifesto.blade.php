@@ -4,8 +4,11 @@
 
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
     <div class="col-sm-12">
-        <h3 class="font-bold-upper text-center margin-t-1 margin-b-2">{{ trans('global.lbl_manifest_our') }}
-            <small class="sub-titulo">Vivemos mais que uma geração, vivemos um movimento.</small>
+        <h3 class="font-bold-upper text-center margin-t-1 margin-b-2">
+            {{ trans('global.lbl_manifest_our') }}
+            <small class="sub-titulo margin-t-1">
+                Vivemos mais que uma geração, vivemos um movimento.
+            </small>
         </h3>
     </div>
     <div class="row margin-b-2">

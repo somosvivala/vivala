@@ -4,8 +4,11 @@
 
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
 
-    <h3 class="font-bold-upper text-center margin-b-2">{{ trans('global.lbl_contact') }}
-        <small class="sub-titulo">{{ trans('global.contact_keep_in_contact') }}</small>
+    <h3 class="font-bold-upper text-center margin-b-2">
+        {{ trans('global.lbl_contact') }}
+        <small class="sub-titulo margin-t-1">
+            {{ trans('global.contact_keep_in_contact') }}
+        </small>
     </h3>
 
     <div class="col-sm-5">
@@ -51,7 +54,7 @@
             {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao pull-right']) !!}
         {!! Form::close() !!}
     </div>
-    <div class="row col-sm-12 container-fluid">
+    <div class="row col-sm-12 container-fluid margin-t-3">
             <div id="vivala-social-network" class="text-right">
                 <a href="https://facebook.com/somosvivala" title="Vivalá no Facebook" alt="Vivalá no Facebook" target="_blank"><i class="fa fa-2x fa-facebook-square laranja"></i></a>
                 <a href="https://instagram.com/somosvivala" title="Vivalá no Instagram" alt="Vivalá no Instagram" target="_blank"><i class="fa fa-2x fa-instagram laranja"></i></a>
