@@ -569,7 +569,6 @@ ul.filtro a {
   background-size: cover;
 }
 .welcome-header {
-  height: 11rem;
   background-color: rgba(255, 245, 210, 0.95);
   font-size: 12.6px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -657,6 +656,7 @@ ul.filtro a {
 .welcome-header .nav-logo {
   height: 9rem;
   padding: 0px;
+  padding-bottom: 1em;
 }
 .welcome-header .nav-logo img {
   height: 100%;
