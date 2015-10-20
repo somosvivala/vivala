@@ -8202,6 +8202,7 @@ ul.quartos-hotel {
 }
 .hotel-detalhes .servico {
   height: 2em;
+  text-align: left;
   overflow: hidden;
 }
 #modal-quimera .modal-lg {
@@ -8255,11 +8256,15 @@ nav.menu-top {
   border-color: #e2e2e2;
   min-height: 52px;
 }
-nav.menu-top .menu-principal {
-  padding: 0.9em;
+@media screen and (min-width: 768px) {
+  nav.menu-top .menu-principal {
+    padding: 0.9em;
+  }
+  nav.menu-top .menu-principal ul {
+    padding: 0.3em;
+  }
 }
 nav.menu-top .menu-principal ul {
-  padding: 0.3em;
   font-size: 1em;
 }
 nav.menu-top .menu-principal ul li {
@@ -8341,13 +8346,24 @@ nav.header div {
   float: left;
 }
 div.logo-menu {
-  width: 10%;
+  width: 18%;
 }
 div.menu-principal {
-  width: 60%;
+  width: 48%;
 }
 div.menu-usuario {
-  width: 4%;
+  width: 8%;
+}
+@media screen and (min-width: 768px) {
+  div.logo-menu {
+    width: 10%;
+  }
+  div.menu-principal {
+    width: 60%;
+  }
+  div.menu-usuario {
+    width: 4%;
+  }
 }
 div.notificacoes {
   width: 25%;
@@ -11450,7 +11466,6 @@ ul.filtro a {
   background-size: cover;
 }
 .welcome-header {
-  height: 11rem;
   background-color: rgba(255, 245, 210, 0.95);
   font-size: 12.6px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -11538,6 +11553,7 @@ ul.filtro a {
 .welcome-header .nav-logo {
   height: 9rem;
   padding: 0px;
+  padding-bottom: 1em;
 }
 .welcome-header .nav-logo img {
   height: 100%;

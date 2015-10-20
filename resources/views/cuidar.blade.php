@@ -8,11 +8,11 @@
 	{{-- Seção do topo com infos (a principio só do usuario) --}}
 	@yield('barra-topo')
 
-	<nav class="col-xs-3 col-sm-3 col-md-2 left-panel">
+	<nav class="col-xs-12 col-sm-3 col-md-2 left-panel">
 		@include('cuidar.menulateral')
 	</nav>
 
-	<nav class="col-xs-9 col-sm-6 col-md-8">
+	<nav class="col-xs-12 col-sm-6 col-md-8">
 		@yield('content')
 	</nav>
 
