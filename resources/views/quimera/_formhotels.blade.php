@@ -1,12 +1,12 @@
 <form novalidate="novalidate" name="searchHotel" id="busca-hoteis">
-
     <input type="hidden" name="_token" value="{{\Session::token() }}">
     <div class="col-sm-6">
         <div class="row">
             <div class="col-sm-12">
                 <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-hotel" name="destination" placeholder="{{ trans('global.quimera_insert_city_or_hotel_name_ph') }}" value="" type="text" class="form-control">
                 <input id="destino-hotel-id" style="display:none" name="destinationId" class="form-control required" value="" type="hidden">
-                <div id="lista-destino-hotel" class="lista-autocomplete">     
+                <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
+                <div id="lista-destino-hotel" class="lista-autocomplete soft-hide">     
                     <div class="hotel-list"> 
                     </div>
                 </div>
@@ -15,9 +15,9 @@
         <div class="row margin-t-2">
             <div class="col-sm-12">
                 <div class="input-daterange input-group" id="idavolta-hotel">
-                    <input placeholder="Quando vai?" type="text" class="form-control" name="fromDate"/>
+                    <input placeholder="Quando vai?" id="data-partida-hotel" type="text" class="form-control" name="fromDate"/>
                     <span class="input-group-addon"></span>
-                    <input placeholder="Quando volta?" type="text" class="form-control" name="toDate"/>
+                    <input placeholder="Quando volta?" id="data-retorno-hotel" type="text" class="form-control" name="toDate"/>
                 </div>
             </div>
         </div>

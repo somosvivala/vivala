@@ -1,4 +1,4 @@
-<div class="list-group col-sm-9 hotel-list">
+<div class="list-group hotel-list">
     @foreach ($data['cities'] as $city)
         <a href="#" class="list-group-item autocomplete-hotel" data-type="cidade" data-value="{{ $city->item->id }}">
             <div class="row">

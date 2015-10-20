@@ -10,14 +10,14 @@ $('#idavolta-hotel.input-daterange input').datepicker({
 });
 
 $(".mostraCriancasVoos").change(function() {
-  var qtdCriancas = this.value;
-  $(".idade-criancas").hide();
-  for(var i=0;i<=qtdCriancas;i++) {
-      $('.idade-criancas[data-child-id="'+i+'"]').show();
-  }
+    var qtdCriancas = this.value;
+    $(".idade-criancas").hide();
+    for(var i=0;i<=qtdCriancas;i++) {
+        $('.idade-criancas[data-child-id="'+i+'"]').show();
+    }
 });
 
-$("form#buscaVoos").submit(function(e){
+$("form#buscaVoos").submit(function(e) {
     e.preventDefault();
 
     var form = $(this),
@@ -136,12 +136,12 @@ $(document).ready(function($) {
     var autocompleteTimeout = null;
     $('input#origem-voo').on('keyup', function() {
         var value = $(this).val(),
-            lista = $('#lista-origem .flight-list'),
-            container = $('#lista-origem');
+            lista = $('#lista-origem-voo .flight-list'),
+            container = $('#lista-origem-voo');  
 
         container.show();
         //Insere icone de loading
-        lista.html("<i class='fa-spin fa-spinner fa'></i>");
+        $(this).siblings('i.fa').show();
 
         if (autocompleteTimeout > 0) {
             clearTimeout(autocompleteTimeout);
@@ -151,6 +151,7 @@ $(document).ready(function($) {
         } else {
             lista.remove();
             container.hide();
+            $(this).siblings('i.fa').hide();
         }
     });
 
@@ -158,12 +159,12 @@ $(document).ready(function($) {
     // e cidades quando entrar mais que 3 chars
     $('input#destino-voo').on('keyup', function() {
         var value = $(this).val(),
-            lista = $('#lista-destino .flight-list'),
-            container = $('#lista-destino');
+            lista = $('#lista-destino-voo .flight-list'),
+            container = $('#lista-destino-voo');
 
         container.show();
-        //Insere icone de loading
-        lista.html("<i class='fa-spin fa-spinner fa'></i>");
+        //Ativa icone de loading
+        $(this).siblings('i.fa').show();
 
         if (autocompleteTimeout > 0) {
             clearTimeout(autocompleteTimeout);
@@ -173,6 +174,7 @@ $(document).ready(function($) {
         } else {
             lista.remove();
             container.hide();
+            $(this).siblings('i.fa').hide();
         }
     });
 
@@ -190,7 +192,7 @@ $(document).ready(function($) {
 
         container.show();
         //Insere icone de loading
-        lista.html("<i class='fa-spin fa-spinner fa'></i>");
+        $(this).siblings('i.fa').show();
 
         if (autocompleteTimeout > 0) {
             clearTimeout(autocompleteTimeout);
@@ -199,6 +201,7 @@ $(document).ready(function($) {
             autocompleteTimeout = setTimeout(autocompleteHotels, 500, value, '#destino-hotel', container, lista);
         } else {
             lista.remove();
+            $(this).siblings('i.fa').hide();
             container.hide();
         }
     });

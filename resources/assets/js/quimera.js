@@ -14,6 +14,7 @@ var autocompleteFlights = function(query, inputId, container, lista) {
     if (ajaxCall != null && ajaxCall.state() == 'pending') {
         ajaxCall.abort();
     }
+
     // Procura o que foi inserido
     ajaxCall = $.ajax({
         url: '/quimera',
@@ -30,7 +31,10 @@ var autocompleteFlights = function(query, inputId, container, lista) {
         lista.remove(); 
         container.append(data);
 
+        console.log(container);
         $('.flight-list').attr('data-input', inputId);
+        
+        $(inputId).siblings('i.fa').hide();
         
         bindAutoCompleteFlights();
     });
@@ -67,7 +71,11 @@ var autocompleteHotels = function(query, inputId, container, lista) {
     .done(function(data) {
         lista.remove(); 
         container.append(data);
+        
+
         $('.hotel-list').attr('data-input', inputId);
+
+        $(inputId).siblings('i.fa').hide();
 
         bindAutoCompleteHotels();
     });
@@ -480,10 +488,14 @@ var bindAutoCompleteFlights = function() {
     $('a.autocomplete-flight').on('click', function(e) {
         e.preventDefault();
         var 
-            input = $(this).parent('.flight-list').attr('data-input'),
+            list = $(this).parent('.flight-list'),
+            input = list.attr('data-input'),
             value = $(this).find('span.autocomplete-text').text(),
-            code  = $(this).attr('data-value');
+            code  = $(this).attr('data-value'),
+            container = list.parent('.lista-autocomplete');
 
+        container.hide();
+        $(input).siblings('i.fa').hide();
         $(input).val(value);
         $(input+'-id').val(code);
 
@@ -495,10 +507,13 @@ var bindAutoCompleteHotels = function() {
     $('a.autocomplete-hotel').on('click', function(e) {
         e.preventDefault();
         var 
-            input = $(this).parent('.hotel-list').attr('data-input'),
+            list = $(this).parent('.hotel-list'),
+            input = list.attr('data-input'),
             value = $(this).find('span.autocomplete-text').text(),
-            code  = $(this).attr('data-value');
+            code  = $(this).attr('data-value'),
+            container = list.parent('.lista-autocomplete');
 
+        container.hide();
         $(input).val(value);
         $(input+'-id').val(code);
 

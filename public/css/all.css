@@ -8166,6 +8166,12 @@ ul.quartos-hotel {
   border: 0px;
   opacity: 0;
 }
+.loading-search {
+  position: absolute;
+  transition: opacity 0.3s ease;
+  right: 2em;
+  top: 1em;
+}
 .hotel-detalhes .foto-header h2 {
   max-width: 50%;
   margin: 0 25%;
