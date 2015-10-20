@@ -2,17 +2,17 @@
 
 @section('content')
 <div class="panel panel-default">
-    
+
     <div class="form-ong-head">
         <h3 class="text-center margin-t-2"> {{ trans('global.lbl_cause_edit') }}</h3>
         {!! Form::open([ 'method' => 'DELETE', 'route' => ['vagas.destroy', $vaga->id] ]) !!}
         {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja excluir essa vaga?');"]) !!}
         {!! Form::close() !!}
     </div>
-    
+
     <div class="panel-body">
         <div id="causa-contato" class="row margin-t-2 form-ong">
-            <h5 class="col-sm-12">Imagem de capa</h5>
+            <h5 class="col-sm-12">{{ trans('global.lbl_cover_photo') }}</h5>
             <div class="col-sm-12">
 
                 {{-- Adicionando div de update da foto de perfil da ong --}}

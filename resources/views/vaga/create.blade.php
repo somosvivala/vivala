@@ -2,16 +2,15 @@
 
 @section('content')
 <div class="panel panel-default">
-    <h3 class="font-bold-upper text-center"> {{ trans('global.lbl_cause_create') }}
-        <small class="sub-titulo"></small>
+    <h3 class="font-bold-upper text-center"> {{ trans('global.lbl_ong_slot_create') }}
+        <small class="sub-titulo">Busque por voluntários para ajudar!</small>
     </h3>
-    <div class="panel-heading"><h1></h1></div>
     <div class="panel-body">
         <div id="causa-contato" class="row margin-t-2 form-ong">
-            <h5 class="col-sm-12">Imagem de capa</h5>
+            <h5 class="col-sm-12">{{ trans('global.lbl_cover_photo') }}</h5>
             <div class="col-sm-12">
 
-                {{-- Adicionando div de update da foto de capa da vaga --}} 
+                {{-- Adicionando div de update da foto de capa da vaga --}}
                 <div class="text-center jc_coords row col-sm-12">
 
                     {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}

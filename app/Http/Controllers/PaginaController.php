@@ -173,6 +173,14 @@ class PaginaController extends Controller {
         return view('paginas.presskit');
     }
 
+    /**
+     * Retorna a blade da pagina do Financiamento Coletivo
+     */
+    public function getFinanciamentocoletivo()
+    {
+        return view('paginas.financiamentocoletivo');
+    }
+
     public function getTestesendmail()
     {
         $user = Auth::user();

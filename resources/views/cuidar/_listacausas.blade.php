@@ -29,7 +29,7 @@
 			{!! Form::close() !!}
 		</li>
 	@empty
-	    <p>{{ trans('global.lbl_ong_no_') }}</p>
+	    <p>{{ trans('global.lbl_ong_not_found') }}</p>
 	@endforelse
 	@endif
 </ul>

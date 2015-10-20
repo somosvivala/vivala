@@ -5,8 +5,8 @@
 
 @section('content')
 <div class="fundo-cheio col-sm-12">
-    <h3 class="font-bold-upper text-center"> Procurando por Ongs?
-        <small class="sub-titulo">Encontre ONG's em 3 passos.</small>
+    <h3 class="font-bold-upper text-center">{{ trans('global.ong_search_for_ongs') }}
+        <small class="sub-titulo">{{ trans('global.ong_find_ongs_three_steps') }}</small>
     </h3>
     <div class="col-sm-12 margin-b-2 margin-t-2 text-center">
         @include('cuidar._filtraongs')

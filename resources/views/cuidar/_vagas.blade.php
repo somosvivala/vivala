@@ -2,6 +2,6 @@
 
 @section('content')
 <h4 class="suave">
-	Vagas
+	{{ trans('global.lbl_ong_slot_') }}
 </h4>
 @endsection
