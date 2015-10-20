@@ -8183,12 +8183,26 @@ ul.quartos-hotel {
 }
 .hotel-detalhes .fotos-detalhe img {
   float: left;
+  margin: 3px;
 }
 .hotel-detalhes .descricao {
   text-align: left;
 }
 .hotel-detalhes .room-cluster {
   border: 1px solid #535353;
+}
+.hotel-detalhes .room-cluster .roompacks .roompack:not(:last-child) {
+  border-bottom: 1px solid #535353;
+}
+.hotel-detalhes .room-cluster .roompacks {
+  border-left: 1px solid #535353;
+}
+.hotel-detalhes .room-cluster .tarifa {
+  background-color: #e2e2e2;
+}
+.hotel-detalhes .servico {
+  height: 2em;
+  overflow: hidden;
 }
 #modal-quimera .modal-lg {
   width: 1040px;

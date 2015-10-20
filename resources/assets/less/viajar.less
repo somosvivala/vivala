@@ -49,6 +49,7 @@ ul.quartos-hotel {
         overflow:hidden;
         img {
             float:left;
+            margin:3px;
         }
     }
     .descricao {
@@ -56,6 +57,19 @@ ul.quartos-hotel {
     }
     .room-cluster {
         border: 1px solid @cor-cinza-escuro;
+        .roompacks .roompack:not(:last-child) {
+            border-bottom: 1px solid @cor-cinza-escuro;
+        }
+        .roompacks {
+            border-left: 1px solid @cor-cinza-escuro;
+        }
+        .tarifa {
+            background-color:@cor-fundo;
+        }
+    }
+    .servico {
+        height:2em;
+        overflow:hidden;
     }
 }
 
