@@ -1,5 +1,13 @@
 'use strict';
 
+// Coloca intervalo nas datas de busca de voo
+$('#idavolta-hotel.input-daterange input').datepicker({
+    format: "dd/mm/yyyy",
+    todayBtn: true,
+    language: "pt-BR",
+    multidateSeparator: "to",
+    todayHighlight: true
+});
 
 $(".mostraCriancasVoos").change(function() {
   var qtdCriancas = this.value;

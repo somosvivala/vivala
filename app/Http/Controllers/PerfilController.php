@@ -61,12 +61,19 @@ class PerfilController extends ConectarController {
 	{
 		$user = Auth::user();
 		$perfil = $user->perfil;
-    	$foto = $perfil->getAvatarUrl();
-		//Trocando entidadeAtiva para perfil
-		Session::put('entidadeAtiva_id', $perfil->id);
-        Session::put('entidadeAtiva_tipo', 'perfil');
+    	        $foto = $perfil->getAvatarUrl();
+                $apelido = $perfil->apelido;
 
-		return view('perfil.edit', compact('user', 'perfil', 'foto'));
+                if ($perfil->id != $id)
+                {
+                     return App::abort(403, 'Ops, aparentemente voce não tem permissão para editar esse perfil');
+                }
+
+                //Trocando entidadeAtiva para perfil
+		Session::put('entidadeAtiva_id', $perfil->id);
+                Session::put('entidadeAtiva_tipo', 'perfil');
+
+		return view('perfil.edit', compact('user', 'perfil', 'foto', 'apelido'));
 	}
 
 	/**
@@ -208,7 +215,7 @@ class PerfilController extends ConectarController {
 		//consigo encontralo pelo Collention->find()
 		$alreadyLiked = $entidadeAtiva->likePost->find($post->id);
 
-		if (!$alreadyLiked) {
+		if (!$apelidoOngreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likePost()->attach($post->id);
 		}

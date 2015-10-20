@@ -32,12 +32,12 @@ class EditarPerfilRequest extends Request {
 		});
 
 		return [
-			"username" 				=> "required|min:2",
-			"image_file_upload"    	=> 'mimes:png,jpg',
 			"apelido" 				=> "required|min:2",
 			"url"  					=> "required|alpha_dash|min:2|pretty_url",
-			"aniversario" 			=> 'date_format:"d/m/Y"',
-			"cidade_natal" 			=> 'alpha|min:3'
+			"aniversario" 			        => 'required|date_format:"d/m/Y"',
+                        "descricao_curta" 			=> 'string',
+                        "descricao_longa" 			=> 'string',
+			"cidade_atual" 			        => 'alpha|min:3'
 		];
 	}
 
