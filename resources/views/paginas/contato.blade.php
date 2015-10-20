@@ -11,10 +11,11 @@
     <div class="col-sm-5">
         <p>
         Se estiver afim de dar um alô e bater um lero, é só dar uma ligada, mandar um e-mail ou fazer uma visitinha... Você quem decide! O que importa é que estamos sempre de braços abertos para te receber e te ouvir, escutar sua opinião e suas sugestões.
-    </p><p>
+        </p>
+        <p class="margin-b-2">
         Aqui não tem enrolação. O pessoal da Vivalá é gente boa e ama conhecer gente nova! vamos, com muito prazer, escutar tudo o que você tem a dizer!
         </p>
-
+        <hr style="border: 0; height: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
 
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
@@ -42,14 +43,22 @@
         </div>
     </div>
     <div class="col-sm-7 form-borda-preta">
-
         {!! Form::open(['url' => 'contato']) !!}
             {!! Form::text("nome", '', ['title' => trans('global.lbl_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::text("email", '', ['title' => trans('global.lbl_email'), 'placeholder' => trans('global.lbl_email'), 'class' => 'form-control margin-b-1']) !!}
-            {!! Form::text("assunto", '', ['title' => trans('global.lbl_subject'), 'placeholder' => trans('global.lbl_subject'), 'class' => 'form-control margin-b-1']) !!}
+            {!! Form::text("assunto", '', ['title' => trans('global.lbl_subject_feedback'), 'placeholder' => trans('global.lbl_subject_feedback'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::textarea("mensagem", null, ['title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize margin-b-1' ]) !!}
             {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao pull-right']) !!}
         {!! Form::close() !!}
+    </div>
+    <div class="row col-sm-12 container-fluid">
+            <div id="vivala-social-network" class="text-right">
+                <a href="https://facebook.com/somosvivala" title="Vivalá no Facebook" alt="Vivalá no Facebook" target="_blank"><i class="fa fa-2x fa-facebook-square laranja"></i></a>
+                <a href="https://instagram.com/somosvivala" title="Vivalá no Instagram" alt="Vivalá no Instagram" target="_blank"><i class="fa fa-2x fa-instagram laranja"></i></a>
+                <a href="" title="Vivalá no Youtube" alt="Vivalá no Youtube" target="_blank"><i class="fa fa-2x fa-youtube-square laranja"></i></a>
+                <a href="https://www.linkedin.com/company/6612965" title="Vivalá no Linkedin" alt="Vivalá no Linkedin" target="_blank"><i class="fa fa-2x fa-linkedin-square laranja"></i></a>
+            </div>
+        </
     </div>
 </div>
 @endsection

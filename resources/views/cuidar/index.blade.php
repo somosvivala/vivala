@@ -5,13 +5,11 @@
     <h2>Cuide do Brasil</h2>
     <h3>Faça trabalhos voluntários e desenvolva o país.</h3>
     <div class="col-sm-12">
-        <a class="btn">
-            Como funciona
-        </a>
+        <a class="btn">{{ trans('global.lbl_how_it_works') }}</a>
     </div>
 </div>
 <div class="fundo-cheio col-sm-12 margin-b-2 margin-t-2 padding-b-2">
-    <h3 class="font-bold-upper text-center"> Já sabe qual causa ajudar? 
+    <h3 class="font-bold-upper text-center"> Já sabe qual causa ajudar?
         <small class="sub-titulo">Encontre ONG's e projetos de impacto em 3 passos.</small>
     </h3>
     <div class="col-sm-12 text-center">

@@ -4,7 +4,7 @@
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-md hidden-sm col-lg-4">
-		<input class="busca-geral-menu" placeholder='{{ trans("global.lbl_search1") }}' type="search">
+		<input class="busca-geral-menu" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
 	</div>
 	<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto">
 		@if (Auth::guest())
@@ -99,7 +99,7 @@
                             </li>
                             <li>
                                 <a href="{{ url('paginas/gerenciar') }}">
-                                    <i class="fa fa-star"></i> 
+                                    <i class="fa fa-star"></i>
                                     <span>{{ trans('global.lbl_page_manage') }}</span>
                                 </a>
                             </li>
@@ -121,7 +121,7 @@
                             <span>{{ trans('global.lbl_profile') }}</span>
                         </a>
                     </li>
-                    
+
                     {{--
                     <li><a href="{{ url('config') }}">
                             <i class="fa fa-cogs"></i>

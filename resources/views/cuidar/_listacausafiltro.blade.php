@@ -11,7 +11,7 @@
             </a>
         </li>
     @empty
-        <p class="col-sm-12 text-center">Nenhuma causa encontrada.</p>
+        <p class="col-sm-12 text-center">{{ trans('global.lbl_cause_not_found') }}</p>
     @endforelse
     @endif
 </ul>

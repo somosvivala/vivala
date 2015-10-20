@@ -9,7 +9,7 @@
             </a>
         </li>
     @empty
-        <p class="col-sm-12 text-center">Nenhuma ong encontrada.</p>
+        <p class="col-sm-12 text-center">{{ trans('lbl_ong_not_found') }}</p>
     @endforelse
     @endif
 </ul>
