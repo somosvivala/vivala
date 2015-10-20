@@ -240,6 +240,8 @@ return[
     'lbl_cookie' => 'Cookie',
     'lbl_cookie_' => 'Cookies',
     'lbl_cookie_use' => 'Uso de Cookies',
+    'lbl_cover_photo' => 'Imagem de Capa',
+
     'lbl_create' => 'Criar',
     'lbl_created_at' => 'Criado em',
     'lbl_culture_brazilian' => 'Cultura Brasileira',
@@ -339,6 +341,8 @@ return[
     'lbl_login' => 'Login',
     'lbl_login_keepme' => 'Mantenha-me conectado',
     'lbl_logout' => 'Sair',
+    'lbl_manifest' => 'Manifesto',
+    'lbl_manifest_our' => 'Nosso Manifesto',
     'lbl_memorie' => 'Lembrança',
     'lbl_memorie_' => 'Lembranças',
     'lbl_message' => 'Mensagem',
@@ -377,6 +381,8 @@ return[
       'lbl_ong_search_' => 'Buscar ONGs',
       'lbl_ong_searching' => 'Buscando ONG',
       'lbl_ong_searching_' => 'Buscando ONGs',
+      'lbl_ong_update' => 'Atualizar ONG',
+      'lbl_ong_update_' => 'Atualizar ONGs',
       'lbl_ong_no' => 'Sem ong.',
       'lbl_ong_not_found' => 'Nenhuma ONG encontrada.',
       'lbl_ong_not_created' => 'Nenhuma ONG criada.',
@@ -384,7 +390,8 @@ return[
       'lbl_ong_register_' => 'Cadastrar ONGs',
 
     /* Cuidar - VAGAS */
-    'lbl_ong_slot' => 'Vagas',
+    'lbl_ong_slot' => 'Vaga',
+    'lbl_ong_slot_' => 'Vagas',
     'lbl_ong_slot_add' => 'Adicionar Vaga',
     'lbl_ong_slot_add_' => 'Adicionar Vagas',
     'lbl_ong_slot_adding' => 'Adicionando Vaga',
@@ -401,6 +408,11 @@ return[
     'lbl_ong_slot_edit_' => 'Editar Vagas',
     'lbl_ong_slot_editing' => 'Editando Vaga',
     'lbl_ong_slot_editing_' => 'Editando Vagas',
+    'lbl_ong_slot_search' => 'Buscar Vaga',
+    'lbl_ong_slot_search_' => 'Buscar Vagas',
+    'lbl_ong_slot_searching' => 'Buscando Vaga',
+    'lbl_ong_slot_searching_' => 'Buscando Vagas',
+
 
     /* Cuidar - EMPRESA */
     'lbl_organization' => 'Organização',
@@ -498,6 +510,7 @@ return[
     'lbl_step_back' => 'Voltar',
     'lbl_submit' => 'Enviar',
     'lbl_subject' => 'Assunto',
+    'lbl_subject_feedback' => 'Assunto: Feedback',
     'lbl_suggests' => 'Sugestões',
     'lbl_suggests_no' => 'Nenhuma sugestão.',
     'lbl_tag' => 'Marcação',
@@ -670,7 +683,6 @@ return[
     'ong_t_onu_categories' => 'Categoria - 8 Objetivos do Milênio da ONU',
     'ong_t_additional_social_networks' => 'Complemento - Redes Sociais',
     'ong_t_contact' => 'Contato',
-    'ong_t_cover_photo' => 'Imagem de Capa',
     'ong_name' => 'Nome da ONG',
     'ong_name_prettyurl' => 'Nome-da-ONG',
     'ong_pretty_URL' => 'URL amigável da ONG',
@@ -690,6 +702,9 @@ return[
     'ong_contact_manager' => 'Selecionar Responsável',
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',
+
+    'ong_search_for_ongs' => 'Procurando por ONGs?',
+    'ong_find_ongs_three_steps' => 'Encontre ONGs em três passos.',
 
   /* View: Páginas */
 
