@@ -6,7 +6,7 @@
     <div class="row fundo-cheio">
         <h3 class="font-bold-upper text-center margin-b-2">
             Quem somos
-            <small class="sub-titulo">
+            <small class="sub-titulo margin-t-1">
                 Quais os nossos propósitos, afinal?
             </small>
         </h3>

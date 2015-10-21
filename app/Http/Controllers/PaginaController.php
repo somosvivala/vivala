@@ -137,7 +137,7 @@ class PaginaController extends Controller {
      */
     public function getPoliticadeprivacidade()
     {
-        return view('paginas.politicaprivacidade');
+        return view('paginas.politicadeprivacidade');
     }
 
     /**

@@ -32,10 +32,10 @@
         </div>
     </div>
 
-    {{-- TODO: Trabalhar no responsivo dos logos, lembrar --}}
     <div class="row">
         <div class="col-sm-12 text-center">
-            <a href="" alt="decolar.com" title="decolar.com" target="_blank" class="margin-l-1 margin-r-1 cursor-default">
+            {{-- TODO: Trabalhar no responsivo dos logos, lembrar --}}
+            <!-- <a href="" alt="decolar.com" title="decolar.com" target="_blank" class="margin-l-1 margin-r-1 cursor-default">
                 <img src="/img/parceiros/decolar.png" style="width: 124px; height: 30px;"></img>
             </a>
             <a href="" alt="chefsclub.com.br" title="chefsclub.com.br" target="_blank" class="margin-l-1 margin-r-1 cursor-default">
@@ -43,7 +43,16 @@
             </a>
             <a href="" alt="clickbus.com.br" title="clickbus.com.br" target="_blank" class="margin-l-1 margin-r-1 cursor-default">
                 <img src="/img/parceiros/clickbus.png" style="width: 102px; height: 30px;"></img>
-            </a>
+            </a> -->
+            <span class="margin-l-1 margin-r-1 cursor-default">
+                <img src="/img/parceiros/decolar.png" alt="decolar.com" title="decolar.com" style="width: 124px; height: 30px;"></img>
+            </span>
+            <span class="margin-l-1 margin-r-1 cursor-default">
+                <img src="/img/parceiros/chefsclub.png" alt="chefsclub.com.br" title="chefsclub.com.br" style="width: 43px; height: 30px;"></img>
+            </span>
+            <span class="margin-l-1 margin-r-1 cursor-default">
+                <img src="/img/parceiros/clickbus.png" alt="clickbus.com.br" title="clickbus.com.br" style="width: 102px; height: 30px;"></img>
+            </span>
         </div>
     </div>
 </div>
