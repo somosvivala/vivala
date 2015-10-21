@@ -16,8 +16,9 @@
     <h3 class="font-bold-upper text-center">Já sabe para onde ir?
         <small class="sub-titulo">Monte sua viagem! </small>
     </h3>
+   <!-- <iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;">
+   --> 
     
-
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">
             <a href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
@@ -52,7 +53,6 @@
         </li>
         --}}
     </ul>
-
     <div class="tab-content">
 
         <div role="tabpanel" class="tab-pane" id="carros">
@@ -60,7 +60,6 @@
         </div>
 
         {{--
-        <div role="tabpanel" class="tab-pane active" id="hospedagem">
             @include('quimera._formhotels') 
             <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
         </div>
@@ -75,7 +74,6 @@
         --}}
     </div>
 </div>
-
 <!-- Modal com iframe da quimera -->
 <div id="modal-quimera" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
@@ -91,10 +89,6 @@
         </div>
     </div>
 </div>
-
-
-
-
 
 
 <!-- Modal com iframe pra fechamento de pedido -->
