@@ -36,18 +36,22 @@ class ViajarController extends VivalaBaseController {
             $r1->endereco = "Rua São Gonçalo, 4-37";
             $r1->tipo_cozinha = "Japonesa";
             $r1->preco = 3;
+            $r1->id = 1;
             $r1->qtd_beneficios = 3;
             $r1->desconto = "50%";
             $r1->imagem = "http://cdn-us.chefsclub.com.br/uploads/place/197/web/cover-old/1202201595540.jpg";
+            $r1->link = "https://www.chefsclub.com.br/restaurantes/belo-horizonte/mr-tomy-delivery-2160";
 
             $r2= new \stdClass();
             $r2->restaurante = "Restaurante 2";
             $r2->endereco = "Rua São Gonçalo, 4-37";
             $r2->tipo_cozinha = "Japonesa";
             $r2->preco = 1;
+            $r2->id = 2;
             $r2->qtd_beneficios = 1;
             $r2->desconto = "30%";
             $r2->imagem = "http://cdn-us.chefsclub.com.br/uploads/place/197/web/cover-old/1202201595540.jpg";
+            $r2->link = "https://www.chefsclub.com.br/restaurantes/belo-horizonte/mr-tomy-delivery-2160";
 
             $chefs->restaurantes = array($r1, $r2);
 

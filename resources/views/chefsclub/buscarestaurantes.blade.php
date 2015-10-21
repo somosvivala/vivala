@@ -23,7 +23,28 @@
         {{ $r->preco }}
         {{ $r->qtd_beneficios }}
 
-        <button class="btn detalhes-restaurante" type="button" data-restaurante-id="{{ $r->restaurante }}">Detalhes</button>
+        <button class="btn detalhes-restaurante" type="button" data-restaurante-id="{{ $r->id }}" data-toggle="modal" data-target="#{{ $r->id }}">Detalhes</button>
+    </div>
+    <!-- Modal com iframe pra fechamento de pedido -->
+    <div id="{{ $r->id }}" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+                <div class="modal-body">
+                    {{ $r->restaurante }}
+                    {{ $r->desconto }}
+                    {{ $r->endereco }}
+                    {{ $r->tipo_cozinha }}
+                    {{ $r->preco }}
+                    {{ $r->qtd_beneficios }}
+
+                    <div class="row text-center">
+                        <a class="btn" target="_blank" href="{{ $r->link }}">Entre para o clube</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
     @endforeach
 </div>
