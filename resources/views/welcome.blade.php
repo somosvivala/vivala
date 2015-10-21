@@ -41,7 +41,7 @@
 
 					<div class="row">
 						<div class="col-sm-4 col-xs-12">
-							{!! Form::select('idioma', array('pt' => trans('global.lang_pt-br'), 'en' => trans('global.lang_en-us'), 'es' => trans('global.lang_es-es') )) !!}
+							{!! Form::select('idioma', array('pt' => trans('global.lang_pt-br'), 'en' => trans('global.lang_en-us') )) !!}
 						</div>
 						<div class="col-sm-4 col-xs-12">
 							{!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email') ]) !!}
