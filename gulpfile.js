@@ -22,6 +22,7 @@ elixir(function(mix) {
         '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
         '../../assets/bower/lightbox2/dist/css/lightbox.css',
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
+        '../../../node_modules/sweetalert/dist/sweetalert.css',
         '*.css'
     ], null, 'resources/assets/css');
 
@@ -48,6 +49,7 @@ elixir(function(mix) {
       '../../assets/js/viajar.js',
       '../../assets/js/search.js',
       '../../assets/js/cropFoto.js',
+      '../../../node_modules/sweetalert/dist/sweetalert.min.js',
       '../../assets/js/ongs.js'
 	], 'public/js/vendor.js');
 });
