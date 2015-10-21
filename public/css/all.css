@@ -8168,7 +8168,7 @@ div.foto-fundo {
 }
 .foto-header {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
 }
 .foto-header h2,
 .foto-header h3 {
@@ -8674,6 +8674,10 @@ nav.menu-lateral ul li a i {
   padding-right: 0.6em;
   font-size: 1.2em;
   padding-top: 0.1em;
+}
+ul.pagina-sugestoes > li {
+  height: 11em;
+  overflow: hidden;
 }
 ul.pagina-sugestoes li a div.foto {
   margin: 0;
@@ -9974,7 +9978,7 @@ div.foto-fundo {
 }
 .foto-header {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
 }
 .foto-header h2,
 .foto-header h3 {
