@@ -32,6 +32,7 @@ Route::controller('paginas','PaginaController');
 Route::controller('vagas','VagaController');
 Route::controller('busca','SearchController');
 Route::controller('ong','OngController');
+Route::controller('restaurantes','ChefsclubController');
 
 
 // Rotas dos três pilares do sistema
