@@ -50,7 +50,7 @@
                 @endforelse
                 </select>
                 @endif
-                {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome da Ong']) !!}
+                {!! Form::text("nome",  null , ['class' => 'suave', 'placeholder'=>'Nome do Projeto de Impacto']) !!}
                 <span>Ao clicar em Começar, você concorda com os <a href="{{ url('/paginas/termosecondicoes') }}">Termos das Páginas da Vivalá</a></span>
                 <div class="col-sm-12 text-center">
                     {!! Form::submit('Começar', ['class' => 'btn btn-primario btn-acao']) !!}
