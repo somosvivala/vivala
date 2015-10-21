@@ -23,7 +23,8 @@ elixir(function(mix) {
         '../../assets/bower/lightbox2/dist/css/lightbox.css',
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
         '../../../node_modules/sweetalert/dist/sweetalert.css',
-        '*.css'
+        'app.css',
+        'font-awesome.min.css',
     ], null, 'resources/assets/css');
 
     mix.scripts([
