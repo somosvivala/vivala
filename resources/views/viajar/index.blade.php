@@ -55,7 +55,7 @@
 
     <div class="tab-content">
 
-        <div role="tabpanel" class="tab-pane" id="carros">
+        <div role="tabpanel" class="tab-pane active" id="restaurantes">
             @include('chefsclub.buscarestaurantes') 
         </div>
 
