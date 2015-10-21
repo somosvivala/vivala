@@ -20,6 +20,22 @@
 
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">
+            <a href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
+                Restaurantes
+            </a>
+        </li>
+        <li class="col-sm-5">
+            <a href="#quimera">
+               Hospedagem,Vôos e Carros 
+            </a>
+        </li>
+        <li class="col-sm-4">
+            <a href="#" class="desativado">
+                Passagens rodoviárias 
+            </a>
+        </li>
+        {{--
+        <li class="col-sm-3 active">
             <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab">
                 Hospedagem
             </a>
@@ -34,16 +50,17 @@
                 Carros
             </a>
         </li>
-        <li class="col-sm-3">
-            <a href="#montarviagem" class="desativado" aria-controls="montar" role="tab" data-toggle="tab">
-                Montar viagem
-            </a>
-        </li>
+        --}}
     </ul>
 
     <div class="tab-content">
+
+        <div role="tabpanel" class="tab-pane" id="carros">
+            @include('chefsclub.buscarestaurantes') 
+        </div>
+
+        {{--
         <div role="tabpanel" class="tab-pane active" id="hospedagem">
-            {{-- Incluindo forms em html pq vai funcionar direto por ajax --}}
             @include('quimera._formhotels') 
             <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
         </div>
@@ -55,6 +72,7 @@
             @include('quimera._formcarros') 
             <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
         </div>
+        --}}
     </div>
 </div>
 
