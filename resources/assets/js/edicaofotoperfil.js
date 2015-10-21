@@ -6,7 +6,7 @@
       jQuery('#hJcropPerfil').val() == 0
       )
     {
-      alert('Ops, nada para recortar, voce delimitou uma area dentro da nova imagem?');
+      swal("Ops",'Nada para recortar, voce delimitou uma area dentro da nova imagem?', 'error');
       return false;
     }
   };
