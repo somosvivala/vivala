@@ -24,7 +24,7 @@ $(function() {
 
                 $('#uploadedFoto').val(data.id);
                 $('#preview').attr('src',data.path);
-                swal(null, "Foto atualizada com sucesso", 'success');
+                //swal(null, "Foto atualizada com sucesso", 'success');
 
             }
         });
