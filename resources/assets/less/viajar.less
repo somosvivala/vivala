@@ -90,20 +90,57 @@ ul.quartos-hotel {
 }
 
 .restaurante {
-   border: 1px solid @cor-cinza-escuro;
-   height:12em;
+    border: 1px solid @cor-cinza-escuro;
+    height:15em;
+    overflow:hidden;
+    h5 {
+        width:80%;    
+    }
     i {
         color:@cor-pele-zumbi;
     }
+    ul {
+        width:100%;
+        padding:0;
+        margin:0;
+        height:2em;
+        overflow:hidden;
+        li {
+            height:2em;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .maisinfos {
+        width:98%;
+        margin:1em 1%;
+        border: 1px solid @cor-cinza-escuro;
+        > div {
+            padding-top:0.3em;
+            padding-bottom:0.8em;
+            height:2em;
+            + div {
+                border-left: 1px solid @cor-cinza-escuro;
+            }
+        }
+    }
+
     .foto-restaurante {
-        height:100%;
+        height:14em;
+        margin: 0.4em; 
+        margin-right: -0.5em;
         background-size: cover;
+        background-position:center center;
+        transition: all 5s ease 0.2s;
+    }
+    &:hover .foto-restaurante {
+        background-position: top right;
     }
     .desconto {
         padding: 0.3em 0.8em;
         font-family: @font-family-sans-serif-bold;
         position:absolute;
-        top: 2em;
+        top: 0.8em;
         right:-4px;
         background-color: @cor-cinza-escuro;
         color:white;
