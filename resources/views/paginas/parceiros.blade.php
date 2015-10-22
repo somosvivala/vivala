@@ -4,7 +4,7 @@
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
     <div class="row">
         <h3 class="font-bold-upper text-center margin-b-2">
-            {{ trans('golbal.partners_title') }}
+            {{ trans('global.partners_title') }}
             <small class="sub-titulo margin-t-1">
                 {{ trans('global.partners_subtitle') }}
             </small>

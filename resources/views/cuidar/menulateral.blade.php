@@ -3,12 +3,12 @@
 </h4>
 <nav class="menu-lateral">
 	<ul>
-		<li><a href="/cuidar"><i class="fa fa-home"></i>{{ trans('global.lbl_homepage') }}</a></li>
-		<li><a href="/ongs"><i class="fa fa-heart"></i>{{ trans('global.lbl_ong_') }}</a></li>
-                <li><a href="/vagas"><i class="fa fa-flag"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
-                <li><a href="/paginas/porquecuidar" class="desativado"><i class="fa fa-question"></i>Porque cuidar</a></li>
-                <li><a href="/paginas/resultados" class="desativado"><i class="fa fa-tasks"></i>{{ trans('global.lbl_result_') }}</a></li>
-                <li><a href="/paginas/mapadobem" class="desativado"><i class="fa fa-map"></i>Mapa do bem</a></li>
+		<li><a href="/cuidar" class="click-img-no-border"><i class="fa fa-home"></i>{{ trans('global.lbl_homepage') }}</a></li>
+		<li><a href="/ongs" class="click-img-no-border"><i class="fa fa-heart"></i>{{ trans('global.lbl_ong_') }}</a></li>
+    <li><a href="/vagas" class="click-img-no-border"><i class="fa fa-flag"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
+    <li><a href="/paginas/porquecuidar" class="click-img-no-border desativado"><i class="fa fa-question"></i>Porque cuidar</a></li>
+    <li><a href="/paginas/resultados" class="click-img-no-border desativado"><i class="fa fa-tasks"></i>{{ trans('global.lbl_result_') }}</a></li>
+    <li><a href="/paginas/mapadobem" class="click-img-no-border desativado"><i class="fa fa-map"></i>Mapa do bem</a></li>
 	</ul>
 </nav>
 
