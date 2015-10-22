@@ -3,7 +3,7 @@
     <!-- DADOS BASE da ong -->
     <div id="ong-dados-base" class="row">
         <!-- Título -->
-        <h5 class="form-group col-sm-12">{{ trans('global.lbl_perfil_edit') }}</h5>
+        <h5 class="form-group col-sm-12">{{ trans('global.lbl_profile_edit') }}</h5>
         <!-- Nome -->
         <div class="form-group col-sm-12 ph-cor-cinza-escuro">
             {!! Form::text("apelido", $apelido, ['title' => trans('global.lbl_nickname'), 'placeholder' => trans('global.lbl_nickname'), 'class' => 'form-control']) !!}
