@@ -57,6 +57,10 @@
 
         <div role="tabpanel" class="tab-pane active" id="restaurantes">
             @include('chefsclub.buscarestaurantes') 
+            <div class="lista-restaurantes">
+                @include('chefsclub.listarestaurantes') 
+            </div>
+
         </div>
 
         {{--

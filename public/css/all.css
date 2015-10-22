@@ -9221,6 +9221,26 @@ ul.quartos-hotel {
 #modal-quimera .modal-lg {
   width: 1040px;
 }
+.restaurante {
+  border: 1px solid #535353;
+  height: 12em;
+}
+.restaurante i {
+  color: #8ba6ac;
+}
+.restaurante .foto-restaurante {
+  height: 100%;
+  background-size: cover;
+}
+.restaurante .desconto {
+  padding: 0.3em 0.8em;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  position: absolute;
+  top: 2em;
+  right: -4px;
+  background-color: #535353;
+  color: white;
+}
 .icon36 {
   background-position: center;
   background-repeat: no-repeat;

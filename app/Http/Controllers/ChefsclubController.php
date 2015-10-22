@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use App\Chefsclub;
 use Illuminate\Http\Request;
 
 class ChefsclubController extends Controller {
@@ -17,8 +18,12 @@ class ChefsclubController extends Controller {
 		//
 	}
 
-        public function busca()
+        public function getBusca()
         {
-            return view('chefsclub.buscarestaurantes');
+            $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
+            $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
+            $restaurantes = Chefsclub::all()->take(10); 
+            
+            return view('chefsclub.listarestaurantes', compact('tipo_cozinha', 'descontos', 'restaurantes'));
         }
 }

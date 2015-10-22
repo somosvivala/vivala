@@ -30,12 +30,10 @@ class ViajarController extends VivalaBaseController {
 	 */
 	public function index()
 	{
-            $chefs = new \stdClass();
-            $chefs->num_pessoas = array(1,2,3,4,5);
-            $chefs->tipo_cozinha = Chefsclub::getTipoCozinhaForSelect()->lists('tipo_cozinha');
-            $chefs->descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
-            $chefs->restaurantes = Chefsclub::all()->take(10); 
+            $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
+            $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
+            $restaurantes = Chefsclub::all()->take(10); 
 
-            return view('viajar.index' , compact('chefs') );
+            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos') );
 	}
 }
