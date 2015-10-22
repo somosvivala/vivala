@@ -16,7 +16,16 @@ class FeedController extends Controller {
 	// Compartilha os posts para a view de feed
 	public function getFeeds($view){
 
-		$posts = Post::getUltimos();
+		$posts = Post::getUltimos()->keyBy('id');
+
+                if (env('POST_FIXO_ID') != null)
+                {
+                    $post_fixo = $posts->find(env('POST_FIXO_ID'));
+                    $posts->forget($post_fixo->id);
+                    $posts->prepend($post_fixo);
+                } else {
+                    dd('sem post fixo no env');
+                }
 
 		$view->with('posts', $posts);
 	}
