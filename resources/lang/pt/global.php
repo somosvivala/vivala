@@ -15,18 +15,17 @@ return[
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
 
-/* Pilares / Vertentes */
+// Vertentes
   'lbl_wanna_travel' => 'Quero Viajar',
   'lbl_wanna_connect' => 'Quero me Conectar',
-  'lbl_wanna_volunteer' => 'Quero Cuidar',
+  'lbl_wanna_volunteer' => 'Quero Transformar',
 
 /* Termos Globais */
   'lbl_about' => 'Sobre',
-  'lbl_about_us' => 'Sobre Nós',
   'lbl_acess_data' => 'Dados de Acesso',
   'lbl_activity_log' => 'Log de Atividades',
 
-  // Endereço
+// Endereço
   'lbl_address' => 'Endereço',
   'lbl_address_' => 'Endereços',
   'lbl_address_add' => 'Adicionar Endereço',
@@ -134,7 +133,7 @@ return[
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
 
-  'lbl_back' => 'Retornar',
+  'lbl_back' => 'Voltar',
   'lbl_best_rank' => 'Melhor classificação',
   'lbl_birthday' => 'Data de Nascimento',
   'lbl_birthday1' => 'Data de Aniversário',
@@ -154,7 +153,7 @@ return[
   'lbl_category_create_' => 'Criar Categorias',
   'lbl_category_no' => 'Sem categoria.',
   'lbl_category_no_' => 'Sem categorias.',
-  'lbl_cause_' => 'Causas',
+  'lbl_cause_' => 'Vagas',
   'lbl_cause_add' => 'Adicionar Vaga',
   'lbl_cause_add_' => 'Adicionar Vagas',
   'lbl_cause_adding' => 'Adicionando Vaga',
@@ -384,10 +383,10 @@ return[
   'lbl_ong_update' => 'Atualizar projeto de Impacto',
   'lbl_ong_update_' => 'Atualizar projetos de Impacto',
   'lbl_ong_no' => 'Sem projeto de Impacto.',
-  'lbl_ong_not_found' => 'Nenhuma projeto de Impacto encontrado.',
-  'lbl_ong_not_created' => 'Nenhuma projeto de Impacto criado.',
-  'lbl_ong_register' => 'Cadastrar projeto de Impacto',
-  'lbl_ong_register_' => 'Cadastrar projetos de Impacto',
+  'lbl_ong_not_found' => 'Nenhum projeto encontrado.',
+  'lbl_ong_not_created' => 'Nenhum Projeto criado.',
+  'lbl_ong_register' => 'Cadastrar Projeto de Impacto',
+  'lbl_ong_register_' => 'Cadastrar Projetos de Impacto',
 
     /* Cuidar - VAGAS */
     'lbl_ong_slot' => 'Vaga',
@@ -533,8 +532,8 @@ return[
     'lbl_travel_log_update' => 'Atualizar Diário de Viagem',
     'lbl_travel_most_popular' => 'Viagem mais popular',
     'lbl_travel_most_popular_' => 'As viagens mais populares',
-    'lbl_travel_most_comment' => 'Viagem mais desejada',
-    'lbl_travel_most_comment_' => 'As viagem mais desejadas',
+    'lbl_travel_most_comment' => 'Viagem mais comentada',
+    'lbl_travel_most_comment_' => 'As viagens mais comentadas',
     'lbl_travel_from' => 'Origem',
     'lbl_travel_to' => 'Destino',
     'lbl_traveller' => 'Viajante',
@@ -559,17 +558,17 @@ return[
     'lbl_video_send' => 'Enviar Vídeo',
     'lbl_video_update' => 'Atualizar Vídeo',
     'lbl_volunteer' => 'Voluntário',
-    'lbl_volunteer_' => 'VOluntários',
+    'lbl_volunteer_' => 'Voluntários',
     'lbl_volunteer_be' => 'Seja um Voluntário',
     'lbl_volunteer_not_found' => 'Nenhum voluntário encontrado.',
     'lbl_volunteer_profile' => 'Perfil Voluntário',
-    'lbl_volunteer_work_add' => 'Adicionar projeto de Impacto Social',
-    'lbl_volunteer_work_adding' => 'Adicionando projeto de Impacto Social',
-    'lbl_volunteer_work_create' => 'Criar projeto de Impacto Social',
-    'lbl_volunteer_work_edit' => 'Editar projeto de Impacto Social',
-    'lbl_volunteer_work_manage' => 'Gerenciar projeto de Impacto Social',
-    'lbl_volunteer_work_update' => 'Atualizar projeto de Impacto Social',
-    'lbl_volunteer_work_send' => 'Enviar projeto de Impacto Social',
+    'lbl_volunteer_work_add' => 'Adicionar Projeto de Impacto Social',
+    'lbl_volunteer_work_adding' => 'Adicionando Projeto de Impacto Social',
+    'lbl_volunteer_work_create' => 'Criar Projeto de Impacto Social',
+    'lbl_volunteer_work_edit' => 'Editar Projeto de Impacto Social',
+    'lbl_volunteer_work_manage' => 'Gerenciar Projeto de Impacto Social',
+    'lbl_volunteer_work_update' => 'Atualizar Projeto de Impacto Social',
+    'lbl_volunteer_work_send' => 'Enviar Projeto de Impacto Social',
     'lbl_you_are_in' => 'Você está em',
     'lbl_warning' => 'Aviso',
     'lbl_warning_' => 'Avisos',
@@ -659,8 +658,8 @@ return[
       'lbl_causa_create' => 'Criar Vaga',
 
     // sugestoeseongs.blade
-      'lbl_ongstofollowsuggests' => 'Sugestão de projetos de Impacto para seguir',
-      'lbl_noongsuggests' => 'Não encontramos nenhuma sugestão de projeto de Impacto.',
+      'lbl_ongstofollowsuggests' => 'Projetos de Impacto Social para seguir',
+      'lbl_noongsuggests' => 'Nenhuma sugestão de Projeto',
 
     // ultimosposts.blade
       'lbl_latestposts' => 'Confira os últimos posts',
@@ -748,7 +747,7 @@ return[
       'quiz_fromcomputer' => 'Do seu computador',
     /* Etapa 3 - Pegando alguns dados */
       'quiz_tell_us_more' => 'Conte mais sobre você',
-      'quiz_get_intimacy' => 'Estamos curiosos',
+      'quiz_get_intimacy' => 'Estamos curiosos!',
       'quiz_nickname' => 'COMO QUER SER CHAMADO?',
       'quiz_hometown' => 'QUAL SUA CIDADE DE ORIGEM?',
       'quiz_currentcity' => 'QUAL SUA CIDADE ATUAL?',
@@ -903,6 +902,6 @@ return[
       'contact_our_email' => 'Nosso email:',
       'contact_our_phone' => 'Nosso telefone:',
       'contact_our_address' => 'Nosso endereço',
-      ''
+      
 ];
 ?>
