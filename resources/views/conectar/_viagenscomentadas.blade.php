@@ -3,7 +3,7 @@
 </h4>
 <ul class="sugestoes viagens-comentadas">
 	<li>
-		<a href="/home">
+		<a href="/home" class="click-img-no-border">
 			<div class="round foto">
 				<div class="cover cover-explode">
 					<img src="/img/dummy.jpg">
@@ -15,7 +15,7 @@
 		</a>
 	</li>
 	<li>
-		<a href="/home">
+		<a href="/home" class="click-img-no-border">
 			<div class="round foto">
 				<div class="cover cover-explode">
 					<img src="/img/dummy2.jpg">
@@ -23,11 +23,11 @@
 			</div>
 			<strong class="col-sm-12">São Thomé</strong>
 			<span class="col-sm-12">Fui encontrar uma galera, a viagem foi incrível!</span>
-			<button class="suave" type="button">{{ trans('global.lbl_seemore') }}</button>
+			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>
 	<li>
-		<a href="/home">
+		<a href="/home" class="click-img-no-border">
 			<div class="round foto">
 				<div class="cover cover-explode">
 					<img src="/img/dummy3.jpg">

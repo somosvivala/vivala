@@ -11,9 +11,9 @@
     </h3>
     <ul class="filtro col-sm-12">
         <li class="col-sm-3">{{ trans('global.lbl_filter_by') }} &gt;</li>
-        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/amigo') }}">{{ trans('global.lbl_best_rank') }}</a></li>
-        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/numseguidores') }}">{{ trans('global.lbl_follower_number') }}</a></li>
-        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/seguindo') }}">{{ trans('global.lbl_follower_in_common') }}</a></li>
+        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/amigo') }}" class="click-img-no-border">{{ trans('global.lbl_best_rank') }}</a></li>
+        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/numseguidores') }}" class="click-img-no-border">{{ trans('global.lbl_follower_number') }}</a></li>
+        <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/seguindo') }}" class="click-img-no-border">{{ trans('global.lbl_follower_in_common') }}</a></li>
     </ul>
     <ul class="col-sm-12 sugestoes sugestoes-viajantes pagina-sugestoes">
         @if(isset($sugestoes))
@@ -39,7 +39,7 @@
             </div>
         </li>
         @empty
-            <p>{{ trans('globa.lbl_traveller_suggest_to_follow_no') }} :o</p>
+            <p>{{ trans('global.lbl_traveller_suggest_to_follow_no') }} :o</p>
         @endforelse
         @endif
     </ul>

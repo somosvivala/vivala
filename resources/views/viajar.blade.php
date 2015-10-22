@@ -1,7 +1,6 @@
 @extends('app')
 
 @section('pilar')
-
 	<nav class="navbar navbar-default menu-top header">
 		@include('header')
 	</nav>

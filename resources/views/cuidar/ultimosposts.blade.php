@@ -11,7 +11,7 @@
 			</div>
 			<strong class="col-sm-12">Salvador</strong>
 			<span class="col-sm-12">Uma viagem para entrar em contato com alto astral e cultura.</span>
-			<button class="suave" type="button">{{ trans('global.lbl_seemore') }}</button>
+			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>
 	<li>
@@ -23,7 +23,7 @@
 			</div>
 			<strong class="col-sm-12">São Thomé</strong>
 			<span class="col-sm-12">Fui encontrar uma galera, a viagem foi incrível!</span>
-			<button class="suave" type="button">{{ trans('global.lbl_seemore') }}</button>
+			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>
 	<li>
@@ -35,7 +35,7 @@
 			</div>
 			<strong class="col-sm-12">Bonito</strong>
 			<span class="col-sm-12">Uma viagem com muito verde, cavernas e coisas bonitas, eu adorei!</span>
-			<button class="suave" type="button">{{ trans('global.lbl_seemore') }}</button>
+			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>
 </ul>

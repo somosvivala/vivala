@@ -7585,6 +7585,14 @@ ul.filtro a {
 .height-100 {
   height: 100%;
 }
+a.click-img-no-border {
+  outline: none;
+}
+a.click-img-no-border:active,
+a.click-img-no-border:focus,
+a.click-img-no-border:hover {
+  outline: none;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -8381,7 +8389,6 @@ nav.menu-top .menu-principal ul li a:active {
 }
 nav.menu-top .menu-usuario ul {
   float: right;
-  text-transform: capitalize;
 }
 nav.menu-top .menu-usuario ul li a {
   padding: 0px;
@@ -9486,6 +9493,14 @@ ul.filtro a {
 }
 .height-100 {
   height: 100%;
+}
+a.click-img-no-border {
+  outline: none;
+}
+a.click-img-no-border:active,
+a.click-img-no-border:focus,
+a.click-img-no-border:hover {
+  outline: none;
 }
 #welcome-html {
   position: relative;

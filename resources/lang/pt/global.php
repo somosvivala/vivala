@@ -18,7 +18,7 @@ return[
 // Vertentes
   'lbl_wanna_travel' => 'Quero Viajar',
   'lbl_wanna_connect' => 'Quero me Conectar',
-  'lbl_wanna_volunteer' => 'Quero Transformar',
+  'lbl_wanna_volunteer' => 'Quero Cuidar',
 
 /* Termos Globais */
   'lbl_about' => 'Sobre',
@@ -132,7 +132,6 @@ return[
   // Aplicativo
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
-
   'lbl_back' => 'Voltar',
   'lbl_best_rank' => 'Melhor classificação',
   'lbl_birthday' => 'Data de Nascimento',
@@ -187,7 +186,7 @@ return[
   'lbl_cause_job_localization_ph' => 'Localização do trabalho.',
   'lbl_cause_job_supervisor' => 'Responsável pelo trabalho',
   'lbl_cause_job_supervisor_ph' => 'Responsável pelo trabalho.',
-  'lbl_cause_list' => 'Lista das Vagas',
+  'lbl_cause_list' => 'Lista de Vagas',
   'lbl_cause_listing' => 'Listando Vagas',
   'lbl_cause_manage' => 'Gerenciar Vaga',
   'lbl_cause_manage_' => 'Gerenciar Vagas',
@@ -203,6 +202,7 @@ return[
   'lbl_cellphone' => 'Celular',
   'lbl_chat' => 'Chat',
   'lbl_chat_with_friends' => 'Chat com Amigos',
+  'lbl_chat_with_volunteers' => 'Chat com Voluntários',
   'lbl_close' => 'Fechar',
   'lbl_city' => 'Cidade',
   'lbl_city_' => 'Cidades',
@@ -861,7 +861,7 @@ return[
     'quiz_traveller_motivation_cat-3' => 'Ver realidades diferentes da minha',
     'quiz_traveller_motivation_cat-4' => 'Vivenciar realidades diferentes da minha',
     'quiz_traveller_motivation_cat-5' => 'Buscar experiências que mudem a minha atitude',
-    'quiz_traveller_motivation_cat-6' => 'Achar respostas à questões existenciais',
+    'quiz_traveller_motivation_cat-6' => 'Achar respostas para questões existenciais',
     'quiz_traveller_motivation_cat-7' => 'Crescimento pessoal',
     'quiz_traveller_motivation_cat-8' => 'Imersão Cultural',
     'quiz_traveller_motivation_cat-9' => 'Diversão descompromissada e passatempos',
@@ -968,7 +968,7 @@ return[
     'manifest_fourth_paragraph_4' => 'Se a rotina existe, ela ficou pra trás. Estamos em busca de novs destinos em direção à liberdade.',
     'manifest_fifth_paragraph_1' => 'Somos do tipo que apoia a variedade de culturas, crenças, raças e pensamentos, que ainda acredita nas',
     'manifest_fifth_paragraph_2' => 'pessoas, ama o Brasil e aprecia as diferenças.',
-    'manifest_sixth_paragraph_1' => 'Porque no fim das contas existem três tipos de pessoas:',
+    'manifest_sixth_paragraph_1' => 'Porque no fim das contas existem três tipos de pessoa:',
     'manifest_sixth_paragraph_2' => '- Aquelas que não sabem o que acontece',
     'manifest_sixth_paragraph_3' => '- Aquelas que imaginam o que acontece',
     'manifest_sixth_paragraph_4' => '- E nós, que fazemos acontecer.',
@@ -1040,7 +1040,7 @@ return[
   //
   /* Financiamento Coletivo */
     'crowdfunding_title' => 'Financiamento Coletivo',
-    'crowdfunding_hi_there' => 'Olá',
+    'crowdfunding_hi_there' => 'Olá viajante!',
     'crowdfunding_page_and_plan' => 'Essa página ainda não está disponível. Estamos com o plano pronto,',
     'crowdfunding_we_need_you' => 'mas precisamos do seu apoio no financiamento coletivo.',
     'crowdfunding_support_vivala' => 'Apoie a Vivalá através de:',

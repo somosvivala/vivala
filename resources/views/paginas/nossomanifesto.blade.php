@@ -11,9 +11,7 @@
         </h3>
     </div>
     <div class="row margin-b-2">
-        {{-- Colocar o vídeo do financiamento assim que estiver pronto, Vimeo ou Youtube? --}}
-        <img src="/img/dummy.jpg" alt="Vivalá" title="Vivalá" class="col-sm-12"></img>
-        <!-- iframe src="http://www.youtube.com/embed/dQw4w9WgXcQ"></iframe -->
+        <iframe src="http://www.youtube.com/embed/IIIvwVXT1R8"></iframe>
     </div>
     <div class="col-sm-12">
         <div class="col-sm-12 cursor-default">
@@ -60,7 +58,7 @@
                 <br/>
                 {{ trans('global.manifest_seventh_paragraph_3') }}
                 <br/>
-                <span class="laranja-hover">{{ trans('global.lbl_vivala') }}</span>
+                <span class="suave laranja-hover">{{ trans('global.lbl_vivala') }}</span>
             </p>
         <div>
     </div>

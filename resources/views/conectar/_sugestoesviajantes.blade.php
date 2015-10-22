@@ -7,8 +7,8 @@
 	@forelse($sugestoesViajantes as $Perfil)
 		<li>
 			{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
-			<button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
-			<a href="{{ url($Perfil->getUrl()) }}">
+			<button name='btn_seguir' type="submit" class="btn_seguir_viajante click-img-no-border" data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
+			<a href="{{ url($Perfil->getUrl()) }}" class="click-img-no-border">
 				<div class="round foto">
 					<div class="cover">
 						<img src="{{ $Perfil->getAvatarUrl() }}" alt=" {{ $Perfil->nome }}">
@@ -35,6 +35,6 @@
 @if (Auth::user()->entidadeAtiva->tipo == 'ong')
 @else
 <div class="row text-center">
-	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao ">{{ trans('global.lbl_seemore') }}</a>
+	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
 </div><br>
 @endif
