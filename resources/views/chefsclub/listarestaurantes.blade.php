@@ -1,5 +1,8 @@
 
 <div class="margin-t-2 row detalhes-lista">
+    <div class="col-sm-12">
+        <h4 class="font-bold-upper">Mais de {{ round($restaurantes_total/100)*100 }} restaurantes disponíveis</h4>
+    </div>
     @foreach($restaurantes as $r)
     <div class="col-sm-6 margin-t-2">
         <div class="restaurante col-sm-12">
@@ -12,10 +15,12 @@
                     <span class=""><i class="fa fa-map-marker"></i> {{ $r->endereco }}</span>
                     <div class="row maisinfos">
                         <div class="col-sm-4"><i class="fa fa-male"></i> 1 - <?php preg_match('/[0-9]/',$r->beneficio,$match); echo $match[0]+1; ?></div>
-                        <div class="col-sm-4"><?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i> "; ?></div>
-                        <div class="col-sm-4"><ul><?php foreach(explode(' ',$r->tipo_cozinha) as $tipo) echo "<li>$tipo</li>"; ?></ul></div>
+                        <div class="col-sm-3"><?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i> "; ?></div>
+                        <div class="col-sm-5"><ul><?php foreach(explode(' ',$r->tipo_cozinha) as $tipo) echo "<li>$tipo</li>"; ?></ul></div>
                     </div>
-                    <button class="btn detalhes-restaurante" type="button" data-restaurante-id="{{ $r->id }}" data-toggle="modal" data-target="#{{ $r->id }}">Detalhes</button>
+                    <div class="row text-center">
+                        <button class="btn suave detalhes-restaurante" type="button" data-restaurante-id="{{ $r->id }}" data-toggle="modal" data-target="#{{ $r->id }}">Detalhes</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -27,7 +32,7 @@
 
             <div class="modal-content">
                 <div class="modal-body">
-                    {{ $r->restaurante }}
+                    <h5 class="font-bold-upper">{{ $r->restaurante }}</h5>
                     {{ $r->desconto }}
                     {{ $r->endereco }}
                     {{ $r->tipo_cozinha }}
