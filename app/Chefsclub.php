@@ -22,28 +22,78 @@ class Chefsclub extends Model {
         return self::distinct()->select('desconto')->get();
     }
 
+    public static function getQuantidadeForSelect($parse = false) 
+    {
+        $result = self::distinct()->select('beneficio')->get()->toArray();
+        print_r($result);
+        if ($parse == true) {
+            foreach ($result as &$value) {
+                preg_match("/\d/", $value['beneficio'], $qtd);
+                $qtd = $qtd[0] + 1;
+                $value = [$qtd => $qtd." Adultos"];
+            }
+        }
+        return $result;
+    }
+
     public static function getCidadeForSelect()
     {
         return array(
-            ['id' => 2,  'cidade' => 'Rio de Janeiro',              'estado' = 'RJ'],
-            ['id' => 3,  'cidade' => 'Porto Alegre',                'estado' = 'RS'],
-            ['id' => 4,  'cidade' => 'Baixada Fluminense',          'estado' = 'RJ'],
-            ['id' => 5,  'cidade' => 'Brasília',                    'estado' = 'DF'],
-            ['id' => 7,  'cidade' => 'Niteroi',                     'estado' = 'RJ'],
-            ['id' => 10, 'cidade' => 'Belo Horizonte',              'estado' = 'MG'],
-            ['id' => 12, 'cidade' => 'Balneário Camburiú e Região', 'estado' = 'SC'],
-            ['id' => 13, 'cidade' => 'São Paulo',                   'estado' = 'SP'],
-            ['id' => 14, 'cidade' => 'Curitiba',                    'estado' = 'PR'],
-            ['id' => 15, 'cidade' => 'Salvador',                    'estado' = 'BA'],
-            ['id' => 18, 'cidade' => 'Ribeirão Preto',              'estado' = 'SP'],
-            ['id' => 20, 'cidade' => 'Florianópolis',               'estado' = 'SC'],
-            ['id' => 21, 'cidade' => 'Fortaleza',                   'estado' = 'CE'],
-            ['id' => 22, 'cidade' => 'Recife',                      'estado' = 'PE'],
-            ['id' => 23, 'cidade' => 'Joinville',                   'estado' = 'SC'],
-            ['id' => 24, 'cidade' => 'Criciúma',                    'estado' = 'SC'],
-            ['id' => 25, 'cidade' => 'Vitória e Região',            'estado' = 'RJ'],
-            ['id' => 27, 'cidade' => 'Goiânia',                     'estado' = 'GO'],
-            ['id' => 29, 'cidade' => 'Campinas',                    'estado' = 'SP']
+            ['id' => 2,  'cidade' => 'Rio de Janeiro',              'estado' => 'RJ'],
+            ['id' => 3,  'cidade' => 'Porto Alegre',                'estado' => 'RS'],
+            ['id' => 4,  'cidade' => 'Baixada Fluminense',          'estado' => 'RJ'],
+            ['id' => 5,  'cidade' => 'Brasília',                    'estado' => 'DF'],
+            ['id' => 7,  'cidade' => 'Niteroi',                     'estado' => 'RJ'],
+            ['id' => 10, 'cidade' => 'Belo Horizonte',              'estado' => 'MG'],
+            ['id' => 12, 'cidade' => 'Balneário Camburiú e Região', 'estado' => 'SC'],
+            ['id' => 13, 'cidade' => 'São Paulo',                   'estado' => 'SP'],
+            ['id' => 14, 'cidade' => 'Curitiba',                    'estado' => 'PR'],
+            ['id' => 15, 'cidade' => 'Salvador',                    'estado' => 'BA'],
+            ['id' => 18, 'cidade' => 'Ribeirão Preto',              'estado' => 'SP'],
+            ['id' => 20, 'cidade' => 'Florianópolis',               'estado' => 'SC'],
+            ['id' => 21, 'cidade' => 'Fortaleza',                   'estado' => 'CE'],
+            ['id' => 22, 'cidade' => 'Recife',                      'estado' => 'PE'],
+            ['id' => 23, 'cidade' => 'Joinville',                   'estado' => 'SC'],
+            ['id' => 24, 'cidade' => 'Criciúma',                    'estado' => 'SC'],
+            ['id' => 25, 'cidade' => 'Vitória e Região',            'estado' => 'RJ'],
+            ['id' => 27, 'cidade' => 'Goiânia',                     'estado' => 'GO'],
+            ['id' => 29, 'cidade' => 'Campinas',                    'estado' => 'SP']
         );
+    }
+
+    public static function getRestaurant($filters)
+    {
+        $params = array(
+            'nome'     => null,
+            'date'     => null,
+            'time'     => null,
+            'city'     => null,
+            'type'     => null,
+            'quantity' => null
+        );
+        $params = array_merge($params, $filters);
+
+        $query =  DB::table('chefsclub');
+
+        if (isset($params['nome'])) {
+            $query->where('restaurante', 'like', "%{$params['nome']}%");
+        }
+        if (isset($params['date'])) {
+            $query->where('horario', 'like', "%{$params['date']}%");
+        }
+        if (isset($params['time'])) {
+            $query->where(DB::raw($params['time']'::time BETWEEN horario_abre AND horario_fecha'));
+        }
+        if (isset($params['city'])) {
+            $query->where('codigo_cidade', $params['city']);
+        }
+        if (isset($params['type'])) {
+            $query->where('tipo_cozinha', 'like', "%{$params['type']}%");
+        }
+        if (isset($params['quantity'])) {
+            $query->where('beneficio', 'like', "%{$params['beneficio']}%");
+        }
+
+        return $query->get()->toArray();
     }
 }
