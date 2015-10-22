@@ -2,36 +2,37 @@
 
 @section('content')
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
-
     <div class="row">
         <h3 class="font-bold-upper text-center margin-b-2">
-            Parceiros
+            {{ trans('golbal.partners_title') }}
             <small class="sub-titulo margin-t-1">
-                Todos juntos ou não somos ninguém.
+                {{ trans('global.partners_subtitle') }}
             </small>
         </h3>
     </div>
-
     <div class="row margin-b-2">
-        <img src="/img/parceiros.png" alt="O Que Fazemos" title="O Que Fazemos" class="width-100"></img>
+        <img src="/img/parceiros.png" alt="{{ trans('global.partners_coverphoto_img_alt') }}" title="{{ trans('global.partners_coverphoto_img_title') }}" class="width-100"></img>
     </div>
-
     <div class="row">
         <div class="col-sm-12 padding-b-4">
             <div class="col-sm-12">
                 <p class="text-justify">
-                Para criar uma plataforma de viagens extremamente completa e integrada a Vivalá conta com diversos parceiros que juntos, disponibilizam:<br>
-                <br>
-                - Mais de 200.000 hotéis em 8.000 destinos<br>
-                - 500 empresas de aviação com serviços para todo o mundo<br>
-                - Mais de 30 empresas de aluguel de carro em 30.000 destinos<br>
-                - 1.582 restaurantes em 19 cidades brasileiras<br>
-                - 3.000 destinos de ônibus no Brasil operados por 40 empresas rodoviárias<br>
+                    {{ trans('global.partners_main_text') }}
+                    <br/>
+                    <br/>
+                    {{ trans('global.partners_text_1') }}
+                    <br/>
+                    {{ trans('global.partners_text_2') }}
+                    <br/>
+                    {{ trans('global.partners_text_3') }}
+                    <br/>
+                    {{ trans('global.partners_text_4') }}
+                    <br/>
+                    {{ trans('global.partners_text_5') }}
                 </p>
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-sm-12 text-center">
             {{-- TODO: Trabalhar no responsivo dos logos, lembrar --}}

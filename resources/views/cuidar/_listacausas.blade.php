@@ -1,5 +1,5 @@
 <h4 class="suave">
-	Sugestão de ONGs para seguir
+	Sugestão de Projetos de Impacto para seguir
 </h4>
 <ul class="sugestoes sugestoes-ongs">
 

@@ -1,5 +1,5 @@
 <div class="logo-menu">
-	<a class="navbar-brand logo" href="{{ url('home') }}"><img src="/logo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
+	<a class="navbar-brand logo click-img-no-border" href="{{ url('home') }}"><img src="/logo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
 </div>
 
 <div class="menu-principal">
@@ -12,19 +12,19 @@
 			<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
 		@else
 			<li class="menu-viajar">
-				<a href="{{ url('/viajar') }}" >
+				<a href="{{ url('/viajar') }}" class="click-img-no-border">
 					<i class="icon36 icon-viajar"></i>
 					<span>{{ trans('global.lbl_wanna_travel') }}</span>
 				</a>
 			</li>
 			<li class="menu-conectar">
-				<a href="{{ url('/conectar') }}">
+				<a href="{{ url('/conectar') }}" class="click-img-no-border">
 					<i class="icon36 icon-conectar"></i>
 					<span>{{ trans('global.lbl_wanna_connect') }}</span>
 				</a>
 			</li>
 			<li class="menu-cuidar">
-				<a href="{{ url('/cuidar') }}">
+				<a href="{{ url('/cuidar') }}" class="click-img-no-border">
 					<i class="icon36 icon-cuidar"></i>
 					<span>{{ trans('global.lbl_wanna_volunteer') }}</span>
 				</a>
@@ -34,16 +34,19 @@
 </div>
 
 <div class="notificacoes">
-	<button type="button" id="notificacoes-follow" data-unread="0" title='{{ trans("global.lbl_follower_") }}'><img src="/images/iconperson.png" alt='{{ trans("global.lbl_follower_") }}'></button>
+	<button type="button" id="notificacoes-follow" data-unread="0" title='{{ trans("global.lbl_follower_") }}'>
+		<img src="/images/iconperson.png" alt='{{ trans("global.lbl_follower_") }}'></button>
 	<div class="notificacoes-follow">
 	    @include('_notificacoesFollow')
 	</div>
 
-	<button type="button" id="notificacoes-msg" data-unread="0" title='{{ trans("global.lbl_message_") }}'><img src="/images/iconmsg.png" alt='{{ trans("global.lbl_message_") }}'></button>
+	<button type="button" id="notificacoes-msg" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
+		<img src="/images/iconmsg.png" alt='{{ trans("global.lbl_message_") }}'></button>
   <div class="notificacoes-msg">
       @include('_notificacoesMsg')
   </div>
-	<button type="button" id="notificacoes-geral" data-unread="0" title='{{ trans("global.lbl_notification_") }}'><img src="/images/iconbr.png" alt='{{ trans("global.lbl_notification_") }}'></button>
+	<button type="button" id="notificacoes-geral" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
+		<img src="/images/iconbr.png" alt='{{ trans("global.lbl_notification_") }}'></button>
   <div class="notificacoes-geral">
       @include('_notificacoesGeral')
   </div>
@@ -54,85 +57,61 @@
         @if (Auth::user())
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                <div class="pull-left hello hidden-xs hidden-sm hidden-md">{{ trans('global.lbl_hello') }} {{ Auth::user()->entidadeAtiva->apelido }}</div>
+                <div class="pull-left hello hidden-xs hidden-sm hidden-md">
+									{{ trans('global.lbl_hello') }} {{ Auth::user()->entidadeAtiva->apelido }}
+								</div>
                 <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
                 <ul class="dropdown-menu submenu" role="menu">
                     @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
-                        <li> <span> {{ trans('global.lbl_use_as')}}:</span> </li>
+                        <li>
+													<p>{{ trans('global.lbl_use_as')}}:</p>
+												</li>
                     @endif
-
                     {{-- Se a entidade ativa não for um perfil lista o perfil para ativar --}}
                     @if ( strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil" )
-                        <li class="row">
-                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => Auth::user()->perfil->id , 'tipo' => 'perfil' ]) }}">
-                                <div class="col-sm-4">
-                                    <img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->perfil->apelido }}">
-                                </div>
-                                <div class="col-sm-8">
-                                    {{ Auth::user()->perfil->apelido }}
-                                </div>
-                            </a>
-                        </li>
+                      <li class="row">
+                        <a href="{{ action('PaginaController@getAcessarcomo', ['id' => Auth::user()->perfil->id , 'tipo' => 'perfil' ]) }}" class="click-img-no-border">
+                          <div class="col-sm-4">
+                              <img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->perfil->apelido }}">
+                          </div>
+                          <div class="col-sm-8">
+                              {{ Auth::user()->perfil->apelido }}
+                          </div>
+                        </a>
+                      </li>
                     @endif
                     @if( isset($paginas) && count($paginas) > 0 )
                     @foreach($paginas as $Pagina)
-                        <li class="row">
-                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}">
-                                <div class="col-sm-4">
-                                    <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
-                                </div>
-                                <div class="col-sm-8">
-                                    {{ $Pagina->nome }}
-                                </div>
-                            </a>
-                        </li>
+                      <li class="row">
+                        <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}" class="click-img-no-border">
+                          <div class="col-sm-4">
+                              <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
+                          </div>
+                          <div class="col-sm-8">
+                              {{ $Pagina->nome }}
+                          </div>
+                        </a>
+                      </li>
                     @endforeach
-                    <li><a href="{{ url('paginas/gerenciar') }}">{{ trans('global.lbl_seemore1') }}</a> </li>
+                    <li class="margin-t-1"><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
+										</li>
                     @endif
                     <li class="subsubmenu">
                         <ul>
-                            <li>
-                                <a href="{{ url('paginas/criarpagina') }}">
-                                    <i class="fa fa-plus"></i>
-                                    <span> {{ trans('global.lbl_page_create') }} </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ url('paginas/gerenciar') }}">
-                                    <i class="fa fa-star"></i>
-                                    <span>{{ trans('global.lbl_page_manage') }}</span>
-                                </a>
-                            </li>
+                          <li><a href="{{ url('paginas/criarpagina') }}" class="click-img-no-border"><i class="fa fa-plus"></i><span> {{ trans('global.lbl_page_create') }}</span></a></li>
+                          <li><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border"><i class="fa fa-star"></i><span> {{ trans('global.lbl_page_manage') }}</span></a></li>
                         </ul>
                     </li>
                     <li class="subsubmenu">
                         <ul>
-                            <li>
-                                <a href="{{ url('vagas/create') }}">
-                                    <i class="fa fa-plus"></i>
-                                    <span> {{ trans('global.lbl_causa_create') }} </span>
-                                </a>
-                            </li>
+                            <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-plus"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="{{ url('perfil') }}">
-                            <i class="fa fa-user"></i>
-                            <span>{{ trans('global.lbl_profile') }}</span>
-                        </a>
-                    </li>
-
-                    {{--
-                    <li><a href="{{ url('config') }}">
-                            <i class="fa fa-cogs"></i>
-                            <span>{{ trans('global.lbl_setting_') }}</span>
-                    </a></li>
-                    --}}
-
-                    <li><a href="{{ url('/auth/logout') }}">
-                            <i class="fa fa-power-off"></i>
-                            <span>{{ trans('global.lbl_logout') }}</span>
-                    </a></li>
+                    <li><a href="{{ url('perfil') }}" class="click-img-no-border"><i class="fa fa-user"></i><span> {{ trans('global.lbl_profile') }}</span></a></li>
+										{{--
+                    <li><a href="{{ url('config') }}" class="click-img-no-border"><i class="fa fa-cogs"></i><span> {{ trans('global.lbl_setting_') }}</span></a></li>
+										--}}
+                    <li><a href="{{ url('/auth/logout') }}" class="click-img-no-border"><i class="fa fa-power-off"></i><span> {{ trans('global.lbl_logout') }}</span></a></li>
                 </ul>
             </a>
         </li>

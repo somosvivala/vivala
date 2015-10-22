@@ -1,25 +1,21 @@
 @extends('conectar')
 
 @section('content')
-
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
-
     <h3 class="font-bold-upper text-center margin-b-2">
-        {{ trans('global.lbl_contact') }}
+        {{ trans('global.contact_title') }}
         <small class="sub-titulo margin-t-1">
-            {{ trans('global.contact_keep_in_contact') }}
+            {{ trans('global.contact_subtitle') }}
         </small>
     </h3>
-
     <div class="col-sm-5">
         <p>
-        Se estiver afim de dar um alô e bater um lero, é só dar uma ligada, mandar um e-mail ou fazer uma visitinha... Você quem decide! O que importa é que estamos sempre de braços abertos para te receber e te ouvir, escutar sua opinião e suas sugestões.
+            {{ trans('global.contact_text_1') }}
         </p>
         <p class="margin-b-2">
-        Aqui não tem enrolação. O pessoal da Vivalá é gente boa e ama conhecer gente nova! vamos, com muito prazer, escutar tudo o que você tem a dizer!
+            {{ trans('global.contact_text_2') }}
         </p>
         <hr style="border: 0; height: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
-
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
                 {{ trans('global.contact_our_email') }}
@@ -41,7 +37,7 @@
                 {{ trans('global.contact_our_address') }}
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="https://www.google.com.br/maps/place/R.+Aspicuelta,+345+-+Alto+de+Pinheiros,+S%C3%A3o+Paulo+-+SP/@-22.8755115,-46.1800783,6z/data=!4m2!3m1!1s0x94ce57978b550665:0xc675435d412b5648" target="_blank">Rua Aspicuelta, 345 - São Paulo, SP</a>
+                <a class="laranja font-bold-upper" title="CLique para abrir no Google Maps" href="https://www.google.com.br/maps/place/R.+Aspicuelta,+345+-+Alto+de+Pinheiros,+S%C3%A3o+Paulo+-+SP/@-22.8755115,-46.1800783,6z/data=!4m2!3m1!1s0x94ce57978b550665:0xc675435d412b5648" target="_blank">Rua Aspicuelta, 345 - São Paulo, SP</a>
             </div>
         </div>
     </div>
@@ -55,13 +51,12 @@
         {!! Form::close() !!}
     </div>
     <div class="row col-sm-12 container-fluid margin-t-3">
-            <div id="vivala-social-network" class="text-right">
-                <a href="https://facebook.com/somosvivala" title="Vivalá no Facebook" alt="Vivalá no Facebook" target="_blank"><i class="fa fa-2x fa-facebook-square laranja"></i></a>
-                <a href="https://instagram.com/somosvivala" title="Vivalá no Instagram" alt="Vivalá no Instagram" target="_blank"><i class="fa fa-2x fa-instagram laranja"></i></a>
-                <a href="" title="Vivalá no Youtube" alt="Vivalá no Youtube" target="_blank"><i class="fa fa-2x fa-youtube-square laranja"></i></a>
-                <a href="https://www.linkedin.com/company/6612965" title="Vivalá no Linkedin" alt="Vivalá no Linkedin" target="_blank"><i class="fa fa-2x fa-linkedin-square laranja"></i></a>
-            </div>
-        </
+        <div id="vivala-social-network" class="text-right">
+            <a href="https://facebook.com/somosvivala" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" target="_blank"><i class="fa fa-2x fa-facebook-square laranja"></i></a>
+            <a href="https://instagram.com/somosvivala" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" target="_blank"><i class="fa fa-2x fa-instagram laranja"></i></a>
+            <a href="" alt="{{ trans('global.social_network_youtube_img_alt') }}" title="{{ trans('global.social_network_youtube_img_title') }}" target="_blank"><i class="fa fa-2x fa-youtube-square laranja"></i></a>
+            <a href="https://www.linkedin.com/company/6612965" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}"  target="_blank"><i class="fa fa-2x fa-linkedin-square laranja"></i></a>
+        </div>
     </div>
 </div>
 @endsection

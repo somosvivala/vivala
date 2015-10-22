@@ -149,10 +149,20 @@ return[
   'lbl_category_' => 'Categorias',
   'lbl_category_add' => 'Adicionar Categoria',
   'lbl_category_add_' => 'Adicionar Categorias',
+  'lbl_category_adding' => 'Adicionando Categoria',
+  'lbl_category_adding_' => 'Adicionando Categorias',
+  'lbl_category_choose' => 'Escolher uma Categoria',
+  'lbl_category_choose_' => 'Escolher Categorias',
+  'lbl_category_choosing' => 'Escolhendo uma Categoria',
+  'lbl_category_choosing_' => 'Escolhendo Categorias',
   'lbl_category_create' => 'Criar Categoria',
   'lbl_category_create_' => 'Criar Categorias',
+  'lbl_category_creating' => 'Criando Categoria',
+  'lbl_category_creating_' => 'Criando Categorias',
   'lbl_category_no' => 'Sem categoria.',
   'lbl_category_no_' => 'Sem categorias.',
+  'lbl_category_not_created' => 'Nenhuma categoria criada.',
+  'lbl_category_not_founded' => 'Nenhuma categoria encontrada.',
   'lbl_cause_' => 'Vagas',
   'lbl_cause_add' => 'Adicionar Vaga',
   'lbl_cause_add_' => 'Adicionar Vagas',
@@ -190,6 +200,7 @@ return[
   'lbl_cause_submit_' => 'Submeter Vagas',
   'lbl_cause_update' => 'Atualizar Vaga',
   'lbl_cause_update_' => 'Atualizar Vagas',
+  'lbl_cellphone' => 'Celular',
   'lbl_chat' => 'Chat',
   'lbl_chat_with_friends' => 'Chat com Amigos',
   'lbl_close' => 'Fechar',
@@ -235,12 +246,13 @@ return[
   'lbl_contact' => 'Contato',
   'lbl_contact_' => 'Contatos',
   'lbl_continue' => 'Continuar',
-  'lbl_cellphone' => 'Celular',
   'lbl_cookie' => 'Cookie',
   'lbl_cookie_' => 'Cookies',
   'lbl_cookie_use' => 'Uso de Cookies',
   'lbl_cover_photo' => 'Imagem de Capa',
-
+  'lbl_culture' => 'Cultura',
+  'lbl_culture_' => 'Culturas',
+  'lbl_culture_foment' => 'Fomentar Cultura',
   'lbl_create' => 'Criar',
   'lbl_created_at' => 'Criado em',
   'lbl_culture_brazilian' => 'Cultura Brasileira',
@@ -322,6 +334,8 @@ return[
   'lbl_img_send' => 'Enviar Imagem',
   'lbl_img_update' => 'Atualizar Imagem',
   'lbl_index' => 'Índice:',
+  'lbl_info' => 'Informação',
+  'lbl_info_' => 'Informações',
   'lbl_interest' => 'Interesse',
   'lbl_interest_' => 'Interesses',
   'lbl_interest_no' => 'Nenhum interesse',
@@ -341,7 +355,6 @@ return[
   'lbl_login_keepme' => 'Mantenha-me conectado',
   'lbl_logout' => 'Sair',
   'lbl_manifest' => 'Manifesto',
-  'lbl_manifest_our' => 'Nosso Manifesto',
   'lbl_memorie' => 'Lembrança',
   'lbl_memorie_' => 'Lembranças',
   'lbl_message' => 'Mensagem',
@@ -419,12 +432,23 @@ return[
     'lbl_page' => 'Página',
     'lbl_page_' => 'Páginas',
     'lbl_page_add' => 'Adicionar Página',
+    'lbl_page_add_' => 'Adicionar Páginas',
     'lbl_page_adding' => 'Adicionando Página',
+    'lbl_page_adding_' => 'Adicionando Páginas',
     'lbl_page_create' => 'Criar Página',
+    'lbl_page_create_' => 'Criar Páginas',
+    'lbl_page_creating' => 'Criando Página',
+    'lbl_page_creating_' => 'Criando Páginas',
     'lbl_page_edit' => 'Editar Página',
+    'lbl_page_edit_' => 'Editar Páginas',
+    'lbl_page_editing_' => 'Editando Página',
+    'lbl_page_editing_' => 'Editando Páginas',
     'lbl_page_manage' => 'Gerenciar Páginas',
     'lbl_page_submit' => 'Enviar Página',
     'lbl_page_update' => 'Atualizar Página',
+    'lbl_page_no' => 'Sem páginas.',
+    'lbl_page_not_created' => 'Nenhuma página foi criada.',
+    'lbl_page_not_founded' => 'Nenhuma página foi encontrada.',
     'lbl_pagination_next' => 'Próxima',
     'lbl_pagination_previous' => 'Anterior',
     'lbl_password' => 'Senha',
@@ -453,7 +477,6 @@ return[
     'lbl_post_see_complete' => 'Ver mais desta publicação.',
     'lbl_previous' => 'Anterior',
     'lbl_prettyURL' => 'Sua Endereço',
-
     'lbl_profile' => 'Perfil',
     'lbl_profile_' => 'Perfis',
     'lbl_profile_delete' => 'Deletar Perfil',
@@ -505,6 +528,7 @@ return[
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
     'lbl_step' => 'Passo',
+    'lbl_start' => 'Começar',
     'lbl_step_skip' => 'Pular etapa',
     'lbl_step_back' => 'Voltar',
     'lbl_submit' => 'Enviar',
@@ -623,12 +647,32 @@ return[
       'social_network_github' => 'GitHub',
       'social_network_gplus' => 'Google Plus',
       'social_network_instagram' => 'Instagram',
+      'social_network_linkedin' => 'LinkedIn',
       'social_network_snapchat' => 'Snapchat',
       'social_network_swarm' => 'Swarm',
       'social_network_tumblr' => 'Tumblr',
       'social_network_twitter' => 'Twitter',
       'social_network_yahoo' => 'Yahoo!',
       'social_network_youtube' => 'YouTube',
+      //
+      'social_network_facebook_img_alt' => 'Vivalá no Facebook',
+      'social_network_facebook_img_title' => 'Curta a Vivalá no Facebook',
+      'social_network_github_img_alt' => 'Vivalá no GitHub',
+      'social_network_github_img_title' => 'somosvivala no GitHub',
+      'social_network_gplus_img_alt' => 'Vivalá no Google+',
+      'social_network_gplus_img_title' => 'Curta a Vivalá no Google+',
+      'social_network_instagram_img_alt' => 'Vivalá no Instagram',
+      'social_network_instagram_img_title' => 'Siga a Vivalá no Instagram',
+      'social_network_linkedin_img_alt' => 'Vivalá no LinkedIn',
+      'social_network_linkedin_img_title' => 'Curta a página da Vivalá no LinkedIn',
+      'social_network_snapchat_img_alt' => 'Vivalá no Snapchat',
+      'social_network_snapchat_img_title' => 'Siga a Vivalá no Snapchat',
+      'social_network_swarm_img_alt' => 'Vivalá no Swarm',
+      'social_network_swarm_img_title' => 'Veja os passos da Vivalá no Swarm',
+      'social_network_twitter_img_alt' => 'Vivalá no Twitter',
+      'social_network_twitter_img_title' => 'Siga a Vivalá no Twitter',
+      'social_network_youtube_img_alt' => 'Vivalá no YouTube',
+      'social_network_youtube_img_title' => 'Siga o canal da Vivalá no YouTube',
 
   // View: Album
 
@@ -699,11 +743,14 @@ return[
     'ong_contact_manager' => 'Selecionar Responsável',
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',
-
     'ong_search_for_ongs' => 'Procurando por Projetos de Impacto?',
     'ong_find_ongs_three_steps' => 'Encontre Projetos de Impacto em três passos.',
 
   /* View: Páginas */
+    'pages_join_people' => ' Junte-se as pessoas que apoiam você na Vivalá! ',
+    'pages_by_clicking' => 'Ao clicar em Começar, você concorda com os',
+    'pages_terms_and_conditions' => 'Termos das Páginas da Vivalá',
+
 
   /* View: Perfil */
 
@@ -783,19 +830,18 @@ return[
 
 
 /*------------------------------------------------------------------------------
-//  Traduções com BD-mixed
+/  Traduções com BD-mixed
 ------------------------------------------------------------------------------*/
-
   /* Categorias do Quiz */
     'quiz_traveller_style_cat-1' => 'Mochileiro',
     'quiz_traveller_style_cat-2' => 'Original',
     'quiz_traveller_style_cat-3' => 'Conforto',
-
+    //
     'quiz_traveller_partner_cat-1' => 'Sozinho',
     'quiz_traveller_partner_cat-2' => 'Em Família',
     'quiz_traveller_partner_cat-3' => 'Com Amigos',
     'quiz_traveller_partner_cat-4' => 'Em Casal',
-
+    //
     'quiz_traveller_ambient_cat-1' => 'Praia e Sol',
     'quiz_traveller_ambient_cat-2' => 'Montanha',
     'quiz_traveller_ambient_cat-3' => 'Ecoturismo',
@@ -803,13 +849,13 @@ return[
     'quiz_traveller_ambient_cat-5' => 'Cidades Pequenas',
     'quiz_traveller_ambient_cat-6' => 'Cidades Grandes',
     'quiz_traveller_ambient_cat-7' => 'Retiros Espirituais',
-
+    //
     'quiz_traveller_region_cat-1' => 'Norte',
     'quiz_traveller_region_cat-2' => 'Nordeste',
     'quiz_traveller_region_cat-3' => 'Centro-Oeste',
     'quiz_traveller_region_cat-4' => 'Sul',
     'quiz_traveller_region_cat-5' => 'Sudeste',
-
+    //
     'quiz_traveller_motivation_cat-1' => 'Conhecer locais famosos',
     'quiz_traveller_motivation_cat-2' => 'Explorar locais desconhecidos',
     'quiz_traveller_motivation_cat-3' => 'Ver realidades diferentes da minha',
@@ -821,7 +867,7 @@ return[
     'quiz_traveller_motivation_cat-9' => 'Diversão descompromissada e passatempos',
     'quiz_traveller_motivation_cat-10' => 'Descansar a mente para retomar o cotidiano',
     'quiz_traveller_motivation_cat-11' => 'Gosto de não fazer nada',
-
+    //
     'quiz_traveller_events_cat-1' => 'Eventos Típicos (Carnaval, Festa Junina, etc)',
     'quiz_traveller_events_cat-2' => 'Bares',
     'quiz_traveller_events_cat-3' => 'Baladas',
@@ -835,7 +881,7 @@ return[
     'quiz_traveller_events_cat-11' => 'Restaurantes de Comida Típica',
     'quiz_traveller_events_cat-12' => 'Conhecer Projetos Sociais',
     'quiz_traveller_events_cat-13' => 'Ser Voluntário em Projetos Sociais',
-
+    //
   /* Categorias de Empresas */
     'company_type-cat-1' => 'Aeroespacial/Defesa',
     'company_type-cat-2' => 'Alimentos/Bebidas',
@@ -875,7 +921,7 @@ return[
     'company_type-cat-36' => 'Transporte/Frete',
     'company_type-cat-37' => 'Universidade',
     'company_type-cat-38' => 'Viagem/Lazer',
-
+    //
   /* Categorias da ONU */
     'ong_onu_cat-1' => 'Acabar com a fome e a miséria',
     'ong_onu_cat-2' => 'Educação básica de qualidade para todos',
@@ -885,7 +931,7 @@ return[
     'ong_onu_cat-6' => 'Combater a AIDS, a malária e outras doenças',
     'ong_onu_cat-7' => 'Qualidade de vida e respeito ao meio-ambiente',
     'ong_onu_cat-8' => 'Todo mundo trabalhando pelo Desenvolvimento',
-
+    //
   /* Categorias de Vagas */
     'ong_job_slot_avaiable_cat-1' => 'Acabar com a fome e a miséria',
     'ong_job_slot_avaiable_cat-2' => 'Educação básica de qualidade para todos',
@@ -896,12 +942,109 @@ return[
     'ong_job_slot_avaiable_cat-7' => 'Qualidade de vida e respeito ao meio-ambiente',
     'ong_job_slot_avaiable_cat-8' => 'Todo mundo trabalhando pelo Desenvolvimento',
 
-  /* Páginas */
-    /* Contato */
-      'contact_keep_in_contact' => 'Vem falar com a gente!',
-      'contact_our_email' => 'Nosso email:',
-      'contact_our_phone' => 'Nosso telefone:',
-      'contact_our_address' => 'Nosso endereço',
-      
+/*----------------------------------------------------------------------------------
+/ Páginas
+/---------------------------------------------------------------------------------*/
+  /* Rodapé */
+    'footer_more_about_us' => 'Mais sobre a gente',
+    'footer_vivala_message' => 'A Vivalá utiliza imagens criativas arrematadas em pesquisas para a elaboração de sua identidade visual. Portanto, ressaltamos que a grande maioria desse arquivos não são de nossa autoria ou cedidos formalmente para utilização no site. Por favor entre em contato pelo nosso formulário caso seja o autor de alguma imagem utilizada, queremos muito dar crédito a você. Se quiser que a mesma seja removida, prometemos tirar de nossa plataforma no mesmo instante!',
+    'footer_vivala_infos' => 'Todos os direitos reservados Vivalá Turismo LTDA - CNPJ 22.693.622/0001-85',
+    'footer_development' => 'Desenvolvimento:',
+  //
+  /* Manifesto */
+    'manifest_title' => 'Nosso Manifesto',
+    'manifest_subtitle' => 'Vivemos mais que uma geração, vivemos um movimento.',
+    'manifest_coverphoto_video_alt' => '',
+    'manifest_coverphoto_video_title' => '',
+    'manifest_we_are_restless' => 'Nós somos inquietos.',
+    'manifest_first_paragraph_1' => 'Nascemos assim, com essa vontade incontrolável de conhecer novas pessoas, sentir novas sensações e viver experiências únicas.',
+    'manifest_first_paragraph_2' => 'Sonhamos com um país melhor e fazemos desse sonho uma realidade com atitude. Estamos construindo o Brasil do futuro.',
+    'manifest_second_paragraph_1' => 'Lamentamos por aqueles que são se envolvem nessa mudança, que não querem ir além.',
+    'manifest_second_paragraph_2' => 'Não queremos fazer parte do grupo dos que só falam e não fazem nada.',
+    'manifest_third_paragraph_1' => 'Não nós.',
+    'manifest_fourth_paragraph_1' => 'Nós apostamos todas as nossas fichas em nossos ideais e lutamos por eles.',
+    'manifest_fourth_paragraph_2' => 'Nós queremos viajar mais, conhecer mais e transformar mais.',
+    'manifest_fourth_paragraph_3' => 'Explorar cada canto deste país maravilhoso, descobrindo e desenvolvendo tudo o que eles tem a nos oferecer.',
+    'manifest_fourth_paragraph_4' => 'Se a rotina existe, ela ficou pra trás. Estamos em busca de novs destinos em direção à liberdade.',
+    'manifest_fifth_paragraph_1' => 'Somos do tipo que apoia a variedade de culturas, crenças, raças e pensamentos, que ainda acredita nas',
+    'manifest_fifth_paragraph_2' => 'pessoas, ama o Brasil e aprecia as diferenças.',
+    'manifest_sixth_paragraph_1' => 'Porque no fim das contas existem três tipos de pessoas:',
+    'manifest_sixth_paragraph_2' => '- Aquelas que não sabem o que acontece',
+    'manifest_sixth_paragraph_3' => '- Aquelas que imaginam o que acontece',
+    'manifest_sixth_paragraph_4' => '- E nós, que fazemos acontecer.',
+    'manifest_seventh_paragraph_1' => 'Vivemos mais que uma geração, vivemos um movimento.',
+    'manifest_seventh_paragraph_2' => 'Viva as diferenças.',
+    'manifest_seventh_paragraph_3' => 'Viva as atitudes.',
+  //
+  /* O que fazemos */
+    'whatwedo_title' => 'O que fazemos',
+    'whatwedo_subtitle' => 'Vivemos mais que uma geração, vivemos um movimento.',
+    'whatwedo_coverphoto_img_alt' => 'O Que Fazemos',
+    'whatwedo_coverphoto_img_title' => 'O Que Fazemos',
+    'whatwedo_were_global_plataform' => 'A VIVALÁ É UMA PLATAFORMA GLOBAL QUE CONECTA PESSOAS QUE TÊM INTERESSE EM VIAJAR E TRANSFORMAR O BRASIL.',
+    'whatwedo_main_text' => 'Juntamos viajantes através de uma rede social, facilitamos viagens pela venda de transporte (avião, ônibus e carro), hospedagem e reserva de restaurantes, e finalmente, aproximar projetos de impacto social com pessoas que querem fazer a diferença na realidade do país. Tudo isso em um único lugar. Estamos construindo uma comunidade inquieta que viaja, explora e desenvolve o nosso país, e queremos que você faça parte disso!',
+  //
+  /* Quem somos */
+    'aboutus_title' => 'Quem somos',
+    'aboutus_subtitle' => 'Quais os nossos propósitos, afinal?',
+    'aboutus_coverphoto_img_alt' => 'Quem Somos',
+    'aboutus_coverphoto_img_title' => 'Quem Somos',
+    'aboutus_subtitle_our_mission' => 'Nossa Missão',
+    'aboutus_our_mission_text' => 'Fazer com que pessoas de todo o mundo possam viajar e transformar o Brasil, conhecendo diferentes regiões, culturas, crenças e raças, realizando uma imersão cultural, auxiliando o desenvolvimento pessoal, do turismo e das comunidades do país.',
+    'aboutus_subtitle_why_we_exist' => 'Porquê Nós Existimos',
+    'aboutus_why_we_exist_text' => 'A Vivalá nasceu em Outubro de 2015 e foi projetada por jovens apaixonados por viajar e transformar as realidades para melhor. Estamos cansados da situação política e econômica do Brasil e queremos mudar esse panorama com atitude. Não iremos mais terceirizar a culpa da situação onde estamos para o governo, empresas ou outras entidades. Se queremos que as coisas mudem, mudaremos nós mesmos. Vem com a gente!',
+    'aboutus_subtitle_our_history' => 'Nossa História',
+    'aboutus_our_history_text_1' => 'Tudo começou quando nossa quando nosso fundador queria conhecer o Brasil através de um mochilão e se deparou com um mercado sem informação de qualidade, vendas fragmentadas e o empacotamento de tudo e todos.',
+    'aboutus_our_history_text_2' => 'Somado com a grande vontade de mudança na realidade política e econômica brasileira, mas uma mudança real, que realmente fizesse diferença na vida das pessoas nos criamos a Vivalá.',
+    'aboutus_our_history_text_3' => 'Reunimos pessoas, conceitos, valores de vida, tecnologia e começamos a construção de uma plataforma que visa fazer com que as pessoas cresçam como indivíduos através de auto conhecimento, diversão e cultura em suas viagens e trabalhos voluntários realizados.',
+  //
+  /* Parceiros */
+    'partners_title' => 'Parceiros',
+    'partners_subtitle' => 'Todos juntos ou não somos ninguém.',
+    'partners_coverphoto_img_alt' => 'Parceiros',
+    'partners_coverphoto_img_title' => 'Parceiros',
+    'partners_main_text' => 'Para criar uma plataforma de viagens extremamente completa e integrada a Vivalá conta com diversos parceiros que juntos, disponibilizam:',
+    'partners_text_1' => '- Mais de 200.000 hotéis em 8.000 destinos',
+    'partners_text_2' => '- 500 empresas de aviação com serviços para todo o mundo',
+    'partners_text_3' => '- Mais de 30 empresas de aluguel de carro em 30.000 destinos',
+    'partners_text_4' => '- 1.582 restaurantes em 19 cidades brasileiras',
+    'partners_text_5' => '- 3.000 destinos de ônibus no Brasil operados por 40 empresas rodoviárias',
+  //
+  /* Contato */
+    'contact_title' => 'Contato',
+    'contact_subtitle' => 'Vem falar com a gente!',
+    'contact_text_1' => 'Se estiver afim de dar um alô e bater um lero, é só dar uma ligada, mandar um e-mail ou fazer uma visitinha... Você quem decide! O que importa é que estamos sempre de braços abertos para te receber e te ouvir, escutar sua opinião e suas sugestões.',
+    'contact_text_2' => 'Aqui não tem enrolação. O pessoal da Vivalá é gente boa e ama conhecer gente nova! vamos, com muito prazer, escutar tudo o que você tem a dizer!',
+    'contact_our_email' => 'Nosso email:',
+    'contact_our_phone' => 'Nosso telefone:',
+    'contact_our_address' => 'Nosso endereço',
+  //
+  /* Termos e Condições */
+    'termsconditions_title' => 'Termos e condições',
+    'termsconditions_subtitle' => 'Regrinhas básicas da casa',
+    'termsconditions_intro_text' => 'Favor ler atentamente estes termos e condições de uso antes de utilizar este site. Ao usar este site, você se compromete a cumprir os seguintes Termos e Condições e quaisquer mudanças que venham a ser feitas nos mesmos pela Vivalá, e a se obrigar pelos mesmos, em conformidade com estes. Favor consultar estes Termos e Condições periodicamente para se inteirar de eventuais mudanças. Se não concordar com estes Termos e Condições, você não tem autorização para utilizar este site.',
+    'termsconditions_buying_terms_title' => 'Termos de compra',
+    'termsconditions_buying_terms_text' => 'O objetivo desta seção é apresentar resumidamente as informações necessárias em relação a qualquer negociação comercial entre a VIVALÁ TURISMO E SERVIÇOS LTDA - ‘Vivalá’ - e o usuário da plataforma.  A Vivalá funciona com um canal de contato entre o usuário e parceiros que intermediam serviços turisticos como (1) passagens aéreas; (2) passagens rodoviárias; (3) hospedagem; (4) benefícios em restaurantes. As obrigações da Vivalá dizem respeito ao fornecimento da plataforma em que o usuário tenha condições de montar seu roteiro completo e envolvendo os serviços intermediados pelos parceiros. Estes, os parceiros, por sua vez, têm a obrigação de intermediar a relação entre o usuário e os fornecedores dos serviços (cias aéreas e rodoviárias, estabelecimentos hoteleiros e restaurantes. São obrigações dos Fornecedores: a) operar a venda dos serviços/produtos turísticos diretamente ao Usuário; b) informar e orientar o Usuário sobre as especificações dos serviços/produtos turísticos adquiridos; c) orientar o Usuário sobre eventuais atualizações e providências documentais, tais como, passaporte, vistos, vacinas, dentre outros, conforme o tipo dos serviços/produtos turísticos adquiridos. São obrigações do Usuário: a) observar as regras deste termo e dos termos dos Parceiros e Fornecedores citados; b) realizar o pagamento do preço, nas datas e sob as formas e condições indicadas ao acessar o site Vivalá; c) responsabilizar-se pelo custeio de quaisquer despesas relativas aos serviços/produtos turísticos, nas hipóteses de cancelamento ou alteração daqueles, tais como perda de voos, traslados, dentre outros, por sua culpa exclusiva e/ou de quaisquer viajantes.',
+    'termsconditions_content_terms_title' => 'Termos de conteúdos',
+    'termsconditions_content_terms_text' => 'O usuário é proprietário de todo conteúdo avaliativo que publicar no domínio da Vivalá, tendo total autonomia de modificá-lo dentro da plataforma e excluí-lo quando achar necessário. A Vivalá autoriza o usuário a visualizar, baixar ou imprimir o Conteúdo do Site, sujeito às seguintes condições: (i) só poderá fazê-lo para seu uso pessoal e não comercial; (ii) não poderá modificar o Conteúdo do Site; (iii) qualquer exibição ou impressão de Conteúdo do Site deve ser marcada do ícone da Vivalá; (iv) é proibido reproduzir, distribuir, exibir ou criar trabalhos derivativos do Conteúdo do Site, exceto quando permitido em casos previstos nesses termos. Para solicitar uso de qualquer conteúdo do site em termos que fujam dos descritos acima, favor entrar em contato com a Vivalá. A Vivalá não garante a adequação do conteúdo do site ou de qualquer parte dele para qualquer finalidade. Todo o conteúdo do site é disponibilizado da forma como foi fornecido pelos seus usuários e parceiros. Caso o usuário tenha alguma reclamação ou objeção em relação a qualquer conteúdo postado, infringindo direitos autorais ou contendo ofensas pessoais ou de cunho social, racial, orientação sexual e/ou de gênero, dentre outros, ele deve contatar imediatamente a Vivalá através da aba de contato. Uma vez acionada, a Vivalá fará todos os esforços para remover o conteúdo o mais rápido possível.',
+    'termsconditions_volunteer_policy_title' => 'Políticas de relação ao voluntariado',
+    'termsconditions_volunteer_policy_text' => 'A Vivalá tem como papel a intermediação entre Entidades que disponibilizam oportunidades de trabalho voluntário em suas ações e os Usuários do site. Toda informação relacionada às oportunidades de voluntariado, como locais, datas e especificações são de responsabilidade da Entidade. A Vivalá não se responsabiliza por eventuais danos pessoais ou materiais, bem como eventuais descumprimentos das condições acordadas entre Usuário e Entidade.',
+    'termsconditions_modifications_policy_title' => 'Modificações',
+    'termsconditions_modifications_policy_text' => 'A Vivalá pode mudar, adicionar ou apagar estes Termos e Condições ou qualquer porção deles a qualquer momento, a seu exclusivo critério, quando julgar necessário por motivos legais, regulatórios e técnicos, ou devido a mudanças nos serviços fornecidos ou natureza ou layout do Site. A Vivalá pode alterar, suspender ou interromper qualquer aspecto dos serviços e funcionalidades de sua plataforma a qualquer momento, inclusive a disponibilidade de qualquer função, base de dados ou conteúdo.',
+  //
+  /* Presskit */
+    'presskit_title' => 'Presskit',
+  //
+  /* Política de Privacidade */
+    'privacypolicy_title' => 'Política de Privacidade',
+  //
+  /* Financiamento Coletivo */
+    'crowdfunding_title' => 'Financiamento Coletivo',
+    'crowdfunding_hi_there' => 'Olá',
+    'crowdfunding_page_and_plan' => 'Essa página ainda não está disponível. Estamos com o plano pronto,',
+    'crowdfunding_we_need_you' => 'mas precisamos do seu apoio no financiamento coletivo.',
+    'crowdfunding_support_vivala' => 'Apoie a Vivalá através de:',
+    'crowdfunding_a_alt_crowdvivala' => 'Financiamento Coletivo Vivalá',
+    'crowdfunding_a_title_crowdvivala' => 'Ajude a Vivalá! Te agradecemos de <3',
 ];
 ?>

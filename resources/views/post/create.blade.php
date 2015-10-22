@@ -1,12 +1,11 @@
 <div class="col-xs-12 col-sm-12 cria-post-container fundo-cheio">
     <div class="col-md-2 col-sm-4 col-xs-3">
-        <a href="{{ url('perfil') }}">
+        <a href="{{ url('perfil') }}" class="click-img-no-border">
             <img class="foto-avatar" src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
         </a>
     </div>
     <div class="col-md-10 col-sm-8 col-xs-9">
         {!! Form::open(['url' => 'post', 'class'=>'']) !!}
-
             <ul class="row lista-intervalo-preto radio-hidden tipo-post-criar">
                 <li class="col-xs-2 col-sm-4 col-md-2">
                     <input type="radio" name="tipo_post" value="status" id="status" checked>
@@ -16,27 +15,19 @@
                 </li>
                 <li class="col-xs-7 col-sm-7 col-md-3">
                     <input type="radio" name="tipo_post" value="foto" id="foto">
-                    <label for="foto">
-                        {{ trans('global.lbl_photo_add') }}
-                    </label>
+                    <label for="foto">{{ trans('global.lbl_photo_add') }}</label>
                 </li>
                 <li class="hidden-xs hidden-sm col-md-3">
                     <input type="radio" name="tipo_post" value="video" id="video" disabled="disabled">
-                    <label for="video">
-                        {{ trans('global.lbl_video_add')}}
-                    </label>
+                    <label for="video">{{ trans('global.lbl_video_add')}}</label>
                 </li>
                 <li class="hidden-xs hidden-sm col-md-2">
                     <input type="radio" name="tipo_post" value="album" id="album" disabled="disabled">
-                    <label for="album">
-                        {{ trans('global.lbl_album_create') }}
-                    </label>
+                    <label for="album">{{ trans('global.lbl_album_create') }}</label>
                 </li>
                 <li class="hidden-xs hidden-sm col-md-2">
                     <input type="radio" name="tipo_post" value="localizacao" id="localizacao" disabled="disabled">
-                    <label for="localizacao">
-                        {{trans('global.lbl_localization')}}
-                    </label>
+                    <label for="localizacao">{{trans('global.lbl_localization')}}</label>
                 </li>
             </ul>
             <div class="row adicionar-foto-container">
@@ -57,11 +48,8 @@
                         <li class="col-xs-3 col-sm-3"><a href="#marcar-amigos" class="desativado">{{ trans('global.lbl_tag_friends') }}</a></li>
                     </ul>
                 </div>
-
                 {!! Form::submit( trans('global.lbl_publish'), ['class' => 'col-xs-4 pull-right col-md-2 btn btn-acao']) !!}
             </div>
-
         {!! Form::close() !!}
-
     </div>
 </div>

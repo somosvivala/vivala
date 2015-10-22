@@ -2,7 +2,6 @@
 <div class="row perfil-topo">
     <div class="col-md-1">
         &nbsp;
-
         @if ($perfil->user->id == Auth::user()->id)
         <a class="link-claro edit-profile" href="{{ url($perfil->tipo.'/'.$perfil->id.'/edit') }}">
             <i class="fa fa-edit"></i> {{ trans('global.lbl_edit') }}
@@ -97,9 +96,9 @@
                 </div>
             </li>
             <li class="col-sm-4">
-                @if( $perfil->tipo == 'ong' ) 
-                    Projeto de impacto 
-                    @else 
+                @if( $perfil->tipo == 'ong' )
+                    Projeto de impacto
+                    @else
                     @if( $perfil->apoiador == 'B' )
                     <i class="fa fa-star"></i>
                     <br>APOIADOR
@@ -109,7 +108,7 @@
                     @else
 
                     <br>
-                    {{ trans('global.lbl_traveller') }} 
+                    {{ trans('global.lbl_traveller') }}
                     @endif
                 @endif</li>
         </ul>

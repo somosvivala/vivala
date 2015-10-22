@@ -1,7 +1,7 @@
 <div id="ong-create-form" class="col-sm-12 form-ong">
     <div class="row">
         <!-- Título -->
-        <h5 class="form-group col-sm-12">Informações</h5>
+        <h5 class="form-group col-sm-12">{{ trans('global.lbl_info_') }}</h5>
         <div class="form-group col-sm-12">
             {!! Form::select("ong", $ongs, ($ongSelecionada ? $ongSelecionada : []), ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control', 'id' => 'ong_select']) !!}
         </div>
@@ -9,7 +9,6 @@
             {!! Form::textarea("habilidades", null, ['title'=> trans('global.lbl_cause_job_habilities_ph'), 'aria-label'=> trans('global.lbl_cause_job_habilities_ph'), 'placeholder'=> trans('global.lbl_cause_job_habilities'), 'class' => 'form-control' ]) !!}
         </div>
     </div>
-
     <div class="row">
         <div class="form-group col-sm-12">
             {!! Form::textarea("sobre_trabalho", null, ['title'=> trans('global.lbl_cause_job_description_ph'), 'aria-label'=> trans('global.lbl_cause_job_description_ph'), 'placeholder'=> trans('global.lbl_cause_job_description'), 'class'=> 'form-control' ]) !!}
@@ -49,8 +48,7 @@
             </div>
         </div>
     </div>
-
-        <!-- CATEGORIAS da causa -->
+     <!-- CATEGORIAS da causa -->
     <div id="causa-categorias" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
         <div class="row text-center">
