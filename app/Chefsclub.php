@@ -82,7 +82,7 @@ class Chefsclub extends Model {
             $query->where('horario', 'like', "%{$params['date']}%");
         }
         if (isset($params['time'])) {
-            $query->where(DB::raw($params['time']'::time BETWEEN horario_abre AND horario_fecha'));
+            $query->where(DB::raw($params['time'].'::time BETWEEN horario_abre AND horario_fecha'));
         }
         if (isset($params['city'])) {
             $query->where('codigo_cidade', $params['city']);
