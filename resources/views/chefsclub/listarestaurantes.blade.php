@@ -27,20 +27,86 @@
 
     </div>
     <!-- Modal com iframe pra fechamento de pedido -->
-    <div id="{{ $r->id }}" class="modal fade" role="dialog">
+    <div id="{{ $r->id }}" class="modal fade modal-restaurante" role="dialog">
         <div class="modal-dialog modal-lg">
 
             <div class="modal-content">
                 <div class="modal-body">
-                    <h5 class="font-bold-upper">{{ $r->restaurante }}</h5>
-                    {{ $r->desconto }}
-                    {{ $r->endereco }}
-                    {{ $r->tipo_cozinha }}
-                    {{ $r->preco }}
-                    {{ $r->qtd_beneficios }}
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h5 class="font-bold-upper">{{ $r->restaurante }}</h5>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            {{ $r->horario }}
+                            <span class="desconto">{{ $r->desconto }}</span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-1 text-right">
+                                    <i class="fa fa-map-marker"></i>
+                                </div>
+                                {{ $r->endereco }}
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-1 text-right">
+                                    <i class="fa fa-cutlery"></i>
+                                </div>
+                                {{ $r->tipo_cozinha }}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
 
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="col-sm-4">
+                                        <?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i> "; ?>
+                                    </div>
+                                    Faixa de preço
+                                </div>
+                                <div class="col-sm-6 ">
+                                    <div class="col-sm-1 text-right">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    {{ $r->telefone }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="col-sm-1 text-right">
+                                        <i class="fa fa-users"> </i>
+                                    </div>
+                                    {{ $r->beneficio }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="margin-b-1">
+                    <div class="row">
+                        <div class="col-sm-12 margin-b-1">
+                            <div style="background-image:url('{{ $r->imagem }}');" class="foto-restaurante-detalhe col-sm-6">
+                            </div>
+                            <div class="col-sm-6">
+                                <b class="font-bold-upper">
+                                    Saiba mais
+                                </b>
+                                <p>
+                                    {{ $r->descricao }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="margin-b-1">
+                    <div class="row text-center margin-t-2">
+                        <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">Entre para o clube</a>
+                    </div>
+                    <hr class="margin-b-1 margin-t-2">
                     <div class="row text-center">
-                        <a class="btn" target="_blank" href="{{ $r->link }}">Entre para o clube</a>
+                        <small>
+                        Você pode utilizar o CPF como forma de validação no restaurante apresentando um documento com foto para identificação.<br>O seu CPF estará válido imediatamente após a confirmação da assinatura.
+                        </small>
                     </div>
                 </div>
             </div>
