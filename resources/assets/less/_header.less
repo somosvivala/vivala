@@ -1,7 +1,7 @@
 .icon36 {
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: contain;
 	padding: 0.5em 2em 0.5em 0;
 	margin:0;
 }
@@ -229,7 +229,8 @@ div.notificacoes {
             }
         }
         &:focus + div {
-           max-height: 30vh;
+            min-height: 20vh;
+           max-height: 40vh;
            opacity: 1;
             overflow-y:scroll;
         }

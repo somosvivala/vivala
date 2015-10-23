@@ -94,9 +94,12 @@
 						<h3>{{ trans('global.lbl_signup1') }}</h3>
 					</div>
 					<div class="col-md-6">
+                                            &nbsp;
+                                            {{--
 						<a href="{{ url('/fbLogin') }}" class="btn-social btn-facebook btn-xs">
 							<i class="fa fa-facebook"></i> {{ trans('global.fb_login') }}
 						</a>
+                                                --}}
 					</div>
 				</div>
 				@if (count($errors) > 0)
