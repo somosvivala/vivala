@@ -4,7 +4,7 @@
         <h4 class="font-bold-upper">Mais de {{ round($restaurantes_total/100)*100 }} restaurantes disponíveis</h4>
     </div>
     @foreach($restaurantes as $r)
-    <div class="col-sm-6 margin-t-2">
+    <div class="col-sm-6 col-xs-12 margin-t-2">
         <div class="restaurante col-sm-12">
             <div class="row">
                 <div style="background-image:url('{{ $r->imagem }}');" class="foto-restaurante col-sm-4">
@@ -15,7 +15,7 @@
                     <span class=""><i class="fa fa-map-marker"></i> {{ $r->endereco }}</span>
                     <div class="row maisinfos">
                         <div class="col-sm-4"><i class="fa fa-male"></i> 1 - <?php preg_match('/[0-9]/',$r->beneficio,$match); echo $match[0]+1; ?></div>
-                        <div class="col-sm-3"><?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i> "; ?></div>
+                        <div class="col-sm-3 text-center"><?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i>"; ?></div>
                         <div class="col-sm-5"><ul><?php foreach(explode(' ',$r->tipo_cozinha) as $tipo) echo "<li>$tipo</li>"; ?></ul></div>
                     </div>
                     <div class="row text-center">

@@ -8533,6 +8533,21 @@ a.click-img-no-border:focus,
 a.click-img-no-border:hover {
   outline: none;
 }
+.fa-1-1x {
+  font-size: 1.1em;
+}
+.fa-1-2x {
+  font-size: 1.2em;
+}
+.fa-1-3x {
+  font-size: 1.3em;
+}
+.fa-1-4x {
+  font-size: 1.4em;
+}
+.fa-1-5x {
+  font-size: 1.5em;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -9141,6 +9156,9 @@ ul.lista-vagas li > div span {
 .form-ong .ph-cor-cinza-escuro :-ms-input-placeholder {
   color: #535353;
 }
+.form-ong ul.cat-ong li {
+  height: 12em;
+}
 .esconde-input {
   position: absolute;
   left: -9999px;
@@ -9244,7 +9262,7 @@ ul.quartos-hotel {
   text-align: left;
   overflow: hidden;
 }
-#modal-quimera .modal-lg {
+.modal-lg {
   width: 1040px;
 }
 .restaurante {
@@ -10508,6 +10526,21 @@ a.click-img-no-border:active,
 a.click-img-no-border:focus,
 a.click-img-no-border:hover {
   outline: none;
+}
+.fa-1-1x {
+  font-size: 1.1em;
+}
+.fa-1-2x {
+  font-size: 1.2em;
+}
+.fa-1-3x {
+  font-size: 1.3em;
+}
+.fa-1-4x {
+  font-size: 1.4em;
+}
+.fa-1-5x {
+  font-size: 1.5em;
 }
 #welcome-html {
   position: relative;

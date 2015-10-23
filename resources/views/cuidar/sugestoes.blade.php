@@ -1,3 +1,4 @@
 @include('cuidar.sugestoesongs')
 
-@include('cuidar.ultimosposts')
+@include('viajar.sugestoespacotes')
+{{-- @include('cuidar.ultimosposts') --}}

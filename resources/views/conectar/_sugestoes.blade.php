@@ -1,3 +1,4 @@
 @include('conectar._sugestoesviajantes')
 
-@include('conectar._viagenscomentadas')
+@include('viajar.sugestoespacotes')
+    {{-- @include('conectar._viagenscomentadas') --}}
