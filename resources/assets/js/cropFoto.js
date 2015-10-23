@@ -23,14 +23,23 @@ $(function() {
                 //console.log(data);
 
                 //Settando o tamanho do container para o tamanho da nova imagem
+                var tipo = $('#tipo_foto');
+                if (tipo && tipo.val() == 'capa') {
+                    $('#uploadedFoto').val(data.id);
+                    $('#preview').attr('src',data.path).width('80%');
+                    var height = $('#preview').width();
+                    $('#preview').height(height/2);
+                    $('#preview').width(height);
 
-                $('#uploadedFoto').val(data.id);
-                $('#preview').attr('src',data.path).width('50%');
-                var height = $('#preview').width();
-                $('#preview').height(height);
-                $('#preview').width(height);
+                } else {
+                    $('#uploadedFoto').val(data.id);
+                    $('#preview').attr('src',data.path).width('50%');
+                    var height = $('#preview').width();
+                    $('#preview').height(height);
+                    $('#preview').width(height);
+                }
 
-                //console.log('preview width -> ' +  $('#preview').width());
+                               //console.log('preview width -> ' +  $('#preview').width());
                 //console.log('height -> ' +  height );
                 //console.log($('#preview').height());
 
