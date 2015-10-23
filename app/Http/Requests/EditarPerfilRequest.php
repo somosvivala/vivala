@@ -37,7 +37,7 @@ class EditarPerfilRequest extends Request {
 			"aniversario" 			        => 'required|date_format:"d/m/Y"',
                         "descricao_curta" 			=> 'string',
                         "descricao_longa" 			=> 'string',
-			"cidade_atual" 			        => 'alpha|min:3'
+			"cidade_atual" 			        => 'string|min:3'
 		];
 	}
 
