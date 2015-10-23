@@ -9,7 +9,7 @@
 		<h2>{{ trans("global.quiz_profile_customize") }}</h2>
 		<h3>{{ trans("global.quiz_photo_customize") }}</h3>
 
-		{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'form-ajax', 'data-redirect' => '/quiz/contemais']) !!}
+		{!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'data-redirect' => '/quiz/contemais', 'id'=>'quiz_foto_form']) !!}
 		{!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
 
 			<img id="preview" src="{{ $foto?$foto:'/img/interrogacao.png' }}" class="foto-preview"/>
