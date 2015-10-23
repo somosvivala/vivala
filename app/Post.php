@@ -94,7 +94,7 @@ class Post extends Model {
 
             foreach($seguidores as $fPerfil)
             {
-                $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('author_type','=','App\Perfil')->get()->random();
+                $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('tipo_post','=','foto')->where('author_type','=','App\Perfil')->get()->random();
                 if($fotoDestaque)
                 {
                 $posts->forget($fotoDestaque->id);
