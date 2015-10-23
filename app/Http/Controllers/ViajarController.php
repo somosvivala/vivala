@@ -32,9 +32,10 @@ class ViajarController extends VivalaBaseController {
 	{
             $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
             $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
+            $cidades = Chefsclub::getCidadeForSelect();
             $restaurantes = Chefsclub::all()->take(10); 
             $restaurantes_total = count(Chefsclub::all());
 
-            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total') );
+            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades') );
 	}
 }

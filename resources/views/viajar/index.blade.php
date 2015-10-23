@@ -26,7 +26,7 @@
             </a>
         </li>
         <li class="col-sm-5">
-            <a href="#quimera">
+            <a href="#quimera" data-toggle="modal" data-target="#modal-quimera">
                Hospedagem,Vôos e Carros 
             </a>
         </li>

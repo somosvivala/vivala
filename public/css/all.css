@@ -8415,6 +8415,13 @@ ul.filtro a {
   border: 1px solid black;
   border-radius: 0;
 }
+.form-borda-preta input.form-control,
+.form-borda-preta input.form-control[type="text"],
+.form-borda-preta textarea.form-control,
+.form-borda-preta select {
+  border: 1px solid black;
+  border-radius: 0;
+}
 .form-borda-preta select {
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
@@ -9041,6 +9048,13 @@ ul.lista-vagas li > div span {
 .form-ong input,
 .form-ong input[type="text"],
 .form-ong textarea,
+.form-ong select {
+  border: 1px solid black;
+  border-radius: 0;
+}
+.form-ong input.form-control,
+.form-ong input.form-control[type="text"],
+.form-ong textarea.form-control,
 .form-ong select {
   border: 1px solid black;
   border-radius: 0;
@@ -10373,6 +10387,13 @@ ul.filtro a {
 .form-borda-preta input,
 .form-borda-preta input[type="text"],
 .form-borda-preta textarea,
+.form-borda-preta select {
+  border: 1px solid black;
+  border-radius: 0;
+}
+.form-borda-preta input.form-control,
+.form-borda-preta input.form-control[type="text"],
+.form-borda-preta textarea.form-control,
 .form-borda-preta select {
   border: 1px solid black;
   border-radius: 0;

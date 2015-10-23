@@ -9,10 +9,17 @@
             @endforeach
         </select>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2">
         <select id="qtd-quartos-hotel" class="form-control">
             @foreach($descontos as $Desconto)
             <option value="{{ $Desconto }}">{{ $Desconto }}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="col-md-3">
+        <select id="qtd-cidades" class="form-control">
+            @foreach($cidades as $Cidade)
+            <option value="{{ $Cidade['cidade'] }}">{{ $Cidade['cidade'] }}</option>
             @endforeach
         </select>
     </div>
