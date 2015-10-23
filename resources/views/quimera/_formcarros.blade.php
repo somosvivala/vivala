@@ -30,30 +30,30 @@
                     <span class="mainSprite calendar"></span>
                 </div>
                 <select id="pickUpTime" name="pickUpTime" class="required time-selector">
-                    <option value="00:00">00:00</option>
-                    <option value="01:00">01:00</option>
-                    <option value="02:00">02:00</option>
-                    <option value="03:00">03:00</option>
-                    <option value="04:00">04:00</option>
-                    <option value="05:00">05:00</option>
-                    <option value="06:00">06:00</option>
-                    <option value="07:00">07:00</option>
-                    <option value="08:00">08:00</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00" selected="selected">11:00</option>
-                    <option value="12:00">Meio-dia</option>
-                    <option value="13:00">13:00</option>
-                    <option value="14:00">14:00</option>
-                    <option value="15:00">15:00</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:00">17:00</option>
-                    <option value="18:00">18:00</option>
-                    <option value="19:00">19:00</option>
-                    <option value="20:00">20:00</option>
-                    <option value="21:00">21:00</option>
-                    <option value="22:00">22:00</option>
-                    <option value="23:00">23:00</option>
+                    <option value="00:00">{{ trans('global.time_00_00_text') }}</option>
+                    <option value="01:00">{{ trans('global.time_01_00') }}</option>
+                    <option value="02:00">{{ trans('global.time_02_00') }}</option>
+                    <option value="03:00">{{ trans('global.time_03_00') }}</option>
+                    <option value="04:00">{{ trans('global.time_04_00') }}</option>
+                    <option value="05:00">{{ trans('global.time_05_00') }}</option>
+                    <option value="06:00">{{ trans('global.time_06_00') }}</option>
+                    <option value="07:00">{{ trans('global.time_07_00') }}</option>
+                    <option value="08:00">{{ trans('global.time_08_00') }}</option>
+                    <option value="09:00">{{ trans('global.time_09_00') }}</option>
+                    <option value="10:00">{{ trans('global.time_10_00') }}</option>
+                    <option value="11:00" selected="selected">{{ trans('global.time_11_00') }}</option>
+                    <option value="12:00">{{ trans('global.time_12_00_text') }}</option>
+                    <option value="13:00">{{ trans('global.time_13_00') }}</option>
+                    <option value="14:00">{{ trans('global.time_14_00') }}</option>
+                    <option value="15:00">{{ trans('global.time_15_00') }}</option>
+                    <option value="16:00">{{ trans('global.time_16_00') }}</option>
+                    <option value="17:00">{{ trans('global.time_17_00') }}</option>
+                    <option value="18:00">{{ trans('global.time_18_00') }}</option>
+                    <option value="19:00">{{ trans('global.time_19_00') }}</option>
+                    <option value="20:00">{{ trans('global.time_20_00') }}</option>
+                    <option value="21:00">{{ trans('global.time_21_00') }}</option>
+                    <option value="22:00">{{ trans('global.time_22_00') }}</option>
+                    <option value="23:00">{{ trans('global.time_23_00') }}</option>
                 </select>
             </div>
             <div id="carDropOffDateContainer" class="car-date-container">
@@ -64,30 +64,30 @@
                     <span class="mainSprite calendar"></span>
                 </div>
                 <select id="dropOffTime" name="dropOffTime" class="required time-selector">
-                    <option value="00:00">00:00</option>
-                    <option value="01:00">01:00</option>
-                    <option value="02:00">02:00</option>
-                    <option value="03:00">03:00</option>
-                    <option value="04:00">04:00</option>
-                    <option value="05:00">05:00</option>
-                    <option value="06:00">06:00</option>
-                    <option value="07:00">07:00</option>
-                    <option value="08:00">08:00</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00" selected="selected">11:00</option>
-                    <option value="12:00">Meio-dia</option>
-                    <option value="13:00">13:00</option>
-                    <option value="14:00">14:00</option>
-                    <option value="15:00">15:00</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:00">17:00</option>
-                    <option value="18:00">18:00</option>
-                    <option value="19:00">19:00</option>
-                    <option value="20:00">20:00</option>
-                    <option value="21:00">21:00</option>
-                    <option value="22:00">22:00</option>
-                    <option value="23:00">23:00</option>
+                    <option value="00:00">{{ trans('global.time_00_00_text') }}</option>
+                    <option value="01:00">{{ trans('global.time_01_00') }}</option>
+                    <option value="02:00">{{ trans('global.time_02_00') }}</option>
+                    <option value="03:00">{{ trans('global.time_03_00') }}</option>
+                    <option value="04:00">{{ trans('global.time_04_00') }}</option>
+                    <option value="05:00">{{ trans('global.time_05_00') }}</option>
+                    <option value="06:00">{{ trans('global.time_06_00') }}</option>
+                    <option value="07:00">{{ trans('global.time_07_00') }}</option>
+                    <option value="08:00">{{ trans('global.time_08_00') }}</option>
+                    <option value="09:00">{{ trans('global.time_09_00') }}</option>
+                    <option value="10:00">{{ trans('global.time_10_00') }}</option>
+                    <option value="11:00" selected="selected">{{ trans('global.time_11_00') }}</option>
+                    <option value="12:00">{{ trans('global.time_12_00_text') }}</option>
+                    <option value="13:00">{{ trans('global.time_13_00') }}</option>
+                    <option value="14:00">{{ trans('global.time_14_00') }}</option>
+                    <option value="15:00">{{ trans('global.time_15_00') }}</option>
+                    <option value="16:00">{{ trans('global.time_16_00') }}</option>
+                    <option value="17:00">{{ trans('global.time_17_00') }}</option>
+                    <option value="18:00">{{ trans('global.time_18_00') }}</option>
+                    <option value="19:00">{{ trans('global.time_19_00') }}</option>
+                    <option value="20:00">{{ trans('global.time_20_00') }}</option>
+                    <option value="21:00">{{ trans('global.time_21_00') }}</option>
+                    <option value="22:00">{{ trans('global.time_22_00') }}</option>
+                    <option value="23:00">{{ trans('global.time_23_00') }}</option>
                 </select>
             </div>
         </div>

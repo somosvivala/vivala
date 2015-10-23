@@ -7,9 +7,9 @@
 		<li>
 			<!-- Adiciona a abertura do Form -->
 			{!! Form::open(['url' => ['ajax/followempresa', $Empresa->id], 'class' => 'form-ajax', 'method' => 'GET']) !!}
-				<button type="submit" class='btn_seguir_empresa' data-id="{{$Empresa->id}}">seguir</button>
+				<button type="submit" class='btn_seguir_empresa' data-id="{{$Empresa->id}}">{{ trans('global.lbl_follow') }}</button>
 				<a href="{{ url($Empresa->getUrl()) }}">
-					<img class="hidden" title='Carregando' alt='Carregando...'>
+					<img class="hidden" title="{{ trans('global.lbl_loading') }}" alt='Carregando...'>
 					<div class="round foto">
 						<div class="cover">
 							<img src="{{ $Empresa->getAvatarUrl() }}"  alt="{{ $Empresa->nome }}">
@@ -28,7 +28,7 @@
 			{!! Form::close() !!}
 		</li>
 	@empty
-	    <p>Nenhuma empresa.</p>
+	    <p>{{ trans('global.lbl_company_none') }}</p>
 	@endforelse
 	@endif
 </ul>

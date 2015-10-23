@@ -1,6 +1,4 @@
-<h4 class="suave">
-	Confira os últimos posts
-</h4>
+<h4 class="suave">{{ trans('global.lbl_post_see_last') }}</h4>
 <ul class="sugestoes viagens-comentadas">
 	<li>
 		<a href="/home">
@@ -10,7 +8,7 @@
 				</div>
 			</div>
 			<strong class="col-sm-12">Salvador</strong>
-			<span class="col-sm-12">Uma viagem para entrar em contato com alto astral e cultura.</span>
+			<span class="col-sm-12">{{ trans('global.dummy_salvador') }}</span>
 			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>
@@ -22,7 +20,7 @@
 				</div>
 			</div>
 			<strong class="col-sm-12">São Thomé</strong>
-			<span class="col-sm-12">Fui encontrar uma galera, a viagem foi incrível!</span>
+			<span class="col-sm-12">{{ trans('global.dummy_saothome') }}</span>
 			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>
@@ -34,7 +32,7 @@
 				</div>
 			</div>
 			<strong class="col-sm-12">Bonito</strong>
-			<span class="col-sm-12">Uma viagem com muito verde, cavernas e coisas bonitas, eu adorei!</span>
+			<span class="col-sm-12">{{ trans('global.dummy_bonito') }}</span>
 			<button class="suave desativado" type="button">{{ trans('global.lbl_seemore') }}</button>
 		</a>
 	</li>

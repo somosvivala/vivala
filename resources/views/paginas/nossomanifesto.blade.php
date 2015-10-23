@@ -58,7 +58,7 @@
                 <br/>
                 {{ trans('global.manifest_seventh_paragraph_3') }}
                 <br/>
-                <span class="suave laranja-hover">{{ trans('global.lbl_vivala') }}</span>
+                <span class="text-uppercase text-strong laranja-hover"><strong>{{ trans('global.lbl_vivala') }}</strong></span>
             </p>
         <div>
     </div>

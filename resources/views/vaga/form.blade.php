@@ -1,6 +1,6 @@
 <div id="ong-create-form" class="col-sm-12 form-ong">
     <div class="row">
-        <!-- Título -->
+        {{-- Título --}}
         <h5 class="form-group col-sm-12">{{ trans('global.lbl_info_') }}</h5>
         <div class="form-group col-sm-12">
             {!! Form::select("ong", $ongs, ($ongSelecionada ? $ongSelecionada : []), ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control', 'id' => 'ong_select']) !!}
@@ -14,7 +14,7 @@
             {!! Form::textarea("sobre_trabalho", null, ['title'=> trans('global.lbl_cause_job_description_ph'), 'aria-label'=> trans('global.lbl_cause_job_description_ph'), 'placeholder'=> trans('global.lbl_cause_job_description'), 'class'=> 'form-control' ]) !!}
         </div>
 
-        <!-- Horários de Funcionamento -->
+        {{-- Horários de Funcionamento --}}
         <div class="form-group col-sm-12">
             {!! Form::text("horario_funcionamento", null, ['title'=> trans('global.date_time_and_date'), 'aria-label'=> trans('global.date_time_and_date'), 'placeholder'=> trans('global.date_time_and_date'), 'class'=> 'form-control' ]) !!}
         </div>
@@ -48,7 +48,7 @@
             </div>
         </div>
     </div>
-     <!-- CATEGORIAS da causa -->
+    {{-- CATEGORIAS da causa --}}
     <div id="causa-categorias" class="form-group row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
         <div class="row text-center">
@@ -58,7 +58,7 @@
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
                     <input type="radio" name="categoria_vaga_id" @if ($categoriaSelecionada == $Categoria->id)  checked="checked" @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" >
                     <label for="categoria-ong-{{$Categoria->id}}">
-                        <img src='/img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt="{{ trans($Categoria->id) }}" title="{{ trans($Categoria->id) }}" class='col-sm-12'/>
+                        <img src='/img/categorias-onu/cat-ong-{{$Categoria->id}}.png' alt="{{ trans($Categoria->nome) }}" title="{{ trans($Categoria->nome) }}" class='col-sm-12'/>
                     </label>
                 </li>
                 @endforeach
@@ -68,7 +68,7 @@
     </div>
 
     <div id="causa-contato" class="row margin-t-2">
-        <h5 class="col-sm-12">Contato</h5>
+        <h5 class="col-sm-12">{{ trans('global.lbl_contact') }}</h5>
         <div class="col-sm-6">
             {!! Form::text("telefone_contato",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), 'class' => 'form-control col-sm-6']) !!}
         </div>

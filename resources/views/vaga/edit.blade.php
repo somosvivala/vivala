@@ -6,7 +6,7 @@
     <div class="form-ong-head">
         <h3 class="text-center margin-t-2"> {{ trans('global.lbl_cause_edit') }}</h3>
         {!! Form::open([ 'method' => 'DELETE', 'route' => ['vagas.destroy', $vaga->id] ]) !!}
-        {!! Form::submit('Remover ', ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja excluir essa vaga?');"]) !!}
+        {!! Form::submit( trans('global.lbl_remove'), ['class' => 'btn', 'onclick' => "return confirm('Tem certeza que deseja excluir essa vaga?');"]) !!}
         {!! Form::close() !!}
     </div>
 
@@ -21,13 +21,10 @@
                     {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}
                     {!! Form::hidden("NoOwner",  true) !!}
 
-
                     <img id="preview" src="{{ $vaga->getCapaUrl() }}" class="foto-preview"/>
 
                     <div class="file-upload">
-                        <label for="image_file_upload">
-                            {{ trans('global.lbl_photo_send') }}
-                            <p>{{ trans('global.quiz_fromcomputer') }}</p>
+                        <label for="image_file_upload">{{ trans('global.lbl_photo_send') }}<p>{{ trans('global.quiz_fromcomputer') }}</p>
                             {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'data-ratio'=>'2', 'class' => 'upload']) !!}
                         </label>
                     </div>
