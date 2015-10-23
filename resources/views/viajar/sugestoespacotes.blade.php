@@ -4,7 +4,7 @@
         <a href="#" class="click-img-no-border" data-toggle="modal" data-target="#rio-olimpiada">
             <div class="round foto">
                 <div class="cover-explode">
-                    <img src="/img/dummyrio.jpg">
+                    <img src="/img/dummyrio.png">
                 </div>
             </div>
             <strong class="col-sm-12">Rio de Janeiro</strong>
@@ -29,7 +29,7 @@
         <a href="#" class="click-img-no-border" data-toggle="modal" data-target="#fortaleza-verao">
             <div class="round foto">
                 <div class="cover-explode">
-                    <img src="/img/dummyfortaleza.jpg">
+                    <img src="/img/dummyfortaleza.png">
                 </div>
             </div>
             <strong class="col-sm-12">Fortaleza</strong>
@@ -53,7 +53,7 @@
         <a href="#" class="click-img-no-border" data-toggle="modal" data-target="#recife-carnavel">
             <div class="round foto">
                 <div class="cover-explode">
-                    <img src="/img/dummyrecife.jpg">
+                    <img src="/img/dummyrecife.png">
                 </div>
             </div>
             <strong class="col-sm-12">Recife</strong>

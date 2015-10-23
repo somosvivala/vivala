@@ -8578,6 +8578,32 @@ form.cropfoto-ajax div.file-upload > label p,
 form.form-ajax div.file-upload > label p {
   cursor: pointer;
 }
+.btn-follow {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+  z-index: 1;
+}
+.btn-follow.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -10604,6 +10630,32 @@ form.form-ajax input#image_file_upload > label p,
 form.cropfoto-ajax div.file-upload > label p,
 form.form-ajax div.file-upload > label p {
   cursor: pointer;
+}
+.btn-follow {
+  border: 0px solid transparent;
+  background-color: #f16f2b;
+  color: white;
+  text-transform: uppercase;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  padding: 0.35em 0.5em;
+  position: absolute;
+  right: 0px;
+  top: 0.7em;
+  z-index: 1;
+}
+.btn-follow.suave {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0.7em;
+  font-size: 1em;
+  background-color: #8ba6ac;
+  color: white;
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  line-height: 1.5em;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px solid transparent;
+  padding: 0.35em 0.5em;
 }
 #welcome-html {
   position: relative;

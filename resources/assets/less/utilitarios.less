@@ -695,3 +695,21 @@ form.cropfoto-ajax, form.form-ajax {
         }
     }
 }
+
+.btn-follow {
+		border: 0px solid transparent;
+		background-color: @cor-sugestao-botao-bg;
+		color: @cor-sugestao-botao-txt;
+		text-transform: uppercase;
+		font-family: @font-family-sans-serif-bold;
+		padding: 0.35em 0.5em;
+		position: absolute;
+		right:0px;
+		top: 0.7em;
+		z-index: 1; // Coloca o botão por cima
+		&.suave {
+			.suave();	// Sobrescreve o bg de cima, pra evitar !important
+			padding: 0.35em 0.5em;
+		}
+	}
+
