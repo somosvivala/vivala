@@ -88,7 +88,7 @@ class Post extends Model {
 	public static function getMaisfotos()
 	{
 
-            $seguidores = Auth::user()->entidadeAtiva->followedByPerfil;
+            $seguidores = Auth::user()->entidadeAtiva->followPerfil;
 
             $posts = Post::latest()->get()->keyBy('id');
 
@@ -97,8 +97,8 @@ class Post extends Model {
                 $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('tipo_post','=','foto')->where('author_type','=','App\Perfil')->get()->random();
                 if($fotoDestaque)
                 {
-                $posts->forget($fotoDestaque->id);
-                $posts->prepend($fotoDestaque);
+                    $posts->forget($fotoDestaque->id);
+                    $posts->prepend($fotoDestaque);
                 }
             }
 
