@@ -83,19 +83,43 @@ class Post extends Model {
 	}
 
 	/**
-     * Um Post tem uma foto.
-     */
-    public function fotos()
-    {
-        return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
-    }
+	 * Retorna os ultimos posts com foto primeiro
+	 */
+	public static function getMaisfotos()
+	{
 
-    /**
-     * Um Post pode ter varios albums
-     * @return [type] [description]
-     */
-    public function albums()
-    {
+            $seguidores = Auth::user()->entidadeAtiva->followPerfil;
+            $seguidores = $seguidores->take(count($seguidores)/2);
+
+            $posts = Post::latest()->get()->keyBy('id');
+
+            foreach($seguidores as $fPerfil)
+            {
+                $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('author_type','=','App\Perfil')->get()->first();
+                if($fotoDestaque)
+                {
+                $posts->forget($fotoDestaque->id);
+                $posts->prepend($fotoDestaque);
+                }
+            }
+
+            return $posts;
+        }
+
+        /**
+         * Um Post tem uma foto.
+         */
+        public function fotos()
+        {
+            return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
+        }
+
+        /**
+         * Um Post pode ter varios albums
+         * @return [type] [description]
+         */
+        public function albums()
+        {
         return $this->morphMany('App\Album', 'owner', 'owner_type', 'owner_id');
     }
 
