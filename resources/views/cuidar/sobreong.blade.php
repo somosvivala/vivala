@@ -14,7 +14,7 @@
 </div>
 
 <h3 class="font-bold-upper text-center">
-    {{ $Ong->nome }}            
+    {{ $Ong->nome }}
 </h3>
 <div class="col-sm-12 sobre-ong">
 <div class="text-center fundo-cheio">
@@ -58,7 +58,7 @@
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $responsavel->id }}">seguir</button>
                 <div class="round foto quadrado7em">
                         <div class="cover">
-                                <img src="{{ $responsavel->getAvatarUrl() }}" alt=" {{ $responsavel->nome }}">
+                                <img src="{{ $responsavel->getAvatarUrl() }}" alt="{{ $responsavel->nome }}">
                         </div>
                 </div>
                 <strong class="col-sm-12 margin-t-1">{{ $responsavel->user->username }}</strong>
@@ -69,7 +69,7 @@
 </div>
 </div>
 
-@if(isset($volutarios) && count($voluntarios)) 
+@if(isset($volutarios) && count($voluntarios))
 <div class="text-center fundo-cheio col-sm-12">
     <img src="{{ asset('img/casacomunal.png') }}">
     <h3 class="font-bold-upper col-sm-12">Voluntários nesta Ong</h3>
@@ -77,7 +77,7 @@
     @foreach($voluntarios as $PerfilVoluntario)
         {{ $PerfilVoluntario->apelido }}
     @endforeach
-    
+
     <a class='button' href="{{url('vagas/create')}}">Criar Vaga</a>
 </div>
 @endif

@@ -9,12 +9,8 @@
         </small>
     </h3>
     <div class="col-sm-5">
-        <p>
-            {{ trans('global.contact_text_1') }}
-        </p>
-        <p class="margin-b-2">
-            {{ trans('global.contact_text_2') }}
-        </p>
+        <p>{{ trans('global.contact_text_1') }}</p>
+        <p class="margin-b-2">{{ trans('global.contact_text_2') }}</p>
         <hr style="border: 0; height: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
@@ -46,7 +42,7 @@
             {!! Form::text("nome", '', ['title' => trans('global.lbl_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::text("email", '', ['title' => trans('global.lbl_email'), 'placeholder' => trans('global.lbl_email'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::text("assunto", '', ['title' => trans('global.lbl_subject_feedback'), 'placeholder' => trans('global.lbl_subject_feedback'), 'class' => 'form-control margin-b-1']) !!}
-            {!! Form::textarea("mensagem", null, ['title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize margin-b-1' ]) !!}
+            {!! Form::textarea("mensagem", null, ['title'=> trans('global.lbl_message'), 'aria-label'=> trans('global.lbl_message'), 'placeholder'=> trans('global.lbl_message'), 'class' => 'form-control sem-resize margin-b-1' ]) !!}
             {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao pull-right']) !!}
         {!! Form::close() !!}
     </div>

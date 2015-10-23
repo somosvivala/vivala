@@ -8,7 +8,7 @@
 		<li>
 			<!-- Adiciona a abertura do Form -->
 			{!! Form::open(['url' => ['ajax/followong', $Ong->id], 'class' => 'form-ajax', 'method' => 'GET']) !!}
-				<button type="submit" class='btn_seguir_ong' data-id="{{$Ong->id}}">seguir</button>
+				<button type="submit" class='btn_seguir_ong' data-id="{{$Ong->id}}">{{ trans('global.lbl_follow') }}</button>
 				<a href="{{ url($Ong->getUrl()) }}">
 					<img class="hidden" title='Carregando' alt='Carregando...'>
 					<div class="round foto">

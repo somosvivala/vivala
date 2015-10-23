@@ -1,38 +1,36 @@
 @extends('viajar')
 
 @section('content')
-
 <div class="foto-fundo foto-header" style="background-image:url('/img/queroviajar.png');">
-    <h2>Conheça o Brasil</h2>
-    <h3>Escolha seu transporte e hospedagem, reserve restaurantes e entretenimento</h3>
+    <h2>{{ trans('global.wannatravel_title') }}</h2>
+    <h3>{{ trans('global.wannatravel_subtitle') }}</h3>
     <div class="col-sm-12">
-        <a class="suave padding-btn">
-            Como funciona
-        </a>
+        <a class="suave padding-btn">{{ trans('global.lbl_how_it_works') }}</a>
     </div>
 </div>
 
 <div class="fundo-cheio col-sm-12">
-    <h3 class="font-bold-upper text-center">Já sabe para onde ir?
-        <small class="sub-titulo">Monte sua viagem! </small>
+    <h3 class="font-bold-upper text-center">
+        <small class="sub-titulo">{{ trans('global.wannatravel_trip_setup') }}</small>
     </h3>
-   <!-- <iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;">
-   --> 
-    
+   {{-- Quimera antiga
+      <!--  iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;" -->
+   --}}
+
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">
             <a href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
-                Restaurantes
+                {{ trans('global.wannatravel_trip_restaurants') }}
             </a>
         </li>
         <li class="col-sm-5">
             <a href="#quimera" data-toggle="modal" data-target="#modal-quimera">
-               Hospedagem,Vôos e Carros 
+               {{ trans('global.wannatravel_trip_hotels_flights_cars') }}
             </a>
         </li>
         <li class="col-sm-4">
             <a href="#" class="desativado">
-                Passagens rodoviárias 
+               {{ trans('global.wannatravel_trip_bus_drive') }}
             </a>
         </li>
         {{--
@@ -54,17 +52,15 @@
         --}}
     </ul>
     <div class="tab-content">
-
         <div role="tabpanel" class="tab-pane active" id="restaurantes">
-            @include('chefsclub.buscarestaurantes') 
+            @include('chefsclub.buscarestaurantes')
             <div class="lista-restaurantes">
-                @include('chefsclub.listarestaurantes') 
+                @include('chefsclub.listarestaurantes')
             </div>
-
         </div>
 
         {{--
-            @include('quimera._formhotels') 
+            @include('quimera._formhotels')
             <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="voos">
@@ -72,7 +68,7 @@
             <div class="fundo-cheio col-sm-12 resultados-busca-voos text-center"> </div>
         </div>
         <div role="tabpanel" class="tab-pane" id="carros">
-            @include('quimera._formcarros') 
+            @include('quimera._formcarros')
             <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
         </div>
         --}}

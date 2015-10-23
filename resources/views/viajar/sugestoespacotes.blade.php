@@ -14,7 +14,7 @@
         <div id="rio-olimpiada" class="modal fade " role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-body"> 
+                    <div class="modal-body">
                         <iframe src="http://www.e-agencias.com.br/vivala/cp/search/SAO/RIO/2016-08-10/2016-08-17/1/0/0/NA/2016-08-10/2016-08-17/1" class="quimera_iframe" style="border: 0;">
                         </iframe>
                     </div>
@@ -39,7 +39,7 @@
         <div id="fortaleza-verao" class="modal fade " role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-body"> 
+                    <div class="modal-body">
                         <iframe src="https://www.e-agencias.com.br/vivala/flights/search/RoundTrip/SAO/FOR/2016-01-18/2016-01-22/1/0/0/" class="quimera_iframe" style="border: 0;">
                         </iframe>
                     </div>
@@ -63,7 +63,7 @@
         <div id="fortaleza-verao" class="modal fade " role="dialog">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                    <div class="modal-body"> 
+                    <div class="modal-body">
                         <iframe src="https://www.e-agencias.com.br/vivala/hotels/details/FLN/2016-02-05/2016-02-10/1/777287/BRL" class="quimera_iframe" style="border: 0;">
                         </iframe>
                     </div>
