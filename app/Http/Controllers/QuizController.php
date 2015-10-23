@@ -72,22 +72,25 @@ class QuizController extends VivalaBaseController {
 	{
 		$perfil = Perfil::findOrFail($id);
 		$interesses = $request->get('interesses');
+                
+                if ($interesses) {
+                
+                    //Iterando sob os valores do checkbox de interesses
+                    foreach ($interesses as $interesseID) {
 
-		//Iterando sob os valores do checkbox de interesses
-		foreach ($interesses as $interesseID) {
+                            $int = Interesse::findOrFail($interesseID);
+                            if ($int) {
 
-			$int = Interesse::findOrFail($interesseID);
-			if ($int) {
+                                    //Se ja nao tiver esse acossiado a esse perfil
+                                    //adiciona-o a lista de interesses desse perfil
+                                    if (!$perfil->interesses->find($int)) {
+                                            $perfil->interesses()->attach($int);
+                                    }
+                            }
+                    }
 
-				//Se ja nao tiver esse acossiado a esse perfil
-				//adiciona-o a lista de interesses desse perfil
-				if (!$perfil->interesses->find($int)) {
-					$perfil->interesses()->attach($int);
-				}
-			}
-		}
-
-		$perfil->push();
+                    $perfil->push();
+                }
 	}
 
 	/**

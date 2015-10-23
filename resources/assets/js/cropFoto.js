@@ -20,10 +20,20 @@ $(function() {
             processData: false,  //file
             success: function (data) {
                 // Executa uma função de javascript
-                console.log(data);
+                //console.log(data);
+
+                //Settando o tamanho do container para o tamanho da nova imagem
 
                 $('#uploadedFoto').val(data.id);
-                $('#preview').attr('src',data.path);
+                $('#preview').attr('src',data.path).width('50%');
+                var height = $('#preview').width();
+                $('#preview').height(height);
+                $('#preview').width(height);
+
+                //console.log('preview width -> ' +  $('#preview').width());
+                //console.log('height -> ' +  height );
+                //console.log($('#preview').height());
+
                 //swal(null, "Foto atualizada com sucesso", 'success');
 
             }
