@@ -20,7 +20,7 @@
 
                     <div class="file-upload">
                         <label for="image_file_upload">
-                            {{ trans('global.lbl_photo_send') }}
+                            <span>{{ trans("global.lbl_photo_send") }}</span>
                             <p>{{ trans('global.quiz_fromcomputer') }}</p>
                             {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'class' => 'upload']) !!}
                         </label>

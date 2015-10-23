@@ -24,7 +24,9 @@
                     <img id="preview" src="{{ $vaga->getCapaUrl() }}" class="foto-preview"/>
 
                     <div class="file-upload">
-                        <label for="image_file_upload">{{ trans('global.lbl_photo_send') }}<p>{{ trans('global.quiz_fromcomputer') }}</p>
+                        <label for="image_file_upload">
+                            <span>{{ trans("global.lbl_photo_send") }}</span>
+                            <p>{{ trans('global.quiz_fromcomputer') }}</p>
                             {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'data-ratio'=>'2', 'class' => 'upload']) !!}
                         </label>
                     </div>
@@ -33,7 +35,7 @@
                     {!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
                     {!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
                     {!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
-                    {!! Form::hidden("tipo",  'capa') !!}
+                    {!! Form::hidden("tipo",  'capa', ['id' => 'tipo_foto']) !!}
                     <div class="erros">
                         @include('errors.list')
                     </div>

@@ -160,23 +160,27 @@ $(function(){
 
                         }
 
-                        // Seta o JCrop pra imagem
-                         $('#preview').Jcrop({
-                            aspectRatio: imgRatio,
-                            minSize: [ 100, 100 ],
-                            onSelect: updateCoords,
-                            onSelect: updateCoords,
-                            setSelect: [x1,y1,x2,y2],
-                            bgFade: true,
-                            bgOpacity: .3,
-                            trueSize: [oImage.naturalWidth,oImage.naturalHeight]
-                        }, function(){
-                            // Store the Jcrop API in the jcrop_api variable
-                            jcrop_api = this;
-                        });
+                        var jaFezUpload = $('#uploadedFoto').val();
 
-                     };
-                 };
+                        if (!jaFezUpload) {
+
+                            // Seta o JCrop pra imagem
+                            $('#preview').Jcrop({
+                                aspectRatio: imgRatio,
+                                minSize: [ 100, 100 ],
+                                onSelect: updateCoords,
+                                onSelect: updateCoords,
+                                setSelect: [x1,y1,x2,y2],
+                                bgFade: true,
+                                bgOpacity: .3,
+                                trueSize: [oImage.naturalWidth,oImage.naturalHeight]
+                            }, function(){
+                                // Store the Jcrop API in the jcrop_api variable
+                                jcrop_api = this;
+                            });
+                        }
+                    };
+                };
 
                 // read selected file as DataURL
                 oReader.readAsDataURL(oFile);

@@ -16,7 +16,7 @@ class FeedController extends Controller {
 	// Compartilha os posts para a view de feed
 	public function getFeeds($view){
 
-		$posts = Post::getUltimos()->keyBy('id');
+		$posts = Post::getMaisfotos()->keyBy('id');
 
 		$view->with('posts', $posts);
 	}

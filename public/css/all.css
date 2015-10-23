@@ -8548,6 +8548,36 @@ a.click-img-no-border:hover {
 .fa-1-5x {
   font-size: 1.5em;
 }
+form.cropfoto-ajax img#preview,
+form.form-ajax img#preview,
+form.cropfoto-ajax input#image_file_upload,
+form.form-ajax input#image_file_upload,
+form.cropfoto-ajax div.file-upload,
+form.form-ajax div.file-upload {
+  cursor: pointer;
+}
+form.cropfoto-ajax img#preview > label,
+form.form-ajax img#preview > label,
+form.cropfoto-ajax input#image_file_upload > label,
+form.form-ajax input#image_file_upload > label,
+form.cropfoto-ajax div.file-upload > label,
+form.form-ajax div.file-upload > label {
+  cursor: pointer;
+}
+form.cropfoto-ajax img#preview > label span,
+form.form-ajax img#preview > label span,
+form.cropfoto-ajax input#image_file_upload > label span,
+form.form-ajax input#image_file_upload > label span,
+form.cropfoto-ajax div.file-upload > label span,
+form.form-ajax div.file-upload > label span,
+form.cropfoto-ajax img#preview > label p,
+form.form-ajax img#preview > label p,
+form.cropfoto-ajax input#image_file_upload > label p,
+form.form-ajax input#image_file_upload > label p,
+form.cropfoto-ajax div.file-upload > label p,
+form.form-ajax div.file-upload > label p {
+  cursor: pointer;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -10541,6 +10571,36 @@ a.click-img-no-border:hover {
 }
 .fa-1-5x {
   font-size: 1.5em;
+}
+form.cropfoto-ajax img#preview,
+form.form-ajax img#preview,
+form.cropfoto-ajax input#image_file_upload,
+form.form-ajax input#image_file_upload,
+form.cropfoto-ajax div.file-upload,
+form.form-ajax div.file-upload {
+  cursor: pointer;
+}
+form.cropfoto-ajax img#preview > label,
+form.form-ajax img#preview > label,
+form.cropfoto-ajax input#image_file_upload > label,
+form.form-ajax input#image_file_upload > label,
+form.cropfoto-ajax div.file-upload > label,
+form.form-ajax div.file-upload > label {
+  cursor: pointer;
+}
+form.cropfoto-ajax img#preview > label span,
+form.form-ajax img#preview > label span,
+form.cropfoto-ajax input#image_file_upload > label span,
+form.form-ajax input#image_file_upload > label span,
+form.cropfoto-ajax div.file-upload > label span,
+form.form-ajax div.file-upload > label span,
+form.cropfoto-ajax img#preview > label p,
+form.form-ajax img#preview > label p,
+form.cropfoto-ajax input#image_file_upload > label p,
+form.form-ajax input#image_file_upload > label p,
+form.cropfoto-ajax div.file-upload > label p,
+form.form-ajax div.file-upload > label p {
+  cursor: pointer;
 }
 #welcome-html {
   position: relative;
