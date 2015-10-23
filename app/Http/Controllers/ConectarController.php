@@ -29,7 +29,7 @@ class ConectarController extends VivalaBaseController {
      */
     public function index()
     {
-        $posts = Post::getUltimos()->keyBy('id');
+        $posts = Post::getMaisfotos()->keyBy('id');
 
         if (env('POST_FIXO_ID') != null)
         {
