@@ -88,14 +88,13 @@ class Post extends Model {
 	public static function getMaisfotos()
 	{
 
-            $seguidores = Auth::user()->entidadeAtiva->followPerfil;
-            $seguidores = $seguidores->take(count($seguidores)/2);
+            $seguidores = Auth::user()->entidadeAtiva->followedByPerfil;
 
             $posts = Post::latest()->get()->keyBy('id');
 
             foreach($seguidores as $fPerfil)
             {
-                $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('author_type','=','App\Perfil')->get()->first();
+                $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('author_type','=','App\Perfil')->get()->random();
                 if($fotoDestaque)
                 {
                 $posts->forget($fotoDestaque->id);
