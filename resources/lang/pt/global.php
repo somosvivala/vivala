@@ -372,6 +372,7 @@ return[
   'lbl_interest_no' => 'Nenhum interesse',
   'lbl_invite' => 'Convite',
   'lbl_invite_' => 'Convites',
+  'lbl_know_more_things' => 'Saiba mais coisas',
   'lbl_language' => 'Idioma',
   'lbl_legal_terms' => 'Termos de Uso',
   'lbl_liker' => 'Curtir',
@@ -816,11 +817,26 @@ return[
   /* View: Configuracao [DONE] */
 
   /*------------------------------------------------------------------------------
+  /  View : VIAJAR
+  ------------------------------------------------------------------------------*/
+    'wannatravel_title' => 'Conheça o Brasil',
+    'wannatravel_subtitle' => 'Escolha seu transporte e hospedagem, reserve restaurantes e entretenimento',
+    'wannatravel_trip_already_know' => 'Já sabe para onde ir?',
+    'wannatravel_trip_setup' => 'Monte sua viagem!',
+    'wannatravel_trip_restaurants' => 'Restaurantes',
+    'wannatravel_trip_hotels_flights_cars' => 'Hospedagem, Vôos e Carros',
+    'wannatravel_trip_bus_drive' => 'Passagens rodoviárias',
+    // Desativado ainda
+    'wannatravel_trip_stay' => 'Hotéis',
+    'wannatravel_trip_go' => 'Vôos',
+    'wannatravel_trip_eat' => 'Restaurantes',
+    'wannatravel_trip_drive' => 'Carros',
+
+  /*------------------------------------------------------------------------------
   /  View : CUIDAR
   ------------------------------------------------------------------------------*/
-    'wannavolunteer_take_care_of_brazil' => 'Cuide do Brasil',
-    'wannavolunteer_search_volunteers_and_develop' => 'Faça trabalhos voluntários e desenvolva o país.',
-    'wannavolunteer_how_it_works' => 'Como funciona',
+    'wannavolunteer_title' => 'Cuide do Brasil',
+    'wannavolunteer_subtitle' => 'Faça trabalhos voluntários e desenvolva o país.',
     'wannavolunteer_cause_already_know' => 'Já sabe qual causa ajudar?',
     'wannavolunteer_cause_find_in_three_steps' => 'Encontre projetos de Impacto Social em 3 passos.',
     'wannavolunteer_see_some_causes' => 'Veja causas nobres',
@@ -1055,7 +1071,7 @@ return[
     'ong_job_slot_avaiable_cat-6' => 'Combater a AIDS, a malária e outras doenças',
     'ong_job_slot_avaiable_cat-7' => 'Qualidade de vida e respeito ao meio-ambiente',
     'ong_job_slot_avaiable_cat-8' => 'Todo mundo trabalhando pelo Desenvolvimento',
-
+//
 /*----------------------------------------------------------------------------------
 / Páginas
 /---------------------------------------------------------------------------------*/

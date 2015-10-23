@@ -18,6 +18,7 @@ class AddCityCodeToChefsclub extends Migration {
 			$table->time('horario_abre');
 			$table->time('horario_fecha');
 			$table->text('descricao');
+            $table->string('dia_hora');
 		});
 	}
 
@@ -34,6 +35,7 @@ class AddCityCodeToChefsclub extends Migration {
 			$table->dropColumn('horario_abre');
 			$table->dropColumn('horario_fecha');
 			$table->dropColumn('descricao');
+            //$table->dropColumn('dia_hora');
 		});
 	}
 

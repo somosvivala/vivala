@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="foto-fundo foto-header" style="background-image:url('/img/querocuidar.png');">
-    <h2>{{ trans('global.wannavolunteer_take_care_of_brazil') }}</h2>
-    <h3>{{ trans('global.wannavolunteer_search_volunteers_and_develop') }}</h3>
+    <h2>{{ trans('global.wannavolunteer_title') }}</h2>
+    <h3>{{ trans('global.wannavolunteer_subtitle') }}</h3>
     <div class="col-sm-12">
         <a class="btn">{{ trans('global.wannavolunteer_how_it_works') }}</a>
     </div>
