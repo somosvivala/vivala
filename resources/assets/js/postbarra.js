@@ -7,8 +7,8 @@ $(document).ready(function() {
       urlArray = link.split('/'),
       idPost = urlArray[2];
 
-    $.ajax({
-        url: link
+    $.aj ax({
+        url: '/'+link
       })
       .done(function(data) {
 
@@ -52,13 +52,13 @@ $(document).ready(function() {
                       if (isConfirm) {     
 
                           $.ajax({
-                              url: link
+                              url: '/'+link
                           })
-                          .done(function(data) {
+                           .done(function(data) {
                               location.reload();
                           })
-                          .fail(function(data) {
-                              swal({
+                           .fail(function(data) {
+                               swal({
                                   title: "Ops!",
                                   text: "Você não pode compartilhar seu próprio post!",
                                   type: "error",
