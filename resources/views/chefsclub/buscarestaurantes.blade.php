@@ -1,4 +1,4 @@
-<h3 class="font-bold-upper text-center">Restaurantes
+<h3 class="font-bold-upper text-center">{{ trans('global.lbl_restaurant_') }}
     <small class="sub-titulo">Delícias que alimentam corpo e alma</small>
 </h3>
 <div class="row">

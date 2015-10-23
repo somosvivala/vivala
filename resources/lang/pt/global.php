@@ -15,17 +15,20 @@ return[
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
 
-// Vertentes
+/* Pilares */
   'lbl_wanna_travel' => 'Quero Viajar',
   'lbl_wanna_connect' => 'Quero me Conectar',
   'lbl_wanna_volunteer' => 'Quero Cuidar',
 
-/* Termos Globais */
+  /*------------------------------------------------------------------------------
+  /  Termos Globais
+  ------------------------------------------------------------------------------*/
   'lbl_about' => 'Sobre',
+  'lbl_about_us' => 'Sobre Nós',
   'lbl_acess_data' => 'Dados de Acesso',
   'lbl_activity_log' => 'Log de Atividades',
 
-// Endereço
+/* Endereço */
   'lbl_address' => 'Endereço',
   'lbl_address_' => 'Endereços',
   'lbl_address_add' => 'Adicionar Endereço',
@@ -43,7 +46,11 @@ return[
   'lbl_address_edit' => 'Editar Endereço',
   'lbl_address_edit_' => 'Editar Endereços',
   'lbl_address_editing' => 'Editando Endereço',
-  'lbl_adsress_editing_' => 'Editando Endereços',
+  'lbl_address_editing_' => 'Editando Endereços',
+  'lbl_address_list' => 'Listar Endereço',
+  'lbl_address_list_' => 'Listar Endereços',
+  'lbl_address_listing' => 'Listando Endereço',
+  'lbl_address_listing_' => 'Listando Endereços',
   'lbl_address_manage' => 'Gerenciar Endereço',
   'lbl_address_manage_' => 'Gerenciar Endereços',
   'lbl_address_managing' => 'Gerenciando Endereço',
@@ -61,10 +68,9 @@ return[
   'lbl_address_not_founded' => 'Endereço não encontrado.',
   'lbl_address_not_founded_' => 'Endereços não encontrados.',
 
-  // Anúncio
+/* Anúncio */
   'lbl_ads' => 'Anúncio',
   'lbl_ads_' => 'Anúncios',
-  'lbl_ads_announce' => 'Anunciar',
   'lbl_ads_add' => 'Adicionar Anúncio',
   'lbl_ads_add_' => 'Adicionar Anúncios',
   'lbl_ads_adding' => 'Adicionando Anúncio',
@@ -77,24 +83,38 @@ return[
   'lbl_ads_delete_' => 'Apagar Anúncios',
   'lbl_ads_deleting' => 'Apagando Anúncio',
   'lbl_ads_deleting_' => 'Apagando Anúncios',
-  'lbl_ads_description' => 'Descrição do Anúncio',
   'lbl_ads_edit' => 'Editar Anúncio',
   'lbl_ads_edit_' => 'Editar Anúncios',
-  'lbl_ads_list' => 'Lista dos Anúncios',
-  'lbl_ads_listing' => 'Listando Anúncios',
+  'lbl_ads_editing' => 'Editando Anúncio',
+  'lbl_ads_editing_' => 'Editando Anúncios',
+  'lbl_ads_list' => 'Listar Anúncio',
+  'lbl_ads_list_' => 'Listar Anúncios',
+  'lbl_ads_listing' => 'Listando Anúncio',
+  'lbl_ads_listing_' => 'Listando Anúncios',
   'lbl_ads_manage' => 'Gerenciar Anúncio',
   'lbl_ads_manage_' => 'Gerenciar Anúncios',
-  'lbl_ads_name' => 'Nome do Anúncio',
-  'lbl_ads_not_create' => 'Nenhum anúncio criado.',
-  'lbl_ads_not_found' => 'Nenhum anúncio encontrado.',
-  'lbl_ads_send' => 'Enviar Anúncio',
-  'lbl_ads_send_' => 'Enviar Anúncios',
-  'lbl_ads_submit' => 'Submeter Anúncio',
-  'lbl_ads_submit_' => 'Submeter Anúncios',
+  'lbl_ads_managing' => 'Gerenciando Anúncio',
+  'lbl_ads_managing_' => 'Gerenciando Anúncios',
+  'lbl_ads_submit' => 'Enviar Anúncio',
+  'lbl_ads_submit_' => 'Enviar Anúncios',
+  'lbl_ads_submitting' => 'Enviando Anúncio',
+  'lbl_ads_submitting_' => 'Enviando Anúncios',
   'lbl_ads_update' => 'Atualizar Anúncio',
   'lbl_ads_update_' => 'Atualizar Anúncios',
+  'lbl_ads_updating' => 'Atualizando Anúncio',
+  'lbl_ads_updating_' => 'Atualizando Anúncios',
+  //
+  'lbl_ads_none' => 'Nenhum anúncio.',
+  'lbl_ads_not_created' => 'Nenhum anúncio criado.',
+  'lbl_ads_not_founded' => 'Nenhum anúncio encontrado.',
+  //
+  'lbl_ads_announce' => 'Anunciar',
+  'lbl_ads_description' => 'Descrição do Anúncio',
+  'lbl_ads_name' => 'Nome do Anúncio',
+  'lbl_ads_price' => 'Preço do Anúncio',
+  'lbl_ads_range' => 'Alcance do Anúncio',
 
-  // Álbum
+/* Álbum */
   'lbl_album' => 'Álbum',
   'lbl_album_' => 'Álbuns',
   'lbl_album_add' => 'Adicionar Álbum',
@@ -109,27 +129,30 @@ return[
   'lbl_album_delete_' => 'Apagar Álbuns',
   'lbl_album_deleting' => 'Apagando Álbum',
   'lbl_album_deleting_' => 'Apagando Álbuns',
-  'lbl_album_description' => 'Descrição do Álbum',
   'lbl_album_edit' => 'Editar Álbum',
   'lbl_album_edit_' => 'Editar Álbuns',
   'lbl_album_editing' => 'Editando Álbum',
   'lbl_album_editing_' => 'Editando Álbuns',
-  'lbl_album_list' => 'Lista dos Álbuns',
+  'lbl_album_list' => 'Listar Álbum',
+  'lbl_album_list_' => 'Listar Álbuns',
   'lbl_album_listing' => 'Listando Álbuns',
   'lbl_album_manage' => 'Gerenciar Álbum',
   'lbl_album_manage_' => 'Genrenciar Álbum',
-  'lbl_album_name' => 'Nome do Álbum',
-  'lbl_album_manage' => 'Gerenciar Álbum',
-  'lbl_album_manage_' => 'Gerenciar Álbuns',
-  'lbl_album_not_create' => 'Nenhum Álbum criado.',
-  'lbl_album_not_found' => 'Nenhum Álbum encontrado.',
-  'lbl_album_send' => 'Enviar Álbum',
-  'lbl_album_submit' => 'Submeter Álbum',
+  'lbl_album_submit' => 'Enviar Álbum',
+  'lbl_album_submit_' => 'Enviar Álbuns',
   'lbl_album_update' => 'Atualizar Álbum',
   'lbl_album_update_' => 'Atualizar Álbuns',
-  'lbl_album_without_photo' => 'Álbum sem fotos.',
 
-  // Aplicativo
+  'lbl_album_none' => 'Nenhum álbum.',
+  'lbl_album_not_created' => 'Nenhum álbum criado.',
+  'lbl_album_not_founded' => 'Nenhum álbum encontrado.',
+  'lbl_album_without_photo' => 'Álbum sem fotos.',
+  //
+  'lbl_album_name' => 'Nome do Álbum',
+  'lbl_album_date' => 'Data do Álbum',
+  'lbl_album_description' => 'Descrição do Álbum',
+
+/* Aplicativo */
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
   'lbl_back' => 'Voltar',
@@ -144,6 +167,7 @@ return[
   'lbl_bookmarking' => 'Favoritando',
   'lbl_bookmark_my' => 'Meu Favorito',
   'lbl_bookmark_my_' => 'Meus Favoritos',
+  /* Categoria */
   'lbl_category' => 'Categoria',
   'lbl_category_' => 'Categorias',
   'lbl_category_add' => 'Adicionar Categoria',
@@ -158,10 +182,14 @@ return[
   'lbl_category_create_' => 'Criar Categorias',
   'lbl_category_creating' => 'Criando Categoria',
   'lbl_category_creating_' => 'Criando Categorias',
+  'lbl_category_edit' => 'Editar Categoria',
+  'lbl_category_edit_' => 'Editar Categorias',
+
   'lbl_category_no' => 'Sem categoria.',
   'lbl_category_no_' => 'Sem categorias.',
   'lbl_category_not_created' => 'Nenhuma categoria criada.',
   'lbl_category_not_founded' => 'Nenhuma categoria encontrada.',
+  /* */
   'lbl_cause_' => 'Vagas',
   'lbl_cause_add' => 'Adicionar Vaga',
   'lbl_cause_add_' => 'Adicionar Vagas',
@@ -235,6 +263,7 @@ return[
   'lbl_company_manage' => 'Gerenciar  página de Empresa',
   'lbl_company_manage_' => 'Gerenciar páginas de Empresas',
   'lbl_company_name' => 'Nome da Empresa',
+  'lbl_company_none' => 'Nenhuma empresa encontrada.',
   'lbl_company_not_create' => 'Nenhuma Página de Empresa criada.',
   'lbl_company_not_found' => 'Nenhuma Página de Empresa encontrada.',
   'lbl_company_send' => 'Enviar Empresa',
@@ -242,6 +271,8 @@ return[
   'lbl_company_update' => 'Atualizar página de Empresa',
   'lbl_company_update_' => 'Atualizar páginas de Empresas',
   'lbl_connect_with_others' => 'Sugestão de Conexões',
+  'lbl_connect_with_friends' => 'Conecte-se com voluntários',
+  'lbl_connect_with_volunteers' => 'Conecte-se com voluntários',
   'lbl_confirm' => 'Confirmar',
   'lbl_contact' => 'Contato',
   'lbl_contact_' => 'Contatos',
@@ -255,7 +286,7 @@ return[
   'lbl_culture_foment' => 'Fomentar Cultura',
   'lbl_create' => 'Criar',
   'lbl_created_at' => 'Criado em',
-  'lbl_culture_brazilian' => 'Cultura Brasileira',
+  'lbl_brazilian_culture' => 'Cultura Brasileira',
   'lbl_data_policy' => 'Política de Dados',
   'lbl_developer' => 'Desenvolvedor',
   'lbl_description' => 'Descrição',
@@ -355,6 +386,9 @@ return[
   'lbl_login_keepme' => 'Mantenha-me conectado',
   'lbl_logout' => 'Sair',
   'lbl_manifest' => 'Manifesto',
+  'lbl_map' => 'Mapa',
+  'lbl_map_' => 'Mapas',
+  'lbl_map_goodness' => 'Mapa do Bem',
   'lbl_memorie' => 'Lembrança',
   'lbl_memorie_' => 'Lembranças',
   'lbl_message' => 'Mensagem',
@@ -370,7 +404,7 @@ return[
   'lbl_notification_no' => 'Nenhuma notificação nova.',
   'lbl_ok' => 'Ok',
 
-  /* Cuidar - ONGs */
+/* Cuidar - Projetos de Impacto */
   'lbl_ong' => 'Projeto de Impacto',
   'lbl_ong_' => 'Projetos de Impacto',
   'lbl_ong_add' => 'Adicionar página do Projeto de Impacto',
@@ -395,7 +429,7 @@ return[
   'lbl_ong_searching_' => 'Buscando projetos de Impacto',
   'lbl_ong_update' => 'Atualizar projeto de Impacto',
   'lbl_ong_update_' => 'Atualizar projetos de Impacto',
-  'lbl_ong_no' => 'Sem projeto de Impacto.',
+  'lbl_ong_none' => 'Nenhum projeto de Impacto.',
   'lbl_ong_not_found' => 'Nenhum projeto encontrado.',
   'lbl_ong_not_created' => 'Nenhum Projeto criado.',
   'lbl_ong_register' => 'Cadastrar Projeto de Impacto',
@@ -424,7 +458,6 @@ return[
     'lbl_ong_slot_search_' => 'Buscar Vagas',
     'lbl_ong_slot_searching' => 'Buscando Vaga',
     'lbl_ong_slot_searching_' => 'Buscando Vagas',
-
 
     /* Cuidar - EMPRESA */
     'lbl_organization' => 'Organização',
@@ -474,6 +507,7 @@ return[
     'lbl_photo_update' => 'Atualizar Foto',
     'lbl_post' => 'Publicação',
     'lbl_post_' => 'Publicações',
+    'lbl_post_see_last' => 'Confira os últimos posts',
     'lbl_post_see_complete' => 'Ver mais desta publicação.',
     'lbl_previous' => 'Anterior',
     'lbl_prettyURL' => 'Sua Endereço',
@@ -488,12 +522,22 @@ return[
     'lbl_profile_info' => 'Informação do Perfil',
     'lbl_profile_info_' => 'Informações do Perfis',
     'lbl_publish' => 'Publicar',
+
+    /* Compras */
+    'lbl_purchase' => 'Compra',
+    'lbl_purchase_' => 'Compras',
+    'lbl_purchase_my' => 'Minha Compra',
+    'lbl_purchase_my_' => 'Minhas Compras',
+
     'lbl_quiz' => 'Questionário',
     'lbl_quiz_' => 'Questionários',
     'lbl_read_more' => 'Ler Mais',
     'lbl_register' => 'Registrar',
     'lbl_registered' => 'Registrado',
+    'lbl_remove' => 'Remover',
     'lbl_report_problem' => 'Nos reporte um Problema',
+    'lbl_restaurant' => 'Restaurante',
+    'lbl_restaurant_' => 'Restaurantes',
     'lbl_result' => 'Resultado',
     'lbl_result_' => 'Resultados',
     'lbl_review' => 'Avaliação',
@@ -539,6 +583,19 @@ return[
     'lbl_tag' => 'Marcação',
     'lbl_tag_' => 'Marcações',
     'lbl_tag_friends' => 'Marcar amigos',
+  /* Viagem */
+    'lbl_travel_add' => 'Adicionar Viagem',
+    'lbl_travel_add_' => 'Adicionar Viagens',
+    'lbl_travel_create' => 'Criar Viagem',
+    'lbl_travel_create_' => 'Criar Viagens',
+
+    'lbl_travel_setup' => 'Montar Viagem',
+    'lbl_travel_none' => 'Nenhuma viagem.',
+    'lbl_travel_not_created' => 'Nenhuma viagem criada.',
+    'lbl_travel_not_founded' => 'Nenhuma viagem encontrada.',
+
+
+    /* Viagem : Roteiro */
     'lbl_travel_guide' => 'Roteiro',
     'lbl_travel_guide_' => 'Roteiros',
     'lbl_travel_guide_add' => 'Adicionar Roteiro',
@@ -581,23 +638,37 @@ return[
     'lbl_video_edit' => 'Editar Vídeo',
     'lbl_video_send' => 'Enviar Vídeo',
     'lbl_video_update' => 'Atualizar Vídeo',
+    //
     'lbl_volunteer' => 'Voluntário',
     'lbl_volunteer_' => 'Voluntários',
     'lbl_volunteer_be' => 'Seja um Voluntário',
     'lbl_volunteer_not_found' => 'Nenhum voluntário encontrado.',
     'lbl_volunteer_profile' => 'Perfil Voluntário',
     'lbl_volunteer_work_add' => 'Adicionar Projeto de Impacto Social',
+    'lbl_volunteer_work_add_' => 'Adicionar Projetos de Impacto Social',
     'lbl_volunteer_work_adding' => 'Adicionando Projeto de Impacto Social',
+    'lbl_volunteer_work_adding_' => 'Adicionando Projetos de Impacto Social',
     'lbl_volunteer_work_create' => 'Criar Projeto de Impacto Social',
+    'lbl_volunteer_work_create_' => 'Criar Projetos de Impacto Social',
+    'lbl_volunteer_work_creating' => 'Criando Projeto de Impacto Social',
+    'lbl_volunteer_work_creating_' => 'Criando Projetos de Impacto Social',
     'lbl_volunteer_work_edit' => 'Editar Projeto de Impacto Social',
+    'lbl_volunteer_work_edit_' => 'Editar Projetos de Impacto Social',
+    'lbl_volunteer_work_editing' => 'Editando Projeto de Impacto Social',
+    'lbl_volunteer_work_editing_' => 'Editando Projetos de Impacto Social',
     'lbl_volunteer_work_manage' => 'Gerenciar Projeto de Impacto Social',
+    'lbl_volunteer_work_manage_' => 'Gerenciar Projetos de Impacto Social',
     'lbl_volunteer_work_update' => 'Atualizar Projeto de Impacto Social',
+    'lbl_volunteer_work_search_for_help' => 'Busque por voluntários para ajudar!',
     'lbl_volunteer_work_send' => 'Enviar Projeto de Impacto Social',
+    'lbl_volunteer_work_send_' => 'Enviar Projetos de Impacto Social',
+    //
     'lbl_you_are_in' => 'Você está em',
     'lbl_warning' => 'Aviso',
     'lbl_warning_' => 'Avisos',
     'lbl_website' => 'Website',
     'lbl_website_' => 'Websites',
+    'lbl_why_care' => 'Porque cuidar',
 
     /* Erros */
       'error_whops' => 'Ops!',
@@ -630,6 +701,59 @@ return[
       'date_decade_' => 'Décadas',
       'date_century' => 'Século',
       'date_century_' => 'Séculos',
+
+    /* Tempo */
+      'time_00_00' => '00:00',
+      'time_00_30' => '00:30',
+      'time_01_00' => '01:00',
+      'time_01_30' => '01:30',
+      'time_02_00' => '02:00',
+      'time_02_30' => '02:30',
+      'time_03_00' => '03:00',
+      'time_03_30' => '03:30',
+      'time_04_00' => '04:00',
+      'time_04_30' => '04:30',
+      'time_05_00' => '05:00',
+      'time_05_30' => '05:30',
+      'time_06_00' => '06:00',
+      'time_06_30' => '06:30',
+      'time_07_00' => '07:00',
+      'time_07_30' => '07:30',
+      'time_08_00' => '08:00',
+      'time_08_30' => '08:30',
+      'time_09_00' => '09:00',
+      'time_09_30' => '09:30',
+      'time_10_00' => '10:00',
+      'time_10_30' => '10:30',
+      'time_11_00' => '11:00',
+      'time_11_30' => '11:30',
+      'time_12_00' => '12:00',
+      'time_12_30' => '12:30',
+      'time_13_00' => '13:00',
+      'time_13_30' => '13:30',
+      'time_14_00' => '14:00',
+      'time_14_30' => '14:30',
+      'time_15_00' => '15:00',
+      'time_15_30' => '15:30',
+      'time_16_00' => '16:00',
+      'time_16_30' => '16:30',
+      'time_17_00' => '17:00',
+      'time_17_30' => '17:30',
+      'time_18_00' => '18:00',
+      'time_18_30' => '18:30',
+      'time_19_00' => '19:00',
+      'time_19_30' => '19:30',
+      'time_20_00' => '20:00',
+      'time_20_30' => '20:30',
+      'time_21_00' => '21:00',
+      'time_21_30' => '21:30',
+      'time_22_00' => '22:00',
+      'time_22_30' => '22:30',
+      'time_23_00' => '23:00',
+      'time_23_30' => '23:30',
+      //
+      'time_00_00_text' => 'Meia-noite',
+      'time_12_00_text' => 'Meio-dia',
 
     /* Endereços */
       'address_continent' => 'Continente',
@@ -674,11 +798,13 @@ return[
       'social_network_youtube_img_alt' => 'Vivalá no YouTube',
       'social_network_youtube_img_title' => 'Siga o canal da Vivalá no YouTube',
 
-  // View: Album
+  /* View: Album [DONE] */
 
-  // View: Auth
+  /* View: Auth [DONE] */
 
-  // View: Conectar
+  /* View: ChefsClub */
+
+  /* View: Conectar */
 
     // menulateral.blade - Menu Lateral e ITENS EM COMUM
       'lbl_travellershape' => 'Perfil Viajante',
@@ -686,29 +812,20 @@ return[
       'lbl_travellerguide' => 'Roteiros',
       'lbl_travellermemories' => 'Lembranças',
       'lbl_travellerreviews' => 'Avaliações',
-      'lbl_brazillianculture' => 'Cultura Brasileira',
-      'lbl_volunteershape' => 'Perfil Voluntário',
-      'lbl_connectwithothers' => 'Conecte-se com outras pessoas',
 
-  // View: Configuracao
+  /* View: Configuracao [DONE] */
 
-  /* View: Cuidar */
-
-    // _perfilatuante.blade
-      'lbl_actingprofile' => 'Perfil Atuante',
-
-    // _vagas.blade
-      'lbl_spaceavaiable' => 'Vagas',
-      'lbl_causa_create' => 'Criar Vaga',
-
-    // sugestoeseongs.blade
-      'lbl_ongstofollowsuggests' => 'Projetos de Impacto Social para seguir',
-      'lbl_noongsuggests' => 'Nenhuma sugestão de Projeto',
-
-    // ultimosposts.blade
-      'lbl_latestposts' => 'Confira os últimos posts',
-      'lbl_ongsicare' => 'Cuidei',
-      'lbl_tripresources' => 'Uma viagem para entrar em contato com alto astral e cultura.',
+  /*------------------------------------------------------------------------------
+  /  View : CUIDAR
+  ------------------------------------------------------------------------------*/
+    'wannavolunteer_take_care_of_brazil' => 'Cuide do Brasil',
+    'wannavolunteer_search_volunteers_and_develop' => 'Faça trabalhos voluntários e desenvolva o país.',
+    'wannavolunteer_how_it_works' => 'Como funciona',
+    'wannavolunteer_cause_already_know' => 'Já sabe qual causa ajudar?',
+    'wannavolunteer_cause_find_in_three_steps' => 'Encontre projetos de Impacto Social em 3 passos.',
+    'wannavolunteer_see_some_causes' => 'Veja causas nobres',
+    'wannavolunteer_find_some_projects_near_you' => 'Descubra projetos de impacto social pertinho de você!',
+    'wannavolunteer_see_some_projects_suggest_to_follow' => 'Sugestão de Projetos de Impacto para seguir',
 
   /* View: Emails */
 
@@ -747,10 +864,9 @@ return[
     'ong_find_ongs_three_steps' => 'Encontre Projetos de Impacto em três passos.',
 
   /* View: Páginas */
-    'pages_join_people' => ' Junte-se as pessoas que apoiam você na Vivalá! ',
+    'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
     'pages_by_clicking' => 'Ao clicar em Começar, você concorda com os',
     'pages_terms_and_conditions' => 'Termos das Páginas da Vivalá',
-
 
   /* View: Perfil */
 
@@ -826,8 +942,6 @@ return[
       'welcome_aboutprivacy1' => 'Ao clicar em confirmar, você concorda com nossos',
       'welcome_aboutprivacy2' => 'e confirma que leu nossa',
       'welcome_aboutprivacy3' => ', incluindo nosso',
-  // Blades externas
-
 
 /*------------------------------------------------------------------------------
 /  Traduções com BD-mixed
@@ -1046,5 +1160,15 @@ return[
     'crowdfunding_support_vivala' => 'Apoie a Vivalá através de:',
     'crowdfunding_a_alt_crowdvivala' => 'Financiamento Coletivo Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Ajude a Vivalá! Te agradecemos de <3',
+
+    /*----------------------------------------------------------------------------------
+    / DUMMY - serão deletados em versões futuras, só pra preencher o beta
+    /---------------------------------------------------------------------------------*/
+    'dummy_salvador' => 'Uma viagem para entrar em contato com alto astral e cultura.',
+    'dummy_saothome' => 'Fui encontrar uma galera, a viagem foi incrível!',
+    'dummy_bonito' => 'Uma viagem com muito verde, cavernas e coisas bonitas, eu adorei!',
+    'dummy_pantanal' => 'Um espetáculo da natureza! Aprecie o sol, a fauna e os rios multicoloridos que o Pantanal podem te proporcionar.',
+    'dummy_maragogi' => 'Vislumbre as belezas naturais que Maragogi pode te proporcionar, venha se refrescar em nossas piscinas naturais!',
+    'dummy_chapadaguimaraes' => 'Veja o rio Coxipó desaguar, visite a cachoeira Véu da Noiva e leve na memória uma viagem fantástica.',
 ];
 ?>

@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="panel panel-default">
-    <h3 class="font-bold-upper text-center"> {{ trans('global.lbl_ong_slot_create') }}
-        <small class="sub-titulo">Busque por voluntários para ajudar!</small>
+    <h3 class="font-bold-upper text-center">{{ trans('global.lbl_ong_slot_create') }}
+        <small class="sub-titulo">{{ trans('global.lbl_volunteer_work_search_for_help') }}</small>
     </h3>
     <div class="panel-body">
         <div id="causa-contato" class="row margin-t-2 form-ong">
@@ -12,13 +12,9 @@
 
                 {{-- Adicionando div de update da foto de capa da vaga --}}
                 <div class="text-center jc_coords row col-sm-12">
-
                     {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}
                     {!! Form::hidden("NoOwner",  true) !!}
-
-
                     <img id="preview" src="{{ isset($fotoCapa)?$fotoCapa:'/img/querocuidar.png' }}" class="foto-preview"/>
-
                     <div class="file-upload">
                         <label for="image_file_upload">
                             {{ trans('global.lbl_photo_send') }}
@@ -38,12 +34,8 @@
                     {!! Form::submit( trans('global.lbl_photo_update'), ['class' => 'btn btn-primario btn-acao']) !!}
                     {!! Form::close() !!}
                 </div>
-
             </div>
         </div>
-
-
-
 
         {!! Form::open(['url' => 'vagas']) !!}
         {!! Form::hidden("foto", false, ['id' => 'uploadedFoto' ]) !!}

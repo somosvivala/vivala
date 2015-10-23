@@ -2,9 +2,7 @@
 
 @section('content')
 	<ul>
-		<li>
-			<a href="configuracao/create">{{ trans('global.lbl_setting_create') }}</a>
-		</li>
+		<li><a href="configuracao/create">{{ trans('global.lbl_setting_create') }}</a></li>
 	</ul>
 	<div class="panel panel-default">
 		<div class="panel-heading">
