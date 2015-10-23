@@ -1,5 +1,4 @@
 <ul class="lista-vagas row">
-
     @if(isset($causas))
     @forelse($causas as $Causa)
         <li class="col-sm-4">

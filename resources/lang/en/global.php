@@ -191,7 +191,8 @@ return[
   'lbl_cause_update' => 'Update Volunteer Job',
   'lbl_cause_update_' => 'Update Volunteer Jobs',
   'lbl_chat' => 'Chat',
-  'lbl_chat_with_friends' => 'Chat with your Friends',
+  'lbl_chat_with_friends' => 'Chat with Friends',
+  'lbl_chat_with_volunteers' => 'Chat with Volunteers',
   'lbl_close' => 'Close',
   'lbl_city' => 'City',
   'lbl_city_' => 'Cities',
@@ -240,7 +241,6 @@ return[
   'lbl_cookie_' => 'Cookies',
   'lbl_cookie_use' => 'Cookies usage',
   'lbl_cover_photo' => 'Cover Photo',
-
   'lbl_create' => 'Create',
   'lbl_created_at' => 'Created on',
   'lbl_culture_brazilian' => 'Brazilian Culture',
@@ -342,6 +342,9 @@ return[
   'lbl_logout' => 'Logout',
   'lbl_manifest' => 'Manifesto',
   'lbl_manifest_our' => 'Our Manifesto',
+  'lbl_map' => 'Map',
+  'lbl_map_' => 'Maps',
+  'lbl_map_goodness' => 'Map of Goodness',
   'lbl_memorie' => 'Memory',
   'lbl_memorie_' => 'Memories',
   'lbl_message' => 'Message',
@@ -504,6 +507,7 @@ return[
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
     'lbl_step' => 'Step',
+    'lbl_start' => 'Start',
     'lbl_step_skip' => 'Skip',
     'lbl_step_back' => 'Back',
     'lbl_submit' => 'Submit',
@@ -573,6 +577,7 @@ return[
     'lbl_warning_' => 'Warnings',
     'lbl_website' => 'Website',
     'lbl_website_' => 'Websites',
+    'lbl_why_care' => 'Why care',
 
     /* Erros */
       'error_whops' => 'Ops!',
@@ -628,6 +633,26 @@ return[
       'social_network_twitter' => 'Twitter',
       'social_network_yahoo' => 'Yahoo!',
       'social_network_youtube' => 'YouTube',
+      //
+      'social_network_facebook_img_alt' => 'Vivalá on Facebook',
+      'social_network_facebook_img_title' => 'Follow Vivalá on Facebook',
+      'social_network_github_img_alt' => 'Vivalá on GitHub',
+      'social_network_github_img_title' => 'somosvivala on GitHub',
+      'social_network_gplus_img_alt' => 'Vivalá on Google+',
+      'social_network_gplus_img_title' => 'Follow Vivalá on Google+',
+      'social_network_instagram_img_alt' => 'Vivalá on Instagram',
+      'social_network_instagram_img_title' => 'Follow Vivalá on Instagram',
+      'social_network_linkedin_img_alt' => 'Vivalá on LinkedIn',
+      'social_network_linkedin_img_title' => 'Like Vivalá page on LinkedIn',
+      'social_network_snapchat_img_alt' => 'Vivalá on Snapchat',
+      'social_network_snapchat_img_title' => 'Follow Vivalá on Snapchat',
+      'social_network_swarm_img_alt' => 'Vivalá on Swarm',
+      'social_network_swarm_img_title' => 'See the Vivalá steps on Swarm',
+      'social_network_twitter_img_alt' => 'Vivalá on Twitter',
+      'social_network_twitter_img_title' => 'Follow Vivalá on Twitter',
+      'social_network_youtube_img_alt' => 'Vivalá on YouTube',
+      'social_network_youtube_img_title' => 'Follow Vivalá channel on YouTube',
+
 
   // View: Album
 
@@ -698,7 +723,6 @@ return[
     'ong_contact_manager' => 'Person in Charge',
     'ong_contact_telephone' => 'Telephone',
     'ong_contact_email' => 'Email',
-
     'ong_search_for_ongs' => 'Searching for NGOs?',
     'ong_find_ongs_three_steps' => 'Find interesnting projects in 3 steps.',
 
@@ -902,5 +926,212 @@ return[
       'contact_our_phone' => 'Our phone number:',
       'contact_our_address' => 'Our address',
 
+      /*----------------------------------------------------------------------------------
+/ Páginas
+/---------------------------------------------------------------------------------*/
+  /* Rodapé */
+    'footer_more_about_us' => 'More about us',
+    'footer_vivala_message' => 'Vivalá uses creative images on its visual identity. The majority of these images are part of an authoral work of our contributors or formally authorized for our use. Please contact us through our contact page if a picture of you is being used at Vivalá, we really want to give you credit for that. And if you are not comfortable with that, we promise we&#39;ll exclude the images as soon as possible.',
+    'footer_vivala_infos' => 'All rights reserved Vivalá Turismo LTDA - CNPJ 22.693.622/0001-85',
+    'footer_development' => 'Development:',
+  //
+  /* Manifesto */
+    'manifest_title' => 'Our Manifesto',
+    'manifest_subtitle' => 'We live more than a generation, we live a movement.',
+    'manifest_coverphoto_video_alt' => '',
+    'manifest_coverphoto_video_title' => '',
+    'manifest_we_are_restless' => 'We are restless.',
+    'manifest_first_paragraph_1' => 'We are born like this, with this urge to meet new people, live new sensations and unique experiences.',
+    'manifest_first_paragraph_2' => 'We dream of a better country and make that dream a reality with attitude. We are building the future of Brazil.',
+    'manifest_second_paragraph_1' => 'We are sorry for those who are not involved in this change, who doesn’t want to go further.',
+    'manifest_second_paragraph_2' => 'We don’t want to join the group of those who only talk and do nothing.',
+    'manifest_third_paragraph_1' => 'Not we.',
+    'manifest_fourth_paragraph_1' => 'We bet all our chips in our ideals and fight for them.',
+    'manifest_fourth_paragraph_2' => 'We want to travel more, know more and change more.',
+    'manifest_fourth_paragraph_3' => 'Explore every corner of this wonderful country, discovering and developing all it has to offer.',
+    'manifest_fourth_paragraph_4' => 'If there is a routine, it stay behind. We are looking for new destinations towards freedom.',
+    'manifest_fifth_paragraph_1' => 'We are the type that supports a variety of cultures, beliefs, races and thoughts, that still believes in',
+    'manifest_fifth_paragraph_2' => 'people, loves Brazil and appreciates the differences..',
+    'manifest_sixth_paragraph_1' => 'Because in the end, there are three types of people:',
+    'manifest_sixth_paragraph_2' => '- Those who don’t know what happens',
+    'manifest_sixth_paragraph_3' => '- Those who imagine what happens',
+    'manifest_sixth_paragraph_4' => '- And we who make it happen.',
+    'manifest_seventh_paragraph_1' => 'We live more than a generation, we live a movement.',
+    'manifest_seventh_paragraph_2' => 'Live the differences,',
+    'manifest_seventh_paragraph_3' => 'Live the attitudes,',
+  //
+  /* O que fazemos */
+    'whatwedo_title' => 'What we do',
+    'whatwedo_subtitle' => 'We live more than a generation, we live a movement.',
+    'whatwedo_coverphoto_img_alt' => 'What we do',
+    'whatwedo_coverphoto_img_title' => 'What we do',
+    'whatwedo_were_global_plataform' => 'VIVALÁ IS A GLOBAL PLATFORM THAT CONNECTS PEOPLE WHO WANTS TO TRAVEL AND TRANSFORM BRAZIL.',
+    'whatwedo_main_text' => 'We join travellers together through a social network, help their travels selling transportation, accommodation and restaurants bookings, and finally, we&#39;re creating a national network of NGOs and social projects and getting them closer to people who wants to volunteer and make a difference. We&#39;re building a restless community that travels, explore and trasnform the reality of Brazil, and we really want you to join us and be part of this change!',
+  //
+  /* Quem somos */
+    'aboutus_title' => 'About us',
+    'aboutus_subtitle' => 'What are our purposes?',
+    'aboutus_coverphoto_img_alt' => 'About us',
+    'aboutus_coverphoto_img_title' => 'About us',
+    'aboutus_subtitle_our_mission' => 'Our Mission',
+    'aboutus_our_mission_text' => 'Make people from all over the world to travel and transform Brazil, getting to know different regions, cultures,beliefs and races, having cultural immersion and personal growthand resulting on the development of Brazilian communities and tourism.',
+    'aboutus_subtitle_why_we_exist' => 'Why we exist?',
+    'aboutus_why_we_exist_text' => 'Vivalá was born on 2015 October and was planned by people in love with the idea of travellng and changing realities for better. We&#39;re tired of Brazil&#39;s social situation and we want to change it with attittude. We won&#39;t blame other people or organizations. If we want things to change, we&#39;ll be active part of this change. Join us!',
+    'aboutus_subtitle_our_history' => 'Our story',
+    'aboutus_our_history_text_1' => ' It all began when one of our founders wanted to travel through many destinations in Brazil and found himself without any source of good information, with a lot of turistic offers made with no possibility of customization to his needs. ',
+    'aboutus_our_history_text_2' => 'Besides that, we always had a big will of changing Brazil&#39;s social reality. A real change that would really make a difference on people&#39;s lives. So we created Vivalá.',
+    'aboutus_our_history_text_3' => 'We gathered people, concepts, life values and technology to start the construction of a plataform that aims the personal development of our users through entertainment, culture and selfknowledge when they&#39;re travelling and volunteering in Brazil.',
+  //
+  /* Parceiros */
+    'partners_title' => 'Partners',
+    'partners_subtitle' => 'Todos juntos ou não somos ninguém.',
+    'partners_coverphoto_img_alt' => 'Partners',
+    'partners_coverphoto_img_title' => 'Partners',
+    'partners_main_text' => 'To create a complete travel platform, Vivalá has several partners that offers: ',
+    'partners_text_1' => '- More than 200.000 hotels at 8.000 destinations',
+    'partners_text_2' => '- 500 flight companies with services all over the world',
+    'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
+    'partners_text_4' => '- 1.582 restaurants at 19 brazilian cities',
+    'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
+  //
+  /* Contato */
+    'contact_title' => 'Contact',
+    'contact_subtitle' => 'Talk to us!',
+    'contact_text_1' => 'If you want to have a chat with us, you can call, send an email or visit us.. youc choose! What really matters is that we&#39;re alway open to receive and hear your thoughs and suggestions.',
+    'contact_text_2' => 'Vivalá&#39;s crew is formed by great people who loves to meet new people! We will hear evertything you have to say!',
+    'contact_our_email' => 'Our email:',
+    'contact_our_phone' => 'Our telephone:',
+    'contact_our_address' => 'Our address',
+  //
+  /* Termos e Condições *//*----------------------------------------------------------------------------------
+/ Páginas
+/---------------------------------------------------------------------------------*/
+  /* Rodapé */
+    'footer_more_about_us' => 'More about us',
+    'footer_vivala_message' => 'Vivalá uses creative images on its visual identity. Tha majority of these images are part of an authoral work of our contributors or formally authorized for our use. Please contact us through our contact page if a picture of you is being used at Vivalá, we really want to give you credit for that. And if you are not comfortable with that, we promise we&#39;ll exclude the images as soon as possible.',
+    'footer_vivala_infos' => 'All rights reserved Vivalá Turismo LTDA - CNPJ 22.693.622/0001-85',
+    'footer_development' => 'Development:',
+  //
+  /* Manifesto */
+    'manifest_title' => 'Our Manifesto',
+    'manifest_subtitle' => 'We live more than a generation, we live a movement.',
+    'manifest_coverphoto_video_alt' => '',
+    'manifest_coverphoto_video_title' => '',
+    'manifest_we_are_restless' => 'We are restless.',
+    'manifest_first_paragraph_1' => 'We are born like this, with this urge to meet new people, live new sensations and unique experiences.',
+    'manifest_first_paragraph_2' => 'We dream of a better country and make that dream a reality with attitude. We are building the future of Brazil.',
+    'manifest_second_paragraph_1' => 'We are sorry for those who are not involved in this change, who doesn’t want to go further.',
+    'manifest_second_paragraph_2' => 'We don’t want to join the group of those who only talk and do nothing.',
+    'manifest_third_paragraph_1' => 'Not we.',
+    'manifest_fourth_paragraph_1' => 'We bet all our chips in our ideals and fight for them.',
+    'manifest_fourth_paragraph_2' => 'We want to travel more, know more and change more.',
+    'manifest_fourth_paragraph_3' => 'Explore every corner of this wonderful country, discovering and developing all it has to offer.',
+    'manifest_fourth_paragraph_4' => 'If there is a routine, it stay behind. We are looking for new destinations towards freedom.',
+    'manifest_fifth_paragraph_1' => 'We are the type that supports a variety of cultures, beliefs, races and thoughts, that still believes in',
+    'manifest_fifth_paragraph_2' => 'people, loves Brazil and appreciates the differences..',
+    'manifest_sixth_paragraph_1' => 'Because in the end, there are three types of people:',
+    'manifest_sixth_paragraph_2' => '- Those who don’t know what happens',
+    'manifest_sixth_paragraph_3' => '- Those who imagine what happens',
+    'manifest_sixth_paragraph_4' => '- And we who make it happen.',
+    'manifest_seventh_paragraph_1' => 'We live more than a generation, we live a movement.',
+    'manifest_seventh_paragraph_2' => 'Live the differences,',
+    'manifest_seventh_paragraph_3' => 'Live the attitudes,',
+  //
+  /* O que fazemos */
+    'whatwedo_title' => 'What we do',
+    'whatwedo_subtitle' => 'We live more than a generation, we live a movement.',
+    'whatwedo_coverphoto_img_alt' => 'What we do',
+    'whatwedo_coverphoto_img_title' => 'What we do',
+    'whatwedo_were_global_plataform' => 'VIVALÁ IS A GLOBAL PLATFORM THAT CONNECTS PEOPLE WHO WANTS TO TRAVEL AND TRANSFORM BRAZIL.',
+    'whatwedo_main_text' => 'We join travellers together through a social network, help their travels selling transportation, accommodation and restaurants bookings, and finally, we&#39;re creating a national network of NGOs and social projects and getting them closer to people who wants to volunteer and make a difference. We&#39;re building a restless community that travels, explore and trasnform the reality of Brazil, and we really want you to join us and be part of this change!',
+  //
+  /* Quem somos */
+    'aboutus_title' => 'About us',
+    'aboutus_subtitle' => 'Our Purposes',
+    'aboutus_coverphoto_img_alt' => 'About us',
+    'aboutus_coverphoto_img_title' => 'About us',
+    'aboutus_subtitle_our_mission' => 'Our Mission',
+    'aboutus_our_mission_text' => 'Make people from all over the world to travel and transform Brazil, getting to know different regions, cultures,beliefs and races, having cultural immersion and personal growthand resulting on the development of Brazilian communities and tourism.',
+    'aboutus_subtitle_why_we_exist' => 'Why we exist',
+    'aboutus_why_we_exist_text' => 'Vivalá was born on 2015 October and was planned by people in love with the idea of travellng and changing realities for better. We&#39;re tired of Brazil&#39;s social situation and we want to change it with attittude. We won&#39;t blame other people or organizations. If we want things to change, we&#39;ll be active part of this change. Join us!',
+    'aboutus_subtitle_our_history' => 'Our Story',
+    'aboutus_our_history_text_1' => ' It all began when one of our founders wanted to travel through many destinations in Brazil and found himself without any source of good information, with a lot of turistic offers made with no possibility of customization to his needs. ',
+    'aboutus_our_history_text_2' => 'Besides that, we always had a big will of changing Brazil&#39;s social reality. A real change that would really make a difference on people&#39;s lives. So we created Vivalá.',
+    'aboutus_our_history_text_3' => 'We gathered people, concepts, life values and technology to start the construction of a plataform that aims the personal development of our users through entertainment, culture and selfknowledge when they&#39;re travelling and volunteering in Brazil.',
+  //
+  /* Parceiros */
+    'partners_title' => 'Partners',
+    'partners_subtitle' => 'Todos juntos ou não somos ninguém.',
+    'partners_coverphoto_img_alt' => 'Partners',
+    'partners_coverphoto_img_title' => 'Partners',
+    'partners_main_text' => 'To create a complete travel platform, Vivalá has several partners that offers: ',
+    'partners_text_1' => '- More than 200.000 hotels at 8.000 destinations',
+    'partners_text_2' => '- 500 flight companies with services all over the world',
+    'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
+    'partners_text_4' => '- 1.582 restaurants at 19 brazilian cities',
+    'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
+  //
+  /* Contato */
+    'contact_title' => 'Contact',
+    'contact_subtitle' => 'Talk to us!',
+    'contact_text_1' => 'If you want to have a chat with us, you can call, send an email or visit us.. youc choose! What really matters is that we&#39;re alway open to receive and hear your thoughs and suggestions.',
+    'contact_text_2' => 'Vivalá&#39;s crew is formed by great people who loves to meet new people! We will hear evertything you have to say!',
+    'contact_our_email' => 'Our email:',
+    'contact_our_phone' => 'Our telephone:',
+    'contact_our_address' => 'Our address',
+  //
+  /* Termos e Condições */
+    'termsconditions_title' => 'Terms and Conditions',
+    'termsconditions_subtitle' => 'The basic house rules!',
+    'termsconditions_intro_text' => 'Please read carefully these terms and conditions before using Vivalá. By using Vivalá, you comprmise yourself to follow all the terms and conditions on this section. Please consult this terms and conditions periodcally to know about possible changes. If you don&#39;t agree with the conditions written here, you are not allowed to use Vivalá.',
+    'termsconditions_buying_terms_title' => 'Sales terms',
+    'termsconditions_buying_terms_text' => 'The objective of this section is to introduce the necessary information regarding ant commercial transaction between VIVALÁ TURISMO E SERVIÇOS LTDA - ‘Vivalá’ - and the website user. Vivalá works as a market place that connects our user with our commercial partners, who supply services like (1) flight tickets; (2) bus tickets; (3) accommodation; (4) restaurant benefits. Vivalá&#39;s obligation is to enable a platform where the user has the conditions to build his whole travel itinerary with our partners services. Our partners have the obligation of intermediating the relation between our user and the services provider (flight and bus companies, hotels and restaurants). Our partners obligations are: a) operate the selling process of the travelling services directly to users; b) inform the User about the especifications of the acquired services; c) inform the User about any update or changes regarding travel documentation, such as passports, visas, pharmaceutials documents and others, according to the acquired service regulation. Our Users obligations are: a) read carefully the terms and conditions from Vivalá and our partners; b) pay the price of the acquired services on the dates and conditions indicated on the moment of the purchase; c) be responsible for any extra costs related to the services acquired, on the case of cancellation or changes that may be related to his or any other traveller fault.',
+    'termsconditions_content_terms_title' => 'Content terms',
+    'termsconditions_content_terms_text' => 'Our User is the owner of every content he/she may share on Vivalá, having all the freedom to edit ou exclude it when necessary. Vivalá authorizes our users to download, view and print the website content uder these conditions: (i) It can only be done for personal and non commercial use; (ii) it won&#39;t modify the content of the website; (iii) any exhibition or impression of the website content must have Vivalá&#39;s logo; (iv) it is forbidden to create, exhibit, distribute or reproduce any work originated by Vivalá&#39;s content. For any content use that does not apply to any of these terms, please contact us. Vivalaá does not guarantee it&#39;s content adequation for any use. All of the website content is generated by its users and partners. If there is any content that may offend other users, it must be immediatly reported to Vivalá&#39;s team, that we&#39;ll manage to exclude the content as soon as possible.',
+    'termsconditions_volunteer_policy_title' => 'Volunteering terms',
+    'termsconditions_volunteer_policy_text' => 'Vivalá has the role of intermediate the relation between NGOs and social projcts that offers volunteer jobs and our users. All the information related to the volunteer work, such as location, dates, times and other specifications are NGO/project responsabilities. Vivalá does not take responsability on any issues regarding the conditions between user and the organization.',
+    'termsconditions_modifications_policy_title' => 'Modifications',
+    'termsconditions_modifications_policy_text' => 'Vivalá can change or delete this Terms and Conditions or any part of it at any time, according to its own criteria, when necessary due to legal, regulatory or technical terms or due to any changes on the services offered at the website and its layout nature. Vivalá can change, suspend or interrupt any aspect of its services and functionalities of the platform when necessary, including the availability of any funcion, database or content. ',
+  //
+  /* Presskit */
+    'presskit_title' => 'Presskit',
+  //
+  /* Política de Privacidade */
+    'privacypolicy_title' => 'Privacy Policy',
+  //
+  /* Financiamento Coletivo */
+    'crowdfunding_title' => 'Crowdfunding',
+    'crowdfunding_hi_there' => 'Hello there, traveller!',
+    'crowdfunding_page_and_plan' => 'This page is not available yet. We already have it planned,',
+    'crowdfunding_we_need_you' => 'but to make it happen we need your support on our crowdfunding.',
+    'crowdfunding_support_vivala' => 'Support Vivalá&#39;s development on:',
+    'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
+    'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it<3',
+    'termsconditions_title' => 'Terms and conditions',
+    'termsconditions_subtitle' => 'The basic house rules!',
+    'termsconditions_intro_text' => 'Please read carefully these terms and conditions before using Vivalá. By using Vivalá, you comprmise yourself to follow all the terms and conditions on this section. Please consult this terms and conditions periodcally to know about possible changes. If you don&#39;t agree with the conditions written here, you are not allowed to use Vivalá.',
+    'termsconditions_buying_terms_title' => 'Sales terms',
+    'termsconditions_buying_terms_text' => 'The objective of this section is to introduce the necessary information regarding ant commercial transaction between VIVALÁ TURISMO E SERVIÇOS LTDA - ‘Vivalá’ - and the website user. Vivalá works as a market place that connects our user with our commercial partners, who supply services like (1) flight tickets; (2) bus tickets; (3) accommodation; (4) restaurant benefits. Vivalá&#39;s obligation is to enable a platform where the user has the conditions to build his whole travel itinerary with our partners services. Our partners have the obligation of intermediating the relation between our user and the services provider (flight and bus companies, hotels and restaurants). Our partners obligations are: a) operate the selling process of the travelling services directly to users; b) inform the User about the especifications of the acquired services; c) inform the User about any update or changes regarding travel documentation, such as passports, visas, pharmaceutials documents and others, according to the acquired service regulation. Our Users obligations are: a) read carefully the terms and conditions from Vivalá and our partners; b) pay the price of the acquired services on the dates and conditions indicated on the moment of the purchase; c) be responsible for any extra costs related to the services acquired, on the case of cancellation or changes that may be related to his or any other traveller fault.',
+    'termsconditions_content_terms_title' => 'Content terms',
+    'termsconditions_content_terms_text' => 'Our User is the owner of every content he/she may share on Vivalá, having all the freedom to edit ou exclude it when necessary. Vivalá authorizes our users to download, view and print the website content uder these conditions: (i) It can only be done for personal and non commercial use; (ii) it won&#39;t modify the content of the website; (iii) any exhibition or impression of the website content must have Vivalá&#39;s logo; (iv) it is forbidden to create, exhibit, distribute or reproduce any work originated by Vivalá&#39;s content. For any content use that does not apply to any of these terms, please contact us. Vivalaá does not guarantee it&#39;s content adequation for any use. All of the website content is generated by its users and partners. If there is any content that may offend other users, it must be immediatly reported to Vivalá&#39;s team, that we&#39;ll manage to exclude the content as soon as possible.',
+    'termsconditions_volunteer_policy_title' => 'Volunteering terms',
+    'termsconditions_volunteer_policy_text' => 'Vivalá has the role of intermediate the relation between NGOs and social projcts that offers volunteer jobs and our users. All the information related to the volunteer work, such as location, dates, times and other specifications are NGO/project responsabilities. Vivalá does not take responsability on any issues regarding the conditions between user and the organization.',
+    'termsconditions_modifications_policy_title' => 'Modifications',
+    'termsconditions_modifications_policy_text' => 'Vivalá can change or delete this Terms and Conditions or any part of it at any time, according to its own criteria, when necessary due to legal, regulatory or technical terms or due to any changes on the services offered at the website and its layout nature. Vivalá can change, suspend or interrupt any aspect of its services and functionalities of the platform when necessary, including the availability of any funcion, database or content. ',
+  //
+  /* Presskit */
+    'presskit_title' => 'Presskit',
+  //
+  /* Política de Privacidade */
+    'privacypolicy_title' => 'Privacy policy',
+  //
+  /* Financiamento Coletivo */
+    'crowdfunding_title' => 'Crowdfunding',
+    'crowdfunding_hi_there' => 'Hello there, traveller!',
+    'crowdfunding_page_and_plan' => 'This page is not available yet. We already have it planned,',
+    'crowdfunding_we_need_you' => 'but to make it happen we need your support on our crowdfunding.',
+    'crowdfunding_support_vivala' => 'Support Vivalá&#39;s development on:',
+    'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
+    'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it <3',
 ];
 ?>

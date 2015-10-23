@@ -1,35 +1,30 @@
 @extends('cuidar')
 
 @section('content')
-
 <div class="col-sm-12 margin-b-1">
-<div class="col-sm-12 foto-fundo foto-header" style="background-image:url('{{ $vaga->getCapaUrl() }}');">
+    <div class="col-sm-12 foto-fundo foto-header" style="background-image:url('{{ $vaga->getCapaUrl() }}');">
 
-@if($vaga->podeEditar)
-<div class="hora-post">
-    <a class="btn btn-action" href="/vagas/{{$vaga->id}}/edit">
-        <small>{{ trans('global.lbl_edit') }}</small>
-    </a>
-
+    @if($vaga->podeEditar)
+    <div class="hora-post">
+        <a class="btn btn-action" href="/vagas/{{$vaga->id}}/edit">
+            <small>{{ trans('global.lbl_edit') }}</small>
+        </a>
+    </div>
+    @endif
+    </div>
 </div>
-@endif
-</div>
-</div>
 
-<h3 class="font-bold-upper text-center">
-    {{ $vaga->owner->nome }}
-</h3>
-
+<h3 class="font-bold-upper text-center">{{ $vaga->owner->nome }}</h3>
 
 <div class="col-sm-4 sobre-vaga">
-<div class="text-center fundo-cheio">
-    <img src="{{ asset('img/casacomunal.png') }}">
-    <b class="font-bold-upper col-sm-12">Sobre a organização</b>
-    <p>
-        {{ $vaga->owner->descricao?:"Sem descrição." }}
-    </p>
-    <br><br>
-</div>
+    <div class="text-center fundo-cheio">
+        <img src="{{ asset('img/casacomunal.png') }}">
+        <b class="font-bold-upper col-sm-12">Sobre a organização</b>
+        <p>
+            {{ $vaga->owner->descricao?:"Sem descrição." }}
+        </p>
+        <br><br>
+    </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">

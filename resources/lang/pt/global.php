@@ -815,10 +815,17 @@ return[
 
   /* View: Configuracao [DONE] */
 
-  /* View: Cuidar */
-      'lbl_latestposts' => 'Confira os últimos posts',
-      'lbl_ongsicare' => 'Cuidei',
-      'lbl_tripresources' => 'Uma viagem para entrar em contato com alto astral e cultura.',
+  /*------------------------------------------------------------------------------
+  /  View : CUIDAR
+  ------------------------------------------------------------------------------*/
+    'wannavolunteer_take_care_of_brazil' => 'Cuide do Brasil',
+    'wannavolunteer_search_volunteers_and_develop' => 'Faça trabalhos voluntários e desenvolva o país.',
+    'wannavolunteer_how_it_works' => 'Como funciona',
+    'wannavolunteer_cause_already_know' => 'Já sabe qual causa ajudar?',
+    'wannavolunteer_cause_find_in_three_steps' => 'Encontre projetos de Impacto Social em 3 passos.',
+    'wannavolunteer_see_some_causes' => 'Veja causas nobres',
+    'wannavolunteer_find_some_projects_near_you' => 'Descubra projetos de impacto social pertinho de você!',
+    'wannavolunteer_see_some_projects_suggest_to_follow' => 'Sugestão de Projetos de Impacto para seguir',
 
   /* View: Emails */
 
