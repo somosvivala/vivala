@@ -36,9 +36,10 @@ class ViajarController extends VivalaBaseController {
             $cidades            = Chefsclub::getCidadeForSelect();
             $restaurantes       = Chefsclub::all()->take(10); 
             $pessoas            = Chefsclub::getQuantidadeForSelect(true);
+            $horarios            = Chefsclub::getHorarios(true);
             $restaurantes_total = count(Chefsclub::all());
 
-            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades', 'pessoas') );
+            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades', 'pessoas', 'horarios') );
 	}
 
     public function filtro()

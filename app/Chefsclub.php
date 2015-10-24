@@ -101,4 +101,17 @@ class Chefsclub extends Model {
 
         return $query->get();
     }
+
+    public static function getHorarios() {
+        $start = '09:00:00';
+        $end = '23:30:00';
+        $time = strtotime($start);
+        $timeStop = strtotime($end);
+
+        while($time<$timeStop) {
+            $datas[] = date('H:i', $time);
+            $time = strtotime('+30 minutes', $time);
+        }
+        return $datas;
+    }
 }
