@@ -219,6 +219,7 @@ return[
   'lbl_cause_manage' => 'Gerenciar Vaga',
   'lbl_cause_manage_' => 'Gerenciar Vagas',
   'lbl_cause_name' => 'Nome da Vaga',
+  'lbl_cause_none' => 'Nenhuma vaga',
   'lbl_cause_not_created' => 'Nenhuma vaga criada.',
   'lbl_cause_not_found' => 'Nenhuma vaga encontrada.',
   'lbl_cause_send' => 'Enviar Vaga',
@@ -271,7 +272,7 @@ return[
   'lbl_company_update' => 'Atualizar página de Empresa',
   'lbl_company_update_' => 'Atualizar páginas de Empresas',
   'lbl_connect_with_others' => 'Sugestão de Conexões',
-  'lbl_connect_with_friends' => 'Conecte-se com voluntários',
+  'lbl_connect_with_friends' => 'Conecte-se com amigos',
   'lbl_connect_with_volunteers' => 'Conecte-se com voluntários',
   'lbl_confirm' => 'Confirmar',
   'lbl_contact' => 'Contato',
@@ -592,13 +593,10 @@ return[
     'lbl_travel_add_' => 'Adicionar Viagens',
     'lbl_travel_create' => 'Criar Viagem',
     'lbl_travel_create_' => 'Criar Viagens',
-
     'lbl_travel_setup' => 'Montar Viagem',
     'lbl_travel_none' => 'Nenhuma viagem.',
     'lbl_travel_not_created' => 'Nenhuma viagem criada.',
-    'lbl_travel_not_founded' => 'Nenhuma viagem encontrada.',
-
-
+    'lbl_travel_not_found' => 'Nenhuma viagem encontrada.',
     /* Viagem : Roteiro */
     'lbl_travel_guide' => 'Roteiro',
     'lbl_travel_guide_' => 'Roteiros',
@@ -802,6 +800,17 @@ return[
       'social_network_youtube_img_alt' => 'Vivalá no YouTube',
       'social_network_youtube_img_title' => 'Siga o canal da Vivalá no YouTube',
 
+    /* Passageiros */
+      'passenger_adult' => 'Adulto',
+      'passenger_adult_' => 'Adultos',
+      'passenger_child' => 'Criança',
+      'passenger_child_' => 'Crianças',
+      'passenger_elder' => 'Idoso',
+      'passenger_elder_' => 'Idosos',
+      'passenger_animal' => 'Animal',
+      'passenger_animal_' => 'Animais',
+
+
   /* View: Album [DONE] */
 
   /* View: Auth [DONE] */
@@ -837,7 +846,16 @@ return[
     //
     'wannatravel_package' => 'Pacote',
     'wannatravel_package_' => 'Pacotes',
+    'wannatravel_package_see' => 'Ver Pacote',
+    'wannatravel_package_see_' => 'Ver Pacotes',
     'wannatravel_package_find_best_destinies' => 'Pacotes com os melhores destinos',
+    //
+    'wannatravel_chefsclub_desserts_and_goodies' => 'Delícias que alimentam corpo e alma',
+    'wannatravel_chefsclub_all_restaurants' => 'Todos',
+    'wannatravel_chefsclub_discount' => 'Qualquer desconto',
+    'wannatravel_chefsclub_all_cities' => 'Todas cidades',
+    'wannatravel_chefsclub_any' => 'Qualquer',
+
 
   /*------------------------------------------------------------------------------
   /  View : CUIDAR
@@ -849,6 +867,8 @@ return[
     'wannavolunteer_see_some_causes' => 'Veja causas nobres',
     'wannavolunteer_find_some_projects_near_you' => 'Descubra projetos de impacto social pertinho de você!',
     'wannavolunteer_see_some_projects_suggest_to_follow' => 'Sugestão de Projetos de Impacto para seguir',
+    'wannavolunteer_seeing_some_projects' => 'Procurando por causas?',
+    'wannavolunteer_search_in_three_steps' => 'Encontre em 3 passos.',
 
   /* View: Emails */
 
@@ -1190,5 +1210,6 @@ return[
     'dummy_travel_1' => 'Explore o Rio de Janeiro durante as Olimpíadas!',
     'dummy_travel_2' => 'Que tal curtir Fortaleza no verão?',
     'dummy_travel_3' => 'Encontre hotéis para o carnaval de rua em Recife!',
+    'dummy_travel_4' => 'Ótimo programa para um fim de semana a 2!',
 ];
 ?>

@@ -140,7 +140,7 @@ class VagaController extends CuidarController {
 
         // Faz um post de criação de vaga
         $novoPost = new Post();
-        $novoPost->descricao = "<h1><i class='fa fa-heart'></i></h1><a href='".url('/vagas/'.$novaVaga->id)."' class=''>".$ongResponsavel->nome." criou uma vaga em ".$novaVaga->cidade->nome.",".$novaVaga->estado->sigla."</a>";
+        $novoPost->descricao = "<h1><i class='fa fa-heart'></i></h1><a href='/vagas/".$novaVaga->id."' class=''>".$ongResponsavel->nome." criou uma vaga em ".$novaVaga->cidade->nome.",".$novaVaga->estado->sigla."</a>";
         $novoPost->tipo_post = 'acontecimento';
 
         //Salvando novoPost para entidadeAtiva
