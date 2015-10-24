@@ -232,6 +232,8 @@ return[
   'lbl_company_update' => 'Update company page',
   'lbl_company_update_' => 'Update company pages',
   'lbl_connect_with_others' => 'Connect with others',
+  'lbl_connect_with_friends' => 'Connect with friends',
+  'lbl_connect_with_volunteers' => 'Connect with volunteers',
   'lbl_confirm' => 'Confirm',
   'lbl_contact' => 'Contact',
   'lbl_contact_' => 'Contacts',
@@ -467,12 +469,19 @@ return[
     'lbl_profile_info' => 'Profile Information',
     'lbl_profile_info_' => 'Profile Information',
     'lbl_publish' => 'Publish',
+    /* Compras */
+    'lbl_purchase' => 'Purchase',
+    'lbl_purchase_' => 'Purchases',
+    'lbl_purchase_my' => 'My Purchase',
+    'lbl_purchase_my_' => 'My Purchases',
     'lbl_quiz' => 'Quiz',
     'lbl_quiz_' => 'Quiz',
     'lbl_read_more' => 'Read More',
     'lbl_register' => 'Register',
     'lbl_registered' => 'Registered',
     'lbl_report_problem' => 'Report a problem',
+    'lbl_restaurant' => 'Restaurant',
+    'lbl_restaurant_' => 'Restaurants',
     'lbl_result' => 'Result',
     'lbl_result_' => 'Results',
     'lbl_review' => 'Review',
@@ -518,6 +527,16 @@ return[
     'lbl_tag' => 'Tag',
     'lbl_tag_' => 'Tags',
     'lbl_tag_friends' => 'Tag your friends',
+    /* Viagem */
+    'lbl_travel_add' => 'Add Trip',
+    'lbl_travel_add_' => 'Add Trips',
+    'lbl_travel_create' => 'Create Trip',
+    'lbl_travel_create_' => 'Create Trips',
+    'lbl_travel_setup' => 'Build Trip',
+    'lbl_travel_none' => 'No trips.',
+    'lbl_travel_not_created' => 'None trip created.',
+    'lbl_travel_not_found' => 'None trip found.',
+    /* Viagem : Roteiro */
     'lbl_travel_guide' => 'Itinerary',
     'lbl_travel_guide_' => 'Itineraries',
     'lbl_travel_guide_add' => 'Add Itinerary',
@@ -653,10 +672,19 @@ return[
       'social_network_youtube_img_alt' => 'Vivalá on YouTube',
       'social_network_youtube_img_title' => 'Follow Vivalá channel on YouTube',
 
+    /* Passageiros */
+      'passenger_adult' => 'Adult',
+      'passenger_adult_' => 'Adults',
+      'passenger_child' => 'Child',
+      'passenger_child_' => 'Childs',
+      'passenger_elder' => 'Senior',
+      'passenger_elder_' => 'Seniors',
+      'passenger_animal' => 'Animal',
+      'passenger_animal_' => 'Animals',
 
-  // View: Album
+  /* View: Album [DONE] */
 
-  // View: Auth
+  /* View: Auth [DONE] */
 
   // View: Conectar
 
@@ -670,25 +698,48 @@ return[
       'lbl_volunteershape' => 'Volunteer Profile',
       'lbl_connectwithothers' => 'Connect with others',
 
-  // View: Configuracao
+  /* View: Configuracao [DONE] */
 
-  /* View: Cuidar */
+  /*------------------------------------------------------------------------------
+  /  View : VIAJAR
+  ------------------------------------------------------------------------------*/
+    'wannatravel_title' => 'Meet Brazil',
+    'wannatravel_subtitle' => 'Choose your transport and accommodation, book restaurants and search for entertainment',
+    'wannatravel_trip_already_know' => 'Already know where to go?',
+    'wannatravel_trip_setup' => 'Build your trip!',
+    'wannatravel_trip_restaurants' => 'Restaurants',
+    'wannatravel_trip_hotels_flights_cars' => 'Accommodation, Flights & Cars',
+    'wannatravel_trip_bus_drive' => 'Bus road tickets',
+    // Desativado ainda
+    'wannatravel_trip_stay' => 'Hotels',
+    'wannatravel_trip_go' => 'Flights',
+    'wannatravel_trip_eat' => 'Restaurants',
+    'wannatravel_trip_drive' => 'Cars',
+    //
+    'wannatravel_package' => 'Package',
+    'wannatravel_package_' => 'Packages',
+    'wannatravel_package_see' => 'See Package',
+    'wannatravel_package_see_' => 'See Packages',
+    'wannatravel_package_find_best_destinies' => 'Packages with best destinies',
+    //
+    'wannatravel_chefsclub_desserts_and_goodies' => 'Some tastes that feed body and soul!',
+    'wannatravel_chefsclub_all_restaurants' => 'All',
+    'wannatravel_chefsclub_discount' => 'Any discount',
+    'wannatravel_chefsclub_all_cities' => 'All cities',
+    'wannatravel_chefsclub_any' => 'Any',
 
-    // _perfilatuante.blade
-      'lbl_actingprofile' => 'Active Profile',
-
-    // _vagas.blade
-      'lbl_spaceavaiable' => 'Volunteer Jobs',
-      'lbl_causa_create' => 'Create Volunteer jobs',
-
-    // sugestoeseongs.blade
-      'lbl_ongstofollowsuggests' => 'NGOs to follow',
-      'lbl_noongsuggests' => 'No NGOs to follow',
-
-    // ultimosposts.blade
-      'lbl_latestposts' => 'Check the latest posts',
-      'lbl_ongsicare' => 'I care',
-      'lbl_tripresources' => 'A Great culturar trip.',
+  /*------------------------------------------------------------------------------
+  /  View : CUIDAR
+  ------------------------------------------------------------------------------*/
+    'wannavolunteer_title' => 'Take care of Brazil',
+    'wannavolunteer_subtitle' => 'Do volunteer work and develop the country.',
+    'wannavolunteer_cause_already_know' => 'Already know what causes want to help?',
+    'wannavolunteer_cause_find_in_three_steps' => 'Find Social Impact projects in 3 easy steps.',
+    'wannavolunteer_see_some_causes' => 'See noble causes',
+    'wannavolunteer_find_some_projects_near_you' => 'Discover close social impact projects you!',
+    'wannavolunteer_see_some_projects_suggest_to_follow' => 'Suggestion of Social Impact projects to follow',
+    'wannavolunteer_seeing_some_projects' => 'Searching some causes?',
+    'wannavolunteer_search_in_three_steps' => 'Find in 3 simple steps.',
 
   /* View: Emails */
 
@@ -802,7 +853,6 @@ return[
       'welcome_aboutprivacy1' => ' By clickin Confirm, you agree with our',
       'welcome_aboutprivacy2' => ' and confirm you have read our',
       'welcome_aboutprivacy3' => ', including our',
-  // Blades externas
 
 
 /*------------------------------------------------------------------------------
@@ -1056,5 +1106,6 @@ return[
     'dummy_travel_1' => 'Explore Rio de Janeiro during the Olympics games!',
     'dummy_travel_2' => 'How about enjoy Fortaleza in summer?',
     'dummy_travel_3' => 'Find nice hotels to the street carnival in Recife!',
+    'dummy_travel_4' => 'Great program for 2 on a weekend!',
 ];
 ?>

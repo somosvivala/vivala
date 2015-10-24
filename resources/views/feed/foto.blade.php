@@ -1,7 +1,13 @@
 <article class="foto">
 	<div class="hora-post">
-		<a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a>
-	</div>
+            <a href="/post/{{ $Post->id }}"> {{ $Post->data_postagem_diff }} </a>
+            @if ( Auth::user()->id == $Post->entidade->user->id )
+            {!! Form::open([ 'method' => 'DELETE', 'route' => ['post.destroy', $Post->id] ]) !!}
+            {!! Form::button('<i class="fa fa-trash "></i> ', ['type' => 'submit', 'class' => 'btn-icon', 'onclick' => "return confirm('Tem certeza que deseja remover esse post?');"]) !!}
+
+            {!! Form::close() !!}
+            @endif
+        </div>
 
         <div class="col-sm-2 margin-t-2">
                 <div class="foto-label">
