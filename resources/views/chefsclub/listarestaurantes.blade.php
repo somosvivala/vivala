@@ -7,7 +7,7 @@
     <?php return; ?>
 @endif
 
-<div class="margin-t-2 row detalhes-lista">
+<div data-page="{{ $page }}" class="margin-t-2 row detalhes-lista">
     <div class="col-sm-12">
         <h4 class="font-bold-upper">Mais de {{ $restaurantes_total }} restaurantes disponíveis</h4>
     </div>

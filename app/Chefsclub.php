@@ -23,17 +23,20 @@ class Chefsclub extends Model {
         return self::distinct()->select('desconto')->get();
     }
 
-    public static function getQuantidadeForSelect($parse = false) 
+    public static function getQuantidadeForSelect() 
     {
-        $result = self::distinct()->select('beneficio')->orderBy('beneficio')->get();
-        if ($parse == true) {
-            foreach ($result as &$value) {
-                preg_match("/\d/", $value->beneficio, $qtd);
-                $qtd = $qtd[0] + 1;
-                $value->beneficio = [$qtd => $qtd." Adultos"];
-            }
-        }
-        return $result;
+        return array(
+            ['id' => 1, 'text'=>'1 adulto'],
+            ['id' => 2, 'text'=>'2 adultos'],
+            ['id' => 3, 'text'=>'3 adultos'],
+            ['id' => 4, 'text'=>'4 adultos'],
+            ['id' => 5, 'text'=>'5 adultos'],
+            ['id' => 6, 'text'=>'6 adultos'],
+            ['id' => 7, 'text'=>'7 adultos'],
+            ['id' => 8, 'text'=>'8 adultos'],
+            ['id' => 9, 'text'=>'9 adultos'],
+            ['id' => 10, 'text'=>'10 adultos']
+        );
     }
 
     public static function getCidadeForSelect()
@@ -75,7 +78,7 @@ class Chefsclub extends Model {
         );
         $params = array_merge($params, $filters);
 
-        $query =  DB::table('chefsclub')->skip(($params['page'] - 1)*10)->take(10);
+        $query =  DB::table('chefsclub');
 
         if (isset($params['nome'])) {
             $query->where('restaurante', 'like', "%{$params['nome']}%");
@@ -84,7 +87,7 @@ class Chefsclub extends Model {
             $query->where('horario', 'like', "%{$params['date']}%");
         }
         if (isset($params['time'])) {
-            $query->where(DB::raw($params['time'].'::time BETWEEN horario_abre AND horario_fecha'));
+            $query->whereRaw("'{$params['time']}'::time BETWEEN horario_abre AND horario_fecha");
         }
         if (isset($params['city']) && $params['city'] > 0) {
             $query->where('codigo_cidade', $params['city']);
@@ -92,14 +95,14 @@ class Chefsclub extends Model {
         if (isset($params['type'])) {
             $query->where('tipo_cozinha', 'like', "%{$params['type']}%");
         }
-        if (isset($params['quantity'])) {
-            $query->where('beneficio', 'like', "%{$params['beneficio']}%");
+        if (isset($params['quantity']) && $params['quantity'] > 0) {
+            $query->havingRaw("(SUBSTRING(chefsclub.beneficio, '([0-9])')::integer + 1) >= {$params['quantity']}");
         }
         if (isset($params['promo'])) {
             $query->where('desconto', 'like', "%{$params['promo']}%");
         }
 
-        return $query->get();
+        return $query->groupBy('id')->get();
     }
 
     public static function getHorarios() {
