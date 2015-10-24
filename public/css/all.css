@@ -8604,6 +8604,16 @@ form.form-ajax div.file-upload > label p {
   border: 0px solid transparent;
   padding: 0.35em 0.5em;
 }
+.btn-icon {
+  border: 0px solid transparent;
+  transition: all 0.7s;
+  float: right;
+  background-color: transparent;
+  text-shadow: 0px 0px 4px white;
+}
+.btn-icon:hover {
+  color: #f16f2b;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -10661,6 +10671,16 @@ form.form-ajax div.file-upload > label p {
   margin-bottom: 0px;
   border: 0px solid transparent;
   padding: 0.35em 0.5em;
+}
+.btn-icon {
+  border: 0px solid transparent;
+  transition: all 0.7s;
+  float: right;
+  background-color: transparent;
+  text-shadow: 0px 0px 4px white;
+}
+.btn-icon:hover {
+  color: #f16f2b;
 }
 #welcome-html {
   position: relative;

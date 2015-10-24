@@ -25,7 +25,8 @@
 						<input type="hidden" name="token" value="{{ $token }}">
 
 						<div class="form-group">
-							<div class="col-md-12">
+							<label class="col-md-4 control-label">{{ trans('global.lbl_email') }}</label>
+							<div class="col-md-6">
 								<input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="ENDEREÇO DE EMAIL">
 							</div>
 						</div>
