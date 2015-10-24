@@ -16,6 +16,6 @@
 	@endforelse
 </ul>
 <div class="row text-center wrapper-loadmore">
-    <button type="button" id="load-more-posts" data-pagina="{{isset($pagina)?$pagina:0}}" class="margin-t-2 margin-b-2 btn"> ver mais posts!</button>
+    <button type="button" id="load-more-posts" data-pagina="{{isset($pagina)?$pagina:1}}" class="margin-t-2 margin-b-2 btn"> ver mais posts!</button>
 </div>
 @endif

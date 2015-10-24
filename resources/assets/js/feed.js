@@ -8,7 +8,7 @@ var bindaLoadMore = function() {
             url: '/feed/posts/'+pagina
         })
         .done(function(data) {
-          $(".wrapper-loadmore").addClass('liked');
+          $(".wrapper-loadmore").remove();
           $("ul.lista-posts").parent().append(data);
         })
         .fail(function(data) {
