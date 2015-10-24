@@ -44,6 +44,7 @@
             {!! Form::text("assunto", '', ['title' => trans('global.lbl_subject_feedback'), 'placeholder' => trans('global.lbl_subject_feedback'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::textarea("mensagem", null, ['title'=> trans('global.lbl_message'), 'aria-label'=> trans('global.lbl_message'), 'placeholder'=> trans('global.lbl_message'), 'class' => 'form-control sem-resize margin-b-1' ]) !!}
             {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao pull-right']) !!}
+        {!! Form::hidden('user_id', Auth::user()->id) !!}
         {!! Form::close() !!}
     </div>
     <div class="row col-sm-12 container-fluid margin-t-3">
