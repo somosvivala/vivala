@@ -10,6 +10,7 @@ var bindaLoadMore = function() {
         .done(function(data) {
           $(".wrapper-loadmore").remove();
           $("ul.lista-posts").parent().append(data);
+          bindaLoadMore();
         })
         .fail(function(data) {
                  console.log('Sem posts. ');
