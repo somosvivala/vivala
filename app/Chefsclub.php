@@ -25,13 +25,12 @@ class Chefsclub extends Model {
 
     public static function getQuantidadeForSelect($parse = false) 
     {
-        $result = self::distinct()->select('beneficio')->get()->toArray();
-        print_r($result);
+        $result = self::distinct()->select('beneficio')->orderBy('beneficio')->get();
         if ($parse == true) {
             foreach ($result as &$value) {
-                preg_match("/\d/", $value['beneficio'], $qtd);
+                preg_match("/\d/", $value->beneficio, $qtd);
                 $qtd = $qtd[0] + 1;
-                $value = [$qtd => $qtd." Adultos"];
+                $value->beneficio = [$qtd => $qtd." Adultos"];
             }
         }
         return $result;
