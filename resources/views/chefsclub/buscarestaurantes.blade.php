@@ -1,5 +1,5 @@
 <h3 class="font-bold-upper text-center">{{ trans('global.lbl_restaurant_') }}
-    <small class="sub-titulo">Delícias que alimentam corpo e alma</small>
+    <small class="sub-titulo">{{ trans('global.wannatravel_chefsclub_desserts_and_goodies') }}</small>
 </h3>
 <input type="hidden" name="_token" value="{{\Session::token() }}">
 <div class="row" id="chefsclub-filtros">
