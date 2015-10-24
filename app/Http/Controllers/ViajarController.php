@@ -35,27 +35,48 @@ class ViajarController extends VivalaBaseController {
             $descontos          = Chefsclub::getDescontoForSelect()->lists('desconto');
             $cidades            = Chefsclub::getCidadeForSelect();
             $restaurantes       = Chefsclub::all()->take(10); 
-            $pessoas            = Chefsclub::getQuantidadeForSelect(true);
-            $horarios            = Chefsclub::getHorarios(true);
+            $pessoas            = Chefsclub::getQuantidadeForSelect();
+            $horarios           = Chefsclub::getHorarios(true);
             $restaurantes_total = count(Chefsclub::all());
+            
+            $page = 1;
 
-            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades', 'pessoas', 'horarios') );
+            return view('viajar.index' , compact(
+                'restaurantes',
+                'tipo_cozinha',
+                'descontos',
+                'restaurantes_total',
+                'cidades',
+                'pessoas',
+                'horarios',
+                "page"
+            ));
 	}
 
     public function filtro()
     {
-        $type  = Input::get('tipo');
-        $promo = Input::get('desconto');
-        $city  = Input::get('cidade');
-        $page  = Input::get('page');
+        $type     = Input::get('tipo');
+        $promo    = Input::get('desconto');
+        $city     = Input::get('cidade');
+        $page     = Input::get('page');
+        $quantity = Input::get('qtd');
+        $time     = Input::get('horario');
+        $date     = Input::get('data');
+
+        $date = str_replace('/', '-', $date);
+        $date = date('w', strtotime($date))+1;
 
         $restaurantes = Chefsclub::getRestaurant(compact(
             'type',
             'promo',
-            'city'
+            'city',
+            'date',
+            'quantity',
+            'time'
         ));
 
         $restaurantes_total = count($restaurantes);
+        $restaurantes = array_slice($restaurantes, ($page - 1)*10, 10);
 
         return view('chefsclub.listarestaurantes', compact('restaurantes', 'restaurantes_total'));
     }
