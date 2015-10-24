@@ -28,7 +28,7 @@ class FeedController extends Controller {
     {
         $posts = Post::getMaisfotos()->keyBy('id');
         $posts_total = count($posts);
-        $posts = $posts->slice($pagina, env('QUANTIDADE_FEED_POST'), true);
+        $posts = $posts->slice($pagina*env('QUANTIDADE_FEED_POST'), env('QUANTIDADE_FEED_POST'), true);
         $pagina++;
         return view('feed', compact('posts', 'pagina'));
     }
