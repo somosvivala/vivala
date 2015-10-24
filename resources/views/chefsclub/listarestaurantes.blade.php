@@ -13,12 +13,12 @@
     </div>
     <div class="row margin-t-1 margin-b-1">
         <div class="col-xs-6 text-left">
-            <button type="button" class="btn" id="prev-restaurantes">
+            <button type="button" class="btn prev-restaurantes" {{ $page > 1 ? "": "disabled" }}>
                 <i class="fa fa-arrow-left"></i>
             </button>
         </div>
         <div class="col-xs-6 text-right">
-            <button type="button" class="btn" id="next-restaurantes">
+            <button type="button" class="btn next-restaurantes" {{ $page * 10 >= $restaurantes_total ? "disabled" : "" }}>
                 <i class="fa fa-arrow-right"></i>
             </button>
         </div>
@@ -134,17 +134,17 @@
         </div>
     </div>
     @endforeach
+    <div class="row margin-t-1 margin-b-1">
+        <div class="col-xs-6 text-left">
+            <button type="button" class="btn prev-restaurantes margin-t-1" {{ $page > 1 ? "": "disabled" }}>
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button type="button" class="btn next-restaurantes margin-t-1" {{ $page * 10 >= $restaurantes_total ? "disabled" : "" }}>
+                    <i class="fa fa-arrow-right"></i>
+                </button>
+        </div>
+    </div>
 </div>
 
-<div class="row margin-t-1 margin-b-1">
-    <div class="col-xs-6 text-left">
-        <button type="button" class="btn" id="prev-restaurantes">
-                <i class="fa fa-arrow-left"></i>
-            </button>
-    </div>
-    <div class="col-xs-6 text-right">
-        <button type="button" class="btn" id="next-restaurantes">
-                <i class="fa fa-arrow-right"></i>
-            </button>
-    </div>
-</div>

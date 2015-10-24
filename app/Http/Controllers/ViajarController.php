@@ -63,8 +63,10 @@ class ViajarController extends VivalaBaseController {
         $time     = Input::get('horario');
         $date     = Input::get('data');
 
-        $date = str_replace('/', '-', $date);
-        $date = date('w', strtotime($date))+1;
+        if (strlen($date) > 0) {
+            $date = str_replace('/', '-', $date);
+            $date = date('w', strtotime($date))+1;
+        }
 
         $restaurantes = Chefsclub::getRestaurant(compact(
             'type',

@@ -80,25 +80,25 @@ class Chefsclub extends Model {
 
         $query =  DB::table('chefsclub');
 
-        if (isset($params['nome'])) {
+        if (isset($params['nome'])  && strlen($params['nome']) > 0) {
             $query->where('restaurante', 'like', "%{$params['nome']}%");
         }
-        if (isset($params['date'])) {
+        if (isset($params['date']) && $params['date'] > 0) {
             $query->where('horario', 'like', "%{$params['date']}%");
         }
-        if (isset($params['time'])) {
+        if (isset($params['time']) && strlen($params['time']) > 0) {
             $query->whereRaw("'{$params['time']}'::time BETWEEN horario_abre AND horario_fecha");
         }
         if (isset($params['city']) && $params['city'] > 0) {
             $query->where('codigo_cidade', $params['city']);
         }
-        if (isset($params['type'])) {
+        if (isset($params['type']) && strlen($params['type']) > 0) {
             $query->where('tipo_cozinha', 'like', "%{$params['type']}%");
         }
         if (isset($params['quantity']) && $params['quantity'] > 0) {
             $query->havingRaw("(SUBSTRING(chefsclub.beneficio, '([0-9])')::integer + 1) >= {$params['quantity']}");
         }
-        if (isset($params['promo'])) {
+        if (isset($params['promo']) && strlen($params['promo']) > 0) {
             $query->where('desconto', 'like', "%{$params['promo']}%");
         }
 
