@@ -578,7 +578,7 @@
                                                                 <tbody><tr>
                                                                         <td class="mcnImageContent" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
 
-                                                                            <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/427b9354-0aeb-4e19-8ca0-a17bfc2c7839.jpg" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="600">
+                                                                            <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/766debac-69ee-4259-b83a-1a2fc407b461.jpg" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="600">
 
 
                                                                         </td>
