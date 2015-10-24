@@ -11,6 +11,18 @@
     <div class="col-sm-12">
         <h4 class="font-bold-upper">Mais de {{ $restaurantes_total }} restaurantes disponíveis</h4>
     </div>
+    <div class="row margin-t-1 margin-b-1">
+        <div class="col-xs-6 text-left">
+            <button type="button" class="btn" id="prev-restaurantes">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+        </div>
+        <div class="col-xs-6 text-right">
+            <button type="button" class="btn" id="next-restaurantes">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
     @foreach($restaurantes as $r)
     <div class="col-sm-6 col-xs-12 margin-t-2">
         <div class="restaurante col-sm-12">
@@ -124,3 +136,15 @@
     @endforeach
 </div>
 
+<div class="row margin-t-1 margin-b-1">
+    <div class="col-xs-6 text-left">
+        <button type="button" class="btn" id="prev-restaurantes">
+                <i class="fa fa-arrow-left"></i>
+            </button>
+    </div>
+    <div class="col-xs-6 text-right">
+        <button type="button" class="btn" id="next-restaurantes">
+                <i class="fa fa-arrow-right"></i>
+            </button>
+    </div>
+</div>
