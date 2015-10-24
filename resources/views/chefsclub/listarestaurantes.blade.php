@@ -45,7 +45,7 @@
                             <h5 class="font-bold-upper">{{ $r->restaurante }}</h5>
                         </div>
                         <div class="col-sm-3 text-right">
-                            {{ $r->hora_data }}
+                            {{ $r->dia_hora }}
                             <span class="desconto">{{ $r->desconto }}</span>
                         </div>
                     </div>

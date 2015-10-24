@@ -31,13 +31,14 @@ class ViajarController extends VivalaBaseController {
 	 */
 	public function index()
 	{
-            $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
-            $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
-            $cidades = Chefsclub::getCidadeForSelect();
-            $restaurantes = Chefsclub::all()->take(10); 
+            $tipo_cozinha       = Chefsclub::getTipoCozinhaForSelect();
+            $descontos          = Chefsclub::getDescontoForSelect()->lists('desconto');
+            $cidades            = Chefsclub::getCidadeForSelect();
+            $restaurantes       = Chefsclub::all()->take(10); 
+            $pessoas            = Chefsclub::getQuantidadeForSelect(true);
             $restaurantes_total = count(Chefsclub::all());
 
-            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades') );
+            return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades', 'pessoas') );
 	}
 
     public function filtro()
@@ -45,6 +46,7 @@ class ViajarController extends VivalaBaseController {
         $type  = Input::get('tipo');
         $promo = Input::get('desconto');
         $city  = Input::get('cidade');
+        $page  = Input::get('page');
 
         $restaurantes = Chefsclub::getRestaurant(compact(
             'type',

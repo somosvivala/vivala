@@ -27,4 +27,12 @@
             @endforeach
         </select>
     </div>
+    <div class="col-md-2">
+        <select id="qtd-pessoas" class="form-control">
+            <option value="">Qualquer</option>
+            @foreach($pessoas as $numPessoas => $txtPessoas)
+            <option value="{{ $numPessoas }}">{{ $txtPessoas }}</option>
+            @endforeach
+        </select>
+    </div>
 </div>
