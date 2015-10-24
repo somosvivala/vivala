@@ -34,7 +34,6 @@ Route::controller('busca','SearchController');
 Route::controller('ong','OngController');
 Route::controller('restaurantes','ChefsclubController');
 
-
 // Rotas dos três pilares do sistema
 Route::resource('viajar','ViajarController');
 Route::resource('cuidar','CuidarController');
@@ -45,6 +44,8 @@ Route::resource('conectar','ConectarController');
  */
 
 // Rota para sugestoes de viajantes
+Route::post('viajar/filtro','ViajarController@filtro');
+
 Route::get('sugestoesviajantes','SugestaoController@getViajantes');
 Route::get('sugestoesviajantes/{filtro}','SugestaoController@getViajantes');
 

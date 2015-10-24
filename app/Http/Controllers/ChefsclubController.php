@@ -18,12 +18,25 @@ class ChefsclubController extends Controller {
 		//
 	}
 
-        public function getBusca()
-        {
-            $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
-            $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
-            $restaurantes = Chefsclub::all()->take(10); 
-            
-            return view('chefsclub.listarestaurantes', compact('tipo_cozinha', 'descontos', 'restaurantes'));
-        }
+    public function getBusca()
+    {
+        $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
+        $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
+        $restaurantes = Chefsclub::all()->take(10); 
+        
+        return view('chefsclub.listarestaurantes', compact('tipo_cozinha', 'descontos', 'restaurantes'));
+    }
+
+    public function filtro()
+    {
+        $type  = Input::get('tipo');
+        $promo = Input::get('desconto');
+        $city  = Input::get('cidade');
+
+        print(Chefsclub::getRestaurant(compact(
+            'type',
+            'promo',
+            'city'
+        )));
+    }
 }

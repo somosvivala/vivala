@@ -7,6 +7,7 @@ use View;
 use Auth;
 use Illuminate\Http\Request;
 use App\Chefsclub;
+use Input;
 
 class ViajarController extends VivalaBaseController {
 
@@ -38,4 +39,21 @@ class ViajarController extends VivalaBaseController {
 
             return view('viajar.index' , compact('restaurantes', 'tipo_cozinha', 'descontos', 'restaurantes_total', 'cidades') );
 	}
+
+    public function filtro()
+    {
+        $type  = Input::get('tipo');
+        $promo = Input::get('desconto');
+        $city  = Input::get('cidade');
+
+        $restaurantes = Chefsclub::getRestaurant(compact(
+            'type',
+            'promo',
+            'city'
+        ));
+
+        $restaurantes_total = count($restaurantes);
+
+        return view('chefsclub.listarestaurantes', compact('restaurantes', 'restaurantes_total'));
+    }
 }

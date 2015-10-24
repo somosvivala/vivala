@@ -1,7 +1,15 @@
+@if ($restaurantes_total == 0)
+    <div class="margin-t-2 row detalhes-lista">
+        <div class="col-sm-12">
+            <h4 class="font-bold-upper">Nenhum restaurante encontrado :(</h4>
+        </div>
+    </div>
+    <?php return; ?>
+@endif
 
 <div class="margin-t-2 row detalhes-lista">
     <div class="col-sm-12">
-        <h4 class="font-bold-upper">Mais de {{ round($restaurantes_total/100)*100 }} restaurantes disponíveis</h4>
+        <h4 class="font-bold-upper">Mais de {{ $restaurantes_total }} restaurantes disponíveis</h4>
     </div>
     @foreach($restaurantes as $r)
     <div class="col-sm-6 col-xs-12 margin-t-2">
@@ -37,7 +45,7 @@
                             <h5 class="font-bold-upper">{{ $r->restaurante }}</h5>
                         </div>
                         <div class="col-sm-3 text-right">
-                            {{ $r->horario }}
+                            {{ $r->hora_data }}
                             <span class="desconto">{{ $r->desconto }}</span>
                         </div>
                     </div>

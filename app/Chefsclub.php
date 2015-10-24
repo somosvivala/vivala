@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use \DB as DB;
 
 class Chefsclub extends Model {
     /**
@@ -69,11 +70,13 @@ class Chefsclub extends Model {
             'time'     => null,
             'city'     => null,
             'type'     => null,
-            'quantity' => null
+            'quantity' => null,
+            'promo'    => null,
+            'page'     => 1
         );
         $params = array_merge($params, $filters);
 
-        $query =  DB::table('chefsclub');
+        $query =  DB::table('chefsclub')->skip(($params['page'] - 1)*10)->take(10);
 
         if (isset($params['nome'])) {
             $query->where('restaurante', 'like', "%{$params['nome']}%");
@@ -84,7 +87,7 @@ class Chefsclub extends Model {
         if (isset($params['time'])) {
             $query->where(DB::raw($params['time'].'::time BETWEEN horario_abre AND horario_fecha'));
         }
-        if (isset($params['city'])) {
+        if (isset($params['city']) && $params['city'] > 0) {
             $query->where('codigo_cidade', $params['city']);
         }
         if (isset($params['type'])) {
@@ -93,7 +96,10 @@ class Chefsclub extends Model {
         if (isset($params['quantity'])) {
             $query->where('beneficio', 'like', "%{$params['beneficio']}%");
         }
+        if (isset($params['promo'])) {
+            $query->where('desconto', 'like', "%{$params['promo']}%");
+        }
 
-        return $query->get()->toArray();
+        return $query->get();
     }
 }
