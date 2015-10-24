@@ -9,7 +9,7 @@
 
 <div data-page="{{ $page }}" class="margin-t-2 row detalhes-lista">
     <div class="col-sm-12">
-        <h4 class="font-bold-upper">Mais de {{ $restaurantes_total }} restaurantes disponíveis</h4>
+        <h4 class="font-bold-upper">{{ $restaurantes_total }} Restaurantes disponíveis</h4>
     </div>
     <div class="row margin-t-1 margin-b-1">
         <div class="col-xs-6 text-left">

@@ -44,6 +44,7 @@ elixir(function(mix) {
       '../../assets/js/desativalinks.js',
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/js/uploadFoto.js',
+      '../../assets/js/feed.js',
       '../../assets/js/notificacoes.js',
       '../../assets/js/welcome.js',
       '../../assets/js/quimera.js',
