@@ -8318,6 +8318,9 @@ img.foto-avatar .cover {
 .foto-avatar-comentario .cover {
   z-index: 0;
 }
+ul.lista-usuarios li.foto-user {
+  height: 12em;
+}
 ul.lista-usuarios li.foto-user img {
   border-radius: 50%;
   width: 7em;
@@ -10385,6 +10388,9 @@ img.foto-avatar .cover {
 }
 .foto-avatar-comentario .cover {
   z-index: 0;
+}
+ul.lista-usuarios li.foto-user {
+  height: 12em;
 }
 ul.lista-usuarios li.foto-user img {
   border-radius: 50%;
