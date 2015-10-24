@@ -169,11 +169,11 @@
 				<div class="row">
 					<div class="col-sm-12 welcome-privacy">
 						<p>{{ trans('global.welcome_aboutprivacy1') }}
-							<a href="#"> {{ trans('global.lbl_legal_terms') }}</a>
+							<a href="/paginas/termosecondicoes"> {{ trans('global.lbl_legal_terms') }}</a>
 							 {{ trans('global.welcome_aboutprivacy2') }}
-							<a href="#"> {{ trans('global.lbl_data_policy') }}</a>
+							<a href="/paginas/termosecondicoes"> {{ trans('global.lbl_data_policy') }}</a>
 							 {{ trans('global.welcome_aboutprivacy3') }}
-							<a href="#"> {{ trans('global.lbl_cookie_use') }}</a>.
+							<a href="/paginas/termosecondicoes"> {{ trans('global.lbl_cookie_use') }}</a>.
 						</p>
 					</div>
 				</div>

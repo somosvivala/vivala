@@ -19,7 +19,10 @@ class PaginaController extends Controller {
      * Create a new controller instance.
      *
      * @return void
-     */ public function __construct() { $this->middleware('auth');
+     */ 
+    public function __construct() { 
+        // Use middleware only on some functions
+        $this->middleware('auth', ['except' => 'getTermosecondicoes']);    
     }
 
     /**
@@ -153,7 +156,12 @@ class PaginaController extends Controller {
      */
     public function getTermosecondicoes()
     {
-        return view('paginas.termosecondicoes');
+        if (Auth::user()) {
+            return view('paginas.termosecondicoes');
+        } else {
+            return view('paginas._termosecondicoes');
+        }
+
     }
 
 
