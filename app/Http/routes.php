@@ -66,7 +66,7 @@ Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::get('ongs','OngController@ongs');
 Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
 Route::get('ongs/sobre/{id}','OngController@sobre');
-Route::controller('feed','Cuidar\FeedController');
+Route::controller('feed','FeedController');
 
 
 Route::controller('home', 'HomeController');

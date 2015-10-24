@@ -30,16 +30,10 @@ class ConectarController extends VivalaBaseController {
     public function index()
     {
         $posts = Post::getMaisfotos()->keyBy('id');
-
-        if (env('POST_FIXO_ID') != null)
-        {
-            $post_fixo = $posts->find(env('POST_FIXO_ID'));
-            $posts->forget($post_fixo->id);
-            $posts->prepend($post_fixo);
-        }
-
+        $posts_total = count($posts);
+        $posts = $posts->slice(0, 40);
+       
         return view('conectar.index', compact('posts'));
-
     }
 
 }

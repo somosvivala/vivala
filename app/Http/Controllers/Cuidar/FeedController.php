@@ -6,6 +6,7 @@ use App\Http\Controllers\CuidarController;
 
 use Illuminate\Http\Request;
 
+
 class FeedController extends CuidarController {
 
 	/**
