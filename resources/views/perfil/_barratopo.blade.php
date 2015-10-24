@@ -24,7 +24,7 @@
     <div class="col-md-2">
         {!! Form::open(['url' => ['ajax/followperfil', $perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$perfil->id.')']) !!}
         <a href="{{ url($perfil->getUrl()) }}">
-            <button name='btn_seguir' type="submit" class='btn-follow btn_seguir_viajante' data-id="{{ $perfil->id }}">seguir</button>
+            <button name='btn_seguir' type="submit" class='@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) suave @else @endif  btn-follow btn_seguir_viajante ' data-id="{{ $perfil->id }}">@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) seguindo @else seguir @endif</button>
                 <div class="round foto quadrado7em">
                         <div class="cover">
                             <img src="{{ $perfil->getAvatarUrl() }}" alt=" {{ $perfil->nome }}">
