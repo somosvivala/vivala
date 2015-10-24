@@ -1,11 +1,13 @@
 <div class="row barra-post fundo-cheio" id="barra-post-{{ $Post->id }}">
 
-	<div class="col-sm-4 tag">
-		<a href="#perfilcontroller/likepost/{{ $Post->id }}" class="fa-1-3x tag-btn"><i class="fa fa-tag"></i></a>
+        <div class="col-sm-4 tag">
+                {{--
+		<a href="#perfilcontroller/likepost/{{ $Post->id }}" class="tag-btn"><i class="fa fa-tag"></i></a>
 		<span class="qtd-likes">
-
 		</span>
-	</div>
+                --}}
+                &nbsp;
+        </div>
 	<div class="col-sm-2 like">
 		<a href="#post/likepost/{{ $Post->id }}" class="fa-1-3x like-btn like-btn-post {{ $Post->likedByMe() }}"><i class="fa fa-heart"></i></a>
 		<span class="qtd-likes">

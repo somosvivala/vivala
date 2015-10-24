@@ -22,11 +22,16 @@
         <p class="col-sm-12 row">{{ $perfil->descricao_curta }}</p>
     </div>
     <div class="col-md-2">
-        <div class="round foto">
-            <div class="cover">
-                <img src="{{ $perfil->getAvatarUrl() }}" alt="{{ $user->username }}">
-            </div>
-        </div>
+        {!! Form::open(['url' => ['ajax/followperfil', $perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$perfil->id.')']) !!}
+        <a href="{{ url($perfil->getUrl()) }}">
+            <button name='btn_seguir' type="submit" class='btn-follow btn_seguir_viajante' data-id="{{ $perfil->id }}">seguir</button>
+                <div class="round foto quadrado7em">
+                        <div class="cover">
+                            <img src="{{ $perfil->getAvatarUrl() }}" alt=" {{ $perfil->nome }}">
+                        </div>
+                </div>
+        </a>
+        {!! Form::close() !!}
     </div>
     <div class="col-md-4 font-bold-upper">
         <ul>
