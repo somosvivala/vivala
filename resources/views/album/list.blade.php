@@ -14,19 +14,22 @@
 
 		<div class="panel-body">
 			@forelse($albums as $album)
-		        <li class="fotos col-sm-12">
-					<strong>{{ $album->nome }}</strong> <a href="/albums/{{$album->id}}/edit">{{ trans('global.lbl_edit') }}</a>
-					<p>{{ $album->descricao }}</p>
-					<ul>
-						@forelse($album->fotos as $foto)
-						<li><img src="{{$foto->path}}" alt="lalal"></li>
-						@empty
-						<!--p>empty</p-->
-						@endforelse
-					</ul>
-		        </li>
+	        <li class="fotos col-sm-12">
+						<strong>{{ $album->nome }}</strong>
+						<a href="/albums/{{$album->id}}/edit">{{ trans('global.lbl_edit') }}</a>
+						<p>{{ $album->descricao }}</p>
+						<ul>
+							@forelse($album->fotos as $foto)
+							<li><img src="{{$foto->path}}" alt="{{ trans('global.lbl_photo') }}"></li>
+
+							@empty
+							<p>{{ trans('global.lbl_photo_none') }}</p>
+
+							@endforelse
+						</ul>
+	        </li>
 				@empty
-				    <p>{{ trans('global.lbl_album_no') }}</p>
+				    <p>{{ trans('global.lbl_album_none') }}</p>
 			@endforelse
 		</div>
 	</div>

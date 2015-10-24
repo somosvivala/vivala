@@ -17,7 +17,7 @@
                 {{ trans('global.crowdfunding_support_vivala') }}
             </h4>
             <h4 class="col-sm-12 text-center">
-                <a href="http://www.catarse.me/pt/vivalabrasil?ref=explore" alt="{{ trans('global.crowdfunding_a_alt_crowdvivala') }}" title="{{ trans('global.crowdfunding_a_title_crowdvivala') }}" class="laranja" target="_blank">www.catarse.me/pt/vivalabrasil?ref=explore</a>
+                <a href="http://www.catarse.me/pt/vivala" alt="{{ trans('global.crowdfunding_a_alt_crowdvivala') }}" title="{{ trans('global.crowdfunding_a_title_crowdvivala') }}" class="laranja" target="_blank">www.catarse.me/pt/vivala</a>
             </h4>
         </div>
     </div>

@@ -25,7 +25,7 @@
 
             {!! Form::open(['url' => ['ajax/followperfil', $perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$perfil->id.')']) !!}
             <a href="{{ url($perfil->getUrl()) }}">
-                @if (!$perfil->user->id == Auth::user()->id)
+                @if ($perfil->id != Auth::user()->entidadeAtiva->id)
                     <button name='btn_seguir' type="submit" class='@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) suave @else @endif  btn-follow btn_seguir_viajante ' data-id="{{ $perfil->id }}">@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) seguindo @else seguir @endif</button>
                 @endif
                     <div class="round foto quadrado7em">

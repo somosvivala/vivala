@@ -15,6 +15,6 @@
 
 	@empty
 	    <p>{{ trans('global.lbl_album_without_photo_') }}</p>
-	@endforelse
 
+	@endforelse
 @endsection

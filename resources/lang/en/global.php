@@ -239,12 +239,12 @@ return[
   'lbl_cellphone' => 'Cellphone',
   'lbl_cookie' => 'Cookie',
   'lbl_cookie_' => 'Cookies',
-  'lbl_cookie_use' => 'Cookies usage',
+  'lbl_cookie_use' => 'Cookies Usage',
   'lbl_cover_photo' => 'Cover Photo',
   'lbl_create' => 'Create',
   'lbl_created_at' => 'Created on',
   'lbl_brazilian_culture' => 'Brazilian Culture',
-  'lbl_data_policy' => 'data Policy',
+  'lbl_data_policy' => 'Data Policy',
   'lbl_developer' => 'Developer',
   'lbl_description' => 'Description',
   'lbl_description_long' => 'Long Description',
@@ -328,7 +328,7 @@ return[
   'lbl_invite' => 'Invitation',
   'lbl_invite_' => 'Invitations',
   'lbl_language' => 'Language',
-  'lbl_legal_terms' => 'Terms of use',
+  'lbl_legal_terms' => 'Terms of Use',
   'lbl_liker' => 'Like',
   'lbl_like' => 'Like',
   'lbl_like_' => 'Likes',
@@ -1049,5 +1049,12 @@ return[
     'crowdfunding_support_vivala' => 'Support Vivalá&#39;s development on:',
     'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it <3',
+
+    /*----------------------------------------------------------------------------------
+    / DUMMY - serão deletados em versões futuras, só pra preencher o beta
+    /---------------------------------------------------------------------------------*/
+    'dummy_travel_1' => 'Explore Rio de Janeiro during the Olympics games!',
+    'dummy_travel_2' => 'How about enjoy Fortaleza in summer?',
+    'dummy_travel_3' => 'Find nice hotels to the street carnival in Recife!',
 ];
 ?>
