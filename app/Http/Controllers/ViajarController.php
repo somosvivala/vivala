@@ -38,7 +38,7 @@ class ViajarController extends VivalaBaseController {
             $pessoas            = Chefsclub::getQuantidadeForSelect();
             $horarios           = Chefsclub::getHorarios(true);
             $restaurantes_total = count(Chefsclub::all());
-            
+
             $page = 1;
 
             return view('viajar.index' , compact(
@@ -78,6 +78,6 @@ class ViajarController extends VivalaBaseController {
         $restaurantes_total = count($restaurantes);
         $restaurantes = array_slice($restaurantes, ($page - 1)*10, 10);
 
-        return view('chefsclub.listarestaurantes', compact('restaurantes', 'restaurantes_total'));
+        return view('chefsclub.listarestaurantes', compact('restaurantes', 'restaurantes_total', 'page'));
     }
 }
