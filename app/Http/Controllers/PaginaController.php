@@ -12,6 +12,7 @@ use App\CategoriaOng;
 use Session;
 use Mail;
 
+use App\Http\Requests\ContatoRequest;
 
 class PaginaController extends Controller {
 
@@ -100,15 +101,24 @@ class PaginaController extends Controller {
     }
 
 
-
-
-
     /**
      * Retorna a blade da pagina de Contato
      */
     public function getContato()
     {
         return view('paginas.contato');
+    }
+
+
+    /**
+     * Recebe a request do form de contato e dispara o mail
+     */
+    public function postContato(ContatoRequest $request)
+    {
+        Mail::send('emails.contato', ['request' => $request], function ($message)  {
+            $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pelo Formulário de Contato!');
+            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+        });
     }
 
     /**

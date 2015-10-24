@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="col-sm-7 form-borda-preta">
-        {!! Form::open(['url' => 'contato']) !!}
+        {!! Form::open(['url' => '/paginas/contato', 'method' => 'POST']) !!}
             {!! Form::text("nome", '', ['title' => trans('global.lbl_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::text("email", '', ['title' => trans('global.lbl_email'), 'placeholder' => trans('global.lbl_email'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::text("assunto", '', ['title' => trans('global.lbl_subject_feedback'), 'placeholder' => trans('global.lbl_subject_feedback'), 'class' => 'form-control margin-b-1']) !!}
