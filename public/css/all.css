@@ -9392,6 +9392,10 @@ ul.quartos-hotel {
   background-size: cover;
   background-position: center center;
 }
+#chefsclub-filtros .select-filtro {
+  width: 16%;
+  float: left;
+}
 .icon36 {
   background-position: center;
   background-repeat: no-repeat;

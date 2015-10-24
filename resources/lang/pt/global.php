@@ -506,6 +506,9 @@ return[
     'lbl_photo_resize' => 'Redimensionar Foto',
     'lbl_photo_send' => 'Enviar Foto',
     'lbl_photo_update' => 'Atualizar Foto',
+    'lbl_photo_none' => 'Nenhuma foto.',
+    'lbl_photo_not_created' => 'Nenhuma foto criada.',
+    'lbl_photo_not_found' => 'Nenhuma foto encontrada.',
     'lbl_post' => 'Publicação',
     'lbl_post_' => 'Publicações',
     'lbl_post_see_last' => 'Confira os últimos posts',
@@ -831,6 +834,10 @@ return[
     'wannatravel_trip_go' => 'Vôos',
     'wannatravel_trip_eat' => 'Restaurantes',
     'wannatravel_trip_drive' => 'Carros',
+    //
+    'wannatravel_package' => 'Pacote',
+    'wannatravel_package_' => 'Pacotes',
+    'wannatravel_package_find_best_destinies' => 'Pacotes com os melhores destinos',
 
   /*------------------------------------------------------------------------------
   /  View : CUIDAR
@@ -1180,11 +1187,8 @@ return[
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
-    'dummy_salvador' => 'Uma viagem para entrar em contato com alto astral e cultura.',
-    'dummy_saothome' => 'Fui encontrar uma galera, a viagem foi incrível!',
-    'dummy_bonito' => 'Uma viagem com muito verde, cavernas e coisas bonitas, eu adorei!',
-    'dummy_pantanal' => 'Um espetáculo da natureza! Aprecie o sol, a fauna e os rios multicoloridos que o Pantanal podem te proporcionar.',
-    'dummy_maragogi' => 'Vislumbre as belezas naturais que Maragogi pode te proporcionar, venha se refrescar em nossas piscinas naturais!',
-    'dummy_chapadaguimaraes' => 'Veja o rio Coxipó desaguar, visite a cachoeira Véu da Noiva e leve na memória uma viagem fantástica.',
+    'dummy_travel_1' => 'Explore o Rio de Janeiro durante as Olimpíadas!',
+    'dummy_travel_2' => 'Que tal curtir Fortaleza no verão?',
+    'dummy_travel_3' => 'Encontre hotéis para o carnaval de rua em Recife!',
 ];
 ?>

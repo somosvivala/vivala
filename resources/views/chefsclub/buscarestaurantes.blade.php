@@ -3,33 +3,44 @@
 </h3>
 <input type="hidden" name="_token" value="{{\Session::token() }}">
 <div class="row" id="chefsclub-filtros">
-    <div class="col-md-3">
+    <div class="select-filtro">
         <select id="tipo-cozinha" class="form-control">
-            <option value="">Todos</option>
+            <option value="">Tipo Cozinha</option>
             @foreach($tipo_cozinha as $TipoCozinha)
             <option value="{{ $TipoCozinha }}">{{ $TipoCozinha }}</option>
             @endforeach
         </select>
     </div>
-    <div class="col-md-2">
+    <div class="select-filtro">
+            <input placeholder="Data" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataRestaurante" name="dataRestaurante" class="form-control" type="text">
+    </div>
+    <div class="select-filtro">
+        <select id="qtd-pessoas" class="form-control">
+            <option value="">Horário</option>
+            @foreach($horarios as $horario)
+            <option value="{{ $horario }}">{{ $horario }}</option>
+            @endforeach
+        </select>
+    </div>
+    <div class="select-filtro">
         <select id="porcentagem-desconto" class="form-control">
-            <option value="">Qualquer desconto</option>
+            <option value="">Desconto</option>
             @foreach($descontos as $Desconto)
             <option value="{{ $Desconto }}">{{ $Desconto }}</option>
             @endforeach
         </select>
     </div>
-    <div class="col-md-3">
+    <div class="select-filtro">
         <select id="cidade-restaurante" class="form-control">
-            <option value="0">Todas Cidades</option>
+            <option value="0">Cidade</option>
             @foreach($cidades as $Cidade)
             <option value="{{ $Cidade['id'] }}">{{ $Cidade['cidade'] }}</option>
             @endforeach
         </select>
     </div>
-    <div class="col-md-2">
+    <div class="select-filtro">
         <select id="qtd-pessoas" class="form-control">
-            <option value="">Qualquer</option>
+            <option value=""> Pessoas</option>
             @foreach($pessoas as $numPessoas => $txtPessoas)
             <option value="{{ $numPessoas }}">{{ $txtPessoas }}</option>
             @endforeach
