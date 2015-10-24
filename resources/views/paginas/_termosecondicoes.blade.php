@@ -1,7 +1,7 @@
 @extends('templatedeslogado')
 
 @section('content')
-<div class="fundo-cheio col-sm-12 text-justified padding-b-2">
+<div class="col-sm-12 text-justified padding-b-2">
     <div class="col-sm-12">
     <h3 class="font-bold-upper text-center margin-b-2">
         {{ trans('global.termsconditions_title') }}
