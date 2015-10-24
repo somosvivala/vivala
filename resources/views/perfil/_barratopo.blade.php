@@ -22,16 +22,20 @@
         <p class="col-sm-12 row">{{ $perfil->descricao_curta }}</p>
     </div>
     <div class="col-md-2">
-        {!! Form::open(['url' => ['ajax/followperfil', $perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$perfil->id.')']) !!}
-        <a href="{{ url($perfil->getUrl()) }}">
-            <button name='btn_seguir' type="submit" class='btn-follow btn_seguir_viajante' data-id="{{ $perfil->id }}">seguir</button>
-                <div class="round foto quadrado7em">
-                        <div class="cover">
-                            <img src="{{ $perfil->getAvatarUrl() }}" alt=" {{ $perfil->nome }}">
-                        </div>
-                </div>
-        </a>
-        {!! Form::close() !!}
+
+            {!! Form::open(['url' => ['ajax/followperfil', $perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$perfil->id.')']) !!}
+            <a href="{{ url($perfil->getUrl()) }}">
+                @if (!$perfil->user->id == Auth::user()->id)
+                    <button name='btn_seguir' type="submit" class='@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) suave @else @endif  btn-follow btn_seguir_viajante ' data-id="{{ $perfil->id }}">@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) seguindo @else seguir @endif</button>
+                @endif
+                    <div class="round foto quadrado7em">
+                            <div class="cover">
+                                <img src="{{ $perfil->getAvatarUrl() }}" alt=" {{ $perfil->nome }}">
+                            </div>
+                    </div>
+            </a>
+            {!! Form::close() !!}
+
     </div>
     <div class="col-md-4 font-bold-upper">
         <ul>

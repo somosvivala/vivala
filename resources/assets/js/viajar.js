@@ -110,7 +110,16 @@ var chamaCheckout = function(url) {
       $(this).find('iframe').attr('src', url)
     });
     $('.modal').modal({show:true});
-}
+};
+
+// Atualiza o iframe do checkout com a url recebida por parametro
+$('.ativa-modal-quimera').on('click', function() {
+    var url = $(this).data('url');
+    $('#modal-quimera.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
+      $(this).find('iframe').attr('src', url)
+    });
+    $('#modal-quimera.modal').modal({show:true});
+});
 
 // Mostra as quantidades de adulto e criança para cada quarto
 $("#qtd-quartos-hotel").change(function() {

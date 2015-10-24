@@ -42,5 +42,20 @@
 
 	<!-- Iubenda (link de Privacy Policy) -->
 	<!-- <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> -->
+<!-- Modal com iframe da quimera -->
+<div id="modal-quimera" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+            <div class="modal-body">
+                <iframe src="" class="quimera_iframe" style="border: 0;">
+                </iframe>
+            </div>
+            <div class="modal-footer">
+                <!--button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button> -->
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

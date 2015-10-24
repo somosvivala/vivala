@@ -24,7 +24,7 @@
             </a>
         </li>
         <li class="col-sm-5">
-            <a href="#quimera" data-toggle="modal" data-target="#modal-quimera">
+            <a href="#quimera" data-url="http://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
                {{ trans('global.wannatravel_trip_hotels_flights_cars') }}
             </a>
         </li>
@@ -72,21 +72,6 @@
             <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
         </div>
         --}}
-    </div>
-</div>
-<!-- Modal com iframe da quimera -->
-<div id="modal-quimera" class="modal fade" role="dialog">
-    <div class="modal-dialog modal-lg">
-
-        <div class="modal-content">
-            <div class="modal-body">
-                <iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;">
-                </iframe>
-            </div>
-            <div class="modal-footer">
-                <!--button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button> -->
-            </div>
-        </div>
     </div>
 </div>
 

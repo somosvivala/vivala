@@ -88,15 +88,15 @@ class Perfil extends Model {
     public function isFollowing($id, $tipo)
     {
         switch ($tipo) {
-            case 'App\Perfil':
+            case "App\\Perfil":
                 return ($this->followPerfil()->find($id) ? true : false);
                 break;
 
-            case 'App\Ong':
+            case "App\\Ong":
                 return ($this->followOng()->find($id) ? true : false);
                 break;
 
-            case 'App\Empresa':
+            case "App\\Empresa":
                 return ($this->followEmpresa()->find($id) ? true : false);
                 break;
 
