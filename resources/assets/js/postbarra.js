@@ -7,7 +7,7 @@ $(document).ready(function() {
       urlArray = link.split('/'),
       idPost = urlArray[2];
 
-    $.aj ax({
+    $.ajax({
         url: '/'+link
       })
       .done(function(data) {
