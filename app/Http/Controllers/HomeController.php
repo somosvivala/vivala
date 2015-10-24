@@ -27,10 +27,8 @@ class HomeController extends ConectarController {
 	 */
 	public function getIndex()
 	{
-		$posts = Post::getUltimos();
-
-		return view('home', compact('posts'));
-
+            $posts = Post::getUltimos()->take(35)->get();
+            return view('home', compact('posts'));
 	}
 
     /**
