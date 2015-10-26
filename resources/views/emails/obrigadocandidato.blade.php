@@ -474,7 +474,7 @@ g="0" cellpadding="0" width="600" style="width:600px;">
                             <table class="mcnTextContentContainer" style="min-width: 100% ! important;background-color: #E6E6E6;border-collapse:collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" border="0" cellpadding="18" cellspacing="0">
                                 <tbody><tr>
                                     <td style="color: #F2F2F2;font-family: Helvetica;font-size: 14px;font-weight: normal;line-height: 125%;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;" class="mcnTextContent" valign="top">
-                                        <h1 class="null" style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-family:Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 32px;letter-spacing: normal;"><span style="color:#000000"><span style="font-size:14px"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:26px">Olá, {{ ucfirst($user->perfil->apelido) }}!</span></span></span></span></h1>
+{{--                                        <h1 class="null" style="text-align: left;display: block;margin: 0;padding: 0;color: #202020;font-family:Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 32px;letter-spacing: normal;"><span style="color:#000000"><span style="font-size:14px"><span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:26px">Olá, {{ ucfirst($user->perfil->apelido) }}!</span></span></span></span></h1>
 
 <div style="text-align: left;">&nbsp;</div>
 
@@ -491,7 +491,7 @@ Email: {{ ucfirst($vaga->email_contato) }}<br>
 Telefone: {{ ucfirst($vaga->telefone_contato) }}<br>
 Nome do responsável: {{ ucfirst($vaga->responsavel->nome) }}<br>
 Email do responsável: {{ ucfirst($vaga->responsavel->user->email) }}</span></span></span></div>
-
+--}
                                     </td>
                                 </tr>
                             </tbody></table>
