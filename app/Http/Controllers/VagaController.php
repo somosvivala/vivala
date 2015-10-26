@@ -294,7 +294,7 @@ class VagaController extends CuidarController {
             }); 
             
             Mail::queue('emails.obrigadocandidato', ['user' => Auth::user(),'vaga' => $vaga], function ($message) use ($Responsavel) {
-                $message->to($Responsavel->email, $Responsavel->username)->subject('Olá, Alguém se candidatou a uma vaga no seu projeto.');
+                $message->to($Responsavel->user->email, $Responsavel->user->username)->subject('Olá, Alguém se candidatou a uma vaga no seu projeto.');
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
             });  
 
