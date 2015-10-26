@@ -115,7 +115,7 @@ class PaginaController extends Controller {
      */
     public function postContato(ContatoRequest $request)
     {
-        Mail::send('emails.contato', ['request' => $request], function ($message)  {
+        Mail::queue('emails.contato', ['request' => $request], function ($message)  {
             $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pelo Formulário de Contato!');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
@@ -202,7 +202,7 @@ class PaginaController extends Controller {
     public function getTestesendmail()
     {
         $user = Auth::user();
-        Mail::send('emails.teste', ['user' => $user], function ($message) use ($user) {
+        Mail::queue('emails.teste', ['user' => $user], function ($message) use ($user) {
             $message->to($user->email, $user->name)->subject('Teste Email!');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });

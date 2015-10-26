@@ -64,7 +64,7 @@ class Registrar implements RegistrarContract {
         $perfil->prettyUrl()->save($prettyUrl);
 
         // Envia um email de boas vindas
-        Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
+        Mail::queue('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
             $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });  
