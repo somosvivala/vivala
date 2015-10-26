@@ -14,3 +14,4 @@ composer.lock
 /resources/assets/bower
 /resources/assets/css/app.css
 /config/mail.php
+composer.phar
