@@ -17,6 +17,13 @@ class Post extends Model {
 
 
 	// Definindo a propriedades que nao existem no bd
+	public function getDataPostagemDiffMiniAttribute()
+	{
+		$date = new Date($this->created_at);
+		return $date->diffInSeconds();
+	}
+
+	// Definindo a propriedades que nao existem no bd
 	public function getDataPostagemDiffAttribute()
 	{
 		$date = new Date($this->created_at);
