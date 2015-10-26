@@ -474,7 +474,7 @@
                                                                             <p style="line-height: 125%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;text-align: left;"><br>
                                                                                 <span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif"><span style="font-size:14px"><strong>Seja bem vindo à Vivalá!</strong><br>
                                                                                         &nbsp;<br>
-                                                                                        Estamos muito felizes em ter você na nossa plataforma. Daqui pra frente, você poderá se conectar com pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil, com acesso a tudo que seja necessário para que você também possa concretizar assuas experiências no país.</span></span><br>
+                                                                                        Estamos muito felizes em ter você na nossa plataforma. Daqui pra frente, você poderá se conectar com pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil, com acesso a tudo que seja necessário para que você também possa concretizar as suas experiências no país.</span></span><br>
                                                                                 &nbsp;</p>
 
                                                                         </td>
