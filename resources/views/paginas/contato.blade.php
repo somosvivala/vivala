@@ -17,7 +17,7 @@
                 {{ trans('global.contact_our_email') }}
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="mailto:queroconversar@vivalabrasil.com.br">queroconversar@vivalabrasil.com.br</a>
+                <a class="laranja font-bold-upper" href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a>
             </div>
         </div>
         <div class="row padding-t-2 padding-b-2 ">
@@ -25,7 +25,7 @@
                 {{ trans('global.contact_our_phone') }}
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="tel:+55 11 3758 4726">(11) 3758-4726</a>
+                <a class="laranja font-bold-upper" href="tel:+55 11 2645 2632">(11) 2645 2632</a>
             </div>
         </div>
         <div class="row padding-t-2 ">
@@ -33,7 +33,7 @@
                 {{ trans('global.contact_our_address') }}
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" title="CLique para abrir no Google Maps" href="https://www.google.com.br/maps/place/R.+Aspicuelta,+345+-+Alto+de+Pinheiros,+S%C3%A3o+Paulo+-+SP/@-22.8755115,-46.1800783,6z/data=!4m2!3m1!1s0x94ce57978b550665:0xc675435d412b5648" target="_blank">Rua Aspicuelta, 345 - São Paulo, SP</a>
+                <a class="laranja font-bold-upper" title="Clique para abrir no Google Maps" href="https://www.google.com.br/maps/place/R.+do+Rocio,+52+-+Vila+Olímpia,+São+Paulo+-+SP/@-23.5934738,-46.6865075,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5745f024b5fd:0x992ad154f9e9ed01?hl=pt-BR" target="_blank">Rua do Rócio, 52, cj 122.<br> Vila Olímpia, São Paulo - SP</a>
             </div>
         </div>
     </div>
