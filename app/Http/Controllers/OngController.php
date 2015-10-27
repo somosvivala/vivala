@@ -122,7 +122,7 @@ class OngController extends CuidarController {
 
 
                 $User = Auth::user();
-                Mail::queue('emails.obrigadoong', ['user' => $User], function ($message) use ($User) {
+                Mail::send('emails.obrigadoong', ['user' => $User], function ($message) use ($User) {
                     $message->to($User->email, $User->username)->subject('Olá, tudo bem?');
                     $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
                 });  
