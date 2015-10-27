@@ -7,7 +7,7 @@
 		</span>
 		<h2>{{ trans("global.quiz_tell_us_more") }}</h2>
 		<h3>{{ trans("global.quiz_get_intimacy") }}</h3>
-		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/pessoasinteressantes']) !!}
+		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/pessoasinteressantes', 'data-loading'=>'form-loading']) !!}
 			<div class="erros">
 			</div>
 			<div class="row">
@@ -26,6 +26,7 @@
 				<div class="col-sm-12">
 					<br>
 					{!! Form::submit( trans("global.lbl_continue"), ['class' => 'btn btn-primario btn-acao']) !!}
+                                        <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
 				</div>
 		{!! Form::close() !!}
 	</div>

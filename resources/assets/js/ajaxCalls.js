@@ -11,10 +11,17 @@ $(function() {
         var frm = $(this),
             dataForm = new FormData(this),
             callbackFunction = frm.data('callback'),
-            redirect = frm.data('redirect');
+            redirect = frm.data('redirect'),
+            loading = frm.data('loading');
+
+        if (loading && loading != "") {
+            $(this).find('input:submit').hide();
+            $(this).find('#'+loading).show();
+        }
+
         $.ajax({
             type: frm.attr('method'),
-            url: frm.attr('action'),
+            url: frm.attr('action'),    
             data: dataForm,
             contentType: false, //file
             processData: false,  //file
@@ -27,6 +34,15 @@ $(function() {
                 if(redirect) {
                     window.location = redirect;
                 }
+            },
+            error: function (data) {
+                
+                //Se tiver loading e tiver dado erro, voltar botao
+                if (loading && loading != "") {
+                    $(this).find('input:submit').show();
+                    $(this).find('#'+loading).hide();
+                }
+
             }
         });
     });

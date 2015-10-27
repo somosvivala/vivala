@@ -16,7 +16,7 @@ $(function(){
         var subiuImagem = $('#image_file_upload').val() != "";
 
         if (!subiuImagem) {
-             $('#image_file_upload').click();
+            $('#image_file_upload').click();
         }
     });
 
@@ -30,53 +30,67 @@ $(function(){
 
         var frm = $(this),
             dataForm = new FormData(this),
-                callbackFunction = frm.data('callback'),
-                    redirect = frm.data('redirect');
+            callbackFunction = frm.data('callback'),
+            redirect = frm.data('redirect'),
+            loading = frm.data('loading');
+                   
+            var subiuImagem = $('#image_file_upload').val() != "";
 
-                    var subiuImagem = $('#image_file_upload').val() != "";
+            
+            if (!subiuImagem) {
 
-                    if (!subiuImagem) {
+                swal({
+                    title: "Nenhum arquivo selecionado",
+                    text: "Continuar sem adicionar uma foto de perfil?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Não",
+                    cancelButtonText: "Sim, próxima etapa!",
+                    closeOnConfirm: true,
+                    closeOnCancel: false 
+                }, function(isConfirm) {
+                    if (isConfirm) {
 
-                        swal({
-                            title: "Nenhum arquivo selecionado",
-                            text: "Continuar sem adicionar uma foto de perfil?",
-                            type: "warning",
-                            showCancelButton: true,
-                            confirmButtonColor: "#DD6B55",
-                            confirmButtonText: "Não",
-                            cancelButtonText: "Sim, próxima etapa!",
-                            closeOnConfirm: true,
-                            closeOnCancel: false 
-                        }, function(isConfirm) {
-                            if (isConfirm) {
-                                
-                                return false;
-                            } else {
-                                // Redireciona para outra pagina
-                                if(redirect) {
-                                    window.location = redirect;
-                                }
-                            } 
-                        }    
-                            );
-
-                            //Caso tenha subido imagem, entao dispara ajax para
-                            //foto/cropandsave
+                        return false;
                     } else {
-                        $.ajax({
-                            type: frm.attr('method'),
-                            url: frm.attr('action'),
-                            data: dataForm,
-                            contentType: false, //file
-                            processData: false,  //file
-                            success: function (data) {
-                                // Executa uma função de javascript
-                                if(callbackFunction) {
-                                    eval(callbackFunction);
-                                }
-                                // Redireciona para outra pagina
-                                if(redirect) {
-                                    window.location = redirect;
+                        // Redireciona para outra pagina
+                        if(redirect) {
+                            window.location = redirect;
+                        }
+                    } 
+                }    
+                    );
+
+                    //Caso tenha subido imagem, entao dispara ajax para
+                    //foto/cropandsave
+            } else {
+                if (loading && loading != "") {
+                    $(this).find('input:submit').hide();
+                    $(this).find('#'+loading).show();
+                }
+
+                $.ajax({
+                    type: frm.attr('method'),
+                    url: frm.attr('action'),
+                    data: dataForm,
+                    contentType: false, //file
+                    processData: false,  //file
+                    success: function (data) {
+                        // Executa uma função de javascript
+                        if(callbackFunction) {
+                            eval(callbackFunction);
+                        }
+                        // Redireciona para outra pagina
+                        if(redirect) {
+                            window.location = redirect;
+                        }
+                            },
+                            error: function (data) {
+                                //Se tiver loading e tiver dado erro, voltar botao
+                                if (loading && loading != "") {
+                                    $(this).find('#'+loading).hide();
+                                    $(this).find('input:submit').show();
                                 }
                             }
                         });
@@ -109,7 +123,7 @@ $(function(){
                 $('.erros').hide();
                 // Filtra imagens que não são png ou jpg
                 var rFilter = /^(image\/jpeg|image\/png)$/i;
-                 if (! rFilter.test(oFile.type)) {
+                if (! rFilter.test(oFile.type)) {
                     $('.erros').html('Por favor selecione um formato válido (jpg ou png).').show();
                     return;
                 }
@@ -143,20 +157,20 @@ $(function(){
 
                         var imgWidth =  oImage.naturalWidth;
                         var imgHeight = oImage.naturalHeight;
-                        
+
                         var x1, x2, y1, y2 = 0;
 
-                         if (imgWidth > imgHeight) {
+                        if (imgWidth > imgHeight) {
                             y1 = 0;
                             x1 = (imgWidth - imgHeight)/2;
                             y2 = imgHeight;
                             x2 = x1 + imgHeight;
-                        
+
                         } else {
-                           x1 = 0;
-                           y1 =  (imgHeight - imgWidth )/2;
-                           x2 = imgWidth;
-                           y2 = y1 + imgWidth;
+                            x1 = 0;
+                            y1 =  (imgHeight - imgWidth )/2;
+                            x2 = imgWidth;
+                            y2 = y1 + imgWidth;
 
                         }
 
