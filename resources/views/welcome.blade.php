@@ -4,7 +4,14 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>{{ trans('global.title_vivala') }}</title>
+        
+        <meta property="og:title" content="Cadastre-se e conheça o Brasil de verdade" />
+        <meta property="og:site_name" content="Vivalá"/>
+        <!--<meta property="og:url" content="http://www.vivala.com.br/" />-->
+        <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
+        <meta property="og:image" content="http://vivala.com.br/img/dummy.jpg">        
+
+        <title>{{ trans('global.title_vivala') }}</title>
 
 	<link rel="icon" href="/favicon-16.png" sizes="16x16"/>
 	<link rel="icon" href="/favicon-32.png" sizes="32x32"/>
