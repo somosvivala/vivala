@@ -39,7 +39,7 @@ Route::resource('viajar','ViajarController');
 Route::resource('cuidar','CuidarController');
 Route::resource('conectar','ConectarController');
 
-/* 
+/*
  * Rotas especificas das áreas internas
  */
 
@@ -50,9 +50,16 @@ Route::get('sugestoesviajantes','SugestaoController@getViajantes');
 Route::get('sugestoesviajantes/{filtro}','SugestaoController@getViajantes');
 
 Route::controller('perfilviajante','Conectar\PerfilViajanteController');
+Route::controller('diarioviagem','Conectar\DiarioViagemController');
 Route::controller('roteiros','Conectar\RoteirosController');
-Route::controller('interesses','Conectar\InteressesController');
+Route::controller('lembrancas','Conectar\LembrancasController');
+Route::controller('avaliacoes','Conectar\AvaliacoesController');
+Route::controller('culturabrasileira','Conectar\CulturaBrasileiraController');
+Route::controller('perfilvoluntario','Conectar\PerfilVoluntarioController');
+
 Route::controller('chat','Conectar\ChatController');
+
+Route::controller('interesses','Conectar\InteressesController');
 
 Route::controller('montarviagem','Viajar\MontarViagemController');
 Route::controller('verpacotes','Viajar\VerPacotesController');
