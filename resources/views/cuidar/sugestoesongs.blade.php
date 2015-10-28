@@ -1,5 +1,5 @@
 <h4 class="suave">
-	Sugestão de ONGs para seguir
+        {{ trans('global.wannavolunteer_projects_to_follow') }}
 </h4>
 <ul class="sugestoes sugestoes-ongs">
 

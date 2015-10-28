@@ -832,7 +832,7 @@ return[
   /  View : VIAJAR
   ------------------------------------------------------------------------------*/
     'wannatravel_title' => 'Conheça o Brasil',
-    'wannatravel_subtitle' => 'Escolha seu transporte e hospedagem, reserve restaurantes e entretenimento',
+    'wannatravel_subtitle' => 'Encontre transporte, hospedagem e restaurantes para todo tipo de experiência!',
     'wannatravel_trip_already_know' => 'Já sabe para onde ir?',
     'wannatravel_trip_setup' => 'Monte sua viagem!',
     'wannatravel_trip_restaurants' => 'Restaurantes',
@@ -847,8 +847,8 @@ return[
     'wannatravel_package' => 'Pacote',
     'wannatravel_package_' => 'Pacotes',
     'wannatravel_package_see' => 'Ver Pacote',
-    'wannatravel_package_see_' => 'Ver Pacotes',
-    'wannatravel_package_find_best_destinies' => 'Pacotes com os melhores destinos',
+    'wannatravel_package_see_' => 'Ver Roteiros',
+    'wannatravel_package_find_best_destinies' => 'Roteiros Vivalá',
     //
     'wannatravel_chefsclub_desserts_and_goodies' => 'Delícias que alimentam corpo e alma',
     'wannatravel_chefsclub_all_restaurants' => 'Todos',
@@ -860,14 +860,16 @@ return[
   /*------------------------------------------------------------------------------
   /  View : CUIDAR
   ------------------------------------------------------------------------------*/
-    'wannavolunteer_title' => 'Cuide do Brasil',
+    'wannavolunteer_title' => 'Transforme o Brasil',
     'wannavolunteer_subtitle' => 'Faça trabalhos voluntários e desenvolva o país.',
-    'wannavolunteer_cause_already_know' => 'Já sabe qual causa ajudar?',
+    'wannavolunteer_cause_already_know' => 'Já sabe como ajudar?',
     'wannavolunteer_cause_find_in_three_steps' => 'Encontre projetos de Impacto Social em 3 passos.',
     'wannavolunteer_see_some_causes' => 'Veja causas nobres',
     'wannavolunteer_find_some_projects_near_you' => 'Descubra projetos de impacto social pertinho de você!',
     'wannavolunteer_see_some_projects_suggest_to_follow' => 'Sugestão de Projetos de Impacto para seguir',
+    'wannavolunteer_projects_to_follow' => 'Projetos de Impacto para seguir',
     'wannavolunteer_seeing_some_projects' => 'Procurando por causas?',
+    'wannavolunteer_looking_for_jobs' => 'Procurando vagas?',
     'wannavolunteer_search_in_three_steps' => 'Encontre em 3 passos.',
 
   /* View: Emails */
@@ -903,11 +905,14 @@ return[
     'ong_contact_manager' => 'Selecionar Responsável',
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',
-    'ong_search_for_ongs' => 'Procurando por Projetos de Impacto?',
+    'ong_search_for_ongs' => 'Procurando por Transformação?',
     'ong_find_ongs_three_steps' => 'Encontre Projetos de Impacto em três passos.',
 
+  /* Ajustes Ong -> Projeto */
+    'lbl_project_' => 'Projetos',
+
   /* View: Páginas */
-    'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
+        'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
     'pages_by_clicking' => 'Ao clicar em Começar, você concorda com os',
     'pages_terms_and_conditions' => 'Termos das Páginas da Vivalá',
 
@@ -1157,7 +1162,7 @@ return[
   //
   /* Parceiros */
     'partners_title' => 'Parceiros',
-    'partners_subtitle' => 'Todos juntos ou não somos ninguém.',
+    'partners_subtitle' => 'Companheiros da jornada Vivalá',
     'partners_coverphoto_img_alt' => 'Parceiros',
     'partners_coverphoto_img_title' => 'Parceiros',
     'partners_main_text' => 'Para criar uma plataforma de viagens extremamente completa e integrada a Vivalá conta com diversos parceiros que juntos, disponibilizam:',
