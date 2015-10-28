@@ -55,6 +55,7 @@ elixir(function(mix) {
       '../../assets/js/cropFoto.js',
       '../../assets/js/chefsclub.js',
       '../../../node_modules/sweetalert/dist/sweetalert.min.js',
-      '../../assets/js/ongs.js'
+      '../../assets/js/ongs.js',
+      '../../assets/js/zoomfinanciamentocoletivo.js'
 	], 'public/js/vendor.js');
 });

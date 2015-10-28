@@ -2,7 +2,7 @@
 <nav class="menu-lateral">
 	<ul>
 		<li><a href="/perfil" class="click-img-no-border"><i class="fa fa-clock-o"></i>{{ trans('global.lbl_timeline') }}</a></li>
-		<li><a href="/perfilviajante" class="click-img-no-border desativado"><i class="fa fa-user"></i>{{ trans('global.lbl_traveller_profile') }}</a></li>
+		<li><a href="/perfilviajante" class="click-img-no-border"><i class="fa fa-user"></i>{{ trans('global.lbl_traveller_profile') }}</a></li>
 		<li><a href="/diario" class="click-img-no-border desativado"><i class="fa fa-book"></i>{{ trans('global.lbl_travel_log') }}</a></li>
 		<li><a href="/roteiros" class="click-img-no-border desativado"><i class="fa fa-map"></i>{{ trans('global.lbl_travel_guide_') }}</a></li>
 		<li><a href="/lembrancas" class="click-img-no-border desativado"><i class="fa fa-photo"></i>{{ trans('global.lbl_memorie_') }}</a></li>
