@@ -62,9 +62,12 @@ class FotoController extends VivalaBaseController {
 
                     /* Settando tipo da foto atual para null, checando se existe antes */
                     if ($tipo == 'avatar' && $entidade->avatar) {
-                        $currentAvatar = $entidade->avatar;
-                        $currentAvatar->tipo = null;
-                        $currentAvatar->save();
+                        $avatares = $entidade->fotos()->where('tipo','avatar')->get();
+                        foreach ($avatares as $currentAvatar) 
+                        {
+                            $currentAvatar->tipo = null;
+                            $currentAvatar->save();
+                        }
                     }
 
                     $entidade->fotos()->save($foto);
