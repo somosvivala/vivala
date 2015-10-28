@@ -4,10 +4,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-        
+        <meta name="twitter:card" content="summary" />       
+
         <meta property="og:title" content="Cadastre-se e conheça o Brasil de verdade" />
         <meta property="og:site_name" content="Vivalá"/>
-        <!--<meta property="og:url" content="http://www.vivala.com.br/" />-->
+        <meta property="og:url" content="http://www.vivala.com.br/" />
         <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
         <meta property="og:image" content="http://vivala.com.br/img/dummy.jpg">        
 
