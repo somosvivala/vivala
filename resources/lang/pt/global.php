@@ -537,9 +537,6 @@ return[
 
     'lbl_quiz' => 'Questionário',
     'lbl_quiz_' => 'Questionários',
-    'lbl_rate' => 'Avaliar',
-    'lbl_rating' => 'Avaliação',
-    'lbl_rating_' => 'Avaliações',
     'lbl_read_more' => 'Ler Mais',
     'lbl_register' => 'Registrar',
     'lbl_registered' => 'Registrado',

@@ -1,9 +1,9 @@
 @extends('conectar')
 
 @section('content')
-{{--<h4 class="suave">{{ trans('global.lbl_rating_') }}</h4>--}}
+{{--<h4 class="suave">{{ trans('global.lbl_review_') }}</h4>--}}
 <div class="fundo-laranja-claro col-sm-12">
-    <h3 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_rating_') }}</h3>
+    <h3 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_review_') }}</h3>
     <h6 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_preview')}}</h6>
 </div>
 <div class="fundo-cheio col-sm-12 text-justified">

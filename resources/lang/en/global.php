@@ -1101,6 +1101,10 @@ return[
     'crowdfunding_support_vivala' => 'Support Vivalá&#39;s development on:',
     'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it <3',
+    'crowdfunding_see_the_screens' => 'See the screens that will be delivered with the help of crowdfunding.',
+    'crowdfunding_all_the_struct' => 'The entire platform structure is being created with the help of you',
+    'crowdfunding_donators' => 'Supporters',
+
 
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
