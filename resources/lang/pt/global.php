@@ -515,6 +515,7 @@ return[
     'lbl_post_see_last' => 'Confira os últimos posts',
     'lbl_post_see_complete' => 'Ver mais desta publicação.',
     'lbl_previous' => 'Anterior',
+    'lbl_preview' => 'Prévia',
     'lbl_prettyURL' => 'Sua Endereço',
     'lbl_profile' => 'Perfil',
     'lbl_profile_' => 'Perfis',

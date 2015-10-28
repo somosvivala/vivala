@@ -1,6 +1,8 @@
 	/* Definição de tempo de efeitos */
 @anima-rapido : 0.3s all ease-out;
 
+.zoomContainer { z-index: 100000; }
+
 .soft-hide{
   display:none;
 }
@@ -305,6 +307,9 @@ div.foto {
 
 .fundo-cheio {
 	background-color: white;
+}
+.fundo-laranja-claro{
+  background-color: rgba(241, 111, 43, 1);
 }
 
 // Classe para imagem de background
@@ -680,7 +685,7 @@ a.click-img-no-border{
 }
 
 form.cropfoto-ajax, form.form-ajax {
-    img#preview, 
+    img#preview,
     input#image_file_upload,
     div.file-upload {
         cursor: pointer;
@@ -690,7 +695,7 @@ form.cropfoto-ajax, form.form-ajax {
 
             span, p {
                 cursor: pointer;
-            } 
+            }
         }
     }
 }
