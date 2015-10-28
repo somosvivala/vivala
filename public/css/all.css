@@ -9016,6 +9016,12 @@ ul.viagens-comentadas button {
   padding: 0.5em;
   height: 9.5em;
 }
+.pergunta .text-center {
+  text-align: center;
+}
+#cropper-quiz {
+  max-height: 80vh;
+}
 div.sobre-ong {
   margin-bottom: 1em;
 }
