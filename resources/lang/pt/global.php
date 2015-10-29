@@ -820,13 +820,6 @@ return[
 
   /* View: Conectar */
 
-    // menulateral.blade - Menu Lateral e ITENS EM COMUM
-      'lbl_travellershape' => 'Perfil Viajante',
-      'lbl_travellerdiary' => 'Diário de Viagem',
-      'lbl_travellerguide' => 'Roteiros',
-      'lbl_travellermemories' => 'Lembranças',
-      'lbl_travellerreviews' => 'Avaliações',
-
   /* View: Configuracao [DONE] */
 
   /*------------------------------------------------------------------------------
@@ -1209,6 +1202,9 @@ return[
     'crowdfunding_support_vivala' => 'Apoie a Vivalá através de:',
     'crowdfunding_a_alt_crowdvivala' => 'Financiamento Coletivo Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Ajude a Vivalá! Te agradecemos de <3',
+    'crowdfunding_see_the_screens' => 'Veja as telas que serão entregues com a ajuda do financiamento.',
+    'crowdfunding_all_the_struct' => 'Toda a estrutura da plataforma está sendo criada com a ajuda de vocês',
+    'crowdfunding_donators' => 'Apoiadores',
 
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta

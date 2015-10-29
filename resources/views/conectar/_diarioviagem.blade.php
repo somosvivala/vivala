@@ -1,9 +1,9 @@
 @extends('conectar')
 
 @section('content')
-{{-- <h4 class="suave">{{ trans('global.lbl_traveller_profile') }}</h4> --}}
+{{--<h4 class="suave">{{ trans('global.lbl_travel_log') }}</h4>--}}
 <div class="fundo-laranja-claro col-sm-12">
-    <h3 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_traveller_profile') }}</h3>
+    <h3 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_travel_log') }}</h3>
     <h6 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_preview')}}</h6>
 </div>
 <div class="fundo-cheio col-sm-12 text-justified">
@@ -32,9 +32,20 @@
         <h4 class="text-center">{{ trans('global.crowdfunding_all_the_struct') }}</h4>
         <h3 class="text-center laranja">{{ trans('global.crowdfunding_donators') }}</h3>
     </div>
+    <div class="col-sm-12 padding-b-2">
+        <div class="col-sm-6 text-center">
+            <img id="diario-de-viagem-1" src="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-1.png" data-zoom-image="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-1.png" width="300" height="300" alt="" title=""></img>
+        </div>
+        <div class="col-sm-6 text-center">
+            <img id="diario-de-viagem-2" src="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-2.png" data-zoom-image="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-2.png" width="300" height="300" alt="" title=""></img>
+        </div>
+    </div>
     <div class="col-sm-12 margin-b-2">
         <div class="col-sm-6 text-center">
-            <img id="perfil_viajante-1" src="/img/financiamento-coletivo/quero-conectar/vivala_perfil_viajante-1.png" data-zoom-image="/img/financiamento-coletivo/quero-conectar/vivala_perfil_viajante-1.png" width="300" height="300" alt="" title=""></img>
+            <img id="diario-de-viagem-3" src="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-3.png" data-zoom-image="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-3.png" width="300" height="300" alt="" title=""></img>
+        </div>
+        <div class="col-sm-6 text-center">
+            <img id="diario-de-viagem-4" src="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-4.png" data-zoom-image="img/financiamento-coletivo/quero-conectar/vivala_diario-de-viagem-4.png" width="300" height="300" alt="" title=""></img>
         </div>
     </div>
 </div>

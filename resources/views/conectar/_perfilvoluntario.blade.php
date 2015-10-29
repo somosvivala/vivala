@@ -1,9 +1,9 @@
 @extends('conectar')
 
 @section('content')
-{{-- <h4 class="suave">{{ trans('global.lbl_traveller_profile') }}</h4> --}}
+{{--<h4 class="suave">{{ trans('global.lbl_volunteer_profile') }}</h4>--}}
 <div class="fundo-laranja-claro col-sm-12">
-    <h3 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_traveller_profile') }}</h3>
+    <h3 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_volunteer_profile') }}</h3>
     <h6 class="font-bold-upper text-center texto-branco">{{ trans('global.lbl_preview')}}</h6>
 </div>
 <div class="fundo-cheio col-sm-12 text-justified">
@@ -34,7 +34,7 @@
     </div>
     <div class="col-sm-12 margin-b-2">
         <div class="col-sm-6 text-center">
-            <img id="perfil_viajante-1" src="/img/financiamento-coletivo/quero-conectar/vivala_perfil_viajante-1.png" data-zoom-image="/img/financiamento-coletivo/quero-conectar/vivala_perfil_viajante-1.png" width="300" height="300" alt="" title=""></img>
+            <img id="perfil_voluntario-1" src="/img/financiamento-coletivo/quero-conectar/vivala_perfil-voluntario-1.png" data-zoom-image="/img/financiamento-coletivo/quero-conectar/vivala_perfil-voluntario-1.png" width="300" height="300" alt="" title=""></img>
         </div>
     </div>
 </div>

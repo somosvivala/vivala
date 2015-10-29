@@ -329,6 +329,7 @@ return[
   'lbl_interest_no' => 'No Interest',
   'lbl_invite' => 'Invitation',
   'lbl_invite_' => 'Invitations',
+  'lbl_know_more_things' => 'Know more things',
   'lbl_language' => 'Language',
   'lbl_legal_terms' => 'Terms of Use',
   'lbl_liker' => 'Like',
@@ -457,6 +458,7 @@ return[
     'lbl_post_' => 'Posts',
     'lbl_post_see_complete' => 'See more about this post.',
     'lbl_previous' => 'Previous',
+    'lbl_preview' => 'Preview',
     'lbl_prettyURL' => 'Your URL',
     'lbl_profile' => 'Profile',
     'lbl_profile_' => 'Profile',
@@ -1099,6 +1101,10 @@ return[
     'crowdfunding_support_vivala' => 'Support Vivalá&#39;s development on:',
     'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it <3',
+    'crowdfunding_see_the_screens' => 'See the screens that will be delivered with the help of crowdfunding.',
+    'crowdfunding_all_the_struct' => 'The entire platform structure is being created with the help of you',
+    'crowdfunding_donators' => 'Supporters',
+
 
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta

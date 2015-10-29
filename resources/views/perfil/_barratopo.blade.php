@@ -131,7 +131,7 @@
             </li>
         </ul>
         <ul class="margin-0">
-            <li class="col-sm-6"><a href="#" class="desativado">Saiba mais coisas</a></li>
+            <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_know_more_things') }}</a></li>
             <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_message_send') }}</a></li>
         </ul>
     </div>
