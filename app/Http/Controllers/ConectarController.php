@@ -32,7 +32,7 @@ class ConectarController extends VivalaBaseController {
         $posts = Post::getMaisfotos()->keyBy('id');
         $posts_total = count($posts);
         $posts = $posts->slice(0, env('QUANTIDADE_FEED_POST'), true);
-       
+
         return view('conectar.index', compact('posts'));
     }
 

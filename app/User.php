@@ -131,4 +131,11 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     	return $paginas;
     }
+
+    public function isAdmin()
+    {
+        if( $this->id == 1)
+            return true;
+        return false;
+    }
 }

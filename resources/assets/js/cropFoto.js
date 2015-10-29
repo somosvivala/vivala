@@ -54,9 +54,8 @@ $(function() {
         cropBoxData,
         canvasData;
 
-    $('#cropper-quiz-modal').on('shown.bs.modal', function () {
+    var ativaFoto = function (){
         $image.cropper({
-            autoCropArea: 1,
             aspectRatio: 1,
             built: function () {
                 // Strict mode: set crop box data first
@@ -71,12 +70,23 @@ $(function() {
                 $("#w-quiz-perfil").val(Math.round(e.width));
                 $("#r-quiz-perfil").val(e.rotate);
                 console.log(e);
+            },
+            built: function() {
+                $(this).cropper('crop');
             }
         });
+    };
+
+    $('#cropper-quiz-modal').on('shown.bs.modal', function () {
     }).on('hidden.bs.modal', function () {
         cropBoxData = $image.cropper('getCropBoxData');
         canvasData = $image.cropper('getCanvasData');
         $image.cropper('destroy');
+    });
+
+    $('#btn-upload-img-quiz').on('click', function () {
+        ativaFoto();
+        $('#btn-crop-photo').show();
     });
 
     // Import image
@@ -88,6 +98,7 @@ $(function() {
       $inputImage.change(function () {
         var files = this.files;
         var file;
+        ativaFoto();
 
         if (!$image.data('cropper')) {
           return;
