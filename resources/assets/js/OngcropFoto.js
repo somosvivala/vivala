@@ -7,7 +7,7 @@ $(function() {
 
     /** Funcões para Upload */
     $('#ong_foto_form').submit(function (ev) {
-    console.log('entrou submit form!!!');
+   // console.log('entrou submit form!!!');
         ev.preventDefault();
         var frm = $(this),
             dataForm = new FormData(this),
@@ -21,8 +21,8 @@ $(function() {
             processData: false,  //file
             success: function (data) {
                 // Executa uma função de javascript
-                console.log(data);
-                console.log("Sucess do ajax");
+                //console.log(data);
+                //console.log("Sucess do ajax");
 
                 //Settando o tamanho do container para o tamanho da nova imagem
                 var tipo = $('#tipo_foto');

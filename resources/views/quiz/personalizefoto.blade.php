@@ -36,7 +36,7 @@
                             SELECIONE UMA IMAGEM
                         </span>
                     </label>    
-                    <div id="cropper-quiz">
+                    <div id="cropper-quiz" class="cropper-img">
                         <img src="{{ '/img/nophoto.png' }}" />
                     </div>
                     {!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
