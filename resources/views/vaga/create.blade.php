@@ -8,36 +8,53 @@
     <div class="panel-body">
         <div id="causa-contato" class="row margin-t-2 form-ong">
             <h5 class="col-sm-12">{{ trans('global.lbl_cover_photo') }}</h5>
-            <div class="col-sm-12">
+            <div class="text-center">
+                <a type="button" data-target="#cropper-vaga-modal" data-toggle="modal">
+                    <img class="vaga-foto-atual" src="/img/querocuidar.png"/>
+                    <div class="row pointer margin-t-2">
+                        <div class="file-upload">
+                            <label for="image_file_upload">
+                                {{ trans("global.lbl_photo_send") }}
+                                <p>{{ trans("global.quiz_fromcomputer") }}</p>
+                            </label>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="modal cropper-foto-modal fade" id="cropper-vaga-modal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'id'=>'vaga_foto_form', 'data-loading'=>'form-loading']) !!}
 
-                {{-- Adicionando div de update da foto de capa da vaga --}}
-                <div class="text-center jc_coords row col-sm-12">
-                    {!! Form::open(['url' => ['foto/cropandsave', 0], 'files' => true, 'onsubmit' => 'return verificaRecorteImagem(this);', 'class' => 'cropfoto-ajax']) !!}
-                    {!! Form::hidden("NoOwner",  true) !!}
-                    <img id="preview" src="{{ isset($fotoCapa)?$fotoCapa:'/img/querocuidar.png' }}" class="foto-preview"/>
-                    <div class="file-upload">
-                        <label for="image_file_upload">
-                            <span>{{ trans("global.lbl_photo_send") }}</span>
-                            <p>{{ trans('global.quiz_fromcomputer') }}</p>
-                            {!! Form::file("image_file_upload", ['id' => 'image_file_upload', 'data-ratio'=>'2', 'class' => 'upload']) !!}
-                        </label>
+                            {!! Form::hidden("NoOwner",  true) !!}
+                            {!! Form::hidden("tipo",  'capa', ['id' => 'tipo_foto']) !!}
+                            <h2 class="text-center"></h2>
+                            <label id="btn-upload-img-vaga" class="btn btn-acao btn-upload margin-b-1" for="input-vaga-foto-perfil" title="Upload image file">
+                                <input class="sr-only" id="input-vaga-foto-perfil" name="file" accept="image/*" type="file">
+                                <span data-original-title="Import image with Blob URLs" class="docs-tooltip" data-toggle="tooltip" title="">
+                                    <span class="fa fa-upload"></span>
+                                    SELECIONE UMA IMAGEM
+                                </span>
+                            </label>    
+                            <div id="cropper-vaga" class="cropper-img">
+                                <img src="{{ '/img/querocuidar.png' }}" />
+                            </div>
+                            {!! Form::hidden("x",  0, ['id' => 'x-vaga-perfil']) !!}
+                            {!! Form::hidden("y",  0, ['id' => 'y-vaga-perfil']) !!}
+                            {!! Form::hidden("w",  0, ['id' => 'w-vaga-perfil']) !!}
+                            {!! Form::hidden("h",  0, ['id' => 'h-vaga-perfil']) !!}
+                            {!! Form::hidden("r",  0, ['id' => 'r-vaga-perfil']) !!}
+                            {!! Form::submit( "cortar foto", ['id'=>'btn-crop-photo', 'class' => 'margin-t-1 soft-hide btn btn-primario btn-acao']) !!}
+                            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
+
+                            {!! Form::close() !!}
+                        </div>
                     </div>
-                    {!! Form::hidden("x",  0, ['id' => 'xJcropPerfil']) !!}
-                    {!! Form::hidden("y",  0, ['id' => 'yJcropPerfil']) !!}
-                    {!! Form::hidden("w",  0, ['id' => 'wJcropPerfil']) !!}
-                    {!! Form::hidden("h",  0, ['id' => 'hJcropPerfil']) !!}
-                    {!! Form::hidden("_token",  csrf_token(), ['name' => '_token' ]) !!}
-                    {!! Form::hidden("tipo",  'capa', ['id' => 'tipo_foto']) !!}
-                    <div class="erros">
-                        @include('errors.list')
-                    </div>
-                    {!! Form::submit( trans('global.lbl_photo_update'), ['class' => 'btn btn-primario btn-acao']) !!}
-                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
-
-        {!! Form::open(['url' => 'vagas']) !!}
+         {!! Form::open(['url' => 'vagas']) !!}
         {!! Form::hidden("foto", false, ['id' => 'uploadedFoto' ]) !!}
         @include('vaga.form', ['btnSubmit' => trans('global.lbl_create') ])
         {!! Form::close() !!}

@@ -6,7 +6,7 @@
 
     @if($vaga->podeEditar)
     <div class="hora-post">
-        <a class="btn btn-action" href="/vagas/{{$vaga->id}}/edit">
+        <a class="btn btn-action edit-vaga" href="/vagas/{{$vaga->id}}/edit">
             <small>{{ trans('global.lbl_edit') }}</small>
         </a>
     </div>
@@ -90,7 +90,9 @@
 </div>
 </div>
 <div class="row text-center">
-<a class="btn btn-primario btn-acao margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
+    <div class="col-sm-12">
+        <a class="btn btn-primario btn-acao margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
+    </div>
 </div>
 
 @if(isset($Responsavel))

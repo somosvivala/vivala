@@ -54,6 +54,7 @@ elixir(function(mix) {
       '../../assets/js/search.js',
       '../../assets/js/cropFoto.js',
       '../../assets/js/OngcropFoto.js',
+      '../../assets/js/VagacropFoto.js',
       '../../assets/js/chefsclub.js',
       '../../../node_modules/sweetalert/dist/sweetalert.min.js',
       '../../assets/js/ongs.js',

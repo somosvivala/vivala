@@ -8248,7 +8248,7 @@ div.foto-fundo {
 .foto-header div {
   margin: 2em auto;
 }
-.foto-header a,
+.foto-header a:not(.edit-vaga),
 .foto-header button {
   opacity: 0;
   display: none;
@@ -10363,7 +10363,7 @@ div.foto-fundo {
 .foto-header div {
   margin: 2em auto;
 }
-.foto-header a,
+.foto-header a:not(.edit-vaga),
 .foto-header button {
   opacity: 0;
   display: none;

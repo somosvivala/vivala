@@ -6,7 +6,7 @@ $(function() {
     });
 
     /** Funcões para Upload */
-    $('#ong_foto_form').submit(function (ev) {
+    $('#vaga_foto_form').submit(function (ev) {
    // console.log('entrou submit form!!!');
         ev.preventDefault();
         var frm = $(this),
@@ -28,39 +28,38 @@ $(function() {
                 var tipo = $('#tipo_foto');
                 if (tipo && tipo.val() == 'capa') {
                     $('#uploadedFoto').val(data.id);
-                    $('.ong-foto-atual').attr('src',data.path).width('80%');
-                    var height = $('.ong-foto-atual').width();
-                    $('.ong-foto-atual').height(height/2);
-                    $('.ong-foto-atual').width(height);
+                    $('.vaga-foto-atual').attr('src',data.path).width('80%');
+                    var height = $('.vaga-foto-atual').width()*0.5625;
+                    $('.vaga-foto-atual').height(height);
 
                 } else {
                     $('#uploadedFoto').val(data.id);
-                    $('.ong-foto-atual').attr('src',data.path).width('50%');
-                    var height = $('.ong-foto-atual').width();
-                    $('.ong-foto-atual').height(height);
-                    $('.ong-foto-atual').width(height);
+                    $('.vaga-foto-atual').attr('src',data.path).width('50%');
+                    var height = $('.vaga-foto-atual').width();
+                    $('.vaga-foto-atual').height(height);
+                    $('.vaga-foto-atual').width(height);
                 }   
 
-                //console.log('ong-foto-atual width -> ' +  $('#ong-foto-atual').width());
+                //console.log('vaga-foto-atual width -> ' +  $('#vaga-foto-atual').width());
                 //console.log('height -> ' +  height );
-                //console.log($('#ong-foto-atual').height());
+                //console.log($('#vaga-foto-atual').height());
 
                swal('Sucesso', "Foto recortada", 'success');
-               $('#cropper-ong-modal').modal('hide');
+               $('#cropper-vaga-modal').modal('hide');
 
 
             }
         });
     });
 
-    // Ativa crop da ong 
-    var $image = $('#cropper-ong > img'),
+    // Ativa crop da vaga 
+    var $image = $('#cropper-vaga > img'),
         cropBoxData,
         canvasData;
 
     var ativaFoto = function (){
         $image.cropper({
-            aspectRatio: 1,
+            aspectRatio: 16 / 9,
             built: function () {
                 // Strict mode: set crop box data first
                 $image.cropper('setCropBoxData', cropBoxData);
@@ -68,11 +67,11 @@ $(function() {
             },
             guides: false,
             crop: function(e) {
-                $("#x-ong-perfil").val(Math.round(e.x));
-                $("#y-ong-perfil").val(Math.round(e.y));
-                $("#h-ong-perfil").val(Math.round(e.height));
-                $("#w-ong-perfil").val(Math.round(e.width));
-                $("#r-ong-perfil").val(e.rotate);
+                $("#x-vaga-perfil").val(Math.round(e.x));
+                $("#y-vaga-perfil").val(Math.round(e.y));
+                $("#h-vaga-perfil").val(Math.round(e.height));
+                $("#w-vaga-perfil").val(Math.round(e.width));
+                $("#r-vaga-perfil").val(e.rotate);
                 console.log(e);
             },
             built: function() {
@@ -82,7 +81,7 @@ $(function() {
     };
 
     //destroi o cropper quando fecha a modal
-    $('#cropper-ong-modal').on('shown.bs.modal', function () {
+    $('#cropper-vaga-modal').on('shown.bs.modal', function () {
     }).on('hidden.bs.modal', function () {
         cropBoxData = $image.cropper('getCropBoxData');
         canvasData = $image.cropper('getCanvasData');
@@ -90,13 +89,13 @@ $(function() {
     });
 
     //quando clica no botao de subir foto constroi o cropper
-    $('#btn-upload-img-ong').on('click', function () {
+    $('#btn-upload-img-vaga').on('click', function () {
         ativaFoto();
         $('#btn-crop-photo').show();
     });
 
     // Import image
-    var $inputImage = $('#input-ong-foto-perfil');
+    var $inputImage = $('#input-vaga-foto-perfil');
     var URL = window.URL || window.webkitURL;
     var blobURL;
 
