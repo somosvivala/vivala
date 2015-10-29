@@ -22,8 +22,8 @@
             </div>
         </div>
     </a>
-    <div class="modal fade" id="cropper-quiz-modal">
-        <div class="modal-dialog modal-lg">
+    <div class="modal cropper-foto-modal fade" id="cropper-quiz-modal">
+        <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-body">
                     {!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'data-redirect' => '/quiz/contemais', 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading']) !!}

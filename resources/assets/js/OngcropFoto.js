@@ -6,7 +6,8 @@ $(function() {
     });
 
     /** Funcões para Upload */
-    $('.cropfoto-ajax').submit(function (ev) {
+    $('#ong_foto_form').submit(function (ev) {
+    console.log('entrou submit form!!!');
         ev.preventDefault();
         var frm = $(this),
             dataForm = new FormData(this),
@@ -20,37 +21,40 @@ $(function() {
             processData: false,  //file
             success: function (data) {
                 // Executa uma função de javascript
-                //console.log(data);
+                console.log(data);
+                console.log("Sucess do ajax");
 
                 //Settando o tamanho do container para o tamanho da nova imagem
                 var tipo = $('#tipo_foto');
                 if (tipo && tipo.val() == 'capa') {
                     $('#uploadedFoto').val(data.id);
-                    $('#preview').attr('src',data.path).width('80%');
-                    var height = $('#preview').width();
-                    $('#preview').height(height/2);
-                    $('#preview').width(height);
+                    $('.ong-foto-atual').attr('src',data.path).width('80%');
+                    var height = $('.ong-foto-atual').width();
+                    $('.ong-foto-atual').height(height/2);
+                    $('.ong-foto-atual').width(height);
 
                 } else {
                     $('#uploadedFoto').val(data.id);
-                    $('#preview').attr('src',data.path).width('50%');
-                    var height = $('#preview').width();
-                    $('#preview').height(height);
-                    $('#preview').width(height);
-                }
+                    $('.ong-foto-atual').attr('src',data.path).width('50%');
+                    var height = $('.ong-foto-atual').width();
+                    $('.ong-foto-atual').height(height);
+                    $('.ong-foto-atual').width(height);
+                }   
 
-                               //console.log('preview width -> ' +  $('#preview').width());
+                //console.log('ong-foto-atual width -> ' +  $('#ong-foto-atual').width());
                 //console.log('height -> ' +  height );
-                //console.log($('#preview').height());
+                //console.log($('#ong-foto-atual').height());
 
-                //swal(null, "Foto atualizada com sucesso", 'success');
+               swal('Sucesso', "Foto atualizada", 'success');
+               $('#cropper-ong-modal').modal('hide');
+
 
             }
         });
     });
 
-    // Ativa crop do quiz
-    var $image = $('#cropper-quiz > img'),
+    // Ativa crop da ong 
+    var $image = $('#cropper-ong > img'),
         cropBoxData,
         canvasData;
 
@@ -64,11 +68,11 @@ $(function() {
             },
             guides: false,
             crop: function(e) {
-                $("#x-quiz-perfil").val(Math.round(e.x));
-                $("#y-quiz-perfil").val(Math.round(e.y));
-                $("#h-quiz-perfil").val(Math.round(e.height));
-                $("#w-quiz-perfil").val(Math.round(e.width));
-                $("#r-quiz-perfil").val(e.rotate);
+                $("#x-ong-perfil").val(Math.round(e.x));
+                $("#y-ong-perfil").val(Math.round(e.y));
+                $("#h-ong-perfil").val(Math.round(e.height));
+                $("#w-ong-perfil").val(Math.round(e.width));
+                $("#r-ong-perfil").val(e.rotate);
                 console.log(e);
             },
             built: function() {
@@ -78,7 +82,7 @@ $(function() {
     };
 
     //destroi o cropper quando fecha a modal
-    $('#cropper-quiz-modal').on('shown.bs.modal', function () {
+    $('#cropper-ong-modal').on('shown.bs.modal', function () {
     }).on('hidden.bs.modal', function () {
         cropBoxData = $image.cropper('getCropBoxData');
         canvasData = $image.cropper('getCanvasData');
@@ -86,13 +90,13 @@ $(function() {
     });
 
     //quando clica no botao de subir foto constroi o cropper
-    $('#btn-upload-img-quiz').on('click', function () {
+    $('#btn-upload-img-ong').on('click', function () {
         ativaFoto();
         $('#btn-crop-photo').show();
     });
 
     // Import image
-    var $inputImage = $('#input-quiz-foto-perfil');
+    var $inputImage = $('#input-ong-foto-perfil');
     var URL = window.URL || window.webkitURL;
     var blobURL;
 

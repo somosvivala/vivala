@@ -53,6 +53,7 @@ elixir(function(mix) {
       '../../assets/js/viajar.js',
       '../../assets/js/search.js',
       '../../assets/js/cropFoto.js',
+      '../../assets/js/OngcropFoto.js',
       '../../assets/js/chefsclub.js',
       '../../../node_modules/sweetalert/dist/sweetalert.min.js',
       '../../assets/js/ongs.js',

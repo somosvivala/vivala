@@ -8635,6 +8635,29 @@ form.form-ajax div.file-upload > label p {
 .btn-icon:hover {
   color: #f16f2b;
 }
+.cropper-foto-modal {
+  text-align: center;
+}
+.cropper-foto-modal a {
+  cursor: pointer;
+}
+.cropper-foto-modal h2 {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+.cropper-foto-modal h3 {
+  text-align: left;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+.cropper-foto-modal .text-center {
+  text-align: center;
+}
+.cropper-img {
+  max-height: 60vh;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -9032,9 +9055,6 @@ ul.viagens-comentadas button {
 }
 .pergunta .text-center {
   text-align: center;
-}
-#cropper-quiz {
-  max-height: 60vh;
 }
 .quiz-foto-atual {
   max-width: 17em;
@@ -10729,6 +10749,29 @@ form.form-ajax div.file-upload > label p {
 }
 .btn-icon:hover {
   color: #f16f2b;
+}
+.cropper-foto-modal {
+  text-align: center;
+}
+.cropper-foto-modal a {
+  cursor: pointer;
+}
+.cropper-foto-modal h2 {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 3rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+.cropper-foto-modal h3 {
+  text-align: left;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
+}
+.cropper-foto-modal .text-center {
+  text-align: center;
+}
+.cropper-img {
+  max-height: 60vh;
 }
 #welcome-html {
   position: relative;
