@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use App\PrettyUrl;
 use App\Foto;
 use App\Post;
+use App\Perfil;
 
 class PerfilController extends ConectarController {
 
@@ -226,6 +227,26 @@ class PerfilController extends ConectarController {
 
 		// Retorna a quantidade de likes para utilizar na view
 	    return $post->getQuantidadeLikes();
+	}
+
+	/**
+	 * Seta o like da entidadeAtiva atual para um post específico
+	 *
+	 * @param  [integer] id do post
+	 * @return
+	 */
+	public function getSetapoiador($id) {
+            $perfil = Perfil::findOrFail($id);
+            if(Auth::user()->isAdmin()) {
+                if($perfil->apoiador == 'B'){
+                    $perfil->apoiador = null;
+                }else{
+                    $perfil->apoiador = 'B';
+                }
+                $perfil->push();
+            }
+
+	    return 'success';
 	}
 
 }
