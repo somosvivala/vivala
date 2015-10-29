@@ -39,7 +39,7 @@
                                 </span>
                             </label>    
                             <div id="cropper-perfil" class="cropper-img">
-                                <img src="{{ '/img/nophoto.png' }}" />
+                                <img src="{{ $foto ? $foto : '/img/interrogacao.png' }}" />
                             </div>
                             {!! Form::hidden("x",  0, ['id' => 'x-perfil-perfil']) !!}
                             {!! Form::hidden("y",  0, ['id' => 'y-perfil-perfil']) !!}

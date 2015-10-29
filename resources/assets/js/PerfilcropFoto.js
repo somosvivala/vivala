@@ -39,6 +39,10 @@ $(function() {
                     var height = $('.perfil-foto-atual').width();
                     $('.perfil-foto-atual').height(height);
                     $('.perfil-foto-atual').width(height);
+
+                    $('#cropper-perfil img').attr('src',data.path);
+                    
+                
                 }   
 
                 //console.log('perfil-foto-atual width -> ' +  $('#ong-foto-atual').width());
