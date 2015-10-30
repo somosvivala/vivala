@@ -7,15 +7,11 @@ use App\Configuracao;
 class ClickBusSeeder extends Seeder {
     public function run()
     {
-        DB::table('clickbusplaces')->delete();
+        DB::table('ClickBusPlaces')->delete();
 
         $clickbusPlaces = file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/places');
 
         $clickbusHash = md5($clickbusPlaces);
-
-        $configuracao = Configuracao::firstOrCreate(['nome'  => 'clickbus_places_hash']);
-        $configuracao->valor = $clickbusHash;
-        $configuracao->save();
 
         $clickbusPlaces = (array)json_decode($clickbusPlaces)->items;
 
@@ -38,10 +34,10 @@ class ClickBusSeeder extends Seeder {
             if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0 && count($place->place->longitude) > 0 && count($place->place->latitude) > 0) {
                 $array_insert['place_position'] = DB::raw("ST_GeomFromText('POINT({$place->place->longitude} {$place->place->latitude})', 4326)");
             }
-            DB::table('clickbusplaces')->insert($array_insert);
+            DB::table('ClickBusPlaces')->insert($array_insert);
         }
 
-        DB::table('clickbuscompanies')->delete();
+        DB::table('ClickBusCompanies')->delete();
 
         $pages = json_decode(file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/buscompanies'))->meta->totalPages;
         $busCompaniesHash = '';
@@ -51,17 +47,13 @@ class ClickBusSeeder extends Seeder {
             $companies = json_decode($companies)->busCompanies;
 
             foreach ($companies as $company) {
-                DB::table('clickbuscompanies')->insert(array(
+                DB::table('ClickBusCompanies')->insert(array(
                     'id'       => $company->id,
                     'nome'     => $company->name,
                     'logo_url' => $company->logo->url
                 ));
             }
         }
-
-        $configuracaobusCompany = Configuracao::firstOrCreate(['nome'  => 'clickbus_buscompanies_hash']);
-        $configuracaobusCompany->valor = md5($busCompaniesHash);
-        $configuracaobusCompany->save();
     }
 }
 

@@ -50,6 +50,7 @@ elixir(function(mix) {
       '../../assets/js/notificacoes.js',
       '../../assets/js/welcome.js',
       '../../assets/js/quimera.js',
+      '../../assets/js/clickbus.js',
       '../../assets/js/viajar.js',
       '../../assets/js/search.js',
       '../../assets/js/cropFoto.js',

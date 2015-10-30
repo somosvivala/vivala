@@ -12,7 +12,7 @@ class ClickbusPlaces extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('clickbusplaces', function(Blueprint $table)
+		Schema::create('ClickBusPlaces', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('item_id')->nullable();
@@ -31,7 +31,7 @@ class ClickbusPlaces extends Migration {
 		});
 
 		if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0) {
-			DB::statement('ALTER TABLE clickbusplaces ADD COLUMN place_position geometry(Point,4326) NULL;');
+			DB::statement('ALTER TABLE "ClickBusPlaces" ADD COLUMN place_position geometry(Point,4326) NULL;');
         }
 	}
 
@@ -42,7 +42,7 @@ class ClickbusPlaces extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('clickbusplaces');
+		Schema::drop('ClickBusPlaces');
 	}
 
 }
