@@ -285,7 +285,9 @@ return[
   'lbl_event_update_' => 'Update Events',
   'lbl_exit' => 'Exit',
   'lbl_exit_' => 'Exit',
-  'lbl_feed' => 'Yimeline',
+  'lbl_feed' => 'Timeline',
+  'lbl_feedback' => 'Feedback',
+  'lbl_feedback_give_yours' => 'Give your feedback',
   'lbl_filter_by' => 'Sort by:',
   'lbl_follow' => 'Follow',
   'lbl_followed_by' => 'Followed by',
@@ -331,6 +333,7 @@ return[
   'lbl_invite_' => 'Invitations',
   'lbl_know_more_things' => 'Know more things',
   'lbl_language' => 'Language',
+  'lbl_latest_news' => 'Latest News',
   'lbl_legal_terms' => 'Terms of Use',
   'lbl_liker' => 'Like',
   'lbl_like' => 'Like',
@@ -598,6 +601,8 @@ return[
     'lbl_warning_' => 'Warnings',
     'lbl_website' => 'Website',
     'lbl_website_' => 'Websites',
+    'lbl_wishlist' => 'Wishlist',
+    'lbl_wishlist_my' => 'My Whishlist',
     'lbl_why_care' => 'Why care',
 
     /* Erros */
@@ -688,17 +693,7 @@ return[
 
   /* View: Auth [DONE] */
 
-  // View: Conectar
-
-    // menulateral.blade - Menu Lateral e ITENS EM COMUM
-      'lbl_travellershape' => 'Traveller Profile',
-      'lbl_travellerdiary' => 'Travel Diary',
-      'lbl_travellerguide' => 'Itineraries',
-      'lbl_travellermemories' => 'Memories',
-      'lbl_travellerreviews' => 'Reviews',
-      'lbl_brazillianculture' => 'Brazilian Culture',
-      'lbl_volunteershape' => 'Volunteer Profile',
-      'lbl_connectwithothers' => 'Connect with others',
+  /* View: Conectar [DONE */
 
   /* View: Configuracao [DONE] */
 
@@ -722,6 +717,8 @@ return[
     'wannatravel_package_' => 'Packages',
     'wannatravel_package_see' => 'See Package',
     'wannatravel_package_see_' => 'See Packages',
+    'wannatravel_route_see' => 'See Route',
+    'wannatravel_route_see_' => 'See Routes',
     'wannatravel_package_find_best_destinies' => 'Packages with best destinies',
     //
     'wannatravel_chefsclub_desserts_and_goodies' => 'Some tastes that feed body and soul!',

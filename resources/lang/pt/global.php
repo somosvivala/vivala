@@ -328,6 +328,8 @@ return[
   'lbl_exit' => 'Saída',
   'lbl_exit_' => 'Saídas',
   'lbl_feed' => 'Linha do Tempo',
+  'lbl_feedback' => 'Feedback',
+  'lbl_feedback_give_yours' => 'Dê seu feedback',
   'lbl_filter_by' => 'Filtrar por:',
   'lbl_follow' => 'Seguir',
   'lbl_followed_by' => 'Seguido por',
@@ -375,6 +377,7 @@ return[
   'lbl_invite_' => 'Convites',
   'lbl_know_more_things' => 'Saiba mais coisas',
   'lbl_language' => 'Idioma',
+  'lbl_latest_news' => 'Últimas Notícias',
   'lbl_legal_terms' => 'Termos de Uso',
   'lbl_liker' => 'Curtir',
   'lbl_like' => 'Curtida',
@@ -671,6 +674,8 @@ return[
     'lbl_warning_' => 'Avisos',
     'lbl_website' => 'Website',
     'lbl_website_' => 'Websites',
+    'lbl_wishlist' => 'Lista de desejos',
+    'lbl_wishlist_my' => 'Minha lista de desejos',
     'lbl_why_care' => 'Porque cuidar',
 
     /* Erros */
@@ -841,7 +846,9 @@ return[
     'wannatravel_package' => 'Pacote',
     'wannatravel_package_' => 'Pacotes',
     'wannatravel_package_see' => 'Ver Pacote',
-    'wannatravel_package_see_' => 'Ver Roteiros',
+    'wannatravel_package_see_' => 'Ver Pacotes',
+    'wannatravel_route_see' => 'Ver Roteiro',
+    'wannatravel_route_see_' => 'Ver Roteiros',
     'wannatravel_package_find_best_destinies' => 'Roteiros Vivalá',
     //
     'wannatravel_chefsclub_desserts_and_goodies' => 'Delícias que alimentam corpo e alma',
