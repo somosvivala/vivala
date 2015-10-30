@@ -85,6 +85,8 @@ Route::controller('quiz', 'QuizController');
 
 Route::post('quimera', 'QuimeraController@quimera');
 Route::post('clickbus/place', 'ClickBusController@autocompletePlace');
+Route::post('clickbus/trip', 'ClickBusController@getTrip');
+Route::post('clickbus/trips', 'ClickBusController@getTrips');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

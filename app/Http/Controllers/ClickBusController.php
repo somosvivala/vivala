@@ -10,6 +10,8 @@ use Input;
 
 class ClickBusController extends Controller {
 
+	private static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
+
 	public function autocompletePlace()
 	{
 		$query = Input::get('query');
@@ -19,6 +21,24 @@ class ClickBusController extends Controller {
 			->take(15);
 
 		print(json_encode($result));
+	}
+
+	public function getTrips() 
+	{
+		$from      = Input::get('from');
+		$to        = Input::get('to');
+		$departure = Input::get('departure');
+
+		$result = file_get_contents(self::$url."/trips?from={$from}&to={$to}&departure={$departure}");
+		return $result;
+	}
+
+	public function getTrip() 
+	{
+		$scheduleId = Input::get('scheduleId');
+
+		$result = file_get_contents(self::$url."/trip?scheduleId={$scheduleId}");
+		return $result;
 	}
 
 }
