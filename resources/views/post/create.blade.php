@@ -1,7 +1,10 @@
 <div class="col-xs-12 col-sm-12 cria-post-container fundo-cheio">
     <div class="col-md-2 col-sm-4 col-xs-3">
         <a href="{{ url('perfil') }}" class="click-img-no-border">
-            <img class="foto-avatar" src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
+            <div class="round foto quadrado7em">
+                <div class="avatar-img" style="background-image:url('{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}')">
+                    </div>
+            </div>
         </a>
     </div>
     <div class="col-md-10 col-sm-8 col-xs-9">

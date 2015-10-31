@@ -29,8 +29,7 @@
                     <button name='btn_seguir' type="submit" class='@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) suave @else @endif  btn-follow btn_seguir_viajante ' data-id="{{ $perfil->id }}">@if (Auth::user()->entidadeAtiva->isFollowing($perfil->id, get_class($perfil))) seguindo @else seguir @endif</button>
                 @endif
                     <div class="round foto quadrado7em">
-                            <div class="cover">
-                                <img src="{{ $perfil->getAvatarUrl() }}" alt=" {{ $perfil->nome }}">
+                            <div class="avatar-img" style="background-image:url('{{ $perfil->getAvatarUrl() }}')">
                             </div>
                     </div>
             </a>

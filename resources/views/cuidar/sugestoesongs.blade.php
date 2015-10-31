@@ -13,7 +13,10 @@
 					<img class="hidden" title='Carregando' alt='Carregando...'>
 					<div class="round foto">
 						<div class="cover">
-							<img src="{{ $Ong->getAvatarUrl() }}" alt=" {{ $Ong->nome }}">
+                                                    <div class="round foto quadrado3em">
+                                                        <div class="avatar-img" style="background-image:url('{{ $Comentario->author->getAvatarUrl() }}')">
+                                                            </div>
+                                                    </div>
 						</div>
 					</div>
 					<strong class="col-sm-12">{{ $Ong->nome }}</strong>

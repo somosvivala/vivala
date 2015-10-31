@@ -61,7 +61,12 @@
                 <div class="pull-left hello hidden-xs hidden-sm hidden-md">
 									{{ trans('global.lbl_hello') }} {{ Auth::user()->entidadeAtiva->apelido }}
 								</div>
-                <img src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
+                
+                <div class="round foto quadrado3em foto-perfil">
+                    <div class="avatar-img" style="background-image:url('{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}')">
+                        </div>
+                </div>
+
                 <ul class="dropdown-menu submenu" role="menu">
                     @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
                         <li>

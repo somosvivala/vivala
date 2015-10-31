@@ -145,9 +145,15 @@ a.padding-btn,
 .padding-btn {
     padding: 0.7em 1.2em 0.5em;
 }
+div.quadrado3em {
+    width: 3em;
+    height: 3em;
+}
+div.quadrado7em, 
 .quadrado7em {
     width: 7em;
     height: 7em;
+    margin: 0 auto;
 }
 // Simula um background-cover pra tag img
 div.cover {
@@ -242,6 +248,7 @@ div.foto {
 .round {
 	border-radius: 50%;
 	overflow: hidden;
+        width: 100%;
 }
 
 // Classe com azul-zumbi de fundo, texto branco
@@ -441,6 +448,7 @@ img.foto-avatar {
         z-index: 0;
     }
 }
+
 .foto-avatar-comentario {
     border-radius: 50%;
     width: 3em;
@@ -454,6 +462,13 @@ img.foto-avatar {
 
 }
 
+// Avatar em formato de bg-image
+.avatar-img{
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
 ul.lista-usuarios {
 	li.foto-user {
             height:12em;

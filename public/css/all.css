@@ -8047,6 +8047,11 @@ a.padding-btn,
 .padding-btn {
   padding: 0.7em 1.2em 0.5em;
 }
+div.quadrado3em {
+  width: 3em;
+  height: 3em;
+}
+div.quadrado7em,
 .quadrado7em {
   width: 7em;
   height: 7em;
@@ -8156,6 +8161,7 @@ div.foto {
 .round {
   border-radius: 50%;
   overflow: hidden;
+  width: 100%;
 }
 .suave {
   text-align: center;
@@ -8337,6 +8343,12 @@ img.foto-avatar .cover {
 }
 .foto-avatar-comentario .cover {
   z-index: 0;
+}
+.avatar-img {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 ul.lista-usuarios li.foto-user {
   height: 12em;
@@ -9758,6 +9770,9 @@ div.notificacoes button:focus + div {
   display: block;
   text-align: right;
 }
+.foto-perfil {
+  margin: 0.5em 0 0.5em 0.5em;
+}
 .cria-post-container {
   padding: 15px;
 }
@@ -10162,6 +10177,11 @@ a.padding-btn,
 .padding-btn {
   padding: 0.7em 1.2em 0.5em;
 }
+div.quadrado3em {
+  width: 3em;
+  height: 3em;
+}
+div.quadrado7em,
 .quadrado7em {
   width: 7em;
   height: 7em;
@@ -10271,6 +10291,7 @@ div.foto {
 .round {
   border-radius: 50%;
   overflow: hidden;
+  width: 100%;
 }
 .suave {
   text-align: center;
@@ -10452,6 +10473,12 @@ img.foto-avatar .cover {
 }
 .foto-avatar-comentario .cover {
   z-index: 0;
+}
+.avatar-img {
+  background-size: cover;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 ul.lista-usuarios li.foto-user {
   height: 12em;

@@ -4,7 +4,10 @@
     <li class="col-sm-12 post barra-comentarios margin-t-1" id="barra-comentario-{{ $Comentario->id }}">
         <div class="col-sm-2">
             <a href="{{ url($Comentario->author->getUrl()) }}" title="{{ $Comentario->author->nome }}">
-                <img class="foto-avatar-comentario" src="{{ $Comentario->author->getAvatarUrl() }}" alt="{{ $Comentario->author->nome }}">
+                <div class="round foto quadrado3em">
+                    <div class="avatar-img" style="background-image:url('{{ $Comentario->author->getAvatarUrl() }}')">
+                        </div>
+                </div>
             </a>
         </div>
         <div class="col-sm-8">

@@ -15,11 +15,10 @@
 				<button id='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
 				<a href="{{ url($Perfil->getUrl()) }}">
 					<img class="hidden" title='{{ trans("global.lbl_loading1") }}' alt='{{ trans("global.lbl_loading1") }}'>
-					<div class="round foto">
-						<div class="cover">
-							<img src="{{ $Perfil->getAvatarUrl() }}" alt=" {{ $Perfil->nome }}">
-						</div>
-					</div>
+                                        <div class="round foto quadrado3em">
+                                            <div class="avatar-img" style="background-image:url('{{ $Perfil->getAvatarUrl() }}')">
+                                            </div>
+                                        </div>
 					<strong class="col-sm-12">{{ $Perfil->user->username }}</strong>
 					<div class="row localizacao-cidade">
                                             {{--

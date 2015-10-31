@@ -1,7 +1,10 @@
 <div class="row novo-comentario">
 
 	<div class="col-sm-2">
-        <img class="foto-avatar-comentario" src="{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}" alt="{{ Auth::user()->entidadeAtiva->apelido }}">
+            <div class="round foto quadrado3em">
+                <div class="avatar-img" style="background-image:url('{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}')">
+                    </div>
+            </div>
     </div>
     <div class="col-sm-10">
 
