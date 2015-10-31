@@ -132,9 +132,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     	return $paginas;
     }
 
+    //  Recebe uma string do .env e explode pra pegar os ids dos admins
     public function isAdmin()
     {
-        if( $this->id == 1)
+        if( in_array($this->id, explode(',',env('ADMINS_ID','1'))))
             return true;
         return false;
     }

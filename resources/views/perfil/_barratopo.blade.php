@@ -127,9 +127,9 @@
                 @endif
                 @if(Auth::user()->isAdmin())
 
-                    {!! Form::open(['url' => ['perfilcontroller/setapoiador', $perfil->id], 'method' => 'GET']) !!}
-                    <button class="btn btn-acao" type="submit"  data-id="{{ $perfil->id }}">
-                        Apoiador
+                {!! Form::open(['url' => ['perfilcontroller/setapoiador', $perfil->id], 'method' => 'GET', 'class' => 'form-ajax', 'data-callback'=>'location.reload()']) !!}
+                    <button class="btn btn-acao" style="position: absolute;top:0;right:0;" type="submit"  data-id="{{ $perfil->id }}">
+                        <i class="fa fa-star"></i>
                     </button>
                     {!! Form::close() !!}
                 @endif

@@ -9778,7 +9778,8 @@ div.notificacoes button:focus + div {
   display: block;
   text-align: right;
 }
-.foto-perfil {
+div.foto-perfil,
+ul li div.foto-perfil-topo {
   margin: 0.5em 0 0.5em 0.5em;
 }
 .cria-post-container {

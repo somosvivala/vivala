@@ -61,8 +61,7 @@
                 <div class="pull-left hello hidden-xs hidden-sm hidden-md">
 									{{ trans('global.lbl_hello') }} {{ Auth::user()->entidadeAtiva->apelido }}
 								</div>
-                
-                <div class="round foto quadrado3em foto-perfil">
+                <div class="round foto quadrado3em foto-perfil-topo">
                     <div class="avatar-img" style="background-image:url('{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}')">
                         </div>
                 </div>
@@ -78,8 +77,8 @@
                       <li class="row">
                         <a href="{{ action('PaginaController@getAcessarcomo', ['id' => Auth::user()->perfil->id , 'tipo' => 'perfil' ]) }}" class="click-img-no-border">
                           <div class="col-sm-4">
-                            <div class="round foto quadrado3em foto-perfil">
-                                <div class="avatar-img" style="background-image:url('{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}')">
+                            <div class="round foto quadrado3em foto-perfil pull-right">
+                                <div class="avatar-img" style="background-image:url('{{ Auth::user()->perfil->getAvatarUrl() }}')">
                                     </div>
                             </div>
                           </div>
@@ -94,7 +93,7 @@
                       <li class="row">
                         <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}" class="click-img-no-border">
                           <div class="col-sm-4">
-                            <div class="round foto quadrado3em foto-perfil">
+                            <div class="round foto quadrado3em foto-perfil pull-right">
                                 <div class="avatar-img" style="background-image:url('{{ $Pagina->getAvatarUrl() }}')">
                                     </div>
                             </div>
