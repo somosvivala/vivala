@@ -12,6 +12,7 @@
                 <h4>
                     {{ trans('global.lbl_company') }}
                 </h4>
+                {{--
                 <div class="form-criar">
                     {!! Form::open(array('url' => array('empresa/create')))!!}
                     <span>
@@ -45,6 +46,7 @@
                     </div>
                     {!! Form::close() !!}
                 </div>
+                --}}
             </div>
         </div>
         <div class="col-sm-4">
