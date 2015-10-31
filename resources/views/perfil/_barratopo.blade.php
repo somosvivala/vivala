@@ -11,7 +11,7 @@
     <div class="col-md-4">
         <div class="row perfil-title">
             <h1 class="col-sm-6 font-bold-upper">
-                {{ $perfil->apelido }}
+                {{ $perfil->apelido_tratado }}
             </h1>
             <span class="col-sm-6">
                 @if($perfil->cidade_atual)
@@ -57,7 +57,7 @@
                                                     <div class="avatar-img" style="background-image:url('{{ $perfilSeguidor->getAvatarUrl() }}')">
                                                     </div>
                                             </div>
-                                            <h4 class="texto-preto">{{ $perfilSeguidor->apelido }}</h4>
+                                            <h4 class="texto-preto">{{ $perfilSeguidor->apelido_tratado }}</h4>
                                         </a>
                                     </li>
                                 @empty
@@ -92,7 +92,7 @@
                                                     <div class="avatar-img" style="background-image:url('{{ $perfilSeguindo->getAvatarUrl() }}')">
                                                     </div>
                                             </div>
-                                            <h4 class="texto-preto">{{ $perfilSeguindo->apelido }}</h4>
+                                            <h4 class="texto-preto">{{ $perfilSeguindo->apelido_tratado }}</h4>
 
                                         </a>
                                     </li>

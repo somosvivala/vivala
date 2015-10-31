@@ -103,8 +103,7 @@ class Ong extends Model {
     public function fotos()
     {
         return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
-    }
-
+    } 
 
     /**
      * Uma Ong tem apenas uma foto de avatar;
@@ -593,6 +592,16 @@ class Ong extends Model {
     }
 
 
+
+    public function getApelidoTratadoAttribute()
+    {
+        $completo = $this->nome;
+        $nome_array = explode(' ', $completo);
+        if(is_array($nome_array) && $nome_array[0]!="")
+            return $nome_array[0];
+        else
+            return $completo;
+    }
 
 
 }

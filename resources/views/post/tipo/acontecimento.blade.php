@@ -7,7 +7,7 @@
                                     <div class="avatar-img" style="background-image:url('{{ $Post->entidade->getAvatarUrl() }}')">
                                         </div>
                                 </div>
-				<div class="titulo-label">{{$Post->entidade->apelido }}</div>
+                                <div class="titulo-label">{{$Post->entidade->apelido_tratado }}</div>
                             </a>
 			</div>
 		</div>

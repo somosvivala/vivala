@@ -56,12 +56,12 @@
                 </div>
             </div>
         </div>
+    @include('errors.list')
         {!! Form::model($ong, ['method' => 'PATCH', 'action' => ['OngController@update', $ong->id] ]) !!}
 
-                @include('ong.form', ['btnSubmit' => trans('global.lbl_ong_update') ]);
+                @include('ong.form', ['btnSubmit' => trans('global.lbl_ong_update') ])
 
         {!! Form::close() !!}
 </div>
 
-    @include('errors.list')
 @stop

@@ -21,6 +21,19 @@ class Perfil extends Model {
 
 	protected $dates = ['aniversario'];
 
+
+	public function getApelidoTratadoAttribute()
+	{
+            if($this->apelido != "")
+                return $this->apelido;
+            $completo = $this->nome_completo;
+            $nome_array = explode(' ', $completo);
+            if(is_array($nome_array) && $nome_array[0]!="")
+                return $nome_array[0];
+            else
+                return $completo;
+	}
+
 	public function getNomeAttribute()
 	{
 		return $this->nome_completo;
