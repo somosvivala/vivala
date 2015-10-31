@@ -888,7 +888,7 @@ return[
     'ong_t_additional_social_networks' => 'Complemento - Redes Sociais',
     'ong_t_contact' => 'Contato',
     'ong_name' => 'Nome da ONG',
-    'ong_name_prettyurl' => 'Nome-da-Projeto-de-Impacto-Social',
+    'ong_name_prettyurl' => 'Nome-do-Projeto-de-Impacto-Social',
     'ong_pretty_URL' => 'URL amigável do Projeto de Impacto-Social',
     'ong_vivala_URL_ph' => 'vivala.com.br/ong/',
     'ong_address_zipcode' => 'CEP da projeto',

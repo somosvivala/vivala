@@ -78,9 +78,8 @@
         <a href="{{ url($vaga->responsavel->getUrl()) }}">
             <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $vaga->responsavel->id }}">seguir</button>
                 <div class="round foto quadrado7em">
-                        <div class="cover">
-                            <img src="{{ $vaga->responsavel->getAvatarUrl() }}" alt=" {{ $vaga->responsavel->nome }}">
-                        </div>
+                    <div class="avatar-img" style="background-image:url('{{ $vaga->responsavel->getAvatarUrl() }}')">
+                    </div>
                 </div>
                 <strong class="col-sm-12 margin-t-1">{{ $vaga->responsavel->user->username }}</strong>
         </a>
@@ -100,7 +99,10 @@
     <div class="col-sm-2 text-center">
 
         <a href="{{ url('perfil') }}">
-            <img class="foto-avatar" src="{{ $Responsavel->getAvatarUrl() }}" alt="{{ $Responsavel->apelido }}">
+            <div class="round foto quadrado7em">
+                <div class="avatar-img" style="background-image:url('{{ $Responsavel->getAvatarUrl() }}')">
+                </div>
+            </div>
             <div class="font-bold-upper">{{ $Responsavel->apelido }}</div>
         </a>
     </div>
@@ -120,9 +122,8 @@
         {!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
         <a href="{{ url($Voluntario->getUrl()) }}">
-            <div class="round foto">
-                <div class="cover">
-                    <img src="{{ $Voluntario->getAvatarUrl() }}" alt=" {{ $Voluntario->nome }}">
+            <div class="round foto quadrado7em">
+                <div class="avatar-img" style="background-image:url('{{ $Voluntario->getAvatarUrl() }}')">
                 </div>
             </div>
             <strong class="col-sm-12">{{ $Voluntario->user->username }}</strong>

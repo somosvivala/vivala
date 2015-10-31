@@ -10,7 +10,10 @@
         <div class="col-sm-4">
             <div class="box-criar padding-t-1">
                 <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}" class="click-img-no-border">
-                    <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
+                    <div class="round foto quadrado12em">
+                        <div class="avatar-img" style="background-image:url('{{ $Pagina->getAvatarUrl() }}')">
+                        </div>
+                    </div>
                     <h4>{{ $Pagina->nome }}</h4>
                 </a>
             </div>

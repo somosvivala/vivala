@@ -11,15 +11,11 @@
 				<button type="submit" class='btn_seguir_ong' data-id="{{$Ong->id}}">{{ trans('global.lbl_follow') }}</button>
 				<a href="{{ url($Ong->getUrl()) }}">
 					<img class="hidden" title='Carregando' alt='Carregando...'>
-					<div class="round foto">
-						<div class="cover">
-                                                    <div class="round foto quadrado3em">
-                                                        <div class="avatar-img" style="background-image:url('{{ $Comentario->author->getAvatarUrl() }}')">
-                                                            </div>
-                                                    </div>
-						</div>
-					</div>
-					<strong class="col-sm-12">{{ $Ong->nome }}</strong>
+                                        <div class="round foto quadrado3em">
+                                            <div class="avatar-img" style="background-image:url('{{ $Ong->getAvatarUrl() }}')">
+                                            </div>
+                                        </div>
+                                        <strong class="col-sm-12">{{ $Ong->nome }}</strong>
 					<div class="row localizacao-cidade">
 						<div class="col-sm-4 text-right">
 							<i class="fa fa-map-marker"></i>

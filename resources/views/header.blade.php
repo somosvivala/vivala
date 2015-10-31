@@ -78,7 +78,10 @@
                       <li class="row">
                         <a href="{{ action('PaginaController@getAcessarcomo', ['id' => Auth::user()->perfil->id , 'tipo' => 'perfil' ]) }}" class="click-img-no-border">
                           <div class="col-sm-4">
-                              <img src="{{ Auth::user()->perfil->getAvatarUrl() }}" alt="{{ Auth::user()->perfil->apelido }}">
+                            <div class="round foto quadrado3em foto-perfil">
+                                <div class="avatar-img" style="background-image:url('{{ Auth::user()->entidadeAtiva->getAvatarUrl() }}')">
+                                    </div>
+                            </div>
                           </div>
                           <div class="col-sm-8">
                               {{ Auth::user()->perfil->apelido }}
@@ -91,7 +94,10 @@
                       <li class="row">
                         <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}" class="click-img-no-border">
                           <div class="col-sm-4">
-                              <img src="{{ $Pagina->getAvatarUrl() }}" alt="{{ $Pagina->nome }}">
+                            <div class="round foto quadrado3em foto-perfil">
+                                <div class="avatar-img" style="background-image:url('{{ $Pagina->getAvatarUrl() }}')">
+                                    </div>
+                            </div>
                           </div>
                           <div class="col-sm-8">
                               {{ $Pagina->nome }}

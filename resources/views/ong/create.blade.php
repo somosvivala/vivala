@@ -53,6 +53,7 @@
                 </div>
             </div>
         </div>
+        @include('errors.list')
         {!! Form::open(['url' => 'ong']) !!}
              {!! Form::hidden("foto", false, ['id' => 'uploadedFoto' ]) !!}
 
@@ -60,7 +61,6 @@
         {!! Form::close() !!}
     </div>
 
-    @include('errors.list')
 
 </div>
 @endsection

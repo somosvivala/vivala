@@ -58,7 +58,10 @@
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $responsavel->id }}">seguir</button>
                 <div class="round foto quadrado7em">
                         <div class="cover">
-                                <img src="{{ $responsavel->getAvatarUrl() }}" alt="{{ $responsavel->nome }}">
+                            <div class="round foto quadrado7em foto-perfil">
+                                <div class="avatar-img" style="background-image:url('{{ $responsavel->getAvatarUrl() }}')">
+                                </div>
+                            </div>
                         </div>
                 </div>
                 <strong class="col-sm-12 margin-t-1">{{ $responsavel->user->username }}</strong>

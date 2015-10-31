@@ -6,7 +6,10 @@
             <a href="{{ url($Notificacao->from->getUrl()) }}">
                 <div class="round foto-avatar">
                     <div class="cover">
-                        <img src="{{ $Notificacao->from->getAvatarUrl() }}" alt=" {{ $Notificacao->from->nome }}">
+                        <div class="round foto quadrado7em foto-perfil">
+                            <div class="avatar-img" style="background-image:url('{{ $Notificacao->from->getAvatarUrl() }}')">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </a>

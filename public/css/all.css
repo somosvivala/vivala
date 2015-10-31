@@ -8050,11 +8050,19 @@ a.padding-btn,
 div.quadrado3em {
   width: 3em;
   height: 3em;
+  margin: 0 auto;
 }
 div.quadrado7em,
 .quadrado7em {
   width: 7em;
   height: 7em;
+  margin: 0 auto;
+}
+div.quadrado12em,
+.quadrado12em {
+  width: 12em;
+  height: 12em;
+  margin: 0 auto;
 }
 div.cover {
   position: absolute;
@@ -10180,11 +10188,19 @@ a.padding-btn,
 div.quadrado3em {
   width: 3em;
   height: 3em;
+  margin: 0 auto;
 }
 div.quadrado7em,
 .quadrado7em {
   width: 7em;
   height: 7em;
+  margin: 0 auto;
+}
+div.quadrado12em,
+.quadrado12em {
+  width: 12em;
+  height: 12em;
+  margin: 0 auto;
 }
 div.cover {
   position: absolute;
