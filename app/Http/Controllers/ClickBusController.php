@@ -14,13 +14,13 @@ class ClickBusController extends Controller {
 
 	public function autocompletePlace()
 	{
-		$query = Input::get('query');
+		$query = Input::get('query') ;
 
 		$result = ClickBusPlace::whereRaw("lower(place_name) LIKE '%{$query}%'")
 			->get()
 			->take(15);
 
-		print(json_encode($result));
+		return view('clickbus._listAutocomplete', compact('result'));
 	}
 
 	public function getTrips() 

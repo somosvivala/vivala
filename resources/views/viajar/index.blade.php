@@ -29,7 +29,7 @@
             </a>
         </li>
         <li class="col-sm-4">
-            <a href="#" class="desativado">
+            <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                {{ trans('global.wannatravel_trip_bus_drive') }}
             </a>
         </li>
@@ -56,6 +56,13 @@
             @include('chefsclub.buscarestaurantes')
             <div class="lista-restaurantes">
                 @include('chefsclub.listarestaurantes')
+            </div>
+        </div>
+
+        <div role="tabpanel" class="tab-pane active" id="rodoviario">
+            @include('clickbus.buscar')
+            <div class="lista-rodoviario">
+                
             </div>
         </div>
 

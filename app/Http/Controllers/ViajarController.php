@@ -31,27 +31,32 @@ class ViajarController extends VivalaBaseController {
 	 */
 	public function index()
 	{
-            $tipo_cozinha       = Chefsclub::getTipoCozinhaForSelect();
-            $descontos          = Chefsclub::getDescontoForSelect()->lists('desconto');
-            $cidades            = Chefsclub::getCidadeForSelect();
-            $restaurantes       = Chefsclub::all()->take(10); 
-            $pessoas            = Chefsclub::getQuantidadeForSelect();
-            $horarios           = Chefsclub::getHorarios(true);
-            $restaurantes_total = count(Chefsclub::all());
+        $tipo_cozinha       = Chefsclub::getTipoCozinhaForSelect();
+        $descontos          = Chefsclub::getDescontoForSelect()->lists('desconto');
+        $cidades            = Chefsclub::getCidadeForSelect();
+        $restaurantes       = Chefsclub::all()->take(10); 
+        $pessoas            = Chefsclub::getQuantidadeForSelect();
+        $horarios           = Chefsclub::getHorarios(true);
+        $restaurantes_total = count(Chefsclub::all());
 
-            $page = 1;
+        $page = 1;
 
-            return view('viajar.index' , compact(
-                'restaurantes',
-                'tipo_cozinha',
-                'descontos',
-                'restaurantes_total',
-                'cidades',
-                'pessoas',
-                'horarios',
-                "page"
-            ));
+        return view('viajar.index' , compact(
+            'restaurantes',
+            'tipo_cozinha',
+            'descontos',
+            'restaurantes_total',
+            'cidades',
+            'pessoas',
+            'horarios',
+            "page"
+        ));
 	}
+
+    public function rodoviario()
+    {
+        return view('viajar.clickbus');
+    }
 
     public function filtro()
     {

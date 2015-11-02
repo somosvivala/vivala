@@ -7,15 +7,36 @@ $.ajaxSetup({
     }
 });
 
-var ajaxPlace = function(query) {
-    $.ajax({
+var ajax;
+
+var ajaxPlace = function(query, target) {
+    if (ajax != null && ajax.state() == 'pending') {
+        ajax.abort();
+    }
+
+    var pos = [$(target).position().top + $(target).outerHeight(), $(target).position().left];
+    console.log(pos);
+
+    ajax = $.ajax({
         url: 'clickbus/place',
         type: 'POST',
-        dataType: 'json',
-        data: {query: query},
+        dataType: 'html',
+        data: {
+            query: query
+        },
     })
     .done(function(data) {
-        console.log(data);
+        var element = document.createElement('div');
+        $(element).addClass('list-group places-list')
+            .attr('data-target', $(target).prop('id'))
+            .css('top', pos[0])
+            .css('left', pos[1])
+            .html(data);
+
+        $(target).parents('.row').find('.places-list').remove();
+        $(target).parents('.row').append(element);
+
+        bindAutocompleteRodoviario();
     });
 };
 
