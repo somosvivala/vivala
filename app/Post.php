@@ -110,15 +110,6 @@ class Post extends Model {
                 }
             }
 
-            if (env('POST_FIXO_ID') != null)
-            {
-                $post_fixo = $posts->find(env('POST_FIXO_ID'));
-                $posts->forget($post_fixo->id);
-                $posts->prepend($post_fixo);
-            }
-
-
-
             return $posts;
         }
 
