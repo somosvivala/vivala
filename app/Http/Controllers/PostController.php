@@ -45,6 +45,19 @@ class PostController extends VivalaBaseController {
 		$novoPost->descricao = Request::input('descricao');
 		$novoPost->tipo_post = Request::input('tipo_post');
 
+                $novoPost->relevancia = 999;
+                // Caso seja uma foto ou status, coloca relevancia maior
+                if($novoPost->tipo_post == 'foto')
+                    $novoPost->relevancia_rate = 20;
+                elseif($novoPost->tipo_post == 'status')
+                    $novoPost->relevancia_rate = 15;
+                else
+                    $novoPost->relevancia_rate = 10;
+                
+                // Relevancia adicionada 5 vezes na criação
+                $novoPost->relevancia += $novoPost->relevancia_rate*5;
+
+
 		//Salvando novoPost para entidadeAtiva
 		Auth::user()->entidadeAtiva->posts()->save($novoPost);
 
@@ -143,6 +156,9 @@ class PostController extends VivalaBaseController {
 		$novoPost = $sourcePost->replicate();
 		$novoPost->shared_from = $id;
 
+                // Aumenta a relevancia do post que está sendo shareado
+                $sourcePost->relevancia += $sourcePost->relevancia_rate;
+
 		//Salvando o post para a entidadeAtiva atual
 		$entidadeAtiva->posts()->save($novoPost);
 
@@ -191,6 +207,10 @@ class PostController extends VivalaBaseController {
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likePost()->attach($post->id);
+
+                        // Aumenta a relevancia do post que recebeu o like 
+                        $post->relevancia += $post->relevancia_rate;
+                        $post->push();
 
 			//Só levantar uma notificacao se nao for em um post seu ou de alguma de suas entidades
 			if($entidadeAtiva->user->id != $post->author->user->id)
