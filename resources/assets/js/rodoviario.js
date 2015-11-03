@@ -20,6 +20,20 @@ jQuery(document).ready(function($) {
                 $('.places-list').remove();
             }, 100);
     });
+
+    $('#buscar-rodoviario .btn').on('click', function(e) {
+        e.preventDefault();
+
+        var from      = $('#origem-rodoviario').attr('data-value'),
+            to        = $('#destino-rodoviario').attr('data-value'),
+            departure = $('#data-id-rodoviario').val();
+
+        ajaxTrips({
+            from: from,
+            to: to,
+            departure: departure
+        })
+    });
 });
 
 var bindAutocompleteRodoviario = function() {
