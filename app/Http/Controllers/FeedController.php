@@ -19,14 +19,14 @@ class FeedController extends Controller {
     public function getFeeds($view)
     {
 
-        $posts = Post::getMaisfotos()->keyBy('id');
+        $posts = Post::getMaisrelevantes()->keyBy('id');
 
         $view->with('posts', $posts);
     }
 
     public function getPosts($pagina) 
     {
-        $posts = Post::getMaisfotos()->keyBy('id');
+        $posts = Post::getMaisrelevantes()->keyBy('id');
         $posts_total = count($posts);
         $posts = $posts->slice($pagina*env('QUANTIDADE_FEED_POST'), env('QUANTIDADE_FEED_POST'), true);
         $pagina++;
