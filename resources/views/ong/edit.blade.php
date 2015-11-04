@@ -10,10 +10,10 @@
         {!! Form::close() !!}
     </div>
 
-    <div class="panel-body">
+    <div class="panel-body edit-ong">
         <div class="text-center">
             <a type="button" data-target="#cropper-ong-modal" data-toggle="modal">
-                <img class="ong-foto-atual" src="/img/interrogacao.png"/>
+                <img class="ong-foto-atual" src="{{ $foto ? $foto : '/img/interrogacao.png' }}"/>
                 <div class="row pointer margin-t-2">
                     <div class="file-upload">
                         <label for="image_file_upload">
@@ -28,7 +28,7 @@
             <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-body">
-                        {!! Form::open(['url' => ['foto/cropandsave', $ong->id], 'files' => true, 'id'=>'ong_foto_form', 'data-loading'=>'form-loading']) !!}
+                        {!! Form::open(['url' => ['foto/cropandsave', $ong->id], 'files' => true, 'id'=>'ong_foto_form', 'data-loading'=>'form-loading', 'data-loading'=>'form-loading']) !!}
 
                     {!! Form::hidden("tipoEntidade", "App\\Ong" ) !!}
     
@@ -41,7 +41,7 @@
                             </span>
                         </label>    
                         <div id="cropper-ong" class="cropper-img">
-                            <img src="{{ '/img/nophoto.png' }}" />
+                            <img src="{{ $foto ? $foto : '/img/interrogacao.png' }}" />
                         </div>
                         {!! Form::hidden("x",  0, ['id' => 'x-ong-perfil']) !!}
                         {!! Form::hidden("y",  0, ['id' => 'y-ong-perfil']) !!}

@@ -12,13 +12,21 @@ $(function() {
         var frm = $(this),
             dataForm = new FormData(this),
             callbackFunction = frm.data('callback'),
-            redirect = frm.data('redirect');
+            redirect = frm.data('redirect'),
+            loading = frm.data('loading');
+            
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
             data: dataForm,
             contentType: false, //file
             processData: false,  //file
+            beforeSend: function (data) {
+                if (loading && loading != "") {
+                    $(this).find('input:submit').hide();
+                    $(this).find('#'+loading).show();
+                }
+            },
             success: function (data) {
                 // Executa uma função de javascript
                 //console.log(data);
@@ -49,6 +57,12 @@ $(function() {
                $('#cropper-ong-modal').modal('hide');
 
 
+            },
+            complete: function (data) {
+                if (loading && loading != "") {
+                    $(this).find('input:submit').show();
+                    $(this).find('#'+loading).hide();
+                }
             }
         });
     });

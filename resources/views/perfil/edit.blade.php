@@ -8,7 +8,7 @@
                 <h3 class="text-center margin-t-2">{{ trans('global.lbl_profile_edit') }}</h3>
             </div>
 
-        <div class="panel-body">
+        <div class="panel-body edit-perfil">
             <div class="text-center">
                 <a type="button" data-target="#cropper-perfil-modal" data-toggle="modal">
                     <img class="perfil-foto-atual" src="{{ $foto ? $foto : '/img/interrogacao.png' }}"/>
