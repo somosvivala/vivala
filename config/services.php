@@ -35,9 +35,9 @@ return [
 	],
 
 	'facebook' => [
-        'client_id'         =>  getenv('FACEBOOK_APP_ID'),
-        'client_secret'     =>  getenv('FACEBOOK_APP_SECRET'),
-        'redirect'      		=>  url(getenv('FACEBOOK_REDIRECT_URL')),
-    ]
+            'client_id'         =>  getenv('FACEBOOK_APP_ID'),
+            'client_secret'     =>  getenv('FACEBOOK_APP_SECRET'),
+            'redirect'      		=> getenv('FACEBOOK_REDIRECT_URL')
+        ]
 
 ];
