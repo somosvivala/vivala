@@ -26,6 +26,7 @@ elixir(function(mix) {
         '../../../node_modules/sweetalert/dist/sweetalert.css',
         'app.css',
         'font-awesome.min.css',
+        '../../assets/bower/bootstrap-social/bootstrap-social.css',
     ], null, 'resources/assets/css');
 
     mix.scripts([
