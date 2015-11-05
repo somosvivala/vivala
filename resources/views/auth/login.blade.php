@@ -53,7 +53,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primario btn-acao">{{ trans('global.lbl_login') }}</button>
 								<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
-									<i class="fa fa-facebook"></i>{{ trans('global.fb_login') }}
+									<span class="fa fa-facebook"></span>{{ trans('global.fb_login') }}
 								</a>
 								<div class="margin-t-1">
 									<a class="texto-branco" href="{{ url('/password/email') }}">

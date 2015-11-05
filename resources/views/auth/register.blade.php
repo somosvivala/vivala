@@ -60,7 +60,7 @@
 
 					<div class="row text-center">
 						<a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
-							<i class="fa fa-facebook"></i>{{ trans('global.fb_login') }}
+							<span class="fa fa-facebook"></span>{{ trans('global.fb_login') }}
 						</a>
 					</div>
 				</div>

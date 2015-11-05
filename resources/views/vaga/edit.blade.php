@@ -10,7 +10,7 @@
         {!! Form::close() !!}
     </div>
 
-    <div class="panel-body">
+    <div class="panel-body edit-ong">
         <div id="causa-contato" class="row margin-t-2 form-ong">
              <h5 class="col-sm-12">{{ trans('global.lbl_cover_photo') }}</h5>
              <div class="text-center">

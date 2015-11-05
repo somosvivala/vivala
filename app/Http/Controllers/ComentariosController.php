@@ -45,6 +45,11 @@ class ComentariosController extends VivalaBaseController {
 		//depois as relacoes polimorficas
 		$entidadeAtiva->comentarios()->save($comentario);
 
+                // Aumenta a relevancia e a "aceleracao" de relevancia #GOTRENDING
+                $post->relevancia += $post->relevancia_rate;
+                $post->relevancia_rate += $post->relevancia_rate;
+                $post->push();
+
 		//Só levantar uma notificacao se nao for em um post seu ou de alguma de suas entidades
 		if($entidadeAtiva->user->id != $post->author->user->id)
 		{
@@ -85,6 +90,10 @@ class ComentariosController extends VivalaBaseController {
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likeComentario()->attach($comentario->id);
+
+                        // Aumenta a relevancia do post
+                        $comentario->post->relevancia += $comentario->post->relevancia_rate;
+                        $comentario->post->push();
 
 			//Só levantar uma notificacao se o like for em um 
 			//comentario que nao seja seu ou de alguma de suas entidades

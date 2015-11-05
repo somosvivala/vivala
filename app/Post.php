@@ -90,36 +90,30 @@ class Post extends Model {
 	}
 
 	/**
-	 * Retorna os ultimos posts com foto primeiro
+	 * Retorna os posts ordenados por relevancia 
 	 */
-	public static function getMaisfotos()
+	public static function getMaisrelevantes()
 	{
 
             $seguidores = Auth::user()->entidadeAtiva->followPerfil;
 
-            $posts = Post::latest()->get()->keyBy('id');
+            $posts = Post::orderBy('relevancia','DESC')->latest()->get()->keyBy('id');
 
+            // Pega um post de 'destaque' de cada pessoa que o usuario segue
             foreach($seguidores as $fPerfil)
             {
-                $fotoDestaque = Post::where('author_id','=',$fPerfil->id)->where('tipo_post','=','foto')->where('author_type','=','App\Perfil')->get()->random();
-                if($fotoDestaque)
+                $postDestaque = Post::where('author_id','=',$fPerfil->id)->where('author_type','=','App\Perfil')->get()->random();
+                if($postDestaque)
                 {
-                    $posts->forget($fotoDestaque->id);
-                    $posts->prepend($fotoDestaque);
+                    $posts->forget($postDestaque->id);
+                    $posts->prepend($postDestaque);
                 }
             }
 
-            if (env('POST_FIXO_ID') != null)
-            {
-                $post_fixo = $posts->find(env('POST_FIXO_ID'));
-                $posts->forget($post_fixo->id);
-                $posts->prepend($post_fixo);
-            }
-
-
-
             return $posts;
         }
+
+
 
         /**
          * Um Post tem uma foto.

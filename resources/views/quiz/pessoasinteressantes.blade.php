@@ -13,7 +13,7 @@
 			<li class="col-sm-4 col-md-2">
 				{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
 				<button id='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
-				<a href="{{ url($Perfil->getUrl()) }}">
+				<a onclick="$(this).siblings('button').click();">
 					<img class="hidden" title='{{ trans("global.lbl_loading1") }}' alt='{{ trans("global.lbl_loading1") }}'>
                                         <div class="round foto quadrado3em">
                                             <div class="avatar-img" style="background-image:url('{{ $Perfil->getAvatarUrl() }}')">

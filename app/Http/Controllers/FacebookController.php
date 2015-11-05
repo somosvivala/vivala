@@ -82,9 +82,17 @@ class FacebookController extends Controller {
             $perfil->user_id = $user->id;
             $perfil->save();
 
-            // Faz um post de criação de perfil
+            // Faz um post de criação de perfil numerado caso seja < 300
+            // e não numerado (só com o welcome) caso seja > 300
+            if($user->genero == 'fb.female' || $user->genero == 'feminino')
+                $welcome = "Bem vinda!";
+            else
+                $welcome = "Bem vindo!";
             $novoPost = new Post();
-            $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." é a ".$perfil->id."ª pessoa a se juntar à Vivalá. Bem vindo!";
+            if($perfil->id <= 300)
+                $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." é a ".$perfil->id."ª pessoa a se juntar à Vivalá. ".$welcome;
+            else
+                $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." se juntou à Vivalá. ".$welcome;
             $novoPost->tipo_post = 'acontecimento';
 
             //Salvando novoPost para entidadeAtiva

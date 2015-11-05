@@ -8776,8 +8776,6 @@ a.btn {
   border-radius: 0px;
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
-  background-color: #f16f2b;
-  color: white;
 }
 select {
   width: 100%;
@@ -9805,6 +9803,22 @@ div.notificacoes button:focus + div {
 div.foto-perfil,
 ul li div.foto-perfil-topo {
   margin: 0.5em 0 0.5em 0.5em;
+}
+div.edit-perfil img.perfil-foto-atual,
+div.edit-ong img.perfil-foto-atual,
+div.edit-vaga img.perfil-foto-atual,
+div.edit-perfil img.ong-foto-atual,
+div.edit-ong img.ong-foto-atual,
+div.edit-vaga img.ong-foto-atual,
+div.edit-perfil img.vaga-foto-atual,
+div.edit-ong img.vaga-foto-atual,
+div.edit-vaga img.vaga-foto-atual {
+  max-width: 400px;
+}
+div#cropper-perfil img,
+div#cropper-ong img,
+div#cropper-vaga img {
+  max-width: 400px;
 }
 .cria-post-container {
   padding: 15px;

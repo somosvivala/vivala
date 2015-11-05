@@ -1,4 +1,5 @@
 <?php
+$redir_url = $app->runningInConsole() ? getenv('FACEBOOK_REDIRECT_URL') : url(getenv('FACEBOOK_REDIRECT_URL'));
 
 return [
 
@@ -35,9 +36,9 @@ return [
 	],
 
 	'facebook' => [
-        'client_id'         =>  getenv('FACEBOOK_APP_ID'),
-        'client_secret'     =>  getenv('FACEBOOK_APP_SECRET'),
-        'redirect'      		=>  getenv('FACEBOOK_REDIRECT_URL'),
-    ]
+            'client_id'         =>  getenv('FACEBOOK_APP_ID'),
+            'client_secret'     =>  getenv('FACEBOOK_APP_SECRET'),
+            'redirect'      	=>  $redir_url 
+        ]
 
 ];

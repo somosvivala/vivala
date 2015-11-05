@@ -27,7 +27,7 @@ class HomeController extends ConectarController {
 	 */
 	public function getIndex()
 	{
-            $posts = Post::getMaisfotos()->keyBy('id');
+            $posts = Post::getMaisrelevantes()->keyBy('id');
             $posts_total = count($posts);
             $posts = $posts->slice(0, env('QUANTIDADE_FEED_POST'), true);
             return view('home', compact('posts'));
