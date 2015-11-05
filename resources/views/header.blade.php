@@ -1,5 +1,5 @@
 <div class="logo-menu">
-	<a class="navbar-brand logo click-img-no-border" href="{{ url('home') }}"><img src="/logo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
+	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}"><img src="/logo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
 </div>
 
 <div class="menu-principal">
