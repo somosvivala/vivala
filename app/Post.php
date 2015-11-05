@@ -97,7 +97,7 @@ class Post extends Model {
 
             $seguidores = Auth::user()->entidadeAtiva->followPerfil;
 
-            $posts = Post::latest()->where(function ($query)  {
+            $posts = Post::where(function ($query)  {
                 $query->where('author_id','=',Auth::user()->perfil->id)->where('author_type','=','App\Perfil');
             });
             $seguidores_sugestao = explode(',',env('ADMINS_ID','1'));
@@ -105,16 +105,16 @@ class Post extends Model {
             // pega os posts dos sugeridos
             foreach($seguidores_sugestao as $id_perfil)
             {
-                $posts = $posts->orwhere(function ($query) use ($id_perfil) {
-                    $query->where('author_id','=',$id_perfil)->where('author_type','=','app\perfil');
+                $posts = $posts->orWhere(function ($query) use ($id_perfil) {
+                    $query->where('author_id','=',$id_perfil)->where('author_type','=','App\Perfil');
                 });
             }
 
             // pega os posts dos seus folowers
             foreach($seguidores as $fperfil)
             {
-                $posts = $posts->orwhere(function ($query) use ($fperfil) {
-                    $query->where('author_id','=',$fperfil->id)->where('author_type','=','app\perfil');
+                $posts = $posts->orWhere(function ($query) use ($fperfil) {
+                    $query->where('author_id','=',$fperfil->id)->where('author_type','=','App\Perfil');
                 });
             }
 

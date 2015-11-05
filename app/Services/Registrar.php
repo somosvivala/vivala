@@ -84,6 +84,8 @@ class Registrar implements RegistrarContract {
             $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." se juntou à Vivalá. ".$welcome;
 
         $novoPost->tipo_post = 'acontecimento';
+        $novoPost->relevancia = 999;
+        $novoPost->relevancia_rate = 10;
 
         //Salvando novoPost para entidadeAtiva
         $perfil->posts()->save($novoPost);
