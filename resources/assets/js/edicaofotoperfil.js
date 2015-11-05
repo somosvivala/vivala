@@ -206,4 +206,22 @@ $(function(){
 
     });
 
+
+
+    var submitBtn = $('#perfil-btn-submit input:submit'),
+        loading = submitBtn.next();
+
+    //Escutando click no submit para mostrar o loading
+    $(submitBtn).on('click', function() {
+        console.log('click submit');
+        if (loading && loading != "") {
+            $(submitBtn).hide();
+            $(loading).show();
+        }
+
+    });
+
+
+
+
 });

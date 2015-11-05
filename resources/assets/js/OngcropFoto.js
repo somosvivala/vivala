@@ -7,7 +7,7 @@ $(function() {
 
     /** Funcões para Upload */
     $('#ong_foto_form').submit(function (ev) {
-   // console.log('entrou submit form!!!');
+//        console.log('entrou submit form!!!');
         ev.preventDefault();
         var frm = $(this),
             dataForm = new FormData(this),
@@ -15,23 +15,19 @@ $(function() {
             redirect = frm.data('redirect'),
             loading = frm.data('loading');
             
+        if (loading && loading != "") {
+            $(this).find('input:submit').hide();
+            $(this).find('#'+loading).show();
+        }
+
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
             data: dataForm,
             contentType: false, //file
             processData: false,  //file
-            beforeSend: function (data) {
-                if (loading && loading != "") {
-                    $(this).find('input:submit').hide();
-                    $(this).find('#'+loading).show();
-                }
-            },
             success: function (data) {
-                // Executa uma função de javascript
-                //console.log(data);
-                //console.log("Sucess do ajax");
-
+   
                 //Settando o tamanho do container para o tamanho da nova imagem
                 var tipo = $('#tipo_foto');
                 if (tipo && tipo.val() == 'capa') {
@@ -49,19 +45,17 @@ $(function() {
                     $('.ong-foto-atual').width(height);
                 }   
 
-                //console.log('ong-foto-atual width -> ' +  $('#ong-foto-atual').width());
-                //console.log('height -> ' +  height );
-                //console.log($('#ong-foto-atual').height());
-
                swal('Sucesso', "Foto recortada", 'success');
                $('#cropper-ong-modal').modal('hide');
 
 
             },
             complete: function (data) {
+                
+                //Caso tenha o loading icon, escondel-lo e voltar botão
                 if (loading && loading != "") {
-                    $(this).find('input:submit').show();
-                    $(this).find('#'+loading).hide();
+                    $(frm).find('input:submit').show();
+                    $(frm).find('#'+loading).hide();
                 }
             }
         });
@@ -141,5 +135,20 @@ $(function() {
     } else {
       $inputImage.prop('disabled', true).parent().addClass('disabled');
     }
+
+
+
+    var submitBtn = $('#ong-btn-submit input:submit'),
+        loading = submitBtn.next();
+
+    //Escutando click no submit para mostrar o loading
+    $(submitBtn).on('click', function() {
+        console.log('click submit');
+        if (loading && loading != "") {
+            $(submitBtn).hide();
+            $(loading).show();
+        }
+
+    });
 
 });

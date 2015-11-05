@@ -32,7 +32,7 @@
     </div>
 
     <!-- Botão Enviar -->
-    <div id="ong-btn-submit" class="form-group text-center">
+    <div id="perfil-btn-submit" class="form-group text-center">
         {!! Form::submit($btnSubmit, ['class' => 'btn btn-acao']) !!}
     </div>
 </div>
