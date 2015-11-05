@@ -9566,6 +9566,9 @@ nav.menu-top .menu-principal ul li a:active {
 nav.menu-top .menu-usuario ul {
   float: right;
 }
+nav.menu-top .menu-usuario ul .paginas {
+  padding: 0em 0em 1em;
+}
 nav.menu-top .menu-usuario ul li a {
   padding: 0px;
 }
@@ -9584,14 +9587,12 @@ nav.menu-top .menu-usuario ul li ul.submenu {
   background-color: #8BA6AC;
   position: absolute;
   top: 110%;
-  left: -12em;
+  left: auto;
+  right: 0;
 }
 nav.menu-top .menu-usuario ul li ul.submenu li.subsubmenu {
-  float: left;
-  margin: 0.5em 4%;
   text-align: left;
   padding: 0.5em 0;
-  width: 92%;
   border-top: 1px solid white;
 }
 nav.menu-top .menu-usuario ul li ul.submenu li.subsubmenu ul {
@@ -9608,7 +9609,10 @@ nav.menu-top .menu-usuario ul li ul.submenu li.subsubmenu:last-child {
   border-bottom: 1px solid white;
 }
 nav.menu-top .menu-usuario ul li ul.submenu li {
-  padding: 0.1em 1em;
+  padding: 0.1em 0em;
+  width: 92%;
+  margin: 0em 4%;
+  float: left;
   color: white;
 }
 nav.menu-top .menu-usuario ul li ul.submenu li a {
