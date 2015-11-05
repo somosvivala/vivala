@@ -97,18 +97,28 @@ class Post extends Model {
 
             $seguidores = Auth::user()->entidadeAtiva->followPerfil;
 
-            $posts = Post::orderBy('relevancia','DESC')->latest()->get()->keyBy('id');
+            $posts = Post::latest()->where(function ($query)  {
+                $query->where('author_id','=',Auth::user()->perfil->id)->where('author_type','=','App\Perfil');
+            });
+            $seguidores_sugestao = explode(',',env('ADMINS_ID','1'));
 
-            // Pega um post de 'destaque' de cada pessoa que o usuario segue
-            foreach($seguidores as $fPerfil)
+            // pega os posts dos sugeridos
+            foreach($seguidores_sugestao as $id_perfil)
             {
-                $postDestaque = Post::where('author_id','=',$fPerfil->id)->where('author_type','=','App\Perfil')->get()->random();
-                if($postDestaque)
-                {
-                    $posts->forget($postDestaque->id);
-                    $posts->prepend($postDestaque);
-                }
+                $posts = $posts->orwhere(function ($query) use ($id_perfil) {
+                    $query->where('author_id','=',$id_perfil)->where('author_type','=','app\perfil');
+                });
             }
+
+            // pega os posts dos seus folowers
+            foreach($seguidores as $fperfil)
+            {
+                $posts = $posts->orwhere(function ($query) use ($fperfil) {
+                    $query->where('author_id','=',$fperfil->id)->where('author_type','=','app\perfil');
+                });
+            }
+
+            $posts = $posts->orderBy('relevancia','DESC')->get()->keyBy('id');
 
             return $posts;
         }
