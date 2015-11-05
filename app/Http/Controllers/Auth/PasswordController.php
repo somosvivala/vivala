@@ -20,6 +20,8 @@ class PasswordController extends Controller {
 
 	use ResetsPasswords;
 
+        protected $subject = trans('global.lbl_password_recovery');
+
 	/**
 	 * Create a new password controller instance.
 	 *
