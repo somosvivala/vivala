@@ -47,7 +47,7 @@
                             {!! Form::hidden("h",  0, ['id' => 'h-perfil-perfil']) !!}
                             {!! Form::hidden("r",  0, ['id' => 'r-perfil-perfil']) !!}
                             {!! Form::submit( "cortar foto", ['id'=>'btn-crop-photo', 'class' => 'margin-t-1 soft-hide btn btn-primario btn-acao']) !!}
-                            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
+                            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1" style="display:none"></i>
 
                             {!! Form::close() !!}
                         </div>

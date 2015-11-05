@@ -33,10 +33,10 @@ $(function(){
             callbackFunction = frm.data('callback'),
             redirect = frm.data('redirect'),
             loading = frm.data('loading');
-                   
+
             var subiuImagem = $('#image_file_upload').val() != "";
 
-            
+            console.log('loading -> ' + loading);
             if (!subiuImagem) {
 
                 swal({
@@ -66,8 +66,8 @@ $(function(){
                     //foto/cropandsave
             } else {
                 if (loading && loading != "") {
-                    $(this).find('input:submit').hide();
-                    $(this).find('#'+loading).show();
+                    $(frm).find('input:submit').hide();
+                    $(frm).find('#'+loading).show();
                 }
 
                 $.ajax({
@@ -85,16 +85,16 @@ $(function(){
                         if(redirect) {
                             window.location = redirect;
                         }
-                            },
-                            error: function (data) {
-                                //Se tiver loading e tiver dado erro, voltar botao
-                                if (loading && loading != "") {
-                                    $(this).find('#'+loading).hide();
-                                    $(this).find('input:submit').show();
-                                }
-                            }
-                        });
+                    },
+                    error: function (data) {
+                        //Se tiver loading e tiver dado erro, voltar botao
+                        if (loading && loading != "") {
+                            $(frm).find('#'+loading).hide();
+                            $(frm).find('input:submit').show();
+                        }
                     }
+                });
+            }
 
     });
 
@@ -211,15 +211,15 @@ $(function(){
     var submitBtn = $('#perfil-btn-submit input:submit'),
         loading = submitBtn.next();
 
-    //Escutando click no submit para mostrar o loading
-    $(submitBtn).on('click', function() {
-        console.log('click submit');
-        if (loading && loading != "") {
-            $(submitBtn).hide();
-            $(loading).show();
-        }
+        //Escutando click no submit para mostrar o loading
+        $(submitBtn).on('click', function() {
+            console.log('click submit');
+            if (loading && loading != "") {
+                $(submitBtn).hide();
+                $(loading).show();
+            }
 
-    });
+        });
 
 
 

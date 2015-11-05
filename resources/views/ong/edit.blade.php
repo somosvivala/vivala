@@ -28,7 +28,7 @@
             <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-body">
-                        {!! Form::open(['url' => ['foto/cropandsave', $ong->id], 'files' => true, 'id'=>'ong_foto_form', 'data-loading'=>'form-loading', 'data-loading'=>'form-loading']) !!}
+                        {!! Form::open(['url' => ['foto/cropandsave', $ong->id], 'files' => true, 'id'=>'ong_foto_form', 'data-loading'=>'form-loading']) !!}
 
                     {!! Form::hidden("tipoEntidade", "App\\Ong" ) !!}
     
