@@ -51,11 +51,11 @@ var ajaxTrips = function(params) {
     $.ajax({
         url: 'clickbus/trips',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: defaultParams,
     })
     .done(function(data) {
-        console.log(data);
+        $('#clickbus-resultado-busca').html(data);
     });
     
 };

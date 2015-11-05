@@ -10076,6 +10076,28 @@ div.flight-wrapper div.flight-pricing {
   display: none;
   margin-top: 0.5em;
 }
+#clickbus-resultado-busca .nav-tabs li > a {
+  font-size: 0.9em;
+  width: 8.2em;
+  padding: 0.5em 0.8em;
+  text-align: center;
+  background-color: #e2e2e2;
+  color: #535353;
+  border: none;
+  border-radius: 0;
+  margin-right: 5px;
+}
+#clickbus-resultado-busca .nav-tabs li.active > a {
+  background-color: #8ba6ac;
+  color: white;
+}
+#clickbus-resultado-busca #descricao-origem-destino {
+  background-color: #8ba6ac;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
 
 /* Definição do nome das cores principais */
 /* Definição das cores dos elementos */

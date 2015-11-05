@@ -24,3 +24,7 @@
 </div>
 
 <hr>
+
+<div id="clickbus-resultado-busca">
+    
+</div>

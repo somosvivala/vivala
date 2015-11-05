@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "7b17aeb71129c0e181b795799d3d25c7",
+    "content-hash": "8c410cdcee4926dc44323ac571bc2b6f",
     "packages": [
         {
             "name": "bosnadev/database",
@@ -1279,16 +1280,16 @@
         },
         {
             "name": "jenssegers/date",
-            "version": "v3.0.9",
+            "version": "v3.0.10",
             "source": {
                 "type": "git",
-                "url": "https://github.com/jenssegers/laravel-date.git",
-                "reference": "27f9fed44cd988a9c3d03857093b32f250ea704d"
+                "url": "https://github.com/jenssegers/date.git",
+                "reference": "467278308153eb27048e471213366193587d87a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jenssegers/laravel-date/zipball/27f9fed44cd988a9c3d03857093b32f250ea704d",
-                "reference": "27f9fed44cd988a9c3d03857093b32f250ea704d",
+                "url": "https://api.github.com/repos/jenssegers/date/zipball/467278308153eb27048e471213366193587d87a0",
+                "reference": "467278308153eb27048e471213366193587d87a0",
                 "shasum": ""
             },
             "require": {
@@ -1331,7 +1332,7 @@
                 "time",
                 "translation"
             ],
-            "time": "2015-09-16 07:55:11"
+            "time": "2015-09-24 17:36:06"
         },
         {
             "name": "jeremeamia/SuperClosure",
