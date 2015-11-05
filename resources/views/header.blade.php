@@ -1,5 +1,5 @@
 <div class="logo-menu">
-	<a class="navbar-brand logo click-img-no-border" href="{{ url('home') }}"><img src="/logo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
+	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}"><img src="/logo.png" alt='{{ trans("global.alt_vivala") }}' title='{{ trans("global.title_vivala") }}'></a>
 </div>
 
 <div class="menu-principal">
@@ -89,22 +89,28 @@
                       </li>
                     @endif
                     @if( isset($paginas) && count($paginas) > 0 )
-                    @foreach($paginas as $Pagina)
-                      <li class="row">
-                        <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}" class="click-img-no-border">
-                          <div class="col-sm-4">
-                            <div class="round foto quadrado3em foto-perfil pull-right">
-                                <div class="avatar-img" style="background-image:url('{{ $Pagina->getAvatarUrl() }}')">
-                                    </div>
-                            </div>
-                          </div>
-                          <div class="col-sm-8">
-                              {{ $Pagina->nome }}
-                          </div>
-                        </a>
-                      </li>
-                    @endforeach
-                    <li class="margin-t-1"><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
+                    <li class="row">
+                        <ul class="paginas">
+                        @foreach($paginas as $Pagina)
+                          <li class="row">
+                            <a href="{{ action('PaginaController@getAcessarcomo', ['id' => $Pagina->id , 'tipo' => $Pagina->tipo ]) }}" class="click-img-no-border">
+                              <div class="col-sm-4">
+                                <div class="round foto quadrado3em foto-perfil pull-right">
+                                    <div class="avatar-img" style="background-image:url('{{ $Pagina->getAvatarUrl() }}')">
+                                        </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-8">
+                                  {{ $Pagina->nome }}
+                              </div>
+                            </a>
+                          </li>
+                        @endforeach
+                        @if( count($paginas) > 3 )
+                            <li class="margin-t-1 margin-b-1"><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
+                        @endif
+                        </ul>
+                    </li>
 										</li>
                     @endif
                     <li class="subsubmenu">
@@ -115,7 +121,12 @@
                     </li>
                     <li class="subsubmenu">
                         <ul>
-                            <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-plus"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
+                            <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="subsubmenu">
+                        <ul>
+                            <li><a href="{{ url('/quiz') }}" class="click-img-no-border"><i class="fa fa-comment"></i><span> Quiz</span></a></li>
                         </ul>
                     </li>
                     <li><a href="{{ url('perfil') }}" class="click-img-no-border"><i class="fa fa-user"></i><span> {{ trans('global.lbl_profile') }}</span></a></li>

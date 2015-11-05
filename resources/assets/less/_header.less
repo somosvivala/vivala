@@ -74,6 +74,9 @@ nav.menu-top {
 	.menu-usuario {
             ul {
                 float: right;
+                .paginas {
+                    padding:0em 0em 1em;
+                }
                 li {
                     a {
                         padding: 0px;
@@ -93,16 +96,14 @@ nav.menu-top {
                         background-color: @cor-pele-zumbi;
                         position: absolute;
                         top: 110%;
-                        left: -12em;
+                        left: auto;
+                        right:0;
 
 
                         // subdivisão do menu
                         li.subsubmenu {
-                            float:left;
-                            margin:0.5em 4%;
                             text-align:left;
                             padding:0.5em 0;
-                            width:92%;
                             ul {
                                 padding:0;
                                 width:100%;
@@ -120,7 +121,10 @@ nav.menu-top {
                             }
                         }
                         li {
-                            padding: 0.1em 1em;
+                            padding: 0.1em 0em;
+                            width:92%;
+                            margin: 0em 4%;
+                            float:left;
                             color: white;
                             a {
                                 color:white;
