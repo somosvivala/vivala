@@ -13,7 +13,12 @@
 <nav class="menu-lateral">
 	<ul>
 		<li><a href="/perfil" class="click-img-no-border desativado"><i class="fa fa-newspaper-o"></i>{{ trans('global.lbl_latest_news') }}</a></li>
-		<li><a href="/chat" class="click-img-no-border desativado"><i class="fa fa-binoculars"></i>{{ trans('global.lbl_chat_with_volunteers') }}</a></li>
-		<li><a href="/feedback" class="click-img-no-border desativado"><i class="fa fa-check-circle-o"></i>{{ trans('global.lbl_feedback_give_yours') }}</a></li>
+		<li><a href="/chat" class="click-img-no-border desativado"><i class="fa fa-comment-o"></i>{{ trans('global.lbl_chat_with_friends') }}</a></li>
+                <li>
+                    <a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border ">
+                        <i class="fa fa-check-circle-o"></i>{{ trans('global.lbl_feedback_give_yours') }}
+                    </a>
+                    @include('_feedback')            
+                </li>
 	</ul>
 </nav>
