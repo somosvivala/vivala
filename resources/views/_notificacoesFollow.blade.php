@@ -3,11 +3,11 @@
     @forelse($notificacoes as $Notificacao)
     <li class="row">
         <div class="col-sm-4">
-            <a href="{{ url($Notificacao->from->getUrl()) }}">
+            <a href="{{ isset($Notificacao->from) ? url($Notificacao->from->getUrl()) : '' }}">
                 <div class="round foto-avatar">
                     <div class="cover">
                         <div class="round foto quadrado7em foto-perfil">
-                            <div class="avatar-img" style="background-image:url('{{ $Notificacao->from->getAvatarUrl() }}')">
+                            <div class="avatar-img" style="{{ isset($Notificacao->from) ? 'background-image:url($Notificacao->from->getAvatarUrl())' : '/img/nophoto.jpg'}}">
                             </div>
                         </div>
                     </div>
