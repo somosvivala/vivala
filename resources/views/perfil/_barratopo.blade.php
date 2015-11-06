@@ -39,7 +39,7 @@
     <div class="col-md-4 font-bold-upper">
         <ul>
             <li class="col-sm-4">
-                <a  data-toggle="modal" data-target="#modal-seguidores">
+                <a href="#"  data-toggle="modal" data-target="#modal-seguidores">
                     {{ $perfil->numeroSeguidores }} <br>
                     {{ trans('global.lbl_follower_') }}
                 </a>
@@ -51,7 +51,7 @@
                                 <h3 class="texto-preto">{{ trans('global.lbl_followed_by') }}</h3>
                                 <ul class="lista-usuarios row">
                                 @forelse($followedBy as $perfilSeguidor)
-                                    <li class="foto-user col-sm-6 col-md-4 col-lg-3">
+                                    <li class="foto-user col-sm-6 col-md-4 col-lg-3 margin-b-2">
                                         <a href="{{ url($perfilSeguidor->getUrl()) }}" title="{{ $perfilSeguidor->user->username }}">
                                             <div class="round foto quadrado7em">
                                                     <div class="avatar-img" style="background-image:url('{{ $perfilSeguidor->getAvatarUrl() }}')">
@@ -74,7 +74,7 @@
                 </div>
             </li>
             <li class="col-sm-4">
-                <a  data-toggle="modal" data-target="#modal-seguindo">
+                <a href="#" data-toggle="modal" data-target="#modal-seguindo">
                 {{ $perfil->numeroSeguindo }} <br>
                 {{ trans('global.lbl_following') }}
                 </a>
@@ -86,7 +86,7 @@
                                 <h3 class="texto-preto">{{ trans('global.lbl_following') }}</h3>
                                 <ul class="lista-usuarios row">
                                 @forelse($follow as $perfilSeguindo)
-                                    <li class="foto-user col-sm-6 col-md-4 col-lg-3">
+                                    <li class="foto-user col-sm-6 col-md-4 col-lg-3 margin-b-2">
                                         <a href="{{ url($perfilSeguindo->getUrl()) }}" title="{{ $perfilSeguindo->user->username }}">
                                             <div class="round foto ">
                                                     <div class="avatar-img" style="background-image:url('{{ $perfilSeguindo->getAvatarUrl() }}')">
