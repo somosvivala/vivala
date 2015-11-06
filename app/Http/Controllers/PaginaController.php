@@ -9,6 +9,7 @@ use App\Ong;
 use App\Empresa;
 use App\CategoriaEmpresa;
 use App\CategoriaOng;
+use App\Post;
 use Session;
 use Mail;
 
@@ -206,6 +207,14 @@ class PaginaController extends Controller {
         });
 
         return "sended?";
+    }
+
+    public function getUltimasnoticias()
+    {
+        $posts = Post::getUltimos()->keyBy('id');
+        $posts_total = count($posts);
+        $posts = $posts->slice(0, env('QUANTIDADE_FEED_POST'), true);
+        return view('home', compact('posts', 'pagina'));
     }
 
 }

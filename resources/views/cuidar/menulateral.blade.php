@@ -12,7 +12,7 @@
 <h4 class="suave">{{ trans('global.lbl_connect_with_volunteers') }}</h4>
 <nav class="menu-lateral">
 	<ul>
-		<li><a href="/perfil" class="click-img-no-border desativado"><i class="fa fa-newspaper-o"></i>{{ trans('global.lbl_latest_news') }}</a></li>
+		<li><a href="/paginas/ultimasnoticias" class="click-img-no-border"><i class="fa fa-newspaper-o"></i>{{ trans('global.lbl_latest_news') }}</a></li>
 		<li><a href="/chat" class="click-img-no-border desativado"><i class="fa fa-comment-o"></i>{{ trans('global.lbl_chat_with_friends') }}</a></li>
                 <li>
                     <a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border ">
