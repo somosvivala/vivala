@@ -82,7 +82,8 @@ class Post extends Model {
 	}
 
 	/**
-	 * Retorna os ultimos posts
+	 * Retorna os posts ordenados por data ignorando a relevancia e os
+         * followers 
 	 */
 	static public function getUltimos()
 	{
