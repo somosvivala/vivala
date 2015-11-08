@@ -32,7 +32,7 @@
                         <div class="col-xs-12 arrival">
                             <div class="col-xs-4">Chegada: <b>{{$option['part'][0]['arrival']['time']}}</b></div>
                             <div class="col-xs-4">{{$option['part'][0]['arrival']['city']}}</div>
-                            <div class="col-xs-4">Duração: </div>
+                            <div class="col-xs-4">Duração: {{$option['part'][0]['duration'][0]}}h{{$option['part'][0]['duration'][1]}}min</div>
                         </div>                
                     </div>
                     <div class="col-xs-2 borda-direita borda-inferior">

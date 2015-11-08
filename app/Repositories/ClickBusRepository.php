@@ -25,7 +25,14 @@ class ClickBusRepository {
                 $part['trip']           = $value->trip_id;
                 $part['busCompany']     = (array)$value->busCompany;
                 $part['availableSeats'] = $value->availableSeats;
-                $part['price']          = str_replace(".", ",", (($value->arrival->price) / 100));
+                $part['price']          = self::parcePrice($value->arrival->price);
+
+                $part['duration'] = self::getDuration(
+                    $value->arrival->waypoint->schedule->date,
+                    $value->arrival->waypoint->schedule->time,
+                    $value->departure->waypoint->schedule->date,
+                    $value->departure->waypoint->schedule->time
+                );
 
                 $part['arrival'] = [];
                 $part['arrival']['id']   = $value->arrival->waypoint->id;
@@ -57,5 +64,20 @@ class ClickBusRepository {
         $yesterday = [strtoupper($date->format('d M')), ucfirst($date->format('l'))];
 
         return ['yesterday' => $yesterday, 'today' => $today, 'tomorrow' => $tomorrow];
+    }
+
+    private static function parcePrice($price)
+    {
+        $price /= 100;
+        return number_format((float)$price, 2, ',', ''); 
+    }
+
+    private static function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
+    {
+        $departure = new Date("{$departureDate} {$departureTime}:00");
+        $arrival   = new Date("{$arrivalDate} {$arrivalTime}:00");
+        $interval  = $departure->diff($arrival);
+
+        return [$interval->h, $interval->i];
     }
 }
