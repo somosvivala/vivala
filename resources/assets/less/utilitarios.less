@@ -783,3 +783,16 @@ form.cropfoto-ajax, form.form-ajax {
 .cropper-img {
     max-height:60vh;
 }
+
+.beta {
+    position:relative;
+    &::after {
+        position:absolute;
+        right:-0.2em;
+        bottom:-0.3em;
+        content:'BETA';
+        color:@cor-primaria;
+        font-size:0.5em;
+
+    }
+}

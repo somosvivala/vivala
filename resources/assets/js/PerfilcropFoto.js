@@ -12,7 +12,15 @@ $(function() {
         var frm = $(this),
             dataForm = new FormData(this),
             callbackFunction = frm.data('callback'),
-            redirect = frm.data('redirect');
+            redirect = frm.data('redirect'),
+            loading = frm.data('loading');
+
+        if (loading && loading != "") {
+            $(frm).find('input:submit').hide();
+            $(frm).find('#'+loading).show();
+        }
+
+
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -45,12 +53,14 @@ $(function() {
                 
                 }   
 
-                //console.log('perfil-foto-atual width -> ' +  $('#ong-foto-atual').width());
-                //console.log('height -> ' +  height );
-                //console.log($('#perfil-foto-atual').height());
-
                swal('Sucesso', "Foto recortada", 'success');
                $('#cropper-perfil-modal').modal('hide');
+
+                //se tiver loading e tiver dado erro, voltar botao
+                if (loading && loading != "") {
+                    $(frm).find('#'+loading).hide();
+                    $(frm).find('input:submit').show();
+                }
 
 
             }

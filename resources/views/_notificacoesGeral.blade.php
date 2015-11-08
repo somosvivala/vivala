@@ -3,17 +3,21 @@
     @forelse($notificacoes as $Notificacao)
     <li class="row">
         <div class="col-sm-4">
-            <a href="{{ url($Notificacao->from->getUrl()) }}">
+             <a href="{{ $Notificacao->from ? url($Notificacao->from->getUrl()) : '' }}">
                 <div class="round foto-avatar">
                     <div class="cover">
                         <div class="round foto quadrado7em foto-perfil">
-                            <div class="avatar-img" style="background-image:url('{{ $Notificacao->from->getAvatarUrl() }}')">
+                            @if($Notificacao->from) 
+                                <div class="avatar-img" style="background-image:url({{$Notificacao->from->getAvatarUrl()}})">
+                            @else
+                                <div class="avatar-img" style="background-image:url('/img/nophoto.jpg')">
+                            @endif
                             </div>
                         </div>
                     </div>
                 </div>
-            </a>
-            {!! Form::close() !!}
+            </a>           
+             {!! Form::close() !!}
         </div>
         <div class="col-sm-8 text-left">
             <a href="{{ url($Notificacao->url) }}">
@@ -28,3 +32,7 @@
     @endforelse
     @endif
 </ul>
+
+
+
+

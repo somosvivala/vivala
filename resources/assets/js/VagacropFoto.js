@@ -12,7 +12,15 @@ $(function() {
         var frm = $(this),
             dataForm = new FormData(this),
             callbackFunction = frm.data('callback'),
-            redirect = frm.data('redirect');
+            redirect = frm.data('redirect'),
+            loading = frm.data('loading');
+
+         if (loading && loading != "") {
+            $(this).find('input:submit').hide();
+            $(this).find('#'+loading).show();
+        }
+
+
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -48,7 +56,16 @@ $(function() {
                $('#cropper-vaga-modal').modal('hide');
 
 
+            },
+            complete: function (data) {
+                
+                //Caso tenha o loading icon, escondel-lo e voltar botão
+                if (loading && loading != "") {
+                    $(frm).find('input:submit').show();
+                    $(frm).find('#'+loading).hide();
+                }
             }
+ 
         });
     });
 
@@ -126,5 +143,23 @@ $(function() {
     } else {
       $inputImage.prop('disabled', true).parent().addClass('disabled');
     }
+
+
+
+    var submitBtn = $('#vaga-btn-submit input:submit'),
+        loading = submitBtn.next();
+
+    //Escutando click no submit para mostrar o loading
+    $(submitBtn).on('click', function() {
+        console.log('click submit');
+        if (loading && loading != "") {
+            $(submitBtn).hide();
+            $(loading).show();
+        }
+
+    });
+
+
+
 
 });

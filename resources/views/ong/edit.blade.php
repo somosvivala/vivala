@@ -28,7 +28,7 @@
             <div class="modal-dialog ">
                 <div class="modal-content">
                     <div class="modal-body">
-                        {!! Form::open(['url' => ['foto/cropandsave', $ong->id], 'files' => true, 'id'=>'ong_foto_form', 'data-loading'=>'form-loading', 'data-loading'=>'form-loading']) !!}
+                        {!! Form::open(['url' => ['foto/cropandsave', $ong->id], 'files' => true, 'id'=>'ong_foto_form', 'data-loading'=>'form-loading']) !!}
 
                     {!! Form::hidden("tipoEntidade", "App\\Ong" ) !!}
     
@@ -49,7 +49,7 @@
                         {!! Form::hidden("h",  0, ['id' => 'h-ong-perfil']) !!}
                         {!! Form::hidden("r",  0, ['id' => 'r-ong-perfil']) !!}
                         {!! Form::submit( "cortar foto", ['id'=>'btn-crop-photo', 'class' => 'margin-t-1 soft-hide btn btn-primario btn-acao']) !!}
-                        <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
+                        <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1" style="display:none"></i>
 
                         {!! Form::close() !!}
                     </div>
