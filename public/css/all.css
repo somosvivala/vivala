@@ -10113,6 +10113,27 @@ div.flight-wrapper div.flight-pricing {
   padding-bottom: 0.5em;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
+#clickbus-resultado-busca .company-logo {
+  background-size: cover;
+  height: auto;
+}
+#clickbus-resultado-busca .departure,
+#clickbus-resultado-busca .arrival {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#clickbus-resultado-busca .departure {
+  border-bottom: 1px solid #e2e2e2;
+}
+#clickbus-resultado-busca .borda-direita {
+  border-right: 2px solid #e2e2e2;
+}
+#clickbus-resultado-busca .borda-esquerda {
+  border-left: 2px solid #e2e2e2;
+}
+#clickbus-resultado-busca .borda-inferior {
+  border-bottom: 2px solid #e2e2e2;
+}
 
 /* Definição do nome das cores principais */
 /* Definição das cores dos elementos */

@@ -15,7 +15,6 @@ var ajaxPlace = function(query, target) {
     }
 
     var pos = [$(target).position().top + $(target).outerHeight(), $(target).position().left];
-    console.log(pos);
 
     ajax = $.ajax({
         url: 'clickbus/place',

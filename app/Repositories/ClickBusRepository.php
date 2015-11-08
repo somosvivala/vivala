@@ -16,23 +16,28 @@ class ClickBusRepository {
 
         foreach ($data->items as $item) {
             $option = [];
+            $option['from'] = $item->from;
+            $option['to']   = $item->to;
+            $option['part'] = [];
             foreach ($item->parts as $value) {
                 $part = [];
                 $part['serviceClass']   = $value->bus->serviceClass;
                 $part['trip']           = $value->trip_id;
-                $part['busCompany']     = $value->busCompany;
+                $part['busCompany']     = (array)$value->busCompany;
                 $part['availableSeats'] = $value->availableSeats;
-                $part['price']          = ($value->arrival->price) / 10;
+                $part['price']          = str_replace(".", ",", (($value->arrival->price) / 100));
 
                 $part['arrival'] = [];
                 $part['arrival']['id']   = $value->arrival->waypoint->id;
-                $part['arrival']['city'] = $value->arrival->waypoint->place->id;
+                $part['arrival']['city'] = $value->arrival->waypoint->place->city;
+                $part['arrival']['time'] = $value->arrival->waypoint->schedule->time;
 
                 $part['departure'] = [];
-                $part['departure']['id']   = $value->arrival->waypoint->id;
-                $part['departure']['city'] = $value->arrival->waypoint->place->id;
+                $part['departure']['id']   = $value->departure->waypoint->id;
+                $part['departure']['city'] = $value->departure->waypoint->place->city;
+                $part['departure']['time'] = $value->departure->waypoint->schedule->time;
 
-                array_push($option, $part);
+                array_push($option['part'], $part);
             }
             array_push($output, $option);
         }

@@ -35,7 +35,7 @@ class ClickBusController extends Controller {
 		$dates = ClickBusRepository::getPrettyDates($departure);
 
 		$result = file_get_contents(self::$url."/trips?from={$from}&to={$to}&departure={$departure}");
-
+		
 		$result = ClickBusRepository::parseData(json_decode($result));
 
 		return view('clickbus._listOptions', compact('result', 'dates'));
