@@ -43,7 +43,8 @@ var ajaxTrips = function(params) {
     var defaultParams = {
         from: '',
         to: '',
-        departure: ''
+        departure: '',
+        type: 'ida'
     };
     $.extend(defaultParams, params);
 
@@ -55,6 +56,7 @@ var ajaxTrips = function(params) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+        bindClickDetail();
     });
     
 };

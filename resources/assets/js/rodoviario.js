@@ -26,12 +26,14 @@ jQuery(document).ready(function($) {
 
         var from      = $('#origem-rodoviario').attr('data-value'),
             to        = $('#destino-rodoviario').attr('data-value'),
-            departure = $('#data-id-rodoviario').val();
+            departure = $('#data-id-rodoviario').val(),
+            type      = 'ida';
 
         ajaxTrips({
             from: from,
             to: to,
-            departure: departure
+            departure: departure,
+            type: type
         })
     });
 });
@@ -45,5 +47,39 @@ var bindAutocompleteRodoviario = function() {
         $('#'+target).val($(this).find('span').text());
         $('#'+target).attr('data-value', $(this).attr('data-value'));
         $('.places-list').remove();
+    });
+};
+
+var bindClickDetail = function() {
+    $('.btn-choose-ida').on('click', function(e) {
+        e.preventDefault();
+        var id = $(this).attr('data-id');
+
+        $('#departure-schedule-id').val(id);
+
+        if ($('#data-volta-rodoviario').val().length <= 0) {
+            ajaxTrip([id]);
+        } else {
+            var from      = $('#destino-rodoviario').attr('data-value'),
+                to        = $('#origem-rodoviario').attr('data-value'),
+                departure = $('#data-volta-rodoviario').val(),
+                type      = 'volta';
+
+            ajaxTrips({
+                from: from,
+                to: to,
+                departure: departure,
+                type: type
+            });
+        }
+    });
+
+    $('.btn-choose-volta').on('click', function(e) {
+        e.preventDefault();
+        
+        var ida = $('#departure-schedule-id').val(),
+            id = $(this).attr('data-id');
+
+        ajaxTrip([ida, id]);
     });
 };

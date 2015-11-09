@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-xs-2 borda-direita borda-inferior">
                         <div class="col xs-12">R$ {{$option['part'][0]['price']}}</div>
-                        <div class="col-xs-12"><a href="#" class="btn">Escolher ida</a></div>
+                        <div class="col-xs-12"><a data-id="{{$option['part'][0]['id']}}" href="#" class="btn btn-choose-{{$type}}">Escolher {{$type}}</a></div>
                     </div>
                 </div>
             </div>

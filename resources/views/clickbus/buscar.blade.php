@@ -25,6 +25,8 @@
 
 <hr>
 
+<input type="hidden" id="departure-schedule-id">
+
 <div id="clickbus-resultado-busca">
     
 </div>

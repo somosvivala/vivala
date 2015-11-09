@@ -26,6 +26,7 @@ class ClickBusRepository {
                 $part['busCompany']     = (array)$value->busCompany;
                 $part['availableSeats'] = $value->availableSeats;
                 $part['price']          = self::parcePrice($value->arrival->price);
+                $part['id']             = $value->arrival->waypoint->schedule->id;
 
                 $part['duration'] = self::getDuration(
                     $value->arrival->waypoint->schedule->date,

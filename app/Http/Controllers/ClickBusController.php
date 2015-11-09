@@ -30,6 +30,7 @@ class ClickBusController extends Controller {
 		$from      = Input::get('from');
 		$to        = Input::get('to');
 		$departure = Input::get('departure');
+		$type      = Input::get('type');
 
 		$departure = ClickBusRepository::dateFormat($departure);
 		$dates = ClickBusRepository::getPrettyDates($departure);
@@ -38,14 +39,18 @@ class ClickBusController extends Controller {
 		
 		$result = ClickBusRepository::parseData(json_decode($result));
 
-		return view('clickbus._listOptions', compact('result', 'dates'));
+		return view('clickbus._listOptions', compact('result', 'dates', 'type'));
 	}
 
 	public function getTrip() 
 	{
 		$scheduleId = Input::get('scheduleId');
+		$result     = [];
 
-		$result = file_get_contents(self::$url."/trip?scheduleId={$scheduleId}");
+		foreach ($scheduleId as $id) {
+			array_push($result, file_get_contents(self::$url."/trip?scheduleId={$id}"));
+		}
+
 		return $result;
 	}
 
