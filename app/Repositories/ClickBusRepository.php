@@ -56,13 +56,13 @@ class ClickBusRepository {
     public static function getPrettyDates($date)
     {
         $date = new Date($date);
-        $today = [strtoupper($date->format('d M')), ucfirst($date->format('l'))];
+        $today = [strtoupper($date->format('d M')), ucfirst($date->format('l')), $date->format('d/m/Y')];
 
         $date->modify('+1 day');
-        $tomorrow = [strtoupper($date->format('d M')), ucfirst($date->format('l'))];
+        $tomorrow = [strtoupper($date->format('d M')), ucfirst($date->format('l')), $date->format('d/m/Y')];
 
         $date->modify('-2 days');
-        $yesterday = [strtoupper($date->format('d M')), ucfirst($date->format('l'))];
+        $yesterday = [strtoupper($date->format('d M')), ucfirst($date->format('l')), $date->format('d/m/Y')];
 
         return ['yesterday' => $yesterday, 'today' => $today, 'tomorrow' => $tomorrow];
     }

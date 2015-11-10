@@ -51,6 +51,22 @@ var bindAutocompleteRodoviario = function() {
 };
 
 var bindClickDetail = function() {
+    $('.search-by-date').on('click', function(e) {
+        e.preventDefault();
+
+        var from      = $('#destino-rodoviario').attr('data-value'),
+            to        = $('#origem-rodoviario').attr('data-value'),
+            departure = $(this).attr('data-date'),
+            type      = $(this).attr('data-type');
+
+        ajaxTrips({
+            from: from,
+            to: to,
+            departure: departure,
+            type: type
+        });
+    });
+
     $('.btn-choose-ida').on('click', function(e) {
         e.preventDefault();
         var id = $(this).attr('data-id');
@@ -76,7 +92,7 @@ var bindClickDetail = function() {
 
     $('.btn-choose-volta').on('click', function(e) {
         e.preventDefault();
-        
+
         var ida = $('#departure-schedule-id').val(),
             id = $(this).attr('data-id');
 

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <ul class="nav nav-tabs">
-            <li role="presentation"><a href="#">
+            <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['yesterday'][2]}}" href="#">
                 <span class="font-bold-upper">{{$dates['yesterday'][0]}}</span>
                 <span class="sub-titulo">{{$dates['yesterday'][1]}}</span>
             </a></li>
@@ -9,7 +9,7 @@
                 <span class="font-bold-upper">{{$dates['today'][0]}}</span>
                 <span class="sub-titulo">{{$dates['today'][1]}}</span>
             </a></li>
-            <li role="presentation"><a href="#">
+            <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['tomorrow'][2]}}" href="#">
                 <span class="font-bold-upper">{{$dates['tomorrow'][0]}}</span>
                 <span class="sub-titulo">{{$dates['tomorrow'][1]}}</span>
             </a></li>
