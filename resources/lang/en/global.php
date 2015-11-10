@@ -1102,6 +1102,13 @@ return[
     'crowdfunding_all_the_struct' => 'The entire platform structure is being created with the help of you',
     'crowdfunding_donators' => 'Supporters',
 
+  /* Opções modal feedback */
+    'lbl_feedback_reporting_problem' => 'Report a problem',
+    'lbl_feedback_complaint' => 'Complaint',
+    'lbl_feedback_sugestion' => 'Sugestion',
+    'lbl_feedback_compliment' => 'Compliment',
+    'lbl_feedback_other' => 'Other',
+
 
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
