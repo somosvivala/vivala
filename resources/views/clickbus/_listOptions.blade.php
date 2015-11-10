@@ -15,7 +15,11 @@
             </a></li>
         </ul>
         <div class="col-xs-12" id="descricao-origem-destino">
+            @if($result)
             <span>Passagens de ônibus de {{$result[0]['from']}} para {{$result[0]['to']}}</span>
+            @else
+            <span>Passagens resultantes</span>
+            @endif
         </div>
         @foreach ($result as $option)
             <div class="row">

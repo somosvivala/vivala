@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div role="tabpanel" class="tab-pane active" id="rodoviario">
+        <div role="tabpanel" class="tab-pane " id="rodoviario">
             @include('clickbus.buscar')
             <div class="lista-rodoviario">
                 
