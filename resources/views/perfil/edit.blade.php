@@ -29,7 +29,7 @@
                             {!! Form::open(['url' => ['foto/cropandsave', $perfil->id], 'files' => true, 'id'=>'perfil_foto_form', 'data-loading'=>'form-loading']) !!}
 
                         {!! Form::hidden("tipoEntidade", "App\\Perfil" ) !!}
-        
+
                             <h2 class="text-center"></h2>
                             <label id="btn-upload-img-perfil" class="btn btn-acao btn-upload margin-b-1" for="input-perfil-foto-perfil" title="Upload image file">
                                 <input class="sr-only" id="input-perfil-foto-perfil" name="file" accept="image/*" type="file">
@@ -54,16 +54,12 @@
                     </div>
                 </div>
             </div>
-     
 
-
-
+            {!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
                 @include('errors.list')
-                
-                {!! Form::model($user, ['url' => ['editarPerfil',  $user->id ]]) !!}
-                    @include('perfil.form', ['btnSubmit' => trans('global.lbl_profile_update')])
-                {!! Form::close() !!}
-        </div>
+                @include('perfil.form', ['btnSubmit' => trans('global.lbl_profile_update')])
+            {!! Form::close() !!}
+    </div>
     </div>
 
 @endsection

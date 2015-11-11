@@ -21,11 +21,8 @@
                     {!! Form::text("aniversario", $perfil->dataNascimento, ['title' => trans('global.lbl_birthday'), 'placeholder' => trans('global.lbl_birthday'), 'class' => 'form-control',"data-provide"=>"datepicker", "data-date-format"=>"dd/mm/yyyy"]) !!}
                 </div>
 
-                <div class="col-sm-6 ">
+                <div class="col-sm-12 ">
                     {!! Form::textarea("descricao_curta", $perfil->descricao_curta, ['title'=> trans("global.quiz_shortdesc"), 'aria-label'=> trans("global.quiz_shortdesc"), 'placeholder'=> trans("global.quiz_shortdesc_ph"), 'class'=> 'form-control sem-resize']) !!}
-                </div>
-                <div class="col-sm-6">
-                    {!! Form::textarea("descricao_longa", $perfil->descricao_longa, ['title'=> trans("global.quiz_longdesc"), 'aria-label'=> trans("global.quiz_longdesc"), 'placeholder'=> trans("global.quiz_longdesc_ph"), 'class'=> 'form-control sem-resize' ]) !!}
                 </div>
             </div>
         </div>
