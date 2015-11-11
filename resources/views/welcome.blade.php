@@ -7,7 +7,7 @@
         <title>{{ trans('global.title_vivala') }}</title>
 
         {{-- Facebook OpenGraph metatags --}}
-            <meta property="og:title" content="Cadastre-se e conheça o Brasil de verdade" />
+            <meta property="og:title" content="Vivalá - Cadastre-se e cconecte-se ao Brasil de verdade!" />
             <meta property="og:site_name" content="Vivalá"/>
             <meta property="og:url" content="http://www.vivala.com.br/" />
             <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />

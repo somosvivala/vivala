@@ -46,9 +46,9 @@
             <div class="row padding-t-1">
                 <div class="hidden-xs hidden-sm col-md-10 padding-t-1">
                     <ul class="lista-intervalo-preto">
-                      <li class="col-xs-4 col-sm-4"><a href="javascript:void(0)">{{ trans('global.lbl_travel_guide_add') }}</a></li>
-                      <li class="col-xs-5 col-sm-5"><a href="javascript:void(0)">{{ trans('global.lbl_travel_log_add') }}</a></li>
-                      <li class="col-xs-3 col-sm-3"><a href="javascript:void(0)">{{ trans('global.lbl_tag_friends') }}</a></li>
+                      <li class="col-xs-4 col-sm-4"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_travel_guide_add') }}</a></li>
+                      <li class="col-xs-5 col-sm-5"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_travel_log_add') }}</a></li>
+                      <li class="col-xs-3 col-sm-3"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_tag_friends') }}</a></li>
                     </ul>
                 </div>
                 {!! Form::submit( trans('global.lbl_publish'), ['class' => 'col-xs-4 pull-right col-md-2 btn btn-acao']) !!}
