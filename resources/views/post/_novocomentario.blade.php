@@ -9,7 +9,7 @@
     <div class="col-sm-10">
 
 		<!-- Adiciona a abertura do form -->
-		{!! Form::open(['url' => ['comentario/savecomentario', $Post->id], 'method' => 'POST', 'class'=>'form-ajax', 'data-callback'=>'commentPost('.$Post->id.')']) !!}
+		{!! Form::open(['url' => ['comentario/savecomentario', $Post->id], 'method' => 'POST', 'class'=>'form-ajax', 'data-callback'=>'commentPost('.$Post->id.')', 'id' => 'form-comentario-post-'.$Post->id]) !!}
 
 		<!-- Adiciona um text field para o form-->
 		<div class="form-group">
