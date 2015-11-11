@@ -219,13 +219,12 @@ class PaginaController extends Controller {
     }
 
     /**
-     * Recebe a request do form de contato e dispara o mail
+     * Recebe a request do form de feedback e dispara o mail
      */
     public function postFeedback(FeedbackRequest $request)
     {
         $request->email = Auth::user()->email;
-        $request->nome = Auth::user()->nome;
-//dd($request);
+        $request->nome = (Auth::user()->username != "" ? Auth::user()->username : Auth::user()->perfil->apelido);
         Mail::send('emails.feedback', ['request' => $request], function ($message)  {
             $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pela modal de Feedback!');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');

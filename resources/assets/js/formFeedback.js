@@ -14,9 +14,11 @@ $(function() {
             redirect = frm.data('redirect'),
             loading = frm.data('loading');
 
+        console.log("loading -> " + loading);
+
         if (loading && loading != "") {
-            $(this).find('input:submit').hide();
-            $(this).find('#'+loading).show();
+            $('input:submit').hide();
+            $('#'+loading).show();
         }
 
         $.ajax({
@@ -29,6 +31,7 @@ $(function() {
                 // Executa uma função de javascript
                 if(callbackFunction) {
                    swal('Muito obrigado', "Seu feedback foi enviado. Entraremos em contato assim que possivel. ", 'success');
+                   document.getElementById("form-feedback").reset()
                    $('#modal-feedback').modal('hide');
                 }
                 // Redireciona para outra pagina
@@ -36,12 +39,12 @@ $(function() {
                     window.location = redirect;
                 }
             },
-            error: function (data) {
+            complete: function (data) {
                 
                 //Se tiver loading e tiver dado erro, voltar botao
                 if (loading && loading != "") {
-                    $(this).find('input:submit').show();
-                    $(this).find('#'+loading).hide();
+                    $('input:submit').show();
+                    $('#'+loading).hide();
                 }
 
             }
