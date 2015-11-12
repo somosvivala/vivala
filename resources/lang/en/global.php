@@ -1072,6 +1072,16 @@ return[
     'crowdfunding_support_vivala' => 'Support Vivalá&#39;s development on:',
     'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it<3',
+
+
+    /* Tela de Aviso mobile */
+    'mobile_warning_welcome' => 'Welcome to Vivalá!',
+    'mobile_warning_desctopo' => 'Percebemos que você acessou pelo mobile.',
+    'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para celular e tablet.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
+    'mobile_warning_desclink' => 'Acesse <a href="vivala.com.br">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
+
+
+    /* Termos e condições */
     'termsconditions_title' => 'Terms and conditions',
     'termsconditions_subtitle' => 'The basic house rules!',
     'termsconditions_intro_text' => 'Please read carefully these terms and conditions before using Vivalá. By using Vivalá, you comprmise yourself to follow all the terms and conditions on this section. Please consult this terms and conditions periodcally to know about possible changes. If you don&#39;t agree with the conditions written here, you are not allowed to use Vivalá.',

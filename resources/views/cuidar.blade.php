@@ -5,21 +5,22 @@
         <div class="fundo-cheio text-justified padding-b-2 padding-t-2 hidden-md hidden-lg ">
             <div class="row">
                 <h3 class="font-bold-upper text-center margin-b-2">
-                    {{ trans('global.crowdfunding_hi_there') }}
+                    {{ trans('global.mobile_warning_welcome') }}
+                    {{-- trans('global.crowdfunding_hi_there') --}}
                 </h3>
             </div>
             <div class="row margin-b-10">
                 <h4 class="col-xs-12 text-center">
-                    {{ trans('global.crowdfunding_page_and_plan') }}
+                    {{ trans('global.mobile_warning_welcome') }}
                 </h4>
                 <h4 class="col-xs-12 text-center margin-b-1">
-                    {{ trans('global.crowdfunding_we_need_you') }}
+                    {{ trans('global.mobile_warning_desctopo') }}
                 </h4>
                 <h4 class="col-xs-12 margin-t-2 text-center">
-                    {{ trans('global.crowdfunding_support_vivala') }}
+                    {!! trans('global.mobile_warning_descbody') !!}
                 </h4>
                 <h4 class="col-xs-12 text-center">
-                    <a href="http://www.catarse.me/pt/vivala" alt="{{ trans('global.crowdfunding_a_alt_crowdvivala') }}" title="{{ trans('global.crowdfunding_a_title_crowdvivala') }}" class="laranja" target="_blank">www.catarse.me/pt/vivala</a>
+                    {!! trans('global.mobile_warning_desclink') !!}
                 </h4>
             </div>
         </div>
