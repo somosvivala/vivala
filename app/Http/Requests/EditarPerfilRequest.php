@@ -33,7 +33,7 @@ class EditarPerfilRequest extends Request {
 
 		return [
 			"apelido" 				=> "required|min:2",
-			"url"  					=> "required|alpha_dash|min:2|pretty_url",
+			"url"  					=> "required|string|min:2|pretty_url",
 			"aniversario" 			        => 'required|date_format:"d/m/Y"',
                         "descricao_curta" 			=> 'string',
                         "descricao_longa" 			=> 'string',
