@@ -9492,6 +9492,9 @@ ul.quartos-hotel {
   float: left;
   margin: 0 0.1%;
 }
+#rodoviario #rodoviario-filtros {
+  position: relative;
+}
 #rodoviario #rodoviario-filtros .select-filtro {
   width: 24.6%;
   float: left;
@@ -10114,8 +10117,10 @@ div.flight-wrapper div.flight-pricing {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 #clickbus-resultado-busca .company-logo {
-  background-size: cover;
-  height: auto;
+  background-size: contain;
+  background-position: left center;
+  background-repeat: no-repeat;
+  height: 5em;
 }
 #clickbus-resultado-busca .departure,
 #clickbus-resultado-busca .arrival {
@@ -10124,15 +10129,6 @@ div.flight-wrapper div.flight-pricing {
 }
 #clickbus-resultado-busca .departure {
   border-bottom: 1px solid #E2E2E2;
-}
-#clickbus-resultado-busca .borda-direita {
-  border-right: 2px solid #E2E2E2;
-}
-#clickbus-resultado-busca .borda-esquerda {
-  border-left: 2px solid #E2E2E2;
-}
-#clickbus-resultado-busca .borda-inferior {
-  border-bottom: 2px solid #E2E2E2;
 }
 
 /* Definição do nome das cores principais */
