@@ -12,8 +12,10 @@
             <meta property="og:url" content="http://www.vivala.com.br/" />
             <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
             <meta property="og:image" content="http://vivala.com.br/img/dummy.jpg">
+
         {{-- Twitter Card metatags --}}
             <meta name="twitter:card" content="summary" />
+
         {{-- Favicon e relacionados --}}
             <link rel="apple-touch-icon" sizes="57x57" href="favicon/v/apple-touch-icon-57x57.png">
             <link rel="apple-touch-icon" sizes="60x60" href="favicon/v/apple-touch-icon-60x60.png">
@@ -34,10 +36,12 @@
             <meta name="msapplication-TileImage" content="favicon/v/mstile-144x144.png">
             <meta name="theme-color" content="#ffffff">
 
-        <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+        {{-- Fontes --}}
+            <link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+            <link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 
-        <!-- Fonts -->
-        <link href='fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+        {{-- All CSS --}}
+            <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

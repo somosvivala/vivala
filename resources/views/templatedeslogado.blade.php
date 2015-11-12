@@ -26,10 +26,12 @@
 	  <meta name="msapplication-TileImage" content="favicon/v/mstile-144x144.png">
 	  <meta name="theme-color" content="#ffffff">
 
-	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+  {{-- Fontes --}}
+		<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+		<link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 
-	<!-- Fonts -->
-	<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+	{{-- All CSS --}}
+		<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

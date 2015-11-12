@@ -1,0 +1,139 @@
+@font-face {
+	font-family: 'vivala-glyphicons';
+	src:url('vivala-glyphicons.eot?2h4epj');
+	src:url('vivala-glyphicons.eot?2h4epj#iefix') format('embedded-opentype'),
+		url('vivala-glyphicons.ttf?2h4epj') format('truetype'),
+		url('vivala-glyphicons.woff?2h4epj') format('woff'),
+		url('vivala-glyphicons.svg?2h4epj#vivala-glyphicons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+i {
+	font-family: 'vivala-glyphicons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-vivala-logo:before {
+	content: "\e900";
+}
+.icon-vivala-logo-letra-v-maisc:before {
+	content: "\e901";
+}
+.icon-vivala-logo-letra-i:before {
+	content: "\e902";
+}
+.icon-vivala-logo-letra-v-min:before {
+	content: "\e903";
+}
+.icon-vivala-logo-letra-a:before {
+	content: "\e904";
+}
+.icon-vivala-logo-letra-l:before {
+	content: "\e905";
+}
+.icon-vivala-logo-letra-a-acento:before {
+	content: "\e906";
+}
+.icon-vivala-quero-viajar:before {
+	content: "\e907";
+}
+.icon-vivala-quero-conectar:before {
+	content: "\e908";
+}
+.icon-vivala-quero-transformar:before {
+	content: "\e909";
+}
+.icon-vivala-relogio:before {
+	content: "\e90a";
+}
+.icon-vivala-usuario:before {
+	content: "\e90b";
+}
+.icon-vivala-livro:before {
+	content: "\e90c";
+}
+.icon-vivala-mapa:before {
+	content: "\e90d";
+}
+.icon-vivala-foto:before {
+	content: "\e90e";
+}
+.icon-vivala-estrela:before {
+	content: "\e90f";
+}
+.icon-vivala-mascaras:before {
+	content: "\e910";
+}
+.icon-vivala-mao:before {
+	content: "\e911";
+}
+.icon-vivala-jornal:before {
+	content: "\e912";
+}
+.icon-vivala-chat:before {
+	content: "\e913";
+}
+.icon-vivala-check:before {
+	content: "\e914";
+}
+.icon-vivala-check-preenchido:before {
+	content: "\e915";
+}
+.icon-vivala-casa:before {
+	content: "\e916";
+}
+.icon-vivala-binoculos:before {
+	content: "\e917";
+}
+.icon-vivala-olhos:before {
+	content: "\e918";
+}
+.icon-vivala-coracao:before {
+	content: "\e919";
+}
+.icon-vivala-mochila:before {
+	content: "\e91a";
+}
+.icon-vivala-lupa:before {
+	content: "\e91b";
+}
+.icon-vivala-mapa-do-bem:before {
+	content: "\e91c";
+}
+.icon-vivala-relatorio:before {
+	content: "\e91d";
+}
+.icon-vivala-usuario-em-duvida:before {
+	content: "\e91e";
+}
+.icon-vivala-bandeira:before {
+	content: "\e91f";
+}
+.icon-vivala-coracao-caridoso:before {
+	content: "\e920";
+}
+.icon-vivala-medalha:before {
+	content: "\e921";
+}
+.icon-vivala-floco-de-neve:before {
+	content: "\e922";
+}
+.icon-vivala-menu-usuario:before {
+	content: "\e923";
+}
+.icon-vivala-menu-chat:before {
+	content: "\e924";
+}
+.icon-vivala-menu-brasil:before {
+	content: "\e925";
+}
