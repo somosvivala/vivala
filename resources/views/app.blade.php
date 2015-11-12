@@ -30,7 +30,10 @@
 	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 
     {{-- Fontes --}}
-	<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+		<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+		<link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
+
+	{{-- Google Analytics --}}
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
