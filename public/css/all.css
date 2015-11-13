@@ -7994,6 +7994,9 @@ ul.margin-0 {
 .height-18 {
   height: 18em;
 }
+.margin-b-0 {
+  margin-bottom: 0em;
+}
 .margin-b-1 {
   margin-bottom: 1em;
 }
@@ -8005,6 +8008,9 @@ ul.margin-0 {
 }
 .margin-b-10 {
   margin-bottom: 10em;
+}
+.margin-t-0 {
+  margin-top: 0em;
 }
 .margin-t-1 {
   margin-top: 1em;
@@ -8036,6 +8042,9 @@ ul.margin-0 {
 .margin-r-3 {
   margin-left: 3em;
 }
+.padding-b-0 {
+  padding-bottom: 0em;
+}
 .padding-b-1 {
   padding-bottom: 1em;
 }
@@ -8047,6 +8056,9 @@ ul.margin-0 {
 }
 .padding-b-10 {
   padding-bottom: 10em;
+}
+.padding-t-0 {
+  padding-top: 0em;
 }
 .padding-t-1 {
   padding-top: 1em;
@@ -10121,6 +10133,12 @@ div.flight-wrapper div.flight-pricing {
   background-color: #8BA6AC;
   color: white;
 }
+#clickbus-resultado-busca .passagens-clickbus {
+  border: 1px solid #535353;
+}
+#clickbus-resultado-busca .passagens-clickbus > div:nth-child(odd) .passagem {
+  background-color: #E2E2E2;
+}
 #clickbus-resultado-busca #descricao-origem-destino {
   background-color: #8BA6AC;
   color: white;
@@ -10130,7 +10148,7 @@ div.flight-wrapper div.flight-pricing {
 }
 #clickbus-resultado-busca .company-logo {
   background-size: contain;
-  background-position: left center;
+  background-position: center center;
   background-repeat: no-repeat;
   height: 5em;
 }
@@ -10240,6 +10258,9 @@ ul.margin-0 {
 .height-18 {
   height: 18em;
 }
+.margin-b-0 {
+  margin-bottom: 0em;
+}
 .margin-b-1 {
   margin-bottom: 1em;
 }
@@ -10251,6 +10272,9 @@ ul.margin-0 {
 }
 .margin-b-10 {
   margin-bottom: 10em;
+}
+.margin-t-0 {
+  margin-top: 0em;
 }
 .margin-t-1 {
   margin-top: 1em;
@@ -10282,6 +10306,9 @@ ul.margin-0 {
 .margin-r-3 {
   margin-left: 3em;
 }
+.padding-b-0 {
+  padding-bottom: 0em;
+}
 .padding-b-1 {
   padding-bottom: 1em;
 }
@@ -10293,6 +10320,9 @@ ul.margin-0 {
 }
 .padding-b-10 {
   padding-bottom: 10em;
+}
+.padding-t-0 {
+  padding-top: 0em;
 }
 .padding-t-1 {
   padding-top: 1em;

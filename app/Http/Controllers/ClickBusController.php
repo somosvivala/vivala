@@ -25,6 +25,7 @@ class ClickBusController extends Controller {
 		return view('clickbus._listAutocomplete', compact('result'));
 	}
 
+        // Filtra as passagens de onibus 
 	public function getTrips() 
 	{
 		$from      = Input::get('from');
@@ -45,14 +46,14 @@ class ClickBusController extends Controller {
 
 	public function getTrip() 
 	{
-		$scheduleId = Input::get('scheduleId');
-		$result     = [];
+            $scheduleId = Input::get('scheduleId');
+            $result     = [];
 
-		foreach ($scheduleId as $id) {
-			array_push($result, file_get_contents(self::$url."/trip?scheduleId={$id}"));
-		}
+            foreach ($scheduleId as $id) {
+                array_push($result, file_get_contents(self::$url."/trip?scheduleId={$id}"));
+            }
 
-		return $result;
+            return $result;
 	}
 
 }

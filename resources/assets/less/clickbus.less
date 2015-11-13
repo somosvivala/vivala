@@ -18,6 +18,14 @@
             }
         }
     }
+
+    .passagens-clickbus{
+        border: 1px solid @cor-cinza-escuro;
+        > div:nth-child(odd) .passagem {
+            background-color:@cor-fundo;
+        }
+    }
+
     #descricao-origem-destino {
         background-color: @cor-pele-zumbi;
         color: white;
@@ -27,7 +35,7 @@
     }
     .company-logo {
         background-size: contain;
-        background-position:left center;
+        background-position:center center;
         background-repeat: no-repeat;
         height:5em;
     }
