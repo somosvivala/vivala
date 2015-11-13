@@ -8,6 +8,7 @@
     <div class="col-sm-12">
         <div class="select-filtro">
             <input id="origem-rodoviario" placeholder="DE" type="text" class="form-control">
+            <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
         </div>
         <div class="select-filtro">
             <input id="destino-rodoviario" placeholder="PARA" type="text" class="form-control">

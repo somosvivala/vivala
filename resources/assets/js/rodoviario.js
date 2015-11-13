@@ -5,6 +5,8 @@ jQuery(document).ready(function($) {
 
     $('#rodoviario-filtros #origem-rodoviario').on('keydown focus', function() {
         if ($(this).val().length >= 2) {
+            // vale a pena fazer o timeout aqui? (copiado do viajar.js)
+            // autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista); 
             ajaxPlace($(this).val(), this);
         }
     });

@@ -7904,6 +7904,32 @@ button.close {
 /* Definição das cores dos elementos */
 /* Fontes */
 /* Definição de tempo de efeitos */
+.icon-menu-principal {
+  font-size: 2em;
+  color: #F16F2B;
+  vertical-align: middle;
+}
+.icon-menu-notificacao {
+  font-size: 2.2em;
+  color: #8BA6AC;
+  vertical-align: middle;
+}
+.icon-menu-lateral {
+  font-size: 1.7em;
+  color: #F16F2B;
+  padding-right: 0.3em;
+}
+.icon-footer {
+  font-size: 3em;
+  color: #F16F2B;
+  vertical-align: middle;
+}
+.icon-manifesto {
+  font-size: 3.5em;
+}
+.icon-manifesto:hover {
+  color: #F16F2B;
+}
 .zoomContainer {
   z-index: 100000;
 }
@@ -8910,12 +8936,6 @@ nav.menu-lateral ul li a {
 nav.menu-lateral ul li a:hover {
   color: #F16F2B;
 }
-nav.menu-lateral ul li a i {
-  color: #F16F2B;
-  padding-right: 0.6em;
-  font-size: 1.2em;
-  padding-top: 0.1em;
-}
 ul.pagina-sugestoes > li {
   height: 11em;
   overflow: hidden;
@@ -9525,24 +9545,6 @@ ul.quartos-hotel {
   border-color: #E2E2E2;
   border-radius: 2px;
 }
-.icon36 {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding: 0.5em 2em 0.5em 0;
-  margin: 0;
-}
-.icon-viajar {
-  background-image: url('/img/viajaricon.png');
-  margin-right: 0.2em;
-}
-.icon-conectar {
-  background-image: url('/img/conectaricon.png');
-  margin-right: 0.1em;
-}
-.icon-cuidar {
-  background-image: url('/img/cuidaricon.png');
-}
 .menu-viajar,
 .menu-cuidar {
   width: 30%;
@@ -10100,7 +10102,6 @@ div.flight-wrapper div.flight-pricing {
   display: none;
   margin-top: 0.5em;
 }
-<<<<<<< HEAD
 #clickbus-resultado-busca .nav-tabs li > a {
   font-size: 0.9em;
   width: 8.2em;
@@ -10136,16 +10137,41 @@ div.flight-wrapper div.flight-pricing {
 }
 #clickbus-resultado-busca .departure {
   border-bottom: 1px solid #E2E2E2;
-=======
+}
 .mobile-warning a {
   color: #F16F2B;
->>>>>>> dev
 }
 
 /* Definição do nome das cores principais */
 /* Definição das cores dos elementos */
 /* Fontes */
 /* Definição de tempo de efeitos */
+.icon-menu-principal {
+  font-size: 2em;
+  color: #F16F2B;
+  vertical-align: middle;
+}
+.icon-menu-notificacao {
+  font-size: 2.2em;
+  color: #8BA6AC;
+  vertical-align: middle;
+}
+.icon-menu-lateral {
+  font-size: 1.7em;
+  color: #F16F2B;
+  padding-right: 0.3em;
+}
+.icon-footer {
+  font-size: 3em;
+  color: #F16F2B;
+  vertical-align: middle;
+}
+.icon-manifesto {
+  font-size: 3.5em;
+}
+.icon-manifesto:hover {
+  color: #F16F2B;
+}
 .zoomContainer {
   z-index: 100000;
 }
