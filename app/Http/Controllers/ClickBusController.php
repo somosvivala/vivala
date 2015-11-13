@@ -18,11 +18,11 @@ class ClickBusController extends Controller {
 		$query = Input::get('query');
 		$query = preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"), $query);
 
-		$result = ClickBusPlace::whereRaw("lower(place_name) LIKE '%{$query}%'")
+		$result = ClickBusPlace::whereRaw("lower(place_name) LIKE lower('%{$query}%')")
 			->get()
 			->take(15);
-
-		return view('clickbus._listAutocomplete', compact('result'));
+                
+                return view('clickbus._listAutocomplete', compact('result'));
 	}
 
         // Filtra as passagens de onibus 
