@@ -2,21 +2,21 @@
 	<h4 class="suave">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_volunteer') }}!</h4>
 	<nav class="menu-lateral">
 		<ul>
-			<li><a href="/cuidar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa"></i>{{ trans('global.lbl_homepage') }}</a></li>
-			<li><a href="/ongs" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-coracao-caridoso"></i>{{ trans('global.lbl_project_') }}</a></li>
-	    <li><a href="/vagas" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-bandeira"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
-	    <li><a href="/paginas/porquecuidar" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-usuario-em-duvida cinza-morto"></i>{{ trans('global.lbl_why_care') }}</a></li>
-	    <li><a href="/resultados" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-relatorio cinza-morto"></i>{{ trans('global.lbl_result_') }}</a></li>
-	    <li><a href="/mapadobem" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-mapa-do-bem cinza-morto"></i>{{ trans('global.lbl_map_goodness') }}</a></li>
+			<li><a href="/cuidar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{ trans('global.lbl_homepage') }}</a></li>
+			<li><a href="/ongs" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-coracao-caridoso vi"></i>{{ trans('global.lbl_project_') }}</a></li>
+	    <li><a href="/vagas" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-bandeira vi"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
+	    <li><a href="/paginas/porquecuidar" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-usuario-em-duvida vi cinza-morto"></i>{{ trans('global.lbl_why_care') }}</a></li>
+	    <li><a href="/resultados" class="click-img-no-border"><i class="icon-menu-lateral vi icon-vivala-relatorio cinza-morto"></i>{{ trans('global.lbl_result_') }}</a></li>
+	    <li><a href="/mapadobem" class="click-img-no-border"><i class="icon-menu-lateral vi icon-vivala-mapa-do-bem cinza-morto"></i>{{ trans('global.lbl_map_goodness') }}</a></li>
 		</ul>
 	</nav>
 {{-- Ultimas Notícias e Chat --}}
 	<h4 class="suave">{{ trans('global.lbl_connect_with_volunteers') }}</h4>
 	<nav class="menu-lateral">
 		<ul>
-			<li><a href="/paginas/ultimasnoticias" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-jornal"></i>{{ trans('global.lbl_latest_news') }}</a></li>
-			<li><a href="/chat" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-chat"></i>{{ trans('global.lbl_chat_with_friends') }}</a></li>
-	        <li><a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border "><i class="icon-menu-lateral icon-vivala-check-preenchido"></i>{{ trans('global.lbl_feedback_give_yours') }}</a>
+			<li><a href="/paginas/ultimasnoticias" class="click-img-no-border"><i class="icon-menu-lateral vi icon-vivala-jornal"></i>{{ trans('global.lbl_latest_news') }}</a></li>
+			<li><a href="/chat" class="click-img-no-border desativado"><i class="icon-menu-lateral vi icon-vivala-chat"></i>{{ trans('global.lbl_chat_with_friends') }}</a></li>
+	        <li><a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border "><i class="icon-menu-lateral vi icon-vivala-check-preenchido"></i>{{ trans('global.lbl_feedback_give_yours') }}</a>
 	            @include('_feedback')
 	        </li>
 		</ul>

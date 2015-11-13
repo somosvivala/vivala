@@ -14,19 +14,19 @@
 		@else
 			<li class="menu-viajar">
 				<a href="{{ url('/viajar') }}" class="click-img-no-border">
-					<i class="icon-menu-principal icon-vivala-quero-viajar"></i>
+					<i class="icon-menu-principal icon-vivala-quero-viajar vi"></i>
 					<span>{{ trans('global.lbl_wanna_travel') }}</span>
 				</a>
 			</li>
 			<li class="menu-conectar">
 				<a href="{{ url('/conectar') }}" class="click-img-no-border">
-					<i class="icon-menu-principal icon-vivala-quero-conectar"></i>
+					<i class="icon-menu-principal icon-vivala-quero-conectar vi"></i>
 					<span>{{ trans('global.lbl_wanna_connect') }}</span>
 				</a>
 			</li>
 			<li class="menu-cuidar">
 				<a href="{{ url('/cuidar') }}" class="click-img-no-border">
-					<i class="icon-menu-principal icon-vivala-quero-transformar"></i>
+					<i class="icon-menu-principal icon-vivala-quero-transformar vi"></i>
 					<span>{{ trans('global.lbl_wanna_volunteer') }}</span>
 				</a>
 			</li>
@@ -36,19 +36,19 @@
 
 <div class="notificacoes">
 	<button type="button" id="notificacoes-follow" data-unread="0" title='{{ trans("global.lbl_follower_") }}'>
-		<i class="icon-menu-notificacao icon-vivala-menu-usuario" alt='{{ trans("global.lbl_follower_") }}'></i>
+		<i class="icon-menu-notificacao icon-vivala-menu-usuario vi" alt='{{ trans("global.lbl_follower_") }}'></i>
   </button>
 	<div class="notificacoes-follow">
 	    @include('_notificacoesFollow')
 	</div>
 	<button type="button" id="notificacoes-msg" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
-		<i class="icon-menu-notificacao icon-vivala-menu-chat" alt='{{ trans("global.lbl_message_") }}'></i>
+		<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
   </button>
   <div class="notificacoes-msg">
       @include('_notificacoesMsg')
   </div>
 	<button type="button" id="notificacoes-geral" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
-		<i class="icon-menu-notificacao icon-vivala-menu-brasil" alt='{{ trans("global.lbl_notification_") }}'></i>
+		<i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
   </button>
   <div class="notificacoes-geral">
       @include('_notificacoesGeral')
