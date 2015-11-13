@@ -96,6 +96,7 @@ class PerfilController extends ConectarController {
 		$aniversario = $request->input('aniversario');
 		$perfil->aniversario = Carbon::createFromFormat('d/m/Y', $aniversario);
 		$perfil->cidade_natal = $request->input('cidade_natal');
+		$perfil->cidade_atual = $request->input('cidade_atual');
 		$perfil->apelido = $request->input('apelido');
 		$perfil->descricao_curta = $request->input('descricao_curta');
 		$perfil->descricao_longa = $request->input('descricao_longa');

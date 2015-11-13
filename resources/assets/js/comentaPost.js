@@ -42,6 +42,7 @@ var commentPost = function(idPost) {
       url: "/postajax/"+idPost+"/comentarios"
     })
     .done(function(data) {
+      document.getElementById("form-comentario-post-"+idPost).reset();
       var comentariosWrapper = $('li.post[data-id="'+idPost+'"] div.comentarios').parent();
       console.log('li.post[data-id="'+idPost+'"]');
       comentariosWrapper.html(data);

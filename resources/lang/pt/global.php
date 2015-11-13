@@ -1213,6 +1213,19 @@ return[
     'crowdfunding_all_the_struct' => 'Toda a estrutura da plataforma está sendo criada com a ajuda de vocês',
     'crowdfunding_donators' => 'Apoiadores',
 
+    /* Tela de Aviso mobile */
+    'mobile_warning_welcome' => 'Bem vindo à Vivalá!',
+    'mobile_warning_desctopo' => 'Percebemos que você acessou pelo mobile.',
+    'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para celular e tablet.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
+    'mobile_warning_desclink' => 'Acesse <a href="vivala.com.br">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
+
+  /* Opções modal feedback */
+    'lbl_feedback_reporting_problem' => 'Reportar Problema Encontrado',
+    'lbl_feedback_complaint' => 'Reclamação',
+    'lbl_feedback_sugestion' => 'Sugestão',
+    'lbl_feedback_compliment' => 'Elogio',
+    'lbl_feedback_other' => 'Outro',
+
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/

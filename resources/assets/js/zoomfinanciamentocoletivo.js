@@ -198,4 +198,18 @@ $( document ).ready(function() {
     zoomType : "inner",
     cursor: "crosshair",
   });
+
+  /* QUERO CUIDAR */
+  $("#resultados-1").elevateZoom({
+    easing : true,
+    zoomType : "inner",
+    cursor: "crosshair",
+  });
+
+  $("#mapa-do-bem-1").elevateZoom({
+    easing : true,
+    zoomType : "inner",
+    cursor: "crosshair",
+  });
+
 });

@@ -42,6 +42,7 @@ elixir(function(mix) {
       '../../assets/js/createpost.js',
       '../../assets/js/postbarra.js',
       '../../assets/js/edicaofotoperfil.js',
+      '../../assets/js/formFeedback.js',
       '../../assets/js/follow.js',
       '../../assets/js/ajaxCalls.js',
       '../../assets/js/desativalinks.js',

@@ -8403,12 +8403,18 @@ span.laranja,
 .cursor-default {
   cursor: default;
 }
+.cinza-morto {
+  color: grey !important;
+}
 a.desativado,
 a.desativado:hover {
   color: grey !important;
 }
 a.desativado i,
 a.desativado:hover i {
+  color: grey !important;
+}
+.cinza-morto {
   color: grey !important;
 }
 a.link-claro {
@@ -10094,6 +10100,7 @@ div.flight-wrapper div.flight-pricing {
   display: none;
   margin-top: 0.5em;
 }
+<<<<<<< HEAD
 #clickbus-resultado-busca .nav-tabs li > a {
   font-size: 0.9em;
   width: 8.2em;
@@ -10129,6 +10136,10 @@ div.flight-wrapper div.flight-pricing {
 }
 #clickbus-resultado-busca .departure {
   border-bottom: 1px solid #E2E2E2;
+=======
+.mobile-warning a {
+  color: #F16F2B;
+>>>>>>> dev
 }
 
 /* Definição do nome das cores principais */
@@ -10634,12 +10645,18 @@ span.laranja,
 .cursor-default {
   cursor: default;
 }
+.cinza-morto {
+  color: grey !important;
+}
 a.desativado,
 a.desativado:hover {
   color: grey !important;
 }
 a.desativado i,
 a.desativado:hover i {
+  color: grey !important;
+}
+.cinza-morto {
   color: grey !important;
 }
 a.link-claro {

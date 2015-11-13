@@ -69,6 +69,8 @@ Route::controller('meuspontos','Viajar\MeusPontosController');
 Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
 
 Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
+Route::controller('mapadobem','Cuidar\MapadoBemController');
+Route::controller('resultados','Cuidar\ResultadosController');
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::get('ongs','OngController@ongs');
 Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
