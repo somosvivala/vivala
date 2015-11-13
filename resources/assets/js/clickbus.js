@@ -58,6 +58,8 @@ var ajaxTrips = function(params) {
     };
     $.extend(defaultParams, params);
 
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
+    
     $.ajax({
         url: 'clickbus/trips',
         type: 'POST',

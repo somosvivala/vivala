@@ -31,6 +31,8 @@ jQuery(document).ready(function($) {
             departure = $('#data-id-rodoviario').val(),
             type      = 'ida';
 
+        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i class='fa fa-spin fa-spinner'></i></h1>");
+
         ajaxTrips({
             from: from,
             to: to,
