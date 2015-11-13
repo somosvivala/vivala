@@ -9,6 +9,7 @@ $.ajaxSetup({
 
 var ajax;
 
+// Procura Cidades que tem frota da clickbus
 var ajaxPlace = function(query, target) {
     if (ajax != null && ajax.state() == 'pending') {
         ajax.abort();
@@ -16,6 +17,8 @@ var ajaxPlace = function(query, target) {
 
     var pos = [$(target).position().top + $(target).outerHeight(), $(target).position().left];
 
+    // Mostra o icone de loading
+    $(target).siblings('i.fa').show();
     ajax = $.ajax({
         url: 'clickbus/place',
         type: 'POST',
@@ -25,6 +28,9 @@ var ajaxPlace = function(query, target) {
         },
     })
     .done(function(data) {
+        // Remove as lista antiga de cidades
+        $(target).siblings('.places-list').remove();
+        // Cria o div da lista de cidades
         var element = document.createElement('div');
         $(element).addClass('list-group places-list')
             .attr('data-target', $(target).prop('id'))
@@ -32,8 +38,12 @@ var ajaxPlace = function(query, target) {
             .css('left', pos[1])
             .html(data);
 
-        $(target).parents('.row').find('.places-list').remove();
-        $(target).parents('.row').append(element);
+        // Adiciona a nova lista
+        $(target).parent().append(element);
+        
+        // Esconde o loading
+        $(target).siblings('i.fa').hide();
+
 
         bindAutocompleteRodoviario();
     });

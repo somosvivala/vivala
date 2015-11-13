@@ -12,6 +12,7 @@
         </div>
         <div class="select-filtro">
             <input id="destino-rodoviario" placeholder="PARA" type="text" class="form-control">
+            <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
         </div>
         <div class="select-filtro">
             <input placeholder="IDA" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="data-id-rodoviario" name="data-id-rodoviario" class="form-control" type="text">
@@ -22,7 +23,7 @@
     </div>
 
     <div class="col-sm-12" id="buscar-rodoviario">
-        <button type="button" class="btn">Buscar Transporte</button>
+        <button type="button" class="btn btn-acao">Buscar Transporte</button>
     </div>
 </div>
 

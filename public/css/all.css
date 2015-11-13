@@ -7941,6 +7941,9 @@ button.close {
 .soft-hide {
   display: none;
 }
+.soft-hide.fa {
+  display: none;
+}
 .texto-preto {
   color: black;
 }
@@ -9525,6 +9528,7 @@ ul.quartos-hotel {
   width: 24.6%;
   float: left;
   margin: 0 0.2%;
+  position: relative;
 }
 #rodoviario #rodoviario-filtros #buscar-rodoviario {
   text-align: center;
@@ -10181,6 +10185,9 @@ div.flight-wrapper div.flight-pricing {
   cursor: pointer;
 }
 .soft-hide {
+  display: none;
+}
+.soft-hide.fa {
   display: none;
 }
 .texto-preto {
