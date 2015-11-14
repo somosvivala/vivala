@@ -25,7 +25,7 @@
 {{-- Facebook Like-Page Menu --}}
 	<h4 class="suave">{{ trans('global.social_network_facebook') }}</h4>
 	<nav class="menu-lateral">
-		<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+		<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 			<div class="fb-xfbml-parse-ignore">
 				<blockquote cite="https://www.facebook.com/somosvivala">
 					<a href="https://www.facebook.com/somosvivala">{{ trans('global.lbl_vivala') }}</a>
