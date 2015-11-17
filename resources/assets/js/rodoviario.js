@@ -26,8 +26,8 @@ jQuery(document).ready(function($) {
     $('#buscar-rodoviario .btn').on('click', function(e) {
         e.preventDefault();
 
-        var from      = $('#origem-rodoviario').attr('data-value'),
-            to        = $('#destino-rodoviario').attr('data-value'),
+        var from      = $('#origem-rodoviario-hidden').val(),
+            to        = $('#destino-rodoviario-hidden').val(),
             departure = $('#data-id-rodoviario').val(),
             type      = 'ida';
 
@@ -42,14 +42,20 @@ jQuery(document).ready(function($) {
     });
 });
 
+// Binda o clique do resultado de autocomplete (quando escolhe a cidade)
 var bindAutocompleteRodoviario = function() {
     $('.places-list a').on('click', function(e) {
         e.preventDefault();
 
+        // Pega o id do campo que vai ser modificado, origem ou destino
         var target = $(this).parent('.places-list').attr('data-target');
 
+        // Muda o valor do input para a string do resultado (friendly)
         $('#'+target).val($(this).find('span').text());
-        $('#'+target).attr('data-value', $(this).attr('data-value'));
+        // Muda o valor do input hidden para a string da busca (non-friendly)
+        $('#'+target+'-hidden').val( $(this).attr('data-value'));
+
+        // Remove os resultados
         $('.places-list').remove();
     });
 };
@@ -58,8 +64,8 @@ var bindClickDetail = function() {
     $('.search-by-date').on('click', function(e) {
         e.preventDefault();
 
-        var from      = $('#destino-rodoviario').attr('data-value'),
-            to        = $('#origem-rodoviario').attr('data-value'),
+        var from      = $('#destino-rodoviario-hidden').val(),
+            to        = $('#origem-rodoviario-hidden').val(),
             departure = $(this).attr('data-date'),
             type      = $(this).attr('data-type');
 
@@ -80,8 +86,8 @@ var bindClickDetail = function() {
         if ($('#data-volta-rodoviario').val().length <= 0) {
             ajaxTrip([id]);
         } else {
-            var from      = $('#destino-rodoviario').attr('data-value'),
-                to        = $('#origem-rodoviario').attr('data-value'),
+            var from      = $('#destino-rodoviario-hidden').val(),
+                to        = $('#origem-rodoviario-hidden').val(),
                 departure = $('#data-volta-rodoviario').val(),
                 type      = 'volta';
 

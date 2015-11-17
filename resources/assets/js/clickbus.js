@@ -81,7 +81,7 @@ var ajaxTrip = function(id) {
         data: {scheduleId: id},
     })
     .done(function(data) {
-        console.log(data);
+        $('#clickbus-resultado-busca').html(data);
     });
     
 };
