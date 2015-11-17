@@ -7941,6 +7941,9 @@ button.close {
 .soft-hide {
   display: none;
 }
+.soft-hide.fa {
+  display: none;
+}
 .texto-preto {
   color: black;
 }
@@ -7991,6 +7994,9 @@ ul.margin-0 {
 .height-18 {
   height: 18em;
 }
+.margin-b-0 {
+  margin-bottom: 0em;
+}
 .margin-b-1 {
   margin-bottom: 1em;
 }
@@ -8002,6 +8008,9 @@ ul.margin-0 {
 }
 .margin-b-10 {
   margin-bottom: 10em;
+}
+.margin-t-0 {
+  margin-top: 0em;
 }
 .margin-t-1 {
   margin-top: 1em;
@@ -8033,6 +8042,9 @@ ul.margin-0 {
 .margin-r-3 {
   margin-left: 3em;
 }
+.padding-b-0 {
+  padding-bottom: 0em;
+}
 .padding-b-1 {
   padding-bottom: 1em;
 }
@@ -8044,6 +8056,9 @@ ul.margin-0 {
 }
 .padding-b-10 {
   padding-bottom: 10em;
+}
+.padding-t-0 {
+  padding-top: 0em;
 }
 .padding-t-1 {
   padding-top: 1em;
@@ -9518,6 +9533,34 @@ ul.quartos-hotel {
   float: left;
   margin: 0 0.1%;
 }
+#rodoviario #rodoviario-filtros {
+  position: relative;
+}
+#rodoviario #rodoviario-filtros .select-filtro {
+  width: 24.6%;
+  float: left;
+  margin: 0 0.2%;
+  position: relative;
+}
+#rodoviario #rodoviario-filtros #buscar-rodoviario {
+  text-align: center;
+}
+#rodoviario #rodoviario-filtros #buscar-rodoviario .btn {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 0.8em;
+}
+#rodoviario #rodoviario-filtros .places-list {
+  position: absolute;
+  width: 25em;
+  z-index: 2;
+}
+#rodoviario hr {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-color: #E2E2E2;
+  border-radius: 2px;
+}
 .menu-viajar,
 .menu-cuidar {
   width: 30%;
@@ -10075,6 +10118,80 @@ div.flight-wrapper div.flight-pricing {
   display: none;
   margin-top: 0.5em;
 }
+#clickbus-resultado-busca .nav-tabs li > a {
+  font-size: 0.9em;
+  width: 8.2em;
+  padding: 0.5em 0.8em;
+  text-align: center;
+  background-color: #E2E2E2;
+  color: #535353;
+  border: none;
+  border-radius: 0;
+  margin-right: 5px;
+}
+#clickbus-resultado-busca .nav-tabs li.active > a {
+  background-color: #8BA6AC;
+  color: white;
+}
+#clickbus-resultado-busca .passagens-clickbus {
+  border: 1px solid #535353;
+}
+#clickbus-resultado-busca .passagens-clickbus > div:nth-child(odd) .passagem {
+  background-color: #E2E2E2;
+}
+#clickbus-resultado-busca .poltronas-clickbus {
+  border: 1px solid #535353;
+}
+#clickbus-resultado-busca .poltronas-clickbus .onibus {
+  position: relative;
+  border: 1px solid #535353;
+  height: 17em;
+  width: 90%;
+  padding: 1em;
+}
+#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona {
+  width: 6%;
+  background-color: #8BA6AC;
+  position: absolute;
+}
+#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona.desativado {
+  background-color: #535353;
+}
+#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona.desativado label {
+  cursor: default;
+}
+#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona label {
+  padding: 0.4em;
+  color: white;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  margin-bottom: 0px;
+  cursor: pointer;
+}
+#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona label input {
+  display: none;
+}
+#clickbus-resultado-busca #descricao-origem-destino {
+  background-color: #8BA6AC;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+#clickbus-resultado-busca .company-logo {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 5em;
+}
+#clickbus-resultado-busca .departure,
+#clickbus-resultado-busca .arrival {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+#clickbus-resultado-busca .departure {
+  border-bottom: 1px solid #E2E2E2;
+}
 .mobile-warning a {
   color: #F16F2B;
 }
@@ -10118,6 +10235,9 @@ div.flight-wrapper div.flight-pricing {
   cursor: pointer;
 }
 .soft-hide {
+  display: none;
+}
+.soft-hide.fa {
   display: none;
 }
 .texto-preto {
@@ -10170,6 +10290,9 @@ ul.margin-0 {
 .height-18 {
   height: 18em;
 }
+.margin-b-0 {
+  margin-bottom: 0em;
+}
 .margin-b-1 {
   margin-bottom: 1em;
 }
@@ -10181,6 +10304,9 @@ ul.margin-0 {
 }
 .margin-b-10 {
   margin-bottom: 10em;
+}
+.margin-t-0 {
+  margin-top: 0em;
 }
 .margin-t-1 {
   margin-top: 1em;
@@ -10212,6 +10338,9 @@ ul.margin-0 {
 .margin-r-3 {
   margin-left: 3em;
 }
+.padding-b-0 {
+  padding-bottom: 0em;
+}
 .padding-b-1 {
   padding-bottom: 1em;
 }
@@ -10223,6 +10352,9 @@ ul.margin-0 {
 }
 .padding-b-10 {
   padding-bottom: 10em;
+}
+.padding-t-0 {
+  padding-top: 0em;
 }
 .padding-t-1 {
   padding-top: 1em;

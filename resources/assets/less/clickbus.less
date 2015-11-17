@@ -26,6 +26,41 @@
         }
     }
 
+    .poltronas-clickbus{
+        border: 1px solid @cor-cinza-escuro;
+        
+        .onibus {
+            position:relative;
+            border: 1px solid @cor-cinza-escuro;
+            height: 17em;
+            width: 90%;
+            padding:1em;
+            .poltrona {
+                width:6%;
+                background-color:@cor-pele-zumbi;
+                position:absolute;
+                &.desativado {
+                    background-color:@cor-cinza-escuro;
+                    label { 
+                        cursor: default;
+                    }
+                }
+                label {
+                    padding: 0.4em;
+                    color:white;
+                    font-family: @font-family-sans-serif;                
+                    font-weight: bold;
+                    margin-bottom: 0px;
+                    cursor: pointer;
+                    input {
+                        display:none;
+                    }
+
+                }
+            }
+        }
+    }
+
     #descricao-origem-destino {
         background-color: @cor-pele-zumbi;
         color: white;

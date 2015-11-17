@@ -58,6 +58,7 @@ var ajaxTrips = function(params) {
     };
     $.extend(defaultParams, params);
 
+    // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
     
     $.ajax({
@@ -74,13 +75,19 @@ var ajaxTrips = function(params) {
 };
 
 var ajaxTrip = function(id) {
+
+    // Mostra icone de loading
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
+
+        console.log('entrou na funcao');
     $.ajax({
         url: 'clickbus/trip',
         type: 'POST',
-        dataType: 'json',
-        data: {scheduleId: id},
+        dataType: 'html',
+        data: {scheduleId: id}
     })
     .done(function(data) {
+        console.log('sdf');
         $('#clickbus-resultado-busca').html(data);
     });
     

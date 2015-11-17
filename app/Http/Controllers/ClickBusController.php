@@ -53,7 +53,13 @@ class ClickBusController extends Controller {
                 array_push($result, file_get_contents(self::$url."/trip?scheduleId={$id}"));
             }
 
-            return $result;
+            // Envia dados de ida e volta separados
+            if(isset($result[0]))
+                $ida = json_decode($result[0]);
+            if(isset($result[1]))
+                $volta = json_decode($result[1]);
+
+            return view('clickbus._listPoltronas', compact('ida', 'volta'));
 	}
 
 }
