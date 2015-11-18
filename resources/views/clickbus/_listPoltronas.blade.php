@@ -8,8 +8,8 @@
             </div>
             <div class="row">
                 <label class="col-sm-3">Dia:<span>17/02</span></label>
-                <label class="col-sm-3">Hora:<span>17/02</span></label>
-                <label class="col-sm-3">Compania:<span>{{ $ida->content->busCompany->name }}2</span></label>
+                <label class="col-sm-2">Hora:<span>17/02</span></label>
+                <label class="col-sm-7">Compania:<span>{{ $ida->content->busCompany->name }}2</span></label>
             </div>
             <input type="hidden" id="ida-session-id" value="{{ $ida->sessionId }}">
             <input type="hidden" id="ida-trip-id" value="{{ $ida->content->trip_id }}">
@@ -23,15 +23,21 @@
                     </div>
                 @endforeach
             </div>
-            <div class="legenda row">
-                <div class="col-sm-2 col-sm-offset-3">
+            <div class="row">
+                <div class="col-sm-3 col-sm-offset-1">
+                    <div class="legenda desativado">
+                    </div>
                     Ocupada
                 </div>
-                <div class="col-sm-2">
-                    Ocupada
+                <div class="col-sm-3">
+                    <div class="legenda">
+                    </div>
+                    Livre
                 </div>
-                <div class="col-sm-2">
-                    Ocupada
+                <div class="col-sm-4">
+                    <div class="legenda selecionada">
+                    </div>
+                    Selecionada
                 </div>
             </div>
             @endif

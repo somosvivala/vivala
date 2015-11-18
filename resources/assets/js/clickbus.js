@@ -70,6 +70,9 @@ var ajaxTrips = function(params) {
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
         bindClickDetail();
+    })
+    .fail(function() {
+        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
     });
     
 };
@@ -94,6 +97,9 @@ var ajaxTrip = function(id) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+    })
+    .fail(function() {
+        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
     });
     
 };

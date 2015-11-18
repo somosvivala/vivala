@@ -10173,18 +10173,18 @@ div.flight-wrapper div.flight-pricing {
   border: 4px solid #E2E2E2;
   border-radius: 50%;
 }
-#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona {
+#clickbus-resultado-busca .poltronas-clickbus .poltrona {
   width: 6%;
   background-color: #8BA6AC;
   position: absolute;
 }
-#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona.desativado {
+#clickbus-resultado-busca .poltronas-clickbus .poltrona.desativado {
   background-color: #535353;
 }
-#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona.desativado label {
+#clickbus-resultado-busca .poltronas-clickbus .poltrona.desativado label {
   cursor: default;
 }
-#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona label {
+#clickbus-resultado-busca .poltronas-clickbus .poltrona label {
   padding: 0.4em;
   color: white;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -10194,8 +10194,23 @@ div.flight-wrapper div.flight-pricing {
   width: 100%;
   text-align: center;
 }
-#clickbus-resultado-busca .poltronas-clickbus .onibus .poltrona label input {
+#clickbus-resultado-busca .poltronas-clickbus .poltrona label input {
   display: none;
+}
+#clickbus-resultado-busca .poltronas-clickbus .legenda {
+  width: 2em;
+  height: 2em;
+  border: 1px solid #535353;
+  background-color: #8BA6AC;
+  display: inline-block;
+  margin-top: 0.5em;
+  margin-bottom: -0.5em;
+}
+#clickbus-resultado-busca .poltronas-clickbus .legenda.selecionada {
+  background-color: #F16F2B;
+}
+#clickbus-resultado-busca .poltronas-clickbus .legenda.desativado {
+  background-color: #535353;
 }
 #clickbus-resultado-busca #descricao-origem-destino {
   background-color: #8BA6AC;

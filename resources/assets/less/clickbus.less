@@ -59,31 +59,47 @@
                 border: 4px solid @cor-fundo;
                 border-radius: 50%
             }
-            .poltrona {
-                width:6%;
-                background-color:@cor-pele-zumbi;
-                position:absolute;
-                &.desativado {
-                    background-color:@cor-cinza-escuro;
-                    label { 
-                        cursor: default;
-                    }
-                }
-                label {
-                    padding: 0.4em;
-                    color:white;
-                    font-family: @font-family-sans-serif;                
-                    font-weight: bold;
-                    margin-bottom: 0px;
-                    cursor: pointer;
-                    width:100%;
-                    text-align:center;
-                    input {
-                        display:none;
-                    }
-
+        }
+        .poltrona {
+            width:6%;
+            background-color:@cor-pele-zumbi;
+            position:absolute;
+            &.desativado {
+                background-color:@cor-cinza-escuro;
+                label { 
+                    cursor: default;
                 }
             }
+            label {
+                padding: 0.4em;
+                color:white;
+                font-family: @font-family-sans-serif;                
+                font-weight: bold;
+                margin-bottom: 0px;
+                cursor: pointer;
+                width:100%;
+                text-align:center;
+                input {
+                    display:none;
+                }
+
+            }
+        }
+        .legenda {
+            width: 2em;
+            height: 2em;
+            border: 1px solid @cor-cinza-escuro;
+            background-color: @cor-pele-zumbi;
+            display:inline-block;
+            margin-top:0.5em;
+            margin-bottom:-0.5em;
+            &.selecionada {
+                background-color: @cor-primaria;
+            }
+            &.desativado {
+                background-color: @cor-cinza-escuro;
+            }
+
         }
     }
 
