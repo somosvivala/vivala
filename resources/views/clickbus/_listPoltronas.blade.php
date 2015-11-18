@@ -1,26 +1,38 @@
 <div class="col-xs-12">
-        <h4 class="font-bold-upper">Clique nas poltronas desejadas</h4>
+    <h4 class="font-bold-upper">Clique nas poltronas desejadas</h4>
     <div class="poltronas-clickbus col-sm-8">
         @if(isset($ida))
         <div class="ida"> 
             <div class="row">
-                Ida - Trecho 1: 
+                <label class="col-sm-12">Ida: <span> {{ $from }} para {{ $to }} </span></label>
             </div>
             <div class="row">
-                Ida - Trecho 1: 
+                <label class="col-sm-3">Dia:<span>17/02</span></label>
+                <label class="col-sm-3">Hora:<span>17/02</span></label>
+                <label class="col-sm-3">Compania:<span>{{ $ida->content->busCompany->name }}2</span></label>
             </div>
-            <input type="text" id="ida-session-id" value="{{ $ida->sessionId }}">
-            <input type="text" id="ida-trip-id" value="{{ $ida->content->trip_id }}">
-            <input type="text" id="ida-bus-company" value="{{ $ida->content->busCompany->name }}">
+            <input type="hidden" id="ida-session-id" value="{{ $ida->sessionId }}">
+            <input type="hidden" id="ida-trip-id" value="{{ $ida->content->trip_id }}">
             @if(isset($ida->content->seats))
             <div class="onibus">
                 @foreach($ida->content->seats as $Seat)
-                    <div class="poltrona @if($Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*9+10 }}%;" >
+                    <div class="poltrona @if($Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
                         <label for="{{ $Seat->id }}">
                             <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}" value="{{ $Seat->id }}" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
                         </label>
                     </div>
                 @endforeach
+            </div>
+            <div class="legenda row">
+                <div class="col-sm-2 col-sm-offset-3">
+                    Ocupada
+                </div>
+                <div class="col-sm-2">
+                    Ocupada
+                </div>
+                <div class="col-sm-2">
+                    Ocupada
+                </div>
             </div>
             @endif
         </div>

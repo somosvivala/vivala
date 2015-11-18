@@ -26,15 +26,39 @@
         }
     }
 
+    .ida {
+        padding:1em;
+    }
     .poltronas-clickbus{
-        border: 1px solid @cor-cinza-escuro;
+        border: 1px solid @cor-fundo;
         
         .onibus {
             position:relative;
             border: 1px solid @cor-cinza-escuro;
             height: 17em;
-            width: 90%;
+            width: 100%;
+            border-top-left-radius: 2em 50%;
+            border-bottom-left-radius: 2em 50%;
             padding:1em;
+            &::after{
+                content:'';
+                position:absolute;
+                width:6%;
+                height:2em;
+                bottom:2.4em;
+                left: 2.8em;
+                background-color:@cor-fundo;
+            }
+            &::before{
+                content:'';
+                position:absolute;
+                width:2em;
+                height:4em;
+                bottom:1.3em;
+                left: 1.4em;
+                border: 4px solid @cor-fundo;
+                border-radius: 50%
+            }
             .poltrona {
                 width:6%;
                 background-color:@cor-pele-zumbi;
@@ -52,6 +76,8 @@
                     font-weight: bold;
                     margin-bottom: 0px;
                     cursor: pointer;
+                    width:100%;
+                    text-align:center;
                     input {
                         display:none;
                     }

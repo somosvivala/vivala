@@ -47,6 +47,8 @@ class ClickBusController extends Controller {
 	public function getTrip() 
 	{
             $scheduleId = Input::get('scheduleId');
+            $from = Input::get('from');
+            $to = Input::get('to');
             $result     = [];
 
             foreach ($scheduleId as $id) {
@@ -59,7 +61,7 @@ class ClickBusController extends Controller {
             if(isset($result[1]))
                 $volta = json_decode($result[1]);
 
-            return view('clickbus._listPoltronas', compact('ida', 'volta'));
+            return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to'));
 	}
 
 }

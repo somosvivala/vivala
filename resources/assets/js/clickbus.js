@@ -76,18 +76,23 @@ var ajaxTrips = function(params) {
 
 var ajaxTrip = function(id) {
 
+    // Pega o valor das cidades escolhidas para exibir na escolha de poltrona
+    var from      = $('#origem-rodoviario').val(),
+        to        = $('#destino-rodoviario').val();
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
 
-        console.log('entrou na funcao');
     $.ajax({
         url: 'clickbus/trip',
         type: 'POST',
         dataType: 'html',
-        data: {scheduleId: id}
+        data: {
+            scheduleId: id,
+            from: from,
+            to: to
+        }
     })
     .done(function(data) {
-        console.log('sdf');
         $('#clickbus-resultado-busca').html(data);
     });
     
