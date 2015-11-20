@@ -90,6 +90,7 @@ Route::post('clickbus/place', 'ClickBusController@autocompletePlace');
 Route::post('clickbus/trip', 'ClickBusController@getTrip');
 Route::post('clickbus/trips', 'ClickBusController@getTrips');
 Route::post('clickbus/detail', 'ClickBusController@getDetail');
+Route::post('clickbus/selecionarpoltronas', 'ClickBusController@SelecionarPoltronas');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

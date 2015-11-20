@@ -88,7 +88,7 @@
     </div>
     <div class="col-sm-4">
         <h5 class="font-bold-upper">Poltronas Selecionadas</h5>
-        <form class="form-ajax" action="/clickbus/checkout" method="POST">
+        {!! Form::open(['url' => ['/clickbus/selecionarpoltronas'], 'id'=>'form-poltronas-clickbus', 'data-loading'=>'form-loading']) !!}
             <h4>Partida - Trecho 1</h4>
             <div class="poltronas-selecionadas-ida">
             </div>
@@ -97,7 +97,8 @@
             <div class="poltronas-selecionadas-volta">
             </div>
             @endif
-            <button class="btn btn-acao">Comprar agora</button>
-        </form>
+            {!! Form::submit("Comprar agora", ['class' => 'margin-t-1 btn btn-acao']) !!}
+            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
+        {!! Form::close() !!}
     </div>
 </div>

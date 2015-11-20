@@ -99,9 +99,53 @@ var ajaxTrip = function(id) {
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
         bindaPoltronas();
+        ajaxPoltronas();
     })
     .fail(function() {
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado.');
     });
     
 };
+
+var ajaxPoltronas = function() {
+    
+    /** Funcões para Upload */
+    $('#form-poltronas-clickbus').submit(function (ev) {
+        ev.preventDefault();
+        var frm = $(this),
+            dataForm = new FormData(this),
+            loading = frm.data('loading');
+
+        if (loading && loading != "") {
+            $(this).find('input:submit').hide();
+            $(this).find('#'+loading).show();
+        }
+
+        $.ajax({
+            type: frm.attr('method'),
+            url: frm.attr('action'),    
+            data: dataForm,
+            contentType: false, //file
+            processData: false,  //file
+            success: function (data) {
+                // Executa uma função de javascript
+                console.log('sucess do ajax poltronas');
+                console.log(data);
+            },
+            error: function (data) {
+                console.log('erro do ajax poltronas');
+                console.log(data);
+                //Se tiver loading e tiver dado erro, voltar botao
+                if (loading && loading != "") {
+                    $('#form-poltronas-clickbus').find('input:submit').show();
+                    $('#form-poltronas-clickbus').find('#'+loading).hide();
+                }
+
+            }
+        });
+    });
+
+
+
+}
+

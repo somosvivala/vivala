@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 use App\ClickBusPlace;
 use Input;
 use App\Repositories\ClickBusRepository;
+use App\Http\Requests\SelecionarPoltronasClickbusRequest;
+
+
+
+
 
 class ClickBusController extends Controller {
 
@@ -63,5 +68,22 @@ class ClickBusController extends Controller {
 
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to'));
 	}
+
+
+
+        /**
+         * Metodo que recebe o ajax do formulario de poltronas,
+         * @param $request -> Usa da SelecionarPoltronasClickbusRequest, 
+         * portanto se chegou aqui é valido
+         * @return Retorna a view de checkout
+         */ 
+        public function Selecionarpoltronas(SelecionarPoltronasClickbusRequest $request) 
+        {
+           return view('clickbus._checkout');
+        }
+
+
+
+
 
 }
