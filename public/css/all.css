@@ -10178,6 +10178,9 @@ div.flight-wrapper div.flight-pricing {
   background-color: #8BA6AC;
   position: absolute;
 }
+#clickbus-resultado-busca .poltronas-clickbus .poltrona.selecionada {
+  background-color: #F16F2B;
+}
 #clickbus-resultado-busca .poltronas-clickbus .poltrona.desativado {
   background-color: #535353;
 }

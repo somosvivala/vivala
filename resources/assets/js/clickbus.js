@@ -82,6 +82,7 @@ var ajaxTrip = function(id) {
     // Pega o valor das cidades escolhidas para exibir na escolha de poltrona
     var from      = $('#origem-rodoviario').val(),
         to        = $('#destino-rodoviario').val();
+
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
 
@@ -97,9 +98,10 @@ var ajaxTrip = function(id) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+        bindaPoltronas();
     })
     .fail(function() {
-        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
+        $('#clickbus-resultado-busca').html('Ops, algo saiu errado.');
     });
     
 };

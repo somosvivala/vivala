@@ -1,10 +1,10 @@
 <div class="col-xs-12">
     <h4 class="font-bold-upper">Clique nas poltronas desejadas</h4>
-    <div class="poltronas-clickbus col-sm-8">
+    <div class="poltronas-clickbus col-sm-8 margin-b-2">
         @if(isset($ida))
-        <div class="ida"> 
+        <div class="ida margin-b-2"> 
             <div class="row">
-                <label class="col-sm-12">Ida: <span> {{ $from }} para {{ $to }} </span></label>
+                <label class="col-sm-12">Ida - Trecho 1: <span> {{ $from }} para {{ $to }} </span></label>
             </div>
             <div class="row">
                 <label class="col-sm-3">Dia:<span>17/02</span></label>
@@ -23,8 +23,8 @@
                 </div>
                 @endforeach
             </div>
-            <div class="row">
-                <div class="col-sm-3 text-center col-sm-offset-1">
+            <div class="row margin-b-2 margin-t-1">
+                <div class="col-sm-3 text-center col-sm-offset-2">
                     <div class="legenda desativado">
                     </div>
                     Ocupada
@@ -46,7 +46,7 @@
         @if(isset($volta))
         <div class="volta"> 
             <div class="row">
-                <label class="col-sm-12">Volta: <span> {{ $to}} para {{ $from }} </span></label>
+                <label class="col-sm-12">Volta - Trecho 2: <span> {{ $to}} para {{ $from }} </span></label>
             </div>
             <div class="row">
                 <label class="col-sm-3">Dia:<span>17/02</span></label>
@@ -65,8 +65,8 @@
                 </div>
                 @endforeach
             </div>
-            <div class="row">
-                <div class="col-sm-3 text-center col-sm-offset-1">
+            <div class="row margin-b-2 margin-t-1">
+                <div class="col-sm-3 text-center col-sm-offset-2">
                     <div class="legenda desativado">
                     </div>
                     Ocupada
@@ -88,8 +88,16 @@
     </div>
     <div class="col-sm-4">
         <h5 class="font-bold-upper">Poltronas Selecionadas</h5>
-        <div class="poltronas-selecionadas">
-        </div>
-        <button class="btn btn-acao">Comprar agora</button>
+        <form class="form-ajax" action="/clickbus/checkout" method="POST">
+            <h4>Partida - Trecho 1</h4>
+            <div class="poltronas-selecionadas-ida">
+            </div>
+            @if(isset($volta))
+            <h4>Volta - Trecho 2</h4>
+            <div class="poltronas-selecionadas-volta">
+            </div>
+            @endif
+            <button class="btn btn-acao">Comprar agora</button>
+        </form>
     </div>
 </div>
