@@ -1111,7 +1111,7 @@ return[
   /* Rodapé */
     'footer_more_about_us' => 'Mais sobre a gente',
     'footer_vivala_message' => 'A Vivalá utiliza imagens criativas arrematadas em pesquisas para a elaboração de sua identidade visual. Portanto, ressaltamos que a grande maioria desse arquivos não são de nossa autoria ou cedidos formalmente para utilização no site. Por favor entre em contato pelo nosso formulário caso seja o autor de alguma imagem utilizada, queremos muito dar crédito a você. Se quiser que a mesma seja removida, prometemos tirar de nossa plataforma no mesmo instante!',
-    'footer_vivala_infos' => 'Todos os direitos reservados Vivalá Turismo LTDA - CNPJ 22.693.622/0001-85',
+    'footer_vivala_infos' => 'Todos os direitos reservados Vivalá Turismo e Serviços Ltda - CNPJ 22.693.622/0001-85',
     'footer_development' => 'Desenvolvimento:',
   //
   /* Manifesto */
