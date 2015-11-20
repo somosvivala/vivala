@@ -58,7 +58,6 @@ class ClickBusController extends Controller {
 
             foreach ($scheduleId as $id) {
             	$content = file_get_contents(self::$url."/trip?scheduleId={$id}");
-            	dd(json_decode($content));
             	array_push($result, $content);
             }
 
