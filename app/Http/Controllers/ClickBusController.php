@@ -57,7 +57,9 @@ class ClickBusController extends Controller {
             $result     = [];
 
             foreach ($scheduleId as $id) {
-                array_push($result, file_get_contents(self::$url."/trip?scheduleId={$id}"));
+            	$content = file_get_contents(self::$url."/trip?scheduleId={$id}");
+            	dd(json_decode($content));
+            	array_push($result, $content);
             }
 
             // Envia dados de ida e volta separados
@@ -71,21 +73,64 @@ class ClickBusController extends Controller {
 
 
 
-        /**
-         * Metodo que recebe o ajax do formulario de poltronas,
-         * @param $request -> Usa da SelecionarPoltronasClickbusRequest, 
-         * portanto se chegou aqui é valido
-         * @return Retorna a view de checkout
-         */ 
-        public function Selecionarpoltronas(SelecionarPoltronasClickbusRequest $request) 
-        {
-            $nome = $request->nome;
-            $documento = $request->documento;
-            return view('clickbus._checkout', compact('nome', 'documento'));
-        }
+    /**
+     * Metodo que recebe o ajax do formulario de poltronas,
+     * @param $request -> Usa da SelecionarPoltronasClickbusRequest, 
+     * portanto se chegou aqui é valido
+     * @return Retorna a view de checkout
+     */ 
+    public function Selecionarpoltronas(/*SelecionarPoltronasClickbusRequest $request*/) 
+    {
+    	$request = Input::get('params');
 
+        $data = http_build_query($request);
 
+        $context = [ 
+        	'http' => [ 
+                'method' => 'PUT',
+                'content' => $data
+	        ] 
+		];
+		$context = stream_context_create($context);
 
+		$result = file_get_contents(self::$url.'/seat-block', false, $context);
 
+        return view('clickbus._checkout', compact('nome', 'documento', 'result'));
+    }
 
+    public function Removerpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
+    {
+    	$request = Input::get('params');
+
+        $data = http_build_query($request);
+
+        $context = [ 
+        	'http' => [ 
+                'method' => 'POST',
+                'content' => $data
+	        ] 
+		];
+		$context = stream_context_create($context);
+
+		$result = file_get_contents(self::$url.'/payments', false, $context);
+
+        return view('', compact('result'));
+    }
+
+    public function payment(/*PaymentClickbusRequest $request*/)
+    {
+    	$request = Input::get('params');
+
+    	$data = http_build_query($request);
+
+        $context = [ 
+        	'http' => [ 
+                'method' => 'POST',
+                'content' => $data
+	        ] 
+		];
+		$context = stream_context_create($context);
+
+		return view('', compact('result'));
+    }
 }

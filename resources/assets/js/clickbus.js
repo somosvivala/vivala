@@ -107,9 +107,30 @@ var ajaxTrip = function(id) {
     
 };
 
-var ajaxPoltronas = function() {
-    
-    /** Funcões para Upload */
+var ajaxPoltronas = function(request) {
+    var params = {
+        "meta": {},
+        "request": {
+            "from": "",
+            "to": "",
+            "seat": "",
+            "passenger": {
+                "name": "",
+                "document": "",
+                "documentType": "", /*[rg|cpf|passaporte]*/
+                "gender": ""        /*[M|F]*/
+            },
+            "schedule": {
+                "id": "",
+                "date": "",
+                "time": "",
+                "timezone": "America/Sao_Paulo"
+            },
+            "sessionId": ""
+        }
+    };
+    $.extend(params, request);
+
     $('#form-poltronas-clickbus').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),
@@ -124,9 +145,7 @@ var ajaxPoltronas = function() {
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),    
-            data: dataForm,
-            contentType: false, //file
-            processData: false,  //file
+            data: {params: params},
             success: function (data) {
                 // Executa uma função de javascript
                 console.log('sucess do ajax poltronas');
@@ -171,5 +190,51 @@ var ajaxPoltronas = function() {
 
 
 
-}
+};
 
+var removePoltrona = function(request) {
+    $params = {
+        "meta": {},
+        "request": {
+            "seat": "",
+            "schedule": {
+                "id": ""
+            },
+            "sessionId": ""
+        }
+    }
+    $.extend(params, request);
+
+    $.ajax({
+        url: 'clickbus/removerpoltronas',
+        type: 'POST',
+        dataType: 'json',
+        data: {params: params},
+    })
+    .done(function(data) {
+        console.log(data);
+    });
+};
+
+var tripPayment = function(reauqest) {
+    $params = {
+        "meta": {
+            "store": "clickbus",
+            "model": "retail",
+            "platform": "web"
+        },
+        "contents": []
+    }
+    $.extend(params, request);
+
+    $.ajax({
+        url: 'clickbus/payment',
+        type: 'POST',
+        dataType: 'json',
+        data: {params: params},
+    })
+    .done(function(data) {
+        console.log(data);
+    });
+    
+};
