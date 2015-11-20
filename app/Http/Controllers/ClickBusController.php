@@ -79,7 +79,9 @@ class ClickBusController extends Controller {
          */ 
         public function Selecionarpoltronas(SelecionarPoltronasClickbusRequest $request) 
         {
-           return view('clickbus._checkout');
+            $nome = $request->nome;
+            $documento = $request->documento;
+            return view('clickbus._checkout', compact('nome', 'documento'));
         }
 
 

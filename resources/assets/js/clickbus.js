@@ -130,11 +130,16 @@ var ajaxPoltronas = function() {
             success: function (data) {
                 // Executa uma função de javascript
                 console.log('sucess do ajax poltronas');
-                console.log(data);
+                $('#clickbus-resultado-busca').html(data);
             },
             error: function (data) {
                 console.log('erro do ajax poltronas');
-                console.log(data);
+                
+                //Aqui mostro o sweetAlert com as mensagens retornadas da
+                //validação 
+                //@TODO formatar texto corretamente
+                swal('Ocorreu um erro', data.responseText, 'error');
+                
                 //Se tiver loading e tiver dado erro, voltar botao
                 if (loading && loading != "") {
                     $('#form-poltronas-clickbus').find('input:submit').show();

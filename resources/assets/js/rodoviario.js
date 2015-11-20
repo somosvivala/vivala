@@ -129,7 +129,7 @@ var bindaPoltronas = function(){
             // Adiciona o html da poltrona no formulario de compra
             // CUIDADO: HTML DIRETO NO JS
 
-            var html = ' <div class="row"> <div class="col-sm-12"> <div class="poltrona">'+numero_poltrona+'</div> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <input requeired="requeired"  type="text" placeholder="Nome" name="nome"> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> <select name="tipo_doc"> <option value="rg">RG</option> <option value="passaporte">Passaporte</option> <option value="carteira_motorista">Carteira de Motorista</option> <option value="carteira_trabalho">Carteira de Trabalho</option> </select> </div> <div class="col-sm-8"> <input type="text" placeholder="Ex: 123.456.789-0" name="documento" requeired="requeired" > </div> </div> ';
+            var html = ' <div class="row"> <div class="col-sm-12"> <div class="poltrona">'+numero_poltrona+'</div> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <input required="required"  type="text" placeholder="Nome" name="nome[]"> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> <select name="tipo_doc[]"> <option value="rg">RG</option> <option value="passaporte">Passaporte</option> <option value="carteira_motorista">Carteira de Motorista</option> <option value="carteira_trabalho">Carteira de Trabalho</option> </select> </div> <div class="col-sm-8"> <input type="text" placeholder="Ex: 123.456.789-0" name="documento[]" required="required" > </div> </div> ';
 
             // TODO
             // Testas se é ida ou volta
