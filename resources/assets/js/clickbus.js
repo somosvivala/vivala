@@ -134,11 +134,30 @@ var ajaxPoltronas = function() {
             },
             error: function (data) {
                 console.log('erro do ajax poltronas');
-                
+                console.log(data);
+                console.log(data.responseObject);
                 //Aqui mostro o sweetAlert com as mensagens retornadas da
                 //validação 
-                //@TODO formatar texto corretamente
-                swal('Ocorreu um erro', data.responseText, 'error');
+                //TODO formatar texto corretamente
+
+                var responseObject = data.responseJSON,
+                    responseText = "";
+
+                //Iterando sob o objeto de resposta para montar a mensagem de erro 
+                for (var i in responseObject)
+                {
+                    responseText += "<p>" + responseObject[i] + "</p>";
+                }
+                
+                //removendo o .n  da mensagem de erro
+                responseText = responseText.replace(/.\d /g," ");
+
+                swal({
+                    title: 'Ocorreu um erro', 
+                    text: responseText, 
+                    type: 'error',
+                    html: true
+                });
                 
                 //Se tiver loading e tiver dado erro, voltar botao
                 if (loading && loading != "") {

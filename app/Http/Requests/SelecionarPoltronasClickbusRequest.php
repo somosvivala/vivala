@@ -22,7 +22,8 @@ class SelecionarPoltronasClickbusRequest extends Request {
 	public function rules()
         {
             $rules = [
-                'nome' => 'array|required'
+                'nome' => 'array|required',
+                'documento' => 'array|required'
             ];
 
             /**
@@ -40,7 +41,7 @@ class SelecionarPoltronasClickbusRequest extends Request {
             //iterando sob todos os campos documento para entao settar a regra de validacao
             foreach ($this->request->get('documento') as $key => $val) 
             {
-                $rules['documento.'.$key] =  'numeric|required';
+                $rules['documento.'.$key] =  'string|required';
             }
 
             return $rules;
