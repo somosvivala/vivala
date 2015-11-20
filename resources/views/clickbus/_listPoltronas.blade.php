@@ -2,7 +2,7 @@
     <h4 class="font-bold-upper">Clique nas poltronas desejadas</h4>
     <div class="poltronas-clickbus col-sm-8 margin-b-2">
         @if(isset($ida))
-        <div class="ida margin-b-2"> 
+        <div class="ida container-onibus margin-b-2"> 
             <div class="row">
                 <label class="col-sm-12">Ida - Trecho 1: <span> {{ $from }} para {{ $to }} </span></label>
             </div>
@@ -17,8 +17,8 @@
             <div class="margin-t-1 onibus">
                 @foreach($ida->content->seats as $Seat)
                 <div class="poltrona @if($Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
-                    <label for="{{ $Seat->id }}">
-                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}" value="{{ $Seat->id }}" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
+                    <label for="{{ $Seat->id }}-ida">
+                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-ida" value="{{ $Seat->id }}-ida" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
                     </label>
                 </div>
                 @endforeach
@@ -44,7 +44,7 @@
         </div>
         @endif
         @if(isset($volta))
-        <div class="volta"> 
+        <div class="volta container-onibus"> 
             <div class="row">
                 <label class="col-sm-12">Volta - Trecho 2: <span> {{ $to}} para {{ $from }} </span></label>
             </div>
@@ -59,8 +59,8 @@
             <div class="margin-t-1 onibus">
                 @foreach($volta->content->seats as $Seat)
                 <div class="poltrona @if($Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
-                    <label for="{{ $Seat->id }}">
-                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}" value="{{ $Seat->id }}" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
+                    <label for="{{ $Seat->id }}-volta">
+                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-volta" value="{{ $Seat->id }}-volta" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
                     </label>
                 </div>
                 @endforeach
@@ -93,7 +93,7 @@
             <div class="poltronas-selecionadas-ida">
             </div>
             @if(isset($volta))
-            <h4>Volta - Trecho 2</h4>
+            <h4 class="margin-t-1">Volta - Trecho 2</h4>
             <div class="poltronas-selecionadas-volta">
             </div>
             @endif
