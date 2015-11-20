@@ -91,7 +91,7 @@
         .legenda {
             width: 2em;
             height: 2em;
-            border: 1px solid @cor-cinza-escuro;
+            border: 0px solid @cor-cinza-escuro;
             background-color: @cor-pele-zumbi;
             display:inline-block;
             margin-top:0.5em;
@@ -125,5 +125,37 @@
     }
     .departure {
         border-bottom: 1px solid @cor-fundo;
+    }
+}
+
+.poltrona-externa {
+    width: 2em;
+    height: 2em;
+    padding: 0.4em;
+    background-color: @cor-pele-zumbi;
+    display:inline-block;
+    margin-top:0.5em;
+    margin-bottom:-0.5em;
+    color:white;
+    font-family: @font-family-sans-serif;                
+    font-weight: bold;
+    &.selecionada {
+        background-color: @cor-primaria;
+    }
+    &.desativado {
+        background-color: @cor-cinza-escuro;
+    }
+
+}
+
+.poltrona-container {
+    margin-top: 1em;
+    border-top: 1px solid @cor-fundo;
+}
+.exclui-poltrona {
+    transition: all 0.5s ease;
+    cursor: pointer;
+    &:hover {
+        color: @cor-primaria;
     }
 }
