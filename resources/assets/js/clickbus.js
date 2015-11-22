@@ -109,26 +109,20 @@ var ajaxTrip = function(id) {
 
 var ajaxPoltronas = function(request) {
     var params = {
-        "meta": {},
-        "request": {
-            "from": "",
-            "to": "",
-            "seat": "",
-            "passenger": {
-                "name": "",
-                "document": "",
-                "documentType": "", /*[rg|cpf|passaporte]*/
-                "gender": ""        /*[M|F]*/
-            },
-            "schedule": {
-                "id": "",
-                "date": "",
-                "time": "",
-                "timezone": "America/Sao_Paulo"
-            },
-            "sessionId": ""
-        }
+        "from": "",
+        "to": "",
+        "seat": "",
+        "name": "",
+        "document": "",
+        "documentType": "",
+        "gender": "",
+        "id": "",
+        "date": "",
+        "time": "",
+        "timezone": "America/Sao_Paulo",
+        "sessionId": ""
     };
+
     $.extend(params, request);
 
     $('#form-poltronas-clickbus').submit(function (ev) {
@@ -145,7 +139,29 @@ var ajaxPoltronas = function(request) {
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),    
-            data: {params: params},
+            data: {
+                params: {
+                    "meta": {},
+                    "request": {
+                        "from": params.from,
+                        "to": params.to,
+                        "seat": params.seat,
+                        "passenger": {
+                            "name": params.name,
+                            "document": params.document,
+                            "documentType": params.documentType, /*[rg|cpf|passaporte]*/
+                            "gender": params.gender              /*[M|F]*/
+                        },
+                        "schedule": {
+                            "id": params.id,
+                            "date": params.date,
+                            "time": params.time,
+                            "timezone": params.timezone
+                        },
+                        "sessionId": params.sessionId
+                    }
+                }
+            },
             success: function (data) {
                 // Executa uma função de javascript
                 console.log('sucess do ajax poltronas');
@@ -194,14 +210,9 @@ var ajaxPoltronas = function(request) {
 
 var removePoltrona = function(request) {
     $params = {
-        "meta": {},
-        "request": {
-            "seat": "",
-            "schedule": {
-                "id": ""
-            },
-            "sessionId": ""
-        }
+        "seat": "",
+        "id": "",
+        "sessionId": ""
     }
     $.extend(params, request);
 
@@ -209,20 +220,29 @@ var removePoltrona = function(request) {
         url: 'clickbus/removerpoltronas',
         type: 'POST',
         dataType: 'json',
-        data: {params: params},
+        data: {
+            params: {
+                "meta": {},
+                "request": {
+                    "seat": params.seat,
+                    "schedule": {
+                        "id": params.id
+                    },
+                    "sessionId": params.sessionId
+                }
+            }
+        }
     })
     .done(function(data) {
         console.log(data);
     });
 };
 
-var tripPayment = function(reauqest) {
+var tripPayment = function(request) {
     $params = {
-        "meta": {
-            "store": "clickbus",
-            "model": "retail",
-            "platform": "web"
-        },
+        "store": "clickbus",
+        "model": "retail",
+        "platform": "web",
         "contents": []
     }
     $.extend(params, request);
@@ -231,7 +251,15 @@ var tripPayment = function(reauqest) {
         url: 'clickbus/payment',
         type: 'POST',
         dataType: 'json',
-        data: {params: params},
+        data: {
+            params: {
+                "meta": {
+                "store": params.store,
+                "model": params.model,
+                "platform": params.platform
+            },
+            "contents": params.contents
+        },
     })
     .done(function(data) {
         console.log(data);
