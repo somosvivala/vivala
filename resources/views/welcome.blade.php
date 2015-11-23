@@ -51,7 +51,7 @@
         <![endif]-->
     </head>
     <body>
-        <div class="mobile-warning fundo-cheio text-justified padding-b-2 padding-t-2 hidden-md hidden-lg ">
+        <div class="welcome-mobile-warning fundo-cheio text-justified padding-b-2 padding-t-2 hidden-md hidden-lg ">
             <div class="row">
                 <div class="row col-sm-12 margin-b-1">
                     <a class="navbar-brand-mobile nav-logo" href="{{ url('home') }}" alt="{{ trans('global.lbl_vivala') }}">
@@ -145,7 +145,7 @@
         <div class="welcome-header col-sm-12">
             <div class="container">
                 <div class="col-sm-5 col-xs-12 text-center">
-                    <a class="navbar-brand nav-logo" href="{{ url('home') }}" alt="{{ trans('global.lbl_vivala') }}">
+                    <a class="navbar-brand nav-logo col-xs-4" href="{{ url('home') }}" alt="{{ trans('global.lbl_vivala') }}">
                         {{-- SVG da logo VIVALÁ --}}
                             <svg version="1.1" id="logo-vivala" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                             	 width="100%" height="100%" viewBox="0 0 87.887 48.229" enable-background="new 0 0 87.887 48.229" xml:space="preserve">

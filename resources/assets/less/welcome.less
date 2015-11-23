@@ -11,7 +11,10 @@
 		background-size: cover;
 	}
 }
-@cor-fundo-welcome : rgb(255, 245, 210);
+@cor-fundo-welcome : rgb(255, 245, 210, 1);
+.welcome-mobile-warning{
+	display: none;
+}
 .welcome-header {
 	background-color: rgba(255, 245, 210, 0.95);
 	font-size: @font-size-rem*0.9;
@@ -102,69 +105,77 @@
 	}
 
 	.nav-logo {
+		width: auto;
 		height: 9rem;
+		display: block;
+		position: relative;
+		padding-top: 100%;
 		padding: 0.5em 0 0.8em;
-		&:focus{
-			outline: none;
-			outline-offset: 0;
+			&:focus{
+				outline: none;
+				outline-offset: 0;
+			}
+			#logo-vivala {
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+			}
+	}
+}
+.welcome-content{
+	#brasilwelcome {
+		width: 100%;
+		max-width:70%;
+		display: block;
+		height: auto;
+		position: relative;
+		padding-top: 2em;
+	}
+	.balao-flutuante {
+		background-color: @cor-quase-transparente;
+		padding: 1em;
+		color:white;
+		position: absolute;
+		max-width: 18rem;
+		&.balao-1 {
+			bottom: 20%;
+			left:0;
+		};
+		&.balao-2 {
+			bottom: 3%;
+			max-width: 14rem;
+			right:32%;
+		};
+		&.balao-3 {
+			top: 50%;
+			right:10%;
 		}
-		#logo-vivala {
-			height:100%;
-		}
 	}
-}
-#brasilwelcome {
-	max-width:70%;
-	padding-top: 2em;
-}
-.balao-flutuante {
-	background-color: @cor-quase-transparente;
-	padding: 1em;
-	color:white;
-	position: absolute;
-	max-width: 18rem;
-	&.balao-1 {
-		bottom: 20%;
-		left:0;
-	};
-	&.balao-2 {
-		bottom: 3%;
-		max-width: 14rem;
-		right:32%;
-	};
-	&.balao-3 {
-		top: 50%;
-		right:10%;
+	form input[type="email"].form-control,
+	form input[type="password"].form-control,
+	form input[type="text"].form-control{
+	    &::-webkit-input-placeholder {
+	       color: white;
+	    }
+	    &:-moz-placeholder {  /* Firefox 18- */
+	       color: white;
+	    }
+	    &::-moz-placeholder {  /* Firefox 19+ */
+	       color: white;
+	    }
+	    &:-ms-input-placeholder {
+	       color: white;
+	    }
+	    opacity: 1;
+	    border: 0px solid transparent;
 	}
-}
-div.welcome-content {
-        form input[type="email"].form-control,
-        form input[type="password"].form-control,
-        form input[type="text"].form-control
-        {
-            &::-webkit-input-placeholder {
-               color: white;
-            }
-            &:-moz-placeholder {  /* Firefox 18- */
-               color: white;
-            }
-            &::-moz-placeholder {  /* Firefox 19+ */
-               color: white;
-            }
-            &:-ms-input-placeholder {
-               color: white;
-            }
-            opacity: 1;
-            border: 0px solid transparent;
-	}
-
 	h3 {
 		color: white;
 		font-family: @font-family-sans-serif-bold;
 		font-weight: normal;
 		font-size: 2.5em;
 	}
-
 	p {
 		color: white;
 		font-size: 1.2rem;
@@ -186,17 +197,14 @@ div.welcome-content {
 		padding-top: 4em;
 		padding-bottom: 2em;
 	}
-
 	.form-cadastro-wrapper {
 		margin:0;
 	}
-
 	a.anchor-tour {
 		text-decoration: underline;
 		color: white;
 		font-size: 13px;
 	}
-
 	input {
 		font-weight: bold;
 		color: white;
@@ -208,11 +216,9 @@ div.welcome-content {
 		font-size: @font-size-rem;
 		font-family: @font-family-sans-serif-bold;
 		font-weight: normal;
-
 		&:focus {
 	  		border: 1px solid @cor-primaria;
 		}
-
 		&[type='submit'] {
 			background-color: white;
 			color: @cor-primaria;
@@ -225,15 +231,73 @@ div.welcome-content {
 			width: 100%;
 		}
 	}
-}
-.welcome-privacy{
-	a {
-		color: @cor-primaria;
+	.welcome-privacy{
+		a {
+			color: @cor-primaria;
+		}
 	}
 }
-.welcome-login-passrec{
-	.bg-panel-heading{
 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.welcome-header,
+	.welcome-content{
+	  display: block;
 	}
-
+	.welcome-mobile-warning{
+	 display:none;
+	}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	.welcome-header,
+	.welcome-content{
+	  display: block;
+	}
+	.welcome-mobile-warning{
+	 display:none;
+	}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	#welcome-html body{
+	  background-image: none!important;
+	  background-color: #FFF;
+	}
+	.welcome-header,
+	.welcome-content{
+	  display: none;
+	}
+	.welcome-mobile-warning{
+	 display: block;
+	 a {
+	   color: @cor-primaria;
+			}
+	}
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+	.welcome-header,
+	.welcome-content{
+	  display: none;
+	}
+	.welcome-mobile-warning{
+	 display: block;
+	 a {
+	   color: @cor-primaria;
+			}
+	}
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+	.welcome-header,
+	.welcome-content{
+	 display: none;
+	}
+	.welcome-mobile-warning{
+	 display: block;
+	 a {
+		 color: @cor-primaria;
+		}
+	}
 }
