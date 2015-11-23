@@ -1111,7 +1111,7 @@ return[
   /* Rodapé */
     'footer_more_about_us' => 'Mais sobre a gente',
     'footer_vivala_message' => 'A Vivalá utiliza imagens criativas arrematadas em pesquisas para a elaboração de sua identidade visual. Portanto, ressaltamos que a grande maioria desse arquivos não são de nossa autoria ou cedidos formalmente para utilização no site. Por favor entre em contato pelo nosso formulário caso seja o autor de alguma imagem utilizada, queremos muito dar crédito a você. Se quiser que a mesma seja removida, prometemos tirar de nossa plataforma no mesmo instante!',
-    'footer_vivala_infos' => 'Todos os direitos reservados Vivalá Turismo LTDA - CNPJ 22.693.622/0001-85',
+    'footer_vivala_infos' => 'Todos os direitos reservados Vivalá Turismo e Serviços Ltda - CNPJ 22.693.622/0001-85',
     'footer_development' => 'Desenvolvimento:',
   //
   /* Manifesto */
@@ -1216,7 +1216,7 @@ return[
     /* Tela de Aviso mobile */
     'mobile_warning_welcome' => 'Bem vindo à Vivalá!',
     'mobile_warning_desctopo' => 'Percebemos que você acessou pelo mobile.',
-    'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para celular e tablet.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
+    'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para <span class="laranja">celular</span> e <span class="laranja">tablet</span>.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
     'mobile_warning_desclink' => 'Acesse <a href="vivala.com.br">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
 
   /* Opções modal feedback */

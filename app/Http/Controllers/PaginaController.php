@@ -117,6 +117,7 @@ class PaginaController extends Controller {
      */
     public function postContato(ContatoRequest $request)
     {
+        $request->user_id = Auth::user()->id;
         Mail::send('emails.contato', ['request' => $request], function ($message)  {
             $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pelo Formulário de Contato!');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
@@ -226,7 +227,7 @@ class PaginaController extends Controller {
         $request->email = Auth::user()->email;
         $request->nome = (Auth::user()->username != "" ? Auth::user()->username : Auth::user()->perfil->apelido);
         Mail::send('emails.feedback', ['request' => $request], function ($message)  {
-            $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pela modal de Feedback!');
+            $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pela modal');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
     }

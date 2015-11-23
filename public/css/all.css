@@ -8721,6 +8721,51 @@ form.form-ajax div.file-upload > label p {
   color: #F16F2B;
   font-size: 0.5em;
 }
+.spritemap-vaga {
+  background-image: url('../img/spritemap-vagas.png');
+  background-repeat: no-repeat;
+  height: 128px;
+  width: 104px;
+}
+.sprite-casa {
+  background-position: 0 -660px;
+  margin: auto;
+}
+.sprite-formulario {
+  background-position: 0 -200px;
+  margin: auto;
+}
+.sprite-pessoa {
+  background-position: 0 30px;
+  margin: auto;
+}
+.sprite-calendario {
+  background-position: 0 -430px;
+  margin: auto;
+}
+.sprite-mapmarker {
+  background-position: 0 -880px;
+  margin: auto;
+}
+.spritemap-parceiros {
+  background-image: url('../img/spritemap-parceiros.png');
+  background-repeat: no-repeat;
+}
+.sprite-decolar {
+  background-position: -10px -5px;
+  height: 100px;
+  width: 330px;
+}
+.sprite-chefsclub {
+  background-position: -120px -125px;
+  height: 100px;
+  width: 160px;
+}
+.sprite-clickbus {
+  background-position: -40px -250px;
+  height: 100px;
+  width: 310px;
+}
 .left-panel,
 .right-panel {
   background-color: white;
@@ -10075,9 +10120,6 @@ div.flight-wrapper div.flight-pricing {
   display: none;
   margin-top: 0.5em;
 }
-.mobile-warning a {
-  color: #F16F2B;
-}
 
 /* Definição do nome das cores principais */
 /* Definição das cores dos elementos */
@@ -10900,6 +10942,51 @@ form.form-ajax div.file-upload > label p {
   color: #F16F2B;
   font-size: 0.5em;
 }
+.spritemap-vaga {
+  background-image: url('../img/spritemap-vagas.png');
+  background-repeat: no-repeat;
+  height: 128px;
+  width: 104px;
+}
+.sprite-casa {
+  background-position: 0 -660px;
+  margin: auto;
+}
+.sprite-formulario {
+  background-position: 0 -200px;
+  margin: auto;
+}
+.sprite-pessoa {
+  background-position: 0 30px;
+  margin: auto;
+}
+.sprite-calendario {
+  background-position: 0 -430px;
+  margin: auto;
+}
+.sprite-mapmarker {
+  background-position: 0 -880px;
+  margin: auto;
+}
+.spritemap-parceiros {
+  background-image: url('../img/spritemap-parceiros.png');
+  background-repeat: no-repeat;
+}
+.sprite-decolar {
+  background-position: -10px -5px;
+  height: 100px;
+  width: 330px;
+}
+.sprite-chefsclub {
+  background-position: -120px -125px;
+  height: 100px;
+  width: 160px;
+}
+.sprite-clickbus {
+  background-position: -40px -250px;
+  height: 100px;
+  width: 310px;
+}
 #welcome-html {
   position: relative;
   min-height: 100%;
@@ -10908,6 +10995,9 @@ form.form-ajax div.file-upload > label p {
   background-image: url("../../img/riolaranja.png");
   background-position: center center;
   background-size: cover;
+}
+.welcome-mobile-warning {
+  display: none;
 }
 .welcome-header {
   background-color: rgba(255, 245, 210, 0.95);
@@ -10995,7 +11085,11 @@ form.form-ajax div.file-upload > label p {
   color: white;
 }
 .welcome-header .nav-logo {
+  width: auto;
   height: 9rem;
+  display: block;
+  position: relative;
+  padding-top: 100%;
   padding: 0.5em 0 0.8em;
 }
 .welcome-header .nav-logo:focus {
@@ -11003,96 +11097,103 @@ form.form-ajax div.file-upload > label p {
   outline-offset: 0;
 }
 .welcome-header .nav-logo #logo-vivala {
+  width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 }
-#brasilwelcome {
+.welcome-content #brasilwelcome {
+  width: 100%;
   max-width: 70%;
+  display: block;
+  height: auto;
+  position: relative;
   padding-top: 2em;
 }
-.balao-flutuante {
+.welcome-content .balao-flutuante {
   background-color: rgba(255, 255, 255, 0.25);
   padding: 1em;
   color: white;
   position: absolute;
   max-width: 18rem;
 }
-.balao-flutuante.balao-1 {
+.welcome-content .balao-flutuante.balao-1 {
   bottom: 20%;
   left: 0;
 }
-.balao-flutuante.balao-2 {
+.welcome-content .balao-flutuante.balao-2 {
   bottom: 3%;
   max-width: 14rem;
   right: 32%;
 }
-.balao-flutuante.balao-3 {
+.welcome-content .balao-flutuante.balao-3 {
   top: 50%;
   right: 10%;
 }
-div.welcome-content form input[type="email"].form-control,
-div.welcome-content form input[type="password"].form-control,
-div.welcome-content form input[type="text"].form-control {
+.welcome-content form input[type="email"].form-control,
+.welcome-content form input[type="password"].form-control,
+.welcome-content form input[type="text"].form-control {
   opacity: 1;
   border: 0px solid transparent;
 }
-div.welcome-content form input[type="email"].form-control::-webkit-input-placeholder,
-div.welcome-content form input[type="password"].form-control::-webkit-input-placeholder,
-div.welcome-content form input[type="text"].form-control::-webkit-input-placeholder {
+.welcome-content form input[type="email"].form-control::-webkit-input-placeholder,
+.welcome-content form input[type="password"].form-control::-webkit-input-placeholder,
+.welcome-content form input[type="text"].form-control::-webkit-input-placeholder {
   color: white;
 }
-div.welcome-content form input[type="email"].form-control:-moz-placeholder,
-div.welcome-content form input[type="password"].form-control:-moz-placeholder,
-div.welcome-content form input[type="text"].form-control:-moz-placeholder {
+.welcome-content form input[type="email"].form-control:-moz-placeholder,
+.welcome-content form input[type="password"].form-control:-moz-placeholder,
+.welcome-content form input[type="text"].form-control:-moz-placeholder {
   /* Firefox 18- */
   color: white;
 }
-div.welcome-content form input[type="email"].form-control::-moz-placeholder,
-div.welcome-content form input[type="password"].form-control::-moz-placeholder,
-div.welcome-content form input[type="text"].form-control::-moz-placeholder {
+.welcome-content form input[type="email"].form-control::-moz-placeholder,
+.welcome-content form input[type="password"].form-control::-moz-placeholder,
+.welcome-content form input[type="text"].form-control::-moz-placeholder {
   /* Firefox 19+ */
   color: white;
 }
-div.welcome-content form input[type="email"].form-control:-ms-input-placeholder,
-div.welcome-content form input[type="password"].form-control:-ms-input-placeholder,
-div.welcome-content form input[type="text"].form-control:-ms-input-placeholder {
+.welcome-content form input[type="email"].form-control:-ms-input-placeholder,
+.welcome-content form input[type="password"].form-control:-ms-input-placeholder,
+.welcome-content form input[type="text"].form-control:-ms-input-placeholder {
   color: white;
 }
-div.welcome-content h3 {
+.welcome-content h3 {
   color: white;
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 2.5em;
 }
-div.welcome-content p {
+.welcome-content p {
   color: white;
   font-size: 1.2rem;
 }
-div.welcome-content .panel {
+.welcome-content .panel {
   background-color: transparent;
 }
-div.welcome-content .welcome-cadastrar {
+.welcome-content .welcome-cadastrar {
   padding-top: 4em;
   padding-bottom: 2em;
 }
-div.welcome-content .welcome-cadastrar > div {
+.welcome-content .welcome-cadastrar > div {
   height: 4em;
 }
-div.welcome-content .welcome-cadastrar .btn-facebook {
+.welcome-content .welcome-cadastrar .btn-facebook {
   position: absolute;
   bottom: 0;
   right: 10%;
   text-transform: none;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
-div.welcome-content .form-cadastro-wrapper {
+.welcome-content .form-cadastro-wrapper {
   margin: 0;
 }
-div.welcome-content a.anchor-tour {
+.welcome-content a.anchor-tour {
   text-decoration: underline;
   color: white;
   font-size: 13px;
 }
-div.welcome-content input {
+.welcome-content input {
   font-weight: bold;
   color: white;
   text-transform: uppercase;
@@ -11104,10 +11205,10 @@ div.welcome-content input {
   font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
-div.welcome-content input:focus {
+.welcome-content input:focus {
   border: 1px solid #F16F2B;
 }
-div.welcome-content input[type='submit'] {
+.welcome-content input[type='submit'] {
   background-color: white;
   color: #F16F2B;
   font-weight: bold;
@@ -11118,8 +11219,71 @@ div.welcome-content input[type='submit'] {
   font-size: 1.2rem;
   width: 100%;
 }
-.welcome-privacy a {
+.welcome-content .welcome-privacy a {
   color: #F16F2B;
+}
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .welcome-header,
+  .welcome-content {
+    display: block;
+  }
+  .welcome-mobile-warning {
+    display: none;
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .welcome-header,
+  .welcome-content {
+    display: block;
+  }
+  .welcome-mobile-warning {
+    display: none;
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  #welcome-html body {
+    background-image: none!important;
+    background-color: #FFF;
+  }
+  .welcome-header,
+  .welcome-content {
+    display: none;
+  }
+  .welcome-mobile-warning {
+    display: block;
+  }
+  .welcome-mobile-warning a {
+    color: #F16F2B;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .welcome-header,
+  .welcome-content {
+    display: none;
+  }
+  .welcome-mobile-warning {
+    display: block;
+  }
+  .welcome-mobile-warning a {
+    color: #F16F2B;
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .welcome-header,
+  .welcome-content {
+    display: none;
+  }
+  .welcome-mobile-warning {
+    display: block;
+  }
+  .welcome-mobile-warning a {
+    color: #F16F2B;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */

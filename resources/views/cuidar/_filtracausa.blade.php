@@ -15,13 +15,14 @@
     </div>
 
     {{-- Adicionando div do filtro por Cidade que tem vagas --}}
-    <div class="col-sm-3  ">
+    <div class="col-sm-3">
         @if(isset($cidades))
         {!! Form::select("filtro_cidade", $cidades, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control'], ['id' => 'cidade_select']) !!}
         @endif
     </div>
-
-    {!! Form::submit(trans('global.lbl_searchr'), ['class' => 'btn col-sm-2 ']) !!}
+    <div class="col-sm-3">
+      {!! Form::submit(trans('global.lbl_searchr'), ['class' => 'btn col-sm-12']) !!}
+    </div>
 </div>
 
 {!! Form::close() !!}
