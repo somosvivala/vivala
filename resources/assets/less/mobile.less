@@ -1,3 +1,45 @@
 .mobile-warning a {
     color: @cor-primaria;
 }
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+   .welcome-header,
+   .welcome-content{
+      display: block;
+   }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+   .welcome-header,
+   .welcome-content{
+      display: block;
+   }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+   #welcome-html body{
+      background-image: none!important;
+      background-color: #FFF;
+   }
+   .welcome-header,
+   .welcome-content{
+      display: none;
+   }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+   .welcome-header,
+   .welcome-content{
+      display: none;
+   }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+ .welcome-header,
+ .welcome-content{
+   display: none;
+ }
+}

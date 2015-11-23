@@ -1076,9 +1076,9 @@ return[
 
     /* Tela de Aviso mobile */
     'mobile_warning_welcome' => 'Welcome to Vivalá!',
-    'mobile_warning_desctopo' => 'Percebemos que você acessou pelo mobile.',
-    'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para celular e tablet.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
-    'mobile_warning_desclink' => 'Acesse <a href="vivala.com.br">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
+    'mobile_warning_desctopo' => 'We realize that you accessed by mobile.',
+    'mobile_warning_descbody' => 'We are developing our <span class="laranja">mobile</span> and <span class="laranja">tablet</span> versions. Meanwhile we invite you to connect to platform from your desktop or notebook.',
+    'mobile_warning_desclink' => 'Join <a href="vivala.com.br">vivala.com.br</a> and experience the real Brazil.',
 
 
     /* Termos e condições */
