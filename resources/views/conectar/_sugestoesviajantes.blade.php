@@ -11,7 +11,7 @@
                                                 <div class="avatar-img" style="background-image:url('{{ $Perfil->getAvatarUrl() }}')">
                                                     </div>
                                             </div>
-				<strong class="col-sm-12">{{ $Perfil->user->username }}</strong>
+				<strong class="col-sm-12">{{ $Perfil->apelido_tratado }}</strong>
 				{{-- <div class="row localizacao-cidade">
 					<div class="col-sm-4 text-right">
 						<i class="fa fa-map-marker"></i>

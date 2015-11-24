@@ -239,14 +239,14 @@ class Perfil extends Model {
 		$extras = Collection::make();
 		if ($totalSugestoes < $minSugestoes)
 		{
-			$diferença = $minSugestoes - $totalSugestoes;
+			$diferenca = $minSugestoes - $totalSugestoes;
 
 			//Obtendo lista de ids que nao quero, (todos que ja me sugeriram + todos que nao posso seguir)
 			$merged = array_merge_recursive($notAllowed_ids, $arraySugestoes);
 			$notAllowed_ids = array_unique($merged);
 
 			//Pegando perfils extras para sugerir..
-			$extras = Perfil::whereNotIn('id', $notAllowed_ids)->limit($diferença)->get();
+			$extras = Perfil::whereNotIn('id', $notAllowed_ids)->limit($diferenca)->get();
 		}
 
 		//Pegando Collection de perfils para retornar
