@@ -32,6 +32,7 @@
 <hr>
 
 <input type="hidden" id="departure-schedule-id">
+<input type="hidden" id="horario-ida">
 
 <div id="clickbus-resultado-busca">
     

@@ -40,7 +40,7 @@
                 <div class="col-xs-12 col-md-3 padding-b-1">
                     <div class="row">
                         <h3 class="padding-t-0 padding-b-0 text-center font-bold-upper">R$ {{$option['part'][0]['price']}}</h3>
-                        <div class="col-xs-12 text-center"><a data-id="{{$option['part'][0]['id']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0">Escolher {{$type}}</a></div>
+                        <div class="col-xs-12 text-center"><a data-horario="{{ $option['part'][0]['departure']['time']}}" data-id="{{$option['part'][0]['id']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0">Escolher {{$type}}</a></div>
                     </div>
                 </div>
             </div>

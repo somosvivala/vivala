@@ -79,12 +79,15 @@ var bindClickDetail = function() {
 
     $('.btn-choose-ida').on('click', function(e) {
         e.preventDefault();
-        var id = $(this).attr('data-id');
+        var id = $(this).attr('data-id'),
+            horario_ida = $(this).attr('data-horario'),
+            diames_ida = $('#data-id-rodoviario').val();
 
         $('#departure-schedule-id').val(id);
+        $('#horario-ida').val(horario_ida);
 
         if ($('#data-volta-rodoviario').val().length <= 0) {
-            ajaxTrip([id]);
+            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida }]));
         } else {
             var from      = $('#destino-rodoviario-hidden').val(),
                 to        = $('#origem-rodoviario-hidden').val(),
@@ -103,10 +106,14 @@ var bindClickDetail = function() {
     $('.btn-choose-volta').on('click', function(e) {
         e.preventDefault();
 
-        var ida = $('#departure-schedule-id').val(),
-            id = $(this).attr('data-id');
+        var id_ida = $('#departure-schedule-id').val(),
+            horario_ida = $('#horario-ida').val(),
+            diames_ida = $('#data-id-rodoviario').val(),
+            id_volta = $(this).attr('data-id'),
+            horario_volta = $(this).attr('data-horario'),
+            diames_volta = $('#data-volta-rodoviario').val();
 
-        ajaxTrip([ida, id]);
+        ajaxTrip(JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta }]));
     });
 
 

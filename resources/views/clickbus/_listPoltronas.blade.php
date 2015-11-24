@@ -7,8 +7,8 @@
                 <label class="col-sm-12">Ida - Trecho 1: <span> {{ $from }} para {{ $to }} </span></label>
             </div>
             <div class="row">
-                <label class="col-sm-3">Dia:<span>17/02</span></label>
-                <label class="col-sm-2">Hora:<span>17/02</span></label>
+                <label class="col-sm-3">Dia:<span>{{ $ida->diames }}</span></label>
+                <label class="col-sm-2">Hora:<span>{{ $ida->horario }}</span></label>
                 <label class="col-sm-7">Compania:<span>{{ $ida->content->busCompany->name }}2</span></label>
             </div>
             <input type="hidden" id="ida-session-id" value="{{ $ida->sessionId }}">
@@ -49,8 +49,8 @@
                 <label class="col-sm-12">Volta - Trecho 2: <span> {{ $to}} para {{ $from }} </span></label>
             </div>
             <div class="row">
-                <label class="col-sm-3">Dia:<span>17/02</span></label>
-                <label class="col-sm-2">Hora:<span>17/02</span></label>
+                <label class="col-sm-3">Dia:<span>{{ $volta->diames }}</span></label>
+                <label class="col-sm-2">Hora:<span>{{ $volta->horario }}</span></label>
                 <label class="col-sm-7">Compania:<span>{{ $volta->content->busCompany->name }}2</span></label>
             </div>
             <input type="hidden" id="volta-session-id" value="{{ $volta->sessionId }}">

@@ -49,6 +49,7 @@ var ajaxPlace = function(query, target) {
     });
 };
 
+// Lista as viagens (de ida ou volta)
 var ajaxTrips = function(params) {
     var defaultParams = {
         from: '',
@@ -77,7 +78,9 @@ var ajaxTrips = function(params) {
     
 };
 
-var ajaxTrip = function(id) {
+// Envia viagem de ida e volta
+// e lista as poltronas
+var ajaxTrip = function(viagens) {
 
     // Pega o valor das cidades escolhidas para exibir na escolha de poltrona
     var from      = $('#origem-rodoviario').val(),
@@ -89,9 +92,9 @@ var ajaxTrip = function(id) {
     $.ajax({
         url: 'clickbus/trip',
         type: 'POST',
-        dataType: 'html',
-        data: {
-            scheduleId: id,
+        deataType: 'html',
+         data: {
+            schedule: viagens,
             from: from,
             to: to
         }
@@ -254,9 +257,10 @@ var tripPayment = function(request) {
         data: {
             params: {
                 "meta": {
-                "store": params.store,
-                "model": params.model,
-                "platform": params.platform
+                    "store": params.store,
+                    "model": params.model,
+                    "platform": params.platform
+                },
             },
             "contents": params.contents
         },

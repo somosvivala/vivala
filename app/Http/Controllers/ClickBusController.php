@@ -51,23 +51,30 @@ class ClickBusController extends Controller {
 
 	public function getTrip() 
 	{
-            $scheduleId = Input::get('scheduleId');
+            $schedule = json_decode(Input::get('schedule'));
             $from = Input::get('from');
             $to = Input::get('to');
             $result     = [];
 
-            foreach ($scheduleId as $id) {
-            	$content = file_get_contents(self::$url."/trip?scheduleId={$id}");
-            	array_push($result, $content);
+            // Envia dados de ida e volta separados
+            
+            $ida_obj = $schedule[0];
+            $volta_obj = $schedule[1];
+
+            if($ida_obj) {
+                $content_ida = file_get_contents(self::$url."/trip?scheduleId={$ida_obj->id}");
+                $ida = json_decode($content_ida);
+                $ida->horario = $ida_obj->horario;
+                $ida->diames = $ida_obj->diames ;
+            }
+            if($volta_obj) {
+                $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}");
+                $volta = json_decode($content_volta);
+                $volta->horario = $volta_obj->horario;
+                $volta->diames = $volta_obj->diames ;
             }
 
-            // Envia dados de ida e volta separados
-            if(isset($result[0]))
-                $ida = json_decode($result[0]);
-            if(isset($result[1]))
-                $volta = json_decode($result[1]);
-
-            return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to'));
+            return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
 	}
 
 
