@@ -111,7 +111,7 @@
                     <div class="col-sm-10">
                         <h3 class="texto-preto">
                             <div class="poltrona-externa selecionada num-poltrona"></div>
-                            Poltrona
+                            Poltrona <span class="num-poltrona"></span>
                         </h3>
                     </div>
                     <div class="col-sm-2"><button type="button" class="btn pull-right" data-dismiss="modal"><i class="fa fa-times"></i></button></div>
@@ -119,21 +119,21 @@
 
                 <div class="row">
                     
-                    <input type="hidden" id="from" value="{{ $ida->from }}">
-                    <input type="hidden" id="to" value="{{ $ida->to }}">
+                    <input type="hidden" id="from" value="{{ $ida->frombus }}">
+                    <input type="hidden" id="to" value="{{ $ida->tobus }}">
                     <input type="hidden" id="seat" value="">
-                    <input type="hidden" id="date" value="{{ $ida->sessionId  }}">
-                    <input type="hidden" id="time" value="">
+                    <input type="hidden" id="date" value="{{ $ida->diames  }}">
+                    <input type="hidden" id="time" value="{{ $ida->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $ida->sessionId }}">
                     <input type="hidden" id="trip-id" value="{{ $ida->content->trip_id }}">
                     <div class="col-sm-8"> 
                         <label for="nome">Nome:</label>
                     </div>
-                    <div class="col-sm-8">
-                        <input required="required"  type="text" placeholder="Nome" name="name" id="name">
-                    </div>
                     <div class="col-sm-4"> 
                         <label for="gender">Gênero:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
                     <div class="col-sm-4">
                         <select id="gender" name="gender">

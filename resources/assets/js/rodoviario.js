@@ -81,17 +81,17 @@ var bindClickDetail = function() {
         e.preventDefault();
         var id = $(this).attr('data-id'),
             horario_ida = $(this).attr('data-horario'),
-            diames_ida = $('#data-id-rodoviario').val();
+            diames_ida = $('#data-id-rodoviario').val(),
+            from      = $('#destino-rodoviario-hidden').val(),
+            to        = $('#origem-rodoviario-hidden').val();
 
         $('#departure-schedule-id').val(id);
         $('#horario-ida').val(horario_ida);
 
         if ($('#data-volta-rodoviario').val().length <= 0) {
-            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida }]));
+            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from, 'to':to }]));
         } else {
-            var from      = $('#destino-rodoviario-hidden').val(),
-                to        = $('#origem-rodoviario-hidden').val(),
-                departure = $('#data-volta-rodoviario').val(),
+            var departure = $('#data-volta-rodoviario').val(),
                 type      = 'volta';
 
             ajaxTrips({
@@ -111,9 +111,11 @@ var bindClickDetail = function() {
             diames_ida = $('#data-id-rodoviario').val(),
             id_volta = $(this).attr('data-id'),
             horario_volta = $(this).attr('data-horario'),
-            diames_volta = $('#data-volta-rodoviario').val();
+            diames_volta = $('#data-volta-rodoviario').val(),
+            from      = $('#destino-rodoviario-hidden').val(),
+            to        = $('#origem-rodoviario-hidden').val();
 
-        ajaxTrip(JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta }]));
+        ajaxTrip(JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida , 'from':from, 'to':to }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':to, 'to':from }]));
     });
 
 
@@ -150,6 +152,7 @@ var bindaPoltronas = function(){
         }else{
 
             $("#modal-poltrona-"+tipo_viagem+" .num-poltrona").html(numero_poltrona);
+            $("#modal-poltrona-"+tipo_viagem+" #seat").val(numero_poltrona);
             $("#modal-poltrona-"+tipo_viagem).modal();
         }
 
@@ -164,10 +167,10 @@ var bindaPoltronas = function(){
             "to":  $(this).find('input#to').val(),
             "seat":$(this).find('input#seat').val(),
             "name": $(this).find('input#name').val(),
-            "documentType": $(this).find('input#document-type').val(),
+            "documentType": $(this).find('select#document-type option:selected').val(),
             "document": $(this).find('input#document').val(),
-            "gender": $(this).find('input#gender').val(),
-            "id": $(this).find('input#tripe-id').val(),
+            "gender": $(this).find('select#gender option:selected').val(),
+            "id": $(this).find('input#trip-id').val(),
             "date": $(this).find('input#date').val(),
             "time": $(this).find('input#time').val(),
             "timezone": "America/Sao_Paulo",
@@ -178,6 +181,7 @@ var bindaPoltronas = function(){
 
         // Envia ajax de validaçao, caso seja bem sucedido marca como
         // selecionada a poltrona
+        ajaxPoltronas(params);
 
     });
 

@@ -129,8 +129,8 @@ var ajaxPoltronas = function(request) {
     $.extend(params, request);
 
     $.ajax({
-        type: frm.attr('method'),
-        url: frm.attr('action'),    
+        type: 'post',
+        url: '/clickbus/selecionarpoltronas',    
         data: {
             params: {
                 "meta": {},
