@@ -66,12 +66,16 @@ class ClickBusController extends Controller {
                 $ida = json_decode($content_ida);
                 $ida->horario = $ida_obj->horario;
                 $ida->diames = $ida_obj->diames ;
+                $ida->from = $from;
+                $ida->to = $to;
             }
             if($volta_obj) {
                 $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}");
                 $volta = json_decode($content_volta);
                 $volta->horario = $volta_obj->horario;
                 $volta->diames = $volta_obj->diames ;
+                $volta->from = $to;
+                $volta->to = $from;
             }
 
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));

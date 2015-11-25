@@ -11,8 +11,6 @@
                 <label class="col-sm-2">Hora:<span>{{ $ida->horario }}</span></label>
                 <label class="col-sm-7">Compania:<span>{{ $ida->content->busCompany->name }}2</span></label>
             </div>
-            <input type="hidden" id="ida-session-id" value="{{ $ida->sessionId }}">
-            <input type="hidden" id="ida-trip-id" value="{{ $ida->content->trip_id }}">
             @if(isset($ida->content->seats))
             <div class="margin-t-1 onibus">
                 @foreach($ida->content->seats as $Seat)
@@ -102,3 +100,68 @@
         {!! Form::close() !!}
     </div>
 </div>
+
+@if(isset($ida))
+<div id="modal-poltrona-ida" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form id="validacao-poltrona" action="#" method="GET">
+            <div class="modal-body">
+                <div class="row margin-b-1">
+                    <div class="col-sm-10">
+                        <h3 class="texto-preto">
+                            <div class="poltrona-externa selecionada num-poltrona"></div>
+                            Poltrona
+                        </h3>
+                    </div>
+                    <div class="col-sm-2"><button type="button" class="btn pull-right" data-dismiss="modal"><i class="fa fa-times"></i></button></div>
+                </div>
+
+                <div class="row">
+                    
+                    <input type="hidden" id="from" value="{{ $ida->from }}">
+                    <input type="hidden" id="to" value="{{ $ida->to }}">
+                    <input type="hidden" id="seat" value="">
+                    <input type="hidden" id="date" value="{{ $ida->sessionId  }}">
+                    <input type="hidden" id="time" value="">
+                    <input type="hidden" id="session-id" value="{{ $ida->sessionId }}">
+                    <input type="hidden" id="trip-id" value="{{ $ida->content->trip_id }}">
+                    <div class="col-sm-8"> 
+                        <label for="nome">Nome:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input required="required"  type="text" placeholder="Nome" name="name" id="name">
+                    </div>
+                    <div class="col-sm-4"> 
+                        <label for="gender">Gênero:</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="gender" name="gender">
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select> 
+                    </div>
+                    <div class="col-sm-12"> 
+                        <label for="doc">Documento:</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="document-type" name="documentType">
+                            <option value="rg">RG</option>
+                            <option value="passaporte">Passaporte</option>
+                            <option value="cpf">CPF</option> 
+                        </select> 
+                    </div> 
+                    <div class="col-sm-8"> 
+                        <input type="text" id="document" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                    </div> 
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-acao" type="submit">Escolher Poltrona <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide"></i>
+                        </button>
+             </div>
+             </form>
+        </div>
+    </div>
+</div>
+@endif

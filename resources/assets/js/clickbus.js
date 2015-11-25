@@ -128,6 +128,73 @@ var ajaxPoltronas = function(request) {
 
     $.extend(params, request);
 
+    $.ajax({
+        type: frm.attr('method'),
+        url: frm.attr('action'),    
+        data: {
+            params: {
+                "meta": {},
+                "request": {
+                    "from": params.from,
+                    "to": params.to,
+                    "seat": params.seat,
+                    "passenger": {
+                        "name": params.name,
+                        "document": params.document,
+                        "documentType": params.documentType, /*[rg|cpf|passaporte]*/
+                        "gender": params.gender              /*[M|F]*/
+                    },
+                    "schedule": {
+                        "id": params.id,
+                        "date": params.date,
+                        "time": params.time,
+                        "timezone": params.timezone
+                    },
+                    "sessionId": params.sessionId
+                }
+            }
+        },
+        success: function (data) {
+            // Executa uma função de javascript
+            console.log('sucess do ajax poltronas');
+            $('#clickbus-resultado-busca').html(data);
+        },
+        error: function (data) {
+            console.log('erro do ajax poltronas');
+            console.log(data);
+            console.log(data.responseObject);
+            //Aqui mostro o sweetAlert com as mensagens retornadas da
+            //validação 
+            //TODO formatar texto corretamente
+
+            var responseObject = data.responseJSON,
+                responseText = "";
+
+                //Iterando sob o objeto de resposta para montar a mensagem de erro 
+                for (var i in responseObject)
+                    {
+                        responseText += "<p>" + responseObject[i] + "</p>";
+                    }
+
+                    //removendo o .n  da mensagem de erro
+                    responseText = responseText.replace(/.\d /g," ");
+
+                    swal({
+                        title: 'Ocorreu um erro', 
+                        text: responseText, 
+                        type: 'error',
+                        html: true
+                    });
+
+                    //Se tiver loading e tiver dado erro, voltar botao
+                    if (loading && loading != "") {
+                        $('#form-poltronas-clickbus').find('input:submit').show();
+                        $('#form-poltronas-clickbus').find('#'+loading).hide();
+                    }
+
+        }
+    });
+
     $('#form-poltronas-clickbus').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),
@@ -139,72 +206,6 @@ var ajaxPoltronas = function(request) {
             $(this).find('#'+loading).show();
         }
 
-        $.ajax({
-            type: frm.attr('method'),
-            url: frm.attr('action'),    
-            data: {
-                params: {
-                    "meta": {},
-                    "request": {
-                        "from": params.from,
-                        "to": params.to,
-                        "seat": params.seat,
-                        "passenger": {
-                            "name": params.name,
-                            "document": params.document,
-                            "documentType": params.documentType, /*[rg|cpf|passaporte]*/
-                            "gender": params.gender              /*[M|F]*/
-                        },
-                        "schedule": {
-                            "id": params.id,
-                            "date": params.date,
-                            "time": params.time,
-                            "timezone": params.timezone
-                        },
-                        "sessionId": params.sessionId
-                    }
-                }
-            },
-            success: function (data) {
-                // Executa uma função de javascript
-                console.log('sucess do ajax poltronas');
-                $('#clickbus-resultado-busca').html(data);
-            },
-            error: function (data) {
-                console.log('erro do ajax poltronas');
-                console.log(data);
-                console.log(data.responseObject);
-                //Aqui mostro o sweetAlert com as mensagens retornadas da
-                //validação 
-                //TODO formatar texto corretamente
-
-                var responseObject = data.responseJSON,
-                    responseText = "";
-
-                //Iterando sob o objeto de resposta para montar a mensagem de erro 
-                for (var i in responseObject)
-                {
-                    responseText += "<p>" + responseObject[i] + "</p>";
-                }
-                
-                //removendo o .n  da mensagem de erro
-                responseText = responseText.replace(/.\d /g," ");
-
-                swal({
-                    title: 'Ocorreu um erro', 
-                    text: responseText, 
-                    type: 'error',
-                    html: true
-                });
-                
-                //Se tiver loading e tiver dado erro, voltar botao
-                if (loading && loading != "") {
-                    $('#form-poltronas-clickbus').find('input:submit').show();
-                    $('#form-poltronas-clickbus').find('#'+loading).hide();
-                }
-
-            }
-        });
     });
 
 

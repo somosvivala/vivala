@@ -149,19 +149,50 @@ var bindaPoltronas = function(){
             poltrona.removeClass('selecionada');
         }else{
 
-            console.log(poltrona);
-            // Adiciona o html da poltrona no formulario de compra
-            // CUIDADO: HTML DIRETO NO JS
-
-            var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="$(\'#poltrona-'+numero_poltrona+'-'+tipo_viagem+'\').remove()"></i></div> <input type="hidden" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <input required="required"  type="text" placeholder="Nome" name="nome[]"> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> <select name="tipo_doc[]"> <option value="rg">RG</option> <option value="passaporte">Passaporte</option> <option value="carteira_motorista">Carteira de Motorista</option> <option value="carteira_trabalho">Carteira de Trabalho</option> </select> </div> <div class="col-sm-8"> <input type="text" placeholder="Ex: 123.456.789-0" name="documento[]" required="required" > </div> </div> ';
-
-            $('.poltronas-selecionadas-'+tipo_viagem).append(html);
-            
-            // Muda a cor da poltrona
-            poltrona.addClass('selecionada');
+            $("#modal-poltrona-"+tipo_viagem+" .num-poltrona").html(numero_poltrona);
+            $("#modal-poltrona-"+tipo_viagem).modal();
         }
 
 
     });
 
+    // Binda o submit do modal das poltronas para validacao de disponibilidade
+    $('form#validacao-poltrona').submit(function(e){
+        e.preventDefault();
+        var params = {
+            "from": $(this).find('input#from').val(), 
+            "to":  $(this).find('input#to').val(),
+            "seat":$(this).find('input#seat').val(),
+            "name": $(this).find('input#name').val(),
+            "documentType": $(this).find('input#document-type').val(),
+            "document": $(this).find('input#document').val(),
+            "gender": $(this).find('input#gender').val(),
+            "id": $(this).find('input#tripe-id').val(),
+            "date": $(this).find('input#date').val(),
+            "time": $(this).find('input#time').val(),
+            "timezone": "America/Sao_Paulo",
+            "sessionId": $(this).find('input#session-id').val(),
+        };
+
+        console.log(params);
+
+        // Envia ajax de validaçao, caso seja bem sucedido marca como
+        // selecionada a poltrona
+
+    });
+
+
+};
+
+// Mostra a poltronacomo selecionada e adicona no 
+// formulario de sumissao de compra
+var adicionaPoltrona = function(poltrona_elemento, numero_poltrona, tipo_viagem){
+    // Adiciona o html da poltrona no formulario de compra
+    // CUIDADO: HTML DIRETO NO JS
+    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="$(\'#poltrona-'+numero_poltrona+'-'+tipo_viagem+'\').remove()"></i></div> <input type="hidden" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <input required="required"  type="text" placeholder="Nome" name="nome[]"> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> <select name="tipo_doc[]"> <option value="rg">RG</option> <option value="passaporte">Passaporte</option> <option value="carteira_motorista">Carteira de Motorista</option> <option value="carteira_trabalho">Carteira de Trabalho</option> </select> </div> <div class="col-sm-8"> <input type="text" placeholder="Ex: 123.456.789-0" name="documento[]" required="required" > </div> </div> ';
+
+    $('.poltronas-selecionadas-'+tipo_viagem).append(html);
+
+    // Muda a cor da poltrona
+    poltrona_elemento.addClass('selecionada');
 };
