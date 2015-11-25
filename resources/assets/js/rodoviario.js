@@ -163,6 +163,7 @@ var bindaPoltronas = function(){
     $('form#validacao-poltrona').submit(function(e){
         e.preventDefault();
         var params = {
+            "tipo": $(this).find('input#tipo').val(), 
             "from": $(this).find('input#from').val(), 
             "to":  $(this).find('input#to').val(),
             "seat":$(this).find('input#seat').val(),
@@ -182,6 +183,21 @@ var bindaPoltronas = function(){
         // Envia ajax de validaçao, caso seja bem sucedido marca como
         // selecionada a poltrona
         ajaxPoltronas(params);
+
+    });
+
+
+    // Binda o submit do form de todas as poltronas com o seguro
+    $('#form-poltronas-clickbus').submit(function (ev) {
+        ev.preventDefault();
+        var frm = $(this),
+            dataForm = new FormData(this),
+            loading = frm.data('loading');
+
+        if (loading && loading != "") {
+            $(this).find('input:submit').hide();
+            $(this).find('#'+loading).show();
+        }
 
     });
 

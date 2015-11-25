@@ -56,7 +56,7 @@
             @if(isset($volta->content->seats))
             <div class="margin-t-1 onibus">
                 @foreach($volta->content->seats as $Seat)
-                <div class="poltrona @if($Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
+                <div class="poltrona @if(!$Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
                     <label for="{{ $Seat->id }}-volta">
                         <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-volta" value="{{ $Seat->id }}-volta" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
                     </label>
@@ -119,6 +119,7 @@
 
                 <div class="row">
                     
+                    <input type="hidden" id="tipo" value="ida">
                     <input type="hidden" id="from" value="{{ $ida->frombus }}">
                     <input type="hidden" id="to" value="{{ $ida->tobus }}">
                     <input type="hidden" id="seat" value="">

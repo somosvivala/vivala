@@ -102,7 +102,6 @@ var ajaxTrip = function(viagens) {
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
         bindaPoltronas();
-        ajaxPoltronas();
     })
     .fail(function() {
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado.');
@@ -158,11 +157,15 @@ var ajaxPoltronas = function(request) {
             // Executa uma função de javascript
             console.log('sucess do ajax poltronas');
             $('#clickbus-resultado-busca').html(data);
+
+            // marca o elemento da poltrona como selecionado (laranja)
+            $("input#"+params.seat+"-"+params.tipo).parents('poltrona').addClass("selecionada");
+
         },
         error: function (data) {
             console.log('erro do ajax poltronas');
             console.log(data);
-            console.log(data.responseObject);
+/*            console.log(data.responseObject);
             //Aqui mostro o sweetAlert com as mensagens retornadas da
             //validação 
             //TODO formatar texto corretamente
@@ -192,22 +195,9 @@ var ajaxPoltronas = function(request) {
                         $('#form-poltronas-clickbus').find('#'+loading).hide();
                     }
 
+                    */
         }
     });
-
-    $('#form-poltronas-clickbus').submit(function (ev) {
-        ev.preventDefault();
-        var frm = $(this),
-            dataForm = new FormData(this),
-            loading = frm.data('loading');
-
-        if (loading && loading != "") {
-            $(this).find('input:submit').hide();
-            $(this).find('#'+loading).show();
-        }
-
-    });
-
 
 
 };
