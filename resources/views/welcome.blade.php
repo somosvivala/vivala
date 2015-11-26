@@ -7,7 +7,7 @@
         <title>{{ trans('global.title_vivala') }}</title>
 
         {{-- Facebook OpenGraph metatags --}}
-            <meta property="og:title" content="Vivalá - Cadastre-se e conecte-se ao Brasil de verdade!" />
+            <meta property="og:title" content="Vivalá - Junte-se a Vivalá e conecte-se ao Brasil de verdade" />
             <meta property="og:site_name" content="Vivalá"/>
             <meta property="og:url" content="http://www.vivala.com.br/" />
             <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
@@ -42,7 +42,6 @@
 
         {{-- All CSS --}}
             <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
-
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -1030,6 +1029,14 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+        </div>
+        {{-- OutdatedBrowser sem ajaxcalls -> https://github.com/burocratik/outdated-browser --}}
+        <div id="outdated">
+             <h6>Seu navegador está desatualizado!</h6>
+             <p>Atualize seu navegador para visualizar corretamente a Vivalá.
+                 <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/br" target="_blank">Atualizar meu navegador agora </a>
+             </p>
+             <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="X">&times;</a></p>
         </div>
         {{-- Scripts de carregamento no fim do body --}}
         <script src="{{ asset('/js/vendor.js') }}"></script>
