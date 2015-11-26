@@ -156,7 +156,7 @@ var ajaxPoltronas = function(request) {
         success: function (data) {
             // Executa uma função de javascript
             console.log('sucess do ajax poltronas');
-            $('#clickbus-resultado-busca').html(data);
+           /* $('#clickbus-resultado-busca').html(data);*/
 
             // marca o elemento da poltrona como selecionado (laranja)
             $("input#"+params.seat+"-"+params.tipo).parents('poltrona').addClass("selecionada");

@@ -93,10 +93,13 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-        $data = http_build_query($request);
+        $data = json_encode($request);
 
         $context = [ 
         	'http' => [ 
+                'ignore_errors' => true,
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen($data)."\r\n",
                 'method' => 'PUT',
                 'content' => $data
 	        ] 
@@ -112,7 +115,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-        $data = http_build_query($request);
+        $data = json_encode($request);
 
         $context = [ 
         	'http' => [ 
@@ -131,7 +134,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-    	$data = http_build_query($request);
+    	$data = json_encode($request);
 
         $context = [ 
         	'http' => [ 
