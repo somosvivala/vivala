@@ -1127,5 +1127,17 @@ return[
     'dummy_travel_2' => 'How about enjoy Fortaleza in summer?',
     'dummy_travel_3' => 'Find nice hotels to the street carnival in Recife!',
     'dummy_travel_4' => 'Great program for 2 on a weekend!',
+
+    /*----------------------------------------------------------------------------------
+    / BLACK FRIDAY feature - serão deletados em versões futuras, só pra preencher o beta
+    /---------------------------------------------------------------------------------*/
+    'blackfriday-title' => 'Black Friday',
+    'blackfriday-1' => 'Black Friday: Flights to Rio de Janeiro from R$74,00',
+    'blackfriday-2' => 'Black Friday: Flights to Maceio from R$384,00',
+    'blackfriday-3' => 'Black Friday: Flights to São Paulo from R$74,00',
+    'blackfriday-4' => 'Black Friday: Accommodation in Florianópolis from R$30,00/night',
+    'blackfriday-5' => 'Black Friday: Accommodation in Arraial do Cabo from R$98,00/night',
+    'blackfriday-6' => 'Black Friday: Accommodation in Morro de São Paulo from R$64,00/night',
+    'blackfriday-7' => 'Black Friday: 1 week in Natal with promotional fares!',
 ];
 ?>
