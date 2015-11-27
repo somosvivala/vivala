@@ -1,5 +1,6 @@
 <h4 class="suave">{{ trans('global.lbl_traveller_suggest_') }}</h4>
 
+
 <ul class="sugestoes sugestoes-viajantes">
 	@if(isset($sugestoesViajantes))
 	@forelse($sugestoesViajantes as $Perfil)
