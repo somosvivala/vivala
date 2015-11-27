@@ -1037,13 +1037,13 @@
             </div>
         </div>
         {{-- OutdatedBrowser sem ajaxcalls -> https://github.com/burocratik/outdated-browser --}}
-        <div id="outdated">
+        <!--div id="outdated">
              <h6>Seu navegador está desatualizado!</h6>
              <p>Atualize seu navegador para visualizar corretamente a Vivalá.
                  <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/br" target="_blank">Atualizar meu navegador agora </a>
              </p>
              <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="X">&times;</a></p>
-        </div>
+        </div-->
         {{-- Scripts de carregamento no fim do body --}}
         <script src="{{ asset('/js/vendor.js') }}"></script>
     </body>
