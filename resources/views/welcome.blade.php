@@ -9,7 +9,7 @@
         {{-- Facebook OpenGraph metatags --}}
             <meta property="og:title" content="Vivalá - Junte-se a Vivalá e conecte-se ao Brasil de verdade" />
             <meta property="og:site_name" content="Vivalá"/>
-            <meta property="og:url" content="http://www.vivala.com.br/" />
+            <meta property="og:url" content="http://dev.vivala.com.br/" />
             <meta property="fb:app_id" content="[1598914903686637]" />
             <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
             <meta property="og:image" content="http://vivala.com.br/img/fb-og/fb-og-blackfriday.png">
