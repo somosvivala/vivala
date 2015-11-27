@@ -7,12 +7,17 @@
         <title>{{ trans('global.title_vivala') }}</title>
 
         {{-- Facebook OpenGraph metatags --}}
+            <meta property="og:locale" content="en_US">
+            <meta property="og:type" content="website">
+            <meta property="fb:app_id" content="1598914903686637" />
             <meta property="og:title" content="Vivalá - Junte-se a Vivalá e conecte-se ao Brasil de verdade" />
             <meta property="og:site_name" content="Vivalá"/>
             <meta property="og:url" content="http://dev.vivala.com.br/" />
-            <meta property="fb:app_id" content="1598914903686637" />
             <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
             <meta property="og:image" content="http://dev.vivala.com.br/img/fb-og/fb-og-blackfriday.png">
+            <meta property="og:image:type" content="image/png">
+            <meta property="og:image:width" content="1200" />
+            <meta property="og:image:height" content="630" />
 
         {{-- Twitter Card metatags --}}
             <meta name="twitter:card" content="summary" />
