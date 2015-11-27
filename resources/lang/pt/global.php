@@ -1233,5 +1233,17 @@ return[
     'dummy_travel_2' => 'Que tal curtir Fortaleza no verão?',
     'dummy_travel_3' => 'Encontre hotéis para o carnaval de rua em Recife!',
     'dummy_travel_4' => 'Ótimo programa para um fim de semana a 2!',
+
+    /*----------------------------------------------------------------------------------
+    / BLACK FRIDAY feature - serão deletados em versões futuras, só pra preencher o beta
+    /---------------------------------------------------------------------------------*/
+    'blackfriday-title' => 'Black Friday',
+    'blackfriday-1' => 'Black Friday: Passagens aéreas para o Rio de Janeiro a partir de R$74,00!',
+    'blackfriday-2' => 'Black Friday: Ida e volta para Maceió a partir de R$438,00 em até 5x!',
+    'blackfriday-3' => 'Black Friday: Passagens aéreas para São Paulo a partir de R$74,00!',
+    'blackfriday-4' => 'Black Friday: Hospedagens em Floripa a partir de R$30,00 a diária!',
+    'blackfriday-5' => 'Black Friday: Hospedagem em Arraial do Cabo a partir de R$98,00 a diária!',
+    'blackfriday-6' => 'Black Friday: Hospedagem em Morro de São Paulo a partir de R$64,00 a diária!',
+    'blackfriday-7' => 'Black Friday: 1 semana em Natal a partir de entrada + 14x de R$75,00!',
 ];
 ?>
