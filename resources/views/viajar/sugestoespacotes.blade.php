@@ -1,7 +1,6 @@
 <h4 class="suave">{{ trans('global.wannatravel_package_find_best_destinies') }}</h4>
 <ul id="menu-direita" class="sugestoes sugestoes-pacotes">
     {{-- Menu antigo, desabilitado por motivos de CSS, voltar a usar somente este após o black friday --}}
-    <!--
     <h4 class="suave">{{ trans('global.wannatravel_package_find_best_destinies') }}</h4>
     <ul class="sugestoes sugestoes-pacotes">
         <li>
@@ -55,9 +54,8 @@
             </a>
         </li>
     </ul>
-    -->
     {{-- Menu Black Friday, temporário --}}
-    <li>
+    <!-- <li>
         <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/flights/search/OneWay/SAO/RIO/2016-03-11/1/0/0/">
             <div class="round foto">
                 <div class="cover-explode">
@@ -140,5 +138,5 @@
             <span class="col-sm-12">{{ trans('global.blackfriday-7') }}</span>
             <button class="suave" type="button" >{{ trans('global.lbl_seemore') }}</button>
         </a>
-    </li>
+    </li>-->
 </ul>

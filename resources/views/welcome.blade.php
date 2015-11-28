@@ -14,7 +14,7 @@
             <meta property="og:site_name" content="Vivalá"/>
             <meta property="og:url" content="http://vivala.com.br/" />
             <meta property="og:description" content="Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado." />
-            <meta property="og:image" content="http://vivala.com.br/img/fb-og/fb-og-blackfriday.png">
+            <meta property="og:image" content="http://vivala.com.br/img/fb-og/fb-og-original.png">
             <meta property="og:image:type" content="image/png">
             <meta property="og:image:width" content="1200" />
             <meta property="og:image:height" content="630" />
