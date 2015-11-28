@@ -1,4 +1,3 @@
-<h4 class="suave">{{ trans('global.wannatravel_package_find_best_destinies') }}</h4>
 <ul id="menu-direita" class="sugestoes sugestoes-pacotes">
     {{-- Menu antigo, desabilitado por motivos de CSS, voltar a usar somente este após o black friday --}}
     <h4 class="suave">{{ trans('global.wannatravel_package_find_best_destinies') }}</h4>
