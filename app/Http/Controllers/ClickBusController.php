@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -103,12 +104,22 @@ class ClickBusController extends Controller {
                 'method' => 'PUT',
                 'content' => $data
 	        ] 
-		];
-		$context = stream_context_create($context);
+	];
+        $context = stream_context_create($context);
 
-		$result = file_get_contents(self::$url.'/seat-block', false, $context);
+        $result = file_get_contents(self::$url.'/seat-block', false, $context);
 
-        return view('clickbus._checkout', compact('nome', 'documento', 'result'));
+        // Testa se existe algo dentro do 'error' do result
+        // com um false pra nao entrar nunca hehe
+        if(false && isset(json_decode($result)->error)){
+            App::abort(403,json_decode($result)->error[0]->message );
+        }
+        $return = new \stdClass();
+        $return->seat = $request["request"]["seat"];
+        $return->tipo = "ida";
+        $return->seguro = 9.20;
+
+        return json_encode($return);
     }
 
     public function Removerpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
@@ -125,7 +136,7 @@ class ClickBusController extends Controller {
 		];
 		$context = stream_context_create($context);
 
-		$result = file_get_contents(self::$url.'/payments', false, $context);
+                $result = file_get_contents(self::$url.'/payments', false, $context);
 
         return view('', compact('result'));
     }

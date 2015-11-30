@@ -178,7 +178,6 @@ var bindaPoltronas = function(){
             "sessionId": $(this).find('input#session-id').val(),
         };
 
-        console.log(params);
 
         // Envia ajax de validaçao, caso seja bem sucedido marca como
         // selecionada a poltrona
@@ -206,13 +205,22 @@ var bindaPoltronas = function(){
 
 // Mostra a poltronacomo selecionada e adicona no 
 // formulario de sumissao de compra
-var adicionaPoltrona = function(poltrona_elemento, numero_poltrona, tipo_viagem){
+var adicionaPoltrona = function(numero_poltrona, tipo_viagem){
+    var poltrona_elemento = $("input#"+numero_poltrona+"-"+tipo_viagem).parents('.poltrona');
+
+    // marca o elemento da poltrona como selecionado (laranja)
+    poltrona_elemento.addClass('selecionada');
+
+    //@TODO 
+    // - "Receber" os dados por parametro de nome, doc, doctype e preçoseguro
+    // - Incluir nao modificavel ou input hidden
+    // - Adicionar checkbox pro seguro
+    //
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
     var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="$(\'#poltrona-'+numero_poltrona+'-'+tipo_viagem+'\').remove()"></i></div> <input type="hidden" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <input required="required"  type="text" placeholder="Nome" name="nome[]"> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> <select name="tipo_doc[]"> <option value="rg">RG</option> <option value="passaporte">Passaporte</option> <option value="carteira_motorista">Carteira de Motorista</option> <option value="carteira_trabalho">Carteira de Trabalho</option> </select> </div> <div class="col-sm-8"> <input type="text" placeholder="Ex: 123.456.789-0" name="documento[]" required="required" > </div> </div> ';
 
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 
-    // Muda a cor da poltrona
-    poltrona_elemento.addClass('selecionada');
 };
+

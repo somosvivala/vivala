@@ -155,11 +155,12 @@ var ajaxPoltronas = function(request) {
         },
         success: function (data) {
             // Executa uma função de javascript
-            console.log('sucess do ajax poltronas');
+            console.log('sucess do ajax poltronas:');
            /* $('#clickbus-resultado-busca').html(data);*/
+           data_obj = JSON.parse(data);
+           console.log(data_obj);
 
-            // marca o elemento da poltrona como selecionado (laranja)
-            $("input#"+params.seat+"-"+params.tipo).parents('poltrona').addClass("selecionada");
+           adicionaPoltrona(data_obj.seat,data_obj.tipo);
 
         },
         error: function (data) {
