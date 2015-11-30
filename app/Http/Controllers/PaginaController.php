@@ -258,4 +258,8 @@ class PaginaController extends Controller {
         return view('paginas.assinaturazordo');
     }
        
+    public function getAssinaturababi() 
+    {
+        return view('paginas.assinaturababi');
+    }
 }

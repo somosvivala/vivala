@@ -2,7 +2,7 @@
     <tr>
         <td style="border-right:2px solid #f16f2b;">
             <a href="http://www.vivala.com.br" style="color: #f16f2b;margin-right:1em;text-decoration:none;">
-                <img src="http://dev.vivalabrasil.com.br/logo.png" width="150px" style="margin: 0px;padding:2em 0em 2em 0;">
+                <img src="http://dev.vivalabrasil.com.br/img/assinaturas/logo.png" width="150px" style="margin: 0px;padding:2em 0em 2em 0;">
             </a>
         </td>
         <td>
@@ -12,7 +12,7 @@
                         <table>
                             <tr>
                                 <td width="100" style="width:100px;">
-                                    <img align="top" style="float:left" src="/img/assinaturas/raissagascon.png" alt="">
+                                    <img align="top" style="float:left" src="http://dev.vivalabrasil.com.br/img/assinaturas/raissagascon.png" alt="">
                                 </td>
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none;">

@@ -12,12 +12,12 @@
                         <table>
                             <tr>
                                 <td width="100" style="width:100px;">
-                                    <img align="top" style="float:left" src="http://dev.vivalabrasil.com.br/img/assinaturas/renatogomes.png" alt="">
+                                    <img align="top" style="float:left" src="http://dev.vivalabrasil.com.br/img/assinaturas/barbarac.png" alt="">
                                 </td>
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none;">
-                                        Co-Diretor de Desenvolvimento 
-                                        <h2 style="margin:0;">Renato Gomes</h2>
+                                        Chefe do Jurídico                                        
+                                        <h2 style="margin:0;">Bárbara Espir</h2>
                                     </div>
                                 </td>
                             </tr>
@@ -44,10 +44,10 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="tel: +55 14 99172 6968" style="color: #f16f2b;text-decoration:none;">
+                                    <a href="tel: +55 11 99304 4267" style="color: #f16f2b;text-decoration:none;">
                                         <img src="http://dev.vivalabrasil.com.br/email/icontel.png"
                                         alt="Telefone:" align="top" style="vertical-align:top;margin-top:0em">
-                                        +55 14 99172 6968
+                                        +55 11 99304 4267
                                     </a>
                                 </td>
                                 <td style="float:right">
@@ -58,9 +58,9 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="mailto:renato.gomes@vivalabrasil.com.br" style="color: #f16f2b;text-decoration:none;">
+                                    <a href="mailto:barbara.espir@vivalabrasil.com.br" style="color: #f16f2b;text-decoration:none;">
                                         <img src="http://dev.vivalabrasil.com.br/email/iconemail.png" alt="Email:" align="top" style="vertical-align:top;margin-top:0.2em">
-                                       renato.gomes@vivalabrasil.com.br
+                                       barbara.espir@vivalabrasil.com.br
                                     </a>
                                 </td>
                                 <td style="float:right">
