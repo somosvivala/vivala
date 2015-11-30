@@ -231,4 +231,31 @@ class PaginaController extends Controller {
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
     }
+
+
+    public function getAssinaturadan() 
+    {
+        return view('paginas.assinaturadan');
+    }
+
+    public function getAssinaturapg() 
+    {
+        return view('paginas.assinaturapg');
+    }
+
+    public function getAssinaturaraissa() 
+    {
+        return view('paginas.assinaturaraissa');
+    }
+
+    public function getAssinaturadib() 
+    {
+        return view('paginas.assinaturadib');
+    }
+ 
+    public function getAssinaturazordo() 
+    {
+        return view('paginas.assinaturazordo');
+    }
+       
 }
