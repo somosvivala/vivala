@@ -17,7 +17,7 @@
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none;">
                                         Co-Fundador e Diretor de Marketing 
-                                        <h2 style="margin:0;">Pedro Gayotto</h2>
+                                        <h2 style="margin:0;">PEDRO GAYOTTO</h2>
                                     </div>
                                 </td>
                             </tr>
