@@ -15,9 +15,9 @@
                                     <img align="top" style="float:left" src="http://dev.vivalabrasil.com.br/img/assinaturas/raissagascon.png" alt="">
                                 </td>
                                 <td>
-                                    <div style="color: #f16f2b;text-decoration:none;">
+                                    <div style="color: #f16f2b;text-decoration:none; font-size:12px;">
                                         Coordenadora de Transformação Social
-                                        <h2 style="margin:0;">RAISSA GASCON</h2>
+                                        <h2 style="font-size:24px;">RAISSA GASCON</h2>
                                     </div>
                                 </td>
                             </tr>

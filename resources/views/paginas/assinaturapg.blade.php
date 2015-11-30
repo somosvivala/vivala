@@ -15,9 +15,9 @@
                                     <img align="top" style="float:left" src="http://dev.vivalabrasil.com.br/img/assinaturas/pg.png" alt="">
                                 </td>
                                 <td>
-                                    <div style="color: #f16f2b;text-decoration:none;">
+                                    <div style="color: #f16f2b;font-size:13px;text-decoration:none;">
                                         Co-Fundador e Diretor de Marketing 
-                                        <h2 style="margin:0;">PEDRO GAYOTTO</h2>
+                                        <h2 style="font-size:24px;">PEDRO GAYOTTO</h2>
                                     </div>
                                 </td>
                             </tr>

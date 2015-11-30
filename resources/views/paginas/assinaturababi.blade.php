@@ -17,7 +17,7 @@
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none;">
                                         Chefe do Jurídico                                        
-                                        <h2 style="margin:0;">BÁRBARA ESPIR</h2>
+                                        <h2 style="">BÁRBARA ESPIR</h2>
                                     </div>
                                 </td>
                             </tr>

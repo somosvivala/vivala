@@ -16,8 +16,8 @@
                                 </td>
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none;">
-                                        Co-Diretor de Desenvolvimento 
-                                        <h2 style="margin:0;">RENATO GOMES</h2>
+                                        Diretor de Desenvolvimento 
+                                        <h2 style="">RENATO GOMES</h2>
                                     </div>
                                 </td>
                             </tr>

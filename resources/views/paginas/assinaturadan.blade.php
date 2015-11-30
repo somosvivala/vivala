@@ -17,7 +17,7 @@
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none;">
                                         Fundador e Presidente
-                                        <h2 style="margin:0;">DANIEL CABRERA</h2>
+                                        <h2 style="">DANIEL CABRERA</h2>
                                     </div>
                                 </td>
                             </tr>
