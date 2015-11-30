@@ -21,7 +21,7 @@
             <h5>{{ trans('global.footer_vivala_message') }}<h5>
             <h5>{{ trans('global.footer_vivala_infos') }}</h5>
             <div>
-                <h5 class="text-right">{{ trans('global.footer_development') }} <i class="icon-footer icon-vivala-logo" alt="{{ trans('global.lbl_vivala') }}" title="{{ trans('global.lbl_vivala') }}"></i></h5>
+                <h5 class="text-right">{{ trans('global.footer_development') }} <i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}" title="{{ trans('global.lbl_vivala') }}"></i></h5>
             </div>
         </div>
     </div>

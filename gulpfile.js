@@ -18,6 +18,7 @@ elixir(function(mix) {
     ], 'resources/assets/css/');
 
     mix.styles([
+        '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.css',
         '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
         '../../assets/bower/cropper/dist/cropper.min.css',
@@ -30,14 +31,16 @@ elixir(function(mix) {
     ], null, 'resources/assets/css');
 
     mix.scripts([
-	    '../../assets/bower/jquery/dist/jquery.js',
+        '../../assets/bower/jquery/dist/jquery.js',
       '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
       '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
-      '../../assets/bower/cropper/dist/cropper.min.js',
       '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
       '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
       '../../assets/bower/jquery-file-upload/js/jquery.fileupload-process.js',
+      '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
+      '../../assets/bower/cropper/dist/cropper.min.js',
       '../../assets/bower/bootstrap-datepicker/js/bootstrap-datepicker.js',
+      '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/js/comentaPost.js',
       '../../assets/js/createpost.js',
       '../../assets/js/postbarra.js',
@@ -46,13 +49,8 @@ elixir(function(mix) {
       '../../assets/js/follow.js',
       '../../assets/js/ajaxCalls.js',
       '../../assets/js/desativalinks.js',
-      '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
-      '../../assets/js/uploadFoto.js',
-      '../../assets/js/feed.js',
       '../../assets/js/notificacoes.js',
       '../../assets/js/welcome.js',
-      '../../assets/js/quimera.js',
-      '../../assets/js/clickbus.js',
       '../../assets/js/rodoviario.js',
       '../../assets/js/viajar.js',
       '../../assets/js/search.js',
@@ -61,6 +59,13 @@ elixir(function(mix) {
       '../../assets/js/PerfilcropFoto.js',
       '../../assets/js/VagacropFoto.js',
       '../../assets/js/chefsclub.js',
+      '../../assets/js/uploadFoto.js',
+      '../../assets/js/feed.js',
+      '../../assets/js/notificacoes.js',
+      '../../assets/js/welcome.js',
+      '../../assets/js/quimera.js',
+      '../../assets/js/clickbus.js',
+      '../../assets/js/formContato.js',
       '../../../node_modules/sweetalert/dist/sweetalert.min.js',
       '../../assets/js/ongs.js',
       '../../assets/js/zoomfinanciamentocoletivo.js'

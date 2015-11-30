@@ -3,7 +3,6 @@
 @section('content')
 <div class="col-sm-12 margin-b-1">
     <div class="col-sm-12 foto-fundo foto-header" style="background-image:url('{{ $vaga->getCapaUrl() }}');">
-
     @if($vaga->podeEditar)
     <div class="hora-post">
         <a class="btn btn-action edit-vaga" href="/vagas/{{$vaga->id}}/edit">
@@ -15,59 +14,43 @@
 </div>
 
 <h3 class="font-bold-upper text-center">{{ $vaga->owner->nome }}</h3>
-
 <div class="col-sm-4 sobre-vaga">
     <div class="text-center fundo-cheio">
-        <img src="{{ asset('img/casacomunal.png') }}">
+        <div class="spritemap-vaga sprite-casa"></div>
         <b class="font-bold-upper col-sm-12">Sobre a organização</b>
-        <p>
-            {{ $vaga->owner->descricao?:"Sem descrição." }}
-        </p>
-        <br><br>
+        <p>{{ $vaga->owner->descricao?:"Sem descrição." }}</p>
     </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
-    <img src="{{ asset('img/habilidades.png') }}">
+    <div class="spritemap-vaga sprite-formulario"></div>
     <b class="font-bold-upper col-sm-12">Sobre o trabalho</b>
-    <p>
-        {{ $vaga->sobre_trabalho?:"Sem descrição." }}
-    </p>
-    <br><br>
+    <p>{{ $vaga->sobre_trabalho?:"Sem descrição." }}</p>
 </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
-    <img src="{{ asset('img/pessoa.png') }}">
+    <div class="spritemap-vaga sprite-pessoa"></div>
     <b class="font-bold-upper col-sm-12">Habilidades</b>
-    <p>
-        {{ $vaga->habilidades?:"Sem descrição de habilidades." }}
-    </p>
-    <br><br>
+    <p>{{ $vaga->habilidades?:"Sem descrição de habilidades." }}</p>
 </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
-    <img src="{{ asset('img/calendario.png') }}">
+    <div class="spritemap-vaga sprite-calendario"></div>
     <b class="font-bold-upper col-sm-12">Datas e horários</b>
-    <p>
-        {{ $vaga->horario_funcionamento }}
-    </p>
-    <br><br>
+    <p>{{ $vaga->horario_funcionamento }}</p>
 </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
-    <img src="{{ asset('img/mapmarker.png') }}">
+    <div class="spritemap-vaga sprite-mapmarker"></div>
     <b class="font-bold-upper col-sm-12">Localização</b>
-    <p>
-        {{ $vaga->local ? $vaga->local : $vaga->owner->local }}
-    </p>
-    <br><br>
+    <p>{{ $vaga->local ? $vaga->local : $vaga->owner->local }}</p>
 </div>
 </div>
 <div class="col-sm-4 sobre-vaga">
@@ -81,7 +64,7 @@
                     <div class="avatar-img" style="background-image:url('{{ $vaga->responsavel->getAvatarUrl() }}')">
                     </div>
                 </div>
-                <strong class="col-sm-12 margin-t-1">{{ $vaga->responsavel->user->username }}</strong>
+            <strong class="col-sm-12 margin-t-1">{{ $vaga->responsavel->user->username }}</strong>
         </a>
         {!! Form::close() !!}
     </div>
@@ -97,7 +80,6 @@
 @if(isset($Responsavel))
 <div class="text-left fundo-cheio col-sm-12 margin-b-2 padding-b-2 padding-t-2">
     <div class="col-sm-2 text-center">
-
         <a href="{{ url('perfil') }}">
             <div class="round foto quadrado7em">
                 <div class="avatar-img" style="background-image:url('{{ $Responsavel->getAvatarUrl() }}')">
@@ -113,9 +95,7 @@
 @endif
 
 <div class="text-center fundo-cheio col-sm-12 margin-b-2">
-    <h3 class="font-bold-upper text-center">
-        Voluntários nesta causa
-</h3>
+    <h3 class="font-bold-upper text-center">Voluntários nesta causa</h3>
 <ul class="row sugestoes sugestoes-viajantes">
     @forelse($voluntarios as $Voluntario)
     <li class="col-sm-4 col-md-3 col-lg-2">
@@ -145,9 +125,7 @@
 </div>
 
 @if($vaga->owner->vagas)
-<h3 class="font-bold-upper text-center margin-b-1">
-    Veja outras vagas desse projeto
-</h3>
+<h3 class="font-bold-upper text-center margin-b-1">Veja outras vagas desse projeto</h3>
 
 <ul class="lista-vagas row inside">
     @forelse($vaga->owner->vagas as $Causa)

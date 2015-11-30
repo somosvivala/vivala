@@ -74,8 +74,6 @@
             <ul class="cat-ong" class="col-sm-12">
                 @foreach($categoriasOngs as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
-
-
                     <input type="radio" name="categoria_ong_id" @if ($categoriaSelecionada == $Categoria->id)  checked="checked" @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">
                     <label for="categoria-ong-{{$Categoria->id}}">
                         <img src='{{asset("/img/categorias-onu/cat-ong-".$Categoria->id.".png")}}' alt="{{ trans($Categoria->nome) }}" title="{{ trans($Categoria->nome) }}" class='col-sm-12'/>
