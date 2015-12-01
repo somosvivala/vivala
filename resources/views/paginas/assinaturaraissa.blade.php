@@ -17,7 +17,7 @@
                                 <td>
                                     <div style="color: #f16f2b;text-decoration:none; font-size:12px;">
                                         Coordenadora de Transformação Social
-                                        <h2 style="font-size:24px;">RAISSA GASCON</h2>
+                                        <h2 style="color: #f16f2b;font-size:24px;">RAISSA GASCON</h2>
                                     </div>
                                 </td>
                             </tr>
