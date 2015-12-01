@@ -25,7 +25,14 @@ class PaginaController extends Controller {
      */
     public function __construct() {
         // Use middleware only on some functions
-        $this->middleware('auth', ['except' => 'getTermosecondicoes']);
+        $this->middleware('auth', ['except' => [ 
+            'getTermosecondicoes',
+            'getAssinaturapg',
+            'getAssinaturadan',
+            'getAssinaturaraissa',
+            'getAssinaturadib',
+            'getAssinaturababi' ]
+        ]);
     }
 
     /**
@@ -235,31 +242,26 @@ class PaginaController extends Controller {
 
     public function getAssinaturadan() 
     {
-        return view('paginas.assinaturadan');
+        return view('paginas.assinaturas.assinaturadan');
     }
 
     public function getAssinaturapg() 
     {
-        return view('paginas.assinaturapg');
+        return view('paginas.assinaturas.assinaturapg');
     }
 
     public function getAssinaturaraissa() 
     {
-        return view('paginas.assinaturaraissa');
+        return view('paginas.assinaturas.assinaturaraissa');
     }
 
     public function getAssinaturadib() 
     {
-        return view('paginas.assinaturadib');
+        return view('paginas.assinaturas.assinaturadib');
     }
- 
-    public function getAssinaturazordo() 
-    {
-        return view('paginas.assinaturazordo');
-    }
-       
+      
     public function getAssinaturababi() 
     {
-        return view('paginas.assinaturababi');
+        return view('paginas.assinaturas.assinaturababi');
     }
 }
