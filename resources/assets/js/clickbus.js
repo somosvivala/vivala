@@ -154,13 +154,10 @@ var ajaxPoltronas = function(request) {
             }
         },
         success: function (data) {
-            // Executa uma função de javascript
-            console.log('sucess do ajax poltronas:');
-           /* $('#clickbus-resultado-busca').html(data);*/
            data_obj = JSON.parse(data);
            console.log(data_obj);
 
-           adicionaPoltrona(data_obj.seat,data_obj.tipo);
+           adicionaPoltronaFront(data_obj.items[0].seat,params.tipo);
 
         },
         error: function (data) {
@@ -203,17 +200,18 @@ var ajaxPoltronas = function(request) {
 
 };
 
-var removePoltrona = function(request) {
-    $params = {
+var removePoltrona = function(request, tipo) {
+    var params = {
         "seat": "",
-        "id": "",
-        "sessionId": ""
+        "id": $("input#"+tipo+"-id").val(),
+        "sessionId": $("input#"+tipo+"-session-id").val()
     }
+    
     $.extend(params, request);
 
     $.ajax({
         url: 'clickbus/removerpoltronas',
-        type: 'POST',
+        type: 'post',
         dataType: 'json',
         data: {
             params: {
@@ -230,6 +228,8 @@ var removePoltrona = function(request) {
     })
     .done(function(data) {
         console.log(data);
+        // Remove a Poltrona do form
+        $('#poltrona-'+params.seat+'-'+tipo).remove();
     });
 };
 

@@ -87,10 +87,14 @@
     <div class="col-sm-4">
         <h5 class="font-bold-upper">Poltronas Selecionadas</h5>
         {!! Form::open(['url' => ['/clickbus/selecionarpoltronas'], 'id'=>'form-poltronas-clickbus', 'data-loading'=>'form-loading']) !!}
+            <input type="hidden" id="ida-session-id" value="{{ $ida->sessionId }}">
+            <input type="hidden" id="ida-id" value="{{ $ida->content->trip_id }}">
             <h4>Partida - Trecho 1</h4>
             <div class="poltronas-selecionadas-ida">
             </div>
             @if(isset($volta))
+            <input type="hidden" id="volta-session-id" value="{{ $volta->sessionId }}">
+            <input type="hidden" id="volta-id" value="{{ $volta->content->trip_id }}">
             <h4 class="margin-t-1">Volta - Trecho 2</h4>
             <div class="poltronas-selecionadas-volta">
             </div>

@@ -114,12 +114,22 @@ class ClickBusController extends Controller {
         if(false && isset(json_decode($result)->error)){
             App::abort(403,json_decode($result)->error[0]->message );
         }
-        $return = new \stdClass();
-        $return->seat = $request["request"]["seat"];
-        $return->tipo = "ida";
-        $return->seguro = 9.20;
-
-        return json_encode($return);
+        // Migué de resposta com sucesso que deveria estar vindo no result
+        return '{
+            "meta": {},
+            "items": [{
+                "seat": "'.$request["request"]["seat"].'",
+                "schedule": {
+                    "id": "NDAxNy0tMzkzNS0tMjAxNS0wMi0xMSAwMTowMC0tOS0tNDMyMi0tMS0tMS0tMS0tQ09OVg==",
+                    "date": "",
+                    "time": "",
+                    "timezone": "America/Sao_Paulo"
+                },
+                "status": "blocked",
+                "sessionId": "dnlfm8aecg2omtjaang62fvla5",
+                "expireAt": "2015-01-20 17:46"
+            }]
+        }';
     }
 
     public function Removerpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
@@ -130,15 +140,15 @@ class ClickBusController extends Controller {
 
         $context = [ 
         	'http' => [ 
-                'method' => 'POST',
+                'method' => 'DELETE',
                 'content' => $data
 	        ] 
-		];
-		$context = stream_context_create($context);
+            ];
+        $context = stream_context_create($context);
 
-                $result = file_get_contents(self::$url.'/payments', false, $context);
+        $result = file_get_contents(self::$url.'/seat-block', false, $context);
 
-        return view('', compact('result'));
+        return $result;
     }
 
     public function payment(/*PaymentClickbusRequest $request*/)
@@ -154,6 +164,8 @@ class ClickBusController extends Controller {
 	        ] 
 		];
 		$context = stream_context_create($context);
+
+                $result = file_get_contents(self::$url.'/payments', false, $context);
 
 		return view('', compact('result'));
     }
