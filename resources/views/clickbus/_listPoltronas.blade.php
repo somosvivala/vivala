@@ -14,9 +14,9 @@
             @if(isset($ida->content->seats))
             <div class="margin-t-1 onibus">
                 @foreach($ida->content->seats as $Seat)
-                <div class="poltrona @if($Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
+                <div class="poltrona @if(!$Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
                     <label for="{{ $Seat->id }}-ida">
-                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-ida" value="{{ $Seat->id }}-ida" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
+                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-ida" value="{{ $Seat->id }}-ida" @if(!$Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
                     </label>
                 </div>
                 @endforeach
@@ -58,7 +58,7 @@
                 @foreach($volta->content->seats as $Seat)
                 <div class="poltrona @if(!$Seat->available) desativado @endif" style="bottom:{{ $Seat->position->y*3+1 }}em;left:{{ $Seat->position->x*7+15 }}%;" >
                     <label for="{{ $Seat->id }}-volta">
-                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-volta" value="{{ $Seat->id }}-volta" @if($Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
+                        <input type="checkbox" name="poltronas" data-price="{{ $Seat->details->price }}" id="{{ $Seat->id }}-volta" value="{{ $Seat->id }}-volta" @if(!$Seat->available) disabled="disabled" @endif >{{ $Seat->name }}
                     </label>
                 </div>
                 @endforeach
@@ -131,6 +131,72 @@
                     <input type="hidden" id="time" value="{{ $ida->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $ida->sessionId }}">
                     <input type="hidden" id="trip-id" value="{{ $ida->content->trip_id }}">
+                    <div class="col-sm-8"> 
+                        <label for="nome">Nome:</label>
+                    </div>
+                    <div class="col-sm-4"> 
+                        <label for="gender">Gênero:</label>
+                    </div>
+                    <div class="col-sm-8">
+                        <input required="required"  type="text" placeholder="Nome" name="name" id="name">
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="gender" name="gender">
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                        </select> 
+                    </div>
+                    <div class="col-sm-12"> 
+                        <label for="doc">Documento:</label>
+                    </div>
+                    <div class="col-sm-4">
+                        <select id="document-type" name="documentType">
+                            <option value="rg">RG</option>
+                            <option value="passaporte">Passaporte</option>
+                            <option value="cpf">CPF</option> 
+                        </select> 
+                    </div> 
+                    <div class="col-sm-8"> 
+                        <input type="text" id="document" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                    </div> 
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-acao" type="submit">Escolher Poltrona <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide"></i>
+                        </button>
+             </div>
+             </form>
+        </div>
+    </div>
+</div>
+@endif
+
+@if(isset($volta))
+<div id="modal-poltrona-volta" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <form id="validacao-poltrona" action="#" method="GET">
+            <div class="modal-body">
+                <div class="row margin-b-1">
+                    <div class="col-sm-10">
+                        <h3 class="texto-preto">
+                            <div class="poltrona-externa selecionada num-poltrona"></div>
+                            Poltrona <span class="num-poltrona"></span>
+                        </h3>
+                    </div>
+                    <div class="col-sm-2"><button type="button" class="btn pull-right" data-dismiss="modal"><i class="fa fa-times"></i></button></div>
+                </div>
+
+                <div class="row">
+                    
+                    <input type="hidden" id="tipo" value="volta">
+                    <input type="hidden" id="from" value="{{ $volta->frombus }}">
+                    <input type="hidden" id="to" value="{{ $volta->tobus }}">
+                    <input type="hidden" id="seat" value="">
+                    <input type="hidden" id="date" value="{{ $volta->diames  }}">
+                    <input type="hidden" id="time" value="{{ $volta->horario  }}">
+                    <input type="hidden" id="session-id" value="{{ $volta->sessionId }}">
+                    <input type="hidden" id="trip-id" value="{{ $volta->content->trip_id }}">
                     <div class="col-sm-8"> 
                         <label for="nome">Nome:</label>
                     </div>

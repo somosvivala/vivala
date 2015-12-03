@@ -126,6 +126,7 @@ var bindaPoltronas = function(){
     // Binda o clique das poltronas para seleção
     $(".poltrona input").click(function(){
 
+        console.log('poltrona clicada');
         // Pega o elemento da poltrona
         var poltrona = $(this).parents('.poltrona'),
             // Pega somente o valor numerico. Ex.: '12-ida' -> '12'
@@ -139,11 +140,11 @@ var bindaPoltronas = function(){
             tipo_viagem = 'volta';
         }
         
+        console.log(tipo_viagem);
+        console.log(poltrona);
         // Testa se a poltrona já está selecionada
         if(poltrona.hasClass('selecionada'))
         {
-            console.log('selecionada ja:');
-            console.log(poltrona);
             // Unselect na poltrona
             $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove(); 
 
@@ -215,11 +216,6 @@ var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
     // marca o elemento da poltrona como selecionado (laranja)
     poltrona_elemento.addClass('selecionada');
 
-    //@TODO 
-    // - "Receber" os dados por parametro de nome, doc, doctype e preçoseguro
-    // - Incluir nao modificavel ou input hidden
-    // - Adicionar checkbox pro seguro
-    //
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
     var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> </div> ';
@@ -227,5 +223,5 @@ var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 
     // Fecha a modal
-    $('#modal-poltrona-ida').modal('hide');
+    $('#modal-poltrona-'+tipo_viagem).modal('hide');
 };
