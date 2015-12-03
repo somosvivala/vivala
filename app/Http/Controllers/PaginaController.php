@@ -25,7 +25,14 @@ class PaginaController extends Controller {
      */
     public function __construct() {
         // Use middleware only on some functions
-        $this->middleware('auth', ['except' => 'getTermosecondicoes']);
+        $this->middleware('auth', ['except' => [ 
+            'getTermosecondicoes',
+            'getAssinaturapg',
+            'getAssinaturadan',
+            'getAssinaturaraissa',
+            'getAssinaturadib',
+            'getAssinaturababi' ]
+        ]);
     }
 
     /**
@@ -230,5 +237,31 @@ class PaginaController extends Controller {
             $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pela modal');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
+    }
+
+
+    public function getAssinaturadan() 
+    {
+        return view('paginas.assinaturas.assinaturadan');
+    }
+
+    public function getAssinaturapg() 
+    {
+        return view('paginas.assinaturas.assinaturapg');
+    }
+
+    public function getAssinaturaraissa() 
+    {
+        return view('paginas.assinaturas.assinaturaraissa');
+    }
+
+    public function getAssinaturadib() 
+    {
+        return view('paginas.assinaturas.assinaturadib');
+    }
+      
+    public function getAssinaturababi() 
+    {
+        return view('paginas.assinaturas.assinaturababi');
     }
 }
