@@ -209,7 +209,7 @@ var bindaPoltronas = function(){
 
 // Mostra a poltronacomo selecionada e adicona no 
 // formulario de sumissao de compra
-var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem){
+var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
     var poltrona_elemento = $("input#"+numero_poltrona+"-"+tipo_viagem).parents('.poltrona');
 
     // marca o elemento da poltrona como selecionado (laranja)
@@ -222,7 +222,7 @@ var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem){
     //
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
-    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <input required="required"  type="text" placeholder="Nome" name="nome[]"> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> <select name="tipo_doc[]"> <option value="rg">RG</option> <option value="passaporte">Passaporte</option> <option value="carteira_motorista">Carteira de Motorista</option> <option value="carteira_trabalho">Carteira de Trabalho</option> </select> </div> <div class="col-sm-8"> <input type="text" placeholder="Ex: 123.456.789-0" name="documento[]" required="required" > </div> </div> ';
+    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> </div> ';
 
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 

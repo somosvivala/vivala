@@ -115,7 +115,7 @@ class ClickBusController extends Controller {
             App::abort(403,json_decode($result)->error[0]->message );
         }
         // Migué de resposta com sucesso que deveria estar vindo no result
-        return '{
+        $result = '{
             "meta": {},
             "items": [{
                 "seat": "'.$request["request"]["seat"].'",
@@ -130,6 +130,10 @@ class ClickBusController extends Controller {
                 "expireAt": "2015-01-20 17:46"
             }]
         }';
+        return '{
+            "result": '.$result.',
+            "data": '.$data.'    
+        }';
     }
 
     public function Removerpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
@@ -140,6 +144,8 @@ class ClickBusController extends Controller {
 
         $context = [ 
         	'http' => [ 
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen($data)."\r\n",
                 'method' => 'DELETE',
                 'content' => $data
 	        ] 
