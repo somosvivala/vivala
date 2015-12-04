@@ -158,8 +158,7 @@ var ajaxPoltronas = function(request) {
            console.log(data_obj.data.request.passenger);
 
            adicionaPoltronaFront(data_obj.result.items[0].seat,params.tipo,data_obj.data.request.passenger);
-
-        },
+                   },
         error: function (data) {
             console.log('erro do ajax poltronas');
             console.log(data);
@@ -194,6 +193,11 @@ var ajaxPoltronas = function(request) {
                     }
 
                     */
+        },
+        complete: function(data, status) {
+            $('form#validacao-poltrona').find('button:submit').removeAttr('disabled');
+            $('form#validacao-poltrona button:submit i').hide();
+
         }
     });
 
@@ -272,6 +276,9 @@ var tripPayment = function(request, frm) {
             },
             "contents": params.contents
         }
+    })
+    .error(function(data) {
+
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
