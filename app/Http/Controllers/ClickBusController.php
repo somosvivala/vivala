@@ -163,19 +163,14 @@ class ClickBusController extends Controller {
         $request = Input::get('params');
         $frm = $request['frm'];
 
-        dd($request, $frm);
+//        dd($request, $frm);
 
-
-
-
+/*
         $data = json_encode($request);
 
         $context = [ 
             'http' => [ 
-<<<<<<< HEAD
                 'ignore_errors' => true,
-=======
->>>>>>> b3239d3ba4cc1bcf19b197f74c9e950d97587368
                 'method' => 'POST',
                 'content' => $data
             ] 
@@ -183,11 +178,8 @@ class ClickBusController extends Controller {
         $context = stream_context_create($context);
 
         $result = file_get_contents(self::$url.'/payments', false, $context);
-
-<<<<<<< HEAD
         return view('clickbus._checkout', compact('result'));
-=======
-        return view('', compact('result'));
->>>>>>> b3239d3ba4cc1bcf19b197f74c9e950d97587368
+ */
+        return view('clickbus._checkout');
     }
 }

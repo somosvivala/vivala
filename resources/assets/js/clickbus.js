@@ -254,6 +254,7 @@ var tripPayment = function(request, frm) {
         }
     });
 
+    console.log(frmObj);
     $.extend(params, request);
 
     $.ajax({
@@ -273,7 +274,8 @@ var tripPayment = function(request, frm) {
         },
     })
     .done(function(data) {
-        console.log(data);
+        $('#clickbus-resultado-busca').html(data);
+        bindaAbas();
     });
     
 };

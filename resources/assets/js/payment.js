@@ -12,8 +12,8 @@ var ajax,
     bindaAbas = function() {
     
         $('#abas-pagamento a').click(function (e) {
-          e.preventDefault()
-          $(this).tab('show')
+          e.preventDefault();
+          $(this).tab('show');
         })
     };
 

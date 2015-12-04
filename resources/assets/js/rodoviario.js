@@ -208,7 +208,6 @@ var bindaPoltronas = function(){
 
 
         console.log("Submit das poltronas para a tela de pagamento");
-        console.log(frm);
 
         tripPayment(params, frm);
 
@@ -227,10 +226,18 @@ var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
 
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
-    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="ida-numero_poltrona][" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="ida-documento][" value="'+viajante.document+'"> <input name="ida-documentType][" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="ida-nome][" type="hidden" value="'+viajante.name+'">  </div> ';
+    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="ida-numero_poltrona" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="ida-documento" value="'+viajante.document+'"> <input name="ida-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="ida-nome" type="hidden" value="'+viajante.name+'">  </div> ';
 
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 
     // Fecha a modal
     $('#modal-poltrona-'+tipo_viagem).modal('hide');
 };
+
+var bindaAbas = function() {
+    $('#abas-pagamento a').click(function (e) {
+        e.preventDefault();
+        $(this).tab('show');
+    })
+};
+
