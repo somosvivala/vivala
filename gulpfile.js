@@ -31,6 +31,7 @@ elixir(function(mix) {
     ], null, 'resources/assets/css');
 
     mix.scripts([
+        '../../assets/bower/jquery/dist/jquery.js',
         '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
         '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
         '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
