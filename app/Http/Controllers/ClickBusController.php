@@ -90,7 +90,7 @@ class ClickBusController extends Controller {
      * portanto se chegou aqui é valido
      * @return Retorna a view de checkout
      */ 
-    public function Selecionarpoltronas(/*SelecionarPoltronasClickbusRequest $request*/) 
+    public function getSelecionarpoltronas(/*SelecionarPoltronasClickbusRequest $request*/) 
     {
     	$request = Input::get('params');
 
@@ -136,7 +136,7 @@ class ClickBusController extends Controller {
         }';
     }
 
-    public function Removerpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
+    public function getRemoverpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
     {
     	$request = Input::get('params');
 
@@ -158,15 +158,24 @@ class ClickBusController extends Controller {
         return $result;
     }
 
-    public function payment(/*PaymentClickbusRequest $request*/)
+    public function getPayment(Request $request)
     {
-    	$request = Input::get('params');
+        $request = Input::get('params');
+        $frm = $request['frm'];
 
-    	$data = json_encode($request);
+        dd($request, $frm);
+
+
+
+
+        $data = json_encode($request);
 
         $context = [ 
             'http' => [ 
+<<<<<<< HEAD
                 'ignore_errors' => true,
+=======
+>>>>>>> b3239d3ba4cc1bcf19b197f74c9e950d97587368
                 'method' => 'POST',
                 'content' => $data
             ] 
@@ -175,6 +184,10 @@ class ClickBusController extends Controller {
 
         $result = file_get_contents(self::$url.'/payments', false, $context);
 
+<<<<<<< HEAD
         return view('clickbus._checkout', compact('result'));
+=======
+        return view('', compact('result'));
+>>>>>>> b3239d3ba4cc1bcf19b197f74c9e950d97587368
     }
 }
