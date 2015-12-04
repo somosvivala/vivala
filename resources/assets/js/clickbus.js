@@ -233,13 +233,27 @@ var removePoltrona = function(request, tipo) {
     });
 };
 
-var tripPayment = function(request) {
-    $params = {
+var tripPayment = function(request, frm) {
+    var params = {
         "store": "clickbus",
         "model": "retail",
         "platform": "web",
         "contents": []
-    }
+    };
+
+    //pegando objeto pelo form
+    var frmObj = {};
+    $.each(frm.serializeArray(), function() {
+        if (frmObj[this.name] !== undefined) {
+            if (!frmObj[this.name].push) {
+                frmObj[this.name] = [frmObj[this.name]];
+            }
+            frmObj[this.name].push(this.value || '');
+        } else {
+            frmObj[this.name] = this.value || '';
+        }
+    });
+
     $.extend(params, request);
 
     $.ajax({
@@ -248,6 +262,7 @@ var tripPayment = function(request) {
         dataType: 'json',
         data: {
             params: {
+                "frm" : frmObj,
                 "meta": {
                     "store": params.store,
                     "model": params.model,
