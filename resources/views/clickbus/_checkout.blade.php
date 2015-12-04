@@ -1,10 +1,10 @@
 <div class="col-xs-12">
-   <h3> Tela de Checkout </h3>
+   <h3> Tela de Checkout  - Em desenvolvimento</h3>
 
    @if(isset($result))
        {{ $result }}
    @endif
-
+   {{--
    <div class="row">
        <div class="col-sm-8">
            <h4>Informações do Cliente</h4>
@@ -38,5 +38,5 @@
        <div class="col-sm-4">
            <h4>Detalhes do Pagamento</h4>
        </div>
-
+--}}
 </div>

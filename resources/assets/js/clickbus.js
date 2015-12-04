@@ -260,7 +260,7 @@ var tripPayment = function(request, frm) {
     $.ajax({
         url: 'clickbus/payment',
         type: 'POST',
-        dataType: 'json',
+        dataType: 'html',
         data: {
             params: {
                 "frm" : frmObj,
@@ -271,7 +271,7 @@ var tripPayment = function(request, frm) {
                 },
             },
             "contents": params.contents
-        },
+        }
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
