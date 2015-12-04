@@ -144,6 +144,7 @@ class ClickBusController extends Controller {
 
         $context = [ 
         	'http' => [ 
+                'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n",
                 'method' => 'DELETE',
@@ -164,15 +165,16 @@ class ClickBusController extends Controller {
     	$data = json_encode($request);
 
         $context = [ 
-        	'http' => [ 
+            'http' => [ 
+                'ignore_errors' => true,
                 'method' => 'POST',
                 'content' => $data
-	        ] 
-		];
-		$context = stream_context_create($context);
+            ] 
+        ];
+        $context = stream_context_create($context);
 
-                $result = file_get_contents(self::$url.'/payments', false, $context);
+        $result = file_get_contents(self::$url.'/payments', false, $context);
 
-		return view('', compact('result'));
+        return view('clickbus._checkout', compact('result'));
     }
 }
