@@ -163,6 +163,16 @@ var bindaPoltronas = function(){
     // Binda o submit do modal das poltronas para validacao de disponibilidade
     $('form#validacao-poltrona').submit(function(e){
         e.preventDefault();
+        
+        var frm = $(this),
+            loading = frm.data('loading');
+
+        if (loading && loading != "") {
+            $(this).find('button:submit').attr('disabled','disabled');
+            $(this).find('#'+loading).show();
+        }
+
+        
         var params = {
             "tipo": $(this).find('input#tipo').val(), 
             "from": $(this).find('input#from').val(), 
@@ -202,7 +212,7 @@ var bindaPoltronas = function(){
             loading = frm.data('loading');
         
         if (loading && loading != "") {
-            $(this).find('input:submit').hide();
+            $(this).find('input:submit').attr('disabled','disabled');
             $(this).find('#'+loading).show();
         }
 
