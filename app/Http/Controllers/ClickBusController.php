@@ -69,6 +69,7 @@ class ClickBusController extends Controller {
                 $ida->diames = $ida_obj->diames ;
                 $ida->frombus = $ida_obj->from;
                 $ida->tobus = $ida_obj->to;
+                $ida->scheduleId = $ida_obj->id;
             }
             if($volta_obj) {
                 $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}");
@@ -77,6 +78,8 @@ class ClickBusController extends Controller {
                 $volta->diames = $volta_obj->diames ;
                 $volta->frombus = $volta_obj->from;
                 $volta->tobus= $volta_obj->to;
+                $volta->scheduleId = $volta_obj->id;
+
             }
 
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
@@ -163,23 +166,41 @@ class ClickBusController extends Controller {
         $request = Input::get('params');
         $frm = $request['frm'];
 
-//        dd($request, $frm);
 
-/*
-        $data = json_encode($request);
+        $data = json_encode($request["meta"]);
+
+        $ida = new \stdClass();
+        $ida->scheduleId = $request["frm"]["ida-scheduleId"];
+        $ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
+        
+        $volta = new \stdClass();
+        $volta->scheduleId = $request["frm"]["volta-scheduleId"];
+        $volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
+
+        $content = new \stdClass();
+        $content->meta = $request["meta"];
+        $content->contents = [$ida, $volta];
 
         $context = [ 
             'http' => [ 
                 'ignore_errors' => true,
                 'method' => 'POST',
-                'content' => $data
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen(json_encode($content))."\r\n",
+                'content' => json_encode($content)
             ] 
         ];
-        $context = stream_context_create($context);
 
+
+        $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
+
+
+        dd($content, $context, $result);
+
+        $result = json_decode($result);
+
         return view('clickbus._checkout', compact('result'));
- */
         return view('clickbus._checkout');
     }
 }
