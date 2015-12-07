@@ -1,5 +1,4 @@
 <div class="col-xs-12">
-   <h3> Tela de Checkout  - Em desenvolvimento</h3>
 
    @if(isset($result))
        {{ $result }}
@@ -19,7 +18,7 @@
                            <label for="nome-pf">Nome</label>
                            <input type="text" class="form-control" name="nome-pf" required="required">
                        </div>
-                       
+
                        <div class="col-xs-8">
                            <label for="email-pf">Email</label>
                            <input type="email" class="form-control" required="required" name="email-pf">
@@ -46,7 +45,7 @@
                            <label for="razao-social-pj">Razão Social</label>
                            <input type="text" class="form-control" name="razao-social-pj" required="required">
                        </div>
-                       <div claYss="col-xs-12">
+                       <div class="col-xs-12">
                            <label for="nome-fantasia-pj">Nome fantasia</label>
                            <input type="text" class="form-control" name="nome-fantasia-pj" required="required">
                        </div>
@@ -75,7 +74,7 @@
                    </div>
                </div>
            </div>
-           <h4>Forma de Pagamento</h4>
+           <h4 class="margin-t-2">Forma de Pagamento</h4>
            <ul id="abas-pagamento" class="nav nav-pills">
                <li role="presentation" class="active"><a href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
                <li role="presentation"><a href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>
@@ -97,11 +96,11 @@
                            <input type="text" class="form-control" name="nome-titular-credito" required="required">
                        </div>
                        <div class="col-xs-4">
-                           <div class="row">
+                           <div class="">
                                <label for="mes-validade-credito" >Cartão válido até</label>
                                <select class="col-xs-6">
                                    <option>Mês</option>
-                                   <option>Janiero</option>
+                                   <option>01</option>
                                </select>
                                <select class="col-xs-6">
                                    <option>Ano</option>
@@ -128,7 +127,7 @@
                                <label for="mes-validade-debito" >Cartão válido até</label>
                                <select class="col-xs-6">
                                    <option>Mês</option>
-                                   <option>Janiero</option>
+                                   <option>01</option>
                                </select>
                                <select class="col-xs-6">
                                    <option>Ano</option>
@@ -144,10 +143,59 @@
                        Finalize sua compra para ser transferido para o PayPal.
 
                    </div>
-                </div>
+               </div>
            </div>
        </div>
-       <div class="col-sm-4">
+       <div class="col-sm-4 detalhes-pagamento">
            <h4>Detalhes do Pagamento</h4>
+           <div id="lista-passagens-pagamento">
+               <div class="passagem">
+                   <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
+                   <span>{{ "Expresso Brasil" }}</span> - <span>{{ "Convencional" }}</span>
+                   <span>De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                   <span>Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+               </div>
+               <div class="passagem">
+                   <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
+                   <span>{{ "Expresso Brasil" }}</span> - <span>{{ "Convencional" }}</span>
+                   <span>De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                   <span>Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+               </div>
+           </div>
+
+           <div class="row">
+               <div class="col-sm-8 text-left">
+                   Poltronas:
+               </div>
+               <div class="col-sm-4 text-right">
+                   2
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-sm-8 text-left">
+                   Passagem:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ 175,75
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-sm-8 text-left">
+                   Impostos e taxas:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ 43,33
+               </div>
+           </div>
+           <div class="row margin-t-1 valor-pagamento">
+               <small><span class="num-vezes">2</span>x</small>
+               <span class="valor">R$ 45,30</span>
+           </div>
+           <div class="row margin-t-1 ">
+               <button type="submit" class="btn-acao">
+                   Compre agora
+               </button>
+           </div>
        </div>
+   </div>
 </div>

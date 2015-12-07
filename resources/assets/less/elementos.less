@@ -21,6 +21,23 @@ strong {
 	font-family: @font-family-sans-serif-bold;
 	font-weight: normal;
 }
+// Sabrescrevendo as pills
+.nav-pills {
+    li a {
+        border-radius: 0px;
+        transition: all 0.3s ease;
+        background-color: @cor-fundo;
+        &:hover{
+            background-color: @cor-fundo;
+            color: @cor-primaria;
+        }
+    }
+    li.active > a, 
+    li.active > a:hover,  
+    li.active > a:focus {
+        background-color: @cor-primaria;
+    }
+}
 
 // Sobrescrevendo a cor dos link
 a {
@@ -38,6 +55,7 @@ label {
 	font-family: @font-family-sans-serif-bold;
 }
 input[type="text"],
+input[type="email"],
 select,
 textarea,
 form input[type="text"] {

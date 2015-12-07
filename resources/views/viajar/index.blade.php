@@ -55,6 +55,7 @@
         <div role="tabpanel" class="tab-pane active" id="restaurantes">
             @include('chefsclub.buscarestaurantes')
             <div class="lista-restaurantes">
+                @include('clickbus._checkout')
                 @include('chefsclub.listarestaurantes')
             </div>
         </div>
