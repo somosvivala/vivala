@@ -76,9 +76,23 @@
            </div>
            <h4 class="margin-t-2">Forma de Pagamento</h4>
            <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
-               <li role="presentation" class="active"><a href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
-               <li role="presentation"><a href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>
-               <li role="presentation"><a href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>
+                @foreach($result->items->payment_methods as $formaPagamento)
+                    @if ($formaPagamento->name == 'creditcard')
+                      <li role="presentation" class="active"><a href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>     
+                    @endif
+                    
+                    @if ($formaPagamento->name == 'creditcard')
+                      <li role="presentation"><a href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>      
+                    @endif
+                    
+                    @if ($formaPagamento->name == 'creditcard')
+                      <li role="presentation"><a href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>     
+                    @endif
+ 
+                @empty
+                    <p> Nenhum metodo de pagamento disponivel </p>
+                @endforeach
+               
            </ul>
            <div class="row">
                <div id="tabs-pagamento" class="tab-content">

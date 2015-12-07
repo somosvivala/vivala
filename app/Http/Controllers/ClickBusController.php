@@ -166,17 +166,17 @@ class ClickBusController extends Controller {
         $request = Input::get('params');
         $frm = $request['frm'];
 
-
-        $data = json_encode($request["meta"]);
-
+        //pegando dados das poltronas de ida
         $ida = new \stdClass();
         $ida->scheduleId = $request["frm"]["ida-scheduleId"];
         $ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
-        
+
+        //pegando dados das poltronas de volta 
         $volta = new \stdClass();
         $volta->scheduleId = $request["frm"]["volta-scheduleId"];
         $volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
 
+        //criando objeto content
         $content = new \stdClass();
         $content->meta = $request["meta"];
         $content->contents = [$ida, $volta];
@@ -195,12 +195,8 @@ class ClickBusController extends Controller {
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
 
-
-        dd($content, $context, $result);
-
         $result = json_decode($result);
 
         return view('clickbus._checkout', compact('result'));
-        return view('clickbus._checkout');
     }
 }
