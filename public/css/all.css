@@ -10314,6 +10314,43 @@ div.flight-wrapper div.flight-pricing {
 #clickbus-resultado-busca .departure {
   border-bottom: 1px solid #E2E2E2;
 }
+#clickbus-resultado-busca input[type="text"].form-control,
+#clickbus-resultado-busca input[type="email"].form-control,
+#clickbus-resultado-busca select.form-control,
+#clickbus-resultado-busca textarea.form-control,
+#clickbus-resultado-busca form input[type="text"].form-control {
+  color: black;
+}
+#clickbus-resultado-busca input[type="text"].form-control::-webkit-input-placeholder,
+#clickbus-resultado-busca input[type="email"].form-control::-webkit-input-placeholder,
+#clickbus-resultado-busca select.form-control::-webkit-input-placeholder,
+#clickbus-resultado-busca textarea.form-control::-webkit-input-placeholder,
+#clickbus-resultado-busca form input[type="text"].form-control::-webkit-input-placeholder {
+  color: grey;
+}
+#clickbus-resultado-busca input[type="text"].form-control:-moz-placeholder,
+#clickbus-resultado-busca input[type="email"].form-control:-moz-placeholder,
+#clickbus-resultado-busca select.form-control:-moz-placeholder,
+#clickbus-resultado-busca textarea.form-control:-moz-placeholder,
+#clickbus-resultado-busca form input[type="text"].form-control:-moz-placeholder {
+  /* Firefox 18- */
+  color: grey;
+}
+#clickbus-resultado-busca input[type="text"].form-control::-moz-placeholder,
+#clickbus-resultado-busca input[type="email"].form-control::-moz-placeholder,
+#clickbus-resultado-busca select.form-control::-moz-placeholder,
+#clickbus-resultado-busca textarea.form-control::-moz-placeholder,
+#clickbus-resultado-busca form input[type="text"].form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  color: grey;
+}
+#clickbus-resultado-busca input[type="text"].form-control:-ms-input-placeholder,
+#clickbus-resultado-busca input[type="email"].form-control:-ms-input-placeholder,
+#clickbus-resultado-busca select.form-control:-ms-input-placeholder,
+#clickbus-resultado-busca textarea.form-control:-ms-input-placeholder,
+#clickbus-resultado-busca form input[type="text"].form-control:-ms-input-placeholder {
+  color: grey;
+}
 .detalhes-pagamento {
   border: 1px solid #E2E2E2;
   min-height: 20em;
