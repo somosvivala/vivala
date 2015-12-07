@@ -10318,8 +10318,13 @@ div.flight-wrapper div.flight-pricing {
   border: 1px solid #E2E2E2;
   min-height: 20em;
 }
+.detalhes-pagamento .passagem h5 {
+  margin-bottom: 0px;
+  border-top: 1px solid #E2E2E2;
+  padding-top: 1em;
+}
 .detalhes-pagamento .valor-pagamento {
-  background-color: #F16F2B;
+  background-color: #8BA6AC;
   color: white;
   text-align: right;
 }

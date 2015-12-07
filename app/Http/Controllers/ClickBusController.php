@@ -75,8 +75,8 @@ class ClickBusController extends Controller {
                 $volta = json_decode($content_volta);
                 $volta->horario = $volta_obj->horario;
                 $volta->diames = $volta_obj->diames ;
-                $volta->frombus = $ida_obj->from;
-                $volta->tobus= $ida_obj->to;
+                $volta->frombus = $volta_obj->from;
+                $volta->tobus= $volta_obj->to;
             }
 
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
