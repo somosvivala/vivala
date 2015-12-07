@@ -126,20 +126,49 @@
     .departure {
         border-bottom: 1px solid @cor-fundo;
     }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea,
+    form input[type="text"] {
+        &.form-control{
+            color:black;
+            &::-webkit-input-placeholder {
+                color: grey;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: grey;
+            }
+            &::-moz-placeholder {  /* Firefox 19+ */
+                color: grey;
+            }
+            &:-ms-input-placeholder {
+                color: grey;
+            }
+        }
+    }
 }
 
 .detalhes-pagamento {
     border: 1px solid @cor-fundo;
     min-height: 20em;
+    .passagem {
+        h5 {
+            margin-bottom:0px;
+            border-top:1px solid @cor-fundo;
+            padding-top:1em;
+        }
+    }
     .valor-pagamento {
     
-        background-color: @cor-primaria;
+        background-color: @cor-pele-zumbi;
         color:white;
         text-align:right;
         .valor {
-        font-size:2em;
+            font-size:2em;
         }
     }
+    
 }
 
 .poltrona-externa {

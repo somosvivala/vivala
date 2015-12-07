@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+<div class="col-xs-12 padding-b-2">
 
    @if(isset($result))
        {{ $result }}
@@ -6,7 +6,7 @@
    <div class="row">
        <div class="col-sm-8">
            <h4>Informações do Cliente</h4>
-           <ul id="abas-cliente" class="nav nav-pills">
+           <ul id="abas-cliente" class="nav nav-pills margin-b-1">
                <li role="presentation" class="active"><a href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">Pessoa Física</a></li>
                <li role="presentation"><a href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">Pessoa Jurídica</a></li>
                <li role="presentation"><a href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
@@ -75,21 +75,21 @@
                </div>
            </div>
            <h4 class="margin-t-2">Forma de Pagamento</h4>
-           <ul id="abas-pagamento" class="nav nav-pills">
+           <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
                <li role="presentation" class="active"><a href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
                <li role="presentation"><a href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>
                <li role="presentation"><a href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>
            </ul>
-           <div class="row">
+           <div class="row margin-b-2">
                <div id="tabs-pagamento" class="tab-content">
                    <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-credito">Número do Cartão</label>
-                           <input type="text" class="col-xs-8" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
+                           <input type="text" class="form-control" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
                        </div>
                        <div class="col-xs-4">
                            <label for="cod-seguranca-credito" >Código de Segurança</label>
-                           <input type="text" class="col-xs-4" name="cod-seguranca-credito" required="required" placeholder="123">
+                           <input type="text" class="form-control" name="cod-seguranca-credito" required="required" placeholder="123">
                        </div>
                        <div class="col-xs-8">
                            <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
@@ -112,11 +112,11 @@
                    <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-debito">Número do Cartão</label>
-                           <input type="text" class="col-xs-8" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
+                           <input type="text" class="form-control" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
                        </div>
                        <div class="col-xs-4">
                            <label for="cod-seguranca-debito" >Código de Segurança</label>
-                           <input type="text" class="col-xs-4" name="cod-seguranca-debito" required="required" placeholder="123">
+                           <input type="text" class="form-control" name="cod-seguranca-debito" required="required" placeholder="123">
                        </div>
                        <div class="col-xs-8">
                            <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
@@ -148,7 +148,7 @@
        </div>
        <div class="col-sm-4 detalhes-pagamento">
            <h4>Detalhes do Pagamento</h4>
-           <div id="lista-passagens-pagamento">
+           <div id="lista-passagens-pagamento" class="margin-t-2">
                <div class="passagem">
                    <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
                    <span>{{ "Expresso Brasil" }}</span> - <span>{{ "Convencional" }}</span>
@@ -163,7 +163,7 @@
                </div>
            </div>
 
-           <div class="row">
+           <div class="row margin-t-2">
                <div class="col-sm-8 text-left">
                    Poltronas:
                </div>
@@ -187,12 +187,14 @@
                    R$ 43,33
                </div>
            </div>
-           <div class="row margin-t-1 valor-pagamento">
-               <small><span class="num-vezes">2</span>x</small>
-               <span class="valor">R$ 45,30</span>
+           <div class="row margin-t-2 maring-b-2 valor-pagamento">
+               <div class="col-xs-12">
+                   <small><span class="num-vezes">2</span>x</small>
+                   <span class="valor">R$ 45,30</span>
+               </div>
            </div>
-           <div class="row margin-t-1 ">
-               <button type="submit" class="btn-acao">
+           <div class="row margin-t-1 margin-b-1 text-center">
+               <button type="submit" class=" btn btn-acao">
                    Compre agora
                </button>
            </div>
