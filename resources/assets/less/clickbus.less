@@ -126,6 +126,27 @@
     .departure {
         border-bottom: 1px solid @cor-fundo;
     }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea,
+    form input[type="text"] {
+        &.form-control{
+            color:black;
+            &::-webkit-input-placeholder {
+                color: grey;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: grey;
+            }
+            &::-moz-placeholder {  /* Firefox 19+ */
+                color: grey;
+            }
+            &:-ms-input-placeholder {
+                color: grey;
+            }
+        }
+    }
 }
 
 .detalhes-pagamento {
@@ -147,6 +168,7 @@
             font-size:2em;
         }
     }
+    
 }
 
 .poltrona-externa {

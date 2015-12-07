@@ -1,4 +1,4 @@
-<div class="col-xs-12">
+<div class="col-xs-12 padding-b-2">
 
    @if(isset($result))
        {{ $result }}
@@ -94,16 +94,16 @@
                 @endforeach
                
            </ul>
-           <div class="row">
+           <div class="row margin-b-2">
                <div id="tabs-pagamento" class="tab-content">
                    <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-credito">Número do Cartão</label>
-                           <input type="text" class="col-xs-8" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
+                           <input type="text" class="form-control" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
                        </div>
                        <div class="col-xs-4">
                            <label for="cod-seguranca-credito" >Código de Segurança</label>
-                           <input type="text" class="col-xs-4" name="cod-seguranca-credito" required="required" placeholder="123">
+                           <input type="text" class="form-control" name="cod-seguranca-credito" required="required" placeholder="123">
                        </div>
                        <div class="col-xs-8">
                            <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
@@ -126,11 +126,11 @@
                    <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-debito">Número do Cartão</label>
-                           <input type="text" class="col-xs-8" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
+                           <input type="text" class="form-control" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
                        </div>
                        <div class="col-xs-4">
                            <label for="cod-seguranca-debito" >Código de Segurança</label>
-                           <input type="text" class="col-xs-4" name="cod-seguranca-debito" required="required" placeholder="123">
+                           <input type="text" class="form-control" name="cod-seguranca-debito" required="required" placeholder="123">
                        </div>
                        <div class="col-xs-8">
                            <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
@@ -201,7 +201,7 @@
                    R$ 43,33
                </div>
            </div>
-           <div class="row margin-t-1 valor-pagamento">
+           <div class="row margin-t-2 maring-b-2 valor-pagamento">
                <div class="col-xs-12">
                    <small><span class="num-vezes">2</span>x</small>
                    <span class="valor">R$ 45,30</span>
