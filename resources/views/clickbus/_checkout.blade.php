@@ -16,60 +16,60 @@
                    <div role="tabpanel" class="tab-pane fade active in" id="pessoa-fisica" aria-labelledby="pessoa-fisica-tab">
                        <div class="col-xs-12">
                            <label for="nome-pf">Nome</label>
-                           <input type="text" class="form-control" name="nome-pf" required="required">
+                           <input type="text" class="form-control" name="nome-pf" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
                        </div>
 
                        <div class="col-xs-8">
                            <label for="email-pf">Email</label>
-                           <input type="email" class="form-control" required="required" name="email-pf">
+                           <input type="email" class="form-control" required="required" name="email-pf" value="{{ Auth::user()->email }}">
                        </div>
                        <div class="col-xs-4">
                            <label for="telefone-pf">Telefone</label>
-                           <input type="text" class="form-control" required="required" name="telefone-pf">
+                           <input type="text" class="form-control" required="required" name="telefone-pf" placeholder="11 987654321">
                        </div>
                    </div>
                    <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
                        <div class="col-xs-12">
                            <label for="nome-pj">Nome do comprador</label>
-                           <input type="text" class="form-control" name="nome-pj" required="required">
+                           <input type="text" class="form-control" name="nome-pj" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
                        </div>
                        <div class="col-xs-8">
                            <label for="email-pj">Email</label>
-                           <input type="email" class="form-control" required="required" name="email-pj">
+                           <input type="email" class="form-control" required="required" name="email-pj" value="{{ Auth::user()->email }}">
                        </div>
                        <div class="col-xs-4">
                            <label for="telefone-pj">Telefone</label>
-                           <input type="text" class="form-control" required="required" name="telefone-pj">
+                           <input type="text" class="form-control" required="required" name="telefone-pj" placeholder="11 987654321">
                        </div>
                        <div class="col-xs-12">
                            <label for="razao-social-pj">Razão Social</label>
-                           <input type="text" class="form-control" name="razao-social-pj" required="required">
+                           <input type="text" class="form-control" name="razao-social-pj" required="required" value="Razão Social">
                        </div>
                        <div class="col-xs-12">
                            <label for="nome-fantasia-pj">Nome fantasia</label>
-                           <input type="text" class="form-control" name="nome-fantasia-pj" required="required">
+                           <input type="text" class="form-control" name="nome-fantasia-pj" required="required" value="Nome fantasia">
                        </div>
                        <div class="col-xs-12">
                            <label for="cnpj-pj">CNPJ</label>
-                           <input type="text" class="form-control" name="cnpj-pj" required="required">
+                           <input type="text" class="form-control" name="cnpj-pj" required="required" value="54.767.627/0001-00">
                        </div>
                    </div>
                    <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                        <div class="col-xs-12">
                            <label for="nome-estrangeiro">Nome</label>
-                           <input type="text" class="form-control" name="nome-estrangeiro" required="required">
+                           <input type="text" class="form-control" name="nome-estrangeiro" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
                        </div>
                        <div class="col-xs-8">
                            <label for="email-estrangeiro">Email</label>
-                           <input type="email" class="form-control" required="required" name="email-estrangeiro">
+                           <input type="email" class="form-control" required="required" name="email-estrangeiro" value="{{ Auth::user()->email }}">
                        </div>
                        <div class="col-xs-4">
                            <label for="telefone-estrangeiro">Telefone</label>
-                           <input type="text" class="form-control" required="required" name="telefone-estrangeiro">
+                           <input type="text" class="form-control" required="required" name="telefone-estrangeiro" placeholder="+55 11 987654321">
                        </div>
                        <div class="col-xs-12">
                            <label for="passaporte-estrangeiro">Passaporte</label>
-                           <input type="text" class="form-control" name="passaporte" required="required">
+                           <input type="text" class="form-control" name="passaporte" required="required" value="Passaporte">
                        </div>
                    </div>
                </div>
@@ -85,15 +85,15 @@
                    <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-credito">Número do Cartão</label>
-                           <input type="text" class="col-xs-8" name="num-cartao-credito" required="required">
+                           <input type="text" class="col-xs-8" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
                        </div>
                        <div class="col-xs-4">
                            <label for="cod-seguranca-credito" >Código de Segurança</label>
-                           <input type="text" class="col-xs-4" name="cod-seguranca-credito" required="required">
+                           <input type="text" class="col-xs-4" name="cod-seguranca-credito" required="required" placeholder="123">
                        </div>
                        <div class="col-xs-8">
                            <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
-                           <input type="text" class="form-control" name="nome-titular-credito" required="required">
+                           <input type="text" class="form-control" name="nome-titular-credito" required="required" placeholder="FULANO D. SILVA">
                        </div>
                        <div class="col-xs-4">
                            <div class="">
@@ -112,15 +112,15 @@
                    <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-debito">Número do Cartão</label>
-                           <input type="text" class="col-xs-8" name="num-cartao-debito" required="required">
+                           <input type="text" class="col-xs-8" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
                        </div>
                        <div class="col-xs-4">
                            <label for="cod-seguranca-debito" >Código de Segurança</label>
-                           <input type="text" class="col-xs-4" name="cod-seguranca-debito" required="required">
+                           <input type="text" class="col-xs-4" name="cod-seguranca-debito" required="required" placeholder="123">
                        </div>
                        <div class="col-xs-8">
                            <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
-                           <input type="text" class="form-control" name="nome-titular-debito" required="required">
+                           <input type="text" class="form-control" name="nome-titular-debito" required="required" placeholder="FULANO D. SILVA">
                        </div>
                        <div class="col-xs-4">
                            <div class="row">
