@@ -8845,6 +8845,7 @@ label {
 }
 input[type="text"],
 input[type="email"],
+input[type="date"],
 select,
 textarea,
 form input[type="text"] {
@@ -8857,6 +8858,7 @@ form input[type="text"] {
 }
 input[type="text"].form-control,
 input[type="email"].form-control,
+input[type="date"].form-control,
 select.form-control,
 textarea.form-control,
 form input[type="text"].form-control {
@@ -8867,6 +8869,7 @@ form input[type="text"].form-control {
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[type="date"]:focus,
 select:focus,
 textarea:focus,
 form input[type="text"]:focus {
@@ -8874,6 +8877,7 @@ form input[type="text"]:focus {
 }
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
+input[type="date"]::-webkit-input-placeholder,
 select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder,
 form input[type="text"]::-webkit-input-placeholder {
@@ -8882,6 +8886,7 @@ form input[type="text"]::-webkit-input-placeholder {
 }
 input[type="text"]:-moz-placeholder,
 input[type="email"]:-moz-placeholder,
+input[type="date"]:-moz-placeholder,
 select:-moz-placeholder,
 textarea:-moz-placeholder,
 form input[type="text"]:-moz-placeholder {
@@ -8891,6 +8896,7 @@ form input[type="text"]:-moz-placeholder {
 }
 input[type="text"]::-moz-placeholder,
 input[type="email"]::-moz-placeholder,
+input[type="date"]::-moz-placeholder,
 select::-moz-placeholder,
 textarea::-moz-placeholder,
 form input[type="text"]::-moz-placeholder {
@@ -8900,6 +8906,7 @@ form input[type="text"]::-moz-placeholder {
 }
 input[type="text"]:-ms-input-placeholder,
 input[type="email"]:-ms-input-placeholder,
+input[type="date"]:-ms-input-placeholder,
 select:-ms-input-placeholder,
 textarea:-ms-input-placeholder,
 form input[type="text"]:-ms-input-placeholder {

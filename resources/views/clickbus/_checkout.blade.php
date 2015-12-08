@@ -11,11 +11,15 @@
                 <div class="row">
                     <div id="tabs-pagamento" class="tab-content">
                         <div role="tabpanel" class="tab-pane fade active in" id="pessoa-fisica" aria-labelledby="pessoa-fisica-tab">
-                            <div class="col-xs-12">
+                            <div class="col-xs-8">
                                 <label for="nome-pf">Nome</label>
                                 <input type="text" class="form-control" name="nome-pf" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
                             </div>
 
+                            <div class="col-xs-4">
+                                <label for="nascimento-pf">Nascimento</label>
+                                <input type="date" class="form-control" required="required" name="nascimento-pf" placeholder="dd/mm/aaaa">
+                            </div>
                             <div class="col-xs-8">
                                 <label for="email-pf">Email</label>
                                 <input type="email" class="form-control" required="required" name="email-pf" value="{{ Auth::user()->email }}">
