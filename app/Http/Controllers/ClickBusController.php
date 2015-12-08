@@ -274,10 +274,6 @@ class ClickBusController extends Controller {
     }
 
 
-    public function getBooking(Request $request) {
-        dd($request);
-    }
-
     /**
      * Metodo responsavel fechar o pedido e efetuar o pagamento
      * @param $request -> Informacoes do form ,
