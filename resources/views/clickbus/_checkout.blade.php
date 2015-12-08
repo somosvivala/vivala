@@ -1,8 +1,4 @@
 <div class="col-xs-12 padding-b-2">
-
-   @if(isset($result))
-       {{ $result }}
-   @endif
    <div class="row">
        <div class="col-sm-8">
            <h4>Informações do Cliente</h4>
@@ -43,15 +39,15 @@
                        </div>
                        <div class="col-xs-12">
                            <label for="razao-social-pj">Razão Social</label>
-                           <input type="text" class="form-control" name="razao-social-pj" required="required" value="Razão Social">
+                           <input type="text" class="form-control" name="razao-social-pj" required="required" placeholder="Razão Social">
                        </div>
                        <div class="col-xs-12">
                            <label for="nome-fantasia-pj">Nome fantasia</label>
-                           <input type="text" class="form-control" name="nome-fantasia-pj" required="required" value="Nome fantasia">
+                           <input type="text" class="form-control" name="nome-fantasia-pj" required="required" placeholder="Nome fantasia">
                        </div>
                        <div class="col-xs-12">
                            <label for="cnpj-pj">CNPJ</label>
-                           <input type="text" class="form-control" name="cnpj-pj" required="required" value="54.767.627/0001-00">
+                           <input type="text" class="form-control" name="cnpj-pj" required="required" placeholder="54.767.627/0001-00">
                        </div>
                    </div>
                    <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
@@ -69,34 +65,36 @@
                        </div>
                        <div class="col-xs-12">
                            <label for="passaporte-estrangeiro">Passaporte</label>
-                           <input type="text" class="form-control" name="passaporte" required="required" value="Passaporte">
+                           <input type="text" class="form-control" name="passaporte" required="required" placeholder="Passaporte">
                        </div>
                    </div>
                </div>
            </div>
            <h4 class="margin-t-2">Forma de Pagamento</h4>
            <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
-                @foreach($result->items->payment_methods as $formaPagamento)
+                @forelse($result->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
                       <li role="presentation" class="active"><a href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>     
                     @endif
                     
-                    @if ($formaPagamento->name == 'creditcard')
+                    @if ($formaPagamento->name == 'debitcard')
                       <li role="presentation"><a href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>      
                     @endif
                     
-                    @if ($formaPagamento->name == 'creditcard')
+                    @if ($formaPagamento->name == 'paypal_hpp')
                       <li role="presentation"><a href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>     
                     @endif
  
                 @empty
                     <p> Nenhum metodo de pagamento disponivel </p>
-                @endforeach
+                @endforelse
                
            </ul>
            <div class="row margin-b-2">
                <div id="tabs-pagamento" class="tab-content">
-                   <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
+                   @forelse($result->items->payment_methods as $formaPagamento)
+                    @if ($formaPagamento->name == 'creditcard')  
+                       <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-credito">Número do Cartão</label>
                            <input type="text" class="form-control" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
@@ -122,8 +120,34 @@
                                </select>
                            </div>
                        </div>
+                       <div class="col-xs-12 radio-hidden">
+                            @forelse ($formaPagamento->details as $bandeiraCartao)
+                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="seleciona-bandeira" value="{{ $bandeiraCartao->brand }}">
+                                <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
+                                    <img src="{{ url('/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
+                                </label>
+                            @empty
+                                <p> Bandeiras para esse metodo de pagamento indisponiveis </p>
+                            @endforelse
+                       </div>
+                       <div class="col-xs-12">
+                            @forelse ($formaPagamento->details as $bandeiraCartao)
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="soft-hide select-parcelas">
+                                    @forelse ($bandeiraCartao->installments as $key => $Parcela)
+                                        <option data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
+                                    @empty
+                                        <option value="0">Nenhuma opção disponivel</option>
+                                    @endforelse
+                                </select>
+                            @empty
+                                <p> Bandeira indisponivel </p>
+                            @endforelse
+                       </div>
                    </div>
-                   <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
+                    @endif
+
+                    @if ($formaPagamento->name == 'debitcard')
+                    <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
                        <div class="col-xs-8">
                            <label for="num-cartao-debito">Número do Cartão</label>
                            <input type="text" class="form-control" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
@@ -150,6 +174,10 @@
                            </div>
                        </div>
                    </div>
+                    @endif
+                    
+                   @if ($formaPagamento->name == 'paypal_hpp')
+                    
                    <div role="tabpanel" class="tab-pane fade" id="paypal" aria-labelledby="paypal-tab">
                        Aproveite e pague sua compra com PayPal!
                        <br>
@@ -157,6 +185,11 @@
                        Finalize sua compra para ser transferido para o PayPal.
 
                    </div>
+                   @endif
+ 
+                @empty
+                    <p> Metodo de pagamento indisponivel </p>
+                @endforelse
                </div>
            </div>
        </div>

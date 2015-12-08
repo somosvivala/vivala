@@ -161,6 +161,12 @@ class ClickBusController extends Controller {
         return $result;
     }
 
+    /**
+     * Metodo responsavel por servir a view de checkout, com as opçoes de 
+     * pagamento
+     * @param $request -> Informacoes do form de selecao de poltronas,
+     * @return View
+     */
     public function getPayment(Request $request)
     {
         $request = Input::get('params');
@@ -191,12 +197,10 @@ class ClickBusController extends Controller {
             ] 
         ];
 
-
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
 
         $result = json_decode($result);
-
         return view('clickbus._checkout', compact('result'));
     }
 }

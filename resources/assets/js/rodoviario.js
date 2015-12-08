@@ -251,3 +251,13 @@ var bindaAbas = function() {
     })
 };
 
+//Funcao para bindar quando o usuario selecionar a bandeira do creditcard,
+//esconde todos os selects e mostra o atual;
+//@TODO: bindar selects com update de precos?
+var bindaBandeirasCartao = function() {
+    $('input.seleciona-bandeira').change(function(evt) {
+       evt.preventDefault();
+       $('.select-parcelas').hide();
+       $('#bandeira-'+$(this).val()).show();
+    });
+};
