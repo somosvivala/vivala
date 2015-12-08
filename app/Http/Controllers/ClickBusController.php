@@ -228,7 +228,7 @@ class ClickBusController extends Controller {
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/booking', false, $context);
-        return $result
+        return $result;
 
     }
 }

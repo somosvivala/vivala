@@ -113,11 +113,15 @@
                                     <label for="mes-validade-credito" >Cartão válido até</label>
                                     <select class="col-xs-6">
                                         <option>Mês</option>
-                                        <option>01</option>
+                                        @for($i=1;$i<=12;$i++)
+                                        <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                        @endfor
                                     </select>
                                     <select class="col-xs-6">
                                         <option>Ano</option>
-                                        <option>2015</option>
+                                        @for($i=0;$i<=20;$i++)
+                                        <option>{{ date('Y')+$i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                             </div>
@@ -186,10 +190,14 @@
                         @if ($formaPagamento->name == 'paypal_hpp')
 
                         <div role="tabpanel" class="tab-pane fade" id="paypal" aria-labelledby="paypal-tab">
+                            <h2>
                             Aproveite e pague sua compra com PayPal!
-                            <br>
+                            </h2>
 
+                            <img src="/img/bandeiras/paypal.png" alt="Paypal" title="PayPal">
+                            <h2>
                             Finalize sua compra para ser transferido para o PayPal.
+                            </h2>
 
                         </div>
                         @endif
