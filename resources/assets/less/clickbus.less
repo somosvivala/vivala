@@ -147,6 +147,20 @@
             }
         }
     }
+    .radio-hidden {
+        
+        
+        label {
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+        label:hover {
+            border: 2px solid @cor-fundo;
+        }
+        input[type="radio"]:checked + label {
+            border: 2px solid @cor-primaria;
+        }
+    }
 }
 
 .detalhes-pagamento {

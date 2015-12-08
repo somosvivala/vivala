@@ -10351,6 +10351,16 @@ div.flight-wrapper div.flight-pricing {
 #clickbus-resultado-busca form input[type="text"].form-control:-ms-input-placeholder {
   color: grey;
 }
+#clickbus-resultado-busca .radio-hidden label {
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+#clickbus-resultado-busca .radio-hidden label:hover {
+  border: 2px solid #E2E2E2;
+}
+#clickbus-resultado-busca .radio-hidden input[type="radio"]:checked + label {
+  border: 2px solid #F16F2B;
+}
 .detalhes-pagamento {
   border: 1px solid #E2E2E2;
   min-height: 20em;

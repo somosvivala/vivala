@@ -120,15 +120,21 @@
                                </select>
                            </div>
                        </div>
-                       <div class="col-xs-12 radio-hidden">
+                       <div class="col-xs-12">
+                           <label>Bandeira do cartão</label>
+                       </div>
+                       <div class="col-xs-12 text-center radio-hidden">
                             @forelse ($formaPagamento->details as $bandeiraCartao)
                                 <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="seleciona-bandeira" value="{{ $bandeiraCartao->brand }}">
                                 <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
-                                    <img src="{{ url('/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
+                                    <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
                                 </label>
                             @empty
                                 <p> Bandeiras para esse metodo de pagamento indisponiveis </p>
                             @endforelse
+                       </div>
+                       <div class="col-xs-12">
+                           <label>Quantidade de parcelas</label>
                        </div>
                        <div class="col-xs-12">
                             @forelse ($formaPagamento->details as $bandeiraCartao)
@@ -198,15 +204,19 @@
            <div id="lista-passagens-pagamento" class="margin-t-2">
                <div class="passagem">
                    <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
-                   <span>{{ "Expresso Brasil" }}</span> - <span>{{ "Convencional" }}</span>
-                   <span>De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
-                   <span>Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                   <div class="row">
+                       <span class="col-sm-12">{{ "Expresso Brasil" }} - {{ "Convencional" }}</span>
+                       <span class="col-sm-12">De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                       <span class="col-sm-12">Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                   </div>
                </div>
                <div class="passagem">
                    <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
-                   <span>{{ "Expresso Brasil" }}</span> - <span>{{ "Convencional" }}</span>
-                   <span>De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
-                   <span>Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                   <div class="row">
+                       <span class="col-sm-12">{{ "Expresso Brasil" }} - {{ "Convencional" }}</span>
+                       <span class="col-sm-12">De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                       <span class="col-sm-12">Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                   </div>
                </div>
            </div>
 
@@ -235,12 +245,12 @@
                </div>
            </div>
            <div class="row margin-t-2 maring-b-2 valor-pagamento">
-               <div class="col-xs-12">
+               <div class="col-xs-12 font-bold-upper">
                    <small><span class="num-vezes">2</span>x</small>
                    <span class="valor">R$ 45,30</span>
                </div>
            </div>
-           <div class="row margin-t-1 margin-b-1 text-center">
+           <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">
                    Compre agora
                </button>
