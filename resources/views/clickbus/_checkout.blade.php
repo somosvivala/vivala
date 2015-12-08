@@ -232,54 +232,60 @@
                         </div>
                     </div>
                 </div>
+           <div class="row margin-t-2">
+               <div class="col-sm-8 text-left">
+                   Poltronas:
+               </div>
+               <div class="col-sm-4 text-right">
+                   {{ number_format($result->ticket_amount,2,',','') }}
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-sm-8 text-left">
+                   Passagem:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ {{ number_format($result->original_cost,2,',','') }}
+               </div>
+           </div>
+           <div class="row">
+               <div class="col-sm-8 text-left">
+                   Impostos e taxas:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ <span class="valor-fee">{{ "0,00" }}</span>
+               </div>
+           </div>
+           <div class="row soft-hide row-desconto">
+               <div class="col-sm-8 text-left">
+                   Desconto:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ <span class="valor-desconto">{{ "0,00" }}</span>
+               </div>
+           </div>
+           <div class="row margin-t-2 maring-b-2 valor-pagamento">
+               <div class="col-xs-12 font-bold-upper">
+                   <small><span class="num-vezes">1</span>x</small>
+                   <span class="valor valor-installment">{{ number_format($result->original_cost,2,',','') }}</span>
+               </div>
+           </div>
+           <div class="hidden">
+               <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
+               @if (isset($passagens)) 
+                   @foreach ($passagens as $key => $Passagem) 
+                       <input type="hidden" name="passagens[{{ $key }}]['document']" value="{{ $Passagem->document }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['seat']" value="{{ $Passagem->seat }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['lastName']" value="{{ $Passagem->firstName }}">
+                   @endforeach
+               @endif
 
-                <div class="row margin-t-2">
-                    <div class="col-sm-8 text-left">
-                        Poltronas:
-                    </div>
-                    <div class="col-sm-4 text-right">
-                        {{ number_format($result->ticket_amount,2,',','') }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-8 text-left">
-                        Passagem:
-                    </div>
-                    <div class="col-sm-4 text-right">
-                        R$ {{ number_format($result->original_cost,2,',','') }}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-8 text-left">
-                        Impostos e taxas:
-                    </div>
-                    <div class="col-sm-4 text-right">
-                        R$ <span class="valor-fee">{{ "0,00" }}</span>
-                    </div>
-                </div>
-                <div class="row soft-hide row-desconto">
-                    <div class="col-sm-8 text-left">
-                        Desconto:
-                    </div>
-                    <div class="col-sm-4 text-right">
-                        R$ <span class="valor-desconto">{{ "0,00" }}</span>
-                    </div>
-                </div>
-                <div class="row margin-t-2 maring-b-2 valor-pagamento">
-                    <div class="col-xs-12 font-bold-upper">
-                        <small><span class="num-vezes">1</span>x</small>
-                        <span class="valor valor-installment">{{ number_format($result->original_cost,2,',','') }}</span>
-                    </div>
-                </div>
-                <div class="hidden">
-                    <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
-                </div>
-                <div class="row margin-t-2 margin-b-1 text-center">
-                    <button type="submit" class=" btn btn-acao">
-                        Compre agora
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>
+           </div>
+           <div class="row margin-t-2 margin-b-1 text-center">
+               <button type="submit" class=" btn btn-acao">
+                   Compre agora
+               </button>
+           </div>
+       </div>
+   </div>
 </div>
