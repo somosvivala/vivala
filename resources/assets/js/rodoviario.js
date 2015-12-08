@@ -261,3 +261,35 @@ var bindaBandeirasCartao = function() {
        $('#bandeira-'+$(this).val()).show();
     });
 };
+var bindaChangePagamento = function() {
+    $('input.seleciona-bandeira[name="bandeira-cartao"]').change(function(){
+        atualizaValorParcelas();
+    });
+    $('.select-parcelas').change(atualizaValorParcelas);
+};
+
+var atualizaValorParcelas = function(){
+    var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
+        opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
+        qtd_parcelas = opcao_selecionada.val(),
+        total_with_discount = opcao_selecionada.data('total_with_discount'),
+        total = opcao_selecionada.data('total'),
+        installment = opcao_selecionada.data('installment'),
+        discount_value = opcao_selecionada.data('discount_value'),
+        fee = opcao_selecionada.data('fee');
+
+
+    if(discount_value > 0){
+        $('.row-desconto').show();
+        $('.valor-desconto').html(discount_value.toFixed(2).toString().replace(',','').replace('.',','));
+    }else{
+        $('.row-desconto').hide();
+    }
+
+    $('.num-vezes').html(qtd_parcelas);
+    $('.valor-fee').html(fee.toFixed(2).toString().replace(',','').replace('.',','));
+    $('.valor-installment').html(installment.toFixed(2).toString().replace(',','').replace('.',','));
+
+    $('#valor-total-pagamento-passagem').val(total_with_discount);
+}
+

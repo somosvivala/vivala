@@ -140,7 +140,7 @@
                             @forelse ($formaPagamento->details as $bandeiraCartao)
                                 <select id="bandeira-{{ $bandeiraCartao->brand }}" class="soft-hide select-parcelas">
                                     @forelse ($bandeiraCartao->installments as $key => $Parcela)
-                                        <option data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
+                                        <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
                                     @empty
                                         <option value="0">Nenhuma opção disponivel</option>
                                     @endforelse
@@ -225,7 +225,7 @@
                    Poltronas:
                </div>
                <div class="col-sm-4 text-right">
-                   2
+                   {{ number_format($result->ticket_amount,2,',','') }}
                </div>
            </div>
            <div class="row">
@@ -233,7 +233,7 @@
                    Passagem:
                </div>
                <div class="col-sm-4 text-right">
-                   R$ 175,75
+                   R$ {{ number_format($result->original_cost,2,',','') }}
                </div>
            </div>
            <div class="row">
@@ -241,14 +241,25 @@
                    Impostos e taxas:
                </div>
                <div class="col-sm-4 text-right">
-                   R$ 43,33
+                   R$ <span class="valor-fee">{{ "0,00" }}</span>
+               </div>
+           </div>
+           <div class="row soft-hide row-desconto">
+               <div class="col-sm-8 text-left">
+                   Desconto:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ <span class="valor-desconto">{{ "0,00" }}</span>
                </div>
            </div>
            <div class="row margin-t-2 maring-b-2 valor-pagamento">
                <div class="col-xs-12 font-bold-upper">
-                   <small><span class="num-vezes">2</span>x</small>
-                   <span class="valor">R$ 45,30</span>
+                   <small><span class="num-vezes">1</span>x</small>
+                   <span class="valor valor-installment">{{ number_format($result->original_cost,2,',','') }}</span>
                </div>
+           </div>
+           <div class="hidden">
+               <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">

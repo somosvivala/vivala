@@ -284,6 +284,7 @@ var tripPayment = function(request, frm) {
         $('#clickbus-resultado-busca').html(data);
         bindaAbas();
         bindaBandeirasCartao();
+        bindaChangePagamento();
     });
     
 };
