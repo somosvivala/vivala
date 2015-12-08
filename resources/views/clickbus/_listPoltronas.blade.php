@@ -131,33 +131,32 @@
                     <input type="hidden" id="time" value="{{ $ida->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $ida->sessionId }}">
                     <input type="hidden" id="trip-id" value="{{ $ida->content->trip_id }}">
-                    <div class="col-sm-8"> 
+                    <div class="col-sm-6"> 
                         <label for="nome">Nome:</label>
-                    </div>
-                    <div class="col-sm-4"> 
-                        <label for="gender">Gênero:</label>
-                    </div>
-                    <div class="col-sm-8">
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
-                    <div class="col-sm-4">
-                        <select id="gender" name="gender">
-                            <option value="M">Masculino</option>
-                            <option value="F">Feminino</option>
-                        </select> 
+                    <div class="col-sm-6"> 
+                        <label for="birthday">Nascimento:</label>
+                        <input type="date" required="required" name="birthday" placeholder="dd/mm/aaaa">
                     </div>
-                    <div class="col-sm-12"> 
-                        <label for="doc">Documento:</label>
+                    <div class="col-sm-6"> 
+                        <div class="row">
+                            <label for="doc" class="col-sm-12">Documento:</label>
+                            <div class="col-xs-4">
+                                <select id="document-type" name="documentType" class="">
+                                    <option value="rg">RG</option>
+                                    <option value="passaporte">Passaporte</option>
+                                    <option value="cpf">CPF</option> 
+                                </select> 
+                            </div>
+                            <div class="col-xs-8">
+                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <select id="document-type" name="documentType">
-                            <option value="rg">RG</option>
-                            <option value="passaporte">Passaporte</option>
-                            <option value="cpf">CPF</option> 
-                        </select> 
-                    </div> 
-                    <div class="col-sm-8"> 
-                        <input type="text" id="document" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                    <div class="col-sm-6">
+                        <label for="doc" class="col-sm-12">Email:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" >
                     </div> 
                 </div> 
             </div>

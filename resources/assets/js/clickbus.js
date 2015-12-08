@@ -288,3 +288,52 @@ var tripPayment = function(request, frm) {
     });
     
 };
+
+var tripBooking = function(request) {
+    var params = {
+        "meta": {
+            "model": "retail",
+            "store": "clickbus",
+            "platform": "web"
+        },
+        "request": {
+            "sessionId": "",
+            "ip": "",
+            "buyer": {
+                "locale": "pt_BR",
+                "gender": "M",
+                "meta": {},
+                "payment": {
+                }
+            },
+            "orderItems": [
+            ]
+        }
+    };
+
+    $.extend(params, request);
+
+    $.ajax({
+        url: 'clickbus/booking',
+        type: 'POST',
+        dataType: 'html',
+        data: {
+            params: {
+                "frm" : frmObj,
+                "meta": {
+                    "store": params.store,
+                    "model": params.model,
+                    "platform": params.platform
+                },
+            },
+            "contents": params.contents
+        }
+    })
+    .error(function(data) {
+
+    })
+    .done(function(data) {
+        $('#clickbus-resultado-busca').html(data);
+    });
+    
+};
