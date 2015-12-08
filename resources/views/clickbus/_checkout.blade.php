@@ -260,6 +260,14 @@
            </div>
            <div class="hidden">
                <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
+               @if (isset($passagens)) 
+                   @foreach ($passagens as $key => $Passagem) 
+                       <input type="hidden" name="passagens[{{ $key }}]['document']" value="{{ $Passagem->document }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['seat']" value="{{ $Passagem->seat }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['lastName']" value="{{ $Passagem->firstName }}">
+                   @endforeach
+               @endif
+
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">

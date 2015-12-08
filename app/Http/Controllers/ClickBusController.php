@@ -171,21 +171,21 @@ class ClickBusController extends Controller {
     {
         $request = Input::get('params');
         $frm = $request['frm'];
-
+        
         //pegando dados das poltronas de ida
-        $ida = new \stdClass();
-        $ida->scheduleId = $request["frm"]["ida-scheduleId"];
-        $ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
+        $Ida = new \stdClass();
+        $Ida->scheduleId = $request["frm"]["ida-scheduleId"];
+        $Ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
 
         //pegando dados das poltronas de volta 
-        $volta = new \stdClass();
-        $volta->scheduleId = $request["frm"]["volta-scheduleId"];
-        $volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
+        $Volta = new \stdClass();
+        $Volta->scheduleId = $request["frm"]["volta-scheduleId"];
+        $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
 
         //criando objeto content
         $content = new \stdClass();
         $content->meta = $request["meta"];
-        $content->contents = [$ida, $volta];
+        $content->contents = [$Ida, $Volta];
 
         $context = [ 
             'http' => [ 
@@ -199,8 +199,82 @@ class ClickBusController extends Controller {
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
-
         $result = json_decode($result);
-        return view('clickbus._checkout', compact('result'));
+
+        //Montando objeto $Ida 
+        $Ida->numero_poltrona = $request['frm']['ida-numero_poltrona'];
+        $Ida->documento = $request['frm']['ida-documento'];
+        $Ida->nome = $request['frm']['ida-nome'];
+
+        //Montando objeto $Volta 
+        $Volta->numero_poltrona = $request['frm']['volta-numero_poltrona'];
+        $Volta->documento = $request['frm']['volta-documento'];
+        $Volta->nome = $request['frm']['volta-nome'];
+
+        $Passagens = new \stdClass();
+        $Passagens->idaSessionId = $request['frm']['ida-sessionId'];
+        $Passagens->voltaSessionId = $request['frm']['volta-sessionId'];
+
+        $passagens = array();
+        //tratando Ida
+        if (is_array($Ida->numero_poltrona)) {
+            $i = 0;
+            foreach($Ida->numero_poltrona as $numpoltrona) {
+                $Passagem = new \stdClass();
+                $Passagem->document = $Ida->documento[$i];
+                $Passagem->seat = $numpoltrona;
+
+                $nome = explode(" ", $Ida->nome[$i]);
+                $Passagem->lastName = array_pop($nome);
+                $Passagem->firstName = implode(" ", $nome);
+
+                $passagens[] = $Passagem;
+                $i++;
+            }
+        }else{
+            $Passagem = new \stdClass();
+            $Passagem->document = $Ida->documento;
+            $Passagem->seat = $Ida->numero_poltrona;
+
+            $nome = explode(" ", $Ida->nome);
+            $Passagem->lastName = array_pop($nome);
+            $Passagem->firstName = implode(" ", $nome);
+
+            $passagens[] = $Passagem;
+        }
+        
+        //tratando Volta
+        if (is_array($Volta->numero_poltrona)) {
+            $i = 0;
+            foreach($Volta->numero_poltrona as $numpoltrona) {
+                $Passagem = new \stdClass();
+                $Passagem->document = $Volta->documento[$i];
+                $Passagem->seat = $numpoltrona;
+                
+                $nome = explode(" ", $Volta->nome[$i]);
+                $Passagem->lastName = array_pop($nome);
+                $Passagem->firstName = implode(" ", $nome);
+                
+                $passagens[] = $Passagem;
+                $i++;
+            }
+        }else{
+            $Passagem = new \stdClass();
+            $Passagem->document = $Volta->documento;
+            $Passagem->seat = $Volta->numero_poltrona;
+                        
+            $nome = explode(" ", $Volta->nome);
+            $Passagem->lastName = array_pop($nome);
+            $Passagem->firstName = implode(" ", $nome);
+                
+            $passagens[] = $Passagem;
+        }
+
+        return view('clickbus._checkout', compact('result', 'passagens'));
+    }
+
+
+    public function getBooking(Request $request) {
+        dd($request);
     }
 }
