@@ -203,4 +203,32 @@ class ClickBusController extends Controller {
         $result = json_decode($result);
         return view('clickbus._checkout', compact('result'));
     }
+
+    /**
+     * Metodo responsavel fechar o pedido e efetuar o pagamento
+     * @param $request -> Informacoes do form ,
+     * @return 
+     */
+    public function getBooking(Request $request)
+    {
+        $request = Input::get('params');
+        $frm = $request['frm'];
+
+        $data = json_encode($request);
+
+        $context = [ 
+            'http' => [ 
+                'ignore_errors' => true,
+                'method' => 'POST',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen($data)."\r\n",
+                'content' => $data
+            ] 
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/booking', false, $context);
+        return $result
+
+    }
 }

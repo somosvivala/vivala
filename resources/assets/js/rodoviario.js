@@ -223,6 +223,44 @@ var bindaPoltronas = function(){
 
     });
 
+    // Binda o submit da compra
+    $('#form-pagamento').submit(function (ev) {
+        ev.preventDefault();
+
+        var params = {
+            "meta": {
+                "model": "retail",
+                "store": "clickbus",
+                "platform": "web"
+            },
+            "request": {
+                "sessionId": "",
+                "ip": "",
+                "buyer": {
+                    "locale": "pt_BR",
+                    "gender": "M",
+                    "meta": {},
+                    "payment": {
+                    }
+                },
+                "orderItems": [
+                ]
+            }
+        };
+
+        var frm = $(this),
+            loading = frm.data('loading');
+        
+        if (loading && loading != "") {
+            $(this).find('input:submit').attr('disabled','disabled');
+            $(this).find('#'+loading).show();
+        }
+
+        console.log("Submit do pagamento");
+
+        tripBooking(params);
+
+    });
 
 };
 
