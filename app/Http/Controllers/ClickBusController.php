@@ -97,6 +97,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
+        $sessionId = $request["sessionId"];
         $data = json_encode($request);
 
         $context = [ 
@@ -134,7 +135,7 @@ class ClickBusController extends Controller {
                 "expireAt": "2015-01-20 17:46"
             }]
         }';
-
+       
         // Retorna o resultado e todos os dados recebidos
         return '{
             "result": '.$result.',
