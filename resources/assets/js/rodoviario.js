@@ -161,7 +161,7 @@ var bindaPoltronas = function(){
     });
 
     // Binda o submit do modal das poltronas para validacao de disponibilidade
-    $('form#validacao-poltrona').submit(function(e){
+    $('form.validacao-poltrona').submit(function(e){
         e.preventDefault();
         
         var frm = $(this),
@@ -181,7 +181,8 @@ var bindaPoltronas = function(){
             "name": $(this).find('input#name').val(),
             "documentType": $(this).find('select#document-type option:selected').val(),
             "document": $(this).find('input#document').val(),
-            "gender": $(this).find('select#gender option:selected').val(),
+            "birthday": $(this).find('input#birthday').val(),
+            "email": $(this).find('input#email').val(),
             "id": $(this).find('input#trip-id').val(),
             "date": $(this).find('input#date').val(),
             "time": $(this).find('input#time').val(),
@@ -274,7 +275,7 @@ var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
 
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
-    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="'+tipo_viagem+'-numero_poltrona" value="'+numero_poltrona+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="'+tipo_viagem+'-documento" value="'+viajante.document+'"> <input name="'+tipo_viagem+'-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="'+tipo_viagem+'-nome" type="hidden" value="'+viajante.name+'">  </div> ';
+    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="'+tipo_viagem+'-numero_poltrona" value="'+numero_poltrona+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="'+tipo_viagem+'-email" value="'+viajante.email+'"> <input type="hidden" name="'+tipo_viagem+'-birthday" value="'+viajante.birthday+'">  <input type="hidden" name="'+tipo_viagem+'-documento" value="'+viajante.document+'"> <input name="'+tipo_viagem+'-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="'+tipo_viagem+'-nome" type="hidden" value="'+viajante.name+'">  </div> ';
 
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 

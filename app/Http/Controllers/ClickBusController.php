@@ -133,6 +133,8 @@ class ClickBusController extends Controller {
                 "expireAt": "2015-01-20 17:46"
             }]
         }';
+
+        // Retorna o resultado e todos os dados recebidos
         return '{
             "result": '.$result.',
             "data": '.$data.'    

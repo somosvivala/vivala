@@ -117,7 +117,8 @@ var ajaxPoltronas = function(request) {
         "name": "",
         "document": "",
         "documentType": "",
-        "gender": "",
+        "birthday": "",
+        "email": "",
         "id": "",
         "date": "",
         "time": "",
@@ -141,7 +142,9 @@ var ajaxPoltronas = function(request) {
                         "name": params.name,
                         "document": params.document,
                         "documentType": params.documentType, /*[rg|cpf|passaporte]*/
-                        "gender": params.gender              /*[M|F]*/
+                        "gender": params.gender,              /*[M|F]*/
+                        "birthday": params.birthday,
+                        "email": params.email
                     },
                     "schedule": {
                         "id": params.id,
@@ -195,8 +198,8 @@ var ajaxPoltronas = function(request) {
                     */
         },
         complete: function(data, status) {
-            $('form#validacao-poltrona').find('button:submit').removeAttr('disabled');
-            $('form#validacao-poltrona button:submit i').hide();
+            $('form.validacao-poltrona').find('button:submit').removeAttr('disabled');
+            $('form.validacao-poltrona button:submit i').hide();
 
         }
     });
