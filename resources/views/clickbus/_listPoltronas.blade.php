@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-sm-6"> 
                         <label for="birthday">Nascimento:</label>
-                        <input type="date" required="required" name="birthday" placeholder="dd/mm/aaaa">
+                        <input type="date" required="required" name="birthday" id="birthday" placeholder="dd/mm/aaaa">
                     </div>
                     <div class="col-sm-6"> 
                         <div class="row">

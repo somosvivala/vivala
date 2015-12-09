@@ -277,6 +277,8 @@
                        <input type="hidden" name="passagens[{{ $key }}]['document']" value="{{ $Passagem->document }}">
                        <input type="hidden" name="passagens[{{ $key }}]['seat']" value="{{ $Passagem->seat }}">
                        <input type="hidden" name="passagens[{{ $key }}]['lastName']" value="{{ $Passagem->firstName }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['birthday']" value="{{ $Passagem->birthday }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['email']" value="{{ $Passagem->email }}">
                    @endforeach
                @endif
 
