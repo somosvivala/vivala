@@ -158,7 +158,6 @@ var ajaxPoltronas = function(request) {
         },
         success: function (data) {
            data_obj = JSON.parse(data);
-           console.log(data_obj.data.request.passenger);
 
            adicionaPoltronaFront(data_obj.result.items[0].seat,params.tipo,data_obj.data.request.passenger);
                    },
