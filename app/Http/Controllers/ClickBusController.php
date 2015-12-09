@@ -97,15 +97,15 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-        $sessionId = $request["sessionId"];
+        //$sessionId = $request["sessionId"];
         $data = json_encode($request);
 
         $context = [ 
         	'http' => [ 
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Content-Length: ".strlen($data)."\r\n".
-                            "Cookie: PHPSESSID=".$sessionId,
+                            "Content-Length: ".strlen($data)."\r\n",
+                    //        "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'PUT',
                 'content' => $data
 	        ] 
