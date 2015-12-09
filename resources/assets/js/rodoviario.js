@@ -267,8 +267,11 @@ var bindaPoltronas = function(){
 
 // Mostra a poltronacomo selecionada e adicona no 
 // formulario de sumissao de compra
-var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
+var adicionaPoltronaFront = function(poltrona, tipo_viagem, viajante){
+    var numero_poltrona = poltrona.seat;
     var poltrona_elemento = $("input#"+numero_poltrona+"-"+tipo_viagem).parents('.poltrona');
+
+    var seatReservation = poltrona.schedule.id;
 
     // marca o elemento da poltrona como selecionado (laranja)
     poltrona_elemento.addClass('selecionada');
