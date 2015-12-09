@@ -103,7 +103,8 @@ class ClickBusController extends Controller {
         	'http' => [ 
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Content-Length: ".strlen($data)."\r\n",
+                            "Content-Length: ".strlen($data)."\r\n".
+                            "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'PUT',
                 'content' => $data
 	        ] 
