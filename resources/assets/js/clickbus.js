@@ -117,7 +117,8 @@ var ajaxPoltronas = function(request) {
         "name": "",
         "document": "",
         "documentType": "",
-        "gender": "",
+        "birthday": "",
+        "email": "",
         "id": "",
         "date": "",
         "time": "",
@@ -141,7 +142,9 @@ var ajaxPoltronas = function(request) {
                         "name": params.name,
                         "document": params.document,
                         "documentType": params.documentType, /*[rg|cpf|passaporte]*/
-                        "gender": params.gender              /*[M|F]*/
+                        "gender": params.gender,              /*[M|F]*/
+                        "birthday": params.birthday,
+                        "email": params.email
                     },
                     "schedule": {
                         "id": params.id,
@@ -155,10 +158,9 @@ var ajaxPoltronas = function(request) {
         },
         success: function (data) {
            data_obj = JSON.parse(data);
-           console.log(data_obj.data.request.passenger);
 
-           adicionaPoltronaFront(data_obj.result.items[0].seat,params.tipo,data_obj.data.request.passenger);
-                   },
+           adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
+        },
         error: function (data) {
             console.log('erro do ajax poltronas');
             console.log(data);
@@ -195,8 +197,8 @@ var ajaxPoltronas = function(request) {
                     */
         },
         complete: function(data, status) {
-            $('form#validacao-poltrona').find('button:submit').removeAttr('disabled');
-            $('form#validacao-poltrona button:submit i').hide();
+            $('form.validacao-poltrona').find('button:submit').removeAttr('disabled');
+            $('form.validacao-poltrona button:submit i').hide();
 
         }
     });
@@ -283,6 +285,57 @@ var tripPayment = function(request, frm) {
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
         bindaAbas();
+        bindaBandeirasCartao();
+        bindaChangePagamento();
+    });
+    
+};
+
+var tripBooking = function(request) {
+    var params = {
+        "meta": {
+            "model": "retail",
+            "store": "clickbus",
+            "platform": "web"
+        },
+        "request": {
+            "sessionId": "",
+            "ip": "",
+            "buyer": {
+                "locale": "pt_BR",
+                "gender": "M",
+                "meta": {},
+                "payment": {
+                }
+            },
+            "orderItems": [
+            ]
+        }
+    };
+
+    $.extend(params, request);
+
+    $.ajax({
+        url: 'clickbus/booking',
+        type: 'POST',
+        dataType: 'html',
+        data: {
+            params: {
+                "frm" : frmObj,
+                "meta": {
+                    "store": params.store,
+                    "model": params.model,
+                    "platform": params.platform
+                },
+            },
+            "contents": params.contents
+        }
+    })
+    .error(function(data) {
+
+    })
+    .done(function(data) {
+        $('#clickbus-resultado-busca').html(data);
     });
     
 };

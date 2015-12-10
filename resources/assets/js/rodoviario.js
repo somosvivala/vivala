@@ -126,7 +126,6 @@ var bindaPoltronas = function(){
     // Binda o clique das poltronas para seleção
     $(".poltrona input").click(function(){
 
-        console.log('poltrona clicada');
         // Pega o elemento da poltrona
         var poltrona = $(this).parents('.poltrona'),
             // Pega somente o valor numerico. Ex.: '12-ida' -> '12'
@@ -140,8 +139,6 @@ var bindaPoltronas = function(){
             tipo_viagem = 'volta';
         }
         
-        console.log(tipo_viagem);
-        console.log(poltrona);
         // Testa se a poltrona já está selecionada
         if(poltrona.hasClass('selecionada'))
         {
@@ -161,7 +158,7 @@ var bindaPoltronas = function(){
     });
 
     // Binda o submit do modal das poltronas para validacao de disponibilidade
-    $('form#validacao-poltrona').submit(function(e){
+    $('form.validacao-poltrona').submit(function(e){
         e.preventDefault();
         
         var frm = $(this),
@@ -181,7 +178,8 @@ var bindaPoltronas = function(){
             "name": $(this).find('input#name').val(),
             "documentType": $(this).find('select#document-type option:selected').val(),
             "document": $(this).find('input#document').val(),
-            "gender": $(this).find('select#gender option:selected').val(),
+            "birthday": $(this).find('input#birthday').val(),
+            "email": $(this).find('input#email').val(),
             "id": $(this).find('input#trip-id').val(),
             "date": $(this).find('input#date').val(),
             "time": $(this).find('input#time').val(),
@@ -223,20 +221,61 @@ var bindaPoltronas = function(){
 
     });
 
+    // Binda o submit da compra
+    $('#form-pagamento').submit(function (ev) {
+        ev.preventDefault();
+
+        var params = {
+            "meta": {
+                "model": "retail",
+                "store": "clickbus",
+                "platform": "web"
+            },
+            "request": {
+                "sessionId": "",
+                "ip": "",
+                "buyer": {
+                    "locale": "pt_BR",
+                    "gender": "M",
+                    "meta": {},
+                    "payment": {
+                    }
+                },
+                "orderItems": [
+                ]
+            }
+        };
+
+        var frm = $(this),
+            loading = frm.data('loading');
+        
+        if (loading && loading != "") {
+            $(this).find('input:submit').attr('disabled','disabled');
+            $(this).find('#'+loading).show();
+        }
+
+        console.log("Submit do pagamento");
+
+        tripBooking(params);
+
+    });
 
 };
 
 // Mostra a poltronacomo selecionada e adicona no 
 // formulario de sumissao de compra
-var adicionaPoltronaFront = function(numero_poltrona, tipo_viagem, viajante){
+var adicionaPoltronaFront = function(poltrona, tipo_viagem, viajante){
+    var numero_poltrona = poltrona.seat;
     var poltrona_elemento = $("input#"+numero_poltrona+"-"+tipo_viagem).parents('.poltrona');
+
+    var seatReservation = poltrona.schedule.id;
 
     // marca o elemento da poltrona como selecionado (laranja)
     poltrona_elemento.addClass('selecionada');
 
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
-    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="ida-numero_poltrona" value="'+numero_poltrona+'-'+tipo_viagem+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="ida-documento" value="'+viajante.document+'"> <input name="ida-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="ida-nome" type="hidden" value="'+viajante.name+'">  </div> ';
+    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="'+tipo_viagem+'-numero_poltrona" value="'+numero_poltrona+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="'+tipo_viagem+'-email" value="'+viajante.email+'"> <input type="hidden" name="'+tipo_viagem+'-birthday" value="'+viajante.birthday+'">  <input type="hidden" name="'+tipo_viagem+'-documento" value="'+viajante.document+'"> <input name="'+tipo_viagem+'-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="'+tipo_viagem+'-nome" type="hidden" value="'+viajante.name+'">  </div> ';
 
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 
@@ -248,6 +287,56 @@ var bindaAbas = function() {
     $('#abas-pagamento a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        // Remove os required do que foi deselecionado
+        $($(e.target).attr("href")).parent(".tab-content").find(".required").prop("required",false);
+        // Adiciona required no que ta selecionado
+        $($(e.target).attr("href")).find(".required").prop("required",true);
     })
 };
+
+//Funcao para bindar quando o usuario selecionar a bandeira do creditcard,
+//esconde todos os selects e mostra o atual;
+//@TODO: bindar selects com update de precos?
+var bindaBandeirasCartao = function() {
+    $('input.seleciona-bandeira').change(function(evt) {
+       evt.preventDefault();
+       $('.select-parcelas').hide();
+       $('#bandeira-'+$(this).val()).show();
+    });
+};
+var bindaChangePagamento = function() {
+    $('input.seleciona-bandeira[name="bandeira-cartao"]').change(function(){
+        atualizaValorParcelas();
+    });
+    $('.select-parcelas').change(atualizaValorParcelas);
+};
+
+var atualizaValorParcelas = function(){
+    var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
+        opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
+        qtd_parcelas = opcao_selecionada.val(),
+        total_with_discount = opcao_selecionada.data('total_with_discount'),
+        total = opcao_selecionada.data('total'),
+        installment = opcao_selecionada.data('installment'),
+        discount_value = opcao_selecionada.data('discount_value'),
+        fee = opcao_selecionada.data('fee');
+
+
+    if(discount_value > 0){
+        $('.row-desconto').show();
+        $('.valor-desconto').html(discount_value.toFixed(2).toString().replace(',','').replace('.',','));
+    }else{
+        $('.row-desconto').hide();
+    }
+
+    $('.num-vezes').html(qtd_parcelas);
+    $('.valor-fee').html(fee.toFixed(2).toString().replace(',','').replace('.',','));
+    $('.valor-installment').html(installment.toFixed(2).toString().replace(',','').replace('.',','));
+
+    $('#valor-total-pagamento-passagem').val(total_with_discount);
+};
+
 

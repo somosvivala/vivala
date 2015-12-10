@@ -69,6 +69,7 @@ class ClickBusController extends Controller {
                 $ida->diames = $ida_obj->diames ;
                 $ida->frombus = $ida_obj->from;
                 $ida->tobus = $ida_obj->to;
+                $ida->scheduleId = $ida_obj->id;
             }
             if($volta_obj) {
                 $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}");
@@ -77,6 +78,8 @@ class ClickBusController extends Controller {
                 $volta->diames = $volta_obj->diames ;
                 $volta->frombus = $volta_obj->from;
                 $volta->tobus= $volta_obj->to;
+                $volta->scheduleId = $volta_obj->id;
+
             }
 
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
@@ -94,6 +97,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
+        //$sessionId = $request["sessionId"];
         $data = json_encode($request);
 
         $context = [ 
@@ -101,6 +105,7 @@ class ClickBusController extends Controller {
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n",
+                    //        "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'PUT',
                 'content' => $data
 	        ] 
@@ -130,6 +135,8 @@ class ClickBusController extends Controller {
                 "expireAt": "2015-01-20 17:46"
             }]
         }';
+       
+        // Retorna o resultado e todos os dados recebidos
         return '{
             "result": '.$result.',
             "data": '.$data.'    
@@ -158,28 +165,158 @@ class ClickBusController extends Controller {
         return $result;
     }
 
+    /**
+     * Metodo responsavel por servir a view de checkout, com as opçoes de 
+     * pagamento
+     * @param $request -> Informacoes do form de selecao de poltronas,
+     * @return View
+     */
     public function getPayment(Request $request)
     {
         $request = Input::get('params');
         $frm = $request['frm'];
 
-//        dd($request, $frm);
+        //pegando dados das poltronas de ida
+        $Ida = new \stdClass();
+        $Ida->scheduleId = $request["frm"]["ida-scheduleId"];
+        $Ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
 
-/*
+        //pegando dados das poltronas de volta 
+        $Volta = new \stdClass();
+        $Volta->scheduleId = $request["frm"]["volta-scheduleId"];
+        $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
+
+        //criando objeto content
+        $content = new \stdClass();
+        $content->meta = $request["meta"];
+        $content->contents = [$Ida, $Volta];
+
+        $context = [ 
+            'http' => [ 
+                'ignore_errors' => true,
+                'method' => 'POST',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen(json_encode($content))."\r\n",
+                'content' => json_encode($content)
+            ] 
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/payments', false, $context);
+        $result = json_decode($result);
+
+        //Montando objeto $Ida 
+        $Ida->numero_poltrona = $request['frm']['ida-numero_poltrona'];
+        $Ida->documento = $request['frm']['ida-documento'];
+        $Ida->nome = $request['frm']['ida-nome'];
+        $Ida->birthday = $request['frm']['ida-birthday'];
+        $Ida->email = $request['frm']['ida-email'];
+
+        //Montando objeto $Volta 
+        $Volta->numero_poltrona = $request['frm']['volta-numero_poltrona'];
+        $Volta->documento = $request['frm']['volta-documento'];
+        $Volta->nome = $request['frm']['volta-nome'];
+        $Volta->birthday = $request['frm']['volta-birthday'];
+        $Volta->email = $request['frm']['volta-email'];
+
+        //TODO qual sessionID usar? esse objeto Passagens nao esta
+        //sendo passado para a view!
+        $Passagens = new \stdClass();
+        $Passagens->idaSessionId = $request['frm']['ida-sessionId'];
+        $Passagens->voltaSessionId = $request['frm']['volta-sessionId'];
+
+        $passagens = array();
+        //tratando Ida
+        if (is_array($Ida->numero_poltrona)) {
+            $i = 0;
+            foreach($Ida->numero_poltrona as $numpoltrona) {
+                $Passagem = new \stdClass();
+                $Passagem->document = $Ida->documento[$i];
+                $Passagem->seat = $numpoltrona;
+                $Passagem->birthday = $Ida->birthday[$i]; 
+                $Passagem->email = $Ida->email[$i]; 
+
+                $nome = explode(" ", $Ida->nome[$i]);
+                $Passagem->lastName = array_pop($nome);
+                $Passagem->firstName = implode(" ", $nome);
+
+                $passagens[] = $Passagem;
+                $i++;
+            }
+        }else{
+            $Passagem = new \stdClass();
+            $Passagem->document = $Ida->documento;
+            $Passagem->seat = $Ida->numero_poltrona;
+            $Passagem->birthday = $Ida->birthday; 
+            $Passagem->email = $Ida->email; 
+
+            $nome = explode(" ", $Ida->nome);
+            $Passagem->lastName = array_pop($nome);
+            $Passagem->firstName = implode(" ", $nome);
+
+            $passagens[] = $Passagem;
+        }
+        
+        //tratando Volta
+        if (is_array($Volta->numero_poltrona)) {
+            $i = 0;
+            foreach($Volta->numero_poltrona as $numpoltrona) {
+                $Passagem = new \stdClass();
+                $Passagem->document = $Volta->documento[$i];
+                $Passagem->seat = $numpoltrona;
+                $Passagem->birthday = $Volta->birthday[$i]; 
+                $Passagem->email = $Volta->email[$i]; 
+                
+                $nome = explode(" ", $Volta->nome[$i]);
+                $Passagem->lastName = array_pop($nome);
+                $Passagem->firstName = implode(" ", $nome);
+                
+                $passagens[] = $Passagem;
+                $i++;
+            }
+        }else{
+            $Passagem = new \stdClass();
+            $Passagem->document = $Volta->documento;
+            $Passagem->seat = $Volta->numero_poltrona;
+            $Passagem->birthday = $Volta->birthday; 
+            $Passagem->email = $Volta->email; 
+        
+            $nome = explode(" ", $Volta->nome);
+            $Passagem->lastName = array_pop($nome);
+            $Passagem->firstName = implode(" ", $nome);
+                
+            $passagens[] = $Passagem;
+        }
+
+        return view('clickbus._checkout', compact('result', 'passagens'));
+    }
+
+
+    /**
+     * Metodo responsavel fechar o pedido e efetuar o pagamento
+     * @param $request -> Informacoes do form ,
+     * @return 
+     */
+    public function getBooking(Request $request)
+    {
+        $request = Input::get('params');
+        $frm = $request['frm'];
+
         $data = json_encode($request);
 
         $context = [ 
             'http' => [ 
                 'ignore_errors' => true,
                 'method' => 'POST',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen($data)."\r\n",
                 'content' => $data
             ] 
         ];
-        $context = stream_context_create($context);
 
-        $result = file_get_contents(self::$url.'/payments', false, $context);
-        return view('clickbus._checkout', compact('result'));
- */
-        return view('clickbus._checkout');
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/booking', false, $context);
+        return $result;
+
     }
 }

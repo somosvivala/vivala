@@ -87,14 +87,14 @@
     <div class="col-sm-4">
         <h5 class="font-bold-upper">Poltronas Selecionadas</h5>
         {!! Form::open(['url' => ['/clickbus/selecionarpoltronas'], 'id'=>'form-poltronas-clickbus', 'data-loading'=>'form-loading']) !!}
-            <input type="hidden" id="ida-session-id" value="{{ $ida->sessionId }}">
-            <input type="hidden" id="ida-id" value="{{ $ida->content->trip_id }}">
+            <input type="hidden" id="ida-session-id" name="ida-sessionId" value="{{ $ida->sessionId }}">
+            <input type="hidden" id="ida-id" name="ida-scheduleId" value="{{ $ida->scheduleId }}">
             <h4>Partida - Trecho 1</h4>
             <div class="poltronas-selecionadas-ida">
             </div>
             @if(isset($volta))
-            <input type="hidden" id="volta-session-id" value="{{ $volta->sessionId }}">
-            <input type="hidden" id="volta-id" value="{{ $volta->content->trip_id }}">
+            <input type="hidden" id="volta-session-id" name="volta-sessionId" value="{{ $volta->sessionId }}">
+            <input type="hidden" id="volta-id" name="volta-scheduleId" value="{{ $volta->scheduleId }}">
             <h4 class="margin-t-1">Volta - Trecho 2</h4>
             <div class="poltronas-selecionadas-volta">
             </div>
@@ -109,7 +109,7 @@
 <div id="modal-poltrona-ida" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <form id="validacao-poltrona" action="#" method="GET" data-loading="form-loading">
+            <form id="validacao-poltrona-ida" class="validacao-poltrona" action="#" method="GET" data-loading="form-loading">
             <div class="modal-body">
                 <div class="row margin-b-1">
                     <div class="col-sm-10">
@@ -131,33 +131,32 @@
                     <input type="hidden" id="time" value="{{ $ida->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $ida->sessionId }}">
                     <input type="hidden" id="trip-id" value="{{ $ida->content->trip_id }}">
-                    <div class="col-sm-8"> 
+                    <div class="col-sm-6"> 
                         <label for="nome">Nome:</label>
-                    </div>
-                    <div class="col-sm-4"> 
-                        <label for="gender">Gênero:</label>
-                    </div>
-                    <div class="col-sm-8">
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
-                    <div class="col-sm-4">
-                        <select id="gender" name="gender">
-                            <option value="M">Masculino</option>
-                            <option value="F">Feminino</option>
-                        </select> 
+                    <div class="col-sm-6"> 
+                        <label for="birthday">Nascimento:</label>
+                        <input type="date" required="required" name="birthday" id="birthday" placeholder="dd/mm/aaaa">
                     </div>
-                    <div class="col-sm-12"> 
-                        <label for="doc">Documento:</label>
+                    <div class="col-sm-6"> 
+                        <div class="row">
+                            <label for="doc" class="col-sm-12">Documento:</label>
+                            <div class="col-xs-4">
+                                <select id="document-type" name="documentType" class="">
+                                    <option value="rg">RG</option>
+                                    <option value="passaporte">Passaporte</option>
+                                    <option value="cpf">CPF</option> 
+                                </select> 
+                            </div>
+                            <div class="col-xs-8">
+                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <select id="document-type" name="documentType">
-                            <option value="rg">RG</option>
-                            <option value="passaporte">Passaporte</option>
-                            <option value="cpf">CPF</option> 
-                        </select> 
-                    </div> 
-                    <div class="col-sm-8"> 
-                        <input type="text" id="document" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                    <div class="col-sm-6">
+                        <label for="doc" class="col-sm-12">Email:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" >
                     </div> 
                 </div> 
             </div>
@@ -175,7 +174,7 @@
 <div id="modal-poltrona-volta" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <form id="validacao-poltrona" action="#" method="GET">
+            <form id="validacao-poltrona-volta" class="validacao-poltrona" action="#" method="GET">
             <div class="modal-body">
                 <div class="row margin-b-1">
                     <div class="col-sm-10">
@@ -197,33 +196,32 @@
                     <input type="hidden" id="time" value="{{ $volta->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $volta->sessionId }}">
                     <input type="hidden" id="trip-id" value="{{ $volta->content->trip_id }}">
-                    <div class="col-sm-8"> 
+                    <div class="col-sm-6"> 
                         <label for="nome">Nome:</label>
-                    </div>
-                    <div class="col-sm-4"> 
-                        <label for="gender">Gênero:</label>
-                    </div>
-                    <div class="col-sm-8">
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
-                    <div class="col-sm-4">
-                        <select id="gender" name="gender">
-                            <option value="M">Masculino</option>
-                            <option value="F">Feminino</option>
-                        </select> 
+                    <div class="col-sm-6"> 
+                        <label for="birthday">Nascimento:</label>
+                        <input type="date" required="required" name="birthday" placeholder="dd/mm/aaaa">
                     </div>
-                    <div class="col-sm-12"> 
-                        <label for="doc">Documento:</label>
+                    <div class="col-sm-6"> 
+                        <div class="row">
+                            <label for="doc" class="col-sm-12">Documento:</label>
+                            <div class="col-xs-4">
+                                <select id="document-type" name="documentType" class="">
+                                    <option value="rg">RG</option>
+                                    <option value="passaporte">Passaporte</option>
+                                    <option value="cpf">CPF</option> 
+                                </select> 
+                            </div>
+                            <div class="col-xs-8">
+                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <select id="document-type" name="documentType">
-                            <option value="rg">RG</option>
-                            <option value="passaporte">Passaporte</option>
-                            <option value="cpf">CPF</option> 
-                        </select> 
-                    </div> 
-                    <div class="col-sm-8"> 
-                        <input type="text" id="document" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                    <div class="col-sm-6">
+                        <label for="doc" class="col-sm-12">Email:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" >
                     </div> 
                 </div> 
             </div>
