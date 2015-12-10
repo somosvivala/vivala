@@ -126,7 +126,6 @@ var bindaPoltronas = function(){
     // Binda o clique das poltronas para seleção
     $(".poltrona input").click(function(){
 
-        console.log('poltrona clicada');
         // Pega o elemento da poltrona
         var poltrona = $(this).parents('.poltrona'),
             // Pega somente o valor numerico. Ex.: '12-ida' -> '12'
@@ -140,8 +139,6 @@ var bindaPoltronas = function(){
             tipo_viagem = 'volta';
         }
         
-        console.log(tipo_viagem);
-        console.log(poltrona);
         // Testa se a poltrona já está selecionada
         if(poltrona.hasClass('selecionada'))
         {
@@ -290,6 +287,13 @@ var bindaAbas = function() {
     $('#abas-pagamento a').click(function (e) {
         e.preventDefault();
         $(this).tab('show');
+    });
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        // Remove os required do que foi deselecionado
+        $($(e.target).attr("href")).parent(".tab-content").find(".required").prop("required",false);
+        // Adiciona required no que ta selecionado
+        $($(e.target).attr("href")).find(".required").prop("required",true);
     })
 };
 
@@ -333,5 +337,6 @@ var atualizaValorParcelas = function(){
     $('.valor-installment').html(installment.toFixed(2).toString().replace(',','').replace('.',','));
 
     $('#valor-total-pagamento-passagem').val(total_with_discount);
-}
+};
+
 

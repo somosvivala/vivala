@@ -9,68 +9,68 @@
                     <li role="presentation"><a href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
                 </ul>
                 <div class="row">
-                    <div id="tabs-pagamento" class="tab-content">
+                    <div id="tabs-pagamento-cliente" class="tab-content">
                         <div role="tabpanel" class="tab-pane fade active in" id="pessoa-fisica" aria-labelledby="pessoa-fisica-tab">
                             <div class="col-xs-8">
                                 <label for="nome-pf">Nome</label>
-                                <input type="text" class="form-control" name="nome-pf" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="required form-control" name="nome-pf" required="" value="{{ Auth::user()->perfil->nome_completo }}">
                             </div>
 
                             <div class="col-xs-4">
                                 <label for="nascimento-pf">Nascimento</label>
-                                <input type="date" class="form-control" required="required" name="nascimento-pf" placeholder="dd/mm/aaaa">
+                                <input type="date" class="required form-control" required="" name="nascimento-pf" placeholder="dd/mm/aaaa">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pf">Email</label>
-                                <input type="email" class="form-control" required="required" name="email-pf" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" required="" name="email-pf" value="{{ Auth::user()->email }}">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-pf">Telefone</label>
-                                <input type="text" class="form-control" required="required" name="telefone-pf" placeholder="11 987654321">
+                                <input type="text" class="required form-control" required="" name="telefone-pf" placeholder="11 987654321">
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
                             <div class="col-xs-12">
                                 <label for="nome-pj">Nome do comprador</label>
-                                <input type="text" class="form-control" name="nome-pj" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="form-control" name="nome-pj" value="{{ Auth::user()->perfil->nome_completo }}">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pj">Email</label>
-                                <input type="email" class="form-control" required="required" name="email-pj" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" name="email-pj" value="{{ Auth::user()->email }}">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-pj">Telefone</label>
-                                <input type="text" class="form-control" required="required" name="telefone-pj" placeholder="11 987654321">
+                                <input type="text" class="required form-control" name="telefone-pj" placeholder="11 987654321">
                             </div>
                             <div class="col-xs-12">
                                 <label for="razao-social-pj">Razão Social</label>
-                                <input type="text" class="form-control" name="razao-social-pj" required="required" placeholder="Razão Social">
+                                <input type="text" class="required form-control" name="razao-social-pj" placeholder="Razão Social">
                             </div>
                             <div class="col-xs-12">
                                 <label for="nome-fantasia-pj">Nome fantasia</label>
-                                <input type="text" class="form-control" name="nome-fantasia-pj" required="required" placeholder="Nome fantasia">
+                                <input type="text" class="required form-control" name="nome-fantasia-pj" placeholder="Nome fantasia">
                             </div>
                             <div class="col-xs-12">
                                 <label for="cnpj-pj">CNPJ</label>
-                                <input type="text" class="form-control" name="cnpj-pj" required="required" placeholder="54.767.627/0001-00">
+                                <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                             <div class="col-xs-12">
                                 <label for="nome-estrangeiro">Nome</label>
-                                <input type="text" class="form-control" name="nome-estrangeiro" required="required" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="required form-control" name="nome-estrangeiro" value="{{ Auth::user()->perfil->nome_completo }}">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-estrangeiro">Email</label>
-                                <input type="email" class="form-control" required="required" name="email-estrangeiro" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" name="email-estrangeiro" value="{{ Auth::user()->email }}">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-estrangeiro">Telefone</label>
-                                <input type="text" class="form-control" required="required" name="telefone-estrangeiro" placeholder="+55 11 987654321">
+                                <input type="text" class="required form-control" name="telefone-estrangeiro" placeholder="+55 11 987654321">
                             </div>
                             <div class="col-xs-12">
                                 <label for="passaporte-estrangeiro">Passaporte</label>
-                                <input type="text" class="form-control" name="passaporte" required="required" placeholder="Passaporte">
+                                <input type="text" class="required form-control" name="passaporte" placeholder="Passaporte">
                             </div>
                         </div>
                     </div>
@@ -96,21 +96,21 @@
 
                 </ul>
                 <div class="row margin-b-2">
-                    <div id="tabs-pagamento" class="tab-content">
+                    <div id="tabs-pagamento-tipo" class="tab-content">
                         @forelse($result->items->payment_methods as $formaPagamento)
                         @if ($formaPagamento->name == 'creditcard')  
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                             <div class="col-xs-8">
                                 <label for="num-cartao-credito">Número do Cartão</label>
-                                <input type="text" class="form-control" name="num-cartao-credito" required="required" placeholder="1234 5678 9876 5432">
+                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="1234 5678 9876 5432">
                             </div>
                             <div class="col-xs-4">
                                 <label for="cod-seguranca-credito" >Código de Segurança</label>
-                                <input type="text" class="form-control" name="cod-seguranca-credito" required="required" placeholder="123">
+                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="123">
                             </div>
                             <div class="col-xs-8">
                                 <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
-                                <input type="text" class="form-control" name="nome-titular-credito" required="required" placeholder="FULANO D. SILVA">
+                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="FULANO D. SILVA">
                             </div>
                             <div class="col-xs-4">
                                 <div class="">
@@ -165,15 +165,15 @@
                         <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
                             <div class="col-xs-8">
                                 <label for="num-cartao-debito">Número do Cartão</label>
-                                <input type="text" class="form-control" name="num-cartao-debito" required="required" placeholder="1234 5678 9876 5432">
+                                <input type="text" class="required form-control" name="num-cartao-debito" placeholder="1234 5678 9876 5432">
                             </div>
                             <div class="col-xs-4">
                                 <label for="cod-seguranca-debito" >Código de Segurança</label>
-                                <input type="text" class="form-control" name="cod-seguranca-debito" required="required" placeholder="123">
+                                <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="123">
                             </div>
                             <div class="col-xs-8">
                                 <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
-                                <input type="text" class="form-control" name="nome-titular-debito" required="required" placeholder="FULANO D. SILVA">
+                                <input type="text" class="required form-control" name="nome-titular-debito" placeholder="FULANO D. SILVA">
                             </div>
                             <div class="col-xs-4">
                                 <div class="row">
@@ -272,6 +272,7 @@
            </div>
            <div class="hidden">
                <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
+               {{-- Coloca as poltronas reservadas e os passageiros de cada poltrona --}}
                @if (isset($passagens)) 
                    @foreach ($passagens as $key => $Passagem) 
                        <input type="hidden" name="passagens[{{ $key }}]['document']" value="{{ $Passagem->document }}">
@@ -281,6 +282,8 @@
                        <input type="hidden" name="passagens[{{ $key }}]['email']" value="{{ $Passagem->email }}">
                    @endforeach
                @endif
+               {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
+               <input type="hidden" value="credito" name="tipo-pagamento" id="tipo-pagamento">
 
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
