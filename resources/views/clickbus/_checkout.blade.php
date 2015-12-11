@@ -1,5 +1,5 @@
 <div class="col-xs-12 padding-b-2">
-    <form method="POST" id="form-pagamento">
+    {!! Form::open(['url' => ['/clickbus/booking'], 'method' => 'POST', 'id'=>'form-pagamento', 'data-loading'=>'form-loading']) !!}
         <div class="row">
             <div class="col-sm-8">
                 <h4>Informações do Cliente</h4>
@@ -304,4 +304,5 @@
            </div>
        </div>
    </div>
+{!! Form::close() !!}
 </div>

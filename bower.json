@@ -8,6 +8,7 @@
     "lightbox2": "~2.8.1",
     "bootstrap-datepicker": "eternicode/bootstrap-datepicker#~1.5.0",
     "cropper": "~1.0.0",
-    "bootstrap-social": "~4.10.1"
+    "bootstrap-social": "~4.10.1",
+    "outdated-browser": "~1.1.2"
   }
 }

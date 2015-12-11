@@ -144,7 +144,7 @@
                     <input type="hidden" id="date" value="{{ $ida->diames  }}">
                     <input type="hidden" id="time" value="{{ $ida->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $ida->sessionId }}">
-                    <input type="hidden" id="trip-id" value="{{ $ida->content->trip_id }}">
+                    <input type="hidden" id="trip-id" value="{{ $ida->scheduleId }}">
                     <div class="col-sm-6"> 
                         <label for="nome">Nome:</label>
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
@@ -209,7 +209,7 @@
                     <input type="hidden" id="date" value="{{ $volta->diames  }}">
                     <input type="hidden" id="time" value="{{ $volta->horario  }}">
                     <input type="hidden" id="session-id" value="{{ $volta->sessionId }}">
-                    <input type="hidden" id="trip-id" value="{{ $volta->content->trip_id }}">
+                    <input type="hidden" id="trip-id" value="{{ $volta->scheduleId }}">
                     <div class="col-sm-6"> 
                         <label for="nome">Nome:</label>
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
