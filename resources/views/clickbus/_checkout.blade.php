@@ -216,19 +216,19 @@
                 <h4>Detalhes do Pagamento</h4>
                 <div id="lista-passagens-pagamento" class="margin-t-2">
                     <div class="passagem">
-                        <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
+                        <h5><b>{{ $Ida->diames }}</b></h5>
                         <div class="row">
-                            <span class="col-sm-12">{{ "Expresso Brasil" }} - {{ "Convencional" }}</span>
-                            <span class="col-sm-12">De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
-                            <span class="col-sm-12">Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                            <span class="col-sm-12"> {{ $Ida->company }} - {{ $Ida->classe }}</span>
+                            <span class="col-sm-12">De: {{ $Ida->from }} | {{ $Ida->horario }}</span>
+                            <span class="col-sm-12">Para: {{ $Ida->to }} | {{ $Ida->horario_chegada }}<span>
                         </div>
                     </div>
                     <div class="passagem">
-                        <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
+                        <h5><b>{{ $Volta->diames }}</b></h5>
                         <div class="row">
-                            <span class="col-sm-12">{{ "Expresso Brasil" }} - {{ "Convencional" }}</span>
-                            <span class="col-sm-12">De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
-                            <span class="col-sm-12">Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                            <span class="col-sm-12"> {{ $Volta->company }} - {{ $Ida->classe }}</span>
+                            <span class="col-sm-12">De: {{ $Volta->from }} | {{ $Volta->horario }}</span>
+                            <span class="col-sm-12">Para: {{ $Volta->to }} | {{ $Volta->horario_chegada }}<span>
                         </div>
                     </div>
                 </div>
@@ -284,7 +284,18 @@
                @endif
                {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
                <input type="hidden" value="credito" name="tipo-pagamento" id="tipo-pagamento">
+               
+               <input type="hidden" id="ida-to" name="ida-to" value="{{ $Ida->to}}">
+               <input type="hidden" id="ida-from" name="ida-from" value="{{ $Ida->from}}">
+               <input type="hidden" id="ida-diames" name="ida-diames" value="{{ $Ida->diames }}">
+               <input type="hidden" id="ida-horario" name="ida-horario" value="{{ $Ida->horario }}">
+               <input type="hidden" id="ida-company" name="ida-company" value="{{ $Ida->company }}">
 
+               <input type="hidden" id="volta-to" name="volta-to" value="{{ $Volta->to}}">
+               <input type="hidden" id="volta-from" name="volta-from" value="{{ $Volta->from}}">
+               <input type="hidden" id="volta-diames" name="volta-diames" value="{{ $Volta->diames }}">
+               <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
+               <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">

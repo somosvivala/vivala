@@ -88,11 +88,12 @@ var ajaxTrip = function(viagens) {
 
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
+    console.log(viagens);
 
     $.ajax({
         url: 'clickbus/trip',
         type: 'POST',
-        deataType: 'html',
+        dataType: 'html',
          data: {
             schedule: viagens,
             from: from,
@@ -320,15 +321,7 @@ var tripBooking = function(request) {
         type: 'POST',
         dataType: 'html',
         data: {
-            params: {
-                "frm" : frmObj,
-                "meta": {
-                    "store": params.store,
-                    "model": params.model,
-                    "platform": params.platform
-                },
-            },
-            "contents": params.contents
+            params: params
         }
     })
     .error(function(data) {

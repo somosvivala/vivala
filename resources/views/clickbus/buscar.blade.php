@@ -33,6 +33,10 @@
 
 <input type="hidden" id="departure-schedule-id">
 <input type="hidden" id="horario-ida">
+<input type="hidden" id="horario-chegada-ida">
+<input type="hidden" id="classe-ida">
+<input type="hidden" id="from-ida">
+<input type="hidden" id="to-ida">
 
 <div id="clickbus-resultado-busca">
     
