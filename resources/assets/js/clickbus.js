@@ -287,11 +287,15 @@ var tripPayment = function(request, frm) {
         bindaAbas();
         bindaBandeirasCartao();
         bindaChangePagamento();
+        bindaFormPagamento();
     });
     
 };
 
 var tripBooking = function(request) {
+
+    console.log('inside tripBooking');
+    console.log(request);
     var params = {
         "meta": {
             "model": "retail",
@@ -321,7 +325,6 @@ var tripBooking = function(request) {
         dataType: 'html',
         data: {
             params: {
-                "frm" : frmObj,
                 "meta": {
                     "store": params.store,
                     "model": params.model,
@@ -336,6 +339,7 @@ var tripBooking = function(request) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+        
     });
     
 };
