@@ -3,17 +3,11 @@
 use App;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-
 use App\ClickBusPlace;
 use Input;
 use App\Repositories\ClickBusRepository;
 use App\Http\Requests\SelecionarPoltronasClickbusRequest;
-
-
-
-
 
 class ClickBusController extends Controller {
 
@@ -205,11 +199,8 @@ class ClickBusController extends Controller {
         $Volta->birthday = $request['frm']['volta-birthday'];
         $Volta->email = $request['frm']['volta-email'];
 
-        //TODO qual sessionID usar? esse objeto Passagens nao esta
-        //sendo passado para a view!
-        $Passagens = new \stdClass();
-        $Passagens->idaSessionId = $request['frm']['ida-sessionId'];
-        $Passagens->voltaSessionId = $request['frm']['volta-sessionId'];
+        $idaScheduleId = $request['frm']['ida-scheduleId'];
+        $voltaScheduleId = $request['frm']['volta-scheduleId'];
 
         $passagens = array();
         //tratando Ida
@@ -220,7 +211,9 @@ class ClickBusController extends Controller {
                 $Passagem->document = $Ida->documento[$i];
                 $Passagem->seat = $numpoltrona;
                 $Passagem->birthday = $Ida->birthday[$i]; 
-                $Passagem->email = $Ida->email[$i]; 
+                $Passagem->email = $Ida->email[$i];
+                $Passagem->seatReservation = $idaScheduleId;
+                
 
                 $nome = explode(" ", $Ida->nome[$i]);
                 $Passagem->lastName = array_pop($nome);
@@ -235,6 +228,7 @@ class ClickBusController extends Controller {
             $Passagem->seat = $Ida->numero_poltrona;
             $Passagem->birthday = $Ida->birthday; 
             $Passagem->email = $Ida->email; 
+            $Passagem->seatReservation = $idaScheduleId;
 
             $nome = explode(" ", $Ida->nome);
             $Passagem->lastName = array_pop($nome);
@@ -252,7 +246,8 @@ class ClickBusController extends Controller {
                 $Passagem->seat = $numpoltrona;
                 $Passagem->birthday = $Volta->birthday[$i]; 
                 $Passagem->email = $Volta->email[$i]; 
-                
+                $Passagem->seatReservation = $voltaScheduleId;
+                            
                 $nome = explode(" ", $Volta->nome[$i]);
                 $Passagem->lastName = array_pop($nome);
                 $Passagem->firstName = implode(" ", $nome);
@@ -266,6 +261,7 @@ class ClickBusController extends Controller {
             $Passagem->seat = $Volta->numero_poltrona;
             $Passagem->birthday = $Volta->birthday; 
             $Passagem->email = $Volta->email; 
+            $Passagem->seatReservation = $voltaScheduleId;
         
             $nome = explode(" ", $Volta->nome);
             $Passagem->lastName = array_pop($nome);
@@ -305,6 +301,5 @@ class ClickBusController extends Controller {
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/booking', false, $context);
         return $result;
-
     }
 }

@@ -305,18 +305,44 @@ var bindaFormPagamento = function() {
     $('#form-pagamento').submit(function (ev) {
         ev.preventDefault();
         
+        console.log("Submit do pagamento");
+        
         console.log(this);
         console.log($(this));
-        var frmData =  new FormData(this);
-        console.log(frmData);
+        
+        var numero_poltronas = $('input#quantidade-poltronas').val(),
+            orderItems = [];
+    
+                
+        for (var i = 0; i < numero_poltronas; i++) {
+           var  seatReservation = $('#form-pagamento').find('input[name="passagens['+i+'][\'seatReservation\']"]').val();
+            var passenger = {
+               "firstName" : $('#form-pagamento').find('input[name="passagens['+i+'][\'firstName\']"]').val(),
+               "lastName" : $('#form-pagamento').find('input[name="passagens['+i+'][\'lastName\']"]').val(),
+               "email" : $('#form-pagamento').find('input[name="passagens['+i+'][\'email\']"]').val(),
+               "document" : $('#form-pagamento').find('input[name="passagens['+i+'][\'document\']"]').val(),
+               "gender" : "M",
+               "birthday" : $('#form-pagamento').find('input[name="passagens['+i+'][\'birthday\']"]').val(),
+               "seat" : $('#form-pagamento').find('input[name="passagens['+i+'][\'seat\']"]').val(),
+               "meta" : {}
+            };
+           
+            orderItems.push({
+                "seatReservation" : seatReservation,
+                "passenger" : passenger
+            })
+        }
+
+        console.log('orderItens');
+        console.log(orderItems);
 
         var params = {
-            "meta": {
+             "meta": {
                 "model": "retail",
                 "store": "clickbus",
                 "platform": "web"
             },
-            "request": {
+             "request": {
                 "sessionId": "",
                 "ip": "",
                 "buyer": {
@@ -324,11 +350,10 @@ var bindaFormPagamento = function() {
                     "gender": "M",
                     "meta": {},
                     "payment": {
-                    }
-                },
-                "orderItems": [
-                ]
-            }
+                     }
+                 },
+                "orderItems": orderItems
+             }
         };
 
         var frm = $(this),
@@ -338,8 +363,6 @@ var bindaFormPagamento = function() {
             $(this).find('input:submit').attr('disabled','disabled');
             $(this).find('#'+loading).show();
         }
-
-        console.log("Submit do pagamento");
 
         tripBooking(params);
 

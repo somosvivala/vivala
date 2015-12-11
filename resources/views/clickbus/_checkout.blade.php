@@ -236,8 +236,8 @@
                <div class="col-sm-8 text-left">
                    Poltronas:
                </div>
-               <div class="col-sm-4 text-right">
-                   {{ number_format($result->ticket_amount,2,',','') }}
+               <div class="col-sm-4 text-right ">
+                   {{ $result->ticket_amount }}
                </div>
            </div>
            <div class="row">
@@ -277,13 +277,17 @@
                    @foreach ($passagens as $key => $Passagem) 
                        <input type="hidden" name="passagens[{{ $key }}]['document']" value="{{ $Passagem->document }}">
                        <input type="hidden" name="passagens[{{ $key }}]['seat']" value="{{ $Passagem->seat }}">
-                       <input type="hidden" name="passagens[{{ $key }}]['lastName']" value="{{ $Passagem->firstName }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['lastName']" value="{{ $Passagem->lastName }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['firstName']" value="{{ $Passagem->firstName }}">
                        <input type="hidden" name="passagens[{{ $key }}]['birthday']" value="{{ $Passagem->birthday }}">
                        <input type="hidden" name="passagens[{{ $key }}]['email']" value="{{ $Passagem->email }}">
+                       <input type="hidden" name="passagens[{{ $key }}]['seatReservation']" value="{{ $Passagem->seatReservation }}">
                    @endforeach
                @endif
                {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
                <input type="hidden" value="credito" name="tipo-pagamento" id="tipo-pagamento">
+               <input type="hidden" value="{{ $result->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
+                   
 
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
