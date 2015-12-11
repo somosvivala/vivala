@@ -271,6 +271,11 @@ var bindaAbas = function() {
     });
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        if($(e.target).hasClass('tipo-cliente')){
+            $("#tipo-cliente").val($(e.target).attr('aria-controls'));
+        }else if($(e.target).hasClass('forma-pagamento')){
+            $("#forma-pagamento").val($(e.target).attr('aria-controls'));
+        }
         // Remove os required do que foi deselecionado
         $($(e.target).attr("href")).parent(".tab-content").find(".required").prop("required",false);
         // Adiciona required no que ta selecionado

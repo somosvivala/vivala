@@ -122,8 +122,7 @@ class ClickBusController extends Controller {
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
 
         // Testa se existe algo dentro do 'error' do result
-        // com um false pra nao entrar nunca hehe
-        if(false && isset(json_decode($result)->error)){
+        if( isset(json_decode($result)->error)){
             App::abort(403,json_decode($result)->error[0]->message );
         }
        
