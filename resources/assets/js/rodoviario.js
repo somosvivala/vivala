@@ -335,10 +335,27 @@ var bindaFormPagamento = function() {
         
         console.log(this);
         console.log($(this));
+        // Monta o payment de acordo com a forma de pagamento
+        // (credito, debito, paypal)
+        var forma_pagamento = $('input#forma-pagamento').val();
+        var payment = {};
+        if(forma_pagamento == 'cartao-credito'){
         
+        }else if(forma_pagamento == 'cartao-debito') {
+        
+        }else if(forma_pagamento == 'paypal'){
+            payment: {
+                "method": "paypal_hpp",
+                "currency": "BRL",
+                "total": 630,
+                "installment": "1",
+                "meta": {}
+            }
+        }
+        
+        // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
             orderItems = [];
-    
                 
         for (var i = 0; i < numero_poltronas; i++) {
            var  seatReservation = $('#form-pagamento').find('input[name="passagens['+i+'][\'seatReservation\']"]').val();
