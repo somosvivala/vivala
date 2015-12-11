@@ -82,14 +82,23 @@ var bindClickDetail = function() {
         var id = $(this).attr('data-id'),
             horario_ida = $(this).attr('data-horario'),
             diames_ida = $('#data-id-rodoviario').val(),
+            horario_chegada_ida = $(this).attr('data-horario-chegada'),
+            classe_ida = $(this).attr('data-classe'),
+            from_ida  = $(this).attr('data-from'),
+            to_ida = $(this).attr('data-to')
+            
             from      = $('#destino-rodoviario-hidden').val(),
             to        = $('#origem-rodoviario-hidden').val();
 
         $('#departure-schedule-id').val(id);
         $('#horario-ida').val(horario_ida);
+        $('#horario-chegada-ida').val(horario_chegada_ida);
+        $('#classe-ida').val(classe_ida);
+        $('#from-ida').val(from_ida);
+        $('#to-ida').val(to_ida);
 
         if ($('#data-volta-rodoviario').val().length <= 0) {
-            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from, 'to':to }]));
+            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }]));
         } else {
             var departure = $('#data-volta-rodoviario').val(),
                 type      = 'volta';
@@ -109,13 +118,25 @@ var bindClickDetail = function() {
         var id_ida = $('#departure-schedule-id').val(),
             horario_ida = $('#horario-ida').val(),
             diames_ida = $('#data-id-rodoviario').val(),
+            horario_chegada_ida = $('#horario-chegada-ida').val(),
+            classe_ida = $('#classe-ida').val(),
+            from_ida  = $('#from-ida').val(),
+            to_ida = $('#to-ida').val(),
+
+            from      = $('#destino-rodoviario-hidden').val(),
+            to        = $('#origem-rodoviario-hidden').val(),
+
             id_volta = $(this).attr('data-id'),
             horario_volta = $(this).attr('data-horario'),
             diames_volta = $('#data-volta-rodoviario').val(),
-            from      = $('#destino-rodoviario-hidden').val(),
-            to        = $('#origem-rodoviario-hidden').val();
+            horario_chegada_volta = $(this).attr('data-horario-chegada'),
+            classe_volta = $(this).attr('data-classe'),
+            from_volta  = $(this).attr('data-from'),
+            to_volta = $(this).attr('data-to');
 
-        ajaxTrip(JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida , 'from':from, 'to':to }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':to, 'to':from }]));
+            var json_resposta = JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida, 'from':from_ida, 'to':to_ida , 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':from_volta, 'to':to_volta , 'horario_chegada': horario_chegada_volta, 'classe': classe_volta }]);
+            console.log(json_resposta);
+        ajaxTrip(json_resposta);
     });
 
 
@@ -250,6 +271,11 @@ var bindaAbas = function() {
     });
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        if($(e.target).hasClass('tipo-cliente')){
+            $("#tipo-cliente").val($(e.target).attr('aria-controls'));
+        }else if($(e.target).hasClass('forma-pagamento')){
+            $("#forma-pagamento").val($(e.target).attr('aria-controls'));
+        }
         // Remove os required do que foi deselecionado
         $($(e.target).attr("href")).parent(".tab-content").find(".required").prop("required",false);
         // Adiciona required no que ta selecionado

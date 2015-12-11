@@ -54,7 +54,8 @@ class ClickBusController extends Controller {
             // Envia dados de ida e volta separados
             
             $ida_obj = $schedule[0];
-            $volta_obj = $schedule[1];
+            if(isset($schedule[1]))
+                $volta_obj = $schedule[1];
 
             if($ida_obj) {
                 $content_ida = file_get_contents(self::$url."/trip?scheduleId={$ida_obj->id}");
@@ -64,8 +65,10 @@ class ClickBusController extends Controller {
                 $ida->frombus = $ida_obj->from;
                 $ida->tobus = $ida_obj->to;
                 $ida->scheduleId = $ida_obj->id;
+                $ida->horario_chegada = $ida_obj->horario_chegada;
+                $ida->classe = $ida_obj->classe;
             }
-            if($volta_obj) {
+            if(isset($volta_obj)) {
                 $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}");
                 $volta = json_decode($content_volta);
                 $volta->horario = $volta_obj->horario;
@@ -73,7 +76,8 @@ class ClickBusController extends Controller {
                 $volta->frombus = $volta_obj->from;
                 $volta->tobus= $volta_obj->to;
                 $volta->scheduleId = $volta_obj->id;
-
+                $volta->horario_chegada = $volta_obj->horario_chegada;
+                $volta->classe = $volta_obj->classe;
             }
 
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
@@ -112,8 +116,7 @@ class ClickBusController extends Controller {
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
 
         // Testa se existe algo dentro do 'error' do result
-        // com um false pra nao entrar nunca hehe
-        if(false && isset(json_decode($result)->error)){
+        if( isset(json_decode($result)->error)){
             App::abort(403,json_decode($result)->error[0]->message );
         }
        
@@ -270,7 +273,27 @@ class ClickBusController extends Controller {
             $passagens[] = $Passagem;
         }
 
-        return view('clickbus._checkout', compact('result', 'passagens'));
+        // Incrementando os dados de Ida e Volta com os dados do ônibus para
+        // enviar para a view
+        $Ida->to = $request["frm"]["ida-to"];
+        $Ida->from = $request["frm"]["ida-from"];
+        $Ida->diames = $request["frm"]["ida-diames"];
+        $Ida->horario = $request["frm"]["ida-horario"];
+        $Ida->horario_chegada = $request["frm"]["ida-horario-chegada"];
+        $Ida->company = $request["frm"]["ida-company"];
+        $Ida->classe = $request["frm"]["ida-classe"];
+
+        $Volta->to = $request["frm"]["volta-to"];
+        $Volta->from = $request["frm"]["volta-from"];
+        $Volta->diames = $request["frm"]["volta-diames"];
+        $Volta->horario = $request["frm"]["volta-horario"];
+        $Volta->horario_chegada = $request["frm"]["volta-horario-chegada"];
+        $Volta->company = $request["frm"]["volta-company"];
+        $Volta->classe = $request["frm"]["volta-classe"];
+
+
+
+        return view('clickbus._checkout', compact('result', 'passagens', 'Ida', 'Volta'));
     }
 
 

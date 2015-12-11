@@ -86,15 +86,29 @@
     </div>
     <div class="col-sm-4">
         <h5 class="font-bold-upper">Poltronas Selecionadas</h5>
-        {!! Form::open(['url' => ['/clickbus/selecionarpoltronas'], 'id'=>'form-poltronas-clickbus', 'data-loading'=>'form-loading']) !!}
+        {!! Form::open(['url' => ['/clickbus/payment'], 'id'=>'form-poltronas-clickbus', 'data-loading'=>'form-loading']) !!}
             <input type="hidden" id="ida-session-id" name="ida-sessionId" value="{{ $ida->sessionId }}">
             <input type="hidden" id="ida-id" name="ida-scheduleId" value="{{ $ida->scheduleId }}">
+            <input type="hidden" id="ida-to" name="ida-to" value="{{ $to}}">
+            <input type="hidden" id="ida-from" name="ida-from" value="{{ $from}}">
+            <input type="hidden" id="ida-diames" name="ida-diames" value="{{ $ida->diames }}">
+            <input type="hidden" id="ida-horario" name="ida-horario" value="{{ $ida->horario }}">
+            <input type="hidden" id="ida-classe" name="ida-classe" value="{{ $ida->classe }}">
+            <input type="hidden" id="ida-horario-chegada" name="ida-horario-chegada" value="{{ $ida->horario_chegada }}">
+            <input type="hidden" id="ida-company" name="ida-company" value="{{ $ida->content->busCompany->name }}">
             <h4>Partida - Trecho 1</h4>
             <div class="poltronas-selecionadas-ida">
             </div>
             @if(isset($volta))
             <input type="hidden" id="volta-session-id" name="volta-sessionId" value="{{ $volta->sessionId }}">
             <input type="hidden" id="volta-id" name="volta-scheduleId" value="{{ $volta->scheduleId }}">
+            <input type="hidden" id="volta-to" name="volta-to" value="{{ $from }}">
+            <input type="hidden" id="volta-from" name="volta-from" value="{{ $to }}">
+            <input type="hidden" id="volta-diames" name="volta-diames" value="{{ $volta->diames }}">
+            <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $volta->horario }}">
+            <input type="hidden" id="volta-horario-chegada" name="volta-horario-chegada" value="{{ $volta->horario_chegada }}">
+            <input type="hidden" id="volta-classe" name="volta-classe" value="{{ $volta->classe }}">
+            <input type="hidden" id="volta-company" name="volta-company" value="{{ $volta->content->busCompany->name }}">
             <h4 class="margin-t-1">Volta - Trecho 2</h4>
             <div class="poltronas-selecionadas-volta">
             </div>

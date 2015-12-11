@@ -4,9 +4,9 @@
             <div class="col-sm-8">
                 <h4>Informações do Cliente</h4>
                 <ul id="abas-cliente" class="nav nav-pills margin-b-1">
-                    <li role="presentation" class="active"><a href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">Pessoa Física</a></li>
-                    <li role="presentation"><a href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">Pessoa Jurídica</a></li>
-                    <li role="presentation"><a href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
+                    <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">Pessoa Física</a></li>
+                    <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">Pessoa Jurídica</a></li>
+                    <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
                 </ul>
                 <div class="row">
                     <div id="tabs-pagamento-cliente" class="tab-content">
@@ -79,15 +79,15 @@
                 <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
                     @forelse($result->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
-                    <li role="presentation" class="active"><a href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>     
+                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>     
                     @endif
 
                     @if ($formaPagamento->name == 'debitcard')
-                    <li role="presentation"><a href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>      
+                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>      
                     @endif
 
                     @if ($formaPagamento->name == 'paypal_hpp')
-                    <li role="presentation"><a href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>     
+                    <li role="presentation"><a class="forma-pagamento" href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>     
                     @endif
 
                     @empty
@@ -134,7 +134,7 @@
                             </div>
                             <div class="col-xs-12 text-center radio-hidden">
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="seleciona-bandeira" value="{{ $bandeiraCartao->brand }}">
+                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
                                 <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
                                     <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
                                 </label>
@@ -216,19 +216,19 @@
                 <h4>Detalhes do Pagamento</h4>
                 <div id="lista-passagens-pagamento" class="margin-t-2">
                     <div class="passagem">
-                        <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
+                        <h5><b>{{ $Ida->diames }}</b></h5>
                         <div class="row">
-                            <span class="col-sm-12">{{ "Expresso Brasil" }} - {{ "Convencional" }}</span>
-                            <span class="col-sm-12">De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
-                            <span class="col-sm-12">Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                            <span class="col-sm-12"> {{ $Ida->company }} - {{ $Ida->classe }}</span>
+                            <span class="col-sm-12">De: {{ $Ida->from }} | {{ $Ida->horario }}</span>
+                            <span class="col-sm-12">Para: {{ $Ida->to }} | {{ $Ida->horario_chegada }}<span>
                         </div>
                     </div>
                     <div class="passagem">
-                        <h5><b>{{ "SÁBADO, 16, JAN 2016" }}</b></h5>
+                        <h5><b>{{ $Volta->diames }}</b></h5>
                         <div class="row">
-                            <span class="col-sm-12">{{ "Expresso Brasil" }} - {{ "Convencional" }}</span>
-                            <span class="col-sm-12">De: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
-                            <span class="col-sm-12">Para: {{ "Rio de Janeiro, RJ - Novo Rio"}} | {{ "00:01" }}</span>
+                            <span class="col-sm-12"> {{ $Volta->company }} - {{ $Ida->classe }}</span>
+                            <span class="col-sm-12">De: {{ $Volta->from }} | {{ $Volta->horario }}</span>
+                            <span class="col-sm-12">Para: {{ $Volta->to }} | {{ $Volta->horario_chegada }}<span>
                         </div>
                     </div>
                 </div>
@@ -285,10 +285,21 @@
                    @endforeach
                @endif
                {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
-               <input type="hidden" value="credito" name="tipo-pagamento" id="tipo-pagamento">
                <input type="hidden" value="{{ $result->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
-                   
+               <input type="hidden" value="credito" name="forma-pagamento" id="forma-pagamento">
+               <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
+               
+               <input type="hidden" id="ida-to" name="ida-to" value="{{ $Ida->to}}">
+               <input type="hidden" id="ida-from" name="ida-from" value="{{ $Ida->from}}">
+               <input type="hidden" id="ida-diames" name="ida-diames" value="{{ $Ida->diames }}">
+               <input type="hidden" id="ida-horario" name="ida-horario" value="{{ $Ida->horario }}">
+               <input type="hidden" id="ida-company" name="ida-company" value="{{ $Ida->company }}">
 
+               <input type="hidden" id="volta-to" name="volta-to" value="{{ $Volta->to}}">
+               <input type="hidden" id="volta-from" name="volta-from" value="{{ $Volta->from}}">
+               <input type="hidden" id="volta-diames" name="volta-diames" value="{{ $Volta->diames }}">
+               <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
+               <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">
