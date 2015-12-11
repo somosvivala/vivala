@@ -446,13 +446,7 @@ var bindaFormPagamento = function() {
              "request": {
                 "sessionId": "",
                 "ip": "",
-                "buyer": {
-                    "locale": "pt_BR",
-                    "gender": "M",
-                    "meta": {},
-                    "payment": {
-                     }
-                 },
+                "buyer": buyer,
                 "orderItems": orderItems
              }
         };
