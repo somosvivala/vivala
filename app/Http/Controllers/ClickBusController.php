@@ -97,19 +97,22 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-        //$sessionId = $request["sessionId"];
+        $sessionId = $request['request']["sessionId"];
+
+        $request['request']['passenger']['gender'] = 'M';
         $data = json_encode($request);
+
 
         $context = [ 
         	'http' => [ 
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Content-Length: ".strlen($data)."\r\n",
-                    //        "Cookie: PHPSESSID=".$sessionId,
+                            "Content-Length: ".strlen($data)."\r\n".
+                            "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'PUT',
                 'content' => $data
 	        ] 
-	];
+	    ];
         $context = stream_context_create($context);
 
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
@@ -119,22 +122,6 @@ class ClickBusController extends Controller {
         if(false && isset(json_decode($result)->error)){
             App::abort(403,json_decode($result)->error[0]->message );
         }
-        // Migué de resposta com sucesso que deveria estar vindo no result
-        $result = '{
-            "meta": {},
-            "items": [{
-                "seat": "'.$request["request"]["seat"].'",
-                "schedule": {
-                    "id": "NDAxNy0tMzkzNS0tMjAxNS0wMi0xMSAwMTowMC0tOS0tNDMyMi0tMS0tMS0tMS0tQ09OVg==",
-                    "date": "",
-                    "time": "",
-                    "timezone": "America/Sao_Paulo"
-                },
-                "status": "blocked",
-                "sessionId": "dnlfm8aecg2omtjaang62fvla5",
-                "expireAt": "2015-01-20 17:46"
-            }]
-        }';
        
         // Retorna o resultado e todos os dados recebidos
         return '{
