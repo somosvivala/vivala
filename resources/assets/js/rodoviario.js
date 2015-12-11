@@ -301,15 +301,34 @@ var bindaChangePagamento = function() {
 };
 
 var atualizaValorParcelas = function(){
-    var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
-        opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
-        qtd_parcelas = opcao_selecionada.val(),
-        total_with_discount = opcao_selecionada.data('total_with_discount'),
-        total = opcao_selecionada.data('total'),
-        installment = opcao_selecionada.data('installment'),
-        discount_value = opcao_selecionada.data('discount_value'),
-        fee = opcao_selecionada.data('fee');
-
+    
+    var forma_pagamento = $("form#form-pagamento").find('input#forma-pagamento').val();
+    if(forma_pagamento == 'cartao-credito'){
+        var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
+            opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
+            qtd_parcelas = opcao_selecionada.val(),
+            total_with_discount = opcao_selecionada.data('total_with_discount'),
+            total = opcao_selecionada.data('total'),
+            installment = opcao_selecionada.data('installment'),
+            discount_value = opcao_selecionada.data('discount_value'),
+            fee = opcao_selecionada.data('fee');
+    } else if(forma_pagamento == 'paypal') {
+        var opcao_selecionada = $("#paypal-datas"),
+            qtd_parcelas = opcao_selecionada.val(),
+            total_with_discount = opcao_selecionada.data('total_with_discount'),
+            total = opcao_selecionada.data('total'),
+            installment = opcao_selecionada.data('installment'),
+            discount_value = opcao_selecionada.data('discount_value'),
+            fee = opcao_selecionada.data('fee');
+    } else if(forma_pagamento == 'cartao-debito'){
+        var opcao_selecionada = $("#cartao-debito-datas"),
+            qtd_parcelas = opcao_selecionada.val(),
+            total_with_discount = opcao_selecionada.data('total_with_discount'),
+            total = opcao_selecionada.data('total'),
+            installment = opcao_selecionada.data('installment'),
+            discount_value = opcao_selecionada.data('discount_value'),
+            fee = opcao_selecionada.data('fee');
+    }
 
     if(discount_value > 0){
         $('.row-desconto').show();
@@ -319,6 +338,7 @@ var atualizaValorParcelas = function(){
     }
 
     $('.num-vezes').html(qtd_parcelas);
+    $('#qtd-parcelas').val(qtd_parcelas);
     $('.valor-fee').html(fee.toFixed(2).toString().replace(',','').replace('.',','));
     $('.valor-installment').html(installment.toFixed(2).toString().replace(',','').replace('.',','));
 
@@ -330,29 +350,56 @@ var bindaFormPagamento = function() {
     // Binda o submit da compra
     $('#form-pagamento').submit(function (ev) {
         ev.preventDefault();
+        var frm = $(this);
         
         console.log("Submit do pagamento");
         
-        console.log(this);
-        console.log($(this));
+        console.log(frm);
         // Monta o payment de acordo com a forma de pagamento
         // (credito, debito, paypal)
-        var forma_pagamento = $('input#forma-pagamento').val();
-        var payment = {};
-        if(forma_pagamento == 'cartao-credito'){
+        var forma_pagamento = frm.find('input#forma-pagamento').val(),
+            total = Number(frm.find("input#valor-total-pagamento-passagem").val().replace('.','')),
+            payment = {};
         
+        if(forma_pagamento == 'cartao-credito'){
+            payment = {
+                "method": "creditcard",
+                "currency": "BRL",
+                "total": total,
+                "installment": frm.find("input#qtd-parcelas").val(), 
+                "meta": {
+                    "card": frm.find("input[name='num-cartao-credito']").val(),
+                    "code": frm.find("input[name='cod-seguranca-credito']").val(),
+                    "name": frm.find("input[name='nome-titular-credito']").val(),
+                    "expiration": frm.find("select[name='ano-validade-credito'] option:selected").val()+'-'+frm.find("select[name='mes-validade-credito'] option:selected").val(),
+                    "zipcode": frm.find("input[name='cep-titular-credito']").val()
+                }
+            }
         }else if(forma_pagamento == 'cartao-debito') {
+            payment = {
+                "method": "debitcard",
+                "currency": "BRL",
+                "total": total,
+                "installment": "1",
+                "meta": {
+                    "card": frm.find("input[name='num-cartao-debito']").val(),
+                    "code": frm.find("input[name='cod-seguranca-debito']").val(),
+                    "name": frm.find("input[name='nome-titular-debito']").val(),
+                    "expiration": frm.find("select[name='ano-validade-debito'] option:selected").val()+'-'+frm.find("select[name='mes-validade-debito'] option:selected").val(),
+                    "zipcode": frm.find("input[name='cep-titular-debito']").val()
+                }
+            }
         
         }else if(forma_pagamento == 'paypal'){
-            payment: {
+            payment = {
                 "method": "paypal_hpp",
                 "currency": "BRL",
-                "total": 630,
+                "total": total,
                 "installment": "1",
                 "meta": {}
             }
         }
-        
+       console.log(payment); 
         // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
             orderItems = [];

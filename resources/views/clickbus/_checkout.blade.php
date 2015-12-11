@@ -115,13 +115,13 @@
                             <div class="col-xs-4">
                                 <div class="">
                                     <label for="mes-validade-credito" >Cartão válido até</label>
-                                    <select class="col-xs-6">
+                                    <select class="col-xs-6" name="mes-validade-credito">
                                         <option>Mês</option>
                                         @for($i=1;$i<=12;$i++)
                                         <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
                                         @endfor
                                     </select>
-                                    <select class="col-xs-6">
+                                    <select class="col-xs-6" name="ano-validade-credito">
                                         <option>Ano</option>
                                         @for($i=0;$i<=20;$i++)
                                         <option>{{ date('Y')+$i }}</option>
@@ -130,11 +130,14 @@
                                 </div>
                             </div>
                             <div class="col-xs-12">
-                                <label>Bandeira do cartão</label>
+                                <label>CEP:</label>
+                            </div>
+                            <div class="col-xs-12">
+                                <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
                             </div>
                             <div class="col-xs-12 text-center radio-hidden">
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
+                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
                                 <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
                                     <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
                                 </label>
@@ -163,6 +166,10 @@
 
                         @if ($formaPagamento->name == 'debitcard')
                         <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
+                            <input name="cartao-debito-datas" id="cartao-debito-datas" type="hidden" data-discount_value="{{ $formaPagamento->details[0]->discount_value }}" data-fee="{{ $formaPagamento->details[0]->installments->{'1'}->fee }}" data-installment="{{ $formaPagamento->details[0]->installments->{'1'}->installment }}" data-total="{{ $formaPagamento->details[0]->installments->{'1'}->total }}" data-total_with_discount="{{ $formaPagamento->details[0]->installments->{'1'}->total_with_discount }}" value="1">
+                            <div class="col-xs-12">
+                                <h5 class="text-center">É necessário possuir o plug-in do banco instalado NESTE COMPUTADOR. Caso não tenha certeza, recomendamos o uso do cartão de crédito.</h5>
+                            </div>
                             <div class="col-xs-8">
                                 <label for="num-cartao-debito">Número do Cartão</label>
                                 <input type="text" class="required form-control" name="num-cartao-debito" placeholder="1234 5678 9876 5432">
@@ -178,30 +185,41 @@
                             <div class="col-xs-4">
                                 <div class="row">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
-                                    <select class="col-xs-6">
+                                    <select class="col-xs-6" name="mes-validade-debito">
                                         <option>Mês</option>
-                                        <option>01</option>
+                                        @for($i=1;$i<=12;$i++)
+                                        <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                        @endfor
                                     </select>
-                                    <select class="col-xs-6">
+                                    <select class="col-xs-6" name="ano-validade-debito">
                                         <option>Ano</option>
-                                        <option>2015</option>
+                                        @for($i=0;$i<=20;$i++)
+                                        <option>{{ date('Y')+$i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
+                            </div>
+                            <div class="col-xs-12">
+                                <label>CEP:</label>
+                            </div>
+                            <div class="col-xs-12">
+                                <input type="text" class="required form-control" name="cep-titular-debito" required="" placeholder="1701770">
                             </div>
                         </div>
                         @endif
 
                         @if ($formaPagamento->name == 'paypal_hpp')
 
-                        <div role="tabpanel" class="tab-pane fade" id="paypal" aria-labelledby="paypal-tab">
-                            <h2>
+                        <div role="tabpanel" class="tab-pane fade text-center" id="paypal" aria-labelledby="paypal-tab">
+                            <input name="paypal-datas" id="cartao-debito-datas" type="hidden" data-discount_value="{{ $formaPagamento->details[0]->discount_value }}" data-fee="{{ $formaPagamento->details[0]->installments->{'1'}->fee }}" data-installment="{{ $formaPagamento->details[0]->installments->{'1'}->installment }}" data-total="{{ $formaPagamento->details[0]->installments->{'1'}->total }}" data-total_with_discount="{{ $formaPagamento->details[0]->installments->{'1'}->total_with_discount }}" value="1">
+                            <h3>
                             Aproveite e pague sua compra com PayPal!
-                            </h2>
+                            </h3>
 
                             <img src="/img/bandeiras/paypal.png" alt="Paypal" title="PayPal">
-                            <h2>
+                            <h5>
                             Finalize sua compra para ser transferido para o PayPal.
-                            </h2>
+                            </h5>
 
                         </div>
                         @endif
@@ -272,6 +290,7 @@
            </div>
            <div class="hidden">
                <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
+               <input type="hidden"  id="qtd-parcelas" name="qtd-parcelas" value="1">
                {{-- Coloca as poltronas reservadas e os passageiros de cada poltrona --}}
                @if (isset($passagens)) 
                    @foreach ($passagens as $key => $Passagem) 
@@ -286,7 +305,7 @@
                @endif
                {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
                <input type="hidden" value="{{ $result->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
-               <input type="hidden" value="credito" name="forma-pagamento" id="forma-pagamento">
+               <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
                
                <input type="hidden" id="ida-to" name="ida-to" value="{{ $Ida->to}}">
