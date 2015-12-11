@@ -353,8 +353,66 @@ var bindaFormPagamento = function() {
         var frm = $(this);
         
         console.log("Submit do pagamento");
+
+        // Monta o buyer de acordo com a documentacao
+        var tipo_cliente = $('input#tipo-cliente').val();
+        var buyer = {};
+        if (tipo_cliente == 'pessoa-fisica') {
+            var nomeArray = $('input[name="nome-pf"]').val().split(" ");
+            
+            buyer = {
+                "locale":"pt_BR",
+                "firstName": nomeArray.shift(),
+                "lastName": nomeArray.join(" "),
+                "email": $('input[name="email-pf"]').val(),
+                "phone": $('input[name="telefone-pf"]').val(),
+                "document":$('input[name="documento-pf"]').val(),
+                "gender":"M",
+                "birthday":$('input[name="nascimento-pf"]').val(),
+                "meta": {}
+            }
+
+            console.log('buyer pessoa fisica: ');
+            console.log(buyer);
+
+        }else if (tipo_cliente == 'pessoa-juridica') {
+            var nomeArray = $('input[name="nome-pj"]').val().split(" ");
+            
+            buyer = {
+                "locale":"pt_BR",
+                "firstName": nomeArray.shift(),
+                "lastName": nomeArray.join(" "),
+                "email": $('input[name="email-pj"]').val(),
+                "phone": $('input[name="telefone-pj"]').val(),
+                "document":$('input[name="cnpj-pj"]').val(),
+                "gender":"M",
+                "birthday":$('input[name="nascimento-pj"]').val(),
+                "meta": {}
+            }
+
+            console.log('buyer pessoa juridica: ');
+            console.log(buyer);
+
+        }else if (tipo_cliente == 'estrangeiro') {
+            var nomeArray = $('input[name="nome-estrangeiro"]').val().split(" ");
+            
+            buyer = {
+                "locale":"pt_BR",
+                "firstName": nomeArray.shift(),
+                "lastName": nomeArray.join(" "),
+                "email": $('input[name="email-estrangeiro"]').val(),
+                "phone": $('input[name="telefone-estrangeiro"]').val(),
+                "document":$('input[name="cnpj-estrangeiro"]').val(),
+                "gender":"M",
+                "birthday":$('input[name="nascimento-estrangeiro"]').val(),
+                "meta": {}
+            }
+
+            console.log('buyer estrangeiro: ');
+            console.log(buyer);
+        }
         
-        console.log(frm);
+        
         // Monta o payment de acordo com a forma de pagamento
         // (credito, debito, paypal)
         var forma_pagamento = frm.find('input#forma-pagamento').val(),
@@ -399,8 +457,8 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
         }
-       console.log(payment); 
-        // Monta o orderItems com as poltronas e dados de cada passageiro
+       
+       // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
             orderItems = [];
                 
@@ -435,13 +493,7 @@ var bindaFormPagamento = function() {
              "request": {
                 "sessionId": "",
                 "ip": "",
-                "buyer": {
-                    "locale": "pt_BR",
-                    "gender": "M",
-                    "meta": {},
-                    "payment": {
-                     }
-                 },
+                "buyer": buyer,
                 "orderItems": orderItems
              }
         };

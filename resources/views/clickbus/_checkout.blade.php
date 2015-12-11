@@ -28,11 +28,35 @@
                                 <label for="telefone-pf">Telefone</label>
                                 <input type="text" class="required form-control" required="" name="telefone-pf" placeholder="11 987654321">
                             </div>
+                            <div class="col-xs-8"> 
+                                <div class="row">
+                                    <label for="documento" class="col-sm-12">Documento:</label>
+                                    <div class="col-xs-4">
+                                        <select id="document-type" name="documentType" class="">
+                                            <option value="rg">RG</option>
+                                            <option value="passaporte">Passaporte</option>
+                                            <option value="cpf">CPF</option> 
+                                        </select> 
+                                    </div>
+                                    <div class="col-xs-8">
+                                        <input type="text" id="documento-pf" class="required form-control" placeholder="Ex: 123.456.789-0" name="documento-pf" required="required" >
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div>
+
+
+
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
-                            <div class="col-xs-12">
+                            <div class="col-xs-8">
                                 <label for="nome-pj">Nome do comprador</label>
                                 <input type="text" class="form-control" name="nome-pj" value="{{ Auth::user()->perfil->nome_completo }}">
+                            </div>
+                            <div class="col-xs-4">
+                                <label for="nascimento-pj">Data de nascimento</label>
+                                <input type="date" class="required form-control" name="nascimento-pj" placeholder="dd/mm/aaaa">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pj">Email</label>
@@ -59,6 +83,10 @@
                             <div class="col-xs-12">
                                 <label for="nome-estrangeiro">Nome</label>
                                 <input type="text" class="required form-control" name="nome-estrangeiro" value="{{ Auth::user()->perfil->nome_completo }}">
+                            </div>
+                            <div class="col-xs-4">
+                                <label for="nascimento-estrangeiro">Data de nascimento</label>
+                                <input type="date" class="required form-control" name="nascimento-estrangeiro" placeholder="dd/mm/aaaa">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-estrangeiro">Email</label>
