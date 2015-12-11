@@ -66,7 +66,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-estrangeiro">Telefone</label>
-                                <input type="text" class="required form-control" name="telefone-estrangeiro" placeholder="+55 11 987654321">
+                                <input type="text" class="required form-control" name="telefone-estrangeiro" placeholder="11 987654321">
                             </div>
                             <div class="col-xs-12">
                                 <label for="passaporte-estrangeiro">Passaporte</label>
