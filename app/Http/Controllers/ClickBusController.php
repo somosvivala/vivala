@@ -222,8 +222,8 @@ class ClickBusController extends Controller {
                 
 
                 $nome = explode(" ", $Ida->nome[$i]);
-                $Passagem->lastName = array_pop($nome);
-                $Passagem->firstName = implode(" ", $nome);
+                $Passagem->firstName = array_shift($nome);
+                $Passagem->lastName = implode(" ", $nome);
 
                 $passagens[] = $Passagem;
                 $i++;
@@ -237,9 +237,9 @@ class ClickBusController extends Controller {
             $Passagem->seatReservation = $idaScheduleId;
 
             $nome = explode(" ", $Ida->nome);
-            $Passagem->lastName = array_pop($nome);
-            $Passagem->firstName = implode(" ", $nome);
-
+            $Passagem->firstName = array_shift($nome);
+            $Passagem->lastName = implode(" ", $nome);
+            
             $passagens[] = $Passagem;
         }
         
@@ -255,9 +255,9 @@ class ClickBusController extends Controller {
                 $Passagem->seatReservation = $voltaScheduleId;
                             
                 $nome = explode(" ", $Volta->nome[$i]);
-                $Passagem->lastName = array_pop($nome);
-                $Passagem->firstName = implode(" ", $nome);
-                
+                $Passagem->firstName = array_shift($nome);
+                $Passagem->lastName = implode(" ", $nome);
+    
                 $passagens[] = $Passagem;
                 $i++;
             }
@@ -270,8 +270,8 @@ class ClickBusController extends Controller {
             $Passagem->seatReservation = $voltaScheduleId;
         
             $nome = explode(" ", $Volta->nome);
-            $Passagem->lastName = array_pop($nome);
-            $Passagem->firstName = implode(" ", $nome);
+            $Passagem->firstName = array_shift($nome);
+            $Passagem->lastName = implode(" ", $nome);
                 
             $passagens[] = $Passagem;
         }

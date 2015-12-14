@@ -231,7 +231,7 @@
                                 <label>CEP:</label>
                             </div>
                             <div class="col-xs-12">
-                                <input type="text" class="required form-control" name="cep-titular-debito" required="" placeholder="1701770">
+                                <input type="text" class="required form-control" name="cep-titular-debito" placeholder="1701770">
                             </div>
                         </div>
                         @endif
