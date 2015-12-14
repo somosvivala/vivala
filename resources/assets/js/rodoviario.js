@@ -434,8 +434,6 @@ var bindaFormPagamento = function() {
         ev.preventDefault();
         var frm = $(this);
         
-        console.log("Submit do pagamento");
-
         // Monta o buyer de acordo com a documentacao
         var tipo_cliente = $('input#tipo-cliente').val();
         var buyer = {};
@@ -487,6 +485,7 @@ var bindaFormPagamento = function() {
                 "document":$('input[name="cnpj-estrangeiro"]').val(),
                 "gender":"M",
                 "birthday":$('input[name="nascimento-estrangeiro"]').val(),
+                "payment": payment,
                 "meta": {}
             }
 
@@ -568,9 +567,10 @@ var bindaFormPagamento = function() {
 
         var params = {
              "meta": {
-                "model": "retail",
-                "store": "clickbus",
-                "platform": "web"
+                 "model": "Retail",
+                 "store": "Vivala",
+                 "platform": "API",
+                 "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
             },
              "request": {
                 "sessionId": "",
