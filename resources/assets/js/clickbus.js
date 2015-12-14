@@ -214,6 +214,10 @@ var removePoltrona = function(request, tipo, callback) {
     
     $.extend(params, request);
 
+    // Loading no x da poltrona
+    var icone_remover = $("#poltrona-"+request.seat+"-"+tipo+" i.exclui-poltrona");
+    icone_remover.removeClass("fa-close").addClass("fa-spinner fa-spin");
+
     $.ajax({
         url: 'clickbus/removerpoltronas',
         type: 'post',
@@ -232,7 +236,7 @@ var removePoltrona = function(request, tipo, callback) {
         }
     })
     .done(function(data) {
-        callback(data);
+        callback(data, params.seat, tipo);
     });
 };
 

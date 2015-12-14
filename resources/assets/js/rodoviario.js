@@ -241,13 +241,7 @@ var bindaPoltronas = function(){
         // Testa se a poltrona já está selecionada
         if(poltrona.hasClass('selecionada'))
         {
-            removePoltrona({seat: numero_poltrona}, tipo_viagem, function(data) {
-                data_obj = JSON.parse(data);
-                // Unselect na poltrona
-                $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove(); 
-                // Muda a cor da poltrona
-                poltrona.removeClass('selecionada');
-            });
+            removePoltrona({seat: numero_poltrona}, tipo_viagem, removePoltronaFront);
         }else{
             $("#modal-poltrona-"+tipo_viagem+" .num-poltrona").html(numero_poltrona);
             $("#modal-poltrona-"+tipo_viagem+" #seat").val(numero_poltrona);
@@ -315,12 +309,23 @@ var adicionaPoltronaFront = function(poltrona, tipo_viagem, viajante){
 
     // Adiciona o html da poltrona no formulario de compra
     // CUIDADO: HTML DIRETO NO JS
-    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\')"></i></div> <input type="hidden" name="'+tipo_viagem+'-numero_poltrona" value="'+numero_poltrona+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="'+tipo_viagem+'-email" value="'+viajante.email+'"> <input type="hidden" name="'+tipo_viagem+'-birthday" value="'+viajante.birthday+'">  <input type="hidden" name="'+tipo_viagem+'-documento" value="'+viajante.document+'"> <input name="'+tipo_viagem+'-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="'+tipo_viagem+'-nome" type="hidden" value="'+viajante.name+'">  </div> ';
+    var html = ' <div class="row poltrona-container" id="poltrona-'+numero_poltrona+'-'+tipo_viagem+'"> <div class="col-sm-12 margin-b-1"> <div class="poltrona-externa selecionada">'+numero_poltrona+'</div> <div class="pull-right"><i class="fa fa-close exclui-poltrona" onclick="removePoltrona({\'seat\':'+numero_poltrona+'},\''+tipo_viagem+'\', removePoltronaFront)"></i></div> <input type="hidden" name="'+tipo_viagem+'-numero_poltrona" value="'+numero_poltrona+'"> </div> <div class="col-sm-12"> <label for="nome">Nome:</label> </div> <div class="col-sm-12"> <span>'+viajante.name+'</span> </div> <div class="col-sm-12"> <label for="doc">Documento:</label> </div> <div class="col-sm-4"> '+viajante.documentType.toUpperCase()+'</div> <div class="col-sm-8"> '+viajante.document+'</div> <input type="hidden" name="'+tipo_viagem+'-email" value="'+viajante.email+'"> <input type="hidden" name="'+tipo_viagem+'-birthday" value="'+viajante.birthday+'">  <input type="hidden" name="'+tipo_viagem+'-documento" value="'+viajante.document+'"> <input name="'+tipo_viagem+'-documentType" type="hidden" value="'+viajante.documentType.toUpperCase()+'"> <input name="'+tipo_viagem+'-nome" type="hidden" value="'+viajante.name+'">  </div> ';
 
     $('.poltronas-selecionadas-'+tipo_viagem).append(html);
 
     // Fecha a modal
     $('#modal-poltrona-'+tipo_viagem).modal('hide');
+};
+
+var removePoltronaFront = function(data,numero_poltrona,tipo_viagem){
+
+    var icone_poltrona = $("input#"+numero_poltrona+'-'+tipo_viagem).parents('.poltrona');
+
+    // Remove o div com os dados da lateral 
+    $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove(); 
+    // Muda a cor da poltrona
+    icone_poltrona.removeClass('selecionada');
+
 };
 
 var bindaAbas = function() {
@@ -632,6 +637,8 @@ var checaQuantidadePoltronas =  function(ev) {
             closeOnConfirm: true
         });
 
+    } else {
+        funcaoSubmitPoltronas(this);
     }
 };
 
