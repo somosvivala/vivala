@@ -1,18 +1,93 @@
 'use strict';
 
 jQuery(document).ready(function($) {
-    var ajax;
 
-    $('#rodoviario-filtros #origem-rodoviario').on('keydown focus', function() {
-        if ($(this).val().length >= 2) {
-            // vale a pena fazer o timeout aqui? (copiado do viajar.js)
-            // autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista); 
-            ajaxPlace($(this).val(), this);
-        }
+    $('a[aria-controls=rodoviario]').on('shown.bs.tab', function() {
+        $('#origem-rodoviario').focus();
     });
-    $('#rodoviario-filtros #destino-rodoviario').on('keydown focus', function() {
-        if ($(this).val().length >= 2) {
-            ajaxPlace($(this).val(), this);
+
+    var bindUpDown = function(element, evt) {
+        var keyCode = evt.keyCode,
+            element = $(element).find('.placesList');
+
+        if (keyCode === 40 || keyCode === 38) {
+            var listItem = $('a.autocomplete-rodoviario.list-focus').attr('data-order'),
+                lastItem = $('a.autocomplete-rodoviario:last').attr('data-order');
+            if (listItem === undefined) {
+                if (keyCode === 40)
+                    $('a.autocomplete-rodoviario[data-order=0]').addClass('list-focus');
+                else
+                    $('a.autocomplete-rodoviario[data-order='+lastItem+']').addClass('list-focus');
+            } else {
+                $('a.autocomplete-rodoviario[data-order='+listItem+']').removeClass('list-focus');
+                if (keyCode === 40) {
+                    if (listItem == lastItem) {
+                        $('a.autocomplete-rodoviario[data-order=0]').addClass('list-focus');
+                    }
+                    else {
+                        $('a.autocomplete-rodoviario[data-order='+(parseInt(listItem)+1)+']').addClass('list-focus');
+                    }
+                } else {
+                    if (listItem == 0)
+                        $('a.autocomplete-rodoviario[data-order='+lastItem+']').addClass('list-focus');
+                    else
+                        $('a.autocomplete-rodoviario[data-order='+(listItem-1)+']').addClass('list-focus');
+                }
+            }   
+
+        } else {
+            if (keyCode === 13) {
+                // Pega o id do campo que vai ser modificado, origem ou destino
+                var target = $('a.autocomplete-rodoviario.list-focus').parent('.places-list').attr('data-target');
+                console.log(target);
+                // Muda o valor do input para a string do resultado (friendly)
+                $('#'+target).val($('a.autocomplete-rodoviario.list-focus').find('span').text());
+                // Muda o valor do input hidden para a string da busca (non-friendly)
+                $('#'+target+'-hidden').val( $('a.autocomplete-rodoviario.list-focus').attr('data-value'));
+
+                if (target == 'origem-rodoviario')
+                    $('#destino-rodoviario').focus();
+                else if (target == 'destino-rodoviario')
+                    $('#data-id-rodoviario').focus();
+            }
+        }
+    };
+
+    var ajax, 
+        autocompleteTimeout,
+        origemVal = '',
+        destinoVal = '';
+
+    $('#rodoviario-filtros #origem-rodoviario').on('keyup focus', function(e) {
+        if ($(this).val().length >= 3) {
+            if ($(this).val() !== origemVal) {
+                if (autocompleteTimeout!== undefined && autocompleteTimeout > 0) {
+                    clearTimeout(autocompleteTimeout);
+                }
+                autocompleteTimeout = setTimeout(ajaxPlace, 500, origemVal, this); 
+            }
+        } else {
+            $('.places-list').remove();
+        }
+        origemVal = $(this).val();
+    });
+    $('#rodoviario-filtros #destino-rodoviario').on('keyup focus', function(e) {
+        if ($(this).val().length >= 3) {
+            if ($(this).val() !== destinoVal) {
+                if (autocompleteTimeout!== undefined && autocompleteTimeout > 0) {
+                    clearTimeout(autocompleteTimeout);
+                }
+                autocompleteTimeout = setTimeout(ajaxPlace, 500, destinoVal, this);
+            }
+        } else {
+            $('.places-list').remove();
+        }
+        destinoVal = $(this).val();
+    });
+    $('#rodoviario-filtros').find('#origem-rodoviario, #destino-rodoviario').on('keydown', function(e) {
+        if (e.keyCode === 40 || e.keyCode === 38 || e.keyCode === 13) {
+            e.preventDefault();
+            bindUpDown(this, e);
         }
     });
 
@@ -20,7 +95,7 @@ jQuery(document).ready(function($) {
         .on('blur', function() {
             setTimeout(function() {
                 $('.places-list').remove();
-            }, 100);
+            }, 200);
     });
 
     $('#buscar-rodoviario .btn').on('click', function(e) {
@@ -44,7 +119,7 @@ jQuery(document).ready(function($) {
 
 // Binda o clique do resultado de autocomplete (quando escolhe a cidade)
 var bindAutocompleteRodoviario = function() {
-    $('.places-list a').on('click', function(e) {
+    $('.places-list a').on('mousedown', function(e) {
         e.preventDefault();
 
         // Pega o id do campo que vai ser modificado, origem ou destino
@@ -57,6 +132,9 @@ var bindAutocompleteRodoviario = function() {
 
         // Remove os resultados
         $('.places-list').remove();
+    });
+    $('.places-list a').on('mouseover', function() {
+        $('.places-list a.list-focus').removeClass('list-focus');
     });
 };
 
