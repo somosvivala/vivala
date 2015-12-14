@@ -184,6 +184,7 @@ class ClickBusController extends Controller {
             $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
         }
 
+        $sessionId = $request["frm"]["ida-sessionId"];
 
         //criando objeto content
         $content = new \stdClass();
@@ -195,7 +196,8 @@ class ClickBusController extends Controller {
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Content-Length: ".strlen(json_encode($content))."\r\n",
+                            "Content-Length: ".strlen(json_encode($content))."\r\n".
+                            "Cookie: PHPSESSID=".$sessionId,
                 'content' => json_encode($content)
             ] 
         ];
