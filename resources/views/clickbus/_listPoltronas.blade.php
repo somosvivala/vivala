@@ -188,7 +188,7 @@
 <div id="modal-poltrona-volta" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <form id="validacao-poltrona-volta" class="validacao-poltrona" action="#" method="GET">
+            <form id="validacao-poltrona-volta" class="validacao-poltrona" action="#" method="GET" data-loading="form-loading">
             <div class="modal-body">
                 <div class="row margin-b-1">
                     <div class="col-sm-10">
