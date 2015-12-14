@@ -68,8 +68,15 @@ class ClickBusController extends Controller {
                 $ida->horario_chegada = $ida_obj->horario_chegada;
                 $ida->classe = $ida_obj->classe;
             }
-            if(isset($volta_obj)) {
-                $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}");
+            if(isset($volta_obj) && isset($content_ida)) {
+                $context = [ 
+                    'http' => [ 
+                        'header' => "Cookie: PHPSESSID=".$ida->sessionId
+                    ] 
+                ];
+                $context = stream_context_create($context);
+
+                $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}", false, $context);
                 $volta = json_decode($content_volta);
                 $volta->horario = $volta_obj->horario;
                 $volta->diames = $volta_obj->diames ;
@@ -317,6 +324,7 @@ class ClickBusController extends Controller {
     public function getBooking(Request $request)
     {
         $request = Input::get('params');
+        $sessionId = $request['request']['sessionId'];
 
         $data = json_encode($request);
 
@@ -325,7 +333,8 @@ class ClickBusController extends Controller {
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Content-Length: ".strlen($data)."\r\n",
+                            "Content-Length: ".strlen($data)."\r\n".
+                            "Cookie: PHPSESSID=".$sessionId,
                 'content' => $data
             ] 
         ];

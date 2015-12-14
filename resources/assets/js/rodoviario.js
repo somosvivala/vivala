@@ -555,7 +555,7 @@ var bindaFormPagamento = function() {
                  "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
             },
              "request": {
-                "sessionId": "",
+                "sessionId": $('input#session-clickbus').val(),
                 "ip": "",
                 "buyer": buyer,
                 "orderItems": orderItems

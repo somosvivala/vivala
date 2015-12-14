@@ -37,6 +37,7 @@
 <input type="hidden" id="classe-ida">
 <input type="hidden" id="from-ida">
 <input type="hidden" id="to-ida">
+<input type="hidden" id="session-clickbus">
 
 <div id="clickbus-resultado-busca">
     

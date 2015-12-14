@@ -102,6 +102,7 @@ var ajaxTrip = function(viagens) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+        $('input#session-clickbus').val($('#clickbus-resultado-busca').find('input#volta-session-id').val());
         bindaPoltronas();
     })
     .fail(function() {
