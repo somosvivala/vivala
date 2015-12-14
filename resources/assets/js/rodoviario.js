@@ -299,30 +299,7 @@ var bindaPoltronas = function(){
 
 
     // Binda o submit do form de todas as poltronas
-    $('#form-poltronas-clickbus').submit(function (ev) {
-        ev.preventDefault();
-        
-        var params = {
-            "store": "clickbus",
-            "model": "retail",
-            "platform": "web",
-            "contents": []
-        };
-
-        var frm = $(this),
-            loading = frm.data('loading');
-        
-        if (loading && loading != "") {
-            $(this).find('input:submit').attr('disabled','disabled');
-            $(this).find('#'+loading).show();
-        }
-
-
-        console.log("Submit das poltronas para a tela de pagamento");
-
-        tripPayment(params, frm);
-
-    });
+    $('#form-poltronas-clickbus').submit(checaQuantidadePoltronas);
 };
 
 // Mostra a poltronacomo selecionada e adicona no 
@@ -591,4 +568,92 @@ var bindaFormPagamento = function() {
         tripBooking(params);
 
     });
+};
+
+//Metodo para checar as quantidade de poltronas
+//exibindo algum alert se necessario
+var checaQuantidadePoltronas =  function(ev) {
+    ev.preventDefault();
+
+    var qntIda = $('div.poltronas-selecionadas-ida .poltrona-container').length;
+    var qntVolta = $('div.poltronas-selecionadas-volta .poltrona-container').length;
+
+    if (qntIda > 0 && qntVolta > 0 && qntIda != qntVolta) {
+        //caso qnts diferentes
+        swal({   
+            title: "Atenção",
+            text: "Voce selecionou um numero diferente de passagens de ida e volta. Deseja continuar mesmo assim?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Sim, continuar!",
+            cancelButtonText: "Não, corrigir!",
+            closeOnConfirm: true,
+            closeOnCancel: true 
+            },
+            function(confirmed){   
+                if (confirmed) {     
+                   funcaoSubmitPoltronas(this);
+
+                } else {     
+                    //nao fazer nada
+                } 
+        });
+
+    } else if (qntIda > 0 && qntVolta == 0) {
+        //caso sem volta
+        swal({   
+            title: "Atenção",
+            text: "Voce não selecionou uma passagem de volta. Deseja continuar assim mesmo?",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Sim, continuar!",
+            cancelButtonText: "Não, corrigir!",
+            closeOnConfirm: true,
+            closeOnCancel: true 
+            },
+            function(confirmed){   
+                if (confirmed) {     
+                    funcaoSubmitPoltronas(this);
+                } else {     
+                    //nao fazer nada
+                } 
+        });
+
+    } else if (qntIda == 0) {
+       //caso nao selecionou Ida
+       swal({   
+            title: "Ops, ocorreu um problema",
+            text: "Voce não selecionou uma passagem de ida!",
+            type: "warning",
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Ok",
+            closeOnConfirm: true
+        });
+
+    }
+};
+
+var funcaoSubmitPoltronas = function (ev) {
+    
+    var params = {
+        "store": "clickbus",
+        "model": "retail",
+        "platform": "web",
+        "contents": []
+    };
+
+    var frm = $('#form-poltronas-clickbus'),
+        loading = frm.data('loading');
+    
+    if ( loading && loading != "") {
+        $(this).find('input:submit').attr('disabled','disabled');
+        $(this).find('#'+loading).show();
+    }
+
+    console.log("Submit das poltronas para a tela de pagamento");
+
+    tripPayment(params, frm);
+
 };

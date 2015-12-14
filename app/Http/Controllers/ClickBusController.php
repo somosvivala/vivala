@@ -308,7 +308,7 @@ class ClickBusController extends Controller {
     public function getBooking(Request $request)
     {
         $request = Input::get('params');
-        dd("Chegou em getBooking", $request, Input::all());
+//        dd("Chegou em getBooking", $request, Input::all());
 
         $data = json_encode($request);
 
