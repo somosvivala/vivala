@@ -110,7 +110,7 @@ var ajaxTrip = function(viagens) {
     
 };
 
-var ajaxPoltronas = function(request) {
+var ajaxPoltronas = function(request, callback) {
     var params = {
         "from": "",
         "to": "",
@@ -158,9 +158,7 @@ var ajaxPoltronas = function(request) {
             }
         },
         success: function (data) {
-           data_obj = JSON.parse(data);
-
-           adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
+           callback(data);
         },
         error: function (data) {
             console.log('erro do ajax poltronas');
@@ -207,7 +205,7 @@ var ajaxPoltronas = function(request) {
 
 };
 
-var removePoltrona = function(request, tipo) {
+var removePoltrona = function(request, tipo, callback) {
     var params = {
         "seat": "",
         "id": $("input#"+tipo+"-id").val(),
@@ -234,9 +232,7 @@ var removePoltrona = function(request, tipo) {
         }
     })
     .done(function(data) {
-        console.log(data);
-        // Remove a Poltrona do form
-        $('#poltrona-'+params.seat+'-'+tipo).remove();
+        callback(data);
     });
 };
 

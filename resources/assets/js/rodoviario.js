@@ -241,13 +241,14 @@ var bindaPoltronas = function(){
         // Testa se a poltrona já está selecionada
         if(poltrona.hasClass('selecionada'))
         {
-            // Unselect na poltrona
-            $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove(); 
-
-            // Muda a cor da poltrona
-            poltrona.removeClass('selecionada');
+            removePoltrona({seat: numero_poltrona}, tipo_viagem, function(data) {
+                data_obj = JSON.parse(data);
+                // Unselect na poltrona
+                $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove(); 
+                // Muda a cor da poltrona
+                poltrona.removeClass('selecionada');
+            });
         }else{
-
             $("#modal-poltrona-"+tipo_viagem+" .num-poltrona").html(numero_poltrona);
             $("#modal-poltrona-"+tipo_viagem+" #seat").val(numero_poltrona);
             $("#modal-poltrona-"+tipo_viagem).modal();
@@ -289,7 +290,10 @@ var bindaPoltronas = function(){
 
         // Envia ajax de validaçao, caso seja bem sucedido marca como
          // selecionada a poltrona
-        ajaxPoltronas(params);
+        ajaxPoltronas(params, function(data) {
+            data_obj = JSON.parse(data);
+            adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
+        });
 
     });
 
