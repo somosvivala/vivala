@@ -606,25 +606,30 @@ var checaQuantidadePoltronas =  function(ev) {
         });
 
     } else if (qntIda > 0 && qntVolta == 0) {
-        //caso sem volta
-        swal({   
-            title: "Atenção",
-            text: "Voce não selecionou uma passagem de volta. Deseja continuar assim mesmo?",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Sim, continuar!",
-            cancelButtonText: "Não, corrigir!",
-            closeOnConfirm: true,
-            closeOnCancel: true 
-            },
-            function(confirmed){   
-                if (confirmed) {     
-                    funcaoSubmitPoltronas(this);
-                } else {     
-                    //nao fazer nada
-                } 
-        });
+        var temVolta = $('#data-volta-rodoviario').val() != "";
+        if (temVolta) {
+            //caso sem volta
+            swal({   
+                title: "Atenção",
+                text: "Voce não selecionou uma passagem de volta. Deseja continuar assim mesmo?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Sim, continuar!",
+                cancelButtonText: "Não, corrigir!",
+                closeOnConfirm: true,
+                closeOnCancel: true 
+                },
+                function(confirmed){   
+                    if (confirmed) {     
+                        funcaoSubmitPoltronas(this);
+                    } else {     
+                        //nao fazer nada
+                    } 
+            });
+        } else {
+          funcaoSubmitPoltronas(this);
+        }
 
     } else if (qntIda == 0) {
        //caso nao selecionou Ida
@@ -655,11 +660,9 @@ var funcaoSubmitPoltronas = function (ev) {
         loading = frm.data('loading');
     
     if ( loading && loading != "") {
-        $(this).find('input:submit').attr('disabled','disabled');
-        $(this).find('#'+loading).show();
+        $(frm).find('input:submit').attr('disabled','disabled');
+        $(frm).find('#'+loading).show();
     }
-
-    console.log("Submit das poltronas para a tela de pagamento");
 
     tripPayment(params, frm);
 

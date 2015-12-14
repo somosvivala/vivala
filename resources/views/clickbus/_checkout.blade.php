@@ -269,14 +269,16 @@
                             <span class="col-sm-12">Para: {{ $Ida->to }} | {{ $Ida->horario_chegada }}<span>
                         </div>
                     </div>
-                    <div class="passagem">
-                        <h5><b>{{ $Volta->diames }}</b></h5>
-                        <div class="row">
-                            <span class="col-sm-12"> {{ $Volta->company }} - {{ $Ida->classe }}</span>
-                            <span class="col-sm-12">De: {{ $Volta->from }} | {{ $Volta->horario }}</span>
-                            <span class="col-sm-12">Para: {{ $Volta->to }} | {{ $Volta->horario_chegada }}<span>
+                    @if (isset($Volta))
+                        <div class="passagem">
+                            <h5><b>{{ $Volta->diames }}</b></h5>
+                            <div class="row">
+                                <span class="col-sm-12"> {{ $Volta->company }} - {{ $Ida->classe }}</span>
+                                <span class="col-sm-12">De: {{ $Volta->from }} | {{ $Volta->horario }}</span>
+                                <span class="col-sm-12">Para: {{ $Volta->to }} | {{ $Volta->horario_chegada }}<span>
+                            </div>
                         </div>
-                    </div>
+                    @endif
                 </div>
            <div class="row margin-t-2">
                <div class="col-sm-8 text-left">
@@ -342,11 +344,13 @@
                <input type="hidden" id="ida-horario" name="ida-horario" value="{{ $Ida->horario }}">
                <input type="hidden" id="ida-company" name="ida-company" value="{{ $Ida->company }}">
 
-               <input type="hidden" id="volta-to" name="volta-to" value="{{ $Volta->to}}">
-               <input type="hidden" id="volta-from" name="volta-from" value="{{ $Volta->from}}">
-               <input type="hidden" id="volta-diames" name="volta-diames" value="{{ $Volta->diames }}">
-               <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
-               <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
+                @if (isset($Volta))
+                   <input type="hidden" id="volta-to" name="volta-to" value="{{ $Volta->to}}">
+                   <input type="hidden" id="volta-from" name="volta-from" value="{{ $Volta->from}}">
+                   <input type="hidden" id="volta-diames" name="volta-diames" value="{{ $Volta->diames }}">
+                   <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
+                   <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
+                @endif
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">

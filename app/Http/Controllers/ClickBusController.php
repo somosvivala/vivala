@@ -166,16 +166,22 @@ class ClickBusController extends Controller {
         $Ida = new \stdClass();
         $Ida->scheduleId = $request["frm"]["ida-scheduleId"];
         $Ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
+        
+        //flag para testar se foi requisitado alguma poltrona para a volta
+        $existeVolta = array_key_exists("volta-numero_poltrona",$request["frm"]);
+        
+        if ($existeVolta) {
+            //pegando dados das poltronas de volta 
+            $Volta = new \stdClass();
+            $Volta->scheduleId = $request["frm"]["volta-scheduleId"];
+            $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
+        }
 
-        //pegando dados das poltronas de volta 
-        $Volta = new \stdClass();
-        $Volta->scheduleId = $request["frm"]["volta-scheduleId"];
-        $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
 
         //criando objeto content
         $content = new \stdClass();
         $content->meta = $request["meta"];
-        $content->contents = [$Ida, $Volta];
+        $content->contents = ($existeVolta ? [$Ida, $Volta] : [$Ida]);
 
         $context = [ 
             'http' => [ 
@@ -197,17 +203,18 @@ class ClickBusController extends Controller {
         $Ida->nome = $request['frm']['ida-nome'];
         $Ida->birthday = $request['frm']['ida-birthday'];
         $Ida->email = $request['frm']['ida-email'];
-
-        //Montando objeto $Volta 
-        $Volta->numero_poltrona = $request['frm']['volta-numero_poltrona'];
-        $Volta->documento = $request['frm']['volta-documento'];
-        $Volta->nome = $request['frm']['volta-nome'];
-        $Volta->birthday = $request['frm']['volta-birthday'];
-        $Volta->email = $request['frm']['volta-email'];
-
         $idaScheduleId = $request['frm']['ida-scheduleId'];
-        $voltaScheduleId = $request['frm']['volta-scheduleId'];
 
+        if ($existeVolta) {
+            //Montando objeto $Volta 
+            $Volta->numero_poltrona = $request['frm']['volta-numero_poltrona'];
+            $Volta->documento = $request['frm']['volta-documento'];
+            $Volta->nome = $request['frm']['volta-nome'];
+            $Volta->birthday = $request['frm']['volta-birthday'];
+            $Volta->email = $request['frm']['volta-email'];
+            $voltaScheduleId = $request['frm']['volta-scheduleId'];
+        }
+        
         $passagens = array();
         //tratando Ida
         if (is_array($Ida->numero_poltrona)) {
@@ -242,38 +249,50 @@ class ClickBusController extends Controller {
             
             $passagens[] = $Passagem;
         }
+
+        if ($existeVolta) { 
+            //tratando Volta
+            if (is_array($Volta->numero_poltrona)) {
+                $i = 0;
+                foreach($Volta->numero_poltrona as $numpoltrona) {
+                    $Passagem = new \stdClass();
+                    $Passagem->document = $Volta->documento[$i];
+                    $Passagem->seat = $numpoltrona;
+                    $Passagem->birthday = $Volta->birthday[$i]; 
+                    $Passagem->email = $Volta->email[$i]; 
+                    $Passagem->seatReservation = $voltaScheduleId;
+                                
+                    $nome = explode(" ", $Volta->nome[$i]);
+                    $Passagem->firstName = array_shift($nome);
+                    $Passagem->lastName = implode(" ", $nome);
         
-        //tratando Volta
-        if (is_array($Volta->numero_poltrona)) {
-            $i = 0;
-            foreach($Volta->numero_poltrona as $numpoltrona) {
+                    $passagens[] = $Passagem;
+                    $i++;
+                }
+            }else{
                 $Passagem = new \stdClass();
-                $Passagem->document = $Volta->documento[$i];
-                $Passagem->seat = $numpoltrona;
-                $Passagem->birthday = $Volta->birthday[$i]; 
-                $Passagem->email = $Volta->email[$i]; 
+                $Passagem->document = $Volta->documento;
+                $Passagem->seat = $Volta->numero_poltrona;
+                $Passagem->birthday = $Volta->birthday; 
+                $Passagem->email = $Volta->email; 
                 $Passagem->seatReservation = $voltaScheduleId;
-                            
-                $nome = explode(" ", $Volta->nome[$i]);
+            
+                $nome = explode(" ", $Volta->nome);
                 $Passagem->firstName = array_shift($nome);
                 $Passagem->lastName = implode(" ", $nome);
-    
+                    
                 $passagens[] = $Passagem;
-                $i++;
             }
-        }else{
-            $Passagem = new \stdClass();
-            $Passagem->document = $Volta->documento;
-            $Passagem->seat = $Volta->numero_poltrona;
-            $Passagem->birthday = $Volta->birthday; 
-            $Passagem->email = $Volta->email; 
-            $Passagem->seatReservation = $voltaScheduleId;
-        
-            $nome = explode(" ", $Volta->nome);
-            $Passagem->firstName = array_shift($nome);
-            $Passagem->lastName = implode(" ", $nome);
-                
-            $passagens[] = $Passagem;
+
+            // Incrementando os dados de Ida e Volta com os dados do ônibus para
+            // enviar para a view
+            $Volta->to = $request["frm"]["volta-to"];
+            $Volta->from = $request["frm"]["volta-from"];
+            $Volta->diames = $request["frm"]["volta-diames"];
+            $Volta->horario = $request["frm"]["volta-horario"];
+            $Volta->horario_chegada = $request["frm"]["volta-horario-chegada"];
+            $Volta->company = $request["frm"]["volta-company"];
+            $Volta->classe = $request["frm"]["volta-classe"];
         }
 
         // Incrementando os dados de Ida e Volta com os dados do ônibus para
@@ -285,17 +304,7 @@ class ClickBusController extends Controller {
         $Ida->horario_chegada = $request["frm"]["ida-horario-chegada"];
         $Ida->company = $request["frm"]["ida-company"];
         $Ida->classe = $request["frm"]["ida-classe"];
-
-        $Volta->to = $request["frm"]["volta-to"];
-        $Volta->from = $request["frm"]["volta-from"];
-        $Volta->diames = $request["frm"]["volta-diames"];
-        $Volta->horario = $request["frm"]["volta-horario"];
-        $Volta->horario_chegada = $request["frm"]["volta-horario-chegada"];
-        $Volta->company = $request["frm"]["volta-company"];
-        $Volta->classe = $request["frm"]["volta-classe"];
-
-
-
+        
         return view('clickbus._checkout', compact('result', 'passagens', 'Ida', 'Volta'));
     }
 
