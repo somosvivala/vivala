@@ -5,9 +5,11 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\ClickBusPlace;
+use App\CompraClickbus;
 use Input;
 use App\Repositories\ClickBusRepository;
 use App\Http\Requests\SelecionarPoltronasClickbusRequest;
+use Auth;
 
 class ClickBusController extends Controller {
 
@@ -349,14 +351,23 @@ class ClickBusController extends Controller {
     
         $decoded = json_decode($result);
         $success = !isset($decoded->{"error"});
+
+        //Se for success cria um registro na tabela de compras da clickbus
+        if ($success) 
+        {
+            $userId = Auth::user()->id;
+            $localizer = $decoded->{"content"}->{"localizer"};
+            CompraClickbus::create(['user_id' => $userId, 'localizer' => $localizer]);
         
-        if ($success) {
-            CompraClickbus::create(['user_id'=>Auth::user()->id, 'localizer'=> $decoded->{"content"}["localizer"]);
+        } 
+        
+        else 
+        {
+            //TODO tratar erros?
         }
 
 
-        dd($result, $success, $sucess, $decoded );
- 
+        //TODO tratar retorno? esse retorno contem dados do cartao!!
         return $result;
     }
 }
