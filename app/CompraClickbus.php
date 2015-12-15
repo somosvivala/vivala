@@ -4,7 +4,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class CompraClickbus extends Model {
 
-    $table = "compra_clickbuses";
+    /**
+     * The database table used by the model.
+     *
+     * @var string
+     */
+    protected $table = "compra_clickbuses";
 
     protected $fillable =
         [

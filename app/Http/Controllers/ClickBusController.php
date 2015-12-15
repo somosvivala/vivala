@@ -346,6 +346,17 @@ class ClickBusController extends Controller {
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/booking', false, $context);
+    
+        $decoded = json_decode($result);
+        $success = !isset($decoded->{"error"});
+        
+        if ($success) {
+            CompraClickbus::create(['user_id'=>Auth::user()->id, 'localizer'=> $decoded->{"content"}["localizer"]);
+        }
+
+
+        dd($result, $success, $sucess, $decoded );
+ 
         return $result;
     }
 }
