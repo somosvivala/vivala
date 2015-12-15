@@ -326,8 +326,11 @@ class ClickBusController extends Controller {
     public function getBooking(Request $request)
     {
         $request = Input::get('params');
-        $sessionId = $request['request']['sessionId'];
 
+        $sessionId = $request['request']['sessionId'];
+        $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
+        $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]);     
+            
         $data = json_encode($request);
 
         $context = [ 
