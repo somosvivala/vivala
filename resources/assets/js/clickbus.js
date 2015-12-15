@@ -88,11 +88,12 @@ var ajaxTrip = function(viagens) {
 
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
+    console.log(viagens);
 
     $.ajax({
         url: 'clickbus/trip',
         type: 'POST',
-        deataType: 'html',
+        dataType: 'html',
          data: {
             schedule: viagens,
             from: from,
@@ -101,6 +102,7 @@ var ajaxTrip = function(viagens) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+        $('input#session-clickbus').val($('#clickbus-resultado-busca').find('input#volta-session-id').val());
         bindaPoltronas();
     })
     .fail(function() {
@@ -109,7 +111,7 @@ var ajaxTrip = function(viagens) {
     
 };
 
-var ajaxPoltronas = function(request) {
+var ajaxPoltronas = function(request, callback) {
     var params = {
         "from": "",
         "to": "",
@@ -117,7 +119,8 @@ var ajaxPoltronas = function(request) {
         "name": "",
         "document": "",
         "documentType": "",
-        "gender": "",
+        "birthday": "",
+        "email": "",
         "id": "",
         "date": "",
         "time": "",
@@ -141,7 +144,9 @@ var ajaxPoltronas = function(request) {
                         "name": params.name,
                         "document": params.document,
                         "documentType": params.documentType, /*[rg|cpf|passaporte]*/
-                        "gender": params.gender              /*[M|F]*/
+                        "gender": params.gender,              /*[M|F]*/
+                        "birthday": params.birthday,
+                        "email": params.email
                     },
                     "schedule": {
                         "id": params.id,
@@ -154,11 +159,8 @@ var ajaxPoltronas = function(request) {
             }
         },
         success: function (data) {
-           data_obj = JSON.parse(data);
-           console.log(data_obj.data.request.passenger);
-
-           adicionaPoltronaFront(data_obj.result.items[0].seat,params.tipo,data_obj.data.request.passenger);
-                   },
+           callback(data);
+        },
         error: function (data) {
             console.log('erro do ajax poltronas');
             console.log(data);
@@ -195,8 +197,8 @@ var ajaxPoltronas = function(request) {
                     */
         },
         complete: function(data, status) {
-            $('form#validacao-poltrona').find('button:submit').removeAttr('disabled');
-            $('form#validacao-poltrona button:submit i').hide();
+            $('form.validacao-poltrona').find('button:submit').removeAttr('disabled');
+            $('form.validacao-poltrona button:submit i').hide();
 
         }
     });
@@ -204,7 +206,7 @@ var ajaxPoltronas = function(request) {
 
 };
 
-var removePoltrona = function(request, tipo) {
+var removePoltrona = function(request, tipo, callback) {
     var params = {
         "seat": "",
         "id": $("input#"+tipo+"-id").val(),
@@ -212,6 +214,10 @@ var removePoltrona = function(request, tipo) {
     }
     
     $.extend(params, request);
+
+    // Loading no x da poltrona
+    var icone_remover = $("#poltrona-"+request.seat+"-"+tipo+" i.exclui-poltrona");
+    icone_remover.removeClass("fa-close").addClass("fa-spinner fa-spin");
 
     $.ajax({
         url: 'clickbus/removerpoltronas',
@@ -231,9 +237,7 @@ var removePoltrona = function(request, tipo) {
         }
     })
     .done(function(data) {
-        console.log(data);
-        // Remove a Poltrona do form
-        $('#poltrona-'+params.seat+'-'+tipo).remove();
+        callback(data, params.seat, tipo);
     });
 };
 
@@ -283,6 +287,54 @@ var tripPayment = function(request, frm) {
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
         bindaAbas();
+        bindaBandeirasCartao();
+        bindaChangePagamento();
+        bindaFormPagamento();
+    });
+    
+};
+
+var tripBooking = function(request) {
+
+    console.log('inside tripBooking');
+    console.log(request);
+    var params = {
+        "meta": {
+            "model": "retail",
+            "store": "clickbus",
+            "platform": "web"
+        },
+        "request": {
+            "sessionId": "",
+            "ip": "",
+            "buyer": {
+                "locale": "pt_BR",
+                "gender": "M",
+                "meta": {},
+                "payment": {
+                }
+            },
+            "orderItems": [
+            ]
+        }
+    };
+
+    $.extend(params, request);
+
+    $.ajax({
+        url: 'clickbus/booking',
+        type: 'POST',
+        dataType: 'html',
+        data: {
+            params: params
+        }
+    })
+    .error(function(data) {
+
+    })
+    .done(function(data) {
+        $('#clickbus-resultado-busca').html(data);
+        
     });
     
 };
