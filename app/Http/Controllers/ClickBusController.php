@@ -443,12 +443,16 @@ class ClickBusController extends Controller {
         }
 
         if (isset($compra)) {
+            
+            $departure = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get();
+            $arrival = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get(); 
+
             $retorno = [
                 "success" => true,
-                "ida_departure" => ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->place_name,
-                "ida_arrival" => ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->place_name,
-                "volta_departure" => ClickBusPlace::where('item_id', $compra->volta_departure_waypoint_id)->get()->place_name,
-                "volta_arrival" => ClickBusPlace::where('item_id', $compra->volta_arrival_waypoint_id)->get()->place_name,
+                "ida_departure" => ($departure != null ? $departure->place_name : ""),
+                "ida_arrival" => ($arrival != null ? $arrival->place_name :  ""),
+                "volta_departure" => ($arrival != null ? $arrival->place_name :  ""),
+                "volta_arrival" => ($departure != null ? $departure->place_name : ""),
                 "quantidade" => $compra->quantidade_passagens,
                 "ida_data" => $compra->ida_trip_date,
                 "volta_data" => $compra->volta_trip_date,
