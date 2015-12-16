@@ -331,8 +331,9 @@ class ClickBusController extends Controller {
 
         $sessionId = $request['request']['sessionId'];
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
-        $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]);     
-            
+        $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]); 
+        $request['request']["buyer"]["payment"]["meta"]["name"] = strtoupper($request['request']["buyer"]["payment"]["meta"]["name"]);
+ 
         $data = json_encode($request);
 
         $context = [ 
@@ -355,10 +356,85 @@ class ClickBusController extends Controller {
         //Se for success cria um registro na tabela de compras da clickbus
         if ($success) 
         {
-            $userId = Auth::user()->id;
+            $userId = 2;
             $localizer = $decoded->{"content"}->{"localizer"};
-            CompraClickbus::create(['user_id' => $userId, 'localizer' => $localizer]);
-        
+            $itens = $decoded->{"content"}->{"items"};
+            $payment_method = $decoded->{"content"}->{"payment"}->{"method"};
+            $total = $decoded->{"content"}->{"payment"}->{"total"};
+            $currency = $decoded->{"content"}->{"payment"}->{"currency"};
+            $quantidade_passagens = count($itens);
+
+            //inicializando variaveis que vou incrementar /  settar nas 
+            //iteracoes do foreach de $itens
+            $ida_quantidade = 0;
+            $ida_trip_id = "";
+            $ida_trip_localizers = [];
+            $ida_trip_waypoint_id = "";
+            $ida_departure_waypoint_id = "";
+            $ida_arrival_waypoint_id = "";
+            $ida_trip_date = "";
+
+            $volta_quantidade = 0;
+            $volta_trip_id = "";
+            $volta_trip_localizers = [];
+            $volta_departure_waypoint_id = "";
+            $volta_arrival_waypoint_id = "";
+            $volta_trip_date = "";
+
+            //Como as viagens sao compostas de até 2 trips (ida e volta), nao 
+            //tem problema em re-settar as variaveis a cada iteração, os valores 
+            //sao os mesmos para um mesmo tipo de trip (departure x return)
+            foreach ($itens as $Trip) 
+            {
+                //se for de ida
+                if ($Trip->{"context"} == "departure")
+                {
+                    $ida_quantidade++;
+                    $ida_trip_id = $Trip->{"trip_id"};
+                    $ida_trip_localizers[] = $Trip->{"localizer"};
+                    $ida_departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
+                    $ida_arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
+                    $ida_trip_waypoint_id = 
+                    $ida_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
+                }
+
+                //se for volta (context == return)
+                else 
+                {
+                    $volta_quantidade++;
+                    $volta_trip_id = $Trip->{"trip_id"};
+                    $volta_trip_localizers[] = $Trip->{"localizer"};
+                    $volta_departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
+                    $volta_arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
+                    $volta_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
+                }
+            }
+
+            //Criando registro da compra no BD
+            $compra = CompraClickbus::create([
+                'user_id' => $userId, 
+                'localizer' => $localizer,
+                
+                'payment_method' => $payment_method,
+                'total' => $total,
+                'currency' => $currency,
+                'quantidade_passagens' => $quantidade_passagens,
+                
+                'ida_quantidade' => $ida_quantidade,
+                'ida_trip_id' => $ida_trip_id,
+                'ida_trip_localizers' => implode($ida_trip_localizers, ","),
+                'ida_departure_waypoint_id' => $ida_departure_waypoint_id,
+                'ida_arrival_waypoint_id' => $ida_arrival_waypoint_id,
+                'ida_trip_date' => $ida_trip_date,
+
+                'volta_quantidade' => $volta_quantidade,
+                'volta_trip_id' => $volta_trip_id,
+                'volta_trip_localizers' => implode($volta_trip_localizers, ","),
+                'volta_departure_waypoint_id' => $volta_departure_waypoint_id,
+                'volta_arrival_waypoint_id' => $volta_arrival_waypoint_id,
+                'volta_trip_date' => $volta_trip_date
+            ]);
+
         } 
         
         else 
@@ -366,8 +442,26 @@ class ClickBusController extends Controller {
             //TODO tratar erros?
         }
 
+        if (isset($compra)) {
+            $retorno = [
+                "success" => true,
+                "ida_departure" => ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->place_name,
+                "ida_arrival" => ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->place_name,
+                "volta_departure" => ClickBusPlace::where('item_id', $compra->volta_departure_waypoint_id)->get()->place_name,
+                "volta_arrival" => ClickBusPlace::where('item_id', $compra->volta_arrival_waypoint_id)->get()->place_name,
+                "quantidade" => $compra->quantidade_passagens,
+                "ida_data" => $compra->ida_trip_date,
+                "volta_data" => $compra->volta_trip_date,
+                "total" => $compra->total
+            ];
+
+        } else {
+            $retorno = [
+                "errors" => $decoded->{"error"}
+            ];
+        }
 
         //TODO tratar retorno? esse retorno contem dados do cartao!!
-        return $result;
+        return $retorno;
     }
 }

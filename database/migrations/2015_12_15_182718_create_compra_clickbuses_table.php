@@ -27,8 +27,30 @@ class CreateCompraClickbusesTable extends Migration {
                         //content.localizer da compra usado para qualquer 
                         //UPDATE order
 			$table->string('localizer')->nullable();
-		});
-	}
+                        
+                        $table->string('payment_method')->nullable();
+                        $table->string('total')->nullable();
+                        $table->string('currency')->nullable();
+                        $table->string('quantidade_passagens')->nullable();
+
+                        //campos para controle das passagens de ida 
+			$table->string('ida_quantidade')->nullable();
+			$table->string('ida_trip_id')->nullable();
+			$table->string('ida_trip_localizers')->nullable();
+			$table->string('ida_departure_waypoint_id')->nullable();
+			$table->string('ida_arrival_waypoint_id')->nullable();
+			$table->string('ida_trip_date')->nullable();
+        
+                        //campos para controle das passagens de volta
+			$table->string('volta_quantidade')->nullable();
+			$table->string('volta_trip_id')->nullable();
+			$table->string('volta_trip_localizers')->nullable();
+			$table->string('volta_departure_waypoint_id')->nullable();
+			$table->string('volta_arrival_waypoint_id')->nullable();
+			$table->string('volta_trip_date')->nullable();
+                });
+        }
+
 
 	/**
 	 * Reverse the migrations.

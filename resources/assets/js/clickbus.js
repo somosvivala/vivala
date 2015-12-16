@@ -330,10 +330,55 @@ var tripBooking = function(request) {
         }
     })
     .error(function(data) {
-
+        var json = JSON.parse(data);
+        swal({   
+            title: "Ops",
+            text: "Ocorreu um problema com a sua compra! Tente novamente",
+            type: "error",
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "ok",
+            closeOnConfirm: true,
+            },
+            function() {   
+                console.log('clicou botao swal error');
+            });
     })
     .done(function(data) {
-        $('#clickbus-resultado-busca').html(data);
+        console.log("voltou do backend : ");
+        console.log(data);
+        
+        var json = JSON.parse(data);
+       
+        //TODO testar se tipo pagamento for debit card entao mostrar botao para
+        //redirecionamento...
+        if (json.success) {
+            swal({   
+                title: "Sucesso",
+                text: "Sua viagem de "+json.ida_departure+" á "+json.ida_arrival+" no dia " + data.ida_data + " foi realizada com sucesso!",
+                type: "success",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ok",
+                closeOnConfirm: true,
+                closeOnCancel: true 
+                },
+                function() {   
+                    console.log('clicou botao swal');
+                });
+        } else {
+            swal({   
+                title: "Ops",
+                text: "Ocorreu um problema com a sua compra! Tente novamente",
+                type: "error",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ok",
+                closeOnConfirm: true,
+                },
+                function() {   
+                    console.log('clicou botao swal error');
+                });
+        }
+
+        //$('#clickbus-resultado-busca').html(data);
         
     });
     
