@@ -39,7 +39,7 @@
                                         </select> 
                                     </div>
                                     <div class="col-xs-8">
-                                        <input type="text" id="documento-pf" class="required form-control" placeholder="Ex: 123.456.789-0" name="documento-pf" required="required" >
+                                        <input type="text" id="documento-pf" class="required form-control" placeholder="Ex: 123.456.789-0" name="documento-pf" required="" >
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-pj">Data de nascimento</label>
-                                <input type="text" class="required form-control" required="" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                <input type="text" class="required form-control" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pj">Email</label>
@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-estrangeiro">Data de nascimento</label>
-                                <input type="text" class="required form-control" required="" name="nascimento-estrangeiro" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                <input type="text" class="required form-control" name="nascimento-estrangeiro" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-estrangeiro">Email</label>
