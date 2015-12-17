@@ -48,6 +48,9 @@ class CreateCompraClickbusesTable extends Migration {
 			$table->string('volta_departure_waypoint_id')->nullable();
 			$table->string('volta_arrival_waypoint_id')->nullable();
 			$table->string('volta_trip_date')->nullable();
+                        
+                        
+                        $table->boolean('pagamento_confirmado')->default(false);
                 });
         }
 

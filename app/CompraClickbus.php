@@ -30,7 +30,8 @@ class CompraClickbus extends Model {
             'volta_trip_localizers',
             'volta_departure_waypoint_id',
             'volta_arrival_waypoint_id',
-            'volta_trip_date' 
+            'volta_trip_date',
+            'pagamento_confirmado' 
         ];
 
     public function user()

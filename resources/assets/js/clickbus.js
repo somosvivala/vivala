@@ -340,7 +340,8 @@ var tripBooking = function(request) {
             closeOnConfirm: true,
             },
             function() {   
-                console.log('clicou botao swal error');
+                console.log('clicou botao swal error data:');
+                console.log(data);
             });
     })
     .done(function(data) {
@@ -349,25 +350,49 @@ var tripBooking = function(request) {
         
         var json = JSON.parse(data);
        
-        //TODO testar se tipo pagamento for debit card entao mostrar botao para
-        //redirecionamento...
         if (json.success) {
-            swal({   
-                title: "Sucesso",
-                text: "Sua viagem de "+json.ida_departure+" á "+json.ida_arrival+" no dia " + data.ida_data + " foi realizada com sucesso!",
-                type: "success",
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "ok",
-                closeOnConfirm: true,
-                closeOnCancel: true 
-                },
-                function() {   
-                    console.log('clicou botao swal');
-                });
+            if (json.forma_pagamento == 'payment.creditcard') {
+                swal({   
+                    title: "Parabéns",
+                    text: "Sua viagem de "+json.ida_departure+" á "+json.ida_arrival+" no dia " + data.ida_data + " foi realizada com sucesso!",
+                    type: "success",
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "ok",
+                    closeOnConfirm: true,
+                    closeOnCancel: true 
+                    },
+                    function() {   
+                        console.log('clicou botao swal');
+                    });
+            } else {
+            
+                //Caso a forma de pagamento requira redirecionamento
+                swal({ 
+                     title: "Sucesso",
+                     text: "Confirmacao de dados realizada com sucesso. Clique em Confirmar para continuar a compra da sua viagem de "+json.ida_departure+" á "+json.ida_arrival+" no dia " + data.ida_data + "",
+                     type: "warning",
+                     showCancelButton: true,
+                     confirmButtonColor: "#DD6B55",
+                     confirmButtonText: "Confirmar",
+                     cancelButtonText: "No, cancel plx!",
+                     closeOnConfirm: false,
+                     closeOnCancel: false 
+                     },
+                     function(isConfirm) {
+                         if (isConfirm) {
+                             swal("Redirecionar!", "deveria redirecionar " + json.redirectUrl, "success");
+                         } else {
+                            console.log('clicou cancel'); 
+                         } 
+                     });
+            }
+
+
+
         } else {
             swal({   
                 title: "Ops",
-                text: "Ocorreu um problema com a sua compra! Tente novamente",
+                html: "Ocorreu um problema com a sua compra: <br> <p>"+json.errors+"<p>",
                 type: "error",
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "ok",

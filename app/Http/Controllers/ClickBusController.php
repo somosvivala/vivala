@@ -329,11 +329,18 @@ class ClickBusController extends Controller {
     {
         $request = Input::get('params');
 
+        $payment_method = $request['request']["buyer"]["payment"]["method"];
         $sessionId = $request['request']['sessionId'];
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
-        $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]); 
-        $request['request']["buyer"]["payment"]["meta"]["name"] = strtoupper($request['request']["buyer"]["payment"]["meta"]["name"]);
- 
+
+        //Se o metodo de pagamento for paypal, entao meu objeto request nao possui os propriedades no objeto "meta"
+        if ($payment_method != 'paypal_hpp') {
+
+            $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]); 
+            $request['request']["buyer"]["payment"]["meta"]["name"] = strtoupper($request['request']["buyer"]["payment"]["meta"]["name"]);
+     
+        }
+
         $data = json_encode($request);
 
         $context = [ 
@@ -356,13 +363,47 @@ class ClickBusController extends Controller {
         //Se for success cria um registro na tabela de compras da clickbus
         if ($success) 
         {
-            $userId = 2;
+            $userId = Auth::user()->id;
             $localizer = $decoded->{"content"}->{"localizer"};
             $itens = $decoded->{"content"}->{"items"};
             $payment_method = $decoded->{"content"}->{"payment"}->{"method"};
             $total = $decoded->{"content"}->{"payment"}->{"total"};
             $currency = $decoded->{"content"}->{"payment"}->{"currency"};
             $quantidade_passagens = count($itens);
+
+
+            //switch para formatar a url de redirecionamento corretamente
+            switch ($payment_method) 
+            {
+                case "payment.debitcard" :
+                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
+                    break;
+                
+                case "payment.paypal_hpp" : 
+                    $query["cmd"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"cmd"};
+                    $query["business"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"business"};
+                    $query["item_name"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"item_name"};
+                    $query["amount"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"amount"};
+                    $query["currency_code"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"currency_code"};
+                    $query["button_subtype"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"button_subtype"};
+                    $query["bn"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"bn"};
+                    $query["invoice"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"invoice"};
+                    $query["custom"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"custom"};
+                    $query["return"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"return"};
+                    $query["lc"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"lc"};
+
+                    $formatedQuery = http_build_query($query);
+                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"meta"}->{"postUrl"} . "?" . $formatedQuery; 
+
+                    //Sera melhor redirecionar por aqui?
+                    //header('Location: https://www.paypal.com/cgi-bin/webscr?' . $query_string);
+                    break;
+                
+                case "payment.creditcard" : 
+                    $redirectUrl = ""; 
+                    break;
+            
+            }
 
             //inicializando variaveis que vou incrementar /  settar nas 
             //iteracoes do foreach de $itens
@@ -391,10 +432,15 @@ class ClickBusController extends Controller {
                 {
                     $ida_quantidade++;
                     $ida_trip_id = $Trip->{"trip_id"};
-                    $ida_trip_localizers[] = $Trip->{"localizer"};
+
+                    //se for creditcard entao os localizers das poltronas existem
+                    if ($payment_method == 'creditcard')
+                    {
+                        $ida_trip_localizers[] = $Trip->{"localizer"};
+                    }
+
                     $ida_departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
                     $ida_arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
-                    $ida_trip_waypoint_id = 
                     $ida_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
                 }
 
@@ -403,18 +449,30 @@ class ClickBusController extends Controller {
                 {
                     $volta_quantidade++;
                     $volta_trip_id = $Trip->{"trip_id"};
-                    $volta_trip_localizers[] = $Trip->{"localizer"};
+
+                    //se for creditcard entao os localizers das poltronas existem
+                    if ($payment_method == 'creditcard')
+                    {
+                        $volta_trip_localizers[] = $Trip->{"localizer"};
+                    }
+
                     $volta_departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
                     $volta_arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
                     $volta_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
                 }
             }
 
-            //Criando registro da compra no BD
+            if ($payment_method == 'creditcard')
+            {
+                $flagPagamento = true;
+            }
+
+            //Criando registro da compra no BD, usando da coluna pagamento_confirmado, 
+            //para quando o pagamento for por paypal ou cartao de debito, 
+            //mediante a confirmacao de pegamento (getOrders ou disparo da clickbus)
             $compra = CompraClickbus::create([
                 'user_id' => $userId, 
                 'localizer' => $localizer,
-                
                 'payment_method' => $payment_method,
                 'total' => $total,
                 'currency' => $currency,
@@ -426,13 +484,14 @@ class ClickBusController extends Controller {
                 'ida_departure_waypoint_id' => $ida_departure_waypoint_id,
                 'ida_arrival_waypoint_id' => $ida_arrival_waypoint_id,
                 'ida_trip_date' => $ida_trip_date,
-
+                
                 'volta_quantidade' => $volta_quantidade,
                 'volta_trip_id' => $volta_trip_id,
                 'volta_trip_localizers' => implode($volta_trip_localizers, ","),
                 'volta_departure_waypoint_id' => $volta_departure_waypoint_id,
                 'volta_arrival_waypoint_id' => $volta_arrival_waypoint_id,
-                'volta_trip_date' => $volta_trip_date
+                'volta_trip_date' => $volta_trip_date,
+                'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false
             ]);
 
         } 
@@ -442,13 +501,15 @@ class ClickBusController extends Controller {
             //TODO tratar erros?
         }
 
-        if (isset($compra)) {
-            
-            $departure = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get();
-            $arrival = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get(); 
+        if (isset($compra)) 
+        {
+            $departure = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->first();
+            $arrival = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->first(); 
 
             $retorno = [
                 "success" => true,
+                "forma_pagamento" => $payment_method,
+                "redirectUrl" => $redirectUrl,
                 "ida_departure" => ($departure != null ? $departure->place_name : ""),
                 "ida_arrival" => ($arrival != null ? $arrival->place_name :  ""),
                 "volta_departure" => ($arrival != null ? $arrival->place_name :  ""),
@@ -469,3 +530,6 @@ class ClickBusController extends Controller {
         return $retorno;
     }
 }
+
+
+
