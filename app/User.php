@@ -139,4 +139,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             return true;
         return false;
     }
+
+
+    /**
+     * Um usuario pode fazer várias compras
+     * 
+     */
+    public function comprasClickbus()
+    {
+	return $this->hasMany('App\CompraClickbus');
+    }
+
+
+
+
 }
