@@ -151,7 +151,7 @@
                     </div>
                     <div class="col-sm-6"> 
                         <label for="birthday">Nascimento:</label>
-                        <input type="date" required="required" name="birthday" id="birthday" placeholder="dd/mm/aaaa">
+                        <input type="text" class="required form-control" required="" name="birthday"  id="birthday" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-orientation="bottom">
                     </div>
                     <div class="col-sm-6"> 
                         <div class="row">
@@ -216,7 +216,7 @@
                     </div>
                     <div class="col-sm-6"> 
                         <label for="birthday">Nascimento:</label>
-                        <input type="date" required="required" name="birthday" placeholder="dd/mm/aaaa">
+                        <input type="text" class="required form-control" required="" name="birthday"  id="birthday" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" data-date-orientation="bottom">
                     </div>
                     <div class="col-sm-6"> 
                         <div class="row">

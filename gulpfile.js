@@ -33,6 +33,7 @@ elixir(function(mix) {
     mix.scripts([
         '../../assets/bower/jquery/dist/jquery.js',
       '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
+        '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
       '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
       '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
       '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
@@ -40,6 +41,8 @@ elixir(function(mix) {
       '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
       '../../assets/bower/cropper/dist/cropper.min.js',
       '../../assets/bower/bootstrap-datepicker/js/bootstrap-datepicker.js',
+      '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js',
+      '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js',
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/js/comentaPost.js',
       '../../assets/js/createpost.js',
