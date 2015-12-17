@@ -200,11 +200,11 @@
                             </div>
                             <div class="col-xs-7">
                                 <label for="num-cartao-debito">Número do Cartão</label>
-                                <input type="text" class="required form-control" name="num-cartao-debito" placeholder="1234 5678 9876 5432">
+                                <input type="text" class="required form-control" name="num-cartao-debito" placeholder="0000 0000 0000 0000">
                             </div>
                             <div class="col-xs-5">
                                 <label for="cod-seguranca-debito" >Código de Segurança</label>
-                                <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="123">
+                                <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="000">
                             </div>
                             <div class="col-xs-7">
                                 <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
