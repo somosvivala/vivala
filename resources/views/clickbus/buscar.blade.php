@@ -17,10 +17,10 @@
             <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
         </div>
         <div class="select-filtro">
-            <input placeholder="IDA" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="data-id-rodoviario" name="data-id-rodoviario" class="form-control" type="text">
+            <input placeholder="IDA" data-provide="datepicker" data-date-today-highlight="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" id="data-id-rodoviario" name="data-id-rodoviario" class="form-control" type="text">
         </div>
         <div class="select-filtro">
-            <input placeholder="VOLTA" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="data-volta-rodoviario" name="data-volta-rodoviario" class="form-control" type="text">
+            <input placeholder="VOLTA" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" id="data-volta-rodoviario" name="data-volta-rodoviario" class="form-control" type="text">
         </div>
     </div>
 

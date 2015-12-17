@@ -18,7 +18,7 @@
 
                             <div class="col-xs-4">
                                 <label for="nascimento-pf">Nascimento</label>
-                                <input type="date" class="required form-control" required="" name="nascimento-pf" placeholder="dd/mm/aaaa">
+                                <input type="text" class="required form-control" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pf">Email</label>
@@ -128,19 +128,19 @@
                         @forelse($result->items->payment_methods as $formaPagamento)
                         @if ($formaPagamento->name == 'creditcard')  
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
-                            <div class="col-xs-8">
+                            <div class="col-xs-7">
                                 <label for="num-cartao-credito">Número do Cartão</label>
-                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="1234 5678 9876 5432">
+                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-5">
                                 <label for="cod-seguranca-credito" >Código de Segurança</label>
-                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="123">
+                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-7">
                                 <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="FULANO D. SILVA">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-5">
                                 <div class="">
                                     <label for="mes-validade-credito" >Cartão válido até</label>
                                     <select class="col-xs-6" name="mes-validade-credito">
@@ -198,20 +198,20 @@
                             <div class="col-xs-12">
                                 <h5 class="text-center">É necessário possuir o plug-in do banco instalado NESTE COMPUTADOR. Caso não tenha certeza, recomendamos o uso do cartão de crédito.</h5>
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-7">
                                 <label for="num-cartao-debito">Número do Cartão</label>
                                 <input type="text" class="required form-control" name="num-cartao-debito" placeholder="1234 5678 9876 5432">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-5">
                                 <label for="cod-seguranca-debito" >Código de Segurança</label>
                                 <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="123">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-7">
                                 <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-debito" placeholder="FULANO D. SILVA">
                             </div>
-                            <div class="col-xs-4">
-                                <div class="row">
+                            <div class="col-xs-5">
+                                <div class="">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
                                     <select class="col-xs-6" name="mes-validade-debito">
                                         <option>Mês</option>

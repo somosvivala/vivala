@@ -41,6 +41,8 @@ elixir(function(mix) {
       '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
       '../../assets/bower/cropper/dist/cropper.min.js',
       '../../assets/bower/bootstrap-datepicker/js/bootstrap-datepicker.js',
+      '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js',
+      '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js',
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/js/comentaPost.js',
       '../../assets/js/createpost.js',
