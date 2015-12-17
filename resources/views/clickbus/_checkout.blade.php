@@ -56,7 +56,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-pj">Data de nascimento</label>
-                                <input type="date" class="required form-control" name="nascimento-pj" placeholder="dd/mm/aaaa">
+                                <input type="text" class="required form-control" required="" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pj">Email</label>
@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-estrangeiro">Data de nascimento</label>
-                                <input type="date" class="required form-control" name="nascimento-estrangeiro" placeholder="dd/mm/aaaa">
+                                <input type="text" class="required form-control" required="" name="nascimento-estrangeiro" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-estrangeiro">Email</label>
@@ -178,7 +178,7 @@
                             </div>
                             <div class="col-xs-12">
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="soft-hide select-parcelas">
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="select-parcelas">
                                     @forelse ($bandeiraCartao->installments as $key => $Parcela)
                                     <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
                                     @empty
