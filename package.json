@@ -4,7 +4,5 @@
     "gulp": "^3.9.0",
     "laravel-elixir": "*"
   },
-  "dependencies": {
-    "sweetalert": "^1.1.3"
-  }
+  "dependencies": {}
 }

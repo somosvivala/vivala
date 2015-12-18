@@ -358,7 +358,7 @@ class ClickBusController extends Controller {
         $result = file_get_contents(self::$url.'/booking', false, $context);
     
         $decoded = json_decode($result);
-        $success = !isset($decoded->{"error"});
+        $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
         //Se for success cria um registro na tabela de compras da clickbus
         if ($success) 

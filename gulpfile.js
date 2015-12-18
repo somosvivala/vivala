@@ -24,7 +24,7 @@ elixir(function(mix) {
         '../../assets/bower/cropper/dist/cropper.min.css',
         '../../assets/bower/lightbox2/dist/css/lightbox.css',
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
-        '../../../node_modules/sweetalert/dist/sweetalert.css',
+        '../../assets/bower/sweetalert2/dist/sweetalert2.css',
         'app.css',
         'font-awesome.min.css',
         '../../assets/bower/bootstrap-social/bootstrap-social.css',
@@ -69,7 +69,7 @@ elixir(function(mix) {
       '../../assets/js/quimera.js',
       '../../assets/js/clickbus.js',
       '../../assets/js/formContato.js',
-      '../../../node_modules/sweetalert/dist/sweetalert.min.js',
+      '../../assets/bower/sweetalert2/dist/sweetalert2.min.js',
       '../../assets/js/ongs.js',
       '../../assets/js/zoomfinanciamentocoletivo.js'
 	], 'public/js/vendor.js');
