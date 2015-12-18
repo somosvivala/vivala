@@ -572,6 +572,14 @@ var bindaFormPagamento = function() {
             $(this).find('#'+loading).show();
         }
 
+        //sweetalert de loading :)
+        swal({
+            html : '<br><i class="fa fa-3x fa-spin fa-spinner"></i> <br><br> <h4>Processando</h4>',
+            showCancelButton: false,
+            width:240,
+            confirmButtonClass: 'hide'
+        });
+
         tripBooking(params);
 
     });
