@@ -177,8 +177,9 @@
                                 <label>Quantidade de parcelas</label>
                             </div>
                             <div class="col-xs-12">
+                                <?php $parc_bandeira = 0; ?>
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="select-parcelas">
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="<?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
                                     @forelse ($bandeiraCartao->installments as $key => $Parcela)
                                     <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
                                     @empty
