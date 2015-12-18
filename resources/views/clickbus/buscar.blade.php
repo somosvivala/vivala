@@ -1,5 +1,5 @@
 <h3 class="font-bold-upper text-center">TRANSPORTE - ÔNIBUS
-    <small class="sub-titulo">Como viajar?</small>
+    <small class="sub-titulo"></small>
 </h3>
 
 <input type="hidden" name="_token" value="{{\Session::token() }}">
