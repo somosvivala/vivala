@@ -365,29 +365,27 @@ var tripBooking = function(request) {
                         console.log('clicou botao swal');
                     });
             } else {
-            
+           
+                setTimeout(function() {
+                    window.open(json.redirectUrl,'_blank'); 
+                }, 1800);
+
                 //Caso a forma de pagamento requira redirecionamento
+                var htmlMsg = 'Confirmacao de dados realizada com sucesso.<br>Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br>Iremos redireciona-lo para finalizar sua compra, se isso nao acontecer clique em <a href="'+json.redirectUrl+'" target="_blank">Redirecionar</a>';
+
                 swal({ 
                      title: "Sucesso",
-                     text: "Confirmacao de dados realizada com sucesso. Clique em Confirmar para continuar a compra da sua viagem de "+json.ida_departure+" á "+json.ida_arrival+" no dia " + data.ida_data + "",
-                     type: "warning",
-                     showCancelButton: true,
-                     confirmButtonColor: "#DD6B55",
-                     confirmButtonText: "Confirmar",
-                     cancelButtonText: "No, cancel plx!",
-                     closeOnConfirm: false,
-                     closeOnCancel: false 
-                     },
-                     function(isConfirm) {
-                         if (isConfirm) {
-                             swal("Redirecionar!", "deveria redirecionar " + json.redirectUrl, "success");
-                         } else {
-                            console.log('clicou cancel'); 
-                         } 
-                     });
+                     html: htmlMsg,
+                     type: "success",
+                     confirmButtonColor: "#14CC5B",
+                     confirmButtonText: "Ok",
+                     closeOnConfirm: true,
+                     }, 
+                     function() {
+                        window.location.href="/viajar";
+                     }
+                     );
             }
-
-
 
         } else {
             swal({   
@@ -408,3 +406,4 @@ var tripBooking = function(request) {
     });
     
 };
+
