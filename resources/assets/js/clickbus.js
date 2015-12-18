@@ -296,8 +296,6 @@ var tripPayment = function(request, frm) {
 
 var tripBooking = function(request) {
 
-    console.log('inside tripBooking');
-    console.log(request);
     var params = {
         "meta": {
             "model": "retail",
@@ -333,7 +331,7 @@ var tripBooking = function(request) {
         var json = JSON.parse(data);
         swal({   
             title: "Ops",
-            text: "Ocorreu um problema com a sua compra! Tente novamente",
+            html: "Ocorreu um problema com a sua compra:<br>"+data.errors,
             type: "error",
             confirmButtonColor: "#DD6B55",
             confirmButtonText: "ok",
@@ -347,63 +345,68 @@ var tripBooking = function(request) {
     .done(function(data) {
         console.log("voltou do backend : ");
         console.log(data);
-        
+
         var json = JSON.parse(data);
-       
-        if (json.success) {
+
+        //se tiver dado erro
+        if (!json.success) {
+            swal({   
+                title: "Ops",
+                html: "Ocorreu um problema com a sua compra:<br><br>"+data.errors,
+                type: "error",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ok",
+                closeOnConfirm: true,
+            },
+            function() {   
+                console.log('clicou botao swal error data:');
+                console.log(data);
+            });
+
+        //Se estiver tudo ok..
+        } else {
+
             if (json.forma_pagamento == 'payment.creditcard') {
-                swal({   
-                    title: "Parabéns",
-                    text: "Sua viagem de "+json.ida_departure+" á "+json.ida_arrival+" no dia " + data.ida_data + " foi realizada com sucesso!",
+
+                var htmlMsg = 'Compra realizada com sucesso. Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br> está garantida. Em caso de dúvidas entre em contato pelo email <a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
+
+                swal({ 
+                    title: "Sucesso",
+                    html: htmlMsg,
                     type: "success",
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "ok",
+                    confirmButtonColor: "#14CC5B",
+                    confirmButtonText: "Ok",
                     closeOnConfirm: true,
-                    closeOnCancel: true 
-                    },
-                    function() {   
-                        console.log('clicou botao swal');
-                    });
+                }, 
+                function() {
+                    window.location.href="/viajar";
+                }
+                    );
+
+            //Se nao for creditcard, entao possui um redirectUrl
             } else {
-           
+ 
                 setTimeout(function() {
                     window.open(json.redirectUrl,'_blank'); 
-                }, 1800);
+                }, 2200);
 
                 //Caso a forma de pagamento requira redirecionamento
                 var htmlMsg = 'Confirmacao de dados realizada com sucesso.<br>Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br>Iremos redireciona-lo para finalizar sua compra, se isso nao acontecer clique em <a href="'+json.redirectUrl+'" target="_blank">Redirecionar</a>';
 
                 swal({ 
-                     title: "Sucesso",
-                     html: htmlMsg,
-                     type: "success",
-                     confirmButtonColor: "#14CC5B",
-                     confirmButtonText: "Ok",
-                     closeOnConfirm: true,
-                     }, 
-                     function() {
-                        window.location.href="/viajar";
-                     }
+                    title: "Sucesso",
+                    html: htmlMsg,
+                    type: "success",
+                    confirmButtonColor: "#14CC5B",
+                    confirmButtonText: "Ok",
+                    closeOnConfirm: true,
+                }, 
+                function() {
+                    window.location.href="/viajar";
+                }
                      );
-            }
-
-        } else {
-            swal({   
-                title: "Ops",
-                html: "Ocorreu um problema com a sua compra: <br> <p>"+json.errors+"<p>",
-                type: "error",
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "ok",
-                closeOnConfirm: true,
-                },
-                function() {   
-                    console.log('clicou botao swal error');
-                });
+            } 
         }
 
-        //$('#clickbus-resultado-busca').html(data);
-        
     });
-    
-};
-
+}
