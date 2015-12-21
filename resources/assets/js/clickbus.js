@@ -352,7 +352,7 @@ var tripBooking = function(request) {
         if (!json.success) {
             swal({   
                 title: "Ops",
-                html: "Ocorreu um problema com a sua compra:<br><br>"+data.errors,
+                html: "Ocorreu um problema com a sua compra:<br><br>"+json.errors,
                 type: "error",
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "ok",

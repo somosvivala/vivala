@@ -522,7 +522,7 @@ class ClickBusController extends Controller {
 
         } else {
             $retorno = [
-                "errors" => $decoded->{"error"}
+                "errors" => trans("global.clickbus_error-" . $decoded->{"error"}[0]->{"code"})
             ];
         }
 
