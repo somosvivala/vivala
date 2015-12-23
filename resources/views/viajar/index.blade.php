@@ -24,7 +24,7 @@
             </a>
         </li>
         <li class="col-sm-5">
-            <a href="#quimera" data-url="http://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
+            <a href="#quimera" data-url="https://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
                {{ trans('global.wannatravel_trip_hotels_flights_cars') }}
             </a>
         </li>
