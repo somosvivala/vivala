@@ -13,9 +13,6 @@
     <h3 class="font-bold-upper text-center">
         <small class="sub-titulo">{{ trans('global.wannatravel_trip_setup') }}</small>
     </h3>
-   {{-- Quimera antiga
-      <!--  iframe src="http://www.e-agencias.com.br/vivala" class="quimera_iframe" style="border: 0;" -->
-   --}}
 
     <ul class="lista-border pesquisa-viajar">
         <li class="col-sm-3 active">

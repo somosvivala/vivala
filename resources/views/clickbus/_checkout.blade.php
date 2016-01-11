@@ -6,7 +6,9 @@
                 <ul id="abas-cliente" class="nav nav-pills margin-b-1">
                     <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">Pessoa Física</a></li>
                     <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">Pessoa Jurídica</a></li>
+                    {{-- Desativado 
                     <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
+                    --}}
                 </ul>
                 <div class="row">
                     <div id="tabs-pagamento-cliente" class="tab-content">
@@ -79,6 +81,7 @@
                                 <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
                         </div>
+                        {{-- Desativado 
                         <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                             <div class="col-xs-12">
                                 <label for="nome-estrangeiro">Nome</label>
@@ -101,6 +104,7 @@
                                 <input type="text" class="required form-control" name="passaporte" placeholder="Passaporte">
                             </div>
                         </div>
+                        --}}
                     </div>
                 </div>
                 <h4 class="margin-t-2">Forma de Pagamento</h4>
@@ -114,9 +118,11 @@
                     <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>      
                     @endif
 
+                    {{-- Desativado
                     @if ($formaPagamento->name == 'paypal_hpp')
                     <li role="presentation"><a class="forma-pagamento" href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>     
                     @endif
+                    --}}
 
                     @empty
                     <p> Nenhum metodo de pagamento disponivel </p>
@@ -237,6 +243,9 @@
                         </div>
                         @endif
 
+
+                        {{-- Desativado
+
                         @if ($formaPagamento->name == 'paypal_hpp')
 
                         <div role="tabpanel" class="tab-pane fade text-center" id="paypal" aria-labelledby="paypal-tab">
@@ -253,6 +262,8 @@
                         </div>
                         @endif
 
+                        --}}
+                        
                         @empty
                         <p> Metodo de pagamento indisponivel </p>
                         @endforelse
