@@ -150,8 +150,13 @@
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
                     <div class="col-sm-6"> 
+
+                        <label for="email" class="col-sm-12">Email:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+{{-- Desativado
                         <label for="birthday">Nascimento:</label>
                         <input type="text" class="required form-control" required="" name="birthday"  id="birthday" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-orientation="bottom">
+--}}
                     </div>
                     <div class="col-sm-6"> 
                         <div class="row">
@@ -160,7 +165,6 @@
                                 <select id="document-type" name="documentType" class="">
                                     <option value="rg">RG</option>
                                     <option value="passaporte">Passaporte</option>
-                                    <option value="cpf">CPF</option> 
                                 </select> 
                             </div>
                             <div class="col-xs-8">
@@ -168,10 +172,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
-                        <label for="doc" class="col-sm-12">Email:</label>
-                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" >
-                    </div> 
                 </div> 
             </div>
             <div class="modal-footer">
@@ -214,9 +214,14 @@
                         <label for="nome">Nome:</label>
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
-                    <div class="col-sm-6"> 
+                    <div class="col-sm-6">
+
+                        <label for="doc" class="col-sm-12">Email:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+{{-- Desativado 
                         <label for="birthday">Nascimento:</label>
                         <input type="text" class="required form-control" required="" name="birthday"  id="birthday" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" data-date-orientation="bottom">
+--}}
                     </div>
                     <div class="col-sm-6"> 
                         <div class="row">
@@ -225,7 +230,6 @@
                                 <select id="document-type" name="documentType" class="">
                                     <option value="rg">RG</option>
                                     <option value="passaporte">Passaporte</option>
-                                    <option value="cpf">CPF</option> 
                                 </select> 
                             </div>
                             <div class="col-xs-8">
@@ -234,8 +238,6 @@
                         </div>
                     </div>
                     <div class="col-sm-6">
-                        <label for="doc" class="col-sm-12">Email:</label>
-                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" >
                     </div> 
                 </div> 
             </div>

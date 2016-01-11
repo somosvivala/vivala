@@ -379,6 +379,8 @@ class ClickBusController extends Controller {
                     $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
                     break;
                 
+                //Removendo essa secao já que nao havera pagamento por paypal
+                /*                
                 case "payment.paypal_hpp" : 
                     $query["cmd"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"cmd"};
                     $query["business"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"business"};
@@ -398,7 +400,7 @@ class ClickBusController extends Controller {
                     //Sera melhor redirecionar por aqui?
                     //header('Location: https://www.paypal.com/cgi-bin/webscr?' . $query_string);
                     break;
-                
+                 */ 
                 case "payment.creditcard" : 
                     $redirectUrl = ""; 
                     break;
