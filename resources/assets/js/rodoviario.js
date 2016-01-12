@@ -466,7 +466,8 @@ var bindaFormPagamento = function() {
         var buyer = {};
         if (tipo_cliente == 'pessoa-fisica') {
             var nomeArray = $('input[name="nome-pf"]').val().split(" ");
-            
+            var birthday = $('input[name="nascimento-pf"]').val().split("/").reverse().join("/");
+
             buyer = {
                 "locale":"pt_BR",
                 "firstName": nomeArray.shift(),
@@ -475,7 +476,7 @@ var bindaFormPagamento = function() {
                 "phone": $('input[name="telefone-pf"]').val(),
                 "document":$('input[name="documento-pf"]').val(),
                 "gender":"M",
-                "birthday":$('input[name="nascimento-pf"]').val(),
+                "birthday": birthday,
                 "payment": payment,
                 "meta": {}
             }
@@ -485,6 +486,7 @@ var bindaFormPagamento = function() {
 
         }else if (tipo_cliente == 'pessoa-juridica') {
             var nomeArray = $('input[name="nome-pj"]').val().split(" ");
+            var birthday = $('input[name="nascimento-pj"]').val().split("/").reverse().join("/");
             
             buyer = {
                 "locale":"pt_BR",
@@ -494,7 +496,7 @@ var bindaFormPagamento = function() {
                 "phone": $('input[name="telefone-pj"]').val(),
                 "document":$('input[name="cnpj-pj"]').val(),
                 "gender":"M",
-                "birthday":$('input[name="nascimento-pj"]').val(),
+                "birthday": birthday,
                 "payment": payment,
                 "meta": {}
             }
@@ -502,7 +504,10 @@ var bindaFormPagamento = function() {
             console.log('buyer pessoa juridica: ');
             console.log(buyer);
 
-        }else if (tipo_cliente == 'estrangeiro') {
+        }
+        
+        /** Comentado pois na existe mais forma de pagamento 'estrangeiro'
+        else if (tipo_cliente == 'estrangeiro') {
             var nomeArray = $('input[name="nome-estrangeiro"]').val().split(" ");
             
             buyer = {
@@ -522,7 +527,7 @@ var bindaFormPagamento = function() {
             console.log(buyer);
         }
         
-        
+       */ 
       
        // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
