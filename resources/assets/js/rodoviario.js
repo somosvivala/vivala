@@ -660,9 +660,9 @@ var checaQuantidadePoltronas =  function(ev) {
 var funcaoSubmitPoltronas = function (ev) {
     
     var params = {
-        "store": "clickbus",
-        "model": "retail",
-        "platform": "web",
+        "store": "Vivala",
+        "model": "Retail",
+        "platform": "API",
         "contents": []
     };
 

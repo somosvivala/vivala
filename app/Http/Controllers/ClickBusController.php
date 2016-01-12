@@ -342,7 +342,7 @@ class ClickBusController extends Controller {
         }
 
         $data = json_encode($request);
-
+        
         $context = [ 
             'http' => [ 
                 'ignore_errors' => true,
