@@ -342,7 +342,7 @@ class ClickBusController extends Controller {
         }
 
         $data = json_encode($request);
-
+        
         $context = [ 
             'http' => [ 
                 'ignore_errors' => true,
@@ -355,6 +355,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
+
         $result = file_get_contents(self::$url.'/booking', false, $context);
     
         $decoded = json_decode($result);

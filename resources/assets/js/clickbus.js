@@ -249,10 +249,9 @@ var removePoltrona = function(request, tipo, callback) {
 
 var tripPayment = function(request, frm) {
     var params = {
-        "store": "clickbus",
-        "model": "retail",
-        "platform": "web",
-        "contents": []
+        "store": "Vivala",
+        "model": "Retail",
+        "platform": "API"
     };
 
     //pegando objeto pelo form
@@ -271,6 +270,13 @@ var tripPayment = function(request, frm) {
     console.log(frmObj);
     $.extend(params, request);
 
+
+    console.log("========== Trip Payment Request Ajax params");
+    console.log(params);
+    console.log("========== Trip Payment Request Ajax request");
+    console.log(request);
+
+    
     $.ajax({
         url: 'clickbus/payment',
         type: 'POST',
@@ -292,6 +298,7 @@ var tripPayment = function(request, frm) {
     })
     .done(function(data) {
         $('#clickbus-resultado-busca').html(data);
+        console.log(data);
         bindaAbas();
         bindaBandeirasCartao();
         bindaChangePagamento();
@@ -304,9 +311,10 @@ var tripBooking = function(request) {
 
     var params = {
         "meta": {
-            "model": "retail",
-            "store": "clickbus",
-            "platform": "web"
+            "store": "Vivala",
+            "model": "Retail",
+            "platform": "API",
+            "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
         },
         "request": {
             "sessionId": "",
