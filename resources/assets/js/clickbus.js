@@ -11,8 +11,8 @@ var ajax;
 
 // Trata evento de seleção da passagem de ida para alterar o passagem de volta
 $('#data-id-rodoviario').datepicker().on('changeDate', function() {
-    console.log($('#data-id-rodoviario').getDate());
-    $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').getDate());
+    console.log($('#data-id-rodoviario').datepicker('getDate'));
+    $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').datepicker('getDate'));
 });
 
 // Procura Cidades que tem frota da clickbus
