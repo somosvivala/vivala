@@ -9,6 +9,12 @@ $.ajaxSetup({
 
 var ajax;
 
+// Trata evento de seleção da passagem de ida para alterar o passagem de volta
+$('#data-id-rodoviario').datepicker().on('changeDate', function() {
+    console.log($('#data-id-rodoviario').getDate());
+    $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').getDate());
+});
+
 // Procura Cidades que tem frota da clickbus
 var ajaxPlace = function(query, target) {
     if (ajax != null && ajax.state() == 'pending') {
