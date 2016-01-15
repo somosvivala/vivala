@@ -23,12 +23,12 @@ class ClickBusController extends Controller {
 		$result = ClickBusPlace::whereRaw("lower(place_name) LIKE lower('%{$query}%')")
 			->get()
 			->take(15);
-                
+
                 return view('clickbus._listAutocomplete', compact('result'));
 	}
 
-        // Filtra as passagens de onibus 
-	public function getTrips() 
+    // Filtra as passagens de onibus
+	public function getTrips()
 	{
 		$from      = Input::get('from');
 		$to        = Input::get('to');
@@ -38,15 +38,16 @@ class ClickBusController extends Controller {
 		$departure = ClickBusRepository::dateFormat($departure);
 		$dates = ClickBusRepository::getPrettyDates($departure);
 
-                $url = self::$url."/trips?from={$from}&to={$to}&departure={$departure}";
+        $url = self::$url."/trips?from={$from}&to={$to}&departure={$departure}";
 		$result = file_get_contents($url);
-		
+
 		$result = ClickBusRepository::parseData(json_decode($result));
 
 		return view('clickbus._listOptions', compact('result', 'dates', 'type'));
 	}
 
-	public function getTrip() 
+    // Fecha a viagem Ida/Volta
+	public function getTrip()
 	{
             $schedule = json_decode(Input::get('schedule'));
             $from = Input::get('from');
@@ -54,7 +55,7 @@ class ClickBusController extends Controller {
             $result     = [];
 
             // Envia dados de ida e volta separados
-            
+
             $ida_obj = $schedule[0];
             if(isset($schedule[1]))
                 $volta_obj = $schedule[1];
@@ -71,10 +72,10 @@ class ClickBusController extends Controller {
                 $ida->classe = $ida_obj->classe;
             }
             if(isset($volta_obj) && isset($content_ida)) {
-                $context = [ 
-                    'http' => [ 
+                $context = [
+                    'http' => [
                         'header' => "Cookie: PHPSESSID=".$ida->sessionId
-                    ] 
+                    ]
                 ];
                 $context = stream_context_create($context);
 
@@ -96,11 +97,11 @@ class ClickBusController extends Controller {
 
     /**
      * Metodo que recebe o ajax do formulario de poltronas,
-     * @param $request -> Usa da SelecionarPoltronasClickbusRequest, 
+     * @param $request -> Usa da SelecionarPoltronasClickbusRequest,
      * portanto se chegou aqui é valido
      * @return Retorna a view de checkout
-     */ 
-    public function getSelecionarpoltronas(/*SelecionarPoltronasClickbusRequest $request*/) 
+     */
+    public function getSelecionarpoltronas(/*SelecionarPoltronasClickbusRequest $request*/)
     {
     	$request = Input::get('params');
 
@@ -110,15 +111,15 @@ class ClickBusController extends Controller {
         $data = json_encode($request);
 
 
-        $context = [ 
-        	'http' => [ 
+        $context = [
+        	'http' => [
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n".
                             "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'PUT',
                 'content' => $data
-	        ] 
+	        ]
 	    ];
         $context = stream_context_create($context);
 
@@ -128,31 +129,31 @@ class ClickBusController extends Controller {
         if( isset(json_decode($result)->error)){
             App::abort(403,json_decode($result)->error[0]->message );
         }
-       
+
         // Retorna o resultado e todos os dados recebidos
         return '{
             "result": '.$result.',
-            "data": '.$data.'    
+            "data": '.$data.'
         }';
     }
 
-    public function getRemoverpoltronas(/*RemoverPoltronasClickbusRequest $request*/) 
+    public function getRemoverpoltronas(/*RemoverPoltronasClickbusRequest $request*/)
     {
     	$request = Input::get('params');
 
         $sessionId = $request['request']["sessionId"];
-        
+
         $data = json_encode($request);
 
-        $context = [ 
-        	'http' => [ 
+        $context = [
+        	'http' => [
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n".
                             "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'DELETE',
                 'content' => $data
-	        ] 
+	        ]
             ];
         $context = stream_context_create($context);
 
@@ -162,7 +163,7 @@ class ClickBusController extends Controller {
     }
 
     /**
-     * Metodo responsavel por servir a view de checkout, com as opçoes de 
+     * Metodo responsavel por servir a view de checkout, com as opçoes de
      * pagamento
      * @param $request -> Informacoes do form de selecao de poltronas,
      * @return View
@@ -175,12 +176,12 @@ class ClickBusController extends Controller {
         $Ida = new \stdClass();
         $Ida->scheduleId = $request["frm"]["ida-scheduleId"];
         $Ida->ticket_amount = count($request["frm"]["ida-numero_poltrona"]);
-        
+
         //flag para testar se foi requisitado alguma poltrona para a volta
         $existeVolta = array_key_exists("volta-numero_poltrona",$request["frm"]);
-        
+
         if ($existeVolta) {
-            //pegando dados das poltronas de volta 
+            //pegando dados das poltronas de volta
             $Volta = new \stdClass();
             $Volta->scheduleId = $request["frm"]["volta-scheduleId"];
             $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
@@ -193,22 +194,22 @@ class ClickBusController extends Controller {
         $content->meta = $request["meta"];
         $content->contents = ($existeVolta ? [$Ida, $Volta] : [$Ida]);
 
-        $context = [ 
-            'http' => [ 
+        $context = [
+            'http' => [
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen(json_encode($content))."\r\n".
                             "Cookie: PHPSESSID=".$sessionId,
                 'content' => json_encode($content)
-            ] 
+            ]
         ];
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
         $result = json_decode($result);
 
-        //Montando objeto $Ida 
+        //Montando objeto $Ida
         $Ida->numero_poltrona = $request['frm']['ida-numero_poltrona'];
         $Ida->documento = $request['frm']['ida-documento'];
         $Ida->nome = $request['frm']['ida-nome'];
@@ -217,7 +218,7 @@ class ClickBusController extends Controller {
         $idaScheduleId = $request['frm']['ida-scheduleId'];
 
         if ($existeVolta) {
-            //Montando objeto $Volta 
+            //Montando objeto $Volta
             $Volta->numero_poltrona = $request['frm']['volta-numero_poltrona'];
             $Volta->documento = $request['frm']['volta-documento'];
             $Volta->nome = $request['frm']['volta-nome'];
@@ -225,7 +226,7 @@ class ClickBusController extends Controller {
             $Volta->email = $request['frm']['volta-email'];
             $voltaScheduleId = $request['frm']['volta-scheduleId'];
         }
-        
+
         $passagens = array();
         //tratando Ida
         if (is_array($Ida->numero_poltrona)) {
@@ -234,10 +235,10 @@ class ClickBusController extends Controller {
                 $Passagem = new \stdClass();
                 $Passagem->document = $Ida->documento[$i];
                 $Passagem->seat = $numpoltrona;
-                $Passagem->birthday = $Ida->birthday[$i]; 
+                $Passagem->birthday = $Ida->birthday[$i];
                 $Passagem->email = $Ida->email[$i];
                 $Passagem->seatReservation = $idaScheduleId;
-                
+
 
                 $nome = explode(" ", $Ida->nome[$i]);
                 $Passagem->firstName = array_shift($nome);
@@ -250,18 +251,18 @@ class ClickBusController extends Controller {
             $Passagem = new \stdClass();
             $Passagem->document = $Ida->documento;
             $Passagem->seat = $Ida->numero_poltrona;
-            $Passagem->birthday = $Ida->birthday; 
-            $Passagem->email = $Ida->email; 
+            $Passagem->birthday = $Ida->birthday;
+            $Passagem->email = $Ida->email;
             $Passagem->seatReservation = $idaScheduleId;
 
             $nome = explode(" ", $Ida->nome);
             $Passagem->firstName = array_shift($nome);
             $Passagem->lastName = implode(" ", $nome);
-            
+
             $passagens[] = $Passagem;
         }
 
-        if ($existeVolta) { 
+        if ($existeVolta) {
             //tratando Volta
             if (is_array($Volta->numero_poltrona)) {
                 $i = 0;
@@ -269,14 +270,14 @@ class ClickBusController extends Controller {
                     $Passagem = new \stdClass();
                     $Passagem->document = $Volta->documento[$i];
                     $Passagem->seat = $numpoltrona;
-                    $Passagem->birthday = $Volta->birthday[$i]; 
-                    $Passagem->email = $Volta->email[$i]; 
+                    $Passagem->birthday = $Volta->birthday[$i];
+                    $Passagem->email = $Volta->email[$i];
                     $Passagem->seatReservation = $voltaScheduleId;
-                                
+
                     $nome = explode(" ", $Volta->nome[$i]);
                     $Passagem->firstName = array_shift($nome);
                     $Passagem->lastName = implode(" ", $nome);
-        
+
                     $passagens[] = $Passagem;
                     $i++;
                 }
@@ -284,14 +285,14 @@ class ClickBusController extends Controller {
                 $Passagem = new \stdClass();
                 $Passagem->document = $Volta->documento;
                 $Passagem->seat = $Volta->numero_poltrona;
-                $Passagem->birthday = $Volta->birthday; 
-                $Passagem->email = $Volta->email; 
+                $Passagem->birthday = $Volta->birthday;
+                $Passagem->email = $Volta->email;
                 $Passagem->seatReservation = $voltaScheduleId;
-            
+
                 $nome = explode(" ", $Volta->nome);
                 $Passagem->firstName = array_shift($nome);
                 $Passagem->lastName = implode(" ", $nome);
-                    
+
                 $passagens[] = $Passagem;
             }
 
@@ -315,7 +316,7 @@ class ClickBusController extends Controller {
         $Ida->horario_chegada = $request["frm"]["ida-horario-chegada"];
         $Ida->company = $request["frm"]["ida-company"];
         $Ida->classe = $request["frm"]["ida-classe"];
-        
+
         return view('clickbus._checkout', compact('result', 'passagens', 'Ida', 'Volta'));
     }
 
@@ -323,7 +324,7 @@ class ClickBusController extends Controller {
     /**
      * Metodo responsavel fechar o pedido e efetuar o pagamento
      * @param $request -> Informacoes do form ,
-     * @return 
+     * @return
      */
     public function getBooking(Request $request)
     {
@@ -336,33 +337,33 @@ class ClickBusController extends Controller {
         //Se o metodo de pagamento for paypal, entao meu objeto request nao possui os propriedades no objeto "meta"
         if ($payment_method != 'paypal_hpp') {
 
-            $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]); 
+            $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]);
             $request['request']["buyer"]["payment"]["meta"]["name"] = strtoupper($request['request']["buyer"]["payment"]["meta"]["name"]);
-     
+
         }
 
         $data = json_encode($request);
-        
-        $context = [ 
-            'http' => [ 
+
+        $context = [
+            'http' => [
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n".
                             "Cookie: PHPSESSID=".$sessionId,
                 'content' => $data
-            ] 
+            ]
         ];
 
         $context = stream_context_create($context);
 
         $result = file_get_contents(self::$url.'/booking', false, $context);
-    
+
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
         //Se for success cria um registro na tabela de compras da clickbus
-        if ($success) 
+        if ($success)
         {
             $userId = Auth::user()->id;
             $localizer = $decoded->{"content"}->{"localizer"};
@@ -374,15 +375,15 @@ class ClickBusController extends Controller {
 
 
             //switch para formatar a url de redirecionamento corretamente
-            switch ($payment_method) 
+            switch ($payment_method)
             {
                 case "payment.debitcard" :
                     $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
                     break;
-                
+
                 //Removendo essa secao já que nao havera pagamento por paypal
-                /*                
-                case "payment.paypal_hpp" : 
+                /*
+                case "payment.paypal_hpp" :
                     $query["cmd"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"cmd"};
                     $query["business"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"business"};
                     $query["item_name"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"item_name"};
@@ -396,19 +397,19 @@ class ClickBusController extends Controller {
                     $query["lc"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"lc"};
 
                     $formatedQuery = http_build_query($query);
-                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"meta"}->{"postUrl"} . "?" . $formatedQuery; 
+                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"meta"}->{"postUrl"} . "?" . $formatedQuery;
 
                     //Sera melhor redirecionar por aqui?
                     //header('Location: https://www.paypal.com/cgi-bin/webscr?' . $query_string);
                     break;
-                 */ 
-                case "payment.creditcard" : 
-                    $redirectUrl = ""; 
+                 */
+                case "payment.creditcard" :
+                    $redirectUrl = "";
                     break;
-            
+
             }
 
-            //inicializando variaveis que vou incrementar /  settar nas 
+            //inicializando variaveis que vou incrementar /  settar nas
             //iteracoes do foreach de $itens
             $ida_quantidade = 0;
             $ida_trip_id = "";
@@ -425,10 +426,10 @@ class ClickBusController extends Controller {
             $volta_arrival_waypoint_id = "";
             $volta_trip_date = "";
 
-            //Como as viagens sao compostas de até 2 trips (ida e volta), nao 
-            //tem problema em re-settar as variaveis a cada iteração, os valores 
+            //Como as viagens sao compostas de até 2 trips (ida e volta), nao
+            //tem problema em re-settar as variaveis a cada iteração, os valores
             //sao os mesmos para um mesmo tipo de trip (departure x return)
-            foreach ($itens as $Trip) 
+            foreach ($itens as $Trip)
             {
                 //se for de ida
                 if ($Trip->{"context"} == "departure")
@@ -448,7 +449,7 @@ class ClickBusController extends Controller {
                 }
 
                 //se for volta (context == return)
-                else 
+                else
                 {
                     $volta_quantidade++;
                     $volta_trip_id = $Trip->{"trip_id"};
@@ -470,24 +471,24 @@ class ClickBusController extends Controller {
                 $flagPagamento = true;
             }
 
-            //Criando registro da compra no BD, usando da coluna pagamento_confirmado, 
-            //para quando o pagamento for por paypal ou cartao de debito, 
+            //Criando registro da compra no BD, usando da coluna pagamento_confirmado,
+            //para quando o pagamento for por paypal ou cartao de debito,
             //mediante a confirmacao de pegamento (getOrders ou disparo da clickbus)
             $compra = CompraClickbus::create([
-                'user_id' => $userId, 
+                'user_id' => $userId,
                 'localizer' => $localizer,
                 'payment_method' => $payment_method,
                 'total' => $total,
                 'currency' => $currency,
                 'quantidade_passagens' => $quantidade_passagens,
-                
+
                 'ida_quantidade' => $ida_quantidade,
                 'ida_trip_id' => $ida_trip_id,
                 'ida_trip_localizers' => implode($ida_trip_localizers, ","),
                 'ida_departure_waypoint_id' => $ida_departure_waypoint_id,
                 'ida_arrival_waypoint_id' => $ida_arrival_waypoint_id,
                 'ida_trip_date' => $ida_trip_date,
-                
+
                 'volta_quantidade' => $volta_quantidade,
                 'volta_trip_id' => $volta_trip_id,
                 'volta_trip_localizers' => implode($volta_trip_localizers, ","),
@@ -497,17 +498,17 @@ class ClickBusController extends Controller {
                 'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false
             ]);
 
-        } 
-        
-        else 
+        }
+
+        else
         {
             //TODO tratar erros?
         }
 
-        if (isset($compra)) 
+        if (isset($compra))
         {
             $departure = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->first();
-            $arrival = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->first(); 
+            $arrival = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->first();
 
             $retorno = [
                 "success" => true,
@@ -525,7 +526,7 @@ class ClickBusController extends Controller {
 
         } else {
             $retorno = [
-                "errors" => trans("global.clickbus_error-" . $decoded->{"error"}[0]->{"code"})
+                "errors" => trans("clickbus.clickbus_error-" . $decoded->{"error"}[0]->{"code"})
             ];
         }
 
@@ -533,6 +534,3 @@ class ClickBusController extends Controller {
         return $retorno;
     }
 }
-
-
-

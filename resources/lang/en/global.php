@@ -397,83 +397,84 @@ return[
   'lbl_ong_register' => 'Register NGOs',
   'lbl_ong_register_' => 'Register NGOs',
 
-    /* Cuidar - VAGAS */
-    'lbl_ong_slot' => 'Volunteer Job',
-    'lbl_ong_slot_' => 'Volunteer Jobs',
-    'lbl_ong_slot_add' => 'Add Volunteer Job',
-    'lbl_ong_slot_add_' => 'Add Volunteer Jobs',
-    'lbl_ong_slot_adding' => 'Adding Volunteer Job',
-    'lbl_ong_slot_adding_' => 'Adding Volunteer Jobs',
-    'lbl_ong_slot_create' => 'Create Volunteer Job',
-    'lbl_ong_slot_create_' => 'Create Volunteer Jobs',
-    'lbl_ong_slot_creating' => 'Creating Volunteer Job',
-    'lbl_ong_slot_creating_' => 'Creating Volunteer Jobs',
-    'lbl_ong_slot_delete' => 'Delete Volunteer Job',
-    'lbl_ong_slot_delete_' => 'Delete Volunteer Jobs',
-    'lbl_ong_slot_deleting' => 'Deleting Volunteer Job',
-    'lbl_ong_slot_deleting_' => 'Deleting Volunteer Jobs',
-    'lbl_ong_slot_edit' => 'Edit Volunteer Job',
-    'lbl_ong_slot_edit_' => 'Edit Volunteer Jobs',
-    'lbl_ong_slot_editing' => 'Editing Volunteer Job',
-    'lbl_ong_slot_editing_' => 'Editing Volunteer Jobs',
-    'lbl_ong_slot_search' => 'Search Volunteer Job',
-    'lbl_ong_slot_search_' => 'Search Volunteer Jobs',
-    'lbl_ong_slot_searching' => 'Searching Volunteer Job',
-    'lbl_ong_slot_searching_' => 'Searching Volunteer Jobs',
+  /* Cuidar - VAGAS */
+  'lbl_ong_slot' => 'Volunteer Job',
+  'lbl_ong_slot_' => 'Volunteer Jobs',
+  'lbl_ong_slot_add' => 'Add Volunteer Job',
+  'lbl_ong_slot_add_' => 'Add Volunteer Jobs',
+  'lbl_ong_slot_adding' => 'Adding Volunteer Job',
+  'lbl_ong_slot_adding_' => 'Adding Volunteer Jobs',
+  'lbl_ong_slot_create' => 'Create Volunteer Job',
+  'lbl_ong_slot_create_' => 'Create Volunteer Jobs',
+  'lbl_ong_slot_creating' => 'Creating Volunteer Job',
+  'lbl_ong_slot_creating_' => 'Creating Volunteer Jobs',
+  'lbl_ong_slot_delete' => 'Delete Volunteer Job',
+  'lbl_ong_slot_delete_' => 'Delete Volunteer Jobs',
+  'lbl_ong_slot_deleting' => 'Deleting Volunteer Job',
+  'lbl_ong_slot_deleting_' => 'Deleting Volunteer Jobs',
+  'lbl_ong_slot_edit' => 'Edit Volunteer Job',
+  'lbl_ong_slot_edit_' => 'Edit Volunteer Jobs',
+  'lbl_ong_slot_editing' => 'Editing Volunteer Job',
+  'lbl_ong_slot_editing_' => 'Editing Volunteer Jobs',
+  'lbl_ong_slot_search' => 'Search Volunteer Job',
+  'lbl_ong_slot_search_' => 'Search Volunteer Jobs',
+  'lbl_ong_slot_searching' => 'Searching Volunteer Job',
+  'lbl_ong_slot_searching_' => 'Searching Volunteer Jobs',
 
+  'lbl_optional' => 'Optional',
 
-    /* Cuidar - EMPRESA */
-    'lbl_organization' => 'Organization',
-    'lbl_organization_about' => 'About the Organization',
-    'lbl_page' => 'Page',
-    'lbl_page_' => 'Pages',
-    'lbl_page_add' => 'Add Page',
-    'lbl_page_adding' => 'Adding Page',
-    'lbl_page_create' => 'Create Page',
-    'lbl_page_edit' => 'Edit Page',
-    'lbl_page_manage' => 'Manage Pages',
-    'lbl_page_submit' => 'Send Page',
-    'lbl_page_update' => 'Update Page',
-    'lbl_pagination_next' => 'Next',
-    'lbl_pagination_previous' => 'Previous',
-    'lbl_password' => 'Password',
-    'lbl_password_' => 'Password',
-    'lbl_password_confirmation' => 'Password Confirmation',
-    'lbl_password_forgot' => 'Forgot your password?',
-    'lbl_password_recovery' => 'Password recovery',
-    'lbl_password_recovery_link' => 'Password recovery link',
-    'lbl_password_recovery_link_send' => 'send link for password recovery',
-    'lbl_password_reset' => 'Change password',
-    'lbl_point' => 'Score',
-    'lbl_point_' => 'Score',
-    'lbl_pont_my' => 'My Score',
-    'lbl_point_my_' => 'My Score',
-    'lbl_photo' => 'Photo',
-    'lbl_photo_' => 'Photos',
-    'lbl_photo_add' => 'Add Photo',
-    'lbl_photo_adding' => 'Adding Photo',
-    'lbl_photo_crop' => 'Crop Photo',
-    'lbl_photo_edit' => 'Edit Photo',
-    'lbl_photo_resize' => 'Resize Photo',
-    'lbl_photo_send' => 'Send Photo',
-    'lbl_photo_update' => 'Update Photo',
-    'lbl_post' => 'Post',
-    'lbl_post_' => 'Posts',
-    'lbl_post_see_complete' => 'See more about this post.',
-    'lbl_previous' => 'Previous',
-    'lbl_preview' => 'Preview',
-    'lbl_prettyURL' => 'Your URL',
-    'lbl_profile' => 'Profile',
-    'lbl_profile_' => 'Profile',
-    'lbl_profile_delete' => 'Delete Profile',
-    'lbl_profile_deleting' => 'Deleting Profile',
-    'lbl_profile_edit' => 'Edit Profile',
-    'lbl_profile_editing' => 'Editing Profile',
-    'lbl_profile_update' => 'Update Profile',
-    'lbl_profile_updating' => 'Updating Profile',
-    'lbl_profile_info' => 'Profile Information',
-    'lbl_profile_info_' => 'Profile Information',
-    'lbl_publish' => 'Publish',
+  /* Cuidar - EMPRESA */
+  'lbl_organization' => 'Organization',
+  'lbl_organization_about' => 'About the Organization',
+  'lbl_page' => 'Page',
+  'lbl_page_' => 'Pages',
+  'lbl_page_add' => 'Add Page',
+  'lbl_page_adding' => 'Adding Page',
+  'lbl_page_create' => 'Create Page',
+  'lbl_page_edit' => 'Edit Page',
+  'lbl_page_manage' => 'Manage Pages',
+  'lbl_page_submit' => 'Send Page',
+  'lbl_page_update' => 'Update Page',
+  'lbl_pagination_next' => 'Next',
+  'lbl_pagination_previous' => 'Previous',
+  'lbl_password' => 'Password',
+  'lbl_password_' => 'Password',
+  'lbl_password_confirmation' => 'Password Confirmation',
+  'lbl_password_forgot' => 'Forgot your password?',
+  'lbl_password_recovery' => 'Password recovery',
+  'lbl_password_recovery_link' => 'Password recovery link',
+  'lbl_password_recovery_link_send' => 'send link for password recovery',
+  'lbl_password_reset' => 'Change password',
+  'lbl_point' => 'Score',
+  'lbl_point_' => 'Score',
+  'lbl_pont_my' => 'My Score',
+  'lbl_point_my_' => 'My Score',
+  'lbl_photo' => 'Photo',
+  'lbl_photo_' => 'Photos',
+  'lbl_photo_add' => 'Add Photo',
+  'lbl_photo_adding' => 'Adding Photo',
+  'lbl_photo_crop' => 'Crop Photo',
+  'lbl_photo_edit' => 'Edit Photo',
+  'lbl_photo_resize' => 'Resize Photo',
+  'lbl_photo_send' => 'Send Photo',
+  'lbl_photo_update' => 'Update Photo',
+  'lbl_post' => 'Post',
+  'lbl_post_' => 'Posts',
+  'lbl_post_see_complete' => 'See more about this post.',
+  'lbl_previous' => 'Previous',
+  'lbl_preview' => 'Preview',
+  'lbl_prettyURL' => 'Your URL',
+  'lbl_profile' => 'Profile',
+  'lbl_profile_' => 'Profile',
+  'lbl_profile_delete' => 'Delete Profile',
+  'lbl_profile_deleting' => 'Deleting Profile',
+  'lbl_profile_edit' => 'Edit Profile',
+  'lbl_profile_editing' => 'Editing Profile',
+  'lbl_profile_update' => 'Update Profile',
+  'lbl_profile_updating' => 'Updating Profile',
+  'lbl_profile_info' => 'Profile Information',
+  'lbl_profile_info_' => 'Profile Information',
+  'lbl_publish' => 'Publish',
     /* Compras */
     'lbl_purchase' => 'Purchase',
     'lbl_purchase_' => 'Purchases',
@@ -535,8 +536,10 @@ return[
     /* Viagem */
     'lbl_travel_add' => 'Add Trip',
     'lbl_travel_add_' => 'Add Trips',
+    'lbl_travel_arrival' => 'Arrival',
     'lbl_travel_create' => 'Create Trip',
     'lbl_travel_create_' => 'Create Trips',
+    'lbl_travel_departure' => 'Departure',
     'lbl_travel_setup' => 'Build Trip',
     'lbl_travel_none' => 'No trips.',
     'lbl_travel_not_created' => 'None trip created.',
@@ -561,6 +564,8 @@ return[
     'lbl_travel_most_popular_' => 'Most Popular Trips',
     'lbl_travel_most_comment' => 'Most commented trip',
     'lbl_travel_most_comment_' => 'Most Commented trips',
+    'lbl_travel_return' => 'Return',
+    'lbl_travel_search-for-bus-ticket' => 'Search Bus Tickets',
     'lbl_travel_from' => 'From',
     'lbl_travel_to' => 'To',
     'lbl_traveller' => 'Traveller',
@@ -626,16 +631,18 @@ return[
       'date_dd_mm_yyyy' => 'DD-MM-YYYY',
       'date_mm_dd_yyyy' => 'MM-DD-YYYY',
       'date_yyyy_mm_dd' => 'YYYY-MM-DD',
-      'date_day' => 'day',
-      'date_day_' => 'days',
+      'date_hour' => 'Hour',
+      'date_hour_' => 'Hours',
+      'date_day' => 'Day',
+      'date_day_' => 'Days',
       'date_month' => 'Month',
-      'date_month_' => 'months',
-      'date_year' => 'year',
-      'date_year_' => 'years',
-      'date_decade' => 'decade',
-      'date_decade_' => 'decades',
-      'date_century' => 'century',
-      'date_century_' => 'centuries',
+      'date_month_' => 'Months',
+      'date_year' => 'Year',
+      'date_year_' => 'Years',
+      'date_decade' => 'Decade',
+      'date_decade_' => 'Decades',
+      'date_century' => 'Century',
+      'date_century_' => 'Centuries',
 
     /* Endereços */
       'address_continent' => 'Continent',
@@ -976,7 +983,7 @@ return[
     'footer_vivala_message' => 'Vivalá uses creative images on its visual identity. The majority of these images are part of an authoral work of our contributors or formally authorized for our use. Please contact us through our contact page if a picture of you is being used at Vivalá, we really want to give you credit for that. And if you are not comfortable with that, we promise we&#39;ll exclude the images as soon as possible.',
     'footer_vivala_infos' => 'All rights reserved Vivalá Turismo LTDA - CNPJ 22.693.622/0001-85',
     'footer_development' => 'Development:',
-  //
+
   /* Manifesto */
     'manifest_title' => 'Our Manifesto',
     'manifest_subtitle' => 'We live more than a generation, we live a movement.',
@@ -1001,7 +1008,7 @@ return[
     'manifest_seventh_paragraph_1' => 'We live more than a generation, we live a movement.',
     'manifest_seventh_paragraph_2' => 'Live the differences,',
     'manifest_seventh_paragraph_3' => 'Live the attitudes,',
-  //
+
   /* O que fazemos */
     'whatwedo_title' => 'What we do',
     'whatwedo_subtitle' => 'We live more than a generation, we live a movement.',
@@ -1009,7 +1016,7 @@ return[
     'whatwedo_coverphoto_img_title' => 'What we do',
     'whatwedo_were_global_plataform' => 'VIVALÁ IS A GLOBAL PLATFORM THAT CONNECTS PEOPLE WHO WANTS TO TRAVEL AND TRANSFORM BRAZIL.',
     'whatwedo_main_text' => 'We join travellers together through a social network, help their travels selling transportation, accommodation and restaurants bookings, and finally, we&#39;re creating a national network of NGOs and social projects and getting them closer to people who wants to volunteer and make a difference. We&#39;re building a restless community that travels, explore and trasnform the reality of Brazil, and we really want you to join us and be part of this change!',
-  //
+
   /* Quem somos */
     'aboutus_title' => 'About us',
     'aboutus_subtitle' => 'Our Purposes',
@@ -1023,7 +1030,7 @@ return[
     'aboutus_our_history_text_1' => ' It all began when one of our founders wanted to travel through many destinations in Brazil and found himself without any source of good information, with a lot of turistic offers made with no possibility of customization to his needs. ',
     'aboutus_our_history_text_2' => 'Besides that, we always had a big will of changing Brazil&#39;s social reality. A real change that would really make a difference on people&#39;s lives. So we created Vivalá.',
     'aboutus_our_history_text_3' => 'We gathered people, concepts, life values and technology to start the construction of a plataform that aims the personal development of our users through entertainment, culture and selfknowledge when they&#39;re travelling and volunteering in Brazil.',
-  //
+
   /* Parceiros */
     'partners_title' => 'Partners',
     'partners_subtitle' => 'All together or were nothing.',
@@ -1035,7 +1042,7 @@ return[
     'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
     'partners_text_4' => '- 1.582 restaurants at 19 brazilian cities',
     'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
-  //
+
   /* Contato */
     'contact_title' => 'Contact',
     'contact_subtitle' => 'Talk to us!',
@@ -1044,7 +1051,7 @@ return[
     'contact_our_email' => 'Our email:',
     'contact_our_phone' => 'Our telephone:',
     'contact_our_address' => 'Our address',
-  //
+
   /* Termos e Condições */
     'termsconditions_title' => 'Terms and Conditions',
     'termsconditions_subtitle' => 'The basic house rules!',
@@ -1057,13 +1064,13 @@ return[
     'termsconditions_volunteer_policy_text' => 'Vivalá has the role of intermediate the relation between NGOs and social projcts that offers volunteer jobs and our users. All the information related to the volunteer work, such as location, dates, times and other specifications are NGO/project responsabilities. Vivalá does not take responsability on any issues regarding the conditions between user and the organization.',
     'termsconditions_modifications_policy_title' => 'Modifications',
     'termsconditions_modifications_policy_text' => 'Vivalá can change or delete this Terms and Conditions or any part of it at any time, according to its own criteria, when necessary due to legal, regulatory or technical terms or due to any changes on the services offered at the website and its layout nature. Vivalá can change, suspend or interrupt any aspect of its services and functionalities of the platform when necessary, including the availability of any funcion, database or content. ',
-  //
+
   /* Presskit */
     'presskit_title' => 'Presskit',
-  //
+
   /* Política de Privacidade */
     'privacypolicy_title' => 'Privacy Policy',
-  //
+
   /* Financiamento Coletivo */
     'crowdfunding_title' => 'Crowdfunding',
     'crowdfunding_hi_there' => 'Hello there, traveller!',
@@ -1073,13 +1080,11 @@ return[
     'crowdfunding_a_alt_crowdvivala' => 'Crowdfunding Vivalá',
     'crowdfunding_a_title_crowdvivala' => 'Help Vivalá! We really appreciate it<3',
 
-
     /* Tela de Aviso mobile */
     'mobile_warning_welcome' => 'Welcome to Vivalá!',
     'mobile_warning_desctopo' => 'We realize that you accessed by mobile.',
     'mobile_warning_descbody' => 'We are developing our <span class="laranja">mobile</span> and <span class="laranja">tablet</span> versions. Meanwhile we invite you to connect to platform from your desktop or notebook.',
     'mobile_warning_desclink' => 'Join <a href="vivala.com.br">vivala.com.br</a> and experience the real Brazil.',
-
 
     /* Termos e condições */
     'termsconditions_title' => 'Terms and conditions',
@@ -1093,13 +1098,13 @@ return[
     'termsconditions_volunteer_policy_text' => 'Vivalá has the role of intermediate the relation between NGOs and social projcts that offers volunteer jobs and our users. All the information related to the volunteer work, such as location, dates, times and other specifications are NGO/project responsabilities. Vivalá does not take responsability on any issues regarding the conditions between user and the organization.',
     'termsconditions_modifications_policy_title' => 'Modifications',
     'termsconditions_modifications_policy_text' => 'Vivalá can change or delete this Terms and Conditions or any part of it at any time, according to its own criteria, when necessary due to legal, regulatory or technical terms or due to any changes on the services offered at the website and its layout nature. Vivalá can change, suspend or interrupt any aspect of its services and functionalities of the platform when necessary, including the availability of any funcion, database or content. ',
-  //
+
   /* Presskit */
     'presskit_title' => 'Presskit',
-  //
+
   /* Política de Privacidade */
     'privacypolicy_title' => 'Privacy policy',
-  //
+
   /* Financiamento Coletivo */
     'crowdfunding_title' => 'Crowdfunding',
     'crowdfunding_hi_there' => 'Hello there, traveller!',
@@ -1118,7 +1123,6 @@ return[
     'lbl_feedback_sugestion' => 'Sugestion',
     'lbl_feedback_compliment' => 'Compliment',
     'lbl_feedback_other' => 'Other',
-
 
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
@@ -1140,154 +1144,12 @@ return[
     'blackfriday-6' => 'Black Friday: Accommodation in Morro de São Paulo from R$64,00/night',
     'blackfriday-7' => 'Black Friday: 1 week in Natal with promotional fares!',
 
-
     /*----------------------------------------------------------------------------------
-    / TRATAMENTO ERROS CLICKBUS -  
+    / ClickBus
     /---------------------------------------------------------------------------------*/
-
-    // /places
-    'clickbus_error-F1' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request.',
-    'clickbus_error-F2' => 'The Server encountered a temporary error and could not complete your request.         An error occurred after sending your Request.',
-
-
-    //trips
-    'clickbus_error-J1' => 'Please provide the from parameter. The parameter from is missing from the Request.',
-    'clickbus_error-J2' => 'Please provide the to parameter. The parameter to is missing from the Request.',
-    'clickbus_error-J3' => 'Please provide the departure parameter. The parameter departure is missing from the Request.',
-    'clickbus_error-J4' => 'The given from value is invalid or incorrect. The provided value for from is not a valid Place.',
-    'clickbus_error-J5' => 'The given to value is invalid or incorrect. The provided value for to is not a valid Place.',
-    'clickbus_error-J6' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request before it’s sent to the booking engine.',
-    'clickbus_error-J7' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request to the booking engine.',
-    'clickbus_error-J8' => 'Please provide a valid date for departure. The value for departure is invalid or incorrect.',
-    'clickbus_error-J9' => 'The departure date cannot occur in a day before today. The value for departure cannot be a date in the past.',
-
-
-    //seat-block
-    'clickbus_error-H1' => 'Please provide the passenger’s name. The Passenger’s name is missing.',
-    'clickbus_error-H2' => 'Please provide a value for the passenger’s name. The Passenger’s name is empty.',
-    'clickbus_error-H3' => 'Please provide the passengers document. The Passenger’s document is missing.',
-    'clickbus_error-H4' => 'Please provide a value for the passenger’s document. The Passenger’s document is empty.',
-    'clickbus_error-H5' => 'Please provide the passenger’s gender. The Passenger’s gender is missing. Use M for Male, and F, for Female.',
-    'clickbus_error-H6' => 'Please provide a valid option for the passenger’s gender. The parameter scheduleId is missing from the Request.',
-    'clickbus_error-H7' => 'Please provide a sessionId. The parameter sessionId is missing from the Request.',
-    'clickbus_error-H8' => 'The given sessionId has expired. The value for sessionId has expired and is no longer valid. Please request a new value in Session.',
-    'clickbus_error-H9' => 'Please provide the scheduleId. The parameter scheduleId is missing from the Request.',
-    'clickbus_error-H10' => 'The given scheduleId is invalid. The value for scheduleId has expired and is no longer valid. Please request a new value in Trips.',
-    'clickbus_error-H11' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request before it’s sent to the booking engine.',
-    'clickbus_error-H12' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request to the booking engine.',
-    'clickbus_error-H13' => 'The selected Seat is unavailable. The selected Seat is already taken by another user.',
-    'clickbus_error-H21' => 'Please provide the passenger’s document type. The Passenger’s documentType is missing.',
-    'clickbus_error-H22' => 'Please provide a value for the passenger’s document type. The Passenger’s documentType is empty.',
-
-
-    //payment
-    'clickbus_error-K1' => 'Please provide the meta block. The parameter meta is missing from the Request.',
-    'clickbus_error-K2' => 'Please provide your store parameters for meta. At least one of the parameters store, model or platform is missing.',
-    'clickbus_error-K3' => 'One of the following parameters are incorrect: store, platform or model. One of the meta values is incorrect (store, model or platform).',
-    'clickbus_error-K4' => 'Please provide the contents block. The parameter contents is missing from the Request.',
-    'clickbus_error-K5' => 'Please provide at least one seat information. The parameter contents is empty.',
-    'clickbus_error-K6' => 'Please provide the right params for the seats. At least one of the values inside contents is missing one of it’s required parameters: scheduleId or ticket_amount.',
-    'clickbus_error-K7' => 'The given scheduleId is incorrect. One of the given scheduleId is incorrect or invalid.',
-    'clickbus_error-K8' => 'The given ticket_amount is incorrect. One of the given ticket_amount is incorrect.',
-    'clickbus_error-K9' => 'The request is malformed. Please check the contents of your request. Please check your request for any JSON malforming.',
-
-
-    //Vouchers
-    'clickbus_error-A17' => 'Please provide a voucher. The value for the field voucher is missing.',
-    'clickbus_error-A18' => 'Invalid discount. This voucher’s discount is invalid.',
-    'clickbus_error-A19' => 'Order has not reached minimum value. The actual total value of the Order is lower than the minimum value required for this voucher’s discount.',
-    'clickbus_error-A20' => 'Invalid discount for this email. The email in the request.buyer.email parameter was already applied to this voucher. Please provide another email address.',
-    'clickbus_error-A21' => 'Invalid discount for this trip. The selected seats must be a trip from a given origin or/and destination, the same configured for this voucher.',
-    'clickbus_error-A22' => 'Discount is valid just for round trips. This voucher can only be applied for round trips.',
-    'clickbus_error-A23' => 'Invalid discount for this busline. The selected seats must be from a trip which belongs to the bus company configured for this voucher.',
-
-
-    //booking
-    'clickbus_error-A1' => 'Please provide a sessionId. The parameter sessionId is missing from the Request.',
-    'clickbus_error-A2' => 'The given sessionId has expired. The value for sessionId has expired and is no longer valid. Please request a new value in Session.',
-    'clickbus_error-A3' => 'Please provide the seatReservation for all your Order Items. One or more of your Items in the Order does not have the seatReservation parameter.',
-    'clickbus_error-A4' => 'Missing parameters in your payment data. One or more of the following buyer parameters are missing: name, card, code, zipcode or expiration.',
-    'clickbus_error-A5' => 'The expiration data is invalid or incorrect. The expiration data provided in the card is incorrect or invalid.',
-    'clickbus_error-A6' => 'Please provide the installment for the payment data. The parameter installment is missing from the Request.',
-    'clickbus_error-A7' => 'The Order Cart is empty. You have tried to proceed to Checkout without creating any Seat Block.',
-    'clickbus_error-A12' => 'There was a problem with your Order. Please contact us for more details. Your Order could not be completed. Please contact us at contato@clickbus.com.br for support and details.',
-    'clickbus_error-A13' => 'Checkout Error An internal error ocurred at the conclusion of your Request.',
-    'clickbus_error-A14' => 'Application Error An error occurred before send the success email of your Request.',
-    'clickbus_error-A15' => 'An unexpected issue happened in your Request. Please contact us for more details. Troubles while requesting data from the booking engine. Please contact us at contato@clickbus.com.br for support and details.',
-    'clickbus_error-A16' => 'The number of passengers does not match with the data already informed. There is a difference between the amount of seats provided in the request and the the amount of seats that were reserved previously at the Seat Block. Please contact us for more details about the subject and how to troubleshoot.',
-    'clickbus_error-A27' => 'Inconsistencies were found. Please check your Payment Data. One or more values provided for the payment data are invalid or incorrect. Please check these values before send a new request.',
-    'clickbus_error-A28' => 'The given credit card brand is not supported by the payment method. The card brand is not supported by our payment methods. Please contact us or check the Payments resource to verify if the given card brand is declared in the supported list.',
-    'clickbus_error-A29' => 'Checkout Error It’s required to authorize this purchase with the card issuer.',
-    'clickbus_error-A30' => 'Checkout Error The payment was not authorized. We suggest you to check the card information before proceed.',
-    'clickbus_error-A31' => 'Checkout Error The payment was not authorized. We suggest you to check the card information before proceed.',
-    'clickbus_error-A32' => 'Checkout Error A problem ocurred while authorizing the purchase. Please check the card data or contact us for more details.',
-    'clickbus_error-A33' => 'Checkout Error The payment was not authorized. We suggest you to check the card information before proceed.',
-    'clickbus_error-A34' => 'Checkout Error The payment could not be processed.',
-    'clickbus_error-A35' => 'Checkout Error Please check if the card is ok or if it still requires it’s activation before proceed with your payment.',
-    'clickbus_error-A36' => 'Checkout Error It was not possible to process the purchase.',
-    'clickbus_error-A37' => 'Checkout Error You have already made a purchase with the same value. If you need to pay the same amount again, please, use another card or payment method.',
-    'clickbus_error-A38' => 'Checkout Error Your payment was rejected. We recommend you to pay with other payment methods available.',
-    'clickbus_error-A39' => 'Checkout Error There is no credit available for this credit card.',
-    'clickbus_error-A40' => 'Checkout Error Payments in this installment amount are not processed. Please, choose other installment value.',
-    'clickbus_error-A41' => 'Checkout Error You have reached limit of tries. Please, use another card or payment method.',
-    'clickbus_error-A42' => 'Checkout Error The payment could not be processed.',
-    'clickbus_error-A43' => 'Checkout Error Payment not authorized. Please, check your credit card information.',
-
-
-    //cancel request
-    'clickbus_error-A8' => 'Please provide a localizer. The parameter localizer is missing from the Request.',
-    'clickbus_error-A9' => 'The Request Status is invalid. The value for the status is invalid. Use order_canceled.',
-    'clickbus_error-A10' => 'The given localizer is invalid. The value for localizer is invalid or could not be found.',
-    'clickbus_error-A24' => 'The cancelation request failed. Please check the Order status for more details. The request for cancelation of the given Order was started but could not achieve success. Please contact us for more details.',
-    'clickbus_error-A25' => 'The Order Cancelation Workflow can’t be executed for the given Order. Please check the Order Status for more info. The actual Order status does not allow to proceed to it’s cancelation and your application should not repeat this request. Please contact us for more details.',
-    'clickbus_error-A26' => 'Server Error The Server encountered a temporary error and could not complete your request.',
-
-
-
-    //checkout e outros
-    'clickbus_error-L1' => 'Please provide the passenger\’s name. One of the passengers name is missing from the request.',
-    'clickbus_error-L2' => 'Please provide a value for the passengers first name. One of the passenger’s name is empty.',
-    'clickbus_error-L3' => 'Please provide the passengers document. One of the passenger’s document is missing from the request.',
-    'clickbus_error-L4' => 'Please provide a value for the passengers document. One of the passenger’s document is empty.',
-    'clickbus_error-L5' => 'Please provide the scheduleId. The scheduleId for one of the order items is missing from the Request.',
-    'clickbus_error-L6' => 'The given scheduleId is invalid. The scheduleId for one of the order items is invalid or incorrect.',
-    'clickbus_error-L7' => 'Invalid Parameters (Deprecated: check for L25) Missing parameters in your payment data.',
-    'clickbus_error-L8' => 'The expiration date is invalid or incorrect. The expiration date provided in the card is incorrect or invalid.',
-    'clickbus_error-L9' => 'Please provide the ‘installment’ for the payment data. The parameter installment is missing from the Request.',
-    'clickbus_error-L10' => 'An unexpected issue happened in your Request. Please contact us for more details. Troubles while requesting data from the booking engine. Please contact us at contato@clickbus.com.br for support and details.',
-    'clickbus_error-L12' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request.',
-    'clickbus_error-L13' => 'Please check you card number. The card, or any other information provided for the payment form is incorrect.',
-    'clickbus_error-L14' => 'There was a problem with your Order. Please contact us for more details. Your Order could not be completed. Please contact us at contato@clickbus.com.br for support and details.',
-    'clickbus_error-L15' => 'Checkout Error An internal error ocurred at the conclusion of your Request.',
-    'clickbus_error-L16' => 'Application Error An error occurred before send the success email of your Request.',
-    'clickbus_error-L17' => 'Application Error There was a problem with the communication with the booking engine. Please retry your request.',
-    'clickbus_error-L23' => 'The Order Cart is empty. No Seats were found in your cart to finish your purchase. Please contact us for more details.',
-    'clickbus_error-L24' => 'The installment value is less than the minimum value supported. The value based for each installment of your request is lower than the minimum supported value. Please contact us for more details.',
-    'clickbus_error-L25' => 'Inconsistencies were found. Please check your Payment Data. Some required values for your payment data are missing. Please review your request before proceed.',
-    'clickbus_error-L26' => 'The given credit card brand is not supported by the payment method. The card brand is not supported by our payment methods. Please contact us or check the Payments resource to verify if the given card brand is declared in the supported list.',
-    'clickbus_error-L27' => 'Checkout Error It’s required to authorize this purchase with the card issuer.',
-    'clickbus_error-L28' => 'Checkout Error The payment was not authorized. We suggest you to check the card information before proceed.',
-    'clickbus_error-L29' => 'Checkout Error The payment was not authorized. We suggest you to check the card information before proceed.',
-    'clickbus_error-L30' => 'Checkout Error A problem ocurred while authorizing the purchase. Please check the card data or contact us for more details.',
-    'clickbus_error-L31' => 'Checkout Error The payment was not authorized. We suggest you to check the card information before proceed.',
-    'clickbus_error-L32' => 'Checkout Error The payment could not be processed.',
-    'clickbus_error-L33' => 'Checkout Error Please check if the card is ok or if it still requires it’s activation before proceed with your payment.',
-    'clickbus_error-L34' => 'Checkout Error It was not possible to process the purchase.',
-    'clickbus_error-L35' => 'Checkout Error You have already made a purchase with the same value. If you need to pay the same amount again, please, use another card or payment method.',
-    'clickbus_error-L36' => 'Checkout Error Your payment was rejected. We recommend you to pay with other payment methods available.',
-    'clickbus_error-L37' => 'Checkout Error There is no credit available for this credit card.',
-    'clickbus_error-L38' => 'Checkout Error Payments in this installment amount are not processed. Please, choose other installment value.',
-    'clickbus_error-L39' => 'Checkout Error You have reached limit of tries. Please, use another card or payment method.',
-    'clickbus_error-L40' => 'Checkout Error The payment could not be processed.',
-    'clickbus_error-L41' => 'Checkout Error Payment not authorized. Please, check your credit card information.',
-    'clickbus_error-L42' => 'Checkout Error The maximum execution time was exceeded. Please check the Order resource to check the actual status of your Order.',
-    'clickbus_error-L43' => 'Invalid discount. This voucher’s discount is invalid.',
-    'clickbus_error-L44' => 'Order has not reached minimum value. The actual total value of the Order is lower than the minimum value required for this voucher’s discount.',
-    'clickbus_error-L45' => 'Invalid discount for this email. The email in the request.buyer.email parameter was already applied to this voucher. Please provide another email address.',
-    'clickbus_error-L46' => 'Invalid discount for this trip. The selected seats must be a trip from a given origin or/and destination, the same configured for this voucher.',
-    'clickbus_error-L47' => 'Discount is valid just for round trips. This voucher can only be applied for round trips.',
-    'clickbus_error-L48' => 'Invalid discount for this busline. The selected seats must be from a trip which belongs to the bus company configured for this voucher.',
-
-
+    'transport_transport-title' => 'Transport',
+    'transport_bus' => 'Bus',
+    'transport_car' => 'Car',
+    'transport_airplane' => 'Airplane',
 ];
 ?>
