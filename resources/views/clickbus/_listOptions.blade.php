@@ -34,7 +34,7 @@
                     <div class="row arrival">
                         <div class="col-xs-3">{{ trans('clickbus.clickbus_arrival') }}:<br/><b>{{$option['part'][0]['arrival']['time']}}</b></div>
                         <div class="col-xs-5">{{$option['part'][0]['arrival']['city']}}</div>
-                        <div class="col-xs-4">{{ trans('clickbus.clickbus_tripduration') }}:<br/><b>{{$option['part'][0]['duration'][0]}}h{{$option['part'][0]['duration'][1]}}min<b/></div>
+                        <div class="col-xs-4">{{ trans('clickbus.clickbus_tripduration') }}:<br/><b>{{$option['part'][0]['duration'][0]}}h{{$option['part'][0]['duration'][1]}}min</b></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-3 padding-b-1">
