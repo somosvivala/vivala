@@ -11,7 +11,7 @@ return[
 'clickbus_to' => 'to',
 'clickbus_to-title' => 'TO',
 'clickbus_from-title' => 'FROM',
-'clickbus_bus-ticket-to-from' -> 'Bus tickets from',
+'clickbus_bus-ticket-to-from' => 'Bus tickets from',
 
 'clickbus_seat' => 'Seat',
 'clickbus_seat_' => 'Seats',

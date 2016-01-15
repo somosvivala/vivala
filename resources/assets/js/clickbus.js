@@ -1,7 +1,7 @@
 'use strict';
 
 $.ajaxSetup({
-    headers: { 
+    headers: {
         'X-CSRF-TOKEN': $('input[name="_token"]').attr('value'),
         'Access-Control-Allow-Headers': '*'
     }
@@ -46,7 +46,7 @@ var ajaxPlace = function(query, target) {
 
         // Adiciona a nova lista
         $(target).parent().append(element);
-        
+
         // Esconde o loading
         $(target).siblings('i.fa').hide();
 
@@ -67,7 +67,7 @@ var ajaxTrips = function(params) {
 
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
-    
+
     $.ajax({
         url: 'clickbus/trips',
         type: 'POST',
@@ -81,7 +81,7 @@ var ajaxTrips = function(params) {
     .fail(function() {
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
     });
-    
+
 };
 
 // Envia viagem de ida e volta
@@ -114,7 +114,7 @@ var ajaxTrip = function(viagens) {
     .fail(function() {
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado.');
     });
-    
+
 };
 
 var ajaxPoltronas = function(request, callback) {
@@ -138,7 +138,7 @@ var ajaxPoltronas = function(request, callback) {
 
     $.ajax({
         type: 'post',
-        url: '/clickbus/selecionarpoltronas',    
+        url: '/clickbus/selecionarpoltronas',
         data: {
             params: {
                 "meta": {},
@@ -172,13 +172,13 @@ var ajaxPoltronas = function(request, callback) {
             console.log(data);
 /*            console.log(data.responseObject);
             //Aqui mostro o sweetAlert com as mensagens retornadas da
-            //validação 
+            //validação
             //TODO formatar texto corretamente
 
             var responseObject = data.responseJSON,
                 responseText = "";
 
-                //Iterando sob o objeto de resposta para montar a mensagem de erro 
+                //Iterando sob o objeto de resposta para montar a mensagem de erro
                 for (var i in responseObject)
                     {
                         responseText += "<p>" + responseObject[i] + "</p>";
@@ -188,8 +188,8 @@ var ajaxPoltronas = function(request, callback) {
                     responseText = responseText.replace(/.\d /g," ");
 
                     swal({
-                        title: 'Ocorreu um erro', 
-                        text: responseText, 
+                        title: 'Ocorreu um erro',
+                        text: responseText,
                         type: 'error',
                         html: true
                     });
@@ -218,7 +218,7 @@ var removePoltrona = function(request, tipo, callback) {
         "id": $("input#"+tipo+"-id").val(),
         "sessionId": $("input#"+tipo+"-session-id").val()
     }
-    
+
     $.extend(params, request);
 
     // Loading no x da poltrona
@@ -276,7 +276,7 @@ var tripPayment = function(request, frm) {
     console.log("========== Trip Payment Request Ajax request");
     console.log(request);
 
-    
+
     $.ajax({
         url: 'clickbus/payment',
         type: 'POST',
@@ -304,7 +304,7 @@ var tripPayment = function(request, frm) {
         bindaChangePagamento();
         bindaFormPagamento();
     });
-    
+
 };
 
 var tripBooking = function(request) {
@@ -343,15 +343,15 @@ var tripBooking = function(request) {
     })
     .error(function(data) {
         var json = JSON.parse(data);
-        swal({   
-            title: "Ops",
+        swal({
+            title: "Ooops!",
             html: "Ocorreu um problema com a sua compra:<br>"+data.errors,
             type: "error",
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "ok",
+            confirmButtonColor: "#F16F2B",
+            confirmButtonText: "OK",
             closeOnConfirm: true,
             },
-            function() {   
+            function() {
                 console.log('clicou botao swal error data:');
                 console.log(data);
             });
@@ -364,7 +364,7 @@ var tripBooking = function(request) {
 
         //se tiver dado erro
         if (!json.success) {
-            swal({   
+            swal({
                 title: "Ops",
                 html: "Ocorreu um problema com a sua compra:<br><br>"+json.errors,
                 type: "error",
@@ -372,7 +372,7 @@ var tripBooking = function(request) {
                 confirmButtonText: "ok",
                 closeOnConfirm: true,
             },
-            function() {   
+            function() {
                 console.log('clicou botao swal error data:');
                 console.log(data);
             });
@@ -384,14 +384,14 @@ var tripBooking = function(request) {
 
                 var htmlMsg = 'Compra realizada com sucesso. Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br> está garantida. Em caso de dúvidas entre em contato pelo email <a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
 
-                swal({ 
+                swal({
                     title: "Sucesso",
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
                     confirmButtonText: "Ok",
                     closeOnConfirm: true,
-                }, 
+                },
                 function() {
                     window.location.href="/viajar";
                 }
@@ -399,27 +399,27 @@ var tripBooking = function(request) {
 
             //Se nao for creditcard, entao possui um redirectUrl
             } else {
- 
+
                 setTimeout(function() {
-                    window.open(json.redirectUrl,'_blank'); 
+                    window.open(json.redirectUrl,'_blank');
                 }, 2200);
 
                 //Caso a forma de pagamento requira redirecionamento
                 var htmlMsg = 'Confirmacao de dados realizada com sucesso.<br>Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br>Iremos redireciona-lo para finalizar sua compra, se isso nao acontecer clique em <a href="'+json.redirectUrl+'" target="_blank">Redirecionar</a>';
 
-                swal({ 
+                swal({
                     title: "Sucesso",
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
                     confirmButtonText: "Ok",
                     closeOnConfirm: true,
-                }, 
+                },
                 function() {
                     window.location.href="/viajar";
                 }
                      );
-            } 
+            }
         }
 
     });

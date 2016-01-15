@@ -10,7 +10,7 @@ return[
 'clickbus_to' => 'para',
 'clickbus_to-title' => 'IDA',
 'clickbus_from-title' => 'VOLTA',
-'clickbus_bus-ticket-to-from' -> 'Passagens de ônibus de',
+'clickbus_bus-ticket-to-from' => 'Passagens de ônibus de',
 
 'clickbus_seat' => 'Poltrona',
 'clickbus_seat_' => 'Poltronas',
@@ -29,7 +29,7 @@ return[
 
 // Lugares
 'clickbus_error-F1' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request.',
-'clickbus_error-F2' => 'The Server encountered a temporary error and could not complete your request.         An error occurred after sending your Request.',
+'clickbus_error-F2' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request.',
 
 // Viagens
 'clickbus_error-J1' => 'Please provide the from parameter. The parameter from is missing from the Request.',

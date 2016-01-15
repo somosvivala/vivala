@@ -599,6 +599,7 @@ return[
     'lbl_arrival' => 'Volta',
     'lbl_travel_create' => 'Criar Viagem',
     'lbl_travel_create_' => 'Criar Viagens',
+    'lbl_travel_departure' => 'Ida',
     'lbl_travel_setup' => 'Montar Viagem',
     'lbl_travel_none' => 'Nenhuma viagem.',
     'lbl_travel_not_created' => 'Nenhuma viagem criada.',

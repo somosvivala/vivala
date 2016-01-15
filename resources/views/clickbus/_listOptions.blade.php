@@ -27,14 +27,14 @@
                 <div class="col-xs-12 col-md-2 company-logo" style="background-image: url({{$option['part'][0]['busCompany']['logo']}})"></div>
                 <div class="col-xs-12 col-md-7">
                     <div class="row departure">
-                        <div class="col-xs-3">{{ trans('clickbus.clickbus_departure') }}: <b>{{$option['part'][0]['departure']['time']}}</b></div>
+                        <div class="col-xs-3">{{ trans('clickbus.clickbus_departure') }}:<br/><b>{{$option['part'][0]['departure']['time']}}</b></div>
                         <div class="col-xs-5">{{$option['part'][0]['departure']['city']}}</div>
-                        <div class="col-xs-4">{{ trans('clickbus.clickbus_busclass') }}: {{$option['part'][0]['serviceClass']}}</div>
+                        <div class="col-xs-4">{{ trans('clickbus.clickbus_busclass') }}:<br/><b>{{$option['part'][0]['serviceClass']}}</b></div>
                     </div>
                     <div class="row arrival">
-                        <div class="col-xs-3">{{ trans('clickbus.clickbus_arrival') }}: <b>{{$option['part'][0]['arrival']['time']}}</b></div>
+                        <div class="col-xs-3">{{ trans('clickbus.clickbus_arrival') }}:<br/><b>{{$option['part'][0]['arrival']['time']}}</b></div>
                         <div class="col-xs-5">{{$option['part'][0]['arrival']['city']}}</div>
-                        <div class="col-xs-4">{{ trans('clickbus.clickbus_tripduration') }}: {{$option['part'][0]['duration'][0]}}h{{$option['part'][0]['duration'][1]}}min</div>
+                        <div class="col-xs-4">{{ trans('clickbus.clickbus_tripduration') }}:<br/><b>{{$option['part'][0]['duration'][0]}}h{{$option['part'][0]['duration'][1]}}min<b/></div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-md-3 padding-b-1">

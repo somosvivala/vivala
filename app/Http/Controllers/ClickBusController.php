@@ -39,8 +39,9 @@ class ClickBusController extends Controller {
 		$dates = ClickBusRepository::getPrettyDates($departure);
 
         $url = self::$url."/trips?from={$from}&to={$to}&departure={$departure}";
-		$result = file_get_contents($url);
 
+        $result = file_get_contents($url);
+        dd($result);
 		$result = ClickBusRepository::parseData(json_decode($result));
 
 		return view('clickbus._listOptions', compact('result', 'dates', 'type'));
@@ -505,6 +506,7 @@ class ClickBusController extends Controller {
             //TODO tratar erros?
         }
 
+        // Booking
         if (isset($compra))
         {
             $departure = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->first();
