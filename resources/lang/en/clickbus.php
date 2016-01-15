@@ -8,17 +8,23 @@ return[
 |--------------------------------------------------------------------------
 */
 // Misc.
+'clickbus_departure' => 'Departure',
+'clickbus_return' => 'Return',
+'clickbus_arrival' => 'Arrival',
 'clickbus_to' => 'to',
 'clickbus_to-title' => 'TO',
 'clickbus_from-title' => 'FROM',
+'clickbus_route' => 'Route',
 'clickbus_bus-ticket-to-from' => 'Bus tickets from',
+'clickbus_schedule' => 'Schedule',
 
 'clickbus_seat' => 'Seat',
 'clickbus_seat_' => 'Seats',
 'clickbus_empty-seat' => 'Empty',
 'clickbus_occupied-seat' => 'Occuppied',
 'clickbus_selected-seat' => 'Selected',
-'clickbus_click-on-desired-seats' => 'Click on the desired seats',
+'clickbus_click-on-desired-seat' => 'Click on the desired seats',
+'clickbus_choose-seat' => 'Choose Seat',
 
 'clickbus_company' => 'Company',
 'clickbus_departure' => 'Departure',

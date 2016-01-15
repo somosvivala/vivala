@@ -6,7 +6,7 @@
                 <ul id="abas-cliente" class="nav nav-pills margin-b-1">
                     <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">Pessoa Física</a></li>
                     <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">Pessoa Jurídica</a></li>
-                    {{-- Desativado 
+                    {{-- Desativado
                     <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
                     --}}
                 </ul>
@@ -30,15 +30,15 @@
                                 <label for="telefone-pf">Telefone</label>
                                 <input type="text" class="required form-control" required="" name="telefone-pf" placeholder="11 987654321">
                             </div>
-                            <div class="col-xs-8"> 
+                            <div class="col-xs-8">
                                 <div class="row">
                                     <label for="documento" class="col-sm-12">Documento:</label>
                                     <div class="col-xs-4">
                                         <select id="document-type" name="documentType" class="">
                                             <option value="rg">RG</option>
                                             <option value="passaporte">Passaporte</option>
-                                            <option value="cpf">CPF</option> 
-                                        </select> 
+                                            <option value="cpf">CPF</option>
+                                        </select>
                                     </div>
                                     <div class="col-xs-8">
                                         <input type="text" id="documento-pf" class="required form-control" placeholder="Ex: 123.456.789-0" name="documento-pf" required="" >
@@ -81,7 +81,7 @@
                                 <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
                         </div>
-                        {{-- Desativado 
+                        {{-- Desativado
                         <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                             <div class="col-xs-12">
                                 <label for="nome-estrangeiro">Nome</label>
@@ -111,16 +111,16 @@
                 <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
                     @forelse($result->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
-                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>     
+                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
                     @endif
 
                     @if ($formaPagamento->name == 'debitcard')
-                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>      
+                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>
                     @endif
 
                     {{-- Desativado
                     @if ($formaPagamento->name == 'paypal_hpp')
-                    <li role="presentation"><a class="forma-pagamento" href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>     
+                    <li role="presentation"><a class="forma-pagamento" href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>
                     @endif
                     --}}
 
@@ -132,15 +132,11 @@
                 <div class="row margin-b-2">
                     <div id="tabs-pagamento-tipo" class="tab-content">
                         @forelse($result->items->payment_methods as $formaPagamento)
-                        @if ($formaPagamento->name == 'creditcard')  
+                        @if ($formaPagamento->name == 'creditcard')
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                             <div class="col-xs-7">
                                 <label for="num-cartao-credito">Número do Cartão</label>
                                 <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
-                            </div>
-                            <div class="col-xs-5">
-                                <label for="cod-seguranca-credito" >Código de Segurança</label>
-                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
                             <div class="col-xs-7">
                                 <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
@@ -162,6 +158,10 @@
                                         @endfor
                                     </select>
                                 </div>
+                            </div>
+                            <div class="col-xs-5">
+                                <label for="cod-seguranca-credito" >Código de Segurança</label>
+                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
                             <div class="col-xs-12">
                                 <label>CEP:</label>
@@ -263,7 +263,7 @@
                         @endif
 
                         --}}
-                        
+
                         @empty
                         <p> Metodo de pagamento indisponivel </p>
                         @endforelse
@@ -334,8 +334,8 @@
                <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
                <input type="hidden"  id="qtd-parcelas" name="qtd-parcelas" value="1">
                {{-- Coloca as poltronas reservadas e os passageiros de cada poltrona --}}
-               @if (isset($passagens)) 
-                   @foreach ($passagens as $key => $Passagem) 
+               @if (isset($passagens))
+                   @foreach ($passagens as $key => $Passagem)
                        <input type="hidden" name="passagens[{{ $key }}]['document']" value="{{ $Passagem->document }}">
                        <input type="hidden" name="passagens[{{ $key }}]['seat']" value="{{ $Passagem->seat }}">
                        <input type="hidden" name="passagens[{{ $key }}]['lastName']" value="{{ $Passagem->lastName }}">
@@ -349,7 +349,7 @@
                <input type="hidden" value="{{ $result->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
                <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
-               
+
                <input type="hidden" id="ida-to" name="ida-to" value="{{ $Ida->to}}">
                <input type="hidden" id="ida-from" name="ida-from" value="{{ $Ida->from}}">
                <input type="hidden" id="ida-diames" name="ida-diames" value="{{ $Ida->diames }}">

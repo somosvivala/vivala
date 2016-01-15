@@ -15,7 +15,7 @@
     </ul>
     <div class="col-xs-12" id="descricao-origem-destino">
         @if($result)
-        <span>Passagens de ônibus de {{$result[0]['from']}} {{ trans('clickbus.clickbus_to') }} {{$result[0]['to']}}</span>
+        <span>{{ trans('clickbus.clickbus_bus-ticket-to-from') }} {{$result[0]['from']}} {{ trans('clickbus.clickbus_to') }} {{$result[0]['to']}}</span>
         @else
         <span>Nenhuma passagem foi encontrada, tente uma linha diferente ou outra data.</span>
         @endif

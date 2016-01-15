@@ -7,10 +7,15 @@ return[
 | Status da Tradução:
 |--------------------------------------------------------------------------
 */
+'clickbus_departure' => 'Ida',
+'clickbus_return' => 'Volta',
+'clickbus_arrival' => 'Chegada',
 'clickbus_to' => 'para',
 'clickbus_to-title' => 'IDA',
 'clickbus_from-title' => 'VOLTA',
+'clickbus_route' => 'Trecho',
 'clickbus_bus-ticket-to-from' => 'Passagens de ônibus de',
+'clickbus_schedule' => 'Itinerário',
 
 'clickbus_seat' => 'Poltrona',
 'clickbus_seat_' => 'Poltronas',
@@ -18,6 +23,7 @@ return[
 'clickbus_occupied-seat' => 'Ocupada',
 'clickbus_selected-seat' => 'Selecionada',
 'clickbus_click-on-desired-seat' => 'Clique nas poltronas desejadas',
+'clickbus_choose-seat' => 'Escolher Poltrona',
 
 'clickbus_company' => 'Compania',
 'clickbus_departure' => 'Partida',
