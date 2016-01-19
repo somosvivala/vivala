@@ -4,12 +4,12 @@
         @if(isset($ida))
         <div class="ida container-onibus margin-b-2">
             <div class="row">
-                <label class="col-sm-12">{{ trans('clickbus.clickbus_to-title') }} - {{ trans('clickbus.clickbus_route') }} 1: <br/><span> {{ $from }} {{ trans('clickbus.clickbus_to') }} {{ $to }} </span></label>
+                <label class="col-sm-12">{{ trans('clickbus.clickbus_to-title') }} - {{ trans('clickbus.clickbus_route') }} 1: </label><br/><span> {{ $from }} {{ trans('clickbus.clickbus_to') }} {{ $to }} </span>
             </div>
             <div class="row">
-                <label class="col-sm-3">{{ trans('global.date_day') }}: <span>{{ $ida->diames }}</span></label>
-                <label class="col-sm-2">{{ trans('global.date_hour') }}: <span>{{ $ida->horario }}</span></label>
-                <label class="col-sm-7">{{ trans('global.lbl_company') }}: <span>{{ $ida->content->busCompany->name }}</span></label>
+                <span class="col-sm-3">{{ trans('global.date_day') }}: <span>{{ $ida->diames }}</span></span>
+                <span class="col-sm-2">{{ trans('global.date_hour') }}: <span>{{ $ida->horario }}</span></span>
+                <span class="col-sm-7">{{ trans('global.lbl_company') }}: <span>{{ $ida->content->busCompany->name }}</span></span>
             </div>
             @if(isset($ida->content->seats))
             <div class="margin-t-1 onibus">
@@ -44,12 +44,14 @@
         @if(isset($volta))
         <div class="volta container-onibus">
             <div class="row">
-                <label class="col-sm-12">{{ trans('clickbus.clickbus_from-title') }} - {{ trans('clickbus.clickbus_route') }} 2: <span> {{ $to}} {{ trans('clickbus.clickbus_to') }} {{ $from }} </span></label>
+                <label class="col-sm-12">{{ trans('clickbus.clickbus_from-title') }} - {{ trans('clickbus.clickbus_route') }} 2: </label>
+                <br/>
+                <span> {{ $to}} {{ trans('clickbus.clickbus_to') }} {{ $from }} </span>
             </div>
             <div class="row">
-                <label class="col-sm-3">{{ trans('global.date_day') }}: <span>{{ $volta->diames }}</span></label>
-                <label class="col-sm-2">{{ trans('global.date_hour') }}: <span>{{ $volta->horario }}</span></label>
-                <label class="col-sm-7">{{ trans('clickbus.clickbus_company') }}: <span>{{ $volta->content->busCompany->name }}</span></label>
+                <span class="col-sm-3">{{ trans('global.date_day') }}: <span>{{ $volta->diames }}</span></span>
+                <span class="col-sm-2">{{ trans('global.date_hour') }}: <span>{{ $volta->horario }}</span></span>
+                <span class="col-sm-7">{{ trans('clickbus.clickbus_company') }}: <span>{{ $volta->content->busCompany->name }}</span></span>
             </div>
             <input type="hidden" id="volta-session-id" value="{{ $volta->sessionId }}">
             <input type="hidden" id="volta-trip-id" value="{{ $volta->content->trip_id }}">
