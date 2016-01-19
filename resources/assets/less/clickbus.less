@@ -24,6 +24,9 @@
         > div:nth-child(odd) .passagem {
             background-color:@cor-fundo;
         }
+        .passagem {
+            height: 100px;
+        }
     }
 
     .ida {
@@ -114,17 +117,20 @@
         font-family: @font-family-sans-serif;
     }
     .company-logo {
-        background-size: contain;
-        background-position:center center;
-        background-repeat: no-repeat;
-        height:5em;
+        height:100%;
+        .company-logo-img{
+            height:100%;
+            background-size: contain;
+            background-position:center center;
+            background-repeat: no-repeat;
+        }
     }
     .departure, .arrival {
         padding-top: 0.5em;
         padding-bottom: 0.5em;
     }
     .departure {
-        border-bottom: 1px solid @cor-fundo;
+        border-bottom: 1px solid @cinza-escuro;
     }
     input[type="text"],
     input[type="email"],
