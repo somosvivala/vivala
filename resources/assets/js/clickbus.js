@@ -205,8 +205,7 @@ var ajaxPoltronas = function(request, callback) {
         complete: function(data, status) {
             $('form.validacao-poltrona').find('button:submit').removeAttr('disabled');
             $('form.validacao-poltrona button:submit i').hide();
-            document.getElementById('validacao-poltrona-ida').reset();
-            document.getElementById('validacao-poltrona-volta').reset();
+
         }
     });
 

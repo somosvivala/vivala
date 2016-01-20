@@ -26,24 +26,6 @@
         }
         .passagem {
             height: 100px;
-            // Detalhes para reorganização do layou
-            .company-logo {
-                width: 20%;
-                padding-left:15px;
-                position: relative;
-                float:left;
-            }
-            .detalhes {
-                width: 60%;
-                padding:15px;
-                position: relative;
-                float:left;
-            }
-            .valor-compra {
-                width: 20%;
-                position: relative;
-                float:left;
-            }
         }
     }
 
@@ -52,7 +34,7 @@
     }
     .poltronas-clickbus{
         border: 1px solid @cor-fundo;
-        
+
         .onibus {
             position:relative;
             border: 1px solid @cor-cinza-escuro;
@@ -90,14 +72,14 @@
             }
             &.desativado {
                 background-color:@cor-cinza-escuro;
-                label { 
+                label {
                     cursor: default;
                 }
             }
             label {
                 padding: 0.4em;
                 color:white;
-                font-family: @font-family-sans-serif;                
+                font-family: @font-family-sans-serif;
                 font-weight: bold;
                 margin-bottom: 0px;
                 cursor: pointer;
@@ -148,7 +130,7 @@
         padding-bottom: 0.5em;
     }
     .departure {
-        border-bottom: 1px solid @cor-cinza-claro;
+        border-bottom: 1px solid #555555;
     }
     input[type="text"],
     input[type="email"],
@@ -172,8 +154,6 @@
         }
     }
     .radio-hidden {
-        
-        
         label {
             border: 2px solid transparent;
             transition: all 0.3s ease;
@@ -198,7 +178,7 @@
         }
     }
     .valor-pagamento {
-    
+
         background-color: @cor-pele-zumbi;
         color:white;
         text-align:right;
@@ -206,7 +186,7 @@
             font-size:2em;
         }
     }
-    
+
 }
 
 .poltrona-externa {
@@ -218,7 +198,7 @@
     margin-top:0.5em;
     margin-bottom:-0.5em;
     color:white;
-    font-family: @font-family-sans-serif;                
+    font-family: @font-family-sans-serif;
     font-weight: bold;
     &.selecionada {
         background-color: @cor-primaria;
@@ -233,6 +213,7 @@
     margin-top: 1em;
     border-top: 1px solid @cor-fundo;
 }
+
 .exclui-poltrona {
     transition: all 0.5s ease;
     cursor: pointer;
@@ -244,5 +225,18 @@
 div.places-list {
     &>a.autocomplete-rodoviario.list-focus {
         background-color: #F5F5F5;
+    }
+}
+
+#modal-poltrona-ida{
+    #validacao-poltrona-ida{
+        .modal-body{
+                input #name{
+                    font-family: "FuturaBT-Bold","Open Sans",Helvetica,Arial,sans-serif;
+                    text-transform: uppercase;
+                    border-radius: 0px;
+                    border: 1px solid #E2E2E2;
+                }
+        }
     }
 }
