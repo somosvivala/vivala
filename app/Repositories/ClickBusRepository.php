@@ -51,6 +51,19 @@ class ClickBusRepository {
         }
 
         return $output;
+
+        $result = file_get_contents(self::$url.'/booking', false, $context);
+    }
+
+    public static function parseError($data)
+    {
+        $output = [];
+        $data = [
+            "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
+        ];
+
+        array_push($output, $data);
+        return $output;
     }
 
     public static function getPrettyDates($date)
@@ -70,7 +83,7 @@ class ClickBusRepository {
     private static function parcePrice($price)
     {
         $price /= 100;
-        return number_format((float)$price, 2, ',', ''); 
+        return number_format((float)$price, 2, ',', '');
     }
 
     private static function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
