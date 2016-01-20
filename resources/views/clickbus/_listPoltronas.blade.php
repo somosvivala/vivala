@@ -151,7 +151,7 @@
                         <input required="required"  type="text" placeholder="Nome" name="name" id="name">
                     </div>
                     <div class="col-sm-6">
-                        <label for="email" class="col-sm-12">{{ trans('global.lbl_email') }}:</label>
+                        <label for="email" class="">{{ trans('global.lbl_email') }}:</label>
                         <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
 {{-- Desativado
                         <!-- label for="birthday">Nascimento:</label>
@@ -159,7 +159,7 @@
 --}}
                     </div>
                     <div class="col-sm-6">
-                        <div class="row">
+                        <div class="row margin-t-1">
                             <label for="doc" class="col-sm-12">Documento (com Foto):</label>
                             <div class="col-xs-4">
                                 <select id="document-type" name="documentType" class="">
@@ -214,7 +214,7 @@
                         <input required="required"  type="text" placeholder="{{ trans('global.lbl_name') }}" name="name" id="name">
                     </div>
                     <div class="col-sm-6">
-                        <label for="doc" class="col-sm-12">{{ trans('global.lbl_email') }}:</label>
+                        <label for="doc" class="">{{ trans('global.lbl_email') }}:</label>
                         <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
 {{-- Desativado
                         <!-- label for="birthday">{{ trans('global.lbl_birthday') }}:</label>
@@ -222,7 +222,7 @@
 --}}
                     </div>
                     <div class="col-sm-6">
-                        <div class="row">
+                        <div class="row margin-t-1">
                             <label for="doc" class="col-sm-12">Documento (com Foto):</label>
                             <div class="col-xs-4">
                                 <select id="document-type" name="documentType" class="">
