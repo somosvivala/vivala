@@ -148,27 +148,25 @@
                     <input type="hidden" id="trip-id" value="{{ $ida->scheduleId }}">
                     <div class="col-sm-6">
                         <label for="nome">{{ trans('global.lbl_name') }}:</label>
-                        <input required="required"  type="text" placeholder="Nome" name="name" id="name">
+                        <input required="required"  class="required form-control" type="text" placeholder="Nome" name="name" id="name">
                     </div>
                     <div class="col-sm-6">
-                        <label for="email" class="col-sm-12">{{ trans('global.lbl_email') }}:</label>
-                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
-{{-- Desativado
-                        <!-- label for="birthday">Nascimento:</label>
-                        <input type="text" class="required form-control" required="" name="birthday"  id="birthday" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-orientation="bottom"-->
---}}
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <label for="doc" class="col-sm-12">Documento (com Foto):</label>
-                            <div class="col-xs-4">
-                                <select id="document-type" name="documentType" class="">
-                                    <option value="rg">RG</option>
-                                    <option value="passaporte">Passaporte</option>
-                                </select>
-                            </div>
-                            <div class="col-xs-8">
-                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                        <div class ="row col-sm-12">
+                            <label for="email">{{ trans('global.lbl_email') }}:</label>
+                            <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+                        </div>
+                        <div class="row col-sm-12 padding-t-1">
+                            <label for="doc" class="row col-sm-12">Documento (com Foto):</label>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <select id="document-type" class= "form-control" name="documentType" class="">
+                                        <option value="rg">RG</option>
+                                        <option value="passaporte">Passaporte</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-8">
+                                    <input type="text" id="document" class="col-sm-9 required form-control" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -192,7 +190,7 @@
             <div class="modal-body">
                 <div class="row margin-b-1">
                     <div class="col-sm-10">
-                        <h3 class="texto-preto">
+                        <h3 class="texto-preto margin-t-0 margin-b-1">
                             <div class="poltrona-externa selecionada num-poltrona"></div>
                             {{ trans('clickbus.clickbus_seat') }} <span class="num-poltrona"></span>
                         </h3>
@@ -214,24 +212,22 @@
                         <input required="required"  type="text" placeholder="{{ trans('global.lbl_name') }}" name="name" id="name">
                     </div>
                     <div class="col-sm-6">
-                        <label for="doc" class="col-sm-12">{{ trans('global.lbl_email') }}:</label>
-                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
-{{-- Desativado
-                        <!-- label for="birthday">{{ trans('global.lbl_birthday') }}:</label>
-                        <input type="text" class="required form-control" required="" name="birthday"  id="birthday" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" data-date-orientation="bottom"-->
---}}
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="row">
-                            <label for="doc" class="col-sm-12">Documento (com Foto):</label>
-                            <div class="col-xs-4">
-                                <select id="document-type" name="documentType" class="">
-                                    <option value="rg">RG</option>
-                                    <option value="passaporte">Passaporte</option>
-                                </select>
-                            </div>
-                            <div class="col-xs-8">
-                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                        <div class="row col-sm-12">
+                            <label for="doc">{{ trans('global.lbl_email') }}:</label>
+                            <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+                        </div>
+                        <div class="row col-sm-12 padding-t-1">
+                            <label for="doc" class="row col-sm-12">Documento (com Foto):</label>
+                            <div class="row">
+                                <div class="col-xs-4">
+                                    <select id="document-type" name="documentType" class="">
+                                        <option value="rg">RG</option>
+                                        <option value="passaporte">Passaporte</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-8">
+                                    <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
+                                </div>
                             </div>
                         </div>
                     </div>
