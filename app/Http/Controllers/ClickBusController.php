@@ -46,14 +46,11 @@ class ClickBusController extends Controller {
         $result = file_get_contents($url, false, $context);
         $decoded = json_decode($result);
 
-        $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
-
-        if($success){
+        if(isset($decoded) && !isset($decoded->{"error"})){
             $result = ClickBusRepository::parseData($decoded);
         } else {
             $result = ClickBusRepository::parseError($decoded);
         }
-
 		return view('clickbus._listOptions', compact('result', 'dates', 'type'));
 	}
 

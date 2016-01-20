@@ -58,11 +58,11 @@ class ClickBusRepository {
     public static function parseError($data)
     {
         $output = [];
-        $data = [
+        $option = [
             "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
         ];
 
-        array_push($output, $data);
+        array_push($output, $option);
         return $output;
     }
 

@@ -75,8 +75,27 @@ var ajaxTrips = function(params) {
         data: defaultParams,
     })
     .done(function(data) {
-        $('#clickbus-resultado-busca').html(data);
-        bindClickDetail();
+
+        var json = JSON.parse(data);
+
+        //se tiver dado erro
+        if (json.errors) {
+            swal({
+                title: "Ops",
+                html: "Ocorreu um problema durante a busca:<br><br>"+json.errors,
+                type: "error",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "ok",
+                closeOnConfirm: true,
+            },
+            function() {
+                console.log('clicou botao swal error data:');
+                console.log(data);
+            });
+        //Se estiver tudo ok..
+        } else {
+            $('#clickbus-resultado-busca').html(data);
+            bindClickDetail();
     })
     .fail(function() {
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
