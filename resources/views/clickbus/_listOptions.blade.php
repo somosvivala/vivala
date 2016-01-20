@@ -24,11 +24,11 @@
         @foreach ($result as $option)
         <div class="col-sm-12">
             <div class="row passagem">
-                <div class="col-xs-12 col-md-2 company-logo">
+                <div class="company-logo">
                     <div class="company-logo-img" style="background-image: url({{$option['part'][0]['busCompany']['logo']}})">
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-7">
+                <div class="detalhes">
                     <div class="col-xs-12">
                         <div class="row departure">
                             <div class="row">
@@ -54,7 +54,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-3 padding-b-1">
+                <div class="valor-compra padding-b-1">
                     <div class="row">
                         <h3 class="padding-t-0 padding-b-0 text-center font-bold-upper">R$ {{$option['part'][0]['price']}}</h3>
                         <div class="col-xs-12 text-center"><a data-horario="{{ $option['part'][0]['departure']['time']}}" data-id="{{$option['part'][0]['id']}}" data-horario-chegada="{{$option['part'][0]['arrival']['time']}}" data-classe="{{$option['part'][0]['serviceClass']}}" data-to="{{$option['part'][0]['departure']['city']}}" data-from="{{$option['part'][0]['arrival']['city']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0">Escolher {{$type}}</a></div>

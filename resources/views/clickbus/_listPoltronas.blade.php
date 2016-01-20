@@ -167,6 +167,20 @@
                                 <div class="col-xs-8">
                                     <input type="text" id="document" class="col-sm-9 required form-control" placeholder="Ex: 123.456.789-0" name="document" required="required" >
                                 </div>
+                        <label for="email" class="">{{ trans('global.lbl_email') }}:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row margin-t-1">
+                            <label for="doc" class="col-sm-12">Documento (com Foto):</label>
+                            <div class="col-xs-4">
+                                <select id="document-type" name="documentType" class="">
+                                    <option value="rg">RG</option>
+                                    <option value="passaporte">Passaporte</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required">
                             </div>
                         </div>
                     </div>
@@ -228,6 +242,20 @@
                                 <div class="col-xs-8">
                                     <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required" >
                                 </div>
+                        <label for="doc" class="">{{ trans('global.lbl_email') }}:</label>
+                        <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row margin-t-1">
+                            <label for="doc" class="col-sm-12">Documento (com Foto):</label>
+                            <div class="col-xs-4">
+                                <select id="document-type" name="documentType" class="">
+                                    <option value="rg">RG</option>
+                                    <option value="passaporte">Passaporte</option>
+                                </select>
+                            </div>
+                            <div class="col-xs-8">
+                                <input type="text" id="document" class="col-sm-9" placeholder="Ex: 123.456.789-0" name="document" required="required">
                             </div>
                         </div>
                     </div>
