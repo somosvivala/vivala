@@ -57,13 +57,10 @@ class ClickBusRepository {
 
     public static function parseError($data)
     {
-        $output = [];
         $option = [
             "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
         ];
-
-        array_push($output, $option);
-        return $output;
+        return $option;
     }
 
     public static function getPrettyDates($date)

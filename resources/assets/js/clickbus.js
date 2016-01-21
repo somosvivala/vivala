@@ -75,14 +75,21 @@ var ajaxTrips = function(params) {
         data: defaultParams,
     })
     .done(function(data) {
+
+        var json= {};
+        try {
+            json = JSON.parse(data);
+        } catch(error) {}
+
         //se tiver dado erro
-        if (data.errors) {
+        if (json.errors) {
+            $('#clickbus-resultado-busca').html("");
             swal({
-                title: "Opss",
-                html: "Ocorreu um problema durante a busca!<br><br>"+data.errors,
+                title: "Ops!",
+                html: "Ocorreu um problema durante a busca!<br><br>"+json.errors,
                 type: "error",
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "ok",
+                confirmButtonColor: "#FF5B00",
+                confirmButtonText: "OK",
                 closeOnConfirm: true,
             },
             function() {

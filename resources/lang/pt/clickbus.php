@@ -38,9 +38,9 @@ return[
 'clickbus_error-F2' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request.',
 
 // Viagens
-'clickbus_error-J1' => 'Por favor, preencha a busca com a ORIGEM. Sem este dado n podemos realizar sua busca! :(',
-'clickbus_error-J2' => 'Please provide the to parameter. The parameter to is missing from the Request.',
-'clickbus_error-J3' => 'Please provide the departure parameter. The parameter departure is missing from the Request.',
+'clickbus_error-J1' => 'Por favor preencha a busca com a ORIGEM.<br/>Sem este dado não podemos realizar sua busca!',
+'clickbus_error-J2' => 'Por favor preencha a busca com o DESTINO.<br/>Sem este dado não podemos realizar sua busca!',
+'clickbus_error-J3' => 'Por favor preencha a busca com a DATA DA VIAGEM.<br/>Sem este dado não podemos realizar sua busca!',
 'clickbus_error-J4' => 'The given from value is invalid or incorrect. The provided value for from is not a valid Place.',
 'clickbus_error-J5' => 'The given to value is invalid or incorrect. The provided value for to is not a valid Place.',
 'clickbus_error-J6' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request before it’s sent to the booking engine.',
