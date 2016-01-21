@@ -48,10 +48,11 @@ class ClickBusController extends Controller {
 
         if(isset($decoded) && !isset($decoded->{"error"})){
             $result = ClickBusRepository::parseData($decoded);
+            return view('clickbus._listOptions', compact('result', 'dates', 'type'));
         } else {
             $result = ClickBusRepository::parseError($decoded);
+            return $result;
         }
-		return view('clickbus._listOptions', compact('result', 'dates', 'type'));
 	}
 
     // Fecha a viagem Ida/Volta

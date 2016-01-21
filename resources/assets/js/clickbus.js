@@ -75,14 +75,11 @@ var ajaxTrips = function(params) {
         data: defaultParams,
     })
     .done(function(data) {
-
-        var json = JSON.parse(data);
-
         //se tiver dado erro
-        if (json.errors) {
+        if (data.errors) {
             swal({
-                title: "Ops",
-                html: "Ocorreu um problema durante a busca:<br><br>"+json.errors,
+                title: "Opss",
+                html: "Ocorreu um problema durante a busca!<br><br>"+data.errors,
                 type: "error",
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "ok",
