@@ -37,16 +37,22 @@ return[
 'clickbus_error-F1' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request.',
 'clickbus_error-F2' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request.',
 
-// Viagens
+// Viagens (Trips)
 'clickbus_error-J1' => 'Por favor preencha a busca com a ORIGEM.<br/>Sem este dado não podemos realizar sua busca!',
 'clickbus_error-J2' => 'Por favor preencha a busca com o DESTINO.<br/>Sem este dado não podemos realizar sua busca!',
-'clickbus_error-J3' => 'Por favor preencha a busca com a DATA DA VIAGEM.<br/>Sem este dado não podemos realizar sua busca!',
+'clickbus_error-J3' => 'Por favor preencha a busca com a DATA DE IDA da viagem.<br/>Sem este dado não podemos realizar sua busca!',
 'clickbus_error-J4' => 'O valor inserido na ORIGEM é um local inválido. <br/>Por favor insira o valor corretamente, sem ele não podemos realizar sua busca!',
 'clickbus_error-J5' => 'O valor inserido no DESTINO é um local inválido. <br/>Por favor insira o valor corretamente, sem ele não podemos realizar sua busca!',
 'clickbus_error-J6' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request before it’s sent to the booking engine.',
 'clickbus_error-J7' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request to the booking engine.',
 'clickbus_error-J8' => 'Please provide a valid date for departure. The value for departure is invalid or incorrect.',
 'clickbus_error-J9' => 'The departure date cannot occur in a day before today. The value for departure cannot be a date in the past.',
+
+// Fechamento do Ônibus IDA/VOLTA (Trip)
+'clickbus_error-I1'	=> 'Please provide the scheduleId.	The parameter scheduleId is missing from the Request.',
+'clickbus_error-I2'	=> 'The given scheduleId is invalid.	The value for scheduleId is invalid or incorrect.',
+'clickbus_error-I3'	=> 'Application Error	The Application encountered a temporary error and could not complete your request.',
+'clickbus_error-I4'	=> 'Server Error	The Server encountered a temporary error and could not complete your request.',
 
 // Assentos
 'clickbus_error-H1' => 'Please provide the passenger’s name. The Passenger’s name is missing.',
