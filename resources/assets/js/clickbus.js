@@ -96,6 +96,7 @@ var ajaxTrips = function(params) {
         } else {
             $('#clickbus-resultado-busca').html(data);
             bindClickDetail();
+        }
     })
     .fail(function() {
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
