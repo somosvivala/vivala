@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
                     else
                         $('a.autocomplete-rodoviario[data-order='+(listItem-1)+']').addClass('list-focus');
                 }
-            }   
+            }
 
         } else {
             if (keyCode === 13) {
@@ -53,7 +53,7 @@ jQuery(document).ready(function($) {
         }
     };
 
-    var ajax, 
+    var ajax,
         autocompleteTimeout,
         origemVal = '',
         destinoVal = '';
@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
                 if (autocompleteTimeout!== undefined && autocompleteTimeout > 0) {
                     clearTimeout(autocompleteTimeout);
                 }
-                autocompleteTimeout = setTimeout(ajaxPlace, 500, origemVal, this); 
+                autocompleteTimeout = setTimeout(ajaxPlace, 500, origemVal, this);
             }
         } else {
             $('.places-list').remove();
@@ -142,8 +142,8 @@ var bindClickDetail = function() {
     $('.search-by-date').on('click', function(e) {
         e.preventDefault();
 
-        var from      = $('#destino-rodoviario-hidden').val(),
-            to        = $('#origem-rodoviario-hidden').val(),
+        var from      = $('#origem-rodoviario-hidden').val(),
+            to        = $('#destino-rodoviario-hidden').val(),
             departure = $(this).attr('data-date'),
             type      = $(this).attr('data-type');
 
@@ -164,7 +164,7 @@ var bindClickDetail = function() {
             classe_ida = $(this).attr('data-classe'),
             from_ida  = $(this).attr('data-from'),
             to_ida = $(this).attr('data-to')
-            
+
             from      = $('#destino-rodoviario-hidden').val(),
             to        = $('#origem-rodoviario-hidden').val();
 
@@ -237,7 +237,7 @@ var bindaPoltronas = function(){
         if(container.hasClass('volta')){
             tipo_viagem = 'volta';
         }
-        
+
         // Testa se a poltrona já está selecionada
         if(poltrona.hasClass('selecionada'))
         {
@@ -254,7 +254,7 @@ var bindaPoltronas = function(){
     // Binda o submit do modal das poltronas para validacao de disponibilidade
     $('form.validacao-poltrona').submit(function(e){
         e.preventDefault();
-        
+
         var frm = $(this),
             loading = frm.data('loading');
 
@@ -263,10 +263,10 @@ var bindaPoltronas = function(){
             $(this).find('#'+loading).show();
         }
 
-        
+
         var params = {
-            "tipo": $(this).find('input#tipo').val(), 
-            "from": $(this).find('input#from').val(), 
+            "tipo": $(this).find('input#tipo').val(),
+            "from": $(this).find('input#from').val(),
             "to":  $(this).find('input#to').val(),
             "seat":$(this).find('input#seat').val(),
             "name": $(this).find('input#name').val(),
@@ -296,7 +296,7 @@ var bindaPoltronas = function(){
     $('#form-poltronas-clickbus').submit(checaQuantidadePoltronas);
 };
 
-// Mostra a poltronacomo selecionada e adicona no 
+// Mostra a poltronacomo selecionada e adicona no
 // formulario de sumissao de compra
 var adicionaPoltronaFront = function(poltrona, tipo_viagem, viajante){
     var numero_poltrona = poltrona.seat;
@@ -321,8 +321,8 @@ var removePoltronaFront = function(data,numero_poltrona,tipo_viagem){
 
     var icone_poltrona = $("input#"+numero_poltrona+'-'+tipo_viagem).parents('.poltrona');
 
-    // Remove o div com os dados da lateral 
-    $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove(); 
+    // Remove o div com os dados da lateral
+    $('#poltrona-'+numero_poltrona+'-'+tipo_viagem).remove();
     // Muda a cor da poltrona
     icone_poltrona.removeClass('selecionada');
 
@@ -365,7 +365,7 @@ var bindaChangePagamento = function() {
 };
 
 var atualizaValorParcelas = function(){
-    
+
     var forma_pagamento = $("form#form-pagamento").find('input#forma-pagamento').val();
     if(forma_pagamento == 'cartao-credito'){
         var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
@@ -410,24 +410,24 @@ var atualizaValorParcelas = function(){
 };
 
 var bindaFormPagamento = function() {
-    
+
     // Binda o submit da compra
     $('#form-pagamento').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this);
-        
+
         // Monta o payment de acordo com a forma de pagamento
         // (credito, debito, paypal)
         var forma_pagamento = frm.find('input#forma-pagamento').val(),
             total = Number(frm.find("input#valor-total-pagamento-passagem").val().replace('.','')),
             payment = {};
-        
+
         if(forma_pagamento == 'cartao-credito'){
             payment = {
                 "method": "creditcard",
                 "currency": "BRL",
                 "total": total,
-                "installment": frm.find("input#qtd-parcelas").val(), 
+                "installment": frm.find("input#qtd-parcelas").val(),
                 "meta": {
                     "card": frm.find("input[name='num-cartao-credito']").val(),
                     "code": frm.find("input[name='cod-seguranca-credito']").val(),
@@ -450,7 +450,7 @@ var bindaFormPagamento = function() {
                     "zipcode": frm.find("input[name='cep-titular-debito']").val()
                 }
             }
-        
+
         }else if(forma_pagamento == 'paypal'){
             payment = {
                 "method": "paypal_hpp",
@@ -460,7 +460,7 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
         }
- 
+
         // Monta o buyer de acordo com a documentacao
         var tipo_cliente = $('input#tipo-cliente').val();
         var buyer = {};
@@ -487,7 +487,7 @@ var bindaFormPagamento = function() {
         }else if (tipo_cliente == 'pessoa-juridica') {
             var nomeArray = $('input[name="nome-pj"]').val().split(" ");
             var birthday = $('input[name="nascimento-pj"]').val().split("/").reverse().join("/");
-            
+
             buyer = {
                 "locale":"pt_BR",
                 "firstName": nomeArray.shift(),
@@ -505,11 +505,11 @@ var bindaFormPagamento = function() {
             console.log(buyer);
 
         }
-        
+
         /** Comentado pois na existe mais forma de pagamento 'estrangeiro'
         else if (tipo_cliente == 'estrangeiro') {
             var nomeArray = $('input[name="nome-estrangeiro"]').val().split(" ");
-            
+
             buyer = {
                 "locale":"pt_BR",
                 "firstName": nomeArray.shift(),
@@ -526,13 +526,13 @@ var bindaFormPagamento = function() {
             console.log('buyer estrangeiro: ');
             console.log(buyer);
         }
-        
-       */ 
-      
+
+       */
+
        // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
             orderItems = [];
-                
+
         for (var i = 0; i < numero_poltronas; i++) {
            var  seatReservation = $('#form-pagamento').find('input[name="passagens['+i+'][\'seatReservation\']"]').val();
             var passenger = {
@@ -545,7 +545,7 @@ var bindaFormPagamento = function() {
                "seat" : $('#form-pagamento').find('input[name="passagens['+i+'][\'seat\']"]').val(),
                "meta" : {}
             };
-           
+
             orderItems.push({
                 "seatReservation" : seatReservation,
                 "passenger" : passenger
@@ -571,7 +571,7 @@ var bindaFormPagamento = function() {
 
         var frm = $(this),
             loading = frm.data('loading');
-        
+
         if (loading && loading != "") {
             $(this).find('input:submit').attr('disabled','disabled');
             $(this).find('#'+loading).show();
@@ -600,7 +600,7 @@ var checaQuantidadePoltronas =  function(ev) {
 
     if (qntIda > 0 && qntVolta > 0 && qntIda != qntVolta) {
         //caso qnts diferentes
-        swal({   
+        swal({
             title: "Atenção",
             text: "Voce selecionou um numero diferente de passagens de ida e volta. Deseja continuar mesmo assim?",
             type: "warning",
@@ -609,22 +609,22 @@ var checaQuantidadePoltronas =  function(ev) {
             confirmButtonText: "Sim, continuar!",
             cancelButtonText: "Não, corrigir!",
             closeOnConfirm: true,
-            closeOnCancel: true 
+            closeOnCancel: true
             },
-            function(confirmed){   
-                if (confirmed) {     
+            function(confirmed){
+                if (confirmed) {
                    funcaoSubmitPoltronas(this);
 
-                } else {     
+                } else {
                     //nao fazer nada
-                } 
+                }
         });
 
     } else if (qntIda > 0 && qntVolta == 0) {
         var temVolta = $('#data-volta-rodoviario').val() != "";
         if (temVolta) {
             //caso sem volta
-            swal({   
+            swal({
                 title: "Atenção",
                 text: "Voce não selecionou uma passagem de volta. Deseja continuar assim mesmo?",
                 type: "warning",
@@ -633,14 +633,14 @@ var checaQuantidadePoltronas =  function(ev) {
                 confirmButtonText: "Sim, continuar!",
                 cancelButtonText: "Não, corrigir!",
                 closeOnConfirm: true,
-                closeOnCancel: true 
+                closeOnCancel: true
                 },
-                function(confirmed){   
-                    if (confirmed) {     
+                function(confirmed){
+                    if (confirmed) {
                         funcaoSubmitPoltronas(this);
-                    } else {     
+                    } else {
                         //nao fazer nada
-                    } 
+                    }
             });
         } else {
           funcaoSubmitPoltronas(this);
@@ -648,7 +648,7 @@ var checaQuantidadePoltronas =  function(ev) {
 
     } else if (qntIda == 0) {
        //caso nao selecionou Ida
-       swal({   
+       swal({
             title: "Ops, ocorreu um problema",
             text: "Voce não selecionou uma passagem de ida!",
             type: "warning",
@@ -663,7 +663,7 @@ var checaQuantidadePoltronas =  function(ev) {
 };
 
 var funcaoSubmitPoltronas = function (ev) {
-    
+
     var params = {
         "store": "Vivala",
         "model": "Retail",
@@ -673,7 +673,7 @@ var funcaoSubmitPoltronas = function (ev) {
 
     var frm = $('#form-poltronas-clickbus'),
         loading = frm.data('loading');
-    
+
     if ( loading && loading != "") {
         $(frm).find('input:submit').attr('disabled','disabled');
         $(frm).find('#'+loading).show();
