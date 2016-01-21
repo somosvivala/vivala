@@ -34,19 +34,19 @@ return[
 'clickbus_buy-now' => 'Comprar Agora',
 
 // Lugares
-'clickbus_error-F1' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request.',
-'clickbus_error-F2' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request.',
+'clickbus_error-F1' => 'O nosso serviço de reservas encontrou um erro temporário e não pôde completar sua solicitação.<br/>Um pequeno erro ocorreu durante o trajeto!',
+'clickbus_error-F2' => 'O nosso serviço de reservas encontrou um erro temporário e não pôde completar sua solicitação.<br/>Um pequeno erro em nossos servidores, peço que volte mais tarde.',
 
 // Viagens (Trips)
 'clickbus_error-J1' => 'Por favor preencha a busca com a ORIGEM.<br/>Sem este dado não podemos realizar sua busca!',
 'clickbus_error-J2' => 'Por favor preencha a busca com o DESTINO.<br/>Sem este dado não podemos realizar sua busca!',
 'clickbus_error-J3' => 'Por favor preencha a busca com a DATA DE IDA da viagem.<br/>Sem este dado não podemos realizar sua busca!',
-'clickbus_error-J4' => 'O valor inserido na ORIGEM é um local inválido. <br/>Por favor insira o valor corretamente, sem ele não podemos realizar sua busca!',
-'clickbus_error-J5' => 'O valor inserido no DESTINO é um local inválido. <br/>Por favor insira o valor corretamente, sem ele não podemos realizar sua busca!',
-'clickbus_error-J6' => 'The Application encountered a temporary error and could not complete your request. An error occurred while proccessing your Request before it’s sent to the booking engine.',
-'clickbus_error-J7' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request to the booking engine.',
-'clickbus_error-J8' => 'Please provide a valid date for departure. The value for departure is invalid or incorrect.',
-'clickbus_error-J9' => 'The departure date cannot occur in a day before today. The value for departure cannot be a date in the past.',
+'clickbus_error-J4' => 'O valor inserido na ORIGEM é um local inválido.<br/>Por favor insira o valor corretamente, sem ele não podemos realizar sua busca!',
+'clickbus_error-J5' => 'O valor inserido no DESTINO é um local inválido.<br/>Por favor insira o valor corretamente, sem ele não podemos realizar sua busca!',
+'clickbus_error-J6' => 'O nosso serviço de reservas encontrou um erro temporário e não pôde completar sua solicitação.<br/>Um erro aconteceu com nossos ajudantes buscadores enquanto anotávamos o seu pedido de passagens, tente outra vez.',
+'clickbus_error-J7' => 'O nosso serviço de reservas encontrou um erro temporário e não pôde completar sua solicitação.<br/>Algo ocorreu com nossos ajudantes buscadores na corrida por suas passagens, tente outra vez.',
+'clickbus_error-J8' => 'Por favor preencha com uma DATA DE IDA válida.<br/>O valor da data é inválido ou está incorreto, nossos ajudantes buscadores estão confusos!',
+'clickbus_error-J9' => 'A sua viagem de IDA não pode ocorrer no passado, certo?<br/>Selecione uma data futura, assim podemos te ajudar a arrumar as malas!',
 
 // Fechamento do Ônibus IDA/VOLTA (Trip)
 'clickbus_error-I1'	=> 'Please provide the scheduleId.	The parameter scheduleId is missing from the Request.',
