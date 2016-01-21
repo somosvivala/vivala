@@ -35,8 +35,10 @@ class ClickBusController extends Controller {
 		$departure = Input::get('departure');
 		$type      = Input::get('type');
 
-		$departure = ClickBusRepository::dateFormat($departure);
-		$dates = ClickBusRepository::getPrettyDates($departure);
+        if($departure){
+            $departure = ClickBusRepository::dateFormat($departure);
+            $dates = ClickBusRepository::getPrettyDates($departure);
+        }
 
         $url = self::$url."/trips?from={$from}&to={$to}&departure={$departure}";
         $context = stream_context_create(array(
@@ -64,14 +66,22 @@ class ClickBusController extends Controller {
             $result     = [];
 
             // Envia dados de ida e volta separados
-
             $ida_obj = $schedule[0];
             if(isset($schedule[1]))
                 $volta_obj = $schedule[1];
 
             if($ida_obj) {
-                $content_ida = file_get_contents(self::$url."/trip?scheduleId={$ida_obj->id}");
+                $context = stream_context_create(array(
+                    'http' => array('ignore_errors' => true),
+                ));
+                $content_ida = file_get_contents(self::$url."/trip?scheduleId={$ida_obj->id}", false, $context);
                 $ida = json_decode($content_ida);
+
+                if(isset($ida) && isset($ida->{"error"})){
+                    $result = ClickBusRepository::parseError($ida);
+                    return $result;
+                }
+
                 $ida->horario = $ida_obj->horario;
                 $ida->diames = $ida_obj->diames ;
                 $ida->frombus = $ida_obj->from;
@@ -83,6 +93,7 @@ class ClickBusController extends Controller {
             if(isset($volta_obj) && isset($content_ida)) {
                 $context = [
                     'http' => [
+                        'ignore_errors' => true,
                         'header' => "Cookie: PHPSESSID=".$ida->sessionId
                     ]
                 ];
@@ -90,6 +101,12 @@ class ClickBusController extends Controller {
 
                 $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}", false, $context);
                 $volta = json_decode($content_volta);
+
+                if(isset($volta) && isset($volta->{"error"})){
+                    $result = ClickBusRepository::parseError($volta);
+                    return $result;
+                }
+
                 $volta->horario = $volta_obj->horario;
                 $volta->diames = $volta_obj->diames ;
                 $volta->frombus = $volta_obj->from;

@@ -8,12 +8,12 @@
     <div class="col-sm-12">
         <div class="select-filtro">
             <input id="origem-rodoviario" autocomplete="off" placeholder="{{ trans('global.lbl_travel_from') }}" type="text" class="form-control">
-            <input id="origem-rodoviario-hidden" type="hidden">
+            <input id="origem-rodoviario-hidden" autocomplete="off" type="hidden">
             <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
         </div>
         <div class="select-filtro">
             <input id="destino-rodoviario" autocomplete="off" placeholder="{{ trans('global.lbl_travel_to') }}" type="text" class="form-control">
-            <input id="destino-rodoviario-hidden" type="hidden">
+            <input id="destino-rodoviario-hidden" autocomplete="off" type="hidden">
             <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
         </div>
         <div class="select-filtro">

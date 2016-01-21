@@ -103,7 +103,7 @@ var ajaxTrips = function(params) {
         }
     })
     .fail(function() {
-        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente');
+        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente.');
     });
 
 };
@@ -131,12 +131,34 @@ var ajaxTrip = function(viagens) {
         }
     })
     .done(function(data) {
-        $('#clickbus-resultado-busca').html(data);
-        $('input#session-clickbus').val($('#clickbus-resultado-busca').find('input#volta-session-id').val());
-        bindaPoltronas();
+        var json= {};
+        try {
+            json = JSON.parse(data);
+        } catch(error) {}
+        //se tiver dado erro
+        if (json.errors) {
+            $('#clickbus-resultado-busca').html("");
+            swal({
+                title: "Ops!",
+                html: "Ocorreu um problema durante o fechamento do ônibus!<br><br>"+json.errors,
+                type: "error",
+                confirmButtonColor: "#FF5B00",
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+            },
+            function() {
+                console.log('clicou botao swal error data:');
+                console.log(data);
+            });
+        //Se estiver tudo ok..
+        } else {
+            $('#clickbus-resultado-busca').html(data);
+            $('input#session-clickbus').val($('#clickbus-resultado-busca').find('input#volta-session-id').val());
+            bindaPoltronas();
+        }
     })
     .fail(function() {
-        $('#clickbus-resultado-busca').html('Ops, algo saiu errado.');
+        $('#clickbus-resultado-busca').html('Ops, algo saiu errado!');
     });
 
 };
