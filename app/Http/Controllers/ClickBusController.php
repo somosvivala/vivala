@@ -27,37 +27,46 @@ class ClickBusController extends Controller {
                 return view('clickbus._listAutocomplete', compact('result'));
 	}
 
-    // Filtra as passagens de onibus
+    // ClickBus [BUSCA]: Filtra as passagens de onibus
 	public function getTrips()
 	{
+		// Pega os campos dos inputs
 		$from      = Input::get('from');
 		$to        = Input::get('to');
 		$departure = Input::get('departure');
 		$type      = Input::get('type');
 
+		// Se o campo departure existe, então mando $departure para dateFormat e getPrettyDates
         if($departure){
             $departure = ClickBusRepository::dateFormat($departure);
             $dates = ClickBusRepository::getPrettyDates($departure);
         }
 
+        // Montando a URL
         $url = self::$url."/trips?from={$from}&to={$to}&departure={$departure}";
+
+        // Ignorando possíveis erros 404 no retorno do servidor da ClickBus
         $context = stream_context_create(array(
             'http' => array('ignore_errors' => true),
         ));
-
+        // Recebo o resultado JSON da ClickBus, ignorando os possíveis erros 404
         $result = file_get_contents($url, false, $context);
+
+        // Transformo o JSON em string
         $decoded = json_decode($result);
 
+        // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view ._listOptions
         if(isset($decoded) && !isset($decoded->{"error"})){
             $result = ClickBusRepository::parseData($decoded);
             return view('clickbus._listOptions', compact('result', 'dates', 'type'));
         } else {
+        // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS
             $result = ClickBusRepository::parseError($decoded);
             return $result;
         }
 	}
 
-    // Fecha a viagem Ida/Volta
+    // ClickBus [BUSCA]: Fecha a viagem Ida/Volta
 	public function getTrip()
 	{
             $schedule = json_decode(Input::get('schedule'));
@@ -119,8 +128,6 @@ class ClickBusController extends Controller {
             return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
 	}
 
-
-
     /**
      * Metodo que recebe o ajax do formulario de poltronas,
      * @param $request -> Usa da SelecionarPoltronasClickbusRequest,
@@ -150,9 +157,10 @@ class ClickBusController extends Controller {
 
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
 
-        // Testa se existe algo dentro do 'error' do result
+        // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
             $result = ClickBusRepository::parseError(json_decode($result));
+            // Retorno pro JS do erro para ser exibido em sweetAlert
             return $result;
         }
 
@@ -184,6 +192,13 @@ class ClickBusController extends Controller {
         $context = stream_context_create($context);
 
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
+
+        // Testa se existe algo dentro do 'error' do $result
+        if(isset(json_decode($result)->error)){
+            $result = ClickBusRepository::parseError(json_decode($result));
+            // Retorno pro JS do erro para ser exibido em sweetAlert
+            return $result;
+        }
 
         return $result;
     }
@@ -233,7 +248,7 @@ class ClickBusController extends Controller {
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
-        $result = json_decode($result);
+        $decoded = json_decode($result);
 
         //Montando objeto $Ida
         $Ida->numero_poltrona = $request['frm']['ida-numero_poltrona'];
@@ -343,7 +358,16 @@ class ClickBusController extends Controller {
         $Ida->company = $request["frm"]["ida-company"];
         $Ida->classe = $request["frm"]["ida-classe"];
 
-        return view('clickbus._checkout', compact('result', 'passagens', 'Ida', 'Volta'));
+        // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view ._listOptions
+        if(isset($decoded) && !isset($decoded->{"error"})){
+            return view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta'));
+        } else {
+        // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS
+            $result = ClickBusRepository::parseError($decoded);
+            return $result;
+        }
+
+
     }
 
 

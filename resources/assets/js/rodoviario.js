@@ -301,7 +301,7 @@ var bindaPoltronas = function(){
                     console.log('clicou botao swal error data:');
                     console.log(data);
                 });
-            //Se estiver tudo ok..
+            //se estiver tudo ok.
             } else {
                 adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
             }

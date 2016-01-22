@@ -109,7 +109,7 @@
                 </div>
                 <h4 class="margin-t-2">Forma de Pagamento</h4>
                 <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
-                    @forelse($result->items->payment_methods as $formaPagamento)
+                    @forelse($decoded->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
                     <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
                     @endif
@@ -131,7 +131,7 @@
                 </ul>
                 <div class="row margin-b-2">
                     <div id="tabs-pagamento-tipo" class="tab-content">
-                        @forelse($result->items->payment_methods as $formaPagamento)
+                        @forelse($decoded->items->payment_methods as $formaPagamento)
                         @if ($formaPagamento->name == 'creditcard')
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                             <div class="col-xs-7">
@@ -297,7 +297,7 @@
                    Poltronas:
                </div>
                <div class="col-sm-4 text-right ">
-                   {{ $result->ticket_amount }}
+                   {{ $decoded->ticket_amount }}
                </div>
            </div>
            <div class="row">
@@ -305,7 +305,7 @@
                    Passagem:
                </div>
                <div class="col-sm-4 text-right">
-                   R$ {{ number_format($result->original_cost,2,',','') }}
+                   R$ {{ number_format($decoded->original_cost,2,',','') }}
                </div>
            </div>
            <div class="row">
@@ -327,7 +327,7 @@
            <div class="row margin-t-2 maring-b-2 valor-pagamento">
                <div class="col-xs-12 font-bold-upper">
                    <small><span class="num-vezes">1</span>x</small>
-                   <span class="valor valor-installment">{{ number_format($result->original_cost,2,',','') }}</span>
+                   <span class="valor valor-installment">{{ number_format($decoded->original_cost,2,',','') }}</span>
                </div>
            </div>
            <div class="hidden">
@@ -346,7 +346,7 @@
                    @endforeach
                @endif
                {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
-               <input type="hidden" value="{{ $result->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
+               <input type="hidden" value="{{ $decoded->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
                <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
 
