@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <label for="documento" class="col-sm-12">Documento:</label>
                                     <div class="col-xs-4">
-                                        <select id="document-type" name="documentType" class="">
+                                        <select id="document-type" name="documentType" class="form-control">
                                             <option value="rg">RG</option>
                                             <option value="passaporte">Passaporte</option>
                                             <option value="cpf">CPF</option>
@@ -150,7 +150,7 @@
                             <div class="col-xs-12">
                                 <?php $parc_bandeira = 0; ?>
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="<?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="form-control <?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
                                     @forelse ($bandeiraCartao->installments as $key => $Parcela)
                                     <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
                                     @empty
@@ -172,13 +172,13 @@
                             <div class="col-xs-5">
                                 <div class="">
                                     <label for="mes-validade-credito" >Cartão válido até</label>
-                                    <select class="col-xs-6" name="mes-validade-credito">
+                                    <select class="form-control col-xs-6" name="mes-validade-credito">
                                         <option>Mês</option>
                                         @for($i=1;$i<=12;$i++)
                                         <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
                                         @endfor
                                     </select>
-                                    <select class="col-xs-6" name="ano-validade-credito">
+                                    <select class="form-control col-xs-6" name="ano-validade-credito">
                                         <option>Ano</option>
                                         @for($i=0;$i<=20;$i++)
                                         <option>{{ date('Y')+$i }}</option>
@@ -220,13 +220,13 @@
                             <div class="col-xs-5">
                                 <div class="">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
-                                    <select class="col-xs-6" name="mes-validade-debito">
+                                    <select class="form-control col-xs-6" name="mes-validade-debito">
                                         <option>Mês</option>
                                         @for($i=1;$i<=12;$i++)
                                         <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
                                         @endfor
                                     </select>
-                                    <select class="col-xs-6" name="ano-validade-debito">
+                                    <select class="form-control col-xs-6" name="ano-validade-debito">
                                         <option>Ano</option>
                                         @for($i=0;$i<=20;$i++)
                                         <option>{{ date('Y')+$i }}</option>
