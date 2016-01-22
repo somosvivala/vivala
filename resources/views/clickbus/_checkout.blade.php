@@ -15,7 +15,7 @@
                         <div role="tabpanel" class="tab-pane fade active in" id="pessoa-fisica" aria-labelledby="pessoa-fisica-tab">
                             <div class="col-xs-8">
                                 <label for="nome-pf">Nome</label>
-                                <input type="text" class="required form-control" name="nome-pf" required="" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="required form-control" name="nome-pf" required="" value="">
                             </div>
 
                             <div class="col-xs-4">
@@ -24,7 +24,7 @@
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pf">Email</label>
-                                <input type="email" class="required form-control" required="" name="email-pf" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" required="" name="email-pf" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-pf">Telefone</label>
@@ -54,7 +54,7 @@
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
                             <div class="col-xs-8">
                                 <label for="nome-pj">Nome do comprador</label>
-                                <input type="text" class="form-control" name="nome-pj" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="form-control" name="nome-pj" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-pj">Data de nascimento</label>
@@ -62,7 +62,7 @@
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-pj">Email</label>
-                                <input type="email" class="required form-control" name="email-pj" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" name="email-pj" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-pj">Telefone</label>
@@ -85,7 +85,7 @@
                         <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                             <div class="col-xs-12">
                                 <label for="nome-estrangeiro">Nome</label>
-                                <input type="text" class="required form-control" name="nome-estrangeiro" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="required form-control" name="nome-estrangeiro" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-estrangeiro">Data de nascimento</label>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-estrangeiro">Email</label>
-                                <input type="email" class="required form-control" name="email-estrangeiro" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" name="email-estrangeiro" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-estrangeiro">Telefone</label>
