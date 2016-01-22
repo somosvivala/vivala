@@ -22,15 +22,15 @@
                                 <label for="nascimento-pf">Nascimento</label>
                                 <input type="text" class="required form-control" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 padding-t-1">
                                 <label for="email-pf">Email</label>
                                 <input type="email" class="required form-control" required="" name="email-pf" value="">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-4 padding-t-1">
                                 <label for="telefone-pf">Telefone</label>
                                 <input type="text" class="required form-control" required="" name="telefone-pf" placeholder="11 987654321">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 padding-t-1">
                                 <div class="row">
                                     <label for="documento" class="col-sm-12">Documento:</label>
                                     <div class="col-xs-4">
@@ -60,23 +60,23 @@
                                 <label for="nascimento-pj">Data de nascimento</label>
                                 <input type="text" class="required form-control" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 padding-t-1">
                                 <label for="email-pj">Email</label>
                                 <input type="email" class="required form-control" name="email-pj" value="">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-4 padding-t-1">
                                 <label for="telefone-pj">Telefone</label>
                                 <input type="text" class="required form-control" name="telefone-pj" placeholder="11 987654321">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label for="razao-social-pj">Razão Social</label>
                                 <input type="text" class="required form-control" name="razao-social-pj" placeholder="Razão Social">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label for="nome-fantasia-pj">Nome fantasia</label>
                                 <input type="text" class="required form-control" name="nome-fantasia-pj" placeholder="Nome fantasia">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label for="cnpj-pj">CNPJ</label>
                                 <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
@@ -161,36 +161,38 @@
                                 <p> Bandeira indisponivel </p>
                                 @endforelse
                             </div>
-                            <div class="col-xs-7">
+                            <div class="col-xs-7 padding-t-1">
                                 <label for="num-cartao-credito">Número do Cartão</label>
                                 <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
                             </div>
-                            <div class="col-xs-7">
+                            <div class="col-xs-5 padding-t-1">
+                                <div class="">
+                                    <label for="mes-validade-credito" >Cartão válido até</label>
+                                    <div class="row">
+                                        <select class="form-control col-xs-6" name="mes-validade-credito">
+                                            <option>Mês</option>
+                                            @for($i=1;$i<=12;$i++)
+                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                            @endfor
+                                        </select>
+                                        <select class="form-control col-xs-6" name="ano-validade-credito">
+                                            <option>Ano</option>
+                                            @for($i=0;$i<=20;$i++)
+                                            <option>{{ date('Y')+$i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-7 padding-t-1">
                                 <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="FULANO D. SILVA">
                             </div>
-                            <div class="col-xs-5">
-                                <div class="">
-                                    <label for="mes-validade-credito" >Cartão válido até</label>
-                                    <select class="form-control col-xs-6" name="mes-validade-credito">
-                                        <option>Mês</option>
-                                        @for($i=1;$i<=12;$i++)
-                                        <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                        @endfor
-                                    </select>
-                                    <select class="form-control col-xs-6" name="ano-validade-credito">
-                                        <option>Ano</option>
-                                        @for($i=0;$i<=20;$i++)
-                                        <option>{{ date('Y')+$i }}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-xs-5">
+                            <div class="col-xs-5 padding-t-1">
                                 <label for="cod-seguranca-credito" >Código de Segurança</label>
                                 <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label>CEP:</label>
                             </div>
                             <div class="col-xs-12">
@@ -213,28 +215,30 @@
                                 <label for="cod-seguranca-debito" >Código de Segurança</label>
                                 <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="000">
                             </div>
-                            <div class="col-xs-7">
+                            <div class="col-xs-7 padding-t-1">
                                 <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-debito" placeholder="FULANO D. SILVA">
                             </div>
-                            <div class="col-xs-5">
+                            <div class="col-xs-5 padding-t-1">
                                 <div class="">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
-                                    <select class="form-control col-xs-6" name="mes-validade-debito">
-                                        <option>Mês</option>
-                                        @for($i=1;$i<=12;$i++)
-                                        <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                        @endfor
-                                    </select>
-                                    <select class="form-control col-xs-6" name="ano-validade-debito">
-                                        <option>Ano</option>
-                                        @for($i=0;$i<=20;$i++)
-                                        <option>{{ date('Y')+$i }}</option>
-                                        @endfor
-                                    </select>
+                                    <div class="row">
+                                        <select class="form-control col-xs-6" name="mes-validade-debito">
+                                            <option>Mês</option>
+                                            @for($i=1;$i<=12;$i++)
+                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                            @endfor
+                                        </select>
+                                        <select class="form-control col-xs-6" name="ano-validade-debito">
+                                            <option>Ano</option>
+                                            @for($i=0;$i<=20;$i++)
+                                            <option>{{ date('Y')+$i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label>CEP:</label>
                             </div>
                             <div class="col-xs-12">
