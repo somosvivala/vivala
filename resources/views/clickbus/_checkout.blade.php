@@ -134,6 +134,33 @@
                         @forelse($decoded->items->payment_methods as $formaPagamento)
                         @if ($formaPagamento->name == 'creditcard')
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
+                            <div class="col-xs-12 text-center radio-hidden">
+                                @forelse ($formaPagamento->details as $bandeiraCartao)
+                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
+                                <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
+                                    <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
+                                </label>
+                                @empty
+                                <p> Bandeiras para esse metodo de pagamento indisponiveis </p>
+                                @endforelse
+                            </div>
+                            <div class="col-xs-12 margin-b-1">
+                                <label>Quantidade de parcelas</label>
+                            </div>
+                            <div class="col-xs-12">
+                                <?php $parc_bandeira = 0; ?>
+                                @forelse ($formaPagamento->details as $bandeiraCartao)
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="<?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
+                                    @forelse ($bandeiraCartao->installments as $key => $Parcela)
+                                    <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
+                                    @empty
+                                    <option value="0">Nenhuma opção disponivel</option>
+                                    @endforelse
+                                </select>
+                                @empty
+                                <p> Bandeira indisponivel </p>
+                                @endforelse
+                            </div>
                             <div class="col-xs-7">
                                 <label for="num-cartao-credito">Número do Cartão</label>
                                 <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
@@ -168,33 +195,6 @@
                             </div>
                             <div class="col-xs-12">
                                 <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
-                            </div>
-                            <div class="col-xs-12 text-center radio-hidden">
-                                @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
-                                <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
-                                    <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
-                                </label>
-                                @empty
-                                <p> Bandeiras para esse metodo de pagamento indisponiveis </p>
-                                @endforelse
-                            </div>
-                            <div class="col-xs-12">
-                                <label>Quantidade de parcelas</label>
-                            </div>
-                            <div class="col-xs-12">
-                                <?php $parc_bandeira = 0; ?>
-                                @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="<?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
-                                    @forelse ($bandeiraCartao->installments as $key => $Parcela)
-                                    <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
-                                    @empty
-                                    <option value="0">Nenhuma opção disponivel</option>
-                                    @endforelse
-                                </select>
-                                @empty
-                                <p> Bandeira indisponivel </p>
-                                @endforelse
                             </div>
                         </div>
                         @endif
