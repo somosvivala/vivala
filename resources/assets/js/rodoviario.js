@@ -285,10 +285,27 @@ var bindaPoltronas = function(){
         // Envia ajax de validaçao, caso seja bem sucedido marca como
          // selecionada a poltrona
         ajaxPoltronas(params, function(data) {
-            data_obj = JSON.parse(data);
-            adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
-        });
 
+            data_obj = JSON.parse(data);
+            //se tiver dado erro
+            if (data_obj.errors) {
+                swal({
+                    title: "Ops!",
+                    html: "Ocorreu um problema durante a reserva da sua poltrona!<br><br>"+data_obj.errors,
+                    type: "error",
+                    confirmButtonColor: "#FF5B00",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true,
+                },
+                function() {
+                    console.log('clicou botao swal error data:');
+                    console.log(data);
+                });
+            //Se estiver tudo ok..
+            } else {
+                adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
+            }
+        });
     });
 
 

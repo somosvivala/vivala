@@ -149,13 +149,11 @@ class ClickBusController extends Controller {
         $context = stream_context_create($context);
 
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
-        $decoded = json_decode($result);
 
         // Testa se existe algo dentro do 'error' do result
-        if(isset(json_decode($decoded)->error)){
-            $result = ClickBusRepository::parseError($decoded);
+        if(isset(json_decode($result)->error)){
+            $result = ClickBusRepository::parseError(json_decode($result));
             return $result;
-            //App::abort(403,json_decode($result)->error[0]->message);
         }
 
         // Retorna o resultado e todos os dados recebidos
