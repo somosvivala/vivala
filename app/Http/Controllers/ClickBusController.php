@@ -15,6 +15,7 @@ class ClickBusController extends Controller {
 
 	private static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
 
+    // ClickBus [BUSCA]: Autocomplete do filtro de busca das passagens de onibus
 	public function autocompletePlace()
 	{
 		$query = Input::get('query');
@@ -358,7 +359,7 @@ class ClickBusController extends Controller {
         $Ida->company = $request["frm"]["ida-company"];
         $Ida->classe = $request["frm"]["ida-classe"];
 
-        // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view ._listOptions
+        // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view _checkout
         if(isset($decoded) && !isset($decoded->{"error"})){
             return view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta'));
         } else {
@@ -366,10 +367,7 @@ class ClickBusController extends Controller {
             $result = ClickBusRepository::parseError($decoded);
             return $result;
         }
-
-
     }
-
 
     /**
      * Metodo responsavel fechar o pedido e efetuar o pagamento
@@ -552,7 +550,8 @@ class ClickBusController extends Controller {
 
         else
         {
-            //TODO tratar erros?
+            $result = ClickBusRepository::parseError($decoded);
+            return $result;
         }
 
         // Booking
