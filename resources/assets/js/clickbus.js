@@ -68,6 +68,8 @@ var ajaxTrips = function(params) {
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
 
+    sessionManutencao();
+
     $.ajax({
         url: 'clickbus/trips',
         type: 'POST',
@@ -469,4 +471,52 @@ var tripBooking = function(request) {
         }
 
     });
+}
+
+//Funcao recursiva que garante um sessionId atualizado da clickbus
+//Bate no endpoint que recupera / atualiza se necessario a cada minuto
+var sessionManutencao = function() {
+
+    var currentSessionId = $('input#session-clickbus');
+    
+    //so disparar essa request se estiver atualmente mexendo na clickbus
+    if (currentSessionId.length) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://api-evaluation.clickbus.com.br/api/v1/session");
+        xhr.setRequestHeader("Content-Type", "application/json");
+        
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 201) {
+                var data = JSON.parse(xhr.responseText);
+                setSession(data);
+            }
+        };
+
+        xhr.send('');        
+    }
+}
+
+var setSession = function(data) {
+    //Apos a manutencao da sessao, dispara de 1 minuto para ser executado
+    //novamente
+    
+    console.log('chegou setSesstion');
+    console.log(data);
+
+    $.ajax({
+        type: 'get',
+        url: '/clickbus/session',
+        data : {
+            "sessionId" : data.content 
+        },
+        success: function (data) {
+           console.log("retorno clickbus:");
+           console.log(data);
+            }
+        });
+
+    setTimeout(function() {
+        sessionManutencao();
+    }, 300000);
+
 }
