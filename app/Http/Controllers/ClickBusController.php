@@ -546,12 +546,6 @@ class ClickBusController extends Controller {
 
         }
 
-        else
-        {
-            $result = ClickBusRepository::parseError($decoded);
-            return $result;
-        }
-
         // Booking
         if (isset($compra))
         {
