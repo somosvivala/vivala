@@ -566,7 +566,8 @@ class ClickBusController extends Controller {
                 "total" => $compra->total
             ];
 
-        } else {
+        } else if (isset($decoded)) {
+            
             $retorno = [
                 "errors" => trans("clickbus.clickbus_error-" . $decoded->{"error"}[0]->{"code"})
             ];
