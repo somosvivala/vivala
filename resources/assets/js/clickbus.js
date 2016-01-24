@@ -68,7 +68,6 @@ var ajaxTrips = function(params) {
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
 
-    sessionManutencao();
 
     $.ajax({
         url: 'clickbus/trips',
@@ -134,6 +133,7 @@ var ajaxTrip = function(viagens) {
         }
     })
     .done(function(data) {
+        
         var json= {};
         try {
             json = JSON.parse(data);
@@ -155,9 +155,20 @@ var ajaxTrip = function(viagens) {
             });
         //Se estiver tudo ok..
         } else {
-            $('#clickbus-resultado-busca').html(data);
-            $('input#session-clickbus').val($('#clickbus-resultado-busca').find('input#volta-session-id').val());
+
+            //pegando view retornada e settando o sessionId 
+            $('#clickbus-resultado-busca').html(json.view);
+            $('input#session-clickbus').val(json.sessionId);
             bindaPoltronas();
+        
+            console.log('disparando trigger de refresh de sessionId');
+            //startando o tratamento de refresh da sessao
+            setTimeout(function() {
+                console.log('15 minutos passaram, renovando sessionId...');
+                console.log('current value: ' + $('input#session-clickbus').val());
+                sessionManutencao();
+            }, 960000);
+            
         }
     })
     .fail(function() {
@@ -499,6 +510,9 @@ var sessionManutencao = function() {
         xhr.open("GET", "https://api-evaluation.clickbus.com.br/api/v1/session");
         xhr.setRequestHeader("Content-Type", "application/json");
         
+        //se nao settar essa flag(withCredentials) o PHPSESSID nao é enviado 
+        //e portanto uma nova sessao é criada
+        xhr.withCredentials =  true;
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 201) {
                 var data = JSON.parse(xhr.responseText);
@@ -514,26 +528,15 @@ var setSession = function(data) {
     //Apos a manutencao da sessao, dispara de 1 minuto para ser executado
     //novamente
     
-    console.log('chegou setSesstion');
+    var currentSessionId = getSessionId();
+    console.log('============ chegou setSesstion new value:');
     console.log(data);
+    console.log('currentSessionId: ' + currentSessionId);
+    
+    //settando o novo sessionId caso tenha mudado
+    setSessionId(data.content);
 
-    $.ajax({
-        type: 'get',
-        url: '/clickbus/session',
-        data : {
-            "sessionId" : data.content 
-        },
-        success: function (data) {
-           console.log("retorno clickbus:");
-           console.log(data);
-            }
-        });
-
-    setTimeout(function() {
-        sessionManutencao();
-    }, 60000);
-
-}
+  }
 
 var getSessionId = function() {
     return $('input#session-clickbus').val();

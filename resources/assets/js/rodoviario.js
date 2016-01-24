@@ -278,7 +278,7 @@ var bindaPoltronas = function(){
             "date": $(this).find('input#date').val(),
             "time": $(this).find('input#time').val(),
             "timezone": "America/Sao_Paulo",
-            "sessionId": $(this).find('input#session-id').val(),
+            "sessionId": getSessionId(),
         } ;
 
 
@@ -315,6 +315,7 @@ var bindaPoltronas = function(){
                     modal_volta[0].reset();
                 }
 
+                console.log("retorno do ajaxPoltronas -> sessionId retornado: " + data_obj.data.request.sessionId);
                 //garantindo que o input#session-clickbus tera o sessionId
                 //Atualizado
                 setSessionId(data_obj.data.request.sessionId);

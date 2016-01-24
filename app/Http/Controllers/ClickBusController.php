@@ -10,7 +10,6 @@ use Input;
 use App\Repositories\ClickBusRepository;
 use App\Http\Requests\SelecionarPoltronasClickbusRequest;
 use Auth;
-use Session;
 
 class ClickBusController extends Controller {
 
@@ -94,6 +93,8 @@ class ClickBusController extends Controller {
                     return $result;
                 }
 
+                //adicionando outros campos do formulario para serem passados 
+                //juntos.
                 $ida->horario = $ida_obj->horario;
                 $ida->diames = $ida_obj->diames ;
                 $ida->frombus = $ida_obj->from;
@@ -101,12 +102,13 @@ class ClickBusController extends Controller {
                 $ida->scheduleId = $ida_obj->id;
                 $ida->horario_chegada = $ida_obj->horario_chegada;
                 $ida->classe = $ida_obj->classe;
+                
             }
+            
             if(isset($volta_obj) && isset($content_ida)) {
                 $context = [
                     'http' => [
-                        'ignore_errors' => true,
-                        'header' => "Cookie: PHPSESSID=". Session::get('clickbus-session-id', "")
+                        'ignore_errors' => true
                     ]
                 ];
                 $context = stream_context_create($context);
@@ -128,7 +130,10 @@ class ClickBusController extends Controller {
                 $volta->classe = $volta_obj->classe;
             }
 
-            return view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ));
+            //Nao retornando a view direto pois precisamos do 
+            //valor do sessionId do retorno da request
+            $view = view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ))->render();
+            return array('view' => $view, 'sessionId' => $ida->sessionId);
 	}
 
     /**
@@ -141,27 +146,23 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-        //pegando da sessao
-        //$sessionId = $request['request']["sessionId"];
-        $request['request']["sessionId"] = Session::get('clickbus-session-id', "");
+        $sessionId = $request['request']["sessionId"];
         $request['request']['passenger']['gender'] = 'M';
         $data = json_encode($request);
 
-        dd($data);
         $context = [
         	'http' => [
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n".
-                            "Cookie: PHPSESSID=".Session::get('clickbus-session-id', "")."\r\n",
+                            "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'PUT',
                 'content' => $data
 	        ]
 	    ];
         $context = stream_context_create($context);
-
-
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
+
 
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
@@ -179,8 +180,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::get('params');
 
-        //pegando da sessao
-        //$sessionId = $request['request']["sessionId"];
+        $sessionId = $request['request']["sessionId"];
 
         $data = json_encode($request);
 
@@ -189,7 +189,7 @@ class ClickBusController extends Controller {
                 'ignore_errors' => true,
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n".
-                            "Cookie: PHPSESSID=".Session::get('clickbus-session-id', ""),
+                            "Cookie: PHPSESSID=".$sessionId,
                 'method' => 'DELETE',
                 'content' => $data
 	        ]
@@ -235,8 +235,7 @@ class ClickBusController extends Controller {
             $Volta->ticket_amount = count($request["frm"]["volta-numero_poltrona"]);
         }
 
-        //agora pegando sessionId da sessao
-        //$sessionId = $request["frm"]["ida-sessionId"];
+        $sessionId = $request["frm"]["ida-sessionId"];
 
         //criando objeto content
         $content = new \stdClass();
@@ -249,7 +248,7 @@ class ClickBusController extends Controller {
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen(json_encode($content))."\r\n".
-                            "Cookie: PHPSESSID=".Session::get('clickbus-session-id', ""),
+                            "Cookie: PHPSESSID=".$sessionId,
                 'content' => json_encode($content)
             ]
         ];
@@ -389,8 +388,7 @@ class ClickBusController extends Controller {
 
         $payment_method = $request['request']["buyer"]["payment"]["method"];
 
-        //agora pegando sessionId da sesssao
-        //$sessionId = $request['request']['sessionId'];
+        $sessionId = $request['request']['sessionId'];
         
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
 
@@ -410,7 +408,7 @@ class ClickBusController extends Controller {
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n".
-                            "Cookie: PHPSESSID=".Session::get('clickbus-session-id', ""),
+                            "Cookie: PHPSESSID=".$sessionId,
                 'content' => $data
             ]
         ];
@@ -591,16 +589,32 @@ class ClickBusController extends Controller {
         return $retorno;
     }
 
-    //Retorna o sessionId atual com a clickbus
-    public function getSession()
-    {
-        $sessionID = Input::get('sessionId');
-        Session::set("clickbus-session-id", $sessionID);
+    public function getSession($id) {
+        $context = [
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'GET',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Cookie: PHPSESSID=".$id,
+                'content' => ""
+                ]
+        ];
 
-        return $sessionID;
+        $context = stream_context_create($context);
+
+        $result = file_get_contents(self::$url.'/session', false, $context);
+
+        return $result;
 
 
     }
+
+
+
+
+
+
+
 
 }
 
