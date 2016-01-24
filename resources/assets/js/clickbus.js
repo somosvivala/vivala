@@ -55,7 +55,7 @@ var ajaxPlace = function(query, target) {
     });
 };
 
-// Lista as viagens (de ida ou volta)
+// ClickBus Busca: lista as Viagens (de ida ou volta)
 var ajaxTrips = function(params) {
     var defaultParams = {
         from: '',
@@ -78,6 +78,7 @@ var ajaxTrips = function(params) {
     })
     .done(function(data) {
 
+        // Try/Catch com o data, json do erroXhtml data dos ônibus
         var json= {};
         try {
             json = JSON.parse(data);
@@ -315,15 +316,7 @@ var tripPayment = function(request, frm) {
         }
     });
 
-    console.log(frmObj);
     $.extend(params, request);
-
-
-    console.log("========== Trip Payment Request Ajax params");
-    console.log(params);
-    console.log("========== Trip Payment Request Ajax request");
-    console.log(request);
-
 
     $.ajax({
         url: 'clickbus/payment',
@@ -345,12 +338,36 @@ var tripPayment = function(request, frm) {
 
     })
     .done(function(data) {
-        $('#clickbus-resultado-busca').html(data);
-        console.log(data);
-        bindaAbas();
-        bindaBandeirasCartao();
-        bindaChangePagamento();
-        bindaFormPagamento();
+
+        // Try/Catch com o data, json do erroXhtml data dos ônibus
+        var json= {};
+        try {
+            json = JSON.parse(data);
+        } catch(error) {}
+
+        //se tiver dado erro
+        if (json.errors) {
+            swal({
+                title: "Ops!",
+                html: "Ocorreu um problema durante o processo de pagamento! <br><br>"+json.errors,
+                type: "error",
+                confirmButtonColor: "#FF5B00",
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+            },
+            function() {
+                console.log('clicou botao swal error data:');
+                console.log(data);
+            });
+        //Se estiver tudo ok..
+        } else {
+            $('#clickbus-resultado-busca').html(data);
+            console.log(data);
+            bindaAbas();
+            bindaBandeirasCartao();
+            bindaChangePagamento();
+            bindaFormPagamento();
+        }
     });
 
 };
@@ -365,7 +382,7 @@ var tripBooking = function(request) {
             "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
         },
         "request": {
-            "sessionId": "",
+            "sessionId": getSessionId(),
             "ip": "",
             "buyer": {
                 "locale": "pt_BR",
@@ -400,13 +417,10 @@ var tripBooking = function(request) {
             closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
                 console.log(data);
             });
     })
     .done(function(data) {
-        console.log("voltou do backend : ");
-        console.log(data);
 
         var json = JSON.parse(data);
 
@@ -517,6 +531,16 @@ var setSession = function(data) {
 
     setTimeout(function() {
         sessionManutencao();
-    }, 300000);
+    }, 60000);
 
 }
+
+var getSessionId = function() {
+    return $('input#session-clickbus').val();
+
+}
+
+var setSessionId = function(sessionID) {
+    $('input#session-clickbus').val(sessionID);
+}
+

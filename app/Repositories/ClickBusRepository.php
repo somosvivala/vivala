@@ -4,12 +4,14 @@ use Jenssegers\Date\Date;
 
 class ClickBusRepository {
 
+    // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
     public static function dateFormat($date)
     {
         $date = explode("/", $date);
         return "{$date[2]}-{$date[1]}-{$date[0]}";
     }
 
+    // Função de Tratamento da Busca por Ônibus da ClickBus
     public static function parseData($data)
     {
         $output = [];
@@ -55,6 +57,7 @@ class ClickBusRepository {
         $result = file_get_contents(self::$url.'/booking', false, $context);
     }
 
+    // Função de Tratamento de Erros da ClickBus
     public static function parseError($data)
     {
         $option = [

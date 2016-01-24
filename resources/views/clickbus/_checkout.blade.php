@@ -15,26 +15,26 @@
                         <div role="tabpanel" class="tab-pane fade active in" id="pessoa-fisica" aria-labelledby="pessoa-fisica-tab">
                             <div class="col-xs-8">
                                 <label for="nome-pf">Nome</label>
-                                <input type="text" class="required form-control" name="nome-pf" required="" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="required form-control" name="nome-pf" required="" value="">
                             </div>
 
                             <div class="col-xs-4">
                                 <label for="nascimento-pf">Nascimento</label>
                                 <input type="text" class="required form-control" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 padding-t-1">
                                 <label for="email-pf">Email</label>
-                                <input type="email" class="required form-control" required="" name="email-pf" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" required="" name="email-pf" value="">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-4 padding-t-1">
                                 <label for="telefone-pf">Telefone</label>
                                 <input type="text" class="required form-control" required="" name="telefone-pf" placeholder="11 987654321">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 padding-t-1">
                                 <div class="row">
                                     <label for="documento" class="col-sm-12">Documento:</label>
                                     <div class="col-xs-4">
-                                        <select id="document-type" name="documentType" class="">
+                                        <select id="document-type" name="documentType" class="form-control">
                                             <option value="rg">RG</option>
                                             <option value="passaporte">Passaporte</option>
                                             <option value="cpf">CPF</option>
@@ -54,29 +54,29 @@
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
                             <div class="col-xs-8">
                                 <label for="nome-pj">Nome do comprador</label>
-                                <input type="text" class="form-control" name="nome-pj" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="form-control" name="nome-pj" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-pj">Data de nascimento</label>
                                 <input type="text" class="required form-control" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
-                            <div class="col-xs-8">
+                            <div class="col-xs-8 padding-t-1">
                                 <label for="email-pj">Email</label>
-                                <input type="email" class="required form-control" name="email-pj" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" name="email-pj" value="">
                             </div>
-                            <div class="col-xs-4">
+                            <div class="col-xs-4 padding-t-1">
                                 <label for="telefone-pj">Telefone</label>
                                 <input type="text" class="required form-control" name="telefone-pj" placeholder="11 987654321">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label for="razao-social-pj">Razão Social</label>
                                 <input type="text" class="required form-control" name="razao-social-pj" placeholder="Razão Social">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label for="nome-fantasia-pj">Nome fantasia</label>
                                 <input type="text" class="required form-control" name="nome-fantasia-pj" placeholder="Nome fantasia">
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label for="cnpj-pj">CNPJ</label>
                                 <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
@@ -85,7 +85,7 @@
                         <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                             <div class="col-xs-12">
                                 <label for="nome-estrangeiro">Nome</label>
-                                <input type="text" class="required form-control" name="nome-estrangeiro" value="{{ Auth::user()->perfil->nome_completo }}">
+                                <input type="text" class="required form-control" name="nome-estrangeiro" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-estrangeiro">Data de nascimento</label>
@@ -93,7 +93,7 @@
                             </div>
                             <div class="col-xs-8">
                                 <label for="email-estrangeiro">Email</label>
-                                <input type="email" class="required form-control" name="email-estrangeiro" value="{{ Auth::user()->email }}">
+                                <input type="email" class="required form-control" name="email-estrangeiro" value="">
                             </div>
                             <div class="col-xs-4">
                                 <label for="telefone-estrangeiro">Telefone</label>
@@ -109,7 +109,7 @@
                 </div>
                 <h4 class="margin-t-2">Forma de Pagamento</h4>
                 <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
-                    @forelse($result->items->payment_methods as $formaPagamento)
+                    @forelse($decoded->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
                     <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
                     @endif
@@ -131,44 +131,9 @@
                 </ul>
                 <div class="row margin-b-2">
                     <div id="tabs-pagamento-tipo" class="tab-content">
-                        @forelse($result->items->payment_methods as $formaPagamento)
+                        @forelse($decoded->items->payment_methods as $formaPagamento)
                         @if ($formaPagamento->name == 'creditcard')
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
-                            <div class="col-xs-7">
-                                <label for="num-cartao-credito">Número do Cartão</label>
-                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
-                            </div>
-                            <div class="col-xs-7">
-                                <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
-                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="FULANO D. SILVA">
-                            </div>
-                            <div class="col-xs-5">
-                                <div class="">
-                                    <label for="mes-validade-credito" >Cartão válido até</label>
-                                    <select class="col-xs-6" name="mes-validade-credito">
-                                        <option>Mês</option>
-                                        @for($i=1;$i<=12;$i++)
-                                        <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                        @endfor
-                                    </select>
-                                    <select class="col-xs-6" name="ano-validade-credito">
-                                        <option>Ano</option>
-                                        @for($i=0;$i<=20;$i++)
-                                        <option>{{ date('Y')+$i }}</option>
-                                        @endfor
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-xs-5">
-                                <label for="cod-seguranca-credito" >Código de Segurança</label>
-                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
-                            </div>
-                            <div class="col-xs-12">
-                                <label>CEP:</label>
-                            </div>
-                            <div class="col-xs-12">
-                                <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
-                            </div>
                             <div class="col-xs-12 text-center radio-hidden">
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
                                 <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
@@ -179,13 +144,13 @@
                                 <p> Bandeiras para esse metodo de pagamento indisponiveis </p>
                                 @endforelse
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 margin-b-1">
                                 <label>Quantidade de parcelas</label>
                             </div>
                             <div class="col-xs-12">
                                 <?php $parc_bandeira = 0; ?>
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="<?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="form-control <?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
                                     @forelse ($bandeiraCartao->installments as $key => $Parcela)
                                     <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
                                     @empty
@@ -195,6 +160,43 @@
                                 @empty
                                 <p> Bandeira indisponivel </p>
                                 @endforelse
+                            </div>
+                            <div class="col-xs-7 padding-t-1">
+                                <label for="num-cartao-credito">Número do Cartão</label>
+                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="col-xs-5 padding-t-1">
+                                <div class="">
+                                    <label for="mes-validade-credito" >Cartão válido até</label>
+                                    <div class="row">
+                                        <select class="form-control col-xs-6" name="mes-validade-credito">
+                                            <option>Mês</option>
+                                            @for($i=1;$i<=12;$i++)
+                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                            @endfor
+                                        </select>
+                                        <select class="form-control col-xs-6" name="ano-validade-credito">
+                                            <option>Ano</option>
+                                            @for($i=0;$i<=20;$i++)
+                                            <option>{{ date('Y')+$i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-7 padding-t-1">
+                                <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
+                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="FULANO D. SILVA">
+                            </div>
+                            <div class="col-xs-5 padding-t-1">
+                                <label for="cod-seguranca-credito" >Código de Segurança</label>
+                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
+                            </div>
+                            <div class="col-xs-12 padding-t-1">
+                                <label>CEP:</label>
+                            </div>
+                            <div class="col-xs-12">
+                                <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
                             </div>
                         </div>
                         @endif
@@ -213,28 +215,30 @@
                                 <label for="cod-seguranca-debito" >Código de Segurança</label>
                                 <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="000">
                             </div>
-                            <div class="col-xs-7">
+                            <div class="col-xs-7 padding-t-1">
                                 <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-debito" placeholder="FULANO D. SILVA">
                             </div>
-                            <div class="col-xs-5">
+                            <div class="col-xs-5 padding-t-1">
                                 <div class="">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
-                                    <select class="col-xs-6" name="mes-validade-debito">
-                                        <option>Mês</option>
-                                        @for($i=1;$i<=12;$i++)
-                                        <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                        @endfor
-                                    </select>
-                                    <select class="col-xs-6" name="ano-validade-debito">
-                                        <option>Ano</option>
-                                        @for($i=0;$i<=20;$i++)
-                                        <option>{{ date('Y')+$i }}</option>
-                                        @endfor
-                                    </select>
+                                    <div class="row">
+                                        <select class="form-control col-xs-6" name="mes-validade-debito">
+                                            <option>Mês</option>
+                                            @for($i=1;$i<=12;$i++)
+                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                            @endfor
+                                        </select>
+                                        <select class="form-control col-xs-6" name="ano-validade-debito">
+                                            <option>Ano</option>
+                                            @for($i=0;$i<=20;$i++)
+                                            <option>{{ date('Y')+$i }}</option>
+                                            @endfor
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 padding-t-1">
                                 <label>CEP:</label>
                             </div>
                             <div class="col-xs-12">
@@ -297,7 +301,7 @@
                    Poltronas:
                </div>
                <div class="col-sm-4 text-right ">
-                   {{ $result->ticket_amount }}
+                   {{ $decoded->ticket_amount }}
                </div>
            </div>
            <div class="row">
@@ -305,7 +309,7 @@
                    Passagem:
                </div>
                <div class="col-sm-4 text-right">
-                   R$ {{ number_format($result->original_cost,2,',','') }}
+                   R$ {{ number_format($decoded->original_cost,2,',','') }}
                </div>
            </div>
            <div class="row">
@@ -327,7 +331,7 @@
            <div class="row margin-t-2 maring-b-2 valor-pagamento">
                <div class="col-xs-12 font-bold-upper">
                    <small><span class="num-vezes">1</span>x</small>
-                   <span class="valor valor-installment">{{ number_format($result->original_cost,2,',','') }}</span>
+                   <span class="valor valor-installment">{{ number_format($decoded->original_cost,2,',','') }}</span>
                </div>
            </div>
            <div class="hidden">
@@ -346,7 +350,7 @@
                    @endforeach
                @endif
                {{-- Envia o tipo de pagamento (debito/crediot/paypal) --}}
-               <input type="hidden" value="{{ $result->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
+               <input type="hidden" value="{{ $decoded->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
                <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
 
