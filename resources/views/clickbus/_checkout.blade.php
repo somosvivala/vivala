@@ -169,18 +169,22 @@
                                 <div class="">
                                     <label for="mes-validade-credito" >Cartão válido até</label>
                                     <div class="row">
-                                        <select class="form-control col-xs-6" name="mes-validade-credito">
-                                            <option>Mês</option>
-                                            @for($i=1;$i<=12;$i++)
-                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                            @endfor
-                                        </select>
-                                        <select class="form-control col-xs-6" name="ano-validade-credito">
-                                            <option>Ano</option>
-                                            @for($i=0;$i<=20;$i++)
-                                            <option>{{ date('Y')+$i }}</option>
-                                            @endfor
-                                        </select>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="mes-validade-credito">
+                                                <option>Mês</option>
+                                                @for($i=1;$i<=12;$i++)
+                                                <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="ano-validade-credito">
+                                                <option>Ano</option>
+                                                @for($i=0;$i<=20;$i++)
+                                                <option>{{ date('Y')+$i }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -223,18 +227,22 @@
                                 <div class="">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
                                     <div class="row">
-                                        <select class="form-control col-xs-6" name="mes-validade-debito">
-                                            <option>Mês</option>
-                                            @for($i=1;$i<=12;$i++)
-                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                            @endfor
-                                        </select>
-                                        <select class="form-control col-xs-6" name="ano-validade-debito">
-                                            <option>Ano</option>
-                                            @for($i=0;$i<=20;$i++)
-                                            <option>{{ date('Y')+$i }}</option>
-                                            @endfor
-                                        </select>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="mes-validade-debito">
+                                                <option>Mês</option>
+                                                @for($i=1;$i<=12;$i++)
+                                                <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="ano-validade-debito">
+                                                <option>Ano</option>
+                                                @for($i=0;$i<=20;$i++)
+                                                <option>{{ date('Y')+$i }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
