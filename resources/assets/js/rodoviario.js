@@ -620,6 +620,13 @@ var bindaFormPagamento = function() {
         tripBooking(params);
 
     });
+
+    // Binda botao de voucher para anexar voucher na compra
+    $('usar-voucher-desconto').click(function(){
+
+        var voucherStr = $('#voucher-str').val();
+        alert('Voucher:'+voucherStr+'  enviar ajax com load e tratamento da resposta pra adicionar no form (em algum campo hidden?)')
+    });
 };
 
 //Metodo para checar as quantidade de poltronas

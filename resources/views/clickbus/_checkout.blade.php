@@ -301,6 +301,17 @@
                         </div>
                     @endif
                 </div>
+           <div class="row margin-t-2 margin-b-1 text-center">
+               <div class="col-xs-12 text-right">
+                   Inserir cupom de desconto
+               </div>
+               <div class="col-xs-6">
+                   <input type="text" class="form-control" id="voucher-str" name="voucher-str">
+               </div>
+               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto">
+                   Usar Cupom
+               </button>
+           </div>
            <div class="row margin-t-2">
                <div class="col-sm-8 text-left">
                    Poltronas:
@@ -372,19 +383,6 @@
                    <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
                    <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
                 @endif
-           </div>
-           <div class="row margin-t-2 margin-b-1 text-center">
-               <div class="col-xs-12">
-                   Inserir cupom de desconto
-               </div>
-               <div class="col-xs-8">
-                   <input type="text" class="form-control" id="voucher-desconto" name="voucher-desconto">
-               </div>
-               <div class="col-xs-4">
-                   <button type="button" class="btn btn-acao">
-                       Usar Cupom
-                   </button>
-               </div>
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">
