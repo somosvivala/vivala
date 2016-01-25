@@ -254,7 +254,7 @@ var bindaPoltronas = function(){
     // Binda o submit do modal das poltronas para validacao de disponibilidade
     $('form.validacao-poltrona').submit(function(e){
         e.preventDefault();
-
+        
         var frm = $(this),
             loading = frm.data('loading');
 
@@ -284,9 +284,8 @@ var bindaPoltronas = function(){
 
         // Envia ajax de validaçao, caso seja bem sucedido marca como
          // selecionada a poltrona
-        ajaxPoltronas(params, function(data) {
-
-            data_obj = JSON.parse(data);
+        ajaxPoltronas(params, function(data_obj) {
+            
             //se tiver dado erro
             if (data_obj.errors) {
                 swal({
@@ -299,11 +298,27 @@ var bindaPoltronas = function(){
                 },
                 function() {
                     console.log('clicou botao swal error data:');
-                    console.log(data);
+                    console.log(data_obj);
                 });
             //se estiver tudo ok.
             } else {
                 adicionaPoltronaFront(data_obj.result.items[0],params.tipo,data_obj.data.request.passenger);
+
+                //resetando campos da modal de passageiro
+                var modal_ida = $('#validacao-poltrona-ida');
+                if (modal_ida.length > 0) {
+                    modal_ida[0].reset();
+                }
+                
+                var modal_volta = $('#validacao-poltrona-volta');
+                if (modal_volta.length > 0) {
+                    modal_volta[0].reset();
+                }
+
+                //garantindo que o input#session-clickbus tera o sessionId
+                //Atualizado
+                setSessionId(data_obj.data.request.sessionId);
+
             }
         });
     });

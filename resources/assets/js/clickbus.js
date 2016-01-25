@@ -314,15 +314,7 @@ var tripPayment = function(request, frm) {
         }
     });
 
-    console.log(frmObj);
     $.extend(params, request);
-
-
-    console.log("========== Trip Payment Request Ajax params");
-    console.log(params);
-    console.log("========== Trip Payment Request Ajax request");
-    console.log(request);
-
 
     $.ajax({
         url: 'clickbus/payment',
@@ -388,7 +380,7 @@ var tripBooking = function(request) {
             "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
         },
         "request": {
-            "sessionId": "",
+            "sessionId": getSessionId(),
             "ip": "",
             "buyer": {
                 "locale": "pt_BR",
@@ -423,13 +415,10 @@ var tripBooking = function(request) {
             closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
                 console.log(data);
             });
     })
     .done(function(data) {
-        console.log("voltou do backend : ");
-        console.log(data);
 
         var json = JSON.parse(data);
 
@@ -494,4 +483,14 @@ var tripBooking = function(request) {
         }
 
     });
+}
+
+
+var getSessionId = function() {
+    return $('input#session-clickbus').val();
+
+}
+
+var setSessionId = function(sessionID) {
+    $('input#session-clickbus').val(sessionID);
 }

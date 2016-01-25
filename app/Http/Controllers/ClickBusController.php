@@ -160,17 +160,15 @@ class ClickBusController extends Controller {
 
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
+
             $result = ClickBusRepository::parseError(json_decode($result));
             // Retorno pro JS do erro para ser exibido em sweetAlert
             return $result;
         }
 
         // Retorna o resultado e todos os dados recebidos
-        return '{
-            "result": '.$result.',
-            "data": '.$data.'
-        }';
-    }
+        return array("result" => json_decode($result), "data" => $request);
+        }
 
     public function getRemoverpoltronas(/*RemoverPoltronasClickbusRequest $request*/)
     {
@@ -548,12 +546,6 @@ class ClickBusController extends Controller {
 
         }
 
-        else
-        {
-            $result = ClickBusRepository::parseError($decoded);
-            return $result;
-        }
-
         // Booking
         if (isset($compra))
         {
@@ -574,7 +566,8 @@ class ClickBusController extends Controller {
                 "total" => $compra->total
             ];
 
-        } else {
+        } else if (isset($decoded)) {
+            
             $retorno = [
                 "errors" => trans("clickbus.clickbus_error-" . $decoded->{"error"}[0]->{"code"})
             ];
