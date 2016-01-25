@@ -45,10 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-
 
 
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
@@ -375,6 +372,19 @@
                    <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
                    <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
                 @endif
+           </div>
+           <div class="row margin-t-2 margin-b-1 text-center">
+               <div class="col-xs-12">
+                   Inserir cupom de desconto
+               </div>
+               <div class="col-xs-8">
+                   <input type="text" class="form-control" id="voucher-desconto" name="voucher-desconto">
+               </div>
+               <div class="col-xs-4">
+                   <button type="button" class="btn btn-acao">
+                       Usar Cupom
+                   </button>
+               </div>
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">
