@@ -622,7 +622,7 @@ var bindaFormPagamento = function() {
     });
 
     // Binda botao de voucher para anexar voucher na compra
-    $('usar-voucher-desconto').click(function(){
+    $('#usar-voucher-desconto').click(function(){
 
         var voucherStr = $('#voucher-str').val();
         alert('Voucher:'+voucherStr+'  enviar ajax com load e tratamento da resposta pra adicionar no form (em algum campo hidden?)')
