@@ -34,21 +34,21 @@ return[
 
 'clickbus_buy-now' => 'Comprar Agora',
 
-// Booking [NÃO TRADUZIDO]
-'clickbus_error-A1' => 'Please provide a sessionId. The parameter sessionId is missing from the Request.',
-'clickbus_error-A2' => 'The given sessionId has expired. The value for sessionId has expired and is no longer valid. Please request a new value in Session.',
-'clickbus_error-A3' => 'Please provide the seatReservation for all your Order Items. One or more of your Items in the Order does not have the seatReservation parameter.',
-'clickbus_error-A4' => 'Missing parameters in your payment data. One or more of the following buyer parameters are missing: name, card, code, zipcode or expiration.',
-'clickbus_error-A5' => 'The expiration data is invalid or incorrect. The expiration data provided in the card is incorrect or invalid.',
-'clickbus_error-A6' => 'Please provide the installment for the payment data. The parameter installment is missing from the Request.',
-'clickbus_error-A7' => 'The Order Cart is empty. You have tried to proceed to Checkout without creating any Seat Block.',
-'clickbus_error-A12' => 'There was a problem with your Order. Please contact us for more details. Your Order could not be completed. Please contact us at contato@clickbus.com.br for support and details.',
-'clickbus_error-A13' => 'Checkout Error An internal error ocurred at the conclusion of your Request.',
-'clickbus_error-A14' => 'Application Error An error occurred before send the success email of your Request.',
-'clickbus_error-A15' => 'An unexpected issue happened in your Request. Please contact us for more details. Troubles while requesting data from the booking engine. Please contact us at contato@clickbus.com.br for support and details.',
-'clickbus_error-A16' => 'The number of passengers does not match with the data already informed. There is a difference between the amount of seats provided in the request and the the amount of seats that were reserved previously at the Seat Block. Please contact us for more details about the subject and how to troubleshoot.',
-'clickbus_error-A27' => 'Inconsistencies were found. Please check your Payment Data. One or more values provided for the payment data are invalid or incorrect. Please check these values before send a new request.',
-'clickbus_error-A28' => 'The given credit card brand is not supported by the payment method. The card brand is not supported by our payment methods. Please contact us or check the Payments resource to verify if the given card brand is declared in the supported list.',
+// Booking
+'clickbus_error-A1' => 'Por favor, providencie um <font color="red">sessionId</font>.<br/>O parâmetro <font color="red">sessionId</font> não existe em sua requisição.',
+'clickbus_error-A2' => 'O valor fornecido no <font color="red">sessionId</font> expirou.<br/>O valor do <font color="red">sessionId</font> expirou e não é válido. Por favor, faça a requisição de um novo valor na SEÇÃO.',
+'clickbus_error-A3' => 'Por favor, providencie o <font color="red">seatReservation</font> para todos os itens do seu pedido. Um ou mais itens do seu pedido não possuem o parâmetro <font color="red">seatReservation</font>.',
+'clickbus_error-A4' => 'Alguns parâmetros estão faltando nos dados do seu pagamento.<br/>Um ou mais dos seguintes parâmetros do comprador: nome, cartão, código de segurança, CEP ou data de validade, não foram encontrados.',
+'clickbus_error-A5' => 'A data de validade não é válida ou está incorreta.<br/>A data de validade do cartão que nos foi informada está incorreta ou não é válida.',
+'clickbus_error-A6' => 'Por favor, selecione o número de parcelas nos dados de pagamento.<br/>O parâmetro do número de parcelas não foi encontrado em sua requisição.',
+'clickbus_error-A7' => 'O carrinho de compras de seu pedido está vazio.<br/>Você tentou prosseguir para o processo de checkout sem criar nenhum bloco de Reserva de Assentos.',
+'clickbus_error-A12' => 'Houve um problema com o seu PEDIDO.<br/> Por favor, entre em contato conosco para maiores detalhes. Seu pedido não pôde ser finalizado. Favor entre em contato conosco em contato@clickbus.com.br para suporte e mais detalhes.',
+'clickbus_error-A13' => 'Erro de Checkout.<br/>Um erro interno ocorreu na conclusão de sua requisição.',
+'clickbus_error-A14' => 'Erro da Aplicação.<br/>Um erro interno ocorreu antes de enviarmos o email de êxito da sua requisição.',
+'clickbus_error-A15' => 'Uma questão inesperada ocorreu em sua requisição.<br/>Por favor, entre em contato para maiores detalhes. Problemas ao solicitar dados da Booking Engine. Por favor, entre em contato conosco em contato@clickbus.com.br para suporte e mais detalhes.',
+'clickbus_error-A16' => 'O número de passageiros não condiz com os dados informados.<br/>A uma diferença no número de assentos fornecidos na requisição e no número de assentos que foram reservados previamente no bloco de Reserva de Assentos. Por favor, entre em contato conosco para maiores detalhes sobre o assunto e como solucionar este problema.',
+'clickbus_error-A27' => 'Algumas inconsistências foram encontradas.<br/>Por favor, verifique os DADOS DE PAGAMENTO. Um ou mais valores fornecidos nos dados de pagamento não são válidos ou estão incorretos. Por favor, verifique estes valores antes de enviar sua requisição.',
+'clickbus_error-A28' => 'A BANDEIRA DO CARTÃO DE CRÉDITO fornecido não é suportado por nosso método de pagamento.<br/>A bandeira de seu cartão de crédito não é suportada por nossos métodos de pagamento. Por favor, entre em contato conosco ou verifique as fontes de pagamento para validar se a bandeira do cartão de crédito fornecido está declarada na lista de cartões suportados por nosso sistema.',
 
 // Checkout
 'clickbus_error-A29' => 'Erro de Checkout.<br/>É necessário a autorização desta compra junto a sua operadora de cartões.',
@@ -136,16 +136,16 @@ return[
 'clickbus_error-J8' => 'Por favor, providencie uma data válida para a IDA.<br/>O valor da data de IDA não é válido ou está incorreto.',
 'clickbus_error-J9' => 'A data de IDA não pode acontecer em um dia anterior ao atual (ontem).<br/>O valor da data de IDA não pode estar no passado.',
 
-// Pagamentos [NÃO TRADUZIDO]
-'clickbus_error-K1' => 'Please provide the meta block. The parameter meta is missing from the Request.',
-'clickbus_error-K2' => 'Please provide your store parameters for meta. At least one of the parameters store, model or platform is missing.',
-'clickbus_error-K3' => 'One of the following parameters are incorrect: store, platform or model. One of the meta values is incorrect (store, model or platform).',
-'clickbus_error-K4' => 'Please provide the contents block. The parameter contents is missing from the Request.',
-'clickbus_error-K5' => 'Please provide at least one seat information. The parameter contents is empty.',
-'clickbus_error-K6' => 'Please provide the right params for the seats. At least one of the values inside contents is missing one of it’s required parameters: scheduleId or ticket_amount.',
-'clickbus_error-K7' => 'The given scheduleId is incorrect. One of the given scheduleId is incorrect or invalid.',
-'clickbus_error-K8' => 'The given ticket_amount is incorrect. One of the given ticket_amount is incorrect.',
-'clickbus_error-K9' => 'The request is malformed. Please check the contents of your request. Please check your request for any JSON malforming.',
+// Pagamentos
+'clickbus_error-K1' => 'Por favor, providencie o META BLOCK.<br/>O parâmetro META não foi encontrado em sua requisição.',
+'clickbus_error-K2' => 'Por favor, providencie o parâmetros reservados para o META.<br/>Ao menos um dos seguintes parâmetros: store, model ou platform, não foi encontrado.',
+'clickbus_error-K3' => 'Um dos seguintes parâmetros não está correto: store, platform ou model.<br/>Um dos meta valores fornecidos (store, model ou platform) está incorreto.',
+'clickbus_error-K4' => 'Por favor, providencie o bloco de conteúdos.<br/>O parâmetro de conteúdos não foi encontrado em sua requisição.',
+'clickbus_error-K5' => 'Por favor, providencie ao menos uma informação sobre o assento.<br/>O parâmetro de conteúdos está vazio.',
+'clickbus_error-K6' => 'Por favor, providencie os valores corretos para o número de assentos.<br/>Ao menos um dos valores dos parâmetros que são exigidos dentro do conteúdo está faltando: <font color="red">scheduleId</font> ou <font color="red">ticket_amount.</font>',
+'clickbus_error-K7' => 'O valor fornecido no <font color="red">scheduleId</font> está incorreto. Um dos valores fornecidos no <font color="red">scheduleId</font> está incorreto.',
+'clickbus_error-K8' => 'O valor fornecido no <font color="red">ticket_amount</font> está incorreto. Um dos valores fornecidos no <font color="red">ticket_amount</font> está incorreto.',
+'clickbus_error-K9' => 'A requisição está malformada.<br/>Por favor, verifique o conteúdo da sua requisição. Por favor, verifique por erros de JSON em sua requisição.',
 
 // Checkout e outros [NÃO TRADUZIDO]
 'clickbus_error-L1' => 'Please provide the passenger\’s name. One of the passengers name is missing from the request.',
