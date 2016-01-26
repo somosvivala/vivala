@@ -50,6 +50,7 @@ class ClickBusController extends Controller {
         $context = stream_context_create(array(
             'http' => array('ignore_errors' => true),
         ));
+        
         // Recebo o resultado JSON da ClickBus, ignorando os possíveis erros 404
         $result = file_get_contents($url, false, $context);
 
@@ -59,7 +60,8 @@ class ClickBusController extends Controller {
         // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view ._listOptions
         if(isset($decoded) && !isset($decoded->{"error"})){
             $result = ClickBusRepository::parseData($decoded);
-            return view('clickbus._listOptions', compact('result', 'dates', 'type'));
+            $places = array("from" => $from, "to" => $to);
+            return view('clickbus._listOptions', compact('result', 'dates', 'type', 'places'));
         } else {
         // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS
             $result = ClickBusRepository::parseError($decoded);
@@ -105,10 +107,14 @@ class ClickBusController extends Controller {
                 
             }
             
-            if(isset($volta_obj) && isset($content_ida)) {
+            if (isset($volta_obj) && isset($content_ida)) {
+                $sessionId = $ida->sessionId;
+                
                 $context = [
                     'http' => [
-                        'ignore_errors' => true
+                        'ignore_errors' => true,
+                        'header' => "Cookie: PHPSESSID=".$sessionId."\r\n"
+                                    
                     ]
                 ];
                 $context = stream_context_create($context);
@@ -130,6 +136,7 @@ class ClickBusController extends Controller {
                 $volta->classe = $volta_obj->classe;
             }
 
+
             //Nao retornando a view direto pois precisamos do 
             //valor do sessionId do retorno da request
             $view = view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ))->render();
@@ -148,6 +155,7 @@ class ClickBusController extends Controller {
 
         $sessionId = $request['request']["sessionId"];
         $request['request']['passenger']['gender'] = 'M';
+        $request['request']['schedule']['date'] = ClickBusRepository::dateFormat($request['request']['schedule']['date']);
         $data = json_encode($request);
 
         $context = [
@@ -163,7 +171,6 @@ class ClickBusController extends Controller {
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/seat-block', false, $context);
 
-
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
 
@@ -174,7 +181,8 @@ class ClickBusController extends Controller {
 
         // Retorna o resultado e todos os dados recebidos
         return array("result" => json_decode($result), "data" => $request);
-        }
+    
+    }
 
     public function getRemoverpoltronas(/*RemoverPoltronasClickbusRequest $request*/)
     {

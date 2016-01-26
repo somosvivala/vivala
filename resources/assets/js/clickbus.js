@@ -158,17 +158,21 @@ var ajaxTrip = function(viagens) {
 
             //pegando view retornada e settando o sessionId 
             $('#clickbus-resultado-busca').html(json.view);
+        
+            //settando o valor do input hidden com o valor
+            //do sessionID retornado pelo /trip
             $('input#session-clickbus').val(json.sessionId);
             bindaPoltronas();
         
+            /** TODO: conseguir recuperar o mesmo sessionId retornado pelo /trip
             console.log('disparando trigger de refresh de sessionId');
-            //startando o tratamento de refresh da sessao
+            startando o tratamento de refresh da sessao
             setTimeout(function() {
                 console.log('15 minutos passaram, renovando sessionId...');
                 console.log('current value: ' + $('input#session-clickbus').val());
                 sessionManutencao();
             }, 960000);
-            
+           **/ 
         }
     })
     .fail(function() {
@@ -498,8 +502,9 @@ var tripBooking = function(request) {
     });
 }
 
-//Funcao recursiva que garante um sessionId atualizado da clickbus
-//Bate no endpoint que recupera / atualiza se necessario a cada minuto
+//Funcao para recuperar a sessionId do lado do cliente.
+//Executa uma XMLHttpRequest para o /session resource na clickbus.
+//@TODO usando o sessionID retornado nao é possivel continuar uma compra
 var sessionManutencao = function() {
 
     var currentSessionId = $('input#session-clickbus');
@@ -525,18 +530,16 @@ var sessionManutencao = function() {
 }
 
 var setSession = function(data) {
-    //Apos a manutencao da sessao, dispara de 1 minuto para ser executado
-    //novamente
     
     var currentSessionId = getSessionId();
     console.log('============ chegou setSesstion new value:');
     console.log(data);
     console.log('currentSessionId: ' + currentSessionId);
     
-    //settando o novo sessionId caso tenha mudado
+    //settando o novo sessionId 
     setSessionId(data.content);
 
-  }
+}
 
 var getSessionId = function() {
     return $('input#session-clickbus').val();

@@ -1,6 +1,11 @@
 <div class="col-xs-12">
     <ul class="nav nav-tabs">
-        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['yesterday'][2]}}" href="#">
+        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['yesterday'][2]}}" 
+            @if($places)
+                data-to="{{$places['to']}}" 
+                data-from="{{$places['from']}}" 
+            @endif
+        href="#">
                 <span class="font-bold-upper">{{$dates['yesterday'][0]}}</span>
                 <span class="sub-titulo">{{$dates['yesterday'][1]}}</span>
         </a></li>
@@ -8,7 +13,12 @@
                 <span class="font-bold-upper">{{$dates['today'][0]}}</span>
                 <span class="sub-titulo">{{$dates['today'][1]}}</span>
         </a></li>
-        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['tomorrow'][2]}}" href="#">
+        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['tomorrow'][2]}}"  
+            @if($result)
+                data-to="{{$places['to']}}" 
+                data-from="{{$places['from']}}" 
+            @endif
+        href="#">               
                 <span class="font-bold-upper">{{$dates['tomorrow'][0]}}</span>
                 <span class="sub-titulo">{{$dates['tomorrow'][1]}}</span>
         </a></li>
@@ -49,7 +59,7 @@
                 <div class="valor-compra padding-b-1">
                     <div class="row">
                         <h3 class="padding-t-0 padding-b-0 text-center font-bold-upper">R$ {{$option['part'][0]['price']}}</h3>
-                        <div class="col-xs-12 text-center"><a data-horario="{{ $option['part'][0]['departure']['time']}}" data-id="{{$option['part'][0]['id']}}" data-horario-chegada="{{$option['part'][0]['arrival']['time']}}" data-classe="{{$option['part'][0]['serviceClass']}}" data-to="{{$option['part'][0]['departure']['city']}}" data-from="{{$option['part'][0]['arrival']['city']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0">Escolher {{$type}}</a></div>
+                        <div class="col-xs-12 text-center"><a data-horario="{{ $option['part'][0]['departure']['time']}}" data-id="{{$option['part'][0]['id']}}" data-horario-chegada="{{$option['part'][0]['arrival']['time']}}" data-classe="{{$option['part'][0]['serviceClass']}}" data-to="{{$places['to']}}" data-from="{{$places['from']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0">Escolher {{$type}}</a></div>
                     </div>
                 </div>
             </div>

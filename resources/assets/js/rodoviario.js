@@ -138,12 +138,13 @@ var bindAutocompleteRodoviario = function() {
     });
 };
 
+//funcao chamada no retorno de /trips
 var bindClickDetail = function() {
     $('.search-by-date').on('click', function(e) {
         e.preventDefault();
 
-        var from      = $('#origem-rodoviario-hidden').val(),
-            to        = $('#destino-rodoviario-hidden').val(),
+        var from      = $(this).attr('data-from'),
+            to        = $(this).attr('data-to'),
             departure = $(this).attr('data-date'),
             type      = $(this).attr('data-type');
 
@@ -163,10 +164,11 @@ var bindClickDetail = function() {
             horario_chegada_ida = $(this).attr('data-horario-chegada'),
             classe_ida = $(this).attr('data-classe'),
             from_ida  = $(this).attr('data-from'),
-            to_ida = $(this).attr('data-to')
+            to_ida = $(this).attr('data-to'),
 
-            from      = $('#destino-rodoviario-hidden').val(),
-            to        = $('#origem-rodoviario-hidden').val();
+            //corrigindo inversão do from e to
+            from      = $('#origem-rodoviario-hidden').val(),
+            to        = $('#destino-rodoviario-hidden').val();
 
         $('#departure-schedule-id').val(id);
         $('#horario-ida').val(horario_ida);
@@ -175,15 +177,20 @@ var bindClickDetail = function() {
         $('#from-ida').val(from_ida);
         $('#to-ida').val(to_ida);
 
+        //Se nao tiver passagem de volta, apenas chamar o /trip
         if ($('#data-volta-rodoviario').val().length <= 0) {
             ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }]));
-        } else {
+        } 
+        
+        //Se tiver volta, entao inverter to x from e fazer nova busca
+        else {
             var departure = $('#data-volta-rodoviario').val(),
                 type      = 'volta';
 
+            //Quando busco a volta, preciso inverter os parametros to e from
             ajaxTrips({
-                from: from,
-                to: to,
+                from: to,
+                to: from,
                 departure: departure,
                 type: type
             });
@@ -201,6 +208,8 @@ var bindClickDetail = function() {
             from_ida  = $('#from-ida').val(),
             to_ida = $('#to-ida').val(),
 
+            //Aqui os locais estao corretos, o from e o to da volta
+            //sao o inverso da ida
             from      = $('#destino-rodoviario-hidden').val(),
             to        = $('#origem-rodoviario-hidden').val(),
 
@@ -263,6 +272,9 @@ var bindaPoltronas = function(){
             $(this).find('#'+loading).show();
         }
 
+        console.log('form validacao poltrona:');
+        console.log('from: ' + $(this).find('input#from').val());
+        console.log('to: ' + $(this).find('input#to').val());
 
         var params = {
             "tipo": $(this).find('input#tipo').val(),
@@ -278,7 +290,7 @@ var bindaPoltronas = function(){
             "date": $(this).find('input#date').val(),
             "time": $(this).find('input#time').val(),
             "timezone": "America/Sao_Paulo",
-            "sessionId": getSessionId(),
+            "sessionId": $(this).find('input#session-id').val(),
         } ;
 
 

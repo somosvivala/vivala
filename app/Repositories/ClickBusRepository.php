@@ -51,10 +51,8 @@ class ClickBusRepository {
             }
             array_push($output, $option);
         }
-
         return $output;
 
-        $result = file_get_contents(self::$url.'/booking', false, $context);
     }
 
     // Função de Tratamento de Erros da ClickBus
