@@ -595,32 +595,34 @@ class ClickBusController extends Controller {
         return $retorno;
     }
 
-    public function getSession($id) {
+    
+    /**
+     * Bate no endpoint de /booking/voucher e retorna o resultado ou erro.
+     */
+    public function getVoucher() 
+    {
+    	$request = Input::all();
+
         $context = [
             'http' => [
                 'ignore_errors' => true,
-                'method' => 'GET',
+                'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Cookie: PHPSESSID=".$id,
-                'content' => ""
+                            "Cookie: PHPSESSID=".$request['request']['sessionId'],
+                'content' => json_encode($request)
                 ]
         ];
 
         $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/booking/voucher', false, $context);
+        $decoded = json_decode($result);
 
-        $result = file_get_contents(self::$url.'/session', false, $context);
+        if(isset($decoded) && isset($decoded->{"error"})){
+            $decoded = ClickBusRepository::parseError($decoded);
+        }
 
-        return $result;
-
-
+        return json_encode($decoded);
     }
-
-
-
-
-
-
-
 
 }
 

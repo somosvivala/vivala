@@ -637,20 +637,56 @@ var bindaFormPagamento = function() {
     // Binda botao de voucher para anexar voucher na compra
     $('#usar-voucher-desconto').click(function(){
 
+        //TODO mostrar que email é necessario
+        
         var voucherStr = $('#voucher-str').val();
 
         $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
+
+        //pegando id da aba de pagamento ativa
+        var idTabPagamentoAtiva = $('ul#abas-cliente li.active a')[0].id;
+
+        //pegando valor do email da aba ativa
+        var emailStr = $('#tabs-pagamento-cliente > div.tab-pane[aria-labelledby="'+idTabPagamentoAtiva+'"]').find('input[type="email"]').val()
+
+        var params = {
+             "meta": {
+                 "model": "Retail",
+                 "store": "Vivala",
+                 "platform": "API",
+            },
+             "request": {
+                "sessionId": $('input#session-clickbus').val(),
+                "voucher": voucherStr,
+                "buyer": {
+                    "email": emailStr
+                }
+             }
+        };
+
         ajax = $.ajax({
             url: 'clickbus/voucher',
             type: 'POST',
             dataType: 'json',
-            data: {
-            },
+            data: params 
         })
         .done(function(data) {
+
+            if (data.errors) {
+                swal({
+                    title: "Ooops!",
+                    html: "Ocorreu um problema com seu voucher:<br>"+data.errors,
+                    type: "error",
+                    confirmButtonColor: "#F16F2B",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true,
+                    });
+            }
+
             $("#usar-voucher-desconto").html("USAR CUPOM");
         });
-        alert('Voucher:'+voucherStr+'  enviar ajax com load e tratamento da resposta pra adicionar no form (em algum campo hidden?)')
+        
+        alert('Voucher:'+voucherStr+'  Falta Tratamento da resposta pra adicionar no form (em algum campo hidden --> ver atualizaValorParcelas, adicionar campo hidden e chamar essa funcao apos algumas modificacoes (caso valor % ou fixo) )');
     });
 };
 
