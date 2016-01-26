@@ -224,8 +224,6 @@ class ClickBusController extends Controller {
      */
     public function getPayment(Request $request)
     {
-
-
         $request = Input::get('params');
         $frm = $request['frm'];
         //pegando dados das poltronas de ida
