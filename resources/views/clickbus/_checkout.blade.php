@@ -45,10 +45,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
-
 
 
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
@@ -169,18 +166,22 @@
                                 <div class="">
                                     <label for="mes-validade-credito" >Cartão válido até</label>
                                     <div class="row">
-                                        <select class="form-control col-xs-6" name="mes-validade-credito">
-                                            <option>Mês</option>
-                                            @for($i=1;$i<=12;$i++)
-                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                            @endfor
-                                        </select>
-                                        <select class="form-control col-xs-6" name="ano-validade-credito">
-                                            <option>Ano</option>
-                                            @for($i=0;$i<=20;$i++)
-                                            <option>{{ date('Y')+$i }}</option>
-                                            @endfor
-                                        </select>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="mes-validade-credito">
+                                                <option>Mês</option>
+                                                @for($i=1;$i<=12;$i++)
+                                                <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="ano-validade-credito">
+                                                <option>Ano</option>
+                                                @for($i=0;$i<=20;$i++)
+                                                <option>{{ date('Y')+$i }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -223,18 +224,22 @@
                                 <div class="">
                                     <label for="mes-validade-debito" >Cartão válido até</label>
                                     <div class="row">
-                                        <select class="form-control col-xs-6" name="mes-validade-debito">
-                                            <option>Mês</option>
-                                            @for($i=1;$i<=12;$i++)
-                                            <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                            @endfor
-                                        </select>
-                                        <select class="form-control col-xs-6" name="ano-validade-debito">
-                                            <option>Ano</option>
-                                            @for($i=0;$i<=20;$i++)
-                                            <option>{{ date('Y')+$i }}</option>
-                                            @endfor
-                                        </select>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="mes-validade-debito">
+                                                <option>Mês</option>
+                                                @for($i=1;$i<=12;$i++)
+                                                <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select class="form-control" name="ano-validade-debito">
+                                                <option>Ano</option>
+                                                @for($i=0;$i<=20;$i++)
+                                                <option>{{ date('Y')+$i }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -296,6 +301,17 @@
                         </div>
                     @endif
                 </div>
+           <div class="row margin-t-2 margin-b-1 text-center">
+               <div class="col-xs-12 text-right">
+                   Inserir cupom de desconto
+               </div>
+               <div class="col-xs-6">
+                   <input type="text" class="form-control" id="voucher-str" name="voucher-str">
+               </div>
+               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto">
+                   Usar Cupom
+               </button>
+           </div>
            <div class="row margin-t-2">
                <div class="col-sm-8 text-left">
                    Poltronas:

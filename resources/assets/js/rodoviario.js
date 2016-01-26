@@ -633,6 +633,25 @@ var bindaFormPagamento = function() {
         tripBooking(params);
 
     });
+
+    // Binda botao de voucher para anexar voucher na compra
+    $('#usar-voucher-desconto').click(function(){
+
+        var voucherStr = $('#voucher-str').val();
+
+        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
+        ajax = $.ajax({
+            url: 'clickbus/voucher',
+            type: 'POST',
+            dataType: 'json',
+            data: {
+            },
+        })
+        .done(function(data) {
+            $("#usar-voucher-desconto").html("USAR CUPOM");
+        });
+        alert('Voucher:'+voucherStr+'  enviar ajax com load e tratamento da resposta pra adicionar no form (em algum campo hidden?)')
+    });
 };
 
 //Metodo para checar as quantidade de poltronas
