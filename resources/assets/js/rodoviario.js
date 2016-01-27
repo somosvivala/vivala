@@ -688,6 +688,7 @@ var bindaFormPagamento = function() {
             var descontoFixo = data.isFixedValue;
             var descontoServico = data.serviceFeeDiscountPercentage;
             console.log(data);
+            console.log(desconto);
 
             // Atualiza valores nos campos hidden
             $("#desconto").val(desconto);
@@ -695,6 +696,7 @@ var bindaFormPagamento = function() {
             $("#desconto-servico").val(descontoServico);
 
             $("#usar-voucher-desconto").html("USAR CUPOM");
+            console.log($("#desconto").val());
         });
         
         alert('Voucher:'+voucherStr+'  Falta Tratamento da resposta pra adicionar no form (em algum campo hidden --> ver atualizaValorParcelas, adicionar campo hidden e chamar essa funcao apos algumas modificacoes (caso valor % ou fixo) )');
