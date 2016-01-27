@@ -444,6 +444,7 @@ var atualizaValorParcelas = function(){
     }
 
 
+    console.log("Valor desconto:"+desconto_valor);
     if(desconto_fixo != "true"){
         discount_value = discount_value + desconto_valor*total;
         total_with_discount = total_with_discount - desconto_valor*total;
@@ -451,6 +452,8 @@ var atualizaValorParcelas = function(){
         discount_value = discount_value + desconto_valor;
         total_with_discount = total_with_discount - desconto_valor;
     }
+    console.log("Valor discount:"+discount_value);
+    console.log("Valor total:"+total_with_discount);
                 
     if(discount_value > 0){
         $('.row-desconto').show();
