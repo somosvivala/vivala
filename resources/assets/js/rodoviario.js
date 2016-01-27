@@ -684,9 +684,9 @@ var bindaFormPagamento = function() {
                     closeOnConfirm: true,
                 });
             }
-            var desconto = data.discountValue;
-            var descontoFixo = data.isFixedValue;
-            var descontoServico = data.serviceFeeDiscountPercentage;
+            var desconto = data.content.discountValue;
+            var descontoFixo = data.content.isFixedValue;
+            var descontoServico = data.content.serviceFeeDiscountPercentage;
             console.log(data);
             console.log(desconto);
 
