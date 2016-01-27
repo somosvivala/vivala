@@ -412,6 +412,10 @@ var bindaChangePagamento = function() {
 var atualizaValorParcelas = function(){
 
     var forma_pagamento = $("form#form-pagamento").find('input#forma-pagamento').val();
+    // Calcula o desconto
+    var desconto_valor = $("form#form-pagamento").find('input#desconto').val(),
+        desconto_fixo = $("form#form-pagamento").find('input#desconto-fixo').val();
+
     if(forma_pagamento == 'cartao-credito'){
         var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
             opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
@@ -439,6 +443,15 @@ var atualizaValorParcelas = function(){
             fee = opcao_selecionada.data('fee');
     }
 
+
+    if(desconto_fixo != "true"){
+        discount_value = discount_value + desconto_valor*total;
+        total_with_discount = total_with_discount - desconto_valor*total;
+    }else{
+        discount_value = discount_value + desconto_valor;
+        total_with_discount = total_with_discount - desconto_valor;
+    }
+                
     if(discount_value > 0){
         $('.row-desconto').show();
         $('.valor-desconto').html(discount_value.toFixed(2).toString().replace(',','').replace('.',','));
@@ -687,8 +700,6 @@ var bindaFormPagamento = function() {
             var desconto = data.content.discountValue;
             var descontoFixo = data.content.isFixedValue;
             var descontoServico = data.content.serviceFeeDiscountPercentage;
-            console.log(data);
-            console.log(desconto);
 
             // Atualiza valores nos campos hidden
             $("#desconto").val(desconto);
@@ -696,10 +707,9 @@ var bindaFormPagamento = function() {
             $("#desconto-servico").val(descontoServico);
 
             $("#usar-voucher-desconto").html("USAR CUPOM");
-            console.log($("#desconto").val());
+            atualizaValorParcelas();
         });
         
-        alert('Voucher:'+voucherStr+'  Falta Tratamento da resposta pra adicionar no form (em algum campo hidden --> ver atualizaValorParcelas, adicionar campo hidden e chamar essa funcao apos algumas modificacoes (caso valor % ou fixo) )');
     });
 };
 
