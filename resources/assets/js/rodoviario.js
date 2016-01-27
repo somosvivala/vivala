@@ -647,7 +647,9 @@ var bindaFormPagamento = function() {
         var idTabPagamentoAtiva = $('ul#abas-cliente li.active a')[0].id;
 
         //pegando valor do email da aba ativa
-        var emailStr = $('#tabs-pagamento-cliente > div.tab-pane[aria-labelledby="'+idTabPagamentoAtiva+'"]').find('input[type="email"]').val()
+        var emailStr = $('#tabs-pagamento-cliente > div.tab-pane[aria-labelledby="'+idTabPagamentoAtiva+'"]').find('input[type="email"]').val();
+
+
 
         var params = {
              "meta": {
@@ -680,8 +682,16 @@ var bindaFormPagamento = function() {
                     confirmButtonColor: "#F16F2B",
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
-                    });
+                });
             }
+            var desconto = data.discountValue;
+            var descontoFixo = data.isFixedValue;
+            var descontoServico = data.serviceFeeDiscountPercentage;
+
+            // Atualiza valores nos campos hidden
+            $("#desconto").val(desconto);
+            $("#desconto-fixo").val(descontoFixo);
+            $("#desconto-servico").val(descontoServico);
 
             $("#usar-voucher-desconto").html("USAR CUPOM");
         });

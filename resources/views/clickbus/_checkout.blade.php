@@ -370,6 +370,10 @@
                <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
 
+               <input type="hidden" value="0" name="desconto" id="desconto">
+               <input type="hidden" value="0" name="desconto-fixo" id="desconto-fixo">
+               <input type="hidden" value="0" name="desconto-servico" id="desconto-servico">
+
                <input type="hidden" id="ida-to" name="ida-to" value="{{ $Ida->to}}">
                <input type="hidden" id="ida-from" name="ida-from" value="{{ $Ida->from}}">
                <input type="hidden" id="ida-diames" name="ida-diames" value="{{ $Ida->diames }}">
