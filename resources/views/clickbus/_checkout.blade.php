@@ -302,7 +302,7 @@
                     @endif
                 </div>
            <div class="row margin-t-2 margin-b-1 text-center">
-               <div class="col-xs-12 text-right">
+               <div class="col-xs-12 text-left">
                    Inserir cupom de desconto
                </div>
                <div class="col-xs-6">
