@@ -687,6 +687,7 @@ var bindaFormPagamento = function() {
             var desconto = data.discountValue;
             var descontoFixo = data.isFixedValue;
             var descontoServico = data.serviceFeeDiscountPercentage;
+            console.log(data);
 
             // Atualiza valores nos campos hidden
             $("#desconto").val(desconto);
