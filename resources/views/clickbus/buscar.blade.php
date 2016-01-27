@@ -17,10 +17,10 @@
             <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
         </div>
         <div class="select-filtro">
-            <input placeholder="{{ trans('global.lbl_travel_departure') }}" data-provide="datepicker" data-date-today-highlight="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-id-rodoviario" name="data-id-rodoviario" class="form-control" type="text" data-date-start-date="0d">
+            <input placeholder="{{ trans('global.lbl_travel_departure') }}" data-provide="datepicker" data-date-today-highlight="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-id-rodoviario" name="data-id-rodoviario" class="form-control mascara-data" type="text" data-date-start-date="0d">
         </div>
         <div class="select-filtro">
-            <input placeholder="{{ trans('global.lbl_travel_return') }} ({{ trans('global.lbl_optional') }})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" id="data-volta-rodoviario" name="data-volta-rodoviario" class="form-control" type="text" data-date-start-date="0d">
+            <input placeholder="{{ trans('global.lbl_travel_return') }} ({{ trans('global.lbl_optional') }})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" id="data-volta-rodoviario" name="data-volta-rodoviario" class="form-control mascara-data" type="text" data-date-start-date="0d">
         </div>
     </div>
 

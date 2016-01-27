@@ -20,7 +20,7 @@
 
                             <div class="col-xs-4">
                                 <label for="nascimento-pf">Nascimento</label>
-                                <input type="text" class="required form-control" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                <input type="text" class="required form-control mascara-data" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8 padding-t-1">
                                 <label for="email-pf">Email</label>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="col-xs-4">
                                 <label for="nascimento-pj">Data de nascimento</label>
-                                <input type="text" class="required form-control" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                <input type="text" class="required form-control mascara-data" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8 padding-t-1">
                                 <label for="email-pj">Email</label>
@@ -187,7 +187,7 @@
                             </div>
                             <div class="col-xs-7 padding-t-1">
                                 <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
-                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="FULANO D. SILVA">
+                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="JOÃO D. SILVA">
                             </div>
                             <div class="col-xs-5 padding-t-1">
                                 <label for="cod-seguranca-credito" >Código de Segurança</label>
@@ -218,7 +218,7 @@
                             </div>
                             <div class="col-xs-7 padding-t-1">
                                 <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
-                                <input type="text" class="required form-control" name="nome-titular-debito" placeholder="FULANO D. SILVA">
+                                <input type="text" class="required form-control" name="nome-titular-debito" placeholder="JOÃO D. SILVA">
                             </div>
                             <div class="col-xs-5 padding-t-1">
                                 <div class="">

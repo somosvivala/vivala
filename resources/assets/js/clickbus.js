@@ -15,6 +15,9 @@ $('#data-id-rodoviario').datepicker().on('changeDate', function() {
     $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').datepicker('getDate'));
 });
 
+//aplicando mascara nos campos de date para funcionar melhor com o calendário
+$('.mascara-data').mask("00/00/0000");
+
 // Procura Cidades que tem frota da clickbus
 var ajaxPlace = function(query, target) {
     if (ajax != null && ajax.state() == 'pending') {
