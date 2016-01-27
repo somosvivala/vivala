@@ -413,33 +413,33 @@ var atualizaValorParcelas = function(){
 
     var forma_pagamento = $("form#form-pagamento").find('input#forma-pagamento').val();
     // Calcula o desconto
-    var desconto_valor = $("form#form-pagamento").find('input#desconto').val(),
-        desconto_fixo = $("form#form-pagamento").find('input#desconto-fixo').val();
+    var desconto_valor = Number($("form#form-pagamento").find('input#desconto').val()),
+        desconto_fixo = Number($("form#form-pagamento").find('input#desconto-fixo').val());
 
     if(forma_pagamento == 'cartao-credito'){
         var bandeira = $('input.seleciona-bandeira[name="bandeira-cartao"]:checked').val(),
             opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
             qtd_parcelas = opcao_selecionada.val(),
             total_with_discount = opcao_selecionada.data('total_with_discount'),
-            total = opcao_selecionada.data('total'),
+            total = Number(opcao_selecionada.data('total')),
             installment = opcao_selecionada.data('installment'),
-            discount_value = opcao_selecionada.data('discount_value'),
+            discount_value = Number(opcao_selecionada.data('discount_value')),
             fee = opcao_selecionada.data('fee');
     } else if(forma_pagamento == 'paypal') {
         var opcao_selecionada = $("#paypal-datas"),
             qtd_parcelas = opcao_selecionada.val(),
             total_with_discount = opcao_selecionada.data('total_with_discount'),
-            total = opcao_selecionada.data('total'),
+            total = Number(opcao_selecionada.data('total')),
             installment = opcao_selecionada.data('installment'),
-            discount_value = opcao_selecionada.data('discount_value'),
+            discount_value = Number(opcao_selecionada.data('discount_value')),
             fee = opcao_selecionada.data('fee');
     } else if(forma_pagamento == 'cartao-debito'){
         var opcao_selecionada = $("#cartao-debito-datas"),
             qtd_parcelas = opcao_selecionada.val(),
             total_with_discount = opcao_selecionada.data('total_with_discount'),
-            total = opcao_selecionada.data('total'),
+            total = Number(opcao_selecionada.data('total')),
             installment = opcao_selecionada.data('installment'),
-            discount_value = opcao_selecionada.data('discount_value'),
+            discount_value = Number(opcao_selecionada.data('discount_value')),
             fee = opcao_selecionada.data('fee');
     }
 
