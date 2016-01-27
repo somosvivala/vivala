@@ -421,25 +421,25 @@ var atualizaValorParcelas = function(){
             opcao_selecionada = $( "select#bandeira-"+bandeira+" option:selected"),
             qtd_parcelas = opcao_selecionada.val(),
             total_with_discount = opcao_selecionada.data('total_with_discount'),
-            total = Number(opcao_selecionada.data('total')),
+            total = opcao_selecionada.data('total'),
             installment = opcao_selecionada.data('installment'),
-            discount_value = Number(opcao_selecionada.data('discount_value')),
+            discount_value = opcao_selecionada.data('discount_value'),
             fee = opcao_selecionada.data('fee');
     } else if(forma_pagamento == 'paypal') {
         var opcao_selecionada = $("#paypal-datas"),
             qtd_parcelas = opcao_selecionada.val(),
             total_with_discount = opcao_selecionada.data('total_with_discount'),
-            total = Number(opcao_selecionada.data('total')),
+            total = opcao_selecionada.data('total'),
             installment = opcao_selecionada.data('installment'),
-            discount_value = Number(opcao_selecionada.data('discount_value')),
+            discount_value = opcao_selecionada.data('discount_value'),
             fee = opcao_selecionada.data('fee');
     } else if(forma_pagamento == 'cartao-debito'){
         var opcao_selecionada = $("#cartao-debito-datas"),
             qtd_parcelas = opcao_selecionada.val(),
             total_with_discount = opcao_selecionada.data('total_with_discount'),
-            total = Number(opcao_selecionada.data('total')),
+            total = opcao_selecionada.data('total'),
             installment = opcao_selecionada.data('installment'),
-            discount_value = Number(opcao_selecionada.data('discount_value')),
+            discount_value = opcao_selecionada.data('discount_value'),
             fee = opcao_selecionada.data('fee');
     }
 
@@ -449,6 +449,7 @@ var atualizaValorParcelas = function(){
         discount_value = discount_value + desconto_valor*total;
         total_with_discount = total_with_discount - desconto_valor*total;
     }else{
+        console.log("Valordiscount ant6es:"+discount_value);
         discount_value = discount_value + desconto_valor;
         total_with_discount = total_with_discount - desconto_valor;
     }
