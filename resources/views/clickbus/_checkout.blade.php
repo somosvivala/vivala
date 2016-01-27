@@ -133,7 +133,7 @@
                         <div role="tabpanel" class="tab-pane fade active in" id="cartao-credito" aria-labelledby="cartao-credito-tab">
                             <div class="col-xs-12 text-center radio-hidden">
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" required="" >
+                                <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" {{ $bandeiraCartao->brand == "mastercard" ? 'checked="checked"' : ''}} required="" >
                                 <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
                                     <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
                                 </label>

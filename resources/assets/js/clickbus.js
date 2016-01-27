@@ -314,6 +314,7 @@ var removePoltrona = function(request, tipo, callback) {
     });
 };
 
+//Funcao chamada no submit do formulario de poltronas
 var tripPayment = function(request, frm) {
     var params = {
         "store": "Vivala",
@@ -353,7 +354,16 @@ var tripPayment = function(request, frm) {
         }
     })
     .error(function(data) {
-
+        swal({
+            title: "Ops!",
+            html: "Tivemos um problema durante o processo de agendamento da sua passagem. Por favor tente novamente, se o problema persistir fale conosco através do <a href='mailto:contato@vivala.com.br'>contato@vivala.com.br</a><br><br>"+json.errors,
+            type: "error",
+            confirmButtonColor: "#FF5B00",
+            confirmButtonText: "OK",
+            closeOnConfirm: true,
+        },
+        function() {
+        });
     })
     .done(function(data) {
 
@@ -374,17 +384,15 @@ var tripPayment = function(request, frm) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
             });
         //Se estiver tudo ok..
         } else {
             $('#clickbus-resultado-busca').html(data);
-            console.log(data);
             bindaAbas();
             bindaBandeirasCartao();
             bindaChangePagamento();
             bindaFormPagamento();
+            atualizaValorParcelas();
         }
     });
 
