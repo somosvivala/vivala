@@ -136,7 +136,7 @@ var ajaxTrip = function(viagens) {
         }
     })
     .done(function(data) {
-        
+
         var json= {};
         try {
             json = JSON.parse(data);
@@ -159,14 +159,14 @@ var ajaxTrip = function(viagens) {
         //Se estiver tudo ok..
         } else {
 
-            //pegando view retornada e settando o sessionId 
+            //pegando view retornada e settando o sessionId
             $('#clickbus-resultado-busca').html(json.view);
-        
+
             //settando o valor do input hidden com o valor
             //do sessionID retornado pelo /trip
             $('input#session-clickbus').val(json.sessionId);
             bindaPoltronas();
-        
+
            //// TODO: conseguir recuperar o mesmo sessionId retornado pelo /trip
            //console.log('disparando trigger de refresh de sessionId');
            ////startando o tratamento de refresh da sessao
@@ -175,7 +175,7 @@ var ajaxTrip = function(viagens) {
            //    console.log('current value: ' + $('input#session-clickbus').val());
            //    sessionManutencao();
            //}, 60000);
-            
+
         }
     })
     .fail(function() {
@@ -519,16 +519,16 @@ var tripBooking = function(request) {
 var sessionManutencao = function() {
 
     var currentSessionId = $('input#session-clickbus');
-    
+
     //so disparar essa request se estiver atualmente mexendo na clickbus
     if (currentSessionId.length) {
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://api-evaluation.clickbus.com.br/api/v1/session");
         xhr.setRequestHeader("Content-Type", "application/json");
-        
+
         //Acho que isso nao funciona porque CORS nao esta permitido pelo server.
         //xhr.setRequestHeader("Cookie", "PHPSESSID="+currentSessionId);
-        
+
         //Com só essa flag ativada, o PHPSESSID é enviado, mas aparentemente ele
         //sempre abre uma nova sessao. perdendo os dados da sessao atual.
         //xhr.withCredentials =  true;
@@ -539,17 +539,17 @@ var sessionManutencao = function() {
             }
         };
 
-        xhr.send('');        
+        xhr.send('');
     }
 }
 
 var setSession = function(data) {
-    
+
     var currentSessionId = getSessionId();
     console.log('============ chegou setSession new value:' + data.content);
     console.log('currentSessionId: ' + currentSessionId);
-    
-    //settando o novo sessionId 
+
+    //settando o novo sessionId
     setSessionId(data.content);
 
     setTimeout(function() {
@@ -569,4 +569,3 @@ var getSessionId = function() {
 var setSessionId = function(sessionID) {
     $('input#session-clickbus').val(sessionID);
 }
-

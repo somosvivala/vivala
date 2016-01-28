@@ -50,7 +50,7 @@ class ClickBusController extends Controller {
         $context = stream_context_create(array(
             'http' => array('ignore_errors' => true),
         ));
-        
+
         // Recebo o resultado JSON da ClickBus, ignorando os possíveis erros 404
         $result = file_get_contents($url, false, $context);
 
@@ -95,7 +95,7 @@ class ClickBusController extends Controller {
                     return $result;
                 }
 
-                //adicionando outros campos do formulario para serem passados 
+                //adicionando outros campos do formulario para serem passados
                 //juntos.
                 $ida->horario = $ida_obj->horario;
                 $ida->diames = $ida_obj->diames ;
@@ -104,17 +104,17 @@ class ClickBusController extends Controller {
                 $ida->scheduleId = $ida_obj->id;
                 $ida->horario_chegada = $ida_obj->horario_chegada;
                 $ida->classe = $ida_obj->classe;
-                
+
             }
-            
+
             if (isset($volta_obj) && isset($content_ida)) {
                 $sessionId = $ida->sessionId;
-                
+
                 $context = [
                     'http' => [
                         'ignore_errors' => true,
                         'header' => "Cookie: PHPSESSID=".$sessionId."\r\n"
-                                    
+
                     ]
                 ];
                 $context = stream_context_create($context);
@@ -137,7 +137,7 @@ class ClickBusController extends Controller {
             }
 
 
-            //Nao retornando a view direto pois precisamos do 
+            //Nao retornando a view direto pois precisamos do
             //valor do sessionId do retorno da request
             $view = view('clickbus._listPoltronas', compact('ida', 'volta', 'from', 'to' ))->render();
             return array('view' => $view, 'sessionId' => $ida->sessionId);
@@ -181,7 +181,7 @@ class ClickBusController extends Controller {
 
         // Retorna o resultado e todos os dados recebidos
         return array("result" => json_decode($result), "data" => $request);
-    
+
     }
 
     public function getRemoverpoltronas(/*RemoverPoltronasClickbusRequest $request*/)
@@ -259,7 +259,7 @@ class ClickBusController extends Controller {
             ]
         ];
 
-        
+
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
@@ -395,7 +395,7 @@ class ClickBusController extends Controller {
         $payment_method = $request['request']["buyer"]["payment"]["method"];
 
         $sessionId = $request['request']['sessionId'];
-        
+
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
 
         //Se o metodo de pagamento for paypal, entao meu objeto request nao possui os propriedades no objeto "meta"
@@ -585,21 +585,30 @@ class ClickBusController extends Controller {
             ];
 
         } else if (isset($decoded)) {
-            
-            $retorno = [
-                "errors" => trans("clickbus.clickbus_error-" . $decoded->{"error"}[0]->{"code"})
-            ];
+            // Estou no DEV (development)
+            if(App::environment('development')){
+                $retorno = [
+                    // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
+                    "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
+                ];
+            // Estou na MASTER (production)
+            } else {
+                $retorno = [
+                    // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
+                    "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
+                ];
+            }
         }
 
         //TODO tratar retorno? esse retorno contem dados do cartao!!
         return $retorno;
     }
 
-    
+
     /**
      * Bate no endpoint de /booking/voucher e retorna o resultado ou erro.
      */
-    public function getVoucher() 
+    public function getVoucher()
     {
     	$request = Input::all();
 
@@ -625,6 +634,3 @@ class ClickBusController extends Controller {
     }
 
 }
-
-
-

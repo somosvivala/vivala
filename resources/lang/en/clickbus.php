@@ -34,6 +34,9 @@ return[
 
 'clickbus_buy-now' => 'Buy Now',
 
+/*
+  Tradução pro environment de DESENVOLVIMENTO (dev) [TDD]
+*/
 // Booking
 'clickbus_error-A1' => 'Please provide a <font color="red">sessionId</font>.<br/>The parameter <font color="red">sessionId</font> is missing from the request.',
 'clickbus_error-A2' => 'The given <font color="red">sessionId</font> has expired.<br/>The value for <font color="red">sessionId</font> has expired and is no longer valid. Please request a new value in SESSION.',
@@ -147,7 +150,7 @@ return[
 'clickbus_error-K8' => 'The given <font color="red">ticket_amount</font> is incorrect.<br/>One of the given <font color="red">ticket_amount</font> is incorrect.',
 'clickbus_error-K9' => 'The request is malformed.<br/>Please check the contents of your request. Please check your request for any JSON malforming.',
 
-// Checkout e outros
+// Checkout e outros [NEED REVIEW]
 'clickbus_error-L1' => 'Please provide the passenger\’s name. One of the passengers name is missing from the request.',
 'clickbus_error-L2' => 'Please provide a value for the passengers first name. One of the passenger’s name is empty.',
 'clickbus_error-L3' => 'Please provide the passengers document. One of the passenger’s document is missing from the request.',
@@ -169,7 +172,6 @@ return[
 'clickbus_error-L24' => 'The installment value is less than the minimum value supported. The value based for each installment of your request is lower than the minimum supported value. Please contact us for more details.',
 'clickbus_error-L25' => 'Inconsistencies were found. Please check your Payment Data. Some required values for your payment data are missing. Please review your request before proceed.',
 'clickbus_error-L26' => 'The given credit card brand is not supported by the payment method. The card brand is not supported by our payment methods. Please contact us or check the Payments resource to verify if the given card brand is declared in the supported list.',
-
 'clickbus_error-L27' => 'Checkout Error.<br/>It’s required to authorize this purchase with the card issuer.',
 'clickbus_error-L28' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
 'clickbus_error-L29' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
@@ -192,5 +194,166 @@ return[
 'clickbus_error-L46' => 'Invalid discount for this trip.<br/>The selected seats must be a trip from a given origin or/and destination, the same configured for this voucher.',
 'clickbus_error-L47' => 'Discount is valid just for round trips.<br/>This voucher can only be applied for round trips.',
 'clickbus_error-L48' => 'Invalid discount for this busline.<br/>The selected seats must be from a trip which belongs to the bus company configured for this voucher.',
+
+/*
+  Tradução pro environment de PRODUÇÃO (master) [NEED REVIEW]
+*/
+// Booking
+'clickbus_prod-error-A1' => 'Please provide a <font color="red">sessionId</font>.<br/>The parameter <font color="red">sessionId</font> is missing from the request.',
+'clickbus_prod-error-A2' => 'The given <font color="red">sessionId</font> has expired.<br/>The value for <font color="red">sessionId</font> has expired and is no longer valid. Please request a new value in SESSION.',
+'clickbus_prod-error-A3' => 'Please provide the <font color="red">seatReservation</font> for all your order items.<br/>One or more of your items in the order does not have the <font color="red">seatReservation</font> parameter.',
+'clickbus_prod-error-A4' => 'Missing parameters in your payment data.<br/>One or more of the following buyer parameters are missing: name, card, code, zipcode or expiration.',
+'clickbus_prod-error-A5' => 'The expiration data is invalid or incorrect.<br/>The expiration data provided in the card is incorrect or invalid.',
+'clickbus_prod-error-A6' => 'Please provide the installment for the payment data.<br/>The parameter installment is missing from the request.',
+'clickbus_prod-error-A7' => 'The order cart is empty.<br/>You have tried to proceed to checkout process without creating any Seat Block.',
+'clickbus_prod-error-A12' => 'There was a problem with your ORDER.<br/>Please contact us for more details. Your order could not be completed. Please contact us at contato@clickbus.com.br for support and details.',
+'clickbus_prod-error-A13' => 'Checkout Error.<br/>An internal error ocurred at the conclusion of your request.',
+'clickbus_prod-error-A14' => 'Application Error.<br/>An error occurred before send the success email of your request.',
+'clickbus_prod-error-A15' => 'An unexpected issue happened in your request.<br/>Please contact us for more details. Troubles while requesting data from the booking engine. Please contact us at contato@clickbus.com.br for support and details.',
+'clickbus_prod-error-A16' => 'The number of passengers does not match with the data already informed.<br/>There is a difference between the amount of seats provided in the request and the the amount of seats that were reserved previously at the Seat Block. Please contact us for more details about the subject and how to troubleshoot.',
+'clickbus_prod-error-A27' => 'Some inconsistencies were found.<br/>Please check your PAYMENT DATA. One or more values provided for the payment data are invalid or incorrect. Please check these values before send a new request.',
+'clickbus_prod-error-A28' => 'The given CREDIT CARD BRAND is not supported by the payment method.<br/>The card brand is not supported by our payment methods. Please contact us or check the Payments resource to verify if the given card brand is declared in the supported list.',
+
+// Checkout
+'clickbus_prod-error-A29' => 'Checkout Error.<br/>It’s required to authorize this purchase with the card issuer.',
+'clickbus_prod-error-A30' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
+'clickbus_prod-error-A31' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
+'clickbus_prod-error-A32' => 'Checkout Error.<br/>A problem ocurred while authorizing the purchase. Please check the card data or contact us for more details.',
+'clickbus_prod-error-A33' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
+'clickbus_prod-error-A34' => 'Checkout Error.<br/>The payment could not be processed.',
+'clickbus_prod-error-A35' => 'Checkout Error.<br/>Please check if the card is ok or if it still requires it’s activation before proceed with your payment.',
+'clickbus_prod-error-A36' => 'Checkout Error.<br/>It was not possible to process the purchase.',
+'clickbus_prod-error-A37' => 'Checkout Error.<br/>You have already made a purchase with the same value. If you need to pay the same amount again, please, use another card or payment method.',
+'clickbus_prod-error-A38' => 'Checkout Error.<br/>Your payment was rejected. We recommend you to pay with other payment methods available.',
+'clickbus_prod-error-A39' => 'Checkout Error.<br/>There is no credit available for this credit card.',
+'clickbus_prod-error-A40' => 'Checkout Error.<br/>Payments in this installment amount are not processed. Please, choose other installment value.',
+'clickbus_prod-error-A41' => 'Checkout Error.<br/>You have reached limit of tries. Please, use another card or payment method.',
+'clickbus_prod-error-A42' => 'Checkout Error.<br/>The payment could not be processed.',
+'clickbus_prod-error-A43' => 'Checkout Error.<br/>Payment not authorized. Please, check your credit card information.',
+
+// Cancelamento de Requisição
+'clickbus_prod-error-A8' => 'Please provide a LOCALIZER.<br/>The parameter LOCALIZER is missing from the request.',
+'clickbus_prod-error-A9' => 'The request STATUS is invalid.<br/>The value for the STATUS is invalid. Use order_canceled.',
+'clickbus_prod-error-A10' => 'The given LOCALIZER is invalid.<br/>The value for LOCALIZER is invalid or could not be found.',
+'clickbus_prod-error-A24' => 'The cancelation request failed.<br/>Please check the ORDER status for more details. The request for cancelation of the given Order was started but could not achieve success. Please contact us for more details.',
+'clickbus_prod-error-A25' => 'The ORDER Cancelation Workflow can’t be executed for the given ORDER.<br/>Please check the ORDER Status for more info. The actual ORDER status does not allow to proceed to it’s cancelation and your application should not repeat this request. Please contact us for more details.',
+'clickbus_prod-error-A26' => 'Server Error.<br/>The server encountered a temporary error and could not complete your request.',
+
+// Vouchers
+'clickbus_prod-error-A17' => 'Please provide a VOUCHER.<br/>The value for the field VOUCHER is missing.',
+'clickbus_prod-error-A18' => 'Invalid discount.<br/>This VOUCHER’s discount is invalid.',
+'clickbus_prod-error-A19' => 'Order has not reached minimum value.<br/>The actual total value of the order is lower than the minimum value required for this VOUCHER’s discount.',
+'clickbus_prod-error-A20' => 'Invalid discount for this email.<br/>The requested email was already applied to this voucher before. Please provide another email address.',
+'clickbus_prod-error-A21' => 'Invalid discount for this trip.<br/>The selected seats must be a trip from a given ORIGIN or/and DESTINO, the same configured for this voucher.',
+'clickbus_prod-error-A22' => 'Discount is valid just for round trips.<br/>This VOUCHER can only be applied for round trips.',
+'clickbus_prod-error-A23' => 'Invalid discount for this busline.<br/>The selected seats must be from a trip which belongs to the bus company configured for this voucher.',
+
+// Acessos não autorizados
+'clickbus_prod-error-D1' => 'Unauthorized access.<br/>You are not authorized to view the contents of this resource. Please use a valid API Public Key.',
+'clickbus_prod-error-D2' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your Request before it’s sent to the booking engine.',
+'clickbus_prod-error-D3' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your Request to the booking engine.',
+'clickbus_prod-error-D4' => 'The given ORDER ID is invalid.<br/>The value provided for ID is invalid or incorrect.',
+'clickbus_prod-error-D5' => 'Item not found.<br/>The requested ORDER could not be found.',
+
+// Lugares
+'clickbus_prod-error-F1' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your request.',
+'clickbus_prod-error-F2' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your request.',
+
+// Assentos
+'clickbus_prod-error-H1' => 'Please provide the passenger’s NAME.<br/>The passenger’s NAME is missing.',
+'clickbus_prod-error-H2' => 'Please provide a value for the passenger’s NAME.<br/>The passenger’s NAME is empty.',
+'clickbus_prod-error-H3' => 'Please provide the passengers DOCUMENT.<br/>The passenger’s DOCUMENT is missing.',
+'clickbus_prod-error-H4' => 'Please provide a value for the passenger’s DOCUMENT.<br/>The passenger’s DOCUMENT is empty.',
+'clickbus_prod-error-H5' => 'Please provide the passenger’s GENDER.<br/>The passenger’s GENDER is missing. Use M for MALE and F for FEMALE.',
+'clickbus_prod-error-H6' => 'Please provide a valid option for the passenger’s GENDER.<br/>The passenger’s GENDER is empty.',
+'clickbus_prod-error-H7' => 'Please provide a <font color="red">sessionId</font>.<br/>The parameter <font color="red">sessionId</font> is missing from the request.',
+'clickbus_prod-error-H8' => 'The given <font color="red">sessionId</font> has expired.<br/>The value for <font color="red">sessionId</font> has expired and is no longer valid. Please request a new value in SESSION.',
+'clickbus_prod-error-H9' => 'Please provide the <font color="red">scheduleId</font>. The parameter <font color="red">scheduleId</font> is missing from the request.',
+'clickbus_prod-error-H10' => 'The given <font color="red">scheduleId</font> is invalid. The value for scheduleId has expired and is no longer valid. Please request a new value in SESSION.',
+'clickbus_prod-error-H11' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your Request before it’s sent to the Booking Engine.',
+'clickbus_prod-error-H12' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your Request to the Booking Engine.',
+'clickbus_prod-error-H13' => 'The selected SEAT is unavailable.<br/>The selected SEAT is already taken by another user.',
+'clickbus_prod-error-H14' =>	'Please provide a <font color="red">sessionId</font>.	The parameter sessionId is missing from the Request.',
+'clickbus_prod-error-H15' => 'The given <font color="red">sessionId</font> has expired.	The value for sessionId has expired and is no longer valid. Please request a new value in TRIPS.',
+'clickbus_prod-error-H16' => 'Please provide the <font color="red">scheduleId</font>.	The parameter scheduleId is missing from the Request.',
+'clickbus_prod-error-H17' => 'The given <font color="red">scheduleId</font> is invalid.	The value for scheduleId has expired and is no longer valid. Please request a new value in TRIPS.',
+'clickbus_prod-error-H18' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your request before it’s sent to the Booking Engine.',
+'clickbus_prod-error-H19' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your request to the Booking Engine.',
+'clickbus_prod-error-H20' => 'Busy SEAT.<br/>The lifetime of the Seat Block is expired.',
+'clickbus_prod-error-H21' => 'Please provide the passenger’s DOCUMENT TYPE.<br/>The passenger’s <font color="red">documentType</font> is missing.',
+'clickbus_prod-error-H22' => 'Please provide a value for the passenger’s DOCUMENT TYPE.<br/>The passenger’s <font color="red">documentType</font> is empty.',
+
+// scheduleId
+'clickbus_prod-error-I1' => 'Please provide the <font color="red">scheduleId</font>.<br/>The parameter <font color="red">scheduleId</font> is missing from the request.',
+'clickbus_prod-error-I2'	=> 'The given <font color="red">scheduleId</font> is invalid.<br/>The value for <font color="red">scheduleId</font> is invalid or incorrect.',
+'clickbus_prod-error-I3'	=> 'Application Error.<br/>The application encountered a temporary error and could not complete your request.',
+'clickbus_prod-error-I4'	=> 'Server Error.<br/>The server encountered a temporary error and could not complete your request.',
+
+// Viagens
+'clickbus_prod-error-J1' => 'Please provide the FROM parameter.<br/>The parameter FROM is missing from the request.',
+'clickbus_prod-error-J2' => 'Please provide the TO parameter.<br/>The parameter TO is missing from the request.',
+'clickbus_prod-error-J3' => 'Please provide the DEPARTURE parameter.<br/>The parameter DEPARTURE is missing from the request.',
+'clickbus_prod-error-J4' => 'The given FROM value is invalid or incorrect.<br/>The provided value for FROM is not a valid place.',
+'clickbus_prod-error-J5' => 'The given TO value is invalid or incorrect.<br/>The provided value for TO is not a valid place.',
+'clickbus_prod-error-J6' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your request before it’s sent to the Booking Engine.',
+'clickbus_prod-error-J7' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your request to the Booking Engine.',
+'clickbus_prod-error-J8' => 'Please provide a valid date for DEPARTURE.<br/>The value for DEPARTURE is invalid or incorrect.',
+'clickbus_prod-error-J9' => 'The DEPARTURE date cannot occur in a day before today.<br/>The value for DEPARTURE cannot be a date in the past.',
+
+// Pagamentos
+'clickbus_prod-error-K1' => 'Please provide the META BLOCK.<br/>The parameter meta is missing from the Request.',
+'clickbus_prod-error-K2' => 'Please provide your store parameters for META.<br/>At least one of the parameters store, model or platform is missing.',
+'clickbus_prod-error-K3' => 'One of the following parameters are incorrect: store, platform or model.<br/>One of the meta values is incorrect (store, model or platform).',
+'clickbus_prod-error-K4' => 'Please provide the contents block.<br/>The parameter contents is missing from the request.',
+'clickbus_prod-error-K5' => 'Please provide at least one seat information.<br/>The parameter contents is empty.',
+'clickbus_prod-error-K6' => 'Please provide the right params for the seats.<br/>At least one of the values inside contents is missing one of it’s required parameters: scheduleId or ticket_amount.',
+'clickbus_prod-error-K7' => 'The given <font color="red">scheduleId</font> is incorrect.<br/>One of the given <font color="red">scheduleId</font> is incorrect or invalid.',
+'clickbus_prod-error-K8' => 'The given <font color="red">ticket_amount</font> is incorrect.<br/>One of the given <font color="red">ticket_amount</font> is incorrect.',
+'clickbus_prod-error-K9' => 'The request is malformed.<br/>Please check the contents of your request. Please check your request for any JSON malforming.',
+
+// Checkout e outros [NEED REVIEW]
+'clickbus_prod-error-L1' => 'Please provide the passenger\’s name. One of the passengers name is missing from the request.',
+'clickbus_prod-error-L2' => 'Please provide a value for the passengers first name. One of the passenger’s name is empty.',
+'clickbus_prod-error-L3' => 'Please provide the passengers document. One of the passenger’s document is missing from the request.',
+'clickbus_prod-error-L4' => 'Please provide a value for the passengers document. One of the passenger’s document is empty.',
+'clickbus_prod-error-L5' => 'Please provide the scheduleId. The scheduleId for one of the order items is missing from the Request.',
+'clickbus_prod-error-L6' => 'The given scheduleId is invalid. The scheduleId for one of the order items is invalid or incorrect.',
+'clickbus_prod-error-L7' => 'Invalid Parameters (Deprecated: check for L25) Missing parameters in your payment data.',
+'clickbus_prod-error-L8' => 'The expiration date is invalid or incorrect. The expiration date provided in the card is incorrect or invalid.',
+'clickbus_prod-error-L9' => 'Please provide the ‘installment’ for the payment data. The parameter installment is missing from the Request.',
+'clickbus_prod-error-L10' => 'An unexpected issue happened in your Request. Please contact us for more details. Troubles while requesting data from the booking engine. Please contact us at contato@clickbus.com.br for support and details.',
+'clickbus_prod-error-L12' => 'The Server encountered a temporary error and could not complete your request. An error occurred after sending your Request.',
+'clickbus_prod-error-L13' => 'Please check you card number. The card, or any other information provided for the payment form is incorrect.',
+'clickbus_prod-error-L14' => 'There was a problem with your Order. Please contact us for more details. Your Order could not be completed. Please contact us at contato@clickbus.com.br for support and details.',
+'clickbus_prod-error-L15' => 'Checkout Error An internal error ocurred at the conclusion of your Request.',
+'clickbus_prod-error-L16' => 'Application Error An error occurred before send the success email of your Request.',
+'clickbus_prod-error-L17' => 'Application Error There was a problem with the communication with the booking engine. Please retry your request.',
+'clickbus_prod-error-L22' =>	'Unavailable Seat	One or more Seats received in the request were reserved before your request, or the booking engine could not create reservations for the given Seats.',
+'clickbus_prod-error-L23' => 'The Order Cart is empty. No Seats were found in your cart to finish your purchase. Please contact us for more details.',
+'clickbus_prod-error-L24' => 'The installment value is less than the minimum value supported. The value based for each installment of your request is lower than the minimum supported value. Please contact us for more details.',
+'clickbus_prod-error-L25' => 'Inconsistencies were found. Please check your Payment Data. Some required values for your payment data are missing. Please review your request before proceed.',
+'clickbus_prod-error-L26' => 'The given credit card brand is not supported by the payment method. The card brand is not supported by our payment methods. Please contact us or check the Payments resource to verify if the given card brand is declared in the supported list.',
+'clickbus_prod-error-L27' => 'Checkout Error.<br/>It’s required to authorize this purchase with the card issuer.',
+'clickbus_prod-error-L28' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
+'clickbus_prod-error-L29' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
+'clickbus_prod-error-L30' => 'Checkout Error.<br/>A problem ocurred while authorizing the purchase. Please check the card data or contact us for more details.',
+'clickbus_prod-error-L31' => 'Checkout Error.<br/>The payment was not authorized. We suggest you to check the card information before proceed.',
+'clickbus_prod-error-L32' => 'Checkout Error.<br/>The payment could not be processed.',
+'clickbus_prod-error-L33' => 'Checkout Error.<br/>Please check if the card is ok or if it still requires it’s activation before proceed with your payment.',
+'clickbus_prod-error-L34' => 'Checkout Error.<br/>It was not possible to process the purchase.',
+'clickbus_prod-error-L35' => 'Checkout Error.<br/>You have already made a purchase with the same value. If you need to pay the same amount again, please, use another card or payment method.',
+'clickbus_prod-error-L36' => 'Checkout Error.<br/>Your payment was rejected. We recommend you to pay with other payment methods available.',
+'clickbus_prod-error-L37' => 'Checkout Error.<br/>There is no credit available for this credit card.',
+'clickbus_prod-error-L38' => 'Checkout Error.<br/>Payments in this installment amount are not processed. Please, choose other installment value.',
+'clickbus_prod-error-L39' => 'Checkout Error.<br/>You have reached limit of tries. Please, use another card or payment method.',
+'clickbus_prod-error-L40' => 'Checkout Error.<br/>The payment could not be processed.',
+'clickbus_prod-error-L41' => 'Checkout Error.<br/>Payment not authorized. Please, check your credit card information.',
+'clickbus_prod-error-L42' => 'Checkout Error.<br/>The maximum execution time was exceeded. Please check the Order resource to check the actual status of your Order.',
+'clickbus_prod-error-L43' => 'Invalid discount.<br/>This voucher’s discount is invalid.',
+'clickbus_prod-error-L44' => 'Order has not reached minimum value.<br/>The actual total value of the Order is lower than the minimum value required for this voucher’s discount.',
+'clickbus_prod-error-L45' => 'Invalid discount for this email.<br/>The email in the request.buyer.email parameter was already applied to this voucher. Please provide another email address.',
+'clickbus_prod-error-L46' => 'Invalid discount for this trip.<br/>The selected seats must be a trip from a given origin or/and destination, the same configured for this voucher.',
+'clickbus_prod-error-L47' => 'Discount is valid just for round trips.<br/>This voucher can only be applied for round trips.',
+'clickbus_prod-error-L48' => 'Invalid discount for this busline.<br/>The selected seats must be from a trip which belongs to the bus company configured for this voucher.'
 ];
 ?>

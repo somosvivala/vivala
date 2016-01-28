@@ -58,9 +58,19 @@ class ClickBusRepository {
     // Função de Tratamento de Erros da ClickBus
     public static function parseError($data)
     {
-        $option = [
-            "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
-        ];
+        // Estou no DEV (development)
+		if(App::environment('development')){
+            $option = [
+                // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
+                "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
+            ];
+        // Estou na MASTER (production)
+        } else {
+            $option = [
+                // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
+                "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
+            ];
+        }
         return $option;
     }
 
