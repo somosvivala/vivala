@@ -18,6 +18,9 @@ return[
 'clickbus_bus-ticket-to-from' => 'Passagens de ônibus de',
 'clickbus_schedule' => 'Itinerário',
 
+'clickbus_ticket' => 'Passagem',
+'clickbus_ticket_' => 'Passagens',
+
 'clickbus_seat' => 'Poltrona',
 'clickbus_seat_' => 'Poltronas',
 'clickbus_empty-seat' => 'Livre',
@@ -34,6 +37,44 @@ return[
 
 'clickbus_buy-now' => 'Comprar Agora',
 
+'clickbus_client-opt-PF' => 'Pessoa Física',
+'clickbus_client-opt-PJ' => 'Pessoa Jurídica',
+'clickbus_client-opt-foreigner' => 'Estrangeiro',
+
+'clickbus_client-title-credit-card' => 'Cartão de Crédito',
+'clickbus_client-title-debit-card' => 'Cartão de Débito',
+'clickbus_client-opt-card-number' => 'Número do Cartão',
+'clickbus_client-opt-card-expiration-date' => 'Válido até',
+'clickbus_client-opt-card-name-1' => 'Nome do Titular',
+'clickbus_client-opt-card-name-2' => '(como impresso no cartão)',
+'clickbus_client-opt-card-password' => 'Código de Segurança',
+'clickbus_client-opt-number-installments' => 'Quantidade de Parcelas',
+'clickbus_client-opt-installment' => 'Parcela',
+'clickbus_client-opt-installment_' => 'Parcelas',
+
+'clickbus_client-opt-from' => 'De',
+'clickbus_client-opt-destiny' => 'Para',
+'clickbus_client-opt-with-photo' => '(com foto)',
+
+'clickbus_client-title-infos' => 'Informações do Cliente',
+'clickbus_client-title-payment-type' => 'Forma de Pagamento',
+'clickbus_client-title-payment-details' => 'Detalhes do Pagamento',
+
+'clickbus_client-voucher' => 'Cupom de Desconto',
+'clickbus_client-voucher-insert' => 'Inserir Cupom de Desconto',
+'clickbus_client-voucher-use' => 'Usar Cupom',
+'clickbus_client-taxes-fees' => 'Impostos e Taxas',
+'clickbus_client-discounts' => 'Descontos',
+
+'clickbus_client-error-1' => 'Nenhuma passagem foi encontrada, tente uma linha diferente ou outra data.',
+'clickbus_client-error-2' => 'Nenhum método de pagamento disponivel.',
+'clickbus_client-error-3' => 'Bandeiras para esse metodo de pagamento indisponíveis.',
+'clickbus_client-error-4' => 'Nenhuma opção disponivel.',
+'clickbus_client-error-5' => 'Método de pagamento indisponível.',
+
+'clickbus_client-email-ph' => 'passageiro@email.com',
+
+'clickbus_client-bank-plugin' => 'É necessário possuir o plug-in do banco instalado NESTE COMPUTADOR. Caso não tenha certeza, recomendamos o uso do cartão de crédito.',
 /*
   Tradução pro environment de DESENVOLVIMENTO (dev) [TDD]
 */

@@ -2,41 +2,41 @@
     {!! Form::open(['url' => ['/clickbus/booking'], 'method' => 'POST', 'id'=>'form-pagamento', 'data-loading'=>'form-loading']) !!}
         <div class="row">
             <div class="col-sm-8">
-                <h4>Informações do Cliente</h4>
+                <h4>{{ trans('clickbus.clickbus_client-title-infos') }}</h4>
                 <ul id="abas-cliente" class="nav nav-pills margin-b-1">
-                    <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">Pessoa Física</a></li>
-                    <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">Pessoa Jurídica</a></li>
+                    <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">{{ trans('clickbus.clickbus_client-opt-PF') }}</a></li>
+                    <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">{{ trans('clickbus.clickbus_client-opt-PJ') }}</a></li>
                     {{-- Desativado
-                    <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">Estrangeiro</a></li>
+                    <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">{{ trans('clickbus.clickbus_client-opt-foreigner') }}</a></li>
                     --}}
                 </ul>
                 <div class="row">
                     <div id="tabs-pagamento-cliente" class="tab-content">
                         <div role="tabpanel" class="tab-pane fade active in" id="pessoa-fisica" aria-labelledby="pessoa-fisica-tab">
                             <div class="col-xs-8">
-                                <label for="nome-pf">Nome</label>
+                                <label for="nome-pf">{{ trans('global.lbl_name') }}</label>
                                 <input type="text" class="required form-control" name="nome-pf" required="" value="">
                             </div>
 
                             <div class="col-xs-4">
-                                <label for="nascimento-pf">Nascimento</label>
+                                <label for="nascimento-pf">{{ trans('global.lbl_birthday') }}</label>
                                 <input type="text" class="required form-control mascara-data" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8 padding-t-1">
-                                <label for="email-pf">Email</label>
+                                <label for="email-pf">{{ trans('global.lbl_email') }}</label>
                                 <input type="email" class="required form-control" required="" name="email-pf" value="">
                             </div>
                             <div class="col-xs-4 padding-t-1">
-                                <label for="telefone-pf">Telefone</label>
+                                <label for="telefone-pf">{{ trans('global.lbl_phone') }}</label>
                                 <input type="text" class="required form-control" required="" name="telefone-pf" placeholder="11 987654321">
                             </div>
                             <div class="col-xs-8 padding-t-1">
                                 <div class="row">
-                                    <label for="documento" class="col-sm-12">Documento:</label>
+                                    <label for="documento" class="col-sm-12">{{ trans('global.lbl_document') }}</label>
                                     <div class="col-xs-4">
                                         <select id="document-type" name="documentType" class="form-control">
                                             <option value="rg">RG</option>
-                                            <option value="passaporte">Passaporte</option>
+                                            <option value="passaporte">{{ trans('global.lbl_passport') }}</option>
                                             <option value="cpf">CPF</option>
                                         </select>
                                     </div>
@@ -47,22 +47,21 @@
                             </div>
                         </div>
 
-
                         <div role="tabpanel" class="tab-pane fade" id="pessoa-juridica" aria-labelledby="pessoa-juridica-tab">
                             <div class="col-xs-8">
                                 <label for="nome-pj">Nome do comprador</label>
                                 <input type="text" class="form-control" name="nome-pj" value="">
                             </div>
                             <div class="col-xs-4">
-                                <label for="nascimento-pj">Data de nascimento</label>
+                                <label for="nascimento-pj">{{ trans('global.lbl_birthday') }}</label>
                                 <input type="text" class="required form-control mascara-data" name="nascimento-pj" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8 padding-t-1">
-                                <label for="email-pj">Email</label>
+                                <label for="email-pj">{{ trans('global.lbl_email') }}</label>
                                 <input type="email" class="required form-control" name="email-pj" value="">
                             </div>
                             <div class="col-xs-4 padding-t-1">
-                                <label for="telefone-pj">Telefone</label>
+                                <label for="telefone-pj">{{ trans('global.lbl_phone') }}</label>
                                 <input type="text" class="required form-control" name="telefone-pj" placeholder="11 987654321">
                             </div>
                             <div class="col-xs-12 padding-t-1">
@@ -81,38 +80,38 @@
                         {{-- Desativado
                         <div role="tabpanel" class="tab-pane fade" id="estrangeiro" aria-labelledby="estrangeiro-tab">
                             <div class="col-xs-12">
-                                <label for="nome-estrangeiro">Nome</label>
+                                <label for="nome-estrangeiro">{{ trans('global.lbl_name') }}</label>
                                 <input type="text" class="required form-control" name="nome-estrangeiro" value="">
                             </div>
                             <div class="col-xs-4">
-                                <label for="nascimento-estrangeiro">Data de nascimento</label>
+                                <label for="nascimento-estrangeiro">{{ trans('global.lbl_birthday') }}</label>
                                 <input type="text" class="required form-control" name="nascimento-estrangeiro" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
                             </div>
                             <div class="col-xs-8">
-                                <label for="email-estrangeiro">Email</label>
+                                <label for="email-estrangeiro">{{ trans('global.lbl_email') }}</label>
                                 <input type="email" class="required form-control" name="email-estrangeiro" value="">
                             </div>
                             <div class="col-xs-4">
-                                <label for="telefone-estrangeiro">Telefone</label>
+                                <label for="telefone-estrangeiro">{{ trans('global.lbl_phone') }}</label>
                                 <input type="text" class="required form-control" name="telefone-estrangeiro" placeholder="11 987654321">
                             </div>
                             <div class="col-xs-12">
-                                <label for="passaporte-estrangeiro">Passaporte</label>
+                                <label for="passaporte-estrangeiro">{{ trans('global.lbl_passport') }}</label>
                                 <input type="text" class="required form-control" name="passaporte" placeholder="Passaporte">
                             </div>
                         </div>
                         --}}
                     </div>
                 </div>
-                <h4 class="margin-t-2">Forma de Pagamento</h4>
+                <h4 class="margin-t-2">{{ trans('clickbus.clickbus_client-title-payment-type') }}</h4>
                 <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
                     @forelse($decoded->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
-                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">Cartão de crédito</a></li>
+                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">{{ trans('clickbus.clickbus_client-title-credit-card') }}</a></li>
                     @endif
 
                     @if ($formaPagamento->name == 'debitcard')
-                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">Cartão de Débito</a></li>
+                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">{{ trans('clickbus.clickbus_client-title-debit-card') }}</a></li>
                     @endif
 
                     {{-- Desativado
@@ -122,9 +121,8 @@
                     --}}
 
                     @empty
-                    <p> Nenhum metodo de pagamento disponivel </p>
+                    <p>{{ trans('clickbus.clickbus_client-error-2') }}</p>
                     @endforelse
-
                 </ul>
                 <div class="row margin-b-2">
                     <div id="tabs-pagamento-tipo" class="tab-content">
@@ -138,37 +136,37 @@
                                     <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
                                 </label>
                                 @empty
-                                <p> Bandeiras para esse metodo de pagamento indisponiveis </p>
+                                <p>{{ trans('clickbus.clickbus_client-error-3') }}</p>
                                 @endforelse
                             </div>
-                            <div class="col-xs-12 margin-b-1">
-                                <label>Quantidade de parcelas</label>
+                            <div class="col-xs-12 margin-t-1">
+                                <label>{{ trans('clickbus.clickbus_client-opt-number-installments') }}</label>
                             </div>
-                            <div class="col-xs-12">
+                            <div class="col-xs-12 margin-b-1">
                                 <?php $parc_bandeira = 0; ?>
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
                                 <select id="bandeira-{{ $bandeiraCartao->brand }}" class="form-control <?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
                                     @forelse ($bandeiraCartao->installments as $key => $Parcela)
-                                    <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1)parcela @else parcelas @endif </option>
+                                    <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1){{ trans('clickbus.clickbus_client-opt-installment') }} @else {{ trans('clickbus.clickbus_client-opt-installment_') }} @endif </option>
                                     @empty
-                                    <option value="0">Nenhuma opção disponivel</option>
+                                    <option value="0"></option>
                                     @endforelse
                                 </select>
                                 @empty
-                                <p> Bandeira indisponivel </p>
+                                <p>{{ trans('clickbus.clickbus_client-error-4') }}</p>
                                 @endforelse
                             </div>
                             <div class="col-xs-7 padding-t-1">
-                                <label for="num-cartao-credito">Número do Cartão</label>
+                                <label for="num-cartao-credito">{{ trans('clickbus.clickbus_client-opt-card-number') }}</label>
                                 <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
                             </div>
                             <div class="col-xs-5 padding-t-1">
                                 <div class="">
-                                    <label for="mes-validade-credito" >Cartão válido até</label>
+                                    <label for="mes-validade-credito" >{{ trans('clickbus.clickbus_client-opt-card-expiration-date') }}</label>
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <select class="form-control" name="mes-validade-credito">
-                                                <option>Mês</option>
+                                                <option>{{ trans('global.date_month') }}</option>
                                                 @for($i=1;$i<=12;$i++)
                                                 <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
                                                 @endfor
@@ -176,7 +174,7 @@
                                         </div>
                                         <div class="col-xs-6">
                                             <select class="form-control" name="ano-validade-credito">
-                                                <option>Ano</option>
+                                                <option>{{ trans('global.date_year') }}</option>
                                                 @for($i=0;$i<=20;$i++)
                                                 <option>{{ date('Y')+$i }}</option>
                                                 @endfor
@@ -186,15 +184,15 @@
                                 </div>
                             </div>
                             <div class="col-xs-7 padding-t-1">
-                                <label for="nome-titular-credito">Nome do titular <small> (como impresso no cartão)</small></label>
+                                <label for="nome-titular-credito">{{ trans('clickbus.clickbus_client-opt-card-name-1') }} <small>{{ trans('clickbus.clickbus_client-opt-card-name-2') }}</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="JOÃO D. SILVA">
                             </div>
                             <div class="col-xs-5 padding-t-1">
-                                <label for="cod-seguranca-credito" >Código de Segurança</label>
+                                <label for="cod-seguranca-credito" >{{ trans('clickbus.clickbus_client-opt-card-password') }}</label>
                                 <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
                             <div class="col-xs-12 padding-t-1">
-                                <label>CEP:</label>
+                                <label>{{ trans('global.address_zipcode') }}</label>
                             </div>
                             <div class="col-xs-12">
                                 <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
@@ -206,27 +204,27 @@
                         <div role="tabpanel" class="tab-pane fade" id="cartao-debito" aria-labelledby="cartao-debito-tab">
                             <input name="cartao-debito-datas" id="cartao-debito-datas" type="hidden" data-discount_value="{{ $formaPagamento->details[0]->discount_value }}" data-fee="{{ $formaPagamento->details[0]->installments->{'1'}->fee }}" data-installment="{{ $formaPagamento->details[0]->installments->{'1'}->installment }}" data-total="{{ $formaPagamento->details[0]->installments->{'1'}->total }}" data-total_with_discount="{{ $formaPagamento->details[0]->installments->{'1'}->total_with_discount }}" value="1">
                             <div class="col-xs-12">
-                                <h5 class="text-center">É necessário possuir o plug-in do banco instalado NESTE COMPUTADOR. Caso não tenha certeza, recomendamos o uso do cartão de crédito.</h5>
+                                <h5 class="text-center">{{ trans('clickbus.clickbus_client-bank-plugin') }}</h5>
                             </div>
                             <div class="col-xs-7">
-                                <label for="num-cartao-debito">Número do Cartão</label>
+                                <label for="num-cartao-debito">{{ trans('clickbus.clickbus_client-opt-card-number') }}</label>
                                 <input type="text" class="required form-control" name="num-cartao-debito" placeholder="0000 0000 0000 0000">
                             </div>
                             <div class="col-xs-5">
-                                <label for="cod-seguranca-debito" >Código de Segurança</label>
+                                <label for="cod-seguranca-debito" >{{ trans('clickbus.clickbus_client-opt-card-password') }}</label>
                                 <input type="text" class="required form-control" name="cod-seguranca-debito" placeholder="000">
                             </div>
                             <div class="col-xs-7 padding-t-1">
-                                <label for="nome-titular-debito">Nome do titular <small> (como impresso no cartão)</small></label>
+                                <label for="nome-titular-debito">{{ trans('clickbus.clickbus_client-opt-card-name-1') }} <small>{{ trans('clickbus.clickbus_client-opt-card-name-2') }}</small></label>
                                 <input type="text" class="required form-control" name="nome-titular-debito" placeholder="JOÃO D. SILVA">
                             </div>
                             <div class="col-xs-5 padding-t-1">
                                 <div class="">
-                                    <label for="mes-validade-debito" >Cartão válido até</label>
+                                    <label for="mes-validade-debito" >{{ trans('clickbus.clickbus_client-opt-card-expiration-date') }}</label>
                                     <div class="row">
                                         <div class="col-xs-6">
                                             <select class="form-control" name="mes-validade-debito">
-                                                <option>Mês</option>
+                                                <option>{{ trans('global.date_month') }}</option>
                                                 @for($i=1;$i<=12;$i++)
                                                 <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
                                                 @endfor
@@ -234,7 +232,7 @@
                                         </div>
                                         <div class="col-xs-6">
                                             <select class="form-control" name="ano-validade-debito">
-                                                <option>Ano</option>
+                                                <option>{{ trans('global.date_year') }}</option>
                                                 @for($i=0;$i<=20;$i++)
                                                 <option>{{ date('Y')+$i }}</option>
                                                 @endfor
@@ -244,7 +242,7 @@
                                 </div>
                             </div>
                             <div class="col-xs-12 padding-t-1">
-                                <label>CEP:</label>
+                                <label>{{ trans('global.address_zipcode') }}:</label>
                             </div>
                             <div class="col-xs-12">
                                 <input type="text" class="required form-control" name="cep-titular-debito" placeholder="1701770">
@@ -252,42 +250,36 @@
                         </div>
                         @endif
 
-
                         {{-- Desativado
-
                         @if ($formaPagamento->name == 'paypal_hpp')
-
                         <div role="tabpanel" class="tab-pane fade text-center" id="paypal" aria-labelledby="paypal-tab">
                             <input name="paypal-datas" id="cartao-debito-datas" type="hidden" data-discount_value="{{ $formaPagamento->details[0]->discount_value }}" data-fee="{{ $formaPagamento->details[0]->installments->{'1'}->fee }}" data-installment="{{ $formaPagamento->details[0]->installments->{'1'}->installment }}" data-total="{{ $formaPagamento->details[0]->installments->{'1'}->total }}" data-total_with_discount="{{ $formaPagamento->details[0]->installments->{'1'}->total_with_discount }}" value="1">
                             <h3>
                             Aproveite e pague sua compra com PayPal!
                             </h3>
-
                             <img src="/img/bandeiras/paypal.png" alt="Paypal" title="PayPal">
                             <h5>
                             Finalize sua compra para ser transferido para o PayPal.
                             </h5>
-
                         </div>
                         @endif
-
                         --}}
 
                         @empty
-                        <p> Metodo de pagamento indisponivel </p>
+                        <p>{{ trans('clickbus.clickbus_client-error-5') }}</p>
                         @endforelse
                     </div>
                 </div>
             </div>
             <div class="col-sm-4 detalhes-pagamento">
-                <h4>Detalhes do Pagamento</h4>
+                <h4>{{ trans('clickbus.clickbus_client-title-payment-details') }}</h4>
                 <div id="lista-passagens-pagamento" class="margin-t-2">
                     <div class="passagem">
                         <h5><b>{{ $Ida->diames }}</b></h5>
                         <div class="row">
                             <span class="col-sm-12"> {{ $Ida->company }} - {{ $Ida->classe }}</span>
-                            <span class="col-sm-12">De: {{ $Ida->from }} | {{ $Ida->horario }}</span>
-                            <span class="col-sm-12">Para: {{ $Ida->to }} | {{ $Ida->horario_chegada }}<span>
+                            <span class="col-sm-12">{{ trans('clickbus.clickbus_client-opt-from') }}: {{ $Ida->from }} | {{ $Ida->horario }}</span>
+                            <span class="col-sm-12">{{ trans('clickbus.clickbus_client-opt-destiny') }}: {{ $Ida->to }} | {{ $Ida->horario_chegada }}<span>
                         </div>
                     </div>
                     @if (isset($Volta))
@@ -295,26 +287,26 @@
                             <h5><b>{{ $Volta->diames }}</b></h5>
                             <div class="row">
                                 <span class="col-sm-12"> {{ $Volta->company }} - {{ $Ida->classe }}</span>
-                                <span class="col-sm-12">De: {{ $Volta->from }} | {{ $Volta->horario }}</span>
-                                <span class="col-sm-12">Para: {{ $Volta->to }} | {{ $Volta->horario_chegada }}<span>
+                                <span class="col-sm-12">{{ trans('clickbus.clickbus_client-opt-from') }}: {{ $Volta->from }} | {{ $Volta->horario }}</span>
+                                <span class="col-sm-12">{{ trans('clickbus.clickbus_client-opt-destiny') }}: {{ $Volta->to }} | {{ $Volta->horario_chegada }}<span>
                             </div>
                         </div>
                     @endif
                 </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <div class="col-xs-12 text-left">
-                   Inserir cupom de desconto
+                   {{ trans('clickbus.clickbus_client-voucher-insert') }}
                </div>
                <div class="col-xs-6">
                    <input type="text" class="form-control" id="voucher-str" name="voucher-str">
                </div>
                <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto">
-                   Usar Cupom
+                   {{ trans('clickbus.clickbus_client-voucher-use') }}
                </button>
            </div>
            <div class="row margin-t-2">
                <div class="col-sm-8 text-left">
-                   Poltronas:
+                   {{ trans('clickbus.clickbus_seat_') }}:
                </div>
                <div class="col-sm-4 text-right ">
                    {{ $decoded->ticket_amount }}
@@ -322,7 +314,7 @@
            </div>
            <div class="row">
                <div class="col-sm-8 text-left">
-                   Passagem:
+                   {{ trans('clickbus.clickbus_ticket_') }}:
                </div>
                <div class="col-sm-4 text-right">
                    R$ {{ number_format($decoded->original_cost,2,',','') }}
@@ -330,7 +322,7 @@
            </div>
            <div class="row">
                <div class="col-sm-8 text-left">
-                   Impostos e taxas:
+                   {{ trans('clickbus.clickbus_client-taxes-fees') }}:
                </div>
                <div class="col-sm-4 text-right">
                    R$ <span class="valor-fee">{{ "0,00" }}</span>
@@ -338,7 +330,7 @@
            </div>
            <div class="row soft-hide row-desconto">
                <div class="col-sm-8 text-left">
-                   Desconto:
+                   {{ trans('clickbus.clickbus_client-discounts') }}:
                </div>
                <div class="col-sm-4 text-right">
                    R$ <span class="valor-desconto">{{ "0,00" }}</span>
@@ -390,7 +382,7 @@
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
                <button type="submit" class=" btn btn-acao">
-                   Compre agora
+                   {{ trans('clickbus.clickbus_buy-now') }}
                </button>
            </div>
        </div>

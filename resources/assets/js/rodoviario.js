@@ -180,8 +180,8 @@ var bindClickDetail = function() {
         //Se nao tiver passagem de volta, apenas chamar o /trip
         if ($('#data-volta-rodoviario').val().length <= 0) {
             ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }]));
-        } 
-        
+        }
+
         //Se tiver volta, entao inverter to x from e fazer nova busca
         else {
             var departure = $('#data-volta-rodoviario').val(),
@@ -263,7 +263,7 @@ var bindaPoltronas = function(){
     // Binda o submit do modal das poltronas para validacao de disponibilidade
     $('form.validacao-poltrona').submit(function(e){
         e.preventDefault();
-        
+
         var frm = $(this),
             loading = frm.data('loading');
 
@@ -297,7 +297,7 @@ var bindaPoltronas = function(){
         // Envia ajax de validaçao, caso seja bem sucedido marca como
          // selecionada a poltrona
         ajaxPoltronas(params, function(data_obj) {
-            
+
             //se tiver dado erro
             if (data_obj.errors) {
                 swal({
@@ -321,7 +321,7 @@ var bindaPoltronas = function(){
                 if (modal_ida.length > 0) {
                     modal_ida[0].reset();
                 }
-                
+
                 var modal_volta = $('#validacao-poltrona-volta');
                 if (modal_volta.length > 0) {
                     modal_volta[0].reset();
@@ -455,7 +455,7 @@ var atualizaValorParcelas = function(){
     }
     console.log("Valor discount:"+discount_value);
     console.log("Valor total:"+total_with_discount);
-                
+
     if(discount_value > 0){
         $('.row-desconto').show();
         $('.valor-desconto').html(discount_value.toFixed(2).toString().replace(',','').replace('.',','));
@@ -655,7 +655,7 @@ var bindaFormPagamento = function() {
     $('#usar-voucher-desconto').click(function(){
 
         //TODO mostrar que email é necessario
-        
+
         var voucherStr = $('#voucher-str').val();
 
         $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
@@ -687,7 +687,7 @@ var bindaFormPagamento = function() {
             url: 'clickbus/voucher',
             type: 'POST',
             dataType: 'json',
-            data: params 
+            data: params
         })
         .done(function(data) {
 
@@ -713,7 +713,7 @@ var bindaFormPagamento = function() {
             $("#usar-voucher-desconto").html("USAR CUPOM");
             atualizaValorParcelas();
         });
-        
+
     });
 };
 

@@ -148,21 +148,21 @@
                     <input type="hidden" id="trip-id" value="{{ $ida->scheduleId }}">
                     <div class="col-sm-6">
                         <label for="nome">{{ trans('global.lbl_name') }}:</label>
-                        <input required="required"  class="required form-control" type="text" placeholder="Nome" name="name" id="name">
+                        <input required="required"  class="required form-control" type="text" placeholder="{{ trans('global.lbl_name') }}" name="name" id="name">
                     </div>
                     <div class="col-sm-6">
                         <div class ="">
                             <label for="email">{{ trans('global.lbl_email') }}:</label>
-                            <input type="email" id="email" placeholder="passageiro@email.com" name="email" required="required" class="required form-control">
+                            <input type="email" id="email" placeholder="{{ trans('clickbus.clickbus_client-email-ph') }}" name="email" required="required" class="required form-control">
                         </div>
                     </div>
                     <div class="col-sm-12 padding-t-1">
-                        <label for="doc" class="row col-sm-12">Documento (com Foto):</label>
+                        <label for="doc" class="row col-sm-12">{{ trans('global.lbl_document') }} {{ trans('clickbus.clickbus_client-opt-with-photo') }}:</label>
                         <div class="row">
                             <div class="col-xs-3">
                                 <select id="document-type" class= "form-control" name="documentType" class="">
                                     <option value="rg">RG</option>
-                                    <option value="passaporte">Passaporte</option>
+                                    <option value="passaporte">{{ trans('global.lbl_passport') }}</option>
                                 </select>
                             </div>
                             <div class="col-xs-9">
@@ -219,12 +219,12 @@
                         </div>
                     </div>
                     <div class="col-sm-12 padding-t-1">
-                        <label for="doc" class="row col-sm-12">Documento (com Foto):</label>
+                        <label for="doc" class="row col-sm-12">{{ trans('global.lbl_document') }} {{ trans('clickbus.clickbus_client-opt-with-photo') }}:</label>
                         <div class="row">
                             <div class="col-xs-3">
                                 <select id="document-type" class= "form-control" name="documentType" class="">
                                     <option value="rg">RG</option>
-                                    <option value="passaporte">Passaporte</option>
+                                    <option value="passaporte">{{ trans('global.lbl_passport') }}</option>
                                 </select>
                             </div>
                             <div class="col-xs-9">

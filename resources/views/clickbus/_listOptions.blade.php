@@ -1,9 +1,9 @@
 <div class="col-xs-12">
     <ul class="nav nav-tabs">
-        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['yesterday'][2]}}" 
+        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['yesterday'][2]}}"
             @if($places)
-                data-to="{{$places['to']}}" 
-                data-from="{{$places['from']}}" 
+                data-to="{{$places['to']}}"
+                data-from="{{$places['from']}}"
             @endif
         href="#">
                 <span class="font-bold-upper">{{$dates['yesterday'][0]}}</span>
@@ -13,12 +13,12 @@
                 <span class="font-bold-upper">{{$dates['today'][0]}}</span>
                 <span class="sub-titulo">{{$dates['today'][1]}}</span>
         </a></li>
-        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['tomorrow'][2]}}"  
+        <li role="presentation"><a class="search-by-date" data-type="{{$type}}" data-date="{{$dates['tomorrow'][2]}}"
             @if($result)
-                data-to="{{$places['to']}}" 
-                data-from="{{$places['from']}}" 
+                data-to="{{$places['to']}}"
+                data-from="{{$places['from']}}"
             @endif
-        href="#">               
+        href="#">
                 <span class="font-bold-upper">{{$dates['tomorrow'][0]}}</span>
                 <span class="sub-titulo">{{$dates['tomorrow'][1]}}</span>
         </a></li>
@@ -27,7 +27,7 @@
         @if($result)
         <span>{{ trans('clickbus.clickbus_bus-ticket-to-from') }} {{$result[0]['from']}} {{ trans('clickbus.clickbus_to') }} {{$result[0]['to']}}</span>
         @else
-        <span>Nenhuma passagem foi encontrada, tente uma linha diferente ou outra data.</span>
+        <span>{{ trans('clickbus.clickbus_client-error-1') }}</span>
         @endif
     </div>
     <div class="passagens-clickbus">

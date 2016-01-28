@@ -18,6 +18,9 @@ return[
 'clickbus_bus-ticket-to-from' => 'Bus tickets from',
 'clickbus_schedule' => 'Schedule',
 
+'clickbus_ticket' => 'Ticket',
+'clickbus_ticket_' => 'Tickets',
+
 'clickbus_seat' => 'Seat',
 'clickbus_seat_' => 'Seats',
 'clickbus_empty-seat' => 'Empty',
@@ -34,6 +37,44 @@ return[
 
 'clickbus_buy-now' => 'Buy Now',
 
+'clickbus_client-opt-PF' => 'Pessoa Física',
+'clickbus_client-opt-PJ' => 'Pessoa Jurídica',
+'clickbus_client-opt-foreigner' => 'Foreigner',
+
+'clickbus_client-title-credit-card' => 'Credit Card',
+'clickbus_client-title-debit-card' => 'Debit Card',
+'clickbus_client-opt-card-number' => 'Card Number',
+'clickbus_client-opt-card-expiration-date' => 'Valids until',
+'clickbus_client-opt-card-name-1' => 'Name on card',
+'clickbus_client-opt-card-name-2' => '(as printed)',
+'clickbus_client-opt-card-password' => 'Security Code',
+'clickbus_client-opt-number-installments' => 'Number of Installments',
+'clickbus_client-opt-installment' => 'Installment',
+'clickbus_client-opt-installment_' => 'Installments',
+
+'clickbus_client-opt-from' => 'From',
+'clickbus_client-opt-destiny' => 'To',
+'clickbus_client-opt-with-photo' => '(with photo)',
+
+'clickbus_client-title-infos' => 'Client Information',
+'clickbus_client-title-payment-type' => 'Payment Type',
+'clickbus_client-title-payment-details' => 'Payment Details',
+
+'clickbus_client-voucher' => 'Discount Voucher',
+'clickbus_client-voucher-insert' => 'Insert Discount Voucher',
+'clickbus_client-voucher-use' => 'Use Voucher',
+'clickbus_client-taxes-fees' => 'Taxes and Fees',
+'clickbus_client-discounts' => 'Discounts',
+
+'clickbus_client-error-1' => 'No tickets was found, try a different line or another date.',
+'clickbus_client-error-2' => 'No payment method available .',
+'clickbus_client-error-3' => 'The bank brand for this method of payment is unavailable.',
+'clickbus_client-error-4' => 'No available option.',
+'clickbus_client-error-5' => 'Payment Method Unavailable.',
+
+'clickbus_client-email-ph' => 'passenger@email.com',
+
+'clickbus_client-bank-plugin' => 'You must have the bank security plug-in installed on THIS COMPUTER. If you \'re unsure, we recommend using the credit card.',
 /*
   Tradução pro environment de DESENVOLVIMENTO (dev) [TDD]
 */
