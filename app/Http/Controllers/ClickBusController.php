@@ -604,7 +604,6 @@ class ClickBusController extends Controller {
         return $retorno;
     }
 
-
     /**
      * Bate no endpoint de /booking/voucher e retorna o resultado ou erro.
      */

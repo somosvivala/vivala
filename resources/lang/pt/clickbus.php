@@ -7,7 +7,6 @@ return[
 | Status da Tradução:
 |--------------------------------------------------------------------------
 */
-// Misc.
 'clickbus_departure' => 'Ida',
 'clickbus_return' => 'Volta',
 'clickbus_arrival' => 'Chegada',
@@ -395,6 +394,18 @@ return[
     'clickbus_prod-error-L45' => 'Desconto inválido para este email. O email usado na aplicação deste voucher já aplicou este desconto anteriormente, por favor, providencie outro endereço de email.',
     'clickbus_prod-error-L46' => 'Desconto inválido para esta viagem. Os assentos selecionados devem ser de uma origem e/ou destino fornecidos previamente, os mesmos que foram configurados para este voucher.',
     'clickbus_prod-error-L47' => 'Desconto é válido somente para viagens de ida e volta. Este voucher só pode ser usado em viagens de ida e volta.',
-    'clickbus_prod-error-L48' => 'Desconto inválido para esta linha de ônibus. Os assentos selecionados devem ser de uma viagem pertencente a empresa de ônibus para qual este voucher foi configurado.'
+    'clickbus_prod-error-L48' => 'Desconto inválido para esta linha de ônibus. Os assentos selecionados devem ser de uma viagem pertencente a empresa de ônibus para qual este voucher foi configurado.',
+
+    // Misc.
+    'clickbus_misc-error-1' => 'Opa!',
+    'clickbus_misc-error-2' => 'Ocorreu um problema durante a busca!',
+    'clickbus_misc-error-3' => 'Eita, algo saiu errado, faça a busca novamente.',
+    'clickbus_misc-error-4' => 'Ocorreu um problema durante o fechamento do ônibus!',
+    'clickbus_misc-error-5' => 'Tivemos um problema durante o processo de agendamento da sua passagem. Por favor tente novamente, se o problema persistir fale conosco através do <a href=\'mailto:contato@vivala.com.br\'>contato@vivala.com.br</a>',
+    'clickbus_misc-error-6' => 'Ocorreu um problema durante o processo de pagamento!',
+    'clickbus_misc-error-7' => 'Ocorreu um problema com a sua compra:',
+    'clickbus_misc-error-8' => '',
+    'clickbus_misc-error-9' => '',
+    'clickbus_misc-error-10' => '',
 ];
 ?>

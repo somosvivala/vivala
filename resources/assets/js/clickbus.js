@@ -53,7 +53,6 @@ var ajaxPlace = function(query, target) {
         // Esconde o loading
         $(target).siblings('i.fa').hide();
 
-
         bindAutocompleteRodoviario();
     });
 };
@@ -69,7 +68,7 @@ var ajaxTrips = function(params) {
     $.extend(defaultParams, params);
 
     // Mostra icone de loading
-    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
 
 
     $.ajax({
@@ -90,8 +89,8 @@ var ajaxTrips = function(params) {
         if (json.errors) {
             $('#clickbus-resultado-busca').html("");
             swal({
-                title: "Ops!",
-                html: "Ocorreu um problema durante a busca!<br><br>"+json.errors,
+                title: json.errors1,
+                html: json.errors2+"<br/><br/>"+json.errors,
                 type: "error",
                 confirmButtonColor: "#FF5B00",
                 confirmButtonText: "OK",
@@ -108,6 +107,7 @@ var ajaxTrips = function(params) {
         }
     })
     .fail(function() {
+        // [TODO] Ver como tratar esta mensagem para multilinguagem
         $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente.');
     });
 
@@ -122,7 +122,7 @@ var ajaxTrip = function(viagens) {
         to        = $('#destino-rodoviario').val();
 
     // Mostra icone de loading
-    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner'></i></h1>");
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
     console.log(viagens);
 
     $.ajax({
@@ -145,8 +145,8 @@ var ajaxTrip = function(viagens) {
         if (json.errors) {
             $('#clickbus-resultado-busca').html("");
             swal({
-                title: "Ops!",
-                html: "Ocorreu um problema durante o fechamento do ônibus!<br><br>"+json.errors,
+                title: json.errors1,
+                html: json.errors4+"<br/><br/>"+json.errors,
                 type: "error",
                 confirmButtonColor: "#FF5B00",
                 confirmButtonText: "OK",
@@ -179,7 +179,8 @@ var ajaxTrip = function(viagens) {
         }
     })
     .fail(function() {
-        $('#clickbus-resultado-busca').html('Ops, algo saiu errado!');
+        // [TODO] Ver como tratar esta mensagem para multilinguagem
+        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente.');
     });
 
 };
@@ -355,8 +356,8 @@ var tripPayment = function(request, frm) {
     })
     .error(function(data) {
         swal({
-            title: "Ops!",
-            html: "Tivemos um problema durante o processo de agendamento da sua passagem. Por favor tente novamente, se o problema persistir fale conosco através do <a href='mailto:contato@vivala.com.br'>contato@vivala.com.br</a><br><br>"+json.errors,
+            title: json.errors1,
+            html: json.errors5+"<br/><br/>"+json.errors,
             type: "error",
             confirmButtonColor: "#FF5B00",
             confirmButtonText: "OK",
@@ -376,8 +377,8 @@ var tripPayment = function(request, frm) {
         //se tiver dado erro
         if (json.errors) {
             swal({
-                title: "Ops!",
-                html: "Ocorreu um problema durante o processo de pagamento! <br><br>"+json.errors,
+                title: json.errors1,
+                html: json.errors6+"<br/<br/>"+json.errors,
                 type: "error",
                 confirmButtonColor: "#FF5B00",
                 confirmButtonText: "OK",
@@ -385,7 +386,7 @@ var tripPayment = function(request, frm) {
             },
             function() {
             });
-        //Se estiver tudo ok..
+        //Se estiver tudo ok.
         } else {
             $('#clickbus-resultado-busca').html(data);
             bindaAbas();
@@ -433,10 +434,12 @@ var tripBooking = function(request) {
         }
     })
     .error(function(data) {
+
         var json = JSON.parse(data);
+
         swal({
-            title: "Ooops!",
-            html: "Ocorreu um problema com a sua compra:<br>"+data.errors,
+            title: json.errors1,
+            html: json.errors7+"<br/><br/>"+json.errors,
             type: "error",
             confirmButtonColor: "#F16F2B",
             confirmButtonText: "OK",
@@ -453,8 +456,8 @@ var tripBooking = function(request) {
         //se tiver dado erro
         if (!json.success) {
             swal({
-                title: "Ops",
-                html: "Ocorreu um problema com a sua compra:<br><br>"+json.errors,
+                title: json.errors1,
+                html: json.errors7+"<br/><br/>"+json.errors,
                 type: "error",
                 confirmButtonColor: "#DD6B55",
                 confirmButtonText: "ok",

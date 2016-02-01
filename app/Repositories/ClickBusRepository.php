@@ -58,19 +58,23 @@ class ClickBusRepository {
     // Função de Tratamento de Erros da ClickBus
     public static function parseError($data)
     {
-        // Estou no DEV (development)
-		if(App::environment('development')){
-            $option = [
-                // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
-                "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
+        // Estou no ambiente de produção (MASTER)
+		if(app()->environment('production')){
+            $opt1 = [
+                "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
             ];
-        // Estou na MASTER (production)
+        // Último caso para ambiente de desenvolvimento (DEV)
         } else {
-            $option = [
-                // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
+            $opt1 = [
                 "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
             ];
         }
+        for($i=1; $i<10; $i++){
+            $opt2["errors" . $i] = trans("clickbus.clickbus_misc-error-" . $i);
+        }
+        // Merge de array MISC com mensagens para o JS + mensagem de erro vinda da CLickBus
+        $option = array_merge($opt1, $opt2);
+
         return $option;
     }
 
