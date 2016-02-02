@@ -10,6 +10,7 @@
     "cropper": "~1.0.0",
     "bootstrap-social": "~4.10.1",
     "outdated-browser": "~1.1.2",
-    "sweetalert2": "~0.2.4"
+    "sweetalert2": "~0.2.4",
+    "intro.js": "~1.1.1"
   }
 }

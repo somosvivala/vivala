@@ -25,6 +25,7 @@ elixir(function(mix) {
         '../../assets/bower/lightbox2/dist/css/lightbox.css',
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
         '../../assets/bower/sweetalert2/dist/sweetalert2.css',
+        '../../assets/bower/intro.js/introjs.css',
         'app.css',
         'font-awesome.min.css',
         '../../assets/bower/bootstrap-social/bootstrap-social.css',
@@ -44,6 +45,11 @@ elixir(function(mix) {
       '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js',
       '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js',
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
+      '../../assets/bower/sweetalert2/dist/sweetalert2.min.js',
+      '../../assets/bower/intro.js/intro.js',
+      '../../assets/bower/intro.js/minified/intro.min.js',
+
+      /* Scripts Vivalá */
       '../../assets/js/comentaPost.js',
       '../../assets/js/createpost.js',
       '../../assets/js/postbarra.js',
@@ -69,8 +75,8 @@ elixir(function(mix) {
       '../../assets/js/quimera.js',
       '../../assets/js/clickbus.js',
       '../../assets/js/formContato.js',
-      '../../assets/bower/sweetalert2/dist/sweetalert2.min.js',
       '../../assets/js/ongs.js',
+      '../../assets/js/tour.js',
       '../../assets/js/zoomfinanciamentocoletivo.js'
 	], 'public/js/vendor.js');
 });
