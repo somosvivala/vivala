@@ -106,7 +106,7 @@ jQuery(document).ready(function($) {
             departure = $('#data-id-rodoviario').val(),
             type      = 'ida';
 
-        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i class='fa fa-spin fa-spinner'></i></h1>");
+        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
 
         ajaxTrips({
             from: from,
@@ -641,7 +641,7 @@ var bindaFormPagamento = function() {
 
         //sweetalert de loading :)
         swal({
-            html : '<br><i class="fa fa-3x fa-spin fa-spinner"></i> <br><br> <h4>Processando</h4>',
+            html : '<br><i class="fa fa-3x fa-spin fa-spinner laranja"></i> <br><br> <h4>Processando</h4>',
             showCancelButton: false,
             width:240,
             confirmButtonClass: 'hide'
@@ -658,7 +658,7 @@ var bindaFormPagamento = function() {
 
         var voucherStr = $('#voucher-str').val();
 
-        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
+        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner laranja'></i>");
 
         //pegando id da aba de pagamento ativa
         var idTabPagamentoAtiva = $('ul#abas-cliente li.active a')[0].id;

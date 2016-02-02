@@ -291,7 +291,7 @@ var removePoltrona = function(request, tipo, callback) {
 
     // Loading no x da poltrona
     var icone_remover = $("#poltrona-"+request.seat+"-"+tipo+" i.exclui-poltrona");
-    icone_remover.removeClass("fa-close").addClass("fa-spinner fa-spin");
+    icone_remover.removeClass("fa-close").addClass("fa-spinner fa-spin laranja");
 
     $.ajax({
         url: 'clickbus/removerpoltronas',
