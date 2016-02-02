@@ -1,21 +1,20 @@
 @extends('quiz.index')
 
 @section('pergunta')
-
-<div class="col-sm-12 pergunta">
+<div id="tour-quiz" class="col-sm-12 pergunta quiz-2">
     <span class="absolute-top-right laranja">
         <a href="{{ url ('quiz')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('quiz/contemais')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
     </span>
-    <h2>{{ trans("global.quiz_profile_customize") }}</h2>
-    <h3>{{ trans("global.quiz_photo_customize") }}</h3>
+    <h2 class="tour-quiz-step2" data-intro='{{ trans("tour.tour_quiz-2-step1") }}' data-step="1">{{ trans("global.quiz_profile_customize") }}</h2>
+    <h3 class="tour-quiz-step2" data-intro='{{ trans("tour.tour_quiz-2-step2") }}' data-step="2">{{ trans("global.quiz_photo_customize") }}</h3>
 
     <a type="button" data-target="#cropper-quiz-modal" data-toggle="modal">
 
-        <img class="quiz-foto-atual" src="{{ $foto?$foto:'/img/interrogacao.png' }}"/>
+        <img class="tour-quiz-step2" data-intro='{{ trans("tour.tour_quiz-2-step3") }}' data-step="3" class="quiz-foto-atual" src="{{ $foto?$foto:'/img/interrogacao.png' }}"/>
 
         <div class="row pointer margin-t-2">
             <div class="file-upload">
-                <label for="image_file_upload">
+                <label class="tour-quiz-step2" data-intro='{{ trans("tour.tour_quiz-2-step4") }}' data-step="4" for="image_file_upload">
                     {{ trans("global.lbl_photo_send") }}
                     <p>{{ trans("global.quiz_fromcomputer") }}</p>
                 </label>
@@ -27,7 +26,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     {!! Form::open(['url' => ['foto/cropandsave',  Auth::user()->perfil->id ], 'files' => true, 'data-redirect' => '/quiz/contemais', 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading']) !!}
-                    
+
                     <h2 class="text-center">{{ trans("global.quiz_profile_customize") }}</h2>
                     <label id="btn-upload-img-quiz" class="btn btn-acao btn-upload margin-b-1" for="input-quiz-foto-perfil" title="Upload image file">
                         <input class="sr-only" id="input-quiz-foto-perfil" name="file" accept="image/*" type="file">
@@ -35,7 +34,7 @@
                             <span class="fa fa-upload"></span>
                             SELECIONE UMA IMAGEM
                         </span>
-                    </label>    
+                    </label>
                     <div id="cropper-quiz" class="cropper-img">
                         <img src="{{ '/img/nophoto.png' }}" />
                     </div>

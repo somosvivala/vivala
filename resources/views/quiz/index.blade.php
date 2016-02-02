@@ -49,11 +49,10 @@
         		<span class="icon-bar"></span>
         		<span class="icon-bar"></span>
         	</button>
-        	<a class="navbar-brand logo tour-quiz" href="{{ url('home') }}" data-intro='{{ trans("tour.tour_quiz-welcome-step1") }}' data-step="1"><img src="/logo.png" alt="Vivalá" title="Vivalá"></a>
+        	<a id="logo-vivala" class="navbar-brand logo" href="{{ url('home') }}" data-intro='{{ trans("tour.tour_quiz-1-step1") }}' data-step='1'><img src="/logo.png" alt="Vivalá" title="Vivalá"></a>
         </div>
-
         <div class="col-sm-10 text-right">
-            <span class="laranja tour-quiz absolute-top-right" data-intro='{{ trans("tour.tour_quiz-welcome-step3") }}' data-step="3">{{ trans("global.lbl_step") }} {{ $passo }} {{ trans("global.quiz_offour") }}</span>
+            <span id"skip-quiz" class="laranja absolute-top-right" data-intro='{{ trans("tour.tour_quiz-1-step3") }}' data-step='3'>{{ trans("global.lbl_step") }} {{ $passo }} {{ trans("global.quiz_offour") }}</span>
         </div>
 	</nav>
 	<div class="col-sm-2 col-md-2">

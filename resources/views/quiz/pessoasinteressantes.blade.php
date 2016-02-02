@@ -1,18 +1,18 @@
 @extends('quiz.index')
 
 @section('pergunta')
-	<div class="col-sm-12 pergunta">
+	<div id="tour-quiz" class="col-sm-12 pergunta quiz-4">
 		<span class="absolute-top-right laranja">
 			<a href="{{ url ('quiz/contemais')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('home')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
 		</span>
-		<h2>{{ trans("global.quiz_interestingpeople") }}</h2>
-		<h3>{{ trans("global.quiz_nicesuggests") }}</h3>
-		<ul class="row sugestoes sugestoes-quiz">
+		<h2 class="tour-quiz-step4" data-intro='{{ trans("tour.tour_quiz-4-step1") }}' data-step="1">{{ trans("global.quiz_interestingpeople") }}</h2>
+		<h3 class="tour-quiz-step4" data-intro='{{ trans("tour.tour_quiz-4-step2") }}' data-step="2">{{ trans("global.quiz_nicesuggests") }}</h3>
+		<ul class="row sugestoes sugestoes-quiz tour-quiz-step4" data-intro='{{ trans("tour.tour_quiz-4-step4") }}' data-step="4">
 			@if(isset($sugestoesPessoasInteressantes))
 			@forelse($sugestoesPessoasInteressantes as $Perfil)
 			<li class="col-sm-4 col-md-2">
 				{!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
-				<button id='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
+				<button id='btn_seguir' type="submit" class='btn_seguir_viajante tour-quiz-step3' data-intro='{{ trans("tour.tour_quiz-4-step3") }}' data-step="3" data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
 				<a onclick="$(this).siblings('button').click();">
 					<img class="hidden" title='{{ trans("global.lbl_loading1") }}' alt='{{ trans("global.lbl_loading1") }}'>
                                         <div class="round foto quadrado3em">
@@ -39,7 +39,7 @@
 			@endforelse
 			@endif
 		</ul>
-		<div class="col-sm-12 text-center">
+		<div class="col-sm-12 text-center tour-quiz-step4" data-intro='{{ trans("tour.tour_quiz-4-step5") }}' data-step="5">
 			<a class="btn btn-primario btn-acao" href="/home">{{ trans("global.lbl_continue") }}</a>
 		</div>
 	</div>
