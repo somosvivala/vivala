@@ -452,6 +452,7 @@ var atualizaValorParcelas = function(){
 
         console.log("Original Cost: "+original_cost);
         console.log("Valor discount antes:"+discount_value);
+        console.log("Desconto fixo"+desconto_fixo);
         // Calcula o desconto total e recalcula o total_with_discount
         if(desconto_fixo != "true") {
             console.log("Desconto variavel (nao fixo)");
