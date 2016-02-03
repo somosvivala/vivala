@@ -446,29 +446,29 @@ var atualizaValorParcelas = function(){
 
     // Recalcula os valores caso haja desconto
     if(desconto_valor > 0) {
-        console.log("Valor desconto maior que zero e igual a "+desconto_valor);
+        // console.log("Valor desconto maior que zero e igual a "+desconto_valor);
         // Calcula o valor original
         var original_cost = Number(total) - Number(fee);
 
-        console.log("Original Cost: "+original_cost);
-        console.log("Valor discount antes:"+discount_value);
-        console.log("Desconto fixo"+desconto_fixo);
+        // console.log("Original Cost: "+original_cost);
+        // console.log("Valor discount antes:"+discount_value);
+        // console.log("Desconto fixo"+desconto_fixo);
         // Calcula o desconto total e recalcula o total_with_discount
         if(desconto_fixo != "true") {
-            console.log("Desconto variavel (nao fixo)");
+            // console.log("Desconto variavel (nao fixo)");
             discount_value = discount_value + desconto_valor*total;
             total_with_discount = total_with_discount - desconto_valor*total;
         }else{
-            console.log("Desconto fixo");
+            // console.log("Desconto fixo");
             discount_value = discount_value + desconto_valor;
             total_with_discount = total_with_discount - desconto_valor;
         }
-        console.log("Valor discount:"+discount_value);
-        console.log("Valor total:"+total_with_discount);
+        // console.log("Valor discount:"+discount_value);
+        // console.log("Valor total:"+total_with_discount);
 
         // Recalcula o valor da parcela
         var installment = ((original_cost + Number(fee)) - discount_value) / Number(qtd_parcelas);
-        console.log("Valor parcela: "+installment);
+        // console.log("Valor parcela: "+installment);
     }
 
     if(discount_value > 0){
