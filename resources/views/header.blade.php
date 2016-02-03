@@ -203,6 +203,12 @@
 										{{--
                     <li><a href="{{ url('config') }}" class="click-img-no-border"><i class="fa fa-cogs"></i><span> {{ trans('global.lbl_setting_') }}</span></a></li>
 										--}}
+
+
+                    @if(Auth::user()->isAdmin())
+                    <li><a href="{{ url('gestao') }}" class="click-img-no-border"><i class="fa fa-lightbulb-o"></i><span> Gestão </span></a></li>
+                    @endif
+
                     <li><a href="{{ url('/auth/logout') }}" class="click-img-no-border"><i class="fa fa-power-off"></i><span> {{ trans('global.lbl_logout') }}</span></a></li>
                 </ul>
             </a>
