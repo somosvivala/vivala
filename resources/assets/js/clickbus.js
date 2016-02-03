@@ -454,7 +454,7 @@ var tripBooking = function(request) {
         var json = JSON.parse(data);
 
         //se tiver dado erro
-        if (!json.success) {
+        if (json.errors) {
             swal({
                 title: json.errors1,
                 html: json.errors7+"<br/><br/>"+json.errors,

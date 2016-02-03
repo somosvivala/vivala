@@ -59,16 +59,18 @@ class ClickBusRepository {
     public static function parseError($data)
     {
         // Estou no ambiente de produção (MASTER)
-		if(app()->environment('production')){
+        if(app()->environment('production')){
             $opt1 = [
                 "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
             ];
-        // Último caso para ambiente de desenvolvimento (DEV)
+            
+        // Último caso para ambiente de desenvolvimento (DEV) ou local
         } else {
             $opt1 = [
-                "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
+                "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
             ];
         }
+
         for($i=1; $i<10; $i++){
             $opt2["errors" . $i] = trans("clickbus.clickbus_misc-error-" . $i);
         }

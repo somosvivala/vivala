@@ -584,20 +584,9 @@ class ClickBusController extends Controller {
                 "total" => $compra->total
             ];
 
+        //Compra falhou
         } else if (isset($decoded)) {
-            // Estou no DEV (development)
-            if(App::environment('development')){
-                $retorno = [
-                    // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
-                    "errors" => trans("clickbus.clickbus_error-" . $data->{"error"}[0]->{"code"})
-                ];
-            // Estou na MASTER (production)
-            } else {
-                $retorno = [
-                    // [TODO] Ver como tratar todas as frases genéricas localizadas no JS
-                    "errors" => trans("clickbus.clickbus_prod-error-" . $data->{"error"}[0]->{"code"})
-                ];
-            }
+            $retorno = ClickBusRepository::parseError($decoded);
         }
 
         //TODO tratar retorno? esse retorno contem dados do cartao!!
