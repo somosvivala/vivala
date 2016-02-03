@@ -414,7 +414,7 @@ var atualizaValorParcelas = function(){
     var forma_pagamento = $("form#form-pagamento").find('input#forma-pagamento').val();
     // Calcula o desconto
     var desconto_valor = Number($("form#form-pagamento").find('input#desconto').val()),
-        desconto_fixo = Number($("form#form-pagamento").find('input#desconto-fixo').val()),
+        desconto_fixo = $("form#form-pagamento").find('input#desconto-fixo').val(),
         desconto_servico = Number($("form#form-pagamento").find('input#desconto-servico').val());
 
     if(forma_pagamento == 'cartao-credito'){
