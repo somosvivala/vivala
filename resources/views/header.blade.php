@@ -1,4 +1,4 @@
-<div class="logo-menu">
+<div id="logo-vivala" class="logo-menu" data-intro="{{ trans('tour.tour-pilares-step1') }}" data-step="1">
 	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}">
                         {{-- SVG da logo VIVALÁ --}}
                         <svg version="1.1" id="logo-vivala" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -72,27 +72,26 @@
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-md hidden-sm col-lg-4">
-            &nbsp;
-		<input class="busca-geral-menu hide" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
+                                                <input class="busca-geral-menu hide" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
 	</div>
-	<ul class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto">
+	<ul id="tres-menus-vivala" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto" data-intro="{{ trans('tour.tour-pilares-step2') }}" data-step="2">
 		@if (Auth::guest())
-			<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
-			<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
+                        		<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
+                        		<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
 		@else
-			<li class="menu-viajar">
+			<li id="menu-viajar" class="menu-viajar" data-intro="{{ trans('tour.tour-pilares-step4') }}" data-step="4">
 				<a href="{{ url('/viajar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-viajar vi"></i>
 					<span>{{ trans('global.lbl_wanna_travel') }}</span>
 				</a>
 			</li>
-			<li class="menu-conectar">
+			<li id="menu-conectar" class="menu-conectar" data-intro="{{ trans('tour.tour-pilares-step3') }}" data-step="3">
 				<a href="{{ url('/conectar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-conectar vi"></i>
 					<span>{{ trans('global.lbl_wanna_connect') }}</span>
 				</a>
 			</li>
-			<li class="menu-cuidar">
+			<li id="menu-cuidar" class="menu-cuidar" data-intro="{{ trans('tour.tour-pilares-step5') }}" data-step="5">
 				<a href="{{ url('/cuidar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-transformar vi"></i>
 					<span>{{ trans('global.lbl_wanna_volunteer') }}</span>
@@ -102,28 +101,28 @@
 	</ul>
 </div>
 
-<div class="notificacoes">
-	<button type="button" id="notificacoes-follow" data-unread="0" title='{{ trans("global.lbl_follower_") }}'>
+<div id="menu-notificacoes" class="notificacoes" data-intro="{{ trans('tour.tour-pilares-step6') }}" data-step="6">
+	<button type="button" id="notificacoes-follow" data-unread="0" title='{{ trans("global.lbl_follower_") }}' data-intro="{{ trans('tour.tour-pilares-step7') }}" data-step="7">
 		<i class="icon-menu-notificacao icon-vivala-menu-usuario vi" alt='{{ trans("global.lbl_follower_") }}'></i>
-  </button>
+                        </button>
 	<div class="notificacoes-follow">
 	    @include('_notificacoesFollow')
 	</div>
-	<button type="button" id="notificacoes-msg" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
+	<button type="button" id="notificacoes-msg" data-unread="0" title='{{ trans("global.lbl_message_") }}' data-intro="{{ trans('tour.tour-pilares-step8') }}" data-step="8">
 		<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
   </button>
   <div class="notificacoes-msg">
       @include('_notificacoesMsg')
   </div>
-	<button type="button" id="notificacoes-geral" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
-		<i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
-  </button>
+                        <button type="button" id="notificacoes-geral" data-unread="0" title='{{ trans("global.lbl_notification_") }}' data-intro="{{ trans('tour.tour-pilares-step9') }}" data-step="9">
+                                                <i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
+                        </button>
   <div class="notificacoes-geral">
       @include('_notificacoesGeral')
   </div>
 </div>
 
-<div class="menu-usuario">
+<div id="menu-usuario" class="menu-usuario" data-intro="{{ trans('tour.tour-pilares-step10') }}" data-step="10">
     <ul class="nav navbar-nav">
         @if (Auth::user())
         <li class="dropdown">
