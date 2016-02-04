@@ -65,6 +65,7 @@ $(document).ready(function() {
   // ##### 3PILARES
   if(ligaTresPilaresTour && ($("#tour-pilares").hasClass("pilar-conectar"))){
     console.log("Estou no pilar QUERO ME CONECTAR");
+    // Adição das classes para futura divisão por PILAR específico
     $("#logo-vivala").addClass("tour-tres-pilares");
     $('#menu-tres-pilares').addClass("tour-tres-pilares");
     $('#menu-viajar').addClass("tour-tres-pilares");
@@ -76,16 +77,12 @@ $(document).ready(function() {
     $('#notificacoes-geral').addClass("tour-tres-pilares");
     $('#menu-usuario').addClass("tour-tres-pilares");
     trespilaresTour.start('.tour-tres-pilares');
-
+    $("#logo-vivala").removeClass("pilar-conectar");
   }
   if(ligaTresPilaresTour && ($("#tour-pilares").hasClass("pilar-viajar"))){
     console.log("Estou no pilar QUERO VIAJAR");
-    $("#logo-vivala").addClass("tour-pilar-viajar");
-    trespilaresTour.start('.tour-pilar-viajar');
   }
   if(ligaTresPilaresTour && ($("#tour-pilares").hasClass("pilar-cuidar"))){
     console.log("Estou no pilar QUERO CUIDAR");
-    $("#logo-vivala").addClass("tour-pilar-cuidar");
-    trespilaresTour.start('.tour-pilar-cuidar');
   }
 });
