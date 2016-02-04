@@ -6,6 +6,7 @@ return[
 | [PT-BR] Tour da Vivalá em PORTUGUÊS (PT_BR)
 |--------------------------------------------------------------------------
 */
+  // quizTOUR
   'tour_quiz-1-step1' => '<p class="text-center">Olá Viajante!<br/>Seja bem-vindo(a) à <span class="laranja">Vivalá</span>,<br/> a plataforma para pessoas de todo o mundo que querem viajar e transformar o Brasil.</p>',
   'tour_quiz-1-step2' => '<p class="text-center">O primeiro passo para fazer parte dessa nossa comunidade é preencher algumas informações básicas para a gente saber um pouco sobre você!<br/>Serão em média <span class="laranja">3 minutos</span> no total, mas se você quiser, pode pular alguma das etapas no botão <span class="laranja">Pular etapa</span> aqui em cima, no canto direito.</p>',
   'tour_quiz-1-step3' => '<p class="text-center">Em cada pergunta você pode marcar mais de uma opção, mas marque com moderação!<br/>Assim conseguiremos te entender melhor.</p>',
@@ -19,5 +20,7 @@ return[
   'tour_quiz-4-step1' => '<p class="text-center">Chegamos na última etapa! Aqui, começamos a sugerir viajantes com interesses semelhantes aos seus. <span class="laranja">Conecte-se</span>!</p>',
   'tour_quiz-4-step2' => '<p class="text-center">Clicando no botão <span class="laranja">seguir</span> você já estará criando uma conexão dentro da <span class="laranja">Vivalá</span> e receberá as atualizações desta pessoa.<br/>Comece a compartilhar suas experiências!</p>',
   'tour_quiz-4-step3' => '<p class="text-center">Seja bem-vindo à nossa casa!</p>',
+
+  // 3pilaresTOUR
 ];
 ?>
