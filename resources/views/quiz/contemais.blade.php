@@ -10,7 +10,7 @@
 		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/pessoasinteressantes', 'data-loading'=>'form-loading']) !!}
 			<div class="erros">
 			</div>
-			<div class="row tour-quiz-step3" data-intro='{{ trans("tour.tour_quiz-3-step2") }}' data-step="2">
+			<div class="row">
 				<div class="col-sm-4">
 					{!! Form::text("apelido", null, ['class' => 'form-control', 'placeholder' => trans("global.quiz_nickname") ]) !!}
 					{!! Form::text("cidade_natal", null, ['class' => 'form-control', 'placeholder' => trans("global.quiz_hometown") ]) !!}
@@ -20,7 +20,7 @@
 					{!! Form::textarea("descricao_curta", null, ['title'=> trans("global.quiz_shortdesc"), 'aria-label'=> trans("global.quiz_shortdesc"), 'placeholder'=> trans("global.quiz_shortdesc_ph"), 'class'=> 'form-control sem-resize']) !!}
 				</div>
 			</div>
-				<div class="col-sm-12 margin-t-1 tour-quiz-step3" data-intro='{{ trans("tour.tour_quiz-3-step3") }}' data-step="3">
+				<div class="col-sm-12 margin-t-1">
 					{!! Form::submit( trans("global.lbl_continue"), ['class' => 'btn btn-primario btn-acao']) !!}
           <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x laranja" style="display:none"></i>
 				</div>
