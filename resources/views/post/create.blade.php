@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-12 cria-post-container fundo-cheio">
+<div class="col-xs-12 col-sm-12 cria-post-container fundo-cheio tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step2') }}" data-step="2">
     <div class="col-md-2 col-sm-4 col-xs-3">
         <a href="{{ url('perfil') }}" class="click-img-no-border">
             <div class="round foto quadrado7em">

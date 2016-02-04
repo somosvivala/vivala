@@ -110,16 +110,21 @@
 	</div>
 	<button type="button" id="notificacoes-msg" data-unread="0" title='{{ trans("global.lbl_message_") }}' data-intro="{{ trans('tour.tour-pilares-step8') }}" data-step="8">
 		<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
-  </button>
-  <div class="notificacoes-msg">
-      @include('_notificacoesMsg')
-  </div>
+                        </button>
+                          <div class="notificacoes-msg">
+                              @include('_notificacoesMsg')
+                          </div>
                         <button type="button" id="notificacoes-geral" data-unread="0" title='{{ trans("global.lbl_notification_") }}' data-intro="{{ trans('tour.tour-pilares-step9') }}" data-step="9">
                                                 <i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
                         </button>
-  <div class="notificacoes-geral">
-      @include('_notificacoesGeral')
-  </div>
+                        <div class="notificacoes-geral">
+                                                @include('_notificacoesGeral')
+                        </div>
+                        {{-- Botão de HINTS [TODO] para o TOUR interno da plataforma (?) - senão remover
+                        <button type="button" id="notificacoes-hints" data-unread="0" title="" data-hints="true">
+                                                <i class="icon-menu-notificacao fa fa-2x fa-exclamation" alt=''></i>
+                        </button>
+                        --}}
 </div>
 
 <div id="menu-usuario" class="menu-usuario" data-intro="{{ trans('tour.tour-pilares-step10') }}" data-step="10">

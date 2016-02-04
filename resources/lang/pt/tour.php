@@ -32,5 +32,20 @@ return[
   'tour-pilares-step8' => '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
   'tour-pilares-step9' => '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
   'tour-pilares-step10' => '<p class="text-center">Neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta.</p>',
+
+  // QueroMeConectarTOUR
+  'tour-pilar-conectar-step1' => '<p class="text-center">Você está em <span class="laranja">Quero me Conectar</span>.<br/>É aqui o lugar para interagir com milhares de pessoas que estão viajando e compartilhando experiências Brasil à fora.</p>',
+  'tour-pilar-conectar-step2' => '<p class="text-center">No menu de postagens você poderá compartilhar as suas viagens, fotos e experiências com a rede da <span class="laranja">Vivalá</span>, tornando a experiência de nossos viajantes cada vez mais legal!</p>',
+  'tour-pilar-conectar-step3' => '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências com seus amigos e seguidores.</p>',
+  'tour-pilar-conectar-step4' => '<p calss="text-center">Em <span class="laranja">Linha do Tempo</span> você terá acesso a sua linha do tempo pessoal, com as postagens que realizou e as pessoas com as quais interagiu.</p>',
+  'tour-pilar-conectar-step5' => '<p class="text-center">Aqui ao meio você poderá ver as postagens e notícias de todas as pessoas que estão interagindo dentro da <span class="laranja">Vivalá</span>. Claro que facilitamos, colocando as pessoas que você seguiu no topo desta lista!</p>',
+  'tour-pilar-conectar-step6' => '<p class="text-center">No menu lateral direito você pode encontrar muito mais viajantes que combinam com você!<br/>Basta segui-los para receber suas postagens, fotos e notícias.</p>',
+  'tour-pilar-conectar-step7' => '<p class="text-center">Em <span class="laranja">Últimas Notícias</span> você poderá ver as últimas postagens que ocorreram por aqui.</p>',
+  'tour-pilar-conectar-step8' => '<p class="text-center">Em <span class="laranja">Dê Seu Feedback</span> você poderá nos mandar uma mensagem direta, dando dicas e sugestões do que pode ser melhorado!</p>',
+  'tour-pilar-conectar-step9' => '<p class="text-center">Você também pode dar aquela curtidinha em nossa página no Facebook por aqui. Vamos lá, é rapidinho!</p>',
+
+  // QueroViajarTOUR
+
+  // QueroCuidarTOUR
 ];
 ?>

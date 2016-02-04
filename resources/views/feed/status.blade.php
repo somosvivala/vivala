@@ -1,4 +1,4 @@
-<article class="status">
+<article class="status tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step5') }}" data-step="5">
 	<div class="row principal">
 		<div class="col-sm-2">
 			<div class="foto-label">
@@ -22,7 +22,7 @@
         @if ( Auth::user()->id == $Post->entidade->user->id )
                     {!! Form::open([ 'method' => 'DELETE', 'route' => ['post.destroy', $Post->id] ]) !!}
                     {!! Form::button('<i class="fa fa-trash "></i> ', ['type' => 'submit', 'class' => 'btn-icon', 'onclick' => "return confirm('Tem certeza que deseja remover esse post?');"]) !!}
-                
+
                     {!! Form::close() !!}
             @endif
 	</div>
@@ -37,4 +37,3 @@
 		</div>
 	</div>
 </article>
-

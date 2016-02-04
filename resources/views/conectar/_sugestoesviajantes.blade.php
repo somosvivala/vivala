@@ -1,5 +1,4 @@
-<h4 class="suave">{{ trans('global.lbl_traveller_suggest_') }}</h4>
-
+<h4 class="suave tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step6') }}" data-step="6">{{ trans('global.lbl_traveller_suggest_') }}</h4>
 
 <ul class="sugestoes sugestoes-viajantes">
 	@if(isset($sugestoesViajantes))
