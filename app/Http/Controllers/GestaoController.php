@@ -20,7 +20,7 @@ class GestaoController extends Controller {
 
             if(Auth::user()->isAdmin()) {
             
-                $cadastros = App\Perfil::all();
+                $cadastros = Perfil::all();
             }
             return view('gestao.index', compact('cadastros') );
 	}
