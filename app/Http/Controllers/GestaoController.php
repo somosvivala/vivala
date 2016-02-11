@@ -12,7 +12,7 @@ class GestaoController extends Controller {
 	 *
 	 * @return View
 	 */
-	public function index()
+	public function getHome()
 	{
             return view('gestao.index');
 	}
