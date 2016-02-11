@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Auth;
+use App\Perfil;
+
 class GestaoController extends Controller {
 
 	/**
@@ -14,7 +17,12 @@ class GestaoController extends Controller {
 	 */
 	public function getHome()
 	{
-            return view('gestao.index');
+
+            if(Auth::user()->isAdmin()) {
+            
+                $cadastros = App\Perfil::all();
+            }
+            return view('gestao.index', compact('cadastros') );
 	}
 
 
