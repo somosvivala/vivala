@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-6 col-md-4 fundo-cheio">
+<div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
 
         @if(isset($cadastros))
         <div id="chart_div"></div>
