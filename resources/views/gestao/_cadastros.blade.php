@@ -23,14 +23,14 @@
         var data = new google.visualization.arrayToDataTable([
           ['Dinosaur', 'Length'],
         @foreach($cadastros as $Perfil)
-        ['{{ $Perfil->nome }}', {{ $Perfil->created_at}} ],
+        ['{{ $Perfil->nome }}', '{{ $Perfil->created_at}}' ],
         @endforeach
         ['', 0]
         ]);
 
         var options = {
           title: 'Usuários registrados',
-          colors: ['#F16F2B']
+          colors: ['#F16F2B'],
           legend: { position: 'none' },
         };
 
