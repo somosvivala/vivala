@@ -25,7 +25,7 @@
         @foreach($cadastros as $Perfil)
         ['{{ $Perfil->nome }}', {{ strtotime($Perfil->created_at) }} ],
         @endforeach
-        ['', 0]
+        ['', {{ time() }}]
         ]);
 
         var options = {
