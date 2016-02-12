@@ -32,6 +32,7 @@
           title: 'Usuários registrados',
           colors: ['#F16F2B'],
           legend: { position: 'none' },
+          histogram: { bucketSize: 1 } 
         };
 
         var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
