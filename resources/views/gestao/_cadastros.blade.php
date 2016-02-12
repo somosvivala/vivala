@@ -23,7 +23,7 @@
         var data = new google.visualization.arrayToDataTable([
           ['Dinosaur', 'Length'],
         @foreach($cadastros as $Perfil)
-        ['{{ $Perfil->nome }}', $Perfil->id],
+        ['{{ $Perfil->nome }}', {{ $Perfil->id}} ],
         @endforeach
         ['', 0]
         ]);
