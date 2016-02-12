@@ -46,8 +46,8 @@ elixir(function(mix) {
       '../../assets/bower/bootstrap-datepicker/js/locales/bootstrap-datepicker.pt-BR.js',
       '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
       '../../assets/bower/sweetalert2/dist/sweetalert2.min.js',
-      '../../assets/bower/intro.js/intro.js',
       '../../assets/bower/intro.js/minified/intro.min.js',
+      '../../assets/bower/js-cookie/src/js.cookie.js',
 
       /* Scripts Vivalá */
       '../../assets/js/comentaPost.js',
@@ -77,6 +77,6 @@ elixir(function(mix) {
       '../../assets/js/formContato.js',
       '../../assets/js/ongs.js',
       '../../assets/js/tour.js',
-      '../../assets/js/zoomfinanciamentocoletivo.js'
+      /*'../../assets/js/zoomfinanciamentocoletivo.js'*/
 	], 'public/js/vendor.js');
 });

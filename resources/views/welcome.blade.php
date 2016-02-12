@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" id="welcome-html">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="google-site-verification" content="U7etmc1T1SL8IEwLdDu-Aq941mJGMpSFUapaAn-7ME0" />
         <title>{{ trans('global.title_vivala') }}</title>
+
+        {{-- Codificação de Caracteres --}}
+            <meta charset="utf-8">
+
+        {{-- Lingua utilizada na view --}}
+            <meta name="language" content='<?php echo \Lang::getLocale(); ?>'>
+
+        {{-- Mobile Zoom e IECompat --}}
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        {{-- Google Analytics--}}
+            <meta name="google-site-verification" content="U7etmc1T1SL8IEwLdDu-Aq941mJGMpSFUapaAn-7ME0" />
 
         {{-- Facebook OpenGraph metatags --}}
             <meta property="og:locale" content="en_US">
@@ -43,18 +52,18 @@
             <meta name="msapplication-TileImage" content="favicon/v/mstile-144x144.png">
             <meta name="theme-color" content="#ffffff">
 
-        {{-- Fontes --}}
+        {{-- CSS --}}
+            <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
             <link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
             <link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 
-        {{-- All CSS --}}
-            <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
+
     </head>
     <body>
         {{-- Corpo da aplicação MOBILE - menor que 768px [em construção] --}}
