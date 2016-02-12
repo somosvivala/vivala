@@ -25,6 +25,8 @@
         @foreach($cadastros as $Perfil)
         ['{{ $Perfil->nome }}', $Perfil->id],
         @endforeach
+        ['', 0]
+        ]);
 
         var options = {
           title: 'Usuários registrados',
