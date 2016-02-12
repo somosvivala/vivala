@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ trans('global.title_vivala') }}</title>
+
+    {{-- Codificação de Caracteres --}}
+	   <meta charset="utf-8">
+
+    {{-- Lingua utilizada na view --}}
+        <meta name="laravelLang" content='<?php echo \Lang::getLocale(); ?>'>
+
+    {{-- Mobile Zoom e IECompat --}}
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	{{-- Favicon e relacionados --}}
         <link rel="apple-touch-icon" sizes="57x57" href="favicon/v/apple-touch-icon-57x57.png">
@@ -26,12 +33,10 @@
         <meta name="msapplication-TileImage" content="favicon/v/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
-    {{-- Fontes --}}
-		<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
-		<link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
-
-    {{-- All CSS --}}
+    {{-- CSS --}}
     	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+        <link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+        <link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -49,7 +54,7 @@
         		<span class="icon-bar"></span>
         		<span class="icon-bar"></span>
         	</button>
-        	<a id="logo-vivala" class="navbar-brand logo" href="{{ url('home') }}" data-intro='{{ trans("tour.tour_quiz-1-step1") }}' data-step='1'><img src="/logo.png" alt="Vivalá" title="Vivalá"></a>
+        	<a id="logo-vivala" class="navbar-brand logo tour_quiz-1-step1" href="{{ url('home') }}"><img src="/logo.png" alt="Vivalá" title="Vivalá"></a>
         </div>
         <div class="col-sm-10 text-right">
             <span id"skip-quiz" class="laranja absolute-top-right">{{ trans("global.lbl_step") }} {{ $passo }} {{ trans("global.quiz_offour") }}</span>

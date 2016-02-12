@@ -1,8 +1,8 @@
 {{-- Quero Conectar - Menu Principal --}}
-	<h4 class="suave tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step1') }}" data-step="1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_connect') }}!</h4>
-	<nav class="menu-latera tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step3') }}" data-step="3">
-		<ul>
-			<li class="tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step4') }}" data-step="4"><a href="/perfil" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-relogio vi"></i>{{ trans('global.lbl_timeline') }}</a></li>
+	<h4 class="suave tour-pilar-conectar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_connect') }}!</h4>
+	<nav class="menu-lateral">
+		<ul class="tour-pilar-conectar-step3">
+			<li class="tour-pilar-conectar-step4"><a href="/perfil" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-relogio vi"></i>{{ trans('global.lbl_timeline') }}</a></li>
 			{{-- DESATIVADO TEMPORARIAMENTE
 			<!--li><a href="/perfilviajante" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-usuario cinza-morto vi"></i></i>{{ trans('global.lbl_traveller_profile') }}</a></li>
 			<li><a href="/diarioviagem" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-livro cinza-morto vi"></i>{{ trans('global.lbl_travel_log') }}</a></li>
@@ -18,13 +18,13 @@
 	<h4 class="suave">{{ trans('global.lbl_connect_with_friends') }}</h4>
 	<nav class="menu-lateral">
 		<ul>
-			<li class="tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step7') }}" data-step="7">
+			<li class="tour-pilar-conectar-step7">
 				<a href="/paginas/ultimasnoticias" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-jornal vi"></i>{{ trans('global.lbl_latest_news') }}</a>
 			</li>
 			{{-- DESATIVADO TEMPORARIAMENTE
 			<!--li><a href="/chat" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-chat vi"></i>{{ trans('global.lbl_chat_with_friends') }}</a></li-->
 			--}}
-			<li class="tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step8') }}" data-step="8">
+			<li class="tour-pilar-conectar-step8">
 				<a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border "><i class="icon-menu-lateral icon-vivala-check-preenchido vi"></i>{{ trans('global.lbl_feedback_give_yours') }}</a>
 	        @include('_feedback')
 	    </li>
@@ -32,7 +32,7 @@
 	</nav>
 {{-- Facebook Like-Page Menu --}}
 	<h4 class="suave">{{ trans('global.social_network_facebook') }}</h4>
-	<nav class="menu-lateral tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step9') }}" data-step="9">
+	<nav class="menu-lateral tour-pilar-conectar-step9">
 		<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 			<div class="fb-xfbml-parse-ignore">
 				<blockquote cite="https://www.facebook.com/somosvivala">

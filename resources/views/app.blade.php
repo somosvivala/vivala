@@ -1,11 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="google-site-verification" content="U7etmc1T1SL8IEwLdDu-Aq941mJGMpSFUapaAn-7ME0" />
 	<title>{{ trans('global.title_vivala') }}</title>
+
+    {{-- Codificação de Caracteres --}}
+	   <meta charset="utf-8">
+
+    {{-- Lingua utilizada na view --}}
+		<meta name="laravelLang" content='<?php echo \Lang::getLocale(); ?>'>
+
+    {{-- Mobile Zoom e IECompat --}}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{-- Google Analytics --}}
+        <meta name="google-site-verification" content="U7etmc1T1SL8IEwLdDu-Aq941mJGMpSFUapaAn-7ME0" />
 
     {{-- Favicon e relacionados --}}
         <link rel="apple-touch-icon" sizes="57x57" href="../favicon/v/apple-touch-icon-57x57.png">
@@ -27,14 +36,13 @@
         <meta name="msapplication-TileImage" content="../favicon/v/mstile-144x144.png">
         <meta name="theme-color" content="#ffffff">
 
-	<link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/all.css') }}" rel="stylesheet">
-
-    {{-- Fontes --}}
+    {{-- CSS --}}
+        <link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
 		<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
 		<link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 
-	{{-- Google Analytics --}}
+	{{-- Google Analytics JS --}}
         <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -53,7 +61,7 @@
 </head>
 
 <body>
-	{{-- Facebook Post Plugin --}}
+	{{-- Facebook Post Plugin JS --}}
         <i id="javascript-ativo" class="fa fa-times @if (env('APP_ENV') != 'local') hidden @endif" style="padding:0.2em 0.5em; color:white; font-size: 20px; border-radius:3px; position:absolute; top:5px;left:3px;z-index:10;background-color:#e55"><b class="font-bold-upper"> JS</b></i>
 	@yield('pilar')
 
@@ -71,7 +79,7 @@
         <div class="modal-content">
            <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>     
+            </div>
             <div class="modal-body">
                 <iframe src="" class="quimera_iframe" style="border: 0;">
                 </iframe>

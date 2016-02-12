@@ -3,12 +3,12 @@
 @section('pergunta')
 <div id="tour-quiz" class="col-sm-12 pergunta quiz-1">
     <a class="absolute-top-right laranja" href="{{ url ('quiz/personalize')}}">{{ trans("global.lbl_step_skip") }}</a>
-    <h2 class="tour-quiz-step1" data-intro='{{ trans("tour.tour_quiz-1-step2") }}' data-step="2">{{ trans("global.quiz_interests_yours") }}</h2>
+    <h2 class="tour_quiz-1-step2">{{ trans("global.quiz_interests_yours") }}</h2>
     <h3>{{ trans("global.quiz_interests_choose") }}</h3>
     @if(isset($interesses))
     {!! Form::open(['url' => ['quiz/interesses', Auth::user()->perfil->id], 'class' => 'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/personalize', 'data-loading'=>'form-loading']) !!}
     <ul class="interesses col-sm-6 text-left">
-      <div data-intro='{{ trans("tour.tour_quiz-1-step3") }}' data-step='3' class="row margin-t-3 tour-quiz-step1">
+      <div class="row margin-t-3 tour_quiz-1-step3">
         <i class="fa fa-globe col-sm-1 laranja" style="font-size: 1.5em;"></i>
         <h4 class="col-sm-11" style="padding-left:1em; margin-top:5px; margin-bottom:15px;">{{ trans('global.quiz_interests_travel_style') }}</h4>
         @forelse($interesses['estilo'] as $Interesse)
@@ -89,7 +89,7 @@
         @endforelse
       </div>
     </ul>
-    <div data-intro='{{ trans("tour.tour_quiz-1-step4") }}' data-step='4' class="col-sm-12 tour-quiz-step1">
+    <div class="col-sm-12 tour_quiz-1-step4">
     {!!Form::submit(trans("global.lbl_continue"), ['class' => 'btn btn-primario btn-acao']) !!}
     <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x laranja" style="display:none"></i>
     </div>

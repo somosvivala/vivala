@@ -1,4 +1,4 @@
-<article class="status tour-conectar" data-intro="{{ trans('tour.tour-pilar-conectar-step5') }}" data-step="5">
+<article class="status tour-pilar-conectar-step5">
 	<div class="row principal">
 		<div class="col-sm-2">
 			<div class="foto-label">

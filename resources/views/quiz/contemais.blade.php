@@ -5,7 +5,7 @@
 		<span class="absolute-top-right laranja">
 			<a href="{{ url ('quiz/personalize')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('quiz/pessoasinteressantes')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
 		</span>
-		<h2 class="tour-quiz-step3" data-intro='{{ trans("tour.tour_quiz-3-step1") }}' data-step="1">{{ trans("global.quiz_tell_us_more") }}</h2>
+		<h2 class="tour_quiz-3-step1">{{ trans("global.quiz_tell_us_more") }}</h2>
 		<h3>{{ trans("global.quiz_get_intimacy") }}</h3>
 		{!! Form::open(['url' => ['quiz/contemais',  Auth::user()->perfil->id,  ], 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '/quiz/pessoasinteressantes', 'data-loading'=>'form-loading']) !!}
 			<div class="erros">
