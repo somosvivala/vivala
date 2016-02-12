@@ -42,6 +42,7 @@ Route::resource('conectar','ConectarController');
 /*
  * Rotas especificas das áreas internas
  */
+Route::controller('gestao', 'GestaoController');
 
 // Rota para sugestoes de viajantes
 Route::post('viajar/filtro','ViajarController@filtro');
