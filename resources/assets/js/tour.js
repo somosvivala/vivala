@@ -4,8 +4,8 @@ $(document).ready(function() {
   var linguaAtiva = $("meta[name=language]").attr("content");
 
   // Possibilidade do user afirmar se quer ver sempre o TOUR ou cancelá-lo
-  var ligaQuizTour = true;
-  var ligaTourInterno = true;
+  var ligaQuizTour = Cookies.get('quizTour');
+  var ligaTourInterno = Cookies.get('internoTour');
 
   // Variáveis diferentes só por conta da opacidade da layer ao fundo
   var quizTour = introJs();
@@ -100,9 +100,10 @@ $(document).ready(function() {
 ==============================================================================*/
 // ##### QUIZ
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  if(ligaQuizTour){
+  if(!ligaQuizTour){
     // Passo 1
     if($("#tour-quiz").hasClass("quiz-1")){
+      //console.log("Estou em QUIZ - Etapa 1");
       switch(linguaAtiva){
         case 'en':
           quizTour.setOptions({
@@ -159,10 +160,10 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-      quizTour.start();
     }
     // Passo 2
     if($("#tour-quiz").hasClass("quiz-2")){
+      //console.log("Estou em QUIZ - Etapa 2");
       switch(linguaAtiva){
         case 'en':
           quizTour.setOptions({
@@ -199,10 +200,10 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-      quizTour.start();
     }
     // Passo 3
     if($("#tour-quiz").hasClass("quiz-3")){
+      //console.log("Estou em QUIZ - Etapa 3");
       switch(linguaAtiva){
         case 'en':
           quizTour.setOptions({
@@ -229,10 +230,10 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-      quizTour.start();
     }
     // Passo 4
     if($("#tour-quiz").hasClass("quiz-4")){
+      //console.log("Estou em QUIZ - Etapa 4");
       switch(linguaAtiva){
         case 'en':
           quizTour.setOptions({
@@ -279,23 +280,33 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-      quizTour.start();
     }
+    quizTour.onexit(function(){
+      Cookies.set('quizTour', 'true', { expires: 365, path: '' });
+      ligaQuizTour = Cookies.get('quizTour');
+    });
+    quizTour.oncomplete(function(){
+      Cookies.set('quizTour', 'true', { expires: 365, path: '' });
+      ligaQuizTour = Cookies.get('quizTour');
+    });
+    quizTour.start();
   }
 
 // ##### INTERNO
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  if(ligaTourInterno){
+  if(!ligaTourInterno){
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
 
     // TOUR PILARES
-    if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-conectar"))){
-      //console.log("Estou no pilar QUERO ME CONECTAR");
+    if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-conectar"))){
+      console.log("Estou no pilar QUERO ME CONECTAR");
       internoTour.onexit(function(){
-        ligaTourInterno = false;
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
       });
       internoTour.oncomplete(function(){
-        ligaTourInterno = false;
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
       });
       switch(linguaAtiva){
         case 'en':
@@ -508,13 +519,15 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
     }
-    if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-viajar"))){
-      //console.log("Estou no pilar QUERO VIAJAR");
+    if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-viajar"))){
+      console.log("Estou no pilar QUERO VIAJAR");
       internoTour.onexit(function(){
-        ligaTourInterno = false;
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
       });
       internoTour.oncomplete(function(){
-        ligaTourInterno = false;
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
       });
       switch(linguaAtiva){
         case 'en':
@@ -605,13 +618,15 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
     }
-    if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-cuidar"))){
-      //console.log("Estou no pilar QUERO CUIDAR");
+    if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-cuidar"))){
+      console.log("Estou no pilar QUERO CUIDAR");
       internoTour.onexit(function(){
-        ligaTourInterno = false;
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
       });
       internoTour.oncomplete(function(){
-        ligaTourInterno = false;
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
       });
       switch(linguaAtiva){
         case 'en':
