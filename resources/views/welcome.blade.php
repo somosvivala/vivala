@@ -7,7 +7,7 @@
             <meta charset="utf-8">
 
         {{-- Lingua utilizada na view --}}
-            <meta name="laravelLang" content='<?php echo \Lang::getLocale(); ?>'>
+            <meta name="language" content='<?php echo \Lang::getLocale(); ?>'>
 
         {{-- Mobile Zoom e IECompat --}}
             <meta http-equiv="X-UA-Compatible" content="IE=edge">

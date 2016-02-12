@@ -127,7 +127,7 @@
                         --}}
 </div>
 
-<div id="menu-usuario" class="menu-usuario tour-pilares-step10">
+<div id="menu-usuario" class="menu-usuario tour-pilares-step10 tour-pilar-cuidar-step9">
     <ul class="nav navbar-nav">
         @if (Auth::user())
         <li class="dropdown">

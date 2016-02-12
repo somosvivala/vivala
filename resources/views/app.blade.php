@@ -7,7 +7,7 @@
 	   <meta charset="utf-8">
 
     {{-- Lingua utilizada na view --}}
-		<meta name="laravelLang" content='<?php echo \Lang::getLocale(); ?>'>
+		<meta name="language" content='<?php echo \Lang::getLocale(); ?>'>
 
     {{-- Mobile Zoom e IECompat --}}
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -68,7 +68,6 @@
     {{-- Scripts --}}
 	<script src="{{ asset('/js/vendor.js') }}"></script>
 	<script src="{{ asset('/js/lightbox.min.js') }}"></script>
-	<script src="{{ asset('/js/elevatezoom.min.js')}}"></script>
     <div id="fb-root"></div><script>(function(d, s, id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1598914903686637";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
 
 	<!-- Iubenda (link de Privacy Policy) -->

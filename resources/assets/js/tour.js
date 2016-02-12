@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // Pegando a lingua ativa no momento
-  var linguaAtiva = $("meta[name=laravelLang]").attr("content");
+  var linguaAtiva = $("meta[name=language]").attr("content");
 
   // Possibilidade do user afirmar se quer ver sempre o TOUR ou cancelá-lo
   var ligaQuizTour = true;
@@ -30,7 +30,7 @@ $(document).ready(function() {
       });
     // Interno
       internoTour.setOptions({
-        overlayOpacity: 0.6,
+        overlayOpacity: 0.1,
         showButtons: true,
         scrollToElement: true,
         showProgress: false,
@@ -60,7 +60,7 @@ $(document).ready(function() {
       });
     // Interno
       internoTour.setOptions({
-        overlayOpacity: 0.6,
+        overlayOpacity: 0.1,
         showButtons: true,
         scrollToElement: true,
         showProgress: false,
@@ -85,7 +85,7 @@ $(document).ready(function() {
       });
     // Interno
       internoTour.setOptions({
-          overlayOpacity: 0.6,
+          overlayOpacity: 0.1,
           showButtons: true,
           scrollToElement: true,
           showProgress: false,
@@ -286,11 +286,11 @@ $(document).ready(function() {
 // ##### INTERNO
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
   if(ligaTourInterno){
-    console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
+    //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
 
     // TOUR PILARES
     if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-conectar"))){
-      console.log("Estou no pilar QUERO ME CONECTAR");
+      //console.log("Estou no pilar QUERO ME CONECTAR");
       internoTour.onexit(function(){
         ligaTourInterno = false;
       });
@@ -509,17 +509,7 @@ $(document).ready(function() {
       }
     }
     if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-viajar"))){
-      console.log("Estou no pilar QUERO VIAJAR");
-      internoTour.onexit(function(){
-        ligaTourInterno = false;
-      });
-      internoTour.oncomplete(function(){
-        ligaTourInterno = false;
-      });
-
-    }
-    if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-cuidar"))){
-      console.log("Estou no pilar QUERO CUIDAR");
+      //console.log("Estou no pilar QUERO VIAJAR");
       internoTour.onexit(function(){
         ligaTourInterno = false;
       });
@@ -528,157 +518,45 @@ $(document).ready(function() {
       });
       switch(linguaAtiva){
         case 'en':
-        internoTour.setOptions({
-          steps: [
-            // 3 PILARES
-            {
-              element: '.tour-pilares-step1',
-              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos, prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step2',
-              intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes pilares</span>.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar aos seus amigos e compartilhar suas mais incríveis experiências.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step5',
-              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil.<br/>Você pode se candidatar a uma vaga, criar uma experiência única e modificar a realidade do nosso país durante suas viagens!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step6',
-              intro: '<p class="text-center">Aqui você receberá todas as notificações dentro da plataforma.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step7',
-              intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step8',
-              intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step9',
-              intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step10',
-              intro: '<p class="text-center">Neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta.</p>',
-              position: 'bottom'
-            },
-            // CUIDAR
-            {
-              element: '.tour-pilar-cuidar-step1',
-              intro: '<p class="text-center">Você está em <span class="laranja">Quero Cuidar</span>.<br/>Aqui você pode encontrar vagas em diversas ONGs espalhadas pelo Brasil, poderá se cadastrar a uma delas e compartilhar com outros viajantes o trabalho voluntário em nosso país.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilar-cuidar-step2',
-              intro: '<p class="text-center">Você também poderá divulgar suas vagas caso possua uma ONG, possibilitando a outros viajantes esta troca de experiências!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilar-cuidar-step3',
-              intro: '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências de voluntariado pelo país.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilar-cuidar-step4',
-              intro: '<p class="text-center">Em <span class="laranja">Página Inicial</span> você poderá buscar pelas mais diversas ONGs em todo país.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilar-cuidar-step5',
-              intro: '<p class="text-center">Em <span class="laranja">Projetos</span> você verá os projetos sociais mais acessados por nossos viajantes transformadores.</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilar-cuidar-step6',
-              intro: '<p class="text-center">Em <span class="laranja">Vagas</span> você encontrará as vagas para os trabalhos voluntários mais irados!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilar-cuidar-step7',
-              intro: '<p class="text-center">Você pode usar a busca para encontrar a ONG que é a sua cara, buscando entre as diversas categorias e localidades pelo Brasil.</p>',
-              position: 'top'
-            },
-            {
-              element: '.tour-pilar-cuidar-step8',
-              intro: '<p class="text-center">Ou você pode ver as últimas ONGs que cadastraram vagas em nossa plataforma.</p>',
-              position: 'top'
-            }
-          ]
-        });
+          internoTour.setOptions({
+            steps: [
+              // VIAJAR
+              {
+                element: '.tour-pilar-viajar-step1',
+                intro: '<p class="text-center"></p>',
+                position: 'bottom'
+              }
+            ]
+          });
         break;
         case 'pt':
           internoTour.setOptions({
             steps: [
-              // 3 PILARES
+              // VIAJAR
               {
-                element: '.tour-pilares-step1',
-                intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos, prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
+                element: '.tour-pilar-viajar-step1',
+                intro: '<p class="text-center"></p>',
                 position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step2',
-                intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes pilares</span>.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step3',
-                intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar aos seus amigos e compartilhar suas mais incríveis experiências.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step4',
-                intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step5',
-                intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil.<br/>Você pode se candidatar a uma vaga, criar uma experiência única e modificar a realidade do nosso país durante suas viagens!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step6',
-                intro: '<p class="text-center">Aqui você receberá todas as notificações dentro da plataforma.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step7',
-                intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step8',
-                intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step9',
-                intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step10',
-                intro: '<p class="text-center">Neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta.</p>',
-                position: 'bottom'
-              },
+              }
+            ]
+          });
+        break;
+        default:
+        // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
+      }
+    }
+    if((ligaTourInterno === true) && ($("#tour-pilares").hasClass("pilar-cuidar"))){
+      //console.log("Estou no pilar QUERO CUIDAR");
+      internoTour.onexit(function(){
+        ligaTourInterno = false;
+      });
+      internoTour.oncomplete(function(){
+        ligaTourInterno = false;
+      });
+      switch(linguaAtiva){
+        case 'en':
+          internoTour.setOptions({
+            steps: [
               // CUIDAR
               {
                 element: '.tour-pilar-cuidar-step1',
@@ -719,6 +597,63 @@ $(document).ready(function() {
                 element: '.tour-pilar-cuidar-step8',
                 intro: '<p class="text-center">Ou você pode ver as últimas ONGs que cadastraram vagas em nossa plataforma.</p>',
                 position: 'top'
+              },
+              {
+                element: '.tour-pilar-cuidar-step9',
+                intro: '<p class="text-center">No menu de <span class="laranja">Configurações Globais</span> você poderá criar a página de sua ONG e divulgar suas vagas, é simples e rápido.<br/>Compartilhe o trabalho voluntário e transforme o Brasil!</p>',
+                position: 'bottom'
+              }
+            ]
+          });
+        break;
+        case 'pt':
+          internoTour.setOptions({
+            steps: [
+              // CUIDAR
+              {
+                element: '.tour-pilar-cuidar-step1',
+                intro: '<p class="text-center">Você está em <span class="laranja">Quero Cuidar</span>.<br/>Aqui você pode encontrar vagas em diversas ONGs espalhadas pelo Brasil, poderá se cadastrar a uma delas e compartilhar com outros viajantes o trabalho voluntário em nosso país.</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-cuidar-step2',
+                intro: '<p class="text-center">Você também poderá divulgar suas vagas caso possua uma ONG, possibilitando a outros viajantes esta troca de experiências!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-cuidar-step3',
+                intro: '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências de voluntariado pelo país.</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-cuidar-step4',
+                intro: '<p class="text-center">Em <span class="laranja">Página Inicial</span> você poderá buscar pelas mais diversas ONGs em todo país.</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-cuidar-step5',
+                intro: '<p class="text-center">Em <span class="laranja">Projetos</span> você verá os projetos sociais mais acessados por nossos viajantes transformadores.</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-cuidar-step6',
+                intro: '<p class="text-center">Em <span class="laranja">Vagas</span> você encontrará as vagas para os trabalhos voluntários mais irados!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-cuidar-step7',
+                intro: '<p class="text-center">Você pode usar a busca para encontrar a ONG que é a sua cara, buscando entre as diversas categorias e localidades pelo Brasil.</p>',
+                position: 'top'
+              },
+              {
+                element: '.tour-pilar-cuidar-step8',
+                intro: '<p class="text-center">Ou você pode ver as últimas ONGs que cadastraram vagas em nossa plataforma.</p>',
+                position: 'top'
+              },
+              {
+                element: '.tour-pilar-cuidar-step9',
+                intro: '<p class="text-center">No menu de <span class="laranja">Configurações Globais</span> você poderá criar a página de sua ONG e divulgar suas vagas, é simples e rápido.<br/>Compartilhe o trabalho voluntário e transforme o Brasil!</p>',
+                position: 'bottom'
               }
             ]
           });
