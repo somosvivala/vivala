@@ -1,16 +1,8 @@
 <div class="col-xs-12 col-sm-6 col-md-4 fundo-cheio">
 
         @if(isset($cadastros))
-        @forelse($cadastros as $Perfil)
-        <li class="col-sm-6">
-        </li>
-        @empty
-            Nenhum Usuario encontrado
-        @endforelse
-        @endif
         <div id="chart_div"></div>
 
-</div>
 
 <!--Load the AJAX API-->
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -28,25 +20,21 @@
       function drawChart() {
 
         // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
+        var data = new google.visualization.arrayToDataTable([
+          ['Dinosaur', 'Length'],
+        @foreach($cadastros as $Perfil)
+        ['{{ $Perfil->nome }}', $Perfil->id],
+        @endforeach
 
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
+        var options = {
+          title: 'Usuários registrados',
+          legend: { position: 'none' },
+        };
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
     </script>
 
+        @endif
+</div>
