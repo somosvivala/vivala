@@ -523,7 +523,37 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center"></p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Quero Viajar</span>.<br/>Aqui você encontrará tudo que precisa para viajar Brasil afora, alimentação, passagens áereas/ônibus e hospedagem, tudo isso com muitos descontos e vantagens!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step2',
+                intro: '<p class="text-center">Em nosso menu você encontra cada um de nossos serviços.</p>',
+                position: 'top'
+              },
+              {
+                element: '.tour-pilar-viajar-step3',
+                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com 1.700 opções de restaurantes espalhados pelo Brasil, delicie-se!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step4',
+                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Carros</span> temos passagens áereas, hospedagem e pacotes de viagens com os melhores descontos para você viajante!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step5',
+                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> temos passagens para todo território nacional e descontos exclusivos com mais de 60 viações de ônibus diferentes!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step6',
+                intro: '<p class="text-center">No menu lateral direito você encontra os <span class="laranja">Roteiros</span> mais quentes da Vivalá, feitos sob medida para você conhecer os lugares mais incríveis do país!</p>',
+                position: 'left'
+              },
+              {
+                element: '.tour-pilar-viajar-step7',
+                intro: '<p class="text-center">Monte sua viagem agora e viva esta experiência, viva o Brasil!</p>',
                 position: 'bottom'
               }
             ]
@@ -535,7 +565,37 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center"></p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Quero Viajar</span>.<br/>Aqui você encontrará tudo que precisa para viajar Brasil afora, alimentação, passagens áereas/ônibus e hospedagem, tudo isso com muitos descontos e vantagens!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step2',
+                intro: '<p class="text-center">Em nosso menu você encontra cada um de nossos serviços.</p>',
+                position: 'top'
+              },
+              {
+                element: '.tour-pilar-viajar-step3',
+                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com 1.700 opções de restaurantes espalhados pelo Brasil, delicie-se!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step4',
+                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Carros</span> temos passagens áereas, hospedagem e pacotes de viagens com os melhores descontos para você viajante!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step5',
+                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> temos passagens para todo território nacional e descontos exclusivos com mais de 60 viações de ônibus diferentes!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-pilar-viajar-step6',
+                intro: '<p class="text-center">No menu lateral direito você encontra os <span class="laranja">Roteiros</span> mais quentes da Vivalá, feitos sob medida para você conhecer os lugares mais incríveis do país!</p>',
+                position: 'left'
+              },
+              {
+                element: '.tour-pilar-viajar-step7',
+                intro: '<p class="text-center">Monte sua viagem agora e viva esta experiência, viva o Brasil!</p>',
                 position: 'bottom'
               }
             ]

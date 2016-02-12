@@ -1,5 +1,5 @@
 {{-- Quero Viajar - Menu Principal --}}
-	<h4 class="suave">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_travel') }}!</h4>
+	<h4 class="suave tour-pilar-viajar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_travel') }}!</h4>
 	<nav class="menu-lateral">
 		<ul>
 			<li><a href="/viajar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{  trans('global.lbl_homepage') }}</a></li>
