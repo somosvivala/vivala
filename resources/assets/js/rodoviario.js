@@ -543,7 +543,7 @@ var bindaFormPagamento = function() {
         var buyer = {};
         if (tipo_cliente == 'pessoa-fisica') {
             var nomeArray = $('input[name="nome-pf"]').val().split(" ");
-            var birthday = $('input[name="nascimento-pf"]').val().split("/").reverse().join("/");
+            var birthday = $('input[name="nascimento-pf"]').val().split("/").reverse().join("-");
 
             buyer = {
                 "locale":"pt_BR",
