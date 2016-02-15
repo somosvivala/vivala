@@ -20,9 +20,10 @@ class GestaoController extends Controller {
 
             if(Auth::user()->isAdmin()) {
             
+                $intervalos = Perfil::where('created_at', '>', '2015-10-18 14:56:40')->where('created_at', '<', '2016-01-20 14:56:40')->groupBy(DB::raw('DAY(created_at)'))->get();
                 $cadastros = Perfil::all();
             }
-            return view('gestao.index', compact('cadastros') );
+            return view('gestao.index', compact('cadastros','intervalos') );
 	}
 
 

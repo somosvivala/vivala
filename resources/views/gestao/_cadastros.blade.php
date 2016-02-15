@@ -31,7 +31,9 @@
                         {        
                             type: "area",
                             dataPoints: [//array
-                                //@foreach($intervalos as $Intervalo)
+                                @foreach($intervalos as $Intervalo)
+                                {{ $Intervalo }}
+                                @endforeach
                                 { x: new Date(2012, 01, 1), y: 26},
                                 { x: new Date(2012, 01, 2), y: 26},
                                 { x: new Date(2012, 01, 3), y: 26},
@@ -41,7 +43,6 @@
                                 { x: new Date(2012, 01, 7), y: 26},
                                 { x: new Date(2012, 01, 8), y: 26},
                                 { x: new Date(2012, 01, 9), y: 26},
-                                //@endforeach
 
                             ]
                         }
