@@ -15,6 +15,14 @@ $('#data-id-rodoviario').datepicker().on('changeDate', function() {
     $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').datepicker('getDate'));
 });
 
+// Colore dias anteriores do datepicker na abertura do mesmo
+$("#data-id-rodoviario").datepicker().on('focus', function(){
+    $('.datepicker table tr td.disabled').addClass('datepicker-dia-anterior');
+});
+$("#data-volta-rodoviario").datepicker().on('focus', function(){
+    $('.datepicker table tr td.disabled').addClass('datepicker-dia-anterior');
+});
+
 //aplicando mascara nos campos de date para funcionar melhor com o calendário
 $('.mascara-data').mask("00/00/0000");
 
@@ -141,6 +149,7 @@ var ajaxTrip = function(viagens) {
         try {
             json = JSON.parse(data);
         } catch(error) {}
+
         //se tiver dado erro
         if (json.errors) {
             $('#clickbus-resultado-busca').html("");
@@ -355,6 +364,12 @@ var tripPayment = function(request, frm) {
         }
     })
     .error(function(data) {
+
+        var json= {};
+        try {
+            json = JSON.parse(data);
+        } catch(error) {}
+
         swal({
             title: json.errors1,
             html: json.errors5+"<br/><br/>"+json.errors,
@@ -435,7 +450,10 @@ var tripBooking = function(request) {
     })
     .error(function(data) {
 
-        var json = JSON.parse(data);
+        var json= {};
+        try {
+            json = JSON.parse(data);
+        } catch(error) {}
 
         swal({
             title: json.errors1,
@@ -451,7 +469,10 @@ var tripBooking = function(request) {
     })
     .done(function(data) {
 
-        var json = JSON.parse(data);
+        var json= {};
+        try {
+            json = JSON.parse(data);
+        } catch(error) {}
 
         //se tiver dado erro
         if (json.errors) {

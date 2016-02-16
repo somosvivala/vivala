@@ -1,3 +1,8 @@
+.datepicker-dia-anterior{
+    // Necessário !important para sobrescrever o css do datepicker
+    background-color: rgba(226, 226, 226, 0.4)!important;
+}
+
 #rodoviario-filtros {
     input[type="text"],
     input[type="email"],
@@ -49,7 +54,9 @@
         }
         .passagem {
             height: 115px;
-            // Detalhes para reorganização do layou
+            // Fix-temporario (?) bem porco da passagem, não esta responsivo e por isso o botão estoura o layout as vezes
+            padding: 0 15px;
+            // Detalhes para reorganização do layout
             .company-logo {
                 width: 18%;
                 padding-left:15px;
@@ -205,6 +212,9 @@
         input[type="radio"]:checked + label {
             border: 2px solid @cor-primaria;
         }
+    }
+    .sem-quebralinha{
+        white-space: nowrap;
     }
 }
 

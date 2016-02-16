@@ -115,7 +115,7 @@
             <div class="poltronas-selecionadas-volta">
             </div>
             @endif
-            {!! Form::submit( trans('clickbus.clickbus_buy-now'), ['class' => 'margin-t-1 btn btn-acao']) !!}
+            {!! Form::submit( trans('clickbus.clickbus_buy-now'), ['class' => 'margin-t-1 btn btn-acao', 'tabindex' => '-1']) !!}
             <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
         {!! Form::close() !!}
     </div>

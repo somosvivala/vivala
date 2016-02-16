@@ -4,10 +4,10 @@
             <div class="col-sm-8">
                 <h4>{{ trans('clickbus.clickbus_client-title-infos') }}</h4>
                 <ul id="abas-cliente" class="nav nav-pills margin-b-1">
-                    <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true">{{ trans('clickbus.clickbus_client-opt-PF') }}</a></li>
-                    <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true">{{ trans('clickbus.clickbus_client-opt-PJ') }}</a></li>
+                    <li role="presentation" class="active"><a class="tipo-cliente" href="#pessoa-fisica" id="pessoa-fisica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-fisica" aria-expanded="true" tabindex="-1">{{ trans('clickbus.clickbus_client-opt-PF') }}</a></li>
+                    <li role="presentation"><a class="tipo-cliente" href="#pessoa-juridica" id="pessoa-juridica-tab" role="tab" data-toggle="tab" aria-controls="pessoa-juridica" aria-expanded="true" tabindex="-1">{{ trans('clickbus.clickbus_client-opt-PJ') }}</a></li>
                     {{-- Desativado
-                    <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true">{{ trans('clickbus.clickbus_client-opt-foreigner') }}</a></li>
+                    <li role="presentation"><a class="tipo-cliente" href="#estrangeiro" id="estrangeiro-tab" role="tab" data-toggle="tab" aria-controls="estrangeiro" aria-expanded="true" tabindex="-1">{{ trans('clickbus.clickbus_client-opt-foreigner') }}</a></li>
                     --}}
                 </ul>
                 <div class="row">
@@ -107,16 +107,16 @@
                 <ul id="abas-pagamento" class="nav nav-pills margin-b-1">
                     @forelse($decoded->items->payment_methods as $formaPagamento)
                     @if ($formaPagamento->name == 'creditcard')
-                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true">{{ trans('clickbus.clickbus_client-title-credit-card') }}</a></li>
+                    <li role="presentation" class="active"><a class="forma-pagamento" href="#cartao-credito" id="cartao-credito-tab" role="tab" data-toggle="tab" aria-controls="cartao-credito" aria-expanded="true" tabindex="-1">{{ trans('clickbus.clickbus_client-title-credit-card') }}</a></li>
                     @endif
 
                     @if ($formaPagamento->name == 'debitcard')
-                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true">{{ trans('clickbus.clickbus_client-title-debit-card') }}</a></li>
+                    <li role="presentation"><a class="forma-pagamento" href="#cartao-debito" id="cartao-debito-tab" role="tab" data-toggle="tab" aria-controls="cartao-debito" aria-expanded="true" tabindex="-1">{{ trans('clickbus.clickbus_client-title-debit-card') }}</a></li>
                     @endif
 
                     {{-- Desativado
                     @if ($formaPagamento->name == 'paypal_hpp')
-                    <li role="presentation"><a class="forma-pagamento" href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true">PayPal</a></li>
+                    <li role="presentation"><a class="forma-pagamento" href="#paypal" id="paypal-tab" role="tab" data-toggle="tab" aria-controls="paypal" aria-expanded="true" tabindex="-1">PayPal</a></li>
                     @endif
                     --}}
 
@@ -132,7 +132,7 @@
                             <div class="col-xs-12 text-center radio-hidden">
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
                                 <input type="radio" id="bandeira-cartao-{{ $bandeiraCartao->brand }}" name="bandeira-cartao" class="required seleciona-bandeira" value="{{ $bandeiraCartao->brand }}" {{ $bandeiraCartao->brand == "mastercard" ? 'checked="checked"' : ''}} required="" >
-                                <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}">
+                                <label for="bandeira-cartao-{{ $bandeiraCartao->brand }}" tabindex="-1">
                                     <img src="{{ url('/img/bandeiras/'. $bandeiraCartao->brand .'.png') }}" alt="{{ $bandeiraCartao->brand }}" title="{{ $bandeiraCartao->brand }}">
                                 </label>
                                 @empty
@@ -298,9 +298,9 @@
                    {{ trans('clickbus.clickbus_client-voucher-insert') }}
                </div>
                <div class="col-xs-6">
-                   <input type="text" class="form-control" id="voucher-str" name="voucher-str">
+                   <input type="text" class="form-control" id="voucher-str" name="voucher-str" tabindex="-1">
                </div>
-               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto">
+               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto" tabindex="-1">
                    {{ trans('clickbus.clickbus_client-voucher-use') }}
                </button>
            </div>
@@ -381,7 +381,7 @@
                 @endif
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
-               <button type="submit" class=" btn btn-acao">
+               <button type="submit" class=" btn btn-acao" tabindex="-1">
                    {{ trans('clickbus.clickbus_buy-now') }}
                </button>
            </div>
