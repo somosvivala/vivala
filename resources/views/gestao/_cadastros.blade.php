@@ -32,7 +32,7 @@
                             type: "area",
                             dataPoints: [//array
                                 
-                                { x: new Date(2012, 01, 1), y: 26},
+                                { x: new Date("2012-01-01 12:00:40".replace(/-/g, "/")), y: 26},
                                 { x: new Date(2012, 01, 2), y: 26},
                                 { x: new Date(2012, 01, 3), y: 26},
                                 { x: new Date(2012, 01, 4), y: 26},
