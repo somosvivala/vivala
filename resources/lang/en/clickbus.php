@@ -25,6 +25,7 @@ return[
 'clickbus_empty-seat' => 'Empty',
 'clickbus_occupied-seat' => 'Occuppied',
 'clickbus_selected-seat' => 'Selected',
+'clickbus_selected-seat-title' => 'Selected Seats',
 'clickbus_click-on-desired-seat' => 'Click on the desired seats',
 'clickbus_choose-seat' => 'Choose Seat',
 

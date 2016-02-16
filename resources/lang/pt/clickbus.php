@@ -25,6 +25,7 @@ return[
 'clickbus_empty-seat' => 'Livre',
 'clickbus_occupied-seat' => 'Ocupada',
 'clickbus_selected-seat' => 'Selecionada',
+'clickbus_selected-seat-title' => 'Poltronas Selecionadas',
 'clickbus_click-on-desired-seat' => 'Clique nas poltronas desejadas',
 'clickbus_choose-seat' => 'Escolher Poltrona',
 

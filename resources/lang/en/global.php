@@ -419,7 +419,6 @@ return[
   'lbl_ong_slot_search_' => 'Search Volunteer Jobs',
   'lbl_ong_slot_searching' => 'Searching Volunteer Job',
   'lbl_ong_slot_searching_' => 'Searching Volunteer Jobs',
-
   'lbl_optional' => 'Optional',
 
   /* Cuidar - EMPRESA */

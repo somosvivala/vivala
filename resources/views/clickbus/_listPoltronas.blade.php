@@ -87,7 +87,7 @@
         @endif
     </div>
     <div class="col-sm-4">
-        <h5 class="font-bold-upper">{{ trans('clickbus.clickbus_schedule') }}</h5>
+        <h5 class="font-bold-upper">{{ trans('clickbus.clickbus_selected-seat-title') }}</h5>
         {!! Form::open(['url' => ['/clickbus/payment'], 'id'=>'form-poltronas-clickbus', 'data-loading'=>'form-loading']) !!}
             <input type="hidden" id="ida-session-id" name="ida-sessionId" value="{{ $ida->sessionId }}">
             <input type="hidden" id="ida-id" name="ida-scheduleId" value="{{ $ida->scheduleId }}">
