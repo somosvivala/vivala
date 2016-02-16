@@ -32,16 +32,9 @@
                             type: "area",
                             dataPoints: [//array
                                 
-                                { x: new Date("2012-01-01 12:00:40".replace(/-/g, "/")), y: 26},
-                                { x: new Date(2012, 01, 2), y: 26},
-                                { x: new Date(2012, 01, 3), y: 26},
-                                { x: new Date(2012, 01, 4), y: 26},
-                                { x: new Date(2012, 01, 5), y: 26},
-                                { x: new Date(2012, 01, 6), y: 26},
-                                { x: new Date(2012, 01, 7), y: 26},
-                                { x: new Date(2012, 01, 8), y: 26},
-                                { x: new Date(2012, 01, 9), y: 26}
-
+                                @foreach($intervalos as $Intervalo)
+                                { x: new Date("{{ $Intervalo->intervalo }}".replace(/-/g, "/")), y: {{ $Intervalo->qtd }} },
+                                @endforeach
                             ]
                         }
                     ]
@@ -53,8 +46,5 @@
     <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
-@foreach($intervalos as $Intervalo)
-                                {{ print_r($Intervalo) }}
-                                @endforeach
     @endif
 </div>
