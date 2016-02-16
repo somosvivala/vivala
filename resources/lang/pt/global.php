@@ -861,7 +861,7 @@ return[
     'wannatravel_package_see_' => 'Ver Pacotes',
     'wannatravel_route_see' => 'Ver Roteiro',
     'wannatravel_route_see_' => 'Ver Roteiros',
-    'wannatravel_package_find_best_destinies' => 'Roteiros Vivalá',
+    'wannatravel_package_find_best_destinies' => 'Conheça Nossos Serviços',
     //
     'wannatravel_chefsclub_desserts_and_goodies' => 'Delícias que alimentam corpo e alma',
     'wannatravel_chefsclub_all_restaurants' => 'Todos',
@@ -1241,10 +1241,13 @@ return[
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
-    'dummy_travel_1' => 'Explore o Rio de Janeiro durante as Olimpíadas!',
-    'dummy_travel_2' => 'Que tal curtir Fortaleza no verão?',
-    'dummy_travel_3' => 'Encontre hotéis para o carnaval de rua em Recife!',
-    'dummy_travel_4' => 'Ótimo programa para um fim de semana a 2!',
+    'dummy_travel_1_title' => 'PASSAGENS AÉREAS',
+    'dummy_travel_1' => 'Na Vivalá você encontra passagens aéreas para todo o mundo em mais de 500 companhias! Busque opções aqui!',
+    'dummy_travel_2_title' => 'HOTÉIS',
+    'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência aqui na Vivalá! São mais de 200.000 possibilidades ao redor do mundo. Clique aqui para buscar!',
+    'dummy_travel_3_title' => 'ALIMENTAÇÃO',
+    'dummy_travel_3' => 'Descubra excelentes restaurantes pelo Brasil e tenha até 50% de desconto com os benefícios da Vivalá. Veja mais aqui!',
+
 
     /*----------------------------------------------------------------------------------
     / BLACK FRIDAY feature - serão deletados em versões futuras, só pra preencher o beta
