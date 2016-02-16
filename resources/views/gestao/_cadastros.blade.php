@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
 
-    @if(isset($cadastros))
+    @if(isset($intervalos))
     <div id="chart_div"></div>
 
     <script type="text/javascript">
@@ -31,9 +31,7 @@
                         {        
                             type: "area",
                             dataPoints: [//array
-                                @foreach($intervalos as $Intervalo)
-                                {{ $Intervalo }}
-                                @endforeach
+                                
                                 { x: new Date(2012, 01, 1), y: 26},
                                 { x: new Date(2012, 01, 2), y: 26},
                                 { x: new Date(2012, 01, 3), y: 26},
@@ -55,6 +53,8 @@
     <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
-
+@foreach($intervalos as $Intervalo)
+                                {{ $Intervalo }}
+                                @endforeach
     @endif
 </div>
