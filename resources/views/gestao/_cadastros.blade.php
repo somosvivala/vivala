@@ -50,7 +50,7 @@
                 chart.render();
         }
     </script>
-    <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+    <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
 @foreach($intervalos as $Intervalo)
