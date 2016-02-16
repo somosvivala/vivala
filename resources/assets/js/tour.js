@@ -4,8 +4,8 @@ $(document).ready(function() {
   var linguaAtiva = $("meta[name=language]").attr("content");
 
   // Possibilidade do user afirmar se quer ver sempre o TOUR ou cancelá-lo
-  var ligaQuizTour = Cookies.get('quizTour');
-  var ligaintroTour = Cookies.get('introTour');
+  //var ligaQuizTour = Cookies.get('quizTour');
+  //var ligaintroTour = Cookies.get('introTour');
   var ligaTourInterno = Cookies.get('internoTour');
 
   // Variáveis diferentes só por conta da opacidade da layer ao fundo
@@ -138,6 +138,7 @@ $(document).ready(function() {
 /*==============================================================================
 * Início de cada um dos Tours
 ==============================================================================*/
+
 // ##### QUIZ
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
   //if(!ligaQuizTour){
@@ -478,6 +479,7 @@ $(document).ready(function() {
     introTour.start();
   }
 
+// ##### PILARES
   $('#notificacoes-ajuda').click(function(){
     // TOUR PILARES
     if(($("#tour-pilares").hasClass("pilar-conectar"))){
