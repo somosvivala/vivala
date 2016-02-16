@@ -54,7 +54,7 @@
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
 @foreach($intervalos as $Intervalo)
-                                {{ $Intervalo }}
+                                {{ print_r($Intervalo) }}
                                 @endforeach
     @endif
 </div>
