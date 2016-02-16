@@ -21,7 +21,7 @@ class GestaoController extends Controller {
 
             if(Auth::user()->isAdmin()) {
             
-                $intervalos = DB::table('perfils')->select(DB::raw("date_trunc('day', created_at) as intervalo"),DB::raw('count(*) as qtd'))->where('created_at', '>', '2015-10-18 14:56:40')->where('created_at', '<', '2016-01-20 14:56:40')->orderBy('intervalo','ASC')->groupBy(DB::raw("intervalo, perfils.id "))->get();
+                $intervalos = DB::table('perfils')->select(DB::raw("date_trunc('day', created_at) as intervalo"),DB::raw('count(*) as qtd'))->where('created_at', '>', '2015-10-18 14:56:40')->where('created_at', '<', '2016-01-20 14:56:40')->orderBy('intervalo','ASC')->groupBy(DB::raw("intervalo"))->get();
             }
             return view('gestao.index', compact('intervalos') );
 	}

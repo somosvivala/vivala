@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
+<div class="col-xs-12 col-sm-12 col-md-9 fundo-cheio">
 
     @if(isset($intervalos))
     <div id="chart_div"></div>
@@ -17,7 +17,7 @@
             var chart = new CanvasJS.Chart("chartContainer",
                 {
                     title:{
-                        text: "Simple Date-Time Chart"
+                        text: "Quantidade de usuários cadastrados"
                     },
                     colorSet: "vivacolor",
                     axisX:{
@@ -25,7 +25,7 @@
                         gridThickness: 2
                     },
                     axisY: {
-                        title: "Downloads"
+                        title: "Qtd Cadastrados"
                     },
                     data: [
                         {        
