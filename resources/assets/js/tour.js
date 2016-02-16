@@ -5,86 +5,47 @@ $(document).ready(function() {
 
   // Possibilidade do user afirmar se quer ver sempre o TOUR ou cancelá-lo
   var ligaQuizTour = Cookies.get('quizTour');
+  var ligaintroTour = Cookies.get('introTour');
   var ligaTourInterno = Cookies.get('internoTour');
 
   // Variáveis diferentes só por conta da opacidade da layer ao fundo
   var quizTour = introJs();
+  var introTour = introJs();
   var internoTour = introJs();
 
-  // [QUIZ/INTERNO/PILARES] Configurações Iniciais Baseados na Língua Usada
+  // [QUIZ/INTRO/PILARES] Configurações Iniciais Baseados na Língua Usada
   switch(linguaAtiva){
     case 'en':
-    // Quiz
-      quizTour.setOptions({
-        overlayOpacity: 0.2,
-        showButtons: true,
-        scrollToElement: true,
-        showProgress: false,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        exitOnEsc: true,
-        nextLabel: 'Next',
-        prevLabel: 'Previous',
-        skipLabel: 'Skip Tour',
-        doneLabel: 'End Tour',
-      });
-    // Interno
-      internoTour.setOptions({
-        overlayOpacity: 0.1,
-        showButtons: true,
-        scrollToElement: true,
-        showProgress: false,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        exitOnEsc: true,
-        nextLabel: 'Next',
-        prevLabel: 'Previous',
-        skipLabel: 'Skip Tour',
-        doneLabel: 'End Tour',
-      });
-    break;
-    case 'pt':
-    // Quiz
-      quizTour.setOptions({
-        overlayOpacity: 0.2,
-        showButtons: true,
-        scrollToElement: true,
-        showProgress: false,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        exitOnEsc: true,
-        nextLabel: 'Próximo',
-        prevLabel: 'Anterior',
-        skipLabel: 'Pular Tour',
-        doneLabel: 'Finalizar Tour',
-      });
-    // Interno
-      internoTour.setOptions({
-        overlayOpacity: 0.1,
-        showButtons: true,
-        scrollToElement: true,
-        showProgress: false,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        exitOnEsc: true,
-        nextLabel: 'Próximo',
-        prevLabel: 'Anterior',
-        skipLabel: 'Pular Tour',
-        doneLabel: 'Finalizar Tour',
-      });
-    default:
-    // Quiz
-      quizTour.setOptions({
-        overlayOpacity: 0.2,
-        showButtons: true,
-        scrollToElement: true,
-        showProgress: false,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        exitOnEsc: true,
-      });
-    // Interno
-      internoTour.setOptions({
+      // Quiz
+        quizTour.setOptions({
+          overlayOpacity: 0.2,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true,
+          nextLabel: 'Next',
+          prevLabel: 'Previous',
+          skipLabel: 'Skip Tour',
+          doneLabel: 'End Tour',
+        });
+      // Intro
+        introTour.setOptions({
+          overlayOpacity: 0.5,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true,
+          nextLabel: 'Next',
+          prevLabel: 'Previous',
+          skipLabel: 'Skip Help',
+          doneLabel: 'End Help',
+        });
+      // Interno
+        internoTour.setOptions({
           overlayOpacity: 0.1,
           showButtons: true,
           scrollToElement: true,
@@ -92,7 +53,86 @@ $(document).ready(function() {
           showStepNumbers: false,
           keyboardNavigation: true,
           exitOnEsc: true,
+          nextLabel: 'Next',
+          prevLabel: 'Previous',
+          skipLabel: 'Skip Tour',
+          doneLabel: 'End Tour',
         });
+    break;
+    case 'pt':
+      // Quiz
+        quizTour.setOptions({
+          overlayOpacity: 0.2,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true,
+          nextLabel: 'Próximo',
+          prevLabel: 'Anterior',
+          skipLabel: 'Pular Tour',
+          doneLabel: 'Finalizar Tour',
+        });
+      // Intro
+        introTour.setOptions({
+          overlayOpacity: 0.5,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true,
+          nextLabel: 'Próximo',
+          prevLabel: 'Anterior',
+          skipLabel: 'Pular Ajuda',
+          doneLabel: 'Finalizar Ajuda',
+        });
+      // Interno
+        internoTour.setOptions({
+          overlayOpacity: 0.1,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true,
+          nextLabel: 'Próximo',
+          prevLabel: 'Anterior',
+          skipLabel: 'Pular Tour',
+          doneLabel: 'Finalizar Tour',
+        });
+    default:
+      // Quiz
+        quizTour.setOptions({
+          overlayOpacity: 0.2,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true
+        });
+      // Intro
+        introTour.setOptions({
+          overlayOpacity: 0.5,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true
+        });
+      // Interno
+        internoTour.setOptions({
+            overlayOpacity: 0.1,
+            showButtons: true,
+            scrollToElement: true,
+            showProgress: false,
+            showStepNumbers: false,
+            keyboardNavigation: true,
+            exitOnEsc: true
+          });
   }
 
 /*==============================================================================
@@ -282,7 +322,7 @@ $(document).ready(function() {
       }
     }
     quizTour.onexit(function(){
-      Cookies.set('quizTour', 'true', { expires: 365, path: '' });
+      Cookies.set('quizTour', 'false', { expires: 365, path: '' });
       ligaQuizTour = Cookies.get('quizTour');
     });
     quizTour.oncomplete(function(){
@@ -296,73 +336,155 @@ $(document).ready(function() {
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
   if(!ligaTourInterno){
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
+    // TOUR INTERNO
+    switch(linguaAtiva){
+      case 'en':
+        introTour.setOptions({
+          steps: [
+            // 3 PILARES
+            {
+              element: '.tour-pilares-step1',
+              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step2',
+              intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes seções</span> distintas.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step3',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar coms seus amigos e compartilhar suas mais incríveis experiências.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step4',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte, hospedagem e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step5',
+              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil, você pode se candidatar a uma vaga ou criar uma experiência única, modificando a realidade do nosso país durante suas viagens!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step6',
+              intro: '<p class="text-center">Aqui você receberá todas as notificações importantes dentro da plataforma.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step7',
+              intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step8',
+              intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step9',
+              intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step10',
+              intro: '<p class="text-center">Este é botão de <span class="laranja">Ajuda</span>, você pode clicar aqui sempre que precisar e uma ajuda será mostrada caso esteja disponível.<br/>Todos os 3 pilares possuem dicas feitas especiamente para nossos viajantes, venha e experimente nossoo Tour!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step11',
+              intro: '<p class="text-center">E por último, neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta e do seu perfil.</p>',
+              position: 'bottom'
+            }
+          ]
+        });
+      break;
+      case 'pt':
+        introTour.setOptions({
+          steps: [
+            // 3 PILARES
+            {
+              element: '.tour-pilares-step1',
+              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step2',
+              intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes seções</span> distintas.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step3',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar coms seus amigos e compartilhar suas mais incríveis experiências.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step4',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte, hospedagem e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step5',
+              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil, você pode se candidatar a uma vaga ou criar uma experiência única, modificando a realidade do nosso país durante suas viagens!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step6',
+              intro: '<p class="text-center">Aqui você receberá todas as notificações importantes dentro da plataforma.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step7',
+              intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step8',
+              intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step9',
+              intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step10',
+              intro: '<p class="text-center">Este é botão de <span class="laranja">Ajuda</span>, você pode clicar aqui sempre que precisar e uma ajuda será mostrada caso esteja disponível.<br/>Todos os 3 pilares possuem dicas feitas especiamente para nossos viajantes, venha e experimente nossoo Tour!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-pilares-step11',
+              intro: '<p class="text-center">E por último, neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta e do seu perfil.</p>',
+              position: 'bottom'
+            }
+          ]
+        });
+      break;
+      default:
+      // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
+    }
+    introTour.onexit(function(){
+      Cookies.set('internoTour', 'false', { expires: 365, path: '' });
+      ligaQuizTour = Cookies.get('internoTour');
+    });
+    introTour.onexit(function(){
+      Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+      ligaQuizTour = Cookies.get('internoTour');
+    });
+    introTour.start();
+  }
 
+  $('#notificacoes-ajuda').click(function(){
     // TOUR PILARES
-    if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-conectar"))){
-      console.log("Estou no pilar QUERO ME CONECTAR");
-      internoTour.onexit(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
-      });
-      internoTour.oncomplete(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
-      });
+    if(($("#tour-pilares").hasClass("pilar-conectar"))){
+      //console.log("Estou no pilar QUERO ME CONECTAR");
+      // INTRO TOUR
       switch(linguaAtiva){
         case 'en':
           internoTour.setOptions({
             steps: [
-              // 3 PILARES
-              {
-                element: '.tour-pilares-step1',
-                intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos, prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step2',
-                intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes pilares</span>.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step3',
-                intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar aos seus amigos e compartilhar suas mais incríveis experiências.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step4',
-                intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step5',
-                intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil.<br/>Você pode se candidatar a uma vaga, criar uma experiência única e modificar a realidade do nosso país durante suas viagens!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step6',
-                intro: '<p class="text-center">Aqui você receberá todas as notificações dentro da plataforma.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step7',
-                intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step8',
-                intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step9',
-                intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step10',
-                intro: '<p class="text-center">Neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta.</p>',
-                position: 'bottom'
-              },
               // CONECTAR
               {
                 element: '.tour-pilar-conectar-step1',
@@ -415,57 +537,6 @@ $(document).ready(function() {
         case 'pt':
           internoTour.setOptions({
             steps: [
-              // 3 PILARES
-              {
-                element: '.tour-pilares-step1',
-                intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos, prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step2',
-                intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes pilares</span>.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step3',
-                intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar aos seus amigos e compartilhar suas mais incríveis experiências.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step4',
-                intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step5',
-                intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil.<br/>Você pode se candidatar a uma vaga, criar uma experiência única e modificar a realidade do nosso país durante suas viagens!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step6',
-                intro: '<p class="text-center">Aqui você receberá todas as notificações dentro da plataforma.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step7',
-                intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step8',
-                intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step9',
-                intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilares-step10',
-                intro: '<p class="text-center">Neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta.</p>',
-                position: 'bottom'
-              },
               // CONECTAR
               {
                 element: '.tour-pilar-conectar-step1',
@@ -510,7 +581,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step9',
                 intro: '<p class="text-center">Você também pode dar aquela curtidinha em nossa página no Facebook por aqui. Vamos lá, é rapidinho!</p>',
-                position: 'top'
+                position: 'right'
               }
             ]
           });
@@ -518,17 +589,17 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-    }
-    if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-viajar"))){
-      console.log("Estou no pilar QUERO VIAJAR");
       internoTour.onexit(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        Cookies.set('internoTour', 'false', { expires: 365, path: '' });
         ligaQuizTour = Cookies.get('internoTour');
       });
       internoTour.oncomplete(function(){
         Cookies.set('internoTour', 'true', { expires: 365, path: '' });
         ligaQuizTour = Cookies.get('internoTour');
       });
+    }
+    if(($("#tour-pilares").hasClass("pilar-viajar"))){
+      //console.log("Estou no pilar QUERO VIAJAR");
       switch(linguaAtiva){
         case 'en':
           internoTour.setOptions({
@@ -617,17 +688,17 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-    }
-    if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-cuidar"))){
-      console.log("Estou no pilar QUERO CUIDAR");
       internoTour.onexit(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        Cookies.set('internoTour', 'false', { expires: 365, path: '' });
         ligaQuizTour = Cookies.get('internoTour');
       });
       internoTour.oncomplete(function(){
         Cookies.set('internoTour', 'true', { expires: 365, path: '' });
         ligaQuizTour = Cookies.get('internoTour');
       });
+    }
+    if(($("#tour-pilares").hasClass("pilar-cuidar"))){
+      //console.log("Estou no pilar QUERO CUIDAR");
       switch(linguaAtiva){
         case 'en':
           internoTour.setOptions({
@@ -736,7 +807,16 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      internoTour.onexit(function(){
+        Cookies.set('internoTour', 'false', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
+      });
+      internoTour.oncomplete(function(){
+        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
+        ligaQuizTour = Cookies.get('internoTour');
+      });
     }
     internoTour.start();
-  }
+  });
+
 });

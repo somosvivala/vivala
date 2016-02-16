@@ -120,14 +120,13 @@
                         <div class="notificacoes-geral">
                                                 @include('_notificacoesGeral')
                         </div>
-                        {{-- Botão de HINTS [TODO] para o TOUR interno da plataforma (?) - senão remover
-                        <button type="button" id="notificacoes-hints" data-unread="0" title="" data-hints="true">
-                                                <i class="icon-menu-notificacao fa fa-2x fa-exclamation" alt=''></i>
+                        {{-- Botão de HINTS [TODO] para o TOUR interno da plataforma (?) - senão remover --}}
+                        <button type="button" id="notificacoes-ajuda" class="tour-pilares-step10" data-unread="0" title='{{ trans("global.lbl_help") }}'>
+                                                <i class="icon-menu-notificacao fa fa-3x fa-question" alt=''></i>
                         </button>
-                        --}}
 </div>
 
-<div id="menu-usuario" class="menu-usuario tour-pilares-step10 tour-pilar-cuidar-step9">
+<div id="menu-usuario" class="menu-usuario tour-pilares-step11 tour-pilar-cuidar-step9">
     <ul class="nav navbar-nav">
         @if (Auth::user())
         <li class="dropdown">
