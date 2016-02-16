@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Auth;
+use DB;
 use App\Perfil;
 
 class GestaoController extends Controller {
@@ -20,9 +21,9 @@ class GestaoController extends Controller {
 
             if(Auth::user()->isAdmin()) {
             
-                $cadastros = Perfil::all();
+                $intervalos = Perfil::where('created_at', '>', '2015-10-18 14:56:40')->where('created_at', '<', '2016-01-20 14:56:40')->groupBy(DB::raw("date_trunc('day', created_at), perfils.id "))->get();
             }
-            return view('gestao.index', compact('cadastros') );
+            return view('gestao.index', compact('intervalos') );
 	}
 
 

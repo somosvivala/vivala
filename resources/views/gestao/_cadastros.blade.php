@@ -1,44 +1,60 @@
 <div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
 
-        @if(isset($cadastros))
-        <div id="chart_div"></div>
+    @if(isset($intervalos))
+    <div id="chart_div"></div>
 
-
-<!--Load the AJAX API-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
+        window.onload = function () {
+            CanvasJS.addColorSet("vivacolor",
+            [//colorSet Array
 
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+                "#F16F2B",
+                "#F16F2B",
+                "#8BA6AC",
+                "#F16F2B",
+                "#F16F2B"
+            ]);
+            var chart = new CanvasJS.Chart("chartContainer",
+                {
+                    title:{
+                        text: "Simple Date-Time Chart"
+                    },
+                    colorSet: "vivacolor"
+                    axisX:{
+                        title: "timeline",
+                        gridThickness: 2
+                    },
+                    axisY: {
+                        title: "Downloads"
+                    },
+                    data: [
+                        {        
+                            type: "area",
+                            dataPoints: [//array
+                                
+                                { x: new Date(2012, 01, 1), y: 26},
+                                { x: new Date(2012, 01, 2), y: 26},
+                                { x: new Date(2012, 01, 3), y: 26},
+                                { x: new Date(2012, 01, 4), y: 26},
+                                { x: new Date(2012, 01, 5), y: 26},
+                                { x: new Date(2012, 01, 6), y: 26},
+                                { x: new Date(2012, 01, 7), y: 26},
+                                { x: new Date(2012, 01, 8), y: 26},
+                                { x: new Date(2012, 01, 9), y: 26},
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+                            ]
+                        }
+                    ]
+                });
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.arrayToDataTable([
-          ['Dinosaur', 'Length'],
-        @foreach($cadastros as $Perfil)
-        ['{{ $Perfil->nome }}', {{ strtotime($Perfil->created_at) }} ],
-        @endforeach
-        ['', {{ time() }}]
-        ]);
-
-        var options = {
-          title: 'Usuários registrados',
-          colors: ['#F16F2B'],
-          legend: { position: 'none' },
-          histogram: { bucketSize:  86400 } 
-        };
-
-        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
+                chart.render();
+        }
     </script>
-
-        @endif
+    <script type="text/javascript" src="/assets/script/canvasjs.min.js"></script>
+    <div id="chartContainer" style="height: 300px; width: 100%;">
+    </div>
+@foreach($intervalos as $Intervalo)
+                                {{ $Intervalo }}
+                                @endforeach
+    @endif
 </div>
