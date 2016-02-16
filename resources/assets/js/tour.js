@@ -334,7 +334,7 @@ $(document).ready(function() {
 
 // ##### INTERNO
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  if(!ligaTourInterno){
+  if( (!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-home"))){
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
