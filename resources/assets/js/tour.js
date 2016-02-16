@@ -140,7 +140,7 @@ $(document).ready(function() {
 ==============================================================================*/
 // ##### QUIZ
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  if(!ligaQuizTour){
+  //if(!ligaQuizTour){
     // Passo 1
     if($("#tour-quiz").hasClass("quiz-1")){
       //console.log("Estou em QUIZ - Etapa 1");
@@ -321,6 +321,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
     }
+    /*
     quizTour.onexit(function(){
       Cookies.set('quizTour', 'false', { expires: 365, path: '' });
       ligaQuizTour = Cookies.get('quizTour');
@@ -329,12 +330,13 @@ $(document).ready(function() {
       Cookies.set('quizTour', 'true', { expires: 365, path: '' });
       ligaQuizTour = Cookies.get('quizTour');
     });
+    */
     quizTour.start();
-  }
+  //}
 
 // ##### INTERNO
 // Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  if( (!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-home"))){
+  if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-home"))){
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
