@@ -19,7 +19,7 @@
                     title:{
                         text: "Simple Date-Time Chart"
                     },
-                    colorSet: "vivacolor"
+                    colorSet: "vivacolor",
                     axisX:{
                         title: "timeline",
                         gridThickness: 2
@@ -40,7 +40,7 @@
                                 { x: new Date(2012, 01, 6), y: 26},
                                 { x: new Date(2012, 01, 7), y: 26},
                                 { x: new Date(2012, 01, 8), y: 26},
-                                { x: new Date(2012, 01, 9), y: 26},
+                                { x: new Date(2012, 01, 9), y: 26}
 
                             ]
                         }
