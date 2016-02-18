@@ -1,9 +1,26 @@
 <div class="col-xs-12 col-sm-12 col-md-9 fundo-cheio">
 
-    @if(isset($intervalos))
+    <div class="row">
+        <div class="col-sm-5">
+            <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" data-date-start-date="0d" type="text">
+        </div>
+        <div class="col-sm-5">
+            <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" data-date-start-date="0d" type="text">
+        </div>
+        <div class="col-sm-2">
+            <input id="consulta-grafico" type="button" value="Consultar">
+        </div>
+    </div>
     <div id="chart_div"></div>
 
     <script type="text/javascript">
+
+        $("#consulta-grafico").click(function(){
+            dataInicio = $("input#data-inicial").val();
+            dataFim = $("input#data-final").val();
+            console.log(dataInicio);
+            console.log(dataFim);
+        });
         atualizaChart = function(data) {
             graficoXY = [];
             data.forEach(function(intervalo) {
@@ -47,5 +64,4 @@
     <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
-    @endif
 </div>
