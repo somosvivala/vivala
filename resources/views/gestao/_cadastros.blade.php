@@ -4,7 +4,13 @@
     <div id="chart_div"></div>
 
     <script type="text/javascript">
-        window.onload = function () {
+        atualizaChart = function(data) {
+            graficoXY = [];
+            data.forEach(function(intervalo) {
+                console.log(intervalo);
+                graficoXY.push({ x: new Date(intervalo.intervalo.replace(/-/g, "/")), y: intervalo.qtd});
+            });
+                console.log(graficoXY);
             CanvasJS.addColorSet("vivacolor",
             [//colorSet Array
 
@@ -30,12 +36,7 @@
                     data: [
                         {        
                             type: "area",
-                            dataPoints: [//array
-                                
-                                @foreach($intervalos as $Intervalo)
-                                { x: new Date("{{ $Intervalo->intervalo }}".replace(/-/g, "/")), y: {{ $Intervalo->qtd }} },
-                                @endforeach
-                            ]
+                            dataPoints: graficoXY
                         }
                     ]
                 });
