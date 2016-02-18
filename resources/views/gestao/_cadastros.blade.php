@@ -8,19 +8,21 @@
             <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" data-date-start-date="0d" type="text">
         </div>
         <div class="col-sm-2">
-            <input id="consulta-grafico" type="button" value="Consultar">
+            <button id="consulta-grafico" type="button" class="btn btn-acao">Consultar</button>
         </div>
     </div>
     <div id="chart_div"></div>
 
     <script type="text/javascript">
 
-        $("#consulta-grafico").click(function(){
-            dataInicio = $("input#data-inicial").val();
-            dataFim = $("input#data-final").val();
-            console.log(dataInicio);
-            console.log(dataFim);
-        });
+        window.onload = function(){
+            $("#consulta-grafico").click(function(){
+                dataInicio = $("input#data-inicial").val();
+                dataFim = $("input#data-final").val();
+                console.log(dataInicio);
+                console.log(dataFim);
+            });
+        }
         atualizaChart = function(data) {
             graficoXY = [];
             data.forEach(function(intervalo) {
