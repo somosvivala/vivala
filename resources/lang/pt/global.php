@@ -542,6 +542,8 @@ return[
     'lbl_profile_updating' => 'Atualizando Perfil',
     'lbl_profile_info' => 'Informação do Perfil',
     'lbl_profile_info_' => 'Informações do Perfis',
+    'lbl_project' => 'Projeto',
+    'lbl_project_' => 'Projetos',
     'lbl_publish' => 'Publicar',
 
     /* Compras */
@@ -855,7 +857,7 @@ return[
     'wannatravel_trip_already_know' => 'Já sabe para onde ir?',
     'wannatravel_trip_setup' => 'Monte sua viagem!',
     'wannatravel_trip_restaurants' => 'Restaurantes',
-    'wannatravel_trip_hotels_flights_cars' => 'Hospedagem, Vôos e Carros',
+    'wannatravel_trip_hotels_flights_packs' => 'Vôos, Hospedagem e Pacotes',
     'wannatravel_trip_bus_drive' => 'Passagens rodoviárias',
     // Desativado ainda
     'wannatravel_trip_stay' => 'Hotéis',
@@ -928,9 +930,6 @@ return[
     'ong_contact_email' => 'Email para contato',
     'ong_search_for_ongs' => 'Procurando por Transformação?',
     'ong_find_ongs_three_steps' => 'Encontre Projetos de Impacto em três passos.',
-
-  /* Ajustes Ong -> Projeto */
-    'lbl_project_' => 'Projetos',
 
   /* View: Páginas */
         'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
@@ -1190,7 +1189,7 @@ return[
     'partners_text_1' => '- Mais de 200.000 hotéis em 8.000 destinos',
     'partners_text_2' => '- 500 empresas de aviação com serviços para todo o mundo',
     'partners_text_3' => '- Mais de 30 empresas de aluguel de carro em 30.000 destinos',
-    'partners_text_4' => '- 1.582 restaurantes em 19 cidades brasileiras',
+    'partners_text_4' => '- 1.600 restaurantes em 19 cidades brasileiras',
     'partners_text_5' => '- 3.000 destinos de ônibus no Brasil operados por 40 empresas rodoviárias',
   //
   /* Contato */

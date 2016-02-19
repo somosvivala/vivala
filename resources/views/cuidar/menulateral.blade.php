@@ -1,10 +1,10 @@
 {{-- Quero Cuidar - Menu Principal --}}
 	<h4 class="suave tour-pilar-cuidar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_volunteer') }}!</h4>
 	<nav class="menu-lateral">
-		<ul class="tour-pilar-cuidar-step3">
-			<li class="tour-pilar-cuidar-step4"><a href="/cuidar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{ trans('global.lbl_homepage') }}</a></li>
-			<li class="tour-pilar-cuidar-step5"><a href="/ongs" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-coracao-caridoso vi"></i>{{ trans('global.lbl_project_') }}</a></li>
-	    <li class="tour-pilar-cuidar-step6"><a href="/vagas" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-bandeira vi"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
+		<ul>
+			<li><a href="/cuidar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{ trans('global.lbl_homepage') }}</a></li>
+			<li class="tour-pilar-cuidar-step2"><a href="/ongs" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-coracao-caridoso vi"></i>{{ trans('global.lbl_project_') }}</a></li>
+	    <li class="tour-pilar-cuidar-step3"><a href="/vagas" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-bandeira vi"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
 			{{-- DESATIVADO TEMPORARIAMENTE
 			<!--li><a href="/paginas/porquecuidar" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-usuario-em-duvida vi cinza-morto"></i>{{ trans('global.lbl_why_care') }}</a></li>
 	    <li><a href="/resultados" class="click-img-no-border"><i class="icon-menu-lateral vi icon-vivala-relatorio cinza-morto"></i>{{ trans('global.lbl_result_') }}</a></li>

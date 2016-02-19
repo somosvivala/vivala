@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="tour-pilares" class="pilar-viajar">
-    <div class="foto-fundo foto-header tour-pilar-viajar-step7" style="background-image:url('/img/queroviajar.png');">
+    <div class="foto-fundo foto-header" style="background-image:url('/img/queroviajar.png');">
         <h2>{{ trans('global.wannatravel_title') }}</h2>
         <h3>{{ trans('global.wannatravel_subtitle') }}</h3>
         <div class="col-sm-12">
@@ -23,7 +23,7 @@
             </li>
             <li class="col-sm-5 tour-pilar-viajar-step4">
                 <a href="#quimera" data-url="https://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
-                   {{ trans('global.wannatravel_trip_hotels_flights_cars') }}
+                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
                 </a>
             </li>
             <li class="col-sm-4 tour-pilar-viajar-step5">

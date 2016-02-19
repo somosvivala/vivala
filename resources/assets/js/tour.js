@@ -419,57 +419,52 @@ $(document).ready(function() {
             // 3 PILARES
             {
               element: '.tour-pilares-step1',
-              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
+              intro: '<p class="text-center">Hello Traveller!<br/>We note that this is the first time you visit the <span class="laranja">Vivalá</span>.<br/>Through the tour we\'ll give you a hand and help you to see how things work around here.<br/>It\'s just a few steps and we promise that will take a little of your time.<br/>Let\'s Go!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step2',
-              intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes seções</span> distintas.</p>',
+              intro: '<p class="text-center">Our platform is divided into <span class="laranja">3 big distinct pilars</span>.</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar coms seus amigos e compartilhar suas mais incríveis experiências.</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> it is the pillar where we are now.<br/>It is our social network for you to connect with people who loves to travel and do volunteer work.<br/>Share more your experiences!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte, hospedagem e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br/>All in one place for you to stay quiet when traveling!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step5',
-              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil, você pode se candidatar a uma vaga ou criar uma experiência única, modificando a realidade do nosso país durante suas viagens!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> is our pillar for big changes! Here you can find NGO\'s and Social Projects that need help throughout Brazil.<br/>By entries in volunteer jobs you can live a unique experience, transforming yourself and the reality around you!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step6',
-              intro: '<p class="text-center">Aqui você receberá todas as notificações importantes dentro da plataforma.</p>',
+              intro: '<p class="text-center">Know from other <span class="laranja">Travellers</span> who are following you and who now receive your posts. Share!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step7',
-              intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
+              intro: '<p class="text-center">Exchange private messages with other users of <span class="laranja">Vivalá</span>.</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step8',
-              intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
+              intro: '<p class="text-center">Get inside and interact with those who walk enjoying and commenting on your posts!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step9',
-              intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
+              intro: '<p class="text-center">This is the <span class="laranja">Help</span> button. Click here when you need a helping hand. All three pillars have tips made ​​especially for you have no problems while you surf on <span class="laranja">Vivalá</span>!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step10',
-              intro: '<p class="text-center">Este é botão de <span class="laranja">Ajuda</span>, você pode clicar aqui sempre que precisar e uma ajuda será mostrada caso esteja disponível.<br/>Todos os 3 pilares possuem dicas feitas especiamente para nossos viajantes, venha e experimente nossoo Tour!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step11',
-              intro: '<p class="text-center">E por último, neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta e do seu perfil.</p>',
+              intro: '<p class="text-center">And last but not least, this is the <span class="laranja">Configuration</span> menu from your account and profile.<br/>Discover the possibilities!</p>',
               position: 'bottom'
             }
           ]
@@ -481,57 +476,52 @@ $(document).ready(function() {
             // 3 PILARES
             {
               element: '.tour-pilares-step1',
-              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Podemos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar menos de <span class="laranja">5 minutinhos</span> do seu tempo.<br/>O que acha?</p>',
+              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Através do tour vamos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar pouco do seu tempo.<br/>Vamos lá!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step2',
-              intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes seções</span> distintas.</p>',
+              intro: '<p class="text-center">A nossa plataforma está divididas em <span class="laranja">3 grandes pilares</span> distintos.</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Nele você poderá se conectar coms seus amigos e compartilhar suas mais incríveis experiências.</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Ele é nossa rede social para você se conectar com pessoas que amam viajar e fazer voluntariado.<br/>Compartilhe mais suas experiências!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você viajante, que adora marcar aquela viagem com seus amigos.<br/>Nele são oferecidos serviços de transporte, hospedagem e alimentação com incríveis descontos, tudo pra você ficar tranquilo(a) na hora de viajar!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br/>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step5',
-              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o pilar para suas grandes contribuições!<br/>Nele se encontram diversos projetos de ONG\'s espalhadas pelo Brasil, você pode se candidatar a uma vaga ou criar uma experiência única, modificando a realidade do nosso país durante suas viagens!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o nosso pilar para grandes transformações!<br/>Aqui você encontra ONG\'s e Projetos Sociais que precisam de ajuda espalhados pelo Brasil.<br/>Através de inscrições em vagas de voluntariado você poderá viver uma experiência única, transformando você mesmo e a realidade ao seu redor!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step6',
-              intro: '<p class="text-center">Aqui você receberá todas as notificações importantes dentro da plataforma.</p>',
+              intro: '<p class="text-center">Saiba de outros <span class="laranja">Viajantes</span> que estão te seguindo e que agora recebem suas postagens. Compartilhe!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step7',
-              intro: '<p class="text-center">Notificações de outros <span class="laranja">Viajantes</span> que te seguiram e que agora recebem suas postagens.</p>',
+              intro: '<p class="text-center">Troque mensagens privadas com outros usuários da <span class="laranja">Vivalá</span>.</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step8',
-              intro: '<p class="text-center">Notificações de novas <span class="laranja">Mensagens</span> dos viajantes que querem te dar aquele alô.</p>',
+              intro: '<p class="text-center">Fique por dentro e interaja com quem anda curtindo e comentando seus posts!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step9',
-              intro: '<p class="text-center">Notificações <span class="laranja">Gerais</span>, onde são mostradas as curtidas e comentários em suas postagens.</p>',
+              intro: '<p class="text-center">Este é botão de <span class="laranja">Ajuda</span>. Clique aqui sempre que precisar de uma mãozinha. Todos os 3 pilares possuem dicas feitas especialmente para você não ter problemas em navegar na <span class="laranja">Vivalá</span>!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step10',
-              intro: '<p class="text-center">Este é botão de <span class="laranja">Ajuda</span>, você pode clicar aqui sempre que precisar e uma ajuda será mostrada caso esteja disponível.<br/>Todos os 3 pilares possuem dicas feitas especiamente para nossos viajantes, venha e experimente nossoo Tour!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-pilares-step11',
-              intro: '<p class="text-center">E por último, neste canto está o menu de <span class="laranja">Configurações Globais</span>, aqui você encontra todas as configurações da sua conta e do seu perfil.</p>',
+              intro: '<p class="text-center">E por último, mas não menos importante, esse é o menu de <span class="laranja">Configurações</span> da sua conta e perfil.<br/>Conheça as possibilidades!</p>',
               position: 'bottom'
             }
           ]
@@ -564,47 +554,37 @@ $(document).ready(function() {
               // CONECTAR
               {
                 element: '.tour-pilar-conectar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero me Conectar</span>.<br/>É aqui o lugar para interagir com milhares de pessoas que estão viajando e compartilhando experiências Brasil à fora.</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Quero me Conectar</span>.<br/>Here is the place to interact with thousands of people around the world, sharing travel and volunteer experiences!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step2',
-                intro: '<p class="text-center">No menu de postagens você poderá compartilhar as suas viagens, fotos e experiências com a rede da <span class="laranja">Vivalá</span>, tornando a experiência de nossos viajantes cada vez mais legal!</p>',
+                intro: '<p class="text-center">Share your aggrandizing visions with the <span class="laranja">Vivalá</span> network through your thoughts, sharing texts, photos, travel and volunteer tips!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step3',
-                intro: '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências com seus amigos e seguidores.</p>',
+                intro: '<p class="text-center">Here you can acess your <span class="laranja">personal timeline</span>, with threads that you held and interacted.</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step4',
-                intro: '<p calss="text-center">Em <span class="laranja">Linha do Tempo</span> você terá acesso a sua linha do tempo pessoal, com as postagens que realizou e as pessoas com as quais interagiu.</p>',
-                position: 'bottom'
+                intro: '<p calss="text-center">Here in the middle you can see the posts and news from people you follow into the <span class="laranja">Vivalá</span>.<br/>Stay tuned on the news!</p>',
+                position: 'right'
               },
               {
                 element: '.tour-pilar-conectar-step5',
-                intro: '<p class="text-center">Aqui ao meio você poderá ver as postagens e notícias de todas as pessoas que estão interagindo dentro da <span class="laranja">Vivalá</span>. Claro que facilitamos, colocando as pessoas que você seguiu no topo desta lista!</p>',
-                position: 'top'
+                intro: '<p class="text-center">Here we select, based on your interests, a group of <span class="laranja">people similar with you</span>!<br/>Just click on follow to start receiving your updates.</p>',
+                position: 'left'
               },
               {
                 element: '.tour-pilar-conectar-step6',
-                intro: '<p class="text-center">No menu lateral direito você pode encontrar muito mais viajantes que combinam com você!<br/>Basta segui-los para receber suas postagens, fotos e notícias.</p>',
+                intro: '<p class="text-center">In <span class="laranja">Latest News</span> you can see the most recent posts on the network.<br/>Here in <span class="laranja">Give your Feedback</span> you can send messages directly to us about what can be improved here.<br/><span class="laranja">Let\'s build Vivalá together!</span></p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step7',
-                intro: '<p class="text-center">Em <span class="laranja">Últimas Notícias</span> você poderá ver as últimas postagens que ocorreram por aqui.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-conectar-step8',
-                intro: '<p class="text-center">Em <span class="laranja">Dê Seu Feedback</span> você poderá nos mandar uma mensagem direta, dando dicas e sugestões do que pode ser melhorado!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-conectar-step9',
-                intro: '<p class="text-center">Você também pode dar aquela curtidinha em nossa página no Facebook por aqui. Vamos lá, é rapidinho!</p>',
+                intro: '<p class="text-center"><span class="laranja">Like Vivalá on Facebook</span> and stay tuned to our big news!</p>',
                 position: 'top'
               }
             ]
@@ -616,48 +596,38 @@ $(document).ready(function() {
               // CONECTAR
               {
                 element: '.tour-pilar-conectar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero me Conectar</span>.<br/>É aqui o lugar para interagir com milhares de pessoas que estão viajando e compartilhando experiências Brasil à fora.</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Quero me Conectar</span>.<br/>Aqui é o lugar para interagir com milhares de pessoas do mundo, compartilhando experiências de viagem e voluntariado!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step2',
-                intro: '<p class="text-center">No menu de postagens você poderá compartilhar as suas viagens, fotos e experiências com a rede da <span class="laranja">Vivalá</span>, tornando a experiência de nossos viajantes cada vez mais legal!</p>',
+                intro: '<p class="text-center">Compartilhe visões engrandecedoras com a rede da <span class="laranja">Vivalá</span> através de seus pensamentos em textos, fotos, dicas de viagem e voluntariado!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step3',
-                intro: '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências com seus amigos e seguidores.</p>',
+                intro: '<p class="text-center">Aqui você terá acesso a sua <span class="laranja">linha do tempo pessoal</span>, com as postagens que realizou e interagiu.</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step4',
-                intro: '<p calss="text-center">Em <span class="laranja">Linha do Tempo</span> você terá acesso a sua linha do tempo pessoal, com as postagens que realizou e as pessoas com as quais interagiu.</p>',
-                position: 'bottom'
+                intro: '<p calss="text-center">Aqui no meio você poderá ver as postagens e notícias das pessoas que você segue dentro da <span class="laranja">Vivalá</span>.<br/>Fique por dentro das novidades!</p>',
+                position: 'right'
               },
               {
                 element: '.tour-pilar-conectar-step5',
-                intro: '<p class="text-center">Aqui ao meio você poderá ver as postagens e notícias de todas as pessoas que estão interagindo dentro da <span class="laranja">Vivalá</span>. Claro que facilitamos, colocando as pessoas que você seguiu no topo desta lista!</p>',
-                position: 'top'
+                intro: '<p class="text-center">Aqui, baseado nos seus interesses, selecionamos <span class="laranja">pessoas parecidas com você</span>!<br/>Basta clicar em seguir para começar a receber suas atualizações.</p>',
+                position: 'left'
               },
               {
                 element: '.tour-pilar-conectar-step6',
-                intro: '<p class="text-center">No menu lateral direito você pode encontrar muito mais viajantes que combinam com você!<br/>Basta segui-los para receber suas postagens, fotos e notícias.</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Últimas Notícias</span> você poderá ver as postagens mais recentes da rede.<br/>Já em <span class="laranja">Dê seu Feedback</span> você poderá nos mandar mensagens diretamente sobre o que pode ser melhorado por aqui.<br/><span class="laranja">Vamos construir a Vivalá juntos!</span></p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-conectar-step7',
-                intro: '<p class="text-center">Em <span class="laranja">Últimas Notícias</span> você poderá ver as últimas postagens que ocorreram por aqui.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-conectar-step8',
-                intro: '<p class="text-center">Em <span class="laranja">Dê Seu Feedback</span> você poderá nos mandar uma mensagem direta, dando dicas e sugestões do que pode ser melhorado!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-conectar-step9',
-                intro: '<p class="text-center">Você também pode dar aquela curtidinha em nossa página no Facebook por aqui. Vamos lá, é rapidinho!</p>',
-                position: 'right'
+                intro: '<p class="text-center"><span class="laranja">Curta a Vivalá no Facebook</span> e fique ligado em nossas novidades!</p>',
+                position: 'top'
               }
             ]
           });
@@ -677,37 +647,27 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero Viajar</span>.<br/>Aqui você encontrará tudo que precisa para viajar Brasil afora, alimentação, passagens áereas/ônibus e hospedagem, tudo isso com muitos descontos e vantagens!</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Quero Viajar</span>.<br/>Here you will find everything you need for traveling in Brazil and around the world.<br/>Buy airline tickets, bus tickets, rent a car, lodging and get discounts up to 50% in renowned restaurants!<br/>Explore the possibilities and travel with us!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step2',
-                intro: '<p class="text-center">Em nosso menu você encontra cada um de nossos serviços.</p>',
+                intro: '<p class="text-center">Here in our menu you will find all our services!</p>',
                 position: 'left'
               },
               {
                 element: '.tour-pilar-viajar-step3',
-                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com 1.700 opções de restaurantes espalhados pelo Brasil, delicie-se!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.600 restaurants spread across 12 Brazilian states</span>.<br/>Join the club and delight yourself!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step4',
-                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Carros</span> temos passagens áereas, hospedagem e pacotes de viagens com os melhores descontos para você viajante!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Accommodation, Flights & Packages</span> you can find air tickets to over 140 countries and accommodation in more than 160 countries.<br/>We have the best prices and market partners.<br/><span class="laranja">Create packages with the possibility to add a rented car and earn up to 35% off!</span></p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> temos passagens para todo território nacional e descontos exclusivos com mais de 60 viações de ônibus diferentes!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-viajar-step6',
-                intro: '<p class="text-center">No menu lateral direito você encontra os <span class="laranja">Roteiros</span> mais quentes da Vivalá, feitos sob medida para você conhecer os lugares mais incríveis do país!</p>',
-                position: 'left'
-              },
-              {
-                element: '.tour-pilar-viajar-step7',
-                intro: '<p class="text-center">Monte sua viagem agora e viva esta experiência, viva o Brasil!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br/>Search here on your next trip and hit the road!</p>',
                 position: 'bottom'
               }
             ]
@@ -719,37 +679,27 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero Viajar</span>.<br/>Aqui você encontrará tudo que precisa para viajar Brasil afora, alimentação, passagens áereas/ônibus e hospedagem, tudo isso com muitos descontos e vantagens!</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Quero Viajar</span>.<br/>Aqui você encontrará tudo que precisa para viajar no Brasil e mundo afora.<br/>Compre passagens aéreas, rodoviárias, aluguel de carro, hospedagem e tenha descontos de até 50% em restaurantes renomados!<br/>Explore as possibilidades e viaje conosco!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step2',
-                intro: '<p class="text-center">Em nosso menu você encontra cada um de nossos serviços.</p>',
+                intro: '<p class="text-center">Aqui em nosso menu você encontra todos os nossos serviços!</p>',
                 position: 'left'
               },
               {
                 element: '.tour-pilar-viajar-step3',
-                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com 1.700 opções de restaurantes espalhados pelo Brasil, delicie-se!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.600 restaurantes espalhados por 12 estados brasileiros</span>.<br/>Entre para o clube e delicie-se!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step4',
-                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Carros</span> temos passagens áereas, hospedagem e pacotes de viagens com os melhores descontos para você viajante!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Pacotes</span> você encontra passagens aéreas para mais de 140 países e hospedagem em mais de 160 países.<br/>Temos os melhores preços e parceiros do mercado.<br/><span class="laranja">Crie pacotes com a possibilidade de adicionar aluguel de carro, e ganhe até 35% de desconto!</span></p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> temos passagens para todo território nacional e descontos exclusivos com mais de 60 viações de ônibus diferentes!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-viajar-step6',
-                intro: '<p class="text-center">No menu lateral direito você encontra os <span class="laranja">Roteiros</span> mais quentes da Vivalá, feitos sob medida para você conhecer os lugares mais incríveis do país!</p>',
-                position: 'left'
-              },
-              {
-                element: '.tour-pilar-viajar-step7',
-                intro: '<p class="text-center">Monte sua viagem agora e viva esta experiência, viva o Brasil!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br/>Busque aqui em sua próxima viagem e pé na estrada!</p>',
                 position: 'bottom'
               }
             ]
@@ -761,12 +711,12 @@ $(document).ready(function() {
       internoTour.onexit(function(){
         //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
         internoTour.exit();
-        setTimeout(verificaMarketPlace, 1500);
+        setTimeout(verificaMarketPlace, 1000);
       });
       internoTour.oncomplete(function(){
         //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
         internoTour.exit();
-        setTimeout(verificaMarketPlace, 1500);
+        setTimeout(verificaMarketPlace, 1000);
       });
       internoTour.start();
     }
@@ -780,47 +730,27 @@ $(document).ready(function() {
               // CUIDAR
               {
                 element: '.tour-pilar-cuidar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero Cuidar</span>.<br/>Aqui você pode encontrar vagas em diversas ONGs espalhadas pelo Brasil, poderá se cadastrar a uma delas e compartilhar com outros viajantes o trabalho voluntário em nosso país.</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Quero Cuidar</span>. You can find volunteer jobs in various NGOs and social impact projects throughout Brazil.<br/>Register your NGO or project and arrange volunteers, or help big projects to change realities in Brazil!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-cuidar-step2',
-                intro: '<p class="text-center">Você também poderá divulgar suas vagas caso possua uma ONG, possibilitando a outros viajantes esta troca de experiências!</p>',
+                intro: '<p class="text-center">Learn more closely NGOs and <span class="laranja">transformation projects</span> around Brazil that are registered on <span class="laranja">Vivalá</span> network.</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-cuidar-step3',
-                intro: '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências de voluntariado pelo país.</p>',
+                intro: '<p class="text-center">Find volunteer works in your city, in your travel destination or remote! <span class="laranja">Candidate yourself and start the transformation</span>!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-cuidar-step4',
-                intro: '<p class="text-center">Em <span class="laranja">Página Inicial</span> você poderá buscar pelas mais diversas ONGs em todo país.</p>',
-                position: 'bottom'
+                intro: '<p class="text-center">Use the search filters to find projects and vacant jobs for you, looking between the various categories and locations in Brazil.</p>',
+                position: 'top'
               },
               {
                 element: '.tour-pilar-cuidar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Projetos</span> você verá os projetos sociais mais acessados por nossos viajantes transformadores.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-cuidar-step6',
-                intro: '<p class="text-center">Em <span class="laranja">Vagas</span> você encontrará as vagas para os trabalhos voluntários mais irados!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-cuidar-step7',
-                intro: '<p class="text-center">Você pode usar a busca para encontrar a ONG que é a sua cara, buscando entre as diversas categorias e localidades pelo Brasil.</p>',
-                position: 'top'
-              },
-              {
-                element: '.tour-pilar-cuidar-step8',
-                intro: '<p class="text-center">Ou você pode ver as últimas ONGs que cadastraram vagas em nossa plataforma.</p>',
-                position: 'top'
-              },
-              {
-                element: '.tour-pilar-cuidar-step9',
-                intro: '<p class="text-center">No menu de <span class="laranja">Configurações Globais</span> você poderá criar a página de sua ONG e divulgar suas vagas, é simples e rápido.<br/>Compartilhe o trabalho voluntário e transforme o Brasil!</p>',
+                intro: '<p class="text-center">In the settings menu you can create a page of your NGO or project and spread the vacancies that you need to get your project off the ground! It is simple and fast.<br/>Share impact volunteer jobs and transform Brazil for the better!</p>',
                 position: 'bottom'
               }
             ]
@@ -832,47 +762,27 @@ $(document).ready(function() {
               // CUIDAR
               {
                 element: '.tour-pilar-cuidar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero Cuidar</span>.<br/>Aqui você pode encontrar vagas em diversas ONGs espalhadas pelo Brasil, poderá se cadastrar a uma delas e compartilhar com outros viajantes o trabalho voluntário em nosso país.</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Quero Cuidar</span>. Aqui você pode encontrar vagas de voluntariado em diversas ONGs e Projetos de impacto social espalhadas pelo Brasil.<br/>Inscreva sua ONG ou Projeto e arrume voluntários ou ajude grandes projetos a mudar realidades no Brasil!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-cuidar-step2',
-                intro: '<p class="text-center">Você também poderá divulgar suas vagas caso possua uma ONG, possibilitando a outros viajantes esta troca de experiências!</p>',
+                intro: '<p class="text-center">Conheça mais de perto ONGs e <span class="laranja">projetos transformadores</span> ao redor do Brasil que estão cadastrados na rede da <span class="laranja">Vivalá</span>.</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-cuidar-step3',
-                intro: '<p class="text-center">Nosso menu lateral esquerdo servirá como bússola para te guiar nas mais completas experiências de voluntariado pelo país.</p>',
+                intro: '<p class="text-center">Encontre trabalhos voluntários em sua cidade, em seu destino de viagem ou até remoto! <span class="laranja">Se candidate e comece a transformar</span>!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-cuidar-step4',
-                intro: '<p class="text-center">Em <span class="laranja">Página Inicial</span> você poderá buscar pelas mais diversas ONGs em todo país.</p>',
-                position: 'bottom'
+                intro: '<p class="text-center">Use os filtros de busca para encontrar projetos e vagas que tenham a sua cara, buscando entre as diversas categorias e localidades no Brasil.</p>',
+                position: 'top'
               },
               {
                 element: '.tour-pilar-cuidar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Projetos</span> você verá os projetos sociais mais acessados por nossos viajantes transformadores.</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-cuidar-step6',
-                intro: '<p class="text-center">Em <span class="laranja">Vagas</span> você encontrará as vagas para os trabalhos voluntários mais irados!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-pilar-cuidar-step7',
-                intro: '<p class="text-center">Você pode usar a busca para encontrar a ONG que é a sua cara, buscando entre as diversas categorias e localidades pelo Brasil.</p>',
-                position: 'top'
-              },
-              {
-                element: '.tour-pilar-cuidar-step8',
-                intro: '<p class="text-center">Ou você pode ver as últimas ONGs que cadastraram vagas em nossa plataforma.</p>',
-                position: 'top'
-              },
-              {
-                element: '.tour-pilar-cuidar-step9',
-                intro: '<p class="text-center">No menu de <span class="laranja">Configurações Globais</span> você poderá criar a página de sua ONG e divulgar suas vagas, é simples e rápido.<br/>Compartilhe o trabalho voluntário e transforme o Brasil!</p>',
+                intro: '<p class="text-center">No menu de configurações você poderá criar a página de sua ONG ou projeto e divulgar as vagas que você precisa para o projeto decolar! É simples e rápido.<br/>Compartilhe o trabalho voluntário de impacto e transforme o Brasil para melhor!</p>',
                 position: 'bottom'
               }
             ]
@@ -985,5 +895,8 @@ function verificaMarketPlace(){
       // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
     }
     pilarVendasTour.start();
+    pilarVendasTour.oncomplete(function(){
+      pilarVendasTour.exit();
+    });
   }
 };

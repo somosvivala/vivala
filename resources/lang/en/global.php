@@ -481,6 +481,8 @@ return[
   'lbl_profile_updating' => 'Updating Profile',
   'lbl_profile_info' => 'Profile Information',
   'lbl_profile_info_' => 'Profile Information',
+  'lbl_project' => 'Project',
+  'lbl_project_' => 'Projects',
   'lbl_publish' => 'Publish',
     /* Compras */
     'lbl_purchase' => 'Purchase',
@@ -774,7 +776,7 @@ return[
     'wannatravel_trip_already_know' => 'Already know where to go?',
     'wannatravel_trip_setup' => 'Build your trip!',
     'wannatravel_trip_restaurants' => 'Restaurants',
-    'wannatravel_trip_hotels_flights_cars' => 'Accommodation, Flights & Cars',
+    'wannatravel_trip_hotels_flights_packs' => 'Accommodation, Flights & Packages',
     'wannatravel_trip_bus_drive' => 'Bus road tickets',
     // Desativado ainda
     'wannatravel_trip_stay' => 'Hotels',
@@ -1102,7 +1104,7 @@ return[
     'partners_text_1' => '- More than 200.000 hotels at 8.000 destinations',
     'partners_text_2' => '- 500 flight companies with services all over the world',
     'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
-    'partners_text_4' => '- 1.582 restaurants at 19 brazilian cities',
+    'partners_text_4' => '- 1.600 restaurants at 19 brazilian cities',
     'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
 
   /* Contato */
