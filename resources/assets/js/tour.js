@@ -760,11 +760,13 @@ $(document).ready(function() {
       }
       internoTour.onexit(function(){
         //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
-        verificaMarketPlace();
+        internoTour.exit();
+        setTimeout(verificaMarketPlace, 1500);
       });
       internoTour.oncomplete(function(){
         //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
-        verificaMarketPlace();
+        internoTour.exit();
+        setTimeout(verificaMarketPlace, 1500);
       });
       internoTour.start();
     }
@@ -940,7 +942,7 @@ function verificaMarketPlace(){
     default:
   }
 
-  console.log("Entrei no MarketPlace.");
+  //console.log("Entrei no MarketPlace.");
   if($("#restaurantes")){
     console.log("CHEFSCLUB");
     // CHEFSCLUB
