@@ -31,8 +31,8 @@
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
-            {{--
-            <li class="col-sm-3 active">
+            {{-- DESATIVADO
+            <!-- li class="col-sm-3 active">
                 <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab">
                     Hospedagem
                 </a>
@@ -46,13 +46,15 @@
                 <a href="#carros" class="desativado" aria-controls="carros" role="tab" data-toggle="tab">
                     Carros
                 </a>
-            </li>
+            </li -->
             --}}
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="restaurantes">
-                @include('chefsclub.buscarestaurantes')
-                <div class="lista-restaurantes">
+                <div class="tour-chefsclub-step1">
+                    @include('chefsclub.buscarestaurantes')
+                </div>
+                <div class="lista-restaurantes tour-chefsclub-step2">
                     @include('chefsclub.listarestaurantes')
                 </div>
             </div>
@@ -68,14 +70,14 @@
                 @include('quimera._formhotels')
                 <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
             </div>
-            <div role="tabpanel" class="tab-pane" id="voos">
+            <!--div role="tabpanel" class="tab-pane" id="voos">
                 @include('quimera._formvoos')
                 <div class="fundo-cheio col-sm-12 resultados-busca-voos text-center"> </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="carros">
                 @include('quimera._formcarros')
                 <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
-            </div>
+            </div-->
             --}}
         </div>
     </div>
@@ -98,7 +100,7 @@
     </div>
 
 {{--
-    <section class="secao-sem-bg text-center">
+    <!-- section class="secao-sem-bg text-center">
         <h3 class="subtitulo col-sm-12">Explore novos ares e mares</h3>
         <small class="col-sm-12">Descubra lugares novos e inspiradores</small>
         <div class="col-sm-4">
@@ -132,7 +134,6 @@
             </div>
         </div>
     </section>
-
     <section class="secao-sem-bg text-center">
         <h3 class="col-sm-12">Roteiros populares</h3>
         <small class="col-sm-12">Os mais curtidos, comentados e compartilhados da Vivalá</small>
@@ -202,7 +203,7 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section-->
 --}}
 </div>
 @endsection

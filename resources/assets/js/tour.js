@@ -4,103 +4,195 @@ $(document).ready(function() {
   var linguaAtiva = $("meta[name=language]").attr("content");
 
   // Possibilidade do user afirmar se quer ver sempre o TOUR ou cancelá-lo
-  //var ligaQuizTour = Cookies.get('quizTour');
-  //var ligaintroTour = Cookies.get('introTour');
-  var ligaTourInterno = Cookies.get('internoTour');
+  var ligaQuizTour = Cookies.get('quizTour');
+  var ligaIntroTour = Cookies.get('introTour');
 
   // Variáveis diferentes só por conta da opacidade da layer ao fundo
-  var quizTour = introJs();
-  var introTour = introJs();
-  var internoTour = introJs();
+  var quizTour = introJs(); // Quiz
+  var introTour = introJs(); // Primeira Tour da Plataforma
+  var internoTour = introJs(); // Tour de cada 1 dos 3 pilares
+  var pilarVendasTour = introJs(); // Tour interna do MarketPlace (ChefsClub + ClickBus)
 
-  // [QUIZ/INTRO/PILARES] Configurações Iniciais Baseados na Língua Usada
+  // [QUIZ/INTRO/INTERNO/PILARVENDAS] Configurações Iniciais Baseados na Língua Usada
   switch(linguaAtiva){
     case 'en':
       // Quiz
         quizTour.setOptions({
-          overlayOpacity: 0.2,
-          showButtons: true,
-          scrollToElement: true,
-          showProgress: false,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          exitOnEsc: true,
           nextLabel: 'Next',
           prevLabel: 'Previous',
           skipLabel: 'Skip Tour',
           doneLabel: 'End Tour',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: true,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0.2,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Got it',
         });
       // Intro
         introTour.setOptions({
-          overlayOpacity: 0.5,
-          showButtons: true,
-          scrollToElement: true,
-          showProgress: false,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          exitOnEsc: true,
           nextLabel: 'Next',
           prevLabel: 'Previous',
           skipLabel: 'Skip Help',
           doneLabel: 'End Help',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: true,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0.5,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Got it',
         });
       // Interno
         internoTour.setOptions({
-          overlayOpacity: 0.1,
-          showButtons: true,
-          scrollToElement: true,
-          showProgress: false,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          exitOnEsc: true,
           nextLabel: 'Next',
           prevLabel: 'Previous',
           skipLabel: 'Skip Tour',
           doneLabel: 'End Tour',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: true,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0.1,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Got it',
+        });
+      // Pilares Vendas (ChefsClub + Quimera + ClickBus)
+        pilarVendasTour.setOptions({
+          nextLabel: 'Next',
+          prevLabel: 'Previous',
+          skipLabel: 'Skip Tour',
+          doneLabel: 'End Tour',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: false,
+          showProgress: true,
+          scrollToElement: true,
+          overlayOpacity: 0.1,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Got it',
         });
     break;
     case 'pt':
       // Quiz
         quizTour.setOptions({
-          overlayOpacity: 0.2,
-          showButtons: true,
-          scrollToElement: true,
-          showProgress: false,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          exitOnEsc: true,
           nextLabel: 'Próximo',
           prevLabel: 'Anterior',
           skipLabel: 'Pular Tour',
           doneLabel: 'Finalizar Tour',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: true,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0.2,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Entendi',
         });
       // Intro
         introTour.setOptions({
-          overlayOpacity: 0.5,
-          showButtons: true,
-          scrollToElement: true,
-          showProgress: false,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          exitOnEsc: true,
           nextLabel: 'Próximo',
           prevLabel: 'Anterior',
           skipLabel: 'Pular Ajuda',
           doneLabel: 'Finalizar Ajuda',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: true,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0.5,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Entendi',
         });
       // Interno
         internoTour.setOptions({
-          overlayOpacity: 0.1,
-          showButtons: true,
-          scrollToElement: true,
-          showProgress: false,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          exitOnEsc: true,
           nextLabel: 'Próximo',
           prevLabel: 'Anterior',
           skipLabel: 'Pular Tour',
           doneLabel: 'Finalizar Tour',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: true,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0.1,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Entendi',
+        });
+      // Pilares Vendas (ChefsClub + Quimera + ClickBus)
+        pilarVendasTour.setOptions({
+          nextLabel: 'Próximo',
+          prevLabel: 'Anterior',
+          skipLabel: 'Pular Tour',
+          doneLabel: 'Finalizar Tour',
+          //tooltipPosition: ,
+          //tooltipClass: ,
+          //highlightClass: ,
+          exitOnEsc: true,
+          exitOnOverlayClick: true,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: false,
+          showProgress: true,
+          scrollToElement: true,
+          overlayOpacity: 0.1,
+          //disableInteraction: ,
+          //hintPosition: ,
+          hintButtonLabel: 'Entendi',
         });
     default:
       // Quiz
@@ -140,8 +232,8 @@ $(document).ready(function() {
 ==============================================================================*/
 
 // ##### QUIZ
-// Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  //if(!ligaQuizTour){
+// Se a variável for FALSE (setada pelo user), posso iniciar este Tour
+  if(!parseInt(ligaQuizTour)){
     // Passo 1
     if($("#tour-quiz").hasClass("quiz-1")){
       //console.log("Estou em QUIZ - Etapa 1");
@@ -201,6 +293,15 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      quizTour.onexit(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.oncomplete(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.start();
     }
     // Passo 2
     if($("#tour-quiz").hasClass("quiz-2")){
@@ -241,6 +342,15 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      quizTour.onexit(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.oncomplete(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.start();
     }
     // Passo 3
     if($("#tour-quiz").hasClass("quiz-3")){
@@ -271,6 +381,15 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      quizTour.onexit(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.oncomplete(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.start();
     }
     // Passo 4
     if($("#tour-quiz").hasClass("quiz-4")){
@@ -321,23 +440,21 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      quizTour.onexit(function(){
+        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.oncomplete(function(){
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
+        ligaQuizTour = Cookies.get('quizTour');
+      });
+      quizTour.start();
     }
-    /*
-    quizTour.onexit(function(){
-      Cookies.set('quizTour', 'false', { expires: 365, path: '' });
-      ligaQuizTour = Cookies.get('quizTour');
-    });
-    quizTour.oncomplete(function(){
-      Cookies.set('quizTour', 'true', { expires: 365, path: '' });
-      ligaQuizTour = Cookies.get('quizTour');
-    });
-    */
-    quizTour.start();
-  //}
+  }
 
 // ##### INTERNO
-// Se a variável for TRUE (setada pelo user), posso iniciar este Tour
-  if((!ligaTourInterno) && ($("#tour-pilares").hasClass("pilar-home"))){
+// Se a variável for FALSE (setada pelo user), posso iniciar este Tour
+  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-home"))){
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
@@ -469,12 +586,12 @@ $(document).ready(function() {
       // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
     }
     introTour.onexit(function(){
-      Cookies.set('internoTour', 'false', { expires: 365, path: '' });
-      ligaQuizTour = Cookies.get('internoTour');
+      Cookies.set('introTour', 0, { expires: 365, path: '/' });
+      ligaQuizTour = Cookies.get('introTour');
     });
-    introTour.onexit(function(){
-      Cookies.set('internoTour', 'true', { expires: 365, path: '' });
-      ligaQuizTour = Cookies.get('internoTour');
+    introTour.oncomplete(function(){
+      Cookies.set('introTour', 1, { expires: 365, path: '/' });
+      ligaQuizTour = Cookies.get('introTour');
     });
     introTour.start();
   }
@@ -483,8 +600,8 @@ $(document).ready(function() {
   $('#notificacoes-ajuda').click(function(){
     // TOUR PILARES
     if(($("#tour-pilares").hasClass("pilar-conectar"))){
+      // CONECTAR
       //console.log("Estou no pilar QUERO ME CONECTAR");
-      // INTRO TOUR
       switch(linguaAtiva){
         case 'en':
           internoTour.setOptions({
@@ -593,16 +710,9 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-      internoTour.onexit(function(){
-        Cookies.set('internoTour', 'false', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
-      });
-      internoTour.oncomplete(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
-      });
     }
     if(($("#tour-pilares").hasClass("pilar-viajar"))){
+      // VIAJAR
       //console.log("Estou no pilar QUERO VIAJAR");
       switch(linguaAtiva){
         case 'en':
@@ -693,15 +803,16 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       internoTour.onexit(function(){
-        Cookies.set('internoTour', 'false', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
+        //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
+        //verificaMarketPlace();
       });
       internoTour.oncomplete(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
+        console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
+        verificaMarketPlace();
       });
     }
     if(($("#tour-pilares").hasClass("pilar-cuidar"))){
+      // CUIDAR
       //console.log("Estou no pilar QUERO CUIDAR");
       switch(linguaAtiva){
         case 'en':
@@ -811,16 +922,52 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
-      internoTour.onexit(function(){
-        Cookies.set('internoTour', 'false', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
-      });
-      internoTour.oncomplete(function(){
-        Cookies.set('internoTour', 'true', { expires: 365, path: '' });
-        ligaQuizTour = Cookies.get('internoTour');
-      });
     }
     internoTour.start();
   });
 
+  var verificaMarketPlace = function(){
+    if($("#restaurantes")){
+      // CHEFSCLUB
+      switch(linguaAtiva){
+        case 'en':
+          pilarVendasTour.setOptions({
+            steps: [
+              // CHEFSCLUB
+              {
+                element: '.tour-chefsclub-step1',
+                intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-chefsclub-step2',
+                intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
+                position: 'top'
+              }
+            ]
+          });
+        break;
+        case 'pt':
+          pilarVendasTour.setOptions({
+            steps: [
+              // CHEFSCLUB
+              {
+                element: '.tour-chefsclub-step1',
+                intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
+                position: 'bottom'
+              },
+              {
+                element: '.tour-chefsclub-step2',
+                intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
+                position: 'top'
+              }
+            ]
+          });
+        break;
+        default:
+        // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
+      }
+      pilarVendasTour.start();
+    }
+  };
 });

@@ -1,7 +1,7 @@
 @if ($restaurantes_total == 0)
     <div class="margin-t-2 row detalhes-lista">
         <div class="col-sm-12">
-            <h4 class="font-bold-upper">Nenhum restaurante encontrado :(</h4>
+            <h4 class="font-bold-upper">{{ trans('chefsclub.chefsclub_kitchen-no-found') }}</h4>
         </div>
     </div>
     <?php return; ?>
@@ -9,7 +9,7 @@
 
 <div data-page="{{ $page }}" class="margin-t-2 row detalhes-lista">
     <div class="col-sm-12">
-        <h4 class="font-bold-upper">{{ $restaurantes_total }} Restaurantes disponíveis</h4>
+        <h4 class="font-bold-upper">{{ $restaurantes_total }} {{ trans('chefsclub.chefsclub_avaiable-restaurants') }}</h4>
     </div>
     <div class="row margin-t-1 margin-b-1">
         <div class="col-xs-6 text-left">
@@ -41,7 +41,7 @@
                                 <div class="col-sm-5"><ul><?php foreach(explode(' ',$r->tipo_cozinha) as $tipo) echo "<li>$tipo</li>"; ?></ul></div>
                             </div>
                             <div class="row text-center">
-                                <button class="btn suave detalhes-restaurante" type="button" data-restaurante-id="{{ $r->id }}" data-toggle="modal" data-target="#{{ $r->id }}">Detalhes</button>
+                                <button class="btn suave detalhes-restaurante" type="button" data-restaurante-id="{{ $r->id }}" data-toggle="modal" data-target="#{{ $r->id }}">{{ trans('global.lbl_detail_') }}</button>
                             </div>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                                             <div class="col-sm-4">
                                                 <?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i> "; ?>
                                             </div>
-                                            Faixa de preço
+                                            {{ trans('chefsclub.chefsclub_price-range') }}
                                         </div>
                                         <div class="col-sm-6 ">
                                             <div class="col-sm-1 text-right">
@@ -112,7 +112,7 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <b class="font-bold-upper">
-                                            Saiba mais
+                                            {{ trans('global.lbl_know_more') }}
                                         </b>
                                         <p>
                                             {{ $r->descricao }}
@@ -122,12 +122,12 @@
                             </div>
                             <hr class="margin-b-1">
                             <div class="row text-center margin-t-2">
-                                <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">Entre para o clube</a>
+                                <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">{{ trans('chefsclub.chefsclub_join-the-club') }}</a>
                             </div>
                             <hr class="margin-b-1 margin-t-2">
                             <div class="row text-center">
                                 <small>
-                                Você pode utilizar o CPF como forma de validação no restaurante apresentando um documento com foto para identificação.<br>O seu CPF estará válido imediatamente após a confirmação da assinatura.
+                                {{ trans('chefsclub.chefsclub_warning-1') }}<br/>{{ trans('chefsclub.chefsclub_warning-2') }}
                                 </small>
                             </div>
                         </div>
@@ -151,4 +151,3 @@
         </div>
     </div>
 </div>
-

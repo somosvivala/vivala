@@ -5,7 +5,7 @@
 <div class="row" id="chefsclub-filtros">
     <div class="select-filtro">
         <select id="tipo-cozinha" class="form-control">
-            <option value="">Tipo Cozinha</option>
+            <option value="">{{ trans('chefsclub.chefsclub_kitchen-type') }}</option>
             @foreach($tipo_cozinha as $TipoCozinha)
             <option value="{{ $TipoCozinha }}">{{ $TipoCozinha }}</option>
             @endforeach
@@ -16,7 +16,7 @@
     </div>
     <div class="select-filtro">
         <select id="horaRestaurante" class="form-control">
-            <option value="">Horário</option>
+            <option value="">{{ trans('global.lbl_schedule') }}</option>
             @foreach($horarios as $horario)
             <option value="{{ $horario }}">{{ $horario }}</option>
             @endforeach
@@ -24,7 +24,7 @@
     </div>
     <div class="select-filtro">
         <select id="porcentagem-desconto" class="form-control">
-            <option value="">Desconto</option>
+            <option value="">{{ trans('global.lbl_discount') }}</option>
             @foreach($descontos as $Desconto)
             <option value="{{ $Desconto }}">{{ $Desconto }}</option>
             @endforeach
@@ -32,7 +32,7 @@
     </div>
     <div class="select-filtro">
         <select id="cidade-restaurante" class="form-control">
-            <option value="0">Cidade</option>
+            <option value="0">{{ trans('global.lbl_city') }}</option>
             @foreach($cidades as $Cidade)
             <option value="{{ $Cidade['id'] }}">{{ $Cidade['cidade'] }}</option>
             @endforeach
@@ -40,7 +40,7 @@
     </div>
     <div class="select-filtro">
         <select id="qtd-pessoas" class="form-control">
-            <option value="0"> Pessoas</option>
+            <option value="0"> {{ trans('global.lbl_people') }}</option>
             @foreach($pessoas as $pessoa)
             <option value="{{ $pessoa['id'] }}">{{ $pessoa['text'] }}</option>
             @endforeach
