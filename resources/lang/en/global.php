@@ -790,7 +790,7 @@ return[
     'wannatravel_route_see_' => 'See Routes',
     'wannatravel_package_find_best_destinies' => 'Learn about our services',
     //
-    'wannatravel_chefsclub_desserts_and_goodies' => 'Some tastes that feed body and soul!',
+    'wannatravel_chefsclub_desserts_and_goodies' => 'Some tastes to feed your body and soul!',
     'wannatravel_chefsclub_all_restaurants' => 'All',
     'wannatravel_chefsclub_discount' => 'Any discount',
     'wannatravel_chefsclub_all_cities' => 'All cities',

@@ -728,7 +728,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-viajar-step2',
                 intro: '<p class="text-center">Em nosso menu você encontra cada um de nossos serviços.</p>',
-                position: 'top'
+                position: 'left'
               },
               {
                 element: '.tour-pilar-viajar-step3',
@@ -770,7 +770,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-viajar-step2',
                 intro: '<p class="text-center">Em nosso menu você encontra cada um de nossos serviços.</p>',
-                position: 'top'
+                position: 'left'
               },
               {
                 element: '.tour-pilar-viajar-step3',
@@ -804,11 +804,11 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       internoTour.onexit(function(){
-        console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
+        //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
         verificaMarketPlace();
       });
       internoTour.oncomplete(function(){
-        console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
+        //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
         verificaMarketPlace();
       });
       internoTour.start();
@@ -929,7 +929,10 @@ $(document).ready(function() {
   });
 
   function verificaMarketPlace(){
+    console.log("Entrei no MarketPlace.");
+    internoTour.exit();
     if($("#restaurantes")){
+      console.log("CHEFSCLUB");
       // CHEFSCLUB
       switch(linguaAtiva){
         case 'en':

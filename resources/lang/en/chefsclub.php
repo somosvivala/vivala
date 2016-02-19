@@ -5,7 +5,7 @@ return [
     'chefsclub_kitchen-no-found' => 'No restaurant found.',
     'chefsclub_kitchen-type' => 'Kitchen Type',
     'chefsclub_price-range' => 'Price Range',
-    'chefsclub_warning-1' => 'Você pode utilizar o CPF e um documento com foto, para identificação, como forma de validação no restaurante escolhido.',
-    'chefsclub_warning-2' => 'O seu CPF estará válido imediatamente após a confirmação da assinatura.',
+    'chefsclub_warning-1' => 'You can use your CPF documment and a documment ID with a photo as form of validation in the chosen restaurant.',
+    'chefsclub_warning-2' => 'Your CPF document will be valid immediately after the signature confirmation.',
 ];
 ?>
