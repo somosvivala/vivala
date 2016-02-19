@@ -11,7 +11,6 @@ $(document).ready(function() {
   var quizTour = introJs(); // Quiz
   var introTour = introJs(); // Primeira Tour da Plataforma
   var internoTour = introJs(); // Tour de cada 1 dos 3 pilares
-  var pilarVendasTour = introJs(); // Tour interna do MarketPlace (ChefsClub + ClickBus)
 
   // [QUIZ/INTRO/INTERNO/PILARVENDAS] Configurações Iniciais Baseados na Língua Usada
   switch(linguaAtiva){
@@ -82,28 +81,6 @@ $(document).ready(function() {
           //hintPosition: ,
           hintButtonLabel: 'Got it',
         });
-      // Pilares Vendas (ChefsClub + Quimera + ClickBus)
-        pilarVendasTour.setOptions({
-          nextLabel: 'Next',
-          prevLabel: 'Previous',
-          skipLabel: 'Skip Tour',
-          doneLabel: 'End Tour',
-          //tooltipPosition: ,
-          //tooltipClass: ,
-          //highlightClass: ,
-          exitOnEsc: true,
-          exitOnOverlayClick: true,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          showButtons: true,
-          showBullets: false,
-          showProgress: true,
-          scrollToElement: true,
-          overlayOpacity: 0.1,
-          //disableInteraction: ,
-          //hintPosition: ,
-          hintButtonLabel: 'Got it',
-        });
     break;
     case 'pt':
       // Quiz
@@ -166,28 +143,6 @@ $(document).ready(function() {
           showButtons: true,
           showBullets: true,
           showProgress: false,
-          scrollToElement: true,
-          overlayOpacity: 0.1,
-          //disableInteraction: ,
-          //hintPosition: ,
-          hintButtonLabel: 'Entendi',
-        });
-      // Pilares Vendas (ChefsClub + Quimera + ClickBus)
-        pilarVendasTour.setOptions({
-          nextLabel: 'Próximo',
-          prevLabel: 'Anterior',
-          skipLabel: 'Pular Tour',
-          doneLabel: 'Finalizar Tour',
-          //tooltipPosition: ,
-          //tooltipClass: ,
-          //highlightClass: ,
-          exitOnEsc: true,
-          exitOnOverlayClick: true,
-          showStepNumbers: false,
-          keyboardNavigation: true,
-          showButtons: true,
-          showBullets: false,
-          showProgress: true,
           scrollToElement: true,
           overlayOpacity: 0.1,
           //disableInteraction: ,
@@ -928,51 +883,105 @@ $(document).ready(function() {
     }
   });
 
-  function verificaMarketPlace(){
-    console.log("Entrei no MarketPlace.");
-    internoTour.exit();
-    if($("#restaurantes")){
-      console.log("CHEFSCLUB");
-      // CHEFSCLUB
-      switch(linguaAtiva){
-        case 'en':
-          pilarVendasTour.setOptions({
-            steps: [
-              // CHEFSCLUB
-              {
-                element: '.tour-chefsclub-step1',
-                intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-chefsclub-step2',
-                intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
-                position: 'top'
-              }
-            ]
-          });
-        break;
-        case 'pt':
-          pilarVendasTour.setOptions({
-            steps: [
-              // CHEFSCLUB
-              {
-                element: '.tour-chefsclub-step1',
-                intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
-                position: 'bottom'
-              },
-              {
-                element: '.tour-chefsclub-step2',
-                intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
-                position: 'top'
-              }
-            ]
-          });
-        break;
-        default:
-        // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
-      }
-      pilarVendasTour.start();
-    }
-  };
 });
+
+function verificaMarketPlace(){
+  var linguaAtiva = $("meta[name=language]").attr("content");
+  var pilarVendasTour = introJs(); // Tour interna do MarketPlace (ChefsClub + ClickBus)
+
+  // Pilares Vendas (ChefsClub + Quimera + ClickBus)
+  switch(linguaAtiva){
+    case 'en':
+      pilarVendasTour.setOptions({
+        nextLabel: 'Next',
+        prevLabel: 'Previous',
+        skipLabel: 'Skip Tour',
+        doneLabel: 'End Tour',
+        //tooltipPosition: ,
+        //tooltipClass: ,
+        //highlightClass: ,
+        exitOnEsc: true,
+        exitOnOverlayClick: true,
+        showStepNumbers: false,
+        keyboardNavigation: true,
+        showButtons: true,
+        showBullets: false,
+        showProgress: true,
+        scrollToElement: true,
+        overlayOpacity: 0.1,
+        //disableInteraction: ,
+        //hintPosition: ,
+        hintButtonLabel: 'Got it',
+      });
+    break;
+    case 'pt':
+      pilarVendasTour.setOptions({
+        nextLabel: 'Próximo',
+        prevLabel: 'Anterior',
+        skipLabel: 'Pular Tour',
+        doneLabel: 'Finalizar Tour',
+        //tooltipPosition: ,
+        //tooltipClass: ,
+        //highlightClass: ,
+        exitOnEsc: true,
+        exitOnOverlayClick: true,
+        showStepNumbers: false,
+        keyboardNavigation: true,
+        showButtons: true,
+        showBullets: false,
+        showProgress: true,
+        scrollToElement: true,
+        overlayOpacity: 0.1,
+        //disableInteraction: ,
+        //hintPosition: ,
+        hintButtonLabel: 'Entendi',
+      });
+    break;
+    default:
+  }
+
+  console.log("Entrei no MarketPlace.");
+  if($("#restaurantes")){
+    console.log("CHEFSCLUB");
+    // CHEFSCLUB
+    switch(linguaAtiva){
+      case 'en':
+        pilarVendasTour.setOptions({
+          steps: [
+            // CHEFSCLUB
+            {
+              element: '.tour-chefsclub-step1',
+              intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-chefsclub-step2',
+              intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
+              position: 'left'
+            }
+          ]
+        });
+      break;
+      case 'pt':
+        pilarVendasTour.setOptions({
+          steps: [
+            // CHEFSCLUB
+            {
+              element: '.tour-chefsclub-step1',
+              intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
+              position: 'bottom'
+            },
+            {
+              element: '.tour-chefsclub-step2',
+              intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
+              position: 'left'
+            }
+          ]
+        });
+      break;
+      default:
+      // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
+    }
+    pilarVendasTour.start();
+  }
+};
