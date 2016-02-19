@@ -803,8 +803,8 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       internoTour.onexit(function(){
-        //console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
-        //verificaMarketPlace();
+        console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
+        verificaMarketPlace();
       });
       internoTour.oncomplete(function(){
         console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
@@ -926,7 +926,7 @@ $(document).ready(function() {
     internoTour.start();
   });
 
-  var verificaMarketPlace = function(){
+  function verificaMarketPlace(){
     if($("#restaurantes")){
       // CHEFSCLUB
       switch(linguaAtiva){

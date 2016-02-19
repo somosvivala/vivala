@@ -16,7 +16,7 @@
     </div>
     <div class="select-filtro">
         <select id="horaRestaurante" class="form-control">
-            <option value="">{{ trans('global.lbl_schedule') }}</option>
+            <option value="">{{ trans('global.date_schedule') }}</option>
             @foreach($horarios as $horario)
             <option value="{{ $horario }}">{{ $horario }}</option>
             @endforeach
