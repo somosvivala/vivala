@@ -1192,11 +1192,11 @@ return[
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
     'dummy_travel_1_title' => 'Flights',
-    'dummy_travel_1' => 'Na Vivalá você encontra passagens aéreas para todo o mundo em mais de 500 companhias! Busque opções aqui!',
+    'dummy_travel_1' => 'On Vivalá you find airline tickets all over the world in over 500 companies! Search options here!',
     'dummy_travel_2_title' => 'Hotels',
-    'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência aqui na Vivalá! São mais de 200.000 possibilidades ao redor do mundo. Clique aqui para buscar!',
+    'dummy_travel_2' => 'Find the best accommodation for your next experience here on Vivalá! More than 200,000 possibilities around the world. Click here to find!',
     'dummy_travel_3_title' => 'Restaurants',
-    'dummy_travel_3' => 'Descubra excelentes restaurantes pelo Brasil e tenha até 50% de desconto com os benefícios da Vivalá. Veja mais aqui!',
+    'dummy_travel_3' => 'Discover great restaurants in Brazil and get 50% discount with the benefits of Vivalá. See more here!',
 
     /*----------------------------------------------------------------------------------
     / BLACK FRIDAY feature - serão deletados em versões futuras, só pra preencher o beta
