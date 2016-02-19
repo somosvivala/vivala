@@ -12,7 +12,7 @@
         </select>
     </div>
     <div class="select-filtro">
-            <input placeholder="Data" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataRestaurante" name="dataRestaurante" class="form-control" type="text">
+            <input placeholder="{{ trans('global.date_date') }}" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataRestaurante" name="dataRestaurante" class="form-control" type="text">
     </div>
     <div class="select-filtro">
         <select id="horaRestaurante" class="form-control">

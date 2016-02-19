@@ -710,6 +710,7 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      internoTour.start();
     }
     if(($("#tour-pilares").hasClass("pilar-viajar"))){
       // VIAJAR
@@ -810,6 +811,7 @@ $(document).ready(function() {
         console.log("Estou no MarketPlace, devo mostrar ChefsClub ou ClickBus");
         verificaMarketPlace();
       });
+      internoTour.start();
     }
     if(($("#tour-pilares").hasClass("pilar-cuidar"))){
       // CUIDAR
@@ -922,8 +924,8 @@ $(document).ready(function() {
         default:
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
+      internoTour.start();
     }
-    internoTour.start();
   });
 
   function verificaMarketPlace(){

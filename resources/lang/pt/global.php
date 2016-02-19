@@ -728,6 +728,7 @@ return[
       'date_century' => 'Século',
       'date_century_' => 'Séculos',
       'date_schedule' => 'Horário',
+      'date_date' => 'Data',
 
     /* Tempo */
       'time_00_00' => '00:00',

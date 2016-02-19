@@ -651,6 +651,7 @@ return[
       'date_century' => 'Century',
       'date_century_' => 'Centuries',
       'date_schedule' => 'Schedule',
+      'date_date' => 'Date',
 
       /* Tempo */
         'time_00_00' => '00:00 AM',
