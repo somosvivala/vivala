@@ -109,7 +109,7 @@ class ClickBusController extends Controller {
 
             if (isset($volta_obj) && isset($content_ida)) {
                 $sessionId = $ida->sessionId;
-
+                
                 $context = [
                     'http' => [
                         'ignore_errors' => true,
@@ -619,6 +619,24 @@ class ClickBusController extends Controller {
         }
 
         return json_encode($decoded);
+    }
+
+    private static function getSession($session)
+    {
+        $context = [
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'GET',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Cookie: PHPSESSID=".$session
+            ]
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/session', false, $context);
+        $decoded = json_decode($result);
+
+        return $decoded;
     }
 
 }
