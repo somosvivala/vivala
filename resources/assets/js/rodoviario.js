@@ -751,6 +751,11 @@ var bindaFormPagamento = function() {
                     closeOnConfirm: true,
                 });
             }
+
+            if (data.session !== undefined) {
+                setSessionId(data.session);
+            }
+
             var desconto = data.content.discountValue;
             var descontoFixo = data.content.isFixedValue;
             var descontoServico = data.content.serviceFeeDiscountPercentage;

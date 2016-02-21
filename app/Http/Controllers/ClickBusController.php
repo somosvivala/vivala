@@ -246,6 +246,7 @@ class ClickBusController extends Controller {
         }
 
         $sessionId = $request["frm"]["ida-sessionId"];
+        $sessionId = self::getSession($sessionId);
 
         //criando objeto content
         $content = new \stdClass();
@@ -614,12 +615,14 @@ class ClickBusController extends Controller {
     {
     	$request = Input::all();
 
+        $sessionId = self::getSession($request['request']['sessionId']);
+
         $context = [
             'http' => [
                 'ignore_errors' => true,
                 'method' => 'POST',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
-                            "Cookie: PHPSESSID=".$request['request']['sessionId'],
+                            "Cookie: PHPSESSID=".$sessionId,
                 'content' => json_encode($request)
                 ]
         ];
@@ -630,6 +633,10 @@ class ClickBusController extends Controller {
 
         if(isset($decoded) && isset($decoded->{"error"})){
             $decoded = ClickBusRepository::parseError($decoded);
+        }
+
+        if (is_object($decoded)) {
+            $decoded->session = $sessionId;
         }
 
         return json_encode($decoded);
