@@ -407,6 +407,7 @@ var removePoltronaFront = function(data,numero_poltrona,tipo_viagem){
     // Muda a cor da poltrona
     icone_poltrona.removeClass('selecionada');
 
+    setSessionId(data.content.setSessionId);
 };
 
 var bindaAbas = function() {

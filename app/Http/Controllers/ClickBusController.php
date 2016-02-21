@@ -109,7 +109,7 @@ class ClickBusController extends Controller {
 
             if (isset($volta_obj) && isset($content_ida)) {
                 $sessionId = $ida->sessionId;
-                
+
                 $context = [
                     'http' => [
                         'ignore_errors' => true,
@@ -158,6 +158,8 @@ class ClickBusController extends Controller {
         $request['request']['schedule']['date'] = ClickBusRepository::dateFormat($request['request']['schedule']['date']);
         $data = json_encode($request);
 
+        $sessionId = self::getSession($sessionId);
+
         $context = [
         	'http' => [
                 'ignore_errors' => true,
@@ -189,6 +191,8 @@ class ClickBusController extends Controller {
     	$request = Input::get('params');
 
         $sessionId = $request['request']["sessionId"];
+
+        $sessionId = self::getSession($sessionId);
 
         $data = json_encode($request);
 
@@ -258,8 +262,6 @@ class ClickBusController extends Controller {
                 'content' => json_encode($content)
             ]
         ];
-
-
 
         $context = stream_context_create($context);
         $result = file_get_contents(self::$url.'/payments', false, $context);
@@ -375,10 +377,16 @@ class ClickBusController extends Controller {
 
         // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view _checkout
         if(isset($decoded) && !isset($decoded->{"error"})){
-            return view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta'));
+            return [
+                "html" => view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta')),
+                "session" => $sessionId
+            ];
         } else {
         // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS
             $result = ClickBusRepository::parseError($decoded);
+            if (env('APP_ENV') == 'local') {
+                $result['debug'] = $decoded;
+            }
             return $result;
         }
     }
@@ -407,6 +415,8 @@ class ClickBusController extends Controller {
         }
 
         $data = json_encode($request);
+
+        $sessionId = self::getSession($sessionId);
 
         $context = [
             'http' => [
@@ -589,6 +599,10 @@ class ClickBusController extends Controller {
             $retorno = ClickBusRepository::parseError($decoded);
         }
 
+        if (env('APP_ENV') == 'local') {
+            $retorno['debug'] = $decoded;
+        }
+
         //TODO tratar retorno? esse retorno contem dados do cartao!!
         return $retorno;
     }
@@ -636,7 +650,7 @@ class ClickBusController extends Controller {
         $result = file_get_contents(self::$url.'/session', false, $context);
         $decoded = json_decode($result);
 
-        return $decoded;
+        return $decoded->content;
     }
 
 }
