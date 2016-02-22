@@ -18,8 +18,8 @@
         </div>
     </div>
     <div class="col-sm-12 text-center">
-        <small class="font-bold-upper text-center margin-b-2">{{ trans('global.wannavolunteer_see_some_causes') }}
-            <h3 class="sub-titulo margin-t-1">{!! trans('global.wannavolunteer_find_some_projects_near_you') !!}</h3>
+        <small class="font-bold-upper text-center margin-b-2">{{ trans('global.wannavolunteer_find_some_projects_near_you') }}
+            <h3 class="sub-titulo margin-t-1">{!! trans('global.wannavolunteer_see_some_causes') !!}</h3>
         </small>
         @include('cuidar._listacausafiltro')
     </div>
