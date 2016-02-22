@@ -10,7 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -118,6 +117,7 @@ Route::bind('prettyURL', function($value, $route)
  */
 Route::group(['before' => 'auth'], function() {
 	Route::get('perfil', 'PerfilController@index');
+	Route::get('perfil/queryList', 'PerfilController@getQueryList');
 	Route::get('editarPerfil', 'PerfilController@edit');
 	Route::post('editarPerfil/{id}', 'PerfilController@update');
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');

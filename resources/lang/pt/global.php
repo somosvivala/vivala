@@ -242,6 +242,7 @@ return[
   'lbl_comment_' => 'Comentários',
   'lbl_commentr' => 'Comentar',
   'lbl_commentr1' => 'Comentar...',
+  'lbl_commentr2' => 'Compartilhe visões engrandecedoras com a rede da Vivalá!',
   'lbl_comment_not_found' => 'Nenhum comentário encontrado.',
   'lbl_company' => 'Empresa',
   'lbl_company_' => 'Empresas',
@@ -887,13 +888,15 @@ return[
     'wannavolunteer_subtitle' => 'Faça trabalhos voluntários e desenvolva o país.',
     'wannavolunteer_cause_already_know' => 'Já sabe como ajudar?',
     'wannavolunteer_cause_find_in_three_steps' => 'Encontre projetos de Impacto Social em 3 passos.',
-    'wannavolunteer_see_some_causes' => 'Veja causas nobres',
-    'wannavolunteer_find_some_projects_near_you' => 'Descubra projetos de impacto social pertinho de você!',
+    'wannavolunteer_see_some_causes' => 'Com qual <span class="laranja">Vaga</span> você se identifica?',
+    'wannavolunteer_find_some_projects_near_you' => 'Alguns projetos de Impacto Social precisam de você,',
     'wannavolunteer_see_some_projects_suggest_to_follow' => 'Sugestão de Projetos de Impacto para seguir',
     'wannavolunteer_projects_to_follow' => 'Projetos de Impacto para seguir',
     'wannavolunteer_seeing_some_projects' => 'Procurando por causas?',
     'wannavolunteer_looking_for_jobs' => 'Procurando vagas?',
     'wannavolunteer_search_in_three_steps' => 'Encontre em 3 passos.',
+    'wannavolunteer_menu_create_your_project' => 'Crie Seu Projeto de Impacto',
+
 
   /* View: Emails */
 
