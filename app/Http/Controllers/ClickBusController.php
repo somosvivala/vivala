@@ -376,10 +376,12 @@ class ClickBusController extends Controller {
         $Ida->company = $request["frm"]["ida-company"];
         $Ida->classe = $request["frm"]["ida-classe"];
 
-        // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view _checkout
+        // Se o $decoded não possuir nenhum error internamente, retorno os dados tratados para a view _checkout
         if(isset($decoded) && !isset($decoded->{"error"})){
-            return [
-                "html" => view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta')),
+          return [
+            //Como não estamos devolvendo a view diretamente (return view('nome', ...), 
+            //precisamos chamar o ->render() para obter o html
+                "html" => view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta'))->render(),
                 "session" => $sessionId
             ];
         } else {
