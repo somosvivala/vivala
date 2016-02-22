@@ -250,4 +250,25 @@ class PerfilController extends ConectarController {
 	    return 'success';
 	}
 
+	/**
+	 * retorna lista de perfis 
+	 * @param  Request $request [string]
+	 * @return [array]           
+	 */
+	public function getQueryList()
+	{
+		$query = Input::get('query');
+
+		$perfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
+			->orWhere('apelido', 'ilike', "%{$query}%")
+			->limit(10)
+			->get();
+
+		foreach ($perfils as &$perfil) {
+			$perfil->photo = $perfil->getAvatarUrl();
+		}
+
+		return view('perfil._listaperfis', compact('perfils'));
+	}
+
 }
