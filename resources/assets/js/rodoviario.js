@@ -407,6 +407,7 @@ var removePoltronaFront = function(data,numero_poltrona,tipo_viagem){
     // Muda a cor da poltrona
     icone_poltrona.removeClass('selecionada');
 
+    setSessionId(data.content.setSessionId);
 };
 
 var bindaAbas = function() {
@@ -750,6 +751,11 @@ var bindaFormPagamento = function() {
                     closeOnConfirm: true,
                 });
             }
+
+            if (data.session !== undefined) {
+                setSessionId(data.session);
+            }
+
             var desconto = data.content.discountValue;
             var descontoFixo = data.content.isFixedValue;
             var descontoServico = data.content.serviceFeeDiscountPercentage;

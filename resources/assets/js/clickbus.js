@@ -350,7 +350,7 @@ var tripPayment = function(request, frm) {
     $.ajax({
         url: 'clickbus/payment',
         type: 'POST',
-        dataType: 'html',
+        dataType: 'json',
         data: {
             params: {
                 "frm" : frmObj,
@@ -363,12 +363,12 @@ var tripPayment = function(request, frm) {
             "contents": params.contents
         }
     })
-    .error(function(data) {
+    .error(function(json) {
 
-        var json= {};
+        /*var json= {};
         try {
             json = JSON.parse(data);
-        } catch(error) {}
+        } catch(error) {}*/
 
         swal({
             title: json.errors1,
@@ -381,13 +381,13 @@ var tripPayment = function(request, frm) {
         function() {
         });
     })
-    .done(function(data) {
+    .done(function(json) {
 
         // Try/Catch com o data, json do erroXhtml data dos ônibus
-        var json= {};
+        /*var json= {};
         try {
             json = JSON.parse(data);
-        } catch(error) {}
+        } catch(error) {}*/
 
         //se tiver dado erro
         if (json.errors) {
@@ -403,7 +403,8 @@ var tripPayment = function(request, frm) {
             });
         //Se estiver tudo ok.
         } else {
-            $('#clickbus-resultado-busca').html(data);
+            $('#clickbus-resultado-busca').html(json.html);
+            setSessionId(json.session);
             bindaAbas();
             bindaBandeirasCartao();
             bindaChangePagamento();
