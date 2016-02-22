@@ -13,7 +13,7 @@
 
 		<!-- Adiciona um text field para o form-->
 		<div class="form-group">
-                        {!! Form::textarea("conteudo", null, ['title'=> trans('global.lbl_comment'), 'aria-label'=> trans('global.lbl_commetn'), 'placeholder'=> trans('global.lbl_commentr2'), 'class' => 'sem-resize' ]) !!}
+                        {!! Form::textarea("conteudo", null, ['title'=> trans('global.lbl_comment'), 'aria-label'=> trans('global.lbl_commetn'), 'placeholder'=> trans('global.lbl_commentr1'), 'class' => 'sem-resize' ]) !!}
 		</div>
 
 		<!-- Adiciona submit button para o form -->

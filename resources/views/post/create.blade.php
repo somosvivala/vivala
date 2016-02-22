@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="row">
-                {!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_share'), 'aria-label'=> trans('global.lbl_share'), 'placeholder'=> trans('global.lbl_share'), 'class' => 'sem-resize']) !!}
+                {!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_commentr2'), 'aria-label'=> trans('global.lbl_share'), 'placeholder'=> trans('global.lbl_share'), 'class' => 'sem-resize']) !!}
             </div>
             <div class="row padding-t-1">
                 <div class="hidden-xs hidden-sm col-md-10 padding-t-1">
