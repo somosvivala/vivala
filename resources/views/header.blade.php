@@ -72,7 +72,7 @@
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-md hidden-sm col-lg-4">
-                                                <input class="busca-geral-menu hide" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
+                                                <input data-url="{{ url() }}" class="busca-geral-menu" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
 	</div>
 	<ul id="tres-menus-vivala" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto tour-pilares-step2">
 		@if (Auth::guest())
