@@ -2,12 +2,12 @@
 	<h4 class="suave tour-pilar-cuidar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_volunteer') }}!</h4>
 	<nav class="menu-lateral">
 		<ul>
-			<li><a href="/cuidar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{ trans('global.lbl_homepage') }}</a></li>
-			<li><a href="/paginas/criarpagina" class="click-img-no-border"><i class="icon-menu-lateral fa fa-2x fa-pencil"></i>{{ trans('global.wannavolunteer_menu_create_your_project') }}</a></li> 
+			<li><a href="/paginas/criarpagina" class="click-img-no-border"><i class="icon-menu-lateral fa fa-2x fa-pencil"></i>{{ trans('global.wannavolunteer_menu_create_your_project') }}</a></li>
 			<li class="tour-pilar-cuidar-step2"><a href="/ongs" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-coracao-caridoso vi"></i>{{ trans('global.lbl_project_') }}</a></li>
 	    <li class="tour-pilar-cuidar-step3"><a href="/vagas" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-bandeira vi"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>
 			{{-- DESATIVADO TEMPORARIAMENTE
-			<!--li><a href="/paginas/porquecuidar" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-usuario-em-duvida vi cinza-morto"></i>{{ trans('global.lbl_why_care') }}</a></li>
+			<!--li><a href="/cuidar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{ trans('global.lbl_homepage') }}</a></li>
+			<li><a href="/paginas/porquecuidar" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-usuario-em-duvida vi cinza-morto"></i>{{ trans('global.lbl_why_care') }}</a></li>
 	    <li><a href="/resultados" class="click-img-no-border"><i class="icon-menu-lateral vi icon-vivala-relatorio cinza-morto"></i>{{ trans('global.lbl_result_') }}</a></li>
 	    <li><a href="/mapadobem" class="click-img-no-border"><i class="icon-menu-lateral vi icon-vivala-mapa-do-bem cinza-morto"></i>{{ trans('global.lbl_map_goodness') }}</a></li-->
 			--}}

@@ -2,9 +2,9 @@
 	<h4 class="suave tour-pilar-viajar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_travel') }}!</h4>
 	<nav class="menu-lateral">
 		<ul>
-			<li><a href="/viajar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{  trans('global.lbl_homepage') }}</a></li>
 			{{-- DESATIVADO TEMPORARIAMENTE
-			<!-- li><a class="click-img-no-border" href="/montarviagem"><i class="icon-menu-lateral icon-vivala-binoculos cinza-morto vi"></i>{{ trans('global.lbl_travel_setup') }}</a></li>
+			<!--li><a href="/viajar" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-casa vi"></i>{{  trans('global.lbl_homepage') }}</a></li>
+			<li><a class="click-img-no-border" href="/montarviagem"><i class="icon-menu-lateral icon-vivala-binoculos cinza-morto vi"></i>{{ trans('global.lbl_travel_setup') }}</a></li>
 			<li><a class="click-img-no-border" href="/verpacotes"><i class="icon-menu-lateral icon-vivala-olhos cinza-morto vi"></i>{{ trans('global.wannatravel_route_see_') }}</a></li>
 			<li><a class="click-img-no-border" href="/meusfavoritos"><i class="icon-menu-lateral icon-vivala-coracao cinza-morto vi"></i>{{ trans('global.lbl_wishlist') }}</a></li>
 			<li><a class="click-img-no-border" href="/minhascompras"><i class="icon-menu-lateral icon-vivala-mochila cinza-morto vi"></i>{{ trans('global.lbl_purchase_my_') }}</a></li>
