@@ -408,5 +408,7 @@ return[
     'clickbus_misc-error-8' => '',
     'clickbus_misc-error-9' => '',
     'clickbus_misc-error-10' => '',
+
+    'clickbus_error-A44' => 'Tente outro voucher.',
 ];
 ?>
