@@ -28,7 +28,7 @@ class GestaoController extends Controller {
             $data_fim = Input::get('data_fim');
 
             if(!$data_inicio) {
-                $data_inicio =  '2015-10-16 05:51:39'; //Dia do primeiro user
+                $data_inicio =  '2015-10-16 00:13:37'; //Dia do primeiro user
             }
             if(!$data_fim) {
                 $data_fim = date('Y-m-d H:i:s'); 

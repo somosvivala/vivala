@@ -1,11 +1,11 @@
 <div class="col-xs-12 col-sm-12 col-md-9 fundo-cheio">
 
-    <div class="row">
+    <div class="row padding-t-10" id="consulta_users_gestao">
         <div class="col-sm-5">
-            <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" data-date-start-date="0d" type="text">
+            <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" type="text">
         </div>
         <div class="col-sm-5">
-            <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" data-date-start-date="0d" type="text">
+            <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" type="text">
         </div>
         <div class="col-sm-2">
             <button id="consulta-grafico" type="button" class="btn btn-acao">Consultar</button>
@@ -19,12 +19,28 @@
             $("#consulta-grafico").click(function(){
                 dataInicio = $("input#data-inicial").val();
                 dataFim = $("input#data-final").val();
-                console.log(dataInicio);
-                console.log(dataFim);
+                $.ajax({
+                    url: "gestao/users",
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        data_inicio: dataInicio,
+                        data_fim: dataFim
+                    },
+                }).done(function(data) {
+                    console.log(data);
+                    $("#consulta_users_gestao").hide();
+                    atualizaChart(data);
+                    $("#chart_div").show();
+                }).error(function() {
+                    alert('Algo deu errado, tente novamente.');
+                });
             });
         }
+
         atualizaChart = function(data) {
             graficoXY = [];
+            console.log(data);
             data.forEach(function(intervalo) {
                 console.log(intervalo);
                 graficoXY.push({ x: new Date(intervalo.intervalo.replace(/-/g, "/")), y: intervalo.qtd});
