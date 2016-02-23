@@ -5,7 +5,7 @@
             <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" type="text">
         </div>
         <div class="col-sm-5">
-            <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" type="text">
+            <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" data-date-end-date="0d" type="text">
         </div>
         <div class="col-sm-2">
             <button id="consulta-grafico" type="button" class="btn btn-acao">Consultar</button>
@@ -17,16 +17,16 @@
 
         window.onload = function(){
             $("#consulta-grafico").click(function(){
-                dataInicio = $("input#data-inicial").val();
-                dataFim = $("input#data-final").val();
+                dataInicio = $("input#data-inicial").val().split('/').reverse().join("-");
+                dataFim = $("input#data-final").val().split('/').reverse().join("-");
                 $.ajax({
-                    url: "gestao/users",
+                    url: "/gestao/users",
                     type: 'GET',
                     dataType: 'json',
                     data: {
                         data_inicio: dataInicio,
                         data_fim: dataFim
-                    },
+                    }
                 }).done(function(data) {
                     console.log(data);
                     $("#consulta_users_gestao").hide();
