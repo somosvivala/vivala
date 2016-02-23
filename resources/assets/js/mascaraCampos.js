@@ -22,16 +22,14 @@ function mcep(v){
 }
 /*
   Máscara Telefone com DDD + 9º dígito  no formato (00) 00000-000
-*/
-window.onload = function(){
-	id('mascara-telefone').onkeypress = function(){
-		mascara(this, mtel);
-	}
-}
-/*
+  +
   Máscara CEP no formato  00000-000
 */
 window.onload = function(){
+  id('mascara-telefone').onkeypress = function(){
+		mascara(this, mtel);
+	}
+
   id('mascara-cep').onkeypress = function(){
     mascara(this, mcep);
   }
