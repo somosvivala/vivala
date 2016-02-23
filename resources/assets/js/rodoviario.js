@@ -710,7 +710,7 @@ var bindaFormPagamento = function() {
 
         var voucherStr = $('#voucher-str').val();
 
-        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner laranja'></i>");
+        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
 
         //pegando id da aba de pagamento ativa
         var idTabPagamentoAtiva = $('ul#abas-cliente li.active a')[0].id;
@@ -765,6 +765,9 @@ var bindaFormPagamento = function() {
             $("#desconto-fixo").val(descontoFixo);
             $("#desconto-servico").val(descontoServico);
 
+            $("#usar-voucher-desconto").html("USAR CUPOM");
+            atualizaValorParcelas();
+        }).error(function() {
             $("#usar-voucher-desconto").html("USAR CUPOM");
             atualizaValorParcelas();
         });
