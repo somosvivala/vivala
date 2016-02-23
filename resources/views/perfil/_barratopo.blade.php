@@ -137,7 +137,13 @@
         </ul>
         <ul class="margin-0">
             <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_know_more_things') }}</a></li>
-            <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_message_send') }}</a></li>
+            <li class="col-sm-6"><a href="#" class="desativado">
+                @if( $perfil->tipo == 'ong' )
+                    {{ trans('global.ong_contact_keep_in') }}
+                @else
+                    {{ trans('global.lbl_message_send') }}
+                @endif
+            </a></li>
         </ul>
     </div>
     <div class="col-md-1">
