@@ -1,11 +1,11 @@
 <div class="col-xs-12 col-sm-12 col-md-9 fundo-cheio">
 
-    <div class="row margin-t-5" id="consulta_users_gestao">
+    <div class="row" id="consulta_users_gestao">
         <div class="col-sm-12">
             <h2>Consultar usuários cadastrados por data</h2>
         </div>
         <div class="col-sm-5">
-            <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" type="text">
+            <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" data-date-default-view-date="-1y" type="text">
         </div>
         <div class="col-sm-5">
             <input placeholder="Data final" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-final" name="data-final" class="form-control mascara-data" data-date-end-date="0d" type="text">
@@ -15,16 +15,11 @@
         </div>
     </div>
     <div id="chart_div">
-        <button class="btn btn-acao" id="nova-consulta-grafico">Nova consulta</button>
     </div>
 
     <script type="text/javascript">
 
         window.onload = function(){
-            $("#nova-consulta-grafico").click(function(){
-                    $("#consulta_users_gestao").show();
-                    $("#chart_div").hide();
-            });
             $("#consulta-grafico").click(function(){
                 dataInicio = $("input#data-inicial").val().split('/').reverse().join("-");
                 dataFim = $("input#data-final").val().split('/').reverse().join("-");
@@ -37,9 +32,7 @@
                         data_fim: dataFim
                     }
                 }).done(function(data) {
-                    $("#consulta_users_gestao").hide();
                     atualizaChart(data);
-                    $("#chart_div").show();
                 }).error(function() {
                     alert('Algo deu errado, tente novamente.');
                 });
