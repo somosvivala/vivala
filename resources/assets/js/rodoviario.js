@@ -750,23 +750,28 @@ var bindaFormPagamento = function() {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 });
+
+                $("#usar-voucher-desconto").html("USAR CUPOM");
+                atualizaValorParcelas();
+            } else {
+
+                if (data.session !== undefined) {
+                    setSessionId(data.session);
+                }
+
+                var desconto = data.content.discountValue;
+                var descontoFixo = data.content.isFixedValue;
+                var descontoServico = data.content.serviceFeeDiscountPercentage;
+
+                // Atualiza valores nos campos hidden
+                $("#desconto").val(desconto);
+                $("#desconto-fixo").val(descontoFixo);
+                $("#desconto-servico").val(descontoServico);
+
+                $("#usar-voucher-desconto").html("USAR CUPOM");
+                atualizaValorParcelas();
             }
 
-            if (data.session !== undefined) {
-                setSessionId(data.session);
-            }
-
-            var desconto = data.content.discountValue;
-            var descontoFixo = data.content.isFixedValue;
-            var descontoServico = data.content.serviceFeeDiscountPercentage;
-
-            // Atualiza valores nos campos hidden
-            $("#desconto").val(desconto);
-            $("#desconto-fixo").val(descontoFixo);
-            $("#desconto-servico").val(descontoServico);
-
-            $("#usar-voucher-desconto").html("USAR CUPOM");
-            atualizaValorParcelas();
         }).error(function() {
             $("#usar-voucher-desconto").html("USAR CUPOM");
             atualizaValorParcelas();
