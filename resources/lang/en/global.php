@@ -846,6 +846,7 @@ return[
     'ong_contact_manager' => 'Person in Charge',
     'ong_contact_telephone' => 'Telephone',
     'ong_contact_email' => 'Email',
+    'ong_contact_keep_in' => 'Contact Us',
     'ong_search_for_ongs' => 'Searching for NGOs?',
     'ong_find_ongs_three_steps' => 'Find interesnting projects in 3 steps.',
 

@@ -931,6 +931,7 @@ return[
     'ong_contact_manager' => 'Selecionar Responsável',
     'ong_contact_telephone' => 'Telefone para contato',
     'ong_contact_email' => 'Email para contato',
+    'ong_contact_keep_in' => 'Entre em Contato',
     'ong_search_for_ongs' => 'Procurando por Transformação?',
     'ong_find_ongs_three_steps' => 'Encontre Projetos de Impacto em três passos.',
 

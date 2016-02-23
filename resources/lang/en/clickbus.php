@@ -178,8 +178,7 @@ return[
 'clickbus_error-J6' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your request before it’s sent to the Booking Engine.',
 'clickbus_error-J7' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your request to the Booking Engine.',
 'clickbus_error-J8' => 'Please provide a valid date for DEPARTURE.<br/>The value for DEPARTURE is invalid or incorrect.',
-'clickbus_error-J9' => 'The DEPARTURE date cannot occur in a day before today.<br/>The value for DEPARTURE cannot be a date in the past.',
-
+'clickbus_error-J9' => 'The DEPARTURE date cannot occur in a day before today.<br/>The value for DEPARTURE cannot be a date in the past.', 
 // Pagamentos
 'clickbus_error-K1' => 'Please provide the META BLOCK.<br/>The parameter meta is missing from the Request.',
 'clickbus_error-K2' => 'Please provide your store parameters for META.<br/>At least one of the parameters store, model or platform is missing.',
@@ -397,6 +396,7 @@ return[
 'clickbus_prod-error-L47' => 'Discount is valid just for round trips.<br/>This voucher can only be applied for round trips.',
 'clickbus_prod-error-L48' => 'Invalid discount for this busline.<br/>The selected seats must be from a trip which belongs to the bus company configured for this voucher.',
 
+
 // Misc.
 'clickbus_misc-error-1' => 'Ops!',
 'clickbus_misc-error-2' => 'Something went wrong with your search!',
@@ -408,5 +408,7 @@ return[
 'clickbus_misc-error-8' => '',
 'clickbus_misc-error-9' => '',
 'clickbus_misc-error-10' => '',
+
+'clickbus_error-A44' => 'Try another voucher.',
 ];
 ?>

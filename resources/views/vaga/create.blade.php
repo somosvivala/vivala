@@ -20,7 +20,6 @@
                         </div>
                     </div>
                 </a>
-            </div>
             <div class="modal cropper-foto-modal fade" id="cropper-vaga-modal">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
@@ -36,7 +35,7 @@
                                     <span class="fa fa-upload"></span>
                                     SELECIONE UMA IMAGEM
                                 </span>
-                            </label>    
+                            </label>
                             <div id="cropper-vaga" class="cropper-img">
                                 <img src="{{ '/img/querocuidar.png' }}" />
                             </div>
