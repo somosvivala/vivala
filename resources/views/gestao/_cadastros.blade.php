@@ -1,6 +1,9 @@
 <div class="col-xs-12 col-sm-12 col-md-9 fundo-cheio">
 
-    <div class="row padding-t-10" id="consulta_users_gestao">
+    <div class="row margin-t-5" id="consulta_users_gestao">
+        <div class="col-sm-12">
+            <h2>Consultar usuários cadastrados por data</h2>
+        </div>
         <div class="col-sm-5">
             <input placeholder="Data inicial" data-provide="datepicker" data-date-today-highlight="true" data-date-language="pt-BR" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-inicial" name="data-inicial" class="form-control mascara-data" type="text">
         </div>
@@ -11,11 +14,17 @@
             <button id="consulta-grafico" type="button" class="btn btn-acao">Consultar</button>
         </div>
     </div>
-    <div id="chart_div"></div>
+    <div id="chart_div">
+        <button class="btn btn-acao" id="nova-consulta-grafico">Nova consulta</button>
+    </div>
 
     <script type="text/javascript">
 
         window.onload = function(){
+            $("#nova-consulta-grafico").click(function(){
+                    $("#consulta_users_gestao").show();
+                    $("#chart_div").hide();
+            });
             $("#consulta-grafico").click(function(){
                 dataInicio = $("input#data-inicial").val().split('/').reverse().join("-");
                 dataFim = $("input#data-final").val().split('/').reverse().join("-");
@@ -28,7 +37,6 @@
                         data_fim: dataFim
                     }
                 }).done(function(data) {
-                    console.log(data);
                     $("#consulta_users_gestao").hide();
                     atualizaChart(data);
                     $("#chart_div").show();
@@ -40,12 +48,10 @@
 
         atualizaChart = function(data) {
             graficoXY = [];
-            console.log(data);
             data.forEach(function(intervalo) {
                 console.log(intervalo);
                 graficoXY.push({ x: new Date(intervalo.intervalo.replace(/-/g, "/")), y: intervalo.qtd});
             });
-                console.log(graficoXY);
             CanvasJS.addColorSet("vivacolor",
             [//colorSet Array
 
