@@ -574,7 +574,11 @@ class ClickBusController extends Controller {
                 'volta_trip_date' => $volta_trip_date,
                 'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false
             ]);
+        
+         //Compra falhou
 
+        } else {
+            $retorno = ClickBusRepository::parseError($decoded);
         }
 
         // Booking
@@ -596,17 +600,8 @@ class ClickBusController extends Controller {
                 "volta_data" => $compra->volta_trip_date,
                 "total" => $compra->total
             ];
-
-        //Compra falhou
-        } else if (isset($decoded)) {
-            $retorno = ClickBusRepository::parseError($decoded);
         }
-
-        if (env('APP_ENV') == 'local') {
-            $retorno['debug'] = $decoded;
-        }
-
-        //TODO tratar retorno? esse retorno contem dados do cartao!!
+        
         return $retorno;
     }
 

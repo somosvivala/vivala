@@ -58,6 +58,12 @@ class ClickBusRepository {
     // Função de Tratamento de Erros da ClickBus
     public static function parseError($data)
     {
+      if ( !isset($data) ) {
+            $data = new \stdClass();
+            $data->error[] = new \stdClass();
+            $data->error[0]->code = "L25";
+        }
+
         // Estou no ambiente de produção (MASTER)
         if(app()->environment('production')){
             $opt1 = [
