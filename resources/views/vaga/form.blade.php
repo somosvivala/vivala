@@ -22,7 +22,7 @@
         <div id="ong-dados-endereco" class="row">
             <div class="col-sm-12">
                 <div class="form-group col-sm-6">
-                    {!! Form::text("cep", null, ['title' => trans('global.ong_address_zipcode'), 'placeholder' => trans('global.address_zipcode'), 'id' => 'mascara-cep', 'class' => 'form-control', 'maxlength' => 9]) !!}
+                    {!! Form::text("cep", null, ['title' => trans('global.ong_address_zipcode'), 'placeholder' => trans('global.address_zipcode'), 'class' => 'form-control mascara-cep', 'maxlength' => 9]) !!}
                 </div>
                 <div class="form-group col-sm-6">
                     {!! Form::text("logradouro",  null , ['title' => trans('global.ong_address_patio'), 'placeholder' => trans('global.address_street'), 'class' => 'form-control']) !!}
@@ -69,7 +69,7 @@
     <div id="causa-contato" class="row margin-t-2">
         <h5 class="col-sm-12">{{ trans('global.lbl_contact') }}</h5>
         <div class="col-sm-6">
-            {!! Form::text("telefone_contato",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), 'id' => 'mascara-telefone', 'class' => 'form-control col-sm-6', 'maxlength'=> 15]) !!}
+            {!! Form::text("telefone_contato",  null , ['title' => trans('global.ong_contact_telephone'), 'placeholder' => trans('global.ong_contact_telephone'), class' => 'form-control col-sm-6 mascara-telefone', 'maxlength'=> 15]) !!}
         </div>
     </div>
     <div class="row margin-t-1">
