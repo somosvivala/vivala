@@ -108,12 +108,14 @@
 	<div class="notificacoes-follow">
 	    @include('_notificacoesFollow')
 	</div>
-	<button type="button" id="notificacoes-msg" class="tour-pilares-step7" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
+	{{-- DESATIVADO TEMPORARIAMENTE
+	<!-- button type="button" id="notificacoes-msg" class="tour-pilares-step7" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
 		<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
                         </button>
-                          <div class="notificacoes-msg">
+                        <div class="notificacoes-msg">
                               @include('_notificacoesMsg')
-                          </div>
+                        </div-->
+                        --}}
                         <button type="button" id="notificacoes-geral" class="tour-pilares-step8" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
                                                 <i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
                         </button>
@@ -122,7 +124,7 @@
                         </div>
                         {{-- Botão de HINTS [TODO] para o TOUR interno da plataforma (?) - senão remover --}}
                         <button type="button" id="notificacoes-ajuda" class="tour-pilares-step9" data-unread="0" title='{{ trans("global.lbl_help") }}'>
-                                                <i class="icon-menu-notificacao fa fa-3x fa-question" alt=''></i>
+                                                <i class="icon-menu-notificacao icon-menu--notificacao-fontawesome-fix fa fa-question" alt='{{ trans("global.lbl_help") }}'></i>
                         </button>
 </div>
 

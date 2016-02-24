@@ -5,7 +5,7 @@
     <div class="col-sm-12 foto-fundo foto-header" style="background-image:url('{{ $vaga->getCapaUrl() }}');">
     @if($vaga->podeEditar)
     <div class="hora-post">
-        <a class="btn btn-action edit-vaga" href="/vagas/{{$vaga->id}}/edit">
+        <a class="btn btn-primario btn-acao edit-vaga" href="/vagas/{{$vaga->id}}/edit">
             <small>{{ trans('global.lbl_edit') }}</small>
         </a>
     </div>

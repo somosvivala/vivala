@@ -204,6 +204,7 @@ return[
   'lbl_comment_' => 'Comments',
   'lbl_commentr' => 'Comment',
   'lbl_commentr1' => 'Comment...',
+  'lbl_commentr2' => 'Share aggrandizing visions with the Vivalá network!'
   'lbl_comment_not_found' => 'No Comment found.',
   'lbl_company' => 'Company',
   'lbl_company_' => 'Companies',
@@ -805,11 +806,12 @@ return[
     'wannavolunteer_subtitle' => 'Do volunteer work and develop the country.',
     'wannavolunteer_cause_already_know' => 'Already know what causes want to help?',
     'wannavolunteer_cause_find_in_three_steps' => 'Find Social Impact projects in 3 easy steps.',
-    'wannavolunteer_see_some_causes' => 'See noble causes',
-    'wannavolunteer_find_some_projects_near_you' => 'Discover close social impact projects you!',
+    'wannavolunteer_see_some_causes' => 'With wich <span class="laranja">social job</span> do you identify more?',
+    'wannavolunteer_find_some_projects_near_you' => 'Some Social Impact projects needs you,',
     'wannavolunteer_see_some_projects_suggest_to_follow' => 'Suggestion of Social Impact projects to follow',
     'wannavolunteer_seeing_some_projects' => 'Searching some causes?',
     'wannavolunteer_search_in_three_steps' => 'Find in 3 simple steps.',
+    'wannavolunteer_menu_create_your_project' => 'Create your Social Impact project',
 
   /* View: Emails */
 
@@ -844,6 +846,7 @@ return[
     'ong_contact_manager' => 'Person in Charge',
     'ong_contact_telephone' => 'Telephone',
     'ong_contact_email' => 'Email',
+    'ong_contact_keep_in' => 'Contact Us',
     'ong_search_for_ongs' => 'Searching for NGOs?',
     'ong_find_ongs_three_steps' => 'Find interesnting projects in 3 steps.',
 

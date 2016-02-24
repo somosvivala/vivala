@@ -78,6 +78,7 @@ elixir(function(mix) {
       '../../assets/js/ongs.js',
       '../../assets/js/tour.js',
       '../../assets/js/buscaPerfil.js',
+      '../../assets/js/mascaraCampos.js',
       /*'../../assets/js/zoomfinanciamentocoletivo.js'*/
 	], 'public/js/vendor.js');
 });

@@ -21,8 +21,11 @@ class AuthController extends Controller {
 	| a simple trait to add these behaviors. Why don't you explore it?
 	|
 	*/
-
 	use AuthenticatesAndRegistersUsers;
+
+  //overriding a propriedade $redirectTo, aplica para o login e o register  
+  protected $redirectTo = '/viajar';
+
 
 	/**
 	 * Create a new authentication controller instance.
@@ -39,7 +42,7 @@ class AuthController extends Controller {
 		$this->middleware('guest', ['except' => 'getLogout']);
 	}
 
-	
+	//overriding o postRegister Method, assim apos o registro vai pro /home
 	public function postRegister(Request $request)
     {
 

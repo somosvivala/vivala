@@ -40,7 +40,7 @@ class FacebookController extends Controller {
 
         //Se criou um novo usuario, entao preciso redirecionar para o quiz		
         //se nao, redirecionar para a home
-        return $this->criouNovoUsuario ? redirect('/quiz') : redirect('/home');
+        return $this->criouNovoUsuario ? redirect('/quiz') : redirect('/viajar');
     }
 
     private function getFacebookUser()

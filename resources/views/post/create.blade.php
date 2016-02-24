@@ -20,18 +20,20 @@
                     <input type="radio" name="tipo_post" value="foto" id="foto">
                     <label for="foto">{{ trans('global.lbl_photo_add') }}</label>
                 </li>
-                <li class="hidden-xs hidden-sm col-md-3">
+                {{-- DESATIVADO TEMPORARIAMENTE
+                <!--li class="hidden-xs hidden-sm col-md-3 hide">
                     <input type="radio" name="tipo_post" value="video" id="video" disabled="disabled">
                     <label for="video">{{ trans('global.lbl_video_add')}}</label>
                 </li>
-                <li class="hidden-xs hidden-sm col-md-2">
+                <li class="hidden-xs hidden-sm col-md-2 hide">
                     <input type="radio" name="tipo_post" value="album" id="album" disabled="disabled">
                     <label for="album">{{ trans('global.lbl_album_create') }}</label>
                 </li>
-                <li class="hidden-xs hidden-sm col-md-2">
+                <li class="hidden-xs hidden-sm col-md-2 hide">
                     <input type="radio" name="tipo_post" value="localizacao" id="localizacao" disabled="disabled">
                     <label for="localizacao">{{trans('global.lbl_localization')}}</label>
-                </li>
+                </li-->
+                --}}
             </ul>
             <div class="row adicionar-foto-container">
                 <input class="fileupload" type="file" name="foto" data-url="/foto/uploadphoto" multiple>
@@ -41,14 +43,16 @@
                 </div>
             </div>
             <div class="row">
-                {!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_share'), 'aria-label'=> trans('global.lbl_share'), 'placeholder'=> trans('global.lbl_share'), 'class' => 'sem-resize']) !!}
+                {!! Form::textarea("descricao", null, ['title'=> trans('global.lbl_share'), 'aria-label'=> trans('global.lbl_share'), 'placeholder'=> trans('global.lbl_commentr2'), 'class' => 'sem-resize']) !!}
             </div>
             <div class="row padding-t-1">
                 <div class="hidden-xs hidden-sm col-md-10 padding-t-1">
                     <ul class="lista-intervalo-preto">
-                      <li class="col-xs-4 col-sm-4"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_travel_guide_add') }}</a></li>
-                      <li class="col-xs-5 col-sm-5"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_travel_log_add') }}</a></li>
-                      <li class="col-xs-3 col-sm-3"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_tag_friends') }}</a></li>
+                    {{-- DESATIVADO TEMPORARIAMENTE
+                      <!--li class="col-xs-4 col-sm-4 hide"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_travel_guide_add') }}</a></li>
+                      <li class="col-xs-5 col-sm-5 hide"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_travel_log_add') }}</a></li>
+                      <li class="col-xs-3 col-sm-3 hide"><a class="cinza-morto" href="javascript:void(0)">{{ trans('global.lbl_tag_friends') }}</a></li-->
+                    --}}
                     </ul>
                 </div>
                 {!! Form::submit( trans('global.lbl_publish'), ['class' => 'col-xs-4 pull-right col-md-2 btn btn-acao']) !!}

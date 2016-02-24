@@ -407,6 +407,7 @@ var removePoltronaFront = function(data,numero_poltrona,tipo_viagem){
     // Muda a cor da poltrona
     icone_poltrona.removeClass('selecionada');
 
+    setSessionId(data.content.setSessionId);
 };
 
 var bindaAbas = function() {
@@ -709,7 +710,7 @@ var bindaFormPagamento = function() {
 
         var voucherStr = $('#voucher-str').val();
 
-        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner laranja'></i>");
+        $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
 
         //pegando id da aba de pagamento ativa
         var idTabPagamentoAtiva = $('ul#abas-cliente li.active a')[0].id;
@@ -749,16 +750,29 @@ var bindaFormPagamento = function() {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 });
+
+                $("#usar-voucher-desconto").html("USAR CUPOM");
+                atualizaValorParcelas();
+            } else {
+
+                if (data.session !== undefined) {
+                    setSessionId(data.session);
+                }
+
+                var desconto = data.content.discountValue;
+                var descontoFixo = data.content.isFixedValue;
+                var descontoServico = data.content.serviceFeeDiscountPercentage;
+
+                // Atualiza valores nos campos hidden
+                $("#desconto").val(desconto);
+                $("#desconto-fixo").val(descontoFixo);
+                $("#desconto-servico").val(descontoServico);
+
+                $("#usar-voucher-desconto").html("USAR CUPOM");
+                atualizaValorParcelas();
             }
-            var desconto = data.content.discountValue;
-            var descontoFixo = data.content.isFixedValue;
-            var descontoServico = data.content.serviceFeeDiscountPercentage;
 
-            // Atualiza valores nos campos hidden
-            $("#desconto").val(desconto);
-            $("#desconto-fixo").val(descontoFixo);
-            $("#desconto-servico").val(descontoServico);
-
+        }).error(function() {
             $("#usar-voucher-desconto").html("USAR CUPOM");
             atualizaValorParcelas();
         });
