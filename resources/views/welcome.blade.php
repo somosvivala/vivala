@@ -1001,7 +1001,7 @@
 
                     <div class="form-group">
                         <div class="col-sm-12">
-                            <input type="text" name='aniversario' class="mask-data form-control text-uppercase" placeholder='{{ trans("global.lbl_birthday") }}'>
+                            <input type="text" name='aniversario' class="mascara-data form-control text-uppercase" placeholder='{{ trans("global.lbl_birthday") }}'>
                         </div>
                     </div>
 

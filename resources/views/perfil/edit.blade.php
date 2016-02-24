@@ -37,7 +37,7 @@
                                     <span class="fa fa-upload"></span>
                                     SELECIONE UMA IMAGEM
                                 </span>
-                            </label>    
+                            </label>
                             <div id="cropper-perfil" class="cropper-img">
                                 <img src="{{ $foto ? $foto : '/img/interrogacao.png' }}" />
                             </div>
@@ -60,6 +60,5 @@
                 @include('perfil.form', ['btnSubmit' => trans('global.lbl_profile_update')])
             {!! Form::close() !!}
     </div>
-    </div>
-
+</div>
 @endsection

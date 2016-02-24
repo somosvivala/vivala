@@ -5,7 +5,5 @@
 @endsection
 
 @section('content')
-
 	@include('feed')
-
 @endsection
