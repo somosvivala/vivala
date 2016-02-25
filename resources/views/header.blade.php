@@ -138,9 +138,7 @@
 
                 <ul class="dropdown-menu submenu" role="menu">
                     @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
-                        <li>
-													<p>{{ trans('global.lbl_use_as')}}:</p>
-												</li>
+                        <li><p>{{ trans('global.lbl_use_as')}}:</p></li>
                     @endif
                     {{-- Se a entidade ativa não for um perfil lista o perfil para ativar --}}
                     @if ( strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil" )
@@ -158,7 +156,7 @@
                         </a>
                       </li>
                     @endif
-                    @if( isset($paginas) && count($paginas) > 0 )
+                    @if(isset($paginas) && count($paginas) > 0)
                     <li class="row">
                         <ul class="paginas">
                         @foreach($paginas as $Pagina)
@@ -180,8 +178,7 @@
                             <li class="margin-t-1 margin-b-1"><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
                         @endif
                         </ul>
-                    </li>
-										</li>
+                    </li>								</li>
                     @endif
                     <li class="subsubmenu">
                         <ul>
@@ -189,11 +186,13 @@
                           <li><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border"><i class="fa fa-star"></i><span> {{ trans('global.lbl_page_manage') }}</span></a></li>
                         </ul>
                     </li>
+	        @if(count(Auth::user()->ongs) > 0)
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
                         </ul>
                     </li>
+	        @endif
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('/quiz') }}" class="click-img-no-border"><i class="fa fa-comment"></i><span> Quiz</span></a></li>
