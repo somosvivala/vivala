@@ -156,7 +156,7 @@
                         </a>
                       </li>
                     @endif
-                    @if( isset($paginas) && count($paginas) > 0 )
+                    @if(isset($paginas) && count($paginas) > 0)
                     <li class="row">
                         <ul class="paginas">
                         @foreach($paginas as $Pagina)
@@ -186,7 +186,7 @@
                           <li><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border"><i class="fa fa-star"></i><span> {{ trans('global.lbl_page_manage') }}</span></a></li>
                         </ul>
                     </li>
-	        @if(isset($paginas) && count($paginas) > 0 && Auth::user()->ongs)
+	        @if(count(Auth::user()->ongs) > 0)
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
