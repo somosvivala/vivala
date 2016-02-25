@@ -180,8 +180,7 @@
                             <li class="margin-t-1 margin-b-1"><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
                         @endif
                         </ul>
-                    </li>
-										</li>
+                    </li>								</li>
                     @endif
                     <li class="subsubmenu">
                         <ul>
@@ -189,11 +188,13 @@
                           <li><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border"><i class="fa fa-star"></i><span> {{ trans('global.lbl_page_manage') }}</span></a></li>
                         </ul>
                     </li>
+	        @if (count(Auth::user()->ongs))
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
                         </ul>
                     </li>
+	        @endif
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('/quiz') }}" class="click-img-no-border"><i class="fa fa-comment"></i><span> Quiz</span></a></li>
