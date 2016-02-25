@@ -138,9 +138,7 @@
 
                 <ul class="dropdown-menu submenu" role="menu">
                     @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
-                        <li>
-													<p>{{ trans('global.lbl_use_as')}}:</p>
-												</li>
+                        <li><p>{{ trans('global.lbl_use_as')}}:</p></li>
                     @endif
                     {{-- Se a entidade ativa não for um perfil lista o perfil para ativar --}}
                     @if ( strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil" )
@@ -188,7 +186,7 @@
                           <li><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border"><i class="fa fa-star"></i><span> {{ trans('global.lbl_page_manage') }}</span></a></li>
                         </ul>
                     </li>
-	        @if (count(Auth::user()->ongs))
+	        @if(isset($paginas) && count($paginas) > 0 && Auth::user()->ongs)
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
