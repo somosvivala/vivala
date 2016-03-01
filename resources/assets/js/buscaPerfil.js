@@ -9,7 +9,6 @@ var buscaPerfil = (function() {
                 rect = $(target)[0].getBoundingClientRect(),
                 pos  = [rect.top + rect.height, rect.left];
 
-            console.log(pos);
 
             if (ajaxCall != null && ajaxCall.state() == 'pending') {
                 ajaxCall.abort();
@@ -26,6 +25,8 @@ var buscaPerfil = (function() {
                 $(element).addClass('list-group perfil-list')
                     .css('top', pos[0])
                     .css('left', pos[1])
+                    .css('position', 'fixed')
+                    .css('z-index', '2')
                     .html(data);
 
                 $(target).append(element);
@@ -46,13 +47,13 @@ var buscaPerfil = (function() {
 
             $(input).on('keyup', function() {
                 var value = $(this).val(),
-                    lista = $('div.perfil-list'),
+                    lista = $('ul.perfil-list'),
                     container = $('div.menu-principal');
 
                 if (autocompleteTimeout!= null && autocompleteTimeout > 0) {
                     clearTimeout(autocompleteTimeout);
                 }
-                if (value.length >= 3) {
+                if (value.length >= 1) {
                     autocompleteTimeout = setTimeout(ajaxBusca, 500, this, container);
                 } else {
                     lista.remove();
