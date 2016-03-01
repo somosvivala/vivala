@@ -696,6 +696,7 @@ var bindaFormPagamento = function() {
             },
              "request": {
                 "sessionId": $('input#session-clickbus').val(),
+                "voucher" : $('input#voucher-str').val().toUpperCase(),
                 "ip": "",
                 "buyer": buyer,
                 "orderItems": orderItems
