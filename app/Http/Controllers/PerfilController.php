@@ -45,7 +45,7 @@ class PerfilController extends ConectarController {
 
 		//Nao adicionando entidadeAtiva como sendo perfil, ou seja, mostrando o perfil
 		//da entidadeAtiva logada.
-		
+
 		// Session::put('entidadeAtiva_id', $perfil->id);
     	// Session::put('entidadeAtiva_tipo', 'perfil');
 
@@ -100,7 +100,7 @@ class PerfilController extends ConectarController {
 		$perfil->apelido = $request->input('apelido');
 		$perfil->descricao_curta = $request->input('descricao_curta');
 		$perfil->descricao_longa = $request->input('descricao_longa');
-                        
+
 		$perfil->prettyUrl()->update([
 			'url' => $request->input('url'),
 			'tipo' => 'usuario'
@@ -251,17 +251,17 @@ class PerfilController extends ConectarController {
 	}
 
 	/**
-	 * retorna lista de perfis 
+	 * retorna lista de perfis
 	 * @param  Request $request [string]
-	 * @return [array]           
+	 * @return [array]
 	 */
 	public function getQueryList()
 	{
 		$query = Input::get('query');
 
 		$perfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
-			->orWhere('apelido', 'ilike', "%{$query}%")
-			->limit(10)
+			//->orWhere('apelido', 'ilike', "%{$query}%")
+			->take(10)->limit(10)
 			->get();
 
 		foreach ($perfils as &$perfil) {

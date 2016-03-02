@@ -9,10 +9,17 @@ var buscaPerfil = (function() {
                 rect = $(target)[0].getBoundingClientRect(),
                 pos  = [rect.top + rect.height, rect.left];
 
-
             if (ajaxCall != null && ajaxCall.state() == 'pending') {
                 ajaxCall.abort();
             }
+
+            var element = document.createElement('div');
+              $(element).css('top', pos[0])
+              .css('left', pos[1])
+              .css('position', 'fixed')
+              .css('z-index', '2')
+              .html("<h2 class='pull-right'><i class='fa fa-spin fa-1x fa-spinner laranja'></i></h2>");
+              $(container).append(element);
 
             ajaxCall = $.ajax({
                 url: url,
@@ -28,12 +35,11 @@ var buscaPerfil = (function() {
                     .css('position', 'fixed')
                     .css('z-index', '2')
                     .html(data);
-
                 $(target).append(element);
                 $(container).find('div.perfil-list').remove();
                 $(container).append(element);
             });
-            
+
         },
 
         autocompleteTimeout,
