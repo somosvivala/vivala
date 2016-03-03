@@ -65,6 +65,7 @@ return[
 'clickbus_client-voucher-use' => 'Use Voucher',
 'clickbus_client-taxes-fees' => 'Taxes and Fees',
 'clickbus_client-discounts' => 'Discounts',
+'clickbus_client-total' => 'Total',
 
 'clickbus_client-error-1' => 'No tickets was found, try a different line or another date.',
 'clickbus_client-error-2' => 'No payment method available .',

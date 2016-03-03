@@ -65,6 +65,7 @@ return[
 'clickbus_client-voucher-use' => 'Usar Cupom',
 'clickbus_client-taxes-fees' => 'Impostos e Taxas',
 'clickbus_client-discounts' => 'Descontos',
+'clickbus_client-total' => 'Total',
 
 'clickbus_client-error-1' => 'Nenhuma passagem foi encontrada, tente uma linha diferente ou outra data.',
 'clickbus_client-error-2' => 'Nenhum método de pagamento disponivel.',

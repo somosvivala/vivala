@@ -336,6 +336,15 @@
                    R$ <span class="valor-desconto">{{ "0,00" }}</span>
                </div>
            </div>
+           <div class="row">
+               <div class="col-sm-8 text-left">
+                   {{ trans('clickbus.clickbus_client-total') }}:
+               </div>
+               <div class="col-sm-4 text-right">
+                   R$ <span class="valor-total">{{ "0,00" }}</span>
+               </div>
+           </div>
+
            <div class="row margin-t-2 maring-b-2 valor-pagamento">
                <div class="col-xs-12 font-bold-upper">
                    <small><span class="num-vezes">1</span>x</small>

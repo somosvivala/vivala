@@ -532,11 +532,13 @@ var atualizaValorParcelas = function(){
     $('.valor-installment').html(installment.toFixed(2).toString().replace(',','').replace('.',','));
 
     $('#valor-total-pagamento-passagem').val(total_with_discount);
+    $('.valor-total').html(total_with_discount.toFixed(2).toString().replace(',','').replace('.',','));
 };
 
 //Função para remover o valor dos inputs de desconto
 //Nao atualiza a UI
 var removeDesconto = function() {
+    $('input#voucher-str').val("");
     $("form#form-pagamento").find('input#desconto').val("");
     $("form#form-pagamento").find('input#desconto-fixo').val("");
     $("form#form-pagamento").find('input#desconto-servico').val("");
