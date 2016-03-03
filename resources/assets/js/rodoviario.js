@@ -538,7 +538,7 @@ var atualizaValorParcelas = function(){
 //Função para remover o valor dos inputs de desconto
 //Nao atualiza a UI
 var removeDesconto = function() {
-    $('input#voucher-str').val("");
+    $("form#form-pagamento").find('input#voucher-str').val("");
     $("form#form-pagamento").find('input#desconto').val("");
     $("form#form-pagamento").find('input#desconto-fixo').val("");
     $("form#form-pagamento").find('input#desconto-servico').val("");
@@ -704,6 +704,12 @@ var bindaFormPagamento = function() {
                 "orderItems": orderItems
              }
         };
+
+        //Se nao houver voucher, preciso remover a propriedade 'voucher' do objeto
+        //que sera enviado para a ClickBus, se não ocorre um erro de pagamento(L25).
+        if (!params.request.voucher || params.request.voucher == undefined){
+            delete params.request["voucher"];
+        }
 
         var frm = $(this),
             loading = frm.data('loading');
