@@ -36,9 +36,16 @@ class GestaoController extends Controller {
 
             if(Auth::user()->isAdmin()) {
                 $intervalos = DB::table('perfils')->select(DB::raw("date_trunc('day', created_at) as intervalo"),DB::raw('count(*) as qtd'))->where('created_at', '>', $data_inicio)->where('created_at', '<', $data_fim)->orderBy('intervalo','ASC')->groupBy(DB::raw("intervalo"))->get();
+                $total = DB::table('perfils')->where('created_at', '>', $data_inicio)->where('created_at', '<', $data_fim)->count();
 
             }
-            return json_encode($intervalos);
+            $return = new \stdClass();
+            $return->intervalos = $intervalos;
+            $return->total = $total;
+            $return->inicio = $data_inicio;
+            $return->fim = $data_fim;
+
+            return json_encode($return);
         
         }
 

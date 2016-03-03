@@ -14,7 +14,7 @@
             <button id="consulta-grafico" type="button" class="btn btn-acao">Consultar</button>
         </div>
     </div>
-    <div id="chart_div">
+    <div id="chart_div" class="margin-t-3">
     </div>
 
     <script type="text/javascript">
@@ -41,7 +41,7 @@
 
         atualizaChart = function(data) {
             graficoXY = [];
-            data.forEach(function(intervalo) {
+            data.intervalos.forEach(function(intervalo) {
                 console.log(intervalo);
                 graficoXY.push({ x: new Date(intervalo.intervalo.replace(/-/g, "/")), y: intervalo.qtd});
             });
@@ -57,7 +57,7 @@
             var chart = new CanvasJS.Chart("chartContainer",
                 {
                     title:{
-                        text: "Quantidade de usuários cadastrados"
+                        text: data.total+" usuários de "+data.inicio+" a "+data.fim
                     },
                     colorSet: "vivacolor",
                     axisX:{
