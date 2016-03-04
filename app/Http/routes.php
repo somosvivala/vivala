@@ -1,5 +1,12 @@
 <?php
 
+use App\Events\PerfilHasVolunteered;
+
+Route::get('/testevent', function()
+{
+    event(new PerfilHasVolunteered(App\Perfil::first(), App\Vaga::first()));
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

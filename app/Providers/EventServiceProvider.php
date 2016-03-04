@@ -17,7 +17,14 @@ class EventServiceProvider extends ServiceProvider {
 		'event.name' => [
 			'EventListener',
 		],
+
+    //Aqui registro um Evento para seus Listeners
+		'App\Events\PerfilHasVolunteered' => [
+			'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
+		],
+
 	];
+
 
 	/**
 	 * Register any other events for your application.

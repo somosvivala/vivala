@@ -204,7 +204,7 @@ return[
   'lbl_comment_' => 'Comments',
   'lbl_commentr' => 'Comment',
   'lbl_commentr1' => 'Comment...',
-  'lbl_commentr2' => 'Share aggrandizing visions with the Vivalá network!'
+  'lbl_commentr2' => 'Share aggrandizing visions with the Vivalá network!',
   'lbl_comment_not_found' => 'No Comment found.',
   'lbl_company' => 'Company',
   'lbl_company_' => 'Companies',
