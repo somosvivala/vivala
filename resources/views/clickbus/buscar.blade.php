@@ -9,12 +9,12 @@
         <div class="select-filtro">
             <input id="origem-rodoviario" autocomplete="off" placeholder="{{ trans('global.lbl_travel_from') }}" type="text" class="form-control">
             <input id="origem-rodoviario-hidden" autocomplete="off" type="hidden">
-            <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
+            <i class="fa-spin fa-spinner fa loading-search soft-hide laranja"></i>
         </div>
         <div class="select-filtro">
             <input id="destino-rodoviario" autocomplete="off" placeholder="{{ trans('global.lbl_travel_to') }}" type="text" class="form-control">
             <input id="destino-rodoviario-hidden" autocomplete="off" type="hidden">
-            <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
+            <i class="fa-spin fa-spinner fa loading-search soft-hide laranja"></i>
         </div>
         <div class="select-filtro">
             <input placeholder="{{ trans('global.lbl_travel_departure') }}" data-provide="datepicker" data-date-today-highlight="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="data-id-rodoviario" name="data-id-rodoviario" class="form-control mascara-data" type="text" data-date-start-date="0d">

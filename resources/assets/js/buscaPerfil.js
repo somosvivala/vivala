@@ -1,71 +1,114 @@
-var buscaPerfil = (function() {
-    'use strict';
+'use strict';
+jQuery(document).ready(function($) {
 
-    var ajaxCall,
+  var bindUpDown = function(element, evt) {
+      console.log('Estou no bindUpDown');
+      var keyCode = evt.keyCode,
+          element = $(element).find('.perfil-list');
 
-        ajaxBusca = function(target, container) {
+      if (keyCode === 40 || keyCode === 38) {
+          var listItem = $('a.autocomplete-buscaperfil.list-focus').attr('data-order'),
+              lastItem = $('a.autocomplete-buscaperfil:last').attr('data-order');
 
-            var url  = $(target).data('url')+'/perfilcontroller/query-list',
-                rect = $(target)[0].getBoundingClientRect(),
-                pos  = [rect.top + rect.height, rect.left];
+          if (listItem === undefined) {
+              if (keyCode === 40)
+                  $('a.autocomplete-buscaperfil[data-order=0]').addClass('list-focus');
+              else
+                  $('a.autocomplete-buscaperfil[data-order='+lastItem+']').addClass('list-focus');
+          } else {
+              $('a.autocomplete-buscaperfil[data-order='+listItem+']').removeClass('list-focus');
+              if (keyCode === 40) {
+                  if (listItem == lastItem) {
+                      $('a.autocomplete-buscaperfil[data-order=0]').addClass('list-focus');
+                  }
+                  else {
+                      $('a.autocomplete-buscaperfil[data-order='+(parseInt(listItem)+1)+']').addClass('list-focus');
+                  }
+              } else {
+                  if (listItem == 0)
+                      $('a.autocomplete-buscaperfil[data-order='+lastItem+']').addClass('list-focus');
+                  else
+                      $('a.autocomplete-buscaperfil[data-order='+(listItem-1)+']').addClass('list-focus');
+              }
+          }
 
-            if (ajaxCall != null && ajaxCall.state() == 'pending') {
-                ajaxCall.abort();
-            }
+      } else {
+          if (keyCode === 13) {
+            // Precisa ser continuado após implementação da buscaTodosPerfis
+            $('#busca-geral-menu').focus();
+          }
+      }
+  };
 
-            var element = document.createElement('div');
-              $(element).css('top', pos[0])
-              .css('left', pos[1])
-              .css('position', 'fixed')
-              .css('z-index', '2')
-              .html("<h2 class='pull-right'><i class='fa fa-spin fa-1x fa-spinner laranja'></i></h2>");
-              $(container).append(element);
+  var buscaPerfil = (function() {
+      var ajaxCall,
 
-            ajaxCall = $.ajax({
-                url: url,
-                type: 'GET',
-                dataType: 'html',
-                data: {query: $(target).val()},
-            })
-            .done(function(data) {
-                var element = document.createElement('div');
-                $(element).addClass('list-group perfil-list')
-                    .css('top', pos[0])
-                    .css('left', pos[1])
-                    .css('position', 'fixed')
-                    .css('z-index', '2')
-                    .html(data);
-                $(target).append(element);
-                $(container).find('div.perfil-list').remove();
-                $(container).append(element);
-            });
+          ajaxBusca = function(target, container) {
 
-        },
+              var url  = $(target).data('url')+'/perfilcontroller/query-list',
+                  rect = $(target)[0].getBoundingClientRect(),
+                  pos  = [rect.top + rect.height, rect.left];
 
-        autocompleteTimeout,
+              if (ajaxCall != null && ajaxCall.state() == 'pending') {
+                  ajaxCall.abort();
+              }
 
-        init = function() {
-            var input = $('.busca-geral-menu');
+              $(target).siblings('i.fa').show();
+              ajaxCall = $.ajax({
+                  url: url,
+                  type: 'GET',
+                  dataType: 'html',
+                  data: {query: $(target).val()},
+              })
 
-            $(input).on('keypress', function() {
-                ajaxBusca(this);
-            });
+              .done(function(data) {
+                  $(target).siblings('i.fa').hide();
+                  var element = document.createElement('div');
+                  $(element).addClass('list-group perfil-list')
+                      .css('top', pos[0])
+                      .css('left', pos[1])
+                      .css('position', 'absolute')
+                      .css('z-index', '2')
+                      .html(data);
+                  $(target).append(element);
+                  $(container).find('div.perfil-list').remove();
+                  $(container).append(element);
+              });
 
-            $(input).on('keyup', function() {
-                var value = $(this).val(),
-                    lista = $('ul.perfil-list'),
-                    container = $('div.menu-principal');
+          },
 
-                if (autocompleteTimeout!= null && autocompleteTimeout > 0) {
-                    clearTimeout(autocompleteTimeout);
+          autocompleteTimeout,
+
+          init = function() {
+              var input = $('#busca-geral-menu');
+
+              $(input).on('keydown', function(e) {
+                // Faço a busca somente quando o valor do input for > 3
+                if($(this).val().length >= 3){
+                  // Se for 13 = ENTER, 38 = ArrowUp, 40 = ArrowDown
+                  if(e.keyCode !== 13 || e.keyCode !== 38 || e.key !== 40){
+                    ajaxBusca(this);
+                  }
+                  e.preventDefault();
+                  bindUpDown(this, e);
                 }
-                if (value.length >= 1) {
-                    autocompleteTimeout = setTimeout(ajaxBusca, 500, this, container);
-                } else {
-                    lista.remove();
-                }
-            });
-        };
-        init();
+              });
 
-}());
+              $(input).on('keyup', function(e) {
+                  var value = $(this).val(),
+                      lista = $('ul.perfil-list'),
+                      container = $('div.menu-principal');
+
+                  if (autocompleteTimeout!= null && autocompleteTimeout > 0) {
+                      clearTimeout(autocompleteTimeout);
+                  }
+                  if (value.length >= 3) {
+                      autocompleteTimeout = setTimeout(ajaxBusca, 500, this, container);
+                  } else {
+                      lista.remove();
+                  }
+              });
+          };
+          init();
+  }());
+});

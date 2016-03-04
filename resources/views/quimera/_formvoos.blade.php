@@ -22,10 +22,10 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="false" id="origem-voo" name="origem-voo" class="autocomplete completing form-control" data-provide="typeahead" placeholder="Selecione sua origem" value="" type="text">
-                        <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
+                        <i class="fa-spin fa-spinner fa loading-search soft-hide laranja"></i>
                         <input id="origem-voo-id" style="display:none" name="originId" class="required" value="" type="hidden">
-                        <div id="lista-origem-voo" class="lista-autocomplete soft-hide">     
-                            <div class="flight-list"> 
+                        <div id="lista-origem-voo" class="lista-autocomplete soft-hide laranja">
+                            <div class="flight-list">
                             </div>
                         </div>
                     </div>
@@ -36,8 +36,8 @@
                         <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" allowfilter="true" id="destino-voo" name="destination" class="city-input required autocomplete valid form-control" data-provide="typeahead" placeholder="Digite a cidade de destino" value="" type="text">
                         <i class="fa-spin fa-spinner fa loading-search soft-hide"></i>
                         <input id="destino-voo-id" style="display:none" name="destinationId" class="required" value="" type="hidden">
-                        <div id="lista-destino-voo" class="lista-autocomplete soft-hide">     
-                            <div class="flight-list"> 
+                        <div id="lista-destino-voo" class="lista-autocomplete soft-hide">
+                            <div class="flight-list">
                             </div>
                         </div>
                     </div>
