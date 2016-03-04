@@ -39,11 +39,11 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
 
             if (in_array($vaga->id, $this->IdsOlimpiadas)) {
                 //Se for uma vaga das olimpiadas:
-                $this->sendEmailOlimpiadas();
+                $this->sendEmailOlimpiadas($event);
 
             } else {
                 //Se for uma vaga que não as da olimpiada:
-                $this->sendNormalVolunteerEmail();
+                $this->sendNormalVolunteerEmail($event);
             }
         }
     }
