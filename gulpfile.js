@@ -57,7 +57,6 @@ elixir(function(mix) {
       '../../assets/js/formFeedback.js',
       '../../assets/js/follow.js',
       '../../assets/js/ajaxCalls.js',
-      '../../assets/js/desativalinks.js',
       '../../assets/js/notificacoes.js',
       '../../assets/js/welcome.js',
       '../../assets/js/rodoviario.js',
