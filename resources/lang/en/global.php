@@ -204,7 +204,7 @@ return[
   'lbl_comment_' => 'Comments',
   'lbl_commentr' => 'Comment',
   'lbl_commentr1' => 'Comment...',
-  'lbl_commentr2' => 'Share aggrandizing visions with the Vivalá network!'
+  'lbl_commentr2' => 'Share aggrandizing visions with the Vivalá network!',
   'lbl_comment_not_found' => 'No Comment found.',
   'lbl_company' => 'Company',
   'lbl_company_' => 'Companies',
@@ -1195,11 +1195,17 @@ return[
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
     'dummy_travel_1_title' => 'Flights',
-    'dummy_travel_1' => 'On Vivalá you find airline tickets all over the world in over 500 companies! Search options here!',
+    'dummy_travel_1' => 'Find flight tickets for 143 countries around the world with more than 500 air companies! Search now!',
     'dummy_travel_2_title' => 'Hotels',
-    'dummy_travel_2' => 'Find the best accommodation for your next experience here on Vivalá! More than 200,000 possibilities around the world. Click here to find!',
-    'dummy_travel_3_title' => 'Restaurants',
-    'dummy_travel_3' => 'Discover great restaurants in Brazil and get 50% discount with the benefits of Vivalá. See more here!',
+    'dummy_travel_2' => 'Find the best accommodation for your next experience! We have more than 200.000 options on 164 countries around the world. Click here to search!',
+    'dummy_travel_3_title' => 'Packages',
+    'dummy_travel_3' => 'Customize your travel package combining air tickets, accommodation and car leasing and save up to 35% of the total value! Search here!',
+    'dummy_travel_4_title' => 'Restaurants',
+    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.600 stablishments! See more here',
+    'dummy_travel_5_title' => 'Bus Tickets',
+    'dummy_travel_5' => 'Find bus tickets for 3.000 brazilian cities, operated by 67 companies. Search now!',
+
+
 
     /*----------------------------------------------------------------------------------
     / BLACK FRIDAY feature - serão deletados em versões futuras, só pra preencher o beta
