@@ -1,8 +1,9 @@
 'use strict';
+
 jQuery(document).ready(function($) {
 
   var bindUpDown = function(element, evt) {
-      console.log('Estou no bindUpDown');
+
       var keyCode = evt.keyCode,
           element = $(element).find('.perfil-list');
 
@@ -83,15 +84,10 @@ jQuery(document).ready(function($) {
               var input = $('#busca-geral-menu');
 
               $(input).on('keydown', function(e) {
-                // Faço a busca somente quando o valor do input for > 3
                 if($(this).val().length >= 3){
-                  // Se for 13 = ENTER, 38 = ArrowUp, 40 = ArrowDown
-                  if(e.keyCode !== 13 || e.keyCode !== 38 || e.key !== 40){
-                    ajaxBusca(this);
-                  }
-                  e.preventDefault();
-                  bindUpDown(this, e);
+                  ajaxBusca(this);
                 }
+                  bindUpDown(this, e);
               });
 
               $(input).on('keyup', function(e) {
