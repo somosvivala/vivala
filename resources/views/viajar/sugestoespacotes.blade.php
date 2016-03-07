@@ -3,7 +3,7 @@
     <h4 class="suave">{{ trans('global.wannatravel_package_find_best_destinies') }}</h4>
     <ul class="sugestoes sugestoes-pacotes">
         <li>
-            <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="http://www.e-agencias.com.br/vivala/home/flights">
+            <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/home/flights">
                 <div class="round-foto-sem-cover">
                     <img src="/img/dummyvoos.jpg">
                 </div>
@@ -13,7 +13,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="http://www.e-agencias.com.br/vivala/home/hotels">
+            <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/home/hotels">
                 <div class="round-foto-sem-cover">
                     <img src="/img/dummyhoteis.jpg">
                 </div>
@@ -23,7 +23,7 @@
             </a>
         </li>
         <li>
-            <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="http://www.e-agencias.com.br/vivala/home/packages">
+            <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/home/packages">
                 <div class="round-foto-sem-cover">
                     <img src="/img/dummypackages.jpg">
                 </div>
