@@ -43,7 +43,7 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
 
             } else {
                 //Se for uma vaga que não as da olimpiada:
-                $this->sendNormalVolunteerEmail($event);
+                //$this->sendNormalVolunteerEmail($event);
             }
         }
     }
@@ -66,10 +66,12 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
 
+        /*
         Mail::send('emails.obrigadoong', ['user' => $perfil->user, 'vaga' => $vaga], function ($message) use ($responsavel) {
             $message->to($responsavel->user->email, $responsavel->apelido)->subject('Olá, Alguém se candidatou a uma vaga no seu projeto.');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
+         */
     }
     /**
      * Envia o email padrão de voluntariado
