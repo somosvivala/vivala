@@ -895,7 +895,7 @@ return[
     'wannavolunteer_seeing_some_projects' => 'Procurando por causas?',
     'wannavolunteer_looking_for_jobs' => 'Procurando vagas?',
     'wannavolunteer_search_in_three_steps' => 'Encontre em 3 passos.',
-    'wannavolunteer_menu_create_your_project' => 'Crie Seu Projeto de Impacto',
+    'wannavolunteer_menu_create_your_project' => 'Crie Seu Projeto',
 
 
   /* View: Emails */
