@@ -433,7 +433,7 @@ return[
   'clickbus_email-passenger-name' => 'Nome do passageiro: ',
   'clickbus_email-document' => 'Documento: ',
   'clickbus_email-route' => 'Rota: ',
-  'clickbus_email-road-comp' => 'Viação: '
+  'clickbus_email-road-comp' => 'Viação: ',
   'clickbus_email-seat' => 'Poltrona: ',
   'clickbus_email-boarding' => 'Embarque: ',
   'clickbus_email-arrival' => 'Desembarque: ',
@@ -469,7 +469,7 @@ return[
   'clickbus_email-sigla-real' => 'R$ ',
   'clickbus_email-sigla-dolar' => 'US$ ',
   'clickbus_email-sigla-iso4217-real' => 'BRL',
-  'clickbus_email-sigla-iso4217-dollar' -> 'USD',
+  'clickbus_email-sigla-iso4217-dollar' => 'USD',
 
   'clickbus_email-payment-analyze' => 'Seu pagamento está sendo analisado.',
   'clickbus_email-payment-pending' => ', sua passagem será confirmada assim que recebermos a <span style="font-weight:800">confirmação do pagamento</span>',
