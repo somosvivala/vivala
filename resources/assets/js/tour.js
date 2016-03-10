@@ -409,7 +409,11 @@ $(document).ready(function() {
 
 // ##### INTERNO
 // Se a variável for FALSE (setada pelo user), posso iniciar este Tour
-  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-home"))){
+  if((!parseInt(ligaIntroTour))){
+
+  /* Comentado pois não estava funcionando na versão da HOME -> VIAJAR
+  && ($("#tour-pilares").hasClass("pilar-home"))){
+  */
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
@@ -447,11 +451,13 @@ $(document).ready(function() {
               intro: '<p class="text-center">Know from other <span class="laranja">Travellers</span> who are following you and who now receive your posts. Share!</p>',
               position: 'bottom'
             },
+            /* Desabilitado icone de CHAT, logo não é pra funcionar mais
             {
               element: '.tour-pilares-step7',
               intro: '<p class="text-center">Exchange private messages with other users of <span class="laranja">Vivalá</span>.</p>',
               position: 'bottom'
             },
+            */
             {
               element: '.tour-pilares-step8',
               intro: '<p class="text-center">Get inside and interact with those who walk enjoying and commenting on your posts!</p>',
@@ -504,11 +510,13 @@ $(document).ready(function() {
               intro: '<p class="text-center">Saiba de outros <span class="laranja">Viajantes</span> que estão te seguindo e que agora recebem suas postagens. Compartilhe!</p>',
               position: 'bottom'
             },
+            /* Desabilitado icone de CHAT, logo não é pra funcionar mais
             {
               element: '.tour-pilares-step7',
               intro: '<p class="text-center">Troque mensagens privadas com outros usuários da <span class="laranja">Vivalá</span>.</p>',
               position: 'bottom'
             },
+            */
             {
               element: '.tour-pilares-step8',
               intro: '<p class="text-center">Fique por dentro e interaja com quem anda curtindo e comentando seus posts!</p>',
