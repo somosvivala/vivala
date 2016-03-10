@@ -409,11 +409,7 @@ $(document).ready(function() {
 
 // ##### INTERNO
 // Se a variável for FALSE (setada pelo user), posso iniciar este Tour
-  if((!parseInt(ligaIntroTour))){
-
-  /* Comentado pois não estava funcionando na versão da HOME -> VIAJAR
-  && ($("#tour-pilares").hasClass("pilar-home"))){
-  */
+  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-viajar"))){
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
