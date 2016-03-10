@@ -508,7 +508,7 @@ var tripBooking = function(request) {
                 function() {
                     window.location.href="/viajar";
                 }
-                    );
+                );
 
             //Se nao for creditcard, entao possui um redirectUrl
             } else {

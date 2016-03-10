@@ -417,6 +417,11 @@ return[
   */
   'clickbus_email-vivala-title' => 'Vivalá',
   'clickbus_email-vivala-address' => 'Rua do Rócio, 52, cj 122, Vila Olímpia - CEP: 04552-000 | São Paulo/SP',
+  'clickbus_email-copyright-footer1' => 'Copyright 2016',
+  'clickbus_email-copyright-footer2' => 'Todos os direitos reservados.',
+  'clickbus_email-status-pending' => 'Pendente',
+  'clickbus_email-status-success' => 'Sucesso',
+  'clickbus_email-status-canceled' => 'Cacelado',
 
   'clickbus_email-partnership' => 'em parceria com',
   'clickbus_email-thanks-for-buying' => 'Obrigado por comprar na',

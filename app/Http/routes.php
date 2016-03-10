@@ -102,6 +102,7 @@ Route::post('clickbus/removerpoltronas', 'ClickBusController@getRemoverpoltronas
 Route::post('clickbus/payment', 'ClickBusController@getPayment');
 Route::post('clickbus/booking', 'ClickBusController@getBooking');
 Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
+Route::post('clickbus/success', 'ClickBusController@getSucess');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

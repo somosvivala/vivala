@@ -62,7 +62,7 @@
                           <td style="padding:10px 0px 5px 0px;color:#FFF;font-family:'Roboto',sans-serif;font-weight:400;font-size:26px;border-top:solid thin #282828;border-bottom:solid thin #282828" align="center">
                             {!! trans('clickbus.clickbus_email-payment-analyze') !!}
                             <br/>
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/aguardando.png" alt="Cancelada" style="display:block;padding:10px 0px 10px 0px" border="0" height="85" width="86">
+                            <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-pendente.png" alt="{{ trans('clickbus.clickbus_email-status-pending') }}" style="display:block;padding:10px 0px 10px 0px" border="0" height="85" width="100%">
                             <p style="font-weight:300;font-size:15px">
                               {!! trans('clickbus.clickbus_email-dear-client') !!}
                               <span style="font-weight:800">
@@ -109,10 +109,10 @@
                             {!! trans('clickbus.clickbus_email-boarding') !!}
                           </td>
                           <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/calendario.png" alt="Calend" style="display:inline" height="14" width="13">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                             &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
                             -
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/relogsmall.png" alt="Relog" style="display:inline" border="0" height="14" width="14">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                             &nbsp; HO:RA
                           </td>
                         </tr>
@@ -121,10 +121,10 @@
                             {!! trans('clickbus.clickbus_email-arrival') !!}
                           </td>
                           <td style="text-align:right;padding-right:10px;font-size:12px">
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/calendario.png" alt="Calend" style="display:inline" height="14" width="13">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                             &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
                             -
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/relogsmall.png" alt="Relog" style="display:inline" border="0" height="14" width="14">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                             &nbsp; HO:RA
                           </td>
                         </tr>
@@ -189,10 +189,10 @@
                             {!! trans('clickbus.clickbus_email-boarding') !!}
                           </td>
                           <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/calendario.png" alt="Calend" style="display:inline" height="14" width="13">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                             &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
                             -
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/relogsmall.png" alt="Relog" style="display:inline" border="0" height="14" width="14">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                             &nbsp; HO:RA
                           </td>
                         </tr>
@@ -201,9 +201,10 @@
                             {!! trans('clickbus.clickbus_email-arrival') !!}
                           </td>
                           <td style="text-align:right;padding-right:10px;font-size:12px">
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/calendario.png" alt="Calend" style="display:inline" height="14" width="13">
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                             &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/relogsmall.png" alt="Relog" style="display:inline" border="0" height="14" width="14">
+                            -
+                            <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                             &nbsp; HO:RA
                           </td>
                         </tr>
@@ -251,10 +252,10 @@
                         </tr>
                         <tr style="text-align:center">
                           <td style="border-right:solid thin #999999">
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/Bus-Seat.png" width="70px">
+                            <img src="https://vivala.com.br/img/clickbus/icon_clickbus-poltrona.png" width="70px">
                           </td>
                           <td>
-                            <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailTransational/relogio.png">
+                            <img src="https://vivala.com.br/img/clickbus/icon_clickbus-calendario.png" width="70px">
                           </td>
                         </tr>
 
@@ -299,7 +300,13 @@
 
                 <tr>
                   <td style="padding:5px 0px 0px 0px" align="center">
-                    <img src="https://s3-sa-east-1.amazonaws.com/static2.clickbus.com.br/EmailMarketing/2016/copyright_2016.jpg">
+                    <table>
+                      <tr>
+                        <td align="center"><span>{!! trans(clickbus.clickbus_email-copyright-footer1) !!}</span></td>
+                        <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
+                        <td align="center"><span>{!! trans(clickbus.clickbus_email-copyright-footer2) !!}</span></td>
+                      </tr>
+                    </table>
                   </td>
                 </tr>
 
