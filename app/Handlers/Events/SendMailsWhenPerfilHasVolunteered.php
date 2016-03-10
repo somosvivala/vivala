@@ -10,7 +10,7 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
 {
     //Array com id das vagas das olimpiadas
     //assim podemos testar o condicional
-    private $IdsOlimpiadas = [];
+    private $IdsOlimpiadas = [2];
 
     /**
      * Create the event handler.
@@ -43,7 +43,7 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
 
             } else {
                 //Se for uma vaga que não as da olimpiada:
-                $this->sendNormalVolunteerEmail($event);
+                //$this->sendNormalVolunteerEmail($event);
             }
         }
     }
@@ -62,14 +62,16 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
 
         //Envio de email para o responsável avisando e para o candidato agradecendo
         Mail::send('emails.olimpiadas.obrigadocandidato', ['user' => $perfil->user, 'vaga' => $vaga], function ($message) use ($User) {
-            $message->to($User->email, $User->perfil->apelido)->subject('Olá, tudo bem?');
+            $message->to($User->email, $User->perfil->apelido)->subject('Confirmação de Pré-Inscrição de voluntariado nos Jogos Olímpicos e Paralímpicos Rio 2016');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
 
-        Mail::send('emails.olimpiadas.obrigadocandidato', ['user' => $perfil->user, 'vaga' => $vaga], function ($message) use ($responsavel) {
+        /*
+        Mail::send('emails.obrigadoong', ['user' => $perfil->user, 'vaga' => $vaga], function ($message) use ($responsavel) {
             $message->to($responsavel->user->email, $responsavel->apelido)->subject('Olá, Alguém se candidatou a uma vaga no seu projeto.');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
+         */
     }
     /**
      * Envia o email padrão de voluntariado
