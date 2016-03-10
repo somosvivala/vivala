@@ -440,7 +440,7 @@
                                         </table></td>
                                     </tr>
                                     <tr>
-                                        <td valign="top" id="templateBody" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom:0;padding-top: 9px;padding-bottom: 0;"><table class="mcnTextBlock" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                        <td valign="top" id="templateBody" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom:0;padding-top: 9px;padding-bottom: 0;padding-right:20px;padding-left:20px;"><table class="mcnTextBlock" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                                 <tbody class="mcnTextBlockOuter">
                                                     <tr>
                                                         <td class="mcnTextBlockInner" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -492,23 +492,26 @@
 
                                                                         <td class="mcnTextContent" style="padding: 9px18px;line-height: 125%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;text-align: left;" valign="top">
 
-                                                                            <br>
                                                                             <span style="font-family:trebuchet ms,lucida grande,lucida sans unic
                                                                                 ode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">
                 Para você concluir sua inscrição, <a style="color:#FF6D20" href="https://portaldovoluntario.rio2016.com/ESIREG/NewFormRequest.do?language=1&formId=1">Clique Aqui</a> e insira o código INT111 no momento de cadastro, para sabermos que você veio da Vivalá!
 <br>
+<br>
 Feito esse cadastro, você será direcionado para um formulário que lhe pedirá uma série de informações pessoais. Depois, é só aguardar que em alguns dias o Comitê Organizador entrará em contato para te entrevistar!
+<br>
 <br>
 E fica ligado! Se tiverem campos em branco no seu cadastro, ele não se tornará ativo! Então cheque tudo para garantir que você vai concluir a inscrição!
 <br>
+<br>
 As vagas de voluntariado estão divididas nas categorias: Serviços de Saúde, Esportes, Imprensa e Comunicação, Apoio Operacional, Protocolo e idiomas, Transportes, Atendimento ao público, Tecnologia e Cerimônias de Premiação.  Temos certeza que você vai se dar muito bem em uma delas!
+<br>
 <br>
 Fique ligado nos próximos dias e lembre‐se que a Vivalá está à disposição para te ajudar no que for necessário! Qualquer coisa é só responder este e‐mail ou mandar mensagem por nosso <a style="color:#FF6D20" href="https://www.facebook.com/SomosVivala/?fref=ts">Facebook</a>!
 <br>
 <br>
-Viva as experiências transformadoras,
+<span style="color:#FF6D20">Viva as experiências transformadoras,</span>
 <br>
-Viva os Jogos Olímpicos e Paralímpicos do Rio 2016,
+<span style="color:#FF6D20">Viva os Jogos Olímpicos e Paralímpicos do Rio 2016,</span>
 <img alt="" src="http://vivala.com.br/email/logo.png" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564"> 
 
                 </span></span><br>
