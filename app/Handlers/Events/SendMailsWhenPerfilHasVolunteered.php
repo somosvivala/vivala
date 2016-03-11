@@ -67,7 +67,7 @@ class SendMailsWhenPerfilHasVolunteered implements ShouldBeQueued
         });
 
         Mail::send('emails.obrigadoong', ['user' => $perfil->user, 'vaga' => $vaga], function ($message) use ($responsavel) {
-            $message->to($responsavel->user->email, $responsavel->apelido)->subject('Olá, Alguém se candidatou a uma vaga no seu projeto.');
+            $message->to($responsavel->user->email, $responsavel->apelido)->subject('Alguém se candidatou como voluntário para as Olímpiadas.');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
     }
