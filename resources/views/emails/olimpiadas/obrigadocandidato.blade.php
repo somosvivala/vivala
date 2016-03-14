@@ -512,7 +512,7 @@ Fique ligado nos próximos dias e lembre‐se que a Vivalá está à disposiçã
 <span style="color:#FF6D20">Viva as experiências transformadoras,</span>
 <br>
 <span style="color:#FF6D20">Viva os Jogos Olímpicos e Paralímpicos do Rio 2016,</span>
-<img alt="" src="http://vivala.com.br/email/logo.png" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564"> 
+<img alt="" src="http://vivala.com.br/email/logo.png" style="max-width: 200px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="200"> 
 
                 </span></span><br>
                                                                             &nbsp;
