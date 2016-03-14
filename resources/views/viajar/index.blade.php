@@ -27,9 +27,14 @@
                 </a>
             </li>
             <li class="col-sm-4 tour-pilar-viajar-step5">
-                 <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
-                    {{ trans('global.wannatravel_trip_bus_drive') }}
-                 </a>
+                <a href="#" class="desativado">
+                   {{ trans('global.wannatravel_trip_bus_drive') }}
+                </a>
+                {{--
+                <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
+                   {{ trans('global.wannatravel_trip_bus_drive') }}
+                </a>
+                --}}
             </li>
         </ul>
         <div class="tab-content">
