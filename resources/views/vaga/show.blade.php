@@ -89,7 +89,11 @@
         </a>
     </div>
     <div class="col-sm-10">
-        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar aqui pelo chat Vivalá, pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
+        @if( $vaga->id == 19 )
+        Olá, {{ $Candidato->nome }}, entraremos em contato por e-mail, obrigado por se candidatar a vaga! 
+        @else
+        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
+        @endif
     </div>
 </div>
 @endif
