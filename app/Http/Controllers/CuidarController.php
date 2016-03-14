@@ -30,7 +30,7 @@ class CuidarController extends VivalaBaseController {
 	 */
 	public function index()
 	{
-            $causas = Vaga::all(); 
+            $causas = Vaga::all()->reverse(); 
             $categorias = Vaga::getCategoriasComVagas();
             $cidades = Vaga::getCidadesComVagas();
             $ongs = Vaga::getOngsComVagas();            
