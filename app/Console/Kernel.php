@@ -31,6 +31,24 @@ class Kernel extends ConsoleKernel {
             $schedule->call(function() {
                 DB::table('posts')->where('relevancia_rate','>',5)->decrement('relevancia_rate', 1);
             })->daily();
+
+            $schedule->call(function() {
+                // Testar se existe compra da clickbus com status pendente
+                $compras = DB::table('compra_clickbuses')->where('pagamento_confirmado',false)->get();
+
+                // Caso exista alguma compra pendente
+                if($compras->count() > 0) {
+                
+                    foreach($compras as $Compra) {
+                        // Consulta na clickbus das compras com status pendente
+                        
+
+                        // Caso tenha mudado de pendente para confirmado atualiza no
+                        // bd e envia email
+                    }
+
+                }
+            })->everyTenMinutes();
 	}
 
 }

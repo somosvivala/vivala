@@ -27,14 +27,14 @@
                 </a>
             </li>
             <li class="col-sm-4 tour-pilar-viajar-step5">
-                 <a href="#" class="desativado">
+                <a href="#" class="desativado">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
-{{--
+                {{--
                 <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
---}}
+                --}}
             </li>
         </ul>
         <div class="tab-content">
@@ -46,13 +46,11 @@
                     @include('chefsclub.listarestaurantes')
                 </div>
             </div>
-{{-- Busca Clickbus
+
             <div role="tabpanel" class="tab-pane " id="rodoviario">
                 @include('clickbus.buscar')
                 <div class="lista-rodoviario"></div>
             </div>
---}}
-
         </div>
     </div>
 

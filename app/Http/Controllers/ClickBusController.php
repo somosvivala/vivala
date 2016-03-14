@@ -25,7 +25,7 @@ class ClickBusController extends Controller {
 			->get()
 			->take(15);
 
-                return view('clickbus._listAutocomplete', compact('result'));
+      return view('clickbus._listAutocomplete', compact('result'));
 	}
 
     // ClickBus [BUSCA]: Filtra as passagens de onibus
@@ -379,7 +379,7 @@ class ClickBusController extends Controller {
         // Se o $decoded não possuir nenhum error internamente, retorno os dados tratados para a view _checkout
         if(isset($decoded) && !isset($decoded->{"error"})){
           return [
-            //Como não estamos devolvendo a view diretamente (return view('nome', ...), 
+            //Como não estamos devolvendo a view diretamente (return view('nome', ...),
             //precisamos chamar o ->render() para obter o html
                 "html" => view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta'))->render(),
                 "session" => $sessionId
@@ -411,10 +411,8 @@ class ClickBusController extends Controller {
 
         //Se o metodo de pagamento for paypal, entao meu objeto request nao possui os propriedades no objeto "meta"
         if ($payment_method != 'paypal_hpp') {
-
             $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]);
             $request['request']["buyer"]["payment"]["meta"]["name"] = strtoupper($request['request']["buyer"]["payment"]["meta"]["name"]);
-
         }
 
         $data = json_encode($request);
@@ -550,7 +548,7 @@ class ClickBusController extends Controller {
 
             //Criando registro da compra no BD, usando da coluna pagamento_confirmado,
             //para quando o pagamento for por paypal ou cartao de debito,
-            //mediante a confirmacao de pegamento (getOrders ou disparo da clickbus)
+            //mediante a confirmacao de pagamento (getOrders ou disparo da clickbus)
             $compra = CompraClickbus::create([
                 'user_id' => $userId,
                 'localizer' => $localizer,
@@ -574,9 +572,8 @@ class ClickBusController extends Controller {
                 'volta_trip_date' => $volta_trip_date,
                 'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false
             ]);
-        
-         //Compra falhou
 
+         //Compra falhou
         } else {
             $retorno = ClickBusRepository::parseError($decoded);
         }
@@ -601,7 +598,7 @@ class ClickBusController extends Controller {
                 "total" => $compra->total
             ];
         }
-        
+
         return $retorno;
     }
 
@@ -638,6 +635,43 @@ class ClickBusController extends Controller {
 
         return json_encode($decoded);
     }
+
+		public function getSuccess(){
+
+			// MENSAGEM DE EMAIL PENDENTE PARA O USER
+			// 	$username = User::where('id', $compra->user_id)->get('username');
+			// 	$departure_location = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->first();
+			// 	$arrival_location = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->first();
+			// 	$ida_trip_date = CompraClickbus::where('ida_trip_date', $compra->ida_trip_date)->get();
+			// 	$volta_trip_date = CompraClickbus::where('volta_trip_date', $compra->volta_trip_date)->get();
+			//
+			// 		2016-01-26 00:05
+			//
+			// 	// Envia o email com status PENDENTE pro user
+			// 	Mail::send('emails.clickbus.pendente', [
+			// 		'username' => $username,
+			// 		'ida_departure_location' => $departure_location,
+			// 		'ida_arrival_location' => $arrival_location,
+			// 		'ida_bus_company' => ,
+			// 		'ida_data_departure' => ,
+			// 		'ida_hora_departure' => ,
+			// 		'ida_username' => $Ida->nome,
+			// 		'ida_document' => $Ida->documento,
+			// 		'ida_seat' => $Ida->numero_poltrona,
+			// 		'volta_departure_location' => $departure_location,
+			// 		'volta_arrival_location' => $arrival_location,
+			// 		'volta_bus_company' => ,
+			// 		'volta_data_departure' => $volta_trip_date,
+			// 		'volta_hora_departure' => ,
+			// 		'volta_username' => ,
+			// 		'volta_document' => ,
+			// 		'volta_seat' => ,
+			// 	], function ($message) use ($User) {
+			// 			$message->to($User->email, $User->perfil->apelido)->subject({!! trans('clickbus.clickbus_email-pending-subject') !!});
+			// 			$message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+			// 	});
+			$view = view('clickbus._success')->render();
+		}
 
     private static function getSession($session)
     {
