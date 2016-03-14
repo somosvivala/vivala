@@ -427,9 +427,9 @@
                                                         <td style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner" valign="top">
                                                             <table class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="left" width="100%" border="0" cellpadding="0" cellspacing="0">
                                                                 <tbody><tr>
-                                                                        <td class="mcnImageContent" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top"> 
+                                                                        <td class="mcnImageContent" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
 
-                                                                            <img alt="" src="http://vivala.com.br/email/vivalolimpica.png" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564"> 
+                                                                            <img alt="" src="http://vivala.com.br/email/vivalolimpica.png" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="564">
 
                                                                         </td>
                                                                     </tr>
@@ -450,12 +450,12 @@
 
                                                                         <td class="mcnTextContent" style="padding: 9px18px;line-height: 125%;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: Helvetica;font-size: 16px;text-align: left;" valign="top">
 
-                                                                            <h1 style="display: block;margin: 0;padding:0;color: #202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 32px;letter-spacing: normal;text-align: left;"><br>
+                                                                            <h1 style="display: block;margin: 0;padding:0;color:#202020;font-family: Helvetica;font-size: 26px;font-style: normal;font-weight: bold;line-height: 32px;letter-spacing: normal;text-align: left;">
                                                                                 <span style="font-family:trebuchet ms,lucida grande,lucida sans unicode,lucida sans,tahoma,sans-serif">Olá {{ ucfirst($user->perfil->apelido) }}!</span></h1>
 
-                                                                            <p style="line-height: 125%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;text-align: left;"><br>
+                                                                            <p style="font-weight: 800; line-height: 125%;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: Helvetica;font-size: 16px;text-align: left;"><br>
                                                                                         &nbsp;<br>
-                                                                                        Estamos muito felizes com seu interesse em fazer parte da Força de Trabalho Voluntário dos Jogos Olímpicos e Paralímpios do Rio 2016.
+                                                                                        <strong>Estamos muito felizes com seu interesse em fazer parte da Força de Trabalho Voluntário dos Jogos Olímpicos e Paralímpios do Rio 2016.
                                                                                 &nbsp;</p>
 
                                                                         </td>
@@ -494,26 +494,26 @@
 
                                                                             <span style="font-family:trebuchet ms,lucida grande,lucida sans unic
                                                                                 ode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">
-                Para você concluir sua inscrição, <a style="color:#FF6D20" href="https://portaldovoluntario.rio2016.com/ESIREG/NewFormRequest.do?language=1&formId=1">Clique Aqui</a> e insira o código INT111 no momento de cadastro, para sabermos que você veio da Vivalá!
-<br>
-<br>
+                Para você concluir sua inscrição, <a style="color:#FF6D20" href="https://portaldovoluntario.rio2016.com/ESIREG/NewFormRequest.do?language=1&formId=1">clique aqui</a> e insira o código INT111 no momento de cadastro, para sabermos que você veio da Vivalá!
+<br/>
+<br/>
 Feito esse cadastro, você será direcionado para um formulário que lhe pedirá uma série de informações pessoais. Depois, é só aguardar que em alguns dias o Comitê Organizador entrará em contato para te entrevistar!
-<br>
-<br>
+<br/>
+<br/>
 E fica ligado! Se tiverem campos em branco no seu cadastro, ele não se tornará ativo! Então cheque tudo para garantir que você vai concluir a inscrição!
-<br>
-<br>
+<br/>
+<br/>
 As vagas de voluntariado estão divididas nas categorias: Serviços de Saúde, Esportes, Imprensa e Comunicação, Apoio Operacional, Protocolo e idiomas, Transportes, Atendimento ao público, Tecnologia e Cerimônias de Premiação.  Temos certeza que você vai se dar muito bem em uma delas!
-<br>
-<br>
+<br/>
+<br/>
 Fique ligado nos próximos dias e lembre‐se que a Vivalá está à disposição para te ajudar no que for necessário! Qualquer coisa é só responder este e‐mail ou mandar mensagem por nosso <a style="color:#FF6D20" href="https://www.facebook.com/SomosVivala/?fref=ts">Facebook</a>!
-<br>
-<br>
+<br/>
+<br/>
 <span style="color:#FF6D20">Viva as experiências transformadoras,</span>
-<br>
+<br/>
 <span style="color:#FF6D20">Viva os Jogos Olímpicos e Paralímpicos do Rio 2016,</span>
-<br>
-<img alt="" src="http://vivala.com.br/email/logo.png" style="max-width: 180px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="180"> 
+<br/>
+<img alt="" src="http://vivala.com.br/email/logo.png" style="max-width: 180px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="180">
 
                 </span></span><br>
                                                                             &nbsp;
@@ -524,24 +524,7 @@ Fique ligado nos próximos dias e lembre‐se que a Vivalá está à disposiçã
                                                         </td>
                                                     </tr>
                                                 </tbody>
-                                                </table><table class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" border="0" cellpadding="0" cellspacing="0">
-                                                <tbody class="mcnImageBlockOuter">
-                                                    <tr>
-                                                        <td style="padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner" valign="top">
-                                                            <table class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="left" width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
-                                                                        <td class="mcnImageContent" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
-                                                                            <a href="mailto:contato@vivalabrasil.com.br?subject=Feedback%20Primeiros%20Cadastrados" title="" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/e10fc882-9e0c-4039-8330-958a531f3f2f.jpg" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="600">
-                                                                            </a>
-
-                                                                        </td>
-                                                                    </tr>
-                                                            </tbody></table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                        </table></td>
+                                                </table></td>
                                     </tr>
                                     <tr>
                                         <td valign="top" id="templateColumns" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FFFFFF;border-top: 0;border-bottom: 2pxsolid #EAEAEA;padding-top: 0;padding-bottom: 9px;"><!--[if gte mso 9]>
@@ -571,80 +554,6 @@ Fique ligado nos próximos dias e lembre‐se que a Vivalá está à disposiçã
                                             <![endif]-->
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td valign="top" id="templateFooter" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #e7e7e7;border-top: 0;border-bottom: 0;padding-top: 9px;padding-bottom: 9px;"><table class="mcnImageBlock"style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust:100%;" width="100%" border="0" cellpadding="0" cellspacing="0">
-                                                <tbody class="mcnImageBlockOuter">
-                                                    <tr>
-                                                        <td style="padding: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner" valign="top">
-                                                            <table class="mcnImageContentContainer" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="left" width="100%" border="0" cellpadding="0" cellspacing="0">
-                                                                <tbody><tr>
-                                                                        <td class="mcnImageContent" style="padding-right: 0px;padding-left: 0px;padding-top: 0;padding-bottom: 0;text-align:center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" valign="top">
-
-                                                                            <img alt="" src="https://gallery.mailchimp.com/7b5394cc8a27f4cfe5cb54cf9/images/766debac-69ee-4259-b83a-1a2fc407b461.jpg" style="max-width: 1490px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="600">
-
-
-                                                                        </td>
-                                                                    </tr>
-                                                            </tbody></table>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                                </table><table class="mcnFollowBlock" width="100%" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                <tbody class="mcnFollowBlockOuter">
-                                                    <tr>
-                                                        <td style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowBlockInner" align="center" valign="top">
-                                                            <table class="mcnFollowContentContainer" width="100%"border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                <tbody><tr>
-                                                                        <td style="padding-left: 9px;padding-right: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"align="center">
-                                                                            <table class="mcnFollowContent" width="100%" border="0"cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                <tbody><tr>
-                                                                                        <td style="padding-top: 9px;padding-right: 9px;padding-left: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" align="center" valign="top">
-                                                                                            <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
-                                                                                                <tbody><tr>
-                                                                                                        <td valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><!--[if mso]>
-                                                                                                            <table align="left" border="0" cel
-                                                                                                                lspacing="0" cellpadding="0" width="524">
-                                                                                                                <tr>
-                                                                                                                    <td align="left" valign="top" widt
-                                                                                                                        h="524">
-                                                                                                                        <![endif]-->
-
-
-
-                                                                                                                        <table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><tbody><tr>
-                                                                                                                                    <td style="padding-right: 10px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnFollowContentItemContainer" valign="top">
-                                                                                                                                </td>
-                                                                                                                            </tr>
-                                                                                                                    </tbody></table>
-
-
-
-
-                                                                                                                                </td>
-                                                                                                                            </tr>
-                                                                                                                    </tbody></table>
-
-
-                                                                                                                    <!--[if mso]>
-                                                                                                                </td>
-                                                                                                            </tr>
-                                                                                                        </table>
-                                                                                                        <![endif]-->
-                                                                                                    </td>
-                                                                                                </tr>
-                                                                                        </tbody></table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                        </tbody></table>
-                                                                    </td>
-                                                                </tr>
-                                                        </tbody></table>
-
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                    </table></td>
-                                </tr>
                             </table>
                             <!--[if gte mso 9]>
                         </td>
