@@ -500,7 +500,7 @@
 Feito esse cadastro, você será direcionado para um formulário que lhe pedirá uma série de informações pessoais. Cheque tudo para garantir que não ficaram campos em branco para concluir a sua inscrição! 
 <br/>
 <br/>
-E fica ligado! Se tiverem campos em branco no seu cadastro, ele não se tornará ativo! Então cheque tudo para garantir que você vai concluir a inscrição!
+Depois, é só aguardar que em alguns dias o Comitê Organizador entrará em contato para te entrevistar!
 <br/>
 <br/>
 As vagas de voluntariado estão divididas nas categorias: Serviços de Saúde, Esportes, Imprensa e Comunicação, Apoio Operacional, Protocolo e idiomas, Transportes, Atendimento ao público, Tecnologia e Cerimônias de Premiação e você poderá sinalizar as três áreas que mais tem interesse!
