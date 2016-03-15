@@ -1,3 +1,4 @@
+@extends('cuidar')
 
 @section('content')
 <div class="col-sm-12 margin-b-1">
