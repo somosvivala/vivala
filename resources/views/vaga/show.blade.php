@@ -1,4 +1,3 @@
-@extends('cuidar')
 
 @section('content')
 <div class="col-sm-12 margin-b-1">
@@ -90,7 +89,7 @@
     </div>
     <div class="col-sm-10">
         @if( $vaga->id == 19 )
-        Olá, {{ $Candidato->nome }}, entraremos em contato por e-mail, obrigado por se candidatar a vaga! 
+            Olá, {{ $Candidato->nome }}, estamos muito felizes com o seu interesse em se tornar um voluntário olímpico! Já te mandamos um e-mail com as orientações para você concluir  sua inscrição e fazer parte desse super time! Caso você tenha alguma dúvida, é só nos ligar no (11) 2645-2632 ou entrar em contato com <a href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a> . #SomosVivalá #Rio2016 #FazMaisPorEsporte 
         @else
         Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
         @endif
