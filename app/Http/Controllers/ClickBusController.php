@@ -636,6 +636,33 @@ class ClickBusController extends Controller {
         return json_encode($decoded);
     }
 
+    /**
+     * Bate no endpoint de /order e retorna os dados do pedido
+     */
+    public function getOrder($idOrder)
+    {
+        // Precisa mandar o sessionId?
+    	// $request = Input::all();
+        // $sessionId = self::getSession($request['request']['sessionId']);
+
+        $context = [
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'GET',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Cookie: PHPSESSID=".$sessionId,
+                'content' => json_encode($request)
+                ]
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/order'.$idOrder, false, $context);
+        $decoded = json_decode($result);
+
+        return $decoded->content;
+    }
+
+
 		public function getSuccess(){
 
 			// MENSAGEM DE EMAIL PENDENTE PARA O USER
