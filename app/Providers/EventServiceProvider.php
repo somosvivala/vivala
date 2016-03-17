@@ -23,7 +23,7 @@ class EventServiceProvider extends ServiceProvider {
 			'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
 		],
 
-		'App\Events\PagamentoConfirmado' => [
+		'App\Events\ClickBusPagamentoConfirmado' => [
 			'App\Handlers\Events\ClickBus\UpdatePagamento',
 			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
 		],

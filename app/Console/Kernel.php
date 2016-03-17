@@ -47,6 +47,7 @@ class Kernel extends ConsoleKernel {
                         // Caso tenha mudado de pendente para confirmado chama
                         // evento de pagamento confirmado (atualiza no
                         // bd e envia email)
+                        event(new ClickBusPagamentoConfirmado($Compra, "confirmado"));
                         
                     }
 
