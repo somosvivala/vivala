@@ -1,6 +1,6 @@
 <?php namespace App\Handlers\Events\ClickBus;
 
-use App\Events\PagamentoConfirmado;
+use App\Events\ClickBusPagamentoConfirmado;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
@@ -20,12 +20,13 @@ class UpdatePagamento {
 	/**
 	 * Handle the event.
 	 *
-	 * @param  PagamentoConfirmado  $event
+	 * @param  ClickBusPagamentoConfirmado  $event
 	 * @return void
 	 */
-	public function handle(PagamentoConfirmado $event)
+	public function handle(ClickBusPagamentoConfirmado $event)
 	{
-		//
+            $CompraClickBus = $event->CompraClickBus;
+            $status_pagamento = $event->status_pagamento;
 	}
 
 }
