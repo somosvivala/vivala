@@ -3,6 +3,7 @@
 use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use App\Repositories\ClickBusRepository;
 
 class Kernel extends ConsoleKernel {
 
@@ -41,6 +42,8 @@ class Kernel extends ConsoleKernel {
                 
                     foreach($compras as $Compra) {
                         // Consulta na clickbus das compras com status pendente
+                        ClickBusRepository::getOrder($Compra->id);
+
                         
 
                         // Caso tenha mudado de pendente para confirmado atualiza no

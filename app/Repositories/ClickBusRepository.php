@@ -114,4 +114,26 @@ class ClickBusRepository {
 
         return [$interval->h, $interval->i];
     }
+
+    /**
+     * Bate no endpoint de /order e retorna os dados do pedido
+     */
+    public function getOrder($idOrder)
+    {
+
+        $context = [
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'GET',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n"
+                ]
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/order/'.$idOrder, false, $context);
+        $decoded = json_decode($result);
+
+        return $decoded->content;
+    }
+
 }
