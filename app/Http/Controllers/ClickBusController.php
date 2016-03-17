@@ -13,8 +13,6 @@ use Auth;
 
 class ClickBusController extends Controller {
 
-	private static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
-
     // ClickBus [BUSCA]: Autocomplete do filtro de busca das passagens de onibus
 	public function autocompletePlace()
 	{
@@ -86,7 +84,7 @@ class ClickBusController extends Controller {
                 $context = stream_context_create(array(
                     'http' => array('ignore_errors' => true),
                 ));
-                $content_ida = file_get_contents(self::$url."/trip?scheduleId={$ida_obj->id}", false, $context);
+                $content_ida = file_get_contents(ClickBusRepository::$url."/trip?scheduleId={$ida_obj->id}", false, $context);
                 $ida = json_decode($content_ida);
 
 
@@ -690,5 +688,4 @@ class ClickBusController extends Controller {
 
         return $decoded->content;
     }
-
 }
