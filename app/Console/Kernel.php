@@ -44,10 +44,10 @@ class Kernel extends ConsoleKernel {
                         // Consulta na clickbus das compras com status pendente
                         ClickBusRepository::getOrder($Compra->id);
 
+                        // Caso tenha mudado de pendente para confirmado chama
+                        // evento de pagamento confirmado (atualiza no
+                        // bd e envia email)
                         
-
-                        // Caso tenha mudado de pendente para confirmado atualiza no
-                        // bd e envia email
                     }
 
                 }

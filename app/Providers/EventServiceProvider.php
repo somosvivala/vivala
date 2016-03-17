@@ -18,9 +18,14 @@ class EventServiceProvider extends ServiceProvider {
 			'EventListener',
 		],
 
-    //Aqui registro um Evento para seus Listeners
+                //Aqui registro um Evento para seus Listeners
 		'App\Events\PerfilHasVolunteered' => [
 			'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
+		],
+
+		'App\Events\PagamentoConfirmado' => [
+			'App\Handlers\Events\ClickBus\UpdatePagamento',
+			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
 		],
 
 	];
