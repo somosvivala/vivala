@@ -480,7 +480,7 @@ $(document).ready(function() {
             // 3 PILARES
             {
               element: '.tour-pilares-step1',
-              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Através do tour vamos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar pouco do seu tempo.<br/>Vamos lá!</p>',
+              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que esta é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Através do tour vamos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar pouco do seu tempo.<br/>Vamos lá!</p>',
               position: 'bottom'
             },
             {
