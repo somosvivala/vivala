@@ -9,7 +9,7 @@ class CompraClickbus extends Model {
      *
      * @var string
      */
-    protected $table = "compra_clickbuses";
+    protected $table = "compra_clickbus";
 
     protected $fillable =
         [

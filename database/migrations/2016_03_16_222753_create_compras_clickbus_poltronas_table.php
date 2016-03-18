@@ -22,8 +22,6 @@ class CreateComprasClickbusPoltronasTable extends Migration {
 				->on('compras_clickbus')
 				->onDelete('cascade');
 
-			$table->string('localizer')->nullable();
-			$table->string('ticket_code')->nullable();
 			$table->string('bus_company')->nullable();
 			$table->string('seat_number')->nullable();
 			$table->string('passenger_name')->nullable();
@@ -32,7 +30,8 @@ class CreateComprasClickbusPoltronasTable extends Migration {
 			$table->string('passenger_email')->nullable();
 			$table->string('departure_waypoint_id')->nullable();
 			$table->string('arrival_waypoint_id')->nullable();
-			$table->string('trip_date')->nullable();
+			$table->date('departure_time')->nullable();
+			$table->date('arrival_time')->nullable();
 
 			$table->string('subtotal')->nullable();
 		});
