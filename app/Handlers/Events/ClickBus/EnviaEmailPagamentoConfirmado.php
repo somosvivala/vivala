@@ -27,7 +27,10 @@ class EnviaEmailPagamentoConfirmado implements ShouldBeQueued
 
         //Envia email de sucesso no pagamento
         Mail::send('emails.clickbus.sucesso', ['compra' => $Compra], function ($message) use ($Compra) {
-            $message->to($Compra->email, $User->perfil->apelido)->subject('Obrigado, seu pagamento foi confirmado!');
+
+            // TESTE MAIL ClickBus
+            $message->to('brunoluizgr@gmail.com', 'TesteBrunol')->subject('[CLICKBUS] Obrigado, seu pagamento foi confirmado!');
+            //$message->to($Compra->email, $User->perfil->apelido)->subject('Obrigado, seu pagamento foi confirmado!');
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
         });
     }
