@@ -547,29 +547,45 @@ class ClickBusController extends Controller {
             //Criando registro da compra no BD, usando da coluna pagamento_confirmado,
             //para quando o pagamento for por paypal ou cartao de debito,
             //mediante a confirmacao de pagamento (getOrders ou disparo da clickbus)
+            //
+            //@TODO inserir as outras informações da compra no create
             $compra = CompraClickbus::create([
                 'user_id' => $userId,
-                'localizer' => $localizer,
+                //'buyer_firstname',
+                //'buyer_lastname',
+                //'buyer_birthday',
+                //'buyer_document',
+                //'buyer_document_type',
+                //'buyer_phone',
                 'payment_method' => $payment_method,
+                //'voucher',
+                //'voucher_discount',
+                //'desconto_total',
+                //'taxas',
                 'total' => $total,
-                'currency' => $currency,
-                'quantidade_passagens' => $quantidade_passagens,
 
+               // 'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false,
+                //'status'
+
+            ]);
+
+/*
+ * @TODO criar objeto poltrona e persistir ele no bd
+ * linkar obj compraclickbus com o's obj's compraclickbuspoltrona
+ * abaixo estao parte das informações das poltronas
+ 
                 'ida_quantidade' => $ida_quantidade,
-                'ida_trip_id' => $ida_trip_id,
-                'ida_trip_localizers' => implode($ida_trip_localizers, ","),
                 'ida_departure_waypoint_id' => $ida_departure_waypoint_id,
                 'ida_arrival_waypoint_id' => $ida_arrival_waypoint_id,
                 'ida_trip_date' => $ida_trip_date,
 
                 'volta_quantidade' => $volta_quantidade,
-                'volta_trip_id' => $volta_trip_id,
-                'volta_trip_localizers' => implode($volta_trip_localizers, ","),
                 'volta_departure_waypoint_id' => $volta_departure_waypoint_id,
                 'volta_arrival_waypoint_id' => $volta_arrival_waypoint_id,
                 'volta_trip_date' => $volta_trip_date,
-                'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false
-            ]);
+ 
+ 
+ */
 
          //Compra falhou
         } else {
