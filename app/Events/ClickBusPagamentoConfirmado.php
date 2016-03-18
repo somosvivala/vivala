@@ -9,6 +9,7 @@ class ClickBusPagamentoConfirmado extends Event {
 	use SerializesModels;
 
         public $CompraClickBus;
+				public $status_pagamento;
 
 	/**
 	 * Create a new event instance.

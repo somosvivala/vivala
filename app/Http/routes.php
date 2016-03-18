@@ -161,6 +161,19 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
 });
 
-
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
+
+// TESTE MAIL CLICKBUS, remover aṕos bateria de testes e homologação
+Route::get('/testeemailevento',  function() {
+
+	$compra = CompraClickbus::create([
+               'user_id' => 37,
+   ]);
+
+	$tipo_pagamento = "teste";
+
+	event(new ClickbusPagamentoConfirmado($compra, $tipopagamento));
+
+	dd("lalala");
+});
