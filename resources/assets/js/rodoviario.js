@@ -729,7 +729,7 @@ var bindaFormPagamento = function() {
 
         //Settando as informacoes extras que serao persistidas no backend
         params.extra = getInfoPagamentoParaCheckout();
-        tripbooking(params);
+        tripBooking(params);
 
     });
 
@@ -905,3 +905,11 @@ var funcaoSubmitPoltronas = function (ev) {
 };
 
 
+var getInfoPagamentoParaCheckout() {
+    var obj = {
+        "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
+        "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
+        "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.'))
+    };
+    return obj;
+}
