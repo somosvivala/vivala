@@ -905,11 +905,3 @@ var funcaoSubmitPoltronas = function (ev) {
 };
 
 
-var getInfoPagamentoParaCheckout() {
-    var obj = {
-        "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
-        "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
-        "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.'))
-    };
-    return obj;
-}
