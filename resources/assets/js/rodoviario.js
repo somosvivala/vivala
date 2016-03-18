@@ -727,7 +727,9 @@ var bindaFormPagamento = function() {
             confirmButtonClass: 'hide'
         });
 
-        tripBooking(params);
+        //Settando as informacoes extras que serao persistidas no backend
+        params.extra = getInfoPagamentoParaCheckout();
+        tripbooking(params);
 
     });
 
@@ -901,3 +903,13 @@ var funcaoSubmitPoltronas = function (ev) {
     tripPayment(params, frm);
 
 };
+
+
+var getInfoPagamentoParaCheckout() {
+    var obj = {
+        "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
+        "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
+        "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.'))
+    };
+    return obj;
+}
