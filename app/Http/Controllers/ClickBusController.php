@@ -671,6 +671,11 @@ class ClickBusController extends Controller {
 			$view = view('clickbus._success')->render();
 		}
 
+    /*
+     * Recupera/Refresh na sessao atual com a ClickBus
+     *
+     * @param @session - sessionId advindo da ClickBus
+     */
     private static function getSession($session)
     {
         $context = [

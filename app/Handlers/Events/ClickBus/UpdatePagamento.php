@@ -1,32 +1,28 @@
-<?php namespace App\Handlers\Events\ClickBus;
+<?php
+
+namespace app\Handlers\Events\ClickBus;
 
 use App\Events\ClickBusPagamentoConfirmado;
-
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
-class UpdatePagamento {
+class UpdatePagamento implements ShouldBeQueued
+{
+    /**
+     * Create the event handler.
+     */
+    public function __construct()
+    {
+        //
+    }
 
-	/**
-	 * Create the event handler.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		//
-	}
-
-	/**
-	 * Handle the event.
-	 *
-	 * @param  ClickBusPagamentoConfirmado  $event
-	 * @return void
-	 */
-	public function handle(ClickBusPagamentoConfirmado $event)
-	{
-            $CompraClickBus = $event->CompraClickBus;
-            $status_pagamento = $event->status_pagamento;
-	}
-
+    /**
+     * Handle the event.
+     *
+     * @param ClickBusPagamentoConfirmado $event
+     */
+    public function handle(ClickBusPagamentoConfirmado $event)
+    {
+        $CompraClickBus = $event->CompraClickBus;
+        $status_pagamento = $event->status_pagamento;
+    }
 }
