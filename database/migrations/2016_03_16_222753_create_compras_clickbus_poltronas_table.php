@@ -22,7 +22,6 @@ class CreateComprasClickbusPoltronasTable extends Migration {
 				->on('compras_clickbus')
 				->onDelete('cascade');
 
-			$table->string('bus_company')->nullable();
 			$table->string('seat_number')->nullable();
 			$table->string('passenger_name')->nullable();
 			$table->string('passenger_document_type')->nullable();

@@ -27,6 +27,7 @@ class CreateComprasClickbusTable extends Migration {
 			//content.localizer da compra usado para qualquer
 			//UPDATE order
 			$table->string('localizer')->nullable();
+			$table->string('bus_company')->nullable();
 			$table->string('buyer_firstname')->nullable();
 			$table->string('buyer_lastname')->nullable();
 			$table->string('buyer_birthday')->nullable();
@@ -34,12 +35,13 @@ class CreateComprasClickbusTable extends Migration {
 			$table->string('buyer_document_type')->nullable();
 			$table->string('buyer_phone')->nullable();
 			$table->string('payment_method')->nullable();
-			$table->string('voucher_use')->default(false);
-			$table->string('voucher_number')->nullable();
+			$table->string('voucher')->nullable();
 			$table->string('voucher_discount')->nullable();
-		  $table->string('total')->nullable();
+                        $table->decimal('desconto_total', 7, 2)->nullable();
+                        $table->decimal('taxas', 7, 2)->nullable();
+                        $table->decimal('total', 7, 2)->nullable();
 			//status do pedido, usado para o /orders verificar o estado do pagamento
-			$table->boolean('status')->default(false);
+			$table->string('status')->nullable();
 		});
 	}
 
