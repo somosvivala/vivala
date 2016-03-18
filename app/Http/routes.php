@@ -10,6 +10,16 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
+// TESTE MAIL CLICKBUS, remover aṕos bateria de testes e homologação
+Route::get('/testeemailevento',  function() {
+	$compra = CompraClickbus::create([
+   ]);
+	$tipo_pagamento = "teste";
+	event(new ClickbusPagamentoConfirmado($compra, $tipopagamento));
+	dd("Teste email ClickBus realizado com sucesso!");
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -163,17 +173,3 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
-
-// TESTE MAIL CLICKBUS, remover aṕos bateria de testes e homologação
-Route::get('/testeemailevento',  function() {
-
-	$compra = CompraClickbus::create([
-               'user_id' => 37,
-   ]);
-
-	$tipo_pagamento = "teste";
-
-	event(new ClickbusPagamentoConfirmado($compra, $tipopagamento));
-
-	dd("lalala");
-});

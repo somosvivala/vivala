@@ -34,7 +34,6 @@ class EnviaEmailPagamentoConfirmado {
 
 								// TESTE MAIL ClickBus
 								$message->to('brunoluizgr@gmail.com', 'TesteBrunol')->subject('[CLICKBUS] Obrigado, seu pagamento foi confirmado!');
-
 								//$message->to($Compra->email, $User->perfil->apelido)->subject('Obrigado, seu pagamento foi confirmado!');
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
             });
