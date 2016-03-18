@@ -42,7 +42,7 @@ class ClickBusController extends Controller {
         }
 
         // Montando a URL
-        $url = self::$url."/trips?from={$from}&to={$to}&departure={$departure}";
+        $url = ClickBusRepository::$url."/trips?from={$from}&to={$to}&departure={$departure}";
 
         // Ignorando possíveis erros 404 no retorno do servidor da ClickBus
         $context = stream_context_create(array(
@@ -117,7 +117,7 @@ class ClickBusController extends Controller {
                 ];
                 $context = stream_context_create($context);
 
-                $content_volta = file_get_contents(self::$url."/trip?scheduleId={$volta_obj->id}", false, $context);
+                $content_volta = file_get_contents(ClickBusRepository::$url."/trip?scheduleId={$volta_obj->id}", false, $context);
                 $volta = json_decode($content_volta);
 
                 if(isset($volta) && isset($volta->{"error"})){
@@ -169,7 +169,7 @@ class ClickBusController extends Controller {
 	        ]
 	    ];
         $context = stream_context_create($context);
-        $result = file_get_contents(self::$url.'/seat-block', false, $context);
+        $result = file_get_contents(ClickBusRepository::$url.'/seat-block', false, $context);
 
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
@@ -206,7 +206,7 @@ class ClickBusController extends Controller {
             ];
         $context = stream_context_create($context);
 
-        $result = file_get_contents(self::$url.'/seat-block', false, $context);
+        $result = file_get_contents(ClickBusRepository::$url.'/seat-block', false, $context);
 
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
@@ -263,7 +263,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(self::$url.'/payments', false, $context);
+        $result = file_get_contents(ClickBusRepository::$url.'/payments', false, $context);
         $decoded = json_decode($result);
 
         //Montando objeto $Ida
@@ -430,7 +430,7 @@ class ClickBusController extends Controller {
 
         $context = stream_context_create($context);
 
-        $result = file_get_contents(self::$url.'/booking', false, $context);
+        $result = file_get_contents(ClickBusRepository::$url.'/booking', false, $context);
 
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
@@ -620,7 +620,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(self::$url.'/booking/voucher', false, $context);
+        $result = file_get_contents(ClickBusRepository::$url.'/booking/voucher', false, $context);
         $decoded = json_decode($result);
 
         if(isset($decoded) && isset($decoded->{"error"})){
@@ -683,7 +683,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(self::$url.'/session', false, $context);
+        $result = file_get_contents(ClickBusRepository::$url.'/session', false, $context);
         $decoded = json_decode($result);
 
         return $decoded->content;
