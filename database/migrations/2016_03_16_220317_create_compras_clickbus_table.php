@@ -29,11 +29,12 @@ class CreateComprasClickbusTable extends Migration {
                 ->on('users')
                 ->onDelete('cascade');
 
+            $table->string('localizer')->nullable();
             $table->string('buyer_firstname')->nullable();
             $table->string('buyer_lastname')->nullable();
             $table->string('buyer_birthday')->nullable();
             $table->string('buyer_document')->nullable();
-            $table->string('buyer_document_type')->nullable();
+            $table->string('buyer_email')->nullable();
             $table->string('buyer_phone')->nullable();
             $table->string('payment_method')->nullable();
             $table->string('voucher')->nullable();

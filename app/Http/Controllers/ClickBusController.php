@@ -435,17 +435,30 @@ class ClickBusController extends Controller {
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
-        //Se for success cria um registro na tabela de compras da clickbus
+        //Se for success organiza as informacoes
+        //para criar um registro na tabela de compras da clickbus
         if ($success)
         {
-            $userId = Auth::user()->id;
-            $localizer = $decoded->{"content"}->{"localizer"};
             $itens = $decoded->{"content"}->{"items"};
-            $payment_method = $decoded->{"content"}->{"payment"}->{"method"};
-            $total = $decoded->{"content"}->{"payment"}->{"total"};
-            $currency = $decoded->{"content"}->{"payment"}->{"currency"};
-            $quantidade_passagens = count($itens);
+            $userId = Auth::user()->id;
 
+            //informacoes referentes a compra
+            $localizer = $decoded->{"content"}->{"localizer"};
+            $buyerFirstname = $request['request']["buyer"]["firstName"];
+            $buyerLastname = $request['request']["buyer"]["lastName"];
+            $buyerBirthday = $request['request']["buyer"]["birthday"];
+            $buyerDocument = $request['request']["buyer"]["document"];
+            $buyerEmail = $request['request']["buyer"]["email"];
+            $buyerPhone = $request['request']["buyer"]["phone"];
+            $paymentMethod = $decoded->{"content"}->{"payment"}->{"method"};
+            $voucher = $request['request']['voucher'];
+            $statusPagamento = $decoded->{"content"}->{"status"};
+
+            //pegando informacoes extras na request para persistir
+            $descontoTotal = $request['extra']['desconto'];
+            $taxas = $request['extra']['taxas'];
+            $total = $decoded->{"content"}->{"payment"}->{"total"};
+            $quantidadePassagens = count($itens);
 
             //switch para formatar a url de redirecionamento corretamente
             switch ($payment_method)
@@ -454,32 +467,9 @@ class ClickBusController extends Controller {
                     $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
                     break;
 
-                //Removendo essa secao já que nao havera pagamento por paypal
-                /*
-                case "payment.paypal_hpp" :
-                    $query["cmd"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"cmd"};
-                    $query["business"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"business"};
-                    $query["item_name"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"item_name"};
-                    $query["amount"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"amount"};
-                    $query["currency_code"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"currency_code"};
-                    $query["button_subtype"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"button_subtype"};
-                    $query["bn"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"bn"};
-                    $query["invoice"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"invoice"};
-                    $query["custom"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"custom"};
-                    $query["return"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"return"};
-                    $query["lc"] = $decoded->{"content"}->{"payment"}->{"meta"}->{"postData"}->{"lc"};
-
-                    $formatedQuery = http_build_query($query);
-                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"meta"}->{"postUrl"} . "?" . $formatedQuery;
-
-                    //Sera melhor redirecionar por aqui?
-                    //header('Location: https://www.paypal.com/cgi-bin/webscr?' . $query_string);
-                    break;
-                 */
                 case "payment.creditcard" :
                     $redirectUrl = "";
                     break;
-
             }
 
             //inicializando variaveis que vou incrementar /  settar nas
@@ -547,26 +537,21 @@ class ClickBusController extends Controller {
             //Criando registro da compra no BD, usando da coluna pagamento_confirmado,
             //para quando o pagamento for por paypal ou cartao de debito,
             //mediante a confirmacao de pagamento (getOrders ou disparo da clickbus)
-            //
-            //@TODO inserir as outras informações da compra no create
             $compra = CompraClickbus::create([
                 'user_id' => $userId,
-                //'buyer_firstname',
-                //'buyer_lastname',
-                //'buyer_birthday',
-                //'buyer_document',
-                //'buyer_document_type',
-                //'buyer_phone',
-                'payment_method' => $payment_method,
-                //'voucher',
-                //'voucher_discount',
-                //'desconto_total',
-                //'taxas',
+                'localizer' => $localizer,
+                'buyer_firstname' => $buyerFirstname,
+                'buyer_lastname' => $buyerLastname,
+                'buyer_birthday' => $buyerBirthday,
+                'buyer_document' => $buyerDocument,
+                'buyer_phone' => $buyerPhone,
+                'buyer_email' => $buyerEmail,
+                'payment_method' => $paymentMethod,
+                'voucher' => $voucher,
+                'desconto_total' => $descontoTotal,
+                'taxas' => $taxas,
                 'total' => $total,
-
-               // 'pagamento_confirmado' => isset($flagPagamento) ? $flagPagamento : false,
-                //'status'
-
+                'status' => $statusPagamento
             ]);
 
 /*
