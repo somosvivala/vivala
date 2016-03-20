@@ -447,80 +447,6 @@ class ClickBusController extends Controller {
             $total = $decoded->{"content"}->{"payment"}->{"total"};
             $quantidadePassagens = count($itens);
 
-            //switch para formatar a $redirectUrl corretamente (caso debitcard)
-            switch ($payment_method)
-            {
-                case "payment.debitcard" :
-                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
-                    break;
-
-                case "payment.creditcard" :
-                    $redirectUrl = "";
-                    break;
-            }
-
-            //inicializando variaveis que vou incrementar /  settar nas
-            //iteracoes do foreach de $itens
-            $ida_quantidade = 0;
-            $ida_trip_id = "";
-            $ida_trip_localizers = [];
-            $ida_trip_waypoint_id = "";
-            $ida_departure_waypoint_id = "";
-            $ida_arrival_waypoint_id = "";
-            $ida_trip_date = "";
-
-            $volta_quantidade = 0;
-            $volta_trip_id = "";
-            $volta_trip_localizers = [];
-            $volta_departure_waypoint_id = "";
-            $volta_arrival_waypoint_id = "";
-            $volta_trip_date = "";
-
-            //Como as viagens sao compostas de até 2 trips (ida e volta), nao
-            //tem problema em re-settar as variaveis a cada iteração, os valores
-            //sao os mesmos para um mesmo tipo de trip (departure x return)
-            foreach ($itens as $Trip)
-            {
-                //se for de ida
-                if ($Trip->{"context"} == "departure")
-                {
-                    $ida_quantidade++;
-                    $ida_trip_id = $Trip->{"trip_id"};
-
-                    //se for creditcard entao os localizers das poltronas existem
-                    if ($payment_method == 'creditcard')
-                    {
-                        $ida_trip_localizers[] = $Trip->{"localizer"};
-                    }
-
-                    $ida_departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
-                    $ida_arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
-                    $ida_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
-                }
-
-                //se for volta (context == return)
-                else
-                {
-                    $volta_quantidade++;
-                    $volta_trip_id = $Trip->{"trip_id"};
-
-                    //se for creditcard entao os localizers das poltronas existem
-                    if ($payment_method == 'creditcard')
-                    {
-                        $volta_trip_localizers[] = $Trip->{"localizer"};
-                    }
-
-                    $volta_departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
-                    $volta_arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
-                    $volta_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
-                }
-            }
-
-            if ($payment_method == 'creditcard')
-            {
-                $flagPagamento = true;
-            }
-
             //Criando registro da compra no BD, usando da coluna pagamento_confirmado,
             //para quando o pagamento for por paypal ou cartao de debito,
             //mediante a confirmacao de pagamento (getOrders ou disparo da clickbus)
@@ -541,34 +467,60 @@ class ClickBusController extends Controller {
                 'status' => $statusPagamento
             ]);
 
-/*
- * @TODO criar objeto poltrona e persistir ele no bd
- * linkar obj compraclickbus com o's obj's compraclickbuspoltrona
- * abaixo estao parte das informações das poltronas
- 
-                'ida_quantidade' => $ida_quantidade,
-                'ida_departure_waypoint_id' => $ida_departure_waypoint_id,
-                'ida_arrival_waypoint_id' => $ida_arrival_waypoint_id,
-                'ida_trip_date' => $ida_trip_date,
+            //Como as viagens sao compostas de até 2 trips (ida e volta), nao
+            //tem problema em re-settar as variaveis a cada iteração, os valores
+            //sao os mesmos para um mesmo tipo de trip (departure x return)
+            foreach ($itens as $Trip)
+            {
+                $trip_id = $Trip->{"trip_id"};
 
-                'volta_quantidade' => $volta_quantidade,
-                'volta_departure_waypoint_id' => $volta_departure_waypoint_id,
-                'volta_arrival_waypoint_id' => $volta_arrival_waypoint_id,
-                'volta_trip_date' => $volta_trip_date,
- 
- 
- */
+                //se existirem localizers para as poltronas
+                if (property_exists($Trip, "localizer")) {
+                    $trip_localizer = $Trip->{"localizer"};
+                }
 
-         //Compra falhou
-        } else {
-            $retorno = ClickBusRepository::parseError($decoded);
-        }
+                $departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
+                $departure_id = ClickBusPlace::where('item_id', $departure_waypoint_id)->get()->first()->id;
+                $arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
+                $arrival_id = ClickBusPlace::where('item_id', $arrival_waypoint_id)->get()->first()->id;
 
-        // Booking
-        if (isset($compra))
-        {
-            $departure = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->first();
-            $arrival = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->first();
+                $departure_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
+                $arrival_trip_date = $Trip->{"arrival"}->{"schedule"}->{"date"} . " " . $Trip->{"arrival"}->{"schedule"}->{"time"};
+                $passenger_email = $Trip->{"passenger"}->{"email"};
+                $seat_number = $Trip->{"seat"}->{"name"};
+                $passenger_document = $Trip->{"passenger"}->{"document"};
+                $passenger_name = $Trip->{"passenger"}->{"firstName"} . $Trip->{"passenger"}->{"lastName"};
+                $subTotal = $Trip->{"subtotal"};
+
+                $compra->poltronas()->save(CompraClickbusPoltrona::create([
+                    //'compra_id',
+                    'departure_id' => $departure_id,
+                    'arrival_id' => $arrival_id,
+                    //'viacao_id' => $companyId,
+                    'localizer' => $trip_localizer,
+                    'passenger_name' => $passenger_name,
+                    'passenger_document_number' => $passenger_document,
+                    'seat_number' => $seat_number,
+                    'passenger_email' => $passenger_email,
+                    'departure_time' => $departure_trip_date,
+                    'arrival_time' => $arrival_trip_date,
+                    'subtotal' => $subTotal
+                    ]));
+            }
+
+            $compra->push();
+
+            //switch para formatar a $redirectUrl corretamente (caso debitcard)
+            switch ($paymentMethod)
+            {
+                case "payment.debitcard" :
+                    $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
+                    break;
+
+                case "payment.creditcard" :
+                    $redirectUrl = "";
+                    break;
+            }
 
             $retorno = [
                 "success" => true,
@@ -583,8 +535,13 @@ class ClickBusController extends Controller {
                 "volta_data" => $compra->volta_trip_date,
                 "total" => $compra->total
             ];
+
+        //Se a compra tiver falhado
+        } else {
+            $retorno = ClickBusRepository::parseError($decoded);
         }
 
+        //return erro ou success
         return $retorno;
     }
 
