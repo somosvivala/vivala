@@ -400,21 +400,13 @@ class ClickBusController extends Controller {
     public function getBooking(Request $request)
     {
         $request = Input::get('params');
-
-        $payment_method = $request['request']["buyer"]["payment"]["method"];
-
         $sessionId = $request['request']['sessionId'];
 
+        //convertendo para int o valor em total
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
-
-        //Se o metodo de pagamento for paypal, entao meu objeto request nao possui os propriedades no objeto "meta"
-        if ($payment_method != 'paypal_hpp') {
-            $request['request']["buyer"]["payment"]["meta"]["card"] = preg_replace('/\s+/', '', $request['request']["buyer"]["payment"]["meta"]["card"]);
-            $request['request']["buyer"]["payment"]["meta"]["name"] = strtoupper($request['request']["buyer"]["payment"]["meta"]["name"]);
-        }
-
         $data = json_encode($request);
 
+        //recuperando a sessao com a clickbus para garantir que esta atualizada.
         $sessionId = self::getSession($sessionId);
 
         $context = [
@@ -429,9 +421,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-
         $result = file_get_contents(ClickBusRepository::$url.'/booking', false, $context);
-
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
@@ -442,7 +432,6 @@ class ClickBusController extends Controller {
             $itens = $decoded->{"content"}->{"items"};
             $userId = Auth::user()->id;
 
-            //informacoes referentes a compra
             $localizer = $decoded->{"content"}->{"localizer"};
             $buyerFirstname = $request['request']["buyer"]["firstName"];
             $buyerLastname = $request['request']["buyer"]["lastName"];
@@ -453,14 +442,12 @@ class ClickBusController extends Controller {
             $paymentMethod = $decoded->{"content"}->{"payment"}->{"method"};
             $voucher = $request['request']['voucher'];
             $statusPagamento = $decoded->{"content"}->{"status"};
-
-            //pegando informacoes extras na request para persistir
             $descontoTotal = $request['extra']['desconto'];
             $taxas = $request['extra']['taxas'];
             $total = $decoded->{"content"}->{"payment"}->{"total"};
             $quantidadePassagens = count($itens);
 
-            //switch para formatar a url de redirecionamento corretamente
+            //switch para formatar a $redirectUrl corretamente (caso debitcard)
             switch ($payment_method)
             {
                 case "payment.debitcard" :

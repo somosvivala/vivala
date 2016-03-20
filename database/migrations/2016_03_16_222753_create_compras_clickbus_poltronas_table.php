@@ -10,25 +10,48 @@ class CreateComprasClickbusPoltronasTable extends Migration
      */
     public function up()
     {
-        Schema::create('compras_clickbus_poltronas', function (Blueprint $table) {
-            //FK para compra (poltrona que esta relacionada a compra x)
+        Schema::create('compras_clickbus_poltronas', function (Blueprint $table)
+        {
             $table->increments('id');
             $table->timestamps();
+
+            //fk para compra, toda poltrona pertence a 1 compra
             $table->foreign('compra_id')
                 ->references('id')
                 ->on('compras_clickbus')
                 ->onDelete('cascade');
 
-            $table->string('seat_number')->nullable();
+            //fk para id em clickbusplaces, esse id é o nosso
+            //id interno, nao o waypoint_id da clickbus
+            $table->string('departure_id')->nullable();
+            $table->foreign('departure_id')
+                ->references('id')
+                ->on('ClickBusPlaces')
+                ->onDelete('cascade');
+
+            //fk para id em clickbusplaces, esse id é o nosso
+            //id interno, nao o waypoint_id da clickbus
+            $table->string('arrival_id')->nullable();
+            $table->foreign('arrival_id')
+                ->references('id')
+                ->on('ClickBusPlaces')
+                ->onDelete('cascade');
+
+            //fk para id em clickbuscompanies
+            $table->string('viacao_id')->nullable();
+            $table->foreign('viacao_id')
+                ->references('id')
+                ->on('ClickBusCompanies')
+                ->onDelete('cascade');
+
+            $table->string('localizer')->nullable();
             $table->string('passenger_name')->nullable();
-            $table->string('passenger_document_type')->nullable();
             $table->string('passenger_document_number')->nullable();
+            $table->string('passenger_document_type')->nullable();
+            $table->string('seat_number')->nullable();
             $table->string('passenger_email')->nullable();
-            $table->string('departure_waypoint_id')->nullable();
-            $table->string('arrival_waypoint_id')->nullable();
             $table->date('departure_time')->nullable();
             $table->date('arrival_time')->nullable();
-
             $table->string('subtotal')->nullable();
         });
     }

@@ -16,17 +16,19 @@ class CompraClickbusPoltrona extends Model
     //Settando colunas que podem ser MassAssigned
     //AKA CompraClickBusPoltrona::create(['coluna' => 'valor']);
     protected $fillable = [
-        'seat_number',
+        'compra_id',
+        'departure_id',
+        'arrival_id',
+        'viacao_id',
+        'localizer',
         'passenger_name',
-        'passenger_document_type',
         'passenger_document_number',
+        'passenger_document_type',
+        'seat_number',
         'passenger_email',
-        'departure_waypoint_id',
-        'arrival_waypoint_id',
         'departure_time',
         'arrival_time',
-        'subtotal',
-        'compra_id',
+        'subtotal'
     ];
 
     /**
@@ -36,4 +38,29 @@ class CompraClickbusPoltrona extends Model
     {
         return $this->belongsTo("App\CompraClickBus");
     }
+
+    /**
+     * Toda poltrona tem um local de embarque
+     */
+    public function embarque()
+    {
+        return $this->belongsTo("App\ClickBusPlaces", 'departure_id');
+    }
+
+    /**
+     * Toda poltrona tem um local de desembarque
+     */
+    public function desembarque()
+    {
+        return $this->belongsTo("App\ClickBusPlaces", 'arrival_id');
+    }
+
+    /**
+     * Toda poltrona é oferecida por 1 viacao
+     */
+    public function viacao()
+    {
+        return $this->belongsTo("App\ClickBusCompanies", 'viacao_id');
+    }
+
 }
