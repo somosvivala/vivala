@@ -11,15 +11,6 @@
 |
 */
 
-// TESTE MAIL CLICKBUS, remover aṕos bateria de testes e homologação
-Route::get('/testeemailevento',  function() {
-	$compra = CompraClickbus::create([
-   ]);
-	$tipo_pagamento = "teste";
-	event(new ClickbusPagamentoConfirmado($compra, $tipopagamento));
-	dd("Teste email ClickBus realizado com sucesso!");
-});
-
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');

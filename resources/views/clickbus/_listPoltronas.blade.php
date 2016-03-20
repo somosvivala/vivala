@@ -5,12 +5,12 @@
         <div class="ida container-onibus margin-b-2">
             <div class="row">
                 <label class="col-sm-12">{{ trans('clickbus.clickbus_to-title') }} - {{ trans('clickbus.clickbus_route') }} 1: </label>
-                <span class="col-sm-12"> {{ $from }} {{ trans('clickbus.clickbus_to') }} {{ $to }} </span>
+                <span class="col-sm-12"><span class="texto-negrito">{{ $from }}</span> {{ trans('clickbus.clickbus_to') }} <span class="texto-negrito">{{ $to }}</span></span>
             </div>
             <div class="row">
-                <span class="col-sm-3">{{ trans('global.date_day') }}: <span>{{ $ida->diames }}</span></span>
-                <span class="col-sm-3">{{ trans('global.date_hour') }}: <span>{{ $ida->horario }}</span></span>
-                <span class="col-sm-6">{{ trans('global.lbl_company') }}: <span>{{ $ida->content->busCompany->name }}</span></span>
+                <span class="col-sm-3">{{ trans('global.date_day') }}: <span class="texto-negrito">{{ $ida->diames }}</span></span>
+                <span class="col-sm-3">{{ trans('global.date_hour') }}: <span class="texto-negrito">{{ $ida->horario }}</span></span>
+                <span class="col-sm-6">{{ trans('global.lbl_company') }}: <span class="texto-negrito">{{ $ida->content->busCompany->name }}</span></span>
             </div>
             @if(isset($ida->content->seats))
             <div class="margin-t-1 onibus">
@@ -46,12 +46,12 @@
         <div class="volta container-onibus">
             <div class="row">
                 <label class="col-sm-12">{{ trans('clickbus.clickbus_from-title') }} - {{ trans('clickbus.clickbus_route') }} 2: </label>
-                <span class="col-sm-12"> {{ $to}} {{ trans('clickbus.clickbus_to') }} {{ $from }} </span>
+                <span class="col-sm-12"><span class="texto-negrito">{{ $to}}</span> {{ trans('clickbus.clickbus_to') }} <span class="texto-negrito">{{ $from }}</span></span>
             </div>
             <div class="row">
-                <span class="col-sm-3">{{ trans('global.date_day') }}: <span>{{ $volta->diames }}</span></span>
-                <span class="col-sm-3">{{ trans('global.date_hour') }}: <span>{{ $volta->horario }}</span></span>
-                <span class="col-sm-6">{{ trans('clickbus.clickbus_company') }}: <span>{{ $volta->content->busCompany->name }}</span></span>
+                <span class="col-sm-3">{{ trans('global.date_day') }}: <span class="texto-negrito">{{ $volta->diames }}</span></span>
+                <span class="col-sm-3">{{ trans('global.date_hour') }}: <span class="texto-negrito">{{ $volta->horario }}</span></span>
+                <span class="col-sm-6">{{ trans('global.lbl_company') }}: <span class="texto-negrito">{{ $volta->content->busCompany->name }}</span></span>
             </div>
             <input type="hidden" id="volta-session-id" value="{{ $volta->sessionId }}">
             <input type="hidden" id="volta-trip-id" value="{{ $volta->content->trip_id }}">
@@ -174,7 +174,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-acao" type="submit">{{ trans('clickbus.clickbus_choose-seat') }} <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide"></i>
+                <button class="btn btn-acao" type="submit">{{ trans('clickbus.clickbus_choose-seat') }} <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide laranja"></i>
                         </button>
              </div>
              </form>
@@ -236,7 +236,7 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-acao" type="submit">{{ trans('clickbus.clickbus_choose-seat') }} <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide"></i>
+                <button class="btn btn-acao" type="submit">{{ trans('clickbus.clickbus_choose-seat') }} <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide laranja"></i>
                         </button>
              </div>
              </form>
