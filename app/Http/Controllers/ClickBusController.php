@@ -375,7 +375,7 @@ class ClickBusController extends Controller {
         $Ida->horario = $request["frm"]["ida-horario"];
         $Ida->horario_chegada = $request["frm"]["ida-horario-chegada"];
         $Ida->company = $request["frm"]["ida-company"];
-        $Ida->companyId = ClickBusCompany::where('nome', $request["frm"]["ida-company"])->get()->id;
+        $Ida->companyId = ClickBusCompany::where('nome', $request["frm"]["ida-company"])->first()->id;
         $Ida->classe = $request["frm"]["ida-classe"];
 
         // Se o $decoded não possuir nenhum error internamente, retorno os dados tratados para a view _checkout
