@@ -16,7 +16,7 @@ class CreateComprasClickbusPoltronasTable extends Migration
             $table->timestamps();
 
             //fk para compra, toda poltrona pertence a 1 compra
-            $table->integer('compra_id');
+            $table->integer('compra_id')->nullable();
             $table->foreign('compra_id')
                 ->references('id')
                 ->on('compras_clickbus')
