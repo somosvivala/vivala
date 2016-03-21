@@ -11,6 +11,13 @@
 |
 */
 
+use App\CompraClickbus;
+Route::get('/testeemail', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
