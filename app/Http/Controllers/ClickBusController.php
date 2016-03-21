@@ -10,6 +10,7 @@ use Input;
 use App\Repositories\ClickBusRepository;
 use App\Http\Requests\SelecionarPoltronasClickbusRequest;
 use Auth;
+use App\Events\ClickBusCompraFinalizada;
 
 class ClickBusController extends Controller {
 
