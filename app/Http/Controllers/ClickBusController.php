@@ -536,6 +536,9 @@ class ClickBusController extends Controller {
                 "total" => $compra->total
             ];
 
+            // Chama o evento de compra finalizada para enviar emails
+            event(new ClickBusCompraFinalizada($compra));
+
         //Se a compra tiver falhado
         } else {
             $retorno = ClickBusRepository::parseError($decoded);
