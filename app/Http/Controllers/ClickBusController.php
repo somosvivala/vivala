@@ -363,7 +363,7 @@ class ClickBusController extends Controller {
             $Volta->horario = $request["frm"]["volta-horario"];
             $Volta->horario_chegada = $request["frm"]["volta-horario-chegada"];
             $Volta->company = $request["frm"]["volta-company"];
-            $Volta->companyId = ClickBusCompany::where('nome', $request["frm"]["volta-company"])->get()->id;
+            $Volta->companyId = ClickBusCompany::where('nome', $request["frm"]["volta-company"])->first()->id;
             $Volta->classe = $request["frm"]["volta-classe"];
         }
 
