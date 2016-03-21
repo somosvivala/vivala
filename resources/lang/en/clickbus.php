@@ -481,6 +481,9 @@ return[
     'clickbus_email-sigla-dolar' => 'US$ ',
     'clickbus_email-sigla-iso4217-real' => 'BRL',
     'clickbus_email-sigla-iso4217-dollar' => 'USD',
+    'clickbus_email-payment-method-debitcard' => 'Debit Card',
+    'clickbus_email-payment-method-creditcard' => 'Credit Card',
+    'clickbus_email-payment-method-unavaiable' => 'Payment method unavaiable.',
 
     'clickbus_email-payment-analyze' => 'Your payment is being analyzed.',
     'clickbus_email-payment-pending' => ', your passage will be confirmed once we receive a <span style="font-weight:800">payment confirmation</span>.',
