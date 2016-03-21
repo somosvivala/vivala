@@ -497,10 +497,23 @@ class ClickBusController extends Controller {
                 $passenger_name = $Trip->{"passenger"}->{"firstName"} . $Trip->{"passenger"}->{"lastName"};
                 $subTotal = $Trip->{"subtotal"};
 
+                $idaFrom = array_key_exists('ida-from', $request['extra']) ? $request['extra']['ida-from'] : null;
+
+                //Comparando o local de embarque para saber determinar a viacao
+                if ($idaFrom == ClickBusPlace::find($departure_id)->place_name) {
+                    $viacao_id = $request['extra']['ida-company-id'];
+                }
+
+                else {
+                    $viacao_id = $request['extra']['volta-company-id'];
+                }
+
+
+
                 $compra->poltronas()->save(CompraClickbusPoltrona::create([
                     'departure_id' => $departure_id,
                     'arrival_id' => $arrival_id,
-                    //'viacao_id' => $companyId,
+                    'viacao_id' => $viacao_id,
                     'localizer' => $trip_localizer,
                     'passenger_name' => $passenger_name,
                     'passenger_document_number' => $passenger_document,
@@ -528,12 +541,12 @@ class ClickBusController extends Controller {
 
             $retorno = [
                 "success" => true,
-                "forma_pagamento" => $payment_method,
+                "forma_pagamento" => $paymentMethod,
                 "redirectUrl" => $redirectUrl,
-                "ida_departure" => ($departure != null ? $departure->place_name : ""),
-                "ida_arrival" => ($arrival != null ? $arrival->place_name :  ""),
-                "volta_departure" => ($arrival != null ? $arrival->place_name :  ""),
-                "volta_arrival" => ($departure != null ? $departure->place_name : ""),
+                "ida_departure" => ClickBusPlace::find($departure_id)->place_name,
+                "ida_arrival" => ClickBusPlace::find($arrival_id)->place_name,
+                "volta_departure" => ClickBusPlace::find($arrival_id)->place_name,
+                "volta_arrival" => ClickBusPlace::find($departure_id)->place_name,
                 "quantidade" => $compra->quantidade_passagens,
                 "ida_data" => $compra->ida_trip_date,
                 "volta_data" => $compra->volta_trip_date,

@@ -388,7 +388,7 @@
                    <input type="hidden" id="volta-diames" name="volta-diames" value="{{ $Volta->diames }}">
                    <input type="hidden" id="volta-horario" name="volta-horario" value="{{ $Volta->horario }}">
                    <input type="hidden" id="volta-company" name="volta-company" value="{{ $Volta->company }}">
-                   <input type="hidden" id="volta-company-id" name="volta-company-id" value="{{ $volta->companyId }}">
+                   <input type="hidden" id="volta-company-id" name="volta-company-id" value="{{ $Volta->companyId }}">
                 @endif
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
