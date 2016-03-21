@@ -179,7 +179,7 @@ return[
 'clickbus_error-J6' => 'The application encountered a temporary error and could not complete your request.<br/>An error occurred while proccessing your request before it’s sent to the Booking Engine.',
 'clickbus_error-J7' => 'The server encountered a temporary error and could not complete your request.<br/>An error occurred after sending your request to the Booking Engine.',
 'clickbus_error-J8' => 'Please provide a valid date for DEPARTURE.<br/>The value for DEPARTURE is invalid or incorrect.',
-'clickbus_error-J9' => 'The DEPARTURE date cannot occur in a day before today.<br/>The value for DEPARTURE cannot be a date in the past.', 
+'clickbus_error-J9' => 'The DEPARTURE date cannot occur in a day before today.<br/>The value for DEPARTURE cannot be a date in the past.',
 // Pagamentos
 'clickbus_error-K1' => 'Please provide the META BLOCK.<br/>The parameter meta is missing from the Request.',
 'clickbus_error-K2' => 'Please provide your store parameters for META.<br/>At least one of the parameters store, model or platform is missing.',
@@ -411,5 +411,83 @@ return[
 'clickbus_misc-error-10' => '',
 
 'clickbus_error-A44' => 'Try another voucher.',
+
+/*
+  Tradução dos emails [Ordem: Sucesso, Pendente, Cancelamento]
+*/
+  // Cabeçalhos
+    'clickbus_email-vivala-subject-pending' => 'Vivalá - Thanks, your payment is awaiting for approval.',
+    'clickbus_email-vivala-subject-success' => 'Vivalá - Thanks, your payment was successfully confirmed!',
+    'clickbus_email-vivala-subject-cancelled' => 'Vivalá - Your payment has been canceled.',
+
+  // Corpo dos emails
+    'clickbus_email-vivala-title' => 'Vivalá',
+    'clickbus_email-vivala-address' => 'Rua do Rócio, 52, cj 122, Vila Olímpia - CEP: 04552-000 | São Paulo/SP',
+    'clickbus_email-copyright-footer1' => 'Copyright 2016',
+    'clickbus_email-copyright-footer2' => 'All rights reserved.',
+    'clickbus_email-status-pending' => 'Pending',
+    'clickbus_email-status-success' => 'Success',
+    'clickbus_email-status-canceled' => 'Cancelled',
+
+    'clickbus_email-partnership' => 'in partnership with',
+    'clickbus_email-thanks-for-buying' => 'Thank you for shopping at',
+    'clickbus_email-dear-client' => 'Dear ',
+    'clickbus_email-buy-fulfilled' => ', your purchase was successful.',
+    'clickbus_email-road-company' => 'Bus Road Company',
+    'clickbus_email-locator' => 'Localizer',
+    'clickbus_email-ticket' => 'Ticket',
+    'clickbus_email-trip-details' => '<span style="text-transform:uppercase; font-weight: 800!important;">Detalhes da sua viagem</span>',
+    'clickbus_email-departure' => 'Departure',
+    'clickbus_email-departure-title' => '<h3><span style="font-weigth:800!important; color:#FF762E;">&#9679; DEPARTURE</span></h3>',
+    'clickbus_email-return' => 'Return',
+    'clickbus_email-return-title' => '<h3><span style="font-weigth:800!important; color:#FF762E;">&#9679; RETURN</span></h3>',
+    'clickbus_email-passenger-name' => 'Passenger name: ',
+    'clickbus_email-document' => 'Document: ',
+    'clickbus_email-route' => 'Route: ',
+    'clickbus_email-road-comp' => 'Bus Road Company: ',
+    'clickbus_email-seat' => 'Seat: ',
+    'clickbus_email-boarding' => 'Boarding: ',
+    'clickbus_email-arrival' => 'Arrival: ',
+    'clickbus_email-payment-details' => '<span style="text-transform:uppercase; font-weight: 800!important;">Payment details</span>',
+    'clickbus_email-responsible' => 'Responsible: ',
+    'clickbus_email-tickets-ammount' => 'Total passages: ',
+    'clickbus_email-convenience-fee' => 'Convenience Fee: ',
+    'clickbus_email-total-payment' => 'Total payment: ',
+    'clickbus_email-type-of-payment' => 'Payment type: ',
+    'clickbus_email-date-of-payment' => 'Date of payment: ',
+    'clickbus_email-request-number' => 'The number of your order in <span style="font-weight: 800!important;">ClickBus</span> is ',
+
+    'clickbus_email-faq-dont-delay' => 'Don\'t be late!',
+    'clickbus_email-faq-take-ticket' => 'Take your ticket',
+    'clickbus_email-faq-need-to-print' => 'I need to print?',
+    'clickbus_email-faq-text1' => 'We recommend that you arrive at least half an hour in advance at the ticket window to pick up your ticket .',
+    'clickbus_email-faq-text2' => 'Submit an original photo ID at the ticket window of the road . Check the operation hours. For any questions, please call +55 0800-038-6013.',
+    'clickbus_email-faq-text3' => 'The printing of this voucher is not required. Preserve the environment.',
+    'clickbus_email-faq-call' => 'For any questions please call <span style="font-weight: 800!important;">ClickBus</span> <span style="font-weight: 800!important;">SAC</span>: +55 0800-038-6013.',
+    'clickbus_email-faq-warning' => 'This voucher cannot be used as your passage. You need <span style="font-weight: 800!important;">to checkout</span> your tickets carrying your <span style="font-weight: 800!important;">documents</span>. These landing times are <span style="font-weight: 800!important;">approximate prevision</span>.',
+
+    'clickbus_email-rules-transfer-cancel' => '<span style="font-weight: 800!important">Transfer or Bus Tickets Cancellation</span>',
+    'clickbus_email-rules-text1' => 'The cancellation can be done in two ways: with <span style="font-weight: 800!important">3 hours before</span> boarding time filling out a form available at <a href="http://clickbus.zendesk.com/hc/pt-br/requests/new" target="_blank">"Send a request"</a>, on <span style="font-weight: 800!important">ClickBus</span> website or directly at the bus company\'s at the bus station. Recalling that the team care clickbus is available Monday through Friday, from 9 to 18h, except holidays. After this period, will be the company\'s discretion perform or not the trade.',
+    'clickbus_email-rules-text2' => 'According to terms of the ANTT (National Association of Land Transport), the time of transfer shall be subject to the availability of tickets on the date and desired time by the user, getting even assured the user the option for the ticket with date and time "open", valid of maximum twelve (12) months from the date of the original ticket, subject to price adjustment if not used within that time.',
+    'clickbus_email-rules-text3' => 'In case of credit card payment, the refund of amounts paid for the value of the ticket will be conducted in accordance with the transfer of the Administrator to Operator.',
+    'clickbus_email-rules-text4' => 'Pursuant to art. 8 . § 2 of Resolution no. 978 ANTT, is the carrier entitled to retain up to 5 % (five percent) of the amount paid for the bus ticket, a compensatory fine in the case of the passenger carrying out the cancellation or transfer within the period provided for in the caput of this clause.',
+
+    'clickbus_email-rules-seat-transfer' => 'Change Seats',
+    'clickbus_email-rules-text5' => 'Because of the processing time the seats can be altered. Check the seat number when checkout the ticket at the bus station.',
+    'clickbus_email-rules-deadlines-and-cancel' => 'Terms and Cancellations',
+    'clickbus_email-riles-text6' => 'Bus companies reserves the right to block the early booking of seats , as well as cancel or change the reserved seats without notice.',
+
+    'clickbus_email-sigla-real' => 'R$ ',
+    'clickbus_email-sigla-dolar' => 'US$ ',
+    'clickbus_email-sigla-iso4217-real' => 'BRL',
+    'clickbus_email-sigla-iso4217-dollar' => 'USD',
+
+    'clickbus_email-payment-analyze' => 'Your payment is being analyzed.',
+    'clickbus_email-payment-pending' => ', your passage will be confirmed once we receive a <span style="font-weight:800">payment confirmation</span>.',
+
+    'clickbus_email-payment-cancelled' => ', your payment was not <span style="font-weight:800!important">completed</span>.',
+    'clickbus_email-for-a-new-order' => 'To place a new order please visit our website:',
+
+
 ];
 ?>

@@ -534,11 +534,11 @@ var tripBooking = function(request) {
                 var htmlMsg = lingua[1]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[3]+'<a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
 
                 swal({
-                    title: "Sucesso",
+                    title: lingua[8],
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
-                    confirmButtonText: "Ok",
+                    confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
                 function() {
