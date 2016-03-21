@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\ClickBusPlace;
 use App\CompraClickbus;
+use App\CompraClickbusPoltrona;
 use App\ClickBusCompany;
 use Input;
 use App\Repositories\ClickBusRepository;
