@@ -9,17 +9,25 @@ class ClickBusPlace extends Model {
     /**
      * Um local pode ser embarque de muitas passagens(poltronas)
      */
-    public function embarque()
+    public function passagensEmbarque()
     {
-        return $this->hasMany("App\CompraClickbusPoltrona", 'departure_id', 'poltrona_departure_id');
+        return $this->hasMany("App\CompraClickbusPoltrona", 'departure_id');
     }
 
     /**
      * Um local pode ser desembarque de muitas passagens(poltronas)
      */
-    public function desembarque()
+    public function passagensDesembarque()
     {
-        return $this->hasMany("App\CompraClickbusPoltrona", 'arrival_id', 'poltrona_arrival_id');
+        return $this->hasMany("App\CompraClickbusPoltrona", 'arrival_id');
     }
 
+
+    /**
+     * Acessor para todas as passagens de um local (embarque e desembarque)
+     */
+    public function getPassagensAttribute()
+    {
+       return $this->passagensEmbarque->merge($this->passagensDesembarque);
+    }
 }

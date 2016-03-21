@@ -44,7 +44,7 @@ class CompraClickbusPoltrona extends Model
      */
     public function embarque()
     {
-        return $this->belongsTo("App\ClickBusPlaces", 'departure_id');
+        return $this->belongsTo("App\ClickBusPlace", 'departure_id');
     }
 
     /**
@@ -52,7 +52,7 @@ class CompraClickbusPoltrona extends Model
      */
     public function desembarque()
     {
-        return $this->belongsTo("App\ClickBusPlaces", 'arrival_id');
+        return $this->belongsTo("App\ClickBusPlace", 'arrival_id');
     }
 
     /**
@@ -60,7 +60,7 @@ class CompraClickbusPoltrona extends Model
      */
     public function viacao()
     {
-        return $this->belongsTo("App\ClickBusCompanies", 'viacao_id');
+        return $this->belongsTo("App\ClickBusCompany", 'viacao_id');
     }
 
 }

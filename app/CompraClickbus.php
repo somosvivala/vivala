@@ -11,7 +11,7 @@ class CompraClickbus extends Model
      *
      * @var string
      */
-    protected $table = 'compra_clickbus';
+    protected $table = 'compras_clickbus';
 
     //Settando colunas que podem ser MassAssigned
     //AKA CompraClickBus::create(['coluna' => 'valor']);
@@ -39,6 +39,6 @@ class CompraClickbus extends Model
 
     public function poltronas()
     {
-        return $this->hasMany('App\CompraClickBusPoltrona');
+        return $this->hasMany('App\CompraClickbusPoltrona', 'compra_id');
     }
 }
