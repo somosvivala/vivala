@@ -70,7 +70,7 @@
                       <p style="font-size:16px;color:#fff;font-weight:100;font-family:Arial;padding-bottom:15px">
                         {!! trans('clickbus.clickbus_email-dear-client') !!}
                         <span style="font-weight:600">
-                          {{!! NOME DO USUARIO !! }}
+                          {{-- NOME DO USUARIO --}}
                           {{ ucfirst($Compra->buyer_firstname) }}
                         </span>
                         {!! trans('clickbus.clickbus_email-buy-fulfilled') !!}</p>
