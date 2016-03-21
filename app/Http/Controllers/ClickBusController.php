@@ -584,42 +584,10 @@ class ClickBusController extends Controller {
         return json_encode($decoded);
     }
 
+		/* Tela de SUCESSO após finalização da compra
 		public function getSuccess(){
-
-			// MENSAGEM DE EMAIL PENDENTE PARA O USER
-			// 	$username = User::where('id', $compra->user_id)->get('username');
-			// 	$departure_location = ClickBusPlace::where('item_id', $compra->ida_departure_waypoint_id)->get()->first();
-			// 	$arrival_location = ClickBusPlace::where('item_id', $compra->ida_arrival_waypoint_id)->get()->first();
-			// 	$ida_trip_date = CompraClickbus::where('ida_trip_date', $compra->ida_trip_date)->get();
-			// 	$volta_trip_date = CompraClickbus::where('volta_trip_date', $compra->volta_trip_date)->get();
-			//
-			// 		2016-01-26 00:05
-			//
-			// 	// Envia o email com status PENDENTE pro user
-			// 	Mail::send('emails.clickbus.pendente', [
-			// 		'username' => $username,
-			// 		'ida_departure_location' => $departure_location,
-			// 		'ida_arrival_location' => $arrival_location,
-			// 		'ida_bus_company' => ,
-			// 		'ida_data_departure' => ,
-			// 		'ida_hora_departure' => ,
-			// 		'ida_username' => $Ida->nome,
-			// 		'ida_document' => $Ida->documento,
-			// 		'ida_seat' => $Ida->numero_poltrona,
-			// 		'volta_departure_location' => $departure_location,
-			// 		'volta_arrival_location' => $arrival_location,
-			// 		'volta_bus_company' => ,
-			// 		'volta_data_departure' => $volta_trip_date,
-			// 		'volta_hora_departure' => ,
-			// 		'volta_username' => ,
-			// 		'volta_document' => ,
-			// 		'volta_seat' => ,
-			// 	], function ($message) use ($User) {
-			// 			$message->to($User->email, $User->perfil->apelido)->subject({!! trans('clickbus.clickbus_email-pending-subject') !!});
-			// 			$message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-			// 	});
 			$view = view('clickbus._success')->render();
-		}
+		}*/
 
     /*
      * Recupera/Refresh na sessao atual com a ClickBus
