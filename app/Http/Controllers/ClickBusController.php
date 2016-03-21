@@ -440,10 +440,10 @@ class ClickBusController extends Controller {
             $buyerEmail = $request['request']["buyer"]["email"];
             $buyerPhone = $request['request']["buyer"]["phone"];
             $paymentMethod = $decoded->{"content"}->{"payment"}->{"method"};
-            $voucher = $request['request']['voucher'];
+            $voucher = array_key_exists($request['request']['voucher']) ? $request['request']['voucher'] : null;
             $statusPagamento = $decoded->{"content"}->{"status"};
-            $descontoTotal = $request['extra']['desconto'];
-            $taxas = $request['extra']['taxas'];
+            $descontoTotal = array_key_exists($request['extra']['desconto']) ? $request['extra']['desconto'] : null;
+            $taxas = array_key_exists($request['extra']['taxas']) ? $request['extra']['taxas'] : null;
             $total = $decoded->{"content"}->{"payment"}->{"total"};
             $quantidadePassagens = count($itens);
 
