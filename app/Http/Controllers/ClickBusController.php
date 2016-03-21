@@ -10,6 +10,7 @@ use Input;
 use App\Repositories\ClickBusRepository;
 use App\Http\Requests\SelecionarPoltronasClickbusRequest;
 use Auth;
+use App\Events\ClickBusCompraFinalizada;
 
 class ClickBusController extends Controller {
 
@@ -361,6 +362,7 @@ class ClickBusController extends Controller {
             $Volta->horario = $request["frm"]["volta-horario"];
             $Volta->horario_chegada = $request["frm"]["volta-horario-chegada"];
             $Volta->company = $request["frm"]["volta-company"];
+            $Volta->companyId = ClickBusCompany::where('nome', $request["frm"]["volta-company"])->get()->id;
             $Volta->classe = $request["frm"]["volta-classe"];
         }
 
@@ -372,6 +374,7 @@ class ClickBusController extends Controller {
         $Ida->horario = $request["frm"]["ida-horario"];
         $Ida->horario_chegada = $request["frm"]["ida-horario-chegada"];
         $Ida->company = $request["frm"]["ida-company"];
+        $Ida->companyId = ClickBusCompany::where('nome', $request["frm"]["ida-company"])->get()->id;
         $Ida->classe = $request["frm"]["ida-classe"];
 
         // Se o $decoded não possuir nenhum error internamente, retorno os dados tratados para a view _checkout
@@ -493,7 +496,6 @@ class ClickBusController extends Controller {
                 $subTotal = $Trip->{"subtotal"};
 
                 $compra->poltronas()->save(CompraClickbusPoltrona::create([
-                    //'compra_id',
                     'departure_id' => $departure_id,
                     'arrival_id' => $arrival_id,
                     //'viacao_id' => $companyId,
@@ -535,6 +537,9 @@ class ClickBusController extends Controller {
                 "volta_data" => $compra->volta_trip_date,
                 "total" => $compra->total
             ];
+
+            // Chama o evento de compra finalizada para enviar emails
+            event(new ClickBusCompraFinalizada($compra));
 
         //Se a compra tiver falhado
         } else {

@@ -631,11 +631,13 @@ var setSessionId = function(sessionID) {
     $('input#session-clickbus').val(sessionID);
 }
 
-var getInfoPagamentoParaCheckout = function() {
+var getExtraInfoParaCheckout = function() {
     var obj = {
         "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
         "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
-        "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.'))
+        "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
+        "ida_company_id" : $('#ida_company_id').val(),
+        "volta_company_id" : $('#volta_company_id').val()
     };
     return obj;
 }
