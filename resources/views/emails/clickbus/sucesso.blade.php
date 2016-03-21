@@ -21,6 +21,7 @@
 
           <tr>
             <td>
+
               {{-- CABEÇALHO DO EMAIL --}}
               <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600">
                 <tbody>
@@ -232,6 +233,7 @@
               </table>
               <br/>
               @endforeach
+
             </td>
           </tr>
 
