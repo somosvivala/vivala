@@ -541,9 +541,10 @@ var tripBooking = function(request) {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
-                function() {
-                    window.location.href="/viajar";
-                }
+                $('#clickbus-resultado-busca').html(json.html_sucesso);
+                // function() {
+                //     window.location.href="/viajar";
+                // }
                 );
 
             //Se nao for creditcard, entao possui um redirectUrl
@@ -564,9 +565,10 @@ var tripBooking = function(request) {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
-                function() {
-                    window.location.href="/viajar";
-                }
+                $('#clickbus-resultado-busca').html(json.html_sucesso);
+                // function() {
+                //     window.location.href="/viajar";
+                // }
                      );
             }
         }
