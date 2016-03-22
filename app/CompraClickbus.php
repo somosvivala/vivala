@@ -21,6 +21,7 @@ class CompraClickbus extends Model
         'clickbus_order_id',
         'buyer_firstname',
         'buyer_lastname',
+        'buyer_email',
         'buyer_birthday',
         'buyer_document',
         'buyer_document_type',
