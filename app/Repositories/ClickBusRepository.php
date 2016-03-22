@@ -8,6 +8,8 @@ class ClickBusRepository
 {
     public static $apiKey = '$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6';
     public static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
+    public static $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
+    public static $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
     public static function dateFormat($date)
@@ -124,7 +126,10 @@ class ClickBusRepository
 
     /**
      * Bate no endpoint de /order e retorna os dados do pedido.
+     * 
      * @param $idOrder - uuid da ClickBus que identifica a Order
+     *
+     * @return O objeto "content" da resposta da clickbus
      */
     public static function getOrder($idOrder)
     {
@@ -146,13 +151,26 @@ class ClickBusRepository
     /**
      * Metodo para validar se o pagamento foi confirmado
      *
-     * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($uuid)
+     * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se o pagamento foi confirmado
      */
-    public static function confirmaPagamento($obj)
+    public static function confirmaPagamentoFinalizado($obj)
     {
-        $pagamentoFoiConfirmado = $obj->{"uuid"};
+        $pagamentoFoiConfirmado = $obj->{"status"} == self::$FLAG_PAGAMENTO_CONFIRMADO;
         return $pagamentoFoiConfirmado;
     }
+
+    /**
+     * Metodo para validar se a passagem foi cancelada
+     *
+     * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
+     * @return boolean - se a passagem foi cancelada
+     */
+    public static function confirmaPassagemCancelada($obj)
+    {
+        $passagemFoiCancelada = $obj->{"status"} == self::$FLAG_PASSAGEM_CANCELADA;
+        return $passagemFoiCancelada;
+    }
+
 }
 

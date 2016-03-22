@@ -5,6 +5,8 @@ use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Repositories\ClickBusRepository;
 
+use App\CompraClickbus;
+
 class Kernel extends ConsoleKernel {
 
 	/**
@@ -34,20 +36,26 @@ class Kernel extends ConsoleKernel {
             })->daily();
 
             $schedule->call(function() {
-                // Testar se existe compra da clickbus com status pendente
-                $compras = DB::table('compras_clickbus')->where('status',"order_finalized_successfully")->get();
+                //pegando todas as compras com status pendente
+                $compras = CompraClickbus::where('status',"order_finalized_successfully")->get();
 
                 // Caso exista alguma compra pendente
                 if($compras->count() > 0) {
 
                     foreach($compras as $Compra) {
-                        // Consulta na clickbus das compras com status pendente
-                        ClickBusRepository::getOrder($Compra->clickbusOrderId);
+                        //Obtendo os details dessa compra pendente
+                        $respostaClickbus = ClickBusRepository::getOrder($Compra->clickbusOrderId);
 
-                        // Caso tenha mudado de pendente para confirmado chama
-                        // evento de pagamento confirmado (atualiza no
-                        // bd e envia email)
-                        event(new ClickBusPagamentoConfirmado($Compra));
+                        //Se pagamento confirmado, disparar evento para tomar as medidas necessarias
+                        if (ClickbusRepository::confirmaPagamentoFinalizado($respostaClickbus)) {
+                            event(new ClickBusPagamentoConfirmado($Compra));
+                        }
+
+                        //Se a passagem foi cancelada, disparar evento para tomar as medidas necessarias
+                        if (ClickbusRepository::confirmaPassagemCancelada($respostaClickbus)) {
+                            event(new ClickBusPassagemCancelada($Compra));
+                        }
+
                     }
 
                 }
