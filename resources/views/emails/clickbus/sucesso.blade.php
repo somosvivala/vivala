@@ -158,7 +158,7 @@
                           {{-- NOME DO PASSAGEIRO --}}
                           <tr id="nome-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
                             <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-dear-client') !!}
+                              {!! trans('clickbus.clickbus_email-client-name') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
                               {{ ucfirst($poltrona->passenger_name) }}
