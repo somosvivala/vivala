@@ -1,6 +1,6 @@
 <div class="col-md-12 col-lg-12 padding-b-2">
   <div class="row">
-    <div class="col-md-6 col-lg-6">
+    <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row">
         <div class="col-md-4 col-lg-4">
           SVG LEGALZINHO DOS TICKETS COM SINAL DE OK
@@ -15,19 +15,50 @@
         </h3>
       </div>
       <div class="row">
-        <p><span class="negrito">Caro cliente</span>, a sua compra de <span class="negrito">R$ VAL.OR</span> com <span class="negrito">TIPO_CARTAO</span> foi aprovada pelo nosso sistema.
+        <p>
+          <span class="negrito">
+          Caro cliente
+          </span>
+          , a sua compra de
+          <span class="negrito">{!! trans('clickbus.clickbus_email-sigla-real') !!}</span>
+          <span class="negrito">{{ $compra->total }}</span>
+
+          com
+
+          @if($compra->payment_method === "payment.debitcard")
+            {{-- DÉBITO --}}
+            <span class="texto-negrito texto-maiusculo">
+              {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
+            </span>
+
+          @elseif($compra->payment_method === "payment.creditcard")
+            {{-- CRÉDITO --}}
+            <span class="texto-negrito texto-maiusculo">
+              {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
+            </span>
+          @else
+            {{-- MÉTODO NÃO ENCONTRADO --}}
+            <span class="texto-negrito texto-maiusculo">
+              {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
+            </span>
+          @endif
+
+          foi aprovada pelo nosso sistema.
+
         <p><i></i> Essa compra aparecerá na sua fatura com o nome:</p>
-        <p>MERCADOPAGO*Vivala</p>
+        <p class="texto-negrito">MERCADOPAGO*Vivala</p>
       </div>
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <p>Nós enviamos estas informações para o email cadastrado em sua conta Vivalá:</p>
+          <p>Nós enviamos estas informações para o email cadastrado em sua compra!</p>
         </div>
-        <div class="col-md-12 col-lg-12">
-          {{-- Input de enviar emails pra outras pessoas sobre a COMPRA
+        {{-- Input de enviar emails pra outras pessoas sobre a COMPRA --}}
+        {{--
+        <!--div class="col-md-12 col-lg-12">
+
           <input type="hidden">
-          --}}
-        </div>
+        </div-->
+        --}}
         <div class="row">
           <div class="col-md-12 col-lg-12">
             <table>
@@ -35,19 +66,25 @@
                 <h2>Resumo do Pedido</h2>
               </th>
               <tr>
-                <td>Localizador:</td>
-                <td>Total de tickets:</td>
+                <td>
+                  <span>Localizador:</span>
+                </td>
+                <td>
+                  Total de tickets:
+
+                </td>
                 <td>Total da compra:</td>
               </tr>
               <tr>
-                <td>NUMERO DO LOCALIZADOR</td>
-                <td>NUMERO DE TICKETS COMPRADOS</td>
-                <td>TOTAL DA COMPRA</td>
+                <td><span>{{ $compra->localizer }}</span></td>
+                <td><span>{{ $compra->quantidade_passagens }}</span></td>
+                <td><span>{{ $compra->total }}</span></td>
               </tr>
             </table>
           </div>
           {{-- PRECISA FAZER IDA E VOLTA (SE TIVER)--}}
-          <div class="col-md-12 col-lg-12 text-center">
+          {{--
+          <!-- <div class="col-md-12 col-lg-12 text-center">
             <p>Detalhes:</p>
             <table>
               <tr>
@@ -75,12 +112,12 @@
                 </td>
               </tr>
             </table>
-          </div>
+          </div> -->
+          --}}
         </div>
       </div>
-      <div class=""></div>
     </div>
-    <div class="col-md-6 col-lg-6">
+    <div id="dicas-de-viagem" class="col-md-6 col-lg-6">
       <h1 class="margin-b-1">
         Agora você esta mais perto da sua <strong>viagem</strong>!
       </h1>
