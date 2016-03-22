@@ -69,4 +69,37 @@ class CompraClickbusPoltrona extends Model
         return $this->belongsTo("App\ClickBusCompany", 'viacao_id');
     }
 
+
+    /*
+     * Retorna a hora de embarque formatada em hh:mm:ss
+     */
+    public function getHoraEmbarqueAttribute()
+    {
+        return $this->departure_time->format('H:i:s');
+    }
+
+    /*
+     * Retorna a data de desembarque formatada em dd/mm/YYYY
+     */
+    public function getDataEmbarqueAttribute()
+    {
+        return $this->departure_time->format('d/m/Y');
+    }
+
+    /*
+     * Retorna a hora de desembarque formatada em hh:mm:ss
+     */
+    public function getHoraDesembarqueAttribute()
+    {
+        return $this->arrival_time->format('H:i:s');
+    }
+
+    /*
+     * Retorna a data de desembarque formatada em dd/mm/YYYY
+     */
+    public function getDataDesembarqueAttribute()
+    {
+        return $this->arrival_time->format('d/m/Y');
+    }
+
 }
