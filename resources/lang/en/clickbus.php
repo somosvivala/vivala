@@ -429,9 +429,9 @@ return[
     'clickbus_email-status-canceled' => 'Cancelled',
 
     'clickbus_email-partnership' => 'in partnership with',
-    'clickbus_email-thanks-for-buying' => 'Thank you for shopping at',
-    'clickbus_email-dear-client' => 'Dear ',
-    'clickbus_email-buy-fulfilled' => ', your purchase was successful.',
+    'clickbus_email-thanks-for-buying' => 'Your bus ticket is guaranteed! Thank you to buy in',
+    'clickbus_email-dear-client' => 'Hi ',
+    'clickbus_email-buy-fulfilled' => ', this is your confirmation about your purchase and your travel data! Check everything and hit the road!',
     'clickbus_email-road-company' => 'Bus Road Company',
     'clickbus_email-locator' => 'Localizer',
     'clickbus_email-ticket' => 'Ticket',
@@ -465,6 +465,7 @@ return[
     'clickbus_email-faq-text3' => 'The printing of this voucher is not required. Preserve the environment.',
     'clickbus_email-faq-call' => 'For any questions please call <span style="font-weight: 800!important;">ClickBus</span> <span style="font-weight: 800!important;">SAC</span>: +55 0800-038-6013.',
     'clickbus_email-faq-warning' => 'This voucher cannot be used as your passage. You need <span style="font-weight: 800!important;">to checkout</span> your tickets carrying your <span style="font-weight: 800!important;">documents</span>. These landing times are <span style="font-weight: 800!important;">approximate prevision</span>.',
+    'clickbus_email-faq-warning-extended' => 'The <span style="font-weight:800!important;">Clickbus</span> is a partner of <span style="font-weight:800!important;">Vivalá</span>, cooperating on selling of Bus Road Tickets, and as intermediary, you may receive warnings that your purchase was made in ClickBus. If this happens, please don\'t panic!',
 
     'clickbus_email-rules-transfer-cancel' => '<span style="font-weight: 800!important">Transfer or Bus Tickets Cancellation</span>',
     'clickbus_email-rules-text1' => 'The cancellation can be done in two ways: with <span style="font-weight: 800!important">3 hours before</span> boarding time filling out a form available at <a href="http://clickbus.zendesk.com/hc/pt-br/requests/new" target="_blank">"Send a request"</a>, on <span style="font-weight: 800!important">ClickBus</span> website or directly at the bus company\'s at the bus station. Recalling that the team care clickbus is available Monday through Friday, from 9 to 18h, except holidays. After this period, will be the company\'s discretion perform or not the trade.',

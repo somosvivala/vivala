@@ -17,6 +17,7 @@
   <body>
     <table style="border-radius:15px" cellpadding="0" cellspacing="0" width="100%">
       <tbody>
+        
         <tr>
           <td>
             <table style="border-radius:15px;border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600">
@@ -258,7 +259,7 @@
                   </tbody>
                 </table>
 
-                <table>
+                <table align="center" height="5px" width="600px">
                   <tbody>
 
                     <tr id="transferencias-cancelamentos">
@@ -303,75 +304,91 @@
                   </tbody>
                 </table>
 
-                <tr>
-                  <td>
-                    <p style="font-size:14px;font-family:Arial" align="center">
-                      {!! trans('clickbus.clickbus_email-faq-call') !!}
-                    </p>
-                  </td>
-                </tr>
+                <table align="center" height="5px" width="600px">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <p style="font-size:14px;font-family:Arial" align="center">
+                          {!! trans('clickbus.clickbus_email-faq-call') !!}
+                        </p>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td align="center">
-                    <table style="border-bottom:1px solid #ddd;padding-top:5px;padding-bottom:5px;font-size:12px;font-family:Arial" align="center" width="90%">
-                      <tbody>
-                        <tr>
-                          <td align="center">
-                            <span style="color: #F16F2B;font-weight: 800;">
-                            {!! trans('clickbus.clickbus_email-vivala-title') !!}</span>
-                             -
-                            {!! trans('clickbus.clickbus_email-vivala-address') !!}.
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
+                    <tr>
+                      <td align="center">
+                        <table style="border-bottom:1px solid #ddd;padding-top:5px;padding-bottom:5px;font-size:12px;font-family:Arial" align="center" width="90%">
+                          <tbody>
+                            <tr>
+                              <td align="center">
+                                <span style="color: #F16F2B;font-weight: 800;">
+                                  {!! trans('clickbus.clickbus_email-vivala-title') !!}
+                                </span>
+                                 -
+                                {!! trans('clickbus.clickbus_email-vivala-address') !!}.
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td style="padding:5px 0px 0px 0px" align="center">
-                    <table>
-                      <tr>
-                        <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer1') !!}</span></td>
-                        <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
-                        <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer2') !!}</span></td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
+                    <tr>
+                      <td style="padding:5px 0px 0px 0px" align="center">
+                        <table>
+                          <tr>
+                            <td align="center"><span style="font-size:8px;font-family:Arial">
+                              {!! trans('clickbus.clickbus_email-copyright-footer1') !!}
+                            </span></td>
+                            <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
+                            <td align="center"><span style="font-size:8px;font-family:Arial">
+                              {!! trans('clickbus.clickbus_email-copyright-footer2') !!}
+                            </span></td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
 
-              </tbody>
-            </table>
+                  </tbody>
+                </table>
 
-            <table cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600">
-              <tbody>
-                <tr>
-                  <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
-                    {!! trans('clickbus.clickbus_email-faq-warning') !!}
-                  </td>
-                </tr>
+                <table cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600">
+                  <tbody>
+                    <tr>
+                      <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
+                        {!! trans('clickbus.clickbus_email-faq-warning') !!}
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td style="padding:10px 5px 5px 5px;text-align:center;font-family:'Arial',sans-serif;font-weight:400;font-size:14px">
-                    {!! trans('clickbus.clickbus_email-rules-transfer-cancel') !!}
-                  </td>
-                </tr>
+                    <tr>
+                      <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
+                        {!! trans('clickbus.clickbus_email-faq-warning-extended') !!}
+                      </td>
+                    </tr>
 
-                <tr>
-                  <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
-                    {!! trans('clickbus.clickbus_email-rules-text1') !!}
-                  <br/><br/>
-                    {!! trans('clickbus.clickbus_email-rules-text2') !!}
-                  <br/><br/>
-                    {!! trans('clickbus.clickbus_email-rules-text3') !!}
-                  </td>
-                </tr>
+                    <tr>
+                      <td style="padding:10px 5px 5px 5px;text-align:center;font-family:'Arial',sans-serif;font-weight:400;font-size:14px">
+                        {!! trans('clickbus.clickbus_email-rules-transfer-cancel') !!}
+                      </td>
+                    </tr>
 
-              </tbody>
-            </table>
+                    <tr>
+                      <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
+                        {!! trans('clickbus.clickbus_email-rules-text1') !!}
+                      <br/><br/>
+                        {!! trans('clickbus.clickbus_email-rules-text2') !!}
+                      <br/><br/>
+                        {!! trans('clickbus.clickbus_email-rules-text3') !!}
+                      </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+
           </td>
         </tr>
+
       </tbody>
     </table>
+
   </body>
 </html>

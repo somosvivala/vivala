@@ -461,9 +461,13 @@
             <td style="padding:0px 0px 0px 0px" align="center">
               <table>
                 <tr>
-                  <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer1') !!}</span></td>
+                  <td align="center"><span style="font-size:8px;font-family:Arial">
+                    {!! trans('clickbus.clickbus_email-copyright-footer1') !!}
+                  </span></td>
                   <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px; margin: 0 auto;" height="20px" width="35px"></td>
-                  <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer2') !!}</span></td>
+                  <td align="center"><span style="font-size:8px;font-family:Arial">
+                    {!! trans('clickbus.clickbus_email-copyright-footer2') !!}
+                  </span></td>
                 </tr>
               </table>
             </td>
@@ -478,6 +482,12 @@
           <tr>
             <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
               {!! trans('clickbus.clickbus_email-faq-warning') !!}
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
+              {!! trans('clickbus.clickbus_email-faq-warning-extended') !!}
             </td>
           </tr>
 

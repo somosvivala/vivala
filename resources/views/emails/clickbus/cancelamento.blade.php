@@ -57,7 +57,7 @@
                   </tr>
 
                   <tr>
-                    <td bgcolor="#C76634">
+                    <td bgcolor="#E66929">
                       <table style="padding:10px 40px 10px 40px" cellpadding="10" cellspacing="0" width="100%">
                         <tbody>
                           <tr>
@@ -102,7 +102,7 @@
                     <tbody>
                       {{-- DETALHES DA VIAGEM - Título --}}
                       <tr id="detalhes-da-viagem">
-                        <td style="color:#fff;background:#C76634;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
+                        <td style="color:#fff;background:#E66929;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
                          {!! trans('clickbus.clickbus_email-trip-details') !!}
                         </td>
                       </tr>
@@ -284,9 +284,13 @@
                     <td style="padding:5px 0px 0px 0px" align="center">
                       <table>
                         <tr>
-                          <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer1') !!}</span></td>
+                          <td align="center"><span style="font-size:8px;font-family:Arial">
+                            {!! trans('clickbus.clickbus_email-copyright-footer1') !!}
+                          </span></td>
                           <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
-                          <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer2') !!}</span></td>
+                          <td align="center"><span style="font-size:8px;font-family:Arial">
+                            {!! trans('clickbus.clickbus_email-copyright-footer2') !!}
+                          </span></td>
                         </tr>
                       </table>
                     </td>

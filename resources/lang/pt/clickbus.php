@@ -430,9 +430,9 @@ return[
       'clickbus_email-status-canceled' => 'Cancelado',
 
       'clickbus_email-partnership' => 'em parceria com',
-      'clickbus_email-thanks-for-buying' => 'Obrigado por comprar na',
-      'clickbus_email-dear-client' => 'Prezado(a) ',
-      'clickbus_email-buy-fulfilled' => ', sua compra foi realizada com sucesso!',
+      'clickbus_email-thanks-for-buying' => 'Sua passagem de ônibus está garantida! Obrigado(a) por comprar na',
+      'clickbus_email-dear-client' => 'Oi ',
+      'clickbus_email-buy-fulfilled' => ', esta é a confirmação da sua compra e seus dados! Confira tudo e pé na estrada!',
       'clickbus_email-road-company' => 'Viação',
       'clickbus_email-locator' => 'Localizador',
       'clickbus_email-ticket' => 'Bilhete',
@@ -465,7 +465,8 @@ return[
       'clickbus_email-faq-text2' => 'Apresente um documento original com foto no guichê da viação. Verifique o horário de funcionamento. Em caso de dúvidas, ligue para 0800-038-6013.',
       'clickbus_email-faq-text3' => 'A impressão desse voucher não é necessária. Preserve o meio ambiente.',
       'clickbus_email-faq-call' => 'Qualquer dúvida ligue para o <span style="font-weight: 800!important;">SAC</span> da <span style="font-weight: 800!important;">ClickBus</span>: 0800-038-6013.',
-      'clickbus_email-faq-warning' => 'Este voucher não poderá ser utilizado como passagem. Você <span style="font-weight: 800!important;">deverá trocá-lo</span> pelos bilhetes munido dos <span style="font-weight: 800!important;">documentos dos passageiros</span>. Os horários de desembarque tratam-se de uma <span style="font-weight: 800!important;">previsão aproximada</span>.',
+      'clickbus_email-faq-warning' => 'Este voucher não poderá ser utilizado como passagem. Você <span style="font-weight: 800!important;">deverá retirar</span> sua passagem no guichê da companhia com seu <span style="font-weight: 800!important;">documento de identidade em mãos</span>. Os horários de desembarque tratam-se de uma <span style="font-weight: 800!important;">previsão aproximada</span>.',
+      'clickbus_email-faq-warning-extended' => 'A <span style="font-weight: 800!important;">Clickbus</span> é a parceira da <span style="font-weight: 800!important;">Vivalá</span> na venda de Passagens Rodoviárias, e por este papel de intermediador, você pode receber avisos de que sua compra foi feita na ClickBus. Se isso acontecer, não se assuste!',
 
       'clickbus_email-rules-transfer-cancel' => '<span style="font-weight: 800!important">Transferência ou Cancelamento de Passagem Rodoviária</span>',
       'clickbus_email-rules-text1' => 'O cancelamento poderá ser feito de duas formas: até <span style="font-weight: 800!important">3 horas antes</span> do horário de embarque preenchendo um formulário disponível em <a href="http://clickbus.zendesk.com/hc/pt-br/requests/new" target="_blank">"Enviar uma solicitação"</a>, no site da <span style="font-weight: 800!important">ClickBus</span> ou diretamente no guichê da companhia na rodoviária. Lembrando que o atendimento da equipe ClickBus fica disponível de segunda a sexta-feira, das 9 às 18h, exceto feriados. Após esse período, ficará a critério da companhia realizar ou não a troca.',
