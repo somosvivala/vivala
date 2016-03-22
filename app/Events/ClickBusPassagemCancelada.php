@@ -12,14 +12,12 @@ class ClickBusPassagemCancelada extends Event
 
     //Declarando as propriedades do evento
     public $CompraClickBus;
-    public $status_pagamento;
 
     /**
      * Create a new event instance.
      */
-    public function __construct(ClickbusCompra $compra, $status_pagamento)
+    public function __construct(CompraClickbus $compra)
     {
         $this->CompraClickBus = $CompraClickBus;
-        $this->status_pagamento = $status_pagamento;
     }
 }
