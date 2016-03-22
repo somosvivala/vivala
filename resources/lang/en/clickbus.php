@@ -456,7 +456,7 @@ return[
     'clickbus_email-total-payment' => 'Total payment: ',
     'clickbus_email-type-of-payment' => 'Payment type: ',
     'clickbus_email-date-of-payment' => 'Date of payment: ',
-    'clickbus_email-request-number' => 'The number of your order in <span style="font-weight: 800!important;">ClickBus</span> is ',
+    'clickbus_email-request-number' => 'The number of your order in <span style="font-weight: 800!important;">Vivalá</span> is ',
 
     'clickbus_email-faq-dont-delay' => 'Don\'t be late!',
     'clickbus_email-faq-take-ticket' => 'Take your ticket',
