@@ -541,11 +541,11 @@ var tripBooking = function(request) {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
-                $('#clickbus-resultado-busca').html(json.html_sucesso);
-                // function() {
-                //     window.location.href="/viajar";
-                // }
+                 function() {
+                   //window.location.href="/viajar";
+                }
                 );
+                $('#clickbus-resultado-busca').html(json.view);
 
             //Se nao for creditcard, entao possui um redirectUrl
             } else {
@@ -565,11 +565,11 @@ var tripBooking = function(request) {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
-                $('#clickbus-resultado-busca').html(json.html_sucesso);
-                // function() {
-                //     window.location.href="/viajar";
-                // }
-                     );
+                function() {
+                  //window.location.href="/viajar";
+                }
+                );
+               $('#clickbus-resultado-busca').html(json.view);
             }
         }
 
@@ -638,7 +638,7 @@ var getExtraInfoParaCheckout = function() {
         "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
         "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
         "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
-        "ida-slug" : $("#origem-rodoviario-hidden").val(),
+        "ida-from" : $("#ida-from").val(),
         "ida-company-id" : $('#ida-company-id').val(),
         "volta-company-id" : $('#volta-company-id').val()
     };
