@@ -57,7 +57,6 @@ class Kernel extends ConsoleKernel {
                             event(new ClickBusPassagemCancelada($Compra));
                         }
 
-                        //simulando caso pagamento confirmado
                         if ($Compra->id == 2) {
                             event(new ClickBusPagamentoConfirmado($Compra));
                         }
@@ -65,7 +64,7 @@ class Kernel extends ConsoleKernel {
                     }
 
                 }
-            })->everyMinute();
+            })->everyFiveMinutes();
 	}
 
 }
