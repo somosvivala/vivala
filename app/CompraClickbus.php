@@ -17,6 +17,7 @@ class CompraClickbus extends Model
     //AKA CompraClickBus::create(['coluna' => 'valor']);
     protected $fillable = [
         'user_id',
+        'localizer',
         'buyer_firstname',
         'buyer_lastname',
         'buyer_birthday',

@@ -13,6 +13,12 @@ class CompraClickbusPoltrona extends Model
      */
     protected $table = 'compras_clickbus_poltronas';
 
+    /**
+     * Denotando os campos dates para que o laravel sirva uma instancia do Carbon
+     */
+	  protected $dates = ['departure_time', 'arrival_time'];
+
+
     //Settando colunas que podem ser MassAssigned
     //AKA CompraClickBusPoltrona::create(['coluna' => 'valor']);
     protected $fillable = [
