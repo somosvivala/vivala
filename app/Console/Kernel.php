@@ -43,6 +43,7 @@ class Kernel extends ConsoleKernel {
                 if($compras->count() > 0) {
 
                     foreach($compras as $Compra) {
+
                         //Obtendo os details dessa compra pendente
                         $respostaClickbus = ClickBusRepository::getOrder($Compra->clickbusOrderId);
 
@@ -55,6 +56,12 @@ class Kernel extends ConsoleKernel {
                         if (ClickbusRepository::confirmaPassagemCancelada($respostaClickbus)) {
                             event(new ClickBusPassagemCancelada($Compra));
                         }
+
+                        //simulando caso pagamento confirmado
+                        if ($Compra->id == 2) {
+                            event(new ClickBusPagamentoConfirmado($Compra));
+                        }
+
                     }
 
                 }
