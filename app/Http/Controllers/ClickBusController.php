@@ -552,7 +552,9 @@ class ClickBusController extends Controller {
                 "quantidade" => $compra->quantidade_passagens,
                 "ida_data" => $compra->ida_trip_date,
                 "volta_data" => $compra->volta_trip_date,
-                "total" => $compra->total
+                "total" => $compra->total,
+
+								"html_sucesso" => view('clickbus._success', compact($compra))->render(),
             ];
 
             // Chama o evento de compra finalizada para enviar emails
