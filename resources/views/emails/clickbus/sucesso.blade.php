@@ -38,7 +38,7 @@
                                   <tr>
                                     <td style="padding:0px 0px 5px 40px" align="left" width="35%">
                                       <a href="https://vivala.com.br" target="_blank">
-                                        <img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block" border="0" width="100%">
+                                        <img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block" border="0" width="115px" height="63px">
                                       </a>
                                     </td>
 
@@ -125,7 +125,7 @@
 
                             {{-- LOCALIZADOR --}}
                             <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;border-right:1px solid #000;padding:0px 5px 0px 5px" width="30%">
-                              {{ strtoupper($poltonas->localizer) }}
+                              {{ strtoupper($poltronas->localizer) }}
                             </td>
 
                             {{-- NUMERO DO TICKET dentro do laço de ida/volta --}}
@@ -150,7 +150,7 @@
                               {!! trans('clickbus.clickbus_email-dear-client') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ ucfirst($poltonas->passenger_name) }}
+                              {{ ucfirst($poltronas->passenger_name) }}
                             </td>
                           </tr>
 
@@ -160,7 +160,7 @@
                               {!! trans('clickbus.clickbus_email-document') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ strtoupper($poltonas->localizer) }}
+                              {{ strtoupper($poltronas->localizer) }}
                             </td>
                           </tr>
 
@@ -287,7 +287,7 @@
                       {!! trans('clickbus.clickbus_email-tickets-ammount') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                      {{ count($Compra->poltronas()) }}
+                      {{ count($Compra->poltronas) }}
                     </td>
                   </tr>
 
@@ -298,7 +298,7 @@
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
-                      {!! $Compra->desconto_total !!}}
+                      {!! $Compra->desconto_total !!}
 
                     </td>
                   </tr>
@@ -459,7 +459,7 @@
               <table>
                 <tr>
                   <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer1') !!}</span></td>
-                  <td align="center"><img src="https://vivala.com.br/.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
+                  <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px; margin: 0 auto;" height="20px" width="35px"></td>
                   <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer2') !!}</span></td>
                 </tr>
               </table>
