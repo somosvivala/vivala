@@ -540,12 +540,12 @@ var tripBooking = function(request) {
                     confirmButtonColor: "#14CC5B",
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
-                });
-                function() {
-                    //window.location.href="/viajar";
-                    $('#clickbus-resultado-busca').html(json.html_sucesso);
+                },
+                 function() {
+                   //window.location.href="/viajar";
                 }
-              );
+                );
+                $('#clickbus-resultado-busca').html(json.view);
 
             //Se nao for creditcard, entao possui um redirectUrl
             } else {
@@ -565,11 +565,11 @@ var tripBooking = function(request) {
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
-                  function() {
-                      //window.location.href="/viajar";
-                      $('#clickbus-resultado-busca').html(json.html_sucesso);
-                  }
+                function() {
+                  //window.location.href="/viajar";
+                }
                 );
+               $('#clickbus-resultado-busca').html(json.view);
             }
         }
 
@@ -626,6 +626,7 @@ var setSession = function(data) {
 
 var getSessionId = function() {
     return $('input#session-clickbus').val();
+
 }
 
 var setSessionId = function(sessionID) {
