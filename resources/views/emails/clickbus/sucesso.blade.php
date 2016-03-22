@@ -195,11 +195,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->departure_time
+                              &nbsp; $poltronas->dataEmbarque
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->departure_time
+                              &nbsp; $poltronas->horaEmbarque
                             </td>
 
                           </tr>
@@ -214,11 +214,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->arrival_time
+                              &nbsp; $poltronas->dataDesembarque
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->arrival_time
+                              &nbsp; $poltronas->horaDesembarque
                             </td>
 
                           </tr>
@@ -354,7 +354,7 @@
                       {!! trans('clickbus.clickbus_email-date-of-payment') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
-                      // PEGAR PELO TIMESTAMP (???)
+                      {{ }}
                     </td>
                   </tr>
 
