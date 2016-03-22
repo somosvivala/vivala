@@ -126,9 +126,8 @@ class ClickBusRepository
 
     /**
      * Bate no endpoint de /order e retorna os dados do pedido.
-     * 
-     * @param $idOrder - uuid da ClickBus que identifica a Order
      *
+     * @param $idOrder - uuid da ClickBus que identifica a Order
      * @return O objeto "content" da resposta da clickbus
      */
     public static function getOrder($idOrder)

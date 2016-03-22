@@ -55,7 +55,6 @@ class Kernel extends ConsoleKernel {
                         if (ClickbusRepository::confirmaPassagemCancelada($respostaClickbus)) {
                             event(new ClickBusPassagemCancelada($Compra));
                         }
-
                     }
 
                 }

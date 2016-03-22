@@ -18,15 +18,24 @@ class EventServiceProvider extends ServiceProvider {
 			'EventListener',
 		],
 
-                //Aqui registro um Evento para seus Listeners
+
+    //Quando um perfil se voluntaria
 		'App\Events\PerfilHasVolunteered' => [
 			'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
 		],
 
-		'App\Events\ClickBusCompraFinalizada' => [
+    //Quando alguem finaliza uma compra da Clickbus
+    'App\Events\ClickBusCompraFinalizada' => [
 			'App\Handlers\Events\ClickBus\EnviaEmailCompraFinalizada',
 		],
 
+    //Quando uma passagem da clickbus é cancelada
+		'App\Events\ClickBusPassagemCancelada' => [
+			'App\Handlers\Events\ClickBus\UpdatePassagemCancelada',
+			'App\Handlers\Events\ClickBus\EnviaEmailPassagemCancelada',
+		],
+
+    //Quando um pagamento da clickbus é confirmado
 		'App\Events\ClickBusPagamentoConfirmado' => [
 			'App\Handlers\Events\ClickBus\UpdatePagamentoConfirmado',
 			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
