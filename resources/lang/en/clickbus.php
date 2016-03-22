@@ -397,20 +397,19 @@ return[
 'clickbus_prod-error-L47' => 'Discount is valid just for round trips.<br/>This voucher can only be applied for round trips.',
 'clickbus_prod-error-L48' => 'Invalid discount for this busline.<br/>The selected seats must be from a trip which belongs to the bus company configured for this voucher.',
 
+'clickbus_error-A44' => 'Try another voucher.',
 
 // Misc.
-'clickbus_misc-error-1' => 'Ops!',
-'clickbus_misc-error-2' => 'Something went wrong with your search!',
-'clickbus_misc-error-3' => 'Ops, something went wrong, do the search again.',
-'clickbus_misc-error-4' => 'A problem occurred during the reservation of the bus!',
-'clickbus_misc-error-5' => 'We had a problem during the scheduling of your bus tickets. Please try again, if the problem persists please contact us through <a href=\'mailto:contato@vivala.com.br\'>contato@vivala.com.br</a>',
-'clickbus_misc-error-6' => 'There was a problem during the checkout process!',
-'clickbus_misc-error-7' => 'There was a problem with your purchase:',
-'clickbus_misc-error-8' => '',
-'clickbus_misc-error-9' => '',
-'clickbus_misc-error-10' => '',
-
-'clickbus_error-A44' => 'Try another voucher.',
+  'clickbus_misc-error-1' => 'Ops!',
+  'clickbus_misc-error-2' => 'Something went wrong with your search!',
+  'clickbus_misc-error-3' => 'Ops, something went wrong, do the search again.',
+  'clickbus_misc-error-4' => 'A problem occurred during the reservation of the bus!',
+  'clickbus_misc-error-5' => 'We had a problem during the scheduling of your bus tickets. Please try again, if the problem persists please contact us through <a href=\'mailto:contato@vivala.com.br\'>contato@vivala.com.br</a>',
+  'clickbus_misc-error-6' => 'There was a problem during the checkout process!',
+  'clickbus_misc-error-7' => 'There was a problem with your purchase:',
+  'clickbus_misc-error-8' => 'There was a problem.',
+  'clickbus_misc-error-9' => 'There was a problem.',
+  'clickbus_misc-error-10' => 'There was a problem.',
 
 /*
   Tradução dos emails [Ordem: Sucesso, Pendente, Cancelamento]
@@ -491,7 +490,6 @@ return[
 
     'clickbus_email-payment-cancelled' => ', your payment was not <span style="font-weight:800!important">completed</span>.',
     'clickbus_email-for-a-new-order' => 'To place a new order please visit our website:',
-
 
 ];
 ?>
