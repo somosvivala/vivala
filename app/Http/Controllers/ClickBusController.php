@@ -438,6 +438,7 @@ class ClickBusController extends Controller {
             $userId = Auth::user()->id;
 
             $localizer = $decoded->{"content"}->{"localizer"};
+            $orderId = $decoded->{"content"}->{"id"};
             $buyerFirstname = $request['request']["buyer"]["firstName"];
             $buyerLastname = $request['request']["buyer"]["lastName"];
             $buyerBirthday = $request['request']["buyer"]["birthday"];
@@ -458,6 +459,7 @@ class ClickBusController extends Controller {
             $compra = CompraClickbus::create([
                 'user_id' => $userId,
                 'localizer' => $localizer,
+                'clickbusOrderId' => $orderId,
                 'buyer_firstname' => $buyerFirstname,
                 'buyer_lastname' => $buyerLastname,
                 'buyer_birthday' => $buyerBirthday,

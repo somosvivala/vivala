@@ -42,6 +42,7 @@ class CreateComprasClickbusTable extends Migration {
             $table->decimal('desconto_total', 7, 2)->nullable();
             $table->decimal('taxas', 7, 2)->nullable();
             $table->decimal('total', 7, 2)->nullable();
+            $table->string('clickbus_order_id')->nullable();
 
             //status do pedido, usado para o /orders verificar o estado do pagamento
             $table->enum('status', [

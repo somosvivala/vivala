@@ -18,6 +18,7 @@ class CompraClickbus extends Model
     protected $fillable = [
         'user_id',
         'localizer',
+        'clickbus_order_id',
         'buyer_firstname',
         'buyer_lastname',
         'buyer_birthday',

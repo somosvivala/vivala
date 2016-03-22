@@ -142,4 +142,17 @@ class ClickBusRepository
 
         return $decoded->content;
     }
+
+    /**
+     * Metodo para validar se o pagamento foi confirmado
+     *
+     * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($uuid)
+     * @return boolean - se o pagamento foi confirmado
+     */
+    public static function confirmaPagamento($obj)
+    {
+        $pagamentoFoiConfirmado = $obj->{"uuid"};
+        return $pagamentoFoiConfirmado;
+    }
 }
+

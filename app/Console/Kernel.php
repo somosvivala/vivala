@@ -35,14 +35,14 @@ class Kernel extends ConsoleKernel {
 
             $schedule->call(function() {
                 // Testar se existe compra da clickbus com status pendente
-                $compras = DB::table('compras_clickbus')->where('pagamento_confirmado',false)->get();
+                $compras = DB::table('compras_clickbus')->where('status',"order_finalized_successfully")->get();
 
                 // Caso exista alguma compra pendente
                 if($compras->count() > 0) {
 
                     foreach($compras as $Compra) {
                         // Consulta na clickbus das compras com status pendente
-                        ClickBusRepository::getOrder($Compra->id);
+                        ClickBusRepository::getOrder($Compra->clickbusOrderId);
 
                         // Caso tenha mudado de pendente para confirmado chama
                         // evento de pagamento confirmado (atualiza no
