@@ -4,6 +4,8 @@ use DB;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Repositories\ClickBusRepository;
+use App\Events\ClickBusPagamentoConfirmado;
+use App\Events\ClickBusPassagemCancelada;
 
 use App\CompraClickbus;
 
