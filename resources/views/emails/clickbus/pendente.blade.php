@@ -17,7 +17,7 @@
   <body>
     <table style="border-radius:15px" cellpadding="0" cellspacing="0" width="100%">
       <tbody>
-        
+
         <tr>
           <td>
             <table style="border-radius:15px;border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600">
@@ -336,11 +336,11 @@
                       <td style="padding:5px 0px 0px 0px" align="center">
                         <table>
                           <tr>
-                            <td align="center"><span style="font-size:8px;font-family:Arial">
+                            <td align="center"><span style="font-size:10px;font-family:Arial">
                               {!! trans('clickbus.clickbus_email-copyright-footer1') !!}
                             </span></td>
                             <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
-                            <td align="center"><span style="font-size:8px;font-family:Arial">
+                            <td align="center"><span style="font-size:10px;font-family:Arial">
                               {!! trans('clickbus.clickbus_email-copyright-footer2') !!}
                             </span></td>
                           </tr>

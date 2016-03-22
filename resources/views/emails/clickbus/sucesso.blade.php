@@ -461,11 +461,11 @@
             <td style="padding:0px 0px 0px 0px" align="center">
               <table>
                 <tr>
-                  <td align="center"><span style="font-size:8px;font-family:Arial">
+                  <td align="center"><span style="font-size:10px;font-family:Arial">
                     {!! trans('clickbus.clickbus_email-copyright-footer1') !!}
                   </span></td>
-                  <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px; margin: 0 auto;" height="20px" width="35px"></td>
-                  <td align="center"><span style="font-size:8px;font-family:Arial">
+                  <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
+                  <td align="center"><span style="font-size:10px;font-family:Arial">
                     {!! trans('clickbus.clickbus_email-copyright-footer2') !!}
                   </span></td>
                 </tr>
