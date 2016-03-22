@@ -93,7 +93,7 @@
 
               <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
                 <tbody>
-                  {{-- DETALHES DA VIAGEM --}}
+                  {{-- DETALHES DA VIAGEM - Título --}}
                   <tr id="detalhes-da-viagem">
                     <td style="color:#fff;background:#FF5B00;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
                      {!! trans('clickbus.clickbus_email-trip-details') !!}
@@ -102,7 +102,7 @@
                 </tbody>
               </table>
 
-              {{-- DETALHES DA VIAGEM - Fazer Laço Ida e Volta --}}
+              {{-- DETALHES DA VIAGEM - Infos --}}
               @foreach($Compra->poltronas as $indice => $poltrona)
               <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
                 <tbody>
@@ -240,9 +240,8 @@
 
                 </tbody>
               </table>
-              <br/>
               @endforeach
-
+              <br/>
             </td>
           </tr>
 
@@ -262,11 +261,6 @@
 
       <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
         <tbody>
-          <tr>
-            <td style="padding:12px 0px 0px 0px;font-family:'Arial',sans-serif;font-weight:300;font-size:18px;text-align:center;color:#484848">
-              &nbsp;
-            </td>
-          </tr>
 
           {{-- DETALHES DO PAGAMENTO --}}
           <tr id="detalhes-do-pagamento">

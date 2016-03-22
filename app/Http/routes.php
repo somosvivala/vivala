@@ -18,7 +18,7 @@ Route::get('/testeemailpendente', function() {
 });
 Route::get('/testeemailcancelado', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.cancelado')->with('Compra', $Compra);
+    return view('emails.clickbus.cancelamento')->with('Compra', $Compra);
 });
 Route::get('/testeemailsucesso', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
