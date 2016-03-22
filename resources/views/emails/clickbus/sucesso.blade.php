@@ -92,7 +92,8 @@
               </table>
 
               {{-- DETALHES DA VIAGEM - Fazer Laço Ida e Volta --}}
-              @foreach($Compra->poltronas as $indice=>$poltronas)
+
+              @foreach($Compra->poltronas as $indice => $poltrona)
               <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
                 <tbody>
 
@@ -120,17 +121,17 @@
 
                             {{-- NOME DA VIAÇÃO --}}
                             <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;border-right:1px solid #000;padding:0px 5px 0px 5px" width="30%">
-                              {{ ucfirst($poltronas->viacao->nome) }}
+                              {{ ucfirst($poltrona->viacao->nome) }}
                             </td>
 
                             {{-- LOCALIZADOR --}}
                             <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;border-right:1px solid #000;padding:0px 5px 0px 5px" width="30%">
-                              {{ strtoupper($poltronas->localizer) }}
+                              {{ strtoupper($poltrona->localizer) }}
                             </td>
 
                             {{-- NUMERO DO TICKET dentro do laço de ida/volta --}}
                             <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;padding:0px 5px 0px 5px" width="30%">
-                              $indice
+                              {{ $indice }}
                             </td>
                           </tr>
 
@@ -150,7 +151,7 @@
                               {!! trans('clickbus.clickbus_email-dear-client') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ ucfirst($poltronas->passenger_name) }}
+                              {{ ucfirst($poltrona->passenger_name) }}
                             </td>
                           </tr>
 
@@ -160,7 +161,7 @@
                               {!! trans('clickbus.clickbus_email-document') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ strtoupper($poltronas->passenger_document_number) }}
+                              {{ strtoupper($poltrona->passenger_document_number) }}
                             </td>
                           </tr>
 
@@ -170,7 +171,7 @@
                               {!! trans('clickbus.clickbus_email-route') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              {{ ucfirst($poltronas->embarque->place_name) }} - {{ ucfirst($poltronas->desembarque->place_name) }}
+                              {{ ucfirst($poltrona->embarque->place_name) }} - {{ ucfirst($poltrona->desembarque->place_name) }}
                             </td>
                           </tr>
 
@@ -180,7 +181,7 @@
                               {!! trans('clickbus.clickbus_email-seat') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ $poltronas->seat_number }}
+                              {{ $poltrona->seat_number }}
                             </td>
                           </tr>
 
@@ -195,11 +196,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->dataEmbarque
+                              &nbsp; $poltrona->dataEmbarque
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->horaEmbarque
+                              &nbsp; $poltrona->horaEmbarque
                             </td>
 
                           </tr>
@@ -214,11 +215,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->dataDesembarque
+                              &nbsp; $poltrona->dataDesembarque
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->horaDesembarque
+                              &nbsp; $poltrona->horaDesembarque
                             </td>
 
                           </tr>
@@ -311,7 +312,6 @@
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
                       {{ $Compra->taxas }}
-
                     </td>
                   </tr>
 
