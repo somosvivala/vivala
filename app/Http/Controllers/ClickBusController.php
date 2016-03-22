@@ -459,7 +459,7 @@ class ClickBusController extends Controller {
             $compra = CompraClickbus::create([
                 'user_id' => $userId,
                 'localizer' => $localizer,
-                'clickbusOrderId' => $orderId,
+                'clickbus_order_id' => $orderId,
                 'buyer_firstname' => $buyerFirstname,
                 'buyer_lastname' => $buyerLastname,
                 'buyer_birthday' => $buyerBirthday,

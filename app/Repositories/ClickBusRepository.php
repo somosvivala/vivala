@@ -9,6 +9,7 @@ class ClickBusRepository
     public static $apiKey = '$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6';
     public static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
     public static $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
+    public static $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
     public static $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus

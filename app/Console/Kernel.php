@@ -36,8 +36,9 @@ class Kernel extends ConsoleKernel {
             })->daily();
 
             $schedule->call(function() {
+
                 //pegando todas as compras com status pendente
-                $compras = CompraClickbus::where('status',"order_finalized_successfully")->get();
+                $compras = CompraClickbus::where('status', ClickBusRepository::$FLAG_PAGAMENTO_PENDENTE)->get();
 
                 // Caso exista alguma compra pendente
                 if($compras->count() > 0) {
@@ -45,7 +46,7 @@ class Kernel extends ConsoleKernel {
                     foreach($compras as $Compra) {
 
                         //Obtendo os details dessa compra pendente
-                        $respostaClickbus = ClickBusRepository::getOrder($Compra->clickbusOrderId);
+                        $respostaClickbus = ClickBusRepository::getOrder($Compra->clickbus_order_id);
 
                         //Se pagamento confirmado, disparar evento para tomar as medidas necessarias
                         if (ClickbusRepository::confirmaPagamentoFinalizado($respostaClickbus)) {
