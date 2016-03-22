@@ -160,7 +160,7 @@
                               {!! trans('clickbus.clickbus_email-document') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ strtoupper($poltronas->passenger_name) }}
+                              {{ strtoupper($poltronas->passenger_document_number) }}
                             </td>
                           </tr>
 
@@ -277,7 +277,7 @@
                       {!! trans('clickbus.clickbus_email-responsible') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                      {{ ucfirst($Compra->buyer_firstname) }} {{ ucfirst($Compra->buyer_lastname) }}
+                      {{ ucfirst($Compra->buyer_firstname) . ucfirst($Compra->buyer_lastname) }}
                     </td>
                   </tr>
 
