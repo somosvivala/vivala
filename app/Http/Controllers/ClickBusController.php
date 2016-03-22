@@ -489,8 +489,8 @@ class ClickBusController extends Controller {
                 $arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
                 $arrival_id = ClickBusPlace::where('item_id', $arrival_waypoint_id)->get()->first()->id;
 
-                $departure_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"};
-                $arrival_trip_date = $Trip->{"arrival"}->{"schedule"}->{"date"} . " " . $Trip->{"arrival"}->{"schedule"}->{"time"};
+                $departure_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"} . ":00";
+                $arrival_trip_date = $Trip->{"arrival"}->{"schedule"}->{"date"} . " " . $Trip->{"arrival"}->{"schedule"}->{"time"} . ":00";
                 $passenger_email = $Trip->{"passenger"}->{"email"};
                 $seat_number = $Trip->{"seat"}->{"name"};
                 $passenger_document = $Trip->{"passenger"}->{"document"};

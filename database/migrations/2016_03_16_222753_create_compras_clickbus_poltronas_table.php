@@ -51,8 +51,8 @@ class CreateComprasClickbusPoltronasTable extends Migration
             $table->string('passenger_document_type')->nullable();
             $table->string('seat_number')->nullable();
             $table->string('passenger_email')->nullable();
-            $table->date('departure_time')->nullable();
-            $table->date('arrival_time')->nullable();
+            $table->datetime('departure_time')->nullable();
+            $table->datetime('arrival_time')->nullable();
             $table->string('subtotal')->nullable();
         });
     }
