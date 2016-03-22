@@ -259,7 +259,7 @@
             </td>
           </tr>
 
-          {{-- DETALHES DO PAGAMENTO --}
+          {{-- DETALHES DO PAGAMENTO --}}
           <tr id="detalhes-do-pagamento">
             <td style="color:#fff;background:#FF5B00;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
              {!! trans('clickbus.clickbus_email-payment-details') !!}
@@ -277,7 +277,7 @@
                       {!! trans('clickbus.clickbus_email-responsible') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                      {{ ucfirst($Compra->buyer_firstname) . ucfirst($Compra->buyer_lastname) }}
+                      {{ ucfirst($Compra->buyer_firstname) ucfirst($Compra->buyer_lastname) }}
                     </td>
                   </tr>
 
