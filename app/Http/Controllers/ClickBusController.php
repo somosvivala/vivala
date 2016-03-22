@@ -510,8 +510,6 @@ class ClickBusController extends Controller {
                     $viacao_id = $request['extra']['volta-company-id'];
                 }
 
-
-
                 $compra->poltronas()->save(CompraClickbusPoltrona::create([
                     'departure_id' => $departure_id,
                     'arrival_id' => $arrival_id,

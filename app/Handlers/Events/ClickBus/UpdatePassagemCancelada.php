@@ -1,7 +1,7 @@
 <?php namespace App\Handlers\Events\ClickBus;
 
 use App\Events\ClickBusPassagemCancelada;
-
+use App\Repositories\ClickBusRepository;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
