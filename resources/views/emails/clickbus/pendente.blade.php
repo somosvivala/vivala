@@ -57,7 +57,6 @@
                   </td>
                 </tr>
 
-
                 <tr>
                   <td style="border-top:solid thin #aaa;border-bottom:solid thin #aaa" bgcolor="#FF762E">
                     <table style="padding:10px 40px 10px 40px" cellpadding="10" cellspacing="0" width="100%">
@@ -84,6 +83,17 @@
                     </table>
                   </td>
                 </tr>
+
+                {{-- Espaço --}}
+                <table align="center" height="5px" width="600px">
+                  <tbody>
+                    <tr>
+                      <td style="font-size:20px;color:#ffffff" height="5px">
+                        -
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
 
                 <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
                   <tbody>
@@ -250,10 +260,13 @@
 
                 <table>
                   <tbody>
+
                     <tr id="transferencias-cancelamentos">
                       <td style="border-bottom:solid thin #999999;border-top:solid thin #999999">
+
                         <table style="font-family:'Roboto',sans-serif;font-weight:300;font-size:16px;padding:10px 0px 0px 0px" cellpadding="5px" cellspacing="0" align="center" bgcolor="#ffffff" width="95%">
                           <tbody>
+
                             <tr style="text-align:center">
                               <td style="border-right:solid thin #999999;font-weight:400" width="50%">
                                 {!! trans('clickbus.clickbus_email-rules-seat-transfer') !!}
@@ -262,6 +275,7 @@
                                 {!! trans('clickbus.clickbus_email-rules-deadlines-and-cancel') !!}
                               </td>
                             </tr>
+
                             <tr style="text-align:center">
                               <td style="border-right:solid thin #999999">
                                 <img src="https://vivala.com.br/img/clickbus/icon_clickbus-poltrona.png" width="70px">
@@ -282,11 +296,12 @@
 
                           </tbody>
                         </table>
+
                       </td>
                     </tr>
 
                   </tbody>
-              </table>
+                </table>
 
                 <tr>
                   <td>

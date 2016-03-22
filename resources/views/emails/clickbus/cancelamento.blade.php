@@ -35,7 +35,7 @@
                                   <tr>
                                     <td style="padding:0px 0px 5px 40px" align="left" width="35%">
                                       <a href="https://vivala.com.br" target="_blank">
-                                        <img src="https://vivala.com.br/img/assinaturas/logo.png" alt="Vivalá" style="display:block" border="0" width="100%">
+                                        <img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block" border="0" width="115px" height="63px">
                                       </a>
                                     </td>
 
@@ -64,10 +64,13 @@
                             <td style="padding:10px 0px 5px 0px;color:#fff;font-family:'Roboto',sans-serif;font-weight:100;font-size:26px;border-top:solid thin #fff;border-bottom:solid thin #fff" align="center">
                               <p style="font-weight:100;font-size:15px">
                               {!! trans('clickbus.clickbus_email-dear-client') !!}
-                              <span style="font-weight:800!important">NOME DO PASSAGEIRO</span>
-                              {!! trans('clickbus.clickbus_email-payment-cancelled') !}}.
+                              <span style="font-weight:800!important">
+                                {{-- NOME DO USUARIO --}}
+                                {{ trim(ucfirst($Compra->buyer_firstname)) }}
+                              </span>
+                              {!! trans('clickbus.clickbus_email-payment-cancelled') !!}.
                               <br/>
-                              <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-cancelado.png" alt="{{ trans('clickbus.clickbus_email-status-canceled') }}" style="display:block;padding:10px 0px 10px 0px" border="0" height="85" width="100%">
+                              <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-cancelado.png" alt="{{ trans('clickbus.clickbus_email-status-canceled') }}" style="display:block;padding:10px 0px 10px 0px;margin: 0 auto;" border="0" width="227px" height="227px">
                               <br/>
                               {!! trans('clickbus.clickbus_email-for-a-new-order') !!}
                               <br/>
@@ -84,165 +87,168 @@
                     </td>
                   </tr>
 
-                  <tr id="ida">
-                    <td bgcolor="#fff">
-                      <table style="border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-bottom:solid thin #999999;border-left:solid thin #999999;border-top:solid thin #999999;border-right:solid thin #999999;font-family:'Arial',sans-serif;font-weight:300;font-size:16px;color:#000" cellpadding="5px" cellspacing="0" align="center" bgcolor="#F4F4F4" width="90%">
-                        <tbody>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-departure-title') !!}
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-route') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              LUGAR DE SAÍDA
-                              -
-                              LUGAR DA CHEGADA
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-road-comp') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              NOME DA VIAÇÃO
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-boarding') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
-                              &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
-                              -
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
-                              &nbsp; HO:RA
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-arrival') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
-                              &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
-                              -
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
-                              &nbsp; HO:RA
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-passenger-name') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              NOME DO PASSAGEIRO
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-document') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              NUMERO DO DOCUMENTO
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-seat') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              NUMERO
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
+                  {{-- Espaço --}}
+                  <table align="center" height="5px" width="600px">
+                    <tbody>
+                      <tr>
+                        <td style="font-size:20px;color:#ffffff" height="5px">
+                          -
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
 
-                  <tr id="volta">
-                    <td bgcolor="#fff">
-                      <table style="border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-bottom:solid thin #999999;border-left:solid thin #999999;border-top:solid thin #999999;border-right:solid thin #999999;font-family:'Arial',sans-serif;font-weight:300;font-size:16px;color:#000" cellpadding="5px" cellspacing="0" align="center" bgcolor="#F4F4F4" width="90%">
-                        <tbody>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-arrival-title') !!}
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-route') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              LUGAR DE SAÍDA
-                              -
-                              LUGAR DE CHEGADA
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-road-comp') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              NOME DA VIAÇÃO
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-boarding') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
-                              &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
-                              -
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
-                              &nbsp; HO:RA
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-arrival') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
-                              &nbsp;DATA/DA/PARTIDA (DD/MM/AAAA)
-                              <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
-                              &nbsp; HO:RA
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-passenger-name') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              NOME DO PASSAGEIRO
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-document') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              NÚMERO DO DOCUMENTO
-                            </td>
-                          </tr>
-                          <tr style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
-                            <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
-                              {!! trans('clickbus.clickbus_email-seat') !!}
-                            </td>
-                            <td style="text-align:right;padding-right:10px;font-size:12px">
-                              NUMERO
-                            </td>
-                          </tr>
+                  <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
+                    <tbody>
+                      {{-- DETALHES DA VIAGEM - Título --}}
+                      <tr id="detalhes-da-viagem">
+                        <td style="color:#fff;background:#C76634;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
+                         {!! trans('clickbus.clickbus_email-trip-details') !!}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
 
-                        </tbody>
-                      </table>
-                    </td>
-                  </tr>
+                  {{-- DETALHES DA VIAGEM - Infos --}}
+                  @foreach($Compra->poltronas as $indice => $poltrona)
+                  <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
+                    <tbody>
+
+                      <tr>
+                        <td style="background:#efefef;border:1px solid #000">
+                          <table align="center" width="100%">
+                            <tbody>
+
+                              {{-- VIAÇÃO / LOCALIZADOR / NÚMERO DA PASSAGEM - Títulos --}}
+                              <tr>
+                                <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial" width="30%">
+                                  {!! trans('clickbus.clickbus_email-road-company') !!}
+                                </td>
+
+                                <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial" width="35%">
+                                  {!! trans('clickbus.clickbus_email-locator') !!}
+                                </td>
+
+                                <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial" width="35%">
+                                  {!! trans('clickbus.clickbus_email-ticket') !!}
+                                </td>
+                              </tr>
+
+                              <tr>
+
+                                {{-- NOME DA VIAÇÃO --}}
+                                <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;border-right:1px solid #000;padding:0px 5px 0px 5px" width="30%">
+                                  {{ ucfirst($poltrona->viacao->nome) }}
+                                </td>
+
+                                {{-- LOCALIZADOR --}}
+                                <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;border-right:1px solid #000;padding:0px 5px 0px 5px" width="30%">
+                                  {{ strtoupper($poltrona->localizer) }}
+                                </td>
+
+                                {{-- NUMERO DO TICKET dentro do laço de ida/volta --}}
+                                <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;padding:0px 5px 0px 5px" width="30%">
+                                  {{ $indice+1 }}
+                                </td>
+                              </tr>
+
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <tr>
+                        <td style="border-bottom:solid thin #aaaaaa" bgcolor="#fff">
+                          <table style="border-bottom-left-radius:5px;border-bottom-right-radius:5px;border-bottom:solid thin #999999;border-left:solid thin #999999;border-top:solid thin #999999;border-right:solid thin #999999;font-family:'Arial',sans-serif;font-weight:300;font-size:16px;color:#000" cellpadding="5px" cellspacing="0" align="center" bgcolor="#F4F4F4" width="90%">
+                            <tbody>
+
+                              {{-- NOME DO PASSAGEIRO --}}
+                              <tr id="nome-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
+                                <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
+                                  {!! trans('clickbus.clickbus_email-dear-client') !!}
+                                </td>
+                                <td style="text-align:right;padding-right:10px;font-size:12px">
+                                  {{ ucfirst($poltrona->passenger_name) }}
+                                </td>
+                              </tr>
+
+                              {{-- NUMERO DO DOCUMENTO --}}
+                              <tr id="documento-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
+                                <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
+                                  {!! trans('clickbus.clickbus_email-document') !!}
+                                </td>
+                                <td style="text-align:right;padding-right:10px;font-size:12px">
+                                  {{ strtoupper($poltrona->passenger_document_number) }}
+                                </td>
+                              </tr>
+
+                              {{-- LUGAR DE PARTIDA - LUGAR DA CHEGADA --}}
+                              <tr id="rota-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
+                                <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
+                                  {!! trans('clickbus.clickbus_email-route') !!}
+                                </td>
+                                <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
+                                  {{ ucfirst($poltrona->embarque->place_name) }} - {{ ucfirst($poltrona->desembarque->place_name) }}
+                                </td>
+                              </tr>
+
+                              {{-- NUMERO DA POLTRONA --}}
+                              <tr id="poltrona-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
+                                <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
+                                  {!! trans('clickbus.clickbus_email-seat') !!}
+                                </td>
+                                <td style="text-align:right;padding-right:10px;font-size:12px">
+                                  {{ $poltrona->seat_number }}
+                                </td>
+                              </tr>
+
+                              {{-- DATAS E HORARIOS --}}
+                              <tr id="data-horario-ida-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
+
+                                <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
+                                  {!! trans('clickbus.clickbus_email-boarding') !!}
+                                </td>
+
+                                <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
+                                  <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
+                                  {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
+                                  &nbsp; {{ $poltrona->dataEmbarque }}
+                                  -
+                                  <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
+                                  {{-- HORA usar format('H:i') --}}
+                                  &nbsp; {{ $poltrona->horaEmbarque }}
+                                </td>
+
+                              </tr>
+
+                              <tr id="data-horario-volta-passageiro" style="height:35px;font-size:14px;font-weight:100" bgcolor="#F4F4F4">
+
+                                <td style="text-align:left;padding-left:10px;color:#000;font-family:Arial">
+                                  {!! trans('clickbus.clickbus_email-arrival') !!}
+                                </td>
+
+                                <td style="text-align:right;padding-right:10px;font-size:12px">
+                                  <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
+                                  {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
+                                  &nbsp; {{ $poltrona->dataDesembarque }}
+                                  -
+                                  <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
+                                  {{-- HORA usar format('H:i') --}}
+                                  &nbsp; {{ $poltrona->horaDesembarque }}
+                                </td>
+
+                              </tr>
+
+                            </tbody>
+                          </table>
+                          <br>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  @endforeach
+                  <br/>
 
                   <tr>
                     <td style="padding:0px 0px 0px 0px;font-family:'Arial',sans-serif;font-weight:300;font-size:18px;text-align:center;color:#484848;height:5px;border-top:2px solid #ddd">
@@ -278,9 +284,9 @@
                     <td style="padding:5px 0px 0px 0px" align="center">
                       <table>
                         <tr>
-                          <td align="center"><span>{!! trans(clickbus.clickbus_email-copyright-footer1) !!}</span></td>
+                          <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer1') !!}</span></td>
                           <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
-                          <td align="center"><span>{!! trans(clickbus.clickbus_email-copyright-footer2) !!}</span></td>
+                          <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer2') !!}</span></td>
                         </tr>
                       </table>
                     </td>
