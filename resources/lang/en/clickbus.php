@@ -436,7 +436,7 @@ return[
     'clickbus_email-locator' => 'Localizer',
     'clickbus_email-ticket' => 'Ticket',
     'clickbus_email-trip-details' => '<span style="text-transform:uppercase; font-weight: 800!important;">Detalhes da sua viagem</span>',
-    'clickbus_email-client-name' => 'Client Name: ',
+    'clickbus_email-passenger-name' => 'Passenger Name: ',
     'clickbus_email-departure' => 'Departure',
     'clickbus_email-departure-title' => '<h3><span style="font-weigth:800!important; color:#FF762E;">&#9679; DEPARTURE</span></h3>',
     'clickbus_email-return' => 'Return',

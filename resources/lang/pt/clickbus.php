@@ -437,7 +437,7 @@ return[
       'clickbus_email-locator' => 'Localizador',
       'clickbus_email-ticket' => 'Bilhete',
       'clickbus_email-trip-details' => '<span style="text-transform:uppercase; font-weight: 800!important;">Detalhes da sua viagem</span>',
-      'clickbus_email-client-name' => 'Nome do Cliente:',
+      'clickbus_email-passenger-name' => 'Nome do Passageiro:',
       'clickbus_email-departure' => 'Ida',
       'clickbus_email-departure-title' => '<h3><span style="font-weigth:800!important; color:#FF762E;">&#9679; IDA</span></h3>',
       'clickbus_email-return' => 'Volta',
