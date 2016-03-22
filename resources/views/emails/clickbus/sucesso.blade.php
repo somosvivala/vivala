@@ -354,7 +354,7 @@
                       {!! trans('clickbus.clickbus_email-date-of-payment') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
-                      {{ }}
+                      {{-- PEGAR PELO TIMESTAMP (???) --}}
                     </td>
                   </tr>
 
