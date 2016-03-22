@@ -371,7 +371,7 @@
             <td>
               <p style="font-size:14px;font-family:Arial" align="center">
                 {!! trans('clickbus.clickbus_email-request-number') !!}
-                {{ $Compra->localizer }}
+                <span style="font-weight:800!important;font-color:#FF3B10!important">{{ $Compra->localizer }}</span>.
                 <br/>
               </p>
             </td>
