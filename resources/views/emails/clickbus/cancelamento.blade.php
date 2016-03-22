@@ -35,7 +35,7 @@
                                   <tr>
                                     <td style="padding:0px 0px 5px 40px" align="left" width="35%">
                                       <a href="https://vivala.com.br" target="_blank">
-                                        <img src="https://vivala.com.br/img/assinaturas/logo.png" alt="Vivalá" style="display:block" border="0" width="100%">
+                                        <img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block" border="0" width="115px" height="63px">
                                       </a>
                                     </td>
 
@@ -64,10 +64,13 @@
                             <td style="padding:10px 0px 5px 0px;color:#fff;font-family:'Roboto',sans-serif;font-weight:100;font-size:26px;border-top:solid thin #fff;border-bottom:solid thin #fff" align="center">
                               <p style="font-weight:100;font-size:15px">
                               {!! trans('clickbus.clickbus_email-dear-client') !!}
-                              <span style="font-weight:800!important">NOME DO PASSAGEIRO</span>
+                              <span style="font-weight:800!important">
+                                {{-- NOME DO USUARIO --}}
+                                {{ trim(ucfirst($Compra->buyer_firstname)) }}
+                              </span>
                               {!! trans('clickbus.clickbus_email-payment-cancelled') !!}.
                               <br/>
-                              <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-cancelado.png" alt="{{ trans('clickbus.clickbus_email-status-canceled') }}" style="display:block;padding:10px 0px 10px 0px" border="0" height="85" width="100%">
+                              <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-cancelado.png" alt="{{ trans('clickbus.clickbus_email-status-canceled') }}" style="display:block;padding:10px 0px 10px 0px;margin: 0 auto;" border="0" width="227px" height="227px">
                               <br/>
                               {!! trans('clickbus.clickbus_email-for-a-new-order') !!}
                               <br/>
