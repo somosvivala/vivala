@@ -68,14 +68,14 @@
                                 {{-- NOME DO USUARIO --}}
                                 {{ trim(ucfirst($Compra->buyer_firstname)) }}
                               </span>
-                              {!! trans('clickbus.clickbus_email-payment-cancelled') !!}.
+                              {!! trans('clickbus.clickbus_email-payment-cancelled') !!}
                               <br/>
                               <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-cancelado.png" alt="{{ trans('clickbus.clickbus_email-status-canceled') }}" style="display:block;padding:10px 0px 10px 0px;margin: 0 auto;" border="0" width="227px" height="227px">
                               <br/>
                               {!! trans('clickbus.clickbus_email-for-a-new-order') !!}
                               <br/>
                                 <a style="text-decoration:none" href="https://vivala.com.br/viajar" target="_blank">
-                                  <font color="white" size="5">
+                                  <font color="white" size="5" font-weight="800">
                                     www.vivala.com.br/viajar
                                   </font>
                                 </a>
