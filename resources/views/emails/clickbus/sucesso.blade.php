@@ -214,11 +214,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->arrival_time;
+                              &nbsp; $poltronas->arrival_time
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->arrival_time;
+                              &nbsp; $poltronas->arrival_time
                             </td>
 
                           </tr>
@@ -298,7 +298,7 @@
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
-                      {!! $Compra->desconto_total !!}
+                      {{ $Compra->desconto_total }}
 
                     </td>
                   </tr>
@@ -310,7 +310,7 @@
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
-                      {!! $Compra->taxas !!}}
+                      {{ $Compra->taxas }}
 
                     </td>
                   </tr>
