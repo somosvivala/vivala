@@ -368,7 +368,7 @@
             <td>
               <p style="font-size:14px;font-family:Arial" align="center">
                 {!! trans('clickbus.clickbus_email-request-number') !!}
-                NUMERODOPEDIDO.
+                {{ $Compra->localizer }}
                 <br/>
               </p>
             </td>

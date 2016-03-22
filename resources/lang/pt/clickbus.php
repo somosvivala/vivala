@@ -456,7 +456,7 @@ return[
       'clickbus_email-total-payment' => 'Total do pagamento: ',
       'clickbus_email-type-of-payment' => 'Tipo de pagamento: ',
       'clickbus_email-date-of-payment' => 'Data de pagamento: ',
-      'clickbus_email-request-number' => 'O número do seu pedido na <span style="font-weight: 800!important;">ClickBus</span> é ',
+      'clickbus_email-request-number' => 'O número do seu pedido na <span style="font-weight: 800!important;">Vivalá</span> é ',
 
       'clickbus_email-faq-dont-delay' => 'Não se atrase!',
       'clickbus_email-faq-take-ticket' => 'Retire sua passagem',
