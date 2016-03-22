@@ -636,10 +636,9 @@ var getExtraInfoParaCheckout = function() {
         "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
         "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
         "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
+        "ida-from" : $("#ida-from").val(),
         "ida-company-id" : $('#ida-company-id').val(),
-        "volta-company-id" : $('#volta-company-id').val(),
-        "ida-to" : $("ida-to").val(),
-        "ida-from" : $("ida-from").val()
+        "volta-company-id" : $('#volta-company-id').val()
     };
     return obj;
 }
