@@ -281,9 +281,9 @@
                     <td style="padding:5px 0px 0px 0px" align="center">
                       <table>
                         <tr>
-                          <td align="center"><span>{!! trans(clickbus.clickbus_email-copyright-footer1) !!}</span></td>
+                          <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer1') !!}</span></td>
                           <td align="center"><img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block;padding:0px 0px 0px 0px" height="20" width="35"></td>
-                          <td align="center"><span>{!! trans(clickbus.clickbus_email-copyright-footer2) !!}</span></td>
+                          <td align="center"><span>{!! trans('clickbus.clickbus_email-copyright-footer2') !!}</span></td>
                         </tr>
                       </table>
                     </td>
