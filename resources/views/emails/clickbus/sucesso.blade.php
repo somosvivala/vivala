@@ -193,14 +193,13 @@
                             </td>
 
                             <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltrona->dataEmbarque
+                              &nbsp; {{ $poltrona->dataEmbarque }}
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltrona->horaEmbarque
+                              &nbsp; {{ $poltrona->horaEmbarque }}
                             </td>
 
                           </tr>
@@ -212,14 +211,13 @@
                             </td>
 
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltrona->dataDesembarque
+                              &nbsp; {{ $poltrona->dataDesembarque }}
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltrona->horaDesembarque
+                              &nbsp; {{ $poltrona->horaDesembarque }}
                             </td>
 
                           </tr>
