@@ -12,10 +12,17 @@
 */
 
 use App\CompraClickbus;
-Route::get('/testeemail', function() {
+Route::get('/testeemailpendente', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+});
+Route::get('/testeemailcancelado', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return view('emails.clickbus.cancelado')->with('Compra', $Compra);
+});
+Route::get('/testeemailsucesso', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
-
 });
 
 Route::get('/', 'WelcomeController@index');
