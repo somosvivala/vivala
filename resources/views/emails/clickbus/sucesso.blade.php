@@ -120,7 +120,7 @@
 
                             {{-- NOME DA VIAÇÃO --}}
                             <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;border-right:1px solid #000;padding:0px 5px 0px 5px" width="30%">
-                              {{ ucfirst($poltronas->viacao) }}
+                              {{ ucfirst($poltronas->viacao->nome) }}
                             </td>
 
                             {{-- LOCALIZADOR --}}
@@ -160,7 +160,7 @@
                               {!! trans('clickbus.clickbus_email-document') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px">
-                              {{ strtoupper($poltronas->localizer) }}
+                              {{ strtoupper($poltronas->passenger_document_number) }}
                             </td>
                           </tr>
 
@@ -170,7 +170,7 @@
                               {!! trans('clickbus.clickbus_email-route') !!}
                             </td>
                             <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                              {{ ucfirst($poltronas->embarque) }} - {{ ucfirst($poltronas->desembarque) }}
+                              {{ ucfirst($poltronas->embarque->place_name) }} - {{ ucfirst($poltronas->desembarque->place_name) }}
                             </td>
                           </tr>
 
@@ -195,11 +195,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->departure_time;
+                              &nbsp; $poltronas->departure_time
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->departure_time;
+                              &nbsp; $poltronas->departure_time
                             </td>
 
                           </tr>
@@ -214,11 +214,11 @@
 
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
                               {{-- DATA/DA/PARTIDA (DD/MM/AAAA) usar format('d-m-Y') --}}
-                              &nbsp; $poltronas->arrival_time;
+                              &nbsp; $poltronas->arrival_time
                               -
                               <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-relogio.png" alt="{{ trans('global.date_hour') }}" style="display:inline" border="0" height="14" width="14">
                               {{-- HORA usar format('H:i') --}}
-                              &nbsp; $poltronas->arrival_time;
+                              &nbsp; $poltronas->arrival_time
                             </td>
 
                           </tr>
@@ -259,7 +259,7 @@
             </td>
           </tr>
 
-          {{-- DETALHES DO PAGAMENTO --}
+          {{-- DETALHES DO PAGAMENTO --}}
           <tr id="detalhes-do-pagamento">
             <td style="color:#fff;background:#FF5B00;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
              {!! trans('clickbus.clickbus_email-payment-details') !!}
@@ -298,7 +298,7 @@
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
-                      {!! $Compra->desconto_total !!}
+                      {{ $Compra->desconto_total }}
 
                     </td>
                   </tr>
@@ -310,7 +310,7 @@
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
-                      {!! $Compra->taxas !!}}
+                      {{ $Compra->taxas }}
 
                     </td>
                   </tr>

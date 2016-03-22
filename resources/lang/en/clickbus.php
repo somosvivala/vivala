@@ -452,6 +452,7 @@ return[
     'clickbus_email-responsible' => 'Responsible: ',
     'clickbus_email-tickets-ammount' => 'Total passages: ',
     'clickbus_email-convenience-fee' => 'Convenience Fee: ',
+    'clickbus_email-discount-fee' => 'Discount Fee: ',
     'clickbus_email-total-payment' => 'Total payment: ',
     'clickbus_email-type-of-payment' => 'Payment type: ',
     'clickbus_email-date-of-payment' => 'Date of payment: ',
