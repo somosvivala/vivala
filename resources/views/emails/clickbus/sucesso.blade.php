@@ -277,7 +277,7 @@
                       {!! trans('clickbus.clickbus_email-responsible') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px;color:#000">
-                      {{ ucfirst($Compra->buyer_firstname) }} {{ ucfirst($compra->buyer_lastname) }}
+                      {{ ucfirst($Compra->buyer_firstname) }} {{ ucfirst($Compra->buyer_lastname) }}
                     </td>
                   </tr>
 
