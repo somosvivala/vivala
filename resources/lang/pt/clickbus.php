@@ -432,7 +432,7 @@ return[
       'clickbus_email-partnership' => 'em parceria com',
       'clickbus_email-thanks-for-buying' => 'Obrigado por comprar na',
       'clickbus_email-dear-client' => 'Prezado(a) ',
-      'clickbus_email-buy-fulfilled' => ', sua compra foi realizada com sucesso.',
+      'clickbus_email-buy-fulfilled' => ', sua compra foi realizada com sucesso!',
       'clickbus_email-road-company' => 'Viação',
       'clickbus_email-locator' => 'Localizador',
       'clickbus_email-ticket' => 'Bilhete',

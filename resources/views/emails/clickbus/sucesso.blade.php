@@ -64,14 +64,14 @@
                     <td style="text-align:center;padding-left:15px;padding-right:15px;background:#FF3B10;background:-moz-linear-gradient(top,#FF3B10 0%,#FF5B00 100%);background:-webkit-linear-gradient(top,#FF3B10 0%,#FF5B00 100%);background:-o-linear-gradient(top,#FF3B10 0%,#FF5B00 100%);background:-ms-linear-gradient(top,#FF3B10 0%,#FF5B00 100%);background:linear-gradient(to bottom,#FF3B10 0%,#FF5B00 100%)" align="center">
                       <p style="padding-top:15px;color:#fff;font-weight:100;font-family:Arial;font-size:29px;padding-left:20px;padding-right:20px;line-height:38px">
                         {!! trans('clickbus.clickbus_email-thanks-for-buying') !!}
-                        <span style="font-weight:600">{!! trans('clickbus.clickbus_email-vivala-title') !!}</span>
+                        <span style="font-weight:600">{!! trans('clickbus.clickbus_email-vivala-title') !!}!</span>
                       </p>
                       <img src="https://vivala.com.br/img/clickbus/icon_clickbus-status-concluido.png" alt="{{ trans('clickbus.clickbus_email-status-success') }}" style="display:block; margin: 0 auto; padding:0" border="0" height="45%" width="45%">
                       <p style="font-size:16px;color:#fff;font-weight:100;font-family:Arial;padding-bottom:15px">
                         {!! trans('clickbus.clickbus_email-dear-client') !!}
                         <span style="font-weight:600">
                           {{-- NOME DO USUARIO --}}
-                          {{ ucfirst($Compra->buyer_firstname) }}
+                          {{ trim(ucfirst($Compra->buyer_firstname)) }}
                         </span>
                         {!! trans('clickbus.clickbus_email-buy-fulfilled') !!}</p>
                     </td>
@@ -91,8 +91,18 @@
                 </tbody>
               </table>
 
-              {{-- DETALHES DA VIAGEM - Fazer Laço Ida e Volta --}}
+              <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
+                <tbody>
+                  {{-- DETALHES DA VIAGEM --}}
+                  <tr id="detalhes-da-viagem">
+                    <td style="color:#fff;background:#FF5B00;height:35px;padding:10px 0px 5px 0px;font-family:Arial;font-size:19px" align="center">
+                     {!! trans('clickbus.clickbus_email-trip-details') !!}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 
+              {{-- DETALHES DA VIAGEM - Fazer Laço Ida e Volta --}}
               @foreach($Compra->poltronas as $indice => $poltrona)
               <table style="border:solid thin #999999" cellpadding="10px" cellspacing="0" align="center" bgcolor="#ffffff" width="600px">
                 <tbody>
@@ -131,7 +141,7 @@
 
                             {{-- NUMERO DO TICKET dentro do laço de ida/volta --}}
                             <td style="font-size:18px;text-align:center;margin-bottom:0;font-family:Arial;font-weight:bold;padding:0px 5px 0px 5px" width="30%">
-                              {{ $indice }}
+                              {{ $indice+1 }}
                             </td>
                           </tr>
 
