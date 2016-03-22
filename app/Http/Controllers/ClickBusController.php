@@ -499,11 +499,11 @@ class ClickBusController extends Controller {
                 $passenger_name = $Trip->{"passenger"}->{"firstName"} . $Trip->{"passenger"}->{"lastName"};
                 $subTotal = $Trip->{"subtotal"};
 
-                $idaFrom = array_key_exists('ida-from', $request['extra'])
-                    ? $request['extra']['ida-from'] : null;
+                $idaSlug = array_key_exists('ida-slug', $request['extra'])
+                    ? $request['extra']['ida-slug'] : null;
 
                 //Comparando o local de embarque para saber determinar a viacao
-                if ($idaFrom == ClickBusPlace::find($departure_id)->place_name) {
+                if ($idaSlug == ClickBusPlace::find($departure_id)->slug) {
                     $viacao_id = $request['extra']['ida-company-id'];
                 }
 
