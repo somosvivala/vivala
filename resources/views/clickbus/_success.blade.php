@@ -12,12 +12,12 @@
         </div>
       </div>
       <div class="row detalhes-da-viagem-2">
-        <h3>
+        <h3 class="text-center">
           {!! trans('clickbus.clickbus_success-thanks-for-vivala') !!}
         </h3>
       </div>
       <div class="row detalhes-da-viagem-3">
-        <p>
+        <p class="padding-t-1">
           <span>
             {!! trans('clickbus.clickbus_success-dear-client') !!}
           </span>
@@ -55,14 +55,19 @@
           @endif
             {!! trans('clickbus.clickbus_success-approved-by-system') !!}
 
-        <p><i class="fa fa-3x fa-exclamation-circle"></i> {!! trans('clickbus.clickbus_success-invoice-bill') !!}</p>
+        <p>
+          <i class="fa fa-3x fa-exclamation-circle"></i>
+          <span>
+            {!! trans('clickbus.clickbus_success-invoice-bill') !!}
+          </span>
+        </p>
         <p class="texto-negrito text-center">
           {!! trans('clickbus.clickbus_success-mercadopago') !!}
         </p>
       </div>
       <div class="row detalhes-da-viagem-4">
         <div class="col-md-12 col-lg-12 padding-t-1">
-          <h3>{!! trans('clickbus.clickbus_success-we-sent-infos') !!}</h3>
+          <h4>{!! trans('clickbus.clickbus_success-we-sent-infos') !!}</h4>
         </div>
         {{-- Input de enviar emails pra outras pessoas sobre a COMPRA --}}
         {{--
@@ -72,15 +77,12 @@
         --}}
         <div class="row">
           <div class="col-md-12 col-lg-12">
+            <h3 class="text-center">
+              {!! trans('clickbus.clickbus_success-order-details') !!}
+            </h3>
+
             <table class="table">
               <tbody>
-                <tr class="text-center">
-                  <th>
-                    <h3 class="text-center">
-                      {!! trans('clickbus.clickbus_success-order-details') !!}
-                    </h3>
-                  </th>
-                </tr>
 
                 <tr>
                   <td>
@@ -138,7 +140,9 @@
         {!! trans('clickbus.clickbus_success-some-tips-to-you') !!}
       </p>
       <hr class="dicas-de-viagem-divisor"/>
+
       <table class="tres-dicas-de-viagem">
+
         <tr class="padding-b-1">
           <td class="text-center">
             <img src="{{ asset('/img/clickbus/icon_clickbus-envelope-view.svg') }}" height="50px" width="100%">
@@ -150,6 +154,7 @@
             <img src="{{ asset('/img/clickbus/icon_clickbus-relogio-view.svg') }}" height="50px" width="100%">
           </td>
         </tr>
+
         <tr>
           <td class="text-center">
             <span>{!! trans('clickbus.clickbus_success-tip-1') !!}</span>
@@ -159,9 +164,11 @@
           </td>
           <td class="text-center">
             <span>{!! trans('clickbus.clickbus_success-tip-3') !!}</span>
-          </td>.
+          </td>
         </tr>
+
       </table>
+
       <hr class="dicas-de-viagem-divisor"/>
       <div>
         {{-- ALGUMA IMAGEM LEGALZINHA EM SVG --}}
