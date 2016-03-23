@@ -76,6 +76,7 @@ return[
 'clickbus_client-email-ph' => 'passageiro@email.com',
 
 'clickbus_client-bank-plugin' => 'É necessário possuir o plug-in do banco instalado NESTE COMPUTADOR. Caso não tenha certeza, recomendamos o uso do cartão de crédito.',
+
 /*
   Tradução pro environment de DESENVOLVIMENTO (dev) [TDD]
 */
@@ -494,5 +495,24 @@ return[
       'clickbus_email-payment-cancelled' => ', seu pagamento não foi <span style="font-weight:800!important">concluí­do</span>.',
       'clickbus_email-for-a-new-order' => 'Para realizar um novo pedido entre em nosso site:',
 
+      // View de SUCESSO ao finalizar a compra
+        'clickbus_success-buy-done' => 'Compra finalizada com sucesso!',
+        'clickbus_success-thanks-for-vivala' => '<span class="negrito">Obrigado</span> por comprar na <span class="negrito laranja">Vivalá</span>!',
+        'clickbus_success-dear-client' => '<span class="negrito">Caro cliente</span>, a sua compra de',
+        'clickbus_success-with' => 'com',
+        'clickbus_success-approved-by-system' => 'foi aprovada pelo nosso sistema.',
+        'clickbus_success-invoice-bill' => 'Essa compra aparecerá na sua fatura com o nome:',
+        'clickbus_success-mercadopago' => 'MERCADOPAGO*Vivala',
+        'clickbus_success-we-sent-infos' => 'Nós enviamos estas informações para o email cadastrado em sua compra!',
+        'clickbus_success-order-details' => 'Detalhes da Compra',
+        'clickbus_success-buy-localizer' => 'Localizador:',
+        'clickbus_success-tickets-amount' => 'Total de tickets:',
+        'clickbus_success-order-total' => 'Total da compra:',
+        'clickbus_success-next-to-end' => 'Agora você esta mais perto da sua <strong>viagem</strong>!',
+        'clickbus_success-some-tips-to-you' => 'Algumas <span class="negrito">dicas</span> para você ficar mais tranquilo:',
+        'clickbus_success-tip-1' => 'Você receberá os <span class="negrito">detalhes</span> da sua <span class="negrito">compra</span> por <span class="negrito">email</span>.',
+        'clickbus_success-tip-2' => 'Para retirar sua passagem você precisará <span class="negrito">apenas</span> do seu <span class="negrito">documento</span>!',
+        'clickbus_success-tip-3' => 'Chegue na rodoviária <span class="negrito">45 minutos</span> antes de sua viagem',
+        
 ];
 ?>

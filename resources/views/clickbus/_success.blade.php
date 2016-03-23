@@ -3,28 +3,29 @@
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row">
         <div class="col-md-4 col-lg-4">
-          SVG LEGALZINHO DOS TICKETS COM SINAL DE OK
+          <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="110px" width="100%">
         </div>
         <div class="col-md-8 col-lg-8">
-          <h3>Compra Finalizada com Sucesso!</h3>
+          <h3>{!! trans('clickbus.clickbus_success-buy-done') !!}</h3>
         </div>
       </div>
       <div class="row">
         <h3>
-          <span class="negrito">Obrigado</span> por comprar na <span class="negrito">Vivalá</span>!
+          {!! trans('clickbus.clickbus_success-thanks-for-vivala') !!}
         </h3>
       </div>
       <div class="row">
         <p>
-          <span class="negrito">
-          Caro cliente
+          <span>
+            {!! trans('clickbus.clickbus_success-dear-client') !!}
           </span>
-          , a sua compra de
-          <span class="negrito">{!! trans('clickbus.clickbus_email-sigla-real') !!}</span>
-          <span class="negrito">{{ $compra->total }}</span>
-
-          com
-
+          <span class="negrito">
+            {!! trans('clickbus.clickbus_email-sigla-real') !!}
+          </span>
+          <span class="negrito">
+            {{ $compra->total }}
+          </span>
+            {!! trans('clickbus.clickbus_success-with') !!}
           @if($compra->payment_method === "payment.debitcard")
             {{-- DÉBITO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -42,15 +43,14 @@
               {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
             </span>
           @endif
+            {!! trans('clickbus.clickbus_success-approved-by-system') !!}
 
-          foi aprovada pelo nosso sistema.
-
-        <p><i></i> Essa compra aparecerá na sua fatura com o nome:</p>
-        <p class="texto-negrito">MERCADOPAGO*Vivala</p>
+        <p><i class="fa fa-3x fa-exclamation-circle"></i> {!! trans('clickbus.clickbus_success-invoice-bill') !!}</p>
+        <p class="texto-negrito">{!! trans('clickbus.clickbus_success-mercadopago') !!}</p>
       </div>
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          <p>Nós enviamos estas informações para o email cadastrado em sua compra!</p>
+          <p>{!! trans('clickbus.clickbus_success-we-sent-infos') !!}</p>
         </div>
         {{-- Input de enviar emails pra outras pessoas sobre a COMPRA --}}
         {{--
@@ -63,87 +63,71 @@
           <div class="col-md-12 col-lg-12">
             <table>
               <th class="text-center">
-                <h2>Resumo do Pedido</h2>
+                <h2>{!! trans('clickbus.clickbus_success-order-details') !!}</h2>
               </th>
-              <tr>
-                <td>
-                  <span>Localizador:</span>
-                </td>
-                <td>
-                  Total de tickets:
 
-                </td>
-                <td>Total da compra:</td>
-              </tr>
               <tr>
-                <td><span>{{ $compra->localizer }}</span></td>
-                <td><span>{{ $compra->poltronas->count() }}</span></td>
-                <td><span>{{ $compra->total }}</span></td>
+                <td>
+                  <span>{!! trans('clickbus.clickbus_success-buy-localizer') !!}</span>
+                </td>
+                <td>
+                  <span>{!! trans('clickbus.clickbus_success-tickets-amount') !!}</span>
+                </td>
+                <td>
+                  <span>{!! trans('clickbus.clickbus_success-order-total') !!}</span>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <span>{{ $compra->localizer }}</span>
+                </td>
+                <td>
+                  <span>{{ $compra->poltronas->count() }}</span>
+                </td>
+                <td>
+                  <span>{{ $compra->total }}</span>
+                </td>
+
               </tr>
             </table>
           </div>
-          {{-- PRECISA FAZER IDA E VOLTA (SE TIVER)--}}
-          {{--
-          <!-- <div class="col-md-12 col-lg-12 text-center">
-            <p>Detalhes:</p>
-            <table>
-              <tr>
-                <td>
-                  LOCAL DE PARTIDA -> LOCAL DE CHEGADA
-                </td>
-                <td>
-                  DATA DA PARTIDA
-                </td>
-                <td>
-                  <p>
-                    POLTRONAS
-                  </p>
-                  <p>
-                    16 (MARCEL RODRIGUES BIANCHI) [NUMERO DO DOCUMENTO]
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  R$VAL.OR DA PASSAGEM
-                </td>
-                <td>
-                  HORARIO DE SAÍDA -> HORÁRIO DE CHEGADA
-                </td>
-              </tr>
-            </table>
-          </div> -->
-          --}}
         </div>
       </div>
     </div>
     <div id="dicas-de-viagem" class="col-md-6 col-lg-6">
       <h1 class="margin-b-1">
-        Agora você esta mais perto da sua <strong>viagem</strong>!
+        {!! trans('clickbus.clickbus_success-next-to-end') !!}
       </h1>
       <p class="margin-b-1">
-        Algumas <span class="negrito">dicas</span> para você ficar mais tranquilo:
+        {!! trans('clickbus.clickbus_success-some-tips-to-you') !!}
       </p>
       <table>
         <tr>
-          <td>IMAGEM DO MAIL</td>
-          <td>IMAGEM DO DOCUMENTO</td>
-          <td>IMAGEM DO RELOGIO</td>
+          <td>
+            <img src="{{ asset('/img/clickbus/icon_clickbus-envelope-view.svg') }}" height="50px" width="100%">
+          </td>
+          <td>
+            <img src="{{ asset('/img/clickbus/icon_clickbus-documento-view.svg') }}" height="50px" width="100%">
+          </td>
+          <td>
+            <img src="{{ asset('/img/clickbus/icon_clickbus-relogio-view.svg') }}" height="50px" width="100%">
+          </td>
         </tr>
         <tr>
           <td>
-            Você receberá os <span class="negrito">detalhes</span> da sua <span class="negrito">compra</span> por <span class="negrito">email</span>.
+            <span>{!! trans('clickbus.clickbus_success-tip-1') !!}</span>
           </td>
           <td>
-            Para retirar sua passagem você precisará <span class="negrito">apenas</span> do seu <span class="negrito">documento</span>!
+            <span>{!! trans('clickbus.clickbus_success-tip-2') !!}</span>
           </td>
           <td>
-            Chegue na rodoviária <span class="negrito">45 minutos</span> antes de sua viagem
+            <span>{!! trans('clickbus.clickbus_success-tip-3') !!}</span>
           </td>.
         </tr>
       </table>
       <div>
-        ALGUMA IMAGEM LEGALZINHA EM SVG
+        {{-- ALGUMA IMAGEM LEGALZINHA EM SVG --}}
       </div>
       </div>
     </div>
