@@ -171,7 +171,7 @@
 
       <hr class="dicas-de-viagem-divisor"/>
       <div>
-        {{-- ALGUMA IMAGEM LEGALZINHA EM SVG --}}
+        <img src="{{ asset('/img/dummy.jpg') }}" height="25%" width="100%">
       </div>
       </div>
     </div>
