@@ -431,7 +431,7 @@ return[
       'clickbus_email-status-canceled' => 'Cancelado',
 
       'clickbus_email-partnership' => 'em parceria com',
-      'clickbus_email-thanks-for-buying' => 'Sua passagem de ônibus está garantida! Obrigado(a) por comprar na',
+      'clickbus_email-thanks-for-buying' => 'Sua passagem de ônibus está garantida! Obrigado por comprar na',
       'clickbus_email-dear-client' => 'Oi ',
       'clickbus_email-buy-fulfilled' => ', esta é a confirmação da sua compra e seus dados! <br/>Confira tudo e pé na estrada!',
       'clickbus_email-road-company' => 'Viação',
