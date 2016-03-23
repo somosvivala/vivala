@@ -57,14 +57,10 @@ class Kernel extends ConsoleKernel {
 
                         //Se a passagem foi cancelada, disparar evento para tomar as medidas necessarias
                         if (ClickbusRepository::confirmaPassagemCancelada($respostaClickbus)) {
-                            echo 'passagem cancelada';
-
                             event(new ClickBusPassagemCancelada($Compra));
                         }
 
-                        if ($Compra->id == 2) {
-                            echo 'simulando pagamentoConfirmado';
-
+                        if ($Compra->id == 3) {
                             event(new ClickBusPagamentoConfirmado($Compra));
                         }
 
