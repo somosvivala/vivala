@@ -509,10 +509,10 @@ return[
         'clickbus_success-tickets-amount' => 'Total de tickets:',
         'clickbus_success-order-total' => 'Total da compra:',
         'clickbus_success-next-to-end' => 'Agora você esta mais perto da sua <strong>viagem</strong>!',
-        'clickbus_success-some-tips-to-you' => 'Algumas <span class="negrito">dicas</span> para você ficar mais tranquilo:',
+        'clickbus_success-some-tips-to-you' => 'Algumas <span class="negrito">dicas</span> para você ficar mais relax:',
         'clickbus_success-tip-1' => 'Você receberá os <span class="negrito">detalhes</span> da sua <span class="negrito">compra</span> por <span class="negrito">email</span>.',
         'clickbus_success-tip-2' => 'Para retirar sua passagem você precisará <span class="negrito">apenas</span> do seu <span class="negrito">documento</span>!',
         'clickbus_success-tip-3' => 'Chegue na rodoviária <span class="negrito">45 minutos</span> antes de sua viagem',
-        
+
 ];
 ?>

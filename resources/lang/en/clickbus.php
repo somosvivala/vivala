@@ -494,7 +494,7 @@ return[
     'clickbus_email-for-a-new-order' => 'To place a new order please visit our website:',
 
     // View de SUCESSO ao finalizar a compra
-      'clickbus_success-buy-done' => 'Compra finalizada com sucesso!',
+      'clickbus_success-buy-done' => 'Compra finalizada com <span class="negrito">sucesso</span>!',
       'clickbus_success-thanks-for-vivala' => '<span class="negrito">Obrigado</span> por comprar na <span class="negrito laranja">Vivalá</span>!',
       'clickbus_success-dear-client' => '<span class="negrito">Caro cliente</span>, a sua compra de',
       'clickbus_success-with' => 'com',
@@ -507,10 +507,10 @@ return[
       'clickbus_success-tickets-amount' => 'Total de tickets:',
       'clickbus_success-order-total' => 'Total da compra:',
       'clickbus_success-next-to-end' => 'Agora você esta mais perto da sua <strong>viagem</strong>!',
-      'clickbus_success-some-tips-to-you' => 'Algumas <span class="negrito">dicas</span> para você ficar mais tranquilo:',
+      'clickbus_success-some-tips-to-you' => 'Algumas <span class="negrito"><b>dicas</b></span> para você ficar mais tranquilo:',
       'clickbus_success-tip-1' => 'Você receberá os <span class="negrito">detalhes</span> da sua <span class="negrito">compra</span> por <span class="negrito">email</span>.',
       'clickbus_success-tip-2' => 'Para retirar sua passagem você precisará <span class="negrito">apenas</span> do seu <span class="negrito">documento</span>!',
       'clickbus_success-tip-3' => 'Chegue na rodoviária <span class="negrito">45 minutos</span> antes de sua viagem',
-      
+
 ];
 ?>

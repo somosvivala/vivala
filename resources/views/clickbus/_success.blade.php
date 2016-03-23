@@ -1,20 +1,22 @@
-<div class="col-md-12 col-lg-12 padding-b-2">
+<div id="clickbus-view-sucesso" class="col-md-12 col-lg-12 padding-b-2">
   <div class="row">
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
-      <div class="row">
+      <div class="row detalhes-da-viagem-1">
         <div class="col-md-4 col-lg-4">
           <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="110px" width="100%">
         </div>
         <div class="col-md-8 col-lg-8">
-          <h3>{!! trans('clickbus.clickbus_success-buy-done') !!}</h3>
+          <h3 class="text-justify">
+            {!! trans('clickbus.clickbus_success-buy-done') !!}
+          </h3>
         </div>
       </div>
-      <div class="row">
+      <div class="row detalhes-da-viagem-2">
         <h3>
           {!! trans('clickbus.clickbus_success-thanks-for-vivala') !!}
         </h3>
       </div>
-      <div class="row">
+      <div class="row detalhes-da-viagem-3">
         <p>
           <span>
             {!! trans('clickbus.clickbus_success-dear-client') !!}
@@ -55,7 +57,6 @@
         {{-- Input de enviar emails pra outras pessoas sobre a COMPRA --}}
         {{--
         <!--div class="col-md-12 col-lg-12">
-
           <input type="hidden">
         </div-->
         --}}
@@ -99,33 +100,35 @@
       <h1 class="margin-b-1">
         {!! trans('clickbus.clickbus_success-next-to-end') !!}
       </h1>
-      <p class="margin-b-1">
+      <p class="margin-b-1 text-center">
         {!! trans('clickbus.clickbus_success-some-tips-to-you') !!}
       </p>
-      <table>
-        <tr>
-          <td>
+      <hr class="dicas-de-viagem-divisor">
+      <table class="tres-dicas-de-viagem">
+        <tr class="padding-b-1">
+          <td class="text-center">
             <img src="{{ asset('/img/clickbus/icon_clickbus-envelope-view.svg') }}" height="50px" width="100%">
           </td>
-          <td>
+          <td class="text-center">
             <img src="{{ asset('/img/clickbus/icon_clickbus-documento-view.svg') }}" height="50px" width="100%">
           </td>
-          <td>
+          <td class="text-center">
             <img src="{{ asset('/img/clickbus/icon_clickbus-relogio-view.svg') }}" height="50px" width="100%">
           </td>
         </tr>
         <tr>
-          <td>
+          <td class="text-center">
             <span>{!! trans('clickbus.clickbus_success-tip-1') !!}</span>
           </td>
-          <td>
+          <td class="text-center">
             <span>{!! trans('clickbus.clickbus_success-tip-2') !!}</span>
           </td>
-          <td>
+          <td class="text-center">
             <span>{!! trans('clickbus.clickbus_success-tip-3') !!}</span>
           </td>.
         </tr>
       </table>
+      <hr class="dicas-de-viagem-divisor">
       <div>
         {{-- ALGUMA IMAGEM LEGALZINHA EM SVG --}}
       </div>
