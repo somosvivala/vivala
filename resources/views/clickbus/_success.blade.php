@@ -2,11 +2,11 @@
   <div class="row">
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row detalhes-da-viagem-1">
-        <div class="col-md-4 col-lg-4">
-          <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="110px" width="100%">
+        <div class="col-md-3 col-lg-3">
+          <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="135px" width="100%">
         </div>
-        <div class="col-md-8 col-lg-8">
-          <h3 class="text-center">
+        <div class="col-md-9 col-lg-9">
+          <h3 class="text-center padding-t-1">
             {!! trans('clickbus.clickbus_success-buy-done') !!}
           </h3>
         </div>
@@ -25,34 +25,44 @@
             {!! trans('clickbus.clickbus_email-sigla-real') !!}
           </span>
           <span class="negrito">
-            {{ $compra->total }}<span>,00</span>
+            <strong>
+              {{ $compra->total }}
+            </strong>
           </span>
             {!! trans('clickbus.clickbus_success-with') !!}
           @if($compra->payment_method === "payment.debitcard")
             {{-- DÉBITO --}}
             <span class="texto-negrito texto-maiusculo">
-              {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
+              <strong>
+                {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
+              </strong>
             </span>
 
           @elseif($compra->payment_method === "payment.creditcard")
             {{-- CRÉDITO --}}
             <span class="texto-negrito texto-maiusculo">
-              {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
+              <strong>
+                {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
+              </strong>
             </span>
           @else
             {{-- MÉTODO NÃO ENCONTRADO --}}
             <span class="texto-negrito texto-maiusculo">
-              {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
+              <strong>
+                {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
+              </strong>
             </span>
           @endif
             {!! trans('clickbus.clickbus_success-approved-by-system') !!}
 
         <p><i class="fa fa-3x fa-exclamation-circle"></i> {!! trans('clickbus.clickbus_success-invoice-bill') !!}</p>
-        <p class="texto-negrito">{!! trans('clickbus.clickbus_success-mercadopago') !!}</p>
+        <p class="texto-negrito text-center">
+          {!! trans('clickbus.clickbus_success-mercadopago') !!}
+        </p>
       </div>
-      <div class="row">
-        <div class="col-md-12 col-lg-12">
-          <p>{!! trans('clickbus.clickbus_success-we-sent-infos') !!}</p>
+      <div class="row detalhes-da-viagem-4">
+        <div class="col-md-12 col-lg-12 padding-t-1">
+          <h3>{!! trans('clickbus.clickbus_success-we-sent-infos') !!}</h3>
         </div>
         {{-- Input de enviar emails pra outras pessoas sobre a COMPRA --}}
         {{--
@@ -62,35 +72,59 @@
         --}}
         <div class="row">
           <div class="col-md-12 col-lg-12">
-            <table>
-              <th class="text-center">
-                <h2>{!! trans('clickbus.clickbus_success-order-details') !!}</h2>
-              </th>
+            <table class="table">
+              <tbody>
+                <tr class="text-center">
+                  <th>
+                    <h3 class="text-center">
+                      {!! trans('clickbus.clickbus_success-order-details') !!}
+                    </h3>
+                  </th>
+                </tr>
 
-              <tr>
-                <td>
-                  <span>{!! trans('clickbus.clickbus_success-buy-localizer') !!}</span>
-                </td>
-                <td>
-                  <span>{!! trans('clickbus.clickbus_success-tickets-amount') !!}</span>
-                </td>
-                <td>
-                  <span>{!! trans('clickbus.clickbus_success-order-total') !!}</span>
-                </td>
-              </tr>
+                <tr>
+                  <td>
+                    <span>
+                      {!! trans('clickbus.clickbus_success-buy-localizer') !!}
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      {!! trans('clickbus.clickbus_success-tickets-amount') !!}
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      {!! trans('clickbus.clickbus_success-order-total') !!}
+                    </span>
+                  </td>
+                </tr>
 
-              <tr>
-                <td>
-                  <span>{{ $compra->localizer }}</span>
-                </td>
-                <td>
-                  <span>{{ $compra->poltronas->count() }}</span>
-                </td>
-                <td>
-                  <span>{{ $compra->total }}</span>
-                </td>
+                <tr class="active">
+                  <td>
+                    <span>
+                      <strong>
+                        {{ $compra->localizer }}
+                      </strong>
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      <strong>
+                        {{ $compra->poltronas->count() }}
+                      </strong>
+                    </span>
+                  </td>
+                  <td>
+                    <span>
+                      <strong>
+                        {{ $compra->total }}
+                      </strong>
+                    </span>
+                  </td>
 
-              </tr>
+                </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -103,7 +137,7 @@
       <p class="margin-b-1 text-center">
         {!! trans('clickbus.clickbus_success-some-tips-to-you') !!}
       </p>
-      <hr class="dicas-de-viagem-divisor">
+      <hr class="dicas-de-viagem-divisor"/>
       <table class="tres-dicas-de-viagem">
         <tr class="padding-b-1">
           <td class="text-center">
@@ -128,7 +162,7 @@
           </td>.
         </tr>
       </table>
-      <hr class="dicas-de-viagem-divisor">
+      <hr class="dicas-de-viagem-divisor"/>
       <div>
         {{-- ALGUMA IMAGEM LEGALZINHA EM SVG --}}
       </div>
