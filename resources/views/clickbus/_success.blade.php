@@ -3,7 +3,7 @@
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row">
         <div class="col-md-4 col-lg-4">
-          <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}">
+          <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="110px" width="100%">
         </div>
         <div class="col-md-8 col-lg-8">
           <h3>{!! trans('clickbus.clickbus_success-buy-done') !!}</h3>
@@ -105,13 +105,13 @@
       <table>
         <tr>
           <td>
-            <img src="{{ asset('/img/clickbus/icon_clickbus-envelope-view.svg') }}">
+            <img src="{{ asset('/img/clickbus/icon_clickbus-envelope-view.svg') }}" height="50px" width="100%">
           </td>
           <td>
-            <img src="{{ asset('/img/clickbus/icon_clickbus-documento-view.svg') }}">
+            <img src="{{ asset('/img/clickbus/icon_clickbus-documento-view.svg') }}" height="50px" width="100%">
           </td>
           <td>
-            <img src="{{ asset('/img/clickbus/icon_clickbus-relogio-view.svg') }}">
+            <img src="{{ asset('/img/clickbus/icon_clickbus-relogio-view.svg') }}" height="50px" width="100%">
           </td>
         </tr>
         <tr>
