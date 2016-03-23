@@ -78,7 +78,7 @@
               <tr>
                 <td><span>{{ $compra->localizer }}</span></td>
                 <td><span>{{ $compra->quantidade_passagens }}</span></td>
-                <td><span>{{ $compra->total }}</span></td>
+                <td><span>{{ $compra->poltronas->count() }}</span></td>
               </tr>
             </table>
           </div>
