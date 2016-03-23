@@ -42,7 +42,7 @@ class CompraClickbusPoltrona extends Model
      */
     public function compra()
     {
-        return $this->belongsTo("App\CompraClickBus");
+        return $this->belongsTo("App\CompraClickbus");
     }
 
     /**

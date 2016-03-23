@@ -16,7 +16,7 @@ class ClickBusPassagemCancelada extends Event
     /**
      * Create a new event instance.
      */
-    public function __construct(CompraClickbus $compra)
+    public function __construct(CompraClickbus $CompraClickBus)
     {
         $this->CompraClickBus = $CompraClickBus;
     }
