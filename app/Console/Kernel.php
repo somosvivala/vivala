@@ -59,13 +59,7 @@ class Kernel extends ConsoleKernel {
                         if (ClickbusRepository::confirmaPassagemCancelada($respostaClickbus)) {
                             event(new ClickBusPassagemCancelada($Compra));
                         }
-
-                        if ($Compra->id == 3) {
-                            event(new ClickBusPagamentoConfirmado($Compra));
-                        }
-
                     }
-
                 }
             })->everyFiveMinutes();
 	}
