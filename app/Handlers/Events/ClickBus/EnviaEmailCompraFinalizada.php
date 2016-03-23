@@ -1,7 +1,7 @@
 <?php namespace App\Handlers\Events\ClickBus;
 
 use App\Events\ClickBusCompraFinalizada;
-
+use App\Repositories\ClickBusRepository;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use Mail;
@@ -26,23 +26,21 @@ class EnviaEmailCompraFinalizada {
 	 */
 	public function handle(ClickBusCompraFinalizada $event)
 	{
-      echo 'inside handler passagem pendente';
-            $Compra = $event->CompraClickBus;
-      dd($event);
+        $Compra = $event->CompraClickBus;
 
-            if ($Compra->status == 'payment_confirmed') {
-                //Envia email de sucesso no pagamento
-                Mail::send('emails.clickbus.sucesso', ['Compra' => $Compra], function ($message) use ($Compra) {
-                    $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
-                    $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-                });
-            } else {
-                //Envia email de pagamento pendente
-                Mail::send('emails.clickbus.pendente', ['Compra' => $Compra], function ($message) use ($Compra) {
-                    $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-pending'));
-                    $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-                });
-            }
+        if ($Compra->status == ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO) {
+            //Envia email de sucesso no pagamento
+            Mail::send('emails.clickbus.sucesso', ['Compra' => $Compra], function ($message) use ($Compra) {
+                $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+            });
+        } else {
+            //Envia email de pagamento pendente
+            Mail::send('emails.clickbus.pendente', ['Compra' => $Compra], function ($message) use ($Compra) {
+                $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-pending'));
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+            });
+        }
 	}
 
 }
