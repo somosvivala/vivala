@@ -1,4 +1,4 @@
-<div id="clickbus-view-sucesso" class="col-md-12 col-lg-12 padding-b-2">
+<div class="col-md-12 col-lg-12 padding-b-2">
   <div class="row">
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row detalhes-da-viagem-1">
@@ -6,7 +6,7 @@
           <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="110px" width="100%">
         </div>
         <div class="col-md-8 col-lg-8">
-          <h3 class="text-justify">
+          <h3 class="text-center">
             {!! trans('clickbus.clickbus_success-buy-done') !!}
           </h3>
         </div>
@@ -25,7 +25,7 @@
             {!! trans('clickbus.clickbus_email-sigla-real') !!}
           </span>
           <span class="negrito">
-            {{ $compra->total }}
+            {{ $compra->total }}<span>,00</span>
           </span>
             {!! trans('clickbus.clickbus_success-with') !!}
           @if($compra->payment_method === "payment.debitcard")
@@ -96,7 +96,7 @@
         </div>
       </div>
     </div>
-    <div id="dicas-de-viagem" class="col-md-6 col-lg-6">
+    <div id="dicas-da-viagem" class="col-md-6 col-lg-6">
       <h1 class="margin-b-1">
         {!! trans('clickbus.clickbus_success-next-to-end') !!}
       </h1>
