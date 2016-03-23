@@ -26,7 +26,9 @@ class EnviaEmailCompraFinalizada {
 	 */
 	public function handle(ClickBusCompraFinalizada $event)
 	{
+      echo 'inside handler passagem pendente';
             $Compra = $event->CompraClickBus;
+      dd($event);
 
             if ($Compra->status == 'payment_confirmed') {
                 //Envia email de sucesso no pagamento
