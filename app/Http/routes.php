@@ -20,6 +20,13 @@ Route::get('/testeevento', function() {
 //    return view('emails.clickbus.pendente')->with('Compra', $Compra);
 });
 
+Route::get('/testeview', function() {
+    $compra = CompraClickbus::all()->reverse()->first();
+
+    return ["view" => view('clickbus._success', compact('compra'))->render()];
+
+    //    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+});
 
 Route::get('/testeemailpendente', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
