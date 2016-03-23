@@ -1,7 +1,7 @@
 <?php namespace App\Handlers\Events\ClickBus;
 
 use App\Events\ClickBusPagamentoConfirmado;
-
+use Carbon\Carbon;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use App\Repositories\ClickBusRepository;
@@ -26,7 +26,10 @@ class UpdatePagamentoConfirmado {
 	 */
 	public function handle(ClickBusPagamentoConfirmado $event)
 	{
-		$event->CompraClickBus->update(['status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO]);
+      $event->CompraClickBus->update([
+          'status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO,
+          'data_pagamento' => Carbon::now()
+      ]);
 	}
 
 }
