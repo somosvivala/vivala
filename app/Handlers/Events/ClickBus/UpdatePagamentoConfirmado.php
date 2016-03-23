@@ -25,7 +25,7 @@ class UpdatePagamentoConfirmado {
 	 */
 	public function handle(ClickBusPagamentoConfirmado $event)
 	{
-      $event->CompraClickbus->update(['status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO]);
+      $event->CompraClickBus->update(['status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO]);
   }
 
 

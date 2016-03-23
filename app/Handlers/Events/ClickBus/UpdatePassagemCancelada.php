@@ -25,7 +25,7 @@ class UpdatePassagemCancelada {
 	 */
 	public function handle(ClickBusPassagemCancelada $event)
 	{
-      $event->CompraClickbus->update(['status' => ClickBusRepository::$FLAG_PASSAGEM_CANCELADA]);
+      $event->CompraClickBus->update(['status' => ClickBusRepository::$FLAG_PASSAGEM_CANCELADA]);
 	}
 
 }
