@@ -1,7 +1,7 @@
 <?php namespace App\Handlers\Events\ClickBus;
 
 use App\Events\ClickBusPassagemCancelada;
-
+use Mail;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
@@ -25,13 +25,13 @@ class EnviaEmailPassagemCancelada {
 	 */
 	public function handle(ClickBusPassagemCancelada $event)
 	{
-        $Compra = $event->CompraClickBus;
+      $Compra = $event->CompraClickBus;
 
-        //Envia email de sucesso no pagamento
-        Mail::send('emails.clickbus.cancelamento', ['Compra' => $Compra], function ($message) use ($Compra) {
-            $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-cancelled'));
+      //Envia email de passagem cancelada
+      Mail::send('emails.clickbus.cancelamento', ['Compra' => $Compra], function ($message) use ($Compra) {
+            $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-pending'));
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });
+      });
 	}
 
 }

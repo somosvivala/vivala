@@ -29,16 +29,17 @@ class EventServiceProvider extends ServiceProvider {
 			'App\Handlers\Events\ClickBus\EnviaEmailCompraFinalizada',
 		],
 
-    //Quando uma passagem da clickbus é cancelada
-		'App\Events\ClickBusPassagemCancelada' => [
-			'App\Handlers\Events\ClickBus\UpdatePassagemCancelada',
+    //Quando alguem finaliza uma compra da Clickbus
+    'App\Events\ClickBusPassagemCancelada' => [
 			'App\Handlers\Events\ClickBus\EnviaEmailPassagemCancelada',
+			'App\Handlers\Events\ClickBus\UpdatePassagemCancelada',
 		],
 
+
     //Quando um pagamento da clickbus é confirmado
-		'App\Events\ClickBusPagamentoConfirmado' => [
-			'App\Handlers\Events\ClickBus\UpdatePagamentoConfirmado',
+    'App\Events\ClickBusPagamentoConfirmado' => [
 			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
+			'App\Handlers\Events\ClickBus\UpdatePagamentoConfirmado',
 		],
 
 	];

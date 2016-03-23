@@ -1,9 +1,10 @@
 <?php namespace App\Handlers\Events\ClickBus;
 
 use App\Events\ClickBusPagamentoConfirmado;
-use App\Repositories\ClickBusRepository;
+
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use App\Repositories\ClickBusRepository;
 
 class UpdatePagamentoConfirmado {
 
@@ -25,8 +26,7 @@ class UpdatePagamentoConfirmado {
 	 */
 	public function handle(ClickBusPagamentoConfirmado $event)
 	{
-      $event->CompraClickBus->update(['status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO]);
-  }
-
+		$event->CompraClickBus->update(['status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO]);
+	}
 
 }
