@@ -172,5 +172,74 @@ class ClickBusRepository
         return $passagemFoiCancelada;
     }
 
+    /*
+     * Metodo para retornar todas as orders da clickbus
+     * a partir de $pagination (ver http://docs.clickbus.com.br/#order-details-get-order-list)
+     *
+     * @param $pagination - identifica a pagina para se começar
+     */
+    public static function getOrders($pagination=1)
+    {
+        $context = [
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'GET',
+                'header' => 'X-API-KEY:'.self::$apiKey,
+                ],
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents(self::$url.'/order'."?page=".$pagination, false, $context);
+
+        $decoded = json_decode($result);
+
+        return $decoded->{"items"};
+    }
+
+    /**
+     * Metodo para alimentar a tabela de relatórios com todas as compras realizadas
+     *
+     * @return boolean - se as compras foram inseridas com sucesso
+     */
+    public static function gerarRelatorioCompras()
+    {
+        $existemCompras = true;
+        $indice = 0;
+        while ($existemCompras) {
+            $orders = self::getOrders(++$indice);
+            $existemCompras = (count($orders) > 0);
+
+            //iterando sob as orders para persisti-las
+            foreach ($orders as $ordem) {
+
+                //pegando valores para persistir no bd
+                $localizer = $ordem->{'localizer'};
+                $rota_origem = $ordem->{'rota_origem'};
+                $rota_destino = $ordem->{'rota_destino'};
+                $buyer_firstname = $ordem->{'buyer_firstname'};
+                $buyer_lastname = $ordem->{'buyer_lastname'};
+                $buyer_email = $ordem->{'buyer_email'};
+                $payment_method = $ordem->{'payment_method'};
+                $order_created_at = $ordem->{'order_created_at'};
+                $order_updated_at = $ordem->{'order_updated_at'};
+                $clickbus_order_id = $ordem->{'clickbus_order_id'};
+                $quantidade_bilhete = $ordem->{'quantidade_bilhetes'};
+
+                RelatorioCompraClickbus::create([
+                    'localizer' => $localizer,
+                    'rota_origem' => $rota_origem,
+                    'rota_destino' => $rota_destino,
+                    'buyer_firstname' => $buyer_firstname,
+                    'buyer_lastname' => $buyer_lastname,
+                    'buyer_email' => $buyer_email,
+                    'payment_method' => $payment_method,
+                    'order_created_at' => $order_created_at,
+                    'order_updated_at' => $order_updated_at,
+                    'clickbus_order_id' => $clickbus_order_id,
+                    'quantidade_bilhetes' => $quantidade_bilhetes
+                ]);
+            }
+        }
+    }
 }
 
