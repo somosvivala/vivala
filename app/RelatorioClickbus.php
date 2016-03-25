@@ -2,17 +2,8 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class RelatoriosClickbus extends Model {
+class RelatorioClickbus extends Model {
 
-    /**
-     * The database table used by the model.
-     *
-     * @var string
-     */
-    protected $table = 'relatorio_clickbus';
-
-    //Settando colunas que podem ser MassAssigned
-    //AKA RelatorioCompraClickBus::create(['coluna' => 'valor']);
     protected $fillable = [
         'localizer',
         'rota_origem',
@@ -27,6 +18,4 @@ class RelatoriosClickbus extends Model {
         'quantidade_bilhetes',
         'status'
     ];
-
-
 }

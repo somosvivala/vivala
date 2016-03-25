@@ -3,6 +3,7 @@
 namespace app\Repositories;
 
 use Jenssegers\Date\Date;
+use App\RelatorioClickbus;
 
 class ClickBusRepository
 {
@@ -203,43 +204,50 @@ class ClickBusRepository
      */
     public static function gerarRelatorioCompras()
     {
-        $existemCompras = true;
-        $indice = 0;
-        while ($existemCompras) {
-            $orders = self::getOrders(++$indice);
-            $existemCompras = (count($orders) > 0);
+        try {
 
-            //iterando sob as orders para persisti-las
-            foreach ($orders as $ordem) {
+            $existemCompras = true;
+            $indice = 0;
+            while ($existemCompras) {
+                $orders = self::getOrders(++$indice);
+                $existemCompras = (count($orders) > 0);
 
-                //pegando valores para persistir no bd
-                $localizer = $ordem->{'localizer'};
-                $rota_origem = $ordem->{'rota_origem'};
-                $rota_destino = $ordem->{'rota_destino'};
-                $buyer_firstname = $ordem->{'buyer_firstname'};
-                $buyer_lastname = $ordem->{'buyer_lastname'};
-                $buyer_email = $ordem->{'buyer_email'};
-                $payment_method = $ordem->{'payment_method'};
-                $order_created_at = $ordem->{'order_created_at'};
-                $order_updated_at = $ordem->{'order_updated_at'};
-                $clickbus_order_id = $ordem->{'clickbus_order_id'};
-                $quantidade_bilhete = $ordem->{'quantidade_bilhetes'};
+                //iterando sob as orders para persisti-las
+                foreach ($orders as $ordem) {
 
-                RelatorioCompraClickbus::create([
-                    'localizer' => $localizer,
-                    'rota_origem' => $rota_origem,
-                    'rota_destino' => $rota_destino,
-                    'buyer_firstname' => $buyer_firstname,
-                    'buyer_lastname' => $buyer_lastname,
-                    'buyer_email' => $buyer_email,
-                    'payment_method' => $payment_method,
-                    'order_created_at' => $order_created_at,
-                    'order_updated_at' => $order_updated_at,
-                    'clickbus_order_id' => $clickbus_order_id,
-                    'quantidade_bilhetes' => $quantidade_bilhetes
-                ]);
+                    //pegando valores para persistir no bd
+                    $localizer = $ordem->{'localizer'};
+                    $rota_origem = $ordem->{'order_items'}[0]->origin_station_name;
+                    $rota_destino = $ordem->{'order_items'}[0]->destination_station_name;
+                    $buyer_firstname = $ordem->{'buyer_firstname'};
+                    $buyer_lastname = $ordem->{'buyer_lastname'};
+                    $buyer_email = $ordem->{'buyer_email'};
+                    $status = $ordem->{'status'};
+                    $payment_method = $ordem->{'payment_method'};
+                    $order_created_at = $ordem->{'created_at'};
+                    $order_updated_at = $ordem->{'updated_at'};
+                    $clickbus_order_id = $ordem->{'uuid'};
+                    $quantidade_bilhetes = count($ordem->{'order_items'});
+
+                    RelatorioClickbus::create([
+                        'localizer' => $localizer,
+                        'rota_origem' => $rota_origem,
+                        'rota_destino' => $rota_destino,
+                        'buyer_firstname' => $buyer_firstname,
+                        'buyer_lastname' => $buyer_lastname,
+                        'buyer_email' => $buyer_email,
+                        'status' => $status,
+                        'payment_method' => $payment_method,
+                        'order_created_at' => $order_created_at,
+                        'order_updated_at' => $order_updated_at,
+                        'clickbus_order_id' => $clickbus_order_id,
+                        'quantidade_bilhetes' => $quantidade_bilhetes
+                    ]);
+                }
             }
+        } catch (Exception $ex) {
+            echo 'Ocorreu um problema durante a geracao dos relatorios: ';
+            var_dump($ex);
         }
     }
 }
-
