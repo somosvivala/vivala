@@ -431,12 +431,12 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> it is the pillar where we are now.<br/>It is our social network for you to connect with people who loves to travel and do volunteer work.<br/>Share more your experiences!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br/>All in one place for you to stay quiet when traveling!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br/>All in one place for you to stay quiet when traveling!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> it is the social network pillar for you to connect with people who loves to travel and do volunteer work.<br/>Share more your experiences!</p>',
               position: 'bottom'
             },
             {
@@ -490,12 +490,12 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Ele é nossa rede social para você se conectar com pessoas que amam viajar e fazer voluntariado.<br/>Compartilhe mais suas experiências!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br/>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br/>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar da rede social, para você se conectar com pessoas que amam viajar e fazer voluntariado.<br/>Compartilhe mais suas experiências!</p>',
               position: 'bottom'
             },
             {
