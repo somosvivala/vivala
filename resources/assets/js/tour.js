@@ -25,7 +25,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -47,7 +47,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -69,7 +69,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -93,7 +93,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -115,7 +115,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -137,7 +137,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -249,7 +249,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -298,7 +298,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -337,7 +337,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -396,7 +396,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -537,7 +537,7 @@ $(document).ready(function() {
       // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
     }
     introTour.onexit(function(){
-      Cookies.set('introTour', 0, { expires: 365, path: '/' });
+      Cookies.set('introTour', 1, { expires: 365, path: '/' });
       ligaQuizTour = Cookies.get('introTour');
     });
     introTour.oncomplete(function(){

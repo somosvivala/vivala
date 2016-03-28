@@ -1,4 +1,41 @@
 'use strict';
+// Pegando a lingua ativa no momento
+var linguaAtiva = $("meta[name=language]").attr("content");
+var lingua = [];
+switch(linguaAtiva){
+  case 'en':
+    lingua[0] = 'Ops, something went wrong, do the search again please.',
+    lingua[1] = 'Purchase successfully completed. Your travel from ',
+    lingua[2] = ' to ',
+    lingua[3] = 'is guaranteed. For more questions please contact us by email ',
+    lingua[4] = 'Payment data successfully confirmed.',
+    lingua[5] = 'Your travel from ',
+    lingua[6] = 'We will redirect you to finalize your purchase, if that doesn\'t happen click ',
+    lingua[7] = 'here',
+    lingua[8] = 'Success'
+  break;
+  case 'pt':
+    lingua[0] = 'Ops, algo saiu errado, por favor faça a busca novamente.',
+    lingua[1] = 'Compra realizada com sucesso. Sua viagem de ',
+    lingua[2] = ' para ',
+    lingua[3] = 'está garantida. Em caso de dúvidas entre em contato pelo email '
+    lingua[4] = 'Confirmaço de dados realizada com sucesso.',
+    lingua[5] = 'Sua viagem de ',
+    lingua[6] = 'Iremos redirecioná-lo para finalizar sua compra, se isso nao acontecer clique ',
+    lingua[7] = 'aqui',
+    lingua[8] = 'Successo'
+  break;
+  default:
+    lingua[0] = 'Ops, algo saiu errado, por favor faça a busca novamente.',
+    lingua[1] = 'Compra realizada com sucesso. Sua viagem de ',
+    lingua[2] = ' para ',
+    lingua[3] = 'está garantida. Em caso de dúvidas entre em contato pelo email ',
+    lingua[4] = 'Confirmaço de dados realizada com sucesso.',
+    lingua[5] = 'Sua viagem de ',
+    lingua[6] = 'Iremos redirecioná-lo para finalizar sua compra, se isso nao acontecer clique em ',
+    lingua[7] = 'aqui',
+    lingua[8] = 'Successo'
+}
 
 $.ajaxSetup({
     headers: {
@@ -116,7 +153,7 @@ var ajaxTrips = function(params) {
     })
     .fail(function() {
         // [TODO] Ver como tratar esta mensagem para multilinguagem
-        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente.');
+        $('#clickbus-resultado-busca').html(lingua[0]);
     });
 
 };
@@ -189,7 +226,7 @@ var ajaxTrip = function(viagens) {
     })
     .fail(function() {
         // [TODO] Ver como tratar esta mensagem para multilinguagem
-        $('#clickbus-resultado-busca').html('Ops, algo saiu errado, faça a busca novamente.');
+        $('#clickbus-resultado-busca').html(lingua[0]);
     });
 
 };
@@ -382,7 +419,6 @@ var tripPayment = function(request, frm) {
         });
     })
     .done(function(json) {
-
         // Try/Catch com o data, json do erroXhtml data dos ônibus
         /*var json= {};
         try {
@@ -482,7 +518,7 @@ var tripBooking = function(request) {
                 html: json.errors7+"<br/><br/>"+json.errors,
                 type: "error",
                 confirmButtonColor: "#DD6B55",
-                confirmButtonText: "ok",
+                confirmButtonText: "OK",
                 closeOnConfirm: true,
             },
             function() {
@@ -495,14 +531,14 @@ var tripBooking = function(request) {
 
             if (json.forma_pagamento == 'payment.creditcard') {
 
-                var htmlMsg = 'Compra realizada com sucesso. Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br> está garantida. Em caso de dúvidas entre em contato pelo email <a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
+                var htmlMsg = lingua[1]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[3]+'<a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
 
                 swal({
-                    title: "Sucesso",
+                    title: lingua[8],
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
-                    confirmButtonText: "Ok",
+                    confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
                 function() {
@@ -518,14 +554,14 @@ var tripBooking = function(request) {
                 }, 2200);
 
                 //Caso a forma de pagamento requira redirecionamento
-                var htmlMsg = 'Confirmacao de dados realizada com sucesso.<br>Sua viagem de <h4>'+ json.ida_departure + '</h4> a <h4>'+json.ida_arrival+'</h4><br>Iremos redireciona-lo para finalizar sua compra, se isso nao acontecer clique em <a href="'+json.redirectUrl+'" target="_blank">Redirecionar</a>';
+                var htmlMsg = lingua[4]+'<br>'+lingua[5]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[6]+'<a href="'+json.redirectUrl+'" target="_blank">'+lingua[7]+'</a>.';
 
                 swal({
-                    title: "Sucesso",
+                    title: lingua[8],
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
-                    confirmButtonText: "Ok",
+                    confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
                 function() {
@@ -593,4 +629,17 @@ var getSessionId = function() {
 
 var setSessionId = function(sessionID) {
     $('input#session-clickbus').val(sessionID);
+}
+
+var getExtraInfoParaCheckout = function() {
+    var obj = {
+        "total" : Number($('.valor-total').html().replace('.', '').replace(',','.')),
+        "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
+        "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
+        "ida-company-id" : $('#ida-company-id').val(),
+        "volta-company-id" : $('#volta-company-id').val(),
+        "ida-to" : $("ida-to").val(),
+        "ida-from" : $("ida-from").val()
+    };
+    return obj;
 }

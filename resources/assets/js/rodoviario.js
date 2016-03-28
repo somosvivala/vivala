@@ -727,6 +727,8 @@ var bindaFormPagamento = function() {
             confirmButtonClass: 'hide'
         });
 
+        //Settando as informacoes extras que serao persistidas no backend
+        params.extra = getExtraInfoParaCheckout();
         tripBooking(params);
 
     });

@@ -1,42 +1,46 @@
-<?php namespace App;
+<?php
+
+namespace app;
 
 use Illuminate\Database\Eloquent\Model;
 
-class CompraClickbus extends Model {
-
+class CompraClickbus extends Model
+{
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = "compra_clickbuses";
+    protected $table = 'compras_clickbus';
 
-    protected $fillable =
-        [
-            'user_id',
-            'localizer',
-            'payment_method',
-            'total',
-            'currency',
-            'quantidade_passagens',
-            'ida_quantidade',
-            'ida_trip_id',
-            'ida_trip_localizers', 
-            'ida_departure_waypoint_id',
-            'ida_arrival_waypoint_id',
-            'ida_trip_date',
-            'volta_quantidade',
-            'volta_trip_id',
-            'volta_trip_localizers',
-            'volta_departure_waypoint_id',
-            'volta_arrival_waypoint_id',
-            'volta_trip_date',
-            'pagamento_confirmado' 
-        ];
+    //Settando colunas que podem ser MassAssigned
+    //AKA CompraClickBus::create(['coluna' => 'valor']);
+    protected $fillable = [
+        'user_id',
+        'localizer',
+        'clickbus_order_id',
+        'buyer_firstname',
+        'buyer_lastname',
+        'buyer_birthday',
+        'buyer_document',
+        'buyer_document_type',
+        'buyer_phone',
+        'payment_method',
+        'voucher',
+        'voucher_discount',
+        'desconto_total',
+        'taxas',
+        'total',
+        'status',
+    ];
 
     public function user()
     {
         return $this->belongsTo('App\User');
     }
 
+    public function poltronas()
+    {
+        return $this->hasMany('App\CompraClickbusPoltrona', 'compra_id');
+    }
 }

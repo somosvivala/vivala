@@ -1,12 +1,5 @@
 <?php
 
-use App\Events\PerfilHasVolunteered;
-
-Route::get('/testevent', function()
-{
-    event(new PerfilHasVolunteered(App\Perfil::first(), App\Vaga::first()));
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -17,6 +10,30 @@ Route::get('/testevent', function()
 | and give it the controller to call when that URI is requested.
 |
 */
+
+use App\CompraClickbus;
+use App\Events\ClickBusCompraFinalizada;
+
+Route::get('/testeevento', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return event(new ClickBusCompraFinalizada($Compra));
+//    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+});
+
+
+Route::get('/testeemailpendente', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+});
+Route::get('/testeemailcancelado', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return view('emails.clickbus.cancelamento')->with('Compra', $Compra);
+});
+Route::get('/testeemailsucesso', function() {
+    $Compra = CompraClickbus::all()->reverse()->first();
+    return view('emails.clickbus.sucesso')->with('Compra', $Compra);
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -167,7 +184,6 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 
 	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
 });
-
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
