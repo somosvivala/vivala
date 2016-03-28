@@ -79,13 +79,13 @@
                         		<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
                         		<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
 		@else
-			<li id="menu-viajar" class="menu-viajar tour-pilares-step4">
+			<li id="menu-viajar" class="menu-viajar tour-pilares-step3">
 				<a href="{{ url('/viajar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-viajar vi"></i>
 					<span>{{ trans('global.lbl_wanna_travel') }}</span>
 				</a>
 			</li>
-			<li id="menu-conectar" class="menu-conectar tour-pilares-step3">
+			<li id="menu-conectar" class="menu-conectar tour-pilares-step4">
 				<a href="{{ url('/conectar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-conectar vi"></i>
 					<span>{{ trans('global.lbl_wanna_connect') }}</span>
