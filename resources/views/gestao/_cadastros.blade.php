@@ -78,7 +78,7 @@
                 chart.render();
         }
     </script>
-    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="/js/canvasjs.min.js"></script>
     <div id="chartContainer" style="height: 300px; width: 100%;">
     </div>
 </div>
