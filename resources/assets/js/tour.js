@@ -25,7 +25,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -47,7 +47,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -69,7 +69,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -93,7 +93,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -115,7 +115,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -137,7 +137,7 @@ $(document).ready(function() {
           //tooltipClass: ,
           //highlightClass: ,
           exitOnEsc: true,
-          exitOnOverlayClick: true,
+          exitOnOverlayClick: false,
           showStepNumbers: false,
           keyboardNavigation: true,
           showButtons: true,
@@ -249,7 +249,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -298,7 +298,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -337,7 +337,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -396,7 +396,7 @@ $(document).ready(function() {
         // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
       }
       quizTour.onexit(function(){
-        Cookies.set('quizTour', 0, { expires: 365, path: '/' });
+        Cookies.set('quizTour', 1, { expires: 365, path: '/' });
         ligaQuizTour = Cookies.get('quizTour');
       });
       quizTour.oncomplete(function(){
@@ -409,7 +409,9 @@ $(document).ready(function() {
 
 // ##### INTERNO
 // Se a variável for FALSE (setada pelo user), posso iniciar este Tour
-  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-home"))){
+  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-viajar"))){
+
+
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
@@ -429,12 +431,12 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> it is the pillar where we are now.<br/>It is our social network for you to connect with people who loves to travel and do volunteer work.<br/>Share more your experiences!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br/>All in one place for you to stay quiet when traveling!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br/>All in one place for you to stay quiet when traveling!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> it is the social network pillar for you to connect with people who loves to travel and do volunteer work.<br/>Share more your experiences!</p>',
               position: 'bottom'
             },
             {
@@ -447,11 +449,13 @@ $(document).ready(function() {
               intro: '<p class="text-center">Know from other <span class="laranja">Travellers</span> who are following you and who now receive your posts. Share!</p>',
               position: 'bottom'
             },
+            /* Desabilitado icone de CHAT, logo não é pra funcionar mais
             {
               element: '.tour-pilares-step7',
               intro: '<p class="text-center">Exchange private messages with other users of <span class="laranja">Vivalá</span>.</p>',
               position: 'bottom'
             },
+            */
             {
               element: '.tour-pilares-step8',
               intro: '<p class="text-center">Get inside and interact with those who walk enjoying and commenting on your posts!</p>',
@@ -476,7 +480,7 @@ $(document).ready(function() {
             // 3 PILARES
             {
               element: '.tour-pilares-step1',
-              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que está é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Através do tour vamos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar pouco do seu tempo.<br/>Vamos lá!</p>',
+              intro: '<p class="text-center">Olá Viajante!<br/>Verificamos que esta é a primeira vez que você visita a <span class="laranja">Vivalá</span>.<br/>Através do tour vamos te dar uma mãozinha e te ajudar a ver como as coisas funcionam por aqui.<br/>São apenas alguns passos e prometemos que vai levar pouco do seu tempo.<br/>Vamos lá!</p>',
               position: 'bottom'
             },
             {
@@ -486,12 +490,12 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar em que estamos agora.<br/>Ele é nossa rede social para você se conectar com pessoas que amam viajar e fazer voluntariado.<br/>Compartilhe mais suas experiências!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br/>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br/>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
+              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar da rede social, para você se conectar com pessoas que amam viajar e fazer voluntariado.<br/>Compartilhe mais suas experiências!</p>',
               position: 'bottom'
             },
             {
@@ -504,11 +508,13 @@ $(document).ready(function() {
               intro: '<p class="text-center">Saiba de outros <span class="laranja">Viajantes</span> que estão te seguindo e que agora recebem suas postagens. Compartilhe!</p>',
               position: 'bottom'
             },
+            /* Desabilitado icone de CHAT, logo não é pra funcionar mais
             {
               element: '.tour-pilares-step7',
               intro: '<p class="text-center">Troque mensagens privadas com outros usuários da <span class="laranja">Vivalá</span>.</p>',
               position: 'bottom'
             },
+            */
             {
               element: '.tour-pilares-step8',
               intro: '<p class="text-center">Fique por dentro e interaja com quem anda curtindo e comentando seus posts!</p>',
@@ -531,7 +537,7 @@ $(document).ready(function() {
       // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
     }
     introTour.onexit(function(){
-      Cookies.set('introTour', 0, { expires: 365, path: '/' });
+      Cookies.set('introTour', 1, { expires: 365, path: '/' });
       ligaQuizTour = Cookies.get('introTour');
     });
     introTour.oncomplete(function(){

@@ -895,7 +895,7 @@ return[
     'wannavolunteer_seeing_some_projects' => 'Procurando por causas?',
     'wannavolunteer_looking_for_jobs' => 'Procurando vagas?',
     'wannavolunteer_search_in_three_steps' => 'Encontre em 3 passos.',
-    'wannavolunteer_menu_create_your_project' => 'Crie Seu Projeto de Impacto',
+    'wannavolunteer_menu_create_your_project' => 'Crie Seu Projeto',
 
 
   /* View: Emails */
@@ -1253,11 +1253,16 @@ return[
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
     'dummy_travel_1_title' => 'PASSAGENS AÉREAS',
-    'dummy_travel_1' => 'Na Vivalá você encontra passagens aéreas para todo o mundo em mais de 500 companhias! Busque opções aqui!',
+    'dummy_travel_1' => 'Encontre passagens aéreas para 143 países do mundo com mais de 500 companhias aéreas! Busque agora!',
     'dummy_travel_2_title' => 'HOTÉIS',
-    'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência aqui na Vivalá! São mais de 200.000 possibilidades ao redor do mundo. Clique aqui para buscar!',
-    'dummy_travel_3_title' => 'ALIMENTAÇÃO',
-    'dummy_travel_3' => 'Descubra excelentes restaurantes pelo Brasil e tenha até 50% de desconto com os benefícios da Vivalá. Veja mais aqui!',
+    'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência! São mais de 200.000 possibilidades em de 164 países. Clique aqui para buscar!',
+    'dummy_travel_3_title' => 'PACOTES',
+    'dummy_travel_3' => 'Personalize seu pacote combinando voos, hospedagem e aluguel de carros em uma compra única e economize até 35% em sua viagem! Faça sua busca aqui',
+    'dummy_travel_4_title' => 'ALIMENTAÇÃO',
+    'dummy_travel_4' => 'Descubra excelentes restaurantes pelo Brasil e tenha até 50% de desconto em 1.700 estabelecimentos. Veja mais aqui!',
+    'dummy_travel_5_title' => 'ÔNIBUS',
+    'dummy_travel_5' => 'Compre passagens rodoviárias para 3.000 destinos no Brasil, operados por 67 viações. Busque agora!',
+
 
 
     /*----------------------------------------------------------------------------------

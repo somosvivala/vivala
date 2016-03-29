@@ -44,7 +44,7 @@ $(function() {
     temNotificacoes();
 
     // Verifica se tem novas notificacoes a cada minuto
-    setInterval(temNotificacoes, 60000);
+    setInterval(temNotificacoes, (60000*3));
 
     // binda o clique dos botões de notificação para mark all as read
     $("button#notificacoes-follow").click(function() {

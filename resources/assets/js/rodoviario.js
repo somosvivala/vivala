@@ -419,8 +419,12 @@ var bindaAbas = function() {
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         if($(e.target).hasClass('tipo-cliente')){
             $("#tipo-cliente").val($(e.target).attr('aria-controls'));
+
+        // se mudar a forma de pagamento, remova desconto e atualize
         }else if($(e.target).hasClass('forma-pagamento')){
             $("#forma-pagamento").val($(e.target).attr('aria-controls'));
+            removeDesconto();
+            atualizaValorParcelas();
         }
         // Remove os required do que foi deselecionado
         $($(e.target).attr("href")).parent(".tab-content").find(".required").prop("required",false);
@@ -443,7 +447,14 @@ var bindaChangePagamento = function() {
     $('input.seleciona-bandeira[name="bandeira-cartao"]').change(function(){
         atualizaValorParcelas();
     });
-    $('.select-parcelas').change(atualizaValorParcelas);
+
+    //bindando os select's de qnt de parcelas com as
+    //funcoes para resetar o desconto e atualizar a UI
+    $('.select-parcelas').change(function(){
+        removeDesconto();
+        atualizaValorParcelas();
+    });
+
 };
 
 var atualizaValorParcelas = function(){
@@ -521,6 +532,16 @@ var atualizaValorParcelas = function(){
     $('.valor-installment').html(installment.toFixed(2).toString().replace(',','').replace('.',','));
 
     $('#valor-total-pagamento-passagem').val(total_with_discount);
+    $('.valor-total').html(total_with_discount.toFixed(2).toString().replace(',','').replace('.',','));
+};
+
+//Função para remover o valor dos inputs de desconto
+//Nao atualiza a UI
+var removeDesconto = function() {
+    $("form#form-pagamento").find('input#voucher-str').val("");
+    $("form#form-pagamento").find('input#desconto').val("");
+    $("form#form-pagamento").find('input#desconto-fixo').val("");
+    $("form#form-pagamento").find('input#desconto-servico').val("");
 };
 
 var bindaFormPagamento = function() {
@@ -677,11 +698,18 @@ var bindaFormPagamento = function() {
             },
              "request": {
                 "sessionId": $('input#session-clickbus').val(),
+                "voucher" : $('input#voucher-str').val().toUpperCase(),
                 "ip": "",
                 "buyer": buyer,
                 "orderItems": orderItems
              }
         };
+
+        //Se nao houver voucher, preciso remover a propriedade 'voucher' do objeto
+        //que sera enviado para a ClickBus, se não ocorre um erro de pagamento(L25).
+        if (!params.request.voucher || params.request.voucher == undefined){
+            delete params.request["voucher"];
+        }
 
         var frm = $(this),
             loading = frm.data('loading');
@@ -699,6 +727,8 @@ var bindaFormPagamento = function() {
             confirmButtonClass: 'hide'
         });
 
+        //Settando as informacoes extras que serao persistidas no backend
+        params.extra = getExtraInfoParaCheckout();
         tripBooking(params);
 
     });
@@ -708,7 +738,8 @@ var bindaFormPagamento = function() {
 
         //TODO mostrar que email é necessario
 
-        var voucherStr = $('#voucher-str').val();
+        //Usando o .toUpperCase para evitar vouchers invalidos
+        var voucherStr = $('#voucher-str').val().toUpperCase();
 
         $("#usar-voucher-desconto").html("<i class='fa fa-spin fa-spinner'></i>");
 

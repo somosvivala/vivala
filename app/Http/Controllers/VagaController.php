@@ -15,6 +15,7 @@ use App\Estado;
 use App\CategoriaVaga;
 use App\Foto;
 use App\Post;
+use App\Events\PerfilHasVolunteered;
 
 use Request;
 use Mail;
@@ -29,7 +30,7 @@ class VagaController extends CuidarController {
      */
     public function index()
     {
-        $causas = Vaga::all(); 
+        $causas = Vaga::all()->reverse(); 
         $categorias = Vaga::getCategoriasComVagas();
         $cidades = Vaga::getCidadesComVagas();
         $ongs = Vaga::getOngsComVagas();            
@@ -274,31 +275,17 @@ class VagaController extends CuidarController {
      * @param  [type] $id      [description]
      * @param  [type] $vagaId [description]
      */
-    public function getVoluntariarse($vagaId) 
+    public function getVoluntariarse($vagaId)
     {
         $User = Auth::user();
         $Candidato = $User->perfil;
         $vaga = Vaga::findOrFail($vagaId);
+        $Responsavel = $vaga->responsavel;
 
-        //Se ja nao for voluntario, tornar-se voluntario
-        if (!$vaga->voluntarios->find($Candidato->id)) {
-            $vaga->voluntarios()->save($Candidato);
-            $vaga->push();
-            //Traz o responsável que será exibido como agradecendo pela vaga
-            $Responsavel = $vaga->responsavel;
+        //Disparando evento para avisando que temos
+        //um novo voluntario
+        event(new PerfilHasVolunteered($User->perfil, $vaga));
 
-            //Envio de email para o responsável avisando e para o candidato agradecendo
-            Mail::send('emails.obrigadocandidato', ['user' => Auth::user(),'vaga' => $vaga], function ($message) use ($User) {
-                $message->to($User->email, $User->perfil->apelido)->subject('Olá, tudo bem?');
-                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-            }); 
-            
-            Mail::send('emails.obrigadocandidato', ['user' => Auth::user(),'vaga' => $vaga], function ($message) use ($Responsavel) {
-                $message->to($Responsavel->user->email, $Responsavel->apelido)->subject('Olá, Alguém se candidatou a uma vaga no seu projeto.');
-                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-            });  
-
-        }
         $voluntarios = $vaga->voluntarios;
         return view('vaga.show', compact('vaga', 'voluntarios', 'Candidato', 'Responsavel'));
     }

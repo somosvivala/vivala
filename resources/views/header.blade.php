@@ -80,13 +80,13 @@
                         		<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
                         		<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
 		@else
-			<li id="menu-viajar" class="menu-viajar tour-pilares-step4">
+			<li id="menu-viajar" class="menu-viajar tour-pilares-step3">
 				<a href="{{ url('/viajar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-viajar vi"></i>
 					<span>{{ trans('global.lbl_wanna_travel') }}</span>
 				</a>
 			</li>
-			<li id="menu-conectar" class="menu-conectar tour-pilares-step3">
+			<li id="menu-conectar" class="menu-conectar tour-pilares-step4">
 				<a href="{{ url('/conectar') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-conectar vi"></i>
 					<span>{{ trans('global.lbl_wanna_connect') }}</span>
@@ -144,9 +144,7 @@
 
                 <ul class="dropdown-menu submenu" role="menu">
                     @if( (isset($paginas) && count($paginas) > 0 ) || strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil")
-                        <li>
-													<p>{{ trans('global.lbl_use_as')}}:</p>
-												</li>
+                        <li><p>{{ trans('global.lbl_use_as')}}:</p></li>
                     @endif
                     {{-- Se a entidade ativa não for um perfil lista o perfil para ativar --}}
                     @if ( strtolower(Auth::user()->entidadeAtiva->tipo) != "perfil" )
@@ -164,7 +162,7 @@
                         </a>
                       </li>
                     @endif
-                    @if( isset($paginas) && count($paginas) > 0 )
+                    @if(isset($paginas) && count($paginas) > 0)
                     <li class="row">
                         <ul class="paginas">
                         @foreach($paginas as $Pagina)
@@ -186,8 +184,7 @@
                             <li class="margin-t-1 margin-b-1"><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
                         @endif
                         </ul>
-                    </li>
-										</li>
+                    </li>								</li>
                     @endif
                     <li class="subsubmenu">
                         <ul>
@@ -195,11 +192,13 @@
                           <li><a href="{{ url('paginas/gerenciar') }}" class="click-img-no-border"><i class="fa fa-star"></i><span> {{ trans('global.lbl_page_manage') }}</span></a></li>
                         </ul>
                     </li>
-                    <li class="subsubmenu">
-                        <ul>
-                            <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
-                        </ul>
-                    </li>
+                    @if(count(Auth::user()->ongs) > 0)
+                        <li class="subsubmenu">
+                            <ul>
+                                <li><a href="{{ url('vagas/create') }}" class="click-img-no-border"><i class="fa fa-heart"></i><span> {{ trans('global.lbl_cause_create') }}</span></a></li>
+                            </ul>
+                        </li>
+                    @endif
                     <li class="subsubmenu">
                         <ul>
                             <li><a href="{{ url('/quiz') }}" class="click-img-no-border"><i class="fa fa-comment"></i><span> Quiz</span></a></li>

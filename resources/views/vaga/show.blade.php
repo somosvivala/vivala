@@ -89,7 +89,11 @@
         </a>
     </div>
     <div class="col-sm-10">
-        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar aqui pelo chat Vivalá, pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
+        @if( $vaga->id == 19 )
+            Olá, {{ $Candidato->nome }}, estamos muito felizes com o seu interesse em se tornar um voluntário olímpico! Já te mandamos um e-mail com as orientações para você concluir  sua inscrição e fazer parte desse super time! Caso você tenha alguma dúvida, é só entrar em contato pelo nosso email: <a href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a> . #SomosVivalá #Rio2016 #FazMaisPorEsporte 
+        @else
+        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
+        @endif
     </div>
 </div>
 @endif

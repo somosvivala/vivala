@@ -27,27 +27,15 @@
                 </a>
             </li>
             <li class="col-sm-4 tour-pilar-viajar-step5">
+                {{--
+                <a href="#" class="desativado">
+                   {{ trans('global.wannatravel_trip_bus_drive') }}
+                </a>
+                --}}
                 <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
-            {{-- DESATIVADO
-            <!-- li class="col-sm-3 active">
-                <a href="#hospedagem" aria-controls="hospedagem" role="tab" data-toggle="tab">
-                    Hospedagem
-                </a>
-            </li>
-            <li class="col-sm-3">
-                <a href="#voos" aria-controls="voos" role="tab" data-toggle="tab">
-                    Vôos
-                </a>
-            </li>
-            <li class="col-sm-3">
-                <a href="#carros" class="desativado" aria-controls="carros" role="tab" data-toggle="tab">
-                    Carros
-                </a>
-            </li -->
-            --}}
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane active" id="restaurantes">
@@ -61,24 +49,8 @@
 
             <div role="tabpanel" class="tab-pane " id="rodoviario">
                 @include('clickbus.buscar')
-                <div class="lista-rodoviario">
-
-                </div>
+                <div class="lista-rodoviario"></div>
             </div>
-
-            {{--
-                @include('quimera._formhotels')
-                <div class="fundo-cheio col-sm-12 resultados-busca-hospedagem text-center"> </div>
-            </div>
-            <!--div role="tabpanel" class="tab-pane" id="voos">
-                @include('quimera._formvoos')
-                <div class="fundo-cheio col-sm-12 resultados-busca-voos text-center"> </div>
-            </div>
-            <div role="tabpanel" class="tab-pane" id="carros">
-                @include('quimera._formcarros')
-                <div class="fundo-cheio col-sm-12 resultados-busca-carros text-center"> </div>
-            </div-->
-            --}}
         </div>
     </div>
 
