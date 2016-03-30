@@ -10,15 +10,15 @@ class ClickBusRepository
     /**
      * Settando propriedades que serao settadas no controller para torna-las dinamicas
      */
-    private $apiKey;
-    private $url;
+    public $apiKey;
+    public $url;
 
     /**
      * 'Constants'
      */
-    private $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
-    private $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
-    private $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
+    public $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
+    public $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
+    public $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
 
 
     /**
@@ -31,7 +31,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
-    private function dateFormat($date)
+    public function dateFormat($date)
     {
         $date = explode('/', $date);
 
@@ -39,7 +39,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento da Busca por Ônibus da ClickBus
-    private function parseData($data)
+    public function parseData($data)
     {
         $output = [];
 
@@ -83,7 +83,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento de Erros da ClickBus
-    private function parseError($data)
+    public function parseError($data)
     {
         if (!isset($data)) {
             $data = new \stdClass();
@@ -113,7 +113,7 @@ class ClickBusRepository
         return $option;
     }
 
-    private function getPrettyDates($date)
+    public function getPrettyDates($date)
     {
         $date = new Date($date);
         $today = [strtoupper($date->format('d M')), ucfirst($date->format('l')), $date->format('d/m/Y')];
@@ -127,14 +127,14 @@ class ClickBusRepository
         return ['yesterday' => $yesterday, 'today' => $today, 'tomorrow' => $tomorrow];
     }
 
-    private function parcePrice($price)
+    public function parcePrice($price)
     {
         $price /= 100;
 
         return number_format((float) $price, 2, ',', '');
     }
 
-    private function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
+    public function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
     {
         $departure = new Date("{$departureDate} {$departureTime}:00");
         $arrival = new Date("{$arrivalDate} {$arrivalTime}:00");
@@ -149,7 +149,7 @@ class ClickBusRepository
      * @param $idOrder - uuid da ClickBus que identifica a Order
      * @return O objeto "content" da resposta da clickbus
      */
-    private function getOrder($idOrder)
+    public function getOrder($idOrder)
     {
         $context = [
             'http' => [
@@ -172,7 +172,7 @@ class ClickBusRepository
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se o pagamento foi confirmado
      */
-    private function confirmaPagamentoFinalizado($obj)
+    public function confirmaPagamentoFinalizado($obj)
     {
         $pagamentoFoiConfirmado = $obj->{"status"} == self::$FLAG_PAGAMENTO_CONFIRMADO;
         return $pagamentoFoiConfirmado;
@@ -184,7 +184,7 @@ class ClickBusRepository
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se a passagem foi cancelada
      */
-    private function confirmaPassagemCancelada($obj)
+    public function confirmaPassagemCancelada($obj)
     {
         $passagemFoiCancelada = $obj->{"status"} == self::$FLAG_PASSAGEM_CANCELADA;
         return $passagemFoiCancelada;
@@ -196,7 +196,7 @@ class ClickBusRepository
      *
      * @param $pagination - identifica a pagina para se começar
      */
-    private function getOrders($pagination=1)
+    public function getOrders($pagination=1)
     {
         $context = [
             'http' => [
@@ -219,7 +219,7 @@ class ClickBusRepository
      *
      * @return boolean - se as compras foram inseridas com sucesso
      */
-    private function gerarRelatorioCompras()
+    public function gerarRelatorioCompras()
     {
         try {
 

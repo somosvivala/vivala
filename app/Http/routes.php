@@ -11,32 +11,6 @@
 |
 */
 
-use App\CompraClickbus;
-use App\Events\ClickBusCompraFinalizada;
-
-
-
-Route::get('/testeview', function() {
-    $compra = CompraClickbus::all()->reverse()->first();
-
-    return ["view" => view('clickbus._success', compact('compra'))->render()];
-
-    //    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
-
-Route::get('/testeemailpendente', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
-Route::get('/testeemailcancelado', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.cancelamento')->with('Compra', $Compra);
-});
-Route::get('/testeemailsucesso', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.sucesso')->with('Compra', $Compra);
-});
-
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -185,7 +159,8 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 		}
 	}
 
-	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
+  //substituindo a mensagem anterior pela tela padrao de 404
+  abort(404);
 });
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
