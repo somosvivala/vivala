@@ -27,6 +27,7 @@
 	  <meta name="theme-color" content="#ffffff">
 
   {{-- Fontes --}}
+		<link href='/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
 		<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
 		<link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 

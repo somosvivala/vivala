@@ -5,7 +5,7 @@
 
     {{-- Codificação de Caracteres --}}
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta content="utf-8" http-equiv="encoding">	
+    <meta content="utf-8" http-equiv="encoding">
     <meta charset="utf-8">
 
     {{-- Lingua utilizada na view --}}
@@ -41,8 +41,9 @@
     {{-- CSS --}}
         <link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
         <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
-		<link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
-		<link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
+        <link href='/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
+	      <link href='/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
+	      <link href='/fonts/vivala/vivala-glyphicons.css' rel='stylesheet' type='text/css'>
 
 	{{-- Google Analytics JS --}}
         <script>
