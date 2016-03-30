@@ -14,20 +14,15 @@
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
+// Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
 Route::get('/testeevento', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
     return event(new ClickBusCompraFinalizada($Compra));
-//    return view('emails.clickbus.pendente')->with('Compra', $Compra);
 });
-
 Route::get('/testeview', function() {
     $compra = CompraClickbus::all()->reverse()->first();
-
     return ["view" => view('clickbus._success', compact('compra'))->render()];
-
-    //    return view('emails.clickbus.pendente')->with('Compra', $Compra);
 });
-
 Route::get('/testeemailpendente', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
     return view('emails.clickbus.pendente')->with('Compra', $Compra);
@@ -41,6 +36,9 @@ Route::get('/testeemailsucesso', function() {
     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
 });
 
+/*
+ * Rotas
+ */
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
