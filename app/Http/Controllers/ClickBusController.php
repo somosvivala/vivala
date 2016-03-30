@@ -53,7 +53,7 @@ class ClickBusController extends Controller {
         }
 
         // Montando a URL
-        $url = $this->clickBusRepository->$url."/trips?from={$from}&to={$to}&departure={$departure}";
+        $url = $this->clickBusRepository->url."/trips?from={$from}&to={$to}&departure={$departure}";
 
         // Ignorando possíveis erros 404 no retorno do servidor da ClickBus
         $context = stream_context_create(array(
@@ -584,7 +584,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::all();
 
-        $sessionId = self::getSession($request['request']['sessionId']);
+        $sessionId = $this->getSession($request['request']['sessionId']);
 
         $context = [
             'http' => [
@@ -616,7 +616,7 @@ class ClickBusController extends Controller {
      *
      * @param @session - sessionId advindo da ClickBus
      */
-    private static function getSession($session)
+    private function getSession($session)
     {
         $context = [
             'http' => [
