@@ -8,14 +8,15 @@ use App\Repositories\ClickBusRepository;
 
 class UpdatePassagemCancelada {
 
+
 	/**
 	 * Create the event handler.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(ClickBusRepository $repository)
 	{
-		//
+		$this->clickBusRepository = $repository;
 	}
 
 	/**
@@ -26,7 +27,9 @@ class UpdatePassagemCancelada {
 	 */
 	public function handle(ClickBusPassagemCancelada $event)
 	{
-      $event->CompraClickBus->update(['status' => ClickBusRepository::$FLAG_PASSAGEM_CANCELADA]);
+      $event->CompraClickBus->update([
+          'status' => $this->clickBusRepository->FLAG_PASSAGEM_CANCELADA
+      ]);
 	}
 
 }

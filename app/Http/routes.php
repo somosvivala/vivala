@@ -14,11 +14,7 @@
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
-Route::get('/testeevento', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return event(new ClickBusCompraFinalizada($Compra));
-//    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
+
 
 Route::get('/testeview', function() {
     $compra = CompraClickbus::all()->reverse()->first();

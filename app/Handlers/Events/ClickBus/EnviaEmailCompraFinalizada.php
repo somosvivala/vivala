@@ -8,14 +8,16 @@ use Mail;
 
 class EnviaEmailCompraFinalizada {
 
+    private $repository;
+
 	/**
 	 * Create the event handler.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(ClickBusRepository $repository)
 	{
-		//
+		$this->clickBusRepository = $repository;
 	}
 
 	/**
@@ -28,7 +30,7 @@ class EnviaEmailCompraFinalizada {
 	{
         $Compra = $event->CompraClickBus;
 
-        if ($Compra->status == ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO) {
+        if ($Compra->status == $this->clickBusRepository->FLAG_PAGAMENTO_CONFIRMADO) {
             //Envia email de sucesso no pagamento
             Mail::send('emails.clickbus.sucesso', ['Compra' => $Compra], function ($message) use ($Compra) {
                 $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));

@@ -7,14 +7,31 @@ use App\RelatorioClickbus;
 
 class ClickBusRepository
 {
-    public static $apiKey = '$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6';
-    public static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
-    public static $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
-    public static $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
-    public static $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
+    /**
+     * Settando propriedades que serao settadas no controller para torna-las dinamicas
+     */
+    private $apiKey;
+    private $url;
+
+    /**
+     * 'Constants'
+     */
+    private $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
+    private $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
+    private $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
+
+
+    /**
+     * Construtor que pega os valores do env.
+     */
+    function __construct()
+    {
+        $this->apiKey = env('CLICKBUS_API_KEY');
+        $this->url = env('CLICKBUS_URL');
+    }
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
-    public static function dateFormat($date)
+    private function dateFormat($date)
     {
         $date = explode('/', $date);
 
@@ -22,7 +39,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento da Busca por Ônibus da ClickBus
-    public static function parseData($data)
+    private function parseData($data)
     {
         $output = [];
 
@@ -66,7 +83,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento de Erros da ClickBus
-    public static function parseError($data)
+    private function parseError($data)
     {
         if (!isset($data)) {
             $data = new \stdClass();
@@ -96,7 +113,7 @@ class ClickBusRepository
         return $option;
     }
 
-    public static function getPrettyDates($date)
+    private function getPrettyDates($date)
     {
         $date = new Date($date);
         $today = [strtoupper($date->format('d M')), ucfirst($date->format('l')), $date->format('d/m/Y')];
@@ -110,14 +127,14 @@ class ClickBusRepository
         return ['yesterday' => $yesterday, 'today' => $today, 'tomorrow' => $tomorrow];
     }
 
-    private static function parcePrice($price)
+    private function parcePrice($price)
     {
         $price /= 100;
 
         return number_format((float) $price, 2, ',', '');
     }
 
-    private static function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
+    private function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
     {
         $departure = new Date("{$departureDate} {$departureTime}:00");
         $arrival = new Date("{$arrivalDate} {$arrivalTime}:00");
@@ -132,7 +149,7 @@ class ClickBusRepository
      * @param $idOrder - uuid da ClickBus que identifica a Order
      * @return O objeto "content" da resposta da clickbus
      */
-    public static function getOrder($idOrder)
+    private function getOrder($idOrder)
     {
         $context = [
             'http' => [
@@ -155,7 +172,7 @@ class ClickBusRepository
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se o pagamento foi confirmado
      */
-    public static function confirmaPagamentoFinalizado($obj)
+    private function confirmaPagamentoFinalizado($obj)
     {
         $pagamentoFoiConfirmado = $obj->{"status"} == self::$FLAG_PAGAMENTO_CONFIRMADO;
         return $pagamentoFoiConfirmado;
@@ -167,7 +184,7 @@ class ClickBusRepository
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se a passagem foi cancelada
      */
-    public static function confirmaPassagemCancelada($obj)
+    private function confirmaPassagemCancelada($obj)
     {
         $passagemFoiCancelada = $obj->{"status"} == self::$FLAG_PASSAGEM_CANCELADA;
         return $passagemFoiCancelada;
@@ -179,7 +196,7 @@ class ClickBusRepository
      *
      * @param $pagination - identifica a pagina para se começar
      */
-    public static function getOrders($pagination=1)
+    private function getOrders($pagination=1)
     {
         $context = [
             'http' => [
@@ -202,7 +219,7 @@ class ClickBusRepository
      *
      * @return boolean - se as compras foram inseridas com sucesso
      */
-    public static function gerarRelatorioCompras()
+    private function gerarRelatorioCompras()
     {
         try {
 

@@ -7,6 +7,7 @@ use Mail;
 
 class EnviaEmailPagamentoConfirmado {
 
+
 	/**
 	 * Create the event handler.
 	 *
@@ -14,7 +15,6 @@ class EnviaEmailPagamentoConfirmado {
 	 */
 	public function __construct()
 	{
-		//
 	}
 
 	/**
