@@ -33,13 +33,13 @@ class EnviaEmailCompraFinalizada {
         if ($Compra->status == $this->clickBusRepository->FLAG_PAGAMENTO_CONFIRMADO) {
             //Envia email de sucesso no pagamento
             Mail::send('emails.clickbus.sucesso', ['Compra' => $Compra], function ($message) use ($Compra) {
-                $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
+                $message->to($Compra->buyer_email, $Compra->buyer_firstname)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
             });
         } else {
             //Envia email de pagamento pendente
             Mail::send('emails.clickbus.pendente', ['Compra' => $Compra], function ($message) use ($Compra) {
-                $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-pending'));
+                $message->to($Compra->buyer_email, $Compra->buyer_firstname)->subject(trans('clickbus.clickbus_email-vivala-subject-pending'));
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
             });
         }
