@@ -16,12 +16,7 @@
         </h3>
 
         <ul class="lista-border pesquisa-viajar">
-            <li class="col-sm-5 tour-pilar-viajar-step4">
-                <a href="#quimera" data-url="https://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
-                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
-                </a>
-            </li>
-            <li class="col-sm-4 tour-pilar-viajar-step5">
+            <li class="col-sm-4 tour-pilar-viajar-step3">
                 {{--
                 <a href="#" class="desativado">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
@@ -31,14 +26,21 @@
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
-            <li class="col-sm-3 active tour-pilar-viajar-step3">
+
+            <li class="col-sm-5 tour-pilar-viajar-step4">
+                <a href="#quimera" data-url="https://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
+                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
+                </a>
+            </li>
+
+            <li class="col-sm-3 active tour-pilar-viajar-step5">
                 <a href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                     {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
             </li>
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane" id="rodoviario">
+            <div role="tabpanel" class="tab-pane active" id="rodoviario">
                 @include('clickbus.buscar')
                 <div class="lista-rodoviario"></div>
             </div>
