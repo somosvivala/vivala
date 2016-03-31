@@ -8,14 +8,15 @@ use App\Repositories\ClickBusRepository;
 
 class UpdatePagamentoConfirmado {
 
+
 	/**
 	 * Create the event handler.
 	 *
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(ClickBusRepository $repository)
 	{
-		//
+		$this->clickBusRepository = $repository;
 	}
 
 	/**
@@ -27,7 +28,7 @@ class UpdatePagamentoConfirmado {
 	public function handle(ClickBusPagamentoConfirmado $event)
 	{
       $event->CompraClickBus->update([
-          'status' => ClickBusRepository::$FLAG_PAGAMENTO_CONFIRMADO,
+          'status' => $this->clickBusRepository->FLAG_PAGAMENTO_CONFIRMADO,
           'data_pagamento' => Carbon::now()
       ]);
 	}

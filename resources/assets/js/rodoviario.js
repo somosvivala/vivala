@@ -687,14 +687,12 @@ var bindaFormPagamento = function() {
             })
         }
 
-
-
         var params = {
              "meta": {
                  "model": "Retail",
                  "store": "Vivala",
                  "platform": "API",
-                 "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
+                 "api_key": ""
             },
              "request": {
                 "sessionId": $('input#session-clickbus').val(),

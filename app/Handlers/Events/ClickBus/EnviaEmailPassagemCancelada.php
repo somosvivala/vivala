@@ -7,6 +7,7 @@ use Illuminate\Contracts\Queue\ShouldBeQueued;
 
 class EnviaEmailPassagemCancelada {
 
+
 	/**
 	 * Create the event handler.
 	 *
@@ -14,7 +15,6 @@ class EnviaEmailPassagemCancelada {
 	 */
 	public function __construct()
 	{
-		//
 	}
 
 	/**

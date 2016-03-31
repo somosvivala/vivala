@@ -16,6 +16,14 @@ use App\Events\ClickBusCompraFinalizada;
 
 class ClickBusController extends Controller {
 
+    public $clickBusRepository;
+
+    function __construct(ClickBusRepository $repository)
+    {
+        $this->clickBusRepository = $repository;
+    }
+
+
     // ClickBus [BUSCA]: Autocomplete do filtro de busca das passagens de onibus
 	public function autocompletePlace()
 	{
@@ -40,12 +48,12 @@ class ClickBusController extends Controller {
 
 		// Se o campo departure existe, então mando $departure para dateFormat e getPrettyDates
         if($departure){
-            $departure = ClickBusRepository::dateFormat($departure);
-            $dates = ClickBusRepository::getPrettyDates($departure);
+            $departure = $this->clickBusRepository->dateFormat($departure);
+            $dates = $this->clickBusRepository->getPrettyDates($departure);
         }
 
         // Montando a URL
-        $url = ClickBusRepository::$url."/trips?from={$from}&to={$to}&departure={$departure}";
+        $url = $this->clickBusRepository->url."/trips?from={$from}&to={$to}&departure={$departure}";
 
         // Ignorando possíveis erros 404 no retorno do servidor da ClickBus
         $context = stream_context_create(array(
@@ -60,12 +68,12 @@ class ClickBusController extends Controller {
 
         // Se o $decoded não possuir nenhum error internamente, envio para o parseData, para ser tratado e retornar a view ._listOptions
         if(isset($decoded) && !isset($decoded->{"error"})){
-            $result = ClickBusRepository::parseData($decoded);
+            $result = $this->clickBusRepository->parseData($decoded);
             $places = array("from" => $from, "to" => $to);
             return view('clickbus._listOptions', compact('result', 'dates', 'type', 'places'));
         } else {
         // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS
-            $result = ClickBusRepository::parseError($decoded);
+            $result = $this->clickBusRepository->parseError($decoded);
             return $result;
         }
 	}
@@ -87,12 +95,12 @@ class ClickBusController extends Controller {
                 $context = stream_context_create(array(
                     'http' => array('ignore_errors' => true),
                 ));
-                $content_ida = file_get_contents(ClickBusRepository::$url."/trip?scheduleId={$ida_obj->id}", false, $context);
+                $content_ida = file_get_contents($this->clickBusRepository->url."/trip?scheduleId={$ida_obj->id}", false, $context);
                 $ida = json_decode($content_ida);
 
 
                 if(isset($ida) && isset($ida->{"error"})){
-                    $result = ClickBusRepository::parseError($ida);
+                    $result = $this->clickBusRepository->parseError($ida);
                     return $result;
                 }
 
@@ -120,11 +128,11 @@ class ClickBusController extends Controller {
                 ];
                 $context = stream_context_create($context);
 
-                $content_volta = file_get_contents(ClickBusRepository::$url."/trip?scheduleId={$volta_obj->id}", false, $context);
+                $content_volta = file_get_contents($this->clickBusRepository->url."/trip?scheduleId={$volta_obj->id}", false, $context);
                 $volta = json_decode($content_volta);
 
                 if(isset($volta) && isset($volta->{"error"})){
-                    $result = ClickBusRepository::parseError($volta);
+                    $result = $this->clickBusRepository->parseError($volta);
                     return $result;
                 }
 
@@ -156,7 +164,7 @@ class ClickBusController extends Controller {
 
         $sessionId = $request['request']["sessionId"];
         $request['request']['passenger']['gender'] = 'M';
-        $request['request']['schedule']['date'] = ClickBusRepository::dateFormat($request['request']['schedule']['date']);
+        $request['request']['schedule']['date'] = $this->clickBusRepository->dateFormat($request['request']['schedule']['date']);
         $data = json_encode($request);
 
         $sessionId = self::getSession($sessionId);
@@ -172,12 +180,12 @@ class ClickBusController extends Controller {
 	        ]
 	    ];
         $context = stream_context_create($context);
-        $result = file_get_contents(ClickBusRepository::$url.'/seat-block', false, $context);
+        $result = file_get_contents($this->clickBusRepository->url.'/seat-block', false, $context);
 
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
 
-            $result = ClickBusRepository::parseError(json_decode($result));
+            $result = $this->clickBusRepository->parseError(json_decode($result));
             // Retorno pro JS do erro para ser exibido em sweetAlert
             return $result;
         }
@@ -209,11 +217,11 @@ class ClickBusController extends Controller {
             ];
         $context = stream_context_create($context);
 
-        $result = file_get_contents(ClickBusRepository::$url.'/seat-block', false, $context);
+        $result = file_get_contents($this->clickBusRepository->url.'/seat-block', false, $context);
 
         // Testa se existe algo dentro do 'error' do $result
         if(isset(json_decode($result)->error)){
-            $result = ClickBusRepository::parseError(json_decode($result));
+            $result = $this->clickBusRepository->parseError(json_decode($result));
             // Retorno pro JS do erro para ser exibido em sweetAlert
             return $result;
         }
@@ -266,7 +274,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(ClickBusRepository::$url.'/payments', false, $context);
+        $result = file_get_contents($this->clickBusRepository->url.'/payments', false, $context);
         $decoded = json_decode($result);
 
         //Montando objeto $Ida
@@ -389,7 +397,7 @@ class ClickBusController extends Controller {
             ];
         } else {
         // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS
-            $result = ClickBusRepository::parseError($decoded);
+            $result = $this->clickBusRepository->parseError($decoded);
             if (env('APP_ENV') == 'local') {
                 $result['debug'] = $decoded;
             }
@@ -406,6 +414,9 @@ class ClickBusController extends Controller {
     {
         $request = Input::get('params');
         $sessionId = $request['request']['sessionId'];
+
+        //pegando api_key do repositorio, portanto do env
+        $request['meta']['api_key'] = $this->clickBusRepository->apiKey;
 
         //convertendo para int o valor em total
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
@@ -426,7 +437,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(ClickBusRepository::$url.'/booking', false, $context);
+        $result = file_get_contents($this->clickBusRepository->url.'/booking', false, $context);
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
@@ -562,7 +573,7 @@ class ClickBusController extends Controller {
 
         //Se a compra tiver falhado
         } else {
-            $retorno = ClickBusRepository::parseError($decoded);
+            $retorno = $this->clickBusRepository->parseError($decoded);
         }
 
         //return erro ou success
@@ -576,7 +587,7 @@ class ClickBusController extends Controller {
     {
     	$request = Input::all();
 
-        $sessionId = self::getSession($request['request']['sessionId']);
+        $sessionId = $this->getSession($request['request']['sessionId']);
 
         $context = [
             'http' => [
@@ -589,11 +600,11 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(ClickBusRepository::$url.'/booking/voucher', false, $context);
+        $result = file_get_contents($this->clickBusRepository->url.'/booking/voucher', false, $context);
         $decoded = json_decode($result);
 
         if(isset($decoded) && isset($decoded->{"error"})){
-            $decoded = ClickBusRepository::parseError($decoded);
+            $decoded = $this->clickBusRepository->parseError($decoded);
         }
 
         if (is_object($decoded)) {
@@ -603,17 +614,12 @@ class ClickBusController extends Controller {
         return json_encode($decoded);
     }
 
-		/* Tela de SUCESSO após finalização da compra
-		public function getSuccess(){
-			$view = view('clickbus._success')->render();
-		}*/
-
     /*
      * Recupera/Refresh na sessao atual com a ClickBus
      *
      * @param @session - sessionId advindo da ClickBus
      */
-    private static function getSession($session)
+    private function getSession($session)
     {
         $context = [
             'http' => [
@@ -625,7 +631,7 @@ class ClickBusController extends Controller {
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(ClickBusRepository::$url.'/session', false, $context);
+        $result = file_get_contents($this->clickBusRepository->url.'/session', false, $context);
         $decoded = json_decode($result);
 
         return $decoded->content;

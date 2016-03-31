@@ -15,10 +15,6 @@ use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
 // Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
-Route::get('/testeevento', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return event(new ClickBusCompraFinalizada($Compra));
-});
 Route::get('/testeview', function() {
     $compra = CompraClickbus::all()->reverse()->first();
     return ["view" => view('clickbus._success', compact('compra'))->render()];
@@ -187,7 +183,8 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 		}
 	}
 
-	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
+  //substituindo a mensagem anterior pela tela padrao de 404
+  abort(404);
 });
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
