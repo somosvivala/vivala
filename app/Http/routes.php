@@ -17,8 +17,9 @@ use App\Events\ClickBusCompraFinalizada;
 // Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
 Route::get('/testeview', function() {
     $compra = CompraClickbus::all()->reverse()->first();
-    return ["view" => view('clickbus._success', compact('compra'))->render()];
+    return view('clickbus._success', compact('compra'));
 });
+
 Route::get('/testeemailpendente', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
     return view('emails.clickbus.pendente')->with('Compra', $Compra);

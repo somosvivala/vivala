@@ -48,7 +48,7 @@ var ajax;
 
 // Trata evento de seleção da passagem de ida para alterar o passagem de volta
 $('#data-id-rodoviario').datepicker().on('changeDate', function() {
-    console.log($('#data-id-rodoviario').datepicker('getDate'));
+    //console.log($('#data-id-rodoviario').datepicker('getDate'));
     $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').datepicker('getDate'));
 });
 
@@ -142,8 +142,8 @@ var ajaxTrips = function(params) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
             });
         //Se estiver tudo ok..
         } else {
@@ -168,7 +168,7 @@ var ajaxTrip = function(viagens) {
 
     // Mostra icone de loading
     $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
-    console.log(viagens);
+    //console.log(viagens);
 
     $.ajax({
         url: 'clickbus/trip',
@@ -199,8 +199,8 @@ var ajaxTrip = function(viagens) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
             });
         //Se estiver tudo ok..
         } else {
@@ -273,9 +273,9 @@ var ajaxPoltronas = function(request, callback) {
            callback(data);
         },
         error: function (data) {
-            console.log('erro do ajax poltronas');
-            console.log(data);
-/*            console.log(data.responseObject);
+            //console.log('erro do ajax poltronas');
+            //console.log(data);
+/*            //console.log(data.responseObject);
             //Aqui mostro o sweetAlert com as mensagens retornadas da
             //validação
             //TODO formatar texto corretamente
@@ -492,7 +492,7 @@ var tripBooking = function(request) {
             closeOnConfirm: true,
             },
             function() {
-                console.log(data);
+                //console.log(data);
             });
     })
     .done(function(data) {
@@ -513,8 +513,8 @@ var tripBooking = function(request) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
             });
 
         //Se estiver tudo ok..
