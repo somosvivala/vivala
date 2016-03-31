@@ -17,7 +17,7 @@
         </h3>
       </div>
       <div class="row detalhes-da-viagem-3">
-        <p class="padding-t-1">
+        <p class="padding-t-1 padding-l-1 padding-r-1">
           <span>
             {!! trans('clickbus.clickbus_success-dear-client') !!}
           </span>
@@ -54,8 +54,8 @@
             </span>
           @endif
             {!! trans('clickbus.clickbus_success-approved-by-system') !!}
-
-        <p>
+        </p>
+        <p class="padding-l-1 padding-r-1">
           <i class="fa fa-3x fa-exclamation-circle"></i>
           <span>
             {!! trans('clickbus.clickbus_success-invoice-bill') !!}
@@ -143,26 +143,26 @@
 
       <table class="tres-dicas-de-viagem">
 
-        <tr class="padding-b-1">
-          <td class="text-center">
+        <tr>
+          <td class="text-center padding-t-1 padding-b-1">
             <img src="{{ asset('/img/clickbus/icon_clickbus-envelope-view.svg') }}" height="50px" width="100%">
           </td>
-          <td class="text-center">
+          <td class="text-center padding-t-1 padding-b-1">
             <img src="{{ asset('/img/clickbus/icon_clickbus-documento-view.svg') }}" height="50px" width="100%">
           </td>
-          <td class="text-center">
+          <td class="text-center padding-t-1 padding-b-1">
             <img src="{{ asset('/img/clickbus/icon_clickbus-relogio-view.svg') }}" height="50px" width="100%">
           </td>
         </tr>
 
         <tr>
-          <td class="text-center">
+          <td class="text-center padding-b-1">
             <span>{!! trans('clickbus.clickbus_success-tip-1') !!}</span>
           </td>
-          <td class="text-center">
+          <td class="text-center padding-b-1">
             <span>{!! trans('clickbus.clickbus_success-tip-2') !!}</span>
           </td>
-          <td class="text-center">
+          <td class="text-center padding-b-1">
             <span>{!! trans('clickbus.clickbus_success-tip-3') !!}</span>
           </td>
         </tr>
