@@ -3,13 +3,25 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Configuracao;
+use App\Repositories\ClickBusRepository;
 
 class ClickBusSeeder extends Seeder {
+
+    public $clickBusRepository;
+
+    //Injetando dependencia no construtor do seeder, assim
+    //o laravel providencia uma instancia desse objeto
+    //typehinted
+    function __construct(ClickBusRepository $repository)
+    {
+        $this->clickBusRepository = $repository;
+    }
+
     public function run()
     {
         DB::table('ClickBusPlaces')->delete();
 
-        $clickbusPlaces = file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/places');
+        $clickbusPlaces = file_get_contents($this->clickBusRepository->url .'/places');
 
         $clickbusHash = md5($clickbusPlaces);
 
@@ -39,10 +51,10 @@ class ClickBusSeeder extends Seeder {
 
         DB::table('ClickBusCompanies')->delete();
 
-        $pages = json_decode(file_get_contents('https://api-evaluation.clickbus.com.br/api/v1/buscompanies'))->meta->totalPages;
+        $pages = json_decode(file_get_contents($this->clickBusRepository->url .'/buscompanies'))->meta->totalPages;
         $busCompaniesHash = '';
         for ($i = 1; $i <= intval($pages); $i++) {
-            $companies = file_get_contents("https://api-evaluation.clickbus.com.br/api/v1/buscompanies?page={$i}");
+            $companies = file_get_contents($this->clickBusRepository->url ."/buscompanies?page={$i}");
             $busCompaniesHash .= $companies;
             $companies = json_decode($companies)->busCompanies;
 
