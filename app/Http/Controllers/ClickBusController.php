@@ -415,6 +415,9 @@ class ClickBusController extends Controller {
         $request = Input::get('params');
         $sessionId = $request['request']['sessionId'];
 
+        //pegando api_key do repositorio, portanto do env
+        $request['meta']['api_key'] = $this->clickBusRepository->apiKey;
+
         //convertendo para int o valor em total
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
         $data = json_encode($request);

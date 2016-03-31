@@ -213,15 +213,6 @@ var ajaxTrip = function(viagens) {
             $('input#session-clickbus').val(json.sessionId);
             bindaPoltronas();
 
-           //// TODO: conseguir recuperar o mesmo sessionId retornado pelo /trip
-           //console.log('disparando trigger de refresh de sessionId');
-           ////startando o tratamento de refresh da sessao
-           //setTimeout(function() {
-           //    console.log('15 minutos passaram, renovando sessionId...');
-           //    console.log('current value: ' + $('input#session-clickbus').val());
-           //    sessionManutencao();
-           //}, 60000);
-
         }
     })
     .fail(function() {
@@ -458,7 +449,7 @@ var tripBooking = function(request) {
             "store": "Vivala",
             "model": "Retail",
             "platform": "API",
-            "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
+            "api_key": ""
         },
         "request": {
             "sessionId": getSessionId(),
@@ -574,54 +565,6 @@ var tripBooking = function(request) {
         }
 
     });
-}
-
-//Funcao para recuperar a sessionId do lado do cliente.
-//Executa uma XMLHttpRequest para o /session resource na clickbus.
-//@TODO usando o sessionID retornado nao é possivel continuar uma compra
-var sessionManutencao = function() {
-
-    var currentSessionId = $('input#session-clickbus');
-
-    //so disparar essa request se estiver atualmente mexendo na clickbus
-    if (currentSessionId.length) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api-evaluation.clickbus.com.br/api/v1/session");
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        //Acho que isso nao funciona porque CORS nao esta permitido pelo server.
-        //xhr.setRequestHeader("Cookie", "PHPSESSID="+currentSessionId);
-
-        //Com só essa flag ativada, o PHPSESSID é enviado, mas aparentemente ele
-        //sempre abre uma nova sessao. perdendo os dados da sessao atual.
-        //xhr.withCredentials =  true;
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 201) {
-                var data = JSON.parse(xhr.responseText);
-                setSession(data);
-            }
-        };
-
-        xhr.send('');
-    }
-}
-
-var setSession = function(data) {
-
-    var currentSessionId = getSessionId();
-    console.log('============ chegou setSession new value:' + data.content);
-    console.log('currentSessionId: ' + currentSessionId);
-
-    //settando o novo sessionId
-    setSessionId(data.content);
-
-    setTimeout(function() {
-        console.log('1 minuto passou, renovando sessionId...');
-        console.log('current value: ' + $('input#session-clickbus').val());
-        sessionManutencao();
-    }, 60000);
-
-
 }
 
 var getSessionId = function() {
