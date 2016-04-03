@@ -370,6 +370,7 @@ return[
   'lbl_notification_' => 'Notifications',
   'lbl_notification_no' => 'No new notifications.',
   'lbl_ok' => 'Ok',
+  'lbl_our_essence' => 'Understand our essence',
 
   /* Cuidar - ONGs */
   'lbl_ong' => 'NGO',
@@ -1226,5 +1227,12 @@ return[
     'transport_bus' => 'Bus',
     'transport_car' => 'Car',
     'transport_airplane' => 'Airplane',
+
+    /*----------------------------------------------------------------------------------
+    / Facebook Open Graph
+    /---------------------------------------------------------------------------------*/
+      // Welcome
+      'fb-og-title_welcome' => 'Vivalá - Join Vivalá and connect yourself to the real Brazil',
+      'fb-og-description_welcome' => 'Plan Your Experiences, buy transportation, lodging and restaurants reservations all over Brazil. Meet projects of social impact and transform the country through volunteering.',
 ];
 ?>

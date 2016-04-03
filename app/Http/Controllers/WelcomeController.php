@@ -1,4 +1,5 @@
 <?php namespace App\Http\Controllers;
+use Carbon\Carbon;
 
 class WelcomeController extends Controller {
 
@@ -32,8 +33,8 @@ class WelcomeController extends Controller {
 	{
 		//recuperando alguma informacao da tabela de configurações
 		$title = ConfiguracaoController::get('title');
-
-		return view('welcome')->with('name', $title);
+		$date = Carbon::now();
+		return view('welcome', compact('title', 'date'));
 	}
 
 }

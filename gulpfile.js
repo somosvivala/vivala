@@ -76,7 +76,7 @@ elixir(function(mix) {
       '../../assets/js/formContato.js',
       '../../assets/js/ongs.js',
       '../../assets/js/tour.js',
+      '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
-      /*'../../assets/js/zoomfinanciamentocoletivo.js'*/
 	], 'public/js/vendor.js');
 });

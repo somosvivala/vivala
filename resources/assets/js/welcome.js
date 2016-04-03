@@ -1,13 +1,21 @@
-// Pinta o menu somente
-$(function(){
-  var qualPilar = $('#tour-pilares');
-  if(qualPilar.hasClass('pilar-viajar')){
-    $("#menu-viajar a").css('color', '#F16F2B', 'important');
-  }
-  if(qualPilar.hasClass('pilar-conectar')){
-    $("#menu-conectar a").css('color', '#F16F2B', 'important');
-  }
-  if(qualPilar.hasClass('pilar-cuidar')){
-    $("#menu-cuidar a").css('color', '#F16F2B', 'important');
-  }
+/* Funções que ocorrerão na blade Welcome - Boas Vindas/Home */
+autoPlayYouTubeModal();
+
+//FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
+function autoPlayYouTubeModal() {
+    var trigger = $("body").find('[data-toggle="modal"]');
+    trigger.click(function () {
+        var theModal = $(this).data("target"),
+            videoSRC = $(this).attr("data-theVideo"),
+            videoSRCauto = videoSRC + "?autoplay=1";
+        $(theModal + ' iframe').attr('src', videoSRCauto);
+        $(theModal + ' button.close').click(function () {
+            $(theModal + ' iframe').attr('src', videoSRC);
+        });
+    });
+}
+/* OnChange da Linguagem, definir no futuro
+$('#idioma').change(function(){
+  window.location.reload();
 });
+*/
