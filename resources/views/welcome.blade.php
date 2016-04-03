@@ -185,9 +185,9 @@
                 {{-- SVG do mapa WELCOME - Agora com tradução --}}
                     <div id="brasilwelcome">
                         @if (Config::get('app.locale') === 'pt')
-                          <img src="{{ asset('icons/home/mapa-vivala-home-ptbr.svg') }}" width="100%" height="100%" />
+                          <img src="{{ asset('icons/welcome/mapa-vivala-home-ptbr.svg') }}" width="100%" height="100%" />
                         @elseif (Config::get('app.locale') === 'en')
-                          <img src="{{ asset('icons/home/mapa-vivala-home-en.svg') }}" width="100%" height="100%" />
+                          <img src="{{ asset('icons/welcome/mapa-vivala-home-en.svg') }}" width="100%" height="100%" />
                         @endif
                     </div>
                     <div class="balao-flutuante balao-1">
@@ -202,7 +202,7 @@
                     <div class="container-fluid">
                       <div class="row">
                         <div id="modal-manifesto">
-                          <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#videoModal" data-theVideo="http://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                          <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#videoModal" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                             {{ trans('global.lbl_our_essence') }}
                           </a>
                         </div>
