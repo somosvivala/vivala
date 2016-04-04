@@ -1,5 +1,5 @@
 
-<div class="row perfil-topo">
+<div class="row perfil-topo margin-b-2">
     <div class="col-md-1">
         &nbsp;
         @if ($perfil->user->id == Auth::user()->id)
