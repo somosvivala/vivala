@@ -887,7 +887,6 @@ return[
       'quiz_interests_brazilian_regions' => 'Brazilian regions you want to know:',
       'quiz_interests_travel_motivations' => 'What motivates you to travel?',
       'quiz_interests_what_do_you_like' => 'What do you enjoy doing?',
-
     /* Etapa 2 - Foto */
       'quiz_offour' => 'of 4',
       'quiz_profile_customize' => 'Show us a picture of you!',
@@ -899,10 +898,18 @@ return[
       'quiz_nickname' => 'HOW CAN WE CALL YOU?',
       'quiz_hometown' => 'WHAT IS YOUR HOMETOWN?',
       'quiz_currentcity' => 'WHAT IS YOUR CURRENT TOWN?',
+      'quiz_birthdate' => 'YOUR BIRTHDATE',
       'quiz_shortdesc' => 'Short Description',
       'quiz_shortdesc_ph' => 'SHORT DESCRIPTION',
       'quiz_longdesc' => 'Long Description',
       'quiz_longdesc_ph' => 'LONG DESCRIPTION',
+      'quiz_your_social_profiles' => 'WHAT\'S YOUR PROFILE IN THESE SOCIAL NETWORKS?',
+      'quiz_be_connected' => 'We want to be connected with you!',
+      'quiz_facebook_URL_ph' => 'WWW.FACEBOOK.COM/',
+      'quiz_instagram_URL_ph' => 'WWW.INSTAGRAM.COM/',
+      'quiz_youtube_URL_ph' => 'WWW.YOUTUBE.COM/',
+      'quiz_twitter_URL_ph' => 'WWW.TWITTER.COM/',
+      'quiz_your_user_pretty_URL_ph' => 'YOUR-USERNAME',
     /* Etapa 4 - Seguidores */
       'quiz_interestingpeople' => 'interesting people to follow',
       'quiz_nicesuggests' => 'Suggestions based on your interests. Connect yourself!',

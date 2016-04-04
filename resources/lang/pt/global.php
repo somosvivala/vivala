@@ -975,7 +975,6 @@ return[
       'quiz_interests_brazilian_regions' => 'Regiões do Brasil que quer conhecer:',
       'quiz_interests_travel_motivations' => 'Quais são suas motivações para viajar?',
       'quiz_interests_what_do_you_like' => 'O que você curte fazer?',
-
     /* Etapa 2 - Foto */
       'quiz_offour' => 'de 4',
       'quiz_profile_customize' => 'Mostra a tua cara!',
@@ -987,10 +986,18 @@ return[
       'quiz_nickname' => 'COMO QUER SER CHAMADO?',
       'quiz_hometown' => 'QUAL SUA CIDADE DE ORIGEM?',
       'quiz_currentcity' => 'QUAL SUA CIDADE ATUAL?',
+      'quiz_birthdate' => 'SEU ANIVERSÁRIO',
       'quiz_shortdesc' => 'Descrição curta',
       'quiz_shortdesc_ph' => 'DESCRIÇÃO CURTA',
       'quiz_longdesc' => 'Descrição longa',
       'quiz_longdesc_ph' => 'DESCRIÇÃO LONGA',
+      'quiz_your_social_profiles' => 'QUAL O SEU PERFIL NESTAS REDES SOCIAIS?',
+      'quiz_be_connected' => 'Queremos estar conectados com você!',
+      'quiz_facebook_URL_ph' => 'WWW.FACEBOOK.COM/',
+      'quiz_instagram_URL_ph' => 'WWW.INSTAGRAM.COM/',
+      'quiz_youtube_URL_ph' => 'WWW.YOUTUBE.COM/',
+      'quiz_twitter_URL_ph' => 'WWW.TWITTER.COM/',
+      'quiz_your_user_pretty_URL_ph' => 'SEU-USUARIO',
     /* Etapa 4 - Seguidores */
       'quiz_interestingpeople' => 'Pessoas interessantes para seguir',
       'quiz_nicesuggests' => 'Sugestões baseadas em seus interesses. Conecte-se!',
