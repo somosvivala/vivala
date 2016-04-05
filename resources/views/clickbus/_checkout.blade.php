@@ -34,11 +34,11 @@
                                 <div class="row">
                                     <label for="documento" class="col-sm-12">{{ trans('global.lbl_document') }}</label>
                                     <div class="col-xs-4">
-                                        <select id="document-type" name="documentType" class="form-control">
-                                            <option value="rg">RG</option>
-                                            <option value="passaporte">{{ trans('global.lbl_passport') }}</option>
-                                            <option value="cpf">CPF</option>
+                                        <select id="document-type" name="documentType" class="form-control" onchange="bindaDocumentTypeSelect(this)">
+                                            <option value="CPF">CPF</option>
+                                            <option value="PASSAPORTE">{{ trans('global.lbl_passport') }}</option>
                                         </select>
+                                        <input type="hidden" id="document-type-mp" class="" name="document-type-mp">
                                     </div>
                                     <div class="col-xs-8">
                                         <input type="text" id="documento-pf" class="required form-control" placeholder="Ex: 123.456.789-0" name="documento-pf" required="" >

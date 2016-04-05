@@ -2,6 +2,8 @@
 
 jQuery(document).ready(function($) {
 
+
+
     $('a[aria-controls=rodoviario]').on('shown.bs.tab', function() {
         $('#origem-rodoviario').focus();
     });
@@ -706,6 +708,7 @@ var bindaFormPagamento = function() {
         //Settando as informacoes extras que serao persistidas no backend
         params.extra = getExtraInfoParaCheckout();
 
+        bindaDocumentTypeSelect($('select#document-type'));
         generateMercadoPagoToken();
 
         tripBooking(params);
@@ -881,4 +884,14 @@ var funcaoSubmitPoltronas = function (ev) {
 
     tripPayment(params, frm);
 
+
 };
+
+//bindando o select document-type para o input document-type-mp
+//mercado pago
+var bindaDocumentTypeSelect = function(select) {
+    var value = $(select).val();
+    $('#document-type-mp').val(value);
+};
+
+

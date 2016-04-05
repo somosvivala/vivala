@@ -592,7 +592,6 @@ var getObjetoClickBusPayment = function() {
 
     var clickbus = null;
 
-    var docTypeID = $('#tabs-pagamento-cliente > div.tab-pane.active.in').find('select#document-type').attr('id');
     var docNumberID = $('#tabs-pagamento-cliente > div.tab-pane.active.in').find('input#documento-pf').attr('id');
 
     // Here you can find a list of mapped fields for each parameter.
@@ -603,7 +602,7 @@ var getObjetoClickBusPayment = function() {
         expirationMonthFieldId: 'mes-validade-credito',
         expirationYearFieldId: 'ano-validade-credito',
         holderNameFieldId: 'nome-titular-credito',
-        docTypeFieldId: docTypeID,
+        docTypeFieldId: 'document-type-mp',
         docNumberFieldId: docNumberID,
         test: true
     });
