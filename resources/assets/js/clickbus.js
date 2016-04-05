@@ -587,3 +587,51 @@ var getExtraInfoParaCheckout = function() {
     };
     return obj;
 }
+
+var getObjetoClickBusPayment = function() {
+
+    var clickbus = null;
+
+    var docTypeID = $('#tabs-pagamento-cliente > div.tab-pane.active.in').find('select#document-type').attr('id');
+    var docNumberID = $('#tabs-pagamento-cliente > div.tab-pane.active.in').find('input#documento-pf').attr('id');
+
+    // Here you can find a list of mapped fields for each parameter.
+    clickbus = new ClickBusPayments({
+        paymentFormId: 'form-pagamento',
+        creditcardFieldId: 'num-cartao-credito',
+        securityCodeFieldId: 'cod-seguranca-credito',
+        expirationMonthFieldId: 'mes-validade-credito',
+        expirationYearFieldId: 'ano-validade-credito',
+        holderNameFieldId: 'nome-titular-credito',
+        docTypeFieldId: docTypeID,
+        docNumberFieldId: docNumberID,
+        test: true
+    });
+
+    console.log('criou obj clickBusPayment: ');
+    console.log(clickbus);
+
+    return clickbus;
+
+}
+
+var generateMercadoPagoToken = function() {
+
+    //pegando onjeto clickBusPayment já mapeado para os inputs
+    var clickbus = getObjetoClickBusPayment();
+
+    setTimeout(function() {
+        clickbus.generateToken().success(function(response) {
+                console.log(response.token);
+                console.log(response.payment_method);
+
+            }).fail(function(errors) {
+                for (var error in errors) {
+                    console.log(errors[error].code);
+                    console.log(errors[error].description);
+                }
+            }).call();
+
+            console.log('after generateMercadoPagoToken');
+    }, 100);
+}

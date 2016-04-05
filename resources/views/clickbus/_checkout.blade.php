@@ -158,14 +158,14 @@
                             </div>
                             <div class="col-xs-7 padding-t-1">
                                 <label for="num-cartao-credito">{{ trans('clickbus.clickbus_client-opt-card-number') }}</label>
-                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
+                                <input id="num-cartao-credito"type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
                             </div>
                             <div class="col-xs-5 padding-t-1">
                                 <div class="">
                                     <label for="mes-validade-credito" >{{ trans('clickbus.clickbus_client-opt-card-expiration-date') }}</label>
                                     <div class="row">
                                         <div class="col-xs-6">
-                                            <select class="form-control" name="mes-validade-credito">
+                                            <select id="mes-validade-credito" class="form-control" name="mes-validade-credito">
                                                 <option>{{ trans('global.date_month') }}</option>
                                                 @for($i=1;$i<=12;$i++)
                                                 <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
@@ -173,7 +173,7 @@
                                             </select>
                                         </div>
                                         <div class="col-xs-6">
-                                            <select class="form-control" name="ano-validade-credito">
+                                            <select id="ano-validade-credito" class="form-control" name="ano-validade-credito">
                                                 <option>{{ trans('global.date_year') }}</option>
                                                 @for($i=0;$i<=20;$i++)
                                                 <option>{{ date('Y')+$i }}</option>
@@ -185,11 +185,11 @@
                             </div>
                             <div class="col-xs-7 padding-t-1">
                                 <label for="nome-titular-credito">{{ trans('clickbus.clickbus_client-opt-card-name-1') }} <small>{{ trans('clickbus.clickbus_client-opt-card-name-2') }}</small></label>
-                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="JOÃO D. SILVA">
+                                <input id="nome-titular-credito" type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="JOÃO D. SILVA">
                             </div>
                             <div class="col-xs-5 padding-t-1">
                                 <label for="cod-seguranca-credito" >{{ trans('clickbus.clickbus_client-opt-card-password') }}</label>
-                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
+                                <input id="cod-seguranca-credito" type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
                             <div class="col-xs-12 padding-t-1">
                                 <label>{{ trans('global.address_zipcode') }}</label>

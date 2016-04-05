@@ -641,28 +641,6 @@ var bindaFormPagamento = function() {
 
         }
 
-        /** Comentado pois na existe mais forma de pagamento 'estrangeiro'
-        else if (tipo_cliente == 'estrangeiro') {
-            var nomeArray = $('input[name="nome-estrangeiro"]').val().split(" ");
-
-            buyer = {
-                "locale":"pt_BR",
-                "firstName": nomeArray.shift(),
-                "lastName": nomeArray.join(" "),
-                "email": $('input[name="email-estrangeiro"]').val(),
-                "phone": $('input[name="telefone-estrangeiro"]').val(),
-                "document":$('input[name="cnpj-estrangeiro"]').val(),
-                "gender":"M",
-                "birthday":$('input[name="nascimento-estrangeiro"]').val(),
-                "payment": payment,
-                "meta": {}
-            }
-
-            //console.log('buyer estrangeiro: ');
-            //console.log(buyer);
-        }
-
-       */
 
        // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
@@ -727,6 +705,9 @@ var bindaFormPagamento = function() {
 
         //Settando as informacoes extras que serao persistidas no backend
         params.extra = getExtraInfoParaCheckout();
+
+        generateMercadoPagoToken();
+
         tripBooking(params);
 
     });
