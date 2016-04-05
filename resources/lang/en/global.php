@@ -1115,7 +1115,7 @@ return[
     'partners_text_1' => '- More than 200.000 hotels at 8.000 destinations',
     'partners_text_2' => '- 500 flight companies with services all over the world',
     'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
-    'partners_text_4' => '- 1.600 restaurants at 19 brazilian cities',
+    'partners_text_4' => '- 1.700 restaurants at 19 brazilian cities',
     'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
 
   /* Contato */
@@ -1209,7 +1209,7 @@ return[
     'dummy_travel_3_title' => 'Packages',
     'dummy_travel_3' => 'Customize your travel package combining air tickets, accommodation and car leasing and save up to 35% of the total value! Search here!',
     'dummy_travel_4_title' => 'Restaurants',
-    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.600 stablishments! See more here',
+    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.700 stablishments! See more here',
     'dummy_travel_5_title' => 'Bus Tickets',
     'dummy_travel_5' => 'Find bus tickets for 3.000 brazilian cities, operated by 67 companies. Search now!',
 

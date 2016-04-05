@@ -5,18 +5,18 @@
     <div class="row">
         <h3 class="font-bold-upper text-center margin-b-2">
             {{ trans('global.partners_title') }}
-            <small class="sub-titulo margin-t-1">
+            <small class="sub-titulo margin-t-1 ajuste-fonte-avenir-medium">
                 {{ trans('global.partners_subtitle') }}
             </small>
         </h3>
     </div>
     <div class="row margin-b-2">
-        <img src="/img/parceiros.png" alt="{{ trans('global.partners_coverphoto_img_alt') }}" title="{{ trans('global.partners_coverphoto_img_title') }}" class="width-100"></img>
+        <img src="{{ asset('/img/parceiros.png') }}" alt="{{ trans('global.partners_coverphoto_img_alt') }}" title="{{ trans('global.partners_coverphoto_img_title') }}" class="width-100"></img>
     </div>
     <div class="row">
         <div class="col-sm-12 padding-b-4">
             <div class="col-sm-12">
-                <p class="text-justify">
+                <p class="text-justify ajuste-fonte-avenir-light">
                     {{ trans('global.partners_main_text') }}
                     <br/>
                     <br/>

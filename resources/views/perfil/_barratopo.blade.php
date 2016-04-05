@@ -135,8 +135,11 @@
                 @endif
             </li>
         </ul>
+        {{-- DESATIVADO TEMPORARIAMENTE
         <ul class="margin-0">
-            <li class="col-sm-6"><a href="#" class="desativado">{{ trans('global.lbl_know_more_things') }}</a></li>
+            <li class="col-sm-6">
+              <a href="#" class="desativado">{{ trans('global.lbl_know_more_things') }}</a>
+            </li>
             <li class="col-sm-6"><a href="#" class="desativado">
                 @if( $perfil->tipo == 'ong' )
                     {{ trans('global.ong_contact_keep_in') }}
@@ -145,6 +148,7 @@
                 @endif
             </a></li>
         </ul>
+        --}}
     </div>
     <div class="col-md-1">
     </div>

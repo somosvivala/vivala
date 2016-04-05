@@ -31,8 +31,8 @@
 		</ul>
 	</nav>
 {{-- Facebook Like-Page Menu --}}
-	<h4 class="suave">{{ trans('global.social_network_facebook') }}</h4>
-	<nav class="menu-lateral tour-pilar-conectar-step7">
+	<h4 class="suave">{{ trans('global.lbl_stay_close') }}</h4>
+	<nav class="menu-lateral tour-pilar-conectar-step7 margin-t-2">
 		<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 			<div class="fb-xfbml-parse-ignore">
 				<blockquote cite="https://www.facebook.com/somosvivala">

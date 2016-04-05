@@ -673,7 +673,7 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.600 restaurants spread across 12 Brazilian states</span>.<br/>Join the club and delight yourself!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.700 restaurants spread across 12 Brazilian states</span>.<br/>Join the club and delight yourself!</p>',
                 position: 'bottom'
               }
             ]
@@ -705,7 +705,7 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.600 restaurantes espalhados por 12 estados brasileiros</span>.<br/>Entre para o clube e delicie-se!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.700 restaurantes espalhados por 12 estados brasileiros</span>.<br/>Entre para o clube e delicie-se!</p>',
                 position: 'bottom'
               }
             ]

@@ -596,6 +596,7 @@ return[
     'lbl_site' => 'Site',
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
+    'lbl_stay_close' => 'Fique sempre por perto da Vivalá',
     'lbl_step' => 'Passo',
     'lbl_start' => 'Começar',
     'lbl_step_skip' => 'Pular etapa',
@@ -1201,7 +1202,7 @@ return[
     'partners_text_1' => '- Mais de 200.000 hotéis em 8.000 destinos',
     'partners_text_2' => '- 500 empresas de aviação com serviços para todo o mundo',
     'partners_text_3' => '- Mais de 30 empresas de aluguel de carro em 30.000 destinos',
-    'partners_text_4' => '- 1.600 restaurantes em 19 cidades brasileiras',
+    'partners_text_4' => '- 1.700 restaurantes em 19 cidades brasileiras',
     'partners_text_5' => '- 3.000 destinos de ônibus no Brasil operados por 40 empresas rodoviárias',
   //
   /* Contato */

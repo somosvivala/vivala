@@ -7,7 +7,7 @@
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-md hidden-sm col-lg-4">
-                                                <input class="busca-geral-menu hide" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
+    <input class="busca-geral-menu hide" placeholder='{{ trans("global.lbl_search_type_here") }}' type="search">
 	</div>
 	<ul id="tres-menus-vivala" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto tour-pilares-step2">
 		@if (Auth::guest())
@@ -36,31 +36,31 @@
 	</ul>
 </div>
 
-<div id="menu-notificacoes" class="notificacoes">
+<div id="menu-notificacoes" class="notificacoes padding-l-2">
 	<button type="button" id="notificacoes-follow" class="tour-pilares-step6" data-unread="0" title='{{ trans("global.lbl_follower_") }}'>
 		<i class="icon-menu-notificacao icon-vivala-menu-usuario vi" alt='{{ trans("global.lbl_follower_") }}'></i>
-                        </button>
+  </button>
 	<div class="notificacoes-follow">
 	    @include('_notificacoesFollow')
 	</div>
 	{{-- DESATIVADO TEMPORARIAMENTE
-	<!-- button type="button" id="notificacoes-msg" class="tour-pilares-step7" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
-		<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
-                        </button>
-                        <div class="notificacoes-msg">
-                              @include('_notificacoesMsg')
-                        </div-->
-                        --}}
-                        <button type="button" id="notificacoes-geral" class="tour-pilares-step8" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
-                                                <i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
-                        </button>
-                        <div class="notificacoes-geral">
-                                                @include('_notificacoesGeral')
-                        </div>
-                        {{-- Botão de HINTS [TODO] para o TOUR interno da plataforma (?) - senão remover --}}
-                        <button type="button" id="notificacoes-ajuda" class="tour-pilares-step9" data-unread="0" title='{{ trans("global.lbl_help") }}'>
-                                                <i class="icon-menu-notificacao icon-menu--notificacao-fontawesome-fix fa fa-question" alt='{{ trans("global.lbl_help") }}'></i>
-                        </button>
+		<!-- button type="button" id="notificacoes-msg" class="tour-pilares-step7" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
+			<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
+    </button>
+    <div class="notificacoes-msg">
+          @include('_notificacoesMsg')
+    </div-->
+  --}}
+    <button type="button" id="notificacoes-geral" class="tour-pilares-step8" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
+      <i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
+    </button>
+    <div class="notificacoes-geral">
+    	@include('_notificacoesGeral')
+    </div>
+    {{-- Botão de HINTS [TODO] para o TOUR interno da plataforma (?) - senão remover --}}
+    <button type="button" id="notificacoes-ajuda" class="tour-pilares-step9" data-unread="0" title='{{ trans("global.lbl_help") }}'>
+      <i class="icon-menu-notificacao icon-menu--notificacao-fontawesome-fix fa fa-question" alt='{{ trans("global.lbl_help") }}'></i>
+    </button>
 </div>
 
 <div id="menu-usuario" class="menu-usuario tour-pilares-step10 tour-pilar-cuidar-step5">

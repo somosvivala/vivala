@@ -26,24 +26,22 @@ class SugestaoController extends ConectarController {
     * @return
     */
     public function getViajantes($filtro = "amigo") {
-            $user = Auth::user();
-            $entidadeAtiva = $user->entidadeAtiva;
-            $entidadeAtiva = $user->entidadeAtiva;
-            $perfil = $entidadeAtiva;            
+      $user = Auth::user();
+      $entidadeAtiva = $user->entidadeAtiva;
+      $entidadeAtiva = $user->entidadeAtiva;
+      $perfil = $entidadeAtiva;
 
-            $follow = $perfil->followPerfil;
-	    $followedBy = $perfil->followedByPerfil;
-		
+      $follow = $perfil->followPerfil;
+      $followedBy = $perfil->followedByPerfil;
 
-            if($filtro == "amigo") {
-                $sugestoes = $entidadeAtiva->sugestaoByAmigosEmComum;
-            } else if ($filtro == "seguindo") {
-                $sugestoes = $entidadeAtiva->sugestaoBySeguindoEmComum;
-            } else if ($filtro == "numseguidores") {
-                $sugestoes = Perfil::getMaisSeguidos($entidadeAtiva);
-            }
-
-            return view('conectar.sugestoes.index', compact('sugestoes', 'perfil', 'follow', 'followedBy', 'filtro', 'user', 'entidadeAtiva'));
+        if($filtro == "amigo") {
+            $sugestoes = $entidadeAtiva->sugestaoByAmigosEmComum;
+        } else if ($filtro == "seguindo") {
+            $sugestoes = $entidadeAtiva->sugestaoBySeguindoEmComum;
+        } else if ($filtro == "numseguidores") {
+            $sugestoes = Perfil::getMaisSeguidos($entidadeAtiva);
+        }
+        return view('conectar.sugestoes.index', compact('sugestoes', 'perfil', 'follow', 'followedBy', 'filtro', 'user', 'entidadeAtiva'));
     }
 
 }
