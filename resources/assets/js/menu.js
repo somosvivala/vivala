@@ -17,3 +17,19 @@ $(function(){
     $("#menu-cuidar a").css('color', '#F16F2B', 'important');
   }
 });
+
+// Instagram
+function igScript(options){
+  var userFeed = new Instafeed({
+    get:'user',
+    userId: options.igUserID,
+    accessToken: options.igATkn,
+    target:'instafeed',
+    sortBy:'most-recent',
+    limit:'8',
+    resolution: 'standard_resolution',
+    template:
+    '<a class="col-sm-6 margin-b-1" href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" width="{{width}}" height="100%" image-orientation="{{orientation}}" /></a>',
+  });
+  userFeed.run();
+}

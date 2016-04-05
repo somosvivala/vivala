@@ -26,14 +26,24 @@
       </li>
 		</ul>
 	</nav>
-{{-- Facebook Like-Page Menu --}}
-	<h4 class="suave">{{ trans('global.social_network_facebook') }}</h4>
-	<nav class="menu-lateral">
-		<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
-			<div class="fb-xfbml-parse-ignore">
-				<blockquote cite="https://www.facebook.com/somosvivala">
-					<a href="https://www.facebook.com/somosvivala">{{ trans('global.lbl_vivala') }}</a>
-				</blockquote>
+	{{-- Redes Sociais --}}
+		<h4 class="suave">{{ trans('global.lbl_stay_close') }}</h4>
+		{{-- Facebook --}}
+		<nav class="menu-lateral tour-pilar-conectar-step7 margin-t-2">
+			<h5 class="text-center texto-maiusculo">{{ trans('global.social_network_facebook') }}</h5>
+			<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+				<div class="fb-xfbml-parse-ignore">
+					<blockquote cite="https://www.facebook.com/somosvivala">
+						<a href="https://www.facebook.com/somosvivala">{{ trans('global.lbl_vivala') }}</a>
+					</blockquote>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+		{{-- Instagram --}}
+		<nav class="menu-lateral margin-t-2">
+			<h5 class="text-center texto-maiusculo">{{ trans('global.social_network_instagram') }}</h5>
+			<div class="row">
+				<div id="instafeed" class="col-sm-12">
+				</div>
+			</div>
+		</nav>
