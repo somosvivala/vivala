@@ -608,9 +608,6 @@ var getObjetoClickBusPayment = function() {
         test: true
     });
 
-    console.log('criou obj clickBusPayment: ');
-    console.log(clickbus);
-
     return clickbus;
 
 }
@@ -619,6 +616,9 @@ var generateMercadoPagoToken = function() {
 
     //pegando onjeto clickBusPayment já mapeado para os inputs
     var clickbus = getObjetoClickBusPayment();
+
+    console.log('objeto clickbus em generateMercadoPagoToken()');
+    console.log(clickbus);
 
     setTimeout(function() {
         clickbus.generateToken().success(function(response) {
@@ -633,5 +633,5 @@ var generateMercadoPagoToken = function() {
             }).call();
 
             console.log('after generateMercadoPagoToken');
-    }, 100);
+    }, 2000);
 }

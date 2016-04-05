@@ -412,6 +412,7 @@ class ClickBusController extends Controller {
      */
     public function getBooking(Request $request)
     {
+        dd('chegou booking', $request);
         $request = Input::get('params');
         $sessionId = $request['request']['sessionId'];
 
