@@ -1,6 +1,7 @@
 <?php
 return [
     'chefsclub_avaiable-restaurants' => 'Avaiable Restaurants',
+    'chefsclub_in-partner-with' => 'in partnership with',
     'chefsclub_join-the-club' => 'Join the club',
     'chefsclub_kitchen-no-found' => 'No restaurant found.',
     'chefsclub_kitchen-type' => 'Kitchen Type',

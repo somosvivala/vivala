@@ -532,6 +532,7 @@ return[
     'lbl_site' => 'Site',
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
+    'lbl_stay_close' => 'Stay always near to the Vivalá',
     'lbl_step' => 'Step',
     'lbl_start' => 'Start',
     'lbl_step_skip' => 'Skip',
@@ -878,7 +879,7 @@ return[
 
   /* View: Quiz */
     /* Etapa 1 - Interesses */
-      'quiz_interests_yours' => 'Tell us your interests!',
+      'quiz_interests_yours' => 'Tell us your interests',
       'quiz_interests_choose' => 'If we get to know you better, we will only recommend you good stuff!',
       'quiz_interests_no' => 'No interest.',
       'quiz_interests_travel_style' => 'What is your travel style?',
@@ -893,7 +894,7 @@ return[
       'quiz_photo_customize' => 'Choose picture that shows your style and personality.',
       'quiz_fromcomputer' => 'Upload Photo',
     /* Etapa 3 - Pegando alguns dados */
-      'quiz_tell_us_more' => 'Tell us more about you.',
+      'quiz_tell_us_more' => 'Tell us more about you',
       'quiz_get_intimacy' => 'We are curious!',
       'quiz_nickname' => 'HOW CAN WE CALL YOU?',
       'quiz_hometown' => 'WHAT IS YOUR HOMETOWN?',

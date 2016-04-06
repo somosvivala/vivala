@@ -118,11 +118,22 @@ $('.ativa-modal-quimera').on('click', function() {
       $('.tab-content #rodoviario').removeClass('active');
       $('.tab-content #restaurantes').removeClass('active');
     }
+
     var url = $(this).data('url');
     $('#modal-quimera.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
       $(this).find('iframe').attr('src', url)
     });
     $('#modal-quimera.modal').modal({show:true});
+});
+
+// Menu Fixes
+$('.pesquisa-viajar li .rodoviario').on('click', function() {
+  $('.tab-content #restaurantes').removeClass('active');
+  $('.tab-content #rodoviario').addClass('active');
+});
+$('.pesquisa-viajar li .restaurantes').on('click', function() {
+  $('.tab-content #rodoviario').removeClass('active');
+  $('.tab-content #restaurantes').addClass('active');
 });
 
 // Mostra as quantidades de adulto e criança para cada quarto
@@ -139,11 +150,9 @@ $("#qtd-quartos-hotel").change(function() {
 
 
 $(document).ready(function($) {
-
     /*
      * VOOS
      */
-
     // Binda keydown da origem pra procurar aeroportos
     // e cidades quando entrar mais que 3 chars
     var autocompleteTimeout = null;

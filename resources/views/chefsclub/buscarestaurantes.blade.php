@@ -26,6 +26,7 @@
         <select id="porcentagem-desconto" class="form-control">
             <option value="">{{ trans('global.lbl_discount') }}</option>
             @foreach($descontos as $Desconto)
+            asort($Desconto);
             <option value="{{ $Desconto }}">{{ $Desconto }}</option>
             @endforeach
         </select>

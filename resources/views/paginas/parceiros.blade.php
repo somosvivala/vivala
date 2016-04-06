@@ -36,13 +36,19 @@
     <div class="row">
         <div class="col-sm-12 text-center">
             <span class="margin-l-1 margin-r-1 cursor-default">
-                <div class="col-sm-4 spritemap-parceiros sprite-decolar" alt="decolar.com" title="decolar.com"></div>
+                <div class="col-sm-5">
+                  <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-decolar.svg') }}" alt="decolar.com" title="decolar.com" width="100%" height="100%"/>
+                </div>
             </span>
             <span class="margin-l-1 margin-r-1 cursor-default">
-                <div class="col-sm-4 spritemap-parceiros sprite-chefsclub" alt="chefsclub.com.br" title="chefsclub.com.br"></div>
+                <div class="col-sm-3">
+                  <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" width="100%" height="100%"/>
+                </div>
             </span>
             <span class="margin-l-1 margin-r-1 cursor-default">
-                <div class="col-sm-4 spritemap-parceiros sprite-clickbus" alt="clickbus.com.br" title="clickbus.com.br"></div>
+              <div class="col-sm-4">
+                <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-clickbus.svg') }}" alt="clickbus.com.br" title="clickbus.com.br" width="100%" height="100%"/>
+              </div>
             </span>
         </div>
     </div>
