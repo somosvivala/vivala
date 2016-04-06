@@ -5,18 +5,18 @@
     <div class="row">
         <h3 class="font-bold-upper text-center margin-b-2">
             {{ trans('global.partners_title') }}
-            <small class="sub-titulo margin-t-1">
+            <small class="sub-titulo margin-t-1 ajuste-fonte-avenir-medium">
                 {{ trans('global.partners_subtitle') }}
             </small>
         </h3>
     </div>
     <div class="row margin-b-2">
-        <img src="/img/parceiros.png" alt="{{ trans('global.partners_coverphoto_img_alt') }}" title="{{ trans('global.partners_coverphoto_img_title') }}" class="width-100"></img>
+        <img src="{{ asset('/img/parceiros.png') }}" alt="{{ trans('global.partners_coverphoto_img_alt') }}" title="{{ trans('global.partners_coverphoto_img_title') }}" class="width-100"></img>
     </div>
     <div class="row">
         <div class="col-sm-12 padding-b-4">
             <div class="col-sm-12">
-                <p class="text-justify">
+                <p class="text-justify ajuste-fonte-avenir-light">
                     {{ trans('global.partners_main_text') }}
                     <br/>
                     <br/>
@@ -36,13 +36,19 @@
     <div class="row">
         <div class="col-sm-12 text-center">
             <span class="margin-l-1 margin-r-1 cursor-default">
-                <div class="col-sm-4 spritemap-parceiros sprite-decolar" alt="decolar.com" title="decolar.com"></div>
+                <div class="col-sm-5">
+                  <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-decolar.svg') }}" alt="decolar.com" title="decolar.com" width="100%" height="100%"/>
+                </div>
             </span>
             <span class="margin-l-1 margin-r-1 cursor-default">
-                <div class="col-sm-4 spritemap-parceiros sprite-chefsclub" alt="chefsclub.com.br" title="chefsclub.com.br"></div>
+                <div class="col-sm-3">
+                  <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" width="100%" height="100%"/>
+                </div>
             </span>
             <span class="margin-l-1 margin-r-1 cursor-default">
-                <div class="col-sm-4 spritemap-parceiros sprite-clickbus" alt="clickbus.com.br" title="clickbus.com.br"></div>
+              <div class="col-sm-4">
+                <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-clickbus.svg') }}" alt="clickbus.com.br" title="clickbus.com.br" width="100%" height="100%"/>
+              </div>
             </span>
         </div>
     </div>

@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
             if (keyCode === 13) {
                 // Pega o id do campo que vai ser modificado, origem ou destino
                 var target = $('a.autocomplete-rodoviario.list-focus').parent('.places-list').attr('data-target');
-                console.log(target);
+                //console.log(target);
                 // Muda o valor do input para a string do resultado (friendly)
                 $('#'+target).val($('a.autocomplete-rodoviario.list-focus').find('span').text());
                 // Muda o valor do input hidden para a string da busca (non-friendly)
@@ -222,7 +222,7 @@ var bindClickDetail = function() {
             to_volta = $(this).attr('data-to');
 
             var json_resposta = JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida, 'from':from_ida, 'to':to_ida , 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':from_volta, 'to':to_volta , 'horario_chegada': horario_chegada_volta, 'classe': classe_volta }]);
-            console.log(json_resposta);
+            //console.log(json_resposta);
         ajaxTrip(json_resposta);
     });
 
@@ -272,9 +272,9 @@ var bindaPoltronas = function(){
             $(this).find('#'+loading).show();
         }
 
-        console.log('form validacao poltrona:');
-        console.log('from: ' + $(this).find('input#from').val());
-        console.log('to: ' + $(this).find('input#to').val());
+        //console.log('form validacao poltrona:');
+        //console.log('from: ' + $(this).find('input#from').val());
+        //console.log('to: ' + $(this).find('input#to').val());
 
         var params = {
             "tipo": $(this).find('input#tipo').val(),
@@ -326,8 +326,8 @@ var bindaPoltronas = function(){
                     closeOnConfirm: true,
                 },
                 function() {
-                    console.log('clicou botao swal error data:');
-                    console.log(data_obj);
+                    //console.log('clicou botao swal error data:');
+                    //console.log(data_obj);
                 });
             //se estiver tudo ok.
             } else {
@@ -344,7 +344,7 @@ var bindaPoltronas = function(){
                     modal_volta[0].reset();
                 }
 
-                console.log("retorno do ajaxPoltronas -> sessionId retornado: " + data_obj.data.request.sessionId);
+                //console.log("retorno do ajaxPoltronas -> sessionId retornado: " + data_obj.data.request.sessionId);
                 //garantindo que o input#session-clickbus tera o sessionId
                 //Atualizado
                 setSessionId(data_obj.data.request.sessionId);
@@ -494,29 +494,29 @@ var atualizaValorParcelas = function(){
 
     // Recalcula os valores caso haja desconto
     if(desconto_valor > 0) {
-        // console.log("Valor desconto maior que zero e igual a "+desconto_valor);
+        // //console.log("Valor desconto maior que zero e igual a "+desconto_valor);
         // Calcula o valor original
         var original_cost = Number(total) - Number(fee);
 
-        // console.log("Original Cost: "+original_cost);
-        // console.log("Valor discount antes:"+discount_value);
-        // console.log("Desconto fixo"+desconto_fixo);
+        // //console.log("Original Cost: "+original_cost);
+        // //console.log("Valor discount antes:"+discount_value);
+        // //console.log("Desconto fixo"+desconto_fixo);
         // Calcula o desconto total e recalcula o total_with_discount
         if(desconto_fixo != "true") {
-            // console.log("Desconto variavel (nao fixo)");
+            // //console.log("Desconto variavel (nao fixo)");
             discount_value = discount_value + desconto_valor*total;
             total_with_discount = total_with_discount - desconto_valor*total;
         }else{
-            // console.log("Desconto fixo");
+            // //console.log("Desconto fixo");
             discount_value = discount_value + desconto_valor;
             total_with_discount = total_with_discount - desconto_valor;
         }
-        // console.log("Valor discount:"+discount_value);
-        // console.log("Valor total:"+total_with_discount);
+        // //console.log("Valor discount:"+discount_value);
+        // //console.log("Valor total:"+total_with_discount);
 
         // Recalcula o valor da parcela
         var installment = ((original_cost + Number(fee)) - discount_value) / Number(qtd_parcelas);
-        // console.log("Valor parcela: "+installment);
+        // //console.log("Valor parcela: "+installment);
     }
 
     if(discount_value > 0){
@@ -616,8 +616,8 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
 
-            console.log('buyer pessoa fisica: ');
-            console.log(buyer);
+            //console.log('buyer pessoa fisica: ');
+            //console.log(buyer);
 
         }else if (tipo_cliente == 'pessoa-juridica') {
             var nomeArray = $('input[name="nome-pj"]').val().split(" ");
@@ -636,8 +636,8 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
 
-            console.log('buyer pessoa juridica: ');
-            console.log(buyer);
+            //console.log('buyer pessoa juridica: ');
+            //console.log(buyer);
 
         }
 
@@ -658,8 +658,8 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
 
-            console.log('buyer estrangeiro: ');
-            console.log(buyer);
+            //console.log('buyer estrangeiro: ');
+            //console.log(buyer);
         }
 
        */
@@ -687,14 +687,12 @@ var bindaFormPagamento = function() {
             })
         }
 
-
-
         var params = {
              "meta": {
                  "model": "Retail",
                  "store": "Vivala",
                  "platform": "API",
-                 "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
+                 "api_key": ""
             },
              "request": {
                 "sessionId": $('input#session-clickbus').val(),

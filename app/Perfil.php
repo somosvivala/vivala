@@ -382,7 +382,7 @@ class Perfil extends Model {
             FROM perfil_follow_perfil
             GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
-            LIMIT 30
+            LIMIT 3
             ');
 
         $maisSeguidosByOngs = DB::select('
@@ -390,7 +390,7 @@ class Perfil extends Model {
             FROM ong_follow_perfil
             GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
-            LIMIT 30
+            LIMIT 3
             ');
 
         $maisSeguidosByEmpresas = DB::select('
@@ -398,7 +398,7 @@ class Perfil extends Model {
             FROM empresa_follow_perfil
             GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
-            LIMIT 30
+            LIMIT 3
             ');
 
         //Collections contendo objetos com perfil_seguido_id e quantidade
@@ -415,8 +415,8 @@ class Perfil extends Model {
         $listaTodos = array_merge(array_merge($listaPerfils, $listaOngs), $listaEmpresas);
         $listaIds = array_unique($listaTodos);
         $listaIdSeguidos = Collection::make($entidadeAtiva->following);
-        
-        if (count($listaIdSeguidos)) 
+
+        if (count($listaIdSeguidos))
         {
             //pegando lista de ids para fazer diff e nao recomendar ids que eu ja sigo
             $listaIdSeguidos = $listaIdSeguidos->lists('id');
@@ -596,7 +596,7 @@ class Perfil extends Model {
      * Acessor para as ultimas notificacoes do tipo seguidor
      * @return Collection
      */
-    public function getNotificacoesFollowAttribute() 
+    public function getNotificacoesFollowAttribute()
     {
         return $this->notificacoes()->where('tipo_notificacao', 'seguidor')->latest()->get();
     }
@@ -605,7 +605,7 @@ class Perfil extends Model {
      * Acessor para as ultimas notificacoes do tipo chat
      * @return Collection
      */
-    public function getNotificacoesChatAttribute() 
+    public function getNotificacoesChatAttribute()
     {
         return $this->notificacoes()->where('tipo_notificacao', 'chat')->latest()->get();
     }
@@ -614,7 +614,7 @@ class Perfil extends Model {
      * Acessor para as ultimas notificacoes do tipo 'warning', na verdade todos tipos menos seguidor e chat
      * @return Collection
      */
-    public function getNotificacoesWarningAttribute() 
+    public function getNotificacoesWarningAttribute()
     {
         return $this->notificacoes()->whereNotIn('tipo_notificacao', ['seguidor', 'chat'])->latest()->get();
     }
@@ -658,11 +658,11 @@ class Perfil extends Model {
      * Acessor para o tipo dessa entidade
      * @return String   'ong'|'perfil'|'empresa'
      */
-    public function getTipoAttribute() 
+    public function getTipoAttribute()
     {
         preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
         return strtolower($retorno[1]);
-    }    
+    }
 
 
 }

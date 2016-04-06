@@ -3,7 +3,7 @@
         @if ( Auth::user()->entidadeAtiva == $Post->entidade )
                 {!! Form::open([ 'method' => 'DELETE', 'route' => ['post.destroy', $Post->id] ]) !!}
                     {!! Form::button('<i class="fa fa-trash "></i> ', ['type' => 'submit', 'class' => 'btn-icon', 'onclick' => "return confirm('Tem certeza que deseja remover esse post?');"]) !!}
-            
+
                 {!! Form::close() !!}
         @endif
          </div>
@@ -29,7 +29,7 @@
 	@include('post._barrainfos')
 	<div class="row box-post">
 		<div class="col-sm-6 fundo-cheio">
-			<p class="status text-center">{{$Post->descricao}}</p>
+			<p class="status text-center post-descricao">{{$Post->descricao}}</p>
 		</div>
 		<div class="col-sm-6 fundo-cheio">
 			<div class="comentarios-wrapper">

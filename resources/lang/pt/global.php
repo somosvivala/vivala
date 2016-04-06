@@ -3,7 +3,7 @@ return[
 
 /*
 |--------------------------------------------------------------------------
-| [PT-BR] Tradução GLobal dos Arquivos em PORTUGUÊS
+| [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
 | Status da Tradução:
 |--------------------------------------------------------------------------
 */
@@ -416,6 +416,7 @@ return[
   'lbl_notification_' => 'Notificações',
   'lbl_notification_no' => 'Nenhuma notificação nova.',
   'lbl_ok' => 'Ok',
+  'lbl_our_essence' => 'Entenda nossa essência',
 
 /* Cuidar - Projetos de Impacto */
   'lbl_ong' => 'Projeto de Impacto',
@@ -595,6 +596,7 @@ return[
     'lbl_site' => 'Site',
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
+    'lbl_stay_close' => 'Fique sempre por perto da Vivalá',
     'lbl_step' => 'Passo',
     'lbl_start' => 'Começar',
     'lbl_step_skip' => 'Pular etapa',
@@ -974,7 +976,6 @@ return[
       'quiz_interests_brazilian_regions' => 'Regiões do Brasil que quer conhecer:',
       'quiz_interests_travel_motivations' => 'Quais são suas motivações para viajar?',
       'quiz_interests_what_do_you_like' => 'O que você curte fazer?',
-
     /* Etapa 2 - Foto */
       'quiz_offour' => 'de 4',
       'quiz_profile_customize' => 'Mostra a tua cara!',
@@ -986,10 +987,18 @@ return[
       'quiz_nickname' => 'COMO QUER SER CHAMADO?',
       'quiz_hometown' => 'QUAL SUA CIDADE DE ORIGEM?',
       'quiz_currentcity' => 'QUAL SUA CIDADE ATUAL?',
+      'quiz_birthdate' => 'SEU ANIVERSÁRIO',
       'quiz_shortdesc' => 'Descrição curta',
       'quiz_shortdesc_ph' => 'DESCRIÇÃO CURTA',
       'quiz_longdesc' => 'Descrição longa',
       'quiz_longdesc_ph' => 'DESCRIÇÃO LONGA',
+      'quiz_your_social_profiles' => 'QUAL O SEU PERFIL NESTAS REDES SOCIAIS?',
+      'quiz_be_connected' => 'Queremos estar conectados com você!',
+      'quiz_facebook_URL_ph' => 'WWW.FACEBOOK.COM/',
+      'quiz_instagram_URL_ph' => 'WWW.INSTAGRAM.COM/',
+      'quiz_youtube_URL_ph' => 'WWW.YOUTUBE.COM/',
+      'quiz_twitter_URL_ph' => 'WWW.TWITTER.COM/',
+      'quiz_your_user_pretty_URL_ph' => 'SEU-USUARIO',
     /* Etapa 4 - Seguidores */
       'quiz_interestingpeople' => 'Pessoas interessantes para seguir',
       'quiz_nicesuggests' => 'Sugestões baseadas em seus interesses. Conecte-se!',
@@ -1193,7 +1202,7 @@ return[
     'partners_text_1' => '- Mais de 200.000 hotéis em 8.000 destinos',
     'partners_text_2' => '- 500 empresas de aviação com serviços para todo o mundo',
     'partners_text_3' => '- Mais de 30 empresas de aluguel de carro em 30.000 destinos',
-    'partners_text_4' => '- 1.600 restaurantes em 19 cidades brasileiras',
+    'partners_text_4' => '- 1.700 restaurantes em 19 cidades brasileiras',
     'partners_text_5' => '- 3.000 destinos de ônibus no Brasil operados por 40 empresas rodoviárias',
   //
   /* Contato */
@@ -1223,18 +1232,6 @@ return[
   //
   /* Política de Privacidade */
     'privacypolicy_title' => 'Política de Privacidade',
-  //
-  /* Financiamento Coletivo */
-    'crowdfunding_title' => 'Financiamento Coletivo',
-    'crowdfunding_hi_there' => 'Olá viajante!',
-    'crowdfunding_page_and_plan' => 'Essa página ainda não está disponível. Estamos com o plano pronto,',
-    'crowdfunding_we_need_you' => 'mas precisamos do seu apoio no financiamento coletivo.',
-    'crowdfunding_support_vivala' => 'Apoie a Vivalá através de:',
-    'crowdfunding_a_alt_crowdvivala' => 'Financiamento Coletivo Vivalá',
-    'crowdfunding_a_title_crowdvivala' => 'Ajude a Vivalá! Te agradecemos de <3',
-    'crowdfunding_see_the_screens' => 'Veja as telas que serão entregues com a ajuda do financiamento.',
-    'crowdfunding_all_the_struct' => 'Toda a estrutura da plataforma está sendo criada com a ajuda de vocês',
-    'crowdfunding_donators' => 'Apoiadores',
 
     /* Tela de Aviso mobile */
     'mobile_warning_welcome' => 'Bem vindo à Vivalá!',
@@ -1263,20 +1260,6 @@ return[
     'dummy_travel_5_title' => 'ÔNIBUS',
     'dummy_travel_5' => 'Compre passagens rodoviárias para 3.000 destinos no Brasil, operados por 67 viações. Busque agora!',
 
-
-
-    /*----------------------------------------------------------------------------------
-    / BLACK FRIDAY feature - serão deletados em versões futuras, só pra preencher o beta
-    /---------------------------------------------------------------------------------*/
-    'blackfriday-title' => 'Black Friday',
-    'blackfriday-1' => 'Black Friday: Passagens aéreas para o Rio de Janeiro a partir de R$74,00!',
-    'blackfriday-2' => 'Black Friday: Ida e volta para Maceió a partir de R$438,00 em até 5x!',
-    'blackfriday-3' => 'Black Friday: Passagens aéreas para São Paulo a partir de R$74,00!',
-    'blackfriday-4' => 'Black Friday: Hospedagens em Floripa a partir de R$30,00 a diária!',
-    'blackfriday-5' => 'Black Friday: Hospedagem em Arraial do Cabo a partir de R$98,00 a diária!',
-    'blackfriday-6' => 'Black Friday: Hospedagem em Morro de São Paulo a partir de R$64,00 a diária!',
-    'blackfriday-7' => 'Black Friday: 1 semana em Natal a partir de entrada + 14x de R$75,00!',
-
     /*----------------------------------------------------------------------------------
     / ClickBus
     /---------------------------------------------------------------------------------*/
@@ -1284,5 +1267,12 @@ return[
     'transport_bus' => 'Ônibus',
     'transport_car' => 'Carro',
     'transport_airplane' => 'Avião',
+
+    /*----------------------------------------------------------------------------------
+    / Facebook Open Graph
+    /---------------------------------------------------------------------------------*/
+      // Welcome
+      'fb-og-title_welcome' => 'Vivalá - Junte-se a Vivalá e conecte-se ao Brasil de verdade',
+      'fb-og-description_welcome' => 'Planeje suas experiências, compre transporte, hospedagem e reserva de restaurantes em todo o Brasil. Conheça Projetos de impacto social e transforme o país através de voluntariado.',
 ];
 ?>

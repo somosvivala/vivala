@@ -3,7 +3,7 @@ return[
 
 /*
 |--------------------------------------------------------------------------
-| [PT-BR] Tradução GLobal dos Arquivos em PORTUGUÊS
+| [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
 | Status da Tradução:
 |--------------------------------------------------------------------------
 */
@@ -370,6 +370,7 @@ return[
   'lbl_notification_' => 'Notifications',
   'lbl_notification_no' => 'No new notifications.',
   'lbl_ok' => 'Ok',
+  'lbl_our_essence' => 'Understand our essence',
 
   /* Cuidar - ONGs */
   'lbl_ong' => 'NGO',
@@ -531,6 +532,7 @@ return[
     'lbl_site' => 'Site',
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
+    'lbl_stay_close' => 'Stay always near to the Vivalá',
     'lbl_step' => 'Step',
     'lbl_start' => 'Start',
     'lbl_step_skip' => 'Skip',
@@ -877,7 +879,7 @@ return[
 
   /* View: Quiz */
     /* Etapa 1 - Interesses */
-      'quiz_interests_yours' => 'Tell us your interests!',
+      'quiz_interests_yours' => 'Tell us your interests',
       'quiz_interests_choose' => 'If we get to know you better, we will only recommend you good stuff!',
       'quiz_interests_no' => 'No interest.',
       'quiz_interests_travel_style' => 'What is your travel style?',
@@ -886,22 +888,29 @@ return[
       'quiz_interests_brazilian_regions' => 'Brazilian regions you want to know:',
       'quiz_interests_travel_motivations' => 'What motivates you to travel?',
       'quiz_interests_what_do_you_like' => 'What do you enjoy doing?',
-
     /* Etapa 2 - Foto */
       'quiz_offour' => 'of 4',
       'quiz_profile_customize' => 'Show us a picture of you!',
       'quiz_photo_customize' => 'Choose picture that shows your style and personality.',
       'quiz_fromcomputer' => 'Upload Photo',
     /* Etapa 3 - Pegando alguns dados */
-      'quiz_tell_us_more' => 'Tell us more about you.',
+      'quiz_tell_us_more' => 'Tell us more about you',
       'quiz_get_intimacy' => 'We are curious!',
       'quiz_nickname' => 'HOW CAN WE CALL YOU?',
       'quiz_hometown' => 'WHAT IS YOUR HOMETOWN?',
       'quiz_currentcity' => 'WHAT IS YOUR CURRENT TOWN?',
+      'quiz_birthdate' => 'YOUR BIRTHDATE',
       'quiz_shortdesc' => 'Short Description',
       'quiz_shortdesc_ph' => 'SHORT DESCRIPTION',
       'quiz_longdesc' => 'Long Description',
       'quiz_longdesc_ph' => 'LONG DESCRIPTION',
+      'quiz_your_social_profiles' => 'WHAT\'S YOUR PROFILE IN THESE SOCIAL NETWORKS?',
+      'quiz_be_connected' => 'We want to be connected with you!',
+      'quiz_facebook_URL_ph' => 'WWW.FACEBOOK.COM/',
+      'quiz_instagram_URL_ph' => 'WWW.INSTAGRAM.COM/',
+      'quiz_youtube_URL_ph' => 'WWW.YOUTUBE.COM/',
+      'quiz_twitter_URL_ph' => 'WWW.TWITTER.COM/',
+      'quiz_your_user_pretty_URL_ph' => 'YOUR-USERNAME',
     /* Etapa 4 - Seguidores */
       'quiz_interestingpeople' => 'interesting people to follow',
       'quiz_nicesuggests' => 'Suggestions based on your interests. Connect yourself!',
@@ -1107,7 +1116,7 @@ return[
     'partners_text_1' => '- More than 200.000 hotels at 8.000 destinations',
     'partners_text_2' => '- 500 flight companies with services all over the world',
     'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
-    'partners_text_4' => '- 1.600 restaurants at 19 brazilian cities',
+    'partners_text_4' => '- 1.700 restaurants at 19 brazilian cities',
     'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
 
   /* Contato */
@@ -1201,7 +1210,7 @@ return[
     'dummy_travel_3_title' => 'Packages',
     'dummy_travel_3' => 'Customize your travel package combining air tickets, accommodation and car leasing and save up to 35% of the total value! Search here!',
     'dummy_travel_4_title' => 'Restaurants',
-    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.600 stablishments! See more here',
+    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.700 stablishments! See more here',
     'dummy_travel_5_title' => 'Bus Tickets',
     'dummy_travel_5' => 'Find bus tickets for 3.000 brazilian cities, operated by 67 companies. Search now!',
 
@@ -1226,5 +1235,12 @@ return[
     'transport_bus' => 'Bus',
     'transport_car' => 'Car',
     'transport_airplane' => 'Airplane',
+
+    /*----------------------------------------------------------------------------------
+    / Facebook Open Graph
+    /---------------------------------------------------------------------------------*/
+      // Welcome
+      'fb-og-title_welcome' => 'Vivalá - Join Vivalá and connect yourself to the real Brazil',
+      'fb-og-description_welcome' => 'Plan Your Experiences, buy transportation, lodging and restaurants reservations all over Brazil. Meet projects of social impact and transform the country through volunteering.',
 ];
 ?>

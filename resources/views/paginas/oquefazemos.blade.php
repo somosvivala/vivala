@@ -5,7 +5,7 @@
     <div class="row">
         <h3 class="font-bold-upper text-center margin-b-2">
             {{ trans('global.whatwedo_title') }}
-            <small class="sub-titulo margin-t-1">
+            <small class="sub-titulo margin-t-1 ajuste-fonte-avenir-medium">
                 {{ trans('global.whatwedo_subtitle') }}
             </small>
         </h3>
@@ -20,7 +20,7 @@
                     {{ trans('global.whatwedo_were_global_plataform') }}
                 </h5>
             </div>
-            <p class="text-justify">
+            <p class="text-justify ajuste-fonte-avenir-light">
                 {{ trans('global.whatwedo_main_text') }}
             </p>
         </div>

@@ -32,9 +32,9 @@ elixir(function(mix) {
     ], null, 'resources/assets/css');
 
     mix.scripts([
-        '../../assets/bower/jquery/dist/jquery.js',
+      '../../assets/bower/jquery/dist/jquery.js',
       '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
-        '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
+      '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
       '../../assets/bower/Jcrop/js/jquery.Jcrop.min.js',
       '../../assets/bower/jquery-file-upload/js/vendor/jquery.ui.widget.js',
       '../../assets/bower/jquery-file-upload/js/jquery.fileupload.js',
@@ -48,7 +48,7 @@ elixir(function(mix) {
       '../../assets/bower/sweetalert2/dist/sweetalert2.min.js',
       '../../assets/bower/intro.js/minified/intro.min.js',
       '../../assets/bower/js-cookie/src/js.cookie.js',
-
+      '../../assets/bower/instafeed.js/instafeed.min.js',
       /* Scripts Vivalá */
       '../../assets/js/comentaPost.js',
       '../../assets/js/createpost.js',
@@ -77,7 +77,7 @@ elixir(function(mix) {
       '../../assets/js/ongs.js',
       '../../assets/js/tour.js',
       '../../assets/js/buscaPerfil.js',
+      '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
-      /*'../../assets/js/zoomfinanciamentocoletivo.js'*/
 	], 'public/js/vendor.js');
 });

@@ -7,14 +7,32 @@ use App\RelatorioClickbus;
 
 class ClickBusRepository
 {
-    public static $apiKey = '$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6';
-    public static $url = 'https://api-evaluation.clickbus.com.br/api/v1';
-    public static $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
-    public static $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
-    public static $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
+    /**
+     * Settando propriedades que serao settadas no controller para torna-las dinamicas
+     */
+    public $apiKey;
+    public $url;
+
+    /**
+     * 'Constants'
+     */
+    public $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
+    public $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
+    public $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
+
+
+    /**
+     * Construtor que pega os valores do env.
+     */
+    function __construct()
+    {
+        //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
+        $this->apiKey = env('CLICKBUS_API_KEY');
+        $this->url = env('CLICKBUS_URL');
+    }
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
-    public static function dateFormat($date)
+    public function dateFormat($date)
     {
         $date = explode('/', $date);
 
@@ -22,7 +40,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento da Busca por Ônibus da ClickBus
-    public static function parseData($data)
+    public function parseData($data)
     {
         $output = [];
 
@@ -37,10 +55,10 @@ class ClickBusRepository
                 $part['trip'] = $value->trip_id;
                 $part['busCompany'] = (array) $value->busCompany;
                 $part['availableSeats'] = $value->availableSeats;
-                $part['price'] = self::parcePrice($value->arrival->price);
+                $part['price'] = $this->parcePrice($value->arrival->price);
                 $part['id'] = $value->arrival->waypoint->schedule->id;
 
-                $part['duration'] = self::getDuration(
+                $part['duration'] = $this->getDuration(
                     $value->arrival->waypoint->schedule->date,
                     $value->arrival->waypoint->schedule->time,
                     $value->departure->waypoint->schedule->date,
@@ -66,7 +84,7 @@ class ClickBusRepository
     }
 
     // Função de Tratamento de Erros da ClickBus
-    public static function parseError($data)
+    public function parseError($data)
     {
         if (!isset($data)) {
             $data = new \stdClass();
@@ -96,7 +114,7 @@ class ClickBusRepository
         return $option;
     }
 
-    public static function getPrettyDates($date)
+    public function getPrettyDates($date)
     {
         $date = new Date($date);
         $today = [strtoupper($date->format('d M')), ucfirst($date->format('l')), $date->format('d/m/Y')];
@@ -110,14 +128,14 @@ class ClickBusRepository
         return ['yesterday' => $yesterday, 'today' => $today, 'tomorrow' => $tomorrow];
     }
 
-    private static function parcePrice($price)
+    public function parcePrice($price)
     {
         $price /= 100;
 
         return number_format((float) $price, 2, ',', '');
     }
 
-    private static function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
+    public function getDuration($arrivalDate, $arrivalTime, $departureDate, $departureTime)
     {
         $departure = new Date("{$departureDate} {$departureTime}:00");
         $arrival = new Date("{$arrivalDate} {$arrivalTime}:00");
@@ -132,18 +150,18 @@ class ClickBusRepository
      * @param $idOrder - uuid da ClickBus que identifica a Order
      * @return O objeto "content" da resposta da clickbus
      */
-    public static function getOrder($idOrder)
+    public function getOrder($idOrder)
     {
         $context = [
             'http' => [
                 'ignore_errors' => true,
                 'method' => 'GET',
-                'header' => 'X-API-KEY:'.self::$apiKey,
+                'header' => 'X-API-KEY:'.$this->apiKey,
                 ],
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(self::$url.'/order/'.$idOrder, false, $context);
+        $result = file_get_contents($this->url.'/order/'.$idOrder, false, $context);
         $decoded = json_decode($result);
 
         return $decoded->content;
@@ -155,9 +173,9 @@ class ClickBusRepository
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se o pagamento foi confirmado
      */
-    public static function confirmaPagamentoFinalizado($obj)
+    public function confirmaPagamentoFinalizado($obj)
     {
-        $pagamentoFoiConfirmado = $obj->{"status"} == self::$FLAG_PAGAMENTO_CONFIRMADO;
+        $pagamentoFoiConfirmado = $obj->{"status"} == $this->FLAG_PAGAMENTO_CONFIRMADO;
         return $pagamentoFoiConfirmado;
     }
 
@@ -167,9 +185,9 @@ class ClickBusRepository
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se a passagem foi cancelada
      */
-    public static function confirmaPassagemCancelada($obj)
+    public function confirmaPassagemCancelada($obj)
     {
-        $passagemFoiCancelada = $obj->{"status"} == self::$FLAG_PASSAGEM_CANCELADA;
+        $passagemFoiCancelada = $obj->{"status"} == $this->FLAG_PASSAGEM_CANCELADA;
         return $passagemFoiCancelada;
     }
 
@@ -179,18 +197,18 @@ class ClickBusRepository
      *
      * @param $pagination - identifica a pagina para se começar
      */
-    public static function getOrders($pagination=1)
+    public function getOrders($pagination=1)
     {
         $context = [
             'http' => [
                 'ignore_errors' => true,
                 'method' => 'GET',
-                'header' => 'X-API-KEY:'.self::$apiKey,
+                'header' => 'X-API-KEY:'.$this->apiKey,
                 ],
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents(self::$url.'/order'."?page=".$pagination, false, $context);
+        $result = file_get_contents($this->url.'/order'."?page=".$pagination, false, $context);
 
         $decoded = json_decode($result);
 
@@ -202,14 +220,14 @@ class ClickBusRepository
      *
      * @return boolean - se as compras foram inseridas com sucesso
      */
-    public static function gerarRelatorioCompras()
+    public function gerarRelatorioCompras()
     {
         try {
 
             $existemCompras = true;
             $indice = 0;
             while ($existemCompras) {
-                $orders = self::getOrders(++$indice);
+                $orders = $this->getOrders(++$indice);
                 $existemCompras = (count($orders) > 0);
 
                 //iterando sob as orders para persisti-las

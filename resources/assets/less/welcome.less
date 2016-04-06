@@ -6,7 +6,7 @@
 	min-height: 100%;
 
 	body {
-		background-image: url("../../img/riolaranja.jpg");
+		background-image: url("../../img/welcome/welcome-bg-lg.png");
 		background-position: center center;
 		background-size: cover;
 	}
@@ -37,7 +37,10 @@
 		font-family: @font-family-sans-serif-bold;
 	}
 	label.rememberme {
-		font-family: @font-family-sans-serif;
+		font-family: @font-family-avenir-light;
+	}
+	.forgotpassword a{
+		font-family: @font-family-avenir-light;
 	}
 	.btn-submit {
 		position: absolute;
@@ -133,6 +136,7 @@
 		padding-top: 2em;
 	}
 	.balao-flutuante {
+		font-family: @font-family-avenir-medium;
 		background-color: @cor-quase-transparente;
 		padding: 1em;
 		color:white;
@@ -229,10 +233,17 @@
 			padding: 0.5rem;
 			font-size:1.2rem;
 			width: 100%;
+			&:hover{
+				color: white;
+				background-color: #F16F2B;
+				border: 1px solid #F16F2B;
+			}
 		}
 	}
 	.welcome-privacy{
+		font-family: @font-family-avenir-medium;
 		a {
+		font-family: @font-family-avenir-medium;
 			color: @cor-primaria;
 		}
 	}

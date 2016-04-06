@@ -14,18 +14,10 @@
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
-Route::get('/testeevento', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return event(new ClickBusCompraFinalizada($Compra));
-//    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
-
+// Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
 Route::get('/testeview', function() {
     $compra = CompraClickbus::all()->reverse()->first();
-
-    return ["view" => view('clickbus._success', compact('compra'))->render()];
-
-    //    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+    return view('clickbus._success', compact('compra'));
 });
 
 Route::get('/testeemailpendente', function() {
@@ -41,6 +33,9 @@ Route::get('/testeemailsucesso', function() {
     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
 });
 
+/*
+ * Rotas
+ */
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -189,7 +184,8 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 		}
 	}
 
-	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
+  //substituindo a mensagem anterior pela tela padrao de 404
+  abort(404);
 });
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");

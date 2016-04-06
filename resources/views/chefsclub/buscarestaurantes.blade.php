@@ -12,7 +12,7 @@
         </select>
     </div>
     <div class="select-filtro">
-            <input placeholder="{{ trans('global.date_date') }}" data-provide="datepicker" data-date-format="dd/mm/yyyy" id="dataRestaurante" name="dataRestaurante" class="form-control" type="text">
+            <input placeholder="{{ trans('global.date_date') }}" data-provide="datepicker" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" id="dataRestaurante" name="dataRestaurante" class="form-control" type="text">
     </div>
     <div class="select-filtro">
         <select id="horaRestaurante" class="form-control">
@@ -26,6 +26,7 @@
         <select id="porcentagem-desconto" class="form-control">
             <option value="">{{ trans('global.lbl_discount') }}</option>
             @foreach($descontos as $Desconto)
+            asort($Desconto);
             <option value="{{ $Desconto }}">{{ $Desconto }}</option>
             @endforeach
         </select>

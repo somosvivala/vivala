@@ -2,7 +2,7 @@
 
 @section('content')
 <div id="tour-pilares" class="pilar-viajar">
-    <div class="foto-fundo foto-header" style="background-image:url('/img/queroviajar.png');">
+    <div class="foto-fundo-bottom foto-header" style="background-image:url('/img/queroviajar.png');">
         <h2>{{ trans('global.wannatravel_title') }}</h2>
         <h3>{{ trans('global.wannatravel_subtitle') }}</h3>
         <div class="col-sm-12">
@@ -16,40 +16,42 @@
         </h3>
 
         <ul class="lista-border pesquisa-viajar">
-            <li class="col-sm-3 active tour-pilar-viajar-step3">
-                <a href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
-                    {{ trans('global.wannatravel_trip_restaurants') }}
-                </a>
-            </li>
-            <li class="col-sm-5 tour-pilar-viajar-step4">
-                <a href="#quimera" data-url="https://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
-                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
-                </a>
-            </li>
-            <li class="col-sm-4 tour-pilar-viajar-step5">
+            <li class="col-sm-4 tour-pilar-viajar-step3">
                 {{--
-                <a href="#" class="desativado">
+                <a class="rodoviario" href="#" class="desativado">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
                 --}}
-                <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
+                <a class="rodoviario" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
+                </a>
+            </li>
+
+            <li class="col-sm-5 tour-pilar-viajar-step4">
+                <a class="ativa-modal-quimera" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
+                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
+                </a>
+            </li>
+
+            <li class="col-sm-3 active tour-pilar-viajar-step5">
+                <a class="restaurantes" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
+                    {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
             </li>
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="restaurantes">
+            <div role="tabpanel" class="tab-pane active" id="rodoviario">
+                @include('clickbus.buscar')
+                <div class="lista-rodoviario"></div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane " id="restaurantes">
                 <div class="tour-chefsclub-step1">
                     @include('chefsclub.buscarestaurantes')
                 </div>
                 <div class="lista-restaurantes tour-chefsclub-step2">
                     @include('chefsclub.listarestaurantes')
                 </div>
-            </div>
-
-            <div role="tabpanel" class="tab-pane " id="rodoviario">
-                @include('clickbus.buscar')
-                <div class="lista-rodoviario"></div>
             </div>
         </div>
     </div>

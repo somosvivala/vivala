@@ -92,8 +92,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="col-sm-12 pretty-url-padd-l ph-cor-primaria">
-                        {!! Form::text("url_facebook", null, ['title' => trans('global.ong_facebook_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control input-url-facebook  pretty-url-no-border-l']) !!}
-                        {!! Form::label("url_facebook", trans('global.ong_facebook_URL_ph'), ['class' => 'prettyurl-input label-url label-url-facebook pretty-url-no-border-r']) !!}
+                        {!! Form::text("url_facebook", null, ['title' => trans('global.ong_facebook_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'col-sm-12 form-control input-url-facebook  pretty-url-no-border-l']) !!}
+                        {!! Form::label("url_facebook", trans('global.ong_facebook_URL_ph'), ['class' => 'col-sm-12 prettyurl-input label-url label-url-facebook pretty-url-no-border-r']) !!}
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="col-sm-12 pretty-url-padd-l ph-cor-primaria">
-                        {!! Form::text("url_gplus", null, ['title' => trans('global.ong_googleplus_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control col-sm-12 input-url-gplus pretty-url-no-border-l']) !!}
+                        {!! Form::text("url_gplus", null, ['title' => trans('global.ong_googleplus_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'col-sm-12 form-control input-url-gplus pretty-url-no-border-l']) !!}
                         {!! Form::label("url_gplus", trans('global.ong_googleplus_URL_ph'), ['class' => 'col-sm-12 prettyurl-input label-url label-url-gplus pretty-url-no-border-r']) !!}
                     </div>
                 </div>
@@ -112,8 +112,8 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="col-sm-12 pretty-url-padd-l ph-cor-primaria">
-                        {!! Form::text("url_instagram", null, ['title' => trans('global.ong_instagram_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'form-control col-sm-12 input-url-insta pretty-url-no-border-l',]) !!}
-                        {!! Form::label("url_instagram", trans('global.ong_instagram_URL_ph'), ['class' => 'col -sm-12  prettyurl-input label-url label-url-insta pretty-url-no-border-r']) !!}
+                        {!! Form::text("url_instagram", null, ['title' => trans('global.ong_instagram_URL'), 'placeholder' => trans('global.ong_name_prettyurl'), 'class' => 'col-sm-12 form-control input-url-insta pretty-url-no-border-l',]) !!}
+                        {!! Form::label("url_instagram", trans('global.ong_instagram_URL_ph'), ['class' => 'col-sm-12prettyurl-input label-url label-url-insta pretty-url-no-border-r']) !!}
                     </div>
                 </div>
             </div>
