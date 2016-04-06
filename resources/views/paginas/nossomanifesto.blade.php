@@ -11,7 +11,7 @@
         </h3>
     </div>
     <div class="row margin-b-2">
-        <iframe src="http://www.youtube.com/embed/kaIRH4Uh7nw"></iframe>
+        <iframe src="https://www.youtube.com/embed/kaIRH4Uh7nw"></iframe>
     </div>
     <div class="col-sm-12">
         <div class="col-sm-12 cursor-default">

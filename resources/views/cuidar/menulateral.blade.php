@@ -42,6 +42,7 @@
 		{{-- Instagram --}}
 		<nav class="menu-lateral margin-t-2">
 			<h5 class="text-center texto-maiusculo">{{ trans('global.social_network_instagram') }}</h5>
+			<p class="text-center ajuste-fonte-avenir-light">@somosvivala</p>
 			<div class="row">
 				<div id="instafeed" class="col-sm-12">
 				</div>

@@ -29,7 +29,7 @@
 	{{-- Redes Sociais --}}
 		<h4 class="suave">{{ trans('global.lbl_stay_close') }}</h4>
 		{{-- Facebook --}}
-		<nav class="menu-lateral tour-pilar-conectar-step7 margin-t-2">
+		<nav id="menu-fb" class="menu-lateral tour-pilar-conectar-step7 margin-t-2">
 			<h5 class="text-center texto-maiusculo">{{ trans('global.social_network_facebook') }}</h5>
 			<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 				<div class="fb-xfbml-parse-ignore">
@@ -40,8 +40,10 @@
 			</div>
 		</nav>
 		{{-- Instagram --}}
-		<nav class="menu-lateral margin-t-2">
-			<h5 class="text-center texto-maiusculo">{{ trans('global.social_network_instagram') }}</h5>
+		<nav id="menu-ig" class="menu-lateral margin-t-2 text-center">
+			<h5 class="texto-maiusculo">{{ trans('global.social_network_instagram') }}</h5>
+			<a class="btn-ig-follow" href="https://instagram.com/somosvivala" target="_blank"><span class="btn btn-acao texto-maiusculo">{{ trans('global.lbl_follow') }}</span></a>
+			<p class="text-center ajuste-fonte-avenir-light">@somosvivala</p>
 			<div class="row">
 				<div id="instafeed" class="col-sm-12">
 				</div>
