@@ -9,7 +9,7 @@
 
 <div data-page="{{ $page }}" class="margin-t-2 row detalhes-lista">
     <div class="col-sm-12">
-        <h4 class="font-bold-upper col-sm-8 padding-t-1">
+        <h4 class="font-bold-upper col-sm-9 padding-t-1">
           {{ $restaurantes_total }}
           {{ trans('chefsclub.chefsclub_avaiable-restaurants') }}
           {{ trans('chefsclub.chefsclub_in-partner-with') }}
@@ -132,7 +132,7 @@
                                 <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">
                                   {{ trans('chefsclub.chefsclub_join-the-club') }}
                                   <p><img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" width="100%" height="40px"/></p>
-                                </a>                            
+                                </a>
                             </div>
                             <hr class="margin-b-1 margin-t-2">
                             <div class="row text-center">
