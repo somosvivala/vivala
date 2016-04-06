@@ -102,11 +102,11 @@
 
     {{-- OutdatedBrowser sem ajaxcalls -> https://github.com/burocratik/outdated-browser --}}
     <div id="outdated">
-         <h6>Seu navegador está desatualizado!</h6>
-         <p>Atualize seu navegador para visualizar corretamente a Vivalá.
-             <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/br" target="_blank">Atualizar meu navegador agora </a>
+         <h6>{!! trans('outdatedbrowser.outdated-browser_txt1') !!}</h6>
+         <p>
+             <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/br" target="_blank">{!! trans('outdatedbrowser.outdated-browser_txt2') !!}</a>
          </p>
-         <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="X">&times;</a></p>
+         <p class="last">{!! trans('outdatedbrowser.outdated-browser_txt3') !!}<a href="#" id="btnCloseUpdateBrowser" title="X">&times;</a></p>
     </div>
 
     {{-- Modal Vídeo Manifesto --}}
@@ -187,9 +187,9 @@
             {{-- SVG do mapa WELCOME - Agora com tradução --}}
                 <div id="brasilwelcome">
                     @if (Config::get('app.locale') === 'pt')
-                      <img src="{{ asset('/icons/welcome/mapa-vivala-home-ptbr.svg') }}" width="100%" height="100%" />
+                      <img src="{{ asset('/img/welcome/mapa-vivala-home-ptbr.svg') }}" width="100%" height="100%" />
                     @elseif (Config::get('app.locale') === 'en')
-                      <img src="{{ asset('/icons/welcome/mapa-vivala-home-en.svg') }}" width="100%" height="100%" />
+                      <img src="{{ asset('/img/welcome/mapa-vivala-home-en.svg') }}" width="100%" height="100%" />
                     @endif
                 </div>
                 <div class="balao-flutuante balao-1">

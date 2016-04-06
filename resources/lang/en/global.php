@@ -3,7 +3,7 @@ return[
 
 /*
 |--------------------------------------------------------------------------
-| [PT-BR] Tradução GLobal dos Arquivos em PORTUGUÊS
+| [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
 | Status da Tradução:
 |--------------------------------------------------------------------------
 */
