@@ -195,7 +195,7 @@
                                 <label>{{ trans('global.address_zipcode') }}</label>
                             </div>
                             <div class="col-xs-12">
-                                <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
+                                <input type="text" class="required form-control" name="cep-titular-credito" tabindex="0" required="" placeholder="1701770">
                             </div>
                         </div>
                         @endif
@@ -245,7 +245,7 @@
                                 <label>{{ trans('global.address_zipcode') }}:</label>
                             </div>
                             <div class="col-xs-12">
-                                <input type="text" class="required form-control" name="cep-titular-debito" placeholder="1701770">
+                                <input type="text" class="required form-control" name="cep-titular-debito" tabindex="0" placeholder="1701770">
                             </div>
                         </div>
                         @endif
@@ -298,9 +298,9 @@
                    {{ trans('clickbus.clickbus_client-voucher-insert') }}
                </div>
                <div class="col-xs-6">
-                   <input type="text" class="form-control" id="voucher-str" name="voucher-str" tabindex="-1">
+                   <input type="text" class="form-control" id="voucher-str" name="voucher-str" tabindex="0">
                </div>
-               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto" tabindex="-1">
+               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto" tabindex="0">
                    {{ trans('clickbus.clickbus_client-voucher-use') }}
                </button>
            </div>
@@ -370,6 +370,7 @@
                <input type="hidden" value="{{ $decoded->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
                <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
+               <input type="hidden" id="mp_token" name="mp_token">
 
                <input type="hidden" value="0" name="desconto" id="desconto">
                <input type="hidden" value="0" name="desconto-fixo" id="desconto-fixo">
@@ -392,7 +393,7 @@
                 @endif
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
-               <button type="submit" class=" btn btn-acao" tabindex="-1">
+               <button type="submit" class=" btn btn-acao" tabindex="0">
                    {{ trans('clickbus.clickbus_buy-now') }}
                </button>
            </div>

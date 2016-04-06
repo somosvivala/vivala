@@ -556,23 +556,14 @@ var bindaFormPagamento = function() {
         // Monta o payment de acordo com a forma de pagamento
         // (credito, debito, paypal)
         var forma_pagamento = frm.find('input#forma-pagamento').val(),
-            total = Number(frm.find("input#valor-total-pagamento-passagem").val().replace('.','')),
+            total = Number(frm.find("input#valor-total-pagamento-passagem").val()).toFixed(2).replace('.',''),
             payment = {};
 
         if(forma_pagamento == 'cartao-credito'){
-            payment = {
-                "method": "creditcard",
-                "currency": "BRL",
-                "total": total,
-                "installment": frm.find("input#qtd-parcelas").val(),
-                "meta": {
-                    "card": frm.find("input[name='num-cartao-credito']").val(),
-                    "code": frm.find("input[name='cod-seguranca-credito']").val(),
-                    "name": frm.find("input[name='nome-titular-credito']").val(),
-                    "expiration": frm.find("select[name='ano-validade-credito'] option:selected").val()+'-'+frm.find("select[name='mes-validade-credito'] option:selected").val(),
-                    "zipcode": frm.find("input[name='cep-titular-credito']").val()
-                }
-            }
+            var cardBrand = $("input[name='bandeira-cartao']:checked")[0].id.replace("bandeira-cartao-","");
+
+            payment = getPaymentParaMercadoPago(frm, total, cardBrand);
+
         }else if(forma_pagamento == 'cartao-debito') {
             payment = {
                 "method": "debitcard",
@@ -708,10 +699,16 @@ var bindaFormPagamento = function() {
         //Settando as informacoes extras que serao persistidas no backend
         params.extra = getExtraInfoParaCheckout();
 
-        bindaDocumentTypeSelect($('select#document-type'));
-        generateMercadoPagoToken();
+        if (forma_pagamento == 'cartao-credito') {
+            bindaDocumentTypeSelect($('select#document-type'));
+            generateMercadoPagoToken(params);
 
-        tripBooking(params);
+        //se nao for cartao de credito, chamar tripBooking
+        } else {
+            tripBooking(params);
+        }
+
+
 
     });
 

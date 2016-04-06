@@ -606,31 +606,45 @@ var getObjetoClickBusPayment = function() {
         docNumberFieldId: docNumberID,
         test: true
     });
-
     return clickbus;
-
 }
 
-var generateMercadoPagoToken = function() {
+var generateMercadoPagoToken = function(params) {
 
     //pegando onjeto clickBusPayment já mapeado para os inputs
     var clickbus = getObjetoClickBusPayment();
 
-    console.log('objeto clickbus em generateMercadoPagoToken()');
-    console.log(clickbus);
-
     setTimeout(function() {
         clickbus.generateToken().success(function(response) {
-                console.log(response.token);
-                console.log(response.payment_method);
 
+                //apos gerar o token, inseri-lo na request e enviar para o /booking
+                $('#mp-token').val(response.token);
+                params.request.buyer.payment.meta.token = response.token;
+                tripBooking(params);
+
+                //se falhar mostrar sweetalert
             }).fail(function(errors) {
                 for (var error in errors) {
                     console.log(errors[error].code);
                     console.log(errors[error].description);
                 }
             }).call();
-
-            console.log('after generateMercadoPagoToken');
     }, 2000);
 }
+
+//Monta o paymentObj seguindo o formato necessario
+//para utilizar do MercadoPago
+var getPaymentParaMercadoPago = function(frm, total, cardBrand) {
+    var payment = {
+        "method": "creditcard",
+        "currency": "BRL",
+        "total": total,
+        "installment": frm.find("input#qtd-parcelas").val(),
+        "meta": {
+            "token": frm.find("input[name='mp-token']").val(),
+            "card_brand": cardBrand,
+            "zipcode": frm.find("input[name='cep-titular-credito']").val()
+        }
+    };
+    return payment;
+};

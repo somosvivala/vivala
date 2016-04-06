@@ -412,7 +412,6 @@ class ClickBusController extends Controller {
      */
     public function getBooking(Request $request)
     {
-        dd('chegou booking', $request);
         $request = Input::get('params');
         $sessionId = $request['request']['sessionId'];
 
@@ -442,6 +441,7 @@ class ClickBusController extends Controller {
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
+        dd($decoded, $result);
         //Se for success organiza as informacoes
         //para criar um registro na tabela de compras da clickbus
         if ($success)
@@ -552,6 +552,7 @@ class ClickBusController extends Controller {
                     $redirectUrl = "";
                     break;
             }
+
 
             $retorno = [
                 "success" => true,
