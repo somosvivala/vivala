@@ -44,8 +44,9 @@
 			</div>
 		</nav>
 		{{-- Instagram --}}
-		<nav class="menu-lateral margin-t-2">
-			<h5 class="text-center texto-maiusculo margin-b-0">{{ trans('global.social_network_instagram') }}</h5>
+		<nav id="menu-ig" class="menu-lateral margin-t-2 text-center">
+			<h5 class="texto-maiusculo">{{ trans('global.social_network_instagram') }}</h5>
+			<a class="btn-ig-follow" href="https://instagram.com/somosvivala" target="_blank"><span class="btn btn-acao texto-maiusculo">{{ trans('global.lbl_follow') }}</span></a>
 			<p class="text-center ajuste-fonte-avenir-light">@somosvivala</p>
 			<div class="row">
 				<div id="instafeed" class="col-sm-12">
