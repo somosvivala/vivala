@@ -603,7 +603,7 @@ var getObjetoClickBusPayment = function() {
         expirationYearFieldId: 'ano-validade-credito',
         holderNameFieldId: 'nome-titular-credito',
         docTypeFieldId: 'document-type-mp',
-        docNumberFieldId: docNumberID,
+        docNumberFieldId: 'documento-pf',
         test: true
     });
     return clickbus;

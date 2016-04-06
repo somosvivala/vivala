@@ -441,7 +441,7 @@ class ClickBusController extends Controller {
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
-        dd($decoded, $result);
+        dd($data, $decoded);
         //Se for success organiza as informacoes
         //para criar um registro na tabela de compras da clickbus
         if ($success)
