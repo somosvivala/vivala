@@ -370,7 +370,6 @@
                <input type="hidden" value="{{ $decoded->ticket_amount }}" name="quantidade-poltronas" id="quantidade-poltronas">
                <input type="hidden" value="cartao-credito" name="forma-pagamento" id="forma-pagamento">
                <input type="hidden" value="pessoa-fisica" name="tipo-cliente" id="tipo-cliente">
-               <input type="hidden" id="mp_token" name="mp_token">
 
                <input type="hidden" value="0" name="desconto" id="desconto">
                <input type="hidden" value="0" name="desconto-fixo" id="desconto-fixo">

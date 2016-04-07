@@ -550,6 +550,9 @@ var bindaFormPagamento = function() {
 
     // Binda o submit da compra
     $('#form-pagamento').submit(function (ev) {
+
+        console.log("inside submit formPagamento");
+
         ev.preventDefault();
         var frm = $(this);
 

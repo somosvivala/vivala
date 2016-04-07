@@ -443,6 +443,8 @@ var tripPayment = function(request, frm) {
 };
 
 var tripBooking = function(request) {
+console.log("================== INSIDE tripBooking()");
+console.log(request);
 
     var params = {
         "meta": {
@@ -589,6 +591,7 @@ var getExtraInfoParaCheckout = function() {
 }
 
 var getObjetoClickBusPayment = function() {
+    console.log("============= INSIDE getObjetoClickBusPayment() ");
 
     var clickbus = null;
 
@@ -604,21 +607,26 @@ var getObjetoClickBusPayment = function() {
         holderNameFieldId: 'nome-titular-credito',
         docTypeFieldId: 'document-type-mp',
         docNumberFieldId: 'documento-pf',
+        amountFieldId: 'valor-total-pagamento-passagem',
         test: true
     });
+    console.log('clickbusPayment obj ->');
+    console.log(clickbus);
     return clickbus;
 }
 
 var generateMercadoPagoToken = function(params) {
 
+    console.log("============= INSIDE generateMercadoPagoToken() ");
     //pegando onjeto clickBusPayment já mapeado para os inputs
     var clickbus = getObjetoClickBusPayment();
 
     setTimeout(function() {
         clickbus.generateToken().success(function(response) {
-
+                console.log("============= INSIDE generateToken Callback");
                 //apos gerar o token, inseri-lo na request e enviar para o /booking
                 $('#mp-token').val(response.token);
+                console.log('response:'); console.log(response);
                 params.request.buyer.payment.meta.token = response.token;
                 tripBooking(params);
 
@@ -638,10 +646,10 @@ var getPaymentParaMercadoPago = function(frm, total, cardBrand) {
     var payment = {
         "method": "creditcard",
         "currency": "BRL",
-        "total": total,
+        "total": Number(total),
         "installment": frm.find("input#qtd-parcelas").val(),
         "meta": {
-            "token": frm.find("input[name='mp-token']").val(),
+            "token": '',
             "card_brand": cardBrand,
             "zipcode": frm.find("input[name='cep-titular-credito']").val()
         }

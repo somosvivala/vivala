@@ -420,7 +420,11 @@ class ClickBusController extends Controller {
 
         //convertendo para int o valor em total
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
-        $data = json_encode($request);
+
+        $dataReq = $request;
+        unset($dataReq["extra"]);
+
+        $data = json_encode($dataReq);
 
         //recuperando a sessao com a clickbus para garantir que esta atualizada.
         $sessionId = self::getSession($sessionId);
@@ -441,7 +445,7 @@ class ClickBusController extends Controller {
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
-        dd($data, $decoded);
+        dd($success, $data, $decoded);
         //Se for success organiza as informacoes
         //para criar um registro na tabela de compras da clickbus
         if ($success)
