@@ -2,6 +2,10 @@
 // Pegando a lingua ativa no momento
 var linguaAtiva = $("meta[name=language]").attr("content");
 var lingua = [];
+
+//guardando instancia global do obj que gera o token do Mercado Pago
+var clickBusPaymentObj = null;
+
 switch(linguaAtiva){
   case 'en':
     lingua[0] = 'Ops, something went wrong, do the search again please.',
@@ -437,6 +441,8 @@ var tripPayment = function(request, frm) {
             bindaChangePagamento();
             bindaFormPagamento();
             atualizaValorParcelas();
+            setupClickBusPayment();
+
         }
     });
 
@@ -590,54 +596,52 @@ var getExtraInfoParaCheckout = function() {
     return obj;
 }
 
-var getObjetoClickBusPayment = function() {
-    console.log("============= INSIDE getObjetoClickBusPayment() ");
-
-    var clickbus = null;
+//instancia o obj da clickbus que ira gerar o token do mercado pago
+var setupClickBusPayment = function() {
+    console.log("============= INSIDE setupClickBusPayment() ");
 
     var docNumberID = $('#tabs-pagamento-cliente > div.tab-pane.active.in').find('input#documento-pf').attr('id');
 
     // Here you can find a list of mapped fields for each parameter.
-    clickbus = new ClickBusPayments({
+    clickBusPaymentObj = new ClickBusPayments({
         paymentFormId: 'form-pagamento',
         creditcardFieldId: 'num-cartao-credito',
         securityCodeFieldId: 'cod-seguranca-credito',
         expirationMonthFieldId: 'mes-validade-credito',
         expirationYearFieldId: 'ano-validade-credito',
         holderNameFieldId: 'nome-titular-credito',
-        docTypeFieldId: 'document-type-mp',
+        docTypeFieldId: 'document-type',
         docNumberFieldId: 'documento-pf',
         amountFieldId: 'valor-total-pagamento-passagem',
         test: true
     });
-    console.log('clickbusPayment obj ->');
-    console.log(clickbus);
-    return clickbus;
+
+    console.log('clickBusPaymentObj ->');
+    console.log(clickBusPaymentObj);
 }
 
+//gera o token do mercado pago
 var generateMercadoPagoToken = function(params) {
-
     console.log("============= INSIDE generateMercadoPagoToken() ");
-    //pegando onjeto clickBusPayment já mapeado para os inputs
-    var clickbus = getObjetoClickBusPayment();
 
-    setTimeout(function() {
-        clickbus.generateToken().success(function(response) {
-                console.log("============= INSIDE generateToken Callback");
-                //apos gerar o token, inseri-lo na request e enviar para o /booking
-                $('#mp-token').val(response.token);
-                console.log('response:'); console.log(response);
-                params.request.buyer.payment.meta.token = response.token;
-                tripBooking(params);
+    clickBusPaymentObj.generateToken().success(function(response) {
+            console.log("============= INSIDE generateToken Callback");
 
-                //se falhar mostrar sweetalert
-            }).fail(function(errors) {
-                for (var error in errors) {
-                    console.log(errors[error].code);
-                    console.log(errors[error].description);
-                }
-            }).call();
-    }, 2000);
+            //apos gerar o token, inseri-lo na request e enviar para o /booking
+            console.log('response:'); console.log(response);
+            params.request.buyer.payment.meta.token = response.token;
+            params.request.buyer.payment.installments = Number(params.request.buyer.payment.installments);
+            params.request.buyer.payment.meta.card_brand = response.payment_method;
+            tripBooking(params);
+
+            //se falhar mostrar sweetalert
+        }).fail(function(errors) {
+            console.log("============== deu ruim no generateToken");
+            for (var error in errors) {
+                console.log(errors[error].code);
+                console.log(errors[error].description);
+            }
+        }).call();
 }
 
 //Monta o paymentObj seguindo o formato necessario

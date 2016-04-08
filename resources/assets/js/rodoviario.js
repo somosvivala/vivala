@@ -703,15 +703,12 @@ var bindaFormPagamento = function() {
         params.extra = getExtraInfoParaCheckout();
 
         if (forma_pagamento == 'cartao-credito') {
-            bindaDocumentTypeSelect($('select#document-type'));
             generateMercadoPagoToken(params);
 
-        //se nao for cartao de credito, chamar tripBooking
+            //se nao for cartao de credito, chamar tripBooking
         } else {
             tripBooking(params);
         }
-
-
 
     });
 
