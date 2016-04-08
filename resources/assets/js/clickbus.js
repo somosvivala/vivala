@@ -630,7 +630,7 @@ var generateMercadoPagoToken = function(params) {
             //apos gerar o token, inseri-lo na request e enviar para o /booking
             console.log('response:'); console.log(response);
             params.request.buyer.payment.meta.token = response.token;
-            params.request.buyer.payment.installments = Number(params.request.buyer.payment.installments);
+            params.request.buyer.payment.installment = Number(params.request.buyer.payment.installment);
             params.request.buyer.payment.meta.card_brand = response.payment_method;
             tripBooking(params);
 
