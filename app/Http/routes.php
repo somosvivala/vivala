@@ -82,18 +82,14 @@ Route::controller('lembrancas','Conectar\LembrancasController');
 Route::controller('avaliacoes','Conectar\AvaliacoesController');
 Route::controller('culturabrasileira','Conectar\CulturaBrasileiraController');
 Route::controller('perfilvoluntario','Conectar\PerfilVoluntarioController');
-
 Route::controller('chat','Conectar\ChatController');
-
 Route::controller('interesses','Conectar\InteressesController');
-
 Route::controller('montarviagem','Viajar\MontarViagemController');
 Route::controller('verpacotes','Viajar\VerPacotesController');
 Route::controller('meusfavoritos','Viajar\MeusFavoritosController');
 Route::controller('minhascompras','Viajar\MinhasComprasController');
 Route::controller('meuspontos','Viajar\MeusPontosController');
 Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
-
 Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
 Route::controller('mapadobem','Cuidar\MapadoBemController');
 Route::controller('resultados','Cuidar\ResultadosController');
@@ -102,7 +98,6 @@ Route::get('ongs','OngController@ongs');
 Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::controller('feed','FeedController');
-
 
 Route::controller('home', 'HomeController');
 Route::controller('foto', 'FotoController');
@@ -136,8 +131,6 @@ Route::bind('prettyURL', function($value, $route)
 	$prettyUrl = App\PrettyUrl::all()->where('url', $value)->first();
 	return $prettyUrl;
 });
-
-
 
 /**
  * Aqui ficam as rotas que vao passar por autenticação. (filtro auth)

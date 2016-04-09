@@ -9,14 +9,18 @@
 
 <div data-page="{{ $page }}" class="margin-t-2 row detalhes-lista">
     <div class="col-sm-12">
-        <h4 class="font-bold-upper col-sm-9 padding-t-1">
+        <h4 class="font-bold-upper col-sm-7 col-md-7 col-lg-7 padding-t-1">
           {{ $restaurantes_total }}
           {{ trans('chefsclub.chefsclub_avaiable-restaurants') }}
-          {{ trans('chefsclub.chefsclub_in-partner-with') }}
         </h4>
-        <span class="col-sm-2">
-          <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" width="100%" height="75px"/>
-        </span>
+        <div class="col-5 col-md-5 col-lg-5 text-center">
+          <div class="text-center padding-b-1">
+            <i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}"></i>
+            <span class="ajuste-fonte-avenir-light"> {!! trans('chefsclub.chefsclub_in-partnership_with') !!} </span>
+            <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" height="25px"/>
+          </div>
+          <a class="btn btn-acao" href="https://www.chefsclub.com.br/desconto/vivala" target="_blank">{{ trans('chefsclub.chefsclub_join-the-club') }}</a>
+        </div>
     </div>
     <div class="row margin-t-1 margin-b-1">
         <div class="col-xs-6 text-left">
@@ -39,9 +43,9 @@
                         <div style="background-image:url('{{ $r->imagem }}');" class="foto-restaurante col-sm-4">
                         </div>
                         <div class="col-sm-8">
-                            <h5 class="font-bold-upper">{{ $r->restaurante }}</h5>
-                            <span class="desconto">{{ $r->desconto }}</span>
-                            <span class=""><i class="fa fa-map-marker"></i> {{ $r->endereco }}</span>
+                            <h5 class="font-bold-upper ">{{ $r->restaurante }}</h5>
+                            <span class="desconto ajuste-fonte-avenir-medium">{{ $r->desconto }}</span>
+                            <span class=""><i class="fa fa-map-marker ajuste-fonte-avenir-medium"></i> {{ $r->endereco }}</span>
                             <div class="row maisinfos">
                                 <div class="col-sm-4"><i class="fa fa-male"></i> 1 - <?php preg_match('/[0-9]/',$r->beneficio,$match); echo $match[0]+1; ?></div>
                                 <div class="col-sm-3 text-center"><?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i>"; ?></div>
@@ -121,7 +125,7 @@
                                         <b class="font-bold-upper">
                                             {{ trans('global.lbl_know_more') }}
                                         </b>
-                                        <p>
+                                        <p class="ajuste-fonte-avenir-medium text-justify margin-t-1">
                                             {{ $r->descricao }}
                                         </p>
                                     </div>
@@ -129,10 +133,60 @@
                             </div>
                             <hr class="margin-b-1">
                             <div class="row text-center margin-t-2">
+                              <div class="col-sm-4 col-md-4 col-lg-4 text-left padding-t-2">
+                                <p class="ajuste-fonte-avenir-medium">{!! trans('chefsclub.chefsclub_advantages_text-1') !!}</p>
+                                <p class="ajuste-fonte-avenir-medium">{!! trans('chefsclub.chefsclub_advantages_text-2') !!}</p>
+                                <p class="ajuste-fonte-avenir-medium">{!! trans('chefsclub.chefsclub_advantages_text-3') !!}</p>
+                                <p class="ajuste-fonte-avenir-medium">{!! trans('chefsclub.chefsclub_advantages_text-4') !!}</p>
+                              </div>
+                              <div class="col-sm-4 col-md-4 col-lg-4">
                                 <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">
-                                  {{ trans('chefsclub.chefsclub_join-the-club') }}
-                                  <p><img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" width="100%" height="40px"/></p>
+                                  <p>{{ trans('chefsclub.chefsclub_join-the-club') }}</p>
+                                  <p><img src="{{ asset('/img/icones/vivala-icon-alimentacao.svg') }}"</p>
                                 </a>
+                                <p>
+                                  <i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}"></i>
+                                  <span class="ajuste-fonte-avenir-light"> {!! trans('chefsclub.chefsclub_in-partnership_with') !!} </span>
+                                  <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" height="25px"/>
+                                </p>
+                              </div>
+                              <div class="col-sm-4 col-md-4 col-lg-4 padding-t-1">
+                                <p>
+                                  <p class="margin-b-0">
+                                    <span class="font-bold-upper branco-fundo-laranja">{!! trans('chefsclub.chefsclub_price_title') !!}</span>
+                                  </p>
+                                  <p class="ajuste-fonte-avenir-light">{!! trans('chefsclub.chefsclub_price_subtitle') !!}</p>
+                                  <div class="row">
+                                    <div class="col-sm-6 col-md-6 col-lg-6 text-right">
+                                      <p>
+                                        <p class="ajuste-fonte-avenir-black laranja">
+                                          {!! trans('chefsclub.chefsclub_price_text-1-1') !!}
+                                        </p>
+                                        <p class="ajuste-fonte-avenir-black laranja">
+                                          {!! trans('chefsclub.chefsclub_price_text-1-2') !!}
+                                        </p>
+                                      </p>
+                                    </div>
+                                    <div class="col-sm-6 col-md-6 col-lg-6 text-left">
+                                      <p class="font-bold-upper laranja chefsclub-price">
+                                        {!! trans('chefsclub.chefsclub_price_text-2') !!}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <p class="ajuste-fonte-avenir-medium">
+                                    {!! trans('chefsclub.chefsclub_price_text-3') !!}
+                                    <span class="font-bold-upper laranja">
+                                      {!! trans('chefsclub.chefsclub_price_text-3-1') !!}
+                                    </span>
+                                  </p>
+                                  <p class="ajuste-fonte-avenir-medium">
+                                    {!! trans('chefsclub.chefsclub_price_text-4') !!}
+                                    <span class="font-bold-upper laranja">
+                                      {!! trans('chefsclub.chefsclub_price_text-4-1') !!}
+                                    </span>
+                                  </p>
+                                </p>
+                              </div>
                             </div>
                             <hr class="margin-b-1 margin-t-2">
                             <div class="row text-center">

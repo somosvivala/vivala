@@ -26,7 +26,7 @@ function igScript(options){
     accessToken: options.igATkn,
     target:'instafeed',
     sortBy:'most-recent',
-    limit:'8',
+    limit:'6',
     resolution: 'standard_resolution',
     template:
     '<a class="col-sm-6 margin-b-1" href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" width="{{width}}" height="100%" image-orientation="{{orientation}}" /></a>',

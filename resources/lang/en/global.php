@@ -43,7 +43,7 @@ return[
   'lbl_address_edit' => 'Edit Address',
   'lbl_address_edit_' => 'Edit Address',
   'lbl_address_editing' => 'Editing Address',
-  'lbl_adsress_editing_' => 'Editing Address',
+  'lbl_address_editing_' => 'Editing Address',
   'lbl_address_manage' => 'Manage Address',
   'lbl_address_manage_' => 'Manage Address',
   'lbl_address_managing' => 'Managing Address',
@@ -128,6 +128,7 @@ return[
   'lbl_album_update' => 'Update Album',
   'lbl_album_update_' => 'Update Albums',
   'lbl_album_without_photo' => 'Album without photos.',
+  'lbl_all_rights_reserved' => 'All rights reserved',
 
   // Aplicativo
   'lbl_app' => 'App',
@@ -777,7 +778,7 @@ return[
     'wannatravel_title' => 'Meet Brazil',
     'wannatravel_subtitle' => 'Choose your transport and accommodation, book restaurants and search for entertainment',
     'wannatravel_trip_already_know' => 'Already know where to go?',
-    'wannatravel_trip_setup' => 'Build your trip!',
+    'wannatravel_trip_setup' => 'Build your trip',
     'wannatravel_trip_restaurants' => 'Restaurants',
     'wannatravel_trip_hotels_flights_packs' => 'Accommodation, Flights & Packages',
     'wannatravel_trip_bus_drive' => 'Bus road tickets',
@@ -1235,6 +1236,8 @@ return[
     'transport_bus' => 'Bus',
     'transport_car' => 'Car',
     'transport_airplane' => 'Airplane',
+    'transport_oh_the_sky' => 'Oh, the sky!',
+    'transport_lets_ride' => 'Let\'s ride!',
 
     /*----------------------------------------------------------------------------------
     / Facebook Open Graph

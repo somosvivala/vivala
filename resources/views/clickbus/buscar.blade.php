@@ -1,7 +1,8 @@
-<h3 class="font-bold-upper text-center">{{ trans('global.transport_transport-title') }} - {{ trans('global.transport_bus') }}
-    <small class="sub-titulo"></small>
-</h3>
-
+<div class="margin-b-2">
+  <h3 class="font-bold-upper text-center">{{ trans('global.transport_transport-title') }} - {{ trans('global.transport_bus') }}
+    <small class="sub-titulo">{{ trans('global.transport_lets_ride') }}</small>
+  </h3>
+</div>
 <input type="hidden" name="_token" value="{{\Session::token() }}">
 
 <div class="row" id="rodoviario-filtros">

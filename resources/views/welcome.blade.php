@@ -103,9 +103,7 @@
     {{-- OutdatedBrowser sem ajaxcalls -> https://github.com/burocratik/outdated-browser --}}
     <div id="outdated">
          <h6>{!! trans('outdatedbrowser.outdated-browser_txt1') !!}</h6>
-         <p>
-             <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/br" target="_blank">{!! trans('outdatedbrowser.outdated-browser_txt2') !!}</a>
-         </p>
+         <p><a id="btnUpdateBrowser" href="http://outdatedbrowser.com/br" target="_blank">{!! trans('outdatedbrowser.outdated-browser_txt2') !!}</a></p>
          <p class="last">{!! trans('outdatedbrowser.outdated-browser_txt3') !!}<a href="#" id="btnCloseUpdateBrowser" title="X">&times;</a></p>
     </div>
 
@@ -181,7 +179,7 @@
     </div>
 
     {{-- Body da Welcome --}}
-    <div class="welcome-content col-sm-12 hidden-xs">
+    <div class="welcome-content hidden-xs margin-t-2">
         <div class="container">
             <div class="col-sm-7 welcome-left hidden-xs">
             {{-- SVG do mapa WELCOME - Agora com tradução --}}

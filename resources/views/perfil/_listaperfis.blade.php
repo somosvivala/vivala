@@ -8,8 +8,7 @@
   </a>
   <?php $dataOrder++; ?>
 @endforeach
-{{--
-<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-l-no padding-r-no">
+
+<!--div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-l-no padding-r-no">
   <a href="{{ url("/perfil/buscatodos") }}" class="btn btn-block btn-acao click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
-</div>
---}}
+</div-->

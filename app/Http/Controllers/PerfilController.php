@@ -4,7 +4,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CropPhotoRequest;
 use App\Http\Requests\EditarPerfilRequest;
-
 use App\User;
 use Auth;
 use Session;
@@ -18,14 +17,12 @@ use App\Perfil;
 
 class PerfilController extends ConectarController {
 
-
 	/**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
+	public function __construct() {
 		parent::__construct();
 		$this->middleware('auth');
 	}
@@ -35,8 +32,7 @@ class PerfilController extends ConectarController {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
+	public function index() {
 		$user = Auth::user();
 		$perfil = $user->entidadeAtiva;
 		$follow = $perfil->followPerfil;
@@ -58,8 +54,7 @@ class PerfilController extends ConectarController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id=0)
-	{
+	public function edit($id=0) {
 		$user = Auth::user();
 		$perfil = $user->perfil;
     	        $foto = $perfil->getAvatarUrl();
@@ -83,8 +78,7 @@ class PerfilController extends ConectarController {
 	 * @param  EditarPerfilRequest    $request  Request do form
 	 * @return 									Redireciona para home
 	 */
-	public function update($id, EditarPerfilRequest $request)
-	{
+	public function update($id, EditarPerfilRequest $request) {
 
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
@@ -140,8 +134,7 @@ class PerfilController extends ConectarController {
 	 * @param   String		$prettyUrl       se acessado diretamente, passa a suposta prettyUrl
 	 * @return  View       	Perfil do usuario em questao
 	 */
-	public function showUserProfile($prettyUrl = null)
-	{
+	public function showUserProfile($prettyUrl = null) {
 		//se nao veio nada na sessao e nem na url
 		if(!$prettyUrl && !Session::has('perfil')) {
 			App::abort(404);
@@ -255,8 +248,7 @@ class PerfilController extends ConectarController {
 	 * @param  Request $request [string]
 	 * @return [array]
 	 */
-	public function getQueryList()
-	{
+	public function getQueryList() {
 		$query = Input::get('query');
 
 		$perfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
@@ -269,6 +261,15 @@ class PerfilController extends ConectarController {
 		}
 
 		return view('perfil._listaperfis', compact('perfils'));
+	}
+
+	/**
+	 * retorna toda a lista de perfis
+	 * @param  Request $request [string]
+	 * @return [array]
+	 */
+	public function setAllQueryList() {
+		return view('perfil._listabuscaperfis');
 	}
 
 }

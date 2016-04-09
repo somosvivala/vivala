@@ -1,4 +1,8 @@
-<h4 class="suave tour-pilar-conectar-step5">{{ trans('global.lbl_traveller_suggest_') }}</h4>
+<div class="margin-b-2">
+	<h4 class="suave tour-pilar-conectar-step5">
+		{{ trans('global.lbl_traveller_suggest_') }}
+	</h4>
+</div>
 
 <ul class="sugestoes sugestoes-viajantes">
 	@if(isset($sugestoesViajantes))
@@ -31,7 +35,10 @@
 
 @if (Auth::user()->entidadeAtiva->tipo == 'ong')
 @else
-<div class="row text-center">
-	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao click-img-no-border">{{ trans('global.lbl_seemore') }}</a>
-</div><br>
+<div class="row text-center margin-b-2">
+	<a href="{{ url('sugestoesviajantes') }}" class="btn btn-acao btn-viajantes-fix click-img-no-border">
+		{{ trans('global.lbl_seemore') }}
+	</a>
+</div>
+<br/>
 @endif

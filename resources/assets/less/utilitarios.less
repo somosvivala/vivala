@@ -501,17 +501,10 @@ div.foto-fundo-bottom {
 	}
 }
 
-// Subtitulo
-h3.subtitulo {
-	text-transform: uppercase;
-	color: @cor-txt;
-	font-family: @font-family-sans-serif-bold;
-}
-
 //subtitulo da home de cuidar e viajar
 h3 .sub-titulo {
 	text-transform: none;
-	font-family: @font-family-sans-serif;
+	font-family: @font-family-avenir-medium;
         width:100%;
         position:relative;
         display:block;
@@ -616,6 +609,22 @@ span.laranja,
 	&:hover {
     color: @cor-primaria;
   }
+}
+.laranja-fundo-branco {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  color: @cor-primaria;
+  background-color: @cor-txt-suave;
+  &:hover {
+    color: @cor-txt-suave;
+    background-color: @cor-primaria;
+  }
+}
+.branco-fundo-laranja {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  color: @cor-txt-suave;
+  background-color: @cor-primaria;
+  padding: 3px 4px;
 }
 .cursor-default{
   cursor: default;
@@ -922,7 +931,6 @@ form.cropfoto-ajax, form.form-ajax {
   background-position: 0 -880px;
   margin: auto;
 }
-
 // TEXTOS
 .texto-maiusculo{
   text-transform: uppercase!important;
@@ -945,13 +953,50 @@ form.cropfoto-ajax, form.form-ajax {
 .texto-riscado{
   text-decoration: overline!important;
 }
-
-.ajuste-fonte-avenir-medium{
-  font-family: @font-family-avenir-medium!important;
+// Ajuste de Fontes
+.ajuste-fonte-avenir-black{
+  font-family:@font-family-avenir-black!important;
+}
+.ajuste-fonte-avenir-black-oblique{
+  font-family:@font-family-avenir-blackoblique!important;
+}
+.ajuste-fonte-avenir-book{
+  font-family:@font-family-avenir-book!important;
+}
+.ajuste-fonte-avenir-book-oblique{
+  font-family:@font-family-avenir-bookoblique!important;
+}
+.ajuste-font-avenir-heavy{
+  font-family:@font-family-avenir-heavy!important;
+}
+.ajuste-font-avenir-heavy-oblique{
+  font-family:@font-family-avenir-heavyoblique!important;
 }
 .ajuste-fonte-avenir-light{
   font-family: @font-family-avenir-light!important;
 }
+.ajuste-fonte-avenir-light-oblique{
+  font-family: @font-family-avenir-lightoblique!important;
+}
+.ajuste-fonte-avenir-medium{
+  font-family: @font-family-avenir-medium!important;
+}
+.ajuste-fonte-avenir-medium-oblique{
+  font-family: @font-family-avenir-mediumoblique!important;
+}
+.ajuste-fonte-avenir-oblique{
+  font-family:@font-family-avenir-oblique!important;
+}
+.ajuste-fonte-avenir-roman{
+  font-family:@font-family-avenir-roman!important;
+}
 input#busca-geral-menu {
     .ajuste-fonte-avenir-medium;
+}
+select.form-control-fix{
+  color:#999!important;
+}
+.chefsclub-price{
+  padding-top:10px;
+  font-size: 2em;
 }
