@@ -260,7 +260,7 @@ class PerfilController extends ConectarController {
 			$perfil->photo = $perfil->getAvatarUrl();
 		}
 
-		return view('perfil._listaperfis', compact('perfils'));
+		return view('perfil._listaperfis', compact('perfils', 'query'));
 	}
 
 	/**
@@ -268,17 +268,14 @@ class PerfilController extends ConectarController {
 	 * @param  Request $request [string]
 	 * @return [array]
 	 */
-	public function getAllQueryList() {
-	//public function getAllQueryList( $query ) {
-		//  $allPerfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
-		//  ->get();
-	  //
-		//  foreach ($allPerfils as &$perfil) {
-		//  	$perfil->photo = $perfil->getAvatarUrl();
-		//  }
-		//return view('perfil._listabuscaperfis', compact('allPerfils'));
+	public function getAllQueryList($query) {
+		  $allPerfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
+		  ->simplepaginate(18);
 
-		return view('perfil._listabuscaperfis');
+		  foreach ($allPerfils as &$perfil) {
+		  	$perfil->photo = $perfil->getAvatarUrl();
+		  }
+		return view('perfil._listabuscaperfis', compact('query', 'allPerfils'));
 	}
 
 }

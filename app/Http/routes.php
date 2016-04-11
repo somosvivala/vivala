@@ -13,6 +13,12 @@
 
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
+use App\User;
+
+// Rotas de TESTE paginação
+Route::get('simplepagination', function() {
+   dd( $someUsers = User::simplePaginate(15));
+ });
 
 // Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
 Route::get('/testeview', function() {
@@ -32,8 +38,6 @@ Route::get('/testeemailsucesso', function() {
     $Compra = CompraClickbus::all()->reverse()->first();
     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
 });
-
-Route::resource('perfil/buscatodos', 'PerfilController@getAllQueryList');
 
 /*
  * Rotas
@@ -140,6 +144,7 @@ Route::bind('prettyURL', function($value, $route)
 Route::group(['before' => 'auth'], function() {
 	Route::get('perfil', 'PerfilController@index');
 	Route::get('perfil/queryList', 'PerfilController@getQueryList');
+  Route::get('perfil/busca/{query}', 'PerfilController@getAllQueryList');
 	Route::get('editarPerfil', 'PerfilController@edit');
 	Route::post('editarPerfil/{id}', 'PerfilController@update');
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');

@@ -45,7 +45,7 @@
                         <div class="col-sm-8">
                             <h5 class="font-bold-upper ">{{ $r->restaurante }}</h5>
                             <span class="desconto ajuste-fonte-avenir-medium">{{ $r->desconto }}</span>
-                            <span class=""><i class="fa fa-map-marker ajuste-fonte-avenir-medium"></i> {{ $r->endereco }}</span>
+                            <span class="ajuste-fonte-avenir-medium"><i class="fa fa-map-marker"></i> {{ $r->endereco }}</span>
                             <div class="row maisinfos">
                                 <div class="col-sm-4"><i class="fa fa-male"></i> 1 - <?php preg_match('/[0-9]/',$r->beneficio,$match); echo $match[0]+1; ?></div>
                                 <div class="col-sm-3 text-center"><?php for($i=0;$i<$r->preco;$i++) echo "<i class='fa fa-usd'></i>"; ?></div>

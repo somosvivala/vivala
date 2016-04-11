@@ -147,12 +147,11 @@ return[
   'lbl_album_not_created' => 'Nenhum álbum criado.',
   'lbl_album_not_founded' => 'Nenhum álbum encontrado.',
   'lbl_album_without_photo' => 'Álbum sem fotos.',
-  //
   'lbl_album_name' => 'Nome do Álbum',
   'lbl_album_date' => 'Data do Álbum',
   'lbl_album_description' => 'Descrição do Álbum',
-  //
   'lbl_all_rights_reserved' => 'Todos os direitos reservados',
+  'lbl_all_results_by' => 'Todos os resultados por:',
 
 /* Aplicativo */
   'lbl_app' => 'Aplicativo',
@@ -340,6 +339,7 @@ return[
   'lbl_feedback' => 'Feedback',
   'lbl_feedback_give_yours' => 'Dê seu feedback',
   'lbl_filter_by' => 'Filtrar por:',
+  'lbl_find_all_people_here' => 'Encontre toda galera aqui!',
   'lbl_follow' => 'Seguir',
   'lbl_followed_by' => 'Seguido por',
   'lbl_followed_by_none' => 'Ninguém',
@@ -536,6 +536,7 @@ return[
     'lbl_previous' => 'Anterior',
     'lbl_preview' => 'Prévia',
     'lbl_prettyURL' => 'Sua Endereço',
+    'lbl_profile_all_search' => 'Busca dos Perfis',
     'lbl_profile' => 'Perfil',
     'lbl_profile_' => 'Perfis',
     'lbl_profile_delete' => 'Deletar Perfil',

@@ -129,11 +129,9 @@ return[
   'lbl_album_update_' => 'Update Albums',
   'lbl_album_without_photo' => 'Album without photos.',
   'lbl_all_rights_reserved' => 'All rights reserved',
-
-  // Aplicativo
+  'lbl_all_results_by' => 'All results by:'
   'lbl_app' => 'App',
   'lbl_app_' => 'Apps',
-
   'lbl_back' => 'back',
   'lbl_best_rank' => 'Best ranked',
   'lbl_birthday' => 'Date of birth',
@@ -294,6 +292,7 @@ return[
   'lbl_feedback' => 'Feedback',
   'lbl_feedback_give_yours' => 'Give your feedback',
   'lbl_filter_by' => 'Sort by:',
+  'lbl_find_all_people_here' => 'Find all people here!',
   'lbl_follow' => 'Follow',
   'lbl_followed_by' => 'Followed by',
   'lbl_followed_by_none' => 'None',
@@ -474,6 +473,7 @@ return[
   'lbl_previous' => 'Previous',
   'lbl_preview' => 'Preview',
   'lbl_prettyURL' => 'Your URL',
+  'lbl_profile_all_search' => 'Profiles Search',
   'lbl_profile' => 'Profile',
   'lbl_profile_' => 'Profile',
   'lbl_profile_delete' => 'Delete Profile',
