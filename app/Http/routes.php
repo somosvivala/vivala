@@ -13,9 +13,9 @@
 
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
-use App\User;
 
 // Rotas de TESTE paginação
+use App\User;
 Route::get('simplepagination', function() {
    dd( $someUsers = User::simplePaginate(15));
  });
