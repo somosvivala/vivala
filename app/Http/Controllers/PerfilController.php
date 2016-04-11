@@ -264,11 +264,20 @@ class PerfilController extends ConectarController {
 	}
 
 	/**
-	 * retorna toda a lista de perfis
+	 * retorna TODA a lista de perfis
 	 * @param  Request $request [string]
 	 * @return [array]
 	 */
-	public function setAllQueryList() {
+	public function getAllQueryList() {
+	//public function getAllQueryList( $query ) {
+		//  $allPerfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
+		//  ->get();
+	  //
+		//  foreach ($allPerfils as &$perfil) {
+		//  	$perfil->photo = $perfil->getAvatarUrl();
+		//  }
+		//return view('perfil._listabuscaperfis', compact('allPerfils'));
+
 		return view('perfil._listabuscaperfis');
 	}
 

@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
           }
       }
   };
-  
+
   var buscaPerfil = (function() {
       var ajaxCall,
 
@@ -107,4 +107,5 @@ jQuery(document).ready(function($) {
           };
           init();
   }());
+  
 });

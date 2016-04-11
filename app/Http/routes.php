@@ -33,6 +33,8 @@ Route::get('/testeemailsucesso', function() {
     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
 });
 
+Route::resource('perfil/buscatodos', 'PerfilController@getAllQueryList');
+
 /*
  * Rotas
  */
