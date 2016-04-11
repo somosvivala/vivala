@@ -43,7 +43,7 @@ return[
   'lbl_address_edit' => 'Edit Address',
   'lbl_address_edit_' => 'Edit Address',
   'lbl_address_editing' => 'Editing Address',
-  'lbl_adsress_editing_' => 'Editing Address',
+  'lbl_address_editing_' => 'Editing Address',
   'lbl_address_manage' => 'Manage Address',
   'lbl_address_manage_' => 'Manage Address',
   'lbl_address_managing' => 'Managing Address',
@@ -128,11 +128,10 @@ return[
   'lbl_album_update' => 'Update Album',
   'lbl_album_update_' => 'Update Albums',
   'lbl_album_without_photo' => 'Album without photos.',
-
-  // Aplicativo
+  'lbl_all_rights_reserved' => 'All rights reserved',
+  'lbl_all_results_by' => 'All results by:'
   'lbl_app' => 'App',
   'lbl_app_' => 'Apps',
-
   'lbl_back' => 'back',
   'lbl_best_rank' => 'Best ranked',
   'lbl_birthday' => 'Date of birth',
@@ -293,6 +292,7 @@ return[
   'lbl_feedback' => 'Feedback',
   'lbl_feedback_give_yours' => 'Give your feedback',
   'lbl_filter_by' => 'Sort by:',
+  'lbl_find_all_people_here' => 'Find all people here!',
   'lbl_follow' => 'Follow',
   'lbl_followed_by' => 'Followed by',
   'lbl_followed_by_none' => 'None',
@@ -473,6 +473,7 @@ return[
   'lbl_previous' => 'Previous',
   'lbl_preview' => 'Preview',
   'lbl_prettyURL' => 'Your URL',
+  'lbl_profile_all_search' => 'Profiles Search',
   'lbl_profile' => 'Profile',
   'lbl_profile_' => 'Profile',
   'lbl_profile_delete' => 'Delete Profile',
@@ -777,7 +778,7 @@ return[
     'wannatravel_title' => 'Meet Brazil',
     'wannatravel_subtitle' => 'Choose your transport and accommodation, book restaurants and search for entertainment',
     'wannatravel_trip_already_know' => 'Already know where to go?',
-    'wannatravel_trip_setup' => 'Build your trip!',
+    'wannatravel_trip_setup' => 'Build your trip',
     'wannatravel_trip_restaurants' => 'Restaurants',
     'wannatravel_trip_hotels_flights_packs' => 'Accommodation, Flights & Packages',
     'wannatravel_trip_bus_drive' => 'Bus road tickets',
@@ -1235,6 +1236,8 @@ return[
     'transport_bus' => 'Bus',
     'transport_car' => 'Car',
     'transport_airplane' => 'Airplane',
+    'transport_oh_the_sky' => 'Oh, the sky!',
+    'transport_lets_ride' => 'Let\'s ride!',
 
     /*----------------------------------------------------------------------------------
     / Facebook Open Graph

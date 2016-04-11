@@ -4,7 +4,6 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CropPhotoRequest;
 use App\Http\Requests\EditarPerfilRequest;
-
 use App\User;
 use Auth;
 use Session;
@@ -18,14 +17,12 @@ use App\Perfil;
 
 class PerfilController extends ConectarController {
 
-
 	/**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
-	public function __construct()
-	{
+	public function __construct() {
 		parent::__construct();
 		$this->middleware('auth');
 	}
@@ -35,8 +32,7 @@ class PerfilController extends ConectarController {
 	 *
 	 * @return Response
 	 */
-	public function index()
-	{
+	public function index() {
 		$user = Auth::user();
 		$perfil = $user->entidadeAtiva;
 		$follow = $perfil->followPerfil;
@@ -45,7 +41,7 @@ class PerfilController extends ConectarController {
 
 		//Nao adicionando entidadeAtiva como sendo perfil, ou seja, mostrando o perfil
 		//da entidadeAtiva logada.
-		
+
 		// Session::put('entidadeAtiva_id', $perfil->id);
     	// Session::put('entidadeAtiva_tipo', 'perfil');
 
@@ -58,8 +54,7 @@ class PerfilController extends ConectarController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id=0)
-	{
+	public function edit($id=0) {
 		$user = Auth::user();
 		$perfil = $user->perfil;
     	        $foto = $perfil->getAvatarUrl();
@@ -83,8 +78,7 @@ class PerfilController extends ConectarController {
 	 * @param  EditarPerfilRequest    $request  Request do form
 	 * @return 									Redireciona para home
 	 */
-	public function update($id, EditarPerfilRequest $request)
-	{
+	public function update($id, EditarPerfilRequest $request) {
 
 		//Salva dados referentes ao User
 		$user = User::findOrFail($id);
@@ -100,7 +94,7 @@ class PerfilController extends ConectarController {
 		$perfil->apelido = $request->input('apelido');
 		$perfil->descricao_curta = $request->input('descricao_curta');
 		$perfil->descricao_longa = $request->input('descricao_longa');
-                        
+
 		$perfil->prettyUrl()->update([
 			'url' => $request->input('url'),
 			'tipo' => 'usuario'
@@ -140,8 +134,7 @@ class PerfilController extends ConectarController {
 	 * @param   String		$prettyUrl       se acessado diretamente, passa a suposta prettyUrl
 	 * @return  View       	Perfil do usuario em questao
 	 */
-	public function showUserProfile($prettyUrl = null)
-	{
+	public function showUserProfile($prettyUrl = null) {
 		//se nao veio nada na sessao e nem na url
 		if(!$prettyUrl && !Session::has('perfil')) {
 			App::abort(404);
@@ -251,24 +244,38 @@ class PerfilController extends ConectarController {
 	}
 
 	/**
-	 * retorna lista de perfis 
+	 * retorna lista de perfis
 	 * @param  Request $request [string]
-	 * @return [array]           
+	 * @return [array]
 	 */
-	public function getQueryList()
-	{
+	public function getQueryList() {
 		$query = Input::get('query');
 
 		$perfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
-			->orWhere('apelido', 'ilike', "%{$query}%")
-			->limit(10)
+			//->orWhere('apelido', 'ilike', "%{$query}%")
+			->take(10)->limit(10)
 			->get();
 
 		foreach ($perfils as &$perfil) {
 			$perfil->photo = $perfil->getAvatarUrl();
 		}
 
-		return view('perfil._listaperfis', compact('perfils'));
+		return view('perfil._listaperfis', compact('perfils', 'query'));
+	}
+
+	/**
+	 * retorna TODA a lista de perfis
+	 * @param  Request $request [string]
+	 * @return [array]
+	 */
+	public function getAllQueryList($query) {
+		  $allPerfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
+		  ->simplepaginate(18);
+
+		  foreach ($allPerfils as &$perfil) {
+		  	$perfil->photo = $perfil->getAvatarUrl();
+		  }
+		return view('perfil._listabuscaperfis', compact('query', 'allPerfils'));
 	}
 
 }

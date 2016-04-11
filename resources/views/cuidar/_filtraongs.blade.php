@@ -3,22 +3,22 @@
     <div class="col-sm-3 col-sm-offset-1">
 
         @if(isset($cidades))
-        {!! Form::select("filtro_cidade", $cidades, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city'), 'class' => 'form-control'], ['id' => 'cidade_select']) !!}
+        {!! Form::select("filtro_cidade", $cidades, ['title' => trans('global.ong_address_city'), 'placeholder' => trans('global.address_city')], ['id' => 'cidade_select', 'class' => 'form-control form-control-fix']) !!}
         @endif
     </div>
 
     {{-- Adicionando div do filtro de Categorias das ongs --}}
     <div class="col-sm-3">
         @if(isset($categorias))
-        {!! Form::select("filtro_categoria", $categorias, ['title' => trans('global.lbl_category'), 'placeholder' => trans('global.lbl_category'), 'class' => 'form-control'], ['id' => 'categoria_select']) !!}
+        {!! Form::select("filtro_categoria", $categorias, ['title' => trans('global.lbl_category'), 'placeholder' => trans('global.lbl_category')], ['id' => 'categoria_select', 'class' => 'form-control form-control-fix']) !!}
          @endif
    </div>
- 
+
     <div class="col-sm-3">
-        {!! Form::text("nome", "", ['title' => trans('global.ong_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control']) !!}
+        {!! Form::text("nome", "", ['title' => trans('global.ong_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control form-control-fix']) !!}
     </div>
 
-    {!! Form::submit(trans('global.lbl_searchr'), ['class' => 'btn col-sm-2']) !!}
+    {!! Form::submit(trans('global.lbl_searchr'), ['class' => 'btn btn-acao col-sm-2']) !!}
 </div>
 {!! Form::close() !!}
 

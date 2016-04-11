@@ -147,10 +147,11 @@ return[
   'lbl_album_not_created' => 'Nenhum álbum criado.',
   'lbl_album_not_founded' => 'Nenhum álbum encontrado.',
   'lbl_album_without_photo' => 'Álbum sem fotos.',
-  //
   'lbl_album_name' => 'Nome do Álbum',
   'lbl_album_date' => 'Data do Álbum',
   'lbl_album_description' => 'Descrição do Álbum',
+  'lbl_all_rights_reserved' => 'Todos os direitos reservados',
+  'lbl_all_results_by' => 'Todos os resultados por:',
 
 /* Aplicativo */
   'lbl_app' => 'Aplicativo',
@@ -338,6 +339,7 @@ return[
   'lbl_feedback' => 'Feedback',
   'lbl_feedback_give_yours' => 'Dê seu feedback',
   'lbl_filter_by' => 'Filtrar por:',
+  'lbl_find_all_people_here' => 'Encontre toda galera aqui!',
   'lbl_follow' => 'Seguir',
   'lbl_followed_by' => 'Seguido por',
   'lbl_followed_by_none' => 'Ninguém',
@@ -534,6 +536,7 @@ return[
     'lbl_previous' => 'Anterior',
     'lbl_preview' => 'Prévia',
     'lbl_prettyURL' => 'Sua Endereço',
+    'lbl_profile_all_search' => 'Busca dos Perfis',
     'lbl_profile' => 'Perfil',
     'lbl_profile_' => 'Perfis',
     'lbl_profile_delete' => 'Deletar Perfil',
@@ -858,7 +861,7 @@ return[
     'wannatravel_title' => 'Conheça o Brasil',
     'wannatravel_subtitle' => 'Encontre transporte, hospedagem e restaurantes para todo tipo de experiência!',
     'wannatravel_trip_already_know' => 'Já sabe para onde ir?',
-    'wannatravel_trip_setup' => 'Monte sua viagem!',
+    'wannatravel_trip_setup' => 'Monte sua viagem',
     'wannatravel_trip_restaurants' => 'Restaurantes',
     'wannatravel_trip_hotels_flights_packs' => 'Vôos, Hospedagem e Pacotes',
     'wannatravel_trip_bus_drive' => 'Passagens rodoviárias',
@@ -1249,15 +1252,15 @@ return[
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
-    'dummy_travel_1_title' => 'PASSAGENS AÉREAS',
+    'dummy_travel_1_title' => 'Passagens Aéreas',
     'dummy_travel_1' => 'Encontre passagens aéreas para 143 países do mundo com mais de 500 companhias aéreas! Busque agora!',
-    'dummy_travel_2_title' => 'HOTÉIS',
+    'dummy_travel_2_title' => 'Hospedagem',
     'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência! São mais de 200.000 possibilidades em de 164 países. Clique aqui para buscar!',
-    'dummy_travel_3_title' => 'PACOTES',
+    'dummy_travel_3_title' => 'Pacotes',
     'dummy_travel_3' => 'Personalize seu pacote combinando voos, hospedagem e aluguel de carros em uma compra única e economize até 35% em sua viagem! Faça sua busca aqui',
-    'dummy_travel_4_title' => 'ALIMENTAÇÃO',
+    'dummy_travel_4_title' => 'Restaurantes',
     'dummy_travel_4' => 'Descubra excelentes restaurantes pelo Brasil e tenha até 50% de desconto em 1.700 estabelecimentos. Veja mais aqui!',
-    'dummy_travel_5_title' => 'ÔNIBUS',
+    'dummy_travel_5_title' => 'Ônibus',
     'dummy_travel_5' => 'Compre passagens rodoviárias para 3.000 destinos no Brasil, operados por 67 viações. Busque agora!',
 
     /*----------------------------------------------------------------------------------
@@ -1267,6 +1270,8 @@ return[
     'transport_bus' => 'Ônibus',
     'transport_car' => 'Carro',
     'transport_airplane' => 'Avião',
+    'transport_oh_the_sky' => 'Ah, o céu!',
+    'transport_lets_ride' => 'Pé na estrada!',
 
     /*----------------------------------------------------------------------------------
     / Facebook Open Graph

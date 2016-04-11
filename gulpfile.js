@@ -26,9 +26,9 @@ elixir(function(mix) {
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
         '../../assets/bower/sweetalert2/dist/sweetalert2.css',
         '../../assets/bower/intro.js/introjs.css',
-        'app.css',
-        'font-awesome.min.css',
         '../../assets/bower/bootstrap-social/bootstrap-social.css',
+        'font-awesome.min.css',
+        'app.css',
     ], null, 'resources/assets/css');
 
     mix.scripts([
@@ -76,6 +76,7 @@ elixir(function(mix) {
       '../../assets/js/formContato.js',
       '../../assets/js/ongs.js',
       '../../assets/js/tour.js',
+      '../../assets/js/buscaPerfil.js',
       '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
 	], 'public/js/vendor.js');

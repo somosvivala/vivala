@@ -11,5 +11,5 @@
 </div>
 
 <div class="form-group">
-	{!! Form::submit( $btnSubmit, ['class' => 'form-control btn btn-primary btn-acao']) !!}
+	{!! Form::submit( $btnSubmit, ['class' => 'form-control btn btn-acao']) !!}
 </div>

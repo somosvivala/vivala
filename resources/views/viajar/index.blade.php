@@ -12,10 +12,11 @@
 
     <div class="fundo-cheio col-sm-12 tour-pilar-viajar-step2">
         <h3 class="font-bold-upper text-center">
+          {{ trans('global.wannatravel_trip_already_know') }}
             <small class="sub-titulo">{{ trans('global.wannatravel_trip_setup') }}</small>
         </h3>
 
-        <ul class="lista-border pesquisa-viajar">
+        <ul class="lista-border pesquisa-viajar margin-t-2 margin-b-3">
             <li class="col-sm-4 tour-pilar-viajar-step3">
                 {{--
                 <a class="rodoviario" href="#" class="desativado">
