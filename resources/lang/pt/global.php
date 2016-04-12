@@ -1017,8 +1017,8 @@ return[
       'welcome_img_alt_vivalameet' => 'Conheça o Brasil!',
       'welcome_img_t_vivalaregister' => 'Se junte a Vivalá e conecte-se ao Brasil de verdade.',
       'welcome_floatingballon1' => 'Planeje suas experiências e compre transporte, hospedagem e reserva de restaurantes em todo o Brasil.',
-      'welcome_floatingballon2' => 'Conheça Projetos de impacto de social e transforme o país através de voluntariado.',
-      'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar no Brasil.',
+      'welcome_floatingballon2' => 'Conheça projetos de impacto de social e transforme o país através de voluntariado.',
+      'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar.',
 
     /* Política de Dados */
       'welcome_aboutprivacy1' => 'Ao clicar em confirmar, você concorda com nossos',

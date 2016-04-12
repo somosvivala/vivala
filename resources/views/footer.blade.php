@@ -36,11 +36,10 @@
         </div>
         --}}
         <div class="col-sm-12 col-md-12 col-lg-12 text-center margin-t-1">
-            <span><i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}" title="{{ trans('global.lbl_vivala') }}"></i>
-            <span> . </span>
+            <span><i class="fa fa-copyright"></i> </span>
+            <span><?php echo date("Y"); ?> </span>
+            <span><i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}" title="{{ trans('global.lbl_vivala') }}"></i> </span>
             <span class="ajuste-fonte-avenir-medium">{!! trans('global.lbl_all_rights_reserved') !!}</span>
-            <span> - </span>
-            <span><?php echo date("Y"); ?>.</span>
         </div>
     </div>
 </div>

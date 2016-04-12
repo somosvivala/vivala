@@ -8,27 +8,22 @@
 @endif
 
 <div data-page="{{ $page }}" class="margin-t-2 row detalhes-lista">
-    <div class="col-sm-12">
-        <h4 class="font-bold-upper col-sm-7 col-md-7 col-lg-7 padding-t-1">
-          {{ $restaurantes_total }}
-          {{ trans('chefsclub.chefsclub_avaiable-restaurants') }}
-        </h4>
-        <div class="col-5 col-md-5 col-lg-5 text-center">
-          <div class="text-center padding-b-1">
-            <i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}"></i>
-            <span class="ajuste-fonte-avenir-light"> {!! trans('chefsclub.chefsclub_in-partnership_with') !!} </span>
-            <img src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" height="25px"/>
-          </div>
-          <a class="btn btn-acao" href="https://www.chefsclub.com.br/desconto/vivala" target="_blank">{{ trans('chefsclub.chefsclub_join-the-club') }}</a>
-        </div>
-    </div>
+
     <div class="row margin-t-1 margin-b-1">
-        <div class="col-xs-6 text-left">
+        <div class="col-sm-2 text-left">
             <button type="button" class="btn prev-restaurantes" {{ $page > 1 ? "": "disabled" }}>
                 <i class="fa fa-arrow-left"></i>
             </button>
         </div>
-        <div class="col-xs-6 text-right">
+        <div class="col-sm-8 text-center">
+            <h4 class="font-bold-upper col-sm-12 col-md-12 col-lg-12">
+              {{-- TODO: CRAWLAR A CHEFSCLUB NOVAMENTE E ATUALIZAR ESTE VALOR
+                $restaurantes_total
+              --}}
+              {{1700}} {{ trans('chefsclub.chefsclub_avaiable-restaurants') }}
+            </h4>
+        </div>
+        <div class="col-xs-2 text-right">
             <button type="button" class="btn next-restaurantes" {{ $page * 10 >= $restaurantes_total ? "disabled" : "" }}>
                 <i class="fa fa-arrow-right"></i>
             </button>
