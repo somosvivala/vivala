@@ -270,7 +270,7 @@ class PerfilController extends ConectarController {
 	 */
 	public function getAllQueryList($query) {
 		  $allPerfils = Perfil::where('nome_completo', 'ilike', "%{$query}%")
-		  ->simplepaginate(18);
+		  ->paginate(18);
 
 		  foreach ($allPerfils as &$perfil) {
 		  	$perfil->photo = $perfil->getAvatarUrl();

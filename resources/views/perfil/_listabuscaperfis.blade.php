@@ -34,8 +34,22 @@
                   <div class="round foto quadrado7em">
                       <div class="avatar-img" style="background-image:url('{{ $perfil->photo }}')"></div>
                   </div>
-                  <p class="ajuste-fonte-avenir-medium text-center margin-t-1">
-                    {{ $perfil['nome_completo'] }}
+                  <p class="ajuste-fonte-avenir-medium text-left margin-t-1">
+                    {{ trans('global.lbl_name') }}: {{ $perfil['nome_completo'] }}
+                    <br/>
+                    {{ trans('global.lbl_nickname') }}:
+                    @if($perfil['apelido'] !== NULL)
+                      {{ $perfil['apelido'] }}
+                    @else
+                      {{ trans('global.lbl_n-a') }}
+                    @endif
+                    <br/>
+                    {{ trans('global.address_city') }}:
+                    @if($perfil['cidade_atual'] !== NULL)
+                      {{ $perfil['cidade_atual'] }}
+                    @else
+                      {{ trans('global.lbl_n-a') }}
+                    @endif
                   </p>
                 </a>
 
@@ -46,10 +60,29 @@
           </div>
 
           <div class="row margin-b-2">
+            @if($allPerfils->currentPage() !== 1)
+            <a href="/perfil/busca/{{$query}}?page={{$allPerfils->currentPage()-1}}" class="btn btn-acao">
+              {{ trans('global.lbl_previous') }}
+            </a>
+            @endif
             @if($allPerfils->hasMorePages())
-              <a href="{{ $allPerfils->nextPageUrl() }}" class="btn btn-acao">Mais Perfis</a>
+              <a href="/perfil/busca/{{$query}}?page={{$allPerfils->currentPage()+1}}" class="btn btn-acao">
+                {{ trans('global.lbl_next') }}
+              </a>
             @endif
           </div>
+
+          <div class="row margin-b-2">
+            <?php $numeroDePaginas = (floor($allPerfils->total()/$allPerfils->perPage())+1); ?>
+            @for($i=1; $i<=$numeroDePaginas; $i++)
+              @if($i === $allPerfils->currentPage())
+                <span class="laranja">{{ $i }}</span>
+              @else
+                <span>{{ $i }}</span>
+              @endif
+            @endfor
+          </div>
+
         </div>
       </nav>
 
