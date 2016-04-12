@@ -243,6 +243,17 @@
                       </td>
                     </tr>
 
+                      {{-- NUMERO DO PEDIDO NA CLICKBUS (alinhar com os caras, acho que isso não se manterá na versão final, ver se a API retorna este numero) --}}
+                      <tr>
+                        <td>
+                          <p style="font-size:14px;font-family:Arial" align="center">
+                            {!! trans('clickbus.clickbus_email-request-number') !!}
+                            <span style="font-weight:800!important;color:#FF3B10!important">{{ $Compra->localizer }}</span>.
+                            <br/>
+                          </p>
+                        </td>
+                      </tr>
+
                   </tbody>
                 </table>
                 @endforeach
