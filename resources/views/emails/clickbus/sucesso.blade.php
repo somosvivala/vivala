@@ -339,7 +339,7 @@
                         {{-- DÉBITO --}}
                         {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
 
-                      @elseif($Compra->payment_method === "payment.creditcard")
+                      @elseif($Compra->payment_method === "payment.creditcard" || $Compra->payment_method === "payment.creditcard.mercadopago")
                         {{-- CRÉDITO --}}
                         {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
 

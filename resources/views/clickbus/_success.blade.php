@@ -38,7 +38,7 @@
               </strong>
             </span>
 
-          @elseif($compra->payment_method === "payment.creditcard")
+          @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
             {{-- CRÉDITO --}}
             <span class="texto-negrito texto-maiusculo">
               <strong>
