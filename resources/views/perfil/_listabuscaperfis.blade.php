@@ -76,9 +76,9 @@
             <?php $numeroDePaginas = (floor($allPerfils->total()/$allPerfils->perPage())+1); ?>
             @for($i=1; $i<=$numeroDePaginas; $i++)
               @if($i === $allPerfils->currentPage())
-                <span class="laranja">{{ $i }}</span>
+                <span><a href="/perfil/busca/{{$query}}?page={{$i}}" class="laranja">{{ $i }}</a></span>
               @else
-                <span>{{ $i }}</span>
+                <span><a href="/perfil/busca/{{$query}}?page={{$i}}">{{ $i }}</a></span>
               @endif
             @endfor
           </div>

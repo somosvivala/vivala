@@ -1,10 +1,28 @@
 <div class="margin-b-2">
-  <h3 class="font-bold-upper text-center">{{ trans('global.lbl_restaurant_') }}
-    <small class="sub-titulo">{{ trans('global.wannatravel_chefsclub_desserts_and_goodies') }}</small>
+  <h3 class="font-bold-upper text-center">
+    {{ trans('global.lbl_restaurant_') }}
+    <small class="sub-titulo">
+      {{ trans('global.wannatravel_chefsclub_desserts_and_goodies') }}
+    </small>
   </h3>
 </div>
+
+<div class="col-sm-12 col-md-12 col-lg-12 text-center margin-b-3">
+  <div class="row padding-t-1 margin-b-1 restaurantes-vivala-iconesparceria">
+    <span><i class="icon-vivala-logo vi fa-4x laranja restaurantes-vivala-vivalalogo" alt="{{ trans('global.lbl_vivala') }}"></i></span>
+    <span class="ajuste-fonte-avenir-light restaurantes-vivala-texto"> {!! trans('chefsclub.chefsclub_in-partnership_with') !!} </span>
+    <span><img clas="restaurantes-vivala-chefsclublogo" src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" height="40px"/></span>
+  </div>
+  <div class="row">
+    <a class="btn btn-acao btn-restaurantes" href="https://www.chefsclub.com.br/desconto/vivala" target="_blank">
+    {{ trans('chefsclub.chefsclub_join-the-club') }}
+    </a>
+  </div>
+</div>
+
 <input type="hidden" name="_token" value="{{\Session::token() }}">
-<div class="row" id="chefsclub-filtros">
+<div class="row margin-t-1" id="chefsclub-filtros">
+  <div class="col-sm-12 col-md-12 col-lg-12 text-center">
     <div class="select-filtro">
         <select id="tipo-cozinha" class="form-control form-control-fix">
             <option value="">{{ trans('chefsclub.chefsclub_kitchen-type') }}</option>
@@ -49,4 +67,5 @@
             @endforeach
         </select>
     </div>
+  </div>
 </div>
