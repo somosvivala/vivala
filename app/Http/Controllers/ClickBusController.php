@@ -420,6 +420,7 @@ class ClickBusController extends Controller {
 
         //convertendo para int o valor em total
         $request['request']["buyer"]["payment"]["total"] = (int) $request['request']["buyer"]["payment"]["total"];
+        $request['request']["buyer"]["payment"]["installment"] = (int) $request['request']["buyer"]["payment"]["installment"];
 
         $dataReq = $request;
         unset($dataReq["extra"]);
@@ -445,7 +446,6 @@ class ClickBusController extends Controller {
         $decoded = json_decode($result);
         $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
-        dd($success, $data, $decoded);
         //Se for success organiza as informacoes
         //para criar um registro na tabela de compras da clickbus
         if ($success)
@@ -579,6 +579,9 @@ class ClickBusController extends Controller {
 
         //Se a compra tiver falhado
         } else {
+
+        dd($success, $data, $decoded);
+
             $retorno = $this->clickBusRepository->parseError($decoded);
         }
 

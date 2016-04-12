@@ -461,7 +461,6 @@ console.log(request);
         },
         "request": {
             "sessionId": getSessionId(),
-            "ip": "",
             "buyer": {
                 "locale": "pt_BR",
                 "gender": "M",
@@ -613,7 +612,7 @@ var setupClickBusPayment = function() {
         docTypeFieldId: 'document-type',
         docNumberFieldId: 'documento-pf',
         amountFieldId: 'valor-total-pagamento-passagem',
-        test: true
+        test: false
     });
 
     console.log('clickBusPaymentObj ->');
