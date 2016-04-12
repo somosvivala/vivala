@@ -129,7 +129,7 @@ return[
   'lbl_album_update_' => 'Update Albums',
   'lbl_album_without_photo' => 'Album without photos.',
   'lbl_all_rights_reserved' => 'All rights reserved',
-  'lbl_all_results_by' => 'All results by:'
+  'lbl_all_results_by' => 'All results by:',
   'lbl_app' => 'App',
   'lbl_app_' => 'Apps',
   'lbl_back' => 'back',
@@ -362,6 +362,7 @@ return[
   'lbl_message_' => 'Messages',
   'lbl_message_no' => 'No new messages.',
   'lbl_message_send' => 'Send Message',
+  'lbl_n-a' => 'Not Avaiable',
   'lbl_next' => 'Next',
   'lbl_name' => 'Name',
   'lbl_name_last' => 'Last name',

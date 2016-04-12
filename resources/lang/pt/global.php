@@ -142,7 +142,6 @@ return[
   'lbl_album_submit_' => 'Enviar Álbuns',
   'lbl_album_update' => 'Atualizar Álbum',
   'lbl_album_update_' => 'Atualizar Álbuns',
-
   'lbl_album_none' => 'Nenhum álbum.',
   'lbl_album_not_created' => 'Nenhum álbum criado.',
   'lbl_album_not_founded' => 'Nenhum álbum encontrado.',
@@ -152,8 +151,6 @@ return[
   'lbl_album_description' => 'Descrição do Álbum',
   'lbl_all_rights_reserved' => 'Todos os direitos reservados',
   'lbl_all_results_by' => 'Todos os resultados por:',
-
-/* Aplicativo */
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
   'lbl_back' => 'Voltar',
@@ -410,6 +407,7 @@ return[
   'lbl_message_' => 'Mensagens',
   'lbl_message_no' => 'Nenhuma mensagem nova.',
   'lbl_message_send' => 'Enviar Mensagem',
+  'lbl_n-a' => 'Não Disponível',
   'lbl_next' => 'Próximo',
   'lbl_name' => 'Nome',
   'lbl_name_last' => 'Sobrenome',
