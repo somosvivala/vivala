@@ -545,6 +545,7 @@ class ClickBusController extends Controller {
 
             $compra->push();
 
+            $redirectUrl = "";
             //switch para formatar a $redirectUrl corretamente (caso debitcard)
             switch ($paymentMethod)
             {
@@ -553,10 +554,8 @@ class ClickBusController extends Controller {
                     break;
 
                 case "payment.creditcard" :
-                    $redirectUrl = "";
                     break;
             }
-
 
             $retorno = [
                 "success" => true,
@@ -579,9 +578,6 @@ class ClickBusController extends Controller {
 
         //Se a compra tiver falhado
         } else {
-
-        dd($success, $data, $decoded);
-
             $retorno = $this->clickBusRepository->parseError($decoded);
         }
 
