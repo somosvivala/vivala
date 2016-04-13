@@ -4,6 +4,7 @@ namespace app\Repositories;
 
 use Jenssegers\Date\Date;
 use App\RelatorioClickbus;
+use App\CompraClickbus;
 
 class ClickBusRepository
 {
