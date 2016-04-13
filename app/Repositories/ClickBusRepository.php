@@ -218,10 +218,10 @@ class ClickBusRepository
 
      /*
      * Metodo para cancelar uma compra
-     * @param $compra - Uma instancia de CompraClickbus
+     * @param $compra - Uma instancia de RelatorioClickbus
      *
      */
-    public function cancelaCompra(CompraClickbus $compra)
+    public function cancelaCompra(RelatorioClickbus $compra)
     {
         $localizer = $compra->localizer;
 
@@ -243,13 +243,17 @@ class ClickBusRepository
 
         $context = stream_context_create($context);
         $result = file_get_contents($this->url.'/booking', false, $context);
-
         $decoded = json_decode($result);
 
+        $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
 
-        dd($data, $decoded, $result);
+        if ($success) {
+            echo "Compra de UUID -> " . $compra->clickbus_order_id . " Cancelada!\n";
+        } else {
+            echo "Compra de UUID -> " . $compra->clickbus_order_id . " Erro no Cancelamento! Code: ". $decoded->{"error"}->{"code"} . "\n";
+        }
 
-        return $decoded->{"items"};
+        return $success;
     }
 
     /**
@@ -299,6 +303,23 @@ class ClickBusRepository
                         'quantidade_bilhetes' => $quantidade_bilhetes
                     ]);
                 }
+            }
+        } catch (Exception $ex) {
+            echo 'Ocorreu um problema durante a geracao dos relatorios: ';
+            var_dump($ex);
+        }
+    }
+
+    /*
+     * Metodo para cancelar todas as compras
+     * itera sob os relatorios, cancelando-os
+     */
+    public function cancelaTodasCompras()
+    {
+        try {
+            $Compras = RelatorioClickbus::all();
+            foreach($Compras as $compra) {
+                $this->cancelaCompra($compra);
             }
         } catch (Exception $ex) {
             echo 'Ocorreu um problema durante a geracao dos relatorios: ';
