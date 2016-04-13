@@ -325,7 +325,7 @@
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
                       {!! trans('clickbus.clickbus_email-sigla-real') !!}
-                      {{ $Compra->total }}
+                      {{ number_format($Compra->total, 2, '.', '') }}
                     </td>
                   </tr>
 

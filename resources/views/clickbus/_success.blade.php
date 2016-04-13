@@ -26,7 +26,7 @@
           </span>
           <span class="negrito">
             <strong>
-              {{ $compra->total }}
+              {{ number_format($compra->total, 2, '.', '') }}
             </strong>
           </span>
             {!! trans('clickbus.clickbus_success-with') !!}
@@ -120,7 +120,7 @@
                   <td>
                     <span>
                       <strong>
-                        {{ $compra->total }}
+                        {{ number_format($compra->total, 2, '.', '') }}
                       </strong>
                     </span>
                   </td>
