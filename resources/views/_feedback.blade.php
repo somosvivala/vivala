@@ -19,7 +19,7 @@
             </div>
             <div class="modal-footer">
                 {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao pull-right']) !!}
-                <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1" style="display:none"></i>
+                <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 laranja" style="display:none"></i>
                 {!! Form::close() !!}
              </div>
         </div>

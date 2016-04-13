@@ -117,7 +117,7 @@
                         <div class="modal-title padding-t-1 padding-b-1">
                           <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="35px" />
                         </div>
-                        <iframe width="100%" height="350" src=""></iframe>
+                        <iframe width="100%" height="350" src="" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
                     </div>
                 </div>
             </div>
@@ -979,10 +979,10 @@
                 {!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
 
                 <div class="welcome-cadastrar row">
-                    <div class="col-md-6">
+                    <div class="col-md-5">
                         <h3>{{ trans('global.lbl_signup1') }}</h3>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-md-offset-1">
                         <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook">
                             <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
                         </a>
