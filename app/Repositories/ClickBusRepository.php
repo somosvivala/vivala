@@ -215,6 +215,39 @@ class ClickBusRepository
         return $decoded->{"items"};
     }
 
+     /*
+     * Metodo para cancelar uma compra
+     * @param $compra - Uma instancia de CompraClickbus
+     *
+     */
+    public function cancelaCompra(CompraClickbus $compra)
+    {
+        $localizer = $compra->localizer;
+
+
+        $request = new \stdClass();
+        $request->localizer = $localizer;
+        $request->status = $this->FLAG_PASSAGEM_CANCELADA;
+
+        $data = json_encode($request);
+        dd($request, $data);
+
+        $context = [
+            'http' => [
+                'ignore_errors' => true,
+                'method' => 'GET',
+                'header' => 'X-API-KEY:'.$this->apiKey,
+                ],
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents($this->url.'/order'."?page=".$pagination, false, $context);
+
+        $decoded = json_decode($result);
+
+        return $decoded->{"items"};
+    }
+
     /**
      * Metodo para alimentar a tabela de relatórios com todas as compras realizadas
      *
