@@ -607,7 +607,7 @@ var setupClickBusPayment = function() {
         docTypeFieldId: 'valor-documento-type-mp',
         docNumberFieldId: 'valor-documento-mp',
         amountFieldId: 'valor-total-pagamento-passagem',
-        test: false
+        test: true
     });
 
     console.log('clickBusPaymentObj ->');
