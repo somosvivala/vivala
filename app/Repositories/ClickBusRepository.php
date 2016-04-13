@@ -225,26 +225,27 @@ class ClickBusRepository
     {
         $localizer = $compra->localizer;
 
-
-        $request = new \stdClass();
-        $request->localizer = $localizer;
-        $request->status = $this->FLAG_PASSAGEM_CANCELADA;
-
-        $data = json_encode($request);
-        dd($request, $data);
+        $data = new \stdClass();
+        $data->request =  new \stdClass();
+        $data->request->localizer = $localizer;
+        $data->request->status = $this->FLAG_PASSAGEM_CANCELADA;
+        $data = json_encode($data);
 
         $context = [
             'http' => [
                 'ignore_errors' => true,
-                'method' => 'GET',
-                'header' => 'X-API-KEY:'.$this->apiKey,
+                'method' => 'PUT',
+                'content' => $data
                 ],
         ];
 
         $context = stream_context_create($context);
-        $result = file_get_contents($this->url.'/order'."?page=".$pagination, false, $context);
+        $result = file_get_contents($this->url.'/booking', false, $context);
 
         $decoded = json_decode($result);
+
+
+        dd($data, $decoded, $result);
 
         return $decoded->{"items"};
     }
