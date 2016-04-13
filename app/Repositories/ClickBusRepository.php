@@ -235,6 +235,8 @@ class ClickBusRepository
             'http' => [
                 'ignore_errors' => true,
                 'method' => 'PUT',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen($data)."\r\n",
                 'content' => $data
                 ],
         ];
