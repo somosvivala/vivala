@@ -250,7 +250,7 @@ class ClickBusRepository
         if ($success) {
             echo "Compra de UUID -> " . $compra->clickbus_order_id . " Cancelada!\n";
         } else {
-            echo "Compra de UUID -> " . $compra->clickbus_order_id . " Erro no Cancelamento! Code: ". $decoded->{"error"}->{"code"} . "\n";
+            echo "Compra de UUID -> " . $compra->clickbus_order_id . " Erro no Cancelamento! Code: ". $decoded->{"error"}[0]->{"code"} . "\n";
         }
 
         return $success;
