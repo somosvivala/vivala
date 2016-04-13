@@ -706,6 +706,13 @@ var bindaFormPagamento = function() {
         params.extra = getExtraInfoParaCheckout();
 
         if (forma_pagamento == 'cartao-credito') {
+
+            //se estiver sem valor no campo para instanciar o MP, entao settar valor.
+            if (! $('#valor-documento-mp').val() ) {
+                $('#valor-documento-mp').val($('#documento-pf').val());
+                $('#valor-documento-type-mp').val($('#document-type').val());
+            }
+
             generateMercadoPagoToken(params);
 
             //se nao for cartao de credito, chamar tripBooking
