@@ -34,6 +34,9 @@ class CompraClickbus extends Model
         'taxas',
         'total',
         'status',
+        'buyer_document_type',
+        'buyer_nome_fantasia',
+        'buyer_razao_social'
     ];
 
     public function user()

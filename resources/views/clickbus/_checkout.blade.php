@@ -74,7 +74,7 @@
                             </div>
                             <div class="col-xs-12 padding-t-1">
                                 <label for="cnpj-pj">CNPJ</label>
-                                <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
+                                <input id=documento-pj' type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
                         </div>
                         {{-- Desativado
@@ -354,6 +354,8 @@
            <div class="hidden">
                <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
                <input type="hidden"  id="qtd-parcelas" name="qtd-parcelas" value="1">
+               <input type="hidden"  id="valor-documento-mp" name="valor-documento-mp" value="">
+               <input type="hidden"  id="valor-documento-type-mp" name="valor-documento-type-mp" value="">
                {{-- Coloca as poltronas reservadas e os passageiros de cada poltrona --}}
                @if (isset($passagens))
                    @foreach ($passagens as $key => $Passagem)

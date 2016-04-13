@@ -29,11 +29,17 @@ class CreateComprasClickbusTable extends Migration {
                 ->on('users')
                 ->onDelete('cascade');
 
+            //para identificar se PF/PJ
+            $table->string('buyer_document_type')->nullable();
+            $table->string('buyer_document')->nullable();
+            $table->string('buyer_nome_fantasia')->nullable();
+            $table->string('buyer_razao_social')->nullable();
+
+            //localizer para cancelamento
             $table->string('localizer')->nullable();
             $table->string('buyer_firstname')->nullable();
             $table->string('buyer_lastname')->nullable();
             $table->string('buyer_birthday')->nullable();
-            $table->string('buyer_document')->nullable();
             $table->string('buyer_email')->nullable();
             $table->string('buyer_phone')->nullable();
             $table->string('payment_method')->nullable();
@@ -42,6 +48,8 @@ class CreateComprasClickbusTable extends Migration {
             $table->decimal('desconto_total', 7, 2)->nullable();
             $table->decimal('taxas', 7, 2)->nullable();
             $table->decimal('total', 7, 2)->nullable();
+
+            //order_id para details
             $table->string('clickbus_order_id')->nullable();
 
             //status do pedido, usado para o /orders verificar o estado do pagamento

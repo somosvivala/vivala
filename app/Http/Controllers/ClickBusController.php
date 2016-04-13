@@ -459,6 +459,9 @@ class ClickBusController extends Controller {
             $buyerLastname = $request['request']["buyer"]["lastName"];
             $buyerBirthday = $request['request']["buyer"]["birthday"];
             $buyerDocument = $request['request']["buyer"]["document"];
+            $buyerDocumentType = array_key_exists('tipo_documento', $request['extra']) ? $request['extra']['tipo_documento'] : null;
+            $buyerNomeFantasia = array_key_exists('nome_fantasia', $request['extra']) ? $request['extra']['nome_fantasia'] : null;
+            $buyerRazaoSocial = array_key_exists('razao_social', $request['extra']) ? $request['extra']['razao_social'] : null;
             $buyerEmail = $request['request']["buyer"]["email"];
             $buyerPhone = $request['request']["buyer"]["phone"];
             $paymentMethod = $decoded->{"content"}->{"payment"}->{"method"};
@@ -480,6 +483,9 @@ class ClickBusController extends Controller {
                 'buyer_lastname' => $buyerLastname,
                 'buyer_birthday' => $buyerBirthday,
                 'buyer_document' => $buyerDocument,
+                'buyer_document_type' => $buyerDocumentType,
+                'buyer_nome_fantasia' => $buyerNomeFantasia,
+                'buyer_razao_social' => $buyerRazaoSocial,
                 'buyer_phone' => $buyerPhone,
                 'buyer_email' => $buyerEmail,
                 'payment_method' => $paymentMethod,

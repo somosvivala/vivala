@@ -5,6 +5,7 @@ var lingua = [];
 
 //guardando instancia global do obj que gera o token do Mercado Pago
 var clickBusPaymentObj = null;
+var idCampoDocumentoMP = null;
 
 switch(linguaAtiva){
   case 'en':
@@ -414,13 +415,6 @@ var tripPayment = function(request, frm) {
         });
     })
     .done(function(json) {
-        // Try/Catch com o data, json do erroXhtml data dos ônibus
-        /*var json= {};
-        try {
-            json = JSON.parse(data);
-        } catch(error) {}*/
-
-        //se tiver dado erro
         if (json.errors) {
             swal({
                 title: json.errors1,
@@ -441,6 +435,7 @@ var tripPayment = function(request, frm) {
             bindaChangePagamento();
             bindaFormPagamento();
             atualizaValorParcelas();
+            atualizaCamposDocumento();
             setupClickBusPayment();
 
         }
@@ -609,8 +604,8 @@ var setupClickBusPayment = function() {
         expirationMonthFieldId: 'mes-validade-credito',
         expirationYearFieldId: 'ano-validade-credito',
         holderNameFieldId: 'nome-titular-credito',
-        docTypeFieldId: 'document-type',
-        docNumberFieldId: 'documento-pf',
+        docTypeFieldId: 'valor-documento-type-mp',
+        docNumberFieldId: 'valor-documento-mp',
         amountFieldId: 'valor-total-pagamento-passagem',
         test: false
     });
@@ -630,6 +625,7 @@ var generateMercadoPagoToken = function(params) {
             console.log('response:'); console.log(response);
             params.request.buyer.payment.meta.token = response.token;
             params.request.buyer.payment.installment = Number(params.request.buyer.payment.installment);
+
             params.request.buyer.payment.meta.card_brand = response.payment_method;
             tripBooking(params);
 
@@ -658,4 +654,20 @@ var getPaymentParaMercadoPago = function(frm, total, cardBrand) {
         }
     };
     return payment;
+};
+
+//Funcao para atualizar o valor do campo documento que ira
+//conter o valor do documento para PF e PJ
+var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
+
+    //se for PJ entao pegar o valor do campo documento do form pj e settar tipo para CNPJ
+    if (tipo_cliente === 'pessoa-juridica') {
+       $('#valor-documento-mp').val($('#documento-pj').val());
+       $('#valor-documento-type-mp').val('CNPJ');
+
+    //se for PF entao pegar o valor do doc do form de pf e pegar valor do select de tipoDocumento
+    } else if (tipo_cliente === 'pessoa-fisica') {
+       $('#valor-documento-mp').val($('#documento-pf').val());
+       $('#valor-documento-type-mp').val($('#document-type').val());
+    }
 };

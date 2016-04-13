@@ -418,9 +418,12 @@ var bindaAbas = function() {
         $(this).tab('show');
     });
 
+    //se mudar o tipo de cliente (PF/PJ), atualizar valor do campo documento
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         if($(e.target).hasClass('tipo-cliente')){
             $("#tipo-cliente").val($(e.target).attr('aria-controls'));
+            atualizaCamposDocumento($(e.target).attr('aria-controls'));
+
 
         // se mudar a forma de pagamento, remova desconto e atualize
         }else if($(e.target).hasClass('forma-pagamento')){
