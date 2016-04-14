@@ -584,8 +584,8 @@ var getExtraInfoParaCheckout = function() {
         "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
         "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
         "ida-slug" : $("#origem-rodoviario-hidden").val(),
-        "ida-company-id" : $('#ida-viacaoid').val(),
-        "volta-company-id" : $('#volta-viacaoid').val()
+        "ida-company-id" : $('#ida-company-id').val(),
+        "volta-company-id" : $('#volta-company-id').val()
     };
     return obj;
 }
@@ -666,7 +666,8 @@ var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
        $('#valor-documento-type-mp').val('CNPJ');
 
        //bindando futuras mudancas no campo cnpj para que sejam espelhadas no input hidden
-       $('input[name="cnpj-pj"]').on('input' function() {
+       $('input[name="cnpj-pj"]').off('input');
+       $('input[name="cnpj-pj"]').on('input', function() {
            $('#valor-documento-mp').val($(this).val());
        });
 
@@ -676,7 +677,8 @@ var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
        $('#valor-documento-type-mp').val($('#document-type').val());
 
        //bindando futuras mudancas no campo documento-pf para que sejam espelhadas no input hidden
-       $('#documento-pf').on('input' function() {
+       $('#documento-pf').off('input');
+       $('#documento-pf').on('input', function() {
            $('#valor-documento-mp').val($(this).val());
        });
     }
