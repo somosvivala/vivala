@@ -665,9 +665,19 @@ var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
        $('#valor-documento-mp').val($('input[name="cnpj-pj"]').val());
        $('#valor-documento-type-mp').val('CNPJ');
 
+       //bindando futuras mudancas no campo cnpj para que sejam espelhadas no input hidden
+       $('input[name="cnpj-pj"]').on('input' function() {
+           $('#valor-documento-mp').val($(this).val());
+       });
+
     //se for PF entao pegar o valor do doc do form de pf e pegar valor do select de tipoDocumento
     } else if (tipo_cliente === 'pessoa-fisica') {
        $('#valor-documento-mp').val($('#documento-pf').val());
        $('#valor-documento-type-mp').val($('#document-type').val());
+
+       //bindando futuras mudancas no campo documento-pf para que sejam espelhadas no input hidden
+       $('#documento-pf').on('input' function() {
+           $('#valor-documento-mp').val($(this).val());
+       });
     }
 };
