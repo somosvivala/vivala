@@ -662,7 +662,7 @@ var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
 
     //se for PJ entao pegar o valor do campo documento do form pj e settar tipo para CNPJ
     if (tipo_cliente === 'pessoa-juridica') {
-       $('#valor-documento-mp').val($('#documento-pj').val());
+       $('#valor-documento-mp').val($('input[name="cnpj-pj"]').val());
        $('#valor-documento-type-mp').val('CNPJ');
 
     //se for PF entao pegar o valor do doc do form de pf e pegar valor do select de tipoDocumento
