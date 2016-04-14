@@ -167,6 +167,7 @@ var bindClickDetail = function() {
             classe_ida = $(this).attr('data-classe'),
             from_ida  = $(this).attr('data-from'),
             to_ida = $(this).attr('data-to'),
+            viacaoID_ida = $(this).attr('data-viacaoid'),
 
             //corrigindo inversão do from e to
             from      = $('#origem-rodoviario-hidden').val(),
@@ -178,10 +179,11 @@ var bindClickDetail = function() {
         $('#classe-ida').val(classe_ida);
         $('#from-ida').val(from_ida);
         $('#to-ida').val(to_ida);
+        $('#viacaoid-ida').val(viacaoID_ida);
 
         //Se nao tiver passagem de volta, apenas chamar o /trip
         if ($('#data-volta-rodoviario').val().length <= 0) {
-            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }]));
+            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida, 'viacaoId': viacaoID_ida }]));
         }
 
         //Se tiver volta, entao inverter to x from e fazer nova busca
@@ -209,6 +211,7 @@ var bindClickDetail = function() {
             classe_ida = $('#classe-ida').val(),
             from_ida  = $('#from-ida').val(),
             to_ida = $('#to-ida').val(),
+            viacaoID_ida = $('#viacaoid-ida').val(),
 
             //Aqui os locais estao corretos, o from e o to da volta
             //sao o inverso da ida
@@ -222,8 +225,9 @@ var bindClickDetail = function() {
             classe_volta = $(this).attr('data-classe'),
             from_volta  = $(this).attr('data-from'),
             to_volta = $(this).attr('data-to');
+            viacaoID_volta = $(this).attr('data-viacaoid');
 
-            var json_resposta = JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida, 'from':from_ida, 'to':to_ida , 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':from_volta, 'to':to_volta , 'horario_chegada': horario_chegada_volta, 'classe': classe_volta }]);
+            var json_resposta = JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida, 'from':from_ida, 'to':to_ida , 'horario_chegada': horario_chegada_ida, 'classe': classe_ida, 'viacaoId': viacaoID_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':from_volta, 'to':to_volta , 'horario_chegada': horario_chegada_volta, 'classe': classe_volta, 'viacaoId': viacaoID_volta }]);
             //console.log(json_resposta);
         ajaxTrip(json_resposta);
     });

@@ -584,8 +584,8 @@ var getExtraInfoParaCheckout = function() {
         "desconto" : Number($('.valor-desconto').html().replace('.', '').replace(',','.')),
         "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
         "ida-slug" : $("#origem-rodoviario-hidden").val(),
-        "ida-company-id" : $('#ida-company-id').val(),
-        "volta-company-id" : $('#volta-company-id').val()
+        "ida-company-id" : $('#ida-viacaoid').val(),
+        "volta-company-id" : $('#volta-viacaoid').val()
     };
     return obj;
 }

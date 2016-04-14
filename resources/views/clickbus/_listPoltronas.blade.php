@@ -98,6 +98,7 @@
             <input type="hidden" id="ida-classe" name="ida-classe" value="{{ $ida->classe }}">
             <input type="hidden" id="ida-horario-chegada" name="ida-horario-chegada" value="{{ $ida->horario_chegada }}">
             <input type="hidden" id="ida-company" name="ida-company" value="{{ $ida->content->busCompany->name }}">
+            <input type="hidden" id="ida-viacaoid" name="ida-viacaoid" value="{{ $ida->viacaoId }}">
             <h4>{{ trans('clickbus.clickbus_departure') }} - {{ trans('clickbus.clickbus_route') }} 1</h4>
             <div class="poltronas-selecionadas-ida">
             </div>
@@ -111,6 +112,7 @@
             <input type="hidden" id="volta-horario-chegada" name="volta-horario-chegada" value="{{ $volta->horario_chegada }}">
             <input type="hidden" id="volta-classe" name="volta-classe" value="{{ $volta->classe }}">
             <input type="hidden" id="volta-company" name="volta-company" value="{{ $volta->content->busCompany->name }}">
+            <input type="hidden" id="volta-viacaoid" name="volta-viacaoid" value="{{ $volta->viacaoId }}">
             <h4 class="margin-t-1">{{ trans('clickbus.clickbus_return') }} - {{ trans('clickbus.clickbus_route') }} 2</h4>
             <div class="poltronas-selecionadas-volta">
             </div>

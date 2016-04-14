@@ -38,6 +38,7 @@
 <input type="hidden" id="from-ida">
 <input type="hidden" id="to-ida">
 <input type="hidden" id="session-clickbus">
+<input type="hidden" id="viacaoid-ida">
 
 <div id="clickbus-resultado-busca">
 
