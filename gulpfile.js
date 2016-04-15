@@ -18,7 +18,7 @@ elixir(function(mix) {
     ], 'resources/assets/css/');
 
     mix.styles([
-        '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.css',
+        '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.css',
         '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
         '../../assets/bower/cropper/dist/cropper.min.css',
@@ -27,8 +27,8 @@ elixir(function(mix) {
         '../../assets/bower/sweetalert2/dist/sweetalert2.css',
         '../../assets/bower/intro.js/introjs.css',
         'app.css',
-        'font-awesome.min.css',
-        '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir no fim obrigatoriamente
+        '../../assets/bower/font-awesome/css/font-awesome.min.css',
+        '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir depois do Font-Awesome e ao fim, conflita em classe com algo
     ], null, 'resources/assets/css');
 
     mix.scripts([
@@ -50,6 +50,7 @@ elixir(function(mix) {
       '../../assets/bower/js-cookie/src/js.cookie.js',
       '../../assets/bower/instafeed.js/instafeed.min.js',
       /* Scripts Vivalá */
+      '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',
       '../../assets/js/createpost.js',
       '../../assets/js/postbarra.js',
