@@ -105,9 +105,9 @@ class CompraClickbusPoltrona extends Model
     /**
      * Quando a passagem nao tiver localizer, retornar o localizer da compra
      */
-    public function getLocalizerAttribute()
+    public function getLocalizerAttribute($value)
     {
-        return ($this->localizer ? $this->localizer : $this->compra->localizer);
+        return ($value ? $value : $this->compra->localizer);
     }
 
 }

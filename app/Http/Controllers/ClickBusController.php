@@ -565,7 +565,7 @@ class ClickBusController extends Controller
             switch ($paymentMethod)
             {
             case "payment.debitcard" :
-                $redirectUrl = $decoded->{"content"}->{"payment"}->{"continuePaymentURL"};
+                $redirectUrl = $decoded->{"content"}->{"payment"}->{"meta"}->{"continuePaymentURL"};
                 break;
 
             case "payment.creditcard" :

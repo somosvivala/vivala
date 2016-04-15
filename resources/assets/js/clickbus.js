@@ -7,6 +7,28 @@ var lingua = [];
 var clickBusPaymentObj = null;
 var idCampoDocumentoMP = null;
 
+//mapeando erros do mercado pago para serem usados na validação
+var mercadoPagoErros = {
+    "205" : "Digite o seu número de cartão.",
+    "208" : "Escolha um mês.",
+    "209" : "Escolha um ano.",
+    "212" : "Insira o seu documento.",
+    "213" : "Insira o seu documento.",
+    "214" : "Insira o seu documento.",
+    "220" : "Digite o seu banco emissor.",
+    "221" : "Insira o nome e o sobrenome.",
+    "224" : "Digite o código de segurança.",
+    "E301" : "Há algo errado com este número. Volte a digitá-lo.",
+    "E302" : "Revise o código de segurança.",
+    "316" : "Insira um nome válido.",
+    "322" : "Revise o seu documento.",
+    "323" : "Revise o seu documento.",
+    "324" : "Revise o seu documento.",
+    "325" : "Revise a data.",
+    "326" : "Revise a data."
+};
+
+
 switch(linguaAtiva){
   case 'en':
     lingua[0] = 'Ops, something went wrong, do the search again please.',
@@ -639,10 +661,20 @@ var generateMercadoPagoToken = function(params) {
             //se falhar mostrar sweetalert
         }).fail(function(errors) {
             console.log("============== deu ruim no generateToken");
-            for (var error in errors) {
-                console.log(errors[error].code);
-                console.log(errors[error].description);
-            }
+            swal({
+                title: json.errors1,
+                html: "<br><p>" + getMensagemErroMercadoPago(errors[error].code) + "</p></br>",
+                type: "error",
+                confirmButtonColor: "#FF5B00",
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+            },
+            function() {
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
+            });
+
+
         }).call();
 }
 
@@ -719,3 +751,11 @@ var bindaCartaoAmex = function() {
     });
 
 };
+
+
+//Metodo para pegar a mensagem de erro do mercadoPago a partir do código
+var getMensagemErroMercadoPago =  function(codigoErro) {
+    return mercadoPagoErros[codigoErro]
+        ? mercadoPagoErros[codigoErro]
+        : "Revise os dados e tente novamente";
+}
