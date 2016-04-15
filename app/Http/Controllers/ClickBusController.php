@@ -393,10 +393,14 @@ class ClickBusController extends Controller
 
         // Se o $decoded não possuir nenhum error internamente, retorno os dados tratados para a view _checkout
         if(isset($decoded) && !isset($decoded->{"error"})){
+
+            //pegando regex para testar cartoes amex
+            $amexRegex = $this->clickBusRepository->getAmexRegex();
+
             return [
                 //Como não estamos devolvendo a view diretamente (return view('nome', ...),
                 //precisamos chamar o ->render() para obter o html
-                "html" => view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta'))->render(),
+                "html" => view('clickbus._checkout', compact('decoded', 'passagens', 'Ida', 'Volta', 'amexRegex'))->render(),
                 "session" => $sessionId
             ];
         } else {

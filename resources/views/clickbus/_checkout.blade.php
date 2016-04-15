@@ -357,6 +357,7 @@
                <input type="hidden"  id="qtd-parcelas" name="qtd-parcelas" value="1">
                <input type="hidden"  id="valor-documento-mp" name="valor-documento-mp" value="">
                <input type="hidden"  id="valor-documento-type-mp" name="valor-documento-type-mp" value="">
+               <input type="hidden"  id="amex-regex" name="amex-regex" value="{{ $amexRegex }}">
                {{-- Coloca as poltronas reservadas e os passageiros de cada poltrona --}}
                @if (isset($passagens))
                    @foreach ($passagens as $key => $Passagem)

@@ -13,6 +13,7 @@ class ClickBusRepository
      */
     public $apiKey;
     public $url;
+    public $urlAmexRegex;
 
     /**
      * 'Constants'
@@ -27,9 +28,10 @@ class ClickBusRepository
      */
     function __construct()
     {
-        //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
+         //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
         $this->apiKey = env('CLICKBUS_API_KEY_DEV');
         $this->url = env('CLICKBUS_URL_DEV');
+        $this->urlAmexRegex = env('CLICKBUS_AMEX_URL');
     }
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
@@ -223,7 +225,7 @@ class ClickBusRepository
      */
     public function cancelaCompra(RelatorioClickbus $compra)
     {
-        $localizer = $compra->localizer;
+         $localizer = $compra->localizer;
 
         $data = new \stdClass();
         $data->request =  new \stdClass();
@@ -232,8 +234,8 @@ class ClickBusRepository
         $data = json_encode($data);
 
         $context = [
-            'http' => [
-                'ignore_errors' => true,
+             'http' => [
+                 'ignore_errors' => true,
                 'method' => 'PUT',
                 'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
                             "Content-Length: ".strlen($data)."\r\n",
@@ -263,7 +265,7 @@ class ClickBusRepository
      */
     public function gerarRelatorioCompras()
     {
-        try {
+         try {
 
             $existemCompras = true;
             $indice = 0;
@@ -325,5 +327,19 @@ class ClickBusRepository
             echo 'Ocorreu um problema durante a geracao dos relatorios: ';
             var_dump($ex);
         }
+    }
+
+    public function getAmexRegex()
+    {
+        $result = file_get_contents($this->urlAmexRegex);
+
+        if (isset($result)) {
+            $decoded = json_decode($result);
+            $regex = "/" . $decoded->card_configuration[0]->installment_bins_pattern . "/";
+            return $regex;
+        }
+
+        return false;
+
     }
 }
