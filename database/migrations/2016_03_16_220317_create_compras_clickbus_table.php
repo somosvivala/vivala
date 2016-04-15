@@ -53,13 +53,7 @@ class CreateComprasClickbusTable extends Migration {
             $table->string('clickbus_order_id')->nullable();
 
             //status do pedido, usado para o /orders verificar o estado do pagamento
-            $table->enum('status', [
-                'order_canceled',
-                'order_booking_engine_confirmation_refund_successful',
-                'clarify_booking_engine_confirmation_refund_failure',
-                'order_finalized_successfully',
-                'payment_confirmed'
-            ])->nullable();
+            $table->string('status')->nullable();
 
         });
     }

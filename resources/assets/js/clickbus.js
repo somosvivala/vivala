@@ -28,7 +28,7 @@ switch(linguaAtiva){
     lingua[5] = 'Sua viagem de ',
     lingua[6] = 'Iremos redirecioná-lo para finalizar sua compra, se isso nao acontecer clique ',
     lingua[7] = 'aqui',
-    lingua[8] = 'Successo'
+    lingua[8] = 'Sucesso'
   break;
   default:
     lingua[0] = 'Ops, algo saiu errado, por favor faça a busca novamente.',
@@ -525,10 +525,12 @@ console.log(request);
 
             if (json.forma_pagamento == 'payment.creditcard') {
 
-                var htmlMsg = lingua[1]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[3]+'<a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
+                //var htmlMsg = lingua[1]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[3]+'<a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
 
+                //Texto sendo inserido diretamente, precisa adequar para essa abordagem multilingua
+                var htmlMsg = "<p class='texto-sweetalert'>Logo mais enviaremos um email com os detalhes do seu pagamento, mas voce já pode verificar algumas das informações a seguir :)</p>";
                 swal({
-                    title: lingua[8],
+                    title: 'Obrigado!',
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
@@ -549,18 +551,22 @@ console.log(request);
                 }, 2200);
 
                 //Caso a forma de pagamento requira redirecionamento
-                var htmlMsg = lingua[4]+'<br>'+lingua[5]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[6]+'<a href="'+json.redirectUrl+'" target="_blank">'+lingua[7]+'</a>.';
+                //var htmlMsg = lingua[4]+'<br>'+lingua[5]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[6]+'<a href="'+json.redirectUrl+'" target="_blank">'+lingua[7]+'</a>.';
+
+                //Texto sendo inserido diretamente, precisa adequar para essa abordagem multilingua
+                var htmlMsg = "<p class='texto-sweetalert'>Continue sua compra com cartão de débito clicando " +
+                    '<a href="'+json.redirectUrl+'" target="_blank">'+lingua[7]+'</a></p>';
 
                 swal({
-                    title: lingua[8],
+                    title: 'Obrigado!',
                     html: htmlMsg,
                     type: "success",
                     confirmButtonColor: "#14CC5B",
                     confirmButtonText: "OK",
                     closeOnConfirm: true,
                 },
-                function() {
-                  //window.location.href="/viajar";
+                 function() {
+                   //window.location.href="/viajar";
                 }
                 );
                $('#clickbus-resultado-busca').html(json.view);
