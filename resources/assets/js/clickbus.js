@@ -661,9 +661,10 @@ var generateMercadoPagoToken = function(params) {
             //se falhar mostrar sweetalert
         }).fail(function(errors) {
             console.log("============== deu ruim no generateToken");
+            console.log(errors);
             swal({
-                title: json.errors1,
-                html: "<br><p>" + getMensagemErroMercadoPago(errors[error].code) + "</p></br>",
+                title: 'Opa!',
+                html: "<br><p>" + getMensagemErroMercadoPago(errors[0].code) + "</p></br>",
                 type: "error",
                 confirmButtonColor: "#FF5B00",
                 confirmButtonText: "OK",
