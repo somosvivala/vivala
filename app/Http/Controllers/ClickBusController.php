@@ -512,6 +512,7 @@ class ClickBusController extends Controller
                 $trip_id = $Trip->{"trip_id"};
 
                 //se existirem localizers para as poltronas
+                $trip_localizer = "";
                 if (property_exists($Trip, "localizer")) {
                     $trip_localizer = $Trip->{"localizer"};
                 }
