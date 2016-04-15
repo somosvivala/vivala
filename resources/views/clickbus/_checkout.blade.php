@@ -139,23 +139,6 @@
                                 <p>{{ trans('clickbus.clickbus_client-error-3') }}</p>
                                 @endforelse
                             </div>
-                            <div class="col-xs-12 margin-t-1">
-                                <label>{{ trans('clickbus.clickbus_client-opt-number-installments') }}</label>
-                            </div>
-                            <div class="col-xs-12 margin-b-1">
-                                <?php $parc_bandeira = 0; ?>
-                                @forelse ($formaPagamento->details as $bandeiraCartao)
-                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="form-control <?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
-                                    @forelse ($bandeiraCartao->installments as $key => $Parcela)
-                                    <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1){{ trans('clickbus.clickbus_client-opt-installment') }} @else {{ trans('clickbus.clickbus_client-opt-installment_') }} @endif </option>
-                                    @empty
-                                    <option value="0"></option>
-                                    @endforelse
-                                </select>
-                                @empty
-                                <p>{{ trans('clickbus.clickbus_client-error-4') }}</p>
-                                @endforelse
-                            </div>
                             <div class="col-xs-7 padding-t-1">
                                 <label for="num-cartao-credito">{{ trans('clickbus.clickbus_client-opt-card-number') }}</label>
                                 <input id="num-cartao-credito"type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
@@ -191,6 +174,24 @@
                                 <label for="cod-seguranca-credito" >{{ trans('clickbus.clickbus_client-opt-card-password') }}</label>
                                 <input id="cod-seguranca-credito" type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
                             </div>
+                            <div class="col-xs-12 padding-t-1">
+                                <label>{{ trans('clickbus.clickbus_client-opt-number-installments') }}</label>
+                            </div>
+                            <div class="col-xs-12 ">
+                                <?php $parc_bandeira = 0; ?>
+                                @forelse ($formaPagamento->details as $bandeiraCartao)
+                                <select id="bandeira-{{ $bandeiraCartao->brand }}" class="form-control <?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
+                                    @forelse ($bandeiraCartao->installments as $key => $Parcela)
+                                    <option data-discount_value="{{ $bandeiraCartao->discount_value }}" data-fee="{{ $Parcela->fee }}" data-installment="{{ $Parcela->installment }}" data-total="{{ $Parcela->total }}" data-total_with_discount="{{ $Parcela->total_with_discount }}" value="{{ $key }}"> {{ $key }} @if($key == 1){{ trans('clickbus.clickbus_client-opt-installment') }} @else {{ trans('clickbus.clickbus_client-opt-installment_') }} @endif </option>
+                                    @empty
+                                    <option value="0"></option>
+                                    @endforelse
+                                </select>
+                                @empty
+                                <p>{{ trans('clickbus.clickbus_client-error-4') }}</p>
+                                @endforelse
+                            </div>
+
                             <div class="col-xs-12 padding-t-1">
                                 <label>{{ trans('global.address_zipcode') }}</label>
                             </div>
