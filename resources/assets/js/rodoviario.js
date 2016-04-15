@@ -581,7 +581,7 @@ var bindaFormPagamento = function() {
                 "total": total,
                 "installment": "1",
                 "meta": {
-                    "card": frm.find("input[name='num-cartao-debito']").val(),
+                    "card": frm.find("input[name='num-cartao-debito']").val().replace(/ */, ""),
                     "code": frm.find("input[name='cod-seguranca-debito']").val(),
                     "name": frm.find("input[name='nome-titular-debito']").val(),
                     "expiration": frm.find("select[name='ano-validade-debito'] option:selected").val()+'-'+frm.find("select[name='mes-validade-debito'] option:selected").val(),

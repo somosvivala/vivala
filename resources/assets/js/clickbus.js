@@ -359,6 +359,7 @@ var removePoltrona = function(request, tipo, callback) {
 
 //Funcao chamada no submit do formulario de poltronas
 var tripPayment = function(request, frm) {
+
     var params = {
         "store": "Vivala",
         "model": "Retail",
@@ -434,10 +435,10 @@ var tripPayment = function(request, frm) {
             bindaBandeirasCartao();
             bindaChangePagamento();
             bindaFormPagamento();
+            bindaCartaoAmex();
             atualizaValorParcelas();
             atualizaCamposDocumento();
             setupClickBusPayment();
-
         }
     });
 
@@ -682,4 +683,33 @@ var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
            $('#valor-documento-mp').val($(this).val());
        });
     }
+};
+
+
+//metodo para validar se a regex de cartoes amex que restringe mais de 1 parcela
+//se aplica ao numeroCartao
+var checaCartaoAmex = function(numeroCartao) {
+    var amexRegex = $('#amex-regex').val();
+    if(numeroCartao.match(amexRegex)) {
+        //desabilitar parcelas
+        $('#bandeira-amex').val(1);
+        $('#bandeira-amex').attr('disabled', 'true');
+    } else {
+
+        //caso parcelas ja bloqueadas e amex card valido, desbloquear parcelas
+        if ($('#bandeira-amex').attr('disabled')) {
+            $('#bandeira-amex').removeAttr('disabled');
+        }
+
+    }
+
+}
+
+//binda a checagem de cartoes amex
+var bindaCartaoAmex = function() {
+
+    $('#num-cartao-credito').on('blur', function(e) {
+        checaCartaoAmex($(this).val());
+    });
+
 };

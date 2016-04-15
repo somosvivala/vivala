@@ -329,6 +329,12 @@ class ClickBusRepository
         }
     }
 
+    /*
+     * Metodo para pegar a regex que restringe o numero de parcelas para cartoes
+     * amex
+     *
+     * @return string - regex
+     */
     public function getAmexRegex()
     {
         $result = file_get_contents($this->urlAmexRegex);
