@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App;
+use Carbon\Carbon;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -501,6 +502,7 @@ class ClickBusController extends Controller
                 'desconto_total' => $descontoTotal,
                 'taxas' => $taxas,
                 'total' => $total,
+                'data_pagamento' => ($status_pagamento == $clickBusRepository->FLAG_ORDEM_FINALIZADA) ? Carbon::now('America/Sao_Paulo') : null,
                 'status' => $statusPagamento
             ]);
 

@@ -614,7 +614,10 @@ var getExtraInfoParaCheckout = function() {
         "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
         "ida-slug" : $("#origem-rodoviario-hidden").val(),
         "ida-company-id" : $('#ida-company-id').val(),
-        "volta-company-id" : $('#volta-company-id').val()
+        "volta-company-id" : $('#volta-company-id').val(),
+        "tipo_documento" : $('#valor-documento-type-mp').val(),
+        "nome_fantasia" : $("input[name='nome-fantasia-pj']").val(),
+        "razao_social" : $("input[name='razao-social-pj']").val()
     };
     return obj;
 }
