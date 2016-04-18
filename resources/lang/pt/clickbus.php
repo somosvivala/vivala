@@ -496,9 +496,11 @@ return[
       'clickbus_email-for-a-new-order' => 'Para realizar um novo pedido entre em nosso site:',
 
       // View de SUCESSO ao finalizar a compra
-        'clickbus_success-buy-done' => 'Compra finalizada com sucesso!',
-        'clickbus_success-thanks-for-vivala' => '<span class="negrito">Obrigado</span> por comprar na <span class="negrito laranja">Vivalá</span>!',
-        'clickbus_success-dear-client' => 'A sua compra de',
+        'clickbus_success-thanks-client' => 'Obrigado Viajante!',
+        'clickbus_success-debit-method-text' => 'Para concluir sua compra com ',
+        'clickbus_success-credit-method-text-1' => 'Logo mais enviaremos um email com os detalhes do seu pagamento,',
+        'clickbus_success-credit-method-text-2' => 'mas você já pode verificar algumas informações aqui.',
+        'clickbus_success-your-bought' => 'A sua compra de',
         'clickbus_success-with' => 'com',
         'clickbus_success-approved-by-system' => 'está prestes a ser concluída! Assim que recebermos a confirmação e pagamento você receberá um email com os detalhes.',
         'clickbus_success-invoice-bill' => 'Essa compra aparecerá na sua fatura com o nome:',

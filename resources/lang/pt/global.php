@@ -234,6 +234,7 @@ return[
   'lbl_chat_with_friends' => 'Chat com Amigos',
   'lbl_chat_with_volunteers' => 'Chat com Voluntários',
   'lbl_choose' => 'Escolher',
+  'lbl_click_here' => 'Clique Aqui',
   'lbl_close' => 'Fechar',
   'lbl_city' => 'Cidade',
   'lbl_city_' => 'Cidades',

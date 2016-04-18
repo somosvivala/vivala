@@ -195,6 +195,7 @@ return[
   'lbl_chat_with_friends' => 'Chat with Friends',
   'lbl_chat_with_volunteers' => 'Chat with Volunteers',
   'lbl_choose' => 'Choose',
+  'lbl_click_here' => 'Click Here',
   'lbl_close' => 'Close',
   'lbl_city' => 'City',
   'lbl_city_' => 'Cities',

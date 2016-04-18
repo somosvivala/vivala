@@ -3,46 +3,43 @@
 <div id="sucesso-da-viagem" class="col-md-12 col-lg-12 padding-b-2">
   <div id="cabecalho" class="row padding-b-2 margin-b-1"><
       <div class="col-md-12 col-lg-12">
-        <div class="col-md-4 col-lg-4 text-right">
-          <span><i class="fa fa-check fa-5x"></i></span>
+        <div class="col-md-5 col-lg-5 text-right">
+          <i class="fa fa-7x fa-check"></i>
         </div>
         <div class="col-md-7 col-lg-7 text-center">
-          <h1>Obrigado Viajante!</h1>
-          <p>Para concluir sua compra com
+          <h1 class="texto-maiusculo ajuste-fonte-avenir-black">{!! trans('clickbus.clickbus_success-thanks-client') !!}</h1>
             @if($compra->payment_method === "payment.debitcard")
               {{-- DÉBITO --}}
-              <span class="texto-negrito texto-minusculo">
-                <strong>
-                  {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
-                </strong>
-              </span>
+                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-debit-method-text') !!}
+                  <span class="texto-negrito texto-minusculo">
+                    <strong class="texto-sucesso">
+                      {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
+                    </strong>
+                  </span>
+                </p>
+              <a href="javascript:void(0);" class="btn btn-acao btn-acao-sucesso" target="_blank">{{ trans('global.lbl_click_here') }}</button>
             @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
               {{-- CRÉDITO --}}
-              <span class="texto-negrito texto-minusculo">
-                <strong>
-                  {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
-                </strong>
-              </span>
+                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-credit-method-text-1') !!}</p>
+                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-credit-method-text-2') !!}</p>
             @else
               {{-- MÉTODO NÃO ENCONTRADO --}}
-              <span class="texto-negrito texto-minusculo">
-                <strong>
-                  {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
-                </strong>
-              </span>
+                <span class="texto-negrito texto-minusculo">
+                  <strong>
+                    {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
+                  </strong>
+                </span>
             @endif
-          </p>
-          <button class="btn btn-acao btn-acao-sucesso">Clique aqui</button>
         </div>
       </div>
   </div>
 
-  <div class="row">
+  <div id="corpo" class="row">
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row detalhes-da-viagem-1">
         <p class="padding-t-1 padding-l-1 padding-r-1">
           <span>
-            {!! trans('clickbus.clickbus_success-dear-client') !!}
+            {!! trans('clickbus.clickbus_success-your-bought') !!}
           </span>
           <span class="negrito">
             <strong>
@@ -62,7 +59,6 @@
                 {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
               </strong>
             </span>
-
           @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
             {{-- CRÉDITO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -90,7 +86,6 @@
 
             <table class="table">
               <tbody>
-
                 <tr>
                   <td>
                     <span>
@@ -141,9 +136,9 @@
     </div>
 
     <div id="dicas-da-viagem" class="col-md-6 col-lg-6">
-      <h1 class="margin-b-1">
+      <h3 class="margin-b-1 text-center">
         {!! trans('clickbus.clickbus_success-next-to-end') !!}
-      </h1>
+      </h3>
       <hr class="dicas-de-viagem-divisor"/>
 
       <table class="tres-dicas-de-viagem">
