@@ -1,25 +1,22 @@
+@import "modulos/mediaqueries";
 @import "coresefontes";
 @import "utilitarios";
 
-#welcome-html {
+/* Bibliotecas SOMENTE desta view */
+	@cor-fundo-welcome: rgba(255, 245, 210, 1);
+	@cor-menu-welcome: rgba(255, 245, 210, 0.95);
+
+#welcome-html{
 	position: relative;
 	min-height: 100%;
+}
 
-	body {
-		background-image: url("../../img/welcome/welcome-bg-lg.png");
-		background-position: center center;
-		background-size: cover;
-	}
-}
-@cor-fundo-welcome : rgb(255, 245, 210, 1);
-.welcome-mobile-warning{
-	display: none;
-}
-.welcome-header {
-	background-color: rgba(255, 245, 210, 0.95);
-	font-size: @font-size-rem*0.9;
-	font-family: @font-family-sans-serif;
-	font-weight: normal;
+#welcome-header{
+	background-color: @cor-menu-welcome;
+	font-size:@font-size-rem*0.9;
+	font-family:@font-family-sans-serif;
+	font-weight:normal;
+
 	.form-login .row {
 		line-height: 0.5em;
 		> div{
@@ -126,7 +123,7 @@
 			}
 	}
 }
-.welcome-content{
+#welcome-content{
 	#brasilwelcome {
 		width: 100%;
 		max-width:70%;
@@ -136,6 +133,7 @@
 		padding-top: 2em;
 	}
 	.balao-flutuante {
+		font-size:1.1em;
 		font-family: @font-family-avenir-medium;
 		background-color: @cor-quase-transparente;
 		padding: 1em;
@@ -143,17 +141,17 @@
 		position: absolute;
 		max-width: 18rem;
 		&.balao-1 {
-			bottom: 20%;
-			left:0;
+			bottom:25vh;
+			left:-3vw;
 		};
 		&.balao-2 {
-			bottom: 3%;
+			bottom:3vh;
 			max-width: 14rem;
-			right:32%;
+			right:16vw;
 		};
 		&.balao-3 {
-			top: 50%;
-			right:10%;
+			top:36vh;
+			right:5vw;
 		}
 	}
 	form input[type="email"].form-control,
@@ -187,19 +185,16 @@
 	.panel {
 		background-color:transparent;
 	}
-	.welcome-cadastrar {
+	#welcome-cadastrar {
 		> div {
 			height: 4em;
 		}
 		.btn-facebook {
-			position: absolute;
-			bottom: 0;
-			right: 10%;
 			text-transform: none;
 			font-family: @font-family-sans-serif;
 		}
-		padding-top: 4em;
-		padding-bottom: 2em;
+		padding-top: 3em;
+		padding-bottom: 3.5em;
 	}
 	.form-cadastro-wrapper {
 		margin:0;
@@ -249,66 +244,95 @@
 	}
 }
 
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px) {
-	.welcome-header,
-	.welcome-content{
-	  display: block;
-	}
-	.welcome-mobile-warning{
-	 display:none;
-	}
-}
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px) {
-	.welcome-header,
-	.welcome-content{
-	  display: block;
-	}
-	.welcome-mobile-warning{
-	 display:none;
-	}
-}
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px) {
+/* LG - Large Devices, Wide Screens (1200px and up) */
+@media only screen and (min-width:@screen-lg-min){
 	#welcome-html body{
-	  background-image: none!important;
-	  background-color: #FFF;
-	}
-	.welcome-header,
-	.welcome-content{
-	  display: none;
-	}
-	.welcome-mobile-warning{
-	 display: block;
-	 a {
-	   color: @cor-primaria;
-			}
+		background-image: url("../../img/welcome/welcome-bg-lg.png");
+		background-position: center center;
+		background-size: cover;
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
 	}
 }
-/* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {
-	.welcome-header,
-	.welcome-content{
-	  display: none;
-	}
-	.welcome-mobile-warning{
-	 display: block;
-	 a {
-	   color: @cor-primaria;
-			}
+
+/* MD - Medium Devices, Desktops (992px and up) */
+@media only screen and (min-width:@screen-md-min) and (max-width:@screen-md-max){
+	#welcome-html body{
+		background-image: url("../../img/welcome/welcome-bg-md.png");
+		background-position: center center;
+		background-size: cover;
+
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
 	}
 }
-/* Custom, iPhone Retina */
-@media only screen and (max-width : 320px) {
-	.welcome-header,
-	.welcome-content{
-	 display: none;
+
+/* SM - Small Devices, Tablets (768px and up) */
+@media only screen and (min-width:@screen-sm-min) and (max-width:@screen-sm-max){
+	#welcome-html body{
+	  //background-image:url("../../img/welcome/welcome-bg-sm.png");
+		background-image:none;
+		background-color:#FFF;
+
+		#welcome-mobile-warning{
+			display:block;
+			a{
+	 	  	color:@cor-primaria;
+	 		}
+		}
+		#welcome-header,
+		#welcome-content{
+			display:none;
+		}
 	}
-	.welcome-mobile-warning{
-	 display: block;
-	 a {
-		 color: @cor-primaria;
+}
+
+/* XS - Extra Small Devices, Phones (480px and up) */
+@media only screen and (min-width:@screen-xs-min) and (max-width:@screen-xs-max){
+	#welcome-html body{
+		//background-image:url("../../img/welcome/welcome-bg-xs.png");
+		background-image:none;
+		background-color:white;
+
+		#welcome-mobile-warning{
+			display:block;
+			a{
+	 	  	color:@cor-primaria;
+	 		}
+		}
+		#welcome-header,
+		#welcome-content{
+			display:none;
+		}
+	}
+}
+
+/* [Custom] iPhone Retina */
+@media only screen and (max-width:@screen-retina-max){
+	#welcome-html body{
+		//background-image:url("../../img/welcome/welcome-bg-sm.png");
+	  background-image:none;
+	  background-color:white;
+
+		#welcome-mobile-warning{
+			display:block;
+			a{
+				color:@cor-primaria;
+			}
+		}
+		#welcome-header,
+		#welcome-content{
+		 display: none;
 		}
 	}
 }

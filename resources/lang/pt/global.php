@@ -3,7 +3,7 @@ return[
 
 /*
 |--------------------------------------------------------------------------
-| [PT-BR] Tradução GLobal dos Arquivos em PORTUGUÊS
+| [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
 | Status da Tradução:
 |--------------------------------------------------------------------------
 */
@@ -14,6 +14,9 @@ return[
   'lbl_vivala' => 'Vivalá',
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
+  'join_vivala' => 'Junte-se a Vivalá e conecte-se ao Brasil de verdade.',
+  'description_vivala' => 'A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil.',
+  'keywords_vivala' => 'Vivalá, Rede Social, Turismo, Viagem, Voluntariado, Impacto Social, Hospedagem, Transporte, Alimentação, Entretenimento',
 
 /* Pilares */
   'lbl_wanna_travel' => 'Quero Viajar',
@@ -142,17 +145,15 @@ return[
   'lbl_album_submit_' => 'Enviar Álbuns',
   'lbl_album_update' => 'Atualizar Álbum',
   'lbl_album_update_' => 'Atualizar Álbuns',
-
   'lbl_album_none' => 'Nenhum álbum.',
   'lbl_album_not_created' => 'Nenhum álbum criado.',
   'lbl_album_not_founded' => 'Nenhum álbum encontrado.',
   'lbl_album_without_photo' => 'Álbum sem fotos.',
-  //
   'lbl_album_name' => 'Nome do Álbum',
   'lbl_album_date' => 'Data do Álbum',
   'lbl_album_description' => 'Descrição do Álbum',
-
-/* Aplicativo */
+  'lbl_all_rights_reserved' => 'Todos os direitos reservados',
+  'lbl_all_results_by' => 'Todos os resultados por:',
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
   'lbl_back' => 'Voltar',
@@ -233,6 +234,7 @@ return[
   'lbl_chat_with_friends' => 'Chat com Amigos',
   'lbl_chat_with_volunteers' => 'Chat com Voluntários',
   'lbl_choose' => 'Escolher',
+  'lbl_click_here' => 'Clique Aqui',
   'lbl_close' => 'Fechar',
   'lbl_city' => 'Cidade',
   'lbl_city_' => 'Cidades',
@@ -338,6 +340,7 @@ return[
   'lbl_feedback' => 'Feedback',
   'lbl_feedback_give_yours' => 'Dê seu feedback',
   'lbl_filter_by' => 'Filtrar por:',
+  'lbl_find_all_people_here' => 'Encontre toda galera aqui!',
   'lbl_follow' => 'Seguir',
   'lbl_followed_by' => 'Seguido por',
   'lbl_followed_by_none' => 'Ninguém',
@@ -408,6 +411,7 @@ return[
   'lbl_message_' => 'Mensagens',
   'lbl_message_no' => 'Nenhuma mensagem nova.',
   'lbl_message_send' => 'Enviar Mensagem',
+  'lbl_n-a' => 'Não Disponível',
   'lbl_next' => 'Próximo',
   'lbl_name' => 'Nome',
   'lbl_name_last' => 'Sobrenome',
@@ -534,6 +538,7 @@ return[
     'lbl_previous' => 'Anterior',
     'lbl_preview' => 'Prévia',
     'lbl_prettyURL' => 'Sua Endereço',
+    'lbl_profile_all_search' => 'Busca dos Perfis',
     'lbl_profile' => 'Perfil',
     'lbl_profile_' => 'Perfis',
     'lbl_profile_delete' => 'Deletar Perfil',
@@ -596,6 +601,7 @@ return[
     'lbl_site' => 'Site',
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
+    'lbl_stay_close' => 'Fique sempre por perto da Vivalá',
     'lbl_step' => 'Passo',
     'lbl_start' => 'Começar',
     'lbl_step_skip' => 'Pular etapa',
@@ -857,7 +863,7 @@ return[
     'wannatravel_title' => 'Conheça o Brasil',
     'wannatravel_subtitle' => 'Encontre transporte, hospedagem e restaurantes para todo tipo de experiência!',
     'wannatravel_trip_already_know' => 'Já sabe para onde ir?',
-    'wannatravel_trip_setup' => 'Monte sua viagem!',
+    'wannatravel_trip_setup' => 'Monte sua viagem',
     'wannatravel_trip_restaurants' => 'Restaurantes',
     'wannatravel_trip_hotels_flights_packs' => 'Vôos, Hospedagem e Pacotes',
     'wannatravel_trip_bus_drive' => 'Passagens rodoviárias',
@@ -1015,8 +1021,8 @@ return[
       'welcome_img_alt_vivalameet' => 'Conheça o Brasil!',
       'welcome_img_t_vivalaregister' => 'Se junte a Vivalá e conecte-se ao Brasil de verdade.',
       'welcome_floatingballon1' => 'Planeje suas experiências e compre transporte, hospedagem e reserva de restaurantes em todo o Brasil.',
-      'welcome_floatingballon2' => 'Conheça Projetos de impacto de social e transforme o país através de voluntariado.',
-      'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar no Brasil.',
+      'welcome_floatingballon2' => 'Conheça projetos de impacto de social e transforme o país através de voluntariado.',
+      'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar.',
 
     /* Política de Dados */
       'welcome_aboutprivacy1' => 'Ao clicar em confirmar, você concorda com nossos',
@@ -1201,7 +1207,7 @@ return[
     'partners_text_1' => '- Mais de 200.000 hotéis em 8.000 destinos',
     'partners_text_2' => '- 500 empresas de aviação com serviços para todo o mundo',
     'partners_text_3' => '- Mais de 30 empresas de aluguel de carro em 30.000 destinos',
-    'partners_text_4' => '- 1.600 restaurantes em 19 cidades brasileiras',
+    'partners_text_4' => '- 1.700 restaurantes em 19 cidades brasileiras',
     'partners_text_5' => '- 3.000 destinos de ônibus no Brasil operados por 40 empresas rodoviárias',
   //
   /* Contato */
@@ -1236,7 +1242,7 @@ return[
     'mobile_warning_welcome' => 'Bem vindo à Vivalá!',
     'mobile_warning_desctopo' => 'Percebemos que você acessou pelo mobile.',
     'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para <span class="laranja">celular</span> e <span class="laranja">tablet</span>.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
-    'mobile_warning_desclink' => 'Acesse <a href="vivala.com.br">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
+    'mobile_warning_desclink' => 'Acesse <a href="https://www.vivala.com.br" class="laranja">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
 
   /* Opções modal feedback */
     'lbl_feedback_reporting_problem' => 'Reportar Problema Encontrado',
@@ -1248,15 +1254,15 @@ return[
     /*----------------------------------------------------------------------------------
     / DUMMY - serão deletados em versões futuras, só pra preencher o beta
     /---------------------------------------------------------------------------------*/
-    'dummy_travel_1_title' => 'PASSAGENS AÉREAS',
+    'dummy_travel_1_title' => 'Passagens Aéreas',
     'dummy_travel_1' => 'Encontre passagens aéreas para 143 países do mundo com mais de 500 companhias aéreas! Busque agora!',
-    'dummy_travel_2_title' => 'HOTÉIS',
+    'dummy_travel_2_title' => 'Hospedagem',
     'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência! São mais de 200.000 possibilidades em de 164 países. Clique aqui para buscar!',
-    'dummy_travel_3_title' => 'PACOTES',
+    'dummy_travel_3_title' => 'Pacotes',
     'dummy_travel_3' => 'Personalize seu pacote combinando voos, hospedagem e aluguel de carros em uma compra única e economize até 35% em sua viagem! Faça sua busca aqui',
-    'dummy_travel_4_title' => 'ALIMENTAÇÃO',
+    'dummy_travel_4_title' => 'Restaurantes',
     'dummy_travel_4' => 'Descubra excelentes restaurantes pelo Brasil e tenha até 50% de desconto em 1.700 estabelecimentos. Veja mais aqui!',
-    'dummy_travel_5_title' => 'ÔNIBUS',
+    'dummy_travel_5_title' => 'Ônibus',
     'dummy_travel_5' => 'Compre passagens rodoviárias para 3.000 destinos no Brasil, operados por 67 viações. Busque agora!',
 
     /*----------------------------------------------------------------------------------
@@ -1266,6 +1272,8 @@ return[
     'transport_bus' => 'Ônibus',
     'transport_car' => 'Carro',
     'transport_airplane' => 'Avião',
+    'transport_oh_the_sky' => 'Ah, o céu!',
+    'transport_lets_ride' => 'Pé na estrada!',
 
     /*----------------------------------------------------------------------------------
     / Facebook Open Graph

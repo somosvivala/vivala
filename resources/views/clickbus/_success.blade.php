@@ -1,28 +1,48 @@
-<div class="col-md-12 col-lg-12 padding-b-2">
-  <div class="row">
+<div id="sucesso-da-viagem" class="col-md-12 col-lg-12 padding-b-2">
+  <div id="cabecalho" class="row padding-b-2 margin-b-1">
+      <div class="col-md-12 col-lg-12">
+        <div class="col-md-5 col-lg-5 text-right">
+          <i class="fa fa-7x fa-check"></i>
+        </div>
+        <div class="col-md-7 col-lg-7 text-center">
+          <h1 class="texto-maiusculo ajuste-fonte-avenir-black">{!! trans('clickbus.clickbus_success-thanks-client') !!}</h1>
+            @if($compra->payment_method === "payment.debitcard")
+              {{-- DÉBITO --}}
+                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-debit-method-text') !!}
+                  <span class="texto-negrito texto-minusculo">
+                    <strong class="texto-sucesso">
+                      {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
+                    </strong>
+                  </span>
+                </p>
+              <a href="javascript:void(0);" class="btn btn-acao btn-acao-sucesso" target="_blank">{{ trans('global.lbl_click_here') }}</button>
+            @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
+              {{-- CRÉDITO --}}
+                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-credit-method-text-1') !!}</p>
+                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-credit-method-text-2') !!}</p>
+            @else
+              {{-- MÉTODO NÃO ENCONTRADO --}}
+                <span class="texto-negrito texto-minusculo">
+                  <strong>
+                    {!! trans('clickbus.clickbus_email-payment-method-unavaiable') !!}
+                  </strong>
+                </span>
+            @endif
+        </div>
+      </div>
+  </div>
+
+  <div id="corpo" class="row">
     <div id="detalhes-da-viagem" class="col-md-6 col-lg-6">
       <div class="row detalhes-da-viagem-1">
-        <div class="col-md-3 col-lg-3">
-          <img src="{{ asset('/img/clickbus/icon_clickbus-passagens-view.svg') }}" height="135px" width="100%">
-        </div>
-        <div class="col-md-9 col-lg-9">
-          <h3 class="text-center padding-t-1">
-            {!! trans('clickbus.clickbus_success-buy-done') !!}
-          </h3>
-        </div>
-      </div>
-      <div class="row detalhes-da-viagem-2">
-        <h3 class="text-center">
-          {!! trans('clickbus.clickbus_success-thanks-for-vivala') !!}
-        </h3>
-      </div>
-      <div class="row detalhes-da-viagem-3">
         <p class="padding-t-1 padding-l-1 padding-r-1">
           <span>
-            {!! trans('clickbus.clickbus_success-dear-client') !!}
+            {!! trans('clickbus.clickbus_success-your-bought') !!}
           </span>
           <span class="negrito">
-            {!! trans('clickbus.clickbus_email-sigla-real') !!}
+            <strong>
+              {!! trans('clickbus.clickbus_email-sigla-real') !!}
+            </strong>
           </span>
           <span class="negrito">
             <strong>
@@ -37,7 +57,7 @@
                 {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
               </strong>
             </span>
-
+            <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
           @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
             {{-- CRÉDITO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -45,6 +65,16 @@
                 {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
               </strong>
             </span>
+            <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
+            <p class="padding-l-1 padding-r-1">
+              <i class="fa fa-3x fa-exclamation-circle"></i>
+              <span>
+                {!! trans('clickbus.clickbus_success-invoice-bill') !!}
+              </span>
+            </p>
+            <p class="texto-negrito text-center">
+              {!! trans('clickbus.clickbus_success-mercadopago') !!}
+            </p>
           @else
             {{-- MÉTODO NÃO ENCONTRADO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -53,28 +83,9 @@
               </strong>
             </span>
           @endif
-            {!! trans('clickbus.clickbus_success-approved-by-system') !!}
-        </p>
-        <p class="padding-l-1 padding-r-1">
-          <i class="fa fa-3x fa-exclamation-circle"></i>
-          <span>
-            {!! trans('clickbus.clickbus_success-invoice-bill') !!}
-          </span>
-        </p>
-        <p class="texto-negrito text-center">
-          {!! trans('clickbus.clickbus_success-mercadopago') !!}
         </p>
       </div>
-      <div class="row detalhes-da-viagem-4">
-        <div class="col-md-12 col-lg-12 padding-t-1">
-          <h4>{!! trans('clickbus.clickbus_success-we-sent-infos') !!}</h4>
-        </div>
-        {{-- Input de enviar emails pra outras pessoas sobre a COMPRA --}}
-        {{--
-        <!--div class="col-md-12 col-lg-12">
-          <input type="hidden">
-        </div-->
-        --}}
+      <div class="row detalhes-da-viagem-2">
         <div class="row">
           <div class="col-md-12 col-lg-12">
             <h3 class="text-center">
@@ -83,7 +94,6 @@
 
             <table class="table">
               <tbody>
-
                 <tr>
                   <td>
                     <span>
@@ -132,13 +142,11 @@
         </div>
       </div>
     </div>
+
     <div id="dicas-da-viagem" class="col-md-6 col-lg-6">
-      <h1 class="margin-b-1">
+      <h3 class="margin-b-1 text-center">
         {!! trans('clickbus.clickbus_success-next-to-end') !!}
-      </h1>
-      <p class="margin-b-1 text-center">
-        {!! trans('clickbus.clickbus_success-some-tips-to-you') !!}
-      </p>
+      </h3>
       <hr class="dicas-de-viagem-divisor"/>
 
       <table class="tres-dicas-de-viagem">
@@ -170,9 +178,6 @@
       </table>
 
       <hr class="dicas-de-viagem-divisor"/>
-      <div>
-        <img src="{{ asset('/img/dummy.jpg') }}" height="25%" width="100%">
-      </div>
       </div>
     </div>
   </div>

@@ -12,29 +12,30 @@
 
     <div class="fundo-cheio col-sm-12 tour-pilar-viajar-step2">
         <h3 class="font-bold-upper text-center">
+          {{ trans('global.wannatravel_trip_already_know') }}
             <small class="sub-titulo">{{ trans('global.wannatravel_trip_setup') }}</small>
         </h3>
 
-        <ul class="lista-border pesquisa-viajar">
+        <ul class="lista-border pesquisa-viajar margin-t-2 margin-b-3">
             <li class="col-sm-4 tour-pilar-viajar-step3">
                 {{--
-                <a href="#" class="desativado">
+                <a class="rodoviario" href="#" class="desativado">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
                 --}}
-                <a href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
+                <a class="rodoviario" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
 
             <li class="col-sm-5 tour-pilar-viajar-step4">
-                <a href="#quimera" data-url="https://www.e-agencias.com.br/vivala" class="ativa-modal-quimera">
+                <a class="ativa-modal-quimera" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
                    {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
                 </a>
             </li>
 
             <li class="col-sm-3 active tour-pilar-viajar-step5">
-                <a href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
+                <a class="restaurantes" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                     {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
             </li>

@@ -26,3 +26,32 @@ nav.menu-lateral {
 		}
 	}
 }
+
+// Menu de sugestões lateral (direita)
+#menu-direita{
+	span{
+		font-family:@font-family-avenir-medium;
+	}
+}
+#menu-fb{
+	border: 1px solid @cor-bg-body;
+}
+#menu-ig{
+	border: 1px solid @cor-bg-body;
+	.btn-ig-follow{
+		position: relative;
+		left: 6.1vw;
+		&focus{
+			outline: none;
+			outline-offset: 0;
+		}
+		span{
+			border-radius: 0;
+			padding: 2px 4px;
+			font-size: 10px;
+		}
+	}
+	p{
+		margin-top: -45px;
+	}
+}

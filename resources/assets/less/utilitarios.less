@@ -20,7 +20,7 @@
 	padding-right: 0.3em;
 }
 .icon-footer{
-  font-size: 3em;
+  font-size:2.5em;
   color: @cor-primaria;
   vertical-align: middle;
 }
@@ -130,6 +130,9 @@ ul.margin-0
 .margin-t-10 {
     margin-top: 10em;
 }
+.margin-l-0 {
+  margin-left: 0em;
+}
 .margin-l-1 {
   margin-left: 1em;
 }
@@ -138,6 +141,9 @@ ul.margin-0
 }
 .margin-l-3 {
   margin-left: 3em;
+}
+.margin-r-0 {
+  margin-left: 1em;
 }
 .margin-r-1 {
   margin-left: 1em;
@@ -187,17 +193,29 @@ ul.margin-0
 .padding-t-10 {
     padding-top: 10em;
 }
+.padding-l-0 {
+    padding-left: 0em;
+}
 .padding-l-1 {
     padding-left: 1em;
 }
 .padding-l-2 {
     padding-left: 2em;
 }
+.padding-r-0 {
+    padding-right: 0em;
+}
 .padding-r-1 {
     padding-right: 1em;
 }
 .padding-r-2 {
     padding-right: 2em;
+}
+.padding-l-no{
+    padding-left: 0;
+}
+.padding-r-no{
+    padding-right: 0;
 }
 a.padding-btn,
 .padding-btn {
@@ -341,9 +359,15 @@ div.foto {
 	li {
 		padding:0;
 	}
-	li+li {
-		border-left: 2px solid black;
-	}
+}
+.menu-viajar{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+.menu-conectar{}
+.menu-cuidar{
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .radio-hidden {
@@ -477,17 +501,10 @@ div.foto-fundo-bottom {
 	}
 }
 
-// Subtitulo
-h3.subtitulo {
-	text-transform: uppercase;
-	color: @cor-txt;
-	font-family: @font-family-sans-serif-bold;
-}
-
 //subtitulo da home de cuidar e viajar
 h3 .sub-titulo {
 	text-transform: none;
-	font-family: @font-family-sans-serif;
+	font-family: @font-family-avenir-medium;
         width:100%;
         position:relative;
         display:block;
@@ -592,6 +609,22 @@ span.laranja,
 	&:hover {
     color: @cor-primaria;
   }
+}
+.laranja-fundo-branco {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  color: @cor-primaria;
+  background-color: @cor-txt-suave;
+  &:hover {
+    color: @cor-txt-suave;
+    background-color: @cor-primaria;
+  }
+}
+.branco-fundo-laranja {
+  font-family: "FuturaBT-Bold", "Open Sans", Helvetica, Arial, sans-serif;
+  font-size: 1.3em;
+  color: @cor-txt-suave;
+  background-color: @cor-primaria;
+  padding: 3px 4px;
 }
 .cursor-default{
   cursor: default;
@@ -772,21 +805,35 @@ a.click-img-no-border{
     }
 }
 .fa-1-1x{
-  font-size: 1.1em;
+  font-size:1.1em!important;
 }
 .fa-1-2x{
-  font-size: 1.2em;
+  font-size:1.2em!important;
 }
 .fa-1-3x{
-  font-size: 1.3em;
+  font-size:1.3em!important;
 }
 .fa-1-4x{
-  font-size: 1.4em;
+  font-size:1.4em!important;
 }
 .fa-1-5x{
-  font-size: 1.5em;
+  font-size:1.5em!important;
 }
-
+.fa-6x{
+  font-size:6em!important;
+}
+.fa-7x{
+  font-size:7em!important;
+}
+.fa-8x{
+  font-size:8em!important;
+}
+.fa-9x{
+  font-size:9em!important;
+}
+.fa-10x{
+  font-size:10em!important;
+}
 form.cropfoto-ajax, form.form-ajax {
     img#preview,
     input#image_file_upload,
@@ -898,45 +945,71 @@ form.cropfoto-ajax, form.form-ajax {
   background-position: 0 -880px;
   margin: auto;
 }
-// Spritemap PARCEIROS
-.spritemap-parceiros{
-  background-image: url('../img/spritemap-parceiros.png');
-  background-repeat: no-repeat;
-}
-.sprite-decolar{
-  background-position: -10px -5px;
-  height: 100px;
-  width: 330px;
-}
-.sprite-chefsclub{
-  background-position: -120px -125px;
-  height: 100px;
-  width: 160px;
-}
-.sprite-clickbus{
-  background-position: -40px -250px;
-  height: 100px;
-  width: 310px;
-}
-
+// TEXTOS
 .texto-maiusculo{
-  text-transform: uppercase;
+  text-transform: uppercase!important;
 }
 .texto-minusculo{
-  text-transform: lowercase;
+  text-transform: lowercase!important;
 }
 .texto-capitalizado{
-  text-transform: capitalize;
+  text-transform: capitalize!important;
 }
 .texto-negrito{
-  font-weight: bold;
+  font-weight: bold!important;
 }
 .texto-italico{
-  font-weight: italic;
+  font-weight: italic!important;
 }
 .texto-sublinhado{
-  text-decoration: underline;
+  text-decoration: underline!important;
 }
 .texto-riscado{
-  text-decoration: overline;
+  text-decoration: overline!important;
+}
+// Ajuste de Fontes
+.ajuste-fonte-avenir-black{
+  font-family:@font-family-avenir-black!important;
+}
+.ajuste-fonte-avenir-black-oblique{
+  font-family:@font-family-avenir-blackoblique!important;
+}
+.ajuste-fonte-avenir-book{
+  font-family:@font-family-avenir-book!important;
+}
+.ajuste-fonte-avenir-book-oblique{
+  font-family:@font-family-avenir-bookoblique!important;
+}
+.ajuste-font-avenir-heavy{
+  font-family:@font-family-avenir-heavy!important;
+}
+.ajuste-font-avenir-heavy-oblique{
+  font-family:@font-family-avenir-heavyoblique!important;
+}
+.ajuste-fonte-avenir-light{
+  font-family: @font-family-avenir-light!important;
+}
+.ajuste-fonte-avenir-light-oblique{
+  font-family: @font-family-avenir-lightoblique!important;
+}
+.ajuste-fonte-avenir-medium{
+  font-family: @font-family-avenir-medium!important;
+}
+.ajuste-fonte-avenir-medium-oblique{
+  font-family: @font-family-avenir-mediumoblique!important;
+}
+.ajuste-fonte-avenir-oblique{
+  font-family:@font-family-avenir-oblique!important;
+}
+.ajuste-fonte-avenir-roman{
+  font-family:@font-family-avenir-roman!important;
+}
+input#busca-geral-menu {
+    .ajuste-fonte-avenir-medium;
+}
+select.form-control-fix{
+  color:#999!important;
+}
+.fundo-termos-compromisso{
+  background-color: rgba(0,0,0,.6);
 }

@@ -82,30 +82,33 @@
 </head>
 
 <body>
-	{{-- Facebook Post Plugin JS --}}
-        <i id="javascript-ativo" class="fa fa-times @if (env('APP_ENV') != 'local') hidden @endif" style="padding:0.2em 0.5em; color:white; font-size: 20px; border-radius:3px; position:absolute; top:5px;left:3px;z-index:10;background-color:#e55"><b class="font-bold-upper"> JS</b></i>
-	@yield('pilar')
+	{{-- Plugin JAVASCRIPT ativo --}}
+    <i id="javascript-ativo" class="fa fa-times @if (env('APP_ENV') === 'local') hidden @endif" style="padding:0.2em 0.5em; color:white; font-size: 20px; border-radius:3px; position:absolute; top:5px;left:3px;z-index:10;background-color:#e55"><b class="font-bold-upper"> JS</b></i>
+
+  @yield('pilar')
 
     {{-- Scripts --}}
-	<script src="{{ asset('/js/vendor.js') }}"></script>
-	<script src="{{ asset('/js/lightbox.min.js') }}"></script>
-    <div id="fb-root"></div><script>(function(d, s, id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=1598914903686637";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+      <script src="{{ asset('/js/vendor.js') }}"></script>
+	    <script src="{{ asset('/js/lightbox.min.js') }}"></script>
+      <div id="fb-root"></div><script>(function(d, s, id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=(env('FACEBOOK_APP_ID')";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
+      <div id="ig-root"></div><script type="text/javascript">$(document).ready(function(){igScript({igUserID: '{{ getenv('INSTAGRAM_USER_ID') }}',igATkn: '{{ getenv('INSTAGRAM_ACCESS_TOKEN') }}',igAppID: '{{ getenv('INSTAGRAM_APP_ID')}}',igAppCS: '{{ getenv('INSTAGRAM_APP_CLIENT_SECRET')}}'}); });</script>
 
-	<!-- Iubenda (link de Privacy Policy) -->
-	<!-- <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> -->
-    <!-- Modal com iframe da quimera -->
-<div id="modal-quimera" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-           <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            </div>
-            <div class="modal-body">
-                <iframe src="" class="quimera_iframe" style="border: 0;">
-                </iframe>
+      <!-- Iubenda (link de Privacy Policy) -->
+      <!-- <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> -->
+      <!-- Modal com iframe da quimera -->
+      <div id="modal-quimera" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+               <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="" class="quimera_iframe" style="border: 0;">
+                    </iframe>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+      </div>
 </body>
+
 </html>
