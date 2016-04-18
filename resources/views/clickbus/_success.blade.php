@@ -59,6 +59,7 @@
                 {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
               </strong>
             </span>
+            <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
           @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
             {{-- CRÉDITO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -66,6 +67,16 @@
                 {!! trans('clickbus.clickbus_email-payment-method-creditcard') !!}
               </strong>
             </span>
+            <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
+            <p class="padding-l-1 padding-r-1">
+              <i class="fa fa-3x fa-exclamation-circle"></i>
+              <span>
+                {!! trans('clickbus.clickbus_success-invoice-bill') !!}
+              </span>
+            </p>
+            <p class="texto-negrito text-center">
+              {!! trans('clickbus.clickbus_success-mercadopago') !!}
+            </p>
           @else
             {{-- MÉTODO NÃO ENCONTRADO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -74,7 +85,6 @@
               </strong>
             </span>
           @endif
-            {!! trans('clickbus.clickbus_success-approved-by-system') !!}
         </p>
       </div>
       <div class="row detalhes-da-viagem-2">
