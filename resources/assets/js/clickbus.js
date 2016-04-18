@@ -555,6 +555,17 @@ console.log(request);
 
             //mostrando view de sucesso
             $('#clickbus-resultado-busca').html(json.view);
+
+            //substituindo sweetalert de loading pela de sucesso com timer
+            swal({
+                type: "success",
+                html: '<h4>Sucesso</h4>',
+                showCancelButton: false,
+                width:240,
+                confirmButtonClass: 'hide',
+                timer: 1100,
+            });
+
         }
 
     });
@@ -693,13 +704,16 @@ var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
 //metodo para validar se a regex de cartoes amex que restringe mais de 1 parcela
 //se aplica ao numeroCartao
 var checaCartaoAmex = function(numeroCartao) {
-    var amexRegex = $('#amex-regex').val();
-    if(numeroCartao.match(amexRegex)) {
+    var regex = new RegExp($('#amex-regex').val().replace(/\//g,''), "g");
+
+    if(numeroCartao.match(regex)) {
+        console.log('amex card matched');
         //desabilitar parcelas
         $('#bandeira-amex').val(1);
         $('#bandeira-amex').attr('disabled', 'true');
     } else {
 
+        console.log('no match');
         //caso parcelas ja bloqueadas e amex card valido, desbloquear parcelas
         if ($('#bandeira-amex').attr('disabled')) {
             $('#bandeira-amex').removeAttr('disabled');

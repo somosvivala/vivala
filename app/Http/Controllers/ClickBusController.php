@@ -502,7 +502,7 @@ class ClickBusController extends Controller
                 'desconto_total' => $descontoTotal,
                 'taxas' => $taxas,
                 'total' => $total,
-                'data_pagamento' => ($status_pagamento == $clickBusRepository->FLAG_ORDEM_FINALIZADA) ? Carbon::now('America/Sao_Paulo') : null,
+                'data_pagamento' => ($statusPagamento == $this->clickBusRepository->FLAG_ORDEM_FINALIZADA) ? Carbon::now('America/Sao_Paulo') : null,
                 'status' => $statusPagamento
             ]);
 
