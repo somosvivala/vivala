@@ -14,6 +14,9 @@ return[
   'lbl_vivala' => 'Vivalá',
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
+  'join_vivala' => 'Junte-se a Vivalá e conecte-se ao Brasil de verdade.',
+  'description_vivala' => 'A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil.',
+  'keywords_vivala' => 'Vivalá, Rede Social, Turismo, Viagem, Voluntariado, Impacto Social, Hospedagem, Transporte, Alimentação, Entretenimento',
 
 /* Pilares */
   'lbl_wanna_travel' => 'Quero Viajar',
@@ -231,6 +234,7 @@ return[
   'lbl_chat_with_friends' => 'Chat com Amigos',
   'lbl_chat_with_volunteers' => 'Chat com Voluntários',
   'lbl_choose' => 'Escolher',
+  'lbl_click_here' => 'Clique Aqui',
   'lbl_close' => 'Fechar',
   'lbl_city' => 'Cidade',
   'lbl_city_' => 'Cidades',
@@ -1238,7 +1242,7 @@ return[
     'mobile_warning_welcome' => 'Bem vindo à Vivalá!',
     'mobile_warning_desctopo' => 'Percebemos que você acessou pelo mobile.',
     'mobile_warning_descbody' => 'Estamos desenvolvendo nossas versões para <span class="laranja">celular</span> e <span class="laranja">tablet</span>.<br>Enquanto isso convidamos você para se conectar na plataforma pelo seu desktop ou notebook.',
-    'mobile_warning_desclink' => 'Acesse <a href="vivala.com.br">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
+    'mobile_warning_desclink' => 'Acesse <a href="https://www.vivala.com.br" class="laranja">vivala.com.br</a> e conecte-se ao Brasil de verdade.',
 
   /* Opções modal feedback */
     'lbl_feedback_reporting_problem' => 'Reportar Problema Encontrado',

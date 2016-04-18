@@ -292,43 +292,56 @@ div.places-list {
     }
 }
 
-#detalhes-da-viagem{
-  padding: 0 25px 0 15px;
-  .detalhes-da-viagem-1{
-    background-color: @cor-fundo;
-    color: @cor-cinza-escuro;
+#sucesso-da-viagem{
+  background-color:white;
+  #cabecalho{
+    color:white;
+    background-color:@cor-clickbus-sucesso;
+    .btn-acao-sucesso{
+      color:white!important;
+      background-color:rgba(017,089,080,1)!important;
+      &:hover,
+      &:active{
+        color:white!important;
+        background-color:rgba(12,59,53,1)!important;
+      }
+    }
+    .texto-sucesso{
+      font-size:1.5em;
+    }
   }
 
-  .detalhes-da-viagem-2{
-    background-color: @cor-bg-painel;
-    color: @cor-cinza-escuro;
-  }
+  #corpo{
+    #detalhes-da-viagem{
+      padding: 0 25px 0 15px;
+      .detalhes-da-viagem-1{
+        color: @cor-cinza-escuro;
+        background-color: @cor-fundo;
+      }
 
-  .detalhes-da-viagem-3{
-    background-color: @cor-fundo;
-    color: @cor-cinza-escuro;
-  }
+      .detalhes-da-viagem-2{
+        color: @cor-cinza-escuro;
+        background-color: white;
+      }
+    }
 
-  .detalhes-da-viagem-4{
-    background-color: @cor-bg-painel;
-    color: @cor-cinza-escuro;
-  }
-}
-#dicas-da-viagem{
-  padding: 0 15px 1em 25px;
-  background-color: @cor-primaria;
-  color: @cor-bg-painel;
+    #dicas-da-viagem{
+      padding: 0 15px 1em 25px;
+      background-color: @cor-primaria;
+      color: @cor-bg-painel;
 
-  .dicas-de-viagem-divisor{
-    margin: 10px 0;
-    border: 0;
-    height: 1px;
-    background: @cor-bg-painel;
-    background-image: linear-gradient(to right, @cor-fundo, @cor-bg-painel, @cor-fundo);
-  }
+      .dicas-de-viagem-divisor{
+        margin: 10px 0;
+        border: 0;
+        height: 1px;
+        background: @cor-bg-painel;
+        background-image: linear-gradient(to right, @cor-fundo, @cor-bg-painel, @cor-fundo);
+      }
 
-  .tres-dicas-de-viagem{
-    background-color: @cor-bg-painel;
-    color: @cor-primaria;
+      .tres-dicas-de-viagem{
+        background-color: @cor-bg-painel;
+        color: @cor-primaria;
+      }
+    }
   }
 }

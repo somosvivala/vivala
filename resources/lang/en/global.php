@@ -1,10 +1,8 @@
 <?php
 return[
-
 /*
 |--------------------------------------------------------------------------
 | [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
-| Status da Tradução:
 |--------------------------------------------------------------------------
 */
 
@@ -14,6 +12,9 @@ return[
   'lbl_vivala' => 'Vivalá',
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
+  'join_vivala' => 'Join Vivalá and connect yourself to real Brazil.',
+  'description_vivala' => 'Vivalá is a global platform that connects people who are interested in traveling and transform Brazil.',
+  'keywords_vivala' => 'Vivalá, Social Network, Tourism, Trip, Volunteering, Social Impact, Accomodation, Transport, Feeding, Entertainment',
 
 // Vertentes
   'lbl_wanna_travel' => 'Quero Viajar',
@@ -194,6 +195,7 @@ return[
   'lbl_chat_with_friends' => 'Chat with Friends',
   'lbl_chat_with_volunteers' => 'Chat with Volunteers',
   'lbl_choose' => 'Choose',
+  'lbl_click_here' => 'Click Here',
   'lbl_close' => 'Close',
   'lbl_city' => 'City',
   'lbl_city_' => 'Cities',
@@ -240,11 +242,14 @@ return[
   'lbl_contact' => 'Contact',
   'lbl_contact_' => 'Contacts',
   'lbl_continue' => 'Continue',
+  'lbl_cookie' => 'Cookie',
+  'lbl_cookie_' => 'Cookies',
+  'lbl_cookie_use' => 'Cookies Usage',
   'lbl_cover_photo' => 'Cover Photo',
   'lbl_create' => 'Create',
   'lbl_created_at' => 'Created on',
   'lbl_brazilian_culture' => 'Brazilian Culture',
-  'lbl_data_policy' => 'Data Policy',
+  'lbl_data_policy' => 'Data Policy,',
   'lbl_developer' => 'Developer',
   'lbl_description' => 'Description',
   'lbl_description_long' => 'Long Description',
@@ -936,7 +941,7 @@ return[
     /* Política de Dados */
       'welcome_aboutprivacy1' => ' By clickin Confirm, you agree with our',
       'welcome_aboutprivacy2' => ' and confirm you have read our',
-      'welcome_aboutprivacy3' => ', including our',
+      'welcome_aboutprivacy3' => ' including our',
 
 
 /*------------------------------------------------------------------------------
@@ -1132,7 +1137,7 @@ return[
 
   /* Termos e Condições */
     'termsconditions_title' => 'Terms and Conditions',
-    'termsconditions_subtitle' => 'The basic house rules!',
+    'termsconditions_subtitle' => 'The basic rules of house',
     'termsconditions_intro_text' => 'Please read carefully these terms and conditions before using Vivalá. By using Vivalá, you comprmise yourself to follow all the terms and conditions on this section. Please consult this terms and conditions periodcally to know about possible changes. If you don&#39;t agree with the conditions written here, you are not allowed to use Vivalá.',
     'termsconditions_buying_terms_title' => 'Sales terms',
     'termsconditions_buying_terms_text' => 'The objective of this section is to introduce the necessary information regarding ant commercial transaction between VIVALÁ TURISMO E SERVIÇOS LTDA - ‘Vivalá’ - and the website user. Vivalá works as a market place that connects our user with our commercial partners, who supply services like (1) flight tickets; (2) bus tickets; (3) accommodation; (4) restaurant benefits. Vivalá&#39;s obligation is to enable a platform where the user has the conditions to build his whole travel itinerary with our partners services. Our partners have the obligation of intermediating the relation between our user and the services provider (flight and bus companies, hotels and restaurants). Our partners obligations are: a) operate the selling process of the travelling services directly to users; b) inform the User about the especifications of the acquired services; c) inform the User about any update or changes regarding travel documentation, such as passports, visas, pharmaceutials documents and others, according to the acquired service regulation. Our Users obligations are: a) read carefully the terms and conditions from Vivalá and our partners; b) pay the price of the acquired services on the dates and conditions indicated on the moment of the purchase; c) be responsible for any extra costs related to the services acquired, on the case of cancellation or changes that may be related to his or any other traveller fault.',
@@ -1162,7 +1167,7 @@ return[
     'mobile_warning_welcome' => 'Welcome to Vivalá!',
     'mobile_warning_desctopo' => 'We realize that you accessed by mobile.',
     'mobile_warning_descbody' => 'We are developing our <span class="laranja">mobile</span> and <span class="laranja">tablet</span> versions. Meanwhile we invite you to connect to platform from your desktop or notebook.',
-    'mobile_warning_desclink' => 'Join <a href="vivala.com.br">vivala.com.br</a> and experience the real Brazil.',
+    'mobile_warning_desclink' => 'Join <a href="https://www.vivala.com.br" class="laranja">vivala.com.br</a> and experience the real Brazil.',
 
     /* Termos e condições */
     'termsconditions_title' => 'Terms and conditions',

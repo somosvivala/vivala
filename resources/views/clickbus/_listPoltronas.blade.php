@@ -98,7 +98,7 @@
             <input type="hidden" id="ida-classe" name="ida-classe" value="{{ $ida->classe }}">
             <input type="hidden" id="ida-horario-chegada" name="ida-horario-chegada" value="{{ $ida->horario_chegada }}">
             <input type="hidden" id="ida-company" name="ida-company" value="{{ $ida->content->busCompany->name }}">
-            <h4>{{ trans('clickbus.clickbus_departure') }} - {{ trans('clickbus.clickbus_route') }} 1</h4>
+            <h4 class="margin-t-1">{{ trans('clickbus.clickbus_departure') }} - {{ trans('clickbus.clickbus_route') }} 1</h4>
             <div class="poltronas-selecionadas-ida">
             </div>
             @if(isset($volta))
@@ -112,11 +112,9 @@
             <input type="hidden" id="volta-classe" name="volta-classe" value="{{ $volta->classe }}">
             <input type="hidden" id="volta-company" name="volta-company" value="{{ $volta->content->busCompany->name }}">
             <h4 class="margin-t-1">{{ trans('clickbus.clickbus_return') }} - {{ trans('clickbus.clickbus_route') }} 2</h4>
-            <div class="poltronas-selecionadas-volta">
-            </div>
+            <div class="poltronas-selecionadas-volta"></div>
             @endif
             {!! Form::submit( trans('clickbus.clickbus_buy-now'), ['class' => 'margin-t-1 btn btn-acao', 'tabindex' => '-1']) !!}
-            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x laranja" style="display:none"></i>
         {!! Form::close() !!}
     </div>
 </div>
@@ -134,7 +132,11 @@
                             {{ trans('clickbus.clickbus_seat') }} <span class="num-poltrona"></span>
                         </h3>
                     </div>
-                    <div class="col-sm-2"><button type="button" class="btn pull-right" data-dismiss="modal"><i class="fa fa-times"></i></button></div>
+                    <div class="col-sm-2">
+                      <button type="button" class="btn pull-right" data-dismiss="modal">
+                        <i class="fa fa-times"></i>
+                      </button>
+                    </div>
                 </div>
 
                 <div class="row">
@@ -174,8 +176,11 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-acao" type="submit">{{ trans('clickbus.clickbus_choose-seat') }} <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide laranja"></i>
-                        </button>
+                <button class="btn btn-acao" type="submit">
+                  {{ trans('clickbus.clickbus_choose-seat') }}
+                  <span class="num-poltrona"></span>
+                </button>
+                <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x laranja soft-hide"></i>
              </div>
              </form>
         </div>
