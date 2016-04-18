@@ -18,8 +18,7 @@ class ClickBusRepository
     /**
      * 'Constants'
      */
-    public $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
-    public $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
+    public $FLAG_ORDEM_FINALIZADA = 'order_finalized_successfully';
     public $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
 
 
@@ -173,12 +172,19 @@ class ClickBusRepository
     /**
      * Metodo para validar se o pagamento foi confirmado
      *
+     * @param $compra - a instancia da compra a ser testada 
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se o pagamento foi confirmado
      */
-    public function confirmaPagamentoFinalizado($obj)
+    public function confirmaPagamentoFinalizado(CompraClickbus $compra, $obj)
     {
-        $pagamentoFoiConfirmado = $obj->{"status"} == $this->FLAG_PAGAMENTO_CONFIRMADO;
+        //Se a compra já tiver status de finalizada, entao nao já foi confirmado o pagamento
+        if ($compra->status == $this->FLAG_ORDEM_FINALIZADA) {
+            $pagamentoFoiConfirmado = false;
+        } else {
+            $pagamentoFoiConfirmado = $obj->{"status"} == $this->FLAG_ORDEM_FINALIZADA;
+        }
+
         return $pagamentoFoiConfirmado;
     }
 

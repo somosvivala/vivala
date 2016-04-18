@@ -28,8 +28,8 @@ class UpdatePagamentoConfirmado {
 	public function handle(ClickBusPagamentoConfirmado $event)
 	{
       $event->CompraClickBus->update([
-          'status' => $this->clickBusRepository->FLAG_PAGAMENTO_CONFIRMADO,
-          'data_pagamento' => Carbon::now()
+          'status' => $this->clickBusRepository->FLAG_ORDEM_FINALIZADA,
+          'data_pagamento' => Carbon::now('America/Sao_Paulo')
       ]);
 	}
 

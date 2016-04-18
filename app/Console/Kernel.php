@@ -6,7 +6,7 @@ use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Repositories\ClickBusRepository;
 use App\Events\ClickBusPagamentoConfirmado;
 use App\Events\ClickBusPassagemCancelada;
-
+use Carbon\Carbon;
 use App\CompraClickbus;
 
 class Kernel extends ConsoleKernel {
@@ -41,8 +41,12 @@ class Kernel extends ConsoleKernel {
 
                 $clickBusRepository = new ClickBusRepository();
 
-                //pegando todas as compras com status pendente
-                $compras = CompraClickbus::where('status', $clickBusRepository->FLAG_PAGAMENTO_PENDENTE)->get();
+                //pegando todas as compras que nao foram canceladas ou ja realizadas
+                $compras = CompraClickbus::whereHas('poltronas', function($query){
+                    //pegando as passagens em que a poltronas tiverem departure time maior que 3 horas adiante
+                    $query->where('departure_time', '>=', Carbon::now('America/Sao_Paulo'));
+
+                })->where('status', '!=', $clickBusRepository->FLAG_PASSAGEM_CANCELADA)->get();
 
                 // Caso exista alguma compra pendente
                 if($compras->count() > 0) {
@@ -53,7 +57,7 @@ class Kernel extends ConsoleKernel {
                         $respostaClickbus = $clickBusRepository->getOrder($Compra->clickbus_order_id);
 
                         //Se pagamento confirmado, disparar evento para tomar as medidas necessarias
-                        if ($clickBusRepository->confirmaPagamentoFinalizado($respostaClickbus)) {
+                        if ($clickBusRepository->confirmaPagamentoFinalizado($Compra, $respostaClickbus)) {
                             event(new ClickBusPagamentoConfirmado($Compra));
                         }
 
