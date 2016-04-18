@@ -1,7 +1,5 @@
-@include('../app')
-
 <div id="sucesso-da-viagem" class="col-md-12 col-lg-12 padding-b-2">
-  <div id="cabecalho" class="row padding-b-2 margin-b-1"><
+  <div id="cabecalho" class="row padding-b-2 margin-b-1">
       <div class="col-md-12 col-lg-12">
         <div class="col-md-5 col-lg-5 text-right">
           <i class="fa fa-7x fa-check"></i>
