@@ -497,7 +497,7 @@ return[
 
       // View de SUCESSO ao finalizar a compra
         'clickbus_success-thanks-client' => 'Obrigado Viajante!',
-        'clickbus_success-debit-method-text' => 'Para concluir sua compra com ',
+        'clickbus_success-debit-method-text' => 'Caso você não tenha sido redirecionado para finalizar<br>sua compra com ',
         'clickbus_success-credit-method-text-1' => 'Logo mais enviaremos um email com os detalhes do seu pagamento,',
         'clickbus_success-credit-method-text-2' => 'mas você já pode verificar algumas informações aqui.',
         'clickbus_success-your-bought' => 'A sua compra de',
@@ -512,9 +512,9 @@ return[
         'clickbus_success-order-total' => 'Total da compra:',
         'clickbus_success-next-to-end' => 'Algumas dicas para você ficar mais tranquilo:',
         'clickbus_success-some-tips-to-you' => 'Algumas <span class="negrito">dicas</span> para você ficar mais relax:',
-        'clickbus_success-tip-1' => 'Você receberá os <span class="negrito">detalhes</span> da sua <span class="negrito">compra</span> por <span class="negrito">email</span>.',
-        'clickbus_success-tip-2' => 'Para retirar sua passagem você precisará <span class="negrito">apenas</span> do seu <span class="negrito">documento</span>!',
-        'clickbus_success-tip-3' => 'Chegue na rodoviária <span class="negrito">45 minutos</span> antes de sua viagem',
+        'clickbus_success-tip-1' => 'Você receberá os detalhes da sua compra por email',
+        'clickbus_success-tip-2' => 'Para retirar sua passagem você só precisará do seu documento!',
+        'clickbus_success-tip-3' => 'Chegue na rodoviária 45 minutos antes!',
 
 ];
 ?>
