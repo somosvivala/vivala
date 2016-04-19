@@ -116,7 +116,10 @@
             <h4 class="margin-t-1">{{ trans('clickbus.clickbus_return') }} - {{ trans('clickbus.clickbus_route') }} 2</h4>
             <div class="poltronas-selecionadas-volta"></div>
             @endif
-            {!! Form::submit( trans('clickbus.clickbus_buy-now'), ['class' => 'margin-t-1 btn btn-acao', 'tabindex' => '-1']) !!}
+            <button type="submit" class="margin-t-1 btn btn-acao" tabindex="-1">
+                {{ trans('clickbus.clickbus_buy-now') }}
+                <i id="form-loading" class="fa fa-spinner fa-pulse fa-pulse fa-1x soft-hide"></i>
+            </button>
         {!! Form::close() !!}
     </div>
 </div>
@@ -179,10 +182,11 @@
             </div>
             <div class="modal-footer">
                 <button class="btn btn-acao" type="submit">
-                  {{ trans('clickbus.clickbus_choose-seat') }}
-                  <span class="num-poltrona"></span>
+                    {{ trans('clickbus.clickbus_choose-seat') }}
+                    <span class="num-poltrona"></span>
+                    &nbsp;
+                    <i id="form-loading" class="fa fa-spinner fa-pulse fa-pulse fa-1x soft-hide"></i>
                 </button>
-                <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x laranja soft-hide"></i>
              </div>
              </form>
         </div>
@@ -243,8 +247,12 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-acao" type="submit">{{ trans('clickbus.clickbus_choose-seat') }} <span class="num-poltrona"></span><i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 soft-hide laranja"></i>
-                        </button>
+                <button class="btn btn-acao" type="submit">
+                    {{ trans('clickbus.clickbus_choose-seat') }} 
+                    <span class="num-poltrona"></span>
+                    &nbsp;
+                    <i id="form-loading" class="fa fa-spinner fa-pulse fa-pulse fa-1x soft-hide"></i>
+                </button>
              </div>
              </form>
         </div>

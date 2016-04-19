@@ -108,7 +108,7 @@ jQuery(document).ready(function($) {
             departure = $('#data-id-rodoviario').val(),
             type      = 'ida';
 
-        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
+        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i id='form-loading' class='fa fa-spinner fa-pulse soft-hide laranja'></i></h1>");
 
         ajaxTrips({
             from: from,
@@ -275,7 +275,7 @@ var bindaPoltronas = function(){
 
         if (loading && loading != "") {
             $(this).find('button:submit').attr('disabled','disabled');
-            $(this).find('#'+loading).show();
+            $(this).find('#'+loading).toggleClass('soft-hide');
         }
 
         //console.log('form validacao poltrona:');
@@ -889,8 +889,8 @@ var funcaoSubmitPoltronas = function (ev) {
         loading = frm.data('loading');
 
     if ( loading && loading != "") {
-        $(frm).find('input:submit').attr('disabled','disabled');
-        $(frm).find('#'+loading).show();
+        $(frm).find('button:submit').attr('disabled','disabled');
+        $(frm).find('button:submit i').toggleClass('soft-hide');
     }
 
     tripPayment(params, frm);

@@ -99,7 +99,7 @@ var ajaxPlace = function(query, target) {
     var pos = [$(target).position().top + $(target).outerHeight(), $(target).position().left];
 
     // Mostra o icone de loading
-    $(target).siblings('i.fa').show();
+    $(target).siblings('i.fa').toggleClass('soft-hide');
     ajax = $.ajax({
         url: 'clickbus/place',
         type: 'POST',
@@ -123,8 +123,7 @@ var ajaxPlace = function(query, target) {
         $(target).parent().append(element);
 
         // Esconde o loading
-        $(target).siblings('i.fa').hide();
-
+        $(target).siblings('i.fa').toggleClass('soft-hide');
         bindAutocompleteRodoviario();
     });
 };
@@ -140,7 +139,7 @@ var ajaxTrips = function(params) {
     $.extend(defaultParams, params);
 
     // Mostra icone de loading
-    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-pulse fa-spinner laranja'></i></h1>");
 
 
     $.ajax({
@@ -194,7 +193,7 @@ var ajaxTrip = function(viagens) {
         to        = $('#destino-rodoviario').val();
 
     // Mostra icone de loading
-    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-pulse fa-spinner laranja'></i></h1>");
     //console.log(viagens);
 
     $.ajax({
@@ -336,8 +335,8 @@ var ajaxPoltronas = function(request, callback) {
         },
         complete: function(data, status) {
             $('form.validacao-poltrona').find('button:submit').removeAttr('disabled');
-            $('form.validacao-poltrona button:submit i').hide();
-
+            //voltando a a class soft-hide para o icone que estiver ativo
+            $('form.validacao-poltrona button:submit i:not(.soft-hide)').toggleClass('soft-hide');
         }
     });
 
