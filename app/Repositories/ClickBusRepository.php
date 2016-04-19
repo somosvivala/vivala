@@ -28,8 +28,8 @@ class ClickBusRepository
     function __construct()
     {
          //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
-        $this->apiKey = env('CLICKBUS_API_KEY_DEV');
-        $this->url = env('CLICKBUS_URL_DEV');
+        $this->apiKey = env('CLICKBUS_API_KEY');
+        $this->url = env('CLICKBUS_URL');
         $this->urlAmexRegex = env('CLICKBUS_AMEX_URL');
     }
 
