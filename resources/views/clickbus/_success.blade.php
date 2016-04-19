@@ -15,7 +15,7 @@
                     </strong>
                   </span>
                 </p>
-              <a href="{{ $compra->urlContinuarPagamento }}" class="btn btn-acao btn-acao-sucesso" target="_blank">
+              <a href="{{ $compra->continuarPagamentoUrl }}" class="btn btn-acao btn-acao-sucesso" target="_blank">
                 {{ trans('global.lbl_click_here') }}
               </a>
             @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")

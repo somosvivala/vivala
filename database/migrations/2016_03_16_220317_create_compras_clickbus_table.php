@@ -52,6 +52,9 @@ class CreateComprasClickbusTable extends Migration {
             //order_id para details
             $table->string('clickbus_order_id')->nullable();
 
+            //redirectUrl para caso debitCard
+            $table->string('redirect_url')->nullable();
+
             //status do pedido, usado para o /orders verificar o estado do pagamento
             $table->string('status')->nullable();
 

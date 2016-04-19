@@ -479,6 +479,12 @@ class ClickBusController extends Controller
             $descontoTotal = array_key_exists('desconto', $request['extra']) ? $request['extra']['desconto'] : null;
             $taxas = array_key_exists('taxas', $request['extra']) ? $request['extra']['taxas'] : null;
             $total = $decoded->{"content"}->{"payment"}->{"total"};
+
+            //pegar valor de redirectUrl se for debitcard
+            $redirectUrl = ( $paymentMethod == 'payment.debitcard'
+                ? $decoded->{"content"}->{"payment"}->{"meta"}->{"continuePaymentURL"}
+                : null );
+
             $quantidadePassagens = count($itens);
 
             //Criando registro da compra no BD, usando da coluna pagamento_confirmado,
@@ -502,6 +508,7 @@ class ClickBusController extends Controller
                 'desconto_total' => $descontoTotal,
                 'taxas' => $taxas,
                 'total' => $total,
+                'redirect_url' => $redirectUrl,
                 'data_pagamento' => ($statusPagamento == $this->clickBusRepository->FLAG_ORDEM_FINALIZADA) ? Carbon::now('America/Sao_Paulo') : null,
                 'status' => $statusPagamento
             ]);
@@ -562,22 +569,10 @@ class ClickBusController extends Controller
 
             $compra->push();
 
-            $redirectUrl = "";
-            //switch para formatar a $redirectUrl corretamente (caso debitcard)
-            switch ($paymentMethod)
-            {
-            case "payment.debitcard" :
-                $redirectUrl = $decoded->{"content"}->{"payment"}->{"meta"}->{"continuePaymentURL"};
-                break;
-
-            case "payment.creditcard" :
-                break;
-            }
 
             $retorno = [
                 "success" => true,
                 "forma_pagamento" => $paymentMethod,
-                "redirectUrl" => $redirectUrl,
                 "ida_departure" => ClickBusPlace::find($departure_id)->place_name,
                 "ida_arrival" => ClickBusPlace::find($arrival_id)->place_name,
                 "volta_departure" => ClickBusPlace::find($arrival_id)->place_name,

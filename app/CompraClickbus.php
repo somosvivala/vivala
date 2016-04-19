@@ -41,7 +41,8 @@ class CompraClickbus extends Model
         'status',
         'buyer_document_type',
         'buyer_nome_fantasia',
-        'buyer_razao_social'
+        'buyer_razao_social',
+        'redirect_url'
     ];
 
     public function user()
@@ -61,5 +62,14 @@ class CompraClickbus extends Model
     {
         return $this->data_pagamento->format('d/m/Y');
     }
+
+    /*
+     * Retorna a redirectUrl
+     */
+    public function getContinuarPagamentoUrlAttribute()
+    {
+        return $this->redirectUrl;
+    }
+
 
 }
