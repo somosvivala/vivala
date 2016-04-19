@@ -357,7 +357,8 @@
                       {!! trans('clickbus.clickbus_email-date-of-payment') !!}
                     </td>
                     <td style="text-align:right;padding-right:10px;font-size:12px">
-                      {{-- PEGAR PELO TIMESTAMP (???) --}}
+                      <img src="https://vivala.com.br/img/clickbus/small_icon_clickbus-calendario.png" alt="{{ trans('global.date_date') }}" style="display:inline" height="14" width="13">
+                      &nbsp; {{ $Compra->dataConfirmacaoPagamento }}
                     </td>
                   </tr>
 

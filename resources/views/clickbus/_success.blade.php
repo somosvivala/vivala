@@ -66,8 +66,8 @@
               </strong>
             </span>
             <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
-            <div class="col-sm-2 col-md-2 col-lg-2 margin-t-0-45 text-center">
-              <i class="fa fa-3x fa-exclamation-circle margin-t-0-40"></i>
+            <div class="col-sm-2 col-md-2 col-lg-2 text-center">
+              <i class="fa fa-3x fa-exclamation-circle"></i>
             </div>
             <div class="col-sm-10 col-md-10 col-lg-10 text-center">
                 <span>
