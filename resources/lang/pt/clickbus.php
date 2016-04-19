@@ -502,7 +502,7 @@ return[
         'clickbus_success-credit-method-text-2' => 'mas você já pode verificar algumas informações aqui.',
         'clickbus_success-your-bought' => 'A sua compra de',
         'clickbus_success-with' => 'com',
-        'clickbus_success-approved-by-system' => 'está prestes a ser concluída! Assim que recebermos a confirmação e pagamento você receberá um email com os detalhes.',
+        'clickbus_success-approved-by-system' => 'está prestes a ser concluída! Assim que confirmarmos o pagamento você receberá um email com os detalhes.',
         'clickbus_success-invoice-bill' => 'Essa compra aparecerá na sua fatura com o nome:',
         'clickbus_success-mercadopago' => 'MERCADOPAGO*Vivala',
         'clickbus_success-we-sent-infos' => 'Nós enviamos estas informações para o email cadastrado em sua compra!',
