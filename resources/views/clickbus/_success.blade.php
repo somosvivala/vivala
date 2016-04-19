@@ -15,7 +15,9 @@
                     </strong>
                   </span>
                 </p>
-              <a href="javascript:void(0);" class="btn btn-acao btn-acao-sucesso" target="_blank">{{ trans('global.lbl_click_here') }}</button>
+              <a href="{{ $compra->urlContinuarPagamento }}" class="btn btn-acao btn-acao-sucesso" target="_blank">
+                {{ trans('global.lbl_click_here') }}
+              </a>
             @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
               {{-- CRÉDITO --}}
                 <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-credit-method-text-1') !!}</p>
