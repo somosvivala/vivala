@@ -2,13 +2,13 @@
   <div id="cabecalho" class="row padding-b-2 margin-b-1">
       <div class="col-md-12 col-lg-12">
         <div class="col-md-2 col-lg-2 text-center">
-          <i class="fa fa-10x fa-check margin-t-0-25 margin-l-0-2"></i>
+          <i class="fa fa-10x fa-check margin-t-0-25 margin-l-0-1"></i>
         </div>
         <div class="col-md-10 col-lg-10 text-center">
           <h1 class="texto-maiusculo ajuste-fonte-futura-bold">{!! trans('clickbus.clickbus_success-thanks-client') !!}</h1>
             @if($compra->payment_method === "payment.debitcard")
               {{-- DÉBITO --}}
-                <p class="ajuste-fonte-avenir-light fa-1-1x">{!! trans('clickbus.clickbus_success-debit-method-text') !!}
+                <p class="ajuste-fonte-avenir-light fa-1-5x">{!! trans('clickbus.clickbus_success-debit-method-text') !!}
                   <span class="texto-negrito texto-minusculo">
                     <strong class="fa-1-1x">
                       {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
