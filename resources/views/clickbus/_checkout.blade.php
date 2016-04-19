@@ -20,7 +20,7 @@
 
                             <div class="col-xs-4">
                                 <label for="nascimento-pf">{{ trans('global.lbl_birthday') }}</label>
-                                <input type="text" class="required form-control mascara-data" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                                <input type="text" class="required form-control mascara-data" required="" name="nascimento-pf" placeholder="dd/mm/aaaa" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}">
                             </div>
                             <div class="col-xs-8 padding-t-1">
                                 <label for="email-pf">{{ trans('global.lbl_email') }}</label>

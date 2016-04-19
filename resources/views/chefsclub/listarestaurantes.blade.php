@@ -137,7 +137,7 @@
                               <div class="col-sm-4 col-md-4 col-lg-4">
                                 <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">
                                   <p>{{ trans('chefsclub.chefsclub_join-the-club') }}</p>
-                                  <p><img src="{{ asset('/img/icones/vivala-icon-alimentacao.svg') }}"</p>
+                                  <p><img src="{{ asset('/img/icones/svg/vivala-icon-alimentacao.svg') }}"</p>
                                 </a>
                                 <p>
                                   <i class="icon-footer icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}"></i>
