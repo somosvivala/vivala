@@ -1,10 +1,10 @@
 <div id="sucesso-da-viagem" class="col-md-12 col-lg-12 padding-b-2">
   <div id="cabecalho" class="row padding-b-2 margin-b-1">
       <div class="col-md-12 col-lg-12">
-        <div class="col-md-5 col-lg-5 text-right">
-          <i class="fa fa-7x fa-check"></i>
+        <div class="col-md-2 col-lg-2 text-center">
+          <i class="fa fa-7x fa-check margin-t-0-45"></i>
         </div>
-        <div class="col-md-7 col-lg-7 text-center">
+        <div class="col-md-10 col-lg-10 text-center">
           <h1 class="texto-maiusculo ajuste-fonte-avenir-black">{!! trans('clickbus.clickbus_success-thanks-client') !!}</h1>
             @if($compra->payment_method === "payment.debitcard")
               {{-- DÉBITO --}}
@@ -66,15 +66,17 @@
               </strong>
             </span>
             <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
-            <p class="padding-l-1 padding-r-1">
-              <i class="fa fa-3x fa-exclamation-circle"></i>
-              <span>
-                {!! trans('clickbus.clickbus_success-invoice-bill') !!}
-              </span>
-            </p>
-            <p class="texto-negrito text-center">
-              {!! trans('clickbus.clickbus_success-mercadopago') !!}
-            </p>
+            <div class="col-sm-2 col-md-2 col-lg-2 margin-t-0-45 text-center">
+              <i class="fa fa-3x fa-exclamation-circle margin-t-0-40"></i>
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10 text-center">
+                <span>
+                  {!! trans('clickbus.clickbus_success-invoice-bill') !!}
+                </span>
+                <p class="texto-negrito text-center">
+                  {!! trans('clickbus.clickbus_success-mercadopago') !!}
+                </p>
+            </div>
           @else
             {{-- MÉTODO NÃO ENCONTRADO --}}
             <span class="texto-negrito texto-maiusculo">
