@@ -219,8 +219,8 @@
                 <div id="welcome-cadastrar">
 
                   <div class="row">
-                    <div class="col-md-11 col-lg-11">
-                      <div class="col-md-5"><h3>{{ trans('global.lbl_signup1') }}</h3></div>
+                    <div class="col-md-12 col-lg-12">
+                      <div class="col-md-5 padding-l-no"><h3>{{ trans('global.lbl_signup1') }}</h3></div>
                       <div class="col-md-6 col-md-offset-1">
                           <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
                               <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
