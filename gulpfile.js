@@ -80,5 +80,10 @@ elixir(function(mix) {
       '../../assets/js/buscaPerfil.js',
       '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
+
+      /* ClickbusPayment Mercado Pago Gateway*/
+      '../../assets/js/clickbus-payments.js',
+
+
 	], 'public/js/vendor.js');
 });

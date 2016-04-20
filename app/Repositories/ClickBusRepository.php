@@ -4,6 +4,7 @@ namespace app\Repositories;
 
 use Jenssegers\Date\Date;
 use App\RelatorioClickbus;
+use App\CompraClickbus;
 
 class ClickBusRepository
 {
@@ -12,12 +13,12 @@ class ClickBusRepository
      */
     public $apiKey;
     public $url;
+    public $urlAmexRegex;
 
     /**
      * 'Constants'
      */
-    public $FLAG_PAGAMENTO_CONFIRMADO = 'payment_confirmed';
-    public $FLAG_PAGAMENTO_PENDENTE = 'order_finalized_successfully';
+    public $FLAG_ORDEM_FINALIZADA = 'order_finalized_successfully';
     public $FLAG_PASSAGEM_CANCELADA = 'order_canceled';
 
 
@@ -26,9 +27,10 @@ class ClickBusRepository
      */
     function __construct()
     {
-        //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
+         //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
         $this->apiKey = env('CLICKBUS_API_KEY');
         $this->url = env('CLICKBUS_URL');
+        $this->urlAmexRegex = env('CLICKBUS_AMEX_URL');
     }
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus
@@ -170,12 +172,19 @@ class ClickBusRepository
     /**
      * Metodo para validar se o pagamento foi confirmado
      *
+     * @param $compra - a instancia da compra a ser testada 
      * @param $obj - O objeto retornado pelo ClickBusRepository::getOrders($idOrder)
      * @return boolean - se o pagamento foi confirmado
      */
-    public function confirmaPagamentoFinalizado($obj)
+    public function confirmaPagamentoFinalizado(CompraClickbus $compra, $obj)
     {
-        $pagamentoFoiConfirmado = $obj->{"status"} == $this->FLAG_PAGAMENTO_CONFIRMADO;
+        //Se a compra já tiver status de finalizada, entao nao já foi confirmado o pagamento
+        if ($compra->status == $this->FLAG_ORDEM_FINALIZADA) {
+            $pagamentoFoiConfirmado = false;
+        } else {
+            $pagamentoFoiConfirmado = $obj->{"status"} == $this->FLAG_ORDEM_FINALIZADA;
+        }
+
         return $pagamentoFoiConfirmado;
     }
 
@@ -215,6 +224,46 @@ class ClickBusRepository
         return $decoded->{"items"};
     }
 
+     /*
+     * Metodo para cancelar uma compra
+     * @param $compra - Uma instancia de RelatorioClickbus
+     *
+     */
+    public function cancelaCompra(RelatorioClickbus $compra)
+    {
+         $localizer = $compra->localizer;
+
+        $data = new \stdClass();
+        $data->request =  new \stdClass();
+        $data->request->localizer = $localizer;
+        $data->request->status = $this->FLAG_PASSAGEM_CANCELADA;
+        $data = json_encode($data);
+
+        $context = [
+             'http' => [
+                 'ignore_errors' => true,
+                'method' => 'PUT',
+                'header' => "Content-Type: application/x-www-form-urlencoded\r\n".
+                            "Content-Length: ".strlen($data)."\r\n",
+                'content' => $data
+                ],
+        ];
+
+        $context = stream_context_create($context);
+        $result = file_get_contents($this->url.'/booking', false, $context);
+        $decoded = json_decode($result);
+
+        $success = isset($decoded) ? !isset($decoded->{"error"}) : false;
+
+        if ($success) {
+            echo "Compra de UUID -> " . $compra->clickbus_order_id . " Cancelada!\n";
+        } else {
+            echo "Compra de UUID -> " . $compra->clickbus_order_id . " Erro no Cancelamento! Code: ". $decoded->{"error"}[0]->{"code"} . "\n";
+        }
+
+        return $success;
+    }
+
     /**
      * Metodo para alimentar a tabela de relatórios com todas as compras realizadas
      *
@@ -222,7 +271,7 @@ class ClickBusRepository
      */
     public function gerarRelatorioCompras()
     {
-        try {
+         try {
 
             $existemCompras = true;
             $indice = 0;
@@ -267,5 +316,42 @@ class ClickBusRepository
             echo 'Ocorreu um problema durante a geracao dos relatorios: ';
             var_dump($ex);
         }
+    }
+
+    /*
+     * Metodo para cancelar todas as compras
+     * itera sob os relatorios, cancelando-os
+     */
+    public function cancelaTodasCompras()
+    {
+        try {
+            $Compras = RelatorioClickbus::all();
+            foreach($Compras as $compra) {
+                $this->cancelaCompra($compra);
+            }
+        } catch (Exception $ex) {
+            echo 'Ocorreu um problema durante a geracao dos relatorios: ';
+            var_dump($ex);
+        }
+    }
+
+    /*
+     * Metodo para pegar a regex que restringe o numero de parcelas para cartoes
+     * amex
+     *
+     * @return string - regex
+     */
+    public function getAmexRegex()
+    {
+        $result = file_get_contents($this->urlAmexRegex);
+
+        if (isset($result)) {
+            $decoded = json_decode($result);
+            $regex = "/" . $decoded->card_configuration[0]->installment_bins_pattern . "/";
+            return $regex;
+        }
+
+        return false;
+
     }
 }

@@ -1,21 +1,23 @@
 <div id="sucesso-da-viagem" class="col-md-12 col-lg-12 padding-b-2">
   <div id="cabecalho" class="row padding-b-2 margin-b-1">
       <div class="col-md-12 col-lg-12">
-        <div class="col-md-5 col-lg-5 text-right">
-          <i class="fa fa-7x fa-check"></i>
+        <div class="col-md-2 col-lg-2 text-center">
+          <i class="fa fa-10x fa-check margin-t-0-25 margin-l-0-1"></i>
         </div>
-        <div class="col-md-7 col-lg-7 text-center">
-          <h1 class="texto-maiusculo ajuste-fonte-avenir-black">{!! trans('clickbus.clickbus_success-thanks-client') !!}</h1>
+        <div class="col-md-10 col-lg-10 text-center">
+          <h1 class="texto-maiusculo ajuste-fonte-futura-bold">{!! trans('clickbus.clickbus_success-thanks-client') !!}</h1>
             @if($compra->payment_method === "payment.debitcard")
               {{-- DÉBITO --}}
-                <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-debit-method-text') !!}
+                <p class="ajuste-fonte-avenir-light fa-1-5x">{!! trans('clickbus.clickbus_success-debit-method-text') !!}
                   <span class="texto-negrito texto-minusculo">
-                    <strong class="texto-sucesso">
+                    <strong class="fa-1-1x">
                       {!! trans('clickbus.clickbus_email-payment-method-debitcard') !!}
                     </strong>
                   </span>
                 </p>
-              <a href="javascript:void(0);" class="btn btn-acao btn-acao-sucesso" target="_blank">{{ trans('global.lbl_click_here') }}</button>
+              <a href="{{ $compra->redirect_url }}" class="btn btn-acao btn-acao-sucesso" target="_blank">
+                {{ trans('global.lbl_click_here') }}
+              </a>
             @elseif($compra->payment_method === "payment.creditcard" || $compra->payment_method === "payment.creditcard.mercadopago")
               {{-- CRÉDITO --}}
                 <p class="ajuste-fonte-avenir-light texto-sucesso">{!! trans('clickbus.clickbus_success-credit-method-text-1') !!}</p>
@@ -66,15 +68,17 @@
               </strong>
             </span>
             <span>{!! trans('clickbus.clickbus_success-approved-by-system') !!}</span>
-            <p class="padding-l-1 padding-r-1">
+            <div class="col-sm-2 col-md-2 col-lg-2 text-center">
               <i class="fa fa-3x fa-exclamation-circle"></i>
-              <span>
-                {!! trans('clickbus.clickbus_success-invoice-bill') !!}
-              </span>
-            </p>
-            <p class="texto-negrito text-center">
-              {!! trans('clickbus.clickbus_success-mercadopago') !!}
-            </p>
+            </div>
+            <div class="col-sm-10 col-md-10 col-lg-10 text-center">
+                <span>
+                  {!! trans('clickbus.clickbus_success-invoice-bill') !!}
+                </span>
+                <p class="texto-negrito text-center">
+                  {!! trans('clickbus.clickbus_success-mercadopago') !!}
+                </p>
+            </div>
           @else
             {{-- MÉTODO NÃO ENCONTRADO --}}
             <span class="texto-negrito texto-maiusculo">
@@ -144,7 +148,7 @@
     </div>
 
     <div id="dicas-da-viagem" class="col-md-6 col-lg-6">
-      <h3 class="margin-b-1 text-center">
+      <h3 class="margin-b-1 text-center ajuste-fonte-avenir-light fa-1-5x">
         {!! trans('clickbus.clickbus_success-next-to-end') !!}
       </h3>
       <hr class="dicas-de-viagem-divisor"/>
