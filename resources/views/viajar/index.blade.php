@@ -18,14 +18,14 @@
 
         <ul class="lista-border pesquisa-viajar margin-t-2 margin-b-3">
             <li class="col-sm-4 tour-pilar-viajar-step3">
-                {{--
-                <a class="rodoviario" href="#" class="desativado">
+                <a class="rodoviario desativado" href="#">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
-                --}}
+                {{--
                 <a class="rodoviario" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
+                --}}
             </li>
 
             <li class="col-sm-5 tour-pilar-viajar-step4">
