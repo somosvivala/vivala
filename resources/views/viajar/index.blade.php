@@ -21,7 +21,7 @@
                 <a class="rodoviario desativado" href="#">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
-                {{--
+                {{-- DESATIVA CLICKBUS
                 <a class="rodoviario" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
@@ -41,11 +41,12 @@
             </li>
         </ul>
         <div class="tab-content">
+            {{-- DESATIVA CLICKBUS
             <div role="tabpanel" class="tab-pane active" id="rodoviario">
                 @include('clickbus.buscar')
                 <div class="lista-rodoviario"></div>
             </div>
-
+            --}}
             <div role="tabpanel" class="tab-pane " id="restaurantes">
                 <div class="tour-chefsclub-step1">
                     @include('chefsclub.buscarestaurantes')
