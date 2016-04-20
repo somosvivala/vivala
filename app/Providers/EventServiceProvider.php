@@ -38,8 +38,8 @@ class EventServiceProvider extends ServiceProvider {
 
     //Quando um pagamento da clickbus é confirmado
     'App\Events\ClickBusPagamentoConfirmado' => [
-			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
 			'App\Handlers\Events\ClickBus\UpdatePagamentoConfirmado',
+			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
 		],
 
 	];
