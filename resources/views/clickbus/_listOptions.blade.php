@@ -59,7 +59,7 @@
                 <div class="col-sm-3 valor-compra padding-b-1">
                     <div class="row">
                         <h3 class="padding-t-0 padding-b-0 text-center font-bold-upper">R$ {{$option['part'][0]['price']}}</h3>
-                        <div class="col-xs-12 text-center"><a data-horario="{{ $option['part'][0]['departure']['time']}}" data-id="{{$option['part'][0]['id']}}" data-horario-chegada="{{$option['part'][0]['arrival']['time']}}" data-classe="{{$option['part'][0]['serviceClass']}}" data-to="{{$places['to']}}" data-from="{{$places['from']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0" tabindex="-1">{{ trans('global.lbl_choose') }} {{$type}}</a></div>
+                        <div class="col-xs-12 text-center"><a data-horario="{{ $option['part'][0]['departure']['time']}}" data-id="{{$option['part'][0]['id']}}" data-horario-chegada="{{$option['part'][0]['arrival']['time']}}" data-classe="{{$option['part'][0]['serviceClass']}}" data-to="{{$places['to']}}" data-from="{{$places['from']}}" data-viacaoid="{{ $option['part'][0]['busCompany']['id']}}" href="#" class="btn btn-acao btn-choose-{{$type}} padding-t-0 padding-b-0" tabindex="-1">{{ trans('global.lbl_choose') }} {{$type}}</a></div>
                     </div>
                 </div>
             </div>

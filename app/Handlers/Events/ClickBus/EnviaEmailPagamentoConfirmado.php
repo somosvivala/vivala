@@ -7,6 +7,7 @@ use Mail;
 
 class EnviaEmailPagamentoConfirmado {
 
+
 	/**
 	 * Create the event handler.
 	 *
@@ -14,7 +15,6 @@ class EnviaEmailPagamentoConfirmado {
 	 */
 	public function __construct()
 	{
-		//
 	}
 
 	/**
@@ -29,7 +29,7 @@ class EnviaEmailPagamentoConfirmado {
 
       //Envia email de passagem cancelada
       Mail::send('emails.clickbus.sucesso', ['Compra' => $Compra], function ($message) use ($Compra) {
-            $message->to($Compra->user->email, $Compra->user->perfil->apelido)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
+            $message->to($Compra->buyer_email, $Compra->buyer_firstname)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
             $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
 	}

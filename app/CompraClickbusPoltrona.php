@@ -102,4 +102,12 @@ class CompraClickbusPoltrona extends Model
         return $this->arrival_time->format('d/m/Y');
     }
 
+    /**
+     * Quando a passagem nao tiver localizer, retornar o localizer da compra
+     */
+    public function getLocalizerAttribute($value)
+    {
+        return ($value ? $value : $this->compra->localizer);
+    }
+
 }

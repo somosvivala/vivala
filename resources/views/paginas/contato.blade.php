@@ -4,17 +4,19 @@
 <div class="fundo-cheio col-sm-12 text-justified padding-b-2">
     <h3 class="font-bold-upper text-center margin-b-2">
         {{ trans('global.contact_title') }}
-        <small class="sub-titulo margin-t-1">
+        <small class="sub-titulo margin-t-1 ajuste-fonte-avenir-medium">
             {{ trans('global.contact_subtitle') }}
         </small>
     </h3>
     <div class="col-sm-5">
-        <p>{{ trans('global.contact_text_1') }}</p>
-        <p class="margin-b-2">{{ trans('global.contact_text_2') }}</p>
+        <p class="ajuste-fonte-avenir-light">{{ trans('global.contact_text_1') }}</p>
+        <p class="margin-b-2 ajuste-fonte-avenir-light">{{ trans('global.contact_text_2') }}</p>
         <hr style="border: 0; height: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
-                {{ trans('global.contact_our_email') }}
+                <span class="ajuste-fonte-avenir-light">
+                  {{ trans('global.contact_our_email') }}
+                </span>
             </div>
             <div class="col-sm-12">
                 <a class="laranja font-bold-upper" href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a>
@@ -22,7 +24,9 @@
         </div>
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
+              <span class="ajuste-fonte-avenir-light">
                 {{ trans('global.contact_our_phone') }}
+              </span>
             </div>
             <div class="col-sm-12">
                 <a class="laranja font-bold-upper" href="tel:+55 11 2645 2632">(11) 2645 2632</a>
@@ -30,7 +34,9 @@
         </div>
         <div class="row padding-t-2 ">
             <div class="col-sm-12">
+              <span class="ajuste-fonte-avenir-light">
                 {{ trans('global.contact_our_address') }}
+              </span>
             </div>
             <div class="col-sm-12">
                 <a class="laranja font-bold-upper" title="Clique para abrir no Google Maps" href="https://www.google.com.br/maps/place/R.+do+Rocio,+52+-+Vila+Olímpia,+São+Paulo+-+SP/@-23.5934738,-46.6865075,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5745f024b5fd:0x992ad154f9e9ed01?hl=pt-BR" target="_blank">Rua do Rócio, 52, cj 122.<br> Vila Olímpia, São Paulo - SP</a>

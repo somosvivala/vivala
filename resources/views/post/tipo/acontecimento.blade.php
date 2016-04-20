@@ -11,7 +11,7 @@
                             </a>
 			</div>
 		</div>
-		<div class="col-sm-10 status text-center">
+		<div class="col-sm-10 status text-center post-descricao">
 			{!! $Post->descricao !!}
 		</div>
 	</div>
@@ -25,12 +25,12 @@
 			</div>
 		</div>
 	</div>
-    <div class="hora-post"> 
+    <div class="hora-post">
         {{ $Post->data_postagem_diff }}
         @if ( Auth::user()->id == $Post->entidade->user->id )
                 {!! Form::open([ 'method' => 'DELETE', 'route' => ['post.destroy', $Post->id] ]) !!}
                     {!! Form::button('<i class="fa fa-trash "></i> ', ['type' => 'submit', 'class' => 'btn-icon', 'onclick' => "return confirm('Tem certeza que deseja remover esse post?');"]) !!}
-            
+
                 {!! Form::close() !!}
         @endif
     </div>

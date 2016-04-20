@@ -2,7 +2,7 @@
     @if($Post->novosComentariosByDate($qtdComentariosExibicao))
     @forelse($Post->novosComentariosByDate($qtdComentariosExibicao)->reverse() as $Comentario)
     <li class="col-sm-12 post barra-comentarios padding-b-1" id="barra-comentario-{{ $Comentario->id }}">
-        <div class="col-sm-2">
+        <div class="post-foto-usuario col-sm-2">
             <a href="{{ url($Comentario->author->getUrl()) }}" title="{{ $Comentario->author->nome }}">
                 <div class="round foto quadrado3em">
                     <div class="avatar-img" style="background-image:url('{{ $Comentario->author->getAvatarUrl() }}')">
@@ -10,10 +10,10 @@
                 </div>
             </a>
         </div>
-        <div class="col-sm-7">
+        <div class="post-comentario col-sm-7">
             {{ $Comentario->conteudo }}
         </div>
-        <div class="col-sm-3 like">
+        <div class="post-qtd-likes col-sm-3 like">
             <span class="qtd-likes">
                 @if($Comentario->getQuantidadeLikes() > 1)
                 <a href="#" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}"><i class="fa fa-heart"></i>

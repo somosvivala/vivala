@@ -22,8 +22,8 @@ class ChefsclubController extends Controller {
     {
         $tipo_cozinha = Chefsclub::getTipoCozinhaForSelect();
         $descontos = Chefsclub::getDescontoForSelect()->lists('desconto');
-        $restaurantes = Chefsclub::all()->take(10); 
-        
+        $restaurantes = Chefsclub::all()->take(10);
+
         return view('chefsclub.listarestaurantes', compact('tipo_cozinha', 'descontos', 'restaurantes'));
     }
 

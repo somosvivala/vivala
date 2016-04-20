@@ -34,11 +34,11 @@
                                 <div class="row">
                                     <label for="documento" class="col-sm-12">{{ trans('global.lbl_document') }}</label>
                                     <div class="col-xs-4">
-                                        <select id="document-type" name="documentType" class="form-control">
-                                            <option value="rg">RG</option>
-                                            <option value="passaporte">{{ trans('global.lbl_passport') }}</option>
-                                            <option value="cpf">CPF</option>
+                                        <select id="document-type" name="documentType" class="form-control" onchange="bindaDocumentTypeSelect(this)">
+                                            <option value="CPF">CPF</option>
+                                            <option value="PASSAPORTE">{{ trans('global.lbl_passport') }}</option>
                                         </select>
+                                        <input type="hidden" id="document-type-mp" class="" name="document-type-mp">
                                     </div>
                                     <div class="col-xs-8">
                                         <input type="text" id="documento-pf" class="required form-control" placeholder="Ex: 123.456.789-0" name="documento-pf" required="" >
@@ -74,7 +74,7 @@
                             </div>
                             <div class="col-xs-12 padding-t-1">
                                 <label for="cnpj-pj">CNPJ</label>
-                                <input type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
+                                <input id=documento-pj' type="text" class="required form-control" name="cnpj-pj" placeholder="54.767.627/0001-00">
                             </div>
                         </div>
                         {{-- Desativado
@@ -139,10 +139,45 @@
                                 <p>{{ trans('clickbus.clickbus_client-error-3') }}</p>
                                 @endforelse
                             </div>
-                            <div class="col-xs-12 margin-t-1">
+                            <div class="col-xs-7 padding-t-1">
+                                <label for="num-cartao-credito">{{ trans('clickbus.clickbus_client-opt-card-number') }}</label>
+                                <input id="num-cartao-credito"type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
+                            </div>
+                            <div class="col-xs-5 padding-t-1">
+                                <div class="">
+                                    <label for="mes-validade-credito" >{{ trans('clickbus.clickbus_client-opt-card-expiration-date') }}</label>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <select id="mes-validade-credito" class="form-control" name="mes-validade-credito">
+                                                <option>{{ trans('global.date_month') }}</option>
+                                                @for($i=1;$i<=12;$i++)
+                                                <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <select id="ano-validade-credito" class="form-control" name="ano-validade-credito">
+                                                <option>{{ trans('global.date_year') }}</option>
+                                                @for($i=0;$i<=20;$i++)
+                                                <option>{{ date('Y')+$i }}</option>
+                                                @endfor
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-7 padding-t-1">
+                                <label for="nome-titular-credito">{{ trans('clickbus.clickbus_client-opt-card-name-1') }} <small>{{ trans('clickbus.clickbus_client-opt-card-name-2') }}</small></label>
+                                <input id="nome-titular-credito" type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="JOÃO D. SILVA">
+                            </div>
+                            <div class="col-xs-5 padding-t-1">
+                                <label for="cod-seguranca-credito" >{{ trans('clickbus.clickbus_client-opt-card-password') }}</label>
+                                <input id="cod-seguranca-credito" type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
+                            </div>
+                            <div class="col-xs-12 padding-t-1">
                                 <label>{{ trans('clickbus.clickbus_client-opt-number-installments') }}</label>
                             </div>
-                            <div class="col-xs-12 margin-b-1">
+                            <div class="col-xs-12 ">
                                 <?php $parc_bandeira = 0; ?>
                                 @forelse ($formaPagamento->details as $bandeiraCartao)
                                 <select id="bandeira-{{ $bandeiraCartao->brand }}" class="form-control <?php if($parc_bandeira != 0) echo "soft-hide";$parc_bandeira++; ?> select-parcelas">
@@ -156,46 +191,12 @@
                                 <p>{{ trans('clickbus.clickbus_client-error-4') }}</p>
                                 @endforelse
                             </div>
-                            <div class="col-xs-7 padding-t-1">
-                                <label for="num-cartao-credito">{{ trans('clickbus.clickbus_client-opt-card-number') }}</label>
-                                <input type="text" class="required form-control" name="num-cartao-credito" required="" placeholder="0000 0000 0000 0000">
-                            </div>
-                            <div class="col-xs-5 padding-t-1">
-                                <div class="">
-                                    <label for="mes-validade-credito" >{{ trans('clickbus.clickbus_client-opt-card-expiration-date') }}</label>
-                                    <div class="row">
-                                        <div class="col-xs-6">
-                                            <select class="form-control" name="mes-validade-credito">
-                                                <option>{{ trans('global.date_month') }}</option>
-                                                @for($i=1;$i<=12;$i++)
-                                                <option>{{ str_pad($i, 2, "0", STR_PAD_LEFT) }}</option>
-                                                @endfor
-                                            </select>
-                                        </div>
-                                        <div class="col-xs-6">
-                                            <select class="form-control" name="ano-validade-credito">
-                                                <option>{{ trans('global.date_year') }}</option>
-                                                @for($i=0;$i<=20;$i++)
-                                                <option>{{ date('Y')+$i }}</option>
-                                                @endfor
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xs-7 padding-t-1">
-                                <label for="nome-titular-credito">{{ trans('clickbus.clickbus_client-opt-card-name-1') }} <small>{{ trans('clickbus.clickbus_client-opt-card-name-2') }}</small></label>
-                                <input type="text" class="required form-control" name="nome-titular-credito" required="" placeholder="JOÃO D. SILVA">
-                            </div>
-                            <div class="col-xs-5 padding-t-1">
-                                <label for="cod-seguranca-credito" >{{ trans('clickbus.clickbus_client-opt-card-password') }}</label>
-                                <input type="text" class="required form-control" name="cod-seguranca-credito" required="" placeholder="000">
-                            </div>
+
                             <div class="col-xs-12 padding-t-1">
                                 <label>{{ trans('global.address_zipcode') }}</label>
                             </div>
                             <div class="col-xs-12">
-                                <input type="text" class="required form-control" name="cep-titular-credito" required="" placeholder="1701770">
+                                <input type="text" class="required form-control" name="cep-titular-credito" tabindex="0" required="" placeholder="1701770">
                             </div>
                         </div>
                         @endif
@@ -245,7 +246,7 @@
                                 <label>{{ trans('global.address_zipcode') }}:</label>
                             </div>
                             <div class="col-xs-12">
-                                <input type="text" class="required form-control" name="cep-titular-debito" placeholder="1701770">
+                                <input type="text" class="required form-control" name="cep-titular-debito" tabindex="0" placeholder="1701770">
                             </div>
                         </div>
                         @endif
@@ -298,9 +299,9 @@
                    {{ trans('clickbus.clickbus_client-voucher-insert') }}
                </div>
                <div class="col-xs-6">
-                   <input type="text" class="form-control" id="voucher-str" name="voucher-str" tabindex="-1">
+                   <input type="text" class="form-control" id="voucher-str" name="voucher-str" tabindex="0">
                </div>
-               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto" tabindex="-1">
+               <button type="button" class="btn btn-acao col-xs-6" id="usar-voucher-desconto" tabindex="0">
                    {{ trans('clickbus.clickbus_client-voucher-use') }}
                </button>
            </div>
@@ -354,6 +355,9 @@
            <div class="hidden">
                <input type="hidden"  id="valor-total-pagamento-passagem" name="valor-total-pagamento-passagem" value="0">
                <input type="hidden"  id="qtd-parcelas" name="qtd-parcelas" value="1">
+               <input type="hidden"  id="valor-documento-mp" name="valor-documento-mp" value="">
+               <input type="hidden"  id="valor-documento-type-mp" name="valor-documento-type-mp" value="">
+               <input type="hidden"  id="amex-regex" name="amex-regex" value="{{ $amexRegex }}">
                {{-- Coloca as poltronas reservadas e os passageiros de cada poltrona --}}
                @if (isset($passagens))
                    @foreach ($passagens as $key => $Passagem)
@@ -392,7 +396,7 @@
                 @endif
            </div>
            <div class="row margin-t-2 margin-b-1 text-center">
-               <button type="submit" class=" btn btn-acao" tabindex="-1">
+               <button type="submit" class=" btn btn-acao" tabindex="0">
                    {{ trans('clickbus.clickbus_buy-now') }}
                </button>
            </div>

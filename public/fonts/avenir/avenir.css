@@ -1,0 +1,205 @@
+/* FAMÍLIA AVENIR */
+
+/* Avenir-Black */
+@font-face {
+  font-family: 'Avenir Black';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Black/Avenir-Black.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Black/Avenir-Black?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Black/Avenir-Black.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Black/Avenir-Black.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Black/Avenir-Black.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Black/Avenir-Black.svg#Avenir-Black') format('svg');
+}
+
+/* Avenir-BlackOblique */
+@font-face {
+  font-family: 'Avenir Black Oblique';
+  /* IE9 Compat Modes */
+  src: url('Avenir-BlackOblique/Avenir-BlackOblique.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-BlackOblique/Avenir-BlackOblique?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-BlackOblique/Avenir-BlackOblique.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-BlackOblique/Avenir-BlackOblique.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-BlackOblique/Avenir-BlackOblique.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-BlackOblique/Avenir-BlackOblique.svg#Avenir-BlackOblique') format('svg');
+}
+
+/* Avenir-Book */
+@font-face {
+  font-family: 'Avenir Book';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Book/Avenir-Book.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Book/Avenir-Book?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Book/Avenir-Book.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Book/Avenir-Book.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Book/Avenir-Book.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Book/Avenir-Book.svg#Avenir-Book') format('svg');
+}
+
+/* Avenir-BookOblique */
+@font-face {
+  font-family: 'Avenir Book Oblique';
+  /* IE9 Compat Modes */
+  src: url('Avenir-BookOblique/Avenir-BookOblique.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-BookOblique/Avenir-BookOblique?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-BookOblique/Avenir-BookOblique.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-BookOblique/Avenir-BookOblique.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-BookOblique/Avenir-BookOblique.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-BookOblique/Avenir-BookOblique.svg#Avenir-BookOblique') format('svg');
+}
+
+/* Avenir-Heavy */
+@font-face {
+  font-family: 'Avenir Heavy';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Heavy/Avenir-Heavy.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Heavy/Avenir-Heavy?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Heavy/Avenir-Heavy.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Heavy/Avenir-Heavy.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Heavy/Avenir-Heavy.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Heavy/Avenir-Heavy.svg#Avenir-Heavy') format('svg');
+}
+
+/* Avenir-HeavyOblique */
+@font-face {
+  font-family: 'Avenir Heavy Oblique';
+  /* IE9 Compat Modes */
+  src: url('Avenir-HeavyOblique/Avenir-HeavyOblique.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-HeavyOblique/Avenir-HeavyOblique?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-HeavyOblique/Avenir-HeavyOblique.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-HeavyOblique/Avenir-HeavyOblique.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-HeavyOblique/Avenir-HeavyOblique.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-HeavyOblique/Avenir-HeavyOblique.svg#Avenir-HeavyOblique') format('svg');
+}
+
+/* Avenir-Light */
+@font-face {
+  font-family: 'Avenir Light';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Light/Avenir-Light.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Light/Avenir-Light?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Light/Avenir-Light.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Light/Avenir-Light.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Light/Avenir-Light.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Light/Avenir-Light.svg#Avenir-Light') format('svg');
+}
+
+/* Avenir-LightOblique */
+@font-face {
+  font-family: 'Avenir Light Oblique';
+  /* IE9 Compat Modes */
+  src: url('Avenir-LightOblique/Avenir-LightOblique.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-LightOblique/Avenir-LightOblique?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-LightOblique/Avenir-LightOblique.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-LightOblique/Avenir-LightOblique.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-LightOblique/Avenir-LightOblique.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-LightOblique/Avenir-LightOblique.svg#Avenir-LightOblique') format('svg');
+}
+
+/* Avenir-Medium */
+@font-face {
+  font-family: 'Avenir Medium';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Medium/Avenir-Medium.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Medium/Avenir-Medium?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Medium/Avenir-Medium.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Medium/Avenir-Medium.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Medium/Avenir-Medium.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Medium/Avenir-Medium.svg#Avenir-Medium') format('svg');
+}
+
+/* Avenir-MediumOblique */
+@font-face {
+  font-family: 'Avenir Medium Oblique';
+  /* IE9 Compat Modes */
+  src: url('Avenir-MediumOblique/Avenir-MediumOblique.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-MediumOblique/Avenir-MediumOblique?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-MediumOblique/Avenir-MediumOblique.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-MediumOblique/Avenir-MediumOblique.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-MediumOblique/Avenir-MediumOblique.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-MediumOblique/Avenir-MediumOblique.svg#Avenir-MediumOblique') format('svg');
+}
+
+/* Avenir-Oblique */
+@font-face {
+  font-family: 'Avenir Oblique';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Oblique/Avenir-Oblique.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Oblique/Avenir-Oblique?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Oblique/Avenir-Oblique.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Oblique/Avenir-Oblique.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Oblique/Avenir-Oblique.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Oblique/Avenir-Oblique.svg#Avenir-Oblique') format('svg');
+}
+
+/* Avenir-Roman */
+@font-face {
+  font-family: 'Avenir Roman';
+  /* IE9 Compat Modes */
+  src: url('Avenir-Roman/Avenir-Roman.eot');
+  /* IE6-IE8 */
+  src: url('Avenir-Roman/Avenir-Roman?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Avenir-Roman/Avenir-Roman.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Avenir-Roman/Avenir-Roman.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Avenir-Roman/Avenir-Roman.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Avenir-Roman/Avenir-Roman.svg#Avenir-Roman') format('svg');
+}

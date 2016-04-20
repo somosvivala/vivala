@@ -2,6 +2,8 @@
 
 jQuery(document).ready(function($) {
 
+
+
     $('a[aria-controls=rodoviario]').on('shown.bs.tab', function() {
         $('#origem-rodoviario').focus();
     });
@@ -39,7 +41,7 @@ jQuery(document).ready(function($) {
             if (keyCode === 13) {
                 // Pega o id do campo que vai ser modificado, origem ou destino
                 var target = $('a.autocomplete-rodoviario.list-focus').parent('.places-list').attr('data-target');
-                console.log(target);
+                //console.log(target);
                 // Muda o valor do input para a string do resultado (friendly)
                 $('#'+target).val($('a.autocomplete-rodoviario.list-focus').find('span').text());
                 // Muda o valor do input hidden para a string da busca (non-friendly)
@@ -106,7 +108,7 @@ jQuery(document).ready(function($) {
             departure = $('#data-id-rodoviario').val(),
             type      = 'ida';
 
-        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
+        $('#clickbus-resultado-busca').html("<h1 style='text-align-center'><i id='form-loading' class='fa fa-spinner fa-pulse soft-hide laranja'></i></h1>");
 
         ajaxTrips({
             from: from,
@@ -165,6 +167,7 @@ var bindClickDetail = function() {
             classe_ida = $(this).attr('data-classe'),
             from_ida  = $(this).attr('data-from'),
             to_ida = $(this).attr('data-to'),
+            viacaoID_ida = $(this).attr('data-viacaoid'),
 
             //corrigindo inversão do from e to
             from      = $('#origem-rodoviario-hidden').val(),
@@ -176,10 +179,11 @@ var bindClickDetail = function() {
         $('#classe-ida').val(classe_ida);
         $('#from-ida').val(from_ida);
         $('#to-ida').val(to_ida);
+        $('#viacaoid-ida').val(viacaoID_ida);
 
         //Se nao tiver passagem de volta, apenas chamar o /trip
         if ($('#data-volta-rodoviario').val().length <= 0) {
-            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }]));
+            ajaxTrip(JSON.stringify([{ 'id':id, 'horario':horario_ida ,'diames':diames_ida, 'from':from_ida, 'to':to_ida, 'horario_chegada': horario_chegada_ida, 'classe': classe_ida, 'viacaoId': viacaoID_ida }]));
         }
 
         //Se tiver volta, entao inverter to x from e fazer nova busca
@@ -207,6 +211,7 @@ var bindClickDetail = function() {
             classe_ida = $('#classe-ida').val(),
             from_ida  = $('#from-ida').val(),
             to_ida = $('#to-ida').val(),
+            viacaoID_ida = $('#viacaoid-ida').val(),
 
             //Aqui os locais estao corretos, o from e o to da volta
             //sao o inverso da ida
@@ -220,9 +225,10 @@ var bindClickDetail = function() {
             classe_volta = $(this).attr('data-classe'),
             from_volta  = $(this).attr('data-from'),
             to_volta = $(this).attr('data-to');
+            viacaoID_volta = $(this).attr('data-viacaoid');
 
-            var json_resposta = JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida, 'from':from_ida, 'to':to_ida , 'horario_chegada': horario_chegada_ida, 'classe': classe_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':from_volta, 'to':to_volta , 'horario_chegada': horario_chegada_volta, 'classe': classe_volta }]);
-            console.log(json_resposta);
+            var json_resposta = JSON.stringify([{ 'id':id_ida, 'horario':horario_ida, 'diames':diames_ida, 'from':from_ida, 'to':to_ida , 'horario_chegada': horario_chegada_ida, 'classe': classe_ida, 'viacaoId': viacaoID_ida }, { 'id':id_volta, 'horario':horario_volta, 'diames':diames_volta , 'from':from_volta, 'to':to_volta , 'horario_chegada': horario_chegada_volta, 'classe': classe_volta, 'viacaoId': viacaoID_volta }]);
+            //console.log(json_resposta);
         ajaxTrip(json_resposta);
     });
 
@@ -269,12 +275,12 @@ var bindaPoltronas = function(){
 
         if (loading && loading != "") {
             $(this).find('button:submit').attr('disabled','disabled');
-            $(this).find('#'+loading).show();
+            $(this).find('#'+loading).toggleClass('soft-hide');
         }
 
-        console.log('form validacao poltrona:');
-        console.log('from: ' + $(this).find('input#from').val());
-        console.log('to: ' + $(this).find('input#to').val());
+        //console.log('form validacao poltrona:');
+        //console.log('from: ' + $(this).find('input#from').val());
+        //console.log('to: ' + $(this).find('input#to').val());
 
         var params = {
             "tipo": $(this).find('input#tipo').val(),
@@ -326,8 +332,8 @@ var bindaPoltronas = function(){
                     closeOnConfirm: true,
                 },
                 function() {
-                    console.log('clicou botao swal error data:');
-                    console.log(data_obj);
+                    //console.log('clicou botao swal error data:');
+                    //console.log(data_obj);
                 });
             //se estiver tudo ok.
             } else {
@@ -344,7 +350,7 @@ var bindaPoltronas = function(){
                     modal_volta[0].reset();
                 }
 
-                console.log("retorno do ajaxPoltronas -> sessionId retornado: " + data_obj.data.request.sessionId);
+                //console.log("retorno do ajaxPoltronas -> sessionId retornado: " + data_obj.data.request.sessionId);
                 //garantindo que o input#session-clickbus tera o sessionId
                 //Atualizado
                 setSessionId(data_obj.data.request.sessionId);
@@ -416,9 +422,12 @@ var bindaAbas = function() {
         $(this).tab('show');
     });
 
+    //se mudar o tipo de cliente (PF/PJ), atualizar valor do campo documento
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         if($(e.target).hasClass('tipo-cliente')){
             $("#tipo-cliente").val($(e.target).attr('aria-controls'));
+            atualizaCamposDocumento($(e.target).attr('aria-controls'));
+
 
         // se mudar a forma de pagamento, remova desconto e atualize
         }else if($(e.target).hasClass('forma-pagamento')){
@@ -494,29 +503,29 @@ var atualizaValorParcelas = function(){
 
     // Recalcula os valores caso haja desconto
     if(desconto_valor > 0) {
-        // console.log("Valor desconto maior que zero e igual a "+desconto_valor);
+        // //console.log("Valor desconto maior que zero e igual a "+desconto_valor);
         // Calcula o valor original
         var original_cost = Number(total) - Number(fee);
 
-        // console.log("Original Cost: "+original_cost);
-        // console.log("Valor discount antes:"+discount_value);
-        // console.log("Desconto fixo"+desconto_fixo);
+        // //console.log("Original Cost: "+original_cost);
+        // //console.log("Valor discount antes:"+discount_value);
+        // //console.log("Desconto fixo"+desconto_fixo);
         // Calcula o desconto total e recalcula o total_with_discount
         if(desconto_fixo != "true") {
-            // console.log("Desconto variavel (nao fixo)");
+            // //console.log("Desconto variavel (nao fixo)");
             discount_value = discount_value + desconto_valor*total;
             total_with_discount = total_with_discount - desconto_valor*total;
         }else{
-            // console.log("Desconto fixo");
+            // //console.log("Desconto fixo");
             discount_value = discount_value + desconto_valor;
             total_with_discount = total_with_discount - desconto_valor;
         }
-        // console.log("Valor discount:"+discount_value);
-        // console.log("Valor total:"+total_with_discount);
+        // //console.log("Valor discount:"+discount_value);
+        // //console.log("Valor total:"+total_with_discount);
 
         // Recalcula o valor da parcela
         var installment = ((original_cost + Number(fee)) - discount_value) / Number(qtd_parcelas);
-        // console.log("Valor parcela: "+installment);
+        // //console.log("Valor parcela: "+installment);
     }
 
     if(discount_value > 0){
@@ -548,29 +557,23 @@ var bindaFormPagamento = function() {
 
     // Binda o submit da compra
     $('#form-pagamento').submit(function (ev) {
+
+        console.log("inside submit formPagamento");
+
         ev.preventDefault();
         var frm = $(this);
 
         // Monta o payment de acordo com a forma de pagamento
         // (credito, debito, paypal)
         var forma_pagamento = frm.find('input#forma-pagamento').val(),
-            total = Number(frm.find("input#valor-total-pagamento-passagem").val().replace('.','')),
+            total = Number(frm.find("input#valor-total-pagamento-passagem").val()).toFixed(2).replace('.',''),
             payment = {};
 
         if(forma_pagamento == 'cartao-credito'){
-            payment = {
-                "method": "creditcard",
-                "currency": "BRL",
-                "total": total,
-                "installment": frm.find("input#qtd-parcelas").val(),
-                "meta": {
-                    "card": frm.find("input[name='num-cartao-credito']").val(),
-                    "code": frm.find("input[name='cod-seguranca-credito']").val(),
-                    "name": frm.find("input[name='nome-titular-credito']").val(),
-                    "expiration": frm.find("select[name='ano-validade-credito'] option:selected").val()+'-'+frm.find("select[name='mes-validade-credito'] option:selected").val(),
-                    "zipcode": frm.find("input[name='cep-titular-credito']").val()
-                }
-            }
+            var cardBrand = $("input[name='bandeira-cartao']:checked")[0].id.replace("bandeira-cartao-","");
+
+            payment = getPaymentParaMercadoPago(frm, total, cardBrand);
+
         }else if(forma_pagamento == 'cartao-debito') {
             payment = {
                 "method": "debitcard",
@@ -578,7 +581,7 @@ var bindaFormPagamento = function() {
                 "total": total,
                 "installment": "1",
                 "meta": {
-                    "card": frm.find("input[name='num-cartao-debito']").val(),
+                    "card": frm.find("input[name='num-cartao-debito']").val().replace(/ */, ""),
                     "code": frm.find("input[name='cod-seguranca-debito']").val(),
                     "name": frm.find("input[name='nome-titular-debito']").val(),
                     "expiration": frm.find("select[name='ano-validade-debito'] option:selected").val()+'-'+frm.find("select[name='mes-validade-debito'] option:selected").val(),
@@ -616,8 +619,8 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
 
-            console.log('buyer pessoa fisica: ');
-            console.log(buyer);
+            //console.log('buyer pessoa fisica: ');
+            //console.log(buyer);
 
         }else if (tipo_cliente == 'pessoa-juridica') {
             var nomeArray = $('input[name="nome-pj"]').val().split(" ");
@@ -636,33 +639,11 @@ var bindaFormPagamento = function() {
                 "meta": {}
             }
 
-            console.log('buyer pessoa juridica: ');
-            console.log(buyer);
+            //console.log('buyer pessoa juridica: ');
+            //console.log(buyer);
 
         }
 
-        /** Comentado pois na existe mais forma de pagamento 'estrangeiro'
-        else if (tipo_cliente == 'estrangeiro') {
-            var nomeArray = $('input[name="nome-estrangeiro"]').val().split(" ");
-
-            buyer = {
-                "locale":"pt_BR",
-                "firstName": nomeArray.shift(),
-                "lastName": nomeArray.join(" "),
-                "email": $('input[name="email-estrangeiro"]').val(),
-                "phone": $('input[name="telefone-estrangeiro"]').val(),
-                "document":$('input[name="cnpj-estrangeiro"]').val(),
-                "gender":"M",
-                "birthday":$('input[name="nascimento-estrangeiro"]').val(),
-                "payment": payment,
-                "meta": {}
-            }
-
-            console.log('buyer estrangeiro: ');
-            console.log(buyer);
-        }
-
-       */
 
        // Monta o orderItems com as poltronas e dados de cada passageiro
         var numero_poltronas = $('input#quantidade-poltronas').val(),
@@ -687,14 +668,12 @@ var bindaFormPagamento = function() {
             })
         }
 
-
-
         var params = {
              "meta": {
                  "model": "Retail",
                  "store": "Vivala",
                  "platform": "API",
-                 "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
+                 "api_key": ""
             },
              "request": {
                 "sessionId": $('input#session-clickbus').val(),
@@ -721,7 +700,7 @@ var bindaFormPagamento = function() {
 
         //sweetalert de loading :)
         swal({
-            html : '<br><i class="fa fa-3x fa-spin fa-spinner laranja"></i> <br><br> <h4>Processando</h4>',
+            html : '<br><i class="fa fa-3x fa-pulse fa-spin fa-spinner laranja"></i> <br><br> <h4>Processando</h4>',
             showCancelButton: false,
             width:240,
             confirmButtonClass: 'hide'
@@ -729,7 +708,21 @@ var bindaFormPagamento = function() {
 
         //Settando as informacoes extras que serao persistidas no backend
         params.extra = getExtraInfoParaCheckout();
-        tripBooking(params);
+
+        if (forma_pagamento == 'cartao-credito') {
+
+            //se estiver sem valor no campo para instanciar o MP, entao settar valor.
+            if (! $('#valor-documento-mp').val() ) {
+                $('#valor-documento-mp').val($('#documento-pf').val());
+                $('#valor-documento-type-mp').val($('#document-type').val());
+            }
+
+            generateMercadoPagoToken(params);
+
+            //se nao for cartao de credito, chamar tripBooking
+        } else {
+            tripBooking(params);
+        }
 
     });
 
@@ -896,10 +889,20 @@ var funcaoSubmitPoltronas = function (ev) {
         loading = frm.data('loading');
 
     if ( loading && loading != "") {
-        $(frm).find('input:submit').attr('disabled','disabled');
-        $(frm).find('#'+loading).show();
+        $(frm).find('button:submit').attr('disabled','disabled');
+        $(frm).find('button:submit i').toggleClass('soft-hide');
     }
 
     tripPayment(params, frm);
 
+
 };
+
+//bindando o select document-type para o input document-type-mp
+//mercado pago
+var bindaDocumentTypeSelect = function(select) {
+    var value = $(select).val();
+    $('#document-type-mp').val(value);
+};
+
+

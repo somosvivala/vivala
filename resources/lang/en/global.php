@@ -1,10 +1,8 @@
 <?php
 return[
-
 /*
 |--------------------------------------------------------------------------
-| [PT-BR] Tradução GLobal dos Arquivos em PORTUGUÊS
-| Status da Tradução:
+| [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
 |--------------------------------------------------------------------------
 */
 
@@ -14,6 +12,9 @@ return[
   'lbl_vivala' => 'Vivalá',
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
+  'join_vivala' => 'Join Vivalá and connect yourself to real Brazil.',
+  'description_vivala' => 'Vivalá is a global platform that connects people who are interested in traveling and transform Brazil.',
+  'keywords_vivala' => 'Vivalá, Social Network, Tourism, Trip, Volunteering, Social Impact, Accomodation, Transport, Feeding, Entertainment',
 
 // Vertentes
   'lbl_wanna_travel' => 'Quero Viajar',
@@ -43,7 +44,7 @@ return[
   'lbl_address_edit' => 'Edit Address',
   'lbl_address_edit_' => 'Edit Address',
   'lbl_address_editing' => 'Editing Address',
-  'lbl_adsress_editing_' => 'Editing Address',
+  'lbl_address_editing_' => 'Editing Address',
   'lbl_address_manage' => 'Manage Address',
   'lbl_address_manage_' => 'Manage Address',
   'lbl_address_managing' => 'Managing Address',
@@ -128,11 +129,10 @@ return[
   'lbl_album_update' => 'Update Album',
   'lbl_album_update_' => 'Update Albums',
   'lbl_album_without_photo' => 'Album without photos.',
-
-  // Aplicativo
+  'lbl_all_rights_reserved' => 'All rights reserved',
+  'lbl_all_results_by' => 'All results by:',
   'lbl_app' => 'App',
   'lbl_app_' => 'Apps',
-
   'lbl_back' => 'back',
   'lbl_best_rank' => 'Best ranked',
   'lbl_birthday' => 'Date of birth',
@@ -195,6 +195,7 @@ return[
   'lbl_chat_with_friends' => 'Chat with Friends',
   'lbl_chat_with_volunteers' => 'Chat with Volunteers',
   'lbl_choose' => 'Choose',
+  'lbl_click_here' => 'Click Here',
   'lbl_close' => 'Close',
   'lbl_city' => 'City',
   'lbl_city_' => 'Cities',
@@ -241,11 +242,14 @@ return[
   'lbl_contact' => 'Contact',
   'lbl_contact_' => 'Contacts',
   'lbl_continue' => 'Continue',
+  'lbl_cookie' => 'Cookie',
+  'lbl_cookie_' => 'Cookies',
+  'lbl_cookie_use' => 'Cookies Usage',
   'lbl_cover_photo' => 'Cover Photo',
   'lbl_create' => 'Create',
   'lbl_created_at' => 'Created on',
   'lbl_brazilian_culture' => 'Brazilian Culture',
-  'lbl_data_policy' => 'Data Policy',
+  'lbl_data_policy' => 'Data Policy,',
   'lbl_developer' => 'Developer',
   'lbl_description' => 'Description',
   'lbl_description_long' => 'Long Description',
@@ -293,6 +297,7 @@ return[
   'lbl_feedback' => 'Feedback',
   'lbl_feedback_give_yours' => 'Give your feedback',
   'lbl_filter_by' => 'Sort by:',
+  'lbl_find_all_people_here' => 'Find all people here!',
   'lbl_follow' => 'Follow',
   'lbl_followed_by' => 'Followed by',
   'lbl_followed_by_none' => 'None',
@@ -362,6 +367,7 @@ return[
   'lbl_message_' => 'Messages',
   'lbl_message_no' => 'No new messages.',
   'lbl_message_send' => 'Send Message',
+  'lbl_n-a' => 'Not Avaiable',
   'lbl_next' => 'Next',
   'lbl_name' => 'Name',
   'lbl_name_last' => 'Last name',
@@ -370,6 +376,7 @@ return[
   'lbl_notification_' => 'Notifications',
   'lbl_notification_no' => 'No new notifications.',
   'lbl_ok' => 'Ok',
+  'lbl_our_essence' => 'Understand our essence',
 
   /* Cuidar - ONGs */
   'lbl_ong' => 'NGO',
@@ -472,6 +479,7 @@ return[
   'lbl_previous' => 'Previous',
   'lbl_preview' => 'Preview',
   'lbl_prettyURL' => 'Your URL',
+  'lbl_profile_all_search' => 'Profiles Search',
   'lbl_profile' => 'Profile',
   'lbl_profile_' => 'Profile',
   'lbl_profile_delete' => 'Delete Profile',
@@ -531,6 +539,7 @@ return[
     'lbl_site' => 'Site',
     'lbl_site_' => 'Sites',
     'lbl_status' => 'Status',
+    'lbl_stay_close' => 'Stay always near to the Vivalá',
     'lbl_step' => 'Step',
     'lbl_start' => 'Start',
     'lbl_step_skip' => 'Skip',
@@ -775,7 +784,7 @@ return[
     'wannatravel_title' => 'Meet Brazil',
     'wannatravel_subtitle' => 'Choose your transport and accommodation, book restaurants and search for entertainment',
     'wannatravel_trip_already_know' => 'Already know where to go?',
-    'wannatravel_trip_setup' => 'Build your trip!',
+    'wannatravel_trip_setup' => 'Build your trip',
     'wannatravel_trip_restaurants' => 'Restaurants',
     'wannatravel_trip_hotels_flights_packs' => 'Accommodation, Flights & Packages',
     'wannatravel_trip_bus_drive' => 'Bus road tickets',
@@ -877,7 +886,7 @@ return[
 
   /* View: Quiz */
     /* Etapa 1 - Interesses */
-      'quiz_interests_yours' => 'Tell us your interests!',
+      'quiz_interests_yours' => 'Tell us your interests',
       'quiz_interests_choose' => 'If we get to know you better, we will only recommend you good stuff!',
       'quiz_interests_no' => 'No interest.',
       'quiz_interests_travel_style' => 'What is your travel style?',
@@ -886,22 +895,29 @@ return[
       'quiz_interests_brazilian_regions' => 'Brazilian regions you want to know:',
       'quiz_interests_travel_motivations' => 'What motivates you to travel?',
       'quiz_interests_what_do_you_like' => 'What do you enjoy doing?',
-
     /* Etapa 2 - Foto */
       'quiz_offour' => 'of 4',
       'quiz_profile_customize' => 'Show us a picture of you!',
       'quiz_photo_customize' => 'Choose picture that shows your style and personality.',
       'quiz_fromcomputer' => 'Upload Photo',
     /* Etapa 3 - Pegando alguns dados */
-      'quiz_tell_us_more' => 'Tell us more about you.',
+      'quiz_tell_us_more' => 'Tell us more about you',
       'quiz_get_intimacy' => 'We are curious!',
       'quiz_nickname' => 'HOW CAN WE CALL YOU?',
       'quiz_hometown' => 'WHAT IS YOUR HOMETOWN?',
       'quiz_currentcity' => 'WHAT IS YOUR CURRENT TOWN?',
+      'quiz_birthdate' => 'YOUR BIRTHDATE',
       'quiz_shortdesc' => 'Short Description',
       'quiz_shortdesc_ph' => 'SHORT DESCRIPTION',
       'quiz_longdesc' => 'Long Description',
       'quiz_longdesc_ph' => 'LONG DESCRIPTION',
+      'quiz_your_social_profiles' => 'WHAT\'S YOUR PROFILE IN THESE SOCIAL NETWORKS?',
+      'quiz_be_connected' => 'We want to be connected with you!',
+      'quiz_facebook_URL_ph' => 'WWW.FACEBOOK.COM/',
+      'quiz_instagram_URL_ph' => 'WWW.INSTAGRAM.COM/',
+      'quiz_youtube_URL_ph' => 'WWW.YOUTUBE.COM/',
+      'quiz_twitter_URL_ph' => 'WWW.TWITTER.COM/',
+      'quiz_your_user_pretty_URL_ph' => 'YOUR-USERNAME',
     /* Etapa 4 - Seguidores */
       'quiz_interestingpeople' => 'interesting people to follow',
       'quiz_nicesuggests' => 'Suggestions based on your interests. Connect yourself!',
@@ -925,7 +941,7 @@ return[
     /* Política de Dados */
       'welcome_aboutprivacy1' => ' By clickin Confirm, you agree with our',
       'welcome_aboutprivacy2' => ' and confirm you have read our',
-      'welcome_aboutprivacy3' => ', including our',
+      'welcome_aboutprivacy3' => ' including our',
 
 
 /*------------------------------------------------------------------------------
@@ -1107,7 +1123,7 @@ return[
     'partners_text_1' => '- More than 200.000 hotels at 8.000 destinations',
     'partners_text_2' => '- 500 flight companies with services all over the world',
     'partners_text_3' => '- More than 30 car rental companies at 30.000 destinarions',
-    'partners_text_4' => '- 1.600 restaurants at 19 brazilian cities',
+    'partners_text_4' => '- 1.700 restaurants at 19 brazilian cities',
     'partners_text_5' => '- More than 40 bus companies with services on 3.000 destinations',
 
   /* Contato */
@@ -1121,7 +1137,7 @@ return[
 
   /* Termos e Condições */
     'termsconditions_title' => 'Terms and Conditions',
-    'termsconditions_subtitle' => 'The basic house rules!',
+    'termsconditions_subtitle' => 'The basic rules of house',
     'termsconditions_intro_text' => 'Please read carefully these terms and conditions before using Vivalá. By using Vivalá, you comprmise yourself to follow all the terms and conditions on this section. Please consult this terms and conditions periodcally to know about possible changes. If you don&#39;t agree with the conditions written here, you are not allowed to use Vivalá.',
     'termsconditions_buying_terms_title' => 'Sales terms',
     'termsconditions_buying_terms_text' => 'The objective of this section is to introduce the necessary information regarding ant commercial transaction between VIVALÁ TURISMO E SERVIÇOS LTDA - ‘Vivalá’ - and the website user. Vivalá works as a market place that connects our user with our commercial partners, who supply services like (1) flight tickets; (2) bus tickets; (3) accommodation; (4) restaurant benefits. Vivalá&#39;s obligation is to enable a platform where the user has the conditions to build his whole travel itinerary with our partners services. Our partners have the obligation of intermediating the relation between our user and the services provider (flight and bus companies, hotels and restaurants). Our partners obligations are: a) operate the selling process of the travelling services directly to users; b) inform the User about the especifications of the acquired services; c) inform the User about any update or changes regarding travel documentation, such as passports, visas, pharmaceutials documents and others, according to the acquired service regulation. Our Users obligations are: a) read carefully the terms and conditions from Vivalá and our partners; b) pay the price of the acquired services on the dates and conditions indicated on the moment of the purchase; c) be responsible for any extra costs related to the services acquired, on the case of cancellation or changes that may be related to his or any other traveller fault.',
@@ -1151,7 +1167,7 @@ return[
     'mobile_warning_welcome' => 'Welcome to Vivalá!',
     'mobile_warning_desctopo' => 'We realize that you accessed by mobile.',
     'mobile_warning_descbody' => 'We are developing our <span class="laranja">mobile</span> and <span class="laranja">tablet</span> versions. Meanwhile we invite you to connect to platform from your desktop or notebook.',
-    'mobile_warning_desclink' => 'Join <a href="vivala.com.br">vivala.com.br</a> and experience the real Brazil.',
+    'mobile_warning_desclink' => 'Join <a href="https://www.vivala.com.br" class="laranja">vivala.com.br</a> and experience the real Brazil.',
 
     /* Termos e condições */
     'termsconditions_title' => 'Terms and conditions',
@@ -1201,7 +1217,7 @@ return[
     'dummy_travel_3_title' => 'Packages',
     'dummy_travel_3' => 'Customize your travel package combining air tickets, accommodation and car leasing and save up to 35% of the total value! Search here!',
     'dummy_travel_4_title' => 'Restaurants',
-    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.600 stablishments! See more here',
+    'dummy_travel_4' => 'Discover excellent restaurants in Brazil  and become a member of our benefits club: up to 50% off at 1.700 stablishments! See more here',
     'dummy_travel_5_title' => 'Bus Tickets',
     'dummy_travel_5' => 'Find bus tickets for 3.000 brazilian cities, operated by 67 companies. Search now!',
 
@@ -1226,5 +1242,14 @@ return[
     'transport_bus' => 'Bus',
     'transport_car' => 'Car',
     'transport_airplane' => 'Airplane',
+    'transport_oh_the_sky' => 'Oh, the sky!',
+    'transport_lets_ride' => 'Let\'s ride!',
+
+    /*----------------------------------------------------------------------------------
+    / Facebook Open Graph
+    /---------------------------------------------------------------------------------*/
+      // Welcome
+      'fb-og-title_welcome' => 'Vivalá - Join Vivalá and connect yourself to the real Brazil',
+      'fb-og-description_welcome' => 'Plan Your Experiences, buy transportation, lodging and restaurants reservations all over Brazil. Meet projects of social impact and transform the country through volunteering.',
 ];
 ?>

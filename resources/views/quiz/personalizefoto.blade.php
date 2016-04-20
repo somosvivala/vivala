@@ -5,9 +5,12 @@
     <span class="absolute-top-right laranja">
         <a href="{{ url ('quiz')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('quiz/contemais')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
     </span>
-    <h2 class="tour_quiz-2-step1">{{ trans("global.quiz_profile_customize") }}</h2>
-    <h3>{{ trans("global.quiz_photo_customize") }}</h3>
-
+    <div class="row">
+      <div class="titulo col-sm-12 padding-b-1">
+        <h2 class="tour_quiz-2-step1">{{ trans("global.quiz_profile_customize") }}</h2>
+        <h3>{{ trans("global.quiz_photo_customize") }}</h3>
+      </div>
+    </div>
     <a type="button" data-target="#cropper-quiz-modal" data-toggle="modal">
 
         <img class="tour_quiz-2-step2" class="quiz-foto-atual" src="{{ $foto?$foto:'/img/interrogacao.png' }}"/>

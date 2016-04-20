@@ -78,7 +78,7 @@
         </div>
     </div>
    <div id="vaga-btn-submit" class="form-group text-center margin-t-2">
-        {!! Form::submit( $btnSubmit, ['class' => 'btn btn-primary btn-acao']) !!}
+        {!! Form::submit( $btnSubmit, ['class' => 'btn btn-acao']) !!}
         <i id="form-loading" class="fa fa-spinner fa-pulse margin-t-1 fa-2x " style="display:none"></i>
     </div>
 </div>

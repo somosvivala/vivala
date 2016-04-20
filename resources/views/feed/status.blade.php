@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="col-sm-10">
-			<p class="status text-center">"{{$Post->descricao}}"</p>
+			<p class="status text-center post-descricao">"{{$Post->descricao}}"</p>
 		</div>
 	</div>
 	<div class="hora-post">

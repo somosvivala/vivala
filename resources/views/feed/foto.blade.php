@@ -39,7 +39,7 @@
 	@include('post._barrainfos')
 	<div class="row box-post">
 		<div class="col-sm-6 fundo-cheio">
-			<p class="status text-center">{{$Post->descricao}}</p>
+			<p class="status text-center post-descricao">{{$Post->descricao}}</p>
 		</div>
 		<div class="col-sm-6 fundo-cheio">
 			<div class="comentarios-wrapper">

@@ -2,6 +2,33 @@
 // Pegando a lingua ativa no momento
 var linguaAtiva = $("meta[name=language]").attr("content");
 var lingua = [];
+
+//guardando instancia global do obj que gera o token do Mercado Pago
+var clickBusPaymentObj = null;
+var idCampoDocumentoMP = null;
+
+//mapeando erros do mercado pago para serem usados na validação
+var mercadoPagoErros = {
+    "205" : "Digite o seu número de cartão.",
+    "208" : "Escolha um mês.",
+    "209" : "Escolha um ano.",
+    "212" : "Insira o seu documento.",
+    "213" : "Insira o seu documento.",
+    "214" : "Insira o seu documento.",
+    "220" : "Digite o seu banco emissor.",
+    "221" : "Insira o nome e o sobrenome.",
+    "224" : "Digite o código de segurança.",
+    "E301" : "Há algo errado com este número. Volte a digitá-lo.",
+    "E302" : "Revise o código de segurança.",
+    "316" : "Insira um nome válido.",
+    "322" : "Revise o seu documento.",
+    "323" : "Revise o seu documento.",
+    "324" : "Revise o seu documento.",
+    "325" : "Revise a data.",
+    "326" : "Revise a data."
+};
+
+
 switch(linguaAtiva){
   case 'en':
     lingua[0] = 'Ops, something went wrong, do the search again please.',
@@ -23,7 +50,7 @@ switch(linguaAtiva){
     lingua[5] = 'Sua viagem de ',
     lingua[6] = 'Iremos redirecioná-lo para finalizar sua compra, se isso nao acontecer clique ',
     lingua[7] = 'aqui',
-    lingua[8] = 'Successo'
+    lingua[8] = 'Sucesso'
   break;
   default:
     lingua[0] = 'Ops, algo saiu errado, por favor faça a busca novamente.',
@@ -48,7 +75,7 @@ var ajax;
 
 // Trata evento de seleção da passagem de ida para alterar o passagem de volta
 $('#data-id-rodoviario').datepicker().on('changeDate', function() {
-    console.log($('#data-id-rodoviario').datepicker('getDate'));
+    //console.log($('#data-id-rodoviario').datepicker('getDate'));
     $('#data-volta-rodoviario').datepicker('setStartDate',$('#data-id-rodoviario').datepicker('getDate'));
 });
 
@@ -72,7 +99,7 @@ var ajaxPlace = function(query, target) {
     var pos = [$(target).position().top + $(target).outerHeight(), $(target).position().left];
 
     // Mostra o icone de loading
-    $(target).siblings('i.fa').show();
+    $(target).siblings('i.fa').toggleClass('soft-hide');
     ajax = $.ajax({
         url: 'clickbus/place',
         type: 'POST',
@@ -96,8 +123,7 @@ var ajaxPlace = function(query, target) {
         $(target).parent().append(element);
 
         // Esconde o loading
-        $(target).siblings('i.fa').hide();
-
+        $(target).siblings('i.fa').toggleClass('soft-hide');
         bindAutocompleteRodoviario();
     });
 };
@@ -113,7 +139,7 @@ var ajaxTrips = function(params) {
     $.extend(defaultParams, params);
 
     // Mostra icone de loading
-    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-pulse fa-spinner laranja'></i></h1>");
 
 
     $.ajax({
@@ -142,8 +168,8 @@ var ajaxTrips = function(params) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
             });
         //Se estiver tudo ok..
         } else {
@@ -167,8 +193,8 @@ var ajaxTrip = function(viagens) {
         to        = $('#destino-rodoviario').val();
 
     // Mostra icone de loading
-    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-spinner laranja'></i></h1>");
-    console.log(viagens);
+    $('#clickbus-resultado-busca').html("<h1 style='text-align:center'><i class='fa fa-spin fa-pulse fa-spinner laranja'></i></h1>");
+    //console.log(viagens);
 
     $.ajax({
         url: 'clickbus/trip',
@@ -199,8 +225,8 @@ var ajaxTrip = function(viagens) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
             });
         //Se estiver tudo ok..
         } else {
@@ -212,15 +238,6 @@ var ajaxTrip = function(viagens) {
             //do sessionID retornado pelo /trip
             $('input#session-clickbus').val(json.sessionId);
             bindaPoltronas();
-
-           //// TODO: conseguir recuperar o mesmo sessionId retornado pelo /trip
-           //console.log('disparando trigger de refresh de sessionId');
-           ////startando o tratamento de refresh da sessao
-           //setTimeout(function() {
-           //    console.log('15 minutos passaram, renovando sessionId...');
-           //    console.log('current value: ' + $('input#session-clickbus').val());
-           //    sessionManutencao();
-           //}, 60000);
 
         }
     })
@@ -282,9 +299,9 @@ var ajaxPoltronas = function(request, callback) {
            callback(data);
         },
         error: function (data) {
-            console.log('erro do ajax poltronas');
-            console.log(data);
-/*            console.log(data.responseObject);
+            //console.log('erro do ajax poltronas');
+            //console.log(data);
+/*            //console.log(data.responseObject);
             //Aqui mostro o sweetAlert com as mensagens retornadas da
             //validação
             //TODO formatar texto corretamente
@@ -318,8 +335,8 @@ var ajaxPoltronas = function(request, callback) {
         },
         complete: function(data, status) {
             $('form.validacao-poltrona').find('button:submit').removeAttr('disabled');
-            $('form.validacao-poltrona button:submit i').hide();
-
+            //voltando a a class soft-hide para o icone que estiver ativo
+            $('form.validacao-poltrona button:submit i:not(.soft-hide)').toggleClass('soft-hide');
         }
     });
 
@@ -363,6 +380,7 @@ var removePoltrona = function(request, tipo, callback) {
 
 //Funcao chamada no submit do formulario de poltronas
 var tripPayment = function(request, frm) {
+
     var params = {
         "store": "Vivala",
         "model": "Retail",
@@ -419,13 +437,6 @@ var tripPayment = function(request, frm) {
         });
     })
     .done(function(json) {
-        // Try/Catch com o data, json do erroXhtml data dos ônibus
-        /*var json= {};
-        try {
-            json = JSON.parse(data);
-        } catch(error) {}*/
-
-        //se tiver dado erro
         if (json.errors) {
             swal({
                 title: json.errors1,
@@ -445,24 +456,28 @@ var tripPayment = function(request, frm) {
             bindaBandeirasCartao();
             bindaChangePagamento();
             bindaFormPagamento();
+            bindaCartaoAmex();
             atualizaValorParcelas();
+            atualizaCamposDocumento();
+            setupClickBusPayment();
         }
     });
 
 };
 
 var tripBooking = function(request) {
+console.log("================== INSIDE tripBooking()");
+console.log(request);
 
     var params = {
         "meta": {
             "store": "Vivala",
             "model": "Retail",
             "platform": "API",
-            "api_key": "$2y$05$32207918184a424e2c8ccujmuryCN3y0j28kj0io2anhvd50ryln6"
+            "api_key": ""
         },
         "request": {
             "sessionId": getSessionId(),
-            "ip": "",
             "buyer": {
                 "locale": "pt_BR",
                 "gender": "M",
@@ -501,7 +516,7 @@ var tripBooking = function(request) {
             closeOnConfirm: true,
             },
             function() {
-                console.log(data);
+                //console.log(data);
             });
     })
     .done(function(data) {
@@ -522,106 +537,37 @@ var tripBooking = function(request) {
                 closeOnConfirm: true,
             },
             function() {
-                console.log('clicou botao swal error data:');
-                console.log(data);
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
             });
 
         //Se estiver tudo ok..
         } else {
 
-            if (json.forma_pagamento == 'payment.creditcard') {
-
-                var htmlMsg = lingua[1]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[3]+'<a href="mailto:sac@vivalabrasil.com.br">sac@vivalabrasil.com.br</a>';
-
-                swal({
-                    title: lingua[8],
-                    html: htmlMsg,
-                    type: "success",
-                    confirmButtonColor: "#14CC5B",
-                    confirmButtonText: "OK",
-                    closeOnConfirm: true,
-                },
-                 function() {
-                   //window.location.href="/viajar";
-                }
-                );
-                $('#clickbus-resultado-busca').html(json.view);
-
-            //Se nao for creditcard, entao possui um redirectUrl
-            } else {
-
+            //Se o pagamento foi feito por cartao de debito, entao tenho que
+            //abrir uma nova aba para continuar o pagamento
+            if (json.forma_pagamento == 'payment.debitcard') {
                 setTimeout(function() {
                     window.open(json.redirectUrl,'_blank');
-                }, 2200);
-
-                //Caso a forma de pagamento requira redirecionamento
-                var htmlMsg = lingua[4]+'<br>'+lingua[5]+'<h4>'+ json.ida_departure + '</h4>'+lingua[2]+'<h4>'+json.ida_arrival+'</h4><br/>'+lingua[6]+'<a href="'+json.redirectUrl+'" target="_blank">'+lingua[7]+'</a>.';
-
-                swal({
-                    title: lingua[8],
-                    html: htmlMsg,
-                    type: "success",
-                    confirmButtonColor: "#14CC5B",
-                    confirmButtonText: "OK",
-                    closeOnConfirm: true,
-                },
-                function() {
-                  //window.location.href="/viajar";
-                }
-                );
-               $('#clickbus-resultado-busca').html(json.view);
+                }, 800);
             }
+
+            //mostrando view de sucesso
+            $('#clickbus-resultado-busca').html(json.view);
+
+            //substituindo sweetalert de loading pela de sucesso com timer
+            swal({
+                type: "success",
+                html: '<h4>Sucesso</h4>',
+                showCancelButton: false,
+                width:240,
+                confirmButtonClass: 'hide',
+                timer: 1100,
+            });
+
         }
 
     });
-}
-
-//Funcao para recuperar a sessionId do lado do cliente.
-//Executa uma XMLHttpRequest para o /session resource na clickbus.
-//@TODO usando o sessionID retornado nao é possivel continuar uma compra
-var sessionManutencao = function() {
-
-    var currentSessionId = $('input#session-clickbus');
-
-    //so disparar essa request se estiver atualmente mexendo na clickbus
-    if (currentSessionId.length) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://api-evaluation.clickbus.com.br/api/v1/session");
-        xhr.setRequestHeader("Content-Type", "application/json");
-
-        //Acho que isso nao funciona porque CORS nao esta permitido pelo server.
-        //xhr.setRequestHeader("Cookie", "PHPSESSID="+currentSessionId);
-
-        //Com só essa flag ativada, o PHPSESSID é enviado, mas aparentemente ele
-        //sempre abre uma nova sessao. perdendo os dados da sessao atual.
-        //xhr.withCredentials =  true;
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState == 4 && xhr.status == 201) {
-                var data = JSON.parse(xhr.responseText);
-                setSession(data);
-            }
-        };
-
-        xhr.send('');
-    }
-}
-
-var setSession = function(data) {
-
-    var currentSessionId = getSessionId();
-    console.log('============ chegou setSession new value:' + data.content);
-    console.log('currentSessionId: ' + currentSessionId);
-
-    //settando o novo sessionId
-    setSessionId(data.content);
-
-    setTimeout(function() {
-        console.log('1 minuto passou, renovando sessionId...');
-        console.log('current value: ' + $('input#session-clickbus').val());
-        sessionManutencao();
-    }, 60000);
-
-
 }
 
 var getSessionId = function() {
@@ -640,7 +586,155 @@ var getExtraInfoParaCheckout = function() {
         "taxas" : Number($('.valor-fee').html().replace('.', '').replace(',','.')),
         "ida-slug" : $("#origem-rodoviario-hidden").val(),
         "ida-company-id" : $('#ida-company-id').val(),
-        "volta-company-id" : $('#volta-company-id').val()
+        "volta-company-id" : $('#volta-company-id').val(),
+        "tipo_documento" : $('#valor-documento-type-mp').val(),
+        "nome_fantasia" : $("input[name='nome-fantasia-pj']").val(),
+        "razao_social" : $("input[name='razao-social-pj']").val()
     };
     return obj;
+}
+
+//instancia o obj da clickbus que ira gerar o token do mercado pago
+var setupClickBusPayment = function() {
+    console.log("============= INSIDE setupClickBusPayment() ");
+
+    var docNumberID = $('#tabs-pagamento-cliente > div.tab-pane.active.in').find('input#documento-pf').attr('id');
+
+    // Here you can find a list of mapped fields for each parameter.
+    clickBusPaymentObj = new ClickBusPayments({
+        paymentFormId: 'form-pagamento',
+        creditcardFieldId: 'num-cartao-credito',
+        securityCodeFieldId: 'cod-seguranca-credito',
+        expirationMonthFieldId: 'mes-validade-credito',
+        expirationYearFieldId: 'ano-validade-credito',
+        holderNameFieldId: 'nome-titular-credito',
+        docTypeFieldId: 'valor-documento-type-mp',
+        docNumberFieldId: 'valor-documento-mp',
+        amountFieldId: 'valor-total-pagamento-passagem',
+        test: true
+    });
+
+    console.log('clickBusPaymentObj ->');
+    console.log(clickBusPaymentObj);
+}
+
+//gera o token do mercado pago
+var generateMercadoPagoToken = function(params) {
+    console.log("============= INSIDE generateMercadoPagoToken() ");
+
+    clickBusPaymentObj.generateToken().success(function(response) {
+            console.log("============= INSIDE generateToken Callback");
+
+            //apos gerar o token, inseri-lo na request e enviar para o /booking
+            console.log('response:'); console.log(response);
+            params.request.buyer.payment.meta.token = response.token;
+            params.request.buyer.payment.installment = Number(params.request.buyer.payment.installment);
+
+            params.request.buyer.payment.meta.card_brand = response.payment_method;
+            tripBooking(params);
+
+            //se falhar mostrar sweetalert
+        }).fail(function(errors) {
+            console.log("============== deu ruim no generateToken");
+            console.log(errors);
+            swal({
+                title: 'Opa!',
+                html: "<br><p>" + getMensagemErroMercadoPago(errors[0].code) + "</p></br>",
+                type: "error",
+                confirmButtonColor: "#FF5B00",
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+            },
+            function() {
+                //console.log('clicou botao swal error data:');
+                //console.log(data);
+            });
+
+
+        }).call();
+}
+
+//Monta o paymentObj seguindo o formato necessario
+//para utilizar do MercadoPago
+var getPaymentParaMercadoPago = function(frm, total, cardBrand) {
+    var payment = {
+        "method": "creditcard",
+        "currency": "BRL",
+        "total": Number(total),
+        "installment": frm.find("input#qtd-parcelas").val(),
+        "meta": {
+            "token": '',
+            "card_brand": cardBrand,
+            "zipcode": frm.find("input[name='cep-titular-credito']").val()
+        }
+    };
+    return payment;
+};
+
+//Funcao para atualizar o valor do campo documento que ira
+//conter o valor do documento para PF e PJ
+var atualizaCamposDocumento = function(tipo_cliente = "pessoa-fisica") {
+
+    //se for PJ entao pegar o valor do campo documento do form pj e settar tipo para CNPJ
+    if (tipo_cliente === 'pessoa-juridica') {
+       $('#valor-documento-mp').val($('input[name="cnpj-pj"]').val());
+       $('#valor-documento-type-mp').val('CNPJ');
+
+       //bindando futuras mudancas no campo cnpj para que sejam espelhadas no input hidden
+       $('input[name="cnpj-pj"]').off('input');
+       $('input[name="cnpj-pj"]').on('input', function() {
+           $('#valor-documento-mp').val($(this).val());
+       });
+
+    //se for PF entao pegar o valor do doc do form de pf e pegar valor do select de tipoDocumento
+    } else if (tipo_cliente === 'pessoa-fisica') {
+       $('#valor-documento-mp').val($('#documento-pf').val());
+       $('#valor-documento-type-mp').val($('#document-type').val());
+
+       //bindando futuras mudancas no campo documento-pf para que sejam espelhadas no input hidden
+       $('#documento-pf').off('input');
+       $('#documento-pf').on('input', function() {
+           $('#valor-documento-mp').val($(this).val());
+       });
+    }
+};
+
+
+//metodo para validar se a regex de cartoes amex que restringe mais de 1 parcela
+//se aplica ao numeroCartao
+var checaCartaoAmex = function(numeroCartao) {
+    var regex = new RegExp($('#amex-regex').val().replace(/\//g,''), "g");
+
+    if(numeroCartao.match(regex)) {
+        console.log('amex card matched');
+        //desabilitar parcelas
+        $('#bandeira-amex').val(1);
+        $('#bandeira-amex').attr('disabled', 'true');
+    } else {
+
+        console.log('no match');
+        //caso parcelas ja bloqueadas e amex card valido, desbloquear parcelas
+        if ($('#bandeira-amex').attr('disabled')) {
+            $('#bandeira-amex').removeAttr('disabled');
+        }
+
+    }
+
+}
+
+//binda a checagem de cartoes amex
+var bindaCartaoAmex = function() {
+
+    $('#num-cartao-credito').on('blur', function(e) {
+        checaCartaoAmex($(this).val());
+    });
+
+};
+
+
+//Metodo para pegar a mensagem de erro do mercadoPago a partir do código
+var getMensagemErroMercadoPago =  function(codigoErro) {
+    return mercadoPagoErros[codigoErro]
+        ? mercadoPagoErros[codigoErro]
+        : "Revise os dados e tente novamente";
 }

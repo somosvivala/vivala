@@ -14,18 +14,16 @@
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
-Route::get('/testeevento', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return event(new ClickBusCompraFinalizada($Compra));
-//    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
+// Rotas de TESTE paginação
+use App\User;
+Route::get('simplepagination', function() {
+   dd( $someUsers = User::simplePaginate(15));
+ });
 
+// Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
 Route::get('/testeview', function() {
     $compra = CompraClickbus::all()->reverse()->first();
-
-    return ["view" => view('clickbus._success', compact('compra'))->render()];
-
-    //    return view('emails.clickbus.pendente')->with('Compra', $Compra);
+    return view('clickbus._success', compact('compra'));
 });
 
 Route::get('/testeemailpendente', function() {
@@ -41,6 +39,9 @@ Route::get('/testeemailsucesso', function() {
     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
 });
 
+/*
+ * Rotas
+ */
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -87,18 +88,14 @@ Route::controller('lembrancas','Conectar\LembrancasController');
 Route::controller('avaliacoes','Conectar\AvaliacoesController');
 Route::controller('culturabrasileira','Conectar\CulturaBrasileiraController');
 Route::controller('perfilvoluntario','Conectar\PerfilVoluntarioController');
-
 Route::controller('chat','Conectar\ChatController');
-
 Route::controller('interesses','Conectar\InteressesController');
-
 Route::controller('montarviagem','Viajar\MontarViagemController');
 Route::controller('verpacotes','Viajar\VerPacotesController');
 Route::controller('meusfavoritos','Viajar\MeusFavoritosController');
 Route::controller('minhascompras','Viajar\MinhasComprasController');
 Route::controller('meuspontos','Viajar\MeusPontosController');
 Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
-
 Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
 Route::controller('mapadobem','Cuidar\MapadoBemController');
 Route::controller('resultados','Cuidar\ResultadosController');
@@ -107,7 +104,6 @@ Route::get('ongs','OngController@ongs');
 Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::controller('feed','FeedController');
-
 
 Route::controller('home', 'HomeController');
 Route::controller('foto', 'FotoController');
@@ -142,14 +138,13 @@ Route::bind('prettyURL', function($value, $route)
 	return $prettyUrl;
 });
 
-
-
 /**
  * Aqui ficam as rotas que vao passar por autenticação. (filtro auth)
  */
 Route::group(['before' => 'auth'], function() {
 	Route::get('perfil', 'PerfilController@index');
 	Route::get('perfil/queryList', 'PerfilController@getQueryList');
+  Route::get('perfil/busca/{query}', 'PerfilController@getAllQueryList');
 	Route::get('editarPerfil', 'PerfilController@edit');
 	Route::post('editarPerfil/{id}', 'PerfilController@update');
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
@@ -189,7 +184,8 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 		}
 	}
 
-	dd("rota até o fim, entidade nao encontrada --> 404", $prettyUrl);
+  //substituindo a mensagem anterior pela tela padrao de 404
+  abort(404);
 });
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");

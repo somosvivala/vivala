@@ -411,7 +411,6 @@ $(document).ready(function() {
 // Se a variável for FALSE (setada pelo user), posso iniciar este Tour
   if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-viajar"))){
 
-
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
     switch(linguaAtiva){
@@ -659,11 +658,11 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-viajar-step2',
                 intro: '<p class="text-center">Here in our menu you will find all our services!</p>',
-                position: 'left'
+                position: 'top'
               },
               {
                 element: '.tour-pilar-viajar-step3',
-                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.600 restaurants spread across 12 Brazilian states</span>.<br/>Join the club and delight yourself!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br/>Search here on your next trip and hit the road!</p>',
                 position: 'bottom'
               },
               {
@@ -673,7 +672,7 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br/>Search here on your next trip and hit the road!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.700 restaurants spread across 12 Brazilian states</span>.<br/>Join the club and delight yourself!</p>',
                 position: 'bottom'
               }
             ]
@@ -691,11 +690,11 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-viajar-step2',
                 intro: '<p class="text-center">Aqui em nosso menu você encontra todos os nossos serviços!</p>',
-                position: 'left'
+                position: 'top'
               },
               {
                 element: '.tour-pilar-viajar-step3',
-                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.600 restaurantes espalhados por 12 estados brasileiros</span>.<br/>Entre para o clube e delicie-se!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br/>Busque aqui em sua próxima viagem e pé na estrada!</p>',
                 position: 'bottom'
               },
               {
@@ -705,7 +704,7 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br/>Busque aqui em sua próxima viagem e pé na estrada!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.700 restaurantes espalhados por 12 estados brasileiros</span>.<br/>Entre para o clube e delicie-se!</p>',
                 position: 'bottom'
               }
             ]
@@ -900,9 +899,11 @@ function verificaMarketPlace(){
       default:
       // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
     }
+    /*
     pilarVendasTour.start();
     pilarVendasTour.oncomplete(function(){
       pilarVendasTour.exit();
     });
+    */
   }
 };

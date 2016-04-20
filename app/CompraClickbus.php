@@ -13,6 +13,11 @@ class CompraClickbus extends Model
      */
     protected $table = 'compras_clickbus';
 
+    /**
+     * Denotando os campos dates para que o laravel sirva uma instancia do Carbon
+     */
+	  protected $dates = ['data_pagamento'];
+
     //Settando colunas que podem ser MassAssigned
     //AKA CompraClickBus::create(['coluna' => 'valor']);
     protected $fillable = [
@@ -34,6 +39,10 @@ class CompraClickbus extends Model
         'taxas',
         'total',
         'status',
+        'buyer_document_type',
+        'buyer_nome_fantasia',
+        'buyer_razao_social',
+        'redirect_url'
     ];
 
     public function user()
@@ -45,4 +54,22 @@ class CompraClickbus extends Model
     {
         return $this->hasMany('App\CompraClickbusPoltrona', 'compra_id');
     }
+
+    /*
+     * Retorna a data de pagamento formatada em dd/mm/YYYY
+     */
+    public function getDataConfirmacaoPagamentoAttribute()
+    {
+        return $this->data_pagamento->format('d/m/Y');
+    }
+
+    /*
+     * Retorna a redirectUrl
+     */
+    public function getContinuarPagamentoUrlAttribute()
+    {
+        return $this->redirectUrl;
+    }
+
+
 }

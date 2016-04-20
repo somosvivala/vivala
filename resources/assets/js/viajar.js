@@ -32,8 +32,8 @@ $("form#buscaVoos").submit(function(e) {
         qtdAdultosTotal = qtdAdultos;
 
     // Formata a data
-    dataPartida = dataPartida.split('/').reverse().join('-');  
-    dataRetorno = dataRetorno.split('/').reverse().join('-');  
+    dataPartida = dataPartida.split('/').reverse().join('-');
+    dataRetorno = dataRetorno.split('/').reverse().join('-');
     // Conta quantas tarifas de crianças jovens e adultos serão cobradas
     for(var i=0;i<=qtdCriancas;i++) {
         var tipoTarifa = form.find('.idade-criancas[data-child-id="'+i+'"]').val();
@@ -79,8 +79,8 @@ $("form#busca-hoteis").submit(function(e){
 */
 
     // Formata a data
-    dataPartida = dataPartida.split('/').reverse().join('-');  
-    dataRetorno = dataRetorno.split('/').reverse().join('-');  
+    dataPartida = dataPartida.split('/').reverse().join('-');
+    dataRetorno = dataRetorno.split('/').reverse().join('-');
     // Conta quantas tarifas de crianças jovens e adultos serão cobradas
 /*    for(var i=0;i<=qtdCriancas;i++) {
         var tipoTarifa = form.find('.idade-criancas[data-child-id="'+i+'"]').val();
@@ -114,11 +114,26 @@ var chamaCheckout = function(url) {
 
 // Atualiza o iframe do checkout com a url recebida por parametro
 $('.ativa-modal-quimera').on('click', function() {
+    if(($('.tab-content #rodoviario').hasClass('active')) || ($('.tab-content #restaurantes').hasClass('active'))){
+      $('.tab-content #rodoviario').removeClass('active');
+      $('.tab-content #restaurantes').removeClass('active');
+    }
+
     var url = $(this).data('url');
     $('#modal-quimera.modal').on('shown.bs.modal',function(){      //correct here use 'shown.bs.modal' event which comes in bootstrap3
       $(this).find('iframe').attr('src', url)
     });
     $('#modal-quimera.modal').modal({show:true});
+});
+
+// Menu Fixes
+$('.pesquisa-viajar li .rodoviario').on('click', function() {
+  $('.tab-content #restaurantes').removeClass('active');
+  $('.tab-content #rodoviario').addClass('active');
+});
+$('.pesquisa-viajar li .restaurantes').on('click', function() {
+  $('.tab-content #rodoviario').removeClass('active');
+  $('.tab-content #restaurantes').addClass('active');
 });
 
 // Mostra as quantidades de adulto e criança para cada quarto
@@ -135,18 +150,16 @@ $("#qtd-quartos-hotel").change(function() {
 
 
 $(document).ready(function($) {
-
     /*
      * VOOS
      */
-
-    // Binda keydown da origem pra procurar aeroportos 
+    // Binda keydown da origem pra procurar aeroportos
     // e cidades quando entrar mais que 3 chars
     var autocompleteTimeout = null;
     $('input#origem-voo').on('keyup', function() {
         var value = $(this).val(),
             lista = $('#lista-origem-voo .flight-list'),
-            container = $('#lista-origem-voo');  
+            container = $('#lista-origem-voo');
 
         container.show();
         //Insere icone de loading
@@ -156,7 +169,7 @@ $(document).ready(function($) {
             clearTimeout(autocompleteTimeout);
         }
         if (value.length >= 3) {
-            autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista); 
+            autocompleteTimeout = setTimeout(autocompleteFlights, 500, value, '#origem-voo', container, lista);
         } else {
             lista.remove();
             container.hide();
@@ -164,7 +177,7 @@ $(document).ready(function($) {
         }
     });
 
-    // Binda keydown do destino pra procurar aeroportos 
+    // Binda keydown do destino pra procurar aeroportos
     // e cidades quando entrar mais que 3 chars
     $('input#destino-voo').on('keyup', function() {
         var value = $(this).val(),
@@ -192,7 +205,7 @@ $(document).ready(function($) {
      * Hotéis
      */
 
-    // Binda keydown da origem pra procurar hoteis 
+    // Binda keydown da origem pra procurar hoteis
     // e cidades quando entrar mais que 3 chars
     $('input#destino-hotel').on('keyup', function() {
         var value = $(this).val(),
