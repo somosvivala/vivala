@@ -11,7 +11,7 @@
                   <img src="{{ asset('/img/dummyvoos.jpg') }}">
               </div>
               <strong class="col-sm-12 margin-t-1">{{ trans('global.dummy_travel_1_title') }}</strong>
-              <span class="col-sm-12 padding-b-1 text-justify">{{ trans('global.dummy_travel_1') }}</span>
+              <span class="col-sm-12 padding-b-1 text-center">{{ trans('global.dummy_travel_1') }}</span>
               <button class="btn btn-acao" type="button" >{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
@@ -21,7 +21,7 @@
                   <img src="{{ asset('/img/dummyhoteis.jpg') }}">
               </div>
               <strong class="col-sm-12 margin-t-1">{{ trans('global.dummy_travel_2_title') }}</strong>
-              <span class="col-sm-12 padding-b-1 text-justify">{{ trans('global.dummy_travel_2') }}</span>
+              <span class="col-sm-12 padding-b-1 text-center">{{ trans('global.dummy_travel_2') }}</span>
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
@@ -31,7 +31,7 @@
                   <img src="{{ asset('/img/dummypackages.jpg') }}">
               </div>
               <strong class="col-sm-12 margin-t-1">{{ trans('global.dummy_travel_3_title') }}</strong>
-              <span class="col-sm-12 padding-b-1 text-justify">{{ trans('global.dummy_travel_3') }}</span>
+              <span class="col-sm-12 padding-b-1 text-center">{{ trans('global.dummy_travel_3') }}</span>
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
@@ -41,7 +41,7 @@
                   <img src="{{ asset('/img/dummyrestaurantes.jpg') }}">
               </div>
               <strong class="col-sm-12 margin-t-1">{{ trans('global.dummy_travel_4_title') }}</strong>
-              <span class="col-sm-12 padding-b-1 text-justify">{{ trans('global.dummy_travel_4') }}</span>
+              <span class="col-sm-12 padding-b-1 text-center">{{ trans('global.dummy_travel_4') }}</span>
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
@@ -52,7 +52,7 @@
                   <img src="{{ asset('/img/dummyonibus.jpg') }}">
               </div>
               <strong class="col-sm-12 margin-t-1">{{ trans('global.dummy_travel_5_title') }}</strong>
-              <span class="col-sm-12 padding-b-1 text-justify">{{ trans('global.dummy_travel_5') }}</span>
+              <span class="col-sm-12 padding-b-1 text-center">{{ trans('global.dummy_travel_5') }}</span>
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
