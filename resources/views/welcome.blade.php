@@ -180,7 +180,7 @@
       </div>
 
     {{-- Body da Welcome --}}
-      <div id="welcome-content" class="hidden-xs hidden-sm margin-t-2 margin-b-2">
+      <div id="welcome-content" class="hidden-xs hidden-sm margin-b-2">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-7 col-lg-7">
