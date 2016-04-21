@@ -1257,7 +1257,7 @@ return[
     'dummy_travel_1_title' => 'Passagens Aéreas',
     'dummy_travel_1' => 'Encontre passagens aéreas para 143 países do mundo com mais de 500 companhias aéreas! Busque agora!',
     'dummy_travel_2_title' => 'Hospedagem',
-    'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência! São mais de 200.000 possibilidades em de 164 países. Clique aqui para buscar!',
+    'dummy_travel_2' => 'Ache a melhor hospedagem para sua próxima experiência! São mais de 200.000 possibilidades em 164 países. Clique aqui para buscar!',
     'dummy_travel_3_title' => 'Pacotes',
     'dummy_travel_3' => 'Personalize seu pacote combinando voos, hospedagem e aluguel de carros em uma compra única e economize até 35% em sua viagem! Faça sua busca aqui',
     'dummy_travel_4_title' => 'Restaurantes',
