@@ -34,6 +34,7 @@ class SugestaoController extends ConectarController {
       $follow = $perfil->followPerfil;
       $followedBy = $perfil->followedByPerfil;
 
+
         if($filtro == "amigo") {
             $sugestoes = $entidadeAtiva->sugestaoByAmigosEmComum;
         } else if ($filtro == "seguindo") {

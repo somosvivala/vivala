@@ -508,7 +508,7 @@ class Perfil extends Model {
     public function getSugestaoByAmigosEmComumAttribute()
     {
         //Collection com toos os perfils que eu nao sigo
-        $colNaoAmigos = Perfil::all()->diff($this->followPerfil)->diff([$this]);
+        $colNaoAmigos = Perfil::all()->diff($this->followPerfil)->diff([$this])->take(30);
         $amigos = $this->amigos;
 
         foreach ($colNaoAmigos as $key => $perfil) {
@@ -540,7 +540,7 @@ class Perfil extends Model {
     public function getSugestaoBySeguindoEmComumAttribute()
     {
         //Collection com todos os perfils que eu nao sigo
-        $colNaoSeguindo = Perfil::all()->diff($this->followPerfil)->diff([$this]);
+        $colNaoSeguindo = Perfil::all()->diff($this->followPerfil)->diff([$this])->take(30);
         $seguindo = $this->followPerfil;
 
         foreach ($colNaoSeguindo as $key => $perfil) {
