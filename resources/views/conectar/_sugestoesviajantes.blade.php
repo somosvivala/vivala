@@ -33,6 +33,7 @@
 	@endif
 </ul>
 
+{{-- DESATIVADO DE NOVO PQ NAO FUNCIONOU NO PUBLICADO O_o
 @if (Auth::user()->entidadeAtiva->tipo == 'ong')
 @else
 <div class="row text-center margin-b-2">
@@ -42,3 +43,4 @@
 </div>
 <br/>
 @endif
+}}
