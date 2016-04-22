@@ -58,6 +58,7 @@
         {{-- Fontes --}}
           <link href="{{ asset('/fonts/avenir/avenir.css') }}" rel='stylesheet' type='text/css'>
           <link href="{{ asset('/fonts/futura/futura.css') }}" rel='stylesheet' type='text/css'>
+          <link href="{{ asset('/fonts/gotham/gotham.css') }}" rel='stylesheet' type='text/css'>
           <link href="{{ asset('/fonts/vivala/vivala-glyphicons.css') }}" rel='stylesheet' type='text/css'>
         {{-- AllCSS --}}
           <link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
@@ -83,7 +84,7 @@
 
 <body>
 	{{-- Plugin JAVASCRIPT ativo --}}
-    <i id="javascript-ativo" class="fa fa-times @if (env('APP_ENV') === 'local') hidden @endif" style="padding:0.2em 0.5em; color:white; font-size: 20px; border-radius:3px; position:absolute; top:5px;left:3px;z-index:10;background-color:#e55"><b class="font-bold-upper"> JS</b></i>
+    <i id="javascript-ativo" class="fa fa-times @if(env('APP_ENV') === 'production') hidden @endif" style="padding:0.2em 0.5em; color:white; font-size: 20px; border-radius:3px; position:absolute; top:5px;left:3px;z-index:10;background-color:#e55"><b class="font-bold-upper"> JS</b></i>
 
   @yield('pilar')
 

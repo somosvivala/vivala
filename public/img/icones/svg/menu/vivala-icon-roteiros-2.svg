@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="vivala-icon-roteiros" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" width="20px" height="11.429px" viewBox="0 0 20 11.429" enable-background="new 0 0 20 11.429"
+	 xml:space="preserve">
+<g id="icon-roteiros">
+	<path fill="none" d="M10,2.15c-1.963,0-3.562,1.602-3.562,3.563c0,1.965,1.599,3.563,3.562,3.563c1.961,0,3.56-1.6,3.56-3.563
+		S11.961,2.15,10,2.15z M10,7.793c-1.149,0-2.079-0.932-2.079-2.079S8.853,3.635,10,3.635c1.146,0,2.078,0.932,2.078,2.078
+		C12.078,6.861,11.146,7.793,10,7.793z"/>
+	<path fill="#F3712C" d="M10,0C4.41,0,0,5.714,0,5.714s4.41,5.715,10,5.715c4.272,0,10-5.716,10-5.716S14.272,0,10,0z M10,9.275
+		c-1.963,0-3.562-1.598-3.562-3.563C6.438,3.752,8.037,2.15,10,2.15c1.961,0,3.56,1.6,3.56,3.563S11.961,9.275,10,9.275z"/>
+	<circle fill="#F3712C" cx="10" cy="5.714" r="2.079"/>
+</g>
+</svg>

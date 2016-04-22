@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="vivala-icon-lapis" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+	 y="0px" width="18.28px" height="18.261px" viewBox="35.174 20.052 18.28 18.261"
+	 enable-background="new 35.174 20.052 18.28 18.261" xml:space="preserve">
+<g id="icon-lapis">
+	<polygon id="ponta-lapis" fill="#F3712C" points="35.174,38.313 40.34,36.927 36.578,33.166 	"/>
+	
+		<rect id="corpo-lapis" x="37.112" y="26.822" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 96.0073 19.1958)" fill="#F3712C" width="13.831" height="5.319"/>
+	<path id="borracha-lapis" fill="#F3712C" d="M51.551,25.717l1.655-1.653c0.331-0.332,0.331-0.873,0-1.204l-2.558-2.559
+		c-0.331-0.331-0.873-0.331-1.205,0l-1.654,1.655L51.551,25.717z"/>
+</g>
+</svg>
