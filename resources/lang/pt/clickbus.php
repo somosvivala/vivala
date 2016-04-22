@@ -1,4 +1,4 @@
-<?php
+]<?php
 return[
 
 /*
@@ -492,7 +492,7 @@ return[
       'clickbus_email-payment-analyze' => 'Seu pagamento está sendo analisado.',
       'clickbus_email-payment-pending' => ', sua passagem será confirmada assim que recebermos a <span style="font-weight:800">confirmação do pagamento</span>.',
 
-      'clickbus_email-payment-cancelled' => ', seu pagamento não foi <span style="font-weight:800!important">concluí­do</span>.',
+      'clickbus_email-payment-cancelled' => ', seu pagamento foi <span style="font-weight:800!important">cancelado</span>.',
       'clickbus_email-for-a-new-order' => 'Para realizar um novo pedido entre em nosso site:',
 
       // View de SUCESSO ao finalizar a compra
