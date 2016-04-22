@@ -382,7 +382,7 @@ class Perfil extends Model {
             FROM perfil_follow_perfil
             GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
-            LIMIT 4
+            LIMIT 6
             ');
 
         $maisSeguidosByOngs = DB::select('
@@ -390,7 +390,7 @@ class Perfil extends Model {
             FROM ong_follow_perfil
             GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
-            LIMIT 4
+            LIMIT 6
             ');
 
         $maisSeguidosByEmpresas = DB::select('
@@ -398,7 +398,7 @@ class Perfil extends Model {
             FROM empresa_follow_perfil
             GROUP BY perfil_seguido_id
             ORDER BY quantidade DESC
-            LIMIT 4
+            LIMIT 6
             ');
 
         //Collections contendo objetos com perfil_seguido_id e quantidade

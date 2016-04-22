@@ -1,0 +1,20 @@
+/*==============================================================================
+  Família GOTHAM
+==============================================================================*/
+
+/* Gotham-Black */
+@font-face {
+  font-family: 'Gotham Black';
+  /* IE9 Compat Modes */
+  src: url('Gotham-Black/Gotham-Black.eot');
+  /* IE6-IE8 */
+  src: url('Gotham-Black/Gotham-Black?#iefix') format('embedded-opentype'),
+  /* Super Modern Browsers */
+  url('Gotham-Black/Gotham-Black.woff2') format('woff2'),
+  /* Pretty Modern Browsers */
+  url('Gotham-Black/Gotham-Black.woff') format('woff'),
+  /* Safari, Android, iOS */
+  url('Gotham-Black/Gotham-Black.ttf') format('truetype'),
+  /* Legacy iOS */
+  url('Gotham-Black/Gotham-Black.svg#Gotham-Black') format('svg');
+}

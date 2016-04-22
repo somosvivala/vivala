@@ -60,7 +60,7 @@ class CompraClickbus extends Model
      */
     public function getDataConfirmacaoPagamentoAttribute()
     {
-        return $this->data_pagamento->format('d/m/Y');
+        return ($this->data_pagamento ? $this->data_pagamento->format('d/m/Y') : 'Indisponivel');
     }
 
     /*

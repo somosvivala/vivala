@@ -1,228 +1,238 @@
-/* Variáveis */
-  @em: 1em;
+/*==============================================================================
+  VARIÁVEIS
+==============================================================================*/
+  @fa-un:1em;
+  @padding-un:1em;
+  @margin-un:1em;
 
-/* Biblioteca extra para o fontAwesome */
+/*==============================================================================
+  Biblioteca extra de tamanhos para o FONTAWESOME
+==============================================================================*/
   .fa-0-5x {
-    font-size: .5*@em;
+    font-size: .5*@fa-un;
   }
   .fa-1-1x{
-    font-size: 1.1*@em;
+    font-size: 1.1*@fa-un;
   }
   .fa-1-2x{
-    font-size: 1.2*@em;
+    font-size: 1.2*@fa-un;
   }
   .fa-1-3x{
-    font-size: 1.3*@em;
+    font-size: 1.3*@fa-un;
   }
   .fa-1-4x{
-    font-size: 1.4*@em;
+    font-size: 1.4*@fa-un;
   }
   .fa-1-5x{
-    font-size: 1.5*@em;
+    font-size: 1.5*@fa-un;
+  }
+  .fa-6x{
+    font-size: 6*@fa-un;
+  }
+  .fa-7x{
+    font-size: 7*@fa-un;
+  }
+  .fa-8x{
+    font-size: 8*@fa-un;
+  }
+  .fa-9x{
+    font-size: 9*@fa-un;
+  }
+  .fa-10x{
+    font-size: 10*@fa-un;
   }
 
-/* Biblioteca de TEXT */
-  .texto-minusculo {
-    text-transform: lowercase;
-  }
-  .texto-maiusculo {
-    text-transform: uppercase;
-  }
-  .texto-capitalizado {
-    text-transform: capitalize;
-  }
-  .texto-negrito {
-    font-weight: bold; // Quando disponível na fonte
-  }
-  .texto-italico {
-    font-weight: italic; // Quando disponível na fonte
-  }
-  .texto-sublinhado {
-    text-decoration: overline;
-  }
-  .texto-riscado {
-    text-decoration: line-through;
-  }
-
-/* Biblioteca de PADDING */
+/*==============================================================================
+  Biblioteca de PADDINGS
+==============================================================================*/
   // Sem padding
   .padding-no {
-    padding: 0*@em;
+    padding: 0*@padding-un;
   }
   .padding-t-no {
-    padding-top: 0*@em;
+    padding-top: 0*@padding-un;
   }
   .padding-r-no {
-    padding-right: 0*@em;
+    padding-right: 0*@padding-un;
   }
   .padding-b-no {
-    padding-bottom: 0*@em;
+    padding-bottom: 0*@padding-un;
   }
   .padding-l-no {
-    padding-left: 0*@em;
+    padding-left: 0*@padding-un;
   }
 
   // TOP
   .padding-t-0-5 {
-    padding-top: .5*@em;
+    padding-top: .5*@padding-un;
   }
   .padding-t-1 {
-    padding-top: 1*@em;
+    padding-top: 1*@padding-un;
   }
   .padding-t-2 {
-    padding-top: 2*@em;
+    padding-top: 2*@padding-un;
   }
   .padding-t-4 {
-    padding-top: 4*@em;
+    padding-top: 4*@padding-un;
   }
   .padding-t-5{
-    padding-top: 5*@em;
+    padding-top: 5*@padding-un;
   }
   .padding-t-10 {
-    padding-top: 10*@em;
+    padding-top: 10*@padding-un;
   }
 
   // RIGHT
   .padding-r-0-5 {
-    padding-right: .5*@em;
+    padding-right: .5*@padding-un;
   }
   .padding-r-1 {
-    padding-right: 1*@em;
+    padding-right: 1*@padding-un;
   }
   .padding-r-2 {
-    padding-right: 2*@em;
+    padding-right: 2*@padding-un;
   }
   .padding-r-4 {
-    padding-right: 4*@em;
+    padding-right: 4*@padding-un;
   }
   .padding-r-5 {
-    padding-right: 5*@em;
+    padding-right: 5*@padding-un;
   }
 
   // BOTTOM
   .padding-b-0-5 {
-    padding-bottom: .5*@em;
+    padding-bottom: .5*@padding-un;
   }
   .padding-b-1 {
-    padding-bottom: 1*@em;
+    padding-bottom: 1*@padding-un;
   }
   .padding-b-2 {
-    padding-bottom: 2*@em;
+    padding-bottom: 2*@padding-un;
   }
   .padding-b-4 {
-    padding-bottom: 4*@em;
+    padding-bottom: 4*@padding-un;
   }
   .padding-b-5{
-    padding-bottom: 5*@em;
+    padding-bottom: 5*@padding-un;
   }
   .padding-b-10 {
-    padding-bottom: 10*@em;
+    padding-bottom: 10*@padding-un;
   }
 
   // LEFT
   .padding-l-0-5 {
-    padding-left: .5*@em;
+    padding-left: .5*@padding-un;
   }
   .padding-l-1 {
-    padding-left: 1*@em;
+    padding-left: 1*@padding-un;
   }
   .padding-l-2 {
-    padding-left: 2*@em;
+    padding-left: 2*@padding-un;
   }
   .padding-l-4 {
-    padding-left: 4*@em;
+    padding-left: 4*@padding-un;
   }
   .padding-l-5 {
-    padding-left: 5*@em;
+    padding-left: 5*@padding-un;
   }
 
-/* Biblioteca de MARGIN */
+/*==============================================================================
+  Biblioteca de MARGINS
+==============================================================================*/
   // Sem margin
   .margin-no {
-    margin: 0*@em;
+    margin: 0*@margin-un;
   }
   .margin-t-no {
-    margin-top: 0*@em;
+    margin-top: 0*@margin-un;
   }
   .margin-r-no {
-    margin-right: 0*@em;
+    margin-right: 0*@margin-un;
   }
   .margin-b-no {
-    margin-bottom: 0*@em;
+    margin-bottom: 0*@margin-un;
   }
   .margin-l-no {
-    margin-left: 0*@em;
+    margin-left: 0*@margin-un;
   }
 
   // TOP
   .margin-t-0-5 {
-    margin-top: .5*@em;
+    margin-top: .5*@margin-un;
   }
   .margin-t-1 {
-    margin-top: 1*@em;
+    margin-top: 1*@margin-un;
   }
   .margin-t-2 {
-    margin-top: 2*@em;
+    margin-top: 2*@margin-un;
   }
   .margin-t-3 {
-    margin-top: 3*@em;
+    margin-top: 3*@margin-un;
   }
   .margin-t-4 {
-    margin-top: 4*@em;
+    margin-top: 4*@margin-un;
   }
   .margin-t-5 {
-    margin-top: 5*@em;
+    margin-top: 5*@margin-un;
   }
   .margin-t-10 {
-    margin-top: 10*@em;
+    margin-top: 10*@margin-un;
   }
 
   // RIGHT
   .margin-r-0-5 {
-    margin-right: .5*@em;
+    margin-right: .5*@margin-un;
   }
   .margin-r-1 {
-    margin-right: 1*@em;
+    margin-right: 1*@margin-un;
   }
   .margin-r-2 {
-    margin-right: 2*@em;
+    margin-right: 2*@margin-un;
   }
   .margin-r-3 {
-    margin-right: 3*@em;
+    margin-right: 3*@margin-un;
   }
 
   // BOTTOM
   .margin-b-0-5 {
-    margin-bottom: .5*@em;
+    margin-bottom: .5*@margin-un;
   }
   .margin-b-1 {
-    margin-bottom: 1*@em;
+    margin-bottom: 1*@margin-un;
   }
   .margin-b-2 {
-    margin-bottom: 2*@em;
+    margin-bottom: 2*@margin-un;
   }
   .margin-b-3 {
-    margin-bottom: 3*@em;
+    margin-bottom: 3*@margin-un;
+  }
+  .margin-b-4 {
+    margin-bottom: 4*@margin-un;
+  }
+  .margin-b-5 {
+    margin-bottom: 5*@margin-un;
   }
   .margin-b-10 {
-    margin-bottom: 10*@em;
+    margin-bottom: 10*@margin-un;
   }
 
   // LEFT
   .margin-l-0-5 {
-    margin-left: .5*@em;
+    margin-left: .5*@margin-un;
   }
   .margin-l-1 {
-    margin-left: 1*@em;
+    margin-left: 1*@margin-un;
   }
   .margin-l-2 {
-    margin-left: 2*@em;
+    margin-left: 2*@margin-un;
   }
   .margin-l-3 {
-    margin-left: 3*@em;
+    margin-left: 3*@margin-un;
   }
 
-  /* PSEUDOCLASSES */
+/*==============================================================================
+  Biblioteca de Pseudoclasses - PLACEHOLDERS
+==============================================================================*/
   // Placeholder coloridos | PS: é pseudoclasse e não pseudoelemento, usar na div externa ao input então
   .ph-cor-primaria {
     ::-webkit-input-placeholder { color: @cor-primaria; }

@@ -33,6 +33,7 @@
 	@endif
 </ul>
 
+{{-- DESABILITADO TEMPORARIAMENTE
 @if (Auth::user()->entidadeAtiva->tipo == 'ong')
 @else
 <div class="row text-center margin-b-2">
@@ -42,3 +43,4 @@
 </div>
 <br/>
 @endif
+--}}

@@ -490,7 +490,7 @@ return[
     'clickbus_email-payment-analyze' => 'Your payment is being analyzed.',
     'clickbus_email-payment-pending' => ', your passage will be confirmed once we receive a <span style="font-weight:800">payment confirmation</span>.',
 
-    'clickbus_email-payment-cancelled' => ', your payment was not <span style="font-weight:800!important">completed</span>.',
+    'clickbus_email-payment-cancelled' => ', your payment was <span style="font-weight:800!important">cancelled</span>.',
     'clickbus_email-for-a-new-order' => 'To place a new order please visit our website:',
 
     // View de SUCESSO ao finalizar a compra

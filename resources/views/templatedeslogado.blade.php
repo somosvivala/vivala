@@ -63,6 +63,7 @@
       {{-- Fontes --}}
         <link href="{{ asset('/fonts/avenir/avenir.css') }}" rel='stylesheet' type='text/css'>
         <link href="{{ asset('/fonts/futura/futura.css') }}" rel='stylesheet' type='text/css'>
+        <link href="{{ asset('/fonts/gotham/gotham.css') }}" rel='stylesheet' type='text/css'>
         <link href="{{ asset('/fonts/vivala/vivala-glyphicons.css') }}" rel='stylesheet' type='text/css'>
       {{-- AllCSS --}}
         <link href="{{ asset('/css/all.css') }}" rel="stylesheet">

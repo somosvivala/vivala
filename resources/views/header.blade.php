@@ -1,15 +1,15 @@
 <div id="logo-vivala" class="logo-menu tour-pilares-step1">
 	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}">
   	{{-- SVG da logo VIVALÁ --}}
-    <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%"/>
+    <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
 	</a>
 </div>
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-sm col-lg-4">
-		{{-- ESCONDE BARRA BUSCA
+		{{-- ESCONDE A BUSCA DO MENU
 		<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
-			<i class="fa fa-spin fa-spinner fa loading-search soft-hide laranja"></i>
+			<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
 		--}}
 	</div>
 	<ul id="tres-menus-vivala" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto tour-pilares-step2">
