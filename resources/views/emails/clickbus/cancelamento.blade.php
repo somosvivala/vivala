@@ -35,7 +35,7 @@
                                   <tr>
                                     <td style="padding:0px 0px 5px 40px" align="left" width="35%">
                                       <a href="https://vivala.com.br" target="_blank">
-                                        <img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block" border="0" width="115px" height="63px">
+                                        <img src="https://vivala.com.br/logo.png" alt="Vivalá" style="display:block" border="0" width="115px" height="63px"/>
                                       </a>
                                     </td>
 
