@@ -7,10 +7,8 @@
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-sm col-lg-4">
-		{{-- ESCONDE A BUSCA DO MENU
 		<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
 			<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
-		--}}
 	</div>
 	<ul id="tres-menus-vivala" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto tour-pilares-step2">
 		@if (Auth::guest())
