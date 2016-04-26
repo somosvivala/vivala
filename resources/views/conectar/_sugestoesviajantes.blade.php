@@ -7,7 +7,7 @@
 <ul class="sugestoes sugestoes-viajantes">
   @if(isset($sugestoesViajantes))
   @forelse($sugestoesViajantes as $Perfil)
-    <li>
+		<li class="margin-b-1">
       {!! Form::open(['url' => ['ajax/followperfil', $Perfil->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Perfil->id.')']) !!}
       <button name='btn_seguir' type="submit" class="btn_seguir_viajante click-img-no-border" data-id="{{ $Perfil->id }}">{{ trans('global.lbl_follow') }}</button>
       <a href="{{ url($Perfil->getUrl()) }}" class="click-img-no-border">
