@@ -674,7 +674,7 @@ class Perfil extends Model {
      * 2 perfils com mais seguidores dentre um random de 100.
      * 1 perfil recentemente criado
      */
-    public static function getSugestoesViajantes($entidadeAtiva)
+    public static function getPerfilsParaSeguir($entidadeAtiva)
     {
         //pegando um array com os ids dos perfils que a entidade ativa já segue
         $arrayIdsJaSeguindo = $entidadeAtiva->followPerfil->lists('id');
@@ -700,5 +700,28 @@ class Perfil extends Model {
 
         return $viajantes;
     }
+
+    /*
+     * Acessor para testar se essa entidade é um perfil (deveria estar na superclasse / contract)
+     *
+     * @return Boolean - Se é um perfil ou não
+     */
+    public function getIsPerfilAttribute()
+    {
+        return ( preg_match('/perfil/i', get_class($this)) ? true : false );
+    }
+
+    /*
+     * Acessor para testar se essa entidade é um ong (deveria estar na superclasse / contract)
+     *
+     * @return Boolean - Se é um ong ou não
+     */
+    public function getIsOngAttribute()
+    {
+        return ( preg_match('/ong/i', get_class($this)) ? true : false );
+    }
+
+
+
 
 }

@@ -19,7 +19,7 @@ class ConectarController extends VivalaBaseController {
     // Compartilha as sugestões com as views que forem chamadas por esse controller
     public function getSugestoesViajantes($view)
     {
-        $sugestoesViajantes = Perfil::getSugestoesViajantes(Auth::user()->entidadeAtiva);
+        $sugestoesViajantes = Perfil::getPerfilsParaSeguir(Auth::user()->entidadeAtiva);
         $view->with('sugestoesViajantes', $sugestoesViajantes);
     }
 
