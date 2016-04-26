@@ -75,14 +75,73 @@ jQuery(document).ready(function($) {
 
                   // Se a busca retornou algum perfil
                   if($(data).hasClass("list-group-item")){
+
+                    // Cria o background shadow para receber os perfis encontrados na busca
+                    // var bgelement = document.createElement('div'),
+                    // body = document.body, html = document.documentElement,
+                    // width = document.body.clientWidth,
+                    // height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+                    //
+                    // $(bgelement).addClass('background-shadow')
+                    //     .css('top', pos[0])
+                    //     .css('left', 0)
+                    //     .css('position', 'absolute')
+                    //     .css('z-index', '2')
+                    //     .css('background-color','rgba(0,0,0,.1)')
+                    //     .css('width', width)
+                    //     .css('height', height);
+
                     // Cria a lista para receber os perfis encontrados na busca
+                    var element = document.createElement('ul');
+                    $(element).addClass('list-group perfil-list')
+                        .css('top', pos[0])
+                        .css('left', pos[1])
+                        .css('min-width', )
+                        .css('position', 'absolute')
+                        .css('z-index', '2')
+                        .html(data);
+
+                    // Coloco o background-shadow dentro do target, que é a Barra de Busca
+                    //$(target).append(bgelement);
+
+                    // Coloco a lista dentro do target, que é a Barra de Busca
+                    $(target).append(element);
+
+                    // Remove o elemento antigo (background-shadow) caso possua
+                    //$(container).find('div.background-shadow').remove();
+
+                    // Remove o elemento antigo (busca antiga) caso possua
+                    $(container).find('ul.perfil-list').remove();
+
+                    // Adiciono o background-shadow novo dentro da lista de perfis
+                    //$(container).append(bgelement);
+
+                    // Adiciono a busca nova dentro da lista de perfis
+                    $(container).append(element);
+                  }
+                  // Se a busca não retornou perfil algum
+                  else{
+                    var arrayLingua = [];
+                    switch(linguaAtiva){
+                        case 'en':
+                            arrayLingua[0] = 'Your search has returned no profiles!'
+                        break;
+                        case 'pt':
+                            arrayLingua[0] = 'Sua busca não retornou perfil algum!'
+                        break;
+                        default:
+                            arrayLingua[0] = 'Sua busca não retornou perfil algum!'
+                    }
                     var element = document.createElement('ul');
                     $(element).addClass('list-group perfil-list')
                         .css('top', pos[0])
                         .css('left', pos[1])
                         .css('position', 'absolute')
                         .css('z-index', '2')
-                        .html(data);
+                        .css('background-color', '#FFF')
+                        .css('border', '1px solid #ddd');
+
+                    $(element).append(arrayLingua[0]);
 
                     // Coloco a lista dentro do target, que é a Barra de Busca
                     $(target).append(element);
@@ -92,34 +151,6 @@ jQuery(document).ready(function($) {
 
                     // Adiciono a busca nova dentro da lista de perfis
                     $(container).append(element);
-                  }
-                  // Se a busca não retornou perfil algum
-                  else{
-                    // Remove o elemento antigo (busca antiga) caso possua
-                    $(container).find('ul.perfil-list').remove();
-                    var arrayLingua = [];
-
-                    switch(linguaAtiva){
-                        case 'en':
-                            arrayLingua[1] = 'Ops!';
-                            arrayLingua[2] = 'Your search has returned no profiles!<br/>Please consider and try other names.';
-                        break;
-                        case 'pt':
-                            arrayLingua[1] = 'Opa!';
-                            arrayLingua[2] = 'Sua busca não retornou perfil algum!<br/>Por favor, tente outros nomes.';
-                        break;
-                        default:
-                            arrayLingua[1] = 'Opa!';
-                            arrayLingua[2] = 'Sua busca não retornou perfil algum!<br/>Por favor, tente outros nomes.';
-                    }
-                    swal({
-                        title: arrayLingua[1],
-                        html: arrayLingua[2],
-                        type: "error",
-                        confirmButtonColor: "#FF5B00",
-                        confirmButtonText: "OK",
-                        closeOnConfirm: true,
-                    });
                   }
               })
 
@@ -144,6 +175,7 @@ jQuery(document).ready(function($) {
 
               $(input).on('keyup', function(e) {
                   var value = $(this).val(),
+                      bglista = $('div.background-shadow');
                       lista = $('ul.perfil-list'),
                       container = $('div.menu-principal');
 
@@ -151,9 +183,10 @@ jQuery(document).ready(function($) {
                       clearTimeout(autocompleteTimeout);
                   }
                   if (value.length >= 3) {
-                      autocompleteTimeout = setTimeout(ajaxBusca, 1000, this, container);
+                      autocompleteTimeout = setTimeout(ajaxBusca, 700, this, container);
                   } else {
                       lista.remove();
+                      bglista.remove();
                   }
               });
           };
