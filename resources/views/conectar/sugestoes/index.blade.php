@@ -9,7 +9,7 @@
     <h3 class="font-bold-upper text-center">
       {{ trans('global.lbl_traveller_suggest_to_follow') }}
     </h3>
-    <ul class="filtro col-sm-12">
+    <ul class="filtro col-sm-12 margin-b-2">
         <li class="col-sm-3">{{ trans('global.lbl_filter_by') }} &gt;</li>
         <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/amigo') }}" class="click-img-no-border">{{ trans('global.lbl_best_rank') }}</a></li>
         <li class="col-sm-3"><a href="{{ url('sugestoesviajantes/numseguidores') }}" class="click-img-no-border">{{ trans('global.lbl_follower_number') }}</a></li>
