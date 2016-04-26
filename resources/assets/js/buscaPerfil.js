@@ -96,7 +96,6 @@ jQuery(document).ready(function($) {
                     $(element).addClass('list-group perfil-list')
                         .css('top', pos[0])
                         .css('left', pos[1])
-                        .css('min-width', )
                         .css('position', 'absolute')
                         .css('z-index', '2')
                         .html(data);
