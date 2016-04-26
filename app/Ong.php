@@ -616,8 +616,10 @@ class Ong extends Model {
         //pegando um array com os ids dos ongs que a entidade ativa já segue
         $arrayIdsJaSeguindo = $entidadeAtiva->followOng->lists('id');
 
-        //incluindo o perfil da entidade, para nao sugerir para seguir a sí proprio;
-        array_push($arrayIdsJaSeguindo, $entidadeAtiva->id);
+        //se for uma ong recebendo sugestoes entao nao sugerir a sí mesmo
+        if ($entidadeAtiva->isOng) {
+            array_push($arrayIdsJaSeguindo, $entidadeAtiva->id);
+        }
 
         //fazendo um random nos ongs e removendo os ongs que ja sigo pelo queryBuilder (BD query)
         $ongsParaSeguir = Ong::orderByRaw('RANDOM()')->whereNotIn('id', $arrayIdsJaSeguindo)

@@ -679,6 +679,11 @@ class Perfil extends Model {
         //pegando um array com os ids dos perfils que a entidade ativa já segue
         $arrayIdsJaSeguindo = $entidadeAtiva->followPerfil->lists('id');
 
+        //se for um perfil recebendo sugestoes entao nao sugerir a sí mesmo
+        if ($entidadeAtiva->isPerfil) {
+            array_push($arrayIdsJaSeguindo, $entidadeAtiva->id);
+        }
+
         //fazendo um random nos perfils e removendo os perfils que ja sigo pelo queryBuilder (BD query)
         $viajantes = Perfil::orderByRaw('RANDOM()')->whereNotIn('id', $arrayIdsJaSeguindo)
 
