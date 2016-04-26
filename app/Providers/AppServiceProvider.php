@@ -11,18 +11,18 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//Fornece os dados para as views que são chamadas na sidebar
-		view()->composer('conectar._sugestoesviajantes', 'App\Http\Controllers\ConectarController@getSugestoesViajantes');
-		view()->composer('cuidar.sugestoesongs', 'App\Http\Controllers\CuidarController@getSugestoesOngs');
-		view()->composer('viajar.sugestoesempresas', 'App\Http\Controllers\ViajarController@getSugestoesempresas');
-		//view()->composer('feed', 'App\Http\Controllers\FeedController@getFeeds'); //comentado pra não poluir as outras paginas
-                view()->composer('_notificacoesFollow', 'App\Http\Controllers\NotificacaoController@getNotificacoesfollow');
-                view()->composer('_notificacoesMsg', 'App\Http\Controllers\NotificacaoController@getNotificacoesMsg');
-                view()->composer('_notificacoesGeral', 'App\Http\Controllers\NotificacaoController@getNotificacoesgeral');
+      //Fornece os dados para as views que são chamadas na sidebar
+      view()->composer('conectar._sugestoesviajantes', 'App\Http\Controllers\ConectarController@getSugestoesViajantes');
+      view()->composer('cuidar.sugestoesongs', 'App\Http\Controllers\CuidarController@getSugestoesOngs');
+      view()->composer('viajar.sugestoesempresas', 'App\Http\Controllers\ViajarController@getSugestoesempresas');
+      //view()->composer('feed', 'App\Http\Controllers\FeedController@getFeeds'); //comentado pra não poluir as outras paginas
+      view()->composer('_notificacoesFollow', 'App\Http\Controllers\NotificacaoController@getNotificacoesfollow');
+      view()->composer('_notificacoesMsg', 'App\Http\Controllers\NotificacaoController@getNotificacoesMsg');
+      view()->composer('_notificacoesGeral', 'App\Http\Controllers\NotificacaoController@getNotificacoesgeral');
 
-                // Passa outras páginas do usuario e dados da entidade ativa no 
-                // momento
-                view()->composer('header', 'App\Http\Controllers\PaginaController@getMenu');
+      // Passa outras páginas do usuario e dados da entidade ativa no
+      // momento
+      view()->composer('header', 'App\Http\Controllers\PaginaController@getMenu');
 
 	}
 
@@ -37,9 +37,9 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind(
-			'Illuminate\Contracts\Auth\Registrar',
-			'App\Services\Registrar'
-		);
+      $this->app->bind(
+          'Illuminate\Contracts\Auth\Registrar',
+          'App\Services\Registrar'
+      );
 	}
 }

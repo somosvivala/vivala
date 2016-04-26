@@ -665,4 +665,40 @@ class Perfil extends Model {
     }
 
 
+    /**
+     * Metodo para retornar perfils para seguir
+     *
+     * @param $entidadeAtiva - A Entidade ativa atualmente (Perfil / Ong)
+     *
+     * @return Collection com 3 perfils para serem seguidos
+     * 2 perfils com mais seguidores dentre um random de 100.
+     * 1 perfil recentemente criado
+     */
+    public static function getSugestoesViajantes($entidadeAtiva)
+    {
+        //pegando um array com os ids dos perfils que a entidade ativa já segue
+        $arrayIdsJaSeguindo = $entidadeAtiva->followPerfil->lists('id');
+
+        //fazendo um random nos perfils e removendo os perfils que ja sigo pelo queryBuilder (BD query)
+        $viajantes = Perfil::orderByRaw('RANDOM()')->whereNotIn('id', $arrayIdsJaSeguindo)
+
+            //pegando 100 desses perfils, ordenando-os por maior numero de seguidores
+            ->take(100)->get()->sortBy(function($perfil){
+                return $perfil->numeroSeguidores;
+            }, null, true)
+
+            // e pegando 2
+            ->take(2);
+
+        //Pegando os perfils mais recentes
+        $perfilRecente = Perfil::orderBy('created_at', 'desc')->take(30)
+            ->whereNotIn('id', $arrayIdsJaSeguindo)     //garantindo que ja nao os sigo
+            ->get()->random();                          //pegando 1 random
+
+        //adicionando o perfil recente as sugestoes de viajante
+        $viajantes->push($perfilRecente);
+
+        return $viajantes;
+    }
+
 }
