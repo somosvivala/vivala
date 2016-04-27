@@ -103,7 +103,7 @@
     <h3 class="font-bold-upper text-center margin-b-2">{!! trans('global.ong_slot_volunteers_in_this_cause') !!}</h3>
 <ul class="row sugestoes sugestoes-viajantes">
     @forelse($voluntarios as $Voluntario)
-    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
+    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-3 margin-b-1">
         {!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
         <a href="{{ url($Voluntario->getUrl()) }}">
@@ -111,11 +111,9 @@
                 <div class="avatar-img" style="background-image:url('{{ $Voluntario->getAvatarUrl() }}')">
                 </div>
             </div>
-            {{--
-            <strong class="col-sm-12 col-md-12 col-lg-12">
+            <strong class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-l-0 padding-r-0 margin-l-0 margin-r-0 margin-t-1 text-center">
               {{ $Voluntario->user->username }}
             </strong>
-            --}}
             {{--
               <div class="row localizacao-cidade">
                 <div class="col-sm-4 text-right">
