@@ -17,31 +17,31 @@
 <div class="col-sm-4 sobre-vaga">
     <div class="text-center fundo-cheio">
         <div class="spritemap-vaga sprite-casa"></div>
-        <b class="font-bold-upper col-sm-12">Sobre a organização</b>
-        <p>{{ $vaga->owner->descricao?:"Sem descrição." }}</p>
+        <b class="font-bold-upper col-sm-12">{!! trans('global.ong_slot_about_organization') !!}</b>
+        <p>{!! $vaga->owner->descricao?:trans('global.ong_slot_no_description') !!}</p>
     </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
     <div class="spritemap-vaga sprite-formulario"></div>
-    <b class="font-bold-upper col-sm-12">Sobre o trabalho</b>
-    <p>{{ $vaga->sobre_trabalho?:"Sem descrição." }}</p>
+    <b class="font-bold-upper col-sm-12">{!! trans('global.ong_slot_about_job') !!}</b>
+    <p>{!! $vaga->sobre_trabalho?:trans('global.ong_slot_no_description') !!}</p>
 </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio">
     <div class="spritemap-vaga sprite-pessoa"></div>
-    <b class="font-bold-upper col-sm-12">Habilidades</b>
-    <p>{{ $vaga->habilidades?:"Sem descrição de habilidades." }}</p>
+    <b class="font-bold-upper col-sm-12">{!! trans('global.ong_slot_job_habilities') !!}</b>
+    <p>{!! $vaga->habilidades?:trans('global.ong_slot_no_habilities') !!}</p>
 </div>
 </div>
 
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
     <div class="spritemap-vaga sprite-calendario"></div>
-    <b class="font-bold-upper col-sm-12">Datas e horários</b>
+    <b class="font-bold-upper col-sm-12">{!! trans('global.ong_slot_date_and_hour') !!}</b>
     <p>{{ $vaga->horario_funcionamento }}</p>
 </div>
 </div>
@@ -49,17 +49,17 @@
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
     <div class="spritemap-vaga sprite-mapmarker"></div>
-    <b class="font-bold-upper col-sm-12">Localização</b>
+    <b class="font-bold-upper col-sm-12">{!! trans('global.ong_slot_location') !!}</b>
     <p>{{ $vaga->local ? $vaga->local : $vaga->owner->local }}</p>
 </div>
 </div>
 <div class="col-sm-4 sobre-vaga">
 <div class="text-center fundo-cheio height-18">
-    <b class="font-bold-upper col-sm-12 margin-t-2">Responsável</b>
+    <b class="font-bold-upper col-sm-12 margin-t-2">{!! trans('global.ong_slot_responsible') !!}</b>
     <div class="follow-perfil col-sm-8 col-sm-offset-2 margin-t-1">
         {!! Form::open(['url' => ['ajax/followperfil', $vaga->responsavel->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$vaga->responsavel->id.')']) !!}
         <a href="{{ url($vaga->responsavel->getUrl()) }}">
-            <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $vaga->responsavel->id }}">seguir</button>
+            <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $vaga->responsavel->id }}">{!! trans('global.lbl_follow') !!}</button>
                 <div class="round foto quadrado7em">
                     <div class="avatar-img" style="background-image:url('{{ $vaga->responsavel->getAvatarUrl() }}')">
                     </div>
@@ -71,9 +71,9 @@
     <br><br>
 </div>
 </div>
-<div class="row text-center">
+<div class="row text-center margin-b-2">
     <div class="col-sm-12">
-        <a class="btn btn-primario btn-acao margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">Quero me candidatar</a>
+        <a class="btn btn-primario btn-acao margin-t-1 margin-b-1" href="{{action('VagaController@getVoluntariarse')}}/{{$vaga->id}}">{!! trans('global.ong_slot_wanna_apply') !!}</a>
     </div>
 </div>
 
@@ -85,24 +85,26 @@
                 <div class="avatar-img" style="background-image:url('{{ $Responsavel->getAvatarUrl() }}')">
                 </div>
             </div>
-            <div class="font-bold-upper">{{ $Responsavel->apelido }}</div>
+            <div class="font-bold-upper">
+              {{ $Responsavel->apelido }}
+            </div>
         </a>
     </div>
     <div class="col-sm-10">
         @if( $vaga->id == 19 )
-            Olá, {{ $Candidato->nome }}, estamos muito felizes com o seu interesse em se tornar um voluntário olímpico! Já te mandamos um e-mail com as orientações para você concluir  sua inscrição e fazer parte desse super time! Caso você tenha alguma dúvida, é só entrar em contato pelo nosso email: <a href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a> . #SomosVivalá #Rio2016 #FazMaisPorEsporte 
+          {!! trans('global.lbl_hello') !!}, {{ $Candidato->nome }}, {!! trans('global.ong_slot_dummy_olympics') !!}
         @else
-        Olá, {{ $Candidato->nome }}, obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar pelo e-mail {{ $vaga->email_contato }} ou pelo telefone {{ $vaga->telefone_contato }}
+          {!! trans('global.lbl_hello') !!}, {{ $Candidato->nome }}, {!! trans('global.ong_slot_congratulations_1') !!} {{ $vaga->email_contato }} {!! trans('global.ong_slot_congratulations_2') !!} {{ $vaga->telefone_contato }}
         @endif
     </div>
 </div>
 @endif
 
 <div class="text-center fundo-cheio col-sm-12 margin-b-2">
-    <h3 class="font-bold-upper text-center">Voluntários nesta causa</h3>
+    <h3 class="font-bold-upper text-center margin-b-2">{!! trans('global.ong_slot_volunteers_in_this_cause') !!}</h3>
 <ul class="row sugestoes sugestoes-viajantes">
     @forelse($voluntarios as $Voluntario)
-    <li class="col-sm-4 col-md-3 col-lg-2">
+    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
         {!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
         <a href="{{ url($Voluntario->getUrl()) }}">
@@ -110,26 +112,30 @@
                 <div class="avatar-img" style="background-image:url('{{ $Voluntario->getAvatarUrl() }}')">
                 </div>
             </div>
-            <strong class="col-sm-12">{{ $Voluntario->user->username }}</strong>
-            {{-- <div class="row localizacao-cidade">
+            <strong class="col-sm-12 col-md-12 col-lg-12">
+              {{ $Voluntario->user->username }}
+            </strong>
+            {{--
+              <div class="row localizacao-cidade">
                 <div class="col-sm-4 text-right">
                     <i class="fa fa-map-marker"></i>
                 </div>
                 <div class="col-sm-8 text-left">
                     São Paulo, BR
                 </div>
-            </div> --}}
+            </div>
+            --}}
         </a>
         {!! Form::close() !!}
     </li>
     @empty
-    <p>Nenhum voluntário se cadidatou a essa vaga, seja o primeiro! </p>
+    <p>{!! trans('global.ong_slot_none_voluntary') !!}</p>
     @endforelse
 </ul>
 </div>
 
 @if($vaga->owner->vagas)
-<h3 class="font-bold-upper text-center margin-b-1">Veja outras vagas desse projeto</h3>
+<h3 class="font-bold-upper text-center margin-t-2 margin-b-1">{!! trans('global.ong_slot_see_other_slots') !!}</h3>
 
 <ul class="lista-vagas row inside">
     @forelse($vaga->owner->vagas as $Causa)
@@ -142,7 +148,7 @@
             </a>
         </li>
     @empty
-        <p class="col-sm-12 text-center">Nenhuma causa encontrada.</p>
+        <p class="col-sm-12 text-center">{!! trans('global.ong_slot_none_cause_found') !!}</p>
     @endforelse
 </ul>
 @endif
