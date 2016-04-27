@@ -103,7 +103,7 @@
     <h3 class="font-bold-upper text-center margin-b-2">{!! trans('global.ong_slot_volunteers_in_this_cause') !!}</h3>
 <ul class="row sugestoes sugestoes-viajantes">
     @forelse($voluntarios as $Voluntario)
-    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-3 margin-b-1">
+    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-2 margin-b-1">
         {!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
         <a href="{{ url($Voluntario->getUrl()) }}">
@@ -111,10 +111,13 @@
                 <div class="avatar-img" style="background-image:url('{{ $Voluntario->getAvatarUrl() }}')">
                 </div>
             </div>
-            <strong class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-l-0 padding-r-0 margin-l-0 margin-r-0 margin-t-1 text-center">
-              {{ $Voluntario->user->username }}
-            </strong>
-            {{--
+            {{-- DESATIVADO
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-l-0 padding-r-0 margin-l-0 margin-r-0 margin-t-1">
+                <strong class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 padding-l-0 padding-r-0 margin-l-0 margin-r-0">
+                  {{ $Voluntario->user->username }}
+                </strong>
+              </div>
+
               <div class="row localizacao-cidade">
                 <div class="col-sm-4 text-right">
                     <i class="fa fa-map-marker"></i>
@@ -122,7 +125,7 @@
                 <div class="col-sm-8 text-left">
                     São Paulo, BR
                 </div>
-            </div>
+              </div>
             --}}
         </a>
         {!! Form::close() !!}
