@@ -61,8 +61,7 @@
         <a href="{{ url($vaga->responsavel->getUrl()) }}">
             <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $vaga->responsavel->id }}">{!! trans('global.lbl_follow') !!}</button>
                 <div class="round foto quadrado7em">
-                    <div class="avatar-img" style="background-image:url('{{ $vaga->responsavel->getAvatarUrl() }}')">
-                    </div>
+                    <div class="avatar-img" style="background-image:url('{{ $vaga->responsavel->getAvatarUrl() }}')"></div>
                 </div>
             <strong class="col-sm-12 margin-t-1">{{ $vaga->responsavel->user->username }}</strong>
         </a>
@@ -104,7 +103,7 @@
     <h3 class="font-bold-upper text-center margin-b-2">{!! trans('global.ong_slot_volunteers_in_this_cause') !!}</h3>
 <ul class="row sugestoes sugestoes-viajantes">
     @forelse($voluntarios as $Voluntario)
-    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+    <li class="col-xs-4 col-sm-3 col-md-3 col-lg-2">
         {!! Form::open(['url' => ['ajax/followperfil', $Voluntario->id], 'class' =>'form-ajax', 'method' => 'GET', 'data-callback' => 'followPerfil('.$Voluntario->id.')']) !!}
         <button name='btn_seguir' type="submit" class='btn_seguir_viajante' data-id="{{ $Voluntario->id }}">{{ trans('global.lbl_follow') }}</button>
         <a href="{{ url($Voluntario->getUrl()) }}">
@@ -112,9 +111,11 @@
                 <div class="avatar-img" style="background-image:url('{{ $Voluntario->getAvatarUrl() }}')">
                 </div>
             </div>
+            {{--
             <strong class="col-sm-12 col-md-12 col-lg-12">
               {{ $Voluntario->user->username }}
             </strong>
+            --}}
             {{--
               <div class="row localizacao-cidade">
                 <div class="col-sm-4 text-right">
