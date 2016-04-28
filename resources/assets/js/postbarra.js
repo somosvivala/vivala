@@ -1,4 +1,16 @@
+// Troca os icones de like/dislike do POST se o user já tiver dado like/dislike antes
+var trocaLikes = function (){
+  var btn = document.getElementsByClassName('like-btn-post');
+
+  if($(btn).hasClass("liked")){
+    $(btn).children().removeClass('fa-heart-o').addClass('fa-heart');
+  }
+}
+
 $(document).ready(function() {
+  // Troca os icones de like/dislike do POST se o user já tiver dado like/dislike antes de tudo
+  trocaLikes();
+
   var linguaAtiva = $("meta[name=language]").attr("content"),
       arrayLingua = [];
 
@@ -33,14 +45,6 @@ $(document).ready(function() {
           arrayLingua[5] = 'Não',
           arrayLingua[6] = "Opa!",
           arrayLingua[7] = "Você não pode compartilhar seu próprio post!"
-  }
-
-  // Troca os icones de like/dislike do POST se o user já tiver dado like/dislike antes
-  if($(".like-btn-post").hasClass("liked")){
-    $(this).children().removeClass('fa-heart-o').addClass('fa-heart');
-  }
-  else if(!$(".like-btn-post").hasClass("liked")){
-    $(this).children().removeClass('fa-heart').addClass('fa-heart-o');
   }
 
   //Like
