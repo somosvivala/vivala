@@ -1,15 +1,17 @@
 <div class="row barra-post fundo-cheio" id="barra-post-{{ $Post->id }}">
 
         <div class="col-sm-4 tag">
-                {{--
+    {{--
 		<a href="#perfilcontroller/likepost/{{ $Post->id }}" class="tag-btn"><i class="fa fa-tag"></i></a>
 		<span class="qtd-likes">
 		</span>
-                --}}
+    --}}
                 &nbsp;
         </div>
 	<div class="col-sm-2 like">
-		<a href="#post/likepost/{{ $Post->id }}" class="fa-1-3x like-btn like-btn-post {{ $Post->likedByMe() }}"><i class="fa fa-heart-o"></i></a>
+		<a href="#post/likepost/{{ $Post->id }}" class="fa-1-3x like-btn like-btn-post {{ $Post->likedByMe() }}">
+      <i class="fa @if(Auth::user()->entidadeAtiva->likePost->find($Post->id)) fa-heart @else fa-heart-o @endif"></i>
+    </a>
 		<span class="qtd-likes">
 			@if($Post->getQuantidadeLikes() > 1)
 				 {{ $Post->getQuantidadeLikes() }} {{ trans('global.lbl_like_') }}

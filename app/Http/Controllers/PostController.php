@@ -129,8 +129,7 @@ class PostController extends VivalaBaseController {
             } else {
                 App::abort(403, 'Voce nao tem permissão para deletar um post que não te pertence.');
             }
-
-
+						
             return view('home');
 	}
 

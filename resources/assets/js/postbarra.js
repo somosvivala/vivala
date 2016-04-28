@@ -1,15 +1,4 @@
-// Troca os icones de like/dislike do POST se o user já tiver dado like/dislike antes
-var trocaLikes = function (){
-  var btn = document.getElementsByClassName('like-btn-post');
-
-  if($(btn).hasClass("liked")){
-    $(btn).children().removeClass('fa-heart-o').addClass('fa-heart');
-  }
-}
-
 $(document).ready(function() {
-  // Troca os icones de like/dislike do POST se o user já tiver dado like/dislike antes de tudo
-  trocaLikes();
 
   var linguaAtiva = $("meta[name=language]").attr("content"),
       arrayLingua = [];
