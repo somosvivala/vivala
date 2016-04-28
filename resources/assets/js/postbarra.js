@@ -80,7 +80,7 @@ $(document).ready(function() {
         else if (qtdLikes == 1)
           msgQtdCurtidas = qtdLikes + arrayLingua[1];
         else
-          msgQtdCurtidas = arrayLingua[3];
+          msgQtdCurtidas = arrayLingua[2];
 
         //Atualiza a quantidade de likes no span logo depois
         $("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes").html(msgQtdCurtidas);
