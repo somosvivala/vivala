@@ -15,13 +15,17 @@ $(document).ready(function() {
         console.log($("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes"));
         var msgQtdCurtidas,
           qtdLikes = data;
+
+        //testar se like/unlike e settar o icone correto
         $("#barra-post-" + idPost + " .like-btn-post").addClass('liked');
+
         if (qtdLikes > 1)
           msgQtdCurtidas = qtdLikes + ' Curtidas';
         else if (qtdLikes == 1)
           msgQtdCurtidas = qtdLikes + ' Curtida';
         else
           msgQtdCurtidas = 'Curtir';
+
         //Atualiza a quantidade de likes no span logo depois
         $("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes").html(msgQtdCurtidas);
       })
