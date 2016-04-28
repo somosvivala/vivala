@@ -1,9 +1,7 @@
 'use strict';
 
 jQuery(document).ready(function($) {
-
-
-
+  
     $('a[aria-controls=rodoviario]').on('shown.bs.tab', function() {
         $('#origem-rodoviario').focus();
     });
@@ -904,5 +902,3 @@ var bindaDocumentTypeSelect = function(select) {
     var value = $(select).val();
     $('#document-type-mp').val(value);
 };
-
-

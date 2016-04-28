@@ -1,30 +1,82 @@
 $(document).ready(function() {
+  var linguaAtiva = $("meta[name=language]").attr("content"),
+      arrayLingua = [];
+
+  // Tradução
+  switch(linguaAtiva){
+      case 'en':
+          arrayLingua[0] = ' Likes';
+          arrayLingua[1] = ' Like';
+          arrayLingua[2] = ' Like';
+          arrayLingua[3] = 'Do you want to share this post?',
+          arrayLingua[4] = 'Yes, wanna share!',
+          arrayLingua[5] = 'No',
+          arrayLingua[6] = "Ops!",
+          arrayLingua[7] = "You can't share your own post!"
+      break;
+      case 'pt':
+          arrayLingua[0] = ' Curtidas';
+          arrayLingua[1] = ' Curtida';
+          arrayLingua[2] = ' Curtir';
+          arrayLingua[3] = 'Você quer compartilhar esse post?',
+          arrayLingua[4] = 'Sim, compartilhar!',
+          arrayLingua[5] = 'Não',
+          arrayLingua[6] = "Opa!",
+          arrayLingua[7] = "Você não pode compartilhar seu próprio post!"
+      break;
+      default:
+          arrayLingua[0] = ' Curtidas';
+          arrayLingua[1] = ' Curtida';
+          arrayLingua[2] = ' Curtir';
+          arrayLingua[3] = 'Você quer compartilhar esse post?',
+          arrayLingua[4] = 'Sim, compartilhar!',
+          arrayLingua[5] = 'Não',
+          arrayLingua[6] = "Opa!",
+          arrayLingua[7] = "Você não pode compartilhar seu próprio post!"
+  }
+
+  // Troca os icones de like/dislike do POST se o user já tiver dado like/dislike antes
+  if($(".like-btn-post").hasClass("liked")){
+    $(this).children().removeClass('fa-heart-o').addClass('fa-heart');
+  }
+  else if(!$(".like-btn-post").hasClass("liked")){
+    $(this).children().removeClass('fa-heart').addClass('fa-heart-o');
+  }
 
   //Like
-  $( ".like-btn-post").click(function() {
+  $(".like-btn-post").click(function() {
     var href = $(this).prop("hash"),
       link = href.substr(1),
       urlArray = link.split('/'),
       idPost = urlArray[2];
 
     $.ajax({
-        url: '/'+link
+        url: '/'+link,
+        type: 'GET',
+        dataType: "json"
       })
       .done(function(data) {
-
-        console.log($("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes"));
         var msgQtdCurtidas,
-          qtdLikes = data;
+          qtdLikes = data.qtdLikes,
+          tipoLikeUser = data.tipoLikeUser;
+        // TESTE - Mostro no log se deu certo
+        console.log($("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes"));
 
         //testar se like/unlike e settar o icone correto
-        $("#barra-post-" + idPost + " .like-btn-post").addClass('liked');
-
+         if(tipoLikeUser){
+           $("#barra-post-" + idPost + " .like-btn-post").addClass('liked');
+           $("#barra-post-" + idPost + " .like-btn-post i").removeClass('fa-heart-o').addClass('fa-heart');
+         }
+         else{
+           $("#barra-post-" + idPost + " .like-btn-post").removeClass('liked');
+           $("#barra-post-" + idPost + " .like-btn-post i").removeClass('fa-heart').addClass('fa-heart-o');
+        }
         if (qtdLikes > 1)
-          msgQtdCurtidas = qtdLikes + ' Curtidas';
+          msgQtdCurtidas = qtdLikes + arrayLingua[0];
         else if (qtdLikes == 1)
-          msgQtdCurtidas = qtdLikes + ' Curtida';
+          msgQtdCurtidas = qtdLikes + arrayLingua[1];
         else
-          msgQtdCurtidas = 'Curtir';
+          msgQtdCurtidas = arrayLingua[3];
 
         //Atualiza a quantidade de likes no span logo depois
         $("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes").html(msgQtdCurtidas);
@@ -42,18 +94,18 @@ $(document).ready(function() {
               urlArray = link.split('/'),
                   idPost = urlArray[2];
 
-                  swal({   
-                      title: "Você quer compartilhar esse post?",
+                  swal({
+                      title: arrayLingua[3],
                       type: "warning",
                       showCancelButton: true,
                       confirmButtonColor: "#14CC74",
-                      confirmButtonText: "Sim, compartilhar!",
-                      cancelButtonText: "Não",
+                      confirmButtonText: arrayLingua[4],
+                      cancelButtonText: arrayLingua[5],
                       closeOnConfirm: true,
                       closeOnCancel: true
                   },
-                  function(isConfirm){   
-                      if (isConfirm) {     
+                  function(isConfirm){
+                      if (isConfirm) {
 
                           $.ajax({
                               url: '/'+link
@@ -63,8 +115,8 @@ $(document).ready(function() {
                           })
                            .fail(function(data) {
                                swal({
-                                  title: "Ops!",
-                                  text: "Você não pode compartilhar seu próprio post!",
+                                  title: arrayLingua[6],
+                                  text: arrayLingua[7],
                                   type: "error",
                                   confirmButtonColor: "#DD6B55",
                                   confirmButtonText: "OK"
