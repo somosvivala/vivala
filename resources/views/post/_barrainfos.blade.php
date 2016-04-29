@@ -23,7 +23,7 @@
 		</span>
 	</div>
 	<div class="col-sm-2 comentario">
-		<a href="#post/likepost/{{ $Post->id }}" class="fa-1-3x comment-btn"><i class="fa fa-comment {{ $Post->likedByMe() }}"></i></a>
+		<a href="#post/likepost/{{ $Post->id }}" class="fa-1-3x comment-btn"><i class="fa fa-comment-o {{ $Post->likedByMe() }}"></i></a>
 		<span class="qtd-comentarios">
 		    {{ count($Post->comentarios) }} {{ trans('global.lbl_comment_') }}
 		</span>

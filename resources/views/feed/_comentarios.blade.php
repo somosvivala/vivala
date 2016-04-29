@@ -14,19 +14,18 @@
             {{ $Comentario->conteudo }}
         </div>
         <div class="post-qtd-likes col-sm-3 like">
-            <span class="qtd-likes">
-                @if($Comentario->getQuantidadeLikes() > 1)
-                <a href="#" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}"><i class="fa fa-heart"></i>
-                    {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like_') }}</a>
-                @elseif($Comentario->getQuantidadeLikes() == 1)
-                <a href="#" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}"><i class="fa fa-heart"></i>
-                    {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like') }}
-                </a>
-                @else
-                <a href="#comentario/likecomentario/{{ $Comentario->id }}" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}"><i class="fa fa-heart"></i>
-                    {{ trans('global.lbl_liker') }}</a>
-                @endif
-            </span>
+          <a href="#comentario/likecomentario/{{ $Comentario->id }}" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}">
+            <i class="fa @if(Auth::user()->entidadeAtiva->likeComentario->find($Comentario->id)) fa-heart @else fa-heart-o @endif"></i>
+          </a>
+          <span class="qtd-likes">
+              @if($Comentario->getQuantidadeLikes() > 1)
+                {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like_') }}
+              @elseif($Comentario->getQuantidadeLikes() == 1)
+                {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like') }}
+              @else
+                {{ trans('global.lbl_liker') }}
+              @endif
+          </span>
         </div>
     </li>
     @empty

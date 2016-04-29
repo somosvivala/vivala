@@ -129,7 +129,7 @@ class PostController extends VivalaBaseController {
             } else {
                 App::abort(403, 'Voce nao tem permissão para deletar um post que não te pertence.');
             }
-						
+
             return view('home');
 	}
 
@@ -207,6 +207,7 @@ class PostController extends VivalaBaseController {
 			$entidadeAtiva->likePost()->attach($post->id);
 			// É um like, logo o like vai para o estado 1
 			$tipoLikeUser = true;
+
                         // Aumenta a relevância do post que recebeu o like
                         $post->relevancia += $post->relevancia_rate;
                         $post->push();
@@ -230,7 +231,7 @@ class PostController extends VivalaBaseController {
 		} else {
 			// Retiro o like do post pelo ID do post
 			$entidadeAtiva->likePost()->detach($post->id);
-			// É um dislike, logo o like volta para para o estado zero
+			// É um dislike, logo o like volta para para o estado 0
 			$tipoLikeUser = false;
 		}
 

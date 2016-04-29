@@ -6,9 +6,9 @@ $(document).ready(function() {
   // Tradução
   switch(linguaAtiva){
       case 'en':
-          arrayLingua[0] = ' Likes';
-          arrayLingua[1] = ' Like';
-          arrayLingua[2] = ' Like';
+          arrayLingua[0] = ' Likes',
+          arrayLingua[1] = ' Like',
+          arrayLingua[2] = ' Like',
           arrayLingua[3] = 'Do you want to share this post?',
           arrayLingua[4] = 'Yes, wanna share!',
           arrayLingua[5] = 'No',
@@ -16,9 +16,9 @@ $(document).ready(function() {
           arrayLingua[7] = "You can't share your own post!"
       break;
       case 'pt':
-          arrayLingua[0] = ' Curtidas';
-          arrayLingua[1] = ' Curtida';
-          arrayLingua[2] = ' Curtir';
+          arrayLingua[0] = ' Curtidas',
+          arrayLingua[1] = ' Curtida',
+          arrayLingua[2] = ' Curtir',
           arrayLingua[3] = 'Você quer compartilhar esse post?',
           arrayLingua[4] = 'Sim, compartilhar!',
           arrayLingua[5] = 'Não',
@@ -26,9 +26,9 @@ $(document).ready(function() {
           arrayLingua[7] = "Você não pode compartilhar seu próprio post!"
       break;
       default:
-          arrayLingua[0] = ' Curtidas';
-          arrayLingua[1] = ' Curtida';
-          arrayLingua[2] = ' Curtir';
+          arrayLingua[0] = ' Curtidas',
+          arrayLingua[1] = ' Curtida',
+          arrayLingua[2] = ' Curtir',
           arrayLingua[3] = 'Você quer compartilhar esse post?',
           arrayLingua[4] = 'Sim, compartilhar!',
           arrayLingua[5] = 'Não',
@@ -46,23 +46,21 @@ $(document).ready(function() {
     $.ajax({
         url: '/'+link,
         type: 'GET',
-        dataType: "json"
+        dataType: 'json'
       })
       .done(function(data) {
         var msgQtdCurtidas,
           qtdLikes = data.qtdLikes,
           tipoLikeUser = data.tipoLikeUser;
-        // TESTE - Mostro no log se deu certo
-        console.log($("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes"));
 
-        //testar se like/unlike e settar o icone correto
+        // Testar se like/unlike e settar o icone correto
          if(tipoLikeUser){
-           $("#barra-post-" + idPost + " .like-btn-post").addClass('liked');
-           $("#barra-post-" + idPost + " .like-btn-post i").removeClass('fa-heart-o').addClass('fa-heart');
+           $("#barra-post-"+idPost+" .like-btn-post").addClass('liked');
+           $("#barra-post-"+idPost+" .like-btn-post i").removeClass('fa-heart-o').addClass('fa-heart');
          }
          else{
-           $("#barra-post-" + idPost + " .like-btn-post").removeClass('liked');
-           $("#barra-post-" + idPost + " .like-btn-post i").removeClass('fa-heart').addClass('fa-heart-o');
+           $("#barra-post-"+idPost+" .like-btn-post").removeClass('liked');
+           $("#barra-post-"+idPost+" .like-btn-post i").removeClass('fa-heart').addClass('fa-heart-o');
         }
         if (qtdLikes > 1)
           msgQtdCurtidas = qtdLikes + arrayLingua[0];
@@ -70,12 +68,11 @@ $(document).ready(function() {
           msgQtdCurtidas = qtdLikes + arrayLingua[1];
         else
           msgQtdCurtidas = arrayLingua[2];
-
         //Atualiza a quantidade de likes no span logo depois
-        $("#barra-post-" + idPost).find(".like-btn-post+span.qtd-likes").html(msgQtdCurtidas);
+        $("#barra-post-"+idPost).find(".like-btn-post+span.qtd-likes").html(msgQtdCurtidas);
       })
       .fail(function(data) {
-        console.log('Erro no ajax de like');
+        console.log('Erro no ajax de like-post');
       });
   });
 

@@ -14,7 +14,9 @@
             {{ $Comentario->conteudo }}
         </div>
         <div class="post-qtd-likes col-sm-2 like">
-            <a href="#comentario/likecomentario/{{ $Comentario->id }}" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}"><i class="fa fa-heart"></i></a>
+            <a href="#comentario/likecomentario/{{ $Comentario->id }}" class="like-btn-comentario like-btn {{ $Comentario->likedByMe() }}">
+              <i class="fa @if(Auth::user()->entidadeAtiva->likeComentario->find($Comentario->id)) fa-heart @else fa-heart-o @endif"></i>
+            </a>
             <span class="qtd-likes">
                 @if($Comentario->getQuantidadeLikes() > 1)
                 {{ $Comentario->getQuantidadeLikes() }} {{ trans('global.lbl_like_') }}

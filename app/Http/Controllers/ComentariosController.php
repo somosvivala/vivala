@@ -35,7 +35,7 @@ class ComentariosController extends VivalaBaseController {
 		$conteudo = Input::get('conteudo', null);
 
 		if (!$conteudo) {
-			return json_encode(['error'=>'nao pode em branco']);
+			return json_encode(['error'=>'Branco']);
 		}
 
 		$comentario = new Comentario();
@@ -60,13 +60,13 @@ class ComentariosController extends VivalaBaseController {
 				'tipo_notificacao'	=>	'comentario',
 				'url'				=>	$post->url
 				]);
-	
+
 			//associando a entidadeAtiva com o from e o autor do post comentado como target
 			$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
 			$post->author->notificacoes()->save($novaNotificacao);
 			$novaNotificacao->push();
 		}
-		
+
 		return json_encode(['success'=>true]);
 	}
 
@@ -90,12 +90,14 @@ class ComentariosController extends VivalaBaseController {
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likeComentario()->attach($comentario->id);
+			// É um like, logo o like vai para o estado 1
+			$tipoLikeUser = true;
 
                         // Aumenta a relevancia do post
                         $comentario->post->relevancia += $comentario->post->relevancia_rate;
                         $comentario->post->push();
 
-			//Só levantar uma notificacao se o like for em um 
+			//Só levantar uma notificacao se o like for em um
 			//comentario que nao seja seu ou de alguma de suas entidades
 			if($entidadeAtiva->user->id != $comentario->author->user->id)
 			{
@@ -106,21 +108,22 @@ class ComentariosController extends VivalaBaseController {
 					'tipo_notificacao'	=>	'like_comentario',
 					'url'				=>	$comentario->post->url
 					]);
-			
+
 				//associando a entidadeAtiva com o from e o autor do comentario likeado como target
 				$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
 				$comentario->author->notificacoes()->save($novaNotificacao);
 				$novaNotificacao->push();
 			}
 
-
 		} else {
 			//se ja estiver dando like, remover like
 			$entidadeAtiva->likeComentario()->detach($comentario->id);
+			// É um dislike, logo o like volta para para o estado 0
+			$tipoLikeUser = false;
 		}
 
-		// Retorna a quantidade de likes para utilizar na view
-	    return $comentario->getQuantidadeLikes();
+		// Retorna a quantidade de likes para utilizar na view e se o user deu like ou deslike
+		return array('qtdLikes' => $comentario->getQuantidadeLikes(), 'tipoLikeUser' => $tipoLikeUser);
 	}
 
 
