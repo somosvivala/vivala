@@ -514,7 +514,7 @@ return[
     'lbl_search_' => 'Search',
     'lbl_searchr' => 'Search',
     'lbl_searching' => 'Searching...',
-    'lbl_search_type_here' => 'Type your search...',
+    'lbl_search_type_here' => 'Find other persons...',
     'lbl_search_recent' => 'Recent search',
     'lbl_search_recent_' => 'Recent search',
     'lbl_seemore' => 'See More',

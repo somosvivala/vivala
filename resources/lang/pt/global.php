@@ -576,7 +576,7 @@ return[
     'lbl_search_' => 'Buscas',
     'lbl_searchr' => 'Buscar',
     'lbl_searching' => 'Buscando...',
-    'lbl_search_type_here' => 'Digite aqui sua busca...',
+    'lbl_search_type_here' => 'Encontre outras pessoas...',
     'lbl_search_recent' => 'Busca Recente',
     'lbl_search_recent_' => 'Buscas Recentes',
     'lbl_seemore' => 'Ver Mais',

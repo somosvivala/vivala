@@ -7,13 +7,16 @@
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-sm col-lg-4">
+		{{-- BARRA BUSCA - TEMPORÁRIO pra mostrar só em CONECTAR, mandar uma variável pra view pra dizer em qual pilar estamos seria o mais ideal --}}
+		@if(Request::url() === (url('/') . '/conectar'))
 		<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
 			<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
+		@endif
 	</div>
 	<ul id="tres-menus-vivala" class="col-xs-12 col-sm-12 col-md-12 col-lg-8 nav navbar-nav lista-intervalo-preto tour-pilares-step2">
 		@if (Auth::guest())
-                        		<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
-                        		<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
+    		<li class="col-sm-4"><a href="{{ url('/auth/login') }}">{{ trans('global.lbl_login') }}</a></li>
+  			<li><a href="{{ url('/auth/register') }}">{{ trans('global.lbl_signup') }}</a></li>
 		@else
 			<li id="menu-viajar" class="menu-viajar tour-pilares-step3">
 				<a href="{{ url('/viajar') }}" class="click-img-no-border">
