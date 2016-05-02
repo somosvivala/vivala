@@ -38,6 +38,13 @@ class EnviaEmailCompraFinalizada {
                 $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
             });
 
+            //enviando email para a vivalá avisando que essa compra foi finalizada
+            Mail::send('emails.clickbus.sucesso', ['Compra' => $Compra], function ($message) use ($Compra) {
+                $message->to("contato@vivalabrasil.com.br", "Vendas")->subject("Alguem comprou passagem rodoviaria na Vivalá");
+                $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+            });
+
+
         } else {
             //Envia email de pagamento pendente
             Mail::send('emails.clickbus.pendente', ['Compra' => $Compra], function ($message) use ($Compra) {
