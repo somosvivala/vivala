@@ -80,7 +80,6 @@
                 </a>
                 <div id="modal-seguindo" class="modal fade" role="dialog">
                     <div class="modal-dialog modal-md">
-
                         <div class="modal-content">
                             <div class="modal-body">
                                 <h3 class="texto-preto">{{ trans('global.lbl_following') }}</h3>
@@ -120,13 +119,11 @@
                     <i class="fa fa-star laranja"></i>
                     <br>APOIADOR
                     @else
-
                     <br>
                     {{ trans('global.lbl_traveller') }}
                     @endif
                 @endif
                 @if(Auth::user()->isAdmin())
-
                 {!! Form::open(['url' => ['perfilcontroller/setapoiador', $perfil->id], 'method' => 'GET', 'class' => 'form-ajax', 'data-callback'=>'location.reload()']) !!}
                     <button class="btn btn-acao" style="position: absolute;top:0;right:0;" type="submit"  data-id="{{ $perfil->id }}">
                         <i class="fa fa-star"></i>
@@ -138,13 +135,28 @@
         {{-- DESATIVADO TEMPORARIAMENTE
         <ul class="margin-0">
             <li class="col-sm-6">
-              <a href="#" class="desativado">{{ trans('global.lbl_know_more_things') }}</a>
+              <a href="#" data-toggle="modal" data-target="#modal-mais-coisas">{{ trans('global.lbl_know_more_things') }}</a>
+              <div id="modal-mais-coisas" class="modal fade" role="dialog">
+                  <div class="modal-dialog modal-md">
+                      <div class="modal-content">
+                          <div class="modal-body">
+                              <h3 class="texto-preto">{{ trans('global.lbl_know_more_things') }}</h3>
+
+
+                          </div>
+                          <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">{{trans('global.lbl_close')}}</button>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
             </li>
             <li class="col-sm-6"><a href="#" class="desativado">
                 @if( $perfil->tipo == 'ong' )
-                    {{ trans('global.ong_contact_keep_in') }}
+                      {{ trans('global.ong_contact_keep_in') }}
                 @else
-                    {{ trans('global.lbl_message_send') }}
+                      {{ trans('global.lbl_message_send') }}
                 @endif
             </a></li>
         </ul>

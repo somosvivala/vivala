@@ -24,7 +24,7 @@
 	<a href="{{$Post->fotos->path}}" data-lightbox="foto-{{ $Post->id }}" data-title="{{ $Post->titulo }}">
 	@endif
 
-	<div class="row principal foto-fundo"
+	<div class="row principal margin-t-2 foto-fundo"
 	@if($Post->fotos)
 	 style="background-image:url('{{ $Post->fotos->path }}')"
 	@endif

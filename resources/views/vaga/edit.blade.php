@@ -41,7 +41,7 @@
                                     <span class="fa fa-upload"></span>
                                     SELECIONE UMA IMAGEM
                                 </span>
-                            </label>    
+                            </label>
                             <div id="cropper-vaga" class="cropper-img">
                                 <img src="{{ '/img/querocuidar.png' }}" />
                             </div>
@@ -51,7 +51,7 @@
                             {!! Form::hidden("h",  0, ['id' => 'h-vaga-perfil']) !!}
                             {!! Form::hidden("r",  0, ['id' => 'r-vaga-perfil']) !!}
                             {!! Form::submit( "cortar foto", ['id'=>'btn-crop-photo', 'class' => 'margin-t-1 soft-hide btn btn-primario btn-acao']) !!}
-                            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x " style="display:none"></i>
+                            <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x laranja margin-t-1" style="display:none"></i>
 
                             {!! Form::close() !!}
                         </div>
@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-    
+
 
         @include('errors.list')
         {{-- Adicionando div de update da foto de perfil da ong --}}

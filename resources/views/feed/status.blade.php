@@ -1,5 +1,5 @@
 <article class="status tour-pilar-conectar-step4">
-	<div class="row principal">
+	<div class="row principal margin-t-2">
 		<div class="col-sm-2">
 			<div class="foto-label">
                             <a href="{{ url($Post->entidade->getUrl()) }}">

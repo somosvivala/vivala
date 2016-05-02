@@ -7,7 +7,7 @@
                 {!! Form::close() !!}
         @endif
          </div>
-	<div class="row principal foto-fundo"
+	<div class="row principal margin-t-2 foto-fundo"
 	@if($Post->fotos)
 	 style="background-image:url('{{ $Post->fotos->path }}')"
 	@endif
