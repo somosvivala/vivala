@@ -91,7 +91,7 @@
     </div>
     <div class="col-sm-10">
         @if( $vaga->id == 19 )
-          {!! trans('global.lbl_hello') !!}, {{ $Candidato->nome }}, {!! trans('global.ong_slot_dummy_olympics') !!}
+          {!! trans('global.lbl_hello') !!}, {{ $Candidato->nome }}, {!! trans('global.ong_slot_congratulations_dummy_olympics') !!}
         @else
           {!! trans('global.lbl_hello') !!}, {{ $Candidato->nome }}, {!! trans('global.ong_slot_congratulations_1') !!} {{ $vaga->email_contato }} {!! trans('global.ong_slot_congratulations_2') !!} {{ $vaga->telefone_contato }}
         @endif
@@ -131,7 +131,7 @@
         {!! Form::close() !!}
     </li>
     @empty
-    <p>{!! trans('global.ong_slot_none_voluntary') !!}</p>
+    <p>{!! trans('global.ong_slot_none_voluntary_be_the_first') !!}</p>
     @endforelse
 </ul>
 </div>
