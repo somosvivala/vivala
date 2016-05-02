@@ -508,7 +508,7 @@ class Perfil extends Model {
     public function getSugestaoByAmigosEmComumAttribute()
     {
         //Collection com toos os perfils que eu nao sigo
-        $colNaoAmigos = Perfil::all()->diff($this->followPerfil)->diff([$this]);
+        $colNaoAmigos = Perfil::all()->diff($this->followPerfil)->diff([$this])->take(30);
         $amigos = $this->amigos;
 
         foreach ($colNaoAmigos as $key => $perfil) {
@@ -540,7 +540,7 @@ class Perfil extends Model {
     public function getSugestaoBySeguindoEmComumAttribute()
     {
         //Collection com todos os perfils que eu nao sigo
-        $colNaoSeguindo = Perfil::all()->diff($this->followPerfil)->diff([$this]);
+        $colNaoSeguindo = Perfil::all()->diff($this->followPerfil)->diff([$this])->take(30);
         $seguindo = $this->followPerfil;
 
         foreach ($colNaoSeguindo as $key => $perfil) {
@@ -663,6 +663,70 @@ class Perfil extends Model {
         preg_match('/^App\\\\(.*)$/', get_class($this), $retorno);
         return strtolower($retorno[1]);
     }
+
+
+    /**
+     * Metodo para retornar perfils para seguir
+     *
+     * @param $entidadeAtiva - A Entidade ativa atualmente (Perfil / Ong)
+     *
+     * @return Collection com 3 perfils para serem seguidos
+     * 2 perfils com mais seguidores dentre um random de 100.
+     * 1 perfil recentemente criado
+     */
+    public static function getPerfilsParaSeguir($entidadeAtiva)
+    {
+        //pegando um array com os ids dos perfils que a entidade ativa já segue
+        $arrayIdsJaSeguindo = $entidadeAtiva->followPerfil->lists('id');
+
+        //se for um perfil recebendo sugestoes entao nao sugerir a sí mesmo
+        if ($entidadeAtiva->isPerfil) {
+            array_push($arrayIdsJaSeguindo, $entidadeAtiva->id);
+        }
+
+        //fazendo um random nos perfils e removendo os perfils que ja sigo pelo queryBuilder (BD query)
+        $viajantes = Perfil::orderByRaw('RANDOM()')->whereNotIn('id', $arrayIdsJaSeguindo)
+
+            //pegando 100 desses perfils, ordenando-os por maior numero de seguidores
+            ->take(100)->get()->sortBy(function($perfil){
+                return $perfil->numeroSeguidores;
+            }, null, true)
+
+            // e pegando 2
+            ->take(2);
+
+        //Pegando os perfils mais recentes
+        $perfilRecente = Perfil::orderBy('created_at', 'desc')->take(30)
+            ->whereNotIn('id', $arrayIdsJaSeguindo)     //garantindo que ja nao os sigo
+            ->get()->random();                          //pegando 1 random
+
+        //adicionando o perfil recente as sugestoes de viajante
+        $viajantes->push($perfilRecente);
+
+        return $viajantes;
+    }
+
+    /*
+     * Acessor para testar se essa entidade é um perfil (deveria estar na superclasse / contract)
+     *
+     * @return Boolean - Se é um perfil ou não
+     */
+    public function getIsPerfilAttribute()
+    {
+        return ( preg_match('/perfil/i', get_class($this)) ? true : false );
+    }
+
+    /*
+     * Acessor para testar se essa entidade é um ong (deveria estar na superclasse / contract)
+     *
+     * @return Boolean - Se é um ong ou não
+     */
+    public function getIsOngAttribute()
+    {
+        return ( preg_match('/ong/i', get_class($this)) ? true : false );
+    }
+
+
 
 
 }

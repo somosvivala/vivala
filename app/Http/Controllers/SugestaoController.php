@@ -28,11 +28,11 @@ class SugestaoController extends ConectarController {
     public function getViajantes($filtro = "amigo") {
       $user = Auth::user();
       $entidadeAtiva = $user->entidadeAtiva;
-      $entidadeAtiva = $user->entidadeAtiva;
       $perfil = $entidadeAtiva;
 
       $follow = $perfil->followPerfil;
       $followedBy = $perfil->followedByPerfil;
+
 
         if($filtro == "amigo") {
             $sugestoes = $entidadeAtiva->sugestaoByAmigosEmComum;

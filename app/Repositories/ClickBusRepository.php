@@ -27,10 +27,16 @@ class ClickBusRepository
      */
     function __construct()
     {
-         //Para mudar pra production basta alterar para CLICKBUS_API_KEY e CLICKBUS_URL
-        $this->apiKey = env('CLICKBUS_API_KEY');
-        $this->url = env('CLICKBUS_URL');
         $this->urlAmexRegex = env('CLICKBUS_AMEX_URL');
+
+        //Consumindo do ambiente live se estiver em production
+        if (app()->environment('production')) {
+            $this->apiKey = env('CLICKBUS_API_KEY');
+            $this->url = env('CLICKBUS_URL');
+        } else {
+            $this->apiKey = env('CLICKBUS_API_KEY_DEV');
+            $this->url = env('CLICKBUS_URL_DEV');
+        }
     }
 
     // Função de Tratamento do formato da Data na Busca por Ônibus da ClickBus

@@ -514,7 +514,7 @@ return[
     'lbl_search_' => 'Search',
     'lbl_searchr' => 'Search',
     'lbl_searching' => 'Searching...',
-    'lbl_search_type_here' => 'Type your search...',
+    'lbl_search_type_here' => 'Find other persons...',
     'lbl_search_recent' => 'Recent search',
     'lbl_search_recent_' => 'Recent search',
     'lbl_seemore' => 'See More',
@@ -858,6 +858,23 @@ return[
     'ong_contact_keep_in' => 'Contact Us',
     'ong_search_for_ongs' => 'Searching for NGOs?',
     'ong_find_ongs_three_steps' => 'Find interesnting projects in 3 steps.',
+    /* View: Vagas */
+      'ong_slot_no_description' => 'No description.',
+      'ong_slot_no_habilities' => 'No habilities description.',
+      'ong_slot_about_organization' => 'About the organization',
+      'ong_slot_about_job' => 'About the job',
+      'ong_slot_job_habilities' => 'Habilities',
+      'ong_slot_date_and_hour' => 'Dates and schedules',
+      'ong_slot_location' => 'Localization',
+      'ong_slot_responsible' => 'Responsible',
+      'ong_slot_wanna_apply' => 'Wanna apply for this',
+      'ong_slot_volunteers_in_this_cause' => 'Volunteers in this cause',
+      'ong_slot_congratulations_1' => 'Thank you for applying for this job! We will contact you by email to confirm everything with you! If you have any questions, you can find me by email!',
+      'ong_slot_congratulations_2' => 'or by phone',
+      'ong_slot_none_voluntary_be_the_first' => 'No volunteers in this project work, be the first!',
+      'ong_slot_see_other_slots' => 'View other jobs of this project',
+      'ong_slot_none_cause_found' => 'None projects found.',
+      'ong_slot_congratulations_dummy_olympics' => 'we are very happy with your interest in becoming an Olympic volunteer! We\'ve already sent you an email with directions for you to complete your application and be part of this great team! If you have any questions just contact us through our email: <a href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a> . #WeAreVivalá #Rio2016 #DoMoreForTheSport',
 
   /* View: Páginas */
 

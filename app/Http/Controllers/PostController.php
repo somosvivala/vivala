@@ -10,8 +10,6 @@ use App\Post;
 use App\Foto;
 use App\Notificacao;
 
-
-
 class PostController extends VivalaBaseController {
 
 	/**
@@ -53,7 +51,7 @@ class PostController extends VivalaBaseController {
                     $novoPost->relevancia_rate = 15;
                 else
                     $novoPost->relevancia_rate = 10;
-                
+
                 // Relevancia adicionada 5 vezes na criação
                 $novoPost->relevancia += $novoPost->relevancia_rate*5;
 
@@ -125,13 +123,12 @@ class PostController extends VivalaBaseController {
 
             $entidadeAtiva = Auth::user()->entidadeAtiva;
 
-            //Se o post a ser deletado não pertence à entidade ativa 
+            //Se o post a ser deletado não pertence à entidade ativa
             if ($entidadeAtiva == $post->author) {
                 $post->delete();
             } else {
                 App::abort(403, 'Voce nao tem permissão para deletar um post que não te pertence.');
             }
-
 
             return view('home');
 	}
@@ -175,7 +172,7 @@ class PostController extends VivalaBaseController {
 			'tipo_notificacao'	=>	'share',
 			'url'				=>	$novoPost->url
 			]);
-	
+
 		//associando a entidadeAtiva com o from e o autor do comentario likeado como target
 		$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
 		$sourcePost->author->notificacoes()->save($novaNotificacao);
@@ -196,19 +193,22 @@ class PostController extends VivalaBaseController {
 	{
 		//Verifica se o post existe
 		$post = Post::findOrFail($id);
+
 		//Testo se o usuário está logado
 		$user = Auth::user();
 		$entidadeAtiva = $user->entidadeAtiva;
 
-		//Se já tiver dado like no post com esse id,
-		//consigo encontralo pelo Collention->find()
+		//Se já tiver dado like no post com esse ID,
+		//consigo encontrá-lo pelo Collection->find()
 		$alreadyLiked = $entidadeAtiva->likePost->find($post->id);
 
 		if (!$alreadyLiked) {
 			//Salvando relação (Dando o like finalmente!)
 			$entidadeAtiva->likePost()->attach($post->id);
+			// É um like, logo o like vai para o estado 1
+			$tipoLikeUser = true;
 
-                        // Aumenta a relevancia do post que recebeu o like 
+                        // Aumenta a relevância do post que recebeu o like
                         $post->relevancia += $post->relevancia_rate;
                         $post->push();
 
@@ -221,19 +221,21 @@ class PostController extends VivalaBaseController {
 					'tipo_notificacao'	=>	'like_post',
 					'url'				=>	$post->url
 					]);
-				
+
 				//associando a entidadeAtiva com o from e o autor do comentario likeado como target
 				$entidadeAtiva->fromNotificacoes()->save($novaNotificacao);
 				$post->author->notificacoes()->save($novaNotificacao);
 				$novaNotificacao->push();
 			}
 
-
 		} else {
+			// Retiro o like do post pelo ID do post
 			$entidadeAtiva->likePost()->detach($post->id);
+			// É um dislike, logo o like volta para para o estado 0
+			$tipoLikeUser = false;
 		}
 
-		// Retorna a quantidade de likes para utilizar na view
-	    return $post->getQuantidadeLikes();
+		// Retorna a quantidade de likes para utilizar na view e se o user deu like ou deslike
+	    return array('qtdLikes' => $post->getQuantidadeLikes(), 'tipoLikeUser' => $tipoLikeUser);
 	}
 }

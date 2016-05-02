@@ -604,5 +604,49 @@ class Ong extends Model {
     }
 
 
+    /**
+     * Metodo para retornar ongs para seguir
+     *
+     * @param $entidadeAtiva - A Entidade ativa atualmente (Perfil / Ong)
+     *
+     * @return Collection com 3 ongs para serem seguidos
+     */
+    public static function getOngsParaSeguir($entidadeAtiva)
+    {
+        //pegando um array com os ids dos ongs que a entidade ativa já segue
+        $arrayIdsJaSeguindo = $entidadeAtiva->followOng->lists('id');
+
+        //se for uma ong recebendo sugestoes entao nao sugerir a sí mesmo
+        if ($entidadeAtiva->isOng) {
+            array_push($arrayIdsJaSeguindo, $entidadeAtiva->id);
+        }
+
+        //fazendo um random nos ongs e removendo os ongs que ja sigo pelo queryBuilder (BD query)
+        $ongsParaSeguir = Ong::orderByRaw('RANDOM()')->whereNotIn('id', $arrayIdsJaSeguindo)
+            // e pegando 2
+            ->take(3)->get();
+
+        return $ongsParaSeguir;
+    }
+
+    /*
+     * Acessor para testar se essa entidade é um perfil (deveria estar na superclasse / contract)
+     *
+     * @return Boolean - Se é um perfil ou não
+     */
+    public function getIsPerfilAttribute()
+    {
+        return ( preg_match('/perfil/i', get_class($this)) ? true : false );
+    }
+
+    /*
+     * Acessor para testar se essa entidade é um ong (deveria estar na superclasse / contract)
+     *
+     * @return Boolean - Se é um ong ou não
+     */
+    public function getIsOngAttribute()
+    {
+        return ( preg_match('/ong/i', get_class($this)) ? true : false );
+    }
 }
 

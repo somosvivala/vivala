@@ -576,7 +576,7 @@ return[
     'lbl_search_' => 'Buscas',
     'lbl_searchr' => 'Buscar',
     'lbl_searching' => 'Buscando...',
-    'lbl_search_type_here' => 'Digite aqui sua busca...',
+    'lbl_search_type_here' => 'Encontre outras pessoas...',
     'lbl_search_recent' => 'Busca Recente',
     'lbl_search_recent_' => 'Buscas Recentes',
     'lbl_seemore' => 'Ver Mais',
@@ -942,8 +942,26 @@ return[
     'ong_search_for_ongs' => 'Procurando por Transformação?',
     'ong_find_ongs_three_steps' => 'Encontre Projetos de Impacto em três passos.',
 
+  /* View: Vagas */
+    'ong_slot_no_description' => 'Sem descrição.',
+    'ong_slot_no_habilities' => 'Sem descrição de habilidades.',
+    'ong_slot_about_organization' => 'Sobre a organização',
+    'ong_slot_about_job' => 'Sobre o trabalho',
+    'ong_slot_job_habilities' => 'Habilidades',
+    'ong_slot_date_and_hour' => 'Datas e Horários',
+    'ong_slot_location' => 'Localização',
+    'ong_slot_responsible' => 'Responsável',
+    'ong_slot_wanna_apply' => 'Quero me candidatar',
+    'ong_slot_volunteers_in_this_cause' => 'Voluntários nesta causa',
+    'ong_slot_congratulations_1' => 'obrigado por se candidatar a vaga! Entrarei em contato por e-mail para confirmar tudinho com você! Qualquer dúvida, pode me procurar pelo e-mail',
+    'ong_slot_congratulations_2' => 'ou pelo telefone',
+    'ong_slot_none_voluntary_be_the_first' => 'Nenhum voluntário se cadidatou a essa vaga, seja o primeiro!',
+    'ong_slot_see_other_slots' => 'Veja outras vagas desse projeto',
+    'ong_slot_none_cause_found' => 'Nenhuma causa encontrada.',
+    'ong_slot_congratulations_dummy_olympics' => 'estamos muito felizes com o seu interesse em se tornar um voluntário olímpico! Já te mandamos um e-mail com as orientações para você concluir  sua inscrição e fazer parte desse super time! Caso você tenha alguma dúvida, é só entrar em contato pelo nosso email: <a href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a> . #SomosVivalá #Rio2016 #FazMaisPorEsporte',
+
   /* View: Páginas */
-        'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
+    'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
     'pages_by_clicking' => 'Ao clicar em Começar, você concorda com os',
     'pages_terms_and_conditions' => 'Termos das Páginas da Vivalá',
 
