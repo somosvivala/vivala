@@ -26,6 +26,8 @@ elixir(function(mix) {
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
         '../../assets/bower/sweetalert2/dist/sweetalert2.css',
         '../../assets/bower/intro.js/introjs.css',
+        '../../assets/bower/weather-icons/css/weather-icons.css',
+        '../../assets/bower/weather-icons/css/weather-icons-wind.css',
         'app.css',
         '../../assets/bower/font-awesome/css/font-awesome.min.css',
         '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir depois do Font-Awesome e ao fim, conflita em classe com algo

@@ -879,7 +879,7 @@ return[
     'wannatravel_package_see_' => 'Ver Pacotes',
     'wannatravel_route_see' => 'Ver Roteiro',
     'wannatravel_route_see_' => 'Ver Roteiros',
-    'wannatravel_package_find_best_destinies' => 'Conheça Nossos Serviços',
+    'wannatravel_know_our_services' => 'Conheça Nossos Serviços',
     //
     'wannatravel_chefsclub_desserts_and_goodies' => 'Delícias que alimentam corpo e alma',
     'wannatravel_chefsclub_all_restaurants' => 'Todos',

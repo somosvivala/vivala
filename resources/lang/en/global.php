@@ -800,7 +800,7 @@ return[
     'wannatravel_package_see_' => 'See Packages',
     'wannatravel_route_see' => 'See Route',
     'wannatravel_route_see_' => 'See Routes',
-    'wannatravel_package_find_best_destinies' => 'Learn about our services',
+    'wannatravel_know_our_services' => 'Learn about our services',
     //
     'wannatravel_chefsclub_desserts_and_goodies' => 'Some tastes to feed your body and soul!',
     'wannatravel_chefsclub_all_restaurants' => 'All',

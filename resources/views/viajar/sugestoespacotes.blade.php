@@ -1,7 +1,7 @@
 <ul id="menu-direita" class="sugestoes sugestoes-pacotes">
   <div class="margin-b-2">
     <h4 class="suave">
-      {{ trans('global.wannatravel_package_find_best_destinies') }}
+      {{ trans('global.wannatravel_know_our_services') }}
     </h4>
   </div>
   <ul class="sugestoes sugestoes-pacotes">
@@ -36,7 +36,7 @@
           </a>
       </li>
       <li>
-          <a href="https://vivala.com.br/viajar" class="click-img-no-border">
+          <a href="https://vivala.com.br/viajar#restaurantes" class="click-img-no-border">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyrestaurantes.jpg') }}">
               </div>
@@ -45,9 +45,8 @@
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
-{{-- Menu Clickbus
       <li>
-          <a href="https://vivala.com.br/viajar" class="click-img-no-border">
+          <a href="https://vivala.com.br/viajar#rodoviario" class="click-img-no-border">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyonibus.jpg') }}">
               </div>
@@ -56,6 +55,5 @@
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
---}}
   </ul>
 </ul>

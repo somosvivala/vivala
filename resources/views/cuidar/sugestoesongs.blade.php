@@ -1,10 +1,9 @@
 <div class="margin-b-2">
     <h4 class="suave margin-b-2">
-            {{ trans('global.wannavolunteer_projects_to_follow') }}
+      {{ trans('global.wannavolunteer_projects_to_follow') }}
     </h4>
 </div>
-<ul class="sugestoes sugestoes-ongs">
-
+<ul class="sugestoes sugestoes-ongs margin-b-1">
 	@if(isset($sugestoesOngs))
 	@forelse($sugestoesOngs as $Ong)
 		<li class="margin-b-1">

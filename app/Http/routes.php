@@ -15,29 +15,28 @@ use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
 // Rotas de TESTE paginação
-use App\User;
-Route::get('simplepagination', function() {
-   dd( $someUsers = User::simplePaginate(15));
- });
-
+// use App\User;
+// Route::get('simplepagination', function() {
+//    dd( $someUsers = User::simplePaginate(15));
+//  });
 // Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
-Route::get('/testeview', function() {
-    $compra = CompraClickbus::all()->reverse()->first();
-    return view('clickbus._success', compact('compra'));
-});
-
-Route::get('/testeemailpendente', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
-Route::get('/testeemailcancelado', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.cancelamento')->with('Compra', $Compra);
-});
-Route::get('/testeemailsucesso', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.sucesso')->with('Compra', $Compra);
-});
+// Route::get('/testeview', function() {
+//     $compra = CompraClickbus::all()->reverse()->first();
+//     return view('clickbus._success', compact('compra'));
+// });
+//
+// Route::get('/testeemailpendente', function() {
+//     $Compra = CompraClickbus::all()->reverse()->first();
+//     return view('emails.clickbus.pendente')->with('Compra', $Compra);
+// });
+// Route::get('/testeemailcancelado', function() {
+//     $Compra = CompraClickbus::all()->reverse()->first();
+//     return view('emails.clickbus.cancelamento')->with('Compra', $Compra);
+// });
+// Route::get('/testeemailsucesso', function() {
+//     $Compra = CompraClickbus::all()->reverse()->first();
+//     return view('emails.clickbus.sucesso')->with('Compra', $Compra);
+// });
 
 /*
  * Rotas
@@ -92,6 +91,7 @@ Route::controller('chat','Conectar\ChatController');
 Route::controller('interesses','Conectar\InteressesController');
 Route::controller('montarviagem','Viajar\MontarViagemController');
 Route::controller('verpacotes','Viajar\VerPacotesController');
+Route::controller('cotarviagem', 'Viajar\CotarViagensController');
 Route::controller('meusfavoritos','Viajar\MeusFavoritosController');
 Route::controller('minhascompras','Viajar\MinhasComprasController');
 Route::controller('meuspontos','Viajar\MeusPontosController');
