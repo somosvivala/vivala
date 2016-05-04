@@ -124,6 +124,8 @@ Route::post('clickbus/booking', 'ClickBusController@getBooking');
 Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
 Route::post('clickbus/success', 'ClickBusController@getSucess');
 
+Route::controller('experiencias', 'ExperienciasController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

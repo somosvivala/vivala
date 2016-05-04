@@ -151,6 +151,7 @@ return [
 		'Orangehill\Iseed\IseedServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
+                'Jenssegers\Agent\AgentServiceProvider',
 
 		/**
 		 * POSTGIS
@@ -206,7 +207,8 @@ return [
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
-		'Image' 	=> 'Intervention\Image\Facades\Image'
+                'Image'     => 'Intervention\Image\Facades\Image',
+                'Agent'     => 'Jenssegers\Agent\Facades\Agent'
 	],
 
 ];
