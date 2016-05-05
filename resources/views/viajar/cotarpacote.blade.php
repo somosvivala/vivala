@@ -5,6 +5,6 @@
     </h4>
   </div>
   <a href="/cotarviagem">
-    <button  class="btn btn-acao" type="button">{!! trans('global.lbl_build_my_trip'') !!}</button>
+    <button  class="btn btn-acao" type="button">{!! trans('global.lbl_build_my_trip') !!}</button>
   </a>
 </ul>
