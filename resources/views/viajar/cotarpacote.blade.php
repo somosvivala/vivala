@@ -4,5 +4,7 @@
       Faça a cotação de sua viagem conosco
     </h4>
   </div>
-  <a href="/cotarviagem" class="btn btn-acao">Cotar viagem</a>
+  <a href="/cotarviagem">
+    <button  class="btn btn-acao" type="button">Cotar viagem</button>
+  </a>
 </ul>

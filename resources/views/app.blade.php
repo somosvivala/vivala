@@ -5,7 +5,6 @@
 
     {{-- Codificação de Caracteres --}}
       <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-      <meta content="utf-8" http-equiv="encoding">
 
     {{-- Lingua utilizada na view --}}
 		<meta name="language" content='{{ Config::get('app.locale') }}'>
@@ -58,6 +57,8 @@
           <link href="{{ asset('/fonts/avenir/avenir.css') }}" rel='stylesheet' type='text/css'>
           <link href="{{ asset('/fonts/futura/futura.css') }}" rel='stylesheet' type='text/css'>
           <link href="{{ asset('/fonts/gotham/gotham.css') }}" rel='stylesheet' type='text/css'>
+          <link href="{{ asset('/fonts/weather-icons/weather-icons.css') }}" rel='stylesheet' type='text/css'>
+          <link href="{{ asset('/fonts/weather-icons/weather-icons-wind.css') }}" rel='stylesheet' type='text/css'>
           <link href="{{ asset('/fonts/vivala/vivala-glyphicons.css') }}" rel='stylesheet' type='text/css'>
         {{-- AllCSS --}}
           <link href="{{ asset('/css/Jcrop/jquery.Jcrop.min.css') }}" rel="stylesheet">
