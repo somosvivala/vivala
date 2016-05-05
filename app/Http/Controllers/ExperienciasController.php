@@ -15,12 +15,12 @@ class ExperienciasController extends Controller {
 	 */
 	public function getIndex()
 	{
-            if(Agent::isDesktop()){
-            
-                echo "Desktop";
+            $experiencias = [];
+
+            if(!Agent::isDesktop()){
+		return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
             } else {
-            
-                echo "mobile";
+		return view("experiencias.listaexperiencias", compact("experiencias") );
             }
 	}
 
