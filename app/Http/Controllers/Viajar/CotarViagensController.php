@@ -9,16 +9,22 @@ use Illuminate\Http\Request;
 class CotarViagensController extends ViajarController {
 
 	/**
-	 * Exibe a view referente aos Interesses.
+	 * Exibe a view referente ao Form de Cotação de Viagens
 	 *
-	 *
-	 * @return Response
+	 * @return View
 	 */
 	public function getIndex()
 	{
-		$num_adultos = 10;
-		$num_criancas = 10;
-		return view('viajar._cotacaoviagens', compact('num_adultos, num_criancas'));
+		$configuracoesForm = new \stdClass();
+		$configuracoesForm->max_nro_adultos = 10;
+		$configuracoesForm->max_nro_criancas = 10;
+		
+		return view('viajar._cotacaoviagens', compact('configuracoesForm'));
 	}
 
+	public function getForm()
+	{
+
+		return view('viajar._cotacaoviagens-sucesso');
+	}
 }
