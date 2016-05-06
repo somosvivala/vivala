@@ -575,7 +575,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step4',
                 intro: '<p calss="text-center">Here in the middle you can see the posts and news from people you follow into the <span class="laranja">Vivalá</span>.<br/>Stay tuned on the news!</p>',
-                position: 'right'
+                position: 'top'
               },
               {
                 element: '.tour-pilar-conectar-step5',
@@ -590,7 +590,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step7',
                 intro: '<p class="text-center"><span class="laranja">Like Vivalá on Facebook</span> and stay tuned to our big news!</p>',
-                position: 'top'
+                position: 'right'
               }
             ]
           });
@@ -617,7 +617,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step4',
                 intro: '<p calss="text-center">Aqui no meio você poderá ver as postagens e notícias das pessoas que você segue dentro da <span class="laranja">Vivalá</span>.<br/>Fique por dentro das novidades!</p>',
-                position: 'right'
+                position: 'top'
               },
               {
                 element: '.tour-pilar-conectar-step5',
@@ -632,7 +632,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step7',
                 intro: '<p class="text-center"><span class="laranja">Curta a Vivalá no Facebook</span> e fique ligado em nossas novidades!</p>',
-                position: 'top'
+                position: 'right'
               }
             ]
           });

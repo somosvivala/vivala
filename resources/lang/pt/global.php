@@ -496,6 +496,7 @@ return[
   'lbl_page_editing_' => 'Editando Página',
   'lbl_page_editing_' => 'Editando Páginas',
   'lbl_page_manage' => 'Gerenciar Páginas',
+  'lbl_page_not_found' => 'Página Não Encontrada',
   'lbl_page_submit' => 'Enviar Página',
   'lbl_page_update' => 'Atualizar Página',
   'lbl_page_no' => 'Sem páginas.',

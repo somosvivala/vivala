@@ -449,6 +449,7 @@ return[
   'lbl_page_create' => 'Create Page',
   'lbl_page_edit' => 'Edit Page',
   'lbl_page_manage' => 'Manage Pages',
+  'lbl_page_not_found' => 'Page Not Found',
   'lbl_page_submit' => 'Send Page',
   'lbl_page_update' => 'Update Page',
   'lbl_pagination_next' => 'Next',
