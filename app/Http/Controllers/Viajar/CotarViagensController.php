@@ -18,7 +18,7 @@ class CotarViagensController extends ViajarController {
 		$configuracoesForm = new \stdClass();
 		$configuracoesForm->max_nro_adultos = 10;
 		$configuracoesForm->max_nro_criancas = 10;
-		
+
 		return view('viajar._cotacaoviagens', compact('configuracoesForm'));
 	}
 

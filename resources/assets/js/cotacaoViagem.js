@@ -11,18 +11,24 @@ switch(linguaAtiva){
   default:
 }
 
-var ajaxFormCotacao = function(){
-  var origem, destino, data-ida,
-      data-volta, data-flexivel,
-      qtd-adultos, qtd-criancas,
-      melhor-periodo;
+// Retirando click OutOfArea da modal
+$('#cotacao-viagem').modal({
+    backdrop: 'static',
+    keyboard: false
+});
 
-  ajax = $.ajax({
-    url: '',
-    type: 'POST',
-    dataType: 'html',
-    data: defaultParams,
-  })
-  .done(function(){})
-  .fail(function(){});
-}
+// var ajaxFormCotacao = function(){
+//   var origem, destino, data-ida,
+//       data-volta, data-flexivel,
+//       qtd-adultos, qtd-criancas,
+//       melhor-periodo;
+//
+//   ajax = $.ajax({
+//     url: '',
+//     type: 'POST',
+//     dataType: 'html',
+//     data: defaultParams,
+//   })
+//   .done(function(){})
+//   .fail(function(){});
+//}

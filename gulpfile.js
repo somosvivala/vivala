@@ -84,6 +84,7 @@ elixir(function(mix) {
       /* ClickbusPayment Mercado Pago Gateway*/
       '../../assets/js/clickbus-payments.js',
 
-
+      /* featureCotaViagem */
+      '../../assets/js/cotacaoViagem.js',
 	], 'public/js/vendor.js');
 });

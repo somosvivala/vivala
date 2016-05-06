@@ -3,7 +3,7 @@
 {{-- @include('cuidar.ultimosposts') --}}
 
 {{-- QUERO VIAJAR --}}
-@include('viajar.cotarpacote')
+{{-- @include('viajar.cotarpacote') --}}
 @include('viajar.sugestoespacotes')
 
 {{-- QUERO CONECTAR --}}
