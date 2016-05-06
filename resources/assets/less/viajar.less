@@ -202,23 +202,23 @@ ul.quartos-hotel {
 
 /* Feature CotaViagem */
 #cotacao-viagem{
-  .circulo-icones,
-  .tempo-icones{
-    min-width:100%;
-    min-height:100%;
-    background-color: @cor-secundaria;
-    transition: background-color 0.3s ease-in;
-    -webkit-transition: background-color 0.3s ease-in;
-    -moz-transition: background-color 0.3s ease-in;
-    border-radius: 50%;
+  .conjunto-icones{
     &:hover{
-      background-color: @cor-primaria;
-      transition: background-color 0.3s ease-in;
-      -webkit-transition: background-color 0.3s ease-in;
-      -moz-transition: background-color 0.3s ease-in;
+      .icone-externo{
+        color: @cor-primaria;
+        transition: color 0.3s ease-in;
+        -webkit-transition: color 0.3s ease-in;
+        -moz-transition: color 0.3s ease-in;
+      }
     }
-    i{
-      color:white;
+    .icone-externo{
+      color: @cor-secundaria;
+      transition: color 0.3s ease-in;
+      -webkit-transition: color 0.3s ease-in;
+      -moz-transition: color 0.3s ease-in;
+    }
+    .icone-interno{
+      color: white;
     }
   }
   .divisoria{
@@ -231,8 +231,4 @@ ul.quartos-hotel {
     font-family:'Avenir Light';
     font-size:2rem;
   }
-  #cotacao-basica{}
-  #cotacao-onibus{}
-  #cotacao-voos{}
-  #cotacao-hospedagens{}
 }

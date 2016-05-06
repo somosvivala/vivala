@@ -10,13 +10,12 @@ switch(linguaAtiva){
   break;
   default:
 }
-
-// Retirando click OutOfArea da modal
-$('#cotacao-viagem').modal({
-    backdrop: 'static',
-    keyboard: false
+jQuery(document).ready(function($) {
+  $('#ativa-form-hospedagem').click(function(){
+    console.log('entrei no toggle');
+      $('#cotacao-hospedagem').toggle();
+  });
 });
-
 // var ajaxFormCotacao = function(){
 //   var origem, destino, data-ida,
 //       data-volta, data-flexivel,

@@ -24,7 +24,6 @@ class CotarViagensController extends ViajarController {
 
 	public function getForm()
 	{
-
 		return view('viajar._cotacaoviagens-sucesso');
 	}
 }

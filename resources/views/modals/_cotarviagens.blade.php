@@ -5,40 +5,52 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="{!! trans('lbl_close') !!}">
           <span aria-hidden="true"><i class="fa fa-close"></i></span>
         </button>
-        <h4 class="modal-title font-bold-upper text-center">
+        <h3 class="modal-title font-bold-upper text-center">
           {!! trans('global.wannatravel_trip_setup') !!}
-        </h4>
+        </h3>
       </div>
       <div class="modal-body">
         <div class="row">
-          <small class="sub-titulo ajuste-fonte-avenir-medium margin-b-1 ">
+          <h4 class="sub-titulo ajuste-fonte-avenir-medium text-center margin-b-1">
               {!! trans('global.lbl_what_are_you_looking_for') !!}?
-          </small>
+          </h4>
           <div class="col-md-12 col-lg-12 list-group text-center">
-            <div class="col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3">
+            <div class="col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2">
               <div class="text-center">
                 <a href="#" id="ativa-form-voos">
-                  <div class="circulo-icones">
-                    <i class="fa fa-8x fa-plane"></i>
-                  </div>
+                  <span class="fa-stack fa-5x conjunto-icones">
+                    <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                    <i class="fa fa-plane fa-stack-1x icone-interno"></i>
+                  </span>
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_go') !!}</p>
                 </a>
               </div>
             </div>
             <div class="col-md-2 col-lg-2">
               <a href="#" id="ativa-form-onibus">
-                <div class="circulo-icones">
-                  <i class="fa fa-8x fa-bus"></i>
-                </div>
+                <span class="fa-stack fa-5x conjunto-icones">
+                  <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                  <i class="fa fa-bus fa-stack-1x icone-interno"></i>
+                </span>
                 <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_bus') !!}</p>
               </a>
             </div>
             <div class="col-md-2 col-lg-2">
               <a href="#" id="ativa-form-hospedagem">
-                <div class="circulo-icones">
-                  <i class="fa fa-8x fa-bed"></i>
-                </div>
+                <span class="fa-stack fa-5x conjunto-icones">
+                  <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                  <i class="fa fa-bed fa-stack-1x icone-interno"></i>
+                </span>
                 <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.quimera_lodge') !!}</p>
+              </a>
+            </div>
+            <div class="col-md-2 col-lg-2">
+              <a href="#" id="ativa-form-carros">
+                <span class="fa-stack fa-5x conjunto-icones">
+                  <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                  <i class="fa fa-car fa-stack-1x icone-interno"></i>
+                </span>
+                <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_drive') !!}</p>
               </a>
             </div>
           </div>
@@ -129,9 +141,10 @@
                 <div class="col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2 text-center">
                   <a href="#">
                     <span title="{!! trans('global.time_morning') !!}">
-                      <div class="tempo-icones">
-                        <i class="wi wi-horizon-alt fa-4x"></i>
-                      </div>
+                      <span class="fa-stack fa-3x conjunto-icones">
+                        <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                        <i class="wi wi-horizon-alt fa-stack-1x icone-interno"></i>
+                      </span>
                       {!! Form::hidden('pref-tempo-manha', 'manha') !!}
                     </span>
                   </a>
@@ -139,9 +152,10 @@
                 <div class="col-md-2 col-lg-2 text-center">
                   <a href="#">
                     <span title="{!! trans('global.time_afternoon') !!}">
-                      <div class="tempo-icones">
-                        <i class="wi wi-day-sunny fa-4x"></i>
-                      </div>
+                      <span class="fa-stack fa-3x conjunto-icones">
+                        <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                        <i class="wi wi-day-sunny fa-stack-1x icone-interno"></i>
+                      </span>
                       {!! Form::hidden('pref-tempo-tarde', 'tarde') !!}
                     </span>
                   </a>
@@ -149,9 +163,10 @@
                 <div class="col-md-2 col-lg-2 text-center">
                   <a href="#">
                     <span title="{!! trans('global.time_night') !!}">
-                      <div class="tempo-icones">
-                        <i class="fa fa-moon-o fa-4x"></i>
-                      </div>
+                      <span class="fa-stack fa-3x conjunto-icones">
+                        <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                        <i class="fa fa-moon-o fa-stack-1x icone-interno"></i>
+                      </span>
                       {!! Form::hidden('pref-tempo-noite', 'noite') !!}
                     </span>
                   </a>
@@ -159,9 +174,10 @@
                 <div class="col-md-2 col-lg-2 text-center">
                   <a href="#">
                     <span title="{!! trans('global.time_dawn') !!}">
-                      <div class="tempo-icones">
-                        <i class="wi wi-stars fa-4x"></i>
-                      </div>
+                      <span class="fa-stack fa-3x conjunto-icones">
+                        <i class="fa fa-circle fa-stack-2x icone-externo"></i>
+                        <i class="wi wi-stars fa-stack-1x icone-interno"></i>
+                      </span>
                       {!! Form::hidden('pref-tempo-madrugada', 'madrugada') !!}
                     </span>
                   </a>
@@ -170,132 +186,152 @@
             </div>
             <div id="cotacao-voos" class="row hidden">
               <hr class="divisoria"/>
-              <div id="cotacao-hospedagem-titulo" class="row margin-t-2">
-                <div class="col-md-12 col-lg-12 text-center cotacao-titulo">
-                  {!! trans('global.wannatravel_trip_go') !!}
+              <div id="cotacao-voos-titulo" class="row margin-t-2">
+                <div class="col-md-12 col-lg-12 text-center">
+                  <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_go') !!}</h5>
                 </div>
               </div>
             </div>
             <div id="cotacao-onibus" class="row hidden">
               <hr class="divisoria"/>
-              <div id="cotacao-hospedagem-titulo" class="row margin-t-2">
-                <div class="col-md-12 col-lg-12 text-center cotacao-titulo">
-                  {!! trans('global.wannatravel_trip_bus') !!}
+              <div id="cotacao-onibus-titulo" class="row margin-t-2">
+                <div class="col-md-12 col-lg-12 text-center">
+                  <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_bus') !!}</h5>
                 </div>
               </div>
             </div>
-            <div id="cotacao-hospedagem" class="row hidden">
+            <div id="cotacao-hospedagem" class="row">
               <hr class="divisoria"/>
               <div id="cotacao-hospedagem-titulo" class="row margin-t-2 margin-b-2">
-                <div class="col-md-12 col-lg-12 text-center cotacao-titulo">
-                  <p class="titulo-secao">{!! trans('global.quimera_lodge') !!}</p>
+                <div class="col-md-12 col-lg-12 text-center">
+                  <h5 class="titulo-secao">{!! trans('global.quimera_lodge') !!}</h5>
                 </div>
               </div>
               <div id="cotacao-hospedagem-quartos" class="row margin-t-1">
-                <div class="col-md-6 col-lg-6">
-                  <div class="col-md-5 col-lg-5">
-                    <strong>{!! trans('global.lbl_how_many_rooms') !!}?</strong>
-                  </div>
-                  <div class="col-md-7 col-lg-7">
-                    <select id="qtd-quartos-hotel" class="form-control">
-                        @for($i=1; $i<=10; $i++)
-                            <option name="" value="{{ $i }}">
-                            {{ $i }}
-                            @if($i === 1)
-                              {!! trans('global.quimera_travel_room') !!}
-                            @endif
-                            @if($i >= 2)
-                              {!! trans('global.quimera_travel_room_') !!}
-                            @endif
-                            </option>
-                        @endfor
-                    </select>
+                <div class="col-md-12 col-lg-12">
+                  <div class="col-md-6 col-lg-6">
+                    <div class="col-md-5 col-lg-5">
+                      <strong>{!! trans('global.lbl_how_many_rooms') !!}?</strong>
+                    </div>
+                    <div class="col-md-7 col-lg-7">
+                      <select id="qtd-quartos-hotel" class="form-control">
+                          @for($i=1; $i<=10; $i++)
+                              <option name="" value="{{ $i }}">
+                              {{ $i }}
+                              @if($i === 1)
+                                {!! trans('global.quimera_travel_room') !!}
+                              @endif
+                              @if($i >= 2)
+                                {!! trans('global.quimera_travel_room_') !!}
+                              @endif
+                              </option>
+                          @endfor
+                      </select>
+                    </div>
                   </div>
                 </div>
               </div>
               <div id="cotacao-hospedagem-adicionais" class="row margin-t-1">
                 <div class="col-md-12 col-lg-12">
                   <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
-                    <strong>
-                      {!! trans('global.lbl_extra_hosting') !!}?
-                    </strong>
+                    <div class="col-md-12 col-lg-12">
+                      <strong>
+                        {!! trans('global.lbl_extra_hosting') !!}?
+                      </strong>
+                    </div>
                   </div>
-                  <div class="col-md-4 col-lg-4">
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-cafe', 'adicional-cafe') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_breakfast_included') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-wifi', 'adicional-wifi') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_wifi') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-ar-condicionado', 'adicional-ar-condicionado') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_air_conditioning') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-tv-cabo', 'adicional-tv-cabo') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_tv_cable') !!}</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4 col-lg-4">
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-cancelamento', 'adicional-cancelamento') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_cancellation') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-animal', 'adicional-animal') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_pet_') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-piscina', 'adicional-piscina') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_pool') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-academia', 'adicional-academia') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_gym') !!}</span>
-                    </p>
-                  </div>
-                  <div class="col-md-4 col-lg-4">
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-estacionamento', 'adicional-estacionamento') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_parking') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-banheiro-privativo', 'adicional-banheiro-privativo') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_privative_bathroom') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('cotacao-hospedagem-adicional-varanda', 'adicional-varanda') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_balcony') !!}</span>
-                    </p>
-                    <p>
-                    {!! Form::checkbox('hotel-adicional-translado', 'value') !!}
-                    <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_shuttle') !!}</span>
-                    </p>
+                  <div class="col-md-12 col-lg-12">
+                    <div class="col-md-4 col-lg-4">
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-cafe', 'adicional-cafe') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_breakfast_included') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-wifi', 'adicional-wifi') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_wifi') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-ar-condicionado', 'adicional-ar-condicionado') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_air_conditioning') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-tv-cabo', 'adicional-tv-cabo') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_tv_cable') !!}</span>
+                      </p>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-cancelamento', 'adicional-cancelamento') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_cancellation') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-animal', 'adicional-animal') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_pet_') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-piscina', 'adicional-piscina') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_pool') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-academia', 'adicional-academia') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_gym') !!}</span>
+                      </p>
+                    </div>
+                    <div class="col-md-4 col-lg-4">
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-estacionamento', 'adicional-estacionamento') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_parking') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-banheiro-privativo', 'adicional-banheiro-privativo') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_privative_bathroom') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('cotacao-hospedagem-adicional-varanda', 'adicional-varanda') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_balcony') !!}</span>
+                      </p>
+                      <p>
+                      {!! Form::checkbox('hotel-adicional-translado', 'value') !!}
+                      <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_shuttle') !!}</span>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
               <div id="cotacao-hospedagem-bairro" class="row margin-t-1">
-                <div class="col-md-8 col-lg-8">
-                  <div class="col-md-7 col-lg-7">
-                    <strong>{!! trans('global.lbl_neighborhood_preferred_region') !!}:</strong>
+                <div clas="col-md-12 col-lg-12">
+                  <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12">
+                      <div class="col-md-3 col-lg-3">
+                        <strong>{!! trans('global.lbl_neighborhood_preferred_region') !!}:</strong>
+                      </div>
+                      <div class="col-md-6 col-lg-6">{!! Form::text('') !!}</div>
+                    </div>
                   </div>
-                  <div class="col-md-5 col-lg-5">{!! Form::text('') !!}</div>
                 </div>
               </div>
               <div id="cotacao-hospedagem-adicional" class="row margin-t-1">
                 <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
                   <div class="col-md-12 col-lg-12">
-                    <strong>
-                      {!! trans('global.lbl_like_to_add_more_information') !!}?
-                    </strong>
+                    <div class="col-md-12 col-lg-12">
+                      <strong>{!! trans('global.lbl_like_to_add_more_information') !!}?</strong>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-12 col-lg-12">
                   <div class="col-md-12 col-lg-12">
-                    {!! Form::textarea('') !!}
+                    <div class="col-md-12 col-lg-12">
+                      {!! Form::textarea('') !!}
+                    </div>
                   </div>
+                </div>
+              </div>
+            </div>
+            <div id="cotacao-carros" class="row hidden">
+              <hr class="divisoria"/>
+              <div id="cotacao-carros-titulo" class="row margin-t-2">
+                <div class="col-md-12 col-lg-12 text-center">
+                  <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_drive') !!}</h5>
                 </div>
               </div>
             </div>
