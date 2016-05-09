@@ -14,8 +14,19 @@ class CreateExperienciasTable extends Migration {
 	{
 		Schema::create('experiencias', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->timestamps();
+        $table->increments('id');
+        $table->timestamps();
+
+        //Campos para a relacao polimorfica,
+        //assim experiencias podem pertencer a mais de 1 tipo de entidade
+        $table->integer('owner_id')->nullable();
+        $table->string('owner_type')->nullable();
+
+        //campos com as informacoes da experiencias
+        $table->string('titulo')->nullable();
+        $table->string('descricao')->nullable();
+        $table->decimal('preco', 7, 2)->nullable();
+
 		});
 	}
 
