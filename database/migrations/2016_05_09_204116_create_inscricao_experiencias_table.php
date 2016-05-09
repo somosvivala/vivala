@@ -16,6 +16,7 @@ class CreateInscricaoExperienciasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+      $table->date('data_pagamento')->nullable();
 
       //status da inscricao, se foi pago, cancelado, já foi realizado etc..
 			$table->enum('status', ['pendente', 'confirmada', 'cancelada', 'realizada'])->default('pendente');

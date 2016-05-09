@@ -4,6 +4,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class InscricaoExperiencia extends Model {
 
+
+    /**
+     * Denotando os campos dates para que o laravel sirva uma instancia do Carbon
+     */
+	  protected $dates = ['data_pagamento'];
+
     /**
      * Toda as inscricoes pertencem a uma experiencia especifica
      */
@@ -19,8 +25,5 @@ class InscricaoExperiencia extends Model {
     {
         return $this->belongsTo('App\Perfil');
     }
-
-
-
 
 }

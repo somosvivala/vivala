@@ -726,7 +726,6 @@ class Perfil extends Model {
         return ( preg_match('/ong/i', get_class($this)) ? true : false );
     }
 
-
     /**
      * Um Perfil pode se inscrever em varias experiencias
      */

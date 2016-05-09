@@ -38,6 +38,12 @@ class Experiencia extends Model
         return $this->hasMany('App\InscricaoExperiencia');
     }
 
-
+    /**
+     * Uma Experiencia pertence a muitas CategoriaExperiencia 
+     */
+    public function categorias()
+    {
+        return $this->belongsToMany('App\CategoriaExperiencia');
+    }
 
 }
