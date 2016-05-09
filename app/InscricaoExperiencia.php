@@ -12,6 +12,14 @@ class InscricaoExperiencia extends Model {
         return $this->belongsTo('App\Experiencia');
     }
 
+    /**
+     * Toda as inscricoes pertencem a um usuario especifico
+     */
+    public function perfil()
+    {
+        return $this->belongsTo('App\Perfil');
+    }
+
 
 
 

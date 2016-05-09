@@ -27,6 +27,10 @@ class CreateExperienciasTable extends Migration {
         $table->string('descricao')->nullable();
         $table->decimal('preco', 7, 2)->nullable();
 
+        //status da experiencia, se esta em analise, publicada, se já foi realizada (finalizada) etc..
+        $table->enum('status', ['analise', 'publicada', 'finalizada'])->default('analise');
+
+
 		});
 	}
 

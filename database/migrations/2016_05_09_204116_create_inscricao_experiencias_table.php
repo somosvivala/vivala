@@ -16,6 +16,24 @@ class CreateInscricaoExperienciasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->timestamps();
+
+      //status da inscricao, se foi pago, cancelado, já foi realizado etc..
+			$table->enum('status', ['pendente', 'confirmada', 'cancelada', 'realizada'])->default('pendente');
+
+      //FK para experiencia
+			$table->integer('experiencia_id')->unsigned()->nullable();
+			$table->foreign('experiencia_id')
+				->references('id')
+				->on('experiencias')
+				->onDelete('cascade');
+
+      //FK para perfil
+			$table->integer('perfil_id')->unsigned()->nullable();
+			$table->foreign('perfil_id')
+				->references('id')
+				->on('perfils')
+				->onDelete('cascade');
+
 		});
 	}
 
