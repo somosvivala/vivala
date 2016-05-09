@@ -727,6 +727,12 @@ class Perfil extends Model {
     }
 
 
-
+    /**
+     * Um Perfil pode se inscrever em varias experiencias
+     */
+    public function inscricoesExperiencias()
+    {
+        return $this->hasMany('App\InscricaoExperiencia');
+    }
 
 }

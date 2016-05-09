@@ -7,6 +7,10 @@ class Experiencia extends Model
 
     //mass assigned fields
     protected $fillable = [
+        'titulo',
+        'descricao',
+        'preco',
+        'status'
     ];
 
     /**
@@ -27,7 +31,7 @@ class Experiencia extends Model
 
 
     /**
-     * Uma experiencia em muitas inscriçoes
+     * Uma experiencia tem muitas inscriçoes
      */
     public function inscricoes()
     {
