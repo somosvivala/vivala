@@ -12,14 +12,10 @@ class CreateTabelaPivoCategoriasExperiencias extends Migration {
 	 */
 	public function up()
 	{
-    /**
-     * O Laravel usa como padrao o nome dos models em ordem alfabetica quando busca a tabela pivo
-     * em relacoes do tipo belongsToMany
-     */
-		Schema::table('categoriaexperiencia_experiencia', function(Blueprint $table)
+		Schema::create('categoria_experiencia_experiencia', function(Blueprint $table)
 		{
-        $table->integer('categoriaexperiencia_id')->unsigned();
-        $table->foreign('categoriaexperiencia_id')
+        $table->integer('categoria_experiencia_id')->unsigned();
+        $table->foreign('categoria_experiencia_id')
             ->references('id')
             ->on('categoria_experiencias');
 
@@ -27,7 +23,6 @@ class CreateTabelaPivoCategoriasExperiencias extends Migration {
         $table->foreign('experiencia_id')
             ->references('id')
             ->on('experiencias');
-
 		});
 	}
 
@@ -38,10 +33,6 @@ class CreateTabelaPivoCategoriasExperiencias extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('categoriaexperiencia_experiencia', function(Blueprint $table)
-		{
-			//
-		});
-	}
-
+		Schema::drop('categoria_experiencia_experiencia');
+  }
 }
