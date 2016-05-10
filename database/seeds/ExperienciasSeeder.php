@@ -27,7 +27,7 @@ class ExperienciasSeeder extends Seeder {
      */
     private function seedExperienciasComCategorias()
     {
-        $vivala = Ong::find(17);
+        $ong = Ong::orderByRaw('RANDOM()')->first();
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $experiencia = Experiencia::create([
@@ -37,7 +37,7 @@ class ExperienciasSeeder extends Seeder {
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
         $experiencia->push();
-        $vivala->experiencias()->save($experiencia);
+        $ong->experiencias()->save($experiencia);
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $experiencia = Experiencia::create([
@@ -47,7 +47,7 @@ class ExperienciasSeeder extends Seeder {
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
         $experiencia->push();
-        $vivala->experiencias()->save($experiencia);
+        $ong->experiencias()->save($experiencia);
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $experiencia = Experiencia::create([
@@ -57,9 +57,9 @@ class ExperienciasSeeder extends Seeder {
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
         $experiencia->push();
-        $vivala->experiencias()->save($experiencia);
+        $ong->experiencias()->save($experiencia);
 
-        $vivala->push();
+        $ong->push();
     }
 
     /**
