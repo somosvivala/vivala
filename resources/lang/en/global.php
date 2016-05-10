@@ -332,7 +332,7 @@ return[
   'lbl_how_it_works' => 'How it works',
   'lbl_how_many_child' => 'Some child',
   'lbl_how_many_rooms' => 'How many rooms',
-  'lbl_how_many_travellers' => 'How many travellers',
+  'lbl_how_many_travellers' => 'How many travellers (adults)',
   'lbl_img' => 'Picture',
   'lbl_img_' => 'Pictures',
   'lbl_img_add' => 'Add Picture',
@@ -515,6 +515,7 @@ return[
   'lbl_report_problem' => 'Report a problem',
   'lbl_restaurant' => 'Restaurant',
   'lbl_restaurant_' => 'Restaurants',
+  'lbl_restrict_hours' => 'I have restricted schedule',
   'lbl_result' => 'Result',
   'lbl_result_' => 'Results',
   'lbl_review' => 'Review',
@@ -776,8 +777,10 @@ return[
       'social_network_youtube_img_title' => 'Follow Vivalá channel on YouTube',
 
     /* Passageiros */
+      'passenger_adult_no' => 'None Adults',
       'passenger_adult' => 'Adult',
       'passenger_adult_' => 'Adults',
+      'passenger_child_no' => 'None Children',
       'passenger_child' => 'Child',
       'passenger_child_' => 'Children',
       'passenger_elder' => 'Senior',
