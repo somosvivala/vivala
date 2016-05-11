@@ -727,6 +727,13 @@ class Perfil extends Model {
     }
 
 
+    /**
+     * Um Perfil pode ter fazer varias iteracoes com a plataforma
+     */
+    public function acoesPlataforma()
+    {
+        return $this->morphMany('App\InteracaoPlataforma', 'author', 'author_type', 'author_id');
+    }
 
 
 }
