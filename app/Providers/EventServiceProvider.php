@@ -42,6 +42,13 @@ class EventServiceProvider extends ServiceProvider {
 			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
 		],
 
+    //Quando ocorrer alguma acao que sera guardada no log
+    'App\Events\NovaInteracaoPlataforma' => [
+			'App\Handlers\Events\Logger\CriarLogInteracaoPlataforma',
+		],
+
+
+
 	];
 
 
