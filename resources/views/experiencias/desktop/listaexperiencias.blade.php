@@ -53,7 +53,7 @@
                 @foreach($experiencias as $Experiencia)
                 <li class="row">
                     <a href="/experiencias/{{ $Experiencia->id}}">
-                        <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}">
+                        <img class="col-sm-6" src="{{ $Experiencia->fotoCapa }}" alt="{{ $Experiencia->titulo }}">
                         <h4 class="col-sm-6">{{ $Experiencia->titulo }}</h4>
                         <span class="col-sm-6">{{ $Experiencia->descricao }}</span>
                         <span class="col-sm-6">{{ $Experiencia->preco }}</span>
