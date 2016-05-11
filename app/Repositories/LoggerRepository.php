@@ -6,8 +6,9 @@ class LoggerRepository extends LoggerRepositoryInterface
 {
 
     //implementando metodo da interface
-    protected function saveLog()
+    public function saveLog($logObj)
     {
-        //persisting log
+        echo "inside saveLog() \n";
+        var_dump($logObj);
     }
 }

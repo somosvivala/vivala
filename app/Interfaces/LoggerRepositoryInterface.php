@@ -9,6 +9,6 @@ abstract class LoggerRepositoryInterface {
     /**
      * Metodo que sera implementado pelos repositorios que o extenderem
      */
-    protected abstract function saveLog();
+    public abstract function saveLog($logObj);
 
 }

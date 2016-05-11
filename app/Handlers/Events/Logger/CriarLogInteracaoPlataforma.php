@@ -32,9 +32,7 @@ class CriarLogInteracaoPlataforma
      */
     public function handle(NovaInteracaoPlataforma $event)
     {
-        echo "inside handler";
-        echo get_class($this->logger);
-        //
+        $this->logger->saveLog($event->log);
     }
 
 }
