@@ -14,7 +14,7 @@ use App\Repositories\ClickBusRepository;
 use App\Http\Requests\SelecionarPoltronasClickbusRequest;
 use Auth;
 use App\Events\ClickBusCompraFinalizada;
-
+use Config;
 use App\Events\NovaInteracaoPlataforma;
 
 class ClickBusController extends Controller

@@ -1,6 +1,6 @@
 <?php namespace App\Http\Controllers;
 
-use App\Http\Requests;
+use App\Http\Requests\LoggerRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -14,28 +14,18 @@ class LoggerController extends Controller {
     /**
      * Recebe por POST as informacoes referentes a essa acao que vai ser registrada
      *
-     * @param $request - Uma instancia de LoggerRequest, para validar a presenca dos parametros
+     * @param $request - Uma instancia de LoggerRequest, para garantir que os
+     * parametros ja estejam de uma determinada forma
      */
-    public function postLogaction(Request $request)
+    public function postLogaction(LoggerRequest $request)
     {
-        //pegando o tipo da acao, testando se existe algum valor associado a esse tipo
-        $tipo = Config::get('logger.'.$request->strTipo);
-        $tipo = isset($tipo) ? $tipo : $request->strTipo;
-
-        //pegando a descricao da acao, testando se existe algum valor associado a essa descricao
-        $descricao = Config::get('logger.'.$request->strDesc);
-        $descricao = isset($descricao) ? $descricao : $request->strDesc;
-
-        dd($tipo, $descricao);
-        /*
         //disparando o evento avisando que ocorreu uma acao que queremos registrar
         event(new NovaInteracaoPlataforma(
             Auth::user()->entidadeAtiva,
-            $tipo,
-            $descricao,
-            $request->strUrl,
-            json_encode($request->strExtra)
+            $request-tipo,
+            $request->descricao,
+            $request->url,
+            isset($request->extra) ? json_encode($request->extra) : null
             ));
-         */
     }
 }

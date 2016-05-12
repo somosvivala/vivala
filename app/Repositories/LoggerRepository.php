@@ -20,12 +20,7 @@ class LoggerRepository extends LoggerRepositoryInterface
     public function saveLog($logObj)
     {
         //criando uma nova acao na plataforma
-        $novaAcao = InteracaoPlataforma::create([
-            'tipo'=> $logObj->tipo,
-            'descricao'=> $logObj->descricao,
-            'url'=> $logObj->url,
-            'extra'=> $logObj->extra
-            ]);
+        $novaAcao = InteracaoPlataforma::create((array)$logObj);
 
         //Se tiver vindo algum author, entao vamos associa-lo a nova acao criada
         if (isset($logObj->author)) {
