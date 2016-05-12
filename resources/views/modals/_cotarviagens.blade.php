@@ -19,7 +19,7 @@
               </h4>
               <div class="col-md-12 col-lg-12 list-group text-center">
                 {{-- Botão VÔOS --}}
-                <div class="col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2">
+                <div class="col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3">
                   <div class="text-center">
                     <a href="#" id="ativa-form-voos" class="click-img-no-border">
                       <span class="fa-stack fa-5x conjunto-icones">
@@ -28,7 +28,7 @@
                       </span>
                     </a>
                     <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_go') !!}</p>
-                    {!! Form::hidden('cotacao-voos', 0) !!}
+                    {!! Form::hidden('cotacao-voos', 0, ['id' => 'cotacao-voos']) !!}
                   </div>
                 </div>
                 {{-- Botão ÔNIBUS --}}
@@ -40,7 +40,7 @@
                     </span>
                   </a>
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_bus') !!}</p>
-                  {!! Form::hidden('cotacao-onibus', 0) !!}
+                  {!! Form::hidden('cotacao-onibus', 0, ['id' => 'cotacao-onibus']) !!}
                 </div>
                 {{-- Botão HOSPEDAGEM --}}
                 <div class="col-md-2 col-lg-2">
@@ -51,9 +51,9 @@
                     </span>
                   </a>
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.quimera_lodge') !!}</p>
-                  {!! Form::hidden('cotacao-hospedagem', 0) !!}
+                  {!! Form::hidden('cotacao-hospedagem', 0, ['id' => 'cotacao-hospedagem']) !!}
                 </div>
-                {{-- Botão CARROS --}}
+                {{-- Botão CARROS -- Desativado temporariamente
                 <div class="col-md-2 col-lg-2">
                   <a href="#" id="ativa-form-carros" class="click-img-no-border desativado">
                     <span class="fa-stack fa-5x conjunto-icones">
@@ -62,8 +62,9 @@
                     </span>
                   </a>
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_drive') !!}</p>
-                  {!! Form::hidden('cotacao-carros', 0) !!}
+                  {!! Form::hidden('cotacao-carros', 0, ['id' => 'cotacao-carros']) !!}
                 </div>
+                --}}
               </div>
             </div>
             {{-- Form Básico --}}
@@ -179,7 +180,7 @@
                       <span class="ajuste-fonte-avenir-medium">{!! trans('global.lbl_flexible_dates') !!}</span>
                   </div>
                 </div>
-
+                {{-- Numero de Adultos e Crianças --}}
                 <div class="col-md-12 col-lg-12 margin-t-1">
                   <div class="col-md-6 col-lg-6">
                     <div class="col-md-6 col-lg-6 padding-l-no">
@@ -199,7 +200,7 @@
                               </option>
                           @endfor
                       </select>
-                      {!! Form::hidden('nro-adultos', 0) !!}
+                      {!! Form::hidden('nro-adultos', 0, ['id' => 'nro-adultos']) !!}
                     </div>
                   </div>
                   <div class="col-md-6 col-lg-6">
@@ -222,10 +223,11 @@
                             </option>
                         @endfor
                       </select>
-                      {!! Form::hidden('nro-criancas', 0) !!}
+                      {!! Form::hidden('nro-criancas', 0, ['id' => 'nro-criancas']) !!}
                     </div>
                   </div>
                 </div>
+                {{-- Períodos para Viajar --}}
                 <div class="col-md-12 col-lg-12 margin-t-2">
                   <div class="col-md-12 col-lg-12">
                     <strong>{!! trans('global.lbl_any_preference_period_to_travel') !!}?</strong>
@@ -235,60 +237,61 @@
                   <div class="row">
                     <ul class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
                       <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#">
+                        <a href="#" id="ativa-tempo-manha" class="click-img-no-border">
                           <span title="{!! trans('global.time_morning') !!}">
                             <span class="fa-stack fa-3x conjunto-icones">
                               <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
                               <i class="wi wi-horizon-alt fa-stack-1x icone-interno"></i>
                             </span>
-                            {!! Form::hidden('pref-tempo-manha', false) !!}
                           </span>
                         </a>
+                        {!! Form::hidden('pref-tempo-manha', 0, ['id' => 'pref-tempo-manha']) !!}
                       </li>
                       <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#">
+                        <a href="#" id="ativa-tempo-tarde" class="click-img-no-border">
                           <span title="{!! trans('global.time_afternoon') !!}">
                             <span class="fa-stack fa-3x conjunto-icones">
                               <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
                               <i class="wi wi-day-sunny fa-stack-1x icone-interno"></i>
                             </span>
-                            {!! Form::hidden('pref-tempo-tarde', false) !!}
                           </span>
                         </a>
+                        {!! Form::hidden('pref-tempo-tarde', 0, ['id' => 'pref-tempo-tarde']) !!}
                       </li>
                       <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#">
+                        <a href="#" id="ativa-tempo-noite" class="click-img-no-border">
                           <span title="{!! trans('global.time_night') !!}">
                             <span class="fa-stack fa-3x conjunto-icones">
                               <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
                               <i class="fa fa-moon-o fa-stack-1x icone-interno"></i>
                             </span>
-                            {!! Form::hidden('pref-tempo-noite', false) !!}
                           </span>
                         </a>
+                        {!! Form::hidden('pref-tempo-noite', 0, ['id' => 'pref-tempo-noite']) !!}
                       </li>
                       <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#">
+                        <a href="#" id="ativa-tempo-madrugada" class="click-img-no-border">
                           <span title="{!! trans('global.time_dawn') !!}">
                             <span class="fa-stack fa-3x conjunto-icones">
                               <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
                               <i class="wi wi-stars fa-stack-1x icone-interno"></i>
                             </span>
-                            {!! Form::hidden('pref-tempo-madrugada', false) !!}
                           </span>
                         </a>
+                        {!! Form::hidden('pref-tempo-madrugada', 0, ['id' => 'pref-tempo-madrugada']) !!}
                       </li>
                     </ul>
                   </div>
                 </div>
+                {{-- Horários Restritos --}}
                 <div class="col-md-12 col-lg-12 margin-t-1 margin-b-2">
-                  <div class="col-md-12 col-lg-12">
+                  <div class="col-md-12 col-lg-12 margin-b-1">
                     <a href="#">
                         <i class="fa fa-plus-circle laranja"></i><span class="ajuste-fonte-avenir-medium laranja"> {!! trans('global.lbl_restrict_hours') !!}</span>
                     </a>
                   </div>
                   <div class="col-md-12 col-lg-12">
-                    {!! Form::textarea('horarios-restritos', null, ['class' => 'form-control', 'rows' => '5', 'placeholder' => trans('global.lbl_restrict_hours'), 'style' => 'resize:none']) !!}
+                    {!! Form::textarea('horarios-restritos', null, ['class' => 'form-control hidden', 'rows' => '5', 'placeholder' => trans('global.lbl_restrict_hours'), 'style' => 'resize:none']) !!}
                   </div>
                 </div>
               </div>
