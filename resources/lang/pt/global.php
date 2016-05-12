@@ -1218,13 +1218,13 @@ return[
     'aboutus_coverphoto_img_alt' => 'Quem Somos',
     'aboutus_coverphoto_img_title' => 'Quem Somos',
     'aboutus_subtitle_our_mission' => 'Nossa Missão',
-    'aboutus_our_mission_text' => 'Fazer com que pessoas de todo o mundo possam viajar e transformar o Brasil, conhecendo diferentes regiões, culturas, crenças e raças, realizando uma imersão cultural, auxiliando o desenvolvimento pessoal, do turismo e das comunidades do país.',
+    'aboutus_our_mission_text' => 'Fazer com que pessoas de todo o mundo possam viajar e transformar realidades através do voluntariado. Queremos fazer com que os usuários da Vivalá possam conhecer diferentes regiões, culturas, crenças e raças, realizando um grande intercâmbio cultural, auxiliando o desenvolvimento pessoas e comunidades.',
     'aboutus_subtitle_why_we_exist' => 'Porquê Nós Existimos',
     'aboutus_why_we_exist_text' => 'A Vivalá nasceu em Outubro de 2015 e foi projetada por jovens apaixonados por viajar e transformar as realidades para melhor. Estamos cansados da situação política e econômica do Brasil e queremos mudar esse panorama com atitude. Não iremos mais terceirizar a culpa da situação onde estamos para o governo, empresas ou outras entidades. Se queremos que as coisas mudem, mudaremos nós mesmos. Vem com a gente!',
     'aboutus_subtitle_our_history' => 'Nossa História',
-    'aboutus_our_history_text_1' => 'Tudo começou quando nossa quando nosso fundador queria conhecer o Brasil através de um mochilão e se deparou com um mercado sem informação de qualidade, vendas fragmentadas e o empacotamento de tudo e todos.',
-    'aboutus_our_history_text_2' => 'Somado com a grande vontade de mudança na realidade política e econômica brasileira, mas uma mudança real, que realmente fizesse diferença na vida das pessoas nos criamos a Vivalá.',
-    'aboutus_our_history_text_3' => 'Reunimos pessoas, conceitos, valores de vida, tecnologia e começamos a construção de uma plataforma que visa fazer com que as pessoas cresçam como indivíduos através de auto conhecimento, diversão e cultura em suas viagens e trabalhos voluntários realizados.',
+    'aboutus_our_history_text_1' => 'Tudo começou quando nosso fundador queria conhecer o Brasil através de um mochilão e se deparou com um mercado sem informação de qualidade, vendas fragmentadas e o empacotamento de tudo e todos.',
+    'aboutus_our_history_text_2' => 'Somado com a grande vontade de mudança na realidade social brasileira, mas uma mudança real, que realmente fizesse diferença na vida das pessoas nos criamos a Vivalá.',
+    'aboutus_our_history_text_3' => 'Reunimos gente de bem, conceitos, valores de vida, tecnologia e começamos a construção de uma plataforma que visa fazer com que os indivíduos cresçam através de conhecimento, diversão e cultura em suas viagens e trabalhos voluntários realizados.',
   //
   /* Parceiros */
     'partners_title' => 'Parceiros',
@@ -1241,10 +1241,11 @@ return[
   /* Contato */
     'contact_title' => 'Contato',
     'contact_subtitle' => 'Vem falar com a gente!',
-    'contact_text_1' => 'Se estiver afim de dar um alô e bater um lero, é só dar uma ligada, mandar um e-mail ou fazer uma visitinha... Você quem decide! O que importa é que estamos sempre de braços abertos para te receber e te ouvir, escutar sua opinião e suas sugestões.',
-    'contact_text_2' => 'Aqui não tem enrolação. O pessoal da Vivalá é gente boa e ama conhecer gente nova! vamos, com muito prazer, escutar tudo o que você tem a dizer!',
+    'contact_text_1' => 'Se quiser falar conosco basta ligar, mandar um e-mail ou fazer uma visita... Você quem decide! Aqui não tem enrolação. O pessoal da Vivalá é gente boa e ama conhecer gente nova!',
+    'contact_text_2' => 'O que importa é que estamos sempre de braços abertos para te receber e te ouvir. Somos humildes em ouvir críticas e ficamos muito felizes em saber dos elogios.',
+    'contact_text_3' => 'Não guarde para você, conte pra gente!',
     'contact_our_email' => 'Nosso email:',
-    'contact_our_phone' => 'Nosso telefone:',
+    'contact_our_phone' => 'Nossos telefones:',
     'contact_our_address' => 'Nosso endereço',
   //
   /* Termos e Condições */

@@ -1143,13 +1143,13 @@ return[
     'aboutus_coverphoto_img_alt' => 'About us',
     'aboutus_coverphoto_img_title' => 'About us',
     'aboutus_subtitle_our_mission' => 'Our Mission',
-    'aboutus_our_mission_text' => 'Make people from all over the world to travel and transform Brazil, getting to know different regions, cultures,beliefs and races, having cultural immersion and personal growthand resulting on the development of Brazilian communities and tourism.',
+    'aboutus_our_mission_text' => 'Make people all over the world to travel and transform realities through volunteering. We want to make users of Vivalá meet different regions, cultures, beliefs and races, performing a great cultural exchange, assisting the development of people and communities.',
     'aboutus_subtitle_why_we_exist' => 'Why we exist',
     'aboutus_why_we_exist_text' => 'Vivalá was born on 2015 October and was planned by people in love with the idea of travellng and changing realities for better. We&#39;re tired of Brazil&#39;s social situation and we want to change it with attittude. We won&#39;t blame other people or organizations. If we want things to change, we&#39;ll be active part of this change. Join us!',
     'aboutus_subtitle_our_history' => 'Our Story',
-    'aboutus_our_history_text_1' => ' It all began when one of our founders wanted to travel through many destinations in Brazil and found himself without any source of good information, with a lot of turistic offers made with no possibility of customization to his needs. ',
-    'aboutus_our_history_text_2' => 'Besides that, we always had a big will of changing Brazil&#39;s social reality. A real change that would really make a difference on people&#39;s lives. So we created Vivalá.',
-    'aboutus_our_history_text_3' => 'We gathered people, concepts, life values and technology to start the construction of a plataform that aims the personal development of our users through entertainment, culture and selfknowledge when they&#39;re travelling and volunteering in Brazil.',
+    'aboutus_our_history_text_1' => 'It all started when our founder wanted to know Brazil through a backpacking trip and came across a market without quality information , fragmented sales and packaging of everything and everyone.',
+    'aboutus_our_history_text_2' => 'Along with the great desire for change in Brazilian social reality, but real change , which really make a difference in people\'s lives so we create the Vivalá.',
+    'aboutus_our_history_text_3' => 'We gathered good people, concepts, values ​​of life, technology and start building a platform that aims to ensure that individuals grow through knowledge, fun and culture in your travels and carried out volunteer work.',
 
   /* Parceiros */
     'partners_title' => 'Partners',
@@ -1166,10 +1166,11 @@ return[
   /* Contato */
     'contact_title' => 'Contact',
     'contact_subtitle' => 'Talk to us!',
-    'contact_text_1' => 'If you want to have a chat with us, you can call, send an email or visit us.. youc choose! What really matters is that we&#39;re alway open to receive and hear your thoughs and suggestions.',
-    'contact_text_2' => 'Vivalá&#39;s crew is formed by great people who loves to meet new people! We will hear evertything you have to say!',
+    'contact_text_1' => 'If you want to talk to us just call, send an email or make a visit... You who decides! Here there is no bullshit. The Vivalá staff is good people and love to meeting new people!',
+    'contact_text_2' => 'What matters is that we are always with open arms to receive and hear you. We are humbled to hear criticism and were very happy to hear the praises.',
+    'contact_text_3' => 'Don\'t keep secret, tell to us!',
     'contact_our_email' => 'Our email:',
-    'contact_our_phone' => 'Our telephone:',
+    'contact_our_phone' => 'Ours telephones:',
     'contact_our_address' => 'Our address',
 
   /* Termos e Condições */
