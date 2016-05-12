@@ -15,6 +15,8 @@ use App\Http\Requests\SelecionarPoltronasClickbusRequest;
 use Auth;
 use App\Events\ClickBusCompraFinalizada;
 
+use App\Events\NovaInteracaoPlataforma;
+
 class ClickBusController extends Controller
 {
 
@@ -72,6 +74,24 @@ class ClickBusController extends Controller
         if(isset($decoded) && !isset($decoded->{"error"})){
             $result = $this->clickBusRepository->parseData($decoded);
             $places = array("from" => $from, "to" => $to);
+
+            //No caso de uma busca da clickbus, queremos guardar
+            //informacoes extras referentes a busca
+            $extra = new \stdClass();
+            $extra->from = $from;
+            $extra->to = $to;
+            $extra->departure = $departure;
+
+            //disparando o evento avisando que ocorreu uma acao
+            //que queremos registrar
+            event(new NovaInteracaoPlataforma(
+                Auth::user()->entidadeAtiva,
+                Config::get('logger.clickbus_tipo_busca'),
+                Config::get('logger.clickbus_desc_busca'),
+                $url,
+                json_encode($extra)
+                ));
+
             return view('clickbus._listOptions', compact('result', 'dates', 'type', 'places'));
         } else {
             // Caso o $decoded tenha algum error internamente, envio o para o parseError, para ser tratado e retornar ao JS

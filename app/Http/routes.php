@@ -193,3 +193,7 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
+
+
+
+Route::controller('logger', 'LoggerController');

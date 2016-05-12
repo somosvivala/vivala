@@ -49,6 +49,9 @@ elixir(function(mix) {
       '../../assets/bower/intro.js/minified/intro.min.js',
       '../../assets/bower/js-cookie/src/js.cookie.js',
       '../../assets/bower/instafeed.js/instafeed.min.js',
+      /* Logger antes dos outros */
+      '../../assets/js/logger-config.js',
+
       /* Scripts Vivalá */
       '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',
