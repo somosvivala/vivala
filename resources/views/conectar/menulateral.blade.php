@@ -15,14 +15,6 @@
 	</ul>
 </nav>
 
-{{-- Cotação de Vendas Vivalá --}}
-<nav class="menu-lateral">
-	<h4 class="suave">{!! trans('global.lbl_build_your_trip_with_us') !!}</h4>
-	<ul>
-		<li><a href="#cotar-viagem" class="click-img-no-border" data-controls-modal="cotacao-viagem" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#cotacao-viagem" ><i class="icon-menu-lateral icon-vivala-mochila vi"></i> {!! trans('global.lbl_build_my_trip') !!}</a></li>
-	</ul>
-</nav>
-
 {{-- Ultimas Notícias e Chat --}}
 <nav class="menu-lateral">
 	<h4 class="suave">{{ trans('global.lbl_connect_with_friends') }}</h4>
@@ -35,7 +27,7 @@
 		--}}
 		<li>
 			<a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border "><i class="icon-menu-lateral icon-vivala-check-preenchido vi"></i>{{ trans('global.lbl_feedback_give_yours') }}</a>
-        @include('_feedback')
+        @include('modals._feedback')
     </li>
 	</ul>
 </nav>

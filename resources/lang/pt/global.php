@@ -166,6 +166,7 @@ return[
   'lbl_breakfast_included' => 'Café da manhã incluso',
   'lbl_build_your_trip_with_us' => 'Faça a cotação de sua viagem conosco',
   'lbl_build_my_trip' => 'Cotar viagem',
+  'lbl_build_my_trip_difficulty' => 'Está tendo dificuldade para montar sua viagem ou não achou o que estava procurando? Nós podemos te ajudar!',
   'lbl_category' => 'Categoria',
   'lbl_category_' => 'Categorias',
   'lbl_category_add' => 'Adicionar Categoria',

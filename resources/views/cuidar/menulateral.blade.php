@@ -23,7 +23,7 @@
 		<!--li><a href="/chat" class="click-img-no-border desativado"><i class="icon-menu-lateral icon-vivala-chat vi"></i>{{ trans('global.lbl_chat_with_friends') }}</a></li-->
 		--}}
     <li><a data-toggle="modal" data-target="#modal-feedback" href="#" class="click-img-no-border "><i class="icon-menu-lateral vi icon-vivala-check-preenchido"></i>{{ trans('global.lbl_feedback_give_yours') }}</a>
-        @include('_feedback')
+        @include('modals._feedback')
     </li>
 	</ul>
 </nav>
