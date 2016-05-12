@@ -71,7 +71,7 @@
         <h5 class="col-sm-12">{{ trans('global.ong_t_onu_categories') }}</h5>
         <div class="row text-center">
             @if(isset($categoriasOngs))
-            <ul class="cat-ong" class="col-sm-12">
+            <ul class="col-sm-12 cat-ong">
                 @foreach($categoriasOngs as $Categoria)
                 <li id="cat-ong-{{$Categoria->id}}" class="col-sm-3">
                     <input type="radio" name="categoria_ong_id" @if ($categoriaSelecionada == $Categoria->id)  checked="checked" @endif value="{{$Categoria->id}}" id="categoria-ong-{{$Categoria->id}}" selected="">

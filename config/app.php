@@ -206,7 +206,7 @@ return [
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
-		'Image' 	=> 'Intervention\Image\Facades\Image'
+		'Image' 		=> 'Intervention\Image\Facades\Image'
 	],
 
 ];

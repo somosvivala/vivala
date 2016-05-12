@@ -17,6 +17,9 @@ use App\Events\ClickBusCompraFinalizada;
 /*
  * Rotas
  */
+Route::controller('cotarviagem', 'CotarViagensController');
+Route::post('cotarviagem', 'CotarViagensController@store');
+
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');

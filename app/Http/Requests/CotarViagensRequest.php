@@ -2,7 +2,7 @@
 
 use App\Http\Requests\Request;
 
-class CotacaoViagemRequest extends Request {
+class CotarViagensRequest extends Request {
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -26,13 +26,37 @@ class CotacaoViagemRequest extends Request {
 			'cotacao-onibus' => '',
 			'cotacao-hospedagem' => '',
 			'cotacao-carros' => '',
-			//
 			/* Viagem numero 1*/
 			'origem-1' => 'string|required|min:2',
 			'destino-1' => 'string|required|min:2',
 			'data-ida-1' => 'string|required|min:10',
 			'data-volta-1' => 'string|required|min:10',
 			'mais-hospedagem-1' => '',
+			/* Viagem numero 2
+			'origem-2' => 'string|min:2',
+			'destino-2' => 'string|min:2',
+			'data-ida-2' => 'string|min:10',
+			'data-volta-2' => 'string|min:10',
+			'mais-hospedagem-2' => '',
+			/* Viagem numero 3
+			'origem-3' => 'string|min:2',
+			'destino-3' => 'string|min:2',
+			'data-ida-3' => 'string|min:10',
+			'data-volta-3' => 'string|min:10',
+			'mais-hospedagem-3' => '',
+			/* Viagem numero 4
+			'origem-4' => 'string|min:2',
+			'destino-4' => 'string|min:2',
+			'data-ida-4' => 'string|min:10',
+			'data-volta-4' => 'string|min:10',
+			'mais-hospedagem-4' => '',
+			/* Viagem numero 5
+			'origem-1' => 'string|min:2',
+			'destino-1' => 'string|min:2',
+			'data-ida-1' => 'string|min:10',
+			'data-volta-1' => 'string|min:10',
+			'mais-hospedagem-1' => '',
+			*/
 			//
 			'datas-flexiveis' => '',
 			'nro-adultos' => 'numeric|required|min:1',

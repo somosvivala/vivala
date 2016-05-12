@@ -204,15 +204,21 @@ ul.quartos-hotel {
 #cotacao-viagem{
   .conjunto-icones{
     &:hover{
-      .icone-externo{
+      .icone-externo-desativado{
         color: @cor-primaria;
         transition: color 0.3s ease-in;
         -webkit-transition: color 0.3s ease-in;
         -moz-transition: color 0.3s ease-in;
       }
     }
-    .icone-externo{
+    .icone-externo-desativado{
       color: @cor-secundaria;
+      transition: color 0.3s ease-in;
+      -webkit-transition: color 0.3s ease-in;
+      -moz-transition: color 0.3s ease-in;
+    }
+    .icone-externo-ativado{
+      color: @cor-primaria;
       transition: color 0.3s ease-in;
       -webkit-transition: color 0.3s ease-in;
       -moz-transition: color 0.3s ease-in;
