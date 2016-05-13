@@ -135,7 +135,7 @@
                                 <p class="ajuste-fonte-avenir-medium">{!! trans('chefsclub.chefsclub_advantages_text-4') !!}</p>
                               </div>
                               <div class="col-sm-4 col-md-4 col-lg-4">
-                                <a class="btn" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">
+                                <a class="btn logger-ativo" data-tipo="chefsclub_tipo_entreclubeinterno" data-desc="chefsclub_desc_entreclubeinterno" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" target="_blank" href="https://www.chefsclub.com.br/desconto/vivala">
                                   <p>{{ trans('chefsclub.chefsclub_join-the-club') }}</p>
                                   <p><img src="{{ asset('/img/icones/svg/vivala-icon-alimentacao.svg') }}"</p>
                                 </a>

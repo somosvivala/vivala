@@ -45,9 +45,13 @@ return [
         'barralateral_desc_onibus' => ' clicou em passagens rodoviarias na barra lateral ',
 
     /*** CHEFSCLUB ***/
-        //constante para quando alguem clica na barra lateral em passagens rodoviarias
-        'barralateral_tipo_onibus' => 'barralateral_onibus',
-        'barralateral_desc_onibus' => ' clicou em passagens rodoviarias na barra lateral ',
+        //constante para quando alguem em 'ENTRE PARA O CLUBE' na aba de restaurantes em /viajar
+        'chefsclub_tipo_entreclubeexterno' => 'chefsclub_entreclubeexterno',
+        'chefsclub_desc_entreclubeexterno' => ' clicou em \'Entre para o clube\' na aba de restaurantes em /viajar ',
+
+        //constante para quando alguem em 'ENTRE PARA O CLUBE' na pagina interna de um restaurante
+        'chefsclub_tipo_entreclubeinterno' => 'chefsclub_entreclubeinterno',
+        'chefsclub_desc_entreclubeinterno' => ' clicou em \'Entre para o clube\' na pagina interna de um restaurante ',
 
     /*** MENU/ABAS QUERO VIAJAR ***/
         //constante para quando alguem clica na aba de passagens rodoviarias em /viajar
