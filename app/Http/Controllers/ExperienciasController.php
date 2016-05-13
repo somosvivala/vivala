@@ -11,11 +11,17 @@ use App\Experiencia;
 
 class ExperienciasController extends Controller {
 
+    //propriedade que guarda uma instancia de
+    //ExperienciasRepository, contendo a logica interna
+    private $ExperienciasRepository;
 
-    
-
-
-
+    /**
+     * Construtor com dependencia do ExperienciasRepository
+     */
+    public function __construct(ExperienciasRepositoryInterface $repository)
+    {
+        $this->ExperienciasRepository = $repository;
+    }
 
     /**
      * Exibe lista de experiencias
@@ -24,7 +30,7 @@ class ExperienciasController extends Controller {
      */
     public function index()
     {
-        $experiencias = Experiencia::all();
+        $experiencias = $this->ExperienciasRepository->getAll();
 
         if(!Agent::isDesktop()){
             return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
@@ -40,7 +46,7 @@ class ExperienciasController extends Controller {
      */
     public function show($id)
     {
-        $Experiencia = Experiencia::findOrFail($id);
+        $Experiencia = $this->ExperienciasRepository->findOrFail($id);
 
         if(!Agent::isDesktop()){
             return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
@@ -56,7 +62,7 @@ class ExperienciasController extends Controller {
      */
     public function getCheckout($id)
     {
-        $Experiencia = Experiencia::findOrFail($id);
+        $Experiencia = $this->ExperienciasRepository->findOrFail($id);
         // Testa se usuario está logado
         if (Auth::user()) {
             // Caso esteja logado exibe os métodos de pagamento
@@ -72,11 +78,6 @@ class ExperienciasController extends Controller {
 
     }
 
-    public function getAllExperiencias($view)
-    {
-        $Experiencias = $this->ExperienciasRepository->getAll();
-        return $view->with('Experiencias', $Experiencias);
-    }
 
 
 }
