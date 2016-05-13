@@ -1,7 +1,7 @@
 <div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
 
     <div class="row" id="lista-experiencias">
-        <h2 class="col-sm-12">Experiências</h2>
+        <h2 class="col-sm-12">Inscrições de experiências</h2>
         <ul class="col-sm-4">
             <h3 class="col-sm-12">Pendentes</h3>
             <li>
@@ -20,7 +20,7 @@
                 Evandro - dsff a experienci
             </li>
         </ul>
-        <h3 class="col-sm-12">Gerenciar</h3>
+        <h3 class="col-sm-12">Experiências realizadas</h3>
         <ul>
             <li>
                 Experiencia doida 1

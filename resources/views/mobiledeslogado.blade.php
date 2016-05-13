@@ -77,22 +77,16 @@
 </head>
 
 <body>
-	<div id="welcome-header">
-		<div class="container-fluid">
-			<div class="col-md-12 col-lg-12 text-center">
-				<a class="nav-logo" href="{{ url('home') }}">
-					{{-- SVG da logo VIVALÁ --}}
-						<img src="{{ asset('vivala-logo.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" width="100%" height="100%" />
-				</a>
-			</div>
-		</div>
-	</div>
-	<div id="welcome-content" class="col-md-12 col-lg-12">
-			@yield('content')
-	</div>
+    <div class="col-md-12 col-lg-12 text-center">
+        Conheça a <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+    </div>
 
-	{{-- Scripts de carregamento no fim do HTML --}}
-		<script src="{{ asset('/js/vendor.js') }}"></script>
+    <div class="col-md-12 col-lg-12">
+        @yield('content')
+    </div>
+
+    {{-- Scripts de carregamento no fim do HTML --}}
+    <script src="{{ asset('/js/vendor.js') }}"></script>
 
 </body>
 </html>
