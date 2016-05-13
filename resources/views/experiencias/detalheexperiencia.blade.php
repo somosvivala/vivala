@@ -1,4 +1,4 @@
-@extends('mobiledeslogado')
+@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
 
 @section('content')
 <h1>{{ $Experiencia->titulo }}</h1>

@@ -1,4 +1,4 @@
-@extends('mobiledeslogado')
+@extends('mobilelogado')
 
 @section('content')
 <h1> Checkout da {{ $Experiencia->titulo }}</h1>

@@ -61,7 +61,7 @@ class ExperienciasController extends Controller {
                 }
             } else {
                 // Caso não esteja logado redireciona pra tela de login
-		return redirect('login')->with(['from'=>'experiencias/checkout/'.$id]);;
+		return redirect('/auth/login')->with(['redirectTo'=>'experiencias/checkout/'.$id]);;
             }
 
         }
