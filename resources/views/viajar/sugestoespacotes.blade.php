@@ -5,7 +5,7 @@
     </h4>
   </div>
   <ul class="sugestoes sugestoes-pacotes">
-      <li>
+      <li class="logger-ativo" data-tipo="barralateral_tipo_voos" data-desc="barralateral_desc_voos" data-url="{{ $_SERVER['REQUEST_URI'] }}">
           <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/home/flights">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyvoos.jpg') }}">
@@ -15,7 +15,7 @@
               <button class="btn btn-acao" type="button" >{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
-      <li>
+      <li class="logger-ativo" data-tipo="barralateral_tipo_hospedagem" data-desc="barralateral_desc_hospedagem" data-url="{{ $_SERVER['REQUEST_URI'] }}">
           <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/home/hotels">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyhoteis.jpg') }}">
@@ -25,7 +25,7 @@
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
-      <li>
+      <li class="logger-ativo" data-tipo="barralateral_tipo_pacotes" data-desc="barralateral_desc_pacotes" data-url="{{ $_SERVER['REQUEST_URI'] }}">
           <a href="#" class="click-img-no-border ativa-modal-quimera" data-url="https://www.e-agencias.com.br/vivala/home/packages">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummypackages.jpg') }}">
@@ -35,7 +35,7 @@
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
-      <li>
+      <li class="logger-ativo" data-tipo="barralateral_tipo_restaurantes" data-desc="barralateral_desc_restaurantes" data-url="{{ $_SERVER['REQUEST_URI'] }}">
           <a href="https://vivala.com.br/viajar" class="click-img-no-border">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyrestaurantes.jpg') }}">

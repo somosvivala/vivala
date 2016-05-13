@@ -23,3 +23,20 @@ var logaAcao = function(strTipo, strDesc, strUrl="", strExtra="") {
         data: data
     });
 };
+
+// Shorthand for $( document ).ready()
+$(function() {
+    var checaInteracaoPlataforma = function() {
+         $('.logger-ativo').on('click', function(event) {
+             console.log('disparando ajax ' +$(this).data().tipo);
+
+             //pegando as informacoes data-x do elemento
+             var data = $(this).data();
+
+             //disparando ajax para salvar as informacoes
+             logaAcao(data.tipo, data.desc, data.url, data.extra);
+        });
+    }(); //fazendo a funcao auto-executar.
+});
+
+
