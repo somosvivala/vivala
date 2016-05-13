@@ -26,17 +26,20 @@ var logaAcao = function(strTipo, strDesc, strUrl="", strExtra="") {
 
 // Shorthand for $( document ).ready()
 $(function() {
+
+    /**
+     * Binda o click dos elementos com .logger-ativo,
+     * pegando as informacoes data-x e chamando o logaAcao
+     */
     var checaInteracaoPlataforma = function() {
          $('.logger-ativo').on('click', function(event) {
-             console.log('disparando ajax ' +$(this).data().tipo);
-
              //pegando as informacoes data-x do elemento
              var data = $(this).data();
 
              //disparando ajax para salvar as informacoes
-             logaAcao(data.tipo, data.desc, data.url, data.extra);
+             logaAcao(data.tipo, data.desc, data.loggerurl, data.extra);
         });
-    }(); //fazendo a funcao auto-executar.
+    }(); //fazendo a funcao auto-executar
 });
 
 

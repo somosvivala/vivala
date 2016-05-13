@@ -44,4 +44,23 @@ return [
         'barralateral_tipo_onibus' => 'barralateral_onibus',
         'barralateral_desc_onibus' => ' clicou em passagens rodoviarias na barra lateral ',
 
+    /*** CHEFSCLUB ***/
+        //constante para quando alguem clica na barra lateral em passagens rodoviarias
+        'barralateral_tipo_onibus' => 'barralateral_onibus',
+        'barralateral_desc_onibus' => ' clicou em passagens rodoviarias na barra lateral ',
+
+    /*** MENU/ABAS QUERO VIAJAR ***/
+        //constante para quando alguem clica na aba de passagens rodoviarias em /viajar
+        'abasviajar_tipo_onibus' => 'abasviajar_onibus',
+        'abasviajar_desc_onibus' => ' clicou na aba de passagens rodoviarias em /viajar',
+
+        //constante para quando alguem clica na aba de voos/hospedagem/pacotes em /viajar
+        'abasviajar_tipo_quimera' => 'abasviajar_quimera',
+        'abasviajar_desc_quimera' => ' clicou na aba de passagens rodoviarias em /viajar',
+
+        //constante para quando alguem clica na aba de restaurantes em /viajar
+        'abasviajar_tipo_restaurantes' => 'abasviajar_restaurantes',
+        'abasviajar_desc_restaurantes' => ' clicou na aba de restaurantes em /viajar',
+
+
 ];
