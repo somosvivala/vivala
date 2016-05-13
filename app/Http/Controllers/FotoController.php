@@ -124,4 +124,41 @@ class FotoController extends VivalaBaseController {
     }
 
 
+    /**
+     * Metodo para receber por POST uma CropPhotoRequest,
+     * croppar e settar a foto para a Experiencia em questao
+     */
+    public function postCropandsaveexperiencias(CropPhotoRequest $request, $experienciaId)
+    {
+        $file = Input::file('file');
+        if ($file && $file->isValid()) {
+
+            $experiencia = Experiencia::findOrFail($experienciaId);
+            $destinationPath = public_path() . '/uploads/';
+            $extension = Input::file('file')->getClientOriginalExtension(); // Pega o formato da imagem
+
+            $widthCrop = round($request->input('w'));
+            $heightCrop = round($request->input('h'));
+            $xSuperior = round($request->input('x'));
+            $ySuperior = round($request->input('y'));
+
+            $fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
+            $file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
+            $upload_success = $file->save($destinationPath.$fileName);
+
+            //Se o upload da foto ocorreu com sucesso
+            if ($upload_success) {
+
+                //criar nova foto e associar a experiencia
+                $entidade->fotos()->save(Foto::create(['path' => $fileName]));
+                return $foto;
+
+            } else {
+                return false;
+            }
+        }
+    }
+
+
+
 }
