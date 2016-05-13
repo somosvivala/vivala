@@ -80,7 +80,7 @@ class ClickBusController extends Controller
             $extra = new \stdClass();
             $extra->from = $from;
             $extra->to = $to;
-            $extra->departure = $departure;
+            $extra->data_embarque = $departure;
 
             //disparando o evento avisando que ocorreu uma acao
             //que queremos registrar
@@ -418,6 +418,21 @@ class ClickBusController extends Controller
             //pegando regex para testar cartoes amex
             $amexRegex = $this->clickBusRepository->getAmexRegex();
 
+            //criando obj extra para guardar as informacoes
+            $extra = new \stdClass();
+            $extra->from = $Ida->from;
+            $extra->to = $Ida->to;
+
+            //disparando o evento avisando que ocorreu uma acao
+            //que queremos registrar
+            event(new NovaInteracaoPlataforma(
+                Auth::user()->entidadeAtiva,
+                Config::get('logger.clickbus_tipo_checkout'),
+                Config::get('logger.clickbus_desc_checkout'),
+                null,
+                json_encode($extra)
+                ));
+
             return [
                 //Como não estamos devolvendo a view diretamente (return view('nome', ...),
                 //precisamos chamar o ->render() para obter o html
@@ -607,6 +622,24 @@ class ClickBusController extends Controller
 
             // Chama o evento de compra finalizada para enviar emails
             event(new ClickBusCompraFinalizada($compra));
+
+            //criando obj extra para guardar as informacoes
+            $extra = new \stdClass();
+            $extra->embarque = $retorno["ida_departure"];
+            $extra->desembarque = $retorno["ida_arrival"];
+            $extra->data_embarque = $retorno["ida_date"];
+            $extra->total = $retorno["total"];
+
+            //disparando o evento avisando que ocorreu uma acao
+            //que queremos registrar
+            event(new NovaInteracaoPlataforma(
+                Auth::user()->entidadeAtiva,
+                Config::get('logger.clickbus_tipo_compra'),
+                Config::get('logger.clickbus_desc_compra'),
+                null,
+                json_encode($extra)
+                ));
+
 
             //Se a compra tiver falhado
         } else {

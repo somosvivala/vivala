@@ -39,4 +39,9 @@ return [
         //constante para quando alguem clica na barra lateral em restaurantes
         'barralateral_tipo_restaurantes' => 'barralateral_restaurantes',
         'barralateral_desc_restaurantes' => ' clicou em restaurantes na barra lateral ',
+
+        //constante para quando alguem clica na barra lateral em passagens rodoviarias
+        'barralateral_tipo_onibus' => 'barralateral_onibus',
+        'barralateral_desc_onibus' => ' clicou em passagens rodoviarias na barra lateral ',
+
 ];

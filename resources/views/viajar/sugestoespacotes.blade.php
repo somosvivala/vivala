@@ -36,7 +36,7 @@
           </a>
       </li>
       <li class="logger-ativo" data-tipo="barralateral_tipo_restaurantes" data-desc="barralateral_desc_restaurantes" data-url="{{ $_SERVER['REQUEST_URI'] }}">
-          <a href="https://vivala.com.br/viajar" class="click-img-no-border">
+          <a href="/viajar" class="click-img-no-border">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyrestaurantes.jpg') }}">
               </div>
@@ -45,9 +45,8 @@
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
-{{-- Menu Clickbus
-      <li>
-          <a href="https://vivala.com.br/viajar" class="click-img-no-border">
+      <li class="logger-ativo" data-tipo="barralateral_tipo_onibus" data-desc="barralateral_desc_onibus" data-url="{{ $_SERVER['REQUEST_URI'] }}">
+          <a href="/viajar" class="click-img-no-border">
               <div class="round-foto-sem-cover">
                   <img src="{{ asset('/img/dummyonibus.jpg') }}">
               </div>
@@ -56,6 +55,5 @@
               <button class="btn btn-acao" type="button">{{ trans('global.lbl_seemore') }}</button>
           </a>
       </li>
---}}
   </ul>
 </ul>
