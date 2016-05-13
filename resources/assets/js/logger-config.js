@@ -42,4 +42,24 @@ $(function() {
     }(); //fazendo a funcao auto-executar
 });
 
+var getUltimosLogs = function() {
+    //mostrando loading
+    $('#gestao-ultimos-logs').html("<h1 style='text-align:center'><i class='fa fa-spin fa-pulse fa-spinner laranja'></i></h1>");
+
+    $.ajax({
+        url: '/logger/ultimoslogs',
+        type: 'GET',
+        success: function (data, textStatus, jqXHR) {
+            $('#gestao-ultimos-logs').html(data.html);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            swal("Oops...", 
+                 "Aconteceu algum problema com a requisicao dos logs, erro: " + errorThrown,
+                 "error");
+            $('#gestao-ultimos-logs').html("");
+        }
+    });
+
+}
+
 

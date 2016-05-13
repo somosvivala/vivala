@@ -28,4 +28,14 @@ class LoggerRepository extends LoggerRepositoryInterface
             $novaAcao->push();
         }
     }
+
+    /**
+     * Metodo para recuperar os ultimos 20 logs
+     */
+    public function getUltimosLogs($qnt = 20)
+    {
+        return InteracaoPlataforma::orderBy('created_at', 'desc')->limit($qnt)->get();
+    }
+
+
 }
