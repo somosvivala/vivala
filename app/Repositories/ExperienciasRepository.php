@@ -2,12 +2,13 @@
 
 namespace app\Repositories;
 
-use App\Interfaces\ExperienciaRepositoryInterface;
+use App\Interfaces\ExperienciasRepositoryInterface;
+use App\Experiencia;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
  */
-class ExperienciasRepository extends ExperienciaRepositoryInterface
+class ExperienciasRepository extends ExperienciasRepositoryInterface
 {
 
     /*
@@ -25,9 +26,9 @@ class ExperienciasRepository extends ExperienciaRepositoryInterface
      * @param $view - View que vai receber as experiencias
      *
      */
-    public function getAllExperiencias($view)
+    public function injectAllExperiencias($view)
     {
-        $Experiencias = $this->ExperienciasRepository->getAll();
+        $Experiencias = $this->getAll();
         return $view->with('Experiencias', $Experiencias);
     }
 

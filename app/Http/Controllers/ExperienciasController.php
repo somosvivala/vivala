@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Agent;
 use Auth;
-
+use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Experiencia;
 
 class ExperienciasController extends Controller {
