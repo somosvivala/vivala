@@ -26,6 +26,7 @@ elixir(function(mix) {
         '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
         '../../assets/bower/sweetalert2/dist/sweetalert2.css',
         '../../assets/bower/intro.js/introjs.css',
+        '../../assets/bower/tether-tooltip/dist/css/tooltip-theme-arrows.css',
         'app.css',
         '../../assets/bower/font-awesome/css/font-awesome.min.css',
         '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir depois do Font-Awesome e ao fim, conflita em classe com algo
@@ -49,6 +50,10 @@ elixir(function(mix) {
       '../../assets/bower/intro.js/minified/intro.min.js',
       '../../assets/bower/js-cookie/src/js.cookie.js',
       '../../assets/bower/instafeed.js/instafeed.min.js',
+      '../../assets/bower/tether/dist/js/tether.min.js',
+      '../../assets/bower/tether-drop/dist/js/drop.min.js',
+      '../../assets/bower/tether-tooltip/dist/js/tooltip.min.js',
+
       /* Scripts Vivalá */
       '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',

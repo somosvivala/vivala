@@ -22,14 +22,16 @@ var ativaForm = function(container, val){
 
 var bindaFormCotaViagem = function() {
 // Icones Superiores
-  var formBasico = $('#cotacao-basica'),
-      formBasicoValue =  $('#cotacao-basica').data("value"),
-      formHospedagem = $('#cotacao-hospedagem'),
-      formHospedagemValue = $('#cotacao-hospedagem').data("value"),
-      ativaFormVoos = $('#ativa-form-voos'),
-      ativaFormOnibus = $('#ativa-form-onibus'),
-      ativarFormHospedagem = $('#ativa-form-hospedagem'),
-      ativarFormCarros = $('#ativa-form-carros');
+  var   ativaFormVoos = $('#ativa-form-voos'),
+        ativaFormOnibus = $('#ativa-form-onibus'),
+        ativaFormHospedagem = $('#ativa-form-hospedagem'),
+        ativaFormCarros = $('#ativa-form-carros'),
+        formBasico = $('#cotacao-basica'),
+        formBasicoValue =  $(formBasico).attr("data-value"),
+        formHospedagem = $('#cotacao-hotel'),
+        formHospedagemValue = $(formHospedagem).attr("data-value");
+        formCarros = $('#cotacao-veiculos'),
+        formCarrosValue = $(formHospedagem).attr("data-value");
 
   $(ativaFormVoos).bind('click', function() {
     if(!$(this).hasClass('active')){
@@ -67,16 +69,16 @@ var bindaFormCotaViagem = function() {
       ativaForm(formBasico, formBasicoValue);
     }
   });
-  $(ativarFormHospedagem).bind('click', function() {
+  $(ativaFormHospedagem).bind('click', function() {
     if(!$(this).hasClass('active')){
       $(this).addClass('active');
       $(this).find('i.fa-circle').removeClass('icone-externo-desativado').addClass('icone-externo-ativado');
       formBasicoValue++;
       formHospedagemValue++;
       $(formBasico).attr("data-value", formBasicoValue);
-      ativaForm(formBasico, formBasicoValue);
       $(formHospedagem).attr("data-value", formHospedagemValue);
       $('input#cotacao-hospedagem').val(1);
+      ativaForm(formBasico, formBasicoValue);
       ativaForm(formHospedagem, formHospedagemValue);
     }
     else{
@@ -84,14 +86,28 @@ var bindaFormCotaViagem = function() {
       $(this).find('i.fa-circle').removeClass('icone-externo-ativado').addClass('icone-externo-desativado');
       formBasicoValue--;
       formHospedagemValue--;
+      console.log(formHospedagemValue);
       $(formBasico).attr("data-value", formBasicoValue);
-      ativaForm(formBasico, formBasicoValue);
       $(formHospedagem).attr("data-value", formHospedagemValue);
       $('input#cotacao-hospedagem').val(0);
+      ativaForm(formBasico, formBasicoValue);
       ativaForm(formHospedagem, formHospedagemValue);
     }
   });
-  //$(ativaFormCarros).bind('click', function(){});
+  $(ativaFormCarros).bind('click', function(){
+    var tooltipFormCarros = new Tooltip({
+      target: ativaFormCarros,
+      content: "OOLAR.",
+      classes: 'tooltip-theme-arrows',
+      position: 'right middle'
+    });
+  });
+
+// Mais Destinos
+  var ativaMaisDestinos = $('#ativa-mais-destinos');
+
+  $(ativaMaisDestinos).bind('click', function(){
+  });
 
 // Icones de Tempo
   var ativaTempoManha = $('#ativa-tempo-manha'),
@@ -120,7 +136,7 @@ var bindaFormCotaViagem = function() {
     else{
       $(this).removeClass('active');
       $(this).find('i.fa-circle').removeClass('icone-externo-ativado').addClass('icone-externo-desativado');
-      $('input#pref-tempo-tarde').val(1);
+      $('input#pref-tempo-tarde').val(0);
     }
   });
   $(ativaTempoNoite).bind('click', function(){
@@ -147,6 +163,23 @@ var bindaFormCotaViagem = function() {
       $('input#pref-tempo-madrugada').val(0);
     }
   });
+
+// Horarios Restritos
+  var ativaHorarioRestrito = $('#ativa-horario-restrito'),
+      campoHorarioRestrito = $('#campo-horario-restrito');
+
+  $(ativaHorarioRestrito).bind('click', function(){
+    if(!$(this).hasClass('active')){
+      $(this).addClass('active');
+      $(campoHorarioRestrito).removeClass('hidden');
+    }
+    else{
+      $(this).removeClass('active');
+      $(campoHorarioRestrito).addClass('hidden');
+      $(campoHorarioRestrito).val('');
+    }
+  });
+
 }
 
 jQuery(document).ready(function($) {

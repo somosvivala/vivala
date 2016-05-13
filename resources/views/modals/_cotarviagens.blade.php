@@ -19,7 +19,7 @@
               </h4>
               <div class="col-md-12 col-lg-12 list-group text-center">
                 {{-- Botão VÔOS --}}
-                <div class="col-md-2 col-md-offset-3 col-lg-2 col-lg-offset-3">
+                <div class="col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2">
                   <div class="text-center">
                     <a href="#" id="ativa-form-voos" class="click-img-no-border">
                       <span class="fa-stack fa-5x conjunto-icones">
@@ -53,18 +53,17 @@
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.quimera_lodge') !!}</p>
                   {!! Form::hidden('cotacao-hospedagem', 0, ['id' => 'cotacao-hospedagem']) !!}
                 </div>
-                {{-- Botão CARROS -- Desativado temporariamente
+                {{-- Botão CARROS --}}
                 <div class="col-md-2 col-lg-2">
-                  <a href="#" id="ativa-form-carros" class="click-img-no-border desativado">
+                  <a href="#" id="ativa-form-carros" class="click-img-no-border">
                     <span class="fa-stack fa-5x conjunto-icones">
-                      <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                      <i class="fa fa-circle fa-stack-2x icone-externo-bloqueado"></i>
                       <i class="fa fa-car fa-stack-1x icone-interno"></i>
                     </span>
                   </a>
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_drive') !!}</p>
                   {!! Form::hidden('cotacao-carros', 0, ['id' => 'cotacao-carros']) !!}
                 </div>
-                --}}
               </div>
             </div>
             {{-- Form Básico --}}
@@ -76,7 +75,7 @@
                   </p>
                 </div>
                 {{-- Infos de IDA e VOLTA e DATAS --}}
-                <div class="col-md-12 col-lg-12">
+                <div id="viagem-1" class="col-md-12 col-lg-12">
                   <div class="col-md-3 col-lg-3">
                     {!! Form::text('origem-1', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
                   </div>
@@ -84,95 +83,42 @@
                     {!! Form::text('destino-1', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                   </div>
                   <div class="col-md-2 col-lg-2">
-                    <input type="text" name="cotacao-data-partida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
+                    <input type="text" name="data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    <input type="text" name="cotacao-data-retorno-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
+                    <input type="text" name="data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
                   </div>
                   <div class="col-md-1 col-lg-1">
                     {!! Form::checkbox('mais-hospedagem-1', null, false, ['class' => 'form-control']) !!}
                   </div>
                 </div>
-                {{--
-                <div class="col-md-12 col-lg-12">
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('origem-2', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
+                @for($i=2; $i<=5; $i++)
+                  <div id="viagem-{{ $i }}" class="col-md-12 col-lg-12 hidden">
+                    <div class="col-md-3 col-lg-3">
+                      {!! Form::text('origem-'.$i, null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+                      {!! Form::text('destino-'.$i, null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
+                    </div>
+                    <div class="col-md-2 col-lg-2">
+                      <input type="text" name="data-ida-{{ $i }}" class="form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale') }}">
+                    </div>
+                    <div class="col-md-3 col-lg-3">
+                      <input type="text" name="data-volta-{{ $i }}" class="form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale') }}">
+                    </div>
+                    <div class="col-md-1 col-lg-1">
+                      {!! Form::checkbox('mais-hospedagem-'.$i, null, false, ['class' => 'form-control']) !!}
+                    </div>
                   </div>
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('destino-2', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
-                  </div>
-                  <div class="col-md-2 col-lg-2">
-                    <input type="text" name="cotacao-data-partida-2" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    <input type="text" name="cotacao-data-retorno-2" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-1 col-lg-1">
-                    {!! Form::checkbox('mais-hospedagem-2', null, false, ['class' => 'form-control']) !!}
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-12">
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('origem-3', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('destino-3', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
-                  </div>
-                  <div class="col-md-2 col-lg-2">
-                    <input type="text" name="cotacao-data-partida-3" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    <input type="text" name="cotacao-data-retorno-3" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-1 col-lg-1">
-                    {!! Form::checkbox('mais-hospedagem-3', null, false, ['class' => 'form-control']) !!}
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-12">
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('origem-4', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('destino-4', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
-                  </div>
-                  <div class="col-md-2 col-lg-2">
-                    <input type="text" name="cotacao-data-partida-4" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    <input type="text" name="cotacao-data-retorno-4" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-1 col-lg-1">
-                    {!! Form::checkbox('mais-hospedagem-4', null, false, ['class' => 'form-control']) !!}
-                  </div>
-                </div>
-                <div class="col-md-12 col-lg-12">
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('origem-5', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    {!! Form::text('destino-5', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
-                  </div>
-                  <div class="col-md-2 col-lg-2">
-                    <input type="text" name="cotacao-data-partida-5" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-3 col-lg-3">
-                    <input type="text" name="cotacao-data-retorno-5" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
-                  </div>
-                  <div class="col-md-1 col-lg-1">
-                    {!! Form::checkbox('mais-hospedagem-5', null, false, ['class' => 'form-control']) !!}
-                  </div>
-                </div>
-                --}}
-
+                @endfor
                 {{-- Adicionar mais destinos --}}
                 <div class="col-md-12 col-lg-12 margin-t-1 text-left margin-t-1 margin-b-1">
                   <div class="col-md-12 col-lg-12">
-                    <a href="#">
+                    <a href="#" id="ativa-mais-destinos" class="click-img-no-border">
                       <i class="fa fa-plus-circle laranja"></i><span class="ajuste-fonte-avenir-medium laranja"> {!! trans('global.lbl_travel_to_add_more') !!}</span>
                     </a>
                   </div>
                 </div>
-
                 {{-- Datas Flexíveis --}}
                 <div class="col-md-12 col-lg-12 margin-t-1 text-left margin-b-1">
                   <div class="col-md-12 col-lg-12">
@@ -286,23 +232,23 @@
                 {{-- Horários Restritos --}}
                 <div class="col-md-12 col-lg-12 margin-t-1 margin-b-2">
                   <div class="col-md-12 col-lg-12 margin-b-1">
-                    <a href="#">
-                        <i class="fa fa-plus-circle laranja"></i><span class="ajuste-fonte-avenir-medium laranja"> {!! trans('global.lbl_restrict_hours') !!}</span>
+                    <a href="#" id="ativa-horario-restrito" class="click-img-no-border">
+                      <i class="fa fa-plus-circle laranja"></i><span class="ajuste-fonte-avenir-medium laranja"> {!! trans('global.lbl_restrict_hours') !!}</span>
                     </a>
                   </div>
                   <div class="col-md-12 col-lg-12">
-                    {!! Form::textarea('horarios-restritos', null, ['class' => 'form-control hidden', 'rows' => '5', 'placeholder' => trans('global.lbl_restrict_hours'), 'style' => 'resize:none']) !!}
+                    {!! Form::textarea('horario-restrito', null, ['class' => 'form-control hidden','id' => 'campo-horario-restrito', 'rows' => '5', 'placeholder' => trans('global.lbl_restrict_hours'), 'style' => 'resize:none']) !!}
                   </div>
                 </div>
               </div>
-              <div id="cotacao-hospedagem" data-value="0" class="hidden">
+              <div id="cotacao-hotel" data-value="0" class="hidden">
                 <hr class="divisoria"/>
-                <div id="cotacao-hospedagem-titulo" class="row margin-t-2 margin-b-2">
+                <div id="cotacao-hotel-titulo" class="row margin-t-2 margin-b-2">
                   <div class="col-md-12 col-lg-12 text-center">
                     <h5 class="titulo-secao">{!! trans('global.quimera_lodge') !!}</h5>
                   </div>
                 </div>
-                <div id="cotacao-hospedagem-quartos" class="row margin-t-1">
+                <div id="cotacao-hotel-quartos" class="row margin-t-1">
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-6 col-lg-6">
                       <div class="col-md-5 col-lg-5">
@@ -327,7 +273,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="cotacao-hospedagem-adicionais" class="row margin-t-1">
+                <div id="cotacao-hotel-adicionais" class="row margin-t-1">
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
                       <div class="col-md-12 col-lg-12">
@@ -394,19 +340,19 @@
                     </div>
                   </div>
                 </div>
-                <div id="cotacao-hospedagem-bairro" class="row margin-t-1">
+                <div id="cotacao-hotel-bairro" class="row margin-t-1">
                   <div clas="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-12 col-lg-12">
-                        <div class="col-md-3 col-lg-3">
+                        <div class="col-md-4 col-lg-4">
                           {!! Form::label('hospedagem-bairro-regiao-preferencia', trans('global.lbl_neighborhood_preferred_region'), null, ['class' => 'form-control']) !!} :
                         </div>
-                        <div class="col-md-3 col-lg-3">{!! Form::text('hospedagem-bairro-regiao-preferencia', null, ['class' => 'form-control']) !!}</div>
+                        <div class="col-md-4 col-lg-4">{!! Form::text('hospedagem-bairro-regiao-preferencia', null, ['class' => 'form-control']) !!}</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div id="cotacao-hospedagem-adicional" class="row margin-t-1">
+                <div id="cotacao-hotel-adicional" class="row margin-t-1">
                   <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-12 col-lg-12">
@@ -425,7 +371,7 @@
                   </div>
                 </div>
               </div>
-              <div id="cotacao-carros" data-value="0" class="hidden">
+              <div id="cotacao-veiculos" data-value="0" class="hidden">
                 <hr class="divisoria"/>
                 <div id="cotacao-carros-titulo" class="row margin-t-2">
                   <div class="col-md-12 col-lg-12 text-center">
