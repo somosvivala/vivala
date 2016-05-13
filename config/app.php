@@ -151,12 +151,15 @@ return [
 		'Orangehill\Iseed\IseedServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Jenssegers\Date\DateServiceProvider',
-                'Jenssegers\Agent\AgentServiceProvider',
+    'Jenssegers\Agent\AgentServiceProvider',
 
 		/**
 		 * POSTGIS
 		 */
-		'Phaza\LaravelPostgis\DatabaseServiceProvider'
+		'Phaza\LaravelPostgis\DatabaseServiceProvider',
+
+    //Experiencias Provider
+		'App\Providers\ExperienciasServiceProvider'
 	],
 
 	/*
