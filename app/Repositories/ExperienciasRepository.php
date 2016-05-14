@@ -19,6 +19,17 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return Experiencia::all();
     }
 
+    /*
+     * Metodo para pegar todas as experiencia
+     */
+    public function findOrFail($experienciaId)
+    {
+        return Experiencia::findOrFail($experienciaId);
+    }
+
+
+
+
     /**
      * Metodo usado para servir as experiencias para as view que precisem delas
      * ps: Bindar views que precisarem bindado em ExperienciasProvider

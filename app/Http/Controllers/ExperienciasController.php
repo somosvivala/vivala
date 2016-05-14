@@ -78,6 +78,16 @@ class ExperienciasController extends Controller {
 
     }
 
+    /**
+     * Metodo para servir a view para editar a fotoCapa da Experiencia
+     *
+     * @param $id - ID da experiencia no BD
+     */
+    public function getEditafoto($experienciaId)
+    {
+        $experiencia = $this->ExperienciasRepository->FindOrFail($experienciaId);
+        $foto = $experiencia->fotoCapa;
+        return view('experiencias._editafotoform', compact('experiencia', 'foto'));
 
-
+    }
 }

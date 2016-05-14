@@ -8,20 +8,21 @@ use App\Empresa;
 use App\Post;
 use App\Foto;
 use App\Http\Requests\CropPhotoRequest;
-
-
-
+use App\Interfaces\ExperienciasRepositoryInterface;
 use Auth;
 use Input;
 use Request;
+
 class FotoController extends VivalaBaseController {
 
     /**
      * construtor seguro.
+     * @param $repository - Instancia do Repositorio que extend essa interface
      */
-    public function __construct(){
+    public function __construct(ExperienciasRepositoryInterface $repository){
         //Só passa se estiver logado
         $this->middleware('auth');
+        $this->ExperienciasRepository = $repository;
     }
 
     public function postCropandsave($id=0, CropPhotoRequest $request) {
@@ -133,7 +134,7 @@ class FotoController extends VivalaBaseController {
         $file = Input::file('file');
         if ($file && $file->isValid()) {
 
-            $experiencia = Experiencia::findOrFail($experienciaId);
+            $experiencia = $this->ExperienciasRepository->findOrFail($experienciaId);
             $destinationPath = public_path() . '/uploads/';
             $extension = Input::file('file')->getClientOriginalExtension(); // Pega o formato da imagem
 
