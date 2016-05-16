@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="welcome-html">
+<html lang="en" id="mobile-html">
 <head>
     <title>{{ trans('global.title_vivala') }}</title>
 
@@ -77,7 +77,7 @@
 </head>
 
 <body>
-    <div class="col-md-12 col-lg-12 text-center">
+    <div class="col-md-12 col-lg-12 text-center header-mobile">
         Conheça a <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
     </div>
 
