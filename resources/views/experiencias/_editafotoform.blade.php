@@ -12,7 +12,7 @@
       </div>
     </div>
     <a type="button" data-target="#cropper-quiz-modal" data-toggle="modal">
-        <img class="tour_quiz-2-step2" class="quiz-foto-atual" src="{{ $foto?$foto:'/img/interrogacao.png' }}"/>
+        <img class="tour_quiz-2-step2" class="quiz-foto-atual" src="{{ $foto ? $foto->path : '/img/interrogacao.png' }}"/>
 
         <div class="row pointer margin-t-2">
             <div class="file-upload">
@@ -27,7 +27,7 @@
         <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-body">
-                    {!! Form::open(['url' => ['foto/cropandsaveexperiencias',  $experiencia->id ], 'files' => true, 'data-redirect' => '/quiz/contemais', 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading']) !!}
+                    {!! Form::open(['url' => ['foto/cropandsaveexperiencias',  $experiencia->id ], 'files' => true, 'data-redirect' => '/gestao/home', 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading']) !!}
 
                     <h2 class="text-center">{{ trans("global.quiz_profile_customize") }}</h2>
                     <label id="btn-upload-img-quiz" class="btn btn-acao btn-upload margin-b-1" for="input-quiz-foto-perfil" title="Upload image file">

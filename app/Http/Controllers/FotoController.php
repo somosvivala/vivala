@@ -128,6 +128,11 @@ class FotoController extends VivalaBaseController {
     /**
      * Metodo para receber por POST uma CropPhotoRequest,
      * croppar e settar a foto para a Experiencia em questao
+     *
+     * @param $request - Uma instancia de CropPhotoRequest, servida pelo laravel
+     * @param $experienciaId - o id da experiencia que iremos associar a foto
+     *
+     * @return App\Foto - instancia da foto criada
      */
     public function postCropandsaveexperiencias(CropPhotoRequest $request, $experienciaId)
     {
@@ -150,9 +155,15 @@ class FotoController extends VivalaBaseController {
             //Se o upload da foto ocorreu com sucesso
             if ($upload_success) {
 
+                //Se ja tiver uma foto de capa entao deletar a atual antes de subir a nova
+                //esta usando o softDelete, entao a foto nao é realmente deletada.
+                if ($experiencia->fotoCapa) {
+                    $experiencia->fotoCapa->delete();
+                }
+
                 //criar nova foto e associar a experiencia
-                $entidade->fotos()->save(Foto::create(['path' => $fileName]));
-                return $foto;
+                $experiencia->fotoCapa()->save(Foto::create(['path' => $fileName]));
+                return $experiencia->fotoCapa;
 
             } else {
                 return false;

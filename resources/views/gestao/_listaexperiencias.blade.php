@@ -6,7 +6,10 @@
             @foreach ($Experiencias as $experiencia)
                 <li class="list-group-item col-xs-12">
                     <div class="col-xs-2">
-                        <a href="/experiencias/editaFoto/{{ $experiencia->id }}">Editar Foto </a>
+                        <div class="round foto quadrado3em">
+                            <div class="avatar-img" style="background-image:url('{{ $experiencia->fotoCapaUrl }}')"></div>
+                        </div>
+                        <a href="/experiencias/editafoto/{{ $experiencia->id }}">Editar Foto </a>
                     </div>
                     <div class="col-xs-4">
                         <p> {{ $experiencia->titulo }} </p>

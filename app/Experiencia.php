@@ -29,9 +29,8 @@ class Experiencia extends Model
         return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
 
-
     /**
-     * Uma experiencia tem muitas inscriçoes
+     * Uma Experiencia tem muitas inscriçoes
      */
     public function inscricoes()
     {
@@ -45,5 +44,18 @@ class Experiencia extends Model
     {
         return $this->belongsToMany('App\CategoriaExperiencia');
     }
+
+    /*
+     * Acessor para retornar a url da fotoCapa
+     */
+    public function getFotoCapaUrlAttribute()
+    {
+        if ($this->fotoCapa) {
+            return $this->fotoCapa->path;
+        }
+
+        return '/img/dummy-exp.jpg';
+    }
+
 
 }
