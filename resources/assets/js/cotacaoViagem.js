@@ -32,9 +32,8 @@ var bindaFormCotaViagem = function() {
       formHospedagem = $('#cotacao-hotel'),
       formHospedagemValue = $(formHospedagem).attr("data-value"),
       formCarros = $('#cotacao-veiculos'),
-      formCarrosValue = $(formHospedagem).attr("data-value"),
-      formBtnEnviar = $('#cotacao-enviar'),
-      formBtnEnviarValue = $(formBtnEnviar).attr("data-value");
+      formCarrosValue = $(formHospedagem).attr("data-value");
+      formBtnEnviar = $('#cotacao-enviar');
 
     $(ativaFormVoos).bind('click', function() {
       if(!$(this).hasClass('active')){
@@ -44,6 +43,7 @@ var bindaFormCotaViagem = function() {
         $(formBasico).attr("data-value", formBasicoValue);
         $('input#cotacao-voos').val(1);
         ativaForm(formBasico, formBasicoValue);
+        ativaForm(formBtnEnviar, formBasicoValue);
       }
       else{
         $(this).removeClass('active');
@@ -52,6 +52,7 @@ var bindaFormCotaViagem = function() {
         $(formBasico).attr("data-value", formBasicoValue);
         $('input#cotacao-voos').val(0);
         ativaForm(formBasico, formBasicoValue);
+        ativaForm(formBtnEnviar, formBasicoValue);
       }
     });
     $(ativaFormOnibus).bind('click', function() {
@@ -62,6 +63,7 @@ var bindaFormCotaViagem = function() {
         $(formBasico).attr("data-value", formBasicoValue);
         $('input#cotacao-onibus').val(1);
         ativaForm(formBasico, formBasicoValue);
+        ativaForm(formBtnEnviar, formBasicoValue);
       }
       else{
         $(this).removeClass('active');
@@ -70,6 +72,7 @@ var bindaFormCotaViagem = function() {
         $(formBasico).attr("data-value", formBasicoValue);
         $('input#cotacao-onibus').val(0);
         ativaForm(formBasico, formBasicoValue);
+        ativaForm(formBtnEnviar, formBasicoValue);
       }
     });
     $(ativaFormHospedagem).bind('click', function() {
@@ -82,6 +85,7 @@ var bindaFormCotaViagem = function() {
         $(formHospedagem).attr("data-value", formHospedagemValue);
         $('input#cotacao-hospedagem').val(1);
         ativaForm(formBasico, formBasicoValue);
+        ativaForm(formBtnEnviar, formBasicoValue);
         ativaForm(formHospedagem, formHospedagemValue);
       }
       else{
@@ -93,6 +97,7 @@ var bindaFormCotaViagem = function() {
         $(formHospedagem).attr("data-value", formHospedagemValue);
         $('input#cotacao-hospedagem').val(0);
         ativaForm(formBasico, formBasicoValue);
+        ativaForm(formBtnEnviar, formBasicoValue);
         ativaForm(formHospedagem, formHospedagemValue);
       }
     });
@@ -104,6 +109,7 @@ var bindaFormCotaViagem = function() {
         position: 'right middle'
       });
     });
+
 
   // Mais Destinos
   var ativaMaisDestinos = $('#ativa-mais-destinos');

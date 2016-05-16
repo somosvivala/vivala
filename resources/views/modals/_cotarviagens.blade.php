@@ -10,8 +10,8 @@
         </h3>
       </div>
       <div class="modal-body">
+        {!! Form::open(['url' => '/cotarviagem', 'method' => 'POST', 'class' =>'form-ajax',  'data-redirect' => '', 'data-loading'=>'form-loading']) !!}
         <div class="form-group">
-          {!! Form::open(['url' => '/cotarviagem', 'class' =>'form-ajax', 'method' => 'POST', 'data-redirect' => '', 'data-loading'=>'form-loading']) !!}
             {{-- Botões Iniciais --}}
             <div class="row">
               <h4 class="sub-titulo ajuste-fonte-avenir-medium text-center margin-b-1">
@@ -397,17 +397,16 @@
                 </div>
               </div>
 
-              <div id="cotacao-enviar" data-value="0">
+              <div id="cotacao-enviar" data-value="0" class="hidden">
                 <div class="row margin-t-4">
                   <div class="col-md-12 col-lg-12 text-center">
                     {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao']) !!}
                   </div>
                 </div>
               </div>
-
             </div>
-          {!! Form::close() !!}
         </div>
+        {!! Form::close() !!}
       </div>
     </div>
   </div>
