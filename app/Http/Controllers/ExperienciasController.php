@@ -20,7 +20,12 @@ class ExperienciasController extends Controller {
      */
     public function __construct(ExperienciasRepositoryInterface $repository)
     {
+        //recebendo uma instancia do repositorio de experiecias
         $this->ExperienciasRepository = $repository;
+        $this->middleware('auth', ['only' => [
+            'getEditafoto',
+            'getCheckout'
+        ]]);
     }
 
     /**
@@ -86,6 +91,7 @@ class ExperienciasController extends Controller {
     public function getEditafoto($experienciaId)
     {
         $experiencia = $this->ExperienciasRepository->FindOrFail($experienciaId);
+
         $foto = $experiencia->fotoCapa;
         return view('experiencias._editafotoform', compact('experiencia', 'foto'));
 
