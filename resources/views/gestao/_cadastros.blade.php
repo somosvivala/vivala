@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-12 col-md-9 fundo-cheio">
+<div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
 
     <div class="row" id="consulta_users_gestao">
         <div class="col-sm-12">
