@@ -2,6 +2,8 @@
 
 use App\Http\Requests;
 use App\Http\Requests\EditarFotoExperienciaRequest;
+use App\Http\Requests\CriarExperienciaRequest;
+
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -10,10 +12,10 @@ use Auth;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Experiencia;
 
-class ExperienciasController extends Controller {
+class ExperienciasController extends Controller
+{
 
-    //propriedade que guarda uma instancia de
-    //experienciasRepository, contendo a logica interna
+    //Como vamos lidar com experiencias, usamos do repositorio de experiencias
     private $experienciasRepository;
 
     /**
@@ -45,7 +47,11 @@ class ExperienciasController extends Controller {
         }
     }
 
-    /*
+
+
+
+
+    /**
      * Exibe detalhes da experiencia
      *
      * @return view
@@ -61,7 +67,18 @@ class ExperienciasController extends Controller {
         }
     }
 
-    /*
+    /**
+     * Serve a view de criacao de uma experiencia
+     */
+    public function create(CriarExperienciaRequest $request)
+    {
+        return view('experiencias._createform');
+    }
+
+
+
+
+    /**
      * Faz o checkout da experiencia
      *
      * @return view
