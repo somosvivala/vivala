@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\EditarFotoExperienciaRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -12,16 +13,16 @@ use App\Experiencia;
 class ExperienciasController extends Controller {
 
     //propriedade que guarda uma instancia de
-    //ExperienciasRepository, contendo a logica interna
-    private $ExperienciasRepository;
+    //experienciasRepository, contendo a logica interna
+    private $experienciasRepository;
 
     /**
-     * Construtor com dependencia do ExperienciasRepository
+     * Construtor com dependencia do experienciasRepository
      */
     public function __construct(ExperienciasRepositoryInterface $repository)
     {
         //recebendo uma instancia do repositorio de experiecias
-        $this->ExperienciasRepository = $repository;
+        $this->experienciasRepository = $repository;
         $this->middleware('auth', ['only' => [
             'getEditafoto',
             'getCheckout'
@@ -35,7 +36,7 @@ class ExperienciasController extends Controller {
      */
     public function index()
     {
-        $experiencias = $this->ExperienciasRepository->getAll();
+        $experiencias = $this->experienciasRepository->getAll();
 
         if(!Agent::isDesktop()){
             return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
@@ -51,7 +52,7 @@ class ExperienciasController extends Controller {
      */
     public function show($id)
     {
-        $Experiencia = $this->ExperienciasRepository->findOrFail($id);
+        $Experiencia = $this->experienciasRepository->findOrFail($id);
 
         if(!Agent::isDesktop()){
             return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
@@ -67,7 +68,7 @@ class ExperienciasController extends Controller {
      */
     public function getCheckout($id)
     {
-        $Experiencia = $this->ExperienciasRepository->findOrFail($id);
+        $Experiencia = $this->experienciasRepository->findOrFail($id);
         // Testa se usuario está logado
         if (Auth::user()) {
             // Caso esteja logado exibe os métodos de pagamento
@@ -86,12 +87,12 @@ class ExperienciasController extends Controller {
     /**
      * Metodo para servir a view para editar a fotoCapa da Experiencia
      *
+     * @param $request - Usando da FormRequestValidation
      * @param $id - ID da experiencia no BD
      */
-    public function getEditafoto($experienciaId)
+    public function getEditafoto(EditarFotoExperienciaRequest $request, $id)
     {
-        $experiencia = $this->ExperienciasRepository->FindOrFail($experienciaId);
-
+        $experiencia = $this->experienciasRepository->findOrFail($id);
         $foto = $experiencia->fotoCapa;
         return view('experiencias._editafotoform', compact('experiencia', 'foto'));
 

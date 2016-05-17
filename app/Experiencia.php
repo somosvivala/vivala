@@ -1,6 +1,7 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Experiencia extends Model
 {
@@ -56,6 +57,25 @@ class Experiencia extends Model
 
         return '/img/dummy-exp.jpg';
     }
+
+    /**
+     * Acessor para determinar se o usuario atualmente logado
+     * tem permissao para editar essa experiencia
+     *
+     * @param $user - Uma instancia do usuario que queremos testar
+     * a permissao
+     */
+    public function usuarioPodeEditar(User $user)
+    {
+        //Se a entidadeAtiva for a ong criadora da experiencia
+        $podeEditar = ($this->owner == $user->entidadeAtiva);
+
+        //ou se o usuario ativo for um admin
+        $podeEditar = $podeEditar || $user->isAdmin();
+
+        return $podeEditar;
+    }
+
 
 
 }

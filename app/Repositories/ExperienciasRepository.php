@@ -19,16 +19,28 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return Experiencia::all();
     }
 
+
     /*
-     * Metodo para pegar todas as experiencia
+     * Metodo para retornar a experiencia de $id
+     *
+     * @param $id - id da experiencia
+     * @return Experiencia || null
      */
-    public function findOrFail($experienciaId)
+    public function find($id)
     {
-        return Experiencia::findOrFail($experienciaId);
+        return Experiencia::find($id);
     }
 
-
-
+    /*
+     * Metodo para retornar a experiencia de $id ou falhar
+     *
+     * @param $id - id da experiencia
+     * @return Experiencia
+     */
+    public function findOrFail($id)
+    {
+        return Experiencia::findOrFail($id);
+    }
 
     /**
      * Metodo usado para servir as experiencias para as view que precisem delas
