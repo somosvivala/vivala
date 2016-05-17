@@ -27,6 +27,10 @@
     </li>
     @endforeach
 </ul>
-<div class="barra-bottom">
+<div class="barra-bottom text-center">
+    <button class="icone-bottom">
+        <i class="fa fa-bars"></i>
+        <span>Filtrar</span>
+    </button>
 </div>
 @endsection
