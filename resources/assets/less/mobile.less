@@ -19,8 +19,22 @@
     left:0;
 }
 
+.btn-full-bottom {
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:4em;
+    color:white;
+    text-align:center;
+    background-color:darken(@verde-sucesso,5%);
+    transition:background-color 0.2s ease;
+    &:hover{
+        background-color:@verde-sucesso;
+    }
+}
+
 ul.lista-foto-descricao {
-    
     padding:0;
     margin:0;
     @espacamento: 0.3em;
@@ -78,5 +92,40 @@ ul.lista-foto-descricao {
 
 .experiencia {
     .foto-experiencia {
+        .foto-img {
+            @tamanhofoto: 20em;
+            margin-left:-@tamanhofoto/2;
+            left:50%;
+            width:@tamanhofoto;
+            height:@tamanhofoto;
+            position:absolute;
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-size:cover;
+        }
+        .categorias {
+            width:2em;
+            padding:0.5em;
+            i {
+                color:white;
+                font-size:2em;
+                padding:0.3em;
+                border-radius:2em;
+                background-color:#e2e2e2;
+                opacity:0.5;
+                transition: opacity 0.5s;
+            }
+        }
+        &:hover i {
+            opacity:1;
+        }
+    }
+    .descricao {
+        position: absolute;
+        top:8em;
+        left:5%;
+        width:90%;
+        background-color:white;
+        padding-top:12em;
     }
 }

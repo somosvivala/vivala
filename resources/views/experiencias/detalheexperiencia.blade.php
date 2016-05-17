@@ -2,6 +2,12 @@
 
 @section('content')
 <section class="experiencia">
+    <div class="descricao">
+        <span class="col-xs-12"><i class="fa fa-map-marker"></i>Xao Paulo</span>
+        <span class="col-xs-12">{{ $Experiencia->preco }}</span>
+        <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
+    </div>
+
     <div class="foto-experiencia margin-t-1">
         <div class="foto-img" style="background-image:url('https://dev.vivala.com.br/img/dummyvoos.jpg')">
             <div class="categorias">
@@ -9,10 +15,6 @@
             </div>
         </div>
     </div>
-
-    <span class="col-sm-6">{{ $Experiencia->descricao }}</span>
-    <span class="col-sm-6">{{ $Experiencia->preco }}</span>
-    <span class="col-sm-6">{{ $Experiencia->preco }}</span>
-    <a class="btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Bookar</a>
+    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Bookar</a>
 </section >
 @endsection
