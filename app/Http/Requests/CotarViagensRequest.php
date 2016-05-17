@@ -28,10 +28,10 @@ class CotarViagensRequest extends Request {
 				'basico-cotacao-hospedagem' => 'boolean',
 				'basico-cotacao-carros' => 'boolean',
 				/* Viagem numero 1 [Obrigatória] */
-				'basico-origem-1' => 'string|required|min:2',
-				'basico-destino-1' => 'string|required|min:2',
-				'basico-data-ida-1' => 'string|required|min:10',
-				'basico-data-volta-1' => 'string|required|min:10',
+				'basico-origem-1' => 'required|string|min:2',
+				'basico-destino-1' => 'required|string|min:2',
+				'basico-data-ida-1' => 'required|string|min:10',
+				'basico-data-volta-1' => 'required|string|min:10',
 				'basico-mais-hospedagem-1' => 'boolean',
 				/* Viagem numero 2 a 5 [Não Obrigatória]
 					'basico-origem-2' => 'string|min:2',
@@ -62,8 +62,8 @@ class CotarViagensRequest extends Request {
 					*/
 				//
 				'basico-datas-flexiveis' => 'boolean',
-				'basico-nro-adultos' => 'numeric|required|min:1',
-				'basico-nro-criancas' => 'numeric|required|min:1',
+				'basico-nro-adultos' => 'required|string',
+				'basico-nro-criancas' => 'required|string',
 				'basico-pref-tempo-manha' => 'boolean',
 				'basico-pref-tempo-tarde' => 'boolean',
 				'basico-pref-tempo-noite' => 'boolean',

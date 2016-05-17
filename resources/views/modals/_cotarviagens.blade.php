@@ -10,7 +10,7 @@
         </h3>
       </div>
       <div class="modal-body">
-        {!! Form::open(['url' => '/cotarviagem', 'method' => 'POST', 'class' =>'form-ajax',  'data-redirect' => '', 'data-loading'=>'form-loading']) !!}
+        {!! Form::open(['url' => 'cotarviagem', 'method' => 'POST', 'class' =>'form-ajax',  'data-redirect' => '', 'data-loading'=>'form-loading']) !!}
         <div class="form-group">
             {{-- Botões Iniciais --}}
             <div class="row">
