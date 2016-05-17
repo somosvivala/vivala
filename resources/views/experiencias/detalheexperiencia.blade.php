@@ -1,6 +1,9 @@
 @extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
 
 @section('content')
+<a href="/experiencias" class="link-voltar">
+    <i class="fa fa-chevron-left"></i>
+</a>
 <section class="experiencia">
     <div class="descricao">
         <span class="col-xs-12"><i class="fa fa-map-marker"></i>Xao Paulo</span>
