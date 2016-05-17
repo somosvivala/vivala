@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Ong;
 use App\Perfil;
+use App\Cidade;
 use App\Experiencia;
 use App\CategoriaExperiencia;
 use App\InscricaoExperiencia;
@@ -17,45 +18,51 @@ class ExperienciasSeeder extends Seeder {
         DB::table('experiencias')->delete();
 
         $this->seedCategorias();
-        $this->seedExperienciasComCategorias();
+        $this->seedExperiencias();
         $this->seedInscricoes();
 
     }
 
     /**
-     * Funcao para seedar as experiencias ja com alguma categoria
+     * Funcao para seedar as experiencias
      */
-    private function seedExperienciasComCategorias()
+    private function seedExperiencias()
     {
         $ong = Ong::orderByRaw('RANDOM()')->first();
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
+        $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
         $experiencia = Experiencia::create([
             'titulo' => 'Primeira Experiencia',
             'descricao' => 'Essa é primeira experiencia, a primeira de muitas!',
             'preco' => 50.00
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
+        $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
+        $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
         $experiencia = Experiencia::create([
             'titulo' => 'Segunda Experiencia',
             'descricao' => 'Essa é segunda experiencia, a segunda de muitas!',
             'preco' => 223.44
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
+        $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
+        $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
         $experiencia = Experiencia::create([
             'titulo' => 'Terceira Experiencia',
             'descricao' => 'Essa é terceira experiencia, a terceira de muitas!',
             'preco' => 12.44
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
+        $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
 
@@ -65,7 +72,7 @@ class ExperienciasSeeder extends Seeder {
     /**
      * Funcao para seedar as Categorias
      */
-    private function seedCategorias() 
+    private function seedCategorias()
     {
         CategoriaExperiencia::create([
             'nome' => 'Ecoturismo',
