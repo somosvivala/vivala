@@ -23,6 +23,15 @@ class Experiencia extends Model
     }
 
     /**
+     * Uma Experiencia tem sempre um local
+     * @obs usando relacoes polimorficas possibilitando outros locais alem de cidades
+     */
+    public function local()
+    {
+        return $this->morphTo();
+    }
+
+    /**
      * Uma Experiencia tem uma foto.
      */
     public function fotoCapa()
@@ -59,7 +68,7 @@ class Experiencia extends Model
     }
 
     /**
-     * Acessor para determinar se o usuario atualmente logado
+     * Metodo para determinar se o usuario atualmente logado
      * tem permissao para editar essa experiencia
      *
      * @param $user - Uma instancia do usuario que queremos testar
