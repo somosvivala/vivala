@@ -41,5 +41,14 @@ class AppServiceProvider extends ServiceProvider {
           'Illuminate\Contracts\Auth\Registrar',
           'App\Services\Registrar'
       );
+
+      //bindando a interface com a implementacao,
+      //assim o laravel servira automaticamente uma intancia
+      //de LoggerRepository quando requisitada nos controllers
+      $this->app->bind(
+          'App\Interfaces\LoggerRepositoryInterface',
+          'App\Repositories\LoggerRepository'
+      );
+
 	}
 }

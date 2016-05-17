@@ -734,4 +734,13 @@ class Perfil extends Model {
         return $this->hasMany('App\InscricaoExperiencia');
     }
 
+    /**
+     * Um Perfil pode ter fazer varias interacoes com a plataforma
+     */
+    public function acoesPlataforma()
+    {
+        return $this->morphMany('App\InteracaoPlataforma', 'author', 'author_type', 'author_id');
+    }
+
+
 }

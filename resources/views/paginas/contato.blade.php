@@ -10,7 +10,8 @@
     </h3>
     <div class="col-sm-5">
         <p class="ajuste-fonte-avenir-light">{{ trans('global.contact_text_1') }}</p>
-        <p class="margin-b-2 ajuste-fonte-avenir-light">{{ trans('global.contact_text_2') }}</p>
+        <p class="ajuste-fonte-avenir-light">{{ trans('global.contact_text_2') }}</p>
+        <p class="margin-b-2 ajuste-fonte-avenir-light">{{ trans('global.contact_text_3') }}</p>
         <hr style="border: 0; height: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
         <div class="row padding-t-2 padding-b-2 ">
             <div class="col-sm-12">
@@ -29,7 +30,13 @@
               </span>
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="tel:+55 11 2645 2632">(11) 2645 2632</a>
+                <a class="laranja font-bold-upper" href="tel:+55 11 2645 2632">(11) 2645-2632</a>
+            </div>
+            <div class="col-sm-12">
+                <a class="laranja font-bold-upper" href="tel:+55 11 98204 1821">(11) 98204-1821</a>
+            </div>
+            <div class="col-sm-12">
+                <a class="laranja font-bold-upper" href="tel:+55 11 99131 6658">(11) 99131-6658</a>
             </div>
         </div>
         <div class="row padding-t-2 ">
