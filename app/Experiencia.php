@@ -8,7 +8,6 @@ class Experiencia extends Model
 
     //mass assigned fields
     protected $fillable = [
-        'titulo',
         'descricao',
         'preco',
         'status'

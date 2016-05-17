@@ -2,7 +2,6 @@
 
 use App\Http\Requests;
 use App\Http\Requests\EditarFotoExperienciaRequest;
-use App\Http\Requests\CriarExperienciaRequest;
 
 use App\Http\Controllers\Controller;
 
@@ -11,6 +10,8 @@ use Agent;
 use Auth;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Experiencia;
+use App\Http\Requests\CreateExperienciaRequest;
+use App\Http\Requests\StoreExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -47,10 +48,6 @@ class ExperienciasController extends Controller
         }
     }
 
-
-
-
-
     /**
      * Exibe detalhes da experiencia
      *
@@ -70,12 +67,19 @@ class ExperienciasController extends Controller
     /**
      * Serve a view de criacao de uma experiencia
      */
-    public function create(CriarExperienciaRequest $request)
+    public function create(CreateExperienciaRequest $request)
     {
         return view('experiencias._createform');
     }
 
-
+    /**
+     * Recebe a request para criacao de experiencias
+     * @param $request - StoreExperienciaRequest
+     */
+    public function store(StoreExperienciaRequest $request)
+    {
+        return $this->experienciasRepository->create($request->all());
+    }
 
 
     /**

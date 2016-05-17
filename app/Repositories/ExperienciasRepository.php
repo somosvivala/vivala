@@ -5,6 +5,7 @@ namespace app\Repositories;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Experiencia;
 use App\User;
+use App\CategoriaExperiencia;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -41,6 +42,26 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     public function findOrFail($id)
     {
         return Experiencia::findOrFail($id);
+    }
+
+    /**
+     * Metodo para criar uma nova experiencia
+     */
+    public function create($arrayArgumentos)
+    {
+        return Experiencia::create($arrayArgumentos);
+    }
+
+    /**
+     * Metodo para criar uma nova experiencia e ja associar a algumas categorias
+     */
+    public function createComCategorias($arrayArgumentos)
+    {
+        $experiencia = Experiencia::create($arrayArgumentos);
+
+        //foreach id in $arrayArgumentos->get('categoriasIds')
+        //associate
+
     }
 
     /**
