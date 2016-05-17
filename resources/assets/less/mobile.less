@@ -1,8 +1,14 @@
+body.mobile {
+    font-size: 16px;
+    font-family:@font-family-avenir-light;   
+}
+
 .header-mobile {
     background-color:@cor-primaria;
     color:white;
     text-transform:uppercase;
     fill: currentColor;
+    font-family:@font-family-avenir-black;
     font-size:2rem;
     padding:1em;
     img {
@@ -13,15 +19,16 @@
 .titulo-mobile {
     text-align:center;
     text-transform:uppercase;
-    font-size:2rem;
+    font-size:2.2rem;
+    font-family:@font-family-futura-bt-bold;
 }
 
 .link-voltar {
     position:fixed;
     top:0;
     left:0;
-    padding:0.5em;
-    font-size: 3em;
+    padding:0.2em;
+    font-size: 2.5em;
     color:white;
 }
 
@@ -53,9 +60,12 @@
     left:0;
     bottom:0;
     width:100%;
-    height:4em;
     color:white;
     text-align:center;
+    font-family:@font-family-avenir-black;
+    text-transform:uppercase;
+    font-size:2em;
+    padding:0.5em;
     background-color:darken(@verde-sucesso,5%);
     transition:background-color 0.2s ease;
     &:hover{
@@ -81,7 +91,7 @@ ul.lista-foto-descricao {
     }
     .foto {
         width:50%;
-        height:15em;
+        height:13em;
         .foto-img {
             height:100%;
             width:100%; 
@@ -108,11 +118,11 @@ ul.lista-foto-descricao {
     }
     .descricao {
         width:50%;
-        height:15em;
+        height:13em;
         .container {
             height:100%;
             width:100%; 
-            padding-top:1em;
+                padding-top:2em;
             background-color: white;
             text-align:center;
         }
@@ -122,7 +132,7 @@ ul.lista-foto-descricao {
 .experiencia {
     .foto-experiencia {
         .foto-img {
-            @tamanhofoto: 20em;
+            @tamanhofoto: 14em;
             margin-left:-@tamanhofoto/2;
             left:50%;
             width:@tamanhofoto;
@@ -151,10 +161,16 @@ ul.lista-foto-descricao {
     }
     .descricao {
         position: absolute;
-        top:8em;
+        top:4em;
         left:5%;
         width:90%;
         background-color:white;
         padding-top:12em;
     }
+}
+
+.negrito-exp {
+    font-family:@font-family-futura-bt-bold;
+    font-size:1em;
+    color:@cor-cinza-escuro;
 }

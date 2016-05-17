@@ -6,8 +6,8 @@
 </a>
 <section class="experiencia">
     <div class="descricao">
-        <span class="col-xs-12"><i class="fa fa-map-marker"></i>Xao Paulo</span>
-        <span class="col-xs-12">{{ $Experiencia->preco }}</span>
+        <span class="col-xs-12 negrito-exp text-center"><i class="fa fa-map-marker"></i>Xao Paulo</span>
+        <span class="col-xs-12 negrito-exp text-center">{{ $Experiencia->preco }}</span>
         <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
     </div>
 
@@ -18,6 +18,6 @@
             </div>
         </div>
     </div>
-    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Bookar</a>
+    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Se inscreva aqui</a>
 </section >
 @endsection

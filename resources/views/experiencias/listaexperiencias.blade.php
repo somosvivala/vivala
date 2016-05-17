@@ -18,9 +18,9 @@
             </div>
             <div class="{{ $k%2!=0?'direita':'esquerda'}} descricao">
                 <div class="container">
-                    <span class="col-xs-12 local"><i class="fa fa-map-marker"></i> Sao Paulo</span>
-                    <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
-                    <span class="col-xs-12 preco">R${{ $Experiencia->preco }}</span>
+                    <span class="col-xs-12 negrito-exp"><i class="fa fa-map-marker"></i> Sao Paulo</span>
+                    <span class="col-xs-12 negrito-exp">R${{ $Experiencia->preco }}</span>
+                    <span class="pull-left margin-t-1">{{ $Experiencia->descricao }}</span>
                 </div>
             </div>
         </a>
