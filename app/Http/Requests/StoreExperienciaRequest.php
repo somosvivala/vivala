@@ -36,8 +36,8 @@ class StoreExperienciaRequest extends Request
     public function rules()
     {
         return [
-            'descricao' => 'string',
-            'preco' => 'numeric'
+            'descricao' 			=> "string|required|min:2",
+            'preco'           => "required|numeric"
         ];
     }
 

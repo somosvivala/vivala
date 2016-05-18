@@ -2,14 +2,16 @@
 
     <div class="padding-b-1" id="cadastrar-experiencia">
         <h2 class="col-sm-12">Cadastrar Experiência</h2>
-        <form action="/experiencias/store">
+            @include('errors.list')
+        {!! Form::open(['url' => 'experiencias']) !!}
+
             <div class="">
                 <label class="row col-sm-12">Cidade</label>
                 <input type="text" name="cidade" placeholder="cidade"/>
             </div>
             <div class="">
                 <label class="row col-sm-12">Descrição</label>
-                <textarea name="descricao" placeholder="Descrição"></textarea>
+                {!! Form::textarea("descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input' ]) !!}
             </div>
             <div class="">
                 <label class="row col-sm-12">Foto</label>
@@ -22,16 +24,16 @@
             <div class="">
                 <label class="row col-xs-12">Categorias</label>
                 <label class="col-xs-3">
-                    <input type="checkbox" name="categoria" value="Criança">Criança
+                    <input type="checkbox" name="categoria[]" value="1">Criança
                 </label>
                 <label class="col-xs-3">
-                    <input type="checkbox" name="categoria" value="Animal">Animal 
+                    <input type="checkbox" name="categoria[]" value="2">Animal 
                 </label>
             </div>
             <div class="col-sm-12">
-                <button type="submit" class="btn btn-acao" name="descricao">Cadastrar</button>
+                <button type="submit" class="btn btn-acao">Cadastrar</button>
             </div>
-        </form>
+        {!! Form::close() !!}
     </div>
 </div>
 

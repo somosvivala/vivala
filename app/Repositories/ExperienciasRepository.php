@@ -57,11 +57,20 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function createComCategorias($arrayArgumentos)
     {
-        $experiencia = Experiencia::create($arrayArgumentos);
+        //criando a experiencia normalmente
+        $experiencia = $this->create($arrayArgumentos);
 
-        //foreach id in $arrayArgumentos->get('categoriasIds')
-        //associate
+        $categorias = $arrayArgumentos['categoria'];
 
+        //iterando sob as categorias e salvando-as a experiencia
+        foreach ($categorias as $categoriaId)
+        {
+            $categoria = CategoriaExperiencia::findOrFail($categoriaId);
+            $experiencia->categorias()->save($categoria);
+        }
+
+        $experiencia->push();
+        return $experiencia;
     }
 
     /**
