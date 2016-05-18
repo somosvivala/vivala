@@ -36,8 +36,10 @@ class StoreExperienciaRequest extends Request
     public function rules()
     {
         return [
-            'descricao' 			=> "string|required|min:2",
-            'preco'           => "required|numeric"
+            'descricao' 			  => "string|required|min:2",
+            'preco'             => "required|numeric",
+            'cidade'            => "required|exists:cidades,id",
+            'categoria'         => "array"
         ];
     }
 

@@ -50,5 +50,13 @@ class AppServiceProvider extends ServiceProvider {
           'App\Repositories\LoggerRepository'
       );
 
+      //bindando a interface com a implementacao,
+      //assim o laravel servira automaticamente uma intancia
+      //de LocaisRepository quando requisitada nos controllers
+      $this->app->bind(
+          'App\Interfaces\LocaisRepositoryInterface',
+          'App\Repositories\LocaisRepository'
+      );
+
 	}
 }

@@ -78,9 +78,8 @@ class ExperienciasController extends Controller
      */
     public function store(StoreExperienciaRequest $request)
     {
-        return $this->experienciasRepository->createComCategorias($request->all());
+        return $this->experienciasRepository->create($request->all());
     }
-
 
     /**
      * Faz o checkout da experiencia

@@ -12,11 +12,22 @@ use App\CategoriaVaga;
 use App\Ong;
 use App\Vaga;
 use App\Cidade;
+use App\Interfaces\LocaisRepositoryInterface;
 
 use Illuminate\Database\Eloquent\Collection;
 
 class SearchController extends Controller {
 
+    //instancia de quem lida com os locais
+    private $locaisRepository;
+
+    /**
+     * Construtor recebendo instancia dos repositorios que ele precisa
+     */
+    function __construct(LocaisRepositoryInterface $repository)
+    {
+        $this->locaisRepository = $repository;
+    }
 
     //Metodo para pegar cidades de um estado
     public function getCidadesestado($idEstado)
@@ -186,6 +197,15 @@ class SearchController extends Controller {
         return view('cuidar.vagas', compact('causas','categorias', 'cidades', 'ongs'));
         
     }
-    
+
+    /**
+     * Metodo para retornar a view para autocompletar buscas de cidade
+     */
+    public function getAutocompletecidades()
+    {
+        $Cidades =  $this->locaisRepository->getCidadesByQuery(Request::get('query'));
+        return view('busca._autocompleteCidades')->with('Cidades', $Cidades);
+    }
+
 
 }

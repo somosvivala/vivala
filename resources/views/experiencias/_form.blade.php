@@ -1,14 +1,12 @@
-<div class="">
+<div class="col-sm-12">
     <label class="row col-sm-12">Cidade</label>
-    <input type="text" name="cidade" placeholder="cidade"/>
+    <input id="campo-autocomplete-cidades" class="autocomplete-cidades-ativo" type="text" placeholder="cidade"/>
+    <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden">
+    <i class="fa fa-spin fa-spinner loading-search soft-hide laranja"></i>
 </div>
 <div class="">
     <label class="row col-sm-12">Descrição</label>
-    {!! Form::textarea("descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input' ]) !!}
-</div>
-<div class="">
-    <label class="row col-sm-12">Foto</label>
-    <input type="file">
+    {!! Form::textarea("descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input', 'rows' => 3]) !!}
 </div>
 <div class="">
     <label class="row col-sm-12">Preço</label>

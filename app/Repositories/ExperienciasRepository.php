@@ -6,6 +6,7 @@ use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Experiencia;
 use App\User;
 use App\CategoriaExperiencia;
+use App\Cidade;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -61,19 +62,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function create($arrayArgumentos)
     {
-        return Experiencia::create($arrayArgumentos);
-    }
-
-    /**
-     * Metodo para criar uma nova experiencia e ja associar a algumas categorias
-     *
-     * @param $arrayArgumentos - Array com os argumentos que serao
-     * passados para o Model::create (inclusive as categorias)
-     */
-    public function createComCategorias($arrayArgumentos)
-    {
-        //criando a experiencia normalmente
-        $experiencia = $this->create($arrayArgumentos);
+        $experiencia = Experiencia::create($arrayArgumentos);
 
         $categorias = $arrayArgumentos['categoria'];
 
@@ -84,8 +73,13 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             $experiencia->categorias()->save($categoria);
         }
 
+        //pegando o id da cidade e associando a experiencia
+        $cidade = Cidade::findOrFail($arrayArgumentos['cidade']);
+        $experiencia->local()->associate($cidade);
+
         $experiencia->push();
         return $experiencia;
+
     }
 
     /**
@@ -111,7 +105,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     public function injectAllCategorias($view)
     {
         $Categorias = $this->getAllCategorias();
-        return $view->with('Experiencias', $Categorias);
+        return $view->with('Categorias', $Categorias);
     }
 
     /**
