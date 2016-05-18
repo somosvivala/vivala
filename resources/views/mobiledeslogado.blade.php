@@ -18,7 +18,7 @@
       {{-- Favicon e relacionados --}}
         <link rel="apple-touch-icon" sizes="57x57" href="{{ asset('favicon/v/apple-touch-icon-57x57.png') }}">
         <link rel="apple-touch-icon" sizes="60x60" href="{{ asset('favicon/v/apple-touch-icon-60x60.png') }}">
-        <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon/v/apple-touch-icon-72x72.png') }}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('favicon/v/apple-touch-icon-72x72.png') }}">
         <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon/v/apple-touch-icon-76x76.png') }}">
         <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('favicon/v/apple-touch-icon-114x114.png') }}">
         <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('favicon/v/apple-touch-icon-120x120.png') }}">
@@ -78,13 +78,24 @@
 
 <body class="mobile">
     <div class="col-md-12 col-lg-12 text-center header-mobile">
-        <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        <a href="#">
+            <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        </a>
     </div>
 
     <div class="col-md-12 col-lg-12">
         @yield('content')
     </div>
 
+    <div id="conheca-vivala">
+
+        <div class="col-xs-12">
+            <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        </div>
+        <i class="fa fa-play"></i>
+
+        <i class="fa fa-times desativa-parent"></i>
+    </div>
     {{-- Scripts de carregamento no fim do HTML --}}
     <script src="{{ asset('/js/vendor.js') }}"></script>
 

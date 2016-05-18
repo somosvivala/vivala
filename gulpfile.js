@@ -83,6 +83,7 @@ elixir(function(mix) {
       '../../assets/js/buscaPerfil.js',
       '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
+      '../../assets/js/mobile.js',
 
       /* ClickbusPayment Mercado Pago Gateway*/
       '../../assets/js/clickbus-payments.js',
