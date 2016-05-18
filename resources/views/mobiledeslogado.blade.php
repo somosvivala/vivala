@@ -76,9 +76,9 @@
     <![endif]-->
 </head>
 
-<body>
+<body class="mobile">
     <div class="col-md-12 col-lg-12 text-center header-mobile">
-        Conheça a <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
     </div>
 
     <div class="col-md-12 col-lg-12">
