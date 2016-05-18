@@ -1,4 +1,4 @@
-<div id="cotacao-viagem" class="modal fade" role="dialog">
+<div id="modal-cotacao-viagem" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -10,7 +10,7 @@
         </h3>
       </div>
       <div class="modal-body">
-        {!! Form::open(['url' => 'cotarviagem', 'method' => 'POST', 'class' =>'form-ajax',  'data-redirect' => '', 'data-loading'=>'form-loading']) !!}
+        {!! Form::open(['method' => 'POST', 'url' => 'cotarviagem', 'data-callback' => 'retornoFormCotarViagens', 'data-loading'=>'form-loading', 'id' => 'form-cotar-viagens']) !!}
         <div class="form-group">
             {{-- Botões Iniciais --}}
             <div class="row">
@@ -66,8 +66,9 @@
                 </div>
               </div>
             </div>
-            {{-- Form Básico --}}
+            {{-- Form --}}
             <div class="row">
+              {{-- Form Básico --}}
               <div id="cotacao-basica" data-value="0" class="hidden">
                 <div class="col-md-12 col-lg-12 text-right margin-b-1">
                   <p class="laranja">
@@ -244,7 +245,7 @@
                   </div>
                 </div>
               </div>
-
+              {{-- Form Hospedagem --}}
               <div id="cotacao-hotel" data-value="0" class="hidden">
                 <hr class="divisoria"/>
                 <div id="cotacao-hotel-titulo" class="row margin-t-2 margin-b-2">
@@ -387,7 +388,7 @@
                   </div>
                 </div>
               </div>
-
+              {{-- Form Aluguel de Carros --}}
               <div id="cotacao-veiculos" data-value="0" class="hidden">
                 <hr class="divisoria"/>
                 <div id="cotacao-carros-titulo" class="row margin-t-2">
@@ -396,11 +397,13 @@
                   </div>
                 </div>
               </div>
-
+              {{-- Botão de Enviar --}}
               <div id="cotacao-enviar" data-value="0" class="hidden">
                 <div class="row margin-t-4">
                   <div class="col-md-12 col-lg-12 text-center">
                     {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao']) !!}
+                    {{-- Loading --}}
+                    <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 laranja" style="display:none"></i>
                   </div>
                 </div>
               </div>

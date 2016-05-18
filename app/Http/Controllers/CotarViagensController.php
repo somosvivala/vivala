@@ -9,7 +9,8 @@ class CotarViagensController extends Controller {
 
 	public function getForm(CotarViagensRequest $request)
 	{
-		return dd('passou pela REQUEST');
+		$request = Request::all();
+		//event(new ($compra));
 	}
 
 }

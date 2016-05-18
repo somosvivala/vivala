@@ -1,14 +1,23 @@
 "use strict";
 
-// Pegando a lingua ativa no momento
+// Pegando a lingua ativa na view no momento
 var linguaAtiva = $("meta[name=language]").attr("content");
 var lingua = [];
 switch(linguaAtiva){
   case 'en':
+    lingua[0] = 'Trip estimate send with success!',
+    lingua[1] = 'Our team will do everything to find the trip that fits more with you!',
+    lingua[2] = 'A reply email about your trip is coming soon, stay tuned to your mailbox.'
   break;
   case 'pt':
+    lingua[0] = 'Cotação enviada com sucesso!',
+    lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
+    lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.'
   break;
   default:
+  lingua[0] = 'Cotação enviada com sucesso!',
+  lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
+  lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.'
 }
 
 var ativaForm = function(container, val){
@@ -286,20 +295,60 @@ var bindaFormCotaViagem = function() {
 
 jQuery(document).ready(function($) {
   bindaFormCotaViagem();
-});
 
-// var ajaxFormCotacao = function(){
-//   var origem, destino, data-ida,
-//       data-volta, data-flexivel,
-//       qtd-adultos, qtd-criancas,
-//       melhor-periodo;
-//
-//   ajax = $.ajax({
-//     url: '',
-//     type: 'POST',
-//     dataType: 'html',
-//     data: defaultParams,
-//   })
-//   .done(function(){})
-//   .fail(function(){});
-//}
+  // Token do laravel para Ajax
+  $.ajaxSetup({
+      headers: {
+        'X-CSRF-TOKEN': $('input[name="_token"]').attr('value'),
+        'Access-Control-Allow-Headers': '*'
+     }
+  });
+
+  $('#form-cotar-viagens').submit(function (ev) {
+    ev.defaultPrevented;
+    var frm = $(this),
+        dataForm = new FormData(this),
+        callbackFunction = frm.data('callback'),
+        loading = frm.data('loading');
+
+    if (loading && loading != "") {
+        $('input:submit').hide();
+        $('#'+loading).show();
+    }
+
+    $.ajax({
+        url: frm.attr('url'),
+        type: frm.attr('method'),
+        data: dataForm,
+        contentType: "application/json; charset=utf-8",
+        //dataType: ,
+        //processData: ,
+        success: function (data) {
+            if(callbackFunction) {
+              swal({
+                  title: lingua[0],
+                  html: lingua[1]+"<br/><br/>"+lingua[2],
+                  type: "success",
+                  confirmButtonColor: "#FF5B00",
+                  confirmButtonText: "OK",
+                  closeOnConfirm: true,
+              });
+              document.getElementById('form-cotar-viagens').reset();
+              $('#modal-cotacao-viagem').modal('hide');
+            }
+            if(redirect) {
+                window.location = redirect;
+            }
+        },
+       complete: function (data) {
+         //Se tiver loading e tiver dado erro, voltar botao
+         if (loading && loading != "") {
+             $('input:submit').show();
+             $('#'+loading).hide();
+         }
+       }
+    });
+
+  });
+
+});

@@ -1,14 +1,14 @@
 <?php
 
 namespace app\Repositories;
-
+use Mail;
 
 class MailSenderRepository {
 
-  public function sendEmail($view, $user_to, $message, $subject, $user_from)
+  public function sendMailNoReply($email_view, $message, $subject, $user_to)
   {
-    Mail::send($view, ['user' => $user], function ($message) use ($user) {
-        $message->to($user->email, $user->username)->subject($subject);
+    Mail::send($email_view, ['user' => $user_to], function ($message) use ($user_to) {
+        $message->to($user_to->email, $user_to->username)->subject($subject);
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
   }
