@@ -69,7 +69,7 @@ class ExperienciasController extends Controller
      */
     public function create(CreateExperienciaRequest $request)
     {
-        return view('experiencias._createform');
+        return view('experiencias.create');
     }
 
     /**

@@ -14,12 +14,21 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 {
 
     /*
-     * Metodo para pegar todas as experiencia
+     * Metodo para pegar todas as experiencias
      */
     public function getAll()
     {
         return Experiencia::all();
     }
+
+    /*
+     * Metodo para pegar todas as categorias das experiencias
+     */
+    public function getAllCategorias()
+    {
+        return CategoriaExperiencia::all();
+    }
+
 
 
     /*
@@ -46,6 +55,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
     /**
      * Metodo para criar uma nova experiencia
+     *
+     * @param $arrayArgumentos - Array com os argumentos que serao
+     * passados para o Model::create
      */
     public function create($arrayArgumentos)
     {
@@ -54,6 +66,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
     /**
      * Metodo para criar uma nova experiencia e ja associar a algumas categorias
+     *
+     * @param $arrayArgumentos - Array com os argumentos que serao
+     * passados para o Model::create (inclusive as categorias)
      */
     public function createComCategorias($arrayArgumentos)
     {
@@ -75,7 +90,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
     /**
      * Metodo usado para servir as experiencias para as view que precisem delas
-     * ps: Bindar views que precisarem bindado em ExperienciasProvider
+     * ps: Bindar views que precisarem em ExperienciasProvider
      *
      * @param $view - View que vai receber as experiencias
      *
@@ -84,6 +99,19 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $Experiencias = $this->getAll();
         return $view->with('Experiencias', $Experiencias);
+    }
+
+    /**
+     * Metodo usado para servir as categorias das experiencias para a view que precise delas
+     * ps: Bindar views que precisarem em ExperienciasProvider
+     *
+     * @param $view - View que vai receber as categorias
+     *
+     */
+    public function injectAllCategorias($view)
+    {
+        $Categorias = $this->getAllCategorias();
+        return $view->with('Experiencias', $Categorias);
     }
 
     /**
@@ -115,7 +143,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
 
         //desabilitado ate que ongs possam criar experiencias
-        // $podeEditar = $user->entidadeAtiva->isOng; 
+        // $podeEditar = $user->entidadeAtiva->isOng;
 
         //ou se o usuario ativo for um admin
         $podeEditar = false || $user->isAdmin();
