@@ -7,6 +7,7 @@ use App\Experiencia;
 use App\User;
 use App\CategoriaExperiencia;
 use App\Cidade;
+use App\Ong;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -78,6 +79,10 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $cidade = Cidade::findOrFail($arrayArgumentos['cidade']);
         $experiencia->local()->associate($cidade);
 
+        //pegando o id do owner e associando a experiencia
+        $ong = Ong::findOrFail($arrayArgumentos['projeto']);
+        $experiencia->owner()->associate($ong);
+
         $experiencia->push();
         return $experiencia;
     }
@@ -92,11 +97,12 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia =  $this->findOrFail($experienciaId);
         $cidade = Cidade::find($arrayArgumentos['cidade']);
+        $ong = Ong::findOrFail($arrayArgumentos['projeto']);
 
         $experiencia->update($arrayArgumentos);
         $experiencia->local()->associate($cidade)->save();
+        $experiencia->owner()->associate($ong)->save();
         $experiencia->categorias()->sync($arrayArgumentos['categoria']);
-
     }
 
     /**

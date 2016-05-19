@@ -39,6 +39,7 @@ class StoreExperienciaRequest extends Request
             'descricao' 			  => "string|required|min:2",
             'preco'             => "required|numeric",
             'cidade'            => "required|exists:cidades,id",
+            'projeto'           => "required|exists:ongs,id",
             'categoria'         => "array"
         ];
     }

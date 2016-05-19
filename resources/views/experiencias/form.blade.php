@@ -1,4 +1,8 @@
 <div class="col-sm-12 margin-b-1">
+    {!! Form::label('projeto', 'Projeto responsavel', ['class' => 'row col-sm-12']) !!}
+    {!! Form::select("projeto", $ongs, (isset($experiencia) ? $experiencia->owner->id : []), ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control', 'id' => 'ong_select']) !!}
+</div>
+<div class="col-sm-12 margin-b-1">
     <label class="row col-sm-12">Cidade</label>
     <input id="campo-autocomplete-cidades" class="autocomplete-cidades-ativo" type="text" placeholder="cidade" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
     <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden" value="{{ isset($experiencia) ? $experiencia->local->id : "" }}">
