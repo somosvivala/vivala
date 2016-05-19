@@ -21,6 +21,7 @@ class ExperienciasController extends Controller
     //Como vamos lidar com experiencias, usamos do repositorio de experiencias
     private $experienciasRepository;
 
+
     /**
      * Construtor com dependencia do experienciasRepository
      */
@@ -30,9 +31,14 @@ class ExperienciasController extends Controller
         $this->experienciasRepository = $repository;
         $this->middleware('auth', ['only' => [
             'getEditafoto',
-            'getCheckout'
+            'getCheckout',
+            'create',
+            'store',
+            'edit',
+            'upload'
         ]]);
     }
+
 
     /**
      * Exibe lista de experiencias
@@ -50,6 +56,7 @@ class ExperienciasController extends Controller
         }
     }
 
+
     /**
      * Exibe detalhes da experiencia
      *
@@ -66,6 +73,7 @@ class ExperienciasController extends Controller
         }
     }
 
+
     /**
      * Serve a view de criacao de uma experiencia
      */
@@ -73,6 +81,7 @@ class ExperienciasController extends Controller
     {
         return view('experiencias.create');
     }
+
 
     /**
      * Recebe a request para criacao de experiencias
@@ -82,6 +91,7 @@ class ExperienciasController extends Controller
     {
         return $this->experienciasRepository->create($request->all());
     }
+
 
     /**
      * Metodo para servir a view de edicao de uma experiencia
@@ -104,8 +114,6 @@ class ExperienciasController extends Controller
         $this->experienciasRepository->update($request->all(), $experienciaId);
         return redirect('/experiencias/'.$experienciaId);
     }
-
-
 
 
     /**
