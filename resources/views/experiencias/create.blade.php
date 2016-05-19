@@ -1,3 +1,6 @@
+@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
+
+@section('content')
 <div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
 
     <div class="padding-b-1" id="cadastrar-experiencia">
@@ -5,8 +8,10 @@
             @include('errors.list')
 
             {!! Form::open(['url' => 'experiencias']) !!}
-                @include('experiencias._form')
+
+                @include('experiencias.form', ['textBtnSubmit' => 'Criar Experiência'])
+
             {!! Form::close() !!}
     </div>
 </div>
-
+@endsection

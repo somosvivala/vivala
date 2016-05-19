@@ -64,7 +64,8 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = Experiencia::create($arrayArgumentos);
 
-        $categorias = $arrayArgumentos['categoria'];
+        //checando se existe alguma categoria nessa experiencia
+        $categorias = array_key_exists('categoria', $arrayArgumentos) ? $arrayArgumentos['categoria'] : [];
 
         //iterando sob as categorias e salvando-as a experiencia
         foreach ($categorias as $categoriaId)

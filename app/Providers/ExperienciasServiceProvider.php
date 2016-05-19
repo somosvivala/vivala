@@ -13,7 +13,7 @@ class ExperienciasServiceProvider extends ServiceProvider {
 	{
       //Bindando as views que precisam de experiencias
       view()->composer('gestao._listaexperiencias', 'App\Repositories\ExperienciasRepository@injectAllExperiencias');
-      view()->composer('experiencias._form', 'App\Repositories\ExperienciasRepository@injectAllCategorias');
+      view()->composer('experiencias.form', 'App\Repositories\ExperienciasRepository@injectAllCategorias');
 	}
 
 	/**

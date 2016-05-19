@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Requests\EditarFotoExperienciaRequest;
+use App\Http\Requests\EditExperienciaRequest;
 
 use App\Http\Controllers\Controller;
 
@@ -80,6 +81,27 @@ class ExperienciasController extends Controller
     {
         return $this->experienciasRepository->create($request->all());
     }
+
+    /**
+     * Metodo para servir a view de edicao de uma experiencia
+     */
+    public function edit(EditExperienciaRequest $request, $experienciaId)
+    {
+        $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
+        return view('experiencias.edit')->with('experiencia', $experiencia);
+    }
+
+
+    /**
+     * Metodo para fazer o update de uma experiencia
+     */
+    public function update(Request $request)
+    {
+        dd($request);
+    }
+
+
+
 
     /**
      * Faz o checkout da experiencia
