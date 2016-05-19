@@ -3,6 +3,7 @@
 use App\Http\Requests;
 use App\Http\Requests\EditarFotoExperienciaRequest;
 use App\Http\Requests\EditExperienciaRequest;
+use App\Http\Requests\UpdateExperienciaRequest;
 
 use App\Http\Controllers\Controller;
 
@@ -94,10 +95,14 @@ class ExperienciasController extends Controller
 
     /**
      * Metodo para fazer o update de uma experiencia
+     *
+     * @param $request - Objeto contendo as informacoes da request ja validadas
+     * @param $experienciaId - Id da experiencia que sera updated
      */
-    public function update(Request $request)
+    public function update(UpdateExperienciaRequest $request, $experienciaId)
     {
-        dd($request);
+        $this->experienciasRepository->update($request->all(), $experienciaId);
+        return redirect('/experiencias/'.$experienciaId);
     }
 
 

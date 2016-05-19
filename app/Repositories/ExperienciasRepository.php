@@ -80,6 +80,22 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
         $experiencia->push();
         return $experiencia;
+    }
+
+    /**
+     * Metodo para fazer update de uma experiencia
+     *
+     * @param $arrayArgumentos - Ja validado e com os campos necessarios
+     * @param $experienciaId - ID da experiencia que vai ser updated
+     */
+    public function update($arrayArgumentos, $experienciaId)
+    {
+        $experiencia =  $this->findOrFail($experienciaId);
+        $cidade = Cidade::find($arrayArgumentos['cidade']);
+
+        $experiencia->update($arrayArgumentos);
+        $experiencia->local()->associate($cidade)->save();
+        $experiencia->categorias()->sync($arrayArgumentos['categoria']);
 
     }
 
