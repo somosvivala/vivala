@@ -27,7 +27,7 @@ class EnviaEmailCotacaoViagem {
 	 */
 	public function handle(NovaCotacaoViagem $event)
 	{
-		$CotacaoViagem = $event->CotacaoViagem;
+		enviaEmailCotacaoViagem($event->CotacaoViagem);
 	}
 
 }

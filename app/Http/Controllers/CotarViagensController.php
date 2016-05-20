@@ -13,79 +13,103 @@ use App\Repositories\MailSenderRepository;
 
 class CotarViagensController extends Controller {
 
+	public function setOpcaoCotacao($opt)
+	{
+		if(isset($opt) && $opt) $opt='COTAR'; else $opt='NÃO COTAR';
+		return $opt;
+	}
+
+	public function setOpcaoTempo($time)
+	{
+		if(isset($time) && $time) $time='PODE VIAJAR'; else $time='NÃO PODE VIAJAR';
+		return $time;
+	}
+
+	public function setDatasHorariosRestritos($val)
+	{
+		if(isset($val) && $val) $val='POSSUI'; else $val='NÃO POSSUI';
+		return $val;
+	}
+
+	public function setOpcaoAdicional($add)
+	{
+		if(isset($add) && $add) $add='SIM'; else $add='NÃO';
+		return $add;
+	}
+
 	public function getForm(CotarViagensRequest $request)
 	{
-		// Dados do usuário
-		$user = Auth::user();
-		$user_id = $user->id;
-		$user_username = $user->username;
-		$user_email = $user->email;
-
-		$opt_flight = intval(Input::get('basico-cotacao-voos'));
-		if(isset($opt_flight) && $opt_flight) $opt_flight='NÃO COTAR'; else $opt_flight='COTAR';
-		$opt_bus = intval(Input::get('basico-cotacao-onibus'));
-		if(isset($opt_bus) && $opt_bus) $opt_bus='NÃO COTAR'; else $opt_bus='COTAR';
-		$opt_accomodation = intval(Input::get('basico-cotacao-hospedagem'));
-		if(isset($opt_accomodation) && $opt_accomodation) $opt_accomodation='NÃO COTAR'; else $opt_accomodation='COTAR';
-		$opt_car = intval(Input::get('basico-cotacao-carros'));
-		if(isset($opt_car) && $opt_car) $opt_car='NÃO COTAR'; else $opt_car='COTAR';
-		$options = [
-			'cotacao-voo' => $opt_flight,
-			'cotacao-onibus' => $opt_bus,
-			'cotacao-hospedagem' => $opt_accomodation,
-			'cotacao-carro' => $opt_car,
+		// Montando objeto USUÁRIO
+		$user = [
+			'user-id' => Auth::user()->id,
+			'user-username' => Auth::user()->username,
+			'user-email' => Auth::user()->email
 		];
 
-		$from = strtoupper(Input::get('basico-origem-1'));
-		$to = strtoupper(Input::get('basico-destino-1'));
-		$departure_date_1 = Input::get('basico-data-da-ida-1');
-		$arrival_date_1 = Input::get('basico-data-da-volta-1');
-		//$accomodation_1 = intval(Input::get('basico-mais-hospedagem-1'));
+		// Montando objeto de OPÇÕES DE COTAÇÃO
+		$options = [
+			'cotacao-voo' => $this->setOpcaoCotacao(intval(Input::get('basico-cotacao-voos'))),
+			'cotacao-onibus' => $this->setOpcaoCotacao(intval(Input::get('basico-cotacao-onibus'))),
+			'cotacao-hospedagem' => $this->setOpcaoCotacao(intval(Input::get('basico-cotacao-hospedagem'))),
+			'cotacao-carro' => $this->setOpcaoCotacao(intval(Input::get('basico-cotacao-carros'))),
+		];
 
-		$flexible_dates = Input::get('basico-datas-flexiveis');
-		$adults = intval(Input::get('basico-nro-adultos'));
-		$children = intval(Input::get('basico-nro-criancas'));
-		$time_morning = intval(Input::get('basico-pref-tempo-manha'));
-		$time_noon = intval(Input::get('basico-pref-tempo-tarde'));
-		$time_night = intval(Input::get('basico-pref-tempo-noite'));
-		$time_dawn = intval(Input::get('basico-pref-tempo-madrugada'));
-		$restrict_hours = Input::get('basico-horario-restrito');
+		// Montando objeto de seleção de TEMPO DE VIAGEM
+		$time = [
+			'viaja-manha' => $this->setOpcaoTempo(intval(Input::get('basico-pref-tempo-manha'))),
+			'viaja-tarde' => $this->setOpcaoTempo(intval(Input::get('basico-pref-tempo-tarde'))),
+			'viaja-noite' => $this->setOpcaoTempo(intval(Input::get('basico-pref-tempo-noite'))),
+			'viaja-madrugada' => $this->setOpcaoTempo(intval(Input::get('basico-pref-tempo-madrugada'))),
+			'horario-restrito' => Input::get('basico-horario-restrito')
+		];
 
-		$acc_rooms = intval(Input::get('hospedagem-nro-quartos'));
-		$acc_adc_cafe = Input::get('hospedagem-adicional-cafe');
-		$acc_adc_wifi = Input::get('hospedagem-adicional-wifi');
-		$acc_adc_ar_cond = Input::get('hospedagem-adicional-ar-condicionado');
-		$acc_adc_tv_cabo = Input::get('hospedagem-adicional-tv-cabo');
-		$acc_adc_cancelamento = Input::get('hospedagem-adicional-cancelamento');
-		$acc_adc_animal = Input::get('hospedagem-adicional-animal');
-		$acc_adc_piscina = Input::get('hospedagem-adicional-piscina');
-		$acc_adc_academia = Input::get('hospedagem-adicional-academia');
-		$acc_adc_estacionamento = Input::get('hospedagem-adicional-estacionamento');
-		$acc_adc_banheiro_privativo = Input::get('hospedagem-adicional-banheiro-privativo');
-		$acc_adc_varanda = Input::get('hospedagem-adicional-varanda');
-		$acc_adc_translado = Input::get('hospedagem-adicional-translado');
-		$acc_pref_region = Input::get('hospedagem-bairro-regiao-preferencia');
-		$acc_add_infos = Input::get('hospedagem-informacoes-adicionais');
+		// Montando objeto da VIAGEM BÁSICA
+		$basics = [
+			'lugar-saida' => strtoupper(Input::get('basico-origem-1')),
+			'lugar-chegada' => strtoupper(Input::get('basico-destino-1')),
+			'data-ida' => Input::get('basico-data-ida-1'),
+			'data-volta' => Input::get('basico-data-volta-1'),
+			'datas-flexiveis' => $this->setDatasHorariosRestritos(intval(Input::get('basico-datas-flexiveis'))),
+			'numero-adultos' => intval(Input::get('basico-nro-adultos')),
+			'numero-criancas' => intval(Input::get('basico-nro-criancas'))
+		];
 
-		// MONTANDO O OBJETO
+		// Montando o objeto de adicionais da HOSPEDAGEM
+		$accomodation_additionals = [
+			'adicional-cafe' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-cafe'))),
+			'adicional-wifi' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-wifi'))),
+			'adicional-ar-condicionado' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-ar-condicionado'))),
+			'adicional-tv-cabo' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-tv-cabo'))),
+			'adicional-cancelamento' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-cancelamento'))),
+			'adicional-animal' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-animal'))),
+			'adicional-piscina' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-piscina'))),
+			'adicional-academia' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-academia'))),
+			'adicional-estacionamento' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-estacionamento'))),
+			'adicional-banheiro-privativo' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-banheiro-privativo'))),
+			'adicional-varanda' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-varanda'))),
+			'adicional-translado' => $this->setOpcaoAdicional(intval(Input::get('hospedagem-adicional-translado'))),
+		];
+
+		// Montando o OBJETO final da HOSPEDAGEM
+		$accomodation = [
+			'hotel-numero-quartos' => intval(Input::get('hospedagem-nro-quartos')),
+			'hotel-adicionais' => $accomodation_additionals,
+			'hotel-bairro-regiao' => Input::get('hospedagem-bairro-regiao-preferencia'),
+			'hotel-infos-adicionais' => Input::get('hospedagem-informacoes-adicionais')
+		];
+
+		// MONTANDO O OBJETO FINAL para o EVENTO
 		$CotacaoViagem = [
-			'user-id' => $user_id,
-			'user-username' => $user_username,
-			'user-email' => $user_email,
-			'lugar-saida' => $from,
-			'lugar-chegada' => $to,
-			'data-ida' => $departure_date_1,
-			'data-volta' => $arrival_date_1,
-			'cotar' => $options,
-			'numero-adultos' => $adults,
-			'numero-criancas' => $children,
+			'usuario' => $user,
+			'opcoes' => $options,
+			'dados-viagem' => $basics,
+			'tempo-viagem' => $time,
+			'dados-hospedagem' => $accomodation
 		];
 
 		//Disparando evento para avisando que temos
 		//uma nova cotação
-		//event(new NovaCotacaoViagem($User, $Request));
-
-		return dd($CotacaoViagem);
+		event(new NovaCotacaoViagem($CotacaoViagem));
 	}
 
 }

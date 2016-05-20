@@ -2,7 +2,7 @@
 
 use App\Events\Event;
 use Illuminate\Queue\SerializesModels;
-//use App\CotacaoViagem;
+//use App\CotacoesViagens;
 
 class NovaCotacaoViagem extends Event {
 

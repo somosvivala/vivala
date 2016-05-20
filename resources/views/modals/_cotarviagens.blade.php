@@ -84,10 +84,10 @@
                     {!! Form::text('basico-destino-1', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                   </div>
                   <div class="col-md-2 col-lg-2">
-                    <input type="text" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="date" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    <input type="text" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="date" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-1 col-lg-1">
                     {!! Form::checkbox('', 0, false, ['id' => 'mais-hospedagem-1', 'class' => 'form-control']) !!}
@@ -98,16 +98,16 @@
                 @for($i=2; $i<=5; $i++)
                   <div id="viagem-{{ $i }}" class="col-md-12 col-lg-12 hidden">
                     <div class="col-md-3 col-lg-3">
-                      {!! Form::text('origem-'.$i, null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
+                      {!! Form::text('basico-origem-'.$i, null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
                     </div>
                     <div class="col-md-3 col-lg-3">
-                      {!! Form::text('destino-'.$i, null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
+                      {!! Form::text('basico-destino-'.$i, null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                     </div>
                     <div class="col-md-2 col-lg-2">
-                      <input type="text" name="data-ida-{{ $i }}" class="form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale') }}">
+                      <input type="text" id="basico-data-ida-{{ $i }}" name="data-ida-{{ $i }}" class="form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale') }}">
                     </div>
                     <div class="col-md-3 col-lg-3">
-                      <input type="text" name="data-volta-{{ $i }}" class="form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale') }}">
+                      <input type="text" id="basico-data-ida-{{ $i }}" name="data-volta-{{ $i }}" class="form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale') }}">
                     </div>
                     <div class="col-md-1 col-lg-1">
                       {!! Form::checkbox('mais-hospedagem-'.$i, null, false, ['class' => 'form-control']) !!}
@@ -347,12 +347,12 @@
                         </p>
                         <p>
                           {!! Form::checkbox('', '', false, ['id' => 'adicional-varanda']) !!}
-                          {!! Form::hidden('hospedagem-adicional-varanda', 0, ['id' => 'hospedagem-adicional-banheiro-varanda']) !!}
+                          {!! Form::hidden('hospedagem-adicional-varanda', 0, ['id' => 'hospedagem-adicional-varanda']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_balcony') !!}</span>
                         </p>
                         <p>
                           {!! Form::checkbox('', '', false, ['id' => 'adicional-translado']) !!}
-                          {!! Form::hidden('hospedagem-adicional-translado', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-translado', 0, ['id' => 'hospedagem-adicional-translado']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_shuttle') !!}</span>
                         </p>
                       </div>

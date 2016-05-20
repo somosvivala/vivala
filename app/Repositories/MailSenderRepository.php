@@ -7,11 +7,11 @@ use Mail;
 
 class MailSenderRepository {
 
-  public function enviaEmailCotacaoViagem()
+  public function enviaEmailCotacaoViagem($CotacaoViagem)
   {
     Mail::send('emails.cotacaoviagens.sucesso', ['Cotacao' => $CotacaoViagem],
     function ($message) use ($CotacaoViagem) {
-    		$message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Cotação de Viagem enviada pelo Formulário!');
+    		$message->to('bruno.luiz@vivalabrasil.com.br', 'Vivalá')->subject('Cotação de Viagem enviada pelo Formulário!');
     		$message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
   }

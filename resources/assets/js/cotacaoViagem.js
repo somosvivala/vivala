@@ -29,14 +29,13 @@ switch(linguaAtiva){
     lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.'
 }
 
+// Aplicando mascara nos campos de date para funcionar melhor com o calendário
+$('.mascara-data').mask("00/00/0000");
+
 // Ativa os forms que se encontram abaixo das opções principais
 var ativaForm = function(container, val){
-  if(val < 1){
-    $(container).addClass('hidden');
-  }
-  else if(val >= 1){
-    $(container).removeClass('hidden');
-  }
+  if(val < 1) $(container).addClass('hidden');
+  else if(val >= 1) $(container).removeClass('hidden');
 }
 
 // Previne o usuário de escolher a data da volta em dias anteriores a data da ida
@@ -145,7 +144,6 @@ var bindaFormCotaViagem = function() {
 
   var basicoDataIda1 = $('#basico-data-ida-1'),
       basicoDataVolta1 = $('#basico-data-volta-1');
-      //aplicando mascara nos campos de date para funcionar melhor com o calendário
       coloreDatePickerDiasPassados(basicoDataIda1);
       coloreDatePickerDiasPassados(basicoDataVolta1);
       mudaDataIdaVolta(basicoDataIda1, basicoDataVolta1);
@@ -389,7 +387,7 @@ jQuery(document).ready(function($) {
       $('#'+loading).show();
     }
 
-    console.log(frm);
+    console.log(frmObj);
 
     $.ajax({
         url: frm.attr('action'),
