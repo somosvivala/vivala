@@ -32,6 +32,10 @@ class ExperienciasSeeder extends Seeder {
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
+        $informacaoExperiencia = InformacaoExperiencia::create([
+            'descricao'=>'descricao a ver com bolinha',
+            'icone' => 'fa fa-circle'
+        ]);
         $experiencia = Experiencia::create([
             'titulo' => 'Primeira Experiencia',
             'descricao' => 'Essa é a descricao da primeira experiencia!',
@@ -40,12 +44,17 @@ class ExperienciasSeeder extends Seeder {
             'preco' => 50.00
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
+        $experiencia->informacoes()->save($informacaoExperiencia);
         $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
+        $informacaoExperiencia = InformacaoExperiencia::create([
+            'descricao'=>'descricao a ver com patinha',
+            'icone' => 'fa fa-paw'
+        ]);
         $experiencia = Experiencia::create([
             'titulo' => 'Segunda Experiencia',
             'descricao' => 'Essa é a descricao da Segunda experiencia!',
@@ -54,12 +63,17 @@ class ExperienciasSeeder extends Seeder {
             'preco' => 223.44
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
+        $experiencia->informacoes()->save($informacaoExperiencia);
         $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
 
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
+        $informacaoExperiencia = InformacaoExperiencia::create([
+            'descricao'=>'Acessibilidade ',
+            'icone' => 'fa fa-universal-access'
+        ]);
         $experiencia = Experiencia::create([
             'titulo' => 'Terceira Experiencia',
             'descricao' => 'Essa é a descricao da Terceira experiencia!',
@@ -68,6 +82,7 @@ class ExperienciasSeeder extends Seeder {
             'preco' => 12.44
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
+        $experiencia->informacoes()->save($informacaoExperiencia);
         $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
