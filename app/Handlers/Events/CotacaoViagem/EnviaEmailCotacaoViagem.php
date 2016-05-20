@@ -4,7 +4,6 @@ use App\Events\NovaCotacaoViagem;
 use App\Repositories\MailSenderRepository;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use Mail;
 
 class EnviaEmailCotacaoViagem {
 
@@ -29,11 +28,6 @@ class EnviaEmailCotacaoViagem {
 	public function handle(NovaCotacaoViagem $event)
 	{
 		$CotacaoViagem = $event->CotacaoViagem;
-
-		// Mail::send('emails.cotacaoviagens.sucesso', ['Cotacao' => $CotacaoViagem], function ($message) use ($CotacaoViagem) {
-		// 		$message->to($Compra->buyer_email, $Compra->buyer_firstname)->subject(trans('clickbus.clickbus_email-vivala-subject-success'));
-		// 		$message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-		// });
 	}
 
 }
