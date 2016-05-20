@@ -1,16 +1,23 @@
+{{-- Secao de selecao da ong/projeto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     {!! Form::label('projeto', 'Projeto responsavel', ['class' => 'row col-sm-12']) !!}
     {!! Form::select("projeto", $ongs, (isset($experiencia) ? $experiencia->owner->id : []), ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control', 'id' => 'ong_select']) !!}
 </div>
+
+
+{{-- Secao de selecao da ong/projeto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     <label class="row col-sm-12">Cidade</label>
     <input id="campo-autocomplete-cidades" class="autocomplete-cidades-ativo" type="text" placeholder="cidade" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
     <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden" value="{{ isset($experiencia) ? $experiencia->local->id : "" }}">
     <i class="fa fa-spin fa-spinner loading-search soft-hide laranja"></i>
 </div>
+
+
+{{-- Secao de campos texto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
-    {!! Form::label('descricao_listagem', 'Descrição na listagem', ['class' => 'row col-sm-12']) !!}
-    {!! Form::textarea("descricao_listagem", null, ['id'=>'descricao_listagem', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input', 'rows' => 3]) !!}
+    {!! Form::label('frase_listagem', 'Descrição na listagem', ['class' => 'row col-sm-12']) !!}
+    {!! Form::textarea("frase_listagem", null, ['id'=>'frase_listagem', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input', 'rows' => 3]) !!}
 </div>
 <div class="col-sm-12 margin-b-1">
     {!! Form::label('descricao', 'Descrição', ['class' => 'row col-sm-12']) !!}
