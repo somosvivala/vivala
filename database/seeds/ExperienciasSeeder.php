@@ -8,6 +8,7 @@ use App\Cidade;
 use App\Experiencia;
 use App\CategoriaExperiencia;
 use App\InscricaoExperiencia;
+use App\InformacaoExperiencia;
 
 class ExperienciasSeeder extends Seeder {
 
