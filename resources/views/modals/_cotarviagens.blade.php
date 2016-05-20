@@ -84,10 +84,10 @@
                     {!! Form::text('basico-destino-1', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                   </div>
                   <div class="col-md-2 col-lg-2">
-                    <input type="text" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="text" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    <input type="text" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="text" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-1 col-lg-1">
                     {!! Form::checkbox('', 0, false, ['id' => 'mais-hospedagem-1', 'class' => 'form-control']) !!}

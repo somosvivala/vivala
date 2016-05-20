@@ -29,6 +29,7 @@ switch(linguaAtiva){
     lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.'
 }
 
+// Ativa os forms que se encontram abaixo das opções principais
 var ativaForm = function(container, val){
   if(val < 1){
     $(container).addClass('hidden');
@@ -36,6 +37,20 @@ var ativaForm = function(container, val){
   else if(val >= 1){
     $(container).removeClass('hidden');
   }
+}
+
+// Previne o usuário de escolher a data da volta em dias anteriores a data da ida
+var mudaDataIdaVolta = function(containerIda, containerVolta){
+  $(containerIda).datepicker().on('changeDate', function() {
+      $(containerVolta).datepicker('setStartDate', $(containerIda).datepicker('getDate') );
+  });
+}
+
+// Colore dias anteriores do datepicker na abertura do mesmo
+var coloreDatePickerDiasPassados = function(container){
+  $(container).datepicker().on('focus', function(){
+      $('.datepicker table tr td.disabled').addClass('datepicker-dia-anterior');
+  });
 }
 
 var bindaFormCotaViagem = function() {
@@ -127,6 +142,13 @@ var bindaFormCotaViagem = function() {
         position: 'right middle'
       });
     });
+
+  var basicoDataIda1 = $('#basico-data-ida-1'),
+      basicoDataVolta1 = $('#basico-data-volta-1');
+      //aplicando mascara nos campos de date para funcionar melhor com o calendário
+      coloreDatePickerDiasPassados(basicoDataIda1);
+      coloreDatePickerDiasPassados(basicoDataVolta1);
+      mudaDataIdaVolta(basicoDataIda1, basicoDataVolta1);
 
   // Hospedagem-x
   var dataHospdagem1 = $('#mais-hospedagem-1'),
@@ -366,6 +388,8 @@ jQuery(document).ready(function($) {
       $('input:submit').hide();
       $('#'+loading).show();
     }
+
+    console.log(frm);
 
     $.ajax({
         url: frm.attr('action'),

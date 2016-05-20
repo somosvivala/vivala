@@ -27,13 +27,13 @@ class CotarViagensRequest extends Request {
 				'basico-cotacao-onibus' => 'boolean',
 				'basico-cotacao-hospedagem' => 'boolean',
 				'basico-cotacao-carros' => 'boolean',
-				/* Viagem numero 1 [Obrigatória] */
+				/* Viagem numero 1 [OBRIGATÓRIOS] */
 				'basico-origem-1' => 'required|string|min:2',
 				'basico-destino-1' => 'required|string|min:2',
 				'basico-data-ida-1' => 'required|string|min:10',
 				'basico-data-volta-1' => 'required|string|min:10',
 				'basico-mais-hospedagem-1' => 'boolean',
-				/* Viagem numero 2 a 5 [Não Obrigatória]
+				/* Viagem numero 2 a 5 [NÃO OBRIGATÓRIO]
 					'basico-origem-2' => 'string|min:2',
 					'basico-destino-2' => 'string|min:2',
 					'basico-data-ida-2' => 'string|min:10',
@@ -69,7 +69,7 @@ class CotarViagensRequest extends Request {
 				'basico-pref-tempo-noite' => 'boolean',
 				'basico-pref-tempo-madrugada' => 'boolean',
 				'basico-horario-restrito' => 'string',
-			/* HOSPEDAGEM */
+			/* HOSPEDAGEM [OPCIONAL] */
 				'hospedagem-nro-quartos-do-hotel' => 'numeric',
 				'hospedagem-adicional-cafe' => 'boolean',
 				'hospedagem-adicional-wifi' => 'boolean',
