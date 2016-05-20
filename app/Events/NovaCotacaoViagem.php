@@ -1,14 +1,13 @@
 <?php namespace App\Events;
 
 use App\Events\Event;
-
 use Illuminate\Queue\SerializesModels;
+//use App\CotacaoViagem;
 
 class NovaCotacaoViagem extends Event {
 
 	use SerializesModels;
 
-	//Declarando as propriedades do evento
 	public $CotacaoViagem;
 
 	/**
@@ -16,7 +15,7 @@ class NovaCotacaoViagem extends Event {
 	 * @param $CotacaoViagem - Typehinting para garantir consistencia dos dados
 	 * @return void
 	 */
-	public function __construct()
+	public function __construct(CotacaoViagem $CotacaoViagem)
 	{
 		$this->CotacaoViagem = $CotacaoViagem;
 	}

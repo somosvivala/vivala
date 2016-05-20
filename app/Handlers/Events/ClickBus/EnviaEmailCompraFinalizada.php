@@ -46,7 +46,6 @@ class EnviaEmailCompraFinalizada {
                 });
             }
 
-
         } else {
             //Envia email de pagamento pendente
             Mail::send('emails.clickbus.pendente', ['Compra' => $Compra], function ($message) use ($Compra) {

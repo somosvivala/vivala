@@ -10,7 +10,7 @@
         </h3>
       </div>
       <div class="modal-body">
-        {!! Form::open(['method' => 'POST', 'url' => 'cotarviagem', 'data-callback' => 'retornoFormCotarViagens', 'data-loading'=>'form-loading', 'id' => 'form-cotar-viagens']) !!}
+        {!! Form::open(['id' => 'form-cotar-viagens', 'url' => '/cotarviagem', 'method' => 'POST', 'data-callback' => 'retornoFormCotarViagens', 'data-loading'=>'form-loading', 'data-redirect' => '']) !!}
         <div class="form-group">
             {{-- Botões Iniciais --}}
             <div class="row">
@@ -84,13 +84,14 @@
                     {!! Form::text('basico-destino-1', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                   </div>
                   <div class="col-md-2 col-lg-2">
-                    <input type="text" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
+                    <input type="text" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    <input type="text" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" required>
+                    <input type="text" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-1 col-lg-1">
                     {!! Form::checkbox('', 0, false, ['id' => 'mais-hospedagem-1', 'class' => 'form-control']) !!}
+                    {!! Form::hidden('basico-mais-hospedagem-1', 0, ['id' => 'basico-mais-hospedagem-1']) !!}
                   </div>
                 </div>
                 {{-- DESATIVADO TEMPORARIAMENTE
@@ -114,7 +115,7 @@
                   </div>
                 @endfor
                 --}}
-                {{-- Adicionar mais destinos --}}
+                {{-- Adicionar mais destinos - DESATIVADO TEMPORARIAMENTE
                 <div class="col-md-12 col-lg-12 margin-t-1 text-left margin-t-1 margin-b-1">
                   <div class="col-md-12 col-lg-12">
                     <a href="#" id="ativa-mais-destinos" class="click-img-no-border">
@@ -122,6 +123,7 @@
                     </a>
                   </div>
                 </div>
+                --}}
                 {{-- Datas Flexíveis --}}
                 <div class="col-md-12 col-lg-12 margin-t-1 text-left margin-b-1">
                   <div class="col-md-12 col-lg-12">
@@ -373,7 +375,7 @@
                   <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-12 col-lg-12">
-                        <a href="#">
+                        <a href="#" id="ativa-info-adicional" class="click-img-no-border">
                           <i class="fa fa-plus-circle laranja"></i><span class="ajuste-fonte-avenir-medium laranja"> {!! trans('global.lbl_like_to_add_more_information') !!}?</span>
                         </a>
                       </div>
@@ -382,7 +384,7 @@
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-12 col-lg-12">
-                        {!! Form::textarea('hospedagem-informacoes-adicionais', null, ['class' => 'form-control', 'rows' => '10', 'placeholder' => trans('global.lbl_like_to_add_more_information'), 'style' => 'resize:none']) !!}
+                        {!! Form::textarea('hospedagem-informacoes-adicionais', null, ['id' => 'campo-info-adicional', 'class' => 'form-control hidden', 'rows' => '10', 'placeholder' => trans('global.lbl_like_to_add_more_information'), 'style' => 'resize:none']) !!}
                       </div>
                     </div>
                   </div>
@@ -401,9 +403,9 @@
               <div id="cotacao-enviar" data-value="0" class="hidden">
                 <div class="row margin-t-4">
                   <div class="col-md-12 col-lg-12 text-center">
-                    {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao']) !!}
                     {{-- Loading --}}
-                    <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 laranja" style="display:none"></i>
+                    <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 laranja" style="display:none;"></i>
+                    {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao']) !!}
                   </div>
                 </div>
               </div>

@@ -7,17 +7,26 @@ switch(linguaAtiva){
   case 'en':
     lingua[0] = 'Trip estimate send with success!',
     lingua[1] = 'Our team will do everything to find the trip that fits more with you!',
-    lingua[2] = 'A reply email about your trip is coming soon, stay tuned to your mailbox.'
+    lingua[2] = 'A reply email about your trip is coming soon, stay tuned to your mailbox.',
+    lingua[3] = 'It wasn\'t possible to estimate your trip',
+    lingua[4] = 'An error occurred in our system and your trip estimate can\'t be send!',
+    lingua[5] = 'We apologize for the inconvenience and ask you to try again later.'
   break;
   case 'pt':
     lingua[0] = 'Cotação enviada com sucesso!',
     lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
-    lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.'
+    lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.',
+    lingua[3] = 'Não foi possível realizar a sua cotação',
+    lingua[4] = 'Um erro ocorreu em nosso sistema e sua cotação não pode ser enviada!',
+    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.'
   break;
   default:
-  lingua[0] = 'Cotação enviada com sucesso!',
-  lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
-  lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.'
+    lingua[0] = 'Cotação enviada com sucesso!',
+    lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
+    lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.',
+    lingua[3] = 'Não foi possível realizar a sua cotação',
+    lingua[4] = 'Um erro ocorreu em nosso sistema e sua cotação não pode ser enviada!',
+    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.'
 }
 
 var ativaForm = function(container, val){
@@ -119,6 +128,19 @@ var bindaFormCotaViagem = function() {
       });
     });
 
+  // Hospedagem-x
+  var dataHospdagem1 = $('#mais-hospedagem-1'),
+      datasMaisHospedagem1 = $('#basico-mais-hospedagem-1');
+    $(dataHospdagem1).click(function() {
+        if(this.checked){
+          $(datasMaisHospedagem1).val(1);
+          ativaFormHospedagem.click();
+        }
+        else if(!this.checked){
+          $(datasMaisHospedagem1).val(0);
+          ativaFormHospedagem.click();
+        }
+    });
 
   // Mais Destinos
   var ativaMaisDestinos = $('#ativa-mais-destinos');
@@ -290,6 +312,22 @@ var bindaFormCotaViagem = function() {
             else if(!this.checked) $(hospAdcTranslado).val(0);
         });
 
+  // Mais informações
+  var ativaInfoAdicional = $('#ativa-info-adicional'),
+      campoInfoAdicional = $('#campo-info-adicional');
+
+      $(ativaInfoAdicional).bind('click', function(){
+        if(!$(this).hasClass('active')){
+          $(this).addClass('active');
+          $(campoInfoAdicional).removeClass('hidden');
+        }
+        else{
+          $(this).removeClass('active');
+          $(campoInfoAdicional).addClass('hidden');
+          $(campoInfoAdicional).val('');
+        }
+      });
+
   /* FORM CARROS */
 }
 
@@ -305,47 +343,72 @@ jQuery(document).ready(function($) {
   });
 
   $('#form-cotar-viagens').submit(function (ev) {
-    ev.defaultPrevented;
-    var frm = $(this),
-        dataForm = new FormData(this),
+    ev.preventDefault();
+    var modal = $('#modal-cotacao-viagem');
+        frm = $('#form-cotar-viagens'),
+        frmObj = {},
         callbackFunction = frm.data('callback'),
+        redirect = frm.data('redirect'),
         loading = frm.data('loading');
 
+    $.each(frm.serializeArray(), function() {
+        if (frmObj[this.name] !== undefined) {
+            if (!frmObj[this.name].push) {
+                frmObj[this.name] = [frmObj[this.name]];
+            }
+            frmObj[this.name].push(this.value || '');
+        } else {
+            frmObj[this.name] = this.value || '';
+        }
+    });
+
     if (loading && loading != "") {
-        $('input:submit').hide();
-        $('#'+loading).show();
+      $('input:submit').hide();
+      $('#'+loading).show();
     }
 
     $.ajax({
-        url: frm.attr('url'),
+        url: frm.attr('action'),
         type: frm.attr('method'),
-        data: dataForm,
-        contentType: "application/json; charset=utf-8",
-        //dataType: ,
-        //processData: ,
+        data: frmObj,
+
         success: function (data) {
             if(callbackFunction) {
               swal({
                   title: lingua[0],
-                  html: lingua[1]+"<br/><br/>"+lingua[2],
+                  html: lingua[1]+"<br/>"+lingua[2],
                   type: "success",
                   confirmButtonColor: "#FF5B00",
                   confirmButtonText: "OK",
                   closeOnConfirm: true,
               });
-              document.getElementById('form-cotar-viagens').reset();
-              $('#modal-cotacao-viagem').modal('hide');
+              document.getElementById("form-cotar-viagens").reset();
+              modal.modal('hide');
             }
             if(redirect) {
                 window.location = redirect;
             }
         },
-       complete: function (data) {
-         //Se tiver loading e tiver dado erro, voltar botao
-         if (loading && loading != "") {
+        error: function (data) {
+          if(callbackFunction) {
+            swal({
+                title: lingua[3],
+                html: lingua[4]+"<br/>"+lingua[5],
+                type: "error",
+                confirmButtonColor: "#FF5B00",
+                confirmButtonText: "OK",
+                closeOnConfirm: true,
+            });
+            document.getElementById("form-cotar-viagens").reset();
+            modal.modal('hide');
+          }
+        },
+        complete: function (data) {
+          // Se tiver loading e tiver dado erro, voltar botao
+          if (loading && loading != "") {
              $('input:submit').show();
              $('#'+loading).hide();
-         }
+          }
        }
     });
 

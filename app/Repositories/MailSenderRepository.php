@@ -2,14 +2,12 @@
 
 namespace app\Repositories;
 use Mail;
+//use App\CotacaoViagem;
 
 class MailSenderRepository {
 
-  public function sendMailNoReply($email_view, $message, $subject, $user_to)
+  public function enviaEmailCotacaoViagem($email_view, $message, $subject, $cotaca_data)
   {
-    Mail::send($email_view, ['user' => $user_to], function ($message) use ($user_to) {
-        $message->to($user_to->email, $user_to->username)->subject($subject);
-        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-    });
+  
   }
 }
