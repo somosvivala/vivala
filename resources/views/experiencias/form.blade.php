@@ -46,11 +46,11 @@
                 </div>
                 <div class="col-xs-2">
                     {!! Form::label('classe_icone', 'Classe icone', ['class' => 'row col-sm-12']) !!}
-                    <input type="text" name="icone[]" class='bind-icone-ativo' value="{{ $informacao->icone }}">
+                    <input type="text" name="icone[{{ $informacao->id }}]" class='bind-icone-ativo' value="{{ $informacao->icone }}">
                 </div>
                 <div class="col-xs-8">
                     {!! Form::label('descricao_info', 'Descricao icone', ['class' => 'row col-sm-12']) !!}
-                    <input type="text" name="descricao_info[]" value="{{ $informacao->descricao }}">
+                    <input type="text" name="descricao_info[{{ $informacao->id }}]" value="{{ $informacao->descricao }}">
                 </div>
                 <div class="col-xs-1 text-center">
                         <a href="#" onclick="removeInfoExperiencia(event)">
@@ -68,33 +68,10 @@
             <div class="col-xs-1 text-center">
                     <a href="#" onclick="adicionaInfoExperiencia(event)">
                         <i class="fa fa-2x fa-plus margin-t-1" ></i>
+                        <i class="fa fa 2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
                     </a>
             </div>
         </li>
-
-
-        {{-- List item para hidden para ser copiado e inserido como um novo input --}}
-        <li class="hidden info-experiencia-item modelo-input col-xs-12 margin-b-1">
-            <div class="col-xs-1">
-                {!! Form::label('icone_show', 'Icone  ', ['class' => 'margin-t-2 row col-sm-12']) !!}
-                <i name="icone-show" class="icone-show margin-t-2 fa fa-circle"> </i>
-            </div>
-            <div class="col-xs-2">
-                {!! Form::label('classe_icone', 'Classe icone', ['class' => 'row col-sm-12']) !!}
-                <input type="text" name="icone[]" class='bind-icone-ativo' value="fa fa-circle">
-            </div>
-            <div class="col-xs-8">
-                {!! Form::label('descricao_info', 'Descricao icone', ['class' => 'row col-sm-12']) !!}
-                <input type="text" name="descricao_info[]" value="">
-            </div>
-            <div class="col-xs-1 text-center">
-                    <a href="#" onclick="removeInfoExperiencia(event)">
-                        <i class="fa fa-2x fa-close margin-t-1"></i>
-                    </a>
-            </div>
-        </li>
-
-
 
     </ul>
 </div>

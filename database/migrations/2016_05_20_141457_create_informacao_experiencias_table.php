@@ -22,7 +22,7 @@ class CreateInformacaoExperienciasTable extends Migration {
         $table->increments('id');
         $table->timestamps();
 
-        $table->string("icone")->nullable();
+        $table->string("icone")->default('fa fa-star');
         $table->string("descricao")->nullable();
 
         //FK para experiencia

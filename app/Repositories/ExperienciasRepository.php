@@ -8,6 +8,7 @@ use App\User;
 use App\CategoriaExperiencia;
 use App\Cidade;
 use App\Ong;
+use App\InformacaoExperiencia;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -166,6 +167,33 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $podeEditar = false || $user->isAdmin();
 
         return $podeEditar;
+    }
+
+
+    /**
+     * Metodo para criar novas InformacaoExperiencia
+     *
+     * @param $arrayArgumentos - array contendo os valores das colunas de InformacaoExperiencia
+     * @return App\InformacaoExperiencia
+     */
+    public function createInformacaoExtra($arrayArgumentos = [])
+    {
+        $infoExp = InformacaoExperiencia::create($arrayArgumentos);
+
+        //por algum motivo o create nao esta retornando uma instancia full loaded, por isso estou pegando denovo
+        return InformacaoExperiencia::find($infoExp->id);
+    }
+
+
+    /**
+     * Metodo para deletar uma InformacaoExperiencia
+     *
+     * @param $id - id da InformacaoExperiencia a ser deletada
+     * @return boolean - se deletou ou nao
+     */
+    public function deleteInformacaoExtra($id)
+    {
+        return InformacaoExperiencia::findOrFail($id)->delete();
     }
 
 

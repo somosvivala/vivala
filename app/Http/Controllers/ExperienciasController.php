@@ -14,6 +14,8 @@ use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Experiencia;
 use App\Http\Requests\CreateExperienciaRequest;
 use App\Http\Requests\StoreExperienciaRequest;
+use App\Http\Requests\CreateInformacaoExperienciaRequest;
+use App\Http\Requests\DeleteInformacaoExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -89,6 +91,7 @@ class ExperienciasController extends Controller
      */
     public function store(StoreExperienciaRequest $request)
     {
+        dd($request);
         return $this->experienciasRepository->create($request->all());
     }
 
@@ -152,4 +155,28 @@ class ExperienciasController extends Controller
         return view('experiencias._editafotoform', compact('experiencia', 'foto'));
 
     }
+
+
+    /**
+     * Rota para criar novas InformacaoExperiencia
+     *
+     * @param $request - instancia de CreateInformacaoExperienciaRequest
+     */
+    public function getAddinformacaoextra(CreateInformacaoExperienciaRequest $request)
+    {
+        $informacao = $this->experienciasRepository->createInformacaoExtra($request->all());
+        return ['html' => view('experiencias._form_extra_item')->with('informacao', $informacao)->render() ];
+    }
+
+    /**
+     * Rota para deletar InformacaoExperiencia
+     *
+     * @param $request - instancia de DeleteInformacaoExperienciaRequest
+     */
+    public function putDeleteinformacaoextra(DeleteInformacaoExperienciaRequest $request)
+    {
+        return $this->experienciasRepository->createInformacaoExtra($request->info_id);
+    }
+
+
 }

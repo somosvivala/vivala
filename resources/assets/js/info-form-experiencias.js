@@ -30,14 +30,35 @@ var adicionaInfoExperiencia = function(ev) {
     //pegando a linha da ul que devemos inserir antes (<li> que contem o botao add)
     var parentLinha = $(ev.target).parents('.info-experiencia-item');
 
-    //clonando a li hidden que serve de modelo
-    var novaLinha = $('.info-experiencia-item.hidden.modelo-input').clone();
+    parentLinha.find('i.loading-icon').toggleClass('soft-hide');
 
-    //inserindo antes da linha do botao add
-    novaLinha.insertBefore(parentLinha).toggleClass('hidden').toggleClass('modelo-input');
+    $.ajax({
+        url: '/experiencias/addinformacaoextra',
+        type: 'GET',
+        complete: function (jqXHR, textStatus) {
+            parentLinha.find('i.loading-icon').toggleClass('soft-hide');
+            console.log('ajax completed');
+        },
+        success: function (data, textStatus, jqXHR) {
+            console.log('ajax success');
 
-    //chamando funcao para bindar a mudanca de icone conforme o texto do botao
-    bindaIconeInformacaoExperiencia();
+            var novaLinha = $(data.html);
+
+            //inserindo antes da linha do botao add
+            novaLinha.insertBefore(parentLinha);
+
+            //chamando funcao para bindar a mudanca de icone conforme o texto do botao
+            bindaIconeInformacaoExperiencia();
+
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('ajax error');
+        }
+    });
+
+
+
+
 };
 
 
