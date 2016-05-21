@@ -84,13 +84,13 @@
                     {!! Form::text('basico-destino-1', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                   </div>
                   <div class="col-md-2 col-lg-2">
-                    <input type="date" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="text" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    <input type="date" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="text" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-1 col-lg-1">
-                    {!! Form::checkbox('', 0, false, ['id' => 'mais-hospedagem-1', 'class' => 'form-control']) !!}
+                    {!! Form::checkbox('mais-hospedagem-1', 0, false, ['id' => 'mais-hospedagem-1', 'class' => 'form-control']) !!}
                     {!! Form::hidden('basico-mais-hospedagem-1', 0, ['id' => 'basico-mais-hospedagem-1']) !!}
                   </div>
                 </div>
@@ -243,7 +243,7 @@
                     </a>
                   </div>
                   <div class="col-md-12 col-lg-12">
-                    {!! Form::textarea('basico-horario-restrito', null, ['class' => 'form-control hidden','id' => 'campo-horario-restrito', 'rows' => '5', 'placeholder' => trans('global.lbl_restrict_hours'), 'style' => 'resize:none']) !!}
+                    {!! Form::textarea('basico-horario-restrito', null, ['class' => 'form-control hidden','id' => 'campo-horario-restrito', 'rows' => '5', 'placeholder' => trans('global.lbl_explain_better_your_restriction'), 'style' => 'resize:none']) !!}
                   </div>
                 </div>
               </div>
@@ -384,7 +384,7 @@
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-12 col-lg-12">
-                        {!! Form::textarea('hospedagem-informacoes-adicionais', null, ['id' => 'campo-info-adicional', 'class' => 'form-control hidden', 'rows' => '10', 'placeholder' => trans('global.lbl_like_to_add_more_information'), 'style' => 'resize:none']) !!}
+                        {!! Form::textarea('hospedagem-informacoes-adicionais', null, ['id' => 'campo-info-adicional', 'class' => 'form-control hidden', 'rows' => '10', 'placeholder' => trans('global.lbl_additional_info_'), 'style' => 'resize:none']) !!}
                       </div>
                     </div>
                   </div>

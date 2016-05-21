@@ -1,11 +1,15 @@
 <div id="modal-feedback" class="modal fade" role="dialog">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="{!! trans('lbl_close') !!}">
+              <span aria-hidden="true"><i class="fa fa-close"></i></span>
+            </button>
+            <h3 class="modal-title font-bold-upper text-center">
+              {{ trans('global.lbl_feedback_give_yours') }}
+            </h3>
+          </div>
             <div class="modal-body">
-                <div class="row">
-                    <div class="col-sm-10"><h3 class="texto-preto">{{ trans('global.lbl_feedback_give_yours') }}</h3></div>
-                    <div class="col-sm-2"><button type="button" class="btn pull-right" data-dismiss="modal"><i class="fa fa-times"></i></button></div>
-                </div>
                 {!! Form::open(['url' => '/paginas/feedback', 'method' => 'POST', 'id' => 'form-feedback', 'data-callback' => 'retornoFormFeedback', 'data-loading'=>'form-loading']) !!}
                 {!! Form::select("tipo",
                     array(

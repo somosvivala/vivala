@@ -1,15 +1,14 @@
 <?php namespace App\Http\Controllers;
 
 use App;
+use Auth;
+use Input;
 use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use App\Http\Requests\CotarViagensRequest;
 use Illuminate\Http\Request;
-use Input;
-use Auth;
+use App\Http\Requests\CotarViagensRequest;
 use App\Events\NovaCotacaoViagem;
-use App\Repositories\MailSenderRepository;
 
 class CotarViagensController extends Controller {
 
@@ -42,7 +41,7 @@ class CotarViagensController extends Controller {
 		// Montando objeto USUÁRIO
 		$user = [
 			'user-id' => Auth::user()->id,
-			'user-username' => Auth::user()->username,
+			'user-username' => Auth::user()->perfil->nome_completo,
 			'user-email' => Auth::user()->email
 		];
 

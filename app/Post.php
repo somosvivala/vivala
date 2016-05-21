@@ -1,8 +1,10 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 use Jenssegers\Date\Date;
 use Auth;
+use App;
 
 class Post extends Model {
 
@@ -20,6 +22,7 @@ class Post extends Model {
 	public function getDataPostagemDiffMiniAttribute()
 	{
 		$date = new Date($this->created_at);
+		$date->setLocale(App::getLocale());
 		return $date->diffInSeconds();
 	}
 
@@ -27,6 +30,7 @@ class Post extends Model {
 	public function getDataPostagemDiffAttribute()
 	{
 		$date = new Date($this->created_at);
+		$date->setLocale(App::getLocale());
 		return $date->diffForHumans();
 	}
 
@@ -83,7 +87,7 @@ class Post extends Model {
 
 	/**
 	 * Retorna os posts ordenados por data ignorando a relevancia e os
-         * followers 
+         * followers
 	 */
 	static public function getUltimos()
 	{
@@ -91,7 +95,7 @@ class Post extends Model {
 	}
 
 	/**
-	 * Retorna os posts ordenados por relevancia 
+	 * Retorna os posts ordenados por relevancia
 	 */
 	public static function getMaisrelevantes()
 	{

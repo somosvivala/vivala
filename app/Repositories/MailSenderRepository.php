@@ -11,7 +11,7 @@ class MailSenderRepository {
   {
     Mail::send('emails.cotacaoviagens.sucesso', ['CotacaoViagem' => $CotacaoViagem],
     function ($message) use ($CotacaoViagem) {
-    		$message->to('bruno.luiz@vivalabrasil.com.br', 'Vivalá')->subject('Cotação de Viagem enviada pelo Formulário!');
+        $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
     		$message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
   }

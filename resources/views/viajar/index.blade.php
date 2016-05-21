@@ -50,7 +50,7 @@
                     @include('chefsclub.buscarestaurantes')
                 </div>
                 <div class="lista-restaurantes tour-chefsclub-step2">
-                    @include('chefsclub.listarestaurantes')
+                    @include('modals._listarestaurantes')
                 </div>
             </div>
         </div>
