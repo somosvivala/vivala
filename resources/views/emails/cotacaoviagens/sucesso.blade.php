@@ -15,24 +15,24 @@
     <br/>
     º De <strong>{{ $CotacaoViagem->dados['lugar-saida'] }}</strong> para <strong>{{ $CotacaoViagem->dados['lugar-chegada'] }}</strong><br/>
     º Data da <strong>IDA</strong>: {{ $CotacaoViagem->dados['data-ida'] }}
-    º Data da <strong>VOLTA</strong>: {{ $$CotacaoViagem->dados['data-volta'] }}
+    º Data da <strong>VOLTA</strong>: {{ $CotacaoViagem->dados['data-volta'] }}
     <strong style="color:red;">* Datas flexíveis?</strong> <strong>{{ $CotacaoViagem->dados['datas-flexiveis'] }}</strong><br/>
     º Número de <strong>ADULTOS</strong>: {{ $CotacaoViagem->dados['numero-adultos'] }}
-    º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem->dados->['numero-criancas'] }}
+    º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem->dados['numero-criancas'] }}
     <br/>
     º Prefere viajar de:<br/>
-     - Manhã: {{ $CotacaoViagem->tempo-viagem['viaja-manha'] }}<br/>
-     - Tarde: {{ $CotacaoViagem->tempo-viagem['viaja-tarde'] }}<br/>
-     - Noite: {{ $CotacaoViagem->tempo-viagem['viaja-noite'] }}<br/>
-     - Madrugada {{ $CotacaoViagem->tempo-viagem['viaja-madrugada'] }}<br/>
+     - Manhã: {{ $CotacaoViagem->tempo['viaja-manha'] }}<br/>
+     - Tarde: {{ $CotacaoViagem->tempo['viaja-tarde'] }}<br/>
+     - Noite: {{ $CotacaoViagem->tempo['viaja-noite'] }}<br/>
+     - Madrugada {{ $CotacaoViagem->tempo['viaja-madrugada'] }}<br/>
      <strong style="color:red;">* Horários restritos?</strong><br/>
-     {{ $CotacaoViagem->tempo-viagem['horario-restrito'] }}<br/>
+     {{ $CotacaoViagem->tempo['horario-restrito'] }}<br/>
     <br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</strong><br/>
-    º Número de quartos: <strong>{{ $CotacaoViagem->dados-hospedagem['hotel-numero-quartos'] }}</strong><br/>
+    º Número de quartos: <strong>{{ $CotacaoViagem->hospedagem['hotel-numero-quartos'] }}</strong><br/>
     º Adicionais do Hotel:<br/>
-    º Bairro ou região de preferência: {{ $CotacaoViagem->dados-hospedagem['hotel-bairro-regiao'] }}<br/>
+    º Bairro ou região de preferência: {{ $CotacaoViagem->hospedagem['hotel-bairro-regiao'] }}<br/>
     <strong style="color:red;">* Informações adicionais:</strong><br/>
-    {{ $CotacaoViagem->dados-hospedagem['hotel-infos-adicionais'] }}
+    {{ $CotacaoViagem->hospedagem['hotel-infos-adicionais'] }}
 </body>

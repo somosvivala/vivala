@@ -9,7 +9,6 @@ class MailSenderRepository {
 
   public function enviaEmailCotacaoViagem($CotacaoViagem)
   {
-    var_dump($CotacaoViagem);
     Mail::send('emails.cotacaoviagens.sucesso', ['CotacaoViagem' => $CotacaoViagem],
     function ($message) use ($CotacaoViagem) {
     		$message->to('bruno.luiz@vivalabrasil.com.br', 'Vivalá')->subject('Cotação de Viagem enviada pelo Formulário!');
