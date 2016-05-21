@@ -99,13 +99,12 @@ class CotarViagensController extends Controller {
 		];
 
 		// MONTANDO O OBJETO FINAL para o EVENTO
-		$CotacaoViagem = [
-			'usuario' => $user,
-			'opcoes' => $options,
-			'dados-viagem' => $basics,
-			'tempo-viagem' => $time,
-			'dados-hospedagem' => $accomodation
-		];
+		$CotacaoViagem = new \stdClass();
+		$CotacaoViagem->usuario = $user;
+		$CotacaoViagem->opcoes = $options;
+		$CotacaoViagem->dados = $basics;
+		$CotacaoViagem->tempo = $time;
+		$CotacaoViagem->hospedagem = $accomodation;
 
 		//Disparando evento para avisando que temos
 		//uma nova cotação

@@ -8,6 +8,7 @@ class NovaCotacaoViagem extends Event {
 
 	use SerializesModels;
 
+	//Declarando as propriedades do evento
 	public $CotacaoViagem;
 
 	/**
@@ -15,7 +16,7 @@ class NovaCotacaoViagem extends Event {
 	 * @param $CotacaoViagem - Typehinting para garantir consistencia dos dados
 	 * @return void
 	 */
-	public function __construct(CotacaoViagem $CotacaoViagem)
+	public function __construct($CotacaoViagem)
 	{
 		$this->CotacaoViagem = $CotacaoViagem;
 	}

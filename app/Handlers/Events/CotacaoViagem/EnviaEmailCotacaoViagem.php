@@ -25,9 +25,9 @@ class EnviaEmailCotacaoViagem {
 	 * @param  NovaCotacaoViagem  $event
 	 * @return void
 	 */
-	public function handle(NovaCotacaoViagem $event)
+	public function handle($event)
 	{
-		enviaEmailCotacaoViagem($event->CotacaoViagem);
+		$this->mailSenderRepository->enviaEmailCotacaoViagem($event);
 	}
 
 }
