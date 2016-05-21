@@ -4,7 +4,7 @@
     EMAIL AUTOMÁTICO DA PLATAFORMA PARA COTAÇÃO DE VIAGENS<br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES DO CLIENTE:</strong><br/>
-    User ID do Cliente: <strong>{{ $CotacaoViagem>usuario['user-id'] }}</strong><br/>
+    User ID do Cliente: <strong>{{ $CotacaoViagem->usuario['user-id'] }}</strong><br/>
     Nome do Cliente: <strong>{{ $CotacaoViagem->usuario['user-username'] }}</strong><br/>
     Email do Cliente: <strong>{{ $CotacaoViagem->usuario['user-email'] }}</strong><br/>
     <br/>
