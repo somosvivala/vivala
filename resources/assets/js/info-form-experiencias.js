@@ -1,3 +1,6 @@
+//variavel para controlar o timeout
+var tempoDigitando = null;
+
 // Shorthand for $( document ).ready()
 $(function() {
 
@@ -9,15 +12,49 @@ $(function() {
  * Binda a mudanca do icone conforme o texto dos input's de informacao experiencia
  */
 var bindaIconeInformacaoExperiencia = function() {
-        $('.bind-icone-ativo').on('keyup', function(event) {
-            var icone = $(event.target).parents('.info-experiencia-item').find('i.icone-show');
+    $('.bind-icone-ativo').on('keyup', function(event) {
+        //limpando timeout para apenas testar quando o usuario tiver terminado de digitar
+        clearTimeout(tempoDigitando);
 
-            //pegando as possiveis classes que o icone tenha alem do font-awesome
-            var classesIcone = icone.attr('class').replace(/fa-[a-z]*/g, '').replace(/fa /g, '');
-
-            icone.attr('class', classesIcone + " " + $(event.target).val());
-        });
+        console.log('inside bindaIcone: event : ');
+        console.log(event);
+        tempoDigitando = setTimeout(function() {
+            testaRegexTrocaClassesFontAwesome(event.target);
+        }, 300);
+    });
 };
+
+
+var testaRegexTrocaClassesFontAwesome = function(target) {
+
+    //console.log('inside testaRegex: target : ');
+    //console.log(target);
+    //guardando matches da regex procurando por 'fa fa-*'
+    var regMatches = [];
+    regMatches[0] = $(target).val().match(/(fa\s*)fa/);
+    regMatches[1] = $(target).val().match(/fa-\w*/g);
+
+    //console.log(regMatches);
+
+    //Se tiver encontrado os matches para 1 icone do font-awesome
+    if (regMatches[0] && regMatches[1]) {
+       // console.log(regMatches[0][1] + regMatches[1].join(' '));
+
+        //pegando novas classes para o icone
+        var novasClasses = regMatches[0][1] + regMatches[1].join(' ');
+        //console.log('novas classes font-awesome: ' + novasClasses);
+
+        //pegando as possiveis classes que o icone tenha alem do font-awesome (regex poderia ser melhorado)
+        var icone = $(target).parents('.info-experiencia-item').find('i.icone-show');
+        //var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*/g, '');
+
+        //console.log('classes do icone: ' + classesIcone);
+        //settando as novas classes do icone
+        icone.attr('class', classesIcone + " " + novasClasses);
+    }
+
+}
+
 
 
 /**
@@ -37,11 +74,10 @@ var adicionaInfoExperiencia = function(ev) {
         type: 'GET',
         complete: function (jqXHR, textStatus) {
             parentLinha.find('i.loading-icon').toggleClass('soft-hide');
-            console.log('ajax completed');
+            //console.log('ajax completed');
         },
         success: function (data, textStatus, jqXHR) {
-            console.log('ajax success');
-
+            //console.log('ajax success');
             var novaLinha = $(data.html);
 
             //inserindo antes da linha do botao add
@@ -52,12 +88,9 @@ var adicionaInfoExperiencia = function(ev) {
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('ajax error');
+            //console.log('ajax error');
         }
     });
-
-
-
 
 };
 

@@ -9,7 +9,7 @@ class Experiencia extends Model
 
     //mass assigned fields
     protected $fillable = [
-        'frase_listagem',
+        'descricao_na_listagem',
         'descricao',
         'detalhes',
         'preco',

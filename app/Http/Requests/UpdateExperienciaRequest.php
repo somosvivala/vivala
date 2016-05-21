@@ -35,15 +35,46 @@ class UpdateExperienciaRequest extends Request
      */
     public function rules()
     {
-        return [
-            'frase_listagem' 		=> "string|required|min:2",
-            'descricao' 			  => "string|required|min:2",
-            'detalhes' 			    => "string|required|min:2",
-            'preco'             => "required|numeric",
-            'cidade'            => "required|exists:cidades,id",
-            'projeto'           => "required|exists:ongs,id",
-            'categoria'         => "array"
+        $rules = [
+            'projeto'                   => "required|exists:ongs,id",
+            'cidade'                    => "required|exists:cidades,id",
+            'descricao_na_listagem' 		=> "string|required|min:2",
+            'descricao'                 => "string|required|min:2",
+            'detalhes'                  => "string|required|min:2",
+            'preco'                     => "required|numeric",
+            'icone'                     => "array",
+            'descricao_info'            => "array",
+            'categoria'                 => "array"
         ];
+
+
+        //iterando sob as informacoes que sao em forma de array
+        //para settarmos regras de validacao para cada um dos childs
+        $arrayInformacoesExtras = $this->request->get('icone');
+        if ($arrayInformacoesExtras) {
+            //como nesse caso a $key é o id da InformacaoExperiencia,
+            //precisamos iterar sob algum outro contador
+            $i=0;
+            foreach($arrayInformacoesExtras as $key => $val)
+            {
+                $rules['icone.'.$i] = 'exists:informacao_experiencias,id';
+                $rules['descricao_info.'.$i] = 'string';
+                $i++;
+            }
+        }
+
+        //iterando sob as informacoes que sao em forma de array
+        //para settarmos regras de validacao para cada um dos childs
+        $arrayCategorias = $this->request->get('categoria');
+        if ($arrayCategorias) {
+            foreach($arrayCategorias as $key => $val)
+            {
+                $rules['categoria.'.$key] = 'exists:categoria_experiencias,id';
+            }
+        }
+
+        return $rules;
+
     }
 
 }
