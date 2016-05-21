@@ -8,7 +8,7 @@
 {{-- Secao de selecao da ong/projeto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     <label class="row col-sm-12">Cidade</label>
-    <input id="campo-autocomplete-cidades" class="autocomplete-cidades-ativo" type="text" placeholder="cidade" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
+    <input id="campo-autocomplete-cidades" autocomplete="off" class="autocomplete-cidades-ativo" type="text" placeholder="cidade" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
     <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden" value="{{ isset($experiencia) ? $experiencia->local->id : "" }}">
     <i class="fa fa-spin fa-spinner loading-search soft-hide laranja"></i>
 </div>

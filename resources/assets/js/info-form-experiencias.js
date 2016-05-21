@@ -46,7 +46,7 @@ var testaRegexTrocaClassesFontAwesome = function(target) {
 
         //pegando as possiveis classes que o icone tenha alem do font-awesome (regex poderia ser melhorado)
         var icone = $(target).parents('.info-experiencia-item').find('i.icone-show');
-        //var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*/g, '');
+        var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*/g, '');
 
         //console.log('classes do icone: ' + classesIcone);
         //settando as novas classes do icone
