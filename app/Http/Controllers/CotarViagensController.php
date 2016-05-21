@@ -106,8 +106,7 @@ class CotarViagensController extends Controller {
 		$CotacaoViagem->tempo = $time;
 		$CotacaoViagem->hospedagem = $accomodation;
 
-		//Disparando evento para avisando que temos
-		//uma nova cotação
+		//Disparando evento para avisando que temos uma nova cotação
 		event(new NovaCotacaoViagem($CotacaoViagem));
 	}
 

@@ -1,6 +1,4 @@
-<?php echo var_dump($CotacaoViagem); ?>
 <body>
-    {{--
     EMAIL AUTOMÁTICO DA PLATAFORMA PARA COTAÇÃO DE VIAGENS<br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES DO CLIENTE:</strong><br/>
@@ -37,5 +35,4 @@
     º Bairro ou região de preferência: {{ $CotacaoViagem->dados-hospedagem->hotel-bairro-regiao }}<br/>
     <strong style="color:red;">* Informações adicionais:</strong><br/>
     {{ $CotacaoViagem->dados-hospedagem->hotel-infos-adicionais }}
-    --}
 </body>

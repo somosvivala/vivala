@@ -16,6 +16,7 @@ class EnviaEmailCotacaoViagem {
 	 */
 	public function __construct(MailSenderRepository $repository)
 	{
+		echo $this->mailSenderRepository;
 		$this->mailSenderRepository = $repository;
 	}
 
@@ -27,7 +28,7 @@ class EnviaEmailCotacaoViagem {
 	 */
 	public function handle($event)
 	{
-		$this->mailSenderRepository->enviaEmailCotacaoViagem($event);
+		$this->mailSenderRepository->enviaEmailCotacaoViagem($event->CotacaoViagem);
 	}
 
 }
