@@ -16,7 +16,6 @@ class EnviaEmailCotacaoViagem {
 	 */
 	public function __construct(MailSenderRepository $repository)
 	{
-		echo $this->mailSenderRepository;
 		$this->mailSenderRepository = $repository;
 	}
 
