@@ -16,8 +16,8 @@ var bindaIconeInformacaoExperiencia = function() {
         //limpando timeout para apenas testar quando o usuario tiver terminado de digitar
         clearTimeout(tempoDigitando);
 
-        console.log('inside bindaIcone: event : ');
-        console.log(event);
+        //console.log('inside bindaIcone: event : ');
+        //console.log(event);
         tempoDigitando = setTimeout(function() {
             testaRegexTrocaClassesFontAwesome(event.target);
         }, 300);

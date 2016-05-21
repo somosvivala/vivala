@@ -76,6 +76,23 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             $experiencia->categorias()->save($categoria);
         }
 
+        //checando se existe alguma informacaoExtra nessa experiencia
+        $informacaoExtra = array_key_exists('informacao-extra', $arrayArgumentos) ? $arrayArgumentos['informacao-extra'] : [];
+
+        //iterando sob as informacoes
+        foreach ($informacaoExtra as $informacao)
+        {
+            //encontrando a informacao no bd e fazendo update da informacao
+            $infoObj = InformacaoExperiencia::find($informacao['id']);
+            $infoObj->update([
+                'descricao' => $informacao['descricao_info'],
+                'icone' => $informacao['icone']
+            ]);
+
+            //associando/re-associando a informacao na experiencia
+            $experiencia->informacoes()->save($infoObj);
+        }
+
         //pegando o id da cidade e associando a experiencia
         $cidade = Cidade::findOrFail($arrayArgumentos['cidade']);
         $experiencia->local()->associate($cidade);
@@ -86,6 +103,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
         $experiencia->push();
         return $experiencia;
+
     }
 
     /**
