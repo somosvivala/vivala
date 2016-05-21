@@ -174,7 +174,7 @@ class ExperienciasController extends Controller
      */
     public function putDeleteinformacaoextra(DeleteInformacaoExperienciaRequest $request)
     {
-        return $this->experienciasRepository->createInformacaoExtra($request->info_id);
+        return ['result' => $this->experienciasRepository->deleteInformacaoExtra($request->all()) ];
     }
 
 

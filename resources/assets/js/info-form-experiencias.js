@@ -25,6 +25,10 @@ var bindaIconeInformacaoExperiencia = function() {
 };
 
 
+/**
+ * Funcao para testar se o value do target é uma regex,
+ * se for, substituo o font-awesome do icone com o do target
+ */
 var testaRegexTrocaClassesFontAwesome = function(target) {
 
     //console.log('inside testaRegex: target : ');
@@ -55,8 +59,6 @@ var testaRegexTrocaClassesFontAwesome = function(target) {
 
 }
 
-
-
 /**
  * Funcao para adicionar uma nova linha de InformacaoExperiencia
  * no formulario de create/edit de experiencias
@@ -67,6 +69,7 @@ var adicionaInfoExperiencia = function(ev) {
     //pegando a linha da ul que devemos inserir antes (<li> que contem o botao add)
     var parentLinha = $(ev.target).parents('.info-experiencia-item');
 
+    $(ev.target).toggleClass('soft-hide');
     parentLinha.find('i.loading-icon').toggleClass('soft-hide');
 
     $.ajax({
@@ -74,6 +77,7 @@ var adicionaInfoExperiencia = function(ev) {
         type: 'GET',
         complete: function (jqXHR, textStatus) {
             parentLinha.find('i.loading-icon').toggleClass('soft-hide');
+            $(ev.target).toggleClass('soft-hide');
             //console.log('ajax completed');
         },
         success: function (data, textStatus, jqXHR) {
@@ -103,10 +107,37 @@ var removeInfoExperiencia = function(ev) {
 
     ev.preventDefault();
 
-    var linha = $(ev.target).parents('.info-experiencia-item');
-    linha.addClass('bg-danger').fadeOut(400, function() {
-        $(this).remove()
+    //pegando a linha da ul que devemos remover
+    var parentLinha = $(ev.target).parents('.info-experiencia-item');
+
+    $(ev.target).toggleClass('soft-hide');
+    parentLinha.find('i.loading-icon').toggleClass('soft-hide');
+
+    var data = {
+        id : parentLinha.data('id')
+    };
+
+    $.ajax({
+        url: '/experiencias/deleteinformacaoextra',
+        type: 'PUT',
+        dataType: 'json',
+        data: data,
+        complete: function (jqXHR, textStatus) {
+            $(ev.target).toggleClass('soft-hide');
+            parentLinha.find('i.loading-icon').toggleClass('soft-hide');
+        },
+        success: function (data, textStatus, jqXHR) {
+            console.log('ajax success');
+            parentLinha.addClass('bg-danger').fadeOut(400, function() {
+                $(this).remove()
+            });
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log('ajax error');
+        }
     });
+
+
 
 };
 

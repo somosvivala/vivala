@@ -14,6 +14,7 @@
         <div class="col-xs-1 text-center">
                 <a href="#" onclick="removeInfoExperiencia(event)">
                     <i class="fa fa-2x fa-close margin-t-1"></i>
+                    <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
                 </a>
         </div>
 </li>

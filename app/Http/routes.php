@@ -124,8 +124,9 @@ Route::post('clickbus/booking', 'ClickBusController@getBooking');
 Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
 Route::post('clickbus/success', 'ClickBusController@getSucess');
 
-//aparentemente nao rola usar esses 2 tipos de controllers em um mesmo arquivo. Tive que sobrescrever essa rota
+//aparentemente nao rola usar esses 2 tipos de controllers em um mesmo arquivo. Tive que sobrescrever essas rotas
 Route::get('experiencias/addinformacaoextra', 'ExperienciasController@getAddinformacaoextra');
+Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDeleteinformacaoextra');
 
 Route::resource('experiencias', 'ExperienciasController');
 Route::controller('experiencias', 'ExperienciasController');

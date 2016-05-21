@@ -38,7 +38,7 @@ class DeleteInformacaoExperienciaRequest extends Request
 	public function rules()
 	{
 		return [
-			'info_id' => 'exists,informacao_experiencias,id'
+			'id' => 'exists:informacao_experiencias,id'
 		];
 	}
 
