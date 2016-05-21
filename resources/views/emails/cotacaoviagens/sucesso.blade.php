@@ -1,8 +1,8 @@
+<?php echo var_dump($CotacaoViagem); ?>
 <body>
+    {{--
     EMAIL AUTOMÁTICO DA PLATAFORMA PARA COTAÇÃO DE VIAGENS<br/>
     <br/>
-    var_dump($CotacaoViagem);
-    {{--
     <strong style="font-size:14px;">INFORMAÇÕES DO CLIENTE:</strong><br/>
     User ID do Cliente: <strong>{{ $CotacaoViagem>usuario['user-id'] }}</strong><br/>
     Nome do Cliente: <strong>{{ $CotacaoViagem->usuario['user-username'] }}</strong><br/>
