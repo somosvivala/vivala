@@ -21,18 +21,18 @@
     º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem->dados->['numero-criancas'] }}
     <br/>
     º Prefere viajar de:<br/>
-     - Manhã: {{ $CotacaoViagem->tempo-viagem->viaja-manha }}<br/>
-     - Tarde: {{ $CotacaoViagem->tempo-viagem->viaja-tarde }}<br/>
-     - Noite: {{ $CotacaoViagem->tempo-viagem->viaja-noite }}<br/>
-     - Madrugada {{ $CotacaoViagem->tempo-viagem->viaja-madrugada }}<br/>
+     - Manhã: {{ $CotacaoViagem->tempo-viagem['viaja-manha'] }}<br/>
+     - Tarde: {{ $CotacaoViagem->tempo-viagem['viaja-tarde'] }}<br/>
+     - Noite: {{ $CotacaoViagem->tempo-viagem['viaja-noite'] }}<br/>
+     - Madrugada {{ $CotacaoViagem->tempo-viagem['viaja-madrugada'] }}<br/>
      <strong style="color:red;">* Horários restritos?</strong><br/>
-     {{ $CotacaoViagem->tempo-viagem->horario-restrito }}<br/>
+     {{ $CotacaoViagem->tempo-viagem['horario-restrito'] }}<br/>
     <br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</strong><br/>
-    º Número de quartos: <strong>{{ $CotacaoViagem->dados-hospedagem->hotel-numero-quartos }}</strong><br/>
+    º Número de quartos: <strong>{{ $CotacaoViagem->dados-hospedagem['hotel-numero-quartos'] }}</strong><br/>
     º Adicionais do Hotel:<br/>
-    º Bairro ou região de preferência: {{ $CotacaoViagem->dados-hospedagem->hotel-bairro-regiao }}<br/>
+    º Bairro ou região de preferência: {{ $CotacaoViagem->dados-hospedagem['hotel-bairro-regiao'] }}<br/>
     <strong style="color:red;">* Informações adicionais:</strong><br/>
-    {{ $CotacaoViagem->dados-hospedagem->hotel-infos-adicionais }}
+    {{ $CotacaoViagem->dados-hospedagem['hotel-infos-adicionais'] }}
 </body>
