@@ -1,7 +1,6 @@
 <?php
 
 namespace app\Repositories;
-//use App\CotacaoViagem;
 use Mail;
 
 

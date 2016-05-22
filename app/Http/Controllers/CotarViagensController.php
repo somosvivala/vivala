@@ -93,7 +93,7 @@ class CotarViagensController extends Controller {
 		$accomodation = [
 			'hotel-numero-quartos' => intval(Input::get('hospedagem-nro-quartos')),
 			'hotel-adicionais' => $accomodation_additionals,
-			'hotel-bairro-regiao' => Input::get('hospedagem-bairro-regiao-preferencia'),
+			'hotel-bairro-regiao' => strtoupper(Input::get('hospedagem-bairro-regiao-preferencia')),
 			'hotel-infos-adicionais' => Input::get('hospedagem-informacoes-adicionais')
 		];
 

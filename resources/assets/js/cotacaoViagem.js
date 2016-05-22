@@ -10,7 +10,8 @@ switch(linguaAtiva){
     lingua[2] = 'A reply email about your trip is coming soon, stay tuned to your mailbox.',
     lingua[3] = 'It wasn\'t possible to estimate your trip',
     lingua[4] = 'An error occurred in our system and your trip estimate can\'t be send!',
-    lingua[5] = 'We apologize for the inconvenience and ask you to try again later.'
+    lingua[5] = 'We apologize for the inconvenience and ask you to try again later.',
+        lingua[6] = 'This <b>content</b> it\'s not avaiable!<br> Stay tunned and soon you will be notified on your email!'
   break;
   case 'pt':
     lingua[0] = 'Cotação enviada com sucesso!',
@@ -18,7 +19,8 @@ switch(linguaAtiva){
     lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.',
     lingua[3] = 'Não foi possível realizar a sua cotação',
     lingua[4] = 'Um erro ocorreu em nosso sistema e sua cotação não pode ser enviada!',
-    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.'
+    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.',
+    lingua[6] = 'Este <b>conteúdo</b> ainda não está disponível!<br> Fique ligado, em breve você será notificado por email!.'
   break;
   default:
     lingua[0] = 'Cotação enviada com sucesso!',
@@ -26,7 +28,8 @@ switch(linguaAtiva){
     lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.',
     lingua[3] = 'Não foi possível realizar a sua cotação',
     lingua[4] = 'Um erro ocorreu em nosso sistema e sua cotação não pode ser enviada!',
-    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.'
+    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.',
+    lingua[6] = 'Este <b>conteúdo</b> ainda não está disponível!<br> Fique ligado, em breve você será notificado por email!.'
 }
 
 // Aplicando mascara nos campos de date para funcionar melhor com o calendário
@@ -49,6 +52,15 @@ var mudaDataIdaVolta = function(containerIda, containerVolta){
 var coloreDatePickerDiasPassados = function(container){
   $(container).datepicker().on('focus', function(){
       $('.datepicker table tr td.disabled').addClass('datepicker-dia-anterior');
+  });
+}
+
+var bindaTooltipsDesativados = function(){
+  let bindaTooltipCarrosNaoFuncionando = new Tooltip({
+    target: document.querySelector('#bloqueia-cotacao-carros'),
+    content: lingua[6],
+    classes: 'tooltip-theme-twipsy',
+    position: 'top right'
   });
 }
 
@@ -134,12 +146,6 @@ var bindaFormCotaViagem = function() {
       }
     });
     $(ativaFormCarros).bind('click', function(){
-      var tooltipFormCarros = new Tooltip({
-        target: ativaFormCarros,
-        content: "TESTE",
-        classes: 'tooltip-theme-arrows',
-        position: 'right middle'
-      });
     });
 
   var basicoDataIda1 = $('#basico-data-ida-1'),
@@ -154,11 +160,9 @@ var bindaFormCotaViagem = function() {
     $(dataHospdagem1).click(function() {
         if(this.checked){
           $(datasMaisHospedagem1).val(1);
-          ativaFormHospedagem.click();
         }
         else if(!this.checked){
           $(datasMaisHospedagem1).val(0);
-          ativaFormHospedagem.click();
         }
     });
 
@@ -251,11 +255,11 @@ var bindaFormCotaViagem = function() {
     $(ativaHorarioRestrito).bind('click', function(){
       if(!$(this).hasClass('active')){
         $(this).addClass('active');
-        $(campoHorarioRestrito).removeClass('hidden');
+        $(campoHorarioRestrito).toggle('slow');
       }
       else{
         $(this).removeClass('active');
-        $(campoHorarioRestrito).addClass('hidden');
+        $(campoHorarioRestrito).toggle('fast');
         $(campoHorarioRestrito).val('');
       }
     });
@@ -284,51 +288,51 @@ var bindaFormCotaViagem = function() {
       AdcTranslado = $('#adicional-translado'), hospAdcTranslado = $('input#hospedagem-adicional-translado');
 
         $(AdcCafe).click(function() {
-            if (this.checked) $(hospAdcCafe).val(1);
+            if(this.checked) $(hospAdcCafe).val(1);
             else if(!this.checked) $(hospAdcCafe).val(0);
         });
         $(AdcWifi).click(function() {
-            if (this.checked) $(hospAdcWifi).val(1);
+            if(this.checked) $(hospAdcWifi).val(1);
             else if(!this.checked) $(hospAdcWifi).val(0);
         });
         $(AdcArCondicionado).click(function() {
-            if (this.checked) $(hospAdcArCondicionado).val(1);
+            if(this.checked) $(hospAdcArCondicionado).val(1);
             else if(!this.checked) $(hospAdcArCondicionado).val(0);
         });
         $(AdcTvCabo).click(function() {
-            if (this.checked) $(hospAdcTvCabo).val(1);
+            if(this.checked) $(hospAdcTvCabo).val(1);
             else if(!this.checked) $(hospAdcTvCabo).val(0);
         });
         $(AdcCancelamento).click(function() {
-            if (this.checked) $(hospAdcCancelamento).val(1);
+            if(this.checked) $(hospAdcCancelamento).val(1);
             else if(!this.checked) $(hospAdcCancelamento).val(0);
         });
         $(AdcAnimal).click(function() {
-            if (this.checked) $(hospAdcAnimal).val(1);
+            if(this.checked) $(hospAdcAnimal).val(1);
             else if(!this.checked) $(hospAdcAnimal).val(0);
         });
         $(AdcAcademia).click(function() {
-            if (this.checked) $(hospAdcAcademia).val(1);
+            if(this.checked) $(hospAdcAcademia).val(1);
             else if(!this.checked) $(hospAdcAcademia).val(0);
         });
         $(AdcPiscina).click(function() {
-            if (this.checked) $(hospAdcPiscina).val(1);
+            if(this.checked) $(hospAdcPiscina).val(1);
             else if(!this.checked) $(hospAdcPiscina).val(0);
         });
         $(AdcEstacionamento).click(function() {
-            if (this.checked) $(hospAdcEstacionamento).val(1);
+            if(this.checked) $(hospAdcEstacionamento).val(1);
             else if(!this.checked) $(hospAdcEstacionamento).val(0);
         });
         $(AdcBanheiroPrivativo).click(function() {
-            if (this.checked) $(hospAdcBanheiroPrivativo).val(1);
+            if(this.checked) $(hospAdcBanheiroPrivativo).val(1);
             else if(!this.checked) $(hospAdcBanheiroPrivativo).val(0);
         });
         $(AdcVaranda).click(function() {
-            if (this.checked) $(hospAdcVaranda).val(1);
+            if(this.checked) $(hospAdcVaranda).val(1);
             else if(!this.checked) $(hospAdcVaranda).val(0);
         });
         $(AdcTranslado).click(function() {
-            if (this.checked) $(hospAdcTranslado).val(1);
+            if(this.checked) $(hospAdcTranslado).val(1);
             else if(!this.checked) $(hospAdcTranslado).val(0);
         });
 
@@ -339,11 +343,11 @@ var bindaFormCotaViagem = function() {
       $(ativaInfoAdicional).bind('click', function(){
         if(!$(this).hasClass('active')){
           $(this).addClass('active');
-          $(campoInfoAdicional).removeClass('hidden');
+          $(campoInfoAdicional).toggle('slow');
         }
         else{
           $(this).removeClass('active');
-          $(campoInfoAdicional).addClass('hidden');
+          $(campoInfoAdicional).toggle('fast');
           $(campoInfoAdicional).val('');
         }
       });
@@ -353,6 +357,7 @@ var bindaFormCotaViagem = function() {
 
 jQuery(document).ready(function($) {
   bindaFormCotaViagem();
+  bindaTooltipsDesativados();
 
   // Token do laravel para Ajax
   $.ajaxSetup({

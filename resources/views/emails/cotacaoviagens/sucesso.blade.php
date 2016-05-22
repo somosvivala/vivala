@@ -31,7 +31,25 @@
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</strong><br/>
     º Número de quartos: <strong>{{ $CotacaoViagem->hospedagem['hotel-numero-quartos'] }}</strong><br/>
-    º Adicionais do Hotel:<br/>
+    <table style="width:100%">
+      <caption><strong>º Adicionais do Hotel</strong></caption>
+      <tr>
+        <td>Café da Manhã: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-cafe'] }}</td>
+        <td>WiFi Gratuito: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-wifi'] }}</td>
+        <td>Ar condicionado: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-ar-condicionado'] }}</td>
+        <td>Televisão com TV a cabo: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-tv-cabo'] }}</td>
+      </tr>
+        <td>Cancelamento grátis: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-cancelamento'] }}</td>
+        <td>Animais de estimação: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-animal'] }}</td>
+        <td>Piscina: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-piscina'] }}</td>
+        <td>Academia: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-academia'] }}</td>
+      <tr>
+        <td>Estacionamento gratuito: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-estacionamento'] }}</td>
+        <td>Banheiro Privativo: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-banheiro-privativo'] }}</td>
+        <td>Varanda: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-varanda'] }}</td>
+        <td>Translado: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-translado'] }}</td>
+      </tr>
+    </table>
     º Bairro ou região de preferência: {{ $CotacaoViagem->hospedagem['hotel-bairro-regiao'] }}<br/>
     <strong style="color:red;">* Informações adicionais:</strong><br/>
     {{ $CotacaoViagem->hospedagem['hotel-infos-adicionais'] }}
