@@ -18,10 +18,10 @@
 </nav>
 
 {{-- Cotação de Vendas Vivalá --}}
-<nav class="menu-lateral">
+<nav id="#cotar-viagem" class="menu-lateral">
 	<p class="text-justify margin-t-2">{!! trans('global.lbl_build_my_trip_difficulty') !!}</p>
 	<ul>
-		<li><button class="btn btn-acao click-img-no-border" data-controls-modal="modal-cotacao-viagem" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#modal-cotacao-viagem" > {!! trans('global.lbl_build_my_trip') !!}</button></li>
+		<li><button class="btn btn-acao click-img-no-border tour-cotar-viagem" data-controls-modal="modal-cotacao-viagem" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#modal-cotacao-viagem" > {!! trans('global.lbl_build_my_trip') !!}</button></li>
 	</ul>
 </nav>
 

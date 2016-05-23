@@ -55,6 +55,7 @@ var coloreDatePickerDiasPassados = function(container){
   });
 }
 
+// Tooltips de aviso que algumas features não estão prontas
 var bindaTooltipsDesativados = function(){
   let bindaTooltipCarrosNaoFuncionando = new Tooltip({
     target: document.querySelector('#bloqueia-cotacao-carros'),
@@ -70,6 +71,7 @@ var bindaTooltipsDesativados = function(){
   });
 }
 
+// Binda o formulário de Cotação de Viagens
 var bindaFormCotaViagem = function() {
   /* FORM BÁSICO */
   // Icones Superiores
@@ -154,6 +156,7 @@ var bindaFormCotaViagem = function() {
     $(ativaFormCarros).bind('click', function(){
     });
 
+  // Campo de data
   var basicoDataIda1 = $('#basico-data-ida-1'),
       basicoDataVolta1 = $('#basico-data-volta-1');
       coloreDatePickerDiasPassados(basicoDataIda1);
@@ -174,7 +177,6 @@ var bindaFormCotaViagem = function() {
 
   // Mais Destinos
   var ativaMaisDestinos = $('#ativa-mais-destinos');
-
     $(ativaMaisDestinos).bind('click', function(){
     });
 

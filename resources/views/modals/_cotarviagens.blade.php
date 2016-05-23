@@ -13,7 +13,7 @@
         {!! Form::open(['id' => 'form-cotar-viagens', 'url' => '/cotarviagem', 'method' => 'POST', 'data-callback' => 'retornoFormCotarViagens', 'data-loading'=>'form-cotar-viagens-loading', 'data-redirect' => '']) !!}
         <div class="form-group">
             {{-- Botões Iniciais --}}
-            <div class="row">
+            <div class="row margin-b-2">
               <h4 class="sub-titulo ajuste-fonte-avenir-medium text-center margin-b-1">
                   {!! trans('global.lbl_what_are_you_looking_for') !!}?
               </h4>
