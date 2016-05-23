@@ -1,4 +1,4 @@
-<nav class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12 fundo-cheio padding-t-1 margin-t-1 .navbar-fixed-bottom">
+<nav class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12 fundo-cheio padding-t-1 margin-t-1">
     <div class="col-sm-12 col-md-8 col-md-offset-2">
         <div class="col-sm-4 text-right">
             <span class="font-bold-upper">{{ trans('global.footer_more_about_us') }}</span>

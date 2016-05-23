@@ -207,8 +207,8 @@ return [
 		'Socialite' => 'Laravel\Socialite\Facades\Socialite',
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
-                'Image'     => 'Intervention\Image\Facades\Image',
-                'Agent'     => 'Jenssegers\Agent\Facades\Agent'
+    'Image'     => 'Intervention\Image\Facades\Image',
+    'Agent'     => 'Jenssegers\Agent\Facades\Agent'
 	],
 
 ];

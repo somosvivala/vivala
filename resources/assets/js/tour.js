@@ -6,13 +6,15 @@ $(document).ready(function() {
   // Possibilidade do user afirmar se quer ver sempre o TOUR ou cancelá-lo
   var ligaQuizTour = Cookies.get('quizTour');
   var ligaIntroTour = Cookies.get('introTour');
+  var ligaCotarViagemTour = Cookies.get('featureCotarViagemTour');
 
   // Variáveis diferentes só por conta da opacidade da layer ao fundo
   var quizTour = introJs(); // Quiz
   var introTour = introJs(); // Primeira Tour da Plataforma
   var internoTour = introJs(); // Tour de cada 1 dos 3 pilares
+  var featureCotarViagemTour = introJs(); // Tour featureCotarViagem
 
-  // [QUIZ/INTRO/INTERNO/PILARVENDAS] Configurações Iniciais Baseados na Língua Usada
+  // [QUIZ/INTRO/INTERNO/PILARVENDAS/FEATURES] Configurações Iniciais Baseados na Língua Usada
   switch(linguaAtiva){
     case 'en':
       // Quiz
@@ -80,6 +82,24 @@ $(document).ready(function() {
           //disableInteraction: ,
           //hintPosition: ,
           hintButtonLabel: 'Got it',
+        });
+      // cotacaoViagem
+        featureCotarViagemTour.setOptions({
+          nextLabel: 'Next',
+          prevLabel: 'Previous',
+          skipLabel: 'Got it',
+          doneLabel: 'Got it',
+          exitOnEsc: true,
+          exitOnOverlayClick: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: false,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0,
+          hintButtonLabel: 'Got it',
+          tooltipClass: 'tooltip-nova-feature'
         });
     break;
     case 'pt':
@@ -149,6 +169,24 @@ $(document).ready(function() {
           //hintPosition: ,
           hintButtonLabel: 'Entendi',
         });
+      // cotacaoViagem
+        featureCotarViagemTour.setOptions({
+          nextLabel: 'Próximo',
+          prevLabel: 'Anterior',
+          skipLabel: 'Entendi',
+          doneLabel: 'Entendi',
+          exitOnEsc: true,
+          exitOnOverlayClick: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          showButtons: true,
+          showBullets: false,
+          showProgress: false,
+          scrollToElement: true,
+          overlayOpacity: 0,
+          hintButtonLabel: 'Entendi',
+          tooltipClass: 'tooltip-nova-feature',
+        });
     default:
       // Quiz
         quizTour.setOptions({
@@ -180,6 +218,16 @@ $(document).ready(function() {
             keyboardNavigation: true,
             exitOnEsc: true
           });
+      // cotacaoViagem
+        featureCotarViagemTour.setOptions({
+          overlayOpacity: 0,
+          showButtons: true,
+          scrollToElement: true,
+          showProgress: false,
+          showStepNumbers: false,
+          keyboardNavigation: true,
+          exitOnEsc: true
+        });
   }
 
 /*==============================================================================
@@ -546,6 +594,45 @@ $(document).ready(function() {
     introTour.start();
   }
 
+// ##### FEATURE COTACAO VIAGEM
+  if(parseInt(ligaIntroTour) && !parseInt(ligaCotarViagemTour)){
+    switch(linguaAtiva){
+      case 'en':
+        featureCotarViagemTour.setOptions({
+          steps: [
+            {
+              element: '.tour-cotar-viagem',
+              intro: '<p class="text-center"><h4 class="text-center"><strong>VIVALÁ HAS NEWS FOR YOU!</strong></h4><br/><span class="texto-corpo">Now you can get build your trip with us any time. You can choose between flights, hotels and bus tickets and packages with up to 35 % off!</span></p>',
+              position: 'right'
+            }
+          ]
+        });
+      break;
+      case 'pt':
+        featureCotarViagemTour.setOptions({
+          steps: [
+            {
+              element: '.tour-cotar-viagem',
+                intro: '<p class="text-center"><h4 class="text-center"><strong>A VIVALÁ TEM NOVIDADE PRA VOCÊ!</strong></h4><br/><span class="texto-corpo">Agora você pode fazer a cotação de sua viagem conosco a qualquer momento. Você poderá escolher vôos, hotéis e passagens de ônibus e pacotes com até 35% de desconto!</span></p>',
+              position: 'right'
+            }
+          ]
+        });
+      break;
+      default:
+      // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
+    }
+    featureCotarViagemTour.onexit(function(){
+      Cookies.set('featureCotarViagemTour', 1, { expires: 365, path: '/' });
+      ligaCotarViagemTour = Cookies.get('featureCotarViagemTour');
+    });
+    featureCotarViagemTour.oncomplete(function(){
+      Cookies.set('featureCotarViagemTour', 1, { expires: 365, path: '/' });
+      ligaCotarViagemTour = Cookies.get('featureCotarViagemTour');
+    });
+    featureCotarViagemTour.start();
+  }
+
 // ##### PILARES
   $('#notificacoes-ajuda').click(function(){
     // TOUR PILARES
@@ -575,7 +662,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step4',
                 intro: '<p calss="text-center">Here in the middle you can see the posts and news from people you follow into the <span class="laranja">Vivalá</span>.<br/>Stay tuned on the news!</p>',
-                position: 'right'
+                position: 'top'
               },
               {
                 element: '.tour-pilar-conectar-step5',
@@ -590,7 +677,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step7',
                 intro: '<p class="text-center"><span class="laranja">Like Vivalá on Facebook</span> and stay tuned to our big news!</p>',
-                position: 'top'
+                position: 'right'
               }
             ]
           });
@@ -617,7 +704,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step4',
                 intro: '<p calss="text-center">Aqui no meio você poderá ver as postagens e notícias das pessoas que você segue dentro da <span class="laranja">Vivalá</span>.<br/>Fique por dentro das novidades!</p>',
-                position: 'right'
+                position: 'top'
               },
               {
                 element: '.tour-pilar-conectar-step5',
@@ -632,7 +719,7 @@ $(document).ready(function() {
               {
                 element: '.tour-pilar-conectar-step7',
                 intro: '<p class="text-center"><span class="laranja">Curta a Vivalá no Facebook</span> e fique ligado em nossas novidades!</p>',
-                position: 'top'
+                position: 'right'
               }
             ]
           });
@@ -801,109 +888,3 @@ $(document).ready(function() {
   });
 
 });
-
-function verificaMarketPlace(){
-  var linguaAtiva = $("meta[name=language]").attr("content");
-  var pilarVendasTour = introJs(); // Tour interna do MarketPlace (ChefsClub + ClickBus)
-
-  // Pilares Vendas (ChefsClub + Quimera + ClickBus)
-  switch(linguaAtiva){
-    case 'en':
-      pilarVendasTour.setOptions({
-        nextLabel: 'Next',
-        prevLabel: 'Previous',
-        skipLabel: 'Skip Tour',
-        doneLabel: 'End Tour',
-        //tooltipPosition: ,
-        //tooltipClass: ,
-        //highlightClass: ,
-        exitOnEsc: true,
-        exitOnOverlayClick: true,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        showButtons: true,
-        showBullets: false,
-        showProgress: true,
-        scrollToElement: true,
-        overlayOpacity: 0.1,
-        //disableInteraction: ,
-        //hintPosition: ,
-        hintButtonLabel: 'Got it',
-      });
-    break;
-    case 'pt':
-      pilarVendasTour.setOptions({
-        nextLabel: 'Próximo',
-        prevLabel: 'Anterior',
-        skipLabel: 'Pular Tour',
-        doneLabel: 'Finalizar Tour',
-        //tooltipPosition: ,
-        //tooltipClass: ,
-        //highlightClass: ,
-        exitOnEsc: true,
-        exitOnOverlayClick: true,
-        showStepNumbers: false,
-        keyboardNavigation: true,
-        showButtons: true,
-        showBullets: false,
-        showProgress: true,
-        scrollToElement: true,
-        overlayOpacity: 0.1,
-        //disableInteraction: ,
-        //hintPosition: ,
-        hintButtonLabel: 'Entendi',
-      });
-    break;
-    default:
-  }
-
-  //console.log("Entrei no MarketPlace.");
-  if($("#restaurantes")){
-    console.log("CHEFSCLUB");
-    // CHEFSCLUB
-    switch(linguaAtiva){
-      case 'en':
-        pilarVendasTour.setOptions({
-          steps: [
-            // CHEFSCLUB
-            {
-              element: '.tour-chefsclub-step1',
-              intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-chefsclub-step2',
-              intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
-              position: 'left'
-            }
-          ]
-        });
-      break;
-      case 'pt':
-        pilarVendasTour.setOptions({
-          steps: [
-            // CHEFSCLUB
-            {
-              element: '.tour-chefsclub-step1',
-              intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-chefsclub-step2',
-              intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
-              position: 'left'
-            }
-          ]
-        });
-      break;
-      default:
-      // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
-    }
-    /*
-    pilarVendasTour.start();
-    pilarVendasTour.oncomplete(function(){
-      pilarVendasTour.exit();
-    });
-    */
-  }
-};

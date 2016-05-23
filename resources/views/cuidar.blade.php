@@ -20,7 +20,7 @@
 	</nav>
 
 	<footer class="footer hidden-xs">
-	@include('footer')
+		@include('footer')
 	</footer>
 
 @endsection

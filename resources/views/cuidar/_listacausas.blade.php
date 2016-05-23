@@ -1,8 +1,7 @@
 <h4 class="suave">
-	Sugestão de Projetos de Impacto para seguir
+	{{ trans('global.wannavolunteer_projects_to_follow') }}
 </h4>
 <ul class="sugestoes sugestoes-ongs">
-
 	@if(isset($sugestoesOngs))
 	@forelse($sugestoesOngs as $Ong)
 		<li>

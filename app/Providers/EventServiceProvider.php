@@ -18,7 +18,6 @@ class EventServiceProvider extends ServiceProvider {
 			'EventListener',
 		],
 
-
     //Quando um perfil se voluntaria
 		'App\Events\PerfilHasVolunteered' => [
 			'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
@@ -35,11 +34,15 @@ class EventServiceProvider extends ServiceProvider {
 			'App\Handlers\Events\ClickBus\UpdatePassagemCancelada',
 		],
 
-
     //Quando um pagamento da clickbus é confirmado
     'App\Events\ClickBusPagamentoConfirmado' => [
 			'App\Handlers\Events\ClickBus\UpdatePagamentoConfirmado',
 			'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
+		],
+
+		//Quando alguém finaliza a Cotação de uma Viagem
+		'App\Events\NovaCotacaoViagem' => [
+			'App\Handlers\Events\CotacaoViagem\EnviaEmailCotacaoViagem',
 		],
 
 	];
