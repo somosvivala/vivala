@@ -33,7 +33,7 @@
         <link rel="mask-icon" href="{{ asset('favicon/v/safari-pinned-tab.svg') }}" color="#f3702b">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="msapplication-TileImage" content="{{ asset('favicon/v/mstile-144x144.png') }}">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#F16F2B">
 
     {{-- Google SEO --}}
       <meta name="description" content="{{ trans('global.description_vivala') }}"/>
@@ -83,7 +83,7 @@
         </a>
     </div>
 
-    <div class="col-md-12 col-lg-12">
+    <div class="col-xs-12">
         @yield('content')
     </div>
 

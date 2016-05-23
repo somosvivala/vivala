@@ -17,7 +17,6 @@ body.mobile {
         opacity:1;
         transition: opacity 0.5s ease-out 0.2s, top 0.6s ease;
     }
-    
 }
 
 .desativa-parent {
@@ -41,20 +40,24 @@ body.mobile {
     text-transform:uppercase;
     fill: currentColor;
     font-family:@font-family-avenir-black;
-    font-size:2rem;
-    padding:1em;
+    font-size:1.8rem;
+    font-weight:bold;
+    padding: 0.8em 0 0.6em 0;
     img {
         height:2em;
     }
     a {
         color:white;
     }
+    span {
+        padding-top:0.2em;
+    }
 }
 
 .titulo-mobile {
     text-align:center;
     text-transform:uppercase;
-    font-size:2.2rem;
+    font-size:2.5rem;
     font-family:@font-family-futura-bt-bold;
 }
 
@@ -63,7 +66,7 @@ body.mobile {
     top:0;
     left:0;
     padding:0.2em;
-    font-size: 2.5em;
+    font-size: 2.2em;
     color:white;
 }
 
@@ -82,6 +85,7 @@ body.mobile {
     width:3em;
     padding:0.5em;
     color:white;
+    font-size:0.8em; 
     i {
         font-size:3em;
     }
@@ -99,7 +103,7 @@ body.mobile {
     text-align:center;
     font-family:@font-family-avenir-black;
     text-transform:uppercase;
-    font-size:2em;
+    font-size:1.5em;
     padding:0.5em;
     background-color:darken(@verde-sucesso,5%);
     transition:background-color 0.2s ease;
@@ -134,20 +138,7 @@ ul.lista-foto-descricao {
             background-repeat: no-repeat;
             background-size:cover;
         }
-        .categorias {
-            width:2em;
-            padding:0.5em;
-            i {
-                color:white;
-                font-size:2em;
-                padding:0.3em;
-                border-radius:2em;
-                background-color:#e2e2e2;
-                opacity:0.5;
-                transition: opacity 0.5s;
-            }
-        }
-        &:hover i {
+        &:hover .icone {
             opacity:1;
         }
     }
@@ -164,6 +155,28 @@ ul.lista-foto-descricao {
     }
 }
 
+.categorias-experiencia {
+    width: 3em;
+    .icone {
+        color:white;
+        font-size:1.5em;
+        width:1.4em;
+        height:1.4em;
+        display: inline-block;
+        text-align:center;
+        border-radius:2em;
+        background-color:#e2e2e2;
+        opacity:0.5;
+        transition: opacity 0.5s;
+        margin:0.2em 0 0 0.2em;
+        float:left;
+        span {
+            position: absolute;
+            left: 2em;
+            padding-top: 0.5em;
+        }
+    }
+}
 .experiencia {
     .foto-experiencia {
         .foto-img {
@@ -177,35 +190,37 @@ ul.lista-foto-descricao {
             background-repeat: no-repeat;
             background-size:cover;
         }
-        .categorias {
-            width:2em;
-            padding:0.5em;
-            i {
-                color:white;
-                font-size:2em;
-                padding:0.3em;
-                border-radius:2em;
-                background-color:#e2e2e2;
-                opacity:0.5;
-                transition: opacity 0.5s;
-            }
-        }
-        &:hover i {
+        &:hover .icone {
             opacity:1;
         }
     }
     .descricao {
         position: absolute;
-        top:4em;
+        top:6rem;
         left:5%;
         width:90%;
         background-color:white;
-        padding-top:12em;
+        padding-top:19rem;
+        padding-bottom:2em;
+        font-size:0.9em;
+        .descricao-inicial {
+            width:66%;
+            display:block;
+            float:left;
+            text-align:justify;
+            padding:0;
+            padding-left:15px;
+        }
+        .owner {
+            width:34%;
+            float:left;
+            padding:0 0.5em;
+        }
     }
 }
 
 .negrito-exp {
     font-family:@font-family-futura-bt-bold;
-    font-size:1em;
+    font-size:1.1em;
     color:@cor-cinza-escuro;
 }

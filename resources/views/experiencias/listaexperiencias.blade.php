@@ -10,8 +10,13 @@
         <a href="/experiencias/{{ $Experiencia->id}}">
             <div class="{{ $k%2==0?'direita':'esquerda'}} foto">
                 <div class="foto-img" style="background-image:url('https://dev.vivala.com.br/img/dummyvoos.jpg')">
-                    <div class="categorias">
-                        <i class="fa fa-paw"></i>
+                    <div class="categorias-experiencia">
+                        @foreach($Experiencia->categorias as $Categoria)
+                            <div class="icone">
+                                <i class="fa fa-{{ $Categoria->icone }}"></i>
+                                {{-- <span>{{ $Categoria->nome }}</span> --}}
+                            </div>
+                        @endforeach
                     </div>
                 </div>
                 {{-- <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}"> --}}
