@@ -31,7 +31,7 @@ class CotarViagensRequest extends Request {
 				'basico-origem-1' => 'required|string|min:2',
 				'basico-destino-1' => 'required|string|min:2',
 				'basico-data-ida-1' => 'required|string|min:10',
-				'basico-data-volta-1' => 'required|string|min:10',
+				'basico-data-volta-1' => 'string|min:10',
 				'basico-mais-hospedagem-1' => 'boolean',
 				/* Viagem numero 2 a 5 [NÃO OBRIGATÓRIO]
 					'basico-origem-2' => 'string|min:2',

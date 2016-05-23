@@ -94,13 +94,13 @@
                     {!! Form::text('basico-origem-1', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    {!! Form::text('basico-destino-1', null, ['class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
+                    {!! Form::text('basico-destino-1', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
                   </div>
                   <div class="col-md-3 col-lg-3">
                     <input type="text" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    <input type="text" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
+                    <input type="text" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d">
                   </div>
                   {{-- DESATIVADO TEMPORARIAMENTE
                   <div class="col-md-1 col-lg-1">
@@ -156,15 +156,20 @@
                     <div class="col-md-6 col-lg-6">
                       <select id="qtd-adultos" class="form-control" required>
                           @for($i=0; $i<=10; $i++)
-                            <option name="qtd-adultos-{{ $i }}" value="{{ $i }}" @if($i === 0) disabled selected @endif>
+                            <option name="qtd-adultos-{{ $i }}"
                               @if($i === 0)
+                                disabled selected value="">
                                 {{ trans('global.lbl_select') }}
+                                </option>
                               @elseif($i === 1)
+                                value="{{ $i }}">
                                 {{ $i }} {{ trans('global.passenger_adult') }}
+                                </option>
                               @elseif($i >= 2)
+                                value="{{ $i }}">
                                 {{ $i }} {{ trans('global.passenger_adult_') }}
+                                </option>
                               @endif
-                            </option>
                           @endfor
                       </select>
                       {!! Form::hidden('basico-nro-adultos', 0, ['id' => 'nro-adultos']) !!}
@@ -177,17 +182,24 @@
                     <div class="col-md-6 col-lg-6">
                       <select id="qtd-criancas" class="form-control" required>
                         @for($i=-1; $i<=10; $i++)
-                          <option name="qtd-criancas-{{ $i }}" value="{{ $i }}" @if($i === -1) disabled selected @endif>
+                          <option name="qtd-criancas-{{ $i }}"
                             @if($i === -1)
+                              disabled selected value="">
                               {{ trans('global.lbl_select') }}
+                              </option>
                             @elseif($i === 0)
+                              value="{{ $i }}">
                               {{ trans('global.passenger_child_no') }}
+                              </option>
                             @elseif($i === 1)
+                              value="{{ $i }}">
                               {{ $i }} {{ trans('global.passenger_child') }}
+                              </option>
                             @elseif($i >= 2)
+                              value="{{ $i }}">
                               {{ $i }} {{ trans('global.passenger_child_') }}
+                              </option>
                             @endif
-                          </option>
                         @endfor
                       </select>
                       {!! Form::hidden('basico-nro-criancas', 0, ['id' => 'nro-criancas']) !!}
