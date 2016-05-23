@@ -14,7 +14,7 @@
     <span><img clas="restaurantes-vivala-chefsclublogo" src="{{ asset('/img/parceiros/vivala-icon-parceiros-chefsclub.svg') }}" alt="chefsclub.com.br" title="chefsclub.com.br" height="40px"/></span>
   </div>
   <div class="row">
-    <a class="btn btn-acao btn-restaurantes" href="https://www.chefsclub.com.br/desconto/vivala" target="_blank">
+    <a class="btn btn-acao btn-restaurantes logger-ativo" data-tipo="chefsclub_tipo_entreclubeexterno" data-desc="chefsclub_desc_entreclubeexterno" data-loggerurl=" {{ $_SERVER['REQUEST_URI'] }} " href="https://www.chefsclub.com.br/desconto/vivala" target="_blank">
     {{ trans('chefsclub.chefsclub_join-the-club') }}
     </a>
   </div>

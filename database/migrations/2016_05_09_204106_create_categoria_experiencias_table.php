@@ -3,10 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-
-class CreateFotosTable extends Migration {
-
-
+class CreateCategoriaExperienciasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -15,15 +12,16 @@ class CreateFotosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('fotos', function(Blueprint $table)
+		Schema::create('categoria_experiencias', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('path');
-			$table->enum('tipo', ['avatar','capa'])->nullable();
 			$table->timestamps();
 
-			$table->integer('owner_id')->nullable();
-			$table->string('owner_type')->nullable();
+      $table->string('nome')->nullable();
+
+      //url do icone?
+      $table->string('icone')->nullable();
+
 		});
 	}
 
@@ -34,7 +32,7 @@ class CreateFotosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('fotos');
+		Schema::drop('categoria_experiencias');
 	}
 
 }

@@ -8,20 +8,21 @@ use App\Empresa;
 use App\Post;
 use App\Foto;
 use App\Http\Requests\CropPhotoRequest;
-
-
-
+use App\Interfaces\ExperienciasRepositoryInterface;
 use Auth;
 use Input;
 use Request;
+
 class FotoController extends VivalaBaseController {
 
     /**
      * construtor seguro.
+     * @param $repository - Instancia do Repositorio que extend essa interface
      */
-    public function __construct(){
+    public function __construct(ExperienciasRepositoryInterface $repository){
         //Só passa se estiver logado
         $this->middleware('auth');
+        $this->ExperienciasRepository = $repository;
     }
 
     public function postCropandsave($id=0, CropPhotoRequest $request) {
@@ -122,6 +123,54 @@ class FotoController extends VivalaBaseController {
             }
         }
     }
+
+
+    /**
+     * Metodo para receber por POST uma CropPhotoRequest,
+     * croppar e settar a foto para a Experiencia em questao
+     *
+     * @param $request - Uma instancia de CropPhotoRequest, servida pelo laravel
+     * @param $experienciaId - o id da experiencia que iremos associar a foto
+     *
+     * @return App\Foto - instancia da foto criada
+     */
+    public function postCropandsaveexperiencias(CropPhotoRequest $request, $experienciaId)
+    {
+        $file = Input::file('file');
+        if ($file && $file->isValid()) {
+
+            $experiencia = $this->ExperienciasRepository->findOrFail($experienciaId);
+            $destinationPath = public_path() . '/uploads/';
+            $extension = Input::file('file')->getClientOriginalExtension(); // Pega o formato da imagem
+
+            $widthCrop = round($request->input('w'));
+            $heightCrop = round($request->input('h'));
+            $xSuperior = round($request->input('x'));
+            $ySuperior = round($request->input('y'));
+
+            $fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
+            $file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
+            $upload_success = $file->save($destinationPath.$fileName);
+
+            //Se o upload da foto ocorreu com sucesso
+            if ($upload_success) {
+
+                //Se ja tiver uma foto de capa entao deletar a atual antes de subir a nova
+                //esta usando o softDelete, entao a foto nao é realmente deletada.
+                if ($experiencia->fotoCapa) {
+                    $experiencia->fotoCapa->delete();
+                }
+
+                //criar nova foto e associar a experiencia
+                $experiencia->fotoCapa()->save(Foto::create(['path' => $fileName]));
+                return $experiencia->fotoCapa;
+
+            } else {
+                return false;
+            }
+        }
+    }
+
 
 
 }

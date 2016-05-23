@@ -1,4 +1,4 @@
-@extends('templatedeslogado')
+@extends('mobiledeslogado')
 
 @section('content')
 <div class="container-fluid welcome-login-passrec">

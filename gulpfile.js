@@ -54,7 +54,8 @@ elixir(function(mix) {
       '../../assets/bower/tether/dist/js/tether.min.js',
       '../../assets/bower/tether-drop/dist/js/drop.min.js',
       '../../assets/bower/tether-tooltip/dist/js/tooltip.min.js',
-
+      /* Logger antes dos outros */
+      '../../assets/js/logger-config.js',
       /* Scripts Vivalá */
       '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',

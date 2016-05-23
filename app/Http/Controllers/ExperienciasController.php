@@ -1,58 +1,100 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\EditarFotoExperienciaRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use Agent;
+use Auth;
+use App\Interfaces\ExperienciasRepositoryInterface;
+use App\Experiencia;
 
 class ExperienciasController extends Controller {
 
-	/**
-         * Exibe lista de experiencias
-	 *
-	 * @return view
-	 */
-	public function getIndex()
-	{
-            $exp = new \stdClass();
-            $exp->id = 42;
-            $exp->titulo = "Título da Experiência";
-            $exp->descricao = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim mi ac ipsum consectetur, at tempus lacus mattis. Maecenas elementum varius felis nec finibus. ";
-            $exp->foto = "/img/dummyvoos.jpg";
-            $exp->preco = 36.75;
+    //propriedade que guarda uma instancia de
+    //experienciasRepository, contendo a logica interna
+    private $experienciasRepository;
 
-            $experiencias = [
-                $exp,
-                $exp,
-                $exp
-            ];
+    /**
+     * Construtor com dependencia do experienciasRepository
+     */
+    public function __construct(ExperienciasRepositoryInterface $repository)
+    {
+        //recebendo uma instancia do repositorio de experiecias
+        $this->experienciasRepository = $repository;
+        $this->middleware('auth', ['only' => [
+            'getEditafoto',
+            'getCheckout'
+        ]]);
+    }
 
-            if(Agent::isDesktop()){
-		return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
-            } else {
-		return view("experiencias.listaexperiencias", compact("experiencias") );
-            }
-	}
+    /**
+     * Exibe lista de experiencias
+     *
+     * @return view
+     */
+    public function index()
+    {
+        $experiencias = $this->experienciasRepository->getAll();
 
-	/**
-         * Exibe detalhes da experiencia
-	 *
-	 * @return view
-	 */
-	public function getShow($id)
-	{
-            $Experiencia = new \stdClass();
-            $Experiencia->id = 42;
-            $Experiencia->titulo = "Título da Experiência";
-            $Experiencia->descricao = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dignissim mi ac ipsum consectetur, at tempus lacus mattis. Maecenas elementum varius felis nec finibus. ";
-            $Experiencia->foto = "/img/dummyvoos.jpg";
-            $Experiencia->preco = 36.75;
-
-            if(Agent::isDesktop()){
-		return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
-            } else {
-		return view("experiencias.detalheexperiencia", compact("Experiencia") );
-            }
+        if(!Agent::isDesktop()){
+            return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
+        } else {
+            return view("experiencias.listaexperiencias", compact("experiencias") );
         }
+    }
+
+    /*
+     * Exibe detalhes da experiencia
+     *
+     * @return view
+     */
+    public function show($id)
+    {
+        $Experiencia = $this->experienciasRepository->findOrFail($id);
+
+        if(!Agent::isDesktop()){
+            return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
+        } else {
+            return view("experiencias.detalheexperiencia", compact("Experiencia") );
+        }
+    }
+
+    /*
+     * Faz o checkout da experiencia
+     *
+     * @return view
+     */
+    public function getCheckout($id)
+    {
+        $Experiencia = $this->experienciasRepository->findOrFail($id);
+        // Testa se usuario está logado
+        if (Auth::user()) {
+            // Caso esteja logado exibe os métodos de pagamento
+            if(!Agent::isDesktop()){
+                return view("experiencias.desktop.checkout", compact("Experiencia") );
+            } else {
+                return view("experiencias.checkout", compact("Experiencia") );
+            }
+        } else {
+            // Caso não esteja logado redireciona pra tela de login
+            return redirect('/auth/login')->with(['redirectTo'=>'experiencias/checkout/'.$id]);;
+        }
+
+    }
+
+    /**
+     * Metodo para servir a view para editar a fotoCapa da Experiencia
+     *
+     * @param $request - Usando da FormRequestValidation
+     * @param $id - ID da experiencia no BD
+     */
+    public function getEditafoto(EditarFotoExperienciaRequest $request, $id)
+    {
+        $experiencia = $this->experienciasRepository->findOrFail($id);
+        $foto = $experiencia->fotoCapa;
+        return view('experiencias._editafotoform', compact('experiencia', 'foto'));
+
+    }
 }

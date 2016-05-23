@@ -1,19 +1,32 @@
-@extends('mobiledeslogado')
+@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
 
 @section('content')
-<h1>
+<h1 class="titulo-mobile">
     Experiências
 </h1>
-<ul>
-    @foreach($experiencias as $Experiencia)
+<ul class="padding-b-1 lista-foto-descricao">
+    @foreach($experiencias as $k=>$Experiencia)
     <li class="row">
         <a href="/experiencias/{{ $Experiencia->id}}">
-            <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}">
-            <h4 class="col-sm-6">{{ $Experiencia->titulo }}</h4>
-            <span class="col-sm-6">{{ $Experiencia->descricao }}</span>
-            <span class="col-sm-6">{{ $Experiencia->preco }}</span>
+            <div class="{{ $k%2==0?'direita':'esquerda'}} foto">
+                <div class="foto-img" style="background-image:url('https://dev.vivala.com.br/img/dummyvoos.jpg')">
+                    <div class="categorias">
+                        <i class="fa fa-paw"></i>
+                    </div>
+                </div>
+                {{-- <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}"> --}}
+            </div>
+            <div class="{{ $k%2!=0?'direita':'esquerda'}} descricao">
+                <div class="container">
+                    <span class="col-xs-12 local"><i class="fa fa-map-marker"></i> Sao Paulo</span>
+                    <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
+                    <span class="col-xs-12 preco">R${{ $Experiencia->preco }}</span>
+                </div>
+            </div>
         </a>
     </li>
     @endforeach
 </ul>
+<div class="barra-bottom">
+</div>
 @endsection

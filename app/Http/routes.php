@@ -83,7 +83,7 @@ Route::post('clickbus/booking', 'ClickBusController@getBooking');
 Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
 Route::post('clickbus/success', 'ClickBusController@getSucess');
 
-Route::get('experiencias/{id}', 'ExperienciasController@getShow');
+Route::resource('experiencias', 'ExperienciasController');
 Route::controller('experiencias', 'ExperienciasController');
 
 Route::controllers([
@@ -151,3 +151,7 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
+
+
+
+Route::controller('logger', 'LoggerController');

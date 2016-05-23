@@ -45,6 +45,11 @@ class EventServiceProvider extends ServiceProvider {
 			'App\Handlers\Events\CotacaoViagem\EnviaEmailCotacaoViagem',
 		],
 
+    //Quando ocorrer alguma acao que sera guardada no log
+    'App\Events\NovaInteracaoPlataforma' => [
+			'App\Handlers\Events\Logger\CriarLogInteracaoPlataforma',
+		],
+
 	];
 
 
