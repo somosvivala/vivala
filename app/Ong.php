@@ -650,7 +650,15 @@ class Ong extends Model {
     }
 
     /**
-     * Uma Ong pode ter fazer varias iteracoes com a plataforma
+     * Uma Ong pode ter varias experiencias
+     */
+    public function experiencias()
+    {
+        return $this->morphMany('App\Experiencia', 'owner', 'owner_type', 'owner_id');
+    }
+
+    /*
+     * Uma Ong pode ter fazer varias interacoes com a plataforma
      */
     public function acoesPlataforma()
     {

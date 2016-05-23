@@ -726,9 +726,16 @@ class Perfil extends Model {
         return ( preg_match('/ong/i', get_class($this)) ? true : false );
     }
 
+    /**
+     * Um Perfil pode se inscrever em varias experiencias
+     */
+    public function inscricoesExperiencias()
+    {
+        return $this->hasMany('App\InscricaoExperiencia');
+    }
 
     /**
-     * Um Perfil pode ter fazer varias iteracoes com a plataforma
+     * Um Perfil pode ter fazer varias interacoes com a plataforma
      */
     public function acoesPlataforma()
     {

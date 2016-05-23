@@ -1,4 +1,9 @@
 'use strict';
+$('#modal-quimera').modal({
+    backdrop: 'static',
+    keyboard: false
+});
+
 /**
  * Autocomplete para ser bindado no key up de inputs de viagens.
  * retorna um objeto "autocomplete" com nomes, tipos e códigos das localidades
@@ -6,7 +11,7 @@
 var ajaxCall = null;
 var autocompleteFlights = function(query, inputId, container, lista) {
     query = escape(query);
-    
+
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
@@ -28,14 +33,14 @@ var autocompleteFlights = function(query, inputId, container, lista) {
         },
     })
     .done(function(data) {
-        lista.remove(); 
+        lista.remove();
         container.append(data);
 
         console.log(container);
         $('.flight-list').attr('data-input', inputId);
-        
+
         $(inputId).siblings('i.fa').hide();
-        
+
         bindAutoCompleteFlights();
     });
 };
@@ -69,9 +74,9 @@ var autocompleteHotels = function(query, inputId, container, lista) {
         },
     })
     .done(function(data) {
-        lista.remove(); 
+        lista.remove();
         container.append(data);
-        
+
 
         $('.hotel-list').attr('data-input', inputId);
 
@@ -99,7 +104,7 @@ var autocompleteCars = function(query) {
     .done(function(data) {
         $('#buscaVoos').append(data);
     });
-    
+
 };
 
 /**
@@ -330,7 +335,7 @@ var hotelAvaiability = function(params) {
             $('.resultados-busca-hospedagem').html(data);
         }).fail(function(){
             $('resultados-busca-hospedagem').html("Nenhum hotel foi encontrado");
-        });    
+        });
     });
 
 };
@@ -375,7 +380,7 @@ var searchCars = function(params) {
     .done(function(data) {
         console.logdi(data);
     });
-    
+
 };
 
 var flightCheckout = function(params) {
@@ -452,16 +457,16 @@ var testSearchHotels = function () {
 var testSearchCars = function () {
     searchCars({
         pickup: {
-            type: 'airport',   
-            code: 'GRU',   
-            date: '2015-11-17',   
-            time: '13:00'    
+            type: 'airport',
+            code: 'GRU',
+            date: '2015-11-17',
+            time: '13:00'
         },
         dropoff: {
-            type: 'city',   
-            code: 'SAO',   
-            date: '2015-12-02',   
-            time: '15:00'    
+            type: 'city',
+            code: 'SAO',
+            date: '2015-12-02',
+            time: '15:00'
         }
     });
 };
@@ -487,7 +492,7 @@ var bindFlight = function() {
 var bindAutoCompleteFlights = function() {
     $('a.autocomplete-flight').on('click', function(e) {
         e.preventDefault();
-        var 
+        var
             list = $(this).parent('.flight-list'),
             input = list.attr('data-input'),
             value = $(this).find('span.autocomplete-text').text(),
@@ -506,7 +511,7 @@ var bindAutoCompleteFlights = function() {
 var bindAutoCompleteHotels = function() {
     $('a.autocomplete-hotel').on('click', function(e) {
         e.preventDefault();
-        var 
+        var
             list = $(this).parent('.hotel-list'),
             input = list.attr('data-input'),
             value = $(this).find('span.autocomplete-text').text(),

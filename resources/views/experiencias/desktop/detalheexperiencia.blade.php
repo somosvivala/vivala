@@ -48,7 +48,7 @@
             </div>
             <div role="tabpanel" class="tab-pane active" id="experiencias">
                 <h1>{{ $Experiencia->titulo }}</h1>
-                <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}">
+                <img class="col-sm-6" src="{{ $Experiencia->fotoCapa }}" alt="{{ $Experiencia->titulo }}">
                 <span class="col-sm-6">{{ $Experiencia->descricao }}</span>
                 <span class="col-sm-6">{{ $Experiencia->preco }}</span>
                 <a class="btn btn-acao" href="/experiencias/checkout/{{ $Experiencia->id }}">Bookar</a>

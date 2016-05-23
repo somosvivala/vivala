@@ -1,14 +1,13 @@
 <?php namespace App\Http\Controllers;
 
 use App;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
 use Auth;
 use Request;
-use App\Post;
 use App\Foto;
 use App\Notificacao;
+use App\Post;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
 class PostController extends VivalaBaseController {
 
@@ -215,9 +214,23 @@ class PostController extends VivalaBaseController {
 			//Só levantar uma notificacao se nao for em um post seu ou de alguma de suas entidades
 			if($entidadeAtiva->user->id != $post->author->user->id)
 			{
+				$lang = App::getLocale();
+				switch($lang){
+					case 'pt':
+						$string[0] = 'Curtiram sua Postagem';
+						$string[1] = ' curtiu sua postagem.';
+					break;
+					case 'en':
+						$string[0] = 'Post Like';
+						$string[1] = ' likes your post.';
+					break;
+					default:
+						$string[0] = 'Curtiram sua Postagem';
+						$string[1] = ' curtiu sua postagem.';
+				}
 				$novaNotificacao = Notificacao::create([
-					'titulo'			=>	'Curtiram seu post',
-					'mensagem' 			=> 	$entidadeAtiva->apelido . ' curtiu seu post',
+					'titulo'			=>	$string[0],
+					'mensagem' 			=> 	$entidadeAtiva->apelido . $string[1],
 					'tipo_notificacao'	=>	'like_post',
 					'url'				=>	$post->url
 					]);

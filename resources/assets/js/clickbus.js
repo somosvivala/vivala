@@ -28,7 +28,6 @@ var mercadoPagoErros = {
     "326" : "Revise a data."
 };
 
-
 switch(linguaAtiva){
   case 'en':
     lingua[0] = 'Ops, something went wrong, do the search again please.',

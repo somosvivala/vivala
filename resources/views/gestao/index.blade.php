@@ -7,13 +7,13 @@
 
 	<nav class="col-xs-12 col-sm-12 col-md-6 hidden-xs">
             @if(Auth::user()->isAdmin())
-                @include('gestao._cadastraexperiencia')
+                @include('gestao._experiencias')
             @endif
 	</nav>
 
 	<nav class="col-xs-12 col-sm-12 col-md-6 hidden-xs">
             @if(Auth::user()->isAdmin())
-                @include('gestao._listaexperiencias')
+                @include('gestao._inscricoesexperiencias')
             @endif
 	</nav>
 
@@ -26,9 +26,14 @@
 
 	<nav class="margin-t-1 col-xs-12 col-sm-12 col-md-12 hidden-xs">
             @if(Auth::user()->isAdmin())
+                @include('gestao._listaexperiencias')
+            @endif
+	</nav>
+
+	<nav class="margin-t-1 col-xs-12 col-sm-12 col-md-12 hidden-xs">
+            @if(Auth::user()->isAdmin())
                 @include('gestao._logger')
             @endif
-
 	</nav>
 
 	<footer class="footer hidden-xs">
