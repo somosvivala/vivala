@@ -882,7 +882,7 @@ return[
     // Desativado ainda
     'wannatravel_trip_stay' => 'Hotéis',
     'wannatravel_trip_go' => 'Vôos',
-    'wannatravel_trip_eat' => 'Restaurantes',
+    'wannatravel_trip_eat' => 'Alimentação',
     'wannatravel_trip_drive' => 'Carros',
     'wannatravel_trip_bus' => 'Ônibus',
     //

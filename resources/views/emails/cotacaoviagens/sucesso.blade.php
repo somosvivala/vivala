@@ -1,5 +1,7 @@
 <body>
-    <h1 style="color:#F16F2B;">EMAIL AUTOMÁTICO DA PLATAFORMA PARA COTAÇÃO DE VIAGENS</h1><br/>
+    <h1 style="color:#F16F2B; text-align:center;">EMAIL AUTOMÁTICO DA PLATAFORMA</h1><br/>
+    <h2 style"color:#F16F2B; text-align:center;">COTAÇÃO DE VIAGENS</h2>
+    <br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES DO CLIENTE:</strong><br/>
     User ID do Cliente: <strong>{{ $CotacaoViagem->usuario['user-id'] }}</strong><br/>
@@ -21,14 +23,14 @@
     º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem->dados['numero-criancas'] }}</br>
     <br/>
     º Prefere viajar de:<br/>
-     - Manhã: {{ $CotacaoViagem->tempo['viaja-manha'] }}<br/>
-     - Tarde: {{ $CotacaoViagem->tempo['viaja-tarde'] }}<br/>
-     - Noite: {{ $CotacaoViagem->tempo['viaja-noite'] }}<br/>
-     - Madrugada {{ $CotacaoViagem->tempo['viaja-madrugada'] }}<br/>
+     - Manhã: <strong>{{ $CotacaoViagem->tempo['viaja-manha'] }}</strong><br/>
+     - Tarde: <strong>{{ $CotacaoViagem->tempo['viaja-tarde'] }}</strong><br/>
+     - Noite: <strong>{{ $CotacaoViagem->tempo['viaja-noite'] }}</strong><br/>
+     - Madrugada <strong>{{ $CotacaoViagem->tempo['viaja-madrugada'] }}</strong><br/>
      <strong style="color:red;">* Horários restritos?</strong><br/>
      {{ $CotacaoViagem->tempo['horario-restrito'] }}<br/>
-    <br/>
-    <br/>
+     <br/>
+     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</strong><br/>
     º Número de quartos: <strong>{{ $CotacaoViagem->hospedagem['hotel-numero-quartos'] }}</strong><br/>
     <table style="width:100%">

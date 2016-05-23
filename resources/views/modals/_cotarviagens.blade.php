@@ -19,7 +19,7 @@
               </h4>
               <div class="col-md-12 col-lg-12 list-group text-center">
                 {{-- Botão VÔOS --}}
-                <div class="col-md-2 col-md-offset-2 col-lg-2 col-lg-offset-2">
+                <div class="col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1">
                   <div class="text-center">
                     <a href="#" id="ativa-form-voos" class="click-img-no-border">
                       <span class="fa-stack fa-5x conjunto-icones">
@@ -63,6 +63,17 @@
                   </a>
                   <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_drive') !!}</p>
                   {!! Form::hidden('basico-cotacao-carros', 0, ['id' => 'cotacao-carros']) !!}
+                </div>
+                {{-- Botão ALIMENTAÇÃO --}}
+                <div id="bloqueia-cotacao-alimentacao" class="col-md-2 col-lg-2">
+                  <a href="#" id="ativa-form-alimentacao" class="click-img-no-border">
+                    <span class="fa-stack fa-5x conjunto-icones">
+                      <i class="fa fa-circle fa-stack-2x icone-externo-bloqueado"></i>
+                      <i class="fa fa-cutlery fa-stack-1x icone-interno"></i>
+                    </span>
+                  </a>
+                  <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.wannatravel_trip_eat') !!}</p>
+                  {!! Form::hidden('basico-cotacao-restaurantes', 0, ['id' => 'cotacao-restaurantes']) !!}
                 </div>
               </div>
             </div>
@@ -194,46 +205,42 @@
                     <ul class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
                       <li class="col-md-3 col-lg-3 text-center">
                         <a href="#" id="ativa-tempo-manha" class="click-img-no-border">
-                          <span title="{!! trans('global.time_morning') !!}">
-                            <span class="fa-stack fa-3x conjunto-icones">
-                              <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                              <i class="wi wi-horizon-alt fa-stack-1x icone-interno"></i>
-                            </span>
+                          <span class="fa-stack fa-3x conjunto-icones">
+                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                            <i class="wi wi-horizon-alt fa-stack-1x icone-interno"></i>
                           </span>
                         </a>
+                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_morning') !!}</p>
                         {!! Form::hidden('basico-pref-tempo-manha', 0, ['id' => 'pref-tempo-manha']) !!}
                       </li>
                       <li class="col-md-3 col-lg-3 text-center">
                         <a href="#" id="ativa-tempo-tarde" class="click-img-no-border">
-                          <span title="{!! trans('global.time_afternoon') !!}">
-                            <span class="fa-stack fa-3x conjunto-icones">
-                              <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                              <i class="wi wi-day-sunny fa-stack-1x icone-interno"></i>
-                            </span>
+                          <span class="fa-stack fa-3x conjunto-icones">
+                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                            <i class="wi wi-day-sunny fa-stack-1x icone-interno"></i>
                           </span>
                         </a>
+                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_afternoon') !!}</p>
                         {!! Form::hidden('basico-pref-tempo-tarde', 0, ['id' => 'pref-tempo-tarde']) !!}
                       </li>
                       <li class="col-md-3 col-lg-3 text-center">
                         <a href="#" id="ativa-tempo-noite" class="click-img-no-border">
-                          <span title="{!! trans('global.time_night') !!}">
-                            <span class="fa-stack fa-3x conjunto-icones">
-                              <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                              <i class="fa fa-moon-o fa-stack-1x icone-interno"></i>
-                            </span>
+                          <span class="fa-stack fa-3x conjunto-icones">
+                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                            <i class="fa fa-moon-o fa-stack-1x icone-interno"></i>
                           </span>
                         </a>
+                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_night') !!}</p>
                         {!! Form::hidden('basico-pref-tempo-noite', 0, ['id' => 'pref-tempo-noite']) !!}
                       </li>
                       <li class="col-md-3 col-lg-3 text-center">
                         <a href="#" id="ativa-tempo-madrugada" class="click-img-no-border">
-                          <span title="{!! trans('global.time_dawn') !!}">
-                            <span class="fa-stack fa-3x conjunto-icones">
-                              <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                              <i class="wi wi-stars fa-stack-1x icone-interno"></i>
-                            </span>
+                          <span class="fa-stack fa-3x conjunto-icones">
+                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                            <i class="wi wi-stars fa-stack-1x icone-interno"></i>
                           </span>
                         </a>
+                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_dawn') !!}</p>
                         {!! Form::hidden('basico-pref-tempo-madrugada', 0, ['id' => 'pref-tempo-madrugada']) !!}
                       </li>
                     </ul>
@@ -259,7 +266,7 @@
                     <h5 class="titulo-secao">{!! trans('global.quimera_lodge') !!}</h5>
                   </div>
                 </div>
-                <div id="cotacao-hotel-quartos" class="row margin-t-1">
+                <div id="cotacao-hotel-quartos" class="row margin-t-2">
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-6 col-lg-6">
                       <div class="col-md-5 col-lg-5">
@@ -284,7 +291,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="cotacao-hotel-adicionais" class="row margin-t-1">
+                <div id="cotacao-hotel-adicionais" class="row margin-t-2">
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
                       <div class="col-md-12 col-lg-12">
@@ -363,7 +370,7 @@
                     </div>
                   </div>
                 </div>
-                <div id="cotacao-hotel-bairro" class="row margin-t-1">
+                <div id="cotacao-hotel-bairro" class="row margin-t-2">
                   <div clas="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-12 col-lg-12">
@@ -400,6 +407,15 @@
                 <div id="cotacao-carros-titulo" class="row margin-t-2">
                   <div class="col-md-12 col-lg-12 text-center">
                     <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_drive') !!}</h5>
+                  </div>
+                </div>
+              </div>
+              {{-- Form Aluguel de Carros --}}
+              <div id="cotacao-alimentacao" data-value="0" class="hidden">
+                <hr class="divisoria"/>
+                <div id="cotacao-alimentacao-titulo" class="row margin-t-2">
+                  <div class="col-md-12 col-lg-12 text-center">
+                    <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_eat') !!}</h5>
                   </div>
                 </div>
               </div>

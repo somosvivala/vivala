@@ -60,7 +60,13 @@ var bindaTooltipsDesativados = function(){
     target: document.querySelector('#bloqueia-cotacao-carros'),
     content: lingua[6],
     classes: 'tooltip-theme-twipsy',
-    position: 'top right'
+    position: 'bottom middle'
+  });
+  let bindaTooltipRestaurantesNaoFuncionando = new Tooltip({
+    target: document.querySelector('#bloqueia-cotacao-alimentacao'),
+    content: lingua[6],
+    classes: 'tooltip-theme-twipsy',
+    position: 'bottom middle'
   });
 }
 
