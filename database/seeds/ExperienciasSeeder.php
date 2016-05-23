@@ -98,22 +98,22 @@ class ExperienciasSeeder extends Seeder {
     {
         CategoriaExperiencia::create([
             'nome' => 'Ecoturismo',
-            'icone' => 'path para icone ?',
+            'icone' => 'fa fa-recicle',
         ]);
 
         CategoriaExperiencia::create([
             'nome' => 'Fotografia',
-            'icone' => 'path para icone ?',
+            'icone' => 'fa fa-camera',
         ]);
 
         CategoriaExperiencia::create([
             'nome' => 'Culinária',
-            'icone' => 'path para icone ?',
+            'icone' => 'fa fa-pie-chart',
         ]);
 
         CategoriaExperiencia::create([
             'nome' => 'Jardinagem',
-            'icone' => 'path para icone ?',
+            'icone' => 'fa fa-tree',
         ]);
     }
 
