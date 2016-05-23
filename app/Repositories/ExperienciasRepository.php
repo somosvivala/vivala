@@ -8,6 +8,7 @@ use App\User;
 use App\CategoriaExperiencia;
 use App\Cidade;
 use App\Ong;
+use App\InformacaoExperiencia;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -75,6 +76,23 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             $experiencia->categorias()->save($categoria);
         }
 
+        //checando se existe alguma informacaoExtra nessa experiencia
+        $informacaoExtra = array_key_exists('informacao-extra', $arrayArgumentos) ? $arrayArgumentos['informacao-extra'] : [];
+
+        //iterando sob as informacoes
+        foreach ($informacaoExtra as $informacao)
+        {
+            //encontrando a informacao no bd e fazendo update da informacao
+            $infoObj = InformacaoExperiencia::find($informacao['id']);
+            $infoObj->update([
+                'descricao' => $informacao['descricao_info'],
+                'icone' => $informacao['icone']
+            ]);
+
+            //associando/re-associando a informacao na experiencia
+            $experiencia->informacoes()->save($infoObj);
+        }
+
         //pegando o id da cidade e associando a experiencia
         $cidade = Cidade::findOrFail($arrayArgumentos['cidade']);
         $experiencia->local()->associate($cidade);
@@ -85,6 +103,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
         $experiencia->push();
         return $experiencia;
+
     }
 
     /**
@@ -103,6 +122,26 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $experiencia->local()->associate($cidade)->save();
         $experiencia->owner()->associate($ong)->save();
         $experiencia->categorias()->sync($arrayArgumentos['categoria']);
+
+        //checando se existe alguma informacaoExtra nessa experiencia
+        $informacaoExtra = array_key_exists('informacao-extra', $arrayArgumentos) ? $arrayArgumentos['informacao-extra'] : [];
+
+        //iterando sob as informacoes
+        foreach ($informacaoExtra as $informacao)
+        {
+            //encontrando a informacao no bd e fazendo update da informacao
+            $infoObj = InformacaoExperiencia::find($informacao['id']);
+            $infoObj->update([
+                'descricao' => $informacao['descricao_info'],
+                'icone' => $informacao['icone']
+            ]);
+
+            //associando/re-associando a informacao na experiencia
+            $experiencia->informacoes()->save($infoObj);
+        }
+
+        return $experiencia->push();
+
     }
 
     /**
@@ -166,6 +205,33 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $podeEditar = false || $user->isAdmin();
 
         return $podeEditar;
+    }
+
+
+    /**
+     * Metodo para criar novas InformacaoExperiencia
+     *
+     * @param $arrayArgumentos - array contendo os valores das colunas de InformacaoExperiencia
+     * @return App\InformacaoExperiencia
+     */
+    public function createInformacaoExtra($arrayArgumentos = [])
+    {
+        $infoExp = InformacaoExperiencia::create($arrayArgumentos);
+
+        //por algum motivo o create nao esta retornando uma instancia full loaded, por isso estou pegando denovo
+        return InformacaoExperiencia::find($infoExp->id);
+    }
+
+
+    /**
+     * Metodo para deletar uma InformacaoExperiencia
+     *
+     * @param $id - id da InformacaoExperiencia a ser deletada
+     * @return boolean - se deletou ou nao
+     */
+    public function deleteInformacaoExtra($arrayArgumentos)
+    {
+        return InformacaoExperiencia::findOrFail($arrayArgumentos['id'])->delete();
     }
 
 

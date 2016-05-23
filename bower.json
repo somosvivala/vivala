@@ -14,5 +14,8 @@
     "intro.js": "~1.1.1",
     "instafeed.js": "~1.4.1",
     "js-cookie": "~2.1.0"
+  },
+  "resolutions": {
+    "font-awesome": "^4.6.3"
   }
 }

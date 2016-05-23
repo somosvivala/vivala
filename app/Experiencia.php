@@ -2,13 +2,16 @@
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\InformacaoExperiencia;
 
 class Experiencia extends Model
 {
 
     //mass assigned fields
     protected $fillable = [
+        'descricao_na_listagem',
         'descricao',
+        'detalhes',
         'preco',
         'status'
     ];
@@ -45,6 +48,16 @@ class Experiencia extends Model
     {
         return $this->hasMany('App\InscricaoExperiencia');
     }
+
+
+    /**
+     * Uma Experiencia tem muitas informacoes
+     */
+    public function informacoes()
+    {
+        return $this->hasMany('App\InformacaoExperiencia');
+    }
+
 
     /**
      * Uma Experiencia pertence a muitas CategoriaExperiencia 

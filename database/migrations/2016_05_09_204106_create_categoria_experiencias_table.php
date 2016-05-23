@@ -19,7 +19,6 @@ class CreateCategoriaExperienciasTable extends Migration {
 
       $table->string('nome')->nullable();
 
-      //url do icone?
       $table->string('icone')->nullable();
 
 		});
