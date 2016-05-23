@@ -12,27 +12,28 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less([
-        'app.less',
-        'welcome.less',
-    ], 'resources/assets/css/');
+  mix.less([
+      'app.less',
+      'welcome.less',
+  ], 'resources/assets/css/');
 
-    mix.styles([
-        '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.css',
-        '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
-        '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
-        '../../assets/bower/cropper/dist/cropper.min.css',
-        '../../assets/bower/lightbox2/dist/css/lightbox.css',
-        '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
-        '../../assets/bower/sweetalert2/dist/sweetalert2.css',
-        '../../assets/bower/intro.js/introjs.css',
-        '../../assets/bower/tether-tooltip/dist/css/tooltip-theme-twipsy.css',
-        'app.css',
-        '../../assets/bower/font-awesome/css/font-awesome.min.css',
-        '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir depois do Font-Awesome e ao fim, conflita em classe com algo
-    ], null, 'resources/assets/css');
+  mix.styles([
+      '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.css',
+      '../../assets/bower/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
+      '../../assets/bower/jquery-file-upload/css/jquery.fileupload.css',
+      '../../assets/bower/cropper/dist/cropper.min.css',
+      '../../assets/bower/lightbox2/dist/css/lightbox.css',
+      '../../assets/bower/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
+      '../../assets/bower/sweetalert2/dist/sweetalert2.css',
+      '../../assets/bower/intro.js/introjs.css',
+      '../../assets/bower/tether-tooltip/dist/css/tooltip-theme-twipsy.css',
+      'app.css',
+      '../../assets/bower/font-awesome/css/font-awesome.min.css',
+      '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir depois do Font-Awesome e ao fim, conflita em classe com algo
+  ], null, 'resources/assets/css');
 
-    mix.scripts([
+  // De toda a plataforma
+  mix.scripts([
       '../../assets/bower/jquery/dist/jquery.js',
       '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
       '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
@@ -64,7 +65,6 @@ elixir(function(mix) {
       '../../assets/js/follow.js',
       '../../assets/js/ajaxCalls.js',
       '../../assets/js/notificacoes.js',
-      '../../assets/js/welcome.js',
       '../../assets/js/rodoviario.js',
       '../../assets/js/viajar.js',
       '../../assets/js/search.js',
@@ -76,7 +76,6 @@ elixir(function(mix) {
       '../../assets/js/uploadFoto.js',
       '../../assets/js/feed.js',
       '../../assets/js/notificacoes.js',
-      '../../assets/js/welcome.js',
       '../../assets/js/quimera.js',
       '../../assets/js/clickbus.js',
       '../../assets/js/formContato.js',
@@ -90,4 +89,14 @@ elixir(function(mix) {
       /* featureCotaViagem */
       '../../assets/js/cotacaoViagem.js',
 	], 'public/js/vendor.js');
+
+  // Apenas da view de Welcome
+  mix.scripts([
+    '../../assets/bower/jquery/dist/jquery.js',
+    '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
+    '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
+    /* Scripts Vivalá */
+    '../../assets/js/welcome.js',
+  ], 'public/js/welcome.js');
+
 });

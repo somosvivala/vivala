@@ -46,10 +46,10 @@
                 <div class="lista-rodoviario"></div>
             </div>
             <div role="tabpanel" class="tab-pane " id="restaurantes">
-                <div class="tour-chefsclub-step1">
+                <div>
                     @include('chefsclub.buscarestaurantes')
                 </div>
-                <div class="lista-restaurantes tour-chefsclub-step2">
+                <div>
                     @include('modals._listarestaurantes')
                 </div>
             </div>

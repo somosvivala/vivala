@@ -855,55 +855,16 @@ function verificaMarketPlace(){
       });
     break;
     default:
-  }
-
-  //console.log("Entrei no MarketPlace.");
-  if($("#restaurantes")){
-    console.log("CHEFSCLUB");
-    // CHEFSCLUB
-    switch(linguaAtiva){
-      case 'en':
-        pilarVendasTour.setOptions({
-          steps: [
-            // CHEFSCLUB
-            {
-              element: '.tour-chefsclub-step1',
-              intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-chefsclub-step2',
-              intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
-              position: 'left'
-            }
-          ]
-        });
-      break;
-      case 'pt':
-        pilarVendasTour.setOptions({
-          steps: [
-            // CHEFSCLUB
-            {
-              element: '.tour-chefsclub-step1',
-              intro: '<p class="text-center">Aqui você pode selecionar e buscar os melhores descontos em restaurantes do país!</p>',
-              position: 'bottom'
-            },
-            {
-              element: '.tour-chefsclub-step2',
-              intro: '<p class="text-center">Ou pode degustar essa maravilhosa seleção que fizemos para você!<br/>Venha saborear o que há de melhor no Brasil, entre para o clube!</p>',
-              position: 'left'
-            }
-          ]
-        });
-      break;
-      default:
-      // Não encontrei o LANG, faço nada (?) ou jogo um FALLBACK em PT-BR (?)
-    }
-    /*
-    pilarVendasTour.start();
-    pilarVendasTour.oncomplete(function(){
-      pilarVendasTour.exit();
+    pilarVendasTour.setOptions({
+      exitOnEsc: true,
+      exitOnOverlayClick: true,
+      showStepNumbers: false,
+      keyboardNavigation: true,
+      showButtons: true,
+      showBullets: false,
+      showProgress: true,
+      scrollToElement: true,
+      overlayOpacity: 0.1,
     });
-    */
   }
 };

@@ -392,8 +392,6 @@ jQuery(document).ready(function($) {
       $('#'+loading).show();
     }
 
-    console.log(frmObj);
-
     $.ajax({
         url: frm.attr('action'),
         type: frm.attr('method'),
@@ -433,8 +431,8 @@ jQuery(document).ready(function($) {
         complete: function (data) {
           // Se tiver loading e tiver dado erro, voltar botao
           if (loading && loading != "") {
-             $('input:submit').show();
              $('#'+loading).hide();
+             $('input:submit').show();
           }
        }
     });

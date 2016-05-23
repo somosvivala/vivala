@@ -2,7 +2,7 @@
   <div class="modal-dialog">
       <div class="modal-content">
          <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-label="{!! trans('lbl_close') !!}">
+           <button type="button" class="close" data-dismiss="modal" aria-label="{!! trans('global.lbl_close') !!}">
              <span aria-hidden="true"><i class="fa fa-close"></i></span>
            </button>
           </div>

@@ -10,7 +10,7 @@
         </h3>
       </div>
       <div class="modal-body">
-        {!! Form::open(['id' => 'form-cotar-viagens', 'url' => '/cotarviagem', 'method' => 'POST', 'data-callback' => 'retornoFormCotarViagens', 'data-loading'=>'form-loading', 'data-redirect' => '']) !!}
+        {!! Form::open(['id' => 'form-cotar-viagens', 'url' => '/cotarviagem', 'method' => 'POST', 'data-callback' => 'retornoFormCotarViagens', 'data-loading'=>'form-cotar-viagens-loading', 'data-redirect' => '']) !!}
         <div class="form-group">
             {{-- Botões Iniciais --}}
             <div class="row">
@@ -408,7 +408,9 @@
                 <div class="row margin-t-4">
                   <div class="col-md-12 col-lg-12 text-center">
                     {{-- Loading --}}
-                    <i id="form-loading" class="fa fa-spinner fa-pulse fa-2x margin-t-1 laranja" style="display:none;"></i>
+                    <div id="form-cotar-viagens-loading" style="display:none;">
+                      <i class="fa fa-spinner fa-pulse fa-2x laranja"></i>
+                    </div>
                     {!! Form::submit(trans('global.lbl_submit'), ['class' => 'btn btn-primario btn-acao']) !!}
                   </div>
                 </div>
