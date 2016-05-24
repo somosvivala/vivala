@@ -46,7 +46,7 @@ var ajaxDeleteCategoriaExperiencia = function (target) {
     //inserindo o token manualmente
     //@TODO inserir uma meta no header das versoes mobile logadas
     var params = {
-        id : $(target).data('id'),
+        id : parentLinha.data('id'),
         _token: $('input[name="_token"]').val()
     };
 
