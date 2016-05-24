@@ -58,7 +58,7 @@
 </div>
 
 
-{{-- Secao de categoris da experiencia --}}
+{{-- Secao de categorias da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     <label class="row col-xs-12">Categorias</label>
     @foreach ($Categorias as $categoria)

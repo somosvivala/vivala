@@ -1,4 +1,4 @@
-<li class="info-experiencia-item col-xs-12 margin-b-1" data-id="{{ $informacao->id }}">
+<li class="container-campos-fontawesome col-xs-12 margin-b-1" data-id="{{ $informacao->id }}">
         <input type="hidden" name="informacao-extra[{{ $informacao->id }}][id]" value="{{ $informacao->id }}">
         <div class="col-xs-1">
             <i name="icone-show" class="icone-show margin-t-2 {{ $informacao->icone }}"> </i>

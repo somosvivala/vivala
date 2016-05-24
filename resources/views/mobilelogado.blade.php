@@ -87,4 +87,7 @@
     <div class="col-xs-12">
         @yield('content')
     </div>
+
+    {{-- Scripts de carregamento no fim do HTML --}}
+    <script src="{{ asset('/js/vendor.js') }}"></script>
 </body>

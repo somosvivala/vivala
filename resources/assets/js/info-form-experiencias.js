@@ -4,14 +4,14 @@ var tempoDigitando = null;
 // Shorthand for $( document ).ready()
 $(function() {
 
-    bindaIconeInformacaoExperiencia();
+    bindaInputsFontAwesome();
 
 });
 
 /**
  * Binda a mudanca do icone conforme o texto dos input's de informacao experiencia
  */
-var bindaIconeInformacaoExperiencia = function() {
+var bindaInputsFontAwesome = function() {
     $('.bind-icone-ativo').on('keyup', function(event) {
         //limpando timeout para apenas testar quando o usuario tiver terminado de digitar
         clearTimeout(tempoDigitando);
@@ -49,7 +49,7 @@ var testaRegexTrocaClassesFontAwesome = function(target) {
         //console.log('novas classes font-awesome: ' + novasClasses);
 
         //pegando as possiveis classes que o icone tenha alem do font-awesome (regex poderia ser melhorado)
-        var icone = $(target).parents('.info-experiencia-item').find('i.icone-show');
+        var icone = $(target).parents('.container-campos-fontawesome').find('i.icone-show');
         var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*/g, '');
 
         //console.log('classes do icone: ' + classesIcone);
@@ -67,7 +67,7 @@ var adicionaInfoExperiencia = function(ev) {
     ev.preventDefault();
 
     //pegando a linha da ul que devemos inserir antes (<li> que contem o botao add)
-    var parentLinha = $(ev.target).parents('.info-experiencia-item');
+    var parentLinha = $(ev.target).parents('.container-campos-fontawesome');
 
     $(ev.target).toggleClass('soft-hide');
     parentLinha.find('i.loading-icon').toggleClass('soft-hide');
@@ -88,7 +88,7 @@ var adicionaInfoExperiencia = function(ev) {
             novaLinha.insertBefore(parentLinha);
 
             //chamando funcao para bindar a mudanca de icone conforme o texto do botao
-            bindaIconeInformacaoExperiencia();
+            bindaInputsFontAwesome();
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -108,7 +108,7 @@ var removeInfoExperiencia = function(ev) {
     ev.preventDefault();
 
     //pegando a linha da ul que devemos remover
-    var parentLinha = $(ev.target).parents('.info-experiencia-item');
+    var parentLinha = $(ev.target).parents('.container-campos-fontawesome');
 
     $(ev.target).toggleClass('soft-hide');
     parentLinha.find('i.loading-icon').toggleClass('soft-hide');

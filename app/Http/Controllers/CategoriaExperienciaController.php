@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\CategoriaExperiencia;
+use App\Http\Requests\StoreCategoriaExperienciaRequest;
+use App\Http\Requests\UpdateCategoriaExperienciaRequest;
 
 
 /**
@@ -32,7 +34,7 @@ class CategoriaExperienciaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return Response
+     * @return response
      */
     public function index()
     {
@@ -58,7 +60,7 @@ class CategoriaExperienciaController extends Controller
     public function store(StoreCategoriaExperienciaRequest $request)
     {
         CategoriaExperiencia::create($request->all());
-        return redirect('/experiencias/categorias');
+        return redirect('/categorias/experiencias');
     }
 
     /**
@@ -83,7 +85,7 @@ class CategoriaExperienciaController extends Controller
     {
         $Categoria = CategoriaExperiencia::findOrFail($id);
         $Categoria->update($request->all());
-        return redirect('experiencias/categorias');
+        return redirect('categorias/experiencias');
     }
 
     /**
@@ -95,7 +97,7 @@ class CategoriaExperienciaController extends Controller
     public function destroy($id)
     {
         $Categoria = CategoriaExperiencia::findOrFail($id)->delete();
-        return redirect('experiencias/categorias');
+        return redirect('categorias/experiencias');
     }
 
 }

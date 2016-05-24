@@ -96,8 +96,8 @@
 
         <i class="fa fa-times desativa-parent"></i>
     </div>
+
     {{-- Scripts de carregamento no fim do HTML --}}
     <script src="{{ asset('/js/vendor.js') }}"></script>
-
 </body>
 </html>
