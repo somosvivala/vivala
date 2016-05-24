@@ -86,6 +86,7 @@ elixir(function(mix) {
       '../../assets/js/autocompleteBuscas.js',
       '../../assets/js/mobile.js',
       '../../assets/js/info-form-experiencias.js',
+      '../../assets/js/categoria-experiencia.js',
 
       /* ClickbusPayment Mercado Pago Gateway*/
       '../../assets/js/clickbus-payments.js',

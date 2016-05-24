@@ -127,13 +127,12 @@ var removeInfoExperiencia = function(ev) {
             parentLinha.find('i.loading-icon').toggleClass('soft-hide');
         },
         success: function (data, textStatus, jqXHR) {
-            console.log('ajax success');
+            //deixando vermelho e removendo o elemento
             parentLinha.addClass('bg-danger').fadeOut(400, function() {
                 $(this).remove()
             });
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            console.log('ajax error');
         }
     });
 

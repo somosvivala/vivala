@@ -94,10 +94,9 @@ class CategoriaExperienciaController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $Categoria = CategoriaExperiencia::findOrFail($id)->delete();
-        return redirect('categorias/experiencias');
+        return ['sucess' => true];
     }
-
 }
