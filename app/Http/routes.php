@@ -131,6 +131,9 @@ Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDele
 Route::resource('experiencias', 'ExperienciasController');
 Route::controller('experiencias', 'ExperienciasController');
 
+//Criando controller de resource para as CategoriaExperiencia
+Route::resource('categorias/experiencias', 'CategoriaExperienciaController');
+
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

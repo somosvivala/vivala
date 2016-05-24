@@ -40,7 +40,6 @@
                     <div id="cropper-quiz" class="cropper-img">
                         <img src="{{ '/img/nophoto.png' }}" />
                     </div>
-                    {!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
                     {!! Form::hidden("x",  0, ['id' => 'x-quiz-perfil']) !!}
                     {!! Form::hidden("y",  0, ['id' => 'y-quiz-perfil']) !!}
                     {!! Form::hidden("w",  0, ['id' => 'w-quiz-perfil']) !!}
