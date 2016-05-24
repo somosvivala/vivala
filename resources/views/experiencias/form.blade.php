@@ -44,7 +44,7 @@
         @endif
 
         {{-- Botao de adicionar novas Informacoes --}}
-        <li class="col-xs-12 margin-b-1 info-experiencia-item">
+        <li class="col-xs-12 margin-b-1 container-campos-fontawesome">
             <div class="col-xs-11"></div>
             <div class="col-xs-1 text-center">
                     <a href="#" onclick="adicionaInfoExperiencia(event)">
