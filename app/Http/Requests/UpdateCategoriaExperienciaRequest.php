@@ -24,7 +24,7 @@ class UpdateCategoriaExperienciaRequest extends Request
     public function rules()
     {
         return [
-            'nome' => 'string|required',
+            'nome' => 'string|required|unique:categoria_experiencias',
             'icone' => 'string|required'
         ];
     }
