@@ -16,6 +16,7 @@ use App\Http\Requests\CreateExperienciaRequest;
 use App\Http\Requests\StoreExperienciaRequest;
 use App\Http\Requests\CreateInformacaoExperienciaRequest;
 use App\Http\Requests\DeleteInformacaoExperienciaRequest;
+use App\Http\Requests\DestroyExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -176,6 +177,15 @@ class ExperienciasController extends Controller
     {
         return ['result' => $this->experienciasRepository->deleteInformacaoExtra($request->all()) ];
     }
+
+    /**
+     * Metodo para deletar uma experiencia
+     */
+    public function destroy(DestroyExperienciaRequest $request, $id)
+    {
+        $this->experienciasRepository->delete($id);
+    }
+
 
 
 }

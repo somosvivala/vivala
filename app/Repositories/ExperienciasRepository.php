@@ -234,5 +234,15 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return InformacaoExperiencia::findOrFail($arrayArgumentos['id'])->delete();
     }
 
+    /**
+      * Metodo para deletar uma Experiencia
+      * @param $id da Experiencia
+     */
+    public function delete($id)
+    {
+        return $this->findOrFail($id)->delete();
+    }
+
+
 
 }

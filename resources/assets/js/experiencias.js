@@ -1,8 +1,8 @@
 
 /**
- * Metodo para mostrar a sweetAlert de DELETE de CategoriaExperiencia
+ * Metodo para mostrar a sweetAlert de DELETE de Experiencia
  */
-var confirmaDeleteCategoriaExperiencia = function (ev) {
+var confirmaDeleteExperiencia = function (ev) {
     ev.preventDefault();
 
     //pegando a linha da ul que devemos remover
@@ -11,7 +11,7 @@ var confirmaDeleteCategoriaExperiencia = function (ev) {
     //disparando sweetalert para confirmar a exclusao de uma categoria
     swal({
         title: "Atenção",
-        text: "Essa Categoria será removida. Tem certeza que deseja continuar?",
+        text: "Essa Experiencia será removida. Tem certeza que deseja continuar?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -22,18 +22,18 @@ var confirmaDeleteCategoriaExperiencia = function (ev) {
         },
         function(confirmed){
             if (confirmed) {
-                ajaxDeleteCategoriaExperiencia(target);
+                ajaxDeleteExperiencia(target);
             }
     });
 };
 
 
 /**
- * Metodo para disparar um Ajax de DELETE em uma CategoriaExperiencia
+ * Metodo para disparar um Ajax de DELETE em uma Experiencia
  */
-var ajaxDeleteCategoriaExperiencia = function (target) {
+var ajaxDeleteExperiencia = function (target) {
 
-    var parentLinha = $(target).parents('.categoria-experiencia-item');
+    var parentLinha = $(target).parents('.experiencia-item');
 
     //sweetalert de loading :)
     swal({
@@ -51,7 +51,7 @@ var ajaxDeleteCategoriaExperiencia = function (target) {
     };
 
     $.ajax({
-        url: '/categorias/experiencias/' + params.id,
+        url: '/experiencias/' + params.id,
         type: 'DELETE',
         data: params,
         success: function (data, textStatus, jqXHR) {
@@ -61,12 +61,12 @@ var ajaxDeleteCategoriaExperiencia = function (target) {
             });
 
             //mostrando sweetAlert de sucesso (user-friendly)
-            sweetAlertSucessoDeleteCategoriaExperiencia();
+            sweetAlertSucessoDeleteExperiencia();
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
             //mostrando sweetAlert de erro (user-friendly)
-            sweetAlertErroDeleteCategoriaExperiencia();
+            sweetAlertErroDeleteExperiencia();
         }
     });
 };
@@ -74,10 +74,10 @@ var ajaxDeleteCategoriaExperiencia = function (target) {
 /**
  * Funcao para mostrar uma sweetAlert de sucesso
  */
-var sweetAlertSucessoDeleteCategoriaExperiencia = function() {
+var sweetAlertSucessoDeleteExperiencia = function() {
     swal({
         type: "success",
-        html: '<h4>Sucesso</h4> <p>Categoria removida!</p>',
+        html: '<h4>Sucesso</h4> <p>Experiencia removida!</p>',
         showCancelButton: false,
         width:240,
         confirmButtonClass: 'hide',
@@ -89,10 +89,10 @@ var sweetAlertSucessoDeleteCategoriaExperiencia = function() {
 /**
  * Funcao para mostrar uma sweetAlert de sucesso
  */
-var sweetAlertErroDeleteCategoriaExperiencia = function() {
+var sweetAlertErroDeleteExperiencia = function() {
     swal({
         type: "error",
-        html: '<h4>Opa..</h4> <br> <p> Ocorreu um erro e nao foi possivel remover a categoria. !</p><br>',
+        html: '<h4>Opa..</h4> <br> <p> Ocorreu um erro e nao foi possivel remover a experiencia. !</p><br>',
         confirmButtonColor: "#DD6B55",
         showCancelButton: false
     });

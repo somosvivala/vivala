@@ -3,9 +3,12 @@
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\InformacaoExperiencia;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Experiencia extends Model
 {
+
+    use SoftDeletes;
 
     //mass assigned fields
     protected $fillable = [

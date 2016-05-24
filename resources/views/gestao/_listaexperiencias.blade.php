@@ -4,10 +4,11 @@
 
         <ul class="list-group">
             @foreach ($Experiencias as $experiencia)
-                <li class="list-group-item col-xs-12">
+                <li class="list-group-item col-xs-12 experiencia-item" data-id="{{ $experiencia->id }}">
                     <div class="col-xs-2">
                         <a class="col-xs-12" href="/experiencias/editafoto/{{ $experiencia->id }}">Editar Foto </a>
                         <a class="col-xs-12" href="/experiencias/{{ $experiencia->id }}/edit">Editar Experiencia </a>
+                        <a class="col-xs-12" href="#" onclick="confirmaDeleteExperiencia(event)">Deletar Experiencia </a>
                     </div>
                     <div class="col-xs-2">
                         <div class="round foto quadrado3em">
