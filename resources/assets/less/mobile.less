@@ -105,7 +105,7 @@ body.mobile {
     text-transform:uppercase;
     font-size:1.5em;
     padding:0.5em;
-    background-color:darken(@verde-sucesso,5%);
+    background-color:@verde-sucesso;
     transition:background-color 0.2s ease;
     &:hover{
         background-color:@verde-sucesso;
@@ -224,4 +224,97 @@ ul.lista-foto-descricao {
     font-size:1.1em;
     color:@cor-cinza-escuro;
 }
+h1.negrito-exp{
+    font-size:1.4em;
+    margin:0;
+    padding-top: 0.5em;
+}
 
+.bg-checkout {
+    background-color:@verde-sucesso;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    .popup-checkout {
+        margin:4%;
+        position:absolute;
+        width:92%;
+        height:100%;
+        padding-bottom:3em;
+        background-color:white;
+        text-align:center;
+        padding:2em 0 4em;
+        .small {
+            font-size:0.5em;
+        }
+        .dados-bancarios {
+            display:inline-block;
+            width:14em;
+            background-color:@cor-fundo;
+            padding:0 0.2em;
+        }
+    }
+}
+i.round-icon-bg {
+    background-color:#8BA6AD;
+    color:white;
+    border-radius:1em;
+    width:1.4em;
+    height:1.4em;
+    padding-top:0.2em;
+    text-align:center;
+    font-size:3.9em;
+}
+i.sqr-icon-bg {
+    background-color:@cor-cinza-escuro;
+    color:white;
+    border-radius:0em;
+    width:1.4em;
+    height:1em;
+    padding-top:0.05em;
+    text-align:center;
+    font-size:5em;
+}
+
+.separador {
+    display:block;
+    width:100%;
+    float:left;
+    text-align:center;   
+    margin-top:0.4em;
+    margin-bottom:1em;
+    &::after{
+        display:inline-block;
+        border-bottom:1px solid @cor-cinza-claro;
+        width:15em;
+        content:'';
+    }
+    span{
+        color:@cor-cinza-escuro;
+        background-color:white;
+        display:block;
+        white-space:pre;
+        margin-top:0.2em;
+        width:3em;
+        left:50%;
+        margin-left:-1.5em;
+        position:absolute;
+    }
+}
+
+i.x-preto {
+    position: absolute;
+    right:0;
+    top:0;
+    color:@cor-cinza-escuro;
+    padding:0.2em;
+    font-size:2.4em;
+    cursor:pointer;
+    opacity:0.5;
+    transition: opacity 0.2s ease;
+    &:hover {
+        opacity:1;
+    }
+}
