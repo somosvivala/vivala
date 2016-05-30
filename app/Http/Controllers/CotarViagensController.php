@@ -109,4 +109,33 @@ class CotarViagensController extends Controller {
 		event(new NovaCotacaoViagem($CotacaoViagem));
 	}
 
+	public function getData(){
+		$CotacaoViagem = new \stdClass();
+
+		$tipo_restaurante = array(
+		'cozinha-americana' => 'Americana',
+		'cozinha-asiática' => 'Asiática',
+		'cozinha-australiana' => 'Australiana',
+		'cozinha-brasileira' => 'Brasileira',
+		'cozinha-caribenha' => 'Caribenha',
+		'cozinha-francesa' => 'Francesa',
+		'cozinha-indiana' => 'Indiana',
+		'cozinha-italiana' => 'Italiana',
+		'cozinha-japonesa' => 'Japonesa',
+		'cozinha-mediterrânea' => 'Mediterrânea',
+		'cozinha-mexicana' => 'Mexicana',
+		'cozinha-peruana' => 'Peruana',
+		'cozinha-churrascaria' => 'Churrascaria',
+		'cozinha-contemporanea' => 'Contemporânea',
+		'cozinha-frutos-do-mar' => 'Frutos do Mar',
+		'cozinha-hamburgueria' => 'Hamburgueria',
+		'cozinha-internacional' => 'Internacional',
+		'cozinha-pizzaria' => 'Pizzaria',
+		'cozinha-vegana' => 'Vegana',
+		'cozinha-vegetariana' => 'Vegetariana',
+		);
+		$CotacaoViagem->restaurantes = $tipo_restaurante;
+		return view('modals._cotarviagens', compact('tipo_restaurante'));
+	}
+
 }

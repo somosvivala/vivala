@@ -363,10 +363,30 @@ var bindaFormCotaViagem = function() {
   /* FORM CARROS */
 }
 
+var ajaxGetModal = function () {
+  $('#ativa-modal-cotacao-viagem').click(function() {
+    console.log('Enviando submit do form');
+    $.ajax({
+        url: 'cotarviagem/data',
+        type: 'POST',
+        dataType: 'html',
+    })
+    .done(function(data) {
+      console.log('Foi o ajax!');
+      console.log(data);
+       $('#teste').append(data);
+       $('#modal-cotacao-viagem').modal('show');
+    })
+    .fail(function() {
+      console.log('Falhou o ajax!');
+    });
+  });
+}
+
 jQuery(document).ready(function($) {
   bindaFormCotaViagem();
   bindaTooltipsDesativados();
-
+  
   // Token do laravel para Ajax
   $.ajaxSetup({
       headers: {

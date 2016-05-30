@@ -422,12 +422,136 @@
                   </div>
                 </div>
               </div>
-              {{-- Form Aluguel de Carros --}}
-              <div id="cotacao-alimentacao" data-value="0" class="hidden">
+              {{-- Form Alimentação --}}
+              <div id="cotacao-alimentacao" data-value="0">
                 <hr class="divisoria"/>
                 <div id="cotacao-alimentacao-titulo" class="row margin-t-2">
                   <div class="col-md-12 col-lg-12 text-center">
                     <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_eat') !!}</h5>
+                  </div>
+                </div>
+                <div id="cotacao-alimentacao-" class="row">
+                  <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                      <div class="col-md-12 col-lg-12">
+                        <strong>
+                          Quais culinárias combinam mais com a sua viagem?
+                        </strong>
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                      <div class="col-md-4 col-lg-4">
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Americana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Asiática</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Australiana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Brasileira</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Caribenha</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Chinesa</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Francesa</span>
+                        </p>
+                      </div>
+                      <div class="col-md-4 col-lg-4">
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Indiana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Italiana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Japonesa</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Mediterrânea</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Mexicana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Peruana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Churrascaria</span>
+                        </p>
+                      </div>
+                      <div class="col-md-4 col-lg-4">
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Contemporânea</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> <i>Fast-food</i></span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Frutos do Mar</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Hamburgueria</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Pizzaria</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Vegetariana</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('', '', false, ['id' => 'adicional-cafe']) !!}
+                          {!! Form::hidden('hospedagem-adicional-cafe', 0, ['id' => 'hospedagem-adicional-cafe']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> Vegana</span>
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
