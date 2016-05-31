@@ -38,6 +38,8 @@ class CotarViagensController extends Controller {
 
 	public function getForm(CotarViagensRequest $request)
 	{
+		$decoded = json_decode($request);
+		dd($decoded);
 		// Montando objeto USUÁRIO
 		$user = [
 			'user-id' => Auth::user()->id,

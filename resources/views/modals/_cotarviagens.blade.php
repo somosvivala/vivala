@@ -91,10 +91,12 @@
                 {{-- Infos de IDA e VOLTA e DATAS --}}
                 <div id="viagem-1" class="col-md-12 col-lg-12">
                   <div class="col-md-3 col-lg-3">
-                    {!! Form::text('basico-origem-1', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
+                    {!! Form::text(null, null, ['required' => 'true', 'id' => 'campo-origem-1', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_from') ]) !!}
+                    {!! Form::hidden('basico-origem-1', '', ['id' => 'basico-origem-1']) !!}
                   </div>
                   <div class="col-md-3 col-lg-3">
-                    {!! Form::text('basico-destino-1', null, ['required' => 'true', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
+                    {!! Form::text(null, null, ['required' => 'true', 'id' => 'campo-destino-1', 'class' => 'form-control', 'placeholder' => trans('global.lbl_travel_to') ]) !!}
+                    {!! Form::hidden('basico-destino-1', '', ['id' => 'basico-destino-1']) !!}
                   </div>
                   <div class="col-md-3 col-lg-3">
                     <input type="text" id="basico-data-ida-1" name="basico-data-ida-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_departure') !!}" data-provide="datepicker" data-date-format="dd/mm/yyyy" data-date-today-highlight="true" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d" required>
@@ -102,13 +104,13 @@
                   <div class="col-md-3 col-lg-3">
                       <input type="text" id="basico-data-volta-1" name="basico-data-volta-1" class="required form-control mascara-data" placeholder="{!! trans('global.lbl_travel_return') !!} ({!! trans('global.lbl_optional') !!})" data-provide="datepicker" data-date-today-highlight="true" data-date-format="dd/mm/yyyy" data-date-autoclose="true" data-date-language="{{ Config::get('app.locale') == 'pt'?'pt-BR':Config::get('app.locale')  }}" data-date-start-date="0d">
                   </div>
-                  {{-- DESABILITADO TEMPORARIAMENTE
+                  {{-- Adicionar Hospedagem a cada DESTINO - DESABILITADO TEMPORARIAMENTE
                   <div class="col-md-1 col-lg-1">
                       {!! Form::checkbox('basico-mais-hospedagem-1', 0, false, ['id' => 'basico-mais-hospedagem-1']) !!}
                   </div>
                   --}}
                 </div>
-                {{-- DESABILITADO TEMPORARIAMENTE
+                {{-- Adicionar mais destinos - DESABILITADO TEMPORARIAMENTE
                 @for($i=2; $i<=5; $i++)
                   <div id="viagem-{{ $i }}" class="col-md-12 col-lg-12">
                     <div class="col-md-3 col-lg-3">
@@ -142,7 +144,8 @@
                 {{-- Datas Flexíveis --}}
                 <div class="col-md-12 col-lg-12 margin-t-1 text-left margin-b-1">
                   <div class="col-md-12 col-lg-12">
-                      {!! Form::checkbox('basico-datas-flexiveis', 0, false, ['id' => 'datas-flexiveis']) !!}</span>
+                      {!! Form::checkbox('', '', false, ['id' => 'chbox-data-flexivel']) !!}
+                      {!! Form::hidden('basico-datas-flexiveis', 'Não Possui', false, ['id' => 'datas-flexiveis']) !!}
                       <span class="ajuste-fonte-avenir-medium">{!! trans('global.lbl_flexible_dates') !!}</span>
                   </div>
                 </div>
@@ -198,61 +201,74 @@
                               {{ $i }} {{ trans('global.passenger_child_') }}
                               </option>
                             @endif
-                        @endfor
+                          @endfor
                       </select>
+                    </div>
+                    <div id="adicional-de-crianca" class="hidden">
+                      <div class="col-md-3 col-lg-3">
+                        <strong>{!! trans('global.lbl_insert_child_age') !!}:</strong>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                        <ul id="idade-da-crianca" class="padding-l-no">
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
                 {{-- Períodos para Viajar --}}
-                <div class="col-md-12 col-lg-12 margin-t-2">
-                  <div class="col-md-12 col-lg-12">
-                    <strong>{!! trans('global.lbl_any_preference_period_to_travel') !!}?</strong>
-                  </div>
-                </div>
                 <div class="col-md-12 col-lg-12 margin-t-2 margin-b-2">
                   <div class="row">
-                    <ul class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
-                      <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#" id="ativa-tempo-manha" class="click-img-no-border">
-                          <span class="fa-stack fa-3x conjunto-icones">
-                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                            <i class="wi wi-horizon-alt fa-stack-1x icone-interno"></i>
-                          </span>
-                        </a>
-                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_morning') !!}</p>
-                        {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Manhã', false, ['id' => 'pref-tempo-manha', 'class' => 'hidden']) !!}
-                      </li>
-                      <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#" id="ativa-tempo-tarde" class="click-img-no-border">
-                          <span class="fa-stack fa-3x conjunto-icones">
-                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                            <i class="wi wi-day-sunny fa-stack-1x icone-interno"></i>
-                          </span>
-                        </a>
-                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_afternoon') !!}</p>
-                        {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Tarde', false, ['id' => 'pref-tempo-tarde', 'class' => 'hidden']) !!}
-                      </li>
-                      <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#" id="ativa-tempo-noite" class="click-img-no-border">
-                          <span class="fa-stack fa-3x conjunto-icones">
-                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                            <i class="fa fa-moon-o fa-stack-1x icone-interno"></i>
-                          </span>
-                        </a>
-                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_night') !!}</p>
-                        {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Noite', false, ['id' => 'pref-tempo-noite', 'class' => 'hidden']) !!}
-                      </li>
-                      <li class="col-md-3 col-lg-3 text-center">
-                        <a href="#" id="ativa-tempo-madrugada" class="click-img-no-border">
-                          <span class="fa-stack fa-3x conjunto-icones">
-                            <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
-                            <i class="wi wi-stars fa-stack-1x icone-interno"></i>
-                          </span>
-                        </a>
-                        <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_dawn') !!}</p>
-                        {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Madrugada', false, ['id' => 'pref-tempo-madrugada', 'class' => 'hidden']) !!}
-                      </li>
-                    </ul>
+                    <div class="col-md-12 col-lg-12">
+                      <div class="col-md-12 col-lg-12">
+                        <strong>{!! trans('global.lbl_any_preference_period_to_travel') !!}?</strong>
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12 margin-t-1">
+                      <div class="row">
+                        <ul class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+                          <li class="col-md-3 col-lg-3 text-center">
+                            <a href="#" id="ativa-tempo-manha" class="click-img-no-border">
+                              <span class="fa-stack fa-3x conjunto-icones">
+                                <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                                <i class="wi wi-horizon-alt fa-stack-1x icone-interno"></i>
+                              </span>
+                            </a>
+                            <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_morning') !!}</p>
+                            {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Manhã', false, ['id' => 'pref-tempo-manha', 'class' => 'hidden']) !!}
+                          </li>
+                          <li class="col-md-3 col-lg-3 text-center">
+                            <a href="#" id="ativa-tempo-tarde" class="click-img-no-border">
+                              <span class="fa-stack fa-3x conjunto-icones">
+                                <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                                <i class="wi wi-day-sunny fa-stack-1x icone-interno"></i>
+                              </span>
+                            </a>
+                            <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_afternoon') !!}</p>
+                            {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Tarde', false, ['id' => 'pref-tempo-tarde', 'class' => 'hidden']) !!}
+                          </li>
+                          <li class="col-md-3 col-lg-3 text-center">
+                            <a href="#" id="ativa-tempo-noite" class="click-img-no-border">
+                              <span class="fa-stack fa-3x conjunto-icones">
+                                <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                                <i class="fa fa-moon-o fa-stack-1x icone-interno"></i>
+                              </span>
+                            </a>
+                            <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_night') !!}</p>
+                            {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Noite', false, ['id' => 'pref-tempo-noite', 'class' => 'hidden']) !!}
+                          </li>
+                          <li class="col-md-3 col-lg-3 text-center">
+                            <a href="#" id="ativa-tempo-madrugada" class="click-img-no-border">
+                              <span class="fa-stack fa-3x conjunto-icones">
+                                <i class="fa fa-circle fa-stack-2x icone-externo-desativado"></i>
+                                <i class="wi wi-stars fa-stack-1x icone-interno"></i>
+                              </span>
+                            </a>
+                            <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.time_dawn') !!}</p>
+                            {!! Form::checkbox('basico-pref-tempo-viagem[]', 'Madrugada', false, ['id' => 'pref-tempo-madrugada', 'class' => 'hidden']) !!}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 {{-- Horários Restritos --}}
@@ -415,7 +431,7 @@
                     <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_eat') !!}</h5>
                   </div>
                 </div>
-                <div id="cotacao-alimentacao-" class="row">
+                <div id="cotacao-alimentacao-tipo-refeicao" class="row margin-t-2">
                   {{-- Café da Manhã/Almoço/Jantar --}}
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
@@ -425,7 +441,7 @@
                         </strong>
                       </div>
                     </div>
-                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                    <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="row">
                         <ul class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
                           <li class="col-md-4 col-lg-4 text-center">
@@ -462,6 +478,8 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div id="cotacao-alimentacao-opcao-cozinha" class="row margin-t-2">
                   {{-- Culinárias --}}
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
@@ -471,7 +489,7 @@
                         </strong>
                       </div>
                     </div>
-                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                    <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-4 col-lg-4">
                         <p>
                           {!! Form::checkbox('alimentacao-opcao-cozinha', 'Americana', false, ['id' => 'cozinha-americana']) !!}
@@ -564,6 +582,8 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div id="cotacao-alimentacao-momento" class="row margin-t-2">
                   {{-- Momentos --}}
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
@@ -573,7 +593,7 @@
                         </strong>
                       </div>
                     </div>
-                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                    <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-4 col-lg-4">
                         <p>
                           {!! Form::checkbox('alimentacao-momento', 'Com Família', false, ['id' => 'alimentacao-momento-familia']) !!}
@@ -594,6 +614,8 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                <div id="cotacao-alimentacao-preco-medio-por-prato" class="row margin-t-2">
                   {{-- Custos --}}
                   <div class="col-md-12 col-lg-12">
                     <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
@@ -603,10 +625,10 @@
                         </strong>
                       </div>
                     </div>
-                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                    <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio', 'Preço Baixíssimo', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Baixíssimo', false) !!}
                           <span title="R$5,00 - R$15,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -614,7 +636,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio', 'Preço Baixo', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Baixo', false) !!}
                           <span title="R$15,00 - R$25,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -622,7 +644,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio', 'Preço Médio', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Médio', false) !!}
                           <span title="R$25,00 - R$70,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -630,7 +652,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio', 'Preço Alto', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Alto', false) !!}
                           <span title="R$70,00 - R$300,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -638,7 +660,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio', 'Preço Altíssimo', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Altíssimo', false) !!}
                           <span title="R$300,00+">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i></span>
                           </span>
@@ -655,6 +677,9 @@
                   <div class="col-md-12 col-lg-12 text-center">
                     <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_drive') !!}</h5>
                   </div>
+                </div>
+                <div id="cotacao-carros-qtd-pessoas" class="row margin-t-2">
+
                 </div>
               </div>
               {{-- Botão de Enviar --}}

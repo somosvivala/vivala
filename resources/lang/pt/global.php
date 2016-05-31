@@ -392,6 +392,7 @@ return[
   'lbl_index' => 'Índice:',
   'lbl_info' => 'Informação',
   'lbl_info_' => 'Informações',
+  'lbl_insert_child_age' => 'Insira a idade da criança',
   'lbl_interest' => 'Interesse',
   'lbl_interest_' => 'Interesses',
   'lbl_interest_no' => 'Nenhum interesse',
