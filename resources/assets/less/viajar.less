@@ -223,12 +223,72 @@ ul.quartos-hotel {
       -webkit-transition: color 0.3s ease-in;
       -moz-transition: color 0.3s ease-in;
     }
-    .icone-externo-bloqueado{
-      color: @cor-fundo;
-    }
     .icone-interno{
       color: white;
     }
+    .fix-vivala-icon-modal{
+      top:20px;
+    }
+  }
+  .alimentacao-desativado{
+    color:@cor-fundo;
+  }
+  .rangeslider{
+    max-width: 100%;
+  }
+  .rangeslider__fill{
+    background: @cor-primaria;
+  }
+  .rangeslider__value-bubble {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 25px;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    &:before,
+    &:after {
+      border-width: 11px;
+      border-style: solid;
+      border-color: transparent;
+      content: "";
+      display: block;
+      margin: auto;
+      width: 10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      border-top-color: #ccc;
+      border-bottom-width: 0;
+      bottom: -11px;
+    }
+    &:after {
+      border-top-color: #fff;
+      border-bottom-width: 0;
+      bottom: -10px;
+    }
+  }
+  .rangeslider__ruler {
+    cursor: pointer;
+    font-size: .7em;
+    margin: 20px 3px 0 3px;
+    position: relative;
+    top: 100%;
+    text-align: justify;
+  }
+  .rangeslider__ruler:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
   }
   .divisoria{
      border: 0;

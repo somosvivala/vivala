@@ -137,3 +137,12 @@ i.vi {
 .icon-vivala-menu-brasil:before {
 	content: "\e925";
 }
+.icon-vivala-cafe-da-manha:before {
+	content: "\e926";
+}
+.icon-vivala-almoco:before {
+	content: "\e927";
+}
+.icon-vivala-jantar:before {
+	content: "\e928";
+}
