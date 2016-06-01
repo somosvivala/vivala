@@ -38,8 +38,7 @@ class CotarViagensController extends Controller {
 
 	public function getForm(CotarViagensRequest $request)
 	{
-		$result = json_decode($request->all());
-		var_dump($result);
+		$result = $request->all();
 
 		// Montando objeto USUÁRIO
 		$user = [

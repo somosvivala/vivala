@@ -529,9 +529,9 @@ jQuery(document).ready(function($) {
     $.ajax({
         url: frm.attr('action'),
         type: frm.attr('method'),
-        contentType:"application/json",
-        data: JSON.stringify(frmObj),
-        dataType: "json",
+        contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+        data: frmObj,
+        dataType: "html",
 
         success: function (data) {
             if(callbackFunction) {
