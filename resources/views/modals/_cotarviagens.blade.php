@@ -594,19 +594,25 @@
                       </div>
                     </div>
                     <div class="col-md-12 col-lg-12 margin-b-1">
-                      <div class="col-md-4 col-lg-4">
+                      <div class="col-md-3 col-lg-3">
+                        <p>
+                          {!! Form::checkbox('alimentacao-momento[]', 'Sozinho', false, ['id' => 'alimentacao-momento-sozinho']) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_alone') !!}</span>
+                        </p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
                         <p>
                           {!! Form::checkbox('alimentacao-momento[]', 'Com Família', false, ['id' => 'alimentacao-momento-familia']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_with_family') !!}</span>
                         </p>
                       </div>
-                      <div class="col-md-4 col-lg-4">
+                      <div class="col-md-3 col-lg-3">
                         <p>
                           {!! Form::checkbox('alimentacao-momento[]', 'Com Amigos', false, ['id' => 'alimentacao-momento-amigos']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_with_friends') !!}</span>
                         </p>
                       </div>
-                      <div class="col-md-4 col-lg-4">
+                      <div class="col-md-3 col-lg-3">
                         <p>
                           {!! Form::checkbox('alimentacao-momento[]', 'Com Namorado(a)', false, ['id' => 'alimentacao-momento-casal']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_with_romance') !!}</span>
@@ -721,37 +727,37 @@
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-3 col-lg-3">
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'Ar-Condicionado Veicular', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'Ar-Condicionado Veicular', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_air_conditioning') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'Direção Hidráulica', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'Direção Hidráulica', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_hydraulic_steering') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-3 col-lg-3">
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'Airbag', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'Airbag', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_airbag') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'Freio ABS', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'Freio ABS', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_abs') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-3 col-lg-3">
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'GPS', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'GPS', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_gps') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'CD ou USB', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'CD ou USB', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_cd_or_usb') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-3 col-lg-3">
                         <p>
-                          {!! Form::checkbox('carro-adicionais', 'Vidros/Travas Elétricas', false) !!}
+                          {!! Form::checkbox('carro-adicionais[]', 'Vidros/Travas Elétricas', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_eletric_windows_locks') !!}</span>
                         </p>
                       </div>

@@ -13,23 +13,12 @@ class CotacaoViagem extends Model {
 	protected $table = 'cotacao_viagens';
 
 	/**
-	 * Denotando os campos dates para que o laravel sirva uma instancia do Carbon
-	 */
-	protected $dates = [''];
-
-	/**
 	* Settando colunas que podem ser MassAssigned
   * AKA CotacaoViagem::create(['coluna' => 'valor']);
 	*/
 	protected = [
 		'user_id',
-		'numero_de_adultos',
-		'numero_de_criancas',
-		'qtd_quartos',
-		'adicionais_hotel',
-		'pref_bairro_regiao'
+		'cotacao_json'
 	];
-
-
 
 }

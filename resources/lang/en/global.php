@@ -607,6 +607,7 @@ return[
   'lbl_tag_' => 'Tags',
   'lbl_tag_friends' => 'Tag your friends',
   'lbl_timeline' => 'Timeline',
+  'lbl_to_go_alone' => 'To go alone',
   'lbl_to_go_with_family' => 'To go with family',
   'lbl_to_go_with_friends' => 'To go with friends',
   'lbl_to_go_with_romance' => 'Romantic',

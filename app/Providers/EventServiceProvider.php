@@ -42,6 +42,7 @@ class EventServiceProvider extends ServiceProvider {
 
 		//Quando alguém finaliza a Cotação de uma Viagem
 		'App\Events\NovaCotacaoViagem' => [
+			'App\Handlers\Events\CotacaoViagem\SalvaCotacaoViagem',
 			'App\Handlers\Events\CotacaoViagem\EnviaEmailCotacaoViagem',
 		],
 

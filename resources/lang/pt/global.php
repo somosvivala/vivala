@@ -658,6 +658,7 @@ return[
   'lbl_tag_' => 'Marcações',
   'lbl_tag_friends' => 'Marcar amigos',
   'lbl_timeline' => 'Linha do Tempo',
+  'lbl_to_go_alone' => 'Para ir Sozinho',
   'lbl_to_go_with_family' => 'Para ir com a Família',
   'lbl_to_go_with_friends' => 'Para ir com Amigos',
   'lbl_to_go_with_romance' => 'Romântico',
