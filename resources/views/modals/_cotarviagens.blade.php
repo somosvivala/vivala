@@ -206,7 +206,7 @@
                     </div>
                     <div id="adicional-de-crianca" class="hidden">
                       <div class="col-md-3 col-lg-3">
-                        <strong>{!! trans('global.lbl_insert_child_age') !!}:</strong>
+                        {!! Form::label('basico-idade-criancas', trans('global.lbl_insert_child_age'), null, ['class' => 'form-control']) !!}<strong>:</strong>
                       </div>
                       <div class="col-md-3 col-lg-3">
                         <ul id="idade-da-crianca" class="padding-l-no">
@@ -452,7 +452,7 @@
                               </span>
                             </a>
                             <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.lbl_breakfast') !!}</p>
-                            {!! Form::checkbox('alimentacao-tipo-refeicao', 'Café da Manhã', false, ['id' => 'pref-cafe-da-manha', 'class' => 'hidden']) !!}
+                            {!! Form::checkbox('alimentacao-tipo-refeicao[]', 'Café da Manhã', false, ['id' => 'pref-cafe-da-manha', 'class' => 'hidden']) !!}
                           </li>
                           <li class="col-md-4 col-lg-4 text-center">
                             <a href="#" id="ativa-almoco" class="click-img-no-border">
@@ -462,7 +462,7 @@
                               </span>
                             </a>
                             <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.lbl_lunch') !!}</p>
-                            {!! Form::checkbox('alimentacao-tipo-refeicao', 'Almoço', false, ['id' => 'pref-almoco', 'class' => 'hidden']) !!}
+                            {!! Form::checkbox('alimentacao-tipo-refeicao[]', 'Almoço', false, ['id' => 'pref-almoco', 'class' => 'hidden']) !!}
                           </li>
                           <li class="col-md-4 col-lg-4 text-center">
                             <a href="#" id="ativa-jantar" class="click-img-no-border">
@@ -472,7 +472,7 @@
                               </span>
                             </a>
                             <p class="margin-t-1 ajuste-fonte-avenir-medium">{!! trans('global.lbl_dinner') !!}</p>
-                            {!! Form::checkbox('alimentacao-tipo-refeicao', 'Jantar', false, ['id' => 'pref-jantar', 'class' => 'hidden']) !!}
+                            {!! Form::checkbox('alimentacao-tipo-refeicao[]', 'Jantar', false, ['id' => 'pref-jantar', 'class' => 'hidden']) !!}
                           </li>
                         </ul>
                       </div>
@@ -492,91 +492,91 @@
                     <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Americana', false, ['id' => 'cozinha-americana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Americana', false, ['id' => 'cozinha-americana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_america') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Asiática', false, ['id' => 'cozinha-asiatica']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Asiática', false, ['id' => 'cozinha-asiatica']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_asia') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Australiana', false, ['id' => 'cozinha-australiana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Australiana', false, ['id' => 'cozinha-australiana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_australia') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Brasileira', false, ['id' => 'cozinha-brasileira']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Brasileira', false, ['id' => 'cozinha-brasileira']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_brazil') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Caribenha', false, ['id' => 'cozinha-caribenha']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Caribenha', false, ['id' => 'cozinha-caribenha']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_caribe') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Chinesa', false, ['id' => 'cozinha-chinesa']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Chinesa', false, ['id' => 'cozinha-chinesa']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_china') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Francesa', false, ['id' => 'cozinha-francesa']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Francesa', false, ['id' => 'cozinha-francesa']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_french') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Indiana', false, ['id' => 'cozinha-indiana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Indiana', false, ['id' => 'cozinha-indiana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_india') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Italiana', false, ['id' => 'cozinha-italiana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Italiana', false, ['id' => 'cozinha-italiana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_italy') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Japonesa', false, ['id' => 'cozinha-japonesa']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Japonesa', false, ['id' => 'cozinha-japonesa']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_japan') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Mediterrânea', false, ['id' => 'cozinha-mediterranea']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Mediterrânea', false, ['id' => 'cozinha-mediterranea']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_mediterran') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Mexicana', false, ['id' => 'cozinha-mexicana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Mexicana', false, ['id' => 'cozinha-mexicana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_mexico') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Peruana', false, ['id' => 'cozinha-peruana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Peruana', false, ['id' => 'cozinha-peruana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_peru') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Churrascaria', false, ['id' => 'cozinha-churrascaria']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Churrascaria', false, ['id' => 'cozinha-churrascaria']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_barbecue') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Contemporânea', false, ['id' => 'cozinha-contemporanea']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Contemporânea', false, ['id' => 'cozinha-contemporanea']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_contemporary') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Fast-Food', false, ['id' => 'cozinha-fastfood']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Fast-Food', false, ['id' => 'cozinha-fastfood']) !!}
                           <span class="ajuste-fonte-avenir-medium"> <i>{!! trans('global.lbl_kitchen_fast_food') !!}</i></span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Frutos do Mar', false, ['id' => 'cozinha-frutos-do-mar']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Frutos do Mar', false, ['id' => 'cozinha-frutos-do-mar']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_seafood') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Hamburgueria', false, ['id' => 'cozinha-hamburgueria']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Hamburgueria', false, ['id' => 'cozinha-hamburgueria']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_hamburguer') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Pizzaria', false, ['id' => 'cozinha-pizzaria']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Pizzaria', false, ['id' => 'cozinha-pizzaria']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_pizza') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Vegetariana', false, ['id' => 'cozinha-vegetariana']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Vegetariana', false, ['id' => 'cozinha-vegetariana']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_vegetarian') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('alimentacao-opcao-cozinha', 'Vegan', false, ['id' => 'cozinha-vegan']) !!}
+                          {!! Form::checkbox('alimentacao-opcao-cozinha[]', 'Vegan', false, ['id' => 'cozinha-vegan']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_kitchen_vegan') !!}</span>
                         </p>
                       </div>
@@ -596,19 +596,19 @@
                     <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('alimentacao-momento', 'Com Família', false, ['id' => 'alimentacao-momento-familia']) !!}
+                          {!! Form::checkbox('alimentacao-momento[]', 'Com Família', false, ['id' => 'alimentacao-momento-familia']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_with_family') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('alimentacao-momento', 'Com Amigos', false, ['id' => 'alimentacao-momento-amigos']) !!}
+                          {!! Form::checkbox('alimentacao-momento[]', 'Com Amigos', false, ['id' => 'alimentacao-momento-amigos']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_with_friends') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('alimentacao-momento', 'Com Namorado(a)', false, ['id' => 'alimentacao-momento-casal']) !!}
+                          {!! Form::checkbox('alimentacao-momento[]', 'Com Namorado(a)', false, ['id' => 'alimentacao-momento-casal']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_to_go_with_romance') !!}</span>
                         </p>
                       </div>
@@ -628,7 +628,7 @@
                     <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-2 col-md-offset-1 col-lg-2 col-lg-offset-1">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Baixíssimo', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato[]', 'Preço Baixíssimo', false) !!}
                           <span title="R$5,00 - R$15,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -636,7 +636,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Baixo', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato[]', 'Preço Baixo', false) !!}
                           <span title="R$15,00 - R$25,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -644,7 +644,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Médio', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato[]', 'Preço Médio', false) !!}
                           <span title="R$25,00 - R$70,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -652,7 +652,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Alto', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato[]', 'Preço Alto', false) !!}
                           <span title="R$70,00 - R$300,00">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x alimentacao-desativado"></i></span>
                           </span>
@@ -660,7 +660,7 @@
                       </div>
                       <div class="col-md-2 col-lg-2">
                         <p>
-                          {!! Form::checkbox('alimentacao-preco-medio-por-prato', 'Preço Altíssimo', false) !!}
+                          {!! Form::checkbox('alimentacao-preco-medio-por-prato[]', 'Preço Altíssimo', false) !!}
                           <span title="R$300,00+">
                             <span class="ajuste-fonte-avenir-medium"> <i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i><i class="fa fa-dollar fa-1x"></i></span>
                           </span>
@@ -678,8 +678,85 @@
                     <h5 class="titulo-secao">{!! trans('global.wannatravel_trip_drive') !!}</h5>
                   </div>
                 </div>
-                <div id="cotacao-carros-qtd-pessoas" class="row margin-t-2">
-
+                <div id="cotacao-carros-categoria" class="row margin-t-2">
+                  <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 margin-b-1">
+                      <div class="col-md-12 col-lg-12">
+                        <div class="col-md-4 col-lg-4 padding-l-no">
+                          {!! Form::label('carros-categorias', trans('global.lbl_choose_car_rental_category'), null, ['class' => 'form-control']) !!}<strong>:</strong>
+                        </div>
+                        <div class="col-md-4 col-lg-4">
+                          <select name="carros-categorias" class="form-control">
+                              <option name="carros-categoria-valor" disabled selected>{!! trans('global.lbl_select') !!}</option>
+                              <option name="carros-categoria-valor" value="Mini">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_mini') !!}</option>
+                              <option name="carros-categoria-valor" value="Economico">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_economic') !!}</option>
+                              <option name="carros-categoria-valor" value="Compacto">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_compact') !!}</option>
+                              <option name="carros-categoria-valor" value="Standard">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_standard') !!}</option>
+                              <option name="carros-categoria-valor" value="Intermediario">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_intermediary') !!}</option>
+                              <option name="carros-categoria-valor" value="Premium">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_premium') !!}</option>
+                              <option name="carros-categoria-valor" value="Fullsize">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_fullsize') !!}</option>
+                              <option name="carros-categoria-valor" value="SUV">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_suv') !!}</option>
+                              <option name="carros-categoria-valor" value="Especial">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_special') !!}</option>
+                              <option name="carros-categoria-valor" value="Luxo">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_lux') !!}</option>
+                              <option name="carros-categoria-valor" value="Conversivel">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_convertible') !!}</option>
+                              <option name="carros-categoria-valor" value="Minivan">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_minivan') !!}</option>
+                              <option name="carros-categoria-valor" value="Van">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_van') !!}</option>
+                              <option name="carros-categoria-valor" value="Utilitário">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_utilitary') !!}</option>
+                              <option name="carros-categoria-valor" value="Pickup">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_pickup') !!}</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div id="cotacao-carros-adicionais" class="row margin-t-2">
+                  <div class="col-md-12 col-lg-12">
+                    <div class="col-md-12 col-lg-12 margin-t-1 margin-b-1">
+                      <div class="col-md-12 col-lg-12">
+                        <strong>
+                          {!! trans('global.lbl_would_you_like_some_extra_in_your_car') !!}?
+                        </strong>
+                      </div>
+                    </div>
+                    <div class="col-md-12 col-lg-12">
+                      <div class="col-md-3 col-lg-3">
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'Ar-Condicionado Veicular', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_air_conditioning') !!}</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'Direção Hidráulica', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_hydraulic_steering') !!}</span>
+                        </p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'Airbag', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_airbag') !!}</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'Freio ABS', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_abs') !!}</span>
+                        </p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'GPS', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_gps') !!}</span>
+                        </p>
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'CD ou USB', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_cd_or_usb') !!}</span>
+                        </p>
+                      </div>
+                      <div class="col-md-3 col-lg-3">
+                        <p>
+                          {!! Form::checkbox('carro-adicionais', 'Vidros/Travas Elétricas', false) !!}
+                          <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_eletric_windows_locks') !!}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               {{-- Botão de Enviar --}}

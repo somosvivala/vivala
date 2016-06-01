@@ -2,7 +2,7 @@
 return[
 /*
 |--------------------------------------------------------------------------
-| [PT-BR] Tradução Global dos Arquivos em PORTUGUÊS
+| [EN-US] Tradução Global dos Arquivos em INGLÊS
 |--------------------------------------------------------------------------
 */
 
@@ -21,7 +21,10 @@ return[
   'lbl_wanna_connect' => 'Quero me Conectar',
   'lbl_wanna_volunteer' => 'Quero Cuidar',
 
-/* Termos Globais */
+  /*------------------------------------------------------------------------------
+  /  Termos Globais
+  ------------------------------------------------------------------------------*/
+  'lbl_abs' => 'ABS',
   'lbl_about' => 'About',
   'lbl_acess_data' => 'Access Data',
   'lbl_activity_log' => 'Activities',
@@ -92,6 +95,7 @@ return[
   'lbl_ads_submit_' => 'Submit Ads',
   'lbl_ads_update' => 'Update Ad',
   'lbl_ads_update_' => 'Update Ads',
+  'lbl_airbag' => 'Airbag',
   'lbl_air_conditioning' => 'Air conditioning',
   'lbl_album' => 'Album',
   'lbl_album_' => 'Albums',
@@ -195,11 +199,13 @@ return[
   'lbl_cause_submit_' => 'Submit Volunteer Jobs',
   'lbl_cause_update' => 'Update Volunteer Job',
   'lbl_cause_update_' => 'Update Volunteer Jobs',
+  'lbl_cd_or_usb' => 'CD or USB',
   'lbl_cellphone' => 'Cellphone',
   'lbl_chat' => 'Chat',
   'lbl_chat_with_friends' => 'Chat with Friends',
   'lbl_chat_with_volunteers' => 'Chat with Volunteers',
   'lbl_choose' => 'Choose',
+  'lbl_choose_car_rental_category' => 'Choose the category of rental car',
   'lbl_click_here' => 'Click Here',
   'lbl_close' => 'Close',
   'lbl_city' => 'City',
@@ -266,6 +272,7 @@ return[
   'lbl_discount_' => 'Discounts',
   'lbl_document' => 'Document',
   'lbl_edit' => 'Edit',
+  'lbl_eletric_windows_locks' => 'Eletric Windows/Locks',
   'lbl_email' => 'Email',
   'lbl_event' => 'Event',
   'lbl_event_' => 'Events',
@@ -319,6 +326,7 @@ return[
   'lbl_free_cancellation' => 'Free Cancellation',
   'lbl_free_parking' => 'Free Parking',
   'lbl_free_wifi' => 'Free WiFi',
+  'lbl_gps' => 'GPS',
   'lbl_group' => 'Group',
   'lbl_group_' => 'Groups',
   'lbl_grop_add' => 'Add Group',
@@ -341,6 +349,7 @@ return[
   'lbl_how_many_rooms' => 'How many rooms',
   'lbl_how_many_travellers' => 'How many travellers (adults)',
   'lbl_how_much_you_want_to_spend' => 'How much you want to spend on this trip',
+  'lbl_hydraulic_steering' => 'Hydraulic Steering',
   'lbl_img' => 'Picture',
   'lbl_img_' => 'Pictures',
   'lbl_img_add' => 'Add Picture',
@@ -679,6 +688,7 @@ return[
   'lbl_what_cuisines_combine_more_with' => 'What cuisines combine most with your trip',
   'lbl_wishlist' => 'Wishlist',
   'lbl_wishlist_my' => 'My Whishlist',
+  'lbl_would_you_like_some_extra_in_your_car' => 'Would you like some extra in your car',
   'lbl_why_care' => 'Why care',
 
     /* Erros */
@@ -826,6 +836,23 @@ return[
       'passenger_elder_' => 'Seniors',
       'passenger_animal' => 'Animal',
       'passenger_animal_' => 'Animals',
+
+      /* Categoria de Carros */
+        'car_category_mini' => 'Mini',
+        'car_category_economic' => 'Economic',
+        'car_category_compact' => 'Compact',
+        'car_category_standard' => 'Standard',
+        'car_category_intermediary' => 'Intermediary',
+        'car_category_premium' => 'Premium',
+        'car_category_fullsize' => 'Full-Size',
+        'car_category_suv' => 'SUV',
+        'car_category_special' => 'Special',
+        'car_category_lux' => 'Lux',
+        'car_category_convertible' => 'Convertible',
+        'car_category_minivan' => 'Mini-van',
+        'car_category_van' => 'Van',
+        'car_category_utilitary' => 'Utilitary',
+        'car_category_pickup' => 'Pick-up',
 
   /* View: Album [DONE] */
 

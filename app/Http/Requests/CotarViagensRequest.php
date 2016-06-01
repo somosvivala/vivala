@@ -71,6 +71,10 @@ class CotarViagensRequest extends Request {
 				'hospedagem-bairro-regiao-preferencia' => 'string',
 				'hospedagem-informacoes-adicionais' => 'string',
 			/* ALIMENTAÇÃO */
+				'alimentacao-tipo-refeicao' => 'array',
+				'alimentacao-opcao-cozinha' => 'array',
+				'alimentacao-momento' => 'array',
+				'alimentacao-preco-medio-por-prato' => 'array',
 			/* CARROS */
 		];
 	}

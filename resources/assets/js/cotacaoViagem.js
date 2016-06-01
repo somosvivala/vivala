@@ -274,7 +274,7 @@ var bindaFormCotaViagem = function() {
         if(nroCriancas >= 1){
           $(adicionalCrianca).removeClass('hidden');
           for(i=1; i<=nroCriancas; i++) {
-            $(idadeCrianca).append('<li class="margin-b-1"><select name="basico-idade-criancas" id="" class="form-control" required><option disabled="true" selected>'+lingua[12]+' '+i+'</option><option value="Alguns Meses">'+lingua[13]+'</option><option value="1">1 '+lingua[14]+'</option><option value="2">2 '+lingua[15]+'</option><option value="3">3 '+lingua[15]+'</option><option value="4">4 '+lingua[15]+'</option><option value="5">5 '+lingua[15]+'</option><option value="6">6 '+lingua[15]+'</option><option value="7">7 '+lingua[15]+'</option><option value="8">8 '+lingua[15]+'</option><option value="9">9 '+lingua[15]+'</option><option value="10">10 '+lingua[15]+'</option><option value="11">11 '+lingua[15]+'</option></select></li>');
+            $(idadeCrianca).append('<li class="margin-b-1"><select id="basico-idade-criancas" name="basico-idade-criancas[]" id="" class="form-control" required><option disabled="true" selected>'+lingua[12]+' '+i+'</option><option value="Alguns Meses">'+lingua[13]+'</option><option value="1">1 '+lingua[14]+'</option><option value="2">2 '+lingua[15]+'</option><option value="3">3 '+lingua[15]+'</option><option value="4">4 '+lingua[15]+'</option><option value="5">5 '+lingua[15]+'</option><option value="6">6 '+lingua[15]+'</option><option value="7">7 '+lingua[15]+'</option><option value="8">8 '+lingua[15]+'</option><option value="9">9 '+lingua[15]+'</option><option value="10">10 '+lingua[15]+'</option><option value="11">11 '+lingua[15]+'</option></select></li>');
           }
         }
         else if($(basicoNroCriancas).val() <= 0){
