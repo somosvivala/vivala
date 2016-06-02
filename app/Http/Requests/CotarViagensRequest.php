@@ -76,7 +76,7 @@ class CotarViagensRequest extends Request {
 				'alimentacao-momento' => 'array',
 				'alimentacao-preco-medio-por-prato' => 'array',
 			/* CARROS */
-				'carros-categorias' => 'string',
+				'carro-categoria' => 'string',
 				'carro-adicionais' => 'array',
 		];
 	}

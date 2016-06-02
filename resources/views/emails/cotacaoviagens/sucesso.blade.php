@@ -4,33 +4,41 @@
     <br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES DO CLIENTE:</strong><br/>
-    User ID do Cliente: <strong>{{ $CotacaoViagem->usuario['user-id'] }}</strong><br/>
-    Nome do Cliente: <strong>{{ $CotacaoViagem->usuario['user-username'] }}</strong><br/>
-    Email do Cliente: <strong>{{ $CotacaoViagem->usuario['user-email'] }}</strong><br/>
+    User ID do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-id'] }}</strong><br/>
+    Nome do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-username'] }}</strong><br/>
+    Email do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-email'] }}</strong><br/>
     <br/>
     <br/>
     <strong style="font-size:14px;">INFORMAÇÕES BÁSICAS:</strong><br/>
-    - Pediu Cotação de Voos? <strong>{{ $CotacaoViagem->opcoes['cotacao-voo'] }}</strong><br/>
-    - Pediu Cotação de Onibus? <strong>{{ $CotacaoViagem->opcoes['cotacao-onibus'] }}</strong><br/>
-    - Pediu Cotação de Hospedagem? <strong>{{ $CotacaoViagem->opcoes['cotacao-hospedagem'] }}</strong><br/>
-    - Pediu Cotação de Carros? <strong>{{ $CotacaoViagem->opcoes['cotacao-hospedagem'] }}</strong><br/>
+    - Quanto este cliente pretende gastar nesta cotação (Em uma escala de 1 - Pouquíssimo a 5 - Muitíssimo])?<br/>
+    <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['qto-gastar'] }}</strong>
+    - Quais cotações este cliente pediu?<br/>
+    @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipo_cotacao)
+      <strong><?php echo($tipo_cotacao) ?></strong><br/>
+    @endforeach
     <br/>
-    º De <strong>{{ $CotacaoViagem->dados['lugar-saida'] }}</strong> para <strong>{{ $CotacaoViagem->dados['lugar-chegada'] }}</strong><br/>
-    º Data da <strong>IDA</strong>: {{ $CotacaoViagem->dados['data-ida'] }}</br>
-    º Data da <strong>VOLTA</strong>: {{ $CotacaoViagem->dados['data-volta'] }}</br>
-    <strong style="color:red;">* Datas flexíveis?</strong> <strong>{{ $CotacaoViagem->dados['datas-flexiveis'] }}</strong><br/>
-    º Número de <strong>ADULTOS</strong>: {{ $CotacaoViagem->dados['numero-adultos'] }}</br>
-    º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem->dados['numero-criancas'] }}</br>
+    º De <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['origem'] }}</strong> para <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['destino'] }}</strong><br/>
+    º Data da <strong>IDA</strong>: {{ $CotacaoViagem['cotacao_obj']['basico']['data-ida'] }}</br>
+    º Data da <strong>VOLTA</strong>: {{ $CotacaoViagem['cotacao_obj']['basico']['data-volta'] }}</br>
+    <strong style="color:red;">* Datas flexíveis?</strong> <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['datas-flexiveis'] }}</strong><br/>
+    º Número de <strong>ADULTOS</strong>: {{ $CotacaoViagem['cotacao_obj']['basico']['numero-adultos'] }}</br>
+    º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem['cotacao_obj']['basico']['numero-criancas'] }}</br>
+    @if(isset($CotacaoViagem['cotacao_obj']['basico']['idade-criancas']))
+      @foreach($CotacaoViagem['cotacao_obj']['basico']['idade-criancas'] as $idade_criancas)
+        <?php echo('º Idade das <strong>CRIANÇAS</strong>:</br>' . $idade_criancas . '<br/>') ?>
+      @endforeach
+    @endif
+
+    @if(isset($CotacaoViagem['cotacao_obj']['basico']['pref-tempo']))
+      @foreach($CotacaoViagem['cotacao_obj']['basico']['pref-tempo'] as $preferencia_tempo)
+        <?php echo('º Prefere viajar de:<br/>' . $preferencia_tempo . '<br/>') ?>
+      @endforeach
+    @endif
     <br/>
-    º Prefere viajar de:<br/>
-     - Manhã: <strong>{{ $CotacaoViagem->tempo['viaja-manha'] }}</strong><br/>
-     - Tarde: <strong>{{ $CotacaoViagem->tempo['viaja-tarde'] }}</strong><br/>
-     - Noite: <strong>{{ $CotacaoViagem->tempo['viaja-noite'] }}</strong><br/>
-     - Madrugada <strong>{{ $CotacaoViagem->tempo['viaja-madrugada'] }}</strong><br/>
      <strong style="color:red;">* Horários restritos?</strong><br/>
-     {{ $CotacaoViagem->tempo['horario-restrito'] }}<br/>
+     {{ $CotacaoViagem['cotacao_obj']['basico']['horario-restrito'] }}<br/>
      <br/>
-     <br/>
+    {{--
     <strong style="font-size:14px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</strong><br/>
     º Número de quartos: <strong>{{ $CotacaoViagem->hospedagem['hotel-numero-quartos'] }}</strong><br/>
     <table style="width:100%">
@@ -55,4 +63,5 @@
     º Bairro ou região de preferência: {{ $CotacaoViagem->hospedagem['hotel-bairro-regiao'] }}<br/>
     <strong style="color:red;">* Informações adicionais:</strong><br/>
     {{ $CotacaoViagem->hospedagem['hotel-infos-adicionais'] }}
+  --}}
 </body>

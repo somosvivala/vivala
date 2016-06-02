@@ -726,7 +726,13 @@ class Perfil extends Model {
         return ( preg_match('/ong/i', get_class($this)) ? true : false );
     }
 
-
-
+		/**
+		 * Estabelece a relaçao entre a entidade Perfil e a Cotação Viagem,
+		 * um Perfil pode ser responsavel por muitas Cotações
+		 */
+		public function cotacaoResponsavel()
+		{
+				return $this->hasMany('App\CotacaoViagem', 'cotacao_viagem_id');
+		}
 
 }

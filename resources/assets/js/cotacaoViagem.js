@@ -235,13 +235,18 @@ var bindaFormCotaViagem = function() {
   var campoOrigem1 = $('#campo-origem-1'),
       basicoOrigem1 = $('#basico-origem-1'),
       campoDestino1 = $('#campo-destino-1'),
-      basicoDestino1 = $('#basico-destino-1');
+      basicoDestino1 = $('#basico-destino-1'),
+      campoBairroRegiaoPref = $('#campo-bairro-regiao-preferencia'),
+      hospedagemBairroRegiaoPref = $('#hospedagem-bairro-regiao-preferencia');
 
       $(campoOrigem1).change(function(){
         $(basicoOrigem1).val($(campoOrigem1).val().toUpperCase());
       });
       $(campoDestino1).change(function(){
         $(basicoDestino1).val($(campoDestino1).val().toUpperCase());
+      });
+      $(campoBairroRegiaoPref).change(function(){
+        $(hospedagemBairroRegiaoPref).val($(campoBairroRegiaoPref).val().toUpperCase());
       });
 
   // Campo de data - ajustes

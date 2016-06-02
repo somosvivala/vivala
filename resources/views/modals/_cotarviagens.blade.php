@@ -283,7 +283,7 @@
                   </div>
                 </div>
                 {{-- Quando Pretende Gastar --}}
-                <div class="col-md-12 col-lg-12 margin-t-1 margin-b-3">
+                <div class="col-md-12 col-lg-12 margin-t-2 margin-b-3">
                   <div class="col-md-4 col-lg-4">
                     <strong>{!! trans('global.lbl_how_much_you_want_to_spend') !!}?</strong>
                   </div>
@@ -399,7 +399,10 @@
                         <div class="col-md-4 col-lg-4">
                           {!! Form::label('hospedagem-bairro-regiao-preferencia', trans('global.lbl_neighborhood_preferred_region'), null, ['class' => 'form-control']) !!} :
                         </div>
-                        <div class="col-md-4 col-lg-4">{!! Form::text('hospedagem-bairro-regiao-preferencia', null, ['class' => 'form-control']) !!}</div>
+                        <div class="col-md-4 col-lg-4">
+                          {!! Form::text(null, null, ['id' => 'campo-bairro-regiao-preferencia', 'class' => 'form-control']) !!}
+                          {!! Form::hidden('hospedagem-bairro-regiao-preferencia', '', ['id' => 'hospedagem-bairro-regiao-preferencia']) !!}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -689,10 +692,10 @@
                     <div class="col-md-12 col-lg-12 margin-b-1">
                       <div class="col-md-12 col-lg-12">
                         <div class="col-md-4 col-lg-4 padding-l-no">
-                          {!! Form::label('carros-categorias', trans('global.lbl_choose_car_rental_category'), null, ['class' => 'form-control']) !!}<strong>:</strong>
+                          {!! Form::label('carro-categoria', trans('global.lbl_choose_car_rental_category'), null, ['class' => 'form-control']) !!}<strong>:</strong>
                         </div>
                         <div class="col-md-4 col-lg-4">
-                          <select name="carros-categorias" class="form-control">
+                          <select name="carro-categoria" class="form-control">
                               <option name="carros-categoria-valor" disabled selected>{!! trans('global.lbl_select') !!}</option>
                               <option name="carros-categoria-valor" value="Mini">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_mini') !!}</option>
                               <option name="carros-categoria-valor" value="Economico">{!! trans('global.lbl_category') !!} {!! trans('global.car_category_economic') !!}</option>
