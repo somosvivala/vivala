@@ -46,6 +46,7 @@ class CotarViagensController extends Controller {
 			'alimentacao' => [
 				'tipo-refeicao' => Input::get('alimentacao-tipo-refeicao'),
 				'opcao-cozinha' => Input::get('alimentacao-opcao-cozinha'),
+				'momento' => Input::get('alimentacao-momento'),
 				'preco-medio-prato' => Input::get('alimentacao-preco-medio-por-prato')
 
 			],
