@@ -12,18 +12,15 @@ class CotacaoViagem extends Model {
 	 */
 	protected $table = 'cotacao_viagens';
 
-	$fillable [
-		'cotacao_viagem_obj'
-	];
-
 	/**
 	* Settando colunas que podem ser MassAssigned
-  * AKA CotacaoViagem::create(['coluna' => 'valor']);
+	* AKA CotacaoViagem::create(['coluna' => 'valor']);
 	*/
-	protected = [
-		'cotacao_viagem_id',
-		'cotacao_viagem_obj'
+	protected $fillable = [
+		'user_id',
+		'cotacao_obj'
 	];
+
 
 	/**
 	 * Estabelece a relaçao entre a entidade CotacaoViagem e a entidade Perfil,

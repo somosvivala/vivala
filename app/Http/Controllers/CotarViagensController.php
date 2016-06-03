@@ -1,12 +1,13 @@
 <?php namespace App\Http\Controllers;
 
 use App;
+use App\CotacaoViagem;
 use Auth;
 use Input;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Http\Requests\CotarViagensRequest;
 use App\Events\NovaCotacaoViagem;
 
@@ -14,8 +15,6 @@ class CotarViagensController extends Controller {
 
 	public function getForm(CotarViagensRequest $request)
 	{
-		//dd(json_encode($request->all()));
-
 		// Montando objeto USUÁRIO
 		$user = [
 			'user-id' => Auth::user()->id,
@@ -61,8 +60,14 @@ class CotarViagensController extends Controller {
 			'cotacao_obj' => $cotacao_obj
 		];
 
-		//Disparando evento para avisando que temos uma nova cotação
+		// JSON que será salvo no BD na table de cotações
+		$json = json_encode($CotacaoViagem);
+
+		// Disparando evento para avisando que temos uma nova cotação
 		event(new NovaCotacaoViagem($CotacaoViagem));
+
+		//Salvando no BD o json
+		CotacaoViagem::create(['user_id' => $user['user-id'], 'cotacao_obj' => $json]);
 
 		// Retorno da request JSON para mensagem de sucesso
 		return($request->all());
