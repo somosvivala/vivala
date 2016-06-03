@@ -51,7 +51,7 @@ class CotarViagensController extends Controller {
 
 			],
 			'carros' => [
-				'categoria' => Input::get('carros-categorias'),
+				'categoria' => Input::get('carro-categoria'),
 				'adicionais' => Input::get('carro-adicionais')
 			]
 		];
