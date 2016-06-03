@@ -102,8 +102,11 @@
       @endif
 
       @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato']))
-        <?php echo('º Preço médio por prato que o cliente gostaria de pagar: '); ?>
-        <?php echo($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] . '<br/>'); ?>
+        <?php echo('º Preço(s) médio(s) por prato que o cliente gostaria de pagar: '); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] as $tipo_cozinha)
+          <?php echo('<strong>' . $tipo_cozinha . '</strong>, ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
       @endif
     @endif
     <hr/>
