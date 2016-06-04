@@ -9,7 +9,7 @@
     <li class="row">
         <a href="/experiencias/{{ $Experiencia->id}}">
             <div class="{{ $k%2==0?'direita':'esquerda'}} foto">
-                <div class="foto-img" style="background-image:url('https://dev.vivala.com.br/img/dummyvoos.jpg')">
+                <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
                     <div class="categorias-experiencia">
                         @foreach($Experiencia->categorias as $Categoria)
                             <div class="icone">
