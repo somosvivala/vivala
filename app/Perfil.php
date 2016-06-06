@@ -742,5 +742,13 @@ class Perfil extends Model {
         return $this->morphMany('App\InteracaoPlataforma', 'author', 'author_type', 'author_id');
     }
 
+		/**
+		 * Estabelece a relaçao entre a entidade Perfil e a Cotação Viagem,
+		 * um Perfil pode ser responsavel por muitas Cotações
+		 */
+		public function cotacaoResponsavel()
+		{
+				return $this->hasMany('App\CotacaoViagem', 'cotacao_viagem_id');
+		}
 
 }

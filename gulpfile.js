@@ -30,6 +30,7 @@ elixir(function(mix) {
       'app.css',
       '../../assets/bower/font-awesome/css/font-awesome.min.css',
       '../../assets/bower/bootstrap-social/bootstrap-social.css', // Deve vir depois do Font-Awesome e ao fim, conflita em classe com algo
+      '../../assets/bower/rangeslider.js/dist/rangeslider.css',
   ], null, 'resources/assets/css');
 
   // De toda a plataforma
@@ -56,6 +57,7 @@ elixir(function(mix) {
       '../../assets/bower/tether-tooltip/dist/js/tooltip.min.js',
       /* Logger antes dos outros */
       '../../assets/js/logger-config.js',
+      '../../assets/bower/rangeslider.js/dist/rangeslider.min.js',
       /* Scripts Vivalá */
       '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',

@@ -1,58 +1,146 @@
-<body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-micros oft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+  <head>
+      <!--[if gte mso 15]>
+      <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <meta content="text/html">
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial -scale=1">
+  </head>
+  <body>
     <h1 style="color:#F16F2B; text-align:center;">EMAIL AUTOMÁTICO DA PLATAFORMA</h1><br/>
     <h2 style"color:#F16F2B; text-align:center;">COTAÇÃO DE VIAGENS</h2>
     <br/>
     <br/>
-    <strong style="font-size:14px;">INFORMAÇÕES DO CLIENTE:</strong><br/>
-    User ID do Cliente: <strong>{{ $CotacaoViagem->usuario['user-id'] }}</strong><br/>
-    Nome do Cliente: <strong>{{ $CotacaoViagem->usuario['user-username'] }}</strong><br/>
-    Email do Cliente: <strong>{{ $CotacaoViagem->usuario['user-email'] }}</strong><br/>
+    <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES DO CLIENTE:</h3><br/>
+    User ID do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-id'] }}</strong><br/>
+    Nome do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-username'] }}</strong><br/>
+    Email do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-email'] }}</strong><br/>
     <br/>
     <br/>
-    <strong style="font-size:14px;">INFORMAÇÕES BÁSICAS:</strong><br/>
-    - Pediu Cotação de Voos? <strong>{{ $CotacaoViagem->opcoes['cotacao-voo'] }}</strong><br/>
-    - Pediu Cotação de Onibus? <strong>{{ $CotacaoViagem->opcoes['cotacao-onibus'] }}</strong><br/>
-    - Pediu Cotação de Hospedagem? <strong>{{ $CotacaoViagem->opcoes['cotacao-hospedagem'] }}</strong><br/>
-    - Pediu Cotação de Carros? <strong>{{ $CotacaoViagem->opcoes['cotacao-hospedagem'] }}</strong><br/>
+    <hr/>
+    <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES BÁSICAS:</h3><br/>
+    <?php echo('- Quanto este cliente pretende gastar nesta cotação (Em uma escala de 1 - Pouquíssimo a 5 - Muitíssimo) ? '); ?>
+    <strong style="color:#F16F2B;">{{ $CotacaoViagem['cotacao_obj']['basico']['qto-gastar'] }}</strong><br/>
+    <?php echo('- Quais cotações este cliente pediu? '); ?>
+    @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipo_cotacao)
+      <?php echo('<strong style="color:#F16F2B;">' . $tipo_cotacao . '</strong>; '); ?>
+    @endforeach
     <br/>
-    º De <strong>{{ $CotacaoViagem->dados['lugar-saida'] }}</strong> para <strong>{{ $CotacaoViagem->dados['lugar-chegada'] }}</strong><br/>
-    º Data da <strong>IDA</strong>: {{ $CotacaoViagem->dados['data-ida'] }}</br>
-    º Data da <strong>VOLTA</strong>: {{ $CotacaoViagem->dados['data-volta'] }}</br>
-    <strong style="color:red;">* Datas flexíveis?</strong> <strong>{{ $CotacaoViagem->dados['datas-flexiveis'] }}</strong><br/>
-    º Número de <strong>ADULTOS</strong>: {{ $CotacaoViagem->dados['numero-adultos'] }}</br>
-    º Número de <strong>CRIANÇAS</strong>: {{ $CotacaoViagem->dados['numero-criancas'] }}</br>
-    <br/>
-    º Prefere viajar de:<br/>
-     - Manhã: <strong>{{ $CotacaoViagem->tempo['viaja-manha'] }}</strong><br/>
-     - Tarde: <strong>{{ $CotacaoViagem->tempo['viaja-tarde'] }}</strong><br/>
-     - Noite: <strong>{{ $CotacaoViagem->tempo['viaja-noite'] }}</strong><br/>
-     - Madrugada <strong>{{ $CotacaoViagem->tempo['viaja-madrugada'] }}</strong><br/>
-     <strong style="color:red;">* Horários restritos?</strong><br/>
-     {{ $CotacaoViagem->tempo['horario-restrito'] }}<br/>
+    º De <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['origem'] }}</strong> para <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['destino'] }}</strong><br/>
+    º Data da IDA: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['data-ida'] }}</strong><br/>
+    º Data da VOLTA: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['data-volta'] }}</strong><br/>
+    <strong style="color:red;">* Datas flexíveis?</strong> <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['datas-flexiveis'] }}</strong><br/>
+    º Número de ADULTOS: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['numero-adultos'] }}</strong><br/>
+    º Número de CRIANÇAS: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['numero-criancas'] }}</strong><br/>
+    @if(isset($CotacaoViagem['cotacao_obj']['basico']['idade-criancas']))
+      <?php echo('º Idade das CRIANÇAS: '); ?>
+      @foreach($CotacaoViagem['cotacao_obj']['basico']['idade-criancas'] as $idade_criancas)
+        <?php echo('<strong>' . $idade_criancas . '</strong>, '); ?>
+      @endforeach
+      <?php echo('<br/>'); ?>
+    @endif
+
+    @if(isset($CotacaoViagem['cotacao_obj']['basico']['pref-tempo']))
+      <?php echo('º Prefere viajar de: '); ?>
+      @foreach($CotacaoViagem['cotacao_obj']['basico']['pref-tempo'] as $preferencia_tempo)
+        <?php echo('<strong>' . $preferencia_tempo . '</strong>; '); ?>
+      @endforeach
+      <?php echo('<br/>'); ?>
+    @endif
+
+    @if(isset($CotacaoViagem['cotacao_obj']['basico']['horario-restrito']))
+     <?php echo ('<strong style="color:red;">* Horários restritos?</strong> '); ?>
+     <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['horario-restrito'] }}</strong><br/>
      <br/>
-     <br/>
-    <strong style="font-size:14px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</strong><br/>
-    º Número de quartos: <strong>{{ $CotacaoViagem->hospedagem['hotel-numero-quartos'] }}</strong><br/>
-    <table style="width:100%">
-      <caption><strong>º Adicionais do Hotel</strong></caption>
-      <tr>
-        <td>Café da Manhã: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-cafe'] }}</td>
-        <td>WiFi Gratuito: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-wifi'] }}</td>
-        <td>Ar condicionado: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-ar-condicionado'] }}</td>
-        <td>Televisão com TV a cabo: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-tv-cabo'] }}</td>
-      </tr>
-        <td>Cancelamento grátis: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-cancelamento'] }}</td>
-        <td>Animais de estimação: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-animal'] }}</td>
-        <td>Piscina: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-piscina'] }}</td>
-        <td>Academia: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-academia'] }}</td>
-      <tr>
-        <td>Estacionamento gratuito: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-estacionamento'] }}</td>
-        <td>Banheiro Privativo: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-banheiro-privativo'] }}</td>
-        <td>Varanda: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-varanda'] }}</td>
-        <td>Translado: {{ $CotacaoViagem->hospedagem['hotel-adicionais']['adicional-translado'] }}</td>
-      </tr>
-    </table>
-    º Bairro ou região de preferência: {{ $CotacaoViagem->hospedagem['hotel-bairro-regiao'] }}<br/>
-    <strong style="color:red;">* Informações adicionais:</strong><br/>
-    {{ $CotacaoViagem->hospedagem['hotel-infos-adicionais'] }}
+    @endif
+    <hr/>
+
+    {{-- HOSPEDAGEM --}}
+    @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']))
+      <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</h3><br/>
+      @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']['nro-quartos']))
+        <?php echo('º Número de quartos: <strong>' . $CotacaoViagem['cotacao_obj']['hospedagem']['nro-quartos'] . '</strong><br/>'); ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel']))
+        <?php echo('º Adicionais do Hotel que o cliente gostaria de ter: '); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel'] as $adicionais_hotel)
+          <?php echo('<strong>' . $adicionais_hotel . '</strong>; ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']['bairro-regiao-pref']) && $CotacaoViagem['cotacao_obj']['hospedagem']['bairro-regiao-pref'] != '')
+        <?php echo('º Bairro ou região de preferência: <strong>' . $CotacaoViagem['cotacao_obj']['hospedagem']['bairro-regiao-pref'] . '</strong><br/>') ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']['infos-adicionais']) && $CotacaoViagem['cotacao_obj']['hospedagem']['infos-adicionais'] != '')
+        <?php echo('<strong style="color:red;">* Informações adicionais: </strong><strong>' . $CotacaoViagem['cotacao_obj']['hospedagem']['infos-adicionais'] . '</strong><br/>') ?>
+      @endif
+    @endif
+    <hr/>
+
+    {{-- ALIMENTAÇÃO --}}
+    @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']))
+      <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES REFERENTES A ALIMENTAÇÃO:</h3><br/>
+      @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['tipo-refeicao']))
+        <?php echo('º Tipos de refeição escolhida pelo cliente:<br/>'); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['tipo-refeicao'] as $tipo_refeicao)
+          <?php echo('<strong>' . $tipo_refeicao . '</strong>; ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha']))
+        <?php echo('º Tipos de cozinha escolhidas pelo cliente:<br/>'); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha'] as $opcao_cozinha)
+          <?php echo('<strong>' . $opcao_cozinha . '</strong>; ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['momento']))
+        <?php echo('º O cliente gostaria de curtir esses momentos de alimentação com: '); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['momento'] as $momento)
+          <?php echo('<strong>' . $momento . '</strong>; ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato']))
+        <?php echo('º Preço(s) médio(s) por prato que o cliente gostaria de pagar: '); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] as $tipo_cozinha)
+          <?php echo('<strong>' . $tipo_cozinha . '</strong>; ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
+      @endif
+    @endif
+    <hr/>
+
+    {{-- CARROS --}}
+    @if(isset($CotacaoViagem['cotacao_obj']['carros']))
+      <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES REFERENTES AO ALUGUEL DE CARROS:</h3><br/>
+
+      @if(isset($CotacaoViagem['cotacao_obj']['carros']['categoria']))
+        <?php echo('º Categoria de carro na qual o cliente gostaria de alugar: '); ?>
+        <?php echo('<strong>' . $CotacaoViagem['cotacao_obj']['carros']['categoria'] . '</strong><br/>'); ?>
+      @endif
+
+      @if(isset($CotacaoViagem['cotacao_obj']['carros']['adicionais']))
+        <?php echo('º Adicionais que o cliente gostaria que o carro alugado tivesse: '); ?>
+        @foreach($CotacaoViagem['cotacao_obj']['carros']['adicionais'] as $adicionais_carros)
+          <?php echo('<strong>' . $adicionais_carros . '</strong>; ') ?>
+        @endforeach
+        <?php echo('<br/>') ?>
+      @endif
+    @endif
+
 </body>

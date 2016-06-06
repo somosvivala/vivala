@@ -23,16 +23,13 @@ class CotarViagensRequest extends Request {
 	{
 		return [
 			/* BÁSICO */
-				'basico-cotacao-voos' => 'boolean',
-				'basico-cotacao-onibus' => 'boolean',
-				'basico-cotacao-hospedagem' => 'boolean',
-				'basico-cotacao-carros' => 'boolean',
+				'basico-cotacao' => 'array',
 				/* Viagem numero 1 [OBRIGATÓRIOS] */
 				'basico-origem-1' => 'required|string|min:2',
 				'basico-destino-1' => 'required|string|min:2',
 				'basico-data-ida-1' => 'required|string|min:10',
 				'basico-data-volta-1' => 'string|min:10',
-				'basico-mais-hospedagem-1' => 'boolean',
+				/*'basico-mais-hospedagem-1' => 'boolean',*/
 				/* Viagem numero 2 a 5 [NÃO OBRIGATÓRIO]
 					'basico-origem-2' => 'string|min:2',
 					'basico-destino-2' => 'string|min:2',
@@ -61,31 +58,26 @@ class CotarViagensRequest extends Request {
 					'basico-mais-hospedagem-5' => '',
 					*/
 				//
-				'basico-datas-flexiveis' => 'boolean',
+				'basico-datas-flexiveis' => 'required|string',
 				'basico-nro-adultos' => 'required|string',
 				'basico-nro-criancas' => 'required|string',
-				'basico-pref-tempo-manha' => 'boolean',
-				'basico-pref-tempo-tarde' => 'boolean',
-				'basico-pref-tempo-noite' => 'boolean',
-				'basico-pref-tempo-madrugada' => 'boolean',
+				'basico-idade-criancas' => 'array',
+				'basico-pref-tempo-viagem' => 'array',
 				'basico-horario-restrito' => 'string',
+				'basico-qto-gastar-viagem' => 'numeric',
 			/* HOSPEDAGEM [OPCIONAL] */
 				'hospedagem-nro-quartos-do-hotel' => 'numeric',
-				'hospedagem-adicional-cafe' => 'boolean',
-				'hospedagem-adicional-wifi' => 'boolean',
-				'hospedagem-adicional-ar-condicionado' => 'boolean',
-				'hospedagem-adicional-tv-cabo' => 'boolean',
-				'hospedagem-adicional-cancelamento' => 'boolean',
-				'hospedagem-adicional-animal' => 'boolean',
-				'hospedagem-adicional-piscina' => 'boolean',
-				'hospedagem-adicional-academia' => 'boolean',
-				'hospedagem-adicional-estacionamento' => 'boolean',
-				'hospedagem-adicional-banheiro-privativo' => 'boolean',
-				'hospedagem-adicional-banheiro-varanda' => 'boolean',
-				'hospedagem-adicional-translado' => 'boolean',
+				'hospedagem-adicionais' => 'array',
 				'hospedagem-bairro-regiao-preferencia' => 'string',
 				'hospedagem-informacoes-adicionais' => 'string',
+			/* ALIMENTAÇÃO */
+				'alimentacao-tipo-refeicao' => 'array',
+				'alimentacao-opcao-cozinha' => 'array',
+				'alimentacao-momento' => 'array',
+				'alimentacao-preco-medio-por-prato' => 'array',
 			/* CARROS */
+				'carro-categoria' => 'string',
+				'carro-adicionais' => 'array',
 		];
 	}
 
