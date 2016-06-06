@@ -337,33 +337,33 @@
                     <div class="col-md-12 col-lg-12">
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Café da Manhã', false) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Café da Manhã', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_breakfast_included') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'WiFi Grátis', false) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'WiFi Grátis', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_wifi') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Ar Condicionado', false) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Ar Condicionado', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_air_conditioning') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'TV a Cabo', false) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'TV a Cabo', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_tv_cable') !!}</span>
                         </p>
                       </div>
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Cancelamento Grátis', false) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Cancelamento Grátis', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_cancellation') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Permite Animal', false) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Permite Animal', false) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_pet_') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Piscina', false, ['id' => 'adicional-piscina']) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Piscina', false, ['id' => 'adicional-piscina']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_pool') !!}</span>
                         </p>
                         <p>
@@ -373,19 +373,19 @@
                       </div>
                       <div class="col-md-4 col-lg-4">
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Estacionamento', false, ['id' => 'adicional-estacionamento']) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Estacionamento', false, ['id' => 'adicional-estacionamento']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_free_parking') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Banheiro Privativo', false, ['id' => 'adicional-banheiro-privativo']) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Banheiro Privativo', false, ['id' => 'adicional-banheiro-privativo']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_privative_bathroom') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Varanda', false, ['id' => 'adicional-varanda']) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Varanda', false, ['id' => 'adicional-varanda']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_balcony') !!}</span>
                         </p>
                         <p>
-                          {!! Form::checkbox('hospedagem-adicionais', 'Translado', false, ['id' => 'adicional-translado']) !!}
+                          {!! Form::checkbox('hospedagem-adicionais[]', 'Translado', false, ['id' => 'adicional-translado']) !!}
                           <span class="ajuste-fonte-avenir-medium"> {!! trans('global.lbl_shuttle') !!}</span>
                         </p>
                       </div>
