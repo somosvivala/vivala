@@ -19,7 +19,7 @@
     <h2 style"color:#F16F2B; text-align:center;">COTAÇÃO DE VIAGENS</h2>
     <br/>
     <br/>
-        <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES DO CLIENTE:</h3><br/>
+    <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES DO CLIENTE:</h3><br/>
     User ID do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-id'] }}</strong><br/>
     Nome do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-username'] }}</strong><br/>
     Email do Cliente: <strong>{{ $CotacaoViagem['usuario']['user-email'] }}</strong><br/>
@@ -102,7 +102,7 @@
       @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha']))
         <?php echo('º Tipos de cozinha escolhidas pelo cliente:<br/>'); ?>
         @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha'] as $opcao_cozinha)
-          <?php echo('- <strong>' . $opcao_cozinha . '</strong><br/>') ?>
+          <?php echo('<strong>' . $opcao_cozinha . '</strong>; ') ?>
         @endforeach
         <?php echo('<br/>') ?>
       @endif
@@ -131,7 +131,7 @@
 
       @if(isset($CotacaoViagem['cotacao_obj']['carros']['categoria']))
         <?php echo('º Categoria de carro na qual o cliente gostaria de alugar: '); ?>
-        <?php echo($CotacaoViagem['cotacao_obj']['carros']['categoria'] . '<br/>'); ?>
+        <?php echo('<strong>' . $CotacaoViagem['cotacao_obj']['carros']['categoria'] . '</strong><br/>'); ?>
       @endif
 
       @if(isset($CotacaoViagem['cotacao_obj']['carros']['adicionais']))
