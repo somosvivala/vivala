@@ -10,10 +10,12 @@ class MailSenderRepository {
   {
     Mail::send('emails.cotacaoviagens.sucesso', ['CotacaoViagem' => $CotacaoViagem],
     function ($message) use ($CotacaoViagem) {
-      if(app()->environment('production'))
-        $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
-      else if(app()->environment('development'))
+      if(app()->environment('production')) {
+        $message->to('cotacao@vivala.com.br', 'Vivalá')->subject('[COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
+      }
+      else if(app()->environment('development')) {
         $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
+      }
       $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
   }
