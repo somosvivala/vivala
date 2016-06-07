@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>{{ trans('global.title_vivala') }}</title>
+    {{-- Título da Plataforma --}}
+      <title>{{ trans('global.title_vivala') }}</title>
 
     {{-- Codificação de Caracteres --}}
       <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -83,12 +84,12 @@
 </head>
 
 <body>
-	{{-- Plugin JAVASCRIPT ativo --}}
+  {{-- Plugin JAVASCRIPT ativo --}}
     <i id="javascript-ativo" class="fa fa-times @if(env('APP_ENV') === 'production') hidden @endif" style="padding:0.2em 0.5em; color:white; font-size: 20px; border-radius:3px; position:absolute; top:5px;left:3px;z-index:10;background-color:#e55"><b class="font-bold-upper"> JS</b></i>
 
   @yield('pilar')
 
-  {{-- Scripts --}}
+  {{-- SCRIPTS --}}
     <script src="{{ asset('/js/vendor.js') }}"></script>
     <script src="{{ asset('/js/lightbox.min.js') }}"></script>
     <div id="fb-root"></div><script>(function(d, s, id){var js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js = d.createElement(s); js.id = id;js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.5&appId=(env('FACEBOOK_APP_ID')";fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));</script>
@@ -97,12 +98,13 @@
     <!-- Iubenda (link de Privacy Policy) -->
     <!-- <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "//cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script> -->
 
-  {{-- Modals --}}
-  {{-- MODAL COM IFRAME DA QUIMERA --}}
-    @include('modals._quimera')
+  {{-- MODALS --}}
+    {{-- MODAL COM IFRAME DA QUIMERA --}}
+      @include('modals._quimera')
 
-  {{-- MODAL COM IFRAME DO COTAÇÃO DE VIAGENS --}}
-    @include('modals._cotarviagens')
+    {{-- MODAL COM IFRAME DO COTAÇÃO DE VIAGENS --}}
+      @include('modals._cotarviagens')
+
 </body>
 
 </html>

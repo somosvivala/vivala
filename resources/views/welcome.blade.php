@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html id="welcome-html" lang="en">
 <head>
-    <title>{{ trans('global.title_vivala') }}</title>
+    {{-- Título da Plataforma --}}
+      <title>{{ trans('global.title_vivala') }}</title>
 
     {{-- Codificação de Caracteres --}}
       <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
@@ -64,6 +65,21 @@
         <link href="{{ asset('/fonts/gotham/gotham.css') }}" rel='stylesheet' type='text/css'>
       {{-- AllCSS --}}
         <link href="{{ asset('/css/all.css') }}" rel="stylesheet">
+
+    {{-- Facebook Pixel AD - pra referência acesse: https://www.facebook.com/ads/manager/pixel/ --}}
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+          document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+          fbq('init', '594625000704322');
+          fbq('track', "PageView");</script>
+          <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=594625000704322&ev=PageView&noscript=1"
+          /></noscript>
+      </script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -322,5 +338,6 @@
 
     {{-- Scripts de carregamento no fim do HTML --}}
       <script src="{{ asset('/js/welcome.js') }}"></script>
+
 </body>
 </html>
