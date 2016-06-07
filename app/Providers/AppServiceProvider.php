@@ -37,6 +37,7 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
+      //bindando o registrar comum
       $this->app->bind(
           'Illuminate\Contracts\Auth\Registrar',
           'App\Services\Registrar'
@@ -57,6 +58,8 @@ class AppServiceProvider extends ServiceProvider {
           'App\Interfaces\LocaisRepositoryInterface',
           'App\Repositories\LocaisRepository'
       );
+
+
 
 	}
 }

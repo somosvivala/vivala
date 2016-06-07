@@ -20,7 +20,6 @@ class EventServiceProvider extends ServiceProvider
             'EventListener',
         ],
 
-
         //Quando um perfil se voluntaria
         'App\Events\PerfilHasVolunteered' => [
             'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
@@ -37,18 +36,21 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\ClickBus\UpdatePassagemCancelada',
         ],
 
-
         //Quando um pagamento da clickbus é confirmado
         'App\Events\ClickBusPagamentoConfirmado' => [
             'App\Handlers\Events\ClickBus\UpdatePagamentoConfirmado',
             'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
         ],
 
+        //Quando alguém finaliza a Cotação de uma Viagem
+        'App\Events\NovaCotacaoViagem' => [
+            'App\Handlers\Events\CotacaoViagem\EnviaEmailCotacaoViagem',
+        ],
+
         //Quando ocorrer alguma acao que sera guardada no log
         'App\Events\NovaInteracaoPlataforma' => [
             'App\Handlers\Events\Logger\CriarLogInteracaoPlataforma',
         ],
-
 
     ];
 
@@ -65,7 +67,6 @@ class EventServiceProvider extends ServiceProvider
         Ong::observe(new GenericObserver());
         Vaga::observe(new GenericObserver());
 
-
         /**
          * @TODO: extrair esse comportamento do delete para um observer
          * e observar os models (a abordagem de um array listando o nome de cada relacao)
@@ -81,6 +82,5 @@ class EventServiceProvider extends ServiceProvider
             //removendo pivos de relacoes belongsToMany
             $categoria->experiencias()->detach();
         });
-
     }
 }

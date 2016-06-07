@@ -1,7 +1,9 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 use Jenssegers\Date\Date;
+use App;
 
 class Notificacao extends Model {
 
@@ -26,10 +28,11 @@ class Notificacao extends Model {
 		 return $this->morphTo();
 	}
 
-      	// Definindo a propriedades que nao existem no bd
+	// Definindo a propriedades que nao existem no bd
 	public function getDataPostagemDiffAttribute()
 	{
 		$date = new Date($this->created_at);
+		$date->setLocale(App::getLocale());
 		return $date->diffForHumans();
 	}
 
