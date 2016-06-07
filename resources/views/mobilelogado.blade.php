@@ -91,6 +91,14 @@
         @yield('content')
     </div>
 
+   <div id="conheca-vivala-logado" class="conheca-vivala">
+        <div class="col-xs-12">
+            <img src="{{ asset('vivala-logo.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        </div>
+        <i class="fa fa-play"></i>
+    </div>
+
+
     {{-- Scripts de carregamento no fim do HTML --}}
     <script src="{{ asset('/js/vendor.js') }}"></script>
 </body>
