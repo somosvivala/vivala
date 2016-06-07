@@ -37,7 +37,7 @@ class MailSenderRepository
      * @param $user - Instancia de usuário para o qual queremos enviar o email
      * de boas vindas
      */
-    public function enviaEmailBoasVindas(User $user)
+    public function enviaEmailBemVindo(User $user)
     {
         Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
             $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');

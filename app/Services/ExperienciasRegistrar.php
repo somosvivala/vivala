@@ -7,7 +7,8 @@ use App\PrettyUrl;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-use App\Repositories\MailSenderRepository;
+use app\Repositories\MailSenderRepository;
+use App\Repositories\PostsRepository;
 
 
 /**
@@ -17,6 +18,7 @@ use App\Repositories\MailSenderRepository;
 class ExperienciasRegistrar implements RegistrarContract
 {
     private $emailRepository;
+    private $postRepository;
 
     /**
      * Constructor recebendo instancias dos repositorios que ele necessita
@@ -24,12 +26,11 @@ class ExperienciasRegistrar implements RegistrarContract
      * @param $emailRepository - Instancia de MailSenderRepository
      * @param $postsRepository - Instancia de PostsRepository
      */
-    function __construct(MailSenderRepository $emailRepository)
+    function __construct(MailSenderRepository $emailRepository, PostsRepository $postsRepository)
     {
         $this->emailRepository = $emailRepository;
+        $this->postRepository = $postsRepository;
     }
-
-
 
     /**
      * Get a validator for an incoming registration request.
@@ -73,34 +74,17 @@ class ExperienciasRegistrar implements RegistrarContract
         $perfil->prettyUrl()->save(PrettyUrl::getURLParaPerfil($nome));
         $perfil->push();
 
-        //usando da instancia de MailSenderRepository recebido no controller para
-        //enviar o email de boas vindas.
-        //@todo criar evento/handlers para lidar com os comportamentos pós registro
+        //Usando da instancia de PostsRepository recebido no controller para
+        //fazer o post de boas vindas
+        $postBemVindo = $this->postRepository->getPostBemVindo($user);
+        $perfil->posts()->save($postBemVindo);
+
+        //Usando da instancia de MailSenderRepository recebido no controller para
+        //enviar o email de boas vindas
         $this->emailRepository->enviaEmailBemVindo($user);
 
-
-        // Faz um post de criação de perfil numerado caso seja < 300
-        // e não numerado (só com o welcome) caso seja > 300
-        if($user->genero == 'fb.female' || $user->genero == 'feminino')
-            $welcome = "Bem vinda!";
-        else
-            $welcome = "Bem vindo!";
-
-        $novoPost = new Post();
-
-        if($perfil->id <= 300)
-            $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." é a ".$perfil->id."ª pessoa a se juntar à Vivalá. ".$welcome;
-        else
-            $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." se juntou à Vivalá. ".$welcome;
-
-        $novoPost->tipo_post = 'acontecimento';
-        $novoPost->relevancia = 999;
-        $novoPost->relevancia_rate = 10;
-
-        //Salvando novoPost para entidadeAtiva
-        $perfil->posts()->save($novoPost);
-
+        //@todo criar evento/handlers para lidar com os comportamentos pós registro
+        //e isolar esses disparos nos respectivos handlers
         return $user;
     }
-
 }
