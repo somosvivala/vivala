@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldBeQueued;
 
 class EnviaEmailCotacaoViagem {
 
-	private $repository;
+	private $mailSenderRepository;
 
 	/**
 	 * Create the event handler.

@@ -7,7 +7,7 @@ use App\PrettyUrl;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-use Mail;
+use App\Repositories\MailSenderRepository;
 
 
 /**
@@ -16,6 +16,20 @@ use Mail;
  */
 class ExperienciasRegistrar implements RegistrarContract
 {
+    private $emailRepository;
+
+    /**
+     * Constructor recebendo instancias dos repositorios que ele necessita
+     *
+     * @param $emailRepository - Instancia de MailSenderRepository
+     * @param $postsRepository - Instancia de PostsRepository
+     */
+    function __construct(MailSenderRepository $emailRepository)
+    {
+        $this->emailRepository = $emailRepository;
+    }
+
+
 
     /**
      * Get a validator for an incoming registration request.
@@ -59,11 +73,11 @@ class ExperienciasRegistrar implements RegistrarContract
         $perfil->prettyUrl()->save(PrettyUrl::getURLParaPerfil($nome));
         $perfil->push();
 
-        // Envia um email de boas vindas
-        Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
-            $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
-            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });
+        //usando da instancia de MailSenderRepository recebido no controller para
+        //enviar o email de boas vindas.
+        //@todo criar evento/handlers para lidar com os comportamentos pós registro
+        $this->emailRepository->enviaEmailBemVindo($user);
+
 
         // Faz um post de criação de perfil numerado caso seja < 300
         // e não numerado (só com o welcome) caso seja > 300
