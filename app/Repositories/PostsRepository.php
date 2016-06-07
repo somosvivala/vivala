@@ -1,6 +1,7 @@
 <?php namespace App\Repositories;
 
 use App\Post;
+use App\User;
 
 /**
  * Classe para centralizar metodos referentes aos Posts

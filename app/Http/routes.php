@@ -11,8 +11,6 @@
 |
 */
 
-use App\CompraClickbus;
-use App\Events\ClickBusCompraFinalizada;
 
 /*
  * Rotas
@@ -97,6 +95,7 @@ Route::resource('categorias/experiencias', 'CategoriaExperienciaController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
+	'autenticacao' => 'Auth\ExperienciasAuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 

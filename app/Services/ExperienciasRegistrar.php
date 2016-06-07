@@ -7,8 +7,8 @@ use App\PrettyUrl;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-use app\Repositories\MailSenderRepository;
 use App\Repositories\PostsRepository;
+use App\Repositories\MailSenderRepository;
 
 
 /**

@@ -1,8 +1,9 @@
 <?php
 
-namespace app\Repositories;
+namespace App\Repositories;
 
 use Mail;
+use App\User;
 
 /**
  * Classe para concentrar os triggers de envio de email da plataforma,
