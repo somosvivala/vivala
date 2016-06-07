@@ -75,11 +75,12 @@
           document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
           fbq('init', '594625000704322');
-          fbq('track', "PageView");</script>
-          <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=594625000704322&ev=PageView&noscript=1"
-          /></noscript>
-      </script>
+          fbq('track', "PageView");
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=594625000704322&ev=PageView&noscript=1"
+    /></noscript>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
