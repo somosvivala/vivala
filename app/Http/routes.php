@@ -14,34 +14,13 @@
 use App\CompraClickbus;
 use App\Events\ClickBusCompraFinalizada;
 
-// Rotas de TESTE paginação
-use App\User;
-Route::get('simplepagination', function() {
-   dd( $someUsers = User::simplePaginate(15));
- });
-
-// Rotas de TESTE CLICKBUS, retirar após HOMOLOGAÇÃO final
-Route::get('/testeview', function() {
-    $compra = CompraClickbus::all()->reverse()->first();
-    return view('clickbus._success', compact('compra'));
-});
-
-Route::get('/testeemailpendente', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.pendente')->with('Compra', $Compra);
-});
-Route::get('/testeemailcancelado', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.cancelamento')->with('Compra', $Compra);
-});
-Route::get('/testeemailsucesso', function() {
-    $Compra = CompraClickbus::all()->reverse()->first();
-    return view('emails.clickbus.sucesso')->with('Compra', $Compra);
-});
-
 /*
  * Rotas
  */
+//Route::controller('cotarviagem', 'CotarViagensController');
+Route::post('cotarviagem', 'CotarViagensController@getForm');
+Route::post('cotarviagem/data', 'CotarViagensController@getData');
+
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
@@ -80,25 +59,6 @@ Route::post('viajar/filtro','ViajarController@filtro');
 
 Route::get('sugestoesviajantes','SugestaoController@getViajantes');
 Route::get('sugestoesviajantes/{filtro}','SugestaoController@getViajantes');
-
-Route::controller('perfilviajante','Conectar\PerfilViajanteController');
-Route::controller('diarioviagem','Conectar\DiarioViagemController');
-Route::controller('roteiros','Conectar\RoteirosController');
-Route::controller('lembrancas','Conectar\LembrancasController');
-Route::controller('avaliacoes','Conectar\AvaliacoesController');
-Route::controller('culturabrasileira','Conectar\CulturaBrasileiraController');
-Route::controller('perfilvoluntario','Conectar\PerfilVoluntarioController');
-Route::controller('chat','Conectar\ChatController');
-Route::controller('interesses','Conectar\InteressesController');
-Route::controller('montarviagem','Viajar\MontarViagemController');
-Route::controller('verpacotes','Viajar\VerPacotesController');
-Route::controller('meusfavoritos','Viajar\MeusFavoritosController');
-Route::controller('minhascompras','Viajar\MinhasComprasController');
-Route::controller('meuspontos','Viajar\MeusPontosController');
-Route::controller('buscasrecentes','Viajar\BuscasRecentesController');
-Route::controller('perfilatuante','Cuidar\PerfilAtuanteController');
-Route::controller('mapadobem','Cuidar\MapadoBemController');
-Route::controller('resultados','Cuidar\ResultadosController');
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::get('ongs','OngController@ongs');
 Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
@@ -160,7 +120,6 @@ Route::group(['before' => 'auth'], function() {
 	Route::post('editarPerfil/{id}', 'PerfilController@update');
 	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
 	Route::post('cropPhotoPerfil/{id}', 'PerfilController@cropPhoto');
-
 	Route::post('cropPhotoOng/{id}', 'OngController@cropPhoto');
 	Route::post('cropPhotoEmpresa/{id}', 'EmpresaController@cropPhoto');
 	Route::post('cropPhotoPost/{id}', 'PostController@cropPhoto');

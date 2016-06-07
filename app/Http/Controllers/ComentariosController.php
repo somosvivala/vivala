@@ -1,16 +1,14 @@
 <?php namespace App\Http\Controllers;
 
+use App;
 use Auth;
-
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-
-use App\Post;
+use Input;
 use App\Comentario;
 use App\Notificacao;
-
-use Input;
+use App\Post;
+use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ComentariosController extends VivalaBaseController {
 
@@ -54,9 +52,23 @@ class ComentariosController extends VivalaBaseController {
 		if($entidadeAtiva->user->id != $post->author->user->id)
 		{
 			//Criando nova notificacao
+			$lang = App::getLocale();
+			switch($lang){
+				case 'pt':
+					$string[0] = 'Comentaram sua Postagem';
+					$string[1] = ' comentou sua postagem.';
+				break;
+				case 'en':
+					$string[0] = 'Post Comment';
+					$string[1] = ' commented your post.';
+				break;
+				default:
+					$string[0] = 'Comentaram sua Postagem';
+					$string[1] = ' comentou sua postagem.';
+			}
 			$novaNotificacao = Notificacao::create([
-				'titulo'			=>	'Comentaram seu post',
-				'mensagem' 			=> 	$entidadeAtiva->apelido . ' comentou no seu post',
+				'titulo'			=>	$string[0],
+				'mensagem' 			=> 	$entidadeAtiva->apelido . $string[1],
 				'tipo_notificacao'	=>	'comentario',
 				'url'				=>	$post->url
 				]);
@@ -101,10 +113,24 @@ class ComentariosController extends VivalaBaseController {
 			//comentario que nao seja seu ou de alguma de suas entidades
 			if($entidadeAtiva->user->id != $comentario->author->user->id)
 			{
+				$lang = App::getLocale();
+				switch($lang){
+					case 'pt':
+						$string[0] = 'Curtiram seu Comentário';
+						$string[1] = ' curtiu seu comentário.';
+					break;
+					case 'en':
+						$string[0] = 'Comment Like';
+						$string[1] = ' likes your comment.';
+					break;
+					default:
+						$string[0] = 'Curtiram seu Comentário';
+						$string[1] = ' curtiu seu comentário.';
+				}
 				//Criando nova notificacao
 				$novaNotificacao = Notificacao::create([
-					'titulo'			=>	'Curtiram seu comentario',
-					'mensagem' 			=> 	$entidadeAtiva->apelido . ' curtiu seu comentario',
+					'titulo'			=>	$string[0],
+					'mensagem' 			=> 	$entidadeAtiva->apelido . $string[1],
 					'tipo_notificacao'	=>	'like_comentario',
 					'url'				=>	$comentario->post->url
 					]);

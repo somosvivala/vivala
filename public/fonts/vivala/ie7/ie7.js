@@ -51,6 +51,9 @@
 		'icon-vivala-menu-usuario': '&#xe923;',
 		'icon-vivala-menu-chat': '&#xe924;',
 		'icon-vivala-menu-brasil': '&#xe925;',
+		'icon-vivala-cafe-da-manha': '&#xe926;',
+		'icon-vivala-almoco': '&#xe927;',
+		'icon-vivala-jantar': '&#xe928;',
 		'0': 0
 		},
 		els = document.getElementsByTagName('*'),

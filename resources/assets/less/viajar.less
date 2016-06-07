@@ -5,7 +5,6 @@ ul.pesquisa-viajar {
         font-family: @font-family-sans-serif-bold;
     }
 }
-
 .lista-autocomplete {
     position: absolute;
     top: 100%;
@@ -15,26 +14,22 @@ ul.pesquisa-viajar {
     z-index: 3;
     background-color: white;
     .list-group {
-        width:100%; 
+        width:100%;
     }
 }
-
 ul.quartos-hotel {
     list-style: none;
 }
-
 .input-group-addon {
     border:0px;
     opacity: 0;
 }
-
 .loading-search {
     position: absolute;
     transition: opacity 0.3s ease;
     right: 2em;
     top: 1em;
 }
-
 .hotel-detalhes {
     .foto-header {
         h2 {
@@ -53,7 +48,7 @@ ul.quartos-hotel {
         div {
             margin: 0;
         }
-    }   
+    }
     .fotos-detalhe {
         height: 60px;
         padding:5px 0;
@@ -84,16 +79,14 @@ ul.quartos-hotel {
         overflow:hidden;
     }
 }
-
 .modal-lg {
-    width: 1040px; 
+    width: 1040px;
 }
-
 .restaurante {
     border: 1px solid @cor-cinza-escuro;
     height:15em;
     h5 {
-        width:80%;    
+        width:80%;
     }
     i {
         color:@cor-pele-zumbi;
@@ -125,7 +118,7 @@ ul.quartos-hotel {
 
     .foto-restaurante {
         height:14em;
-        margin: 0.4em; 
+        margin: 0.4em;
         margin-right: -0.5em;
         background-size: cover;
         background-position:center center;
@@ -161,7 +154,6 @@ ul.quartos-hotel {
     background-size: cover;
     background-position:center center;
 }
-
 #chefsclub-filtros  {
     .select-filtro {
         width: 16%;
@@ -169,7 +161,6 @@ ul.quartos-hotel {
         margin: 0 0.1%;
     }
 }
-
 #rodoviario {
     #rodoviario-filtros {
         position:relative;
@@ -200,7 +191,6 @@ ul.quartos-hotel {
         border-radius: 2px;
     }
 }
-
 #modal-quimera {
     .modal-dialog {
         width: 92%;
@@ -208,4 +198,114 @@ ul.quartos-hotel {
     .modal-header .close {
         font-size: 30px;
     }
+}
+
+/* Feature CotaViagem */
+#modal-cotacao-viagem{
+  /* Inibe Highlight em toda a modal */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  
+  .conjunto-icones{
+    &:hover{
+      .icone-externo-desativado{
+        color: @cor-primaria;
+        transition: color 0.3s ease-in;
+        -webkit-transition: color 0.3s ease-in;
+        -moz-transition: color 0.3s ease-in;
+      }
+    }
+    .icone-externo-desativado{
+      color: @cor-secundaria;
+      transition: color 0.3s ease-in;
+      -webkit-transition: color 0.3s ease-in;
+      -moz-transition: color 0.3s ease-in;
+    }
+    .icone-externo-ativado{
+      color: @cor-primaria;
+      transition: color 0.3s ease-in;
+      -webkit-transition: color 0.3s ease-in;
+      -moz-transition: color 0.3s ease-in;
+    }
+    .icone-interno{
+      color: white;
+    }
+    .fix-vivala-icon-modal{
+      top:20px;
+    }
+  }
+  .alimentacao-desativado{
+    color:@cor-fundo;
+  }
+  .rangeslider{
+    max-width: 100%;
+  }
+  .rangeslider__fill{
+    background: @cor-primaria;
+  }
+  .rangeslider__value-bubble {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 5px;
+    position: absolute;
+    bottom: 100%;
+    margin-bottom: 25px;
+    width: 100px;
+    margin-left: -50px;
+    text-align: center;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+
+    &:before,
+    &:after {
+      border-width: 11px;
+      border-style: solid;
+      border-color: transparent;
+      content: "";
+      display: block;
+      margin: auto;
+      width: 10px;
+      position: absolute;
+      left: 0;
+      right: 0;
+    }
+    &:before {
+      border-top-color: #ccc;
+      border-bottom-width: 0;
+      bottom: -11px;
+    }
+    &:after {
+      border-top-color: #fff;
+      border-bottom-width: 0;
+      bottom: -10px;
+    }
+  }
+  .rangeslider__ruler {
+    cursor: pointer;
+    font-size: .7em;
+    margin: 20px 3px 0 3px;
+    position: relative;
+    top: 100%;
+    text-align: justify;
+  }
+  .rangeslider__ruler:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+  }
+  .divisoria{
+     border: 0;
+     height: 1px;
+     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), @cor-secundaria, rgba(0, 0, 0, 0));
+  }
+  .titulo-secao{
+    color:@cor-secundaria;
+    font-family:'Avenir Light';
+    font-size:2rem;
+  }
 }
