@@ -26,9 +26,11 @@ class Kernel extends HttpKernel {
 	 */
 	protected $routeMiddleware = [
 		'auth' => 'App\Http\Middleware\Authenticate',
+		'auth.mobile' => 'App\Http\Middleware\MobileAuthenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'App\Http\Middleware\RedirectIfAuthenticated',
-    'admin' => 'App\Http\Middleware\isAdmin'
+    'admin' => 'App\Http\Middleware\isAdmin',
+    'desktop.only' => 'App\Http\Middleware\DesktopOnly'
 	];
 
 }

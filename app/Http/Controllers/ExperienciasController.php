@@ -32,7 +32,7 @@ class ExperienciasController extends Controller
     {
         //recebendo uma instancia do repositorio de experiecias
         $this->experienciasRepository = $repository;
-        $this->middleware('auth', ['only' => [
+        $this->middleware('auth.mobile', ['only' => [
             'getEditafoto',
             'getCheckout',
             'create',
@@ -124,7 +124,7 @@ class ExperienciasController extends Controller
      *
      * @return view
      */
-    public function getCheckout($id)
+    public function getCheckout(Request $request, $id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
         // Testa se usuario está logado

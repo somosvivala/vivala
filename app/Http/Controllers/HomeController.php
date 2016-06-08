@@ -20,6 +20,7 @@ class HomeController extends ConectarController {
 	|
 	*/
 
+
 	/**
 	 * Mostra o feed de noticias
 	 *

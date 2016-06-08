@@ -20,9 +20,10 @@ class CropPhotoRequest extends Request {
 	 * @return array
 	 */
 	public function rules()
-	{
+  {
+
 		return [
-			//
+        'file' => 'required|image|max:12000'
 		];
 	}
 
