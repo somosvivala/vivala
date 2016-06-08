@@ -23,7 +23,7 @@
                     <a href="{{ url('/autenticacao/login') }}" class="btn-mobile" target="_self" rel="nofollow"> Faça seu login </a>     
                 </div>
                 <div class="row margin-t-1">
-                    <a href="{{ url('/fbLogin') }}" class="btn-mobile" target="_self" rel="nofollow"> Conecte-se <span class="fa fa-facebook"></span> </a>     
+                    <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> Conecte-se <span class="fa fa-facebook-square pull-right"></span> </a>     
                 </div>
             </div>
         </div>
