@@ -41,7 +41,7 @@ class MobileAuthenticate {
 			}
 			else
 			{
-				return redirect()->guest('/cadastro');
+				return redirect()->guest('/login');
 			}
 		}
 
