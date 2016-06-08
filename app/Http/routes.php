@@ -86,8 +86,10 @@ Route::post('clickbus/success', 'ClickBusController@getSucess');
 Route::get('experiencias/addinformacaoextra', 'ExperienciasController@getAddinformacaoextra');
 Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDeleteinformacaoextra');
 
+Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
+Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
+
 Route::resource('experiencias', 'ExperienciasController');
-Route::controller('experiencias', 'ExperienciasController');
 
 //Criando controller de resource para as CategoriaExperiencia
 Route::resource('categorias/experiencias', 'CategoriaExperienciaController');

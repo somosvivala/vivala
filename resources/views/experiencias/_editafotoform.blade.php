@@ -1,6 +1,7 @@
 @extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
 
 @section('content')
+
 <div class="col-sm-12 pergunta quiz-2">
     <div class="row">
         <div class="titulo col-sm-12 padding-b-1">
@@ -24,7 +25,7 @@
         <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-body">
-                    {!! Form::open(['url' => ['foto/cropandsaveexperiencias',  $experiencia->id ], 'files' => true, 'data-redirect' => '/gestao/home', 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading']) !!}
+                    {!! Form::open(['url' => ['foto/cropandsaveexperiencias',  $experiencia->id ], 'files' => true, 'data-redirect' => '/experiencias/'.$experiencia->id, 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading', 'class'=>'cropfoto-ajax']) !!}
 
                     <h2 class="text-center">Atualize a foto da experiência</h2>
                     <label id="btn-upload-img-quiz" class="btn btn-acao btn-upload margin-b-1" for="input-quiz-foto-perfil" title="Upload image file">

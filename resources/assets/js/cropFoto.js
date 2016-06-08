@@ -12,12 +12,27 @@ $(function() {
             dataForm = new FormData(this),
             callbackFunction = frm.data('callback'),
             redirect = frm.data('redirect');
+
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
             data: dataForm,
             contentType: false, //file
             processData: false,  //file
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(jqXHR);
+                console.log(textStatus);
+                console.log(errorThrown);
+
+                swal({
+                    title: 'Opa',
+                    html: "<p>A imagem nao pode conter um tamanho superior a 12MB</p></br>",
+                    type: "error",
+                    confirmButtonColor: "#FF5B00",
+                    confirmButtonText: "OK",
+                    closeOnConfirm: true,
+                });
+            },
             success: function (data) {
                 // Executa uma função de javascript
                 //console.log(data);
@@ -39,13 +54,8 @@ $(function() {
                     $('#preview').width(height);
                 }
 
-                               //console.log('preview width -> ' +  $('#preview').width());
-                //console.log('height -> ' +  height );
-                //console.log($('#preview').height());
-
-                //swal(null, "Foto atualizada com sucesso", 'success');
-
             }
+
         });
     });
 

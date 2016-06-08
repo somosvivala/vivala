@@ -23,7 +23,7 @@ class EditarFotoExperienciaRequest extends Request
     public function authorize()
     {
         //pegando o parametro passado nesse caso o ID da experiencia
-        $id = $this->route('one');
+        $id = $this->route('id');
 
         //retornando se o usuario pode fazer essa request
         return $this->experienciasRepository->checaUsuarioPodeEditar(Auth::user(), $id);

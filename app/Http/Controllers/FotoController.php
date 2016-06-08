@@ -15,6 +15,8 @@ use Request;
 
 class FotoController extends VivalaBaseController {
 
+    private $experienciasRepository;
+
     /**
      * construtor seguro.
      * @param $repository - Instancia do Repositorio que extend essa interface
@@ -22,7 +24,7 @@ class FotoController extends VivalaBaseController {
     public function __construct(ExperienciasRepositoryInterface $repository){
         //Só passa se estiver logado
         $this->middleware('auth');
-        $this->ExperienciasRepository = $repository;
+        $this->experienciasRepository = $repository;
     }
 
     public function postCropandsave($id=0, CropPhotoRequest $request) {
@@ -139,7 +141,7 @@ class FotoController extends VivalaBaseController {
         $file = Input::file('file');
         if ($file && $file->isValid()) {
 
-            $experiencia = $this->ExperienciasRepository->findOrFail($experienciaId);
+            $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
             $destinationPath = public_path() . '/uploads/';
             $extension = Input::file('file')->getClientOriginalExtension(); // Pega o formato da imagem
 
@@ -163,10 +165,12 @@ class FotoController extends VivalaBaseController {
 
                 //criar nova foto e associar a experiencia
                 $experiencia->fotoCapa()->save(Foto::create(['path' => $fileName]));
-                return $experiencia->fotoCapa;
+                return ['success' => true];
 
             } else {
-                return false;
+                return [
+                    'success' => false
+                ];
             }
         }
     }

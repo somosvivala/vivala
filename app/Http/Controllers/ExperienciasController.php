@@ -124,7 +124,7 @@ class ExperienciasController extends Controller
      *
      * @return view
      */
-    public function getCheckout($id)
+    public function getCheckout(Request $request, $id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
         // Testa se usuario está logado
