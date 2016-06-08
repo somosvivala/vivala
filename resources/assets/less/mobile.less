@@ -66,6 +66,15 @@ body.mobile {
         padding-right: 0.5em;
     }
 }
+.btn-verde {
+    color: @verde-sucesso;
+    &:hover {
+        color :@verde-sucesso;
+    }
+    background-color:transparent;
+    border-color:@verde-sucesso;
+
+}
 
 .fundo-laranja {
     background-color: @cor-primaria;
@@ -78,8 +87,25 @@ input.form-mobile {
     background-color: @cor-fundo;
     width:20rem;
 }
-.width20em {
+small.width20em {
     width:20rem;
+    color:@cor-cinza-escuro;
+    margin-top:0.3em;
+    font-size:0.8em;
+    display:inline-block;
+}
+.form-mobile-error {
+    position: absolute;
+    width:100%;
+    top:2rem;
+    left:0;
+    padding:0.2em 0;
+    text-align:center;
+    font-family:@font-family-avenir-black;
+    color:white;
+    font-size:0.8em;
+    text-transform:uppercase;
+    background-color:#A32525;
 }
 .desativa-conheca {
     position: absolute;
