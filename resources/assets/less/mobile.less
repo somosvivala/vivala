@@ -7,7 +7,6 @@ body.mobile {
     position:fixed;
     width:100%;
     height:100%;
-    overflow:scroll;
     .container-logo {
         height:3.5em;
         padding: 0.5em 0;
@@ -15,34 +14,7 @@ body.mobile {
          height:100%;
         }
     }
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        padding-top: 30px; height: 0; overflow: hidden;
-        margin-top:1em;
-        margin-bottom:2em;
-    }
-
-    .video-container iframe,
-    .video-container object,
-    .video-container embed {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        min-height:0;
-    }
-    .conteudo {
-        margin-left:4%;
-        position:relative;
-        float:left;
-        width:92%;
-        background-color:white;
-        text-align:center;
-        padding:1em;
-    }
-    background-color:@cor-primaria;
+    background-color:@cor-semi-transparente;
     top:100%;
     left:0;
     opacity:0;
@@ -51,7 +23,19 @@ body.mobile {
         top:0;
         opacity:1;
         transition: opacity 0.5s ease-out 0.2s, top 0.6s ease;
+        z-index:99; 
     }
+}
+
+.conteudo-mobile {
+    margin-left:4%;
+    margin-bottom:4%;
+    position:relative;
+    float:left;
+    width:92%;
+    background-color:white;
+    text-align:center;
+    padding:1em;
 }
 
 .btn-mobile {
@@ -65,21 +49,26 @@ body.mobile {
     font-size: 1.1em;
 }
 
-#conheca-vivala-logado {
+.fundo-laranja {
+    background-color: @cor-primaria;
 }
 
-.desativa-parent {
+
+.desativa-conheca {
     position: absolute;
     right:0;
+    width:100%;
+    text-align:right;
     top:0;
     color:white;
-    padding:1em;
-    font-size:3em;
+    padding:0.1em;
+    font-size:2em;
     cursor:pointer;
     opacity:0.5s;
     transition: opacity 0.2s ease;
     &:hover {
         opacity:1;
+        color:white;
     }
 }
 
@@ -197,7 +186,7 @@ ul.lista-foto-descricao {
         .container {
             height:100%;
             width:100%; 
-                padding-top:2em;
+            padding-top:2em;
             background-color: white;
             text-align:center;
         }
@@ -245,11 +234,11 @@ ul.lista-foto-descricao {
     }
     .descricao {
         position: absolute;
-        top:6rem;
+        top:14rem;
         left:5%;
         width:90%;
         background-color:white;
-        padding-top:19rem;
+        padding-top:18rem;
         padding-bottom:2em;
         font-size:0.9em;
         .informacoes i {
@@ -369,4 +358,22 @@ i.x-preto {
     &:hover {
         opacity:1;
     }
+}
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+    margin-top:1em;
+    margin-bottom:2em;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-height:0;
 }

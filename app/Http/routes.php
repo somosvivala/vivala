@@ -89,6 +89,12 @@ Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDele
 Route::resource('experiencias', 'ExperienciasController');
 Route::controller('experiencias', 'ExperienciasController');
 
+Route::get('autenticacao/login',function(){ return view('mobilelogin'); });
+Route::get('autenticacao/cadastro',function(){ return view('mobilecadastro'); });
+
+Route::get('conhecavivala',function(){
+    return view('conhecadeslogado');
+});
 //Criando controller de resource para as CategoriaExperiencia
 Route::resource('categorias/experiencias', 'CategoriaExperienciaController');
 

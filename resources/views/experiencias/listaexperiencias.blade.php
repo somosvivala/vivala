@@ -1,6 +1,18 @@
-@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
+@extends('mobiletemplate')
 
 @section('content')
+
+<div class="col-xs-12">
+@if(Auth::user())
+    @include('_conhecalogado')
+@else
+<div class="row text-center header-mobile">
+    <a href="{{ url('/conhecavivala') }}">
+        <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+     </a>
+</div>
+@endif
+
 <h1 class="titulo-mobile">
     Experiências
 </h1>
@@ -32,10 +44,13 @@
     </li>
     @endforeach
 </ul>
+{{--
 <div class="barra-bottom text-center">
     <button class="icone-bottom">
         <i class="fa fa-bars"></i>
         <span>Filtrar</span>
     </button>
+</div>
+--}}
 </div>
 @endsection

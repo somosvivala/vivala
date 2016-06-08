@@ -1,6 +1,19 @@
-@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
+@extends('mobiletemplate')
 
 @section('content')
+
+<div class="col-xs-12">
+
+@if(Auth::user())
+    @include('_conhecalogado')
+@else
+<div class="row text-center header-mobile">
+    <a href="{{ url('/conhecavivala') }}">
+        <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+     </a>
+</div>
+@endif
+
 <a href="/experiencias" class="link-voltar">
     <i class="fa fa-chevron-left"></i>
 </a>
@@ -40,4 +53,5 @@
     </div>
     <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Se inscreva aqui</a>
 </section >
+</div>
 @endsection

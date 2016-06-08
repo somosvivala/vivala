@@ -2,13 +2,16 @@
 
 jQuery(document).ready(function($) {
     var init = function() {
-        $('.header-mobile a').on('click', function() {
+        $('.conheca-popup').on('click', function() {
             $('#conheca-vivala').addClass('ativo');
         });
 
-        $('.desativa-parent').on('click', function(e) {
-            console.log($(e.target.parentNode));
-            $(e.target.parentNode).removeClass('ativo');
+        $('.link-voltar').on('click', function() {
+            window.history.back();
+        });
+
+        $('.desativa-conheca').on('click', function(e) {
+            $('#conheca-vivala').removeClass('ativo');
         });
     };
     init();

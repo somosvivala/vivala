@@ -80,44 +80,7 @@
 </head>
 
 <body class="mobile">
-    <div class="col-md-12 col-lg-12 text-center header-mobile">
-        <a href="#">
-            <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
-        </a>
-    </div>
-
-    <div class="col-xs-12">
         @yield('content')
-    </div>
-
-    <div id="conheca-vivala" class="conheca-vivala">
-
-        <div class="col-xs-12 text-center container-logo">
-            <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
-        </div>
-        <a href="#" class="link-voltar">
-            <i class="fa fa-chevron-left"></i>
-        </a>
-
-        <div class="conteudo">
-
-            A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil. Junte-se a nós!
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/TgqiSBxvdws" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="buttons">
-                <div class="row margin-t-1">
-                    <a href="{{ url('/fbLogin') }}" class="btn-mobile" target="_self" rel="nofollow"> Cadastre-se </a>     
-                </div>
-                <div class="row margin-t-1">
-                    <a href="{{ url('/fbLogin') }}" class="btn-mobile" target="_self" rel="nofollow"> Faça seu login </a>     
-                </div>
-                <div class="row margin-t-1">
-                    <a href="{{ url('/fbLogin') }}" class="btn-mobile" target="_self" rel="nofollow"> Conecte-se <span class="fa fa-facebook"></span> </a>     
-                </div>
-            </div>
-        </div>
-    </div>
 
     {{-- Scripts de carregamento no fim do HTML --}}
     <script src="{{ asset('/js/vendor.js') }}"></script>
