@@ -32,7 +32,7 @@ class ExperienciasController extends Controller
     {
         //recebendo uma instancia do repositorio de experiecias
         $this->experienciasRepository = $repository;
-        $this->middleware('auth', ['only' => [
+        $this->middleware('auth.mobile', ['only' => [
             'getEditafoto',
             'getCheckout',
             'create',

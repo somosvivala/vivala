@@ -11,13 +11,14 @@
 |
 */
 
-
 /*
  * Rotas
  */
 //Route::controller('cotarviagem', 'CotarViagensController');
 Route::post('cotarviagem', 'CotarViagensController@getForm');
 Route::post('cotarviagem/data', 'CotarViagensController@getData');
+
+
 
 Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
@@ -63,7 +64,15 @@ Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::controller('feed','FeedController');
 
-Route::controller('home', 'HomeController');
+
+/** Essas rotas sao apenas para o desktop, portanto se forem acessadas
+ *  por mobile serao redirecionadas para /experiencias
+ */
+Route::group(['middleware' => 'desktop.only'], function() {
+    Route::controller('home', 'HomeController');
+});
+
+
 Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
 Route::controller('perfilcontroller','PerfilController');
@@ -161,6 +170,7 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
+
 
 
 
