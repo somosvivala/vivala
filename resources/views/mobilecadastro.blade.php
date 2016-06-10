@@ -10,13 +10,28 @@
         </a>
 
         <div class="conteudo-mobile ">
-            <div class="row margin-t-1"><input name="nome" type="text" placeholder="NOME" class="form-mobile"></div>
-            <div class="row margin-t-1"><input name="email" type="email" placeholder="EMAIL" class="form-mobile"></div>
-            <div class="row margin-t-1"><input name="senha" type="password" placeholder="SENHA" class="form-mobile"></div>
-            <div class="row margin-t-1"><input name="confirma-senha" type="password" placeholder="CONFIRMAR SENHA" class="form-mobile"></div>
+            @if (count($errors) > 0)
+                @foreach ($errors->all() as $error)
+                <span class="form-mobile-error">{{ $error }}</span> 
+                @endforeach
+            @endif
+              {!! Form::open(['url' => '/autenticacao/register']) !!}
             <div class="row margin-t-1">
-                <a href="{{ url('/autenticacao/cadastro') }}" class="btn-mobile" target="_self" rel="nofollow"> Cadastre-se </a>
+            {!! Form::text("username", null, ['class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
             </div>
+            <div class="row margin-t-1">
+            {!! Form::email("email", old('email'), ['class' => 'form-mobile', 'placeholder' => trans('global.lbl_email')]) !!}
+            </div>
+            <div class="row margin-t-1">
+            {!! Form::password("password", ['class' => 'form-mobile', "placeholder" => trans('global.lbl_password')]) !!}
+            </div>
+            <div class="row margin-t-1">
+            {!! Form::password("password_confirmation", ['class' => 'form-mobile', "placeholder" => trans('CONFIRMAR SENHA') ]) !!}
+            </div>
+            <div class="row margin-t-1">
+                {!!Form::submit( 'Cadastrar', ['class' => 'btn-mobile']) !!}
+            </div>
+            {!! Form::close() !!}
             ou
                 <div class="row margin-t-1">
                     <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> Conecte-se <span class="fa fa-facebook-square pull-right"></span> </a>     
