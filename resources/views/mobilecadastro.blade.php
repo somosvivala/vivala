@@ -16,7 +16,7 @@
                 @endforeach
             @endif
               {!! Form::open(['url' => '/autenticacao/register']) !!}
-            <div class="row margin-t-1">
+            <div class="row margin-t-3">
             {!! Form::text("username", null, ['class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
             </div>
             <div class="row margin-t-1">
@@ -35,6 +35,9 @@
             ou
                 <div class="row margin-t-1">
                     <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> Conecte-se <span class="fa fa-facebook-square pull-right"></span> </a>     
+                </div>
+                <div class="col-xs-12 margin-t-4 concorda-com">
+                    <span>Ao se cadastrar, você concorda com nossos <a href="/paginas/termosecondicoes" class="link-verde">Termos de Uso</a> e <a href="/paginas/termosecondicoes" class="link-verde">Política de Dados</a>
                 </div>
         </div>
     </div>
