@@ -109,10 +109,12 @@ Route::get('conhecavivala',function(){
 //Criando controller de resource para as CategoriaExperiencia
 Route::resource('categorias/experiencias', 'CategoriaExperienciaController');
 
+Route::get('login', 'Auth\MobileAuthController@getLogin');
+Route::get('cadastro', 'Auth\MobileAuthController@getCadastro');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
-	'autenticacao' => 'Auth\ExperienciasAuthController',
+	'autenticacao' => 'Auth\MobileAuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 

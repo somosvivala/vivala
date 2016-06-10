@@ -8,14 +8,14 @@ use App\Services\ExperienciasRegistrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Session;
 
-class ExperienciasAuthController extends Controller
+class MobileAuthController extends Controller
 {
 
     //Por padrao redireciona para as experiencias
     protected $redirectTo = '/experiencias/';
 
   /*
-      |--------------------------------------------------------------------------
+      |-------------------------------------------------------------------
       | Registration & Login Controller
       |--------------------------------------------------------------------------
       |
@@ -77,4 +77,17 @@ class ExperienciasAuthController extends Controller
         $request->session()->flush();
     }
 
+    /**
+     * Metodo para servir a view de login para mobile
+     */
+    public function getLogin(Request $request) {
+        return view('mobilelogin');
+    }
+
+    /**
+     * Metodo para servir a view de cadastro para mobile
+     */
+    public function getCadastro(Request $request) {
+        return view('mobilecadastro');
+    }
 }
