@@ -10,18 +10,17 @@
         </a>
 
         <div class="conteudo-mobile ">
-           {!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal form-login']) !!}
-           <span class="form-mobile-error">Email não cadastrado</span> 
+           {!! Form::open(['url' => '/autenticacao/login', 'class' => 'form-horizontal form-login']) !!}
             @if (count($errors) > 0)
                 @foreach ($errors->all() as $error)
                 <span class="form-mobile-error">{{ $error }}</span> 
                 @endforeach
             @endif
             <div class="row margin-t-3">
-            {!! Form::email("email", old('email'), ['class' => 'form-mobile', 'placeholder' => trans('global.lbl_email') ]) !!}
+            {!! Form::email("email", old('email'), ['required'=>'required','class' => 'form-mobile', 'placeholder' => trans('global.lbl_email') ]) !!}
             </div>
             <div class="row margin-t-2">
-            {!! Form::password("password", ['class' => 'form-mobile', "placeholder" => trans('global.lbl_password') ]) !!}
+            {!! Form::password("password", ['required'=>'required', 'class' => 'form-mobile', "placeholder" => trans('global.lbl_password') ]) !!}
             </div>
             <div class="row"><a href="#"><small class="text-left width20em">Esqueci minha senha</small></a></div>
             <div class="row margin-t-1 margin-t-1">

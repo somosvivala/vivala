@@ -15,18 +15,19 @@
                 <span class="form-mobile-error">{{ $error }}</span> 
                 @endforeach
             @endif
+            <span class="form-mobile-warning hide" id="senhas-nao-coincidem">As senhas não coincidem</span> 
               {!! Form::open(['url' => '/autenticacao/register']) !!}
             <div class="row margin-t-3">
-            {!! Form::text("username", null, ['class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
+            {!! Form::text("username", null, ['required'=>'required', 'class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
             </div>
             <div class="row margin-t-1">
-            {!! Form::email("email", old('email'), ['class' => 'form-mobile', 'placeholder' => trans('global.lbl_email')]) !!}
+            {!! Form::email("email", old('email'), ['required'=>'required','class' => 'form-mobile', 'placeholder' => trans('global.lbl_email')]) !!}
             </div>
             <div class="row margin-t-1">
-            {!! Form::password("password", ['class' => 'form-mobile', "placeholder" => trans('global.lbl_password')]) !!}
+            {!! Form::password("password", ['required'=>'required','class' => 'form-mobile', "placeholder" => trans('global.lbl_password')]) !!}
             </div>
             <div class="row margin-t-1">
-            {!! Form::password("password_confirmation", ['class' => 'form-mobile', "placeholder" => trans('CONFIRMAR SENHA') ]) !!}
+            {!! Form::password("password_confirmation", ['required'=>'required','class' => 'form-mobile', "placeholder" => trans('CONFIRMAR SENHA') ]) !!}
             </div>
             <div class="row margin-t-1">
                 {!!Form::submit( 'Cadastrar', ['class' => 'btn-mobile']) !!}
