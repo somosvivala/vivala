@@ -70,6 +70,16 @@ class Experiencia extends Model
         return $this->belongsToMany('App\CategoriaExperiencia');
     }
 
+
+    /**
+     * Uma Experiencia tem muitas inscriçoes
+     */
+    public function ocorrencias()
+    {
+        return $this->hasMany('App\DataOcorrenciaExperiencia');
+    }
+
+
     /*
      * Acessor para retornar a url da fotoCapa
      */
