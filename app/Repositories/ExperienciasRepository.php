@@ -34,8 +34,6 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return CategoriaExperiencia::all();
     }
 
-
-
     /*
      * Metodo para retornar a experiencia de $id
      *
@@ -93,6 +91,22 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
             //associando/re-associando a informacao na experiencia
             $experiencia->informacoes()->save($infoObj);
+        }
+
+        //checando se existe alguma dataOcorrencia nessa experiencia
+        $dataOcorreciaArray = array_key_exists('datas-ocorrencia', $arrayArgumentos) ? $arrayArgumentos['datas-ocorrencia'] : [];
+
+        //iterando sob as datas
+        foreach ($dataOcorreciaArray as $dataOcorrencia)
+        {
+            //encontrando a dataOcorrencia no bd e fazendo update da dataOcorrencia
+            $dataObj = DataOcorrenciaExperiencia::find($dataOcorrencia['id']);
+            $dataObj->update([
+                'data_ocorrencia' => Carbon::createFromFormat('d/m/Y',$dataOcorrencia['data'])
+            ]);
+
+            //associando/re-associando a dataOcorrencia na experiencia
+            $experiencia->ocorrencias()->save($dataObj);
         }
 
         //pegando o id da cidade e associando a experiencia

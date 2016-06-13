@@ -44,6 +44,7 @@ class StoreExperienciaRequest extends Request
             'detalhes'                  => "string|required|min:2",
             'preco'                     => "required|numeric",
             'informacao-extra'          => "array",
+            'datas-ocorrencia'          => "array",
             'categoria'                 => "array"
         ];
 
@@ -56,6 +57,20 @@ class StoreExperienciaRequest extends Request
                 $rules['informacao-extra.'.$key.'.id'] = 'exists:informacao_experiencias,id';
                 $rules['informacao-extra.'.$key.'.icone'] = 'string';
                 $rules['informacao-extra.'.$key.'.descricao_info'] = 'string';
+            }
+        }
+
+
+        //iterando sob as informacoes que sao em forma de array
+        //para settarmos regras de validacao para cada um dos childs
+        $arrayDatas = $this->request->get('datas-ocorrencias');
+        if ($arrayDatas) {
+            //como nesse caso a $key é o id da InformacaoExperiencia,
+            //precisamos iterar sob algum outro contador
+            $i=0;
+            foreach($arrayDatas as $key => $val)
+            {
+                $rules['datas-ocorrencias.'.$i] = 'exists:data_correncia_experiencias,id';
             }
         }
 
