@@ -53,7 +53,7 @@ class ExperienciasController extends Controller
     {
         $experiencias = $this->experienciasRepository->getAll();
 
-        if(!Agent::isDesktop()){
+        if(Agent::isDesktop()){
             return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
         } else {
             return view("experiencias.listaexperiencias", compact("experiencias") );
@@ -70,7 +70,7 @@ class ExperienciasController extends Controller
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
 
-        if(!Agent::isDesktop()){
+        if(Agent::isDesktop()){
             return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
         } else {
             return view("experiencias.detalheexperiencia", compact("Experiencia") );
@@ -131,7 +131,7 @@ class ExperienciasController extends Controller
         // Testa se usuario está logado
         if (Auth::user()) {
             // Caso esteja logado exibe os métodos de pagamento
-            if(!Agent::isDesktop()){
+            if(Agent::isDesktop()){
                 return view("experiencias.desktop.checkout", compact("Experiencia") );
             } else {
                 return view("experiencias.checkout", compact("Experiencia") );
