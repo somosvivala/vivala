@@ -1,4 +1,4 @@
-@extends('mobilelogado')
+@extends('mobiletemplate')
 
 @section('content')
 <div class="bg-checkout">

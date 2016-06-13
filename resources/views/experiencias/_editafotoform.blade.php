@@ -1,4 +1,4 @@
-@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
+@extends(Auth::user() ? 'mobiletemplate' : 'templatedeslogado')
 
 @section('content')
 

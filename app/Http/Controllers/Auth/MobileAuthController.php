@@ -14,6 +14,9 @@ class MobileAuthController extends Controller
     //Por padrao redireciona para as experiencias
     protected $redirectTo = '/experiencias/';
 
+    //Por padrao o loginpath é
+    protected $loginPath = '/autenticacao/login';
+
   /*
       |-------------------------------------------------------------------
       | Registration & Login Controller

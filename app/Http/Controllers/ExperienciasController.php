@@ -38,7 +38,8 @@ class ExperienciasController extends Controller
             'create',
             'store',
             'edit',
-            'upload'
+            'upload',
+            'destroy'
         ]]);
     }
 

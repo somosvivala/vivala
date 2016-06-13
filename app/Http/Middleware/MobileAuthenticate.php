@@ -3,7 +3,8 @@
 use Closure;
 use Illuminate\Contracts\Auth\Guard;
 
-class MobileAuthenticate {
+class MobileAuthenticate 
+{
 
 	/**
 	 * The Guard implementation.
