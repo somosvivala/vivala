@@ -19,7 +19,7 @@ class CreateDataOcorrenciaExperienciasTable extends Migration
             $table->timestamps();
 
             //data em que ira acontecer a experiencia
-            $table->date('data_ocorrencia');
+            $table->date('data_ocorrencia')->nullable();
 
             //FK para experiencias (experiencia que ira ocorrer em tal data)
             $table->integer('experiencia_id')->unsigned()->nullable();

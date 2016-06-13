@@ -58,6 +58,33 @@
 </div>
 
 
+
+{{-- Secao das datas que irao ocorrer a experiencia --}}
+<div class="col-sm-12 margin-b-1">
+    {!! Form::label('', 'Próximas Datas', ['class' => 'row col-sm-12']) !!}
+    <ul id="data-ocorrencia-container">
+        @if (isset($experiencia))
+        @foreach ($experiencia->ocorrencias as $dataOcorrencia)
+            @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
+        @endforeach
+        @endif
+
+        {{-- Botao de adicionar novas datas --}}
+        <li class="col-xs-12 margin-b-1 container-datas-ocorrencia">
+            <div class="col-xs-11"></div>
+            <div class="col-xs-1 text-center">
+                    <a href="#" onclick="adicionaDataOcorrenciaExperiencia(event)">
+                        <i class="fa fa-2x fa-plus margin-t-1" ></i>
+                        <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
+                    </a>
+            </div>
+        </li>
+
+    </ul>
+</div>
+
+
+
 {{-- Secao de categorias da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     <label class="row col-xs-12">Categorias</label>

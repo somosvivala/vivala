@@ -94,6 +94,7 @@ elixir(function(mix) {
 
       /* Scripts das Experiencias */
       '../../assets/js/info-form-experiencias.js',
+      '../../assets/js/data-ocorrencia-experiencias.js',
       '../../assets/js/categoria-experiencia.js',
       '../../assets/js/experiencias.js',
 

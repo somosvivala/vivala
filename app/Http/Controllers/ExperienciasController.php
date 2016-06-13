@@ -17,6 +17,8 @@ use App\Http\Requests\StoreExperienciaRequest;
 use App\Http\Requests\CreateInformacaoExperienciaRequest;
 use App\Http\Requests\DeleteInformacaoExperienciaRequest;
 use App\Http\Requests\DestroyExperienciaRequest;
+use App\Http\Requests\CreateDataOcorrenciaExperienciaRequest;
+use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -188,5 +190,25 @@ class ExperienciasController extends Controller
     }
 
 
+    /**
+     * Rota para criar uma nova DataOcorrencia para uma experiencia
+     *
+     * @param $request - instancia de CreateDataOcorrenciaExperienciaRequest
+     */
+    public function getAddDataOcorrencia(CreateDataOcorrenciaExperienciaRequest $request)
+    {
+        $dataOcorrencia = $this->experienciasRepository->createDataOcorrencia($request->all());
+        return ['html' => view('experiencias._form_data_ocorrencia')->with('dataOcorrencia', $dataOcorrencia)->render() ];
+    }
+
+    /**
+     * Rota para deletar uma DataOcorrenciaExperiencia
+     *
+     * @param $request - instancia de DeleteDataOcorrenciaExperienciaRequest
+     */
+    public function putDeleteDataOcorrencia(DeleteDataOcorrenciaExperienciaRequest $request)
+    {
+        return ['result' => $this->experienciasRepository->deleteDataOcorrencia($request->all()) ];
+    }
 
 }

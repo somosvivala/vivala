@@ -9,6 +9,8 @@ use App\CategoriaExperiencia;
 use App\Cidade;
 use App\Ong;
 use App\InformacaoExperiencia;
+use App\DataOcorrenciaExperiencia;
+use Carbon\Carbon;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -140,6 +142,22 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             $experiencia->informacoes()->save($infoObj);
         }
 
+        //checando se existe alguma dataOcorrencia nessa experiencia
+        $dataOcorreciaArray = array_key_exists('datas-ocorrencia', $arrayArgumentos) ? $arrayArgumentos['datas-ocorrencia'] : [];
+
+        //iterando sob as datas
+        foreach ($dataOcorreciaArray as $dataOcorrencia)
+        {
+            //encontrando a dataOcorrencia no bd e fazendo update da dataOcorrencia
+            $dataObj = DataOcorrenciaExperiencia::find($dataOcorrencia['id']);
+            $dataObj->update([
+                'data_ocorrencia' => Carbon::createFromFormat('d/m/Y',$dataOcorrencia['data'])
+            ]);
+
+            //associando/re-associando a dataOcorrencia na experiencia
+            $experiencia->ocorrencias()->save($dataObj);
+        }
+
         return $experiencia->push();
 
     }
@@ -233,6 +251,34 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         return InformacaoExperiencia::findOrFail($arrayArgumentos['id'])->delete();
     }
+
+
+    /**
+     * Metodo para criar novas DataOcorrenciaExperiencia
+     *
+     * @param $arrayArgumentos - array contendo os valores das colunas de DataOcorrenciaExperiencia
+     * @return App\DataOcorrenciaExperiencia
+     */
+    public function createDataOcorrencia($arrayArgumentos = [])
+    {
+        $dataOcorrencia = DataOcorrenciaExperiencia::create($arrayArgumentos);
+
+        //por algum motivo o create nao esta retornando uma instancia full loaded, por isso estou pegando denovo
+        return DataOcorrenciaExperiencia::find($dataOcorrencia->id);
+    }
+
+
+    /**
+     * Metodo para deletar uma DataOcorrenciaExperiencia
+     *
+     * @param $id - id da DataOcorrenciaExperiencia a ser deletada
+     * @return boolean - se deletou ou nao
+     */
+    public function deleteDataOcorrencia($arrayArgumentos)
+    {
+        return DataOcorrenciaExperiencia::findOrFail($arrayArgumentos['id'])->delete();
+    }
+
 
     /**
       * Metodo para deletar uma Experiencia

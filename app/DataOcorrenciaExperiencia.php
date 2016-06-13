@@ -21,4 +21,13 @@ class DataOcorrenciaExperiencia extends Model
         return $this->belongsTo('App\Experiencia');
     }
 
+    /**
+     * Acessor para retornar datas em um formato especifico
+     */
+    public function getDataAttribute()
+    {
+        return $this->data_ocorrencia ? $this->data_ocorrencia->format('d/m/Y') : '';
+    }
+
+
 }

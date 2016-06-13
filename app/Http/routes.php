@@ -91,15 +91,31 @@ Route::post('clickbus/booking', 'ClickBusController@getBooking');
 Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
 Route::post('clickbus/success', 'ClickBusController@getSucess');
 
-//aparentemente nao rola usar esses 2 tipos de controllers em um mesmo arquivo. Tive que sobrescrever essas rotas
+
+/**
+ *  Rotas referentes as experiencias
+ */
+
+//rotas para lidar com as informacoes extras de uma experiecia
 Route::get('experiencias/addinformacaoextra', 'ExperienciasController@getAddinformacaoextra');
 Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDeleteinformacaoextra');
 
+//rotas para lidar com as datas de ocorrencia de uma experiencia
+Route::get('experiencias/adddataocorrencia', 'ExperienciasController@getAddDataOcorrencia');
+Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDeleteDataOcorrencia');
+
+//rotas complementares ao resource controller
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
 Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
 
 Route::resource('experiencias', 'ExperienciasController');
 
+
+
+
+/**
+ * Rotas da nova autenticacao
+ */
 Route::get('autenticacao/login',function(){ return view('mobilelogin'); });
 Route::get('autenticacao/cadastro',function(){ return view('mobilecadastro'); });
 
