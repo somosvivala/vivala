@@ -549,7 +549,7 @@ return[
   'lbl_password_forgot' => 'Esqueceu sua senha?',
   'lbl_password_recovery' => 'Recuperação de Senha',
   'lbl_password_recovery_link' => 'Link para recuperação de senha',
-  'lbl_password_recovery_link_send' => 'Enviar link para redefinição de senha',
+  'lbl_password_recovery_link_send' => 'Redefinir senha',
   'lbl_password_reset' => 'Trocar Senha',
   'lbl_people' => 'Pessoas',
   'lbl_person' => 'Pessoa',

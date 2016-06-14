@@ -22,7 +22,7 @@
             <div class="row margin-t-2">
             {!! Form::password("password", ['required'=>'required', 'class' => 'form-mobile', "placeholder" => trans('global.lbl_password') ]) !!}
             </div>
-            <div class="row"><a href="#"><small class="text-left width20em">Esqueci minha senha</small></a></div>
+            <div class="row"><a href="{{ url('/password/email') }}"><small class="text-left width20em">Esqueci minha senha</small></a></div>
             <div class="row margin-t-1 margin-t-1">
                 <input type="submit" class="btn-mobile btn-verde" value="Login">
             </div>
