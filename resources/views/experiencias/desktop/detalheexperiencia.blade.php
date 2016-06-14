@@ -47,11 +47,46 @@
             <div role="tabpanel" class="tab-pane " id="restaurantes">
             </div>
             <div role="tabpanel" class="tab-pane active" id="experiencias">
-                <h1>{{ $Experiencia->titulo }}</h1>
-                <img class="col-sm-6" src="{{ $Experiencia->fotoCapa }}" alt="{{ $Experiencia->titulo }}">
-                <span class="col-sm-6">{{ $Experiencia->descricao }}</span>
-                <span class="col-sm-6">{{ $Experiencia->preco }}</span>
-                <a class="btn btn-acao" href="/experiencias/checkout/{{ $Experiencia->id }}">Bookar</a>
+
+                <div class="margin-t-1 text-center">
+                    <div class="round-foto-sem-cover">
+                        <img src="{{ $Experiencia->fotoCapaUrl}}">
+                    </div>
+                    {{--
+                    <div class="categorias-experiencia">
+                        @foreach($Experiencia->categorias as $Categoria)
+                        <div class="icone">
+                            <i class="fa fa-{{ $Categoria->icone }}"></i>
+                            <span>{{ $Categoria->nome }}</span>
+                        </div>
+                        @endforeach
+                    </div>
+                    --}}
+                </div>
+                <div class="descricao">
+                    <span class="col-xs-12 negrito-exp text-center"><i class="fa fa-map-marker"></i>{{ $Experiencia->local->nome}}</span>
+                    <span class="col-xs-12 negrito-exp text-center">{{ $Experiencia->preco }}</span>
+                    <span class="descricao-inicial">{{ $Experiencia->descricao }}</span>
+                    <div class="owner text-center"><img alt="{{ $Experiencia->owner->nome }}" src="{{ $Experiencia->owner->avatar->path }}"><h4>{{ $Experiencia->owner->nome }}</h4></div>
+                
+                    <span class="col-xs-12 negrito-exp">Informações</span>
+                    @foreach($Experiencia->informacoes as $Informacao)
+                    <div class="col-xs-12 informacoes">
+                        <div class="row">
+                            <div class="col-xs-2"><i class="{{ $Informacao->icone }}"></i></div>
+                            <div class="col-xs-10">{{ $Informacao->descricao }}</div>
+                        </div>
+                    </div>
+                    @endforeach
+                    @if($Experiencia->descricao!="")
+                    <span class="col-xs-12 negrito-exp">Detalhes da experiência</span>
+                    <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
+                    @endif
+                </div>
+
+                <div class="row text-center margint-b-2">
+                    <a class="btn-acao btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Se inscreva aqui</a>
+                </div>
             </div>
         </div>
     </div>

@@ -52,6 +52,50 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\Logger\CriarLogInteracaoPlataforma',
         ],
 
+        /*
+        * Experiencias - Todos os eventos relacionados a feature de Experiencias da plataforma
+        */
+        
+        //Quando acontecer um booking deslogado, guardar na sesssao a pagina para sabermos se houve desistencia no cadastro
+        // 'App\Events\BookouDeslogado' => [
+        //     'App\Handlers\Events\Experiencias\GuardaSessaoBooking'
+        // ],
+
+        //Quando acontecer uma nova inscricao de experiencia, mandar email para o candidato e para a vivalá
+        'App\Events\NovaInscricaoExperiencia' => [
+            'App\Handlers\Events\Experiencias\EnviaEmailNovaInscricaoExperiencia'
+        ],
+
+        //Quando uma inscricao de experiencia for confirmada, avisar o candidato e a instituição
+        'App\Events\InscricaoExperienciaConfirmada' => [
+            'App\Handlers\Events\Experiencias\EnviaEmailInscricaoConfirmadaExperiencia'
+        ],
+
+        //Quando uma inscricao for desconfirmada? (avisar a instituição?)
+        // 'App\Events\InscricaoExperienciaDesConfirmada' => [
+        //     'App\Handlers\Events\Experiencias\EnviaEmailInscricaoDesConfirmadaInstituicao'
+        // ],
+
+        //Quando uma experiencia estiver eminente, disparar emails para quem ainda nao confirmou, para quem confirmou e para a instiuicao
+        // 'App\Events\ExperienciaEminente' => [
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaEminente'
+        // ],
+
+        //Quando uma inscricao for cancelada, ainda nao confirmada, tomar alguma ação?
+        // 'App\Events\InscricaoExperiencaCancelada' => [
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaCancelada'
+        // ],
+
+        //Quando uma experiencia for aprovada pela vivalá e passar a ficar visivel para os candidatos (avisar instituição)
+        // 'App\Events\ExperienciaAprovada' => [
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaAprovada'
+        // ],
+
+        //Quando alguem na plataforma clicar em 'propor exp', enviar email para a vivalá com os detalhes fornecidos por quem propôs
+        // 'App\Events\NovaPropostaExperiencia' => [
+        //     'App\Handlers\Events\Experiencias\EnviaEmailNovaPropostaExperiencia'
+        // ],
+
     ];
 
 
