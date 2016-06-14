@@ -20,7 +20,6 @@ Route::post('cotarviagem/data', 'CotarViagensController@getData');
 
 
 
-Route::get('/', 'WelcomeController@index');
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::get('config', 'ConfigController@index');
 
@@ -64,15 +63,6 @@ Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
 Route::get('ongs/sobre/{id}','OngController@sobre');
 Route::controller('feed','FeedController');
 
-
-/** Essas rotas sao apenas para o desktop, portanto se forem acessadas
- *  por mobile serao redirecionadas para /experiencias
- */
-Route::group(['middleware' => 'desktop.only'], function() {
-    Route::controller('home', 'HomeController');
-});
-
-
 Route::controller('foto', 'FotoController');
 Route::controller('ajax', 'AjaxController');
 Route::controller('perfilcontroller','PerfilController');
@@ -90,6 +80,19 @@ Route::post('clickbus/payment', 'ClickBusController@getPayment');
 Route::post('clickbus/booking', 'ClickBusController@getBooking');
 Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
 Route::post('clickbus/success', 'ClickBusController@getSucess');
+
+
+
+/**
+ *  Essas rotas sao apenas para o desktop, portanto se forem acessadas
+ *  por mobile serao redirecionadas para /experiencias
+ */
+Route::group(['middleware' => 'desktop.only'], function() {
+    Route::get('/', 'WelcomeController@index');
+    Route::controller('home', 'HomeController');
+
+});
+
 
 
 /**

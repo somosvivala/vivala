@@ -43,6 +43,12 @@ class ExperienciasController extends Controller
             'upload',
             'destroy'
         ]]);
+
+        //se acessar /experiencias do desktop precisa estar logado
+        $this->middleware('auth.only.desktop', ['only' => [
+            'index',
+            'show'
+        ]]);
     }
 
 
