@@ -69,11 +69,10 @@
                 <span class="col-xs-12 margin-t-1">
                     <i class="fa fa-barcode sqr-icon-bg"></i>
                 </span>
-                <a href="/experiencias/{{ $Experiencia->id }}">
-                    <i class="fa fa-times x-preto"></i>
-                </a>
             </div>
-            <a class="btn-full-bottom" href="/experiencias">Ver mais experiências</a>
+            <div class="row text-center margin-t-1 margin-b-2">
+                <a class="btn btn-acao" href="/experiencias">Ver mais experiências</a>
+            </div>
         </div>
     </div>
 
