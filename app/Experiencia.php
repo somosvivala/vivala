@@ -4,6 +4,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\InformacaoExperiencia;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Experiencia extends Model
 {
@@ -80,6 +81,22 @@ class Experiencia extends Model
     }
 
 
+    /**
+     * Acessor para a próxima ocorrencia a partir de hoje
+     */
+    public function getProximaOcorrenciaAttribute()
+    {
+        $existeOcorrencias = !$this->ocorrencias->isEmpty();
+
+        return $existeOcorrencias ?
+            $this->ocorrencias()
+            ->where('data_ocorrencia', '>=', Carbon::now())
+            ->orderBy('data_ocorrencia', 'asc')
+            ->first()
+            : null;
+    }
+
+
     /*
      * Acessor para retornar a url da fotoCapa
      */
@@ -91,6 +108,5 @@ class Experiencia extends Model
 
         return '/img/dummy-exp.jpg';
     }
-
 
 }
