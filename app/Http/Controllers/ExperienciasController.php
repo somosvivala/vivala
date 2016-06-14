@@ -217,4 +217,13 @@ class ExperienciasController extends Controller
         return ['result' => $this->experienciasRepository->deleteDataOcorrencia($request->all()) ];
     }
 
+    /**
+     * Rota para servir a view de conheca vivala
+     */
+    public function getConhecaVivala()
+    {
+        return view('conhecadeslogado');
+    }
+
+
 }
