@@ -26,4 +26,14 @@ class InscricaoExperiencia extends Model {
         return $this->belongsTo('App\Perfil');
     }
 
+    /**
+     * As inscricoes podem ter relacao com uma DataOcorrenciaExperiencia
+     */
+    public function dataExperiencia()
+    {
+        return $this->belongsTo('App\DataOcorrenciaExperiencia');
+    }
+
+
+
 }

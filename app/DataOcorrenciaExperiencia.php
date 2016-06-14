@@ -22,6 +22,15 @@ class DataOcorrenciaExperiencia extends Model
     }
 
     /**
+     * Uma data pode conter varias inscricoes confirmadas
+     */
+    public function inscricoesConfirmadas()
+    {
+        return $this->hasMany('App\InscricaoExperiencia');
+    }
+
+
+    /**
      * Acessor para retornar datas em um formato especifico
      */
     public function getDataAttribute()
