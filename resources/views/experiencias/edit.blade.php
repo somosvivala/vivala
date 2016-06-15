@@ -6,7 +6,11 @@
     <div class="padding-b-1" id="editar-experiencia">
         <h2 class="col-sm-12">Editar Experiência</h2>
             @include('errors.list')
-
+            <div class="round-foto-sem-cover">
+                <img src="{{ $experiencia->fotoCapaUrl}}">
+            </div>
+            <a class="btn btn-acao" href="/experiencias/editafoto/{{ $experiencia->id }}">Editar foto</a>
+            
             {!! Form::model($experiencia, ['method' => 'PATCH', 'action' => ['ExperienciasController@update', $experiencia->id] ]) !!}
 
                 @include('experiencias.form', ['textBtnSubmit' => 'Atualizar'])

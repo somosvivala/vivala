@@ -35,8 +35,8 @@
             </div>
             <div class="{{ $k%2!=0?'direita':'esquerda'}} descricao">
                 <div class="container">
-                    <span class="col-xs-12 negrito-exp"><i class="fa fa-map-marker"></i> Sao Paulo</span>
-                    <span class="col-xs-12 negrito-exp">R${{ $Experiencia->preco }}</span>
+                    <div class="row negrito-exp">R${{ $Experiencia->preco }}</div>
+                    <div class="row cidade negrito-exp"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->estado->nome }}</div>
                     <span class="pull-left margin-t-1">{{ $Experiencia->descricao }}</span>
                 </div>
             </div>
