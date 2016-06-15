@@ -1,16 +1,13 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
-use App\Events\NovaInscricaoExperiencia;
+use App\Events\InscricaoExperienciaConfirmada;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use App\Experiencia;
-use App\Perfil;
 use App\Interfaces\ExperienciasRepositoryInterface;
 
-class CriaInscricaoExperiencia
+class ChecaPagamentoInscricaoExperiencia
 {
-
     //instancia do repositorio de experiencias
     private $experienciasRepository;
 
@@ -27,12 +24,12 @@ class CriaInscricaoExperiencia
     /**
      * Handle the event.
      *
-     * @param  NovaInscricaoExperiencia $event
+     * @param  InscricaoExperienciaConfirmada  $event
      * @return void
      */
-    public function handle(NovaInscricaoExperiencia $event)
+    public function handle(InscricaoExperienciaConfirmada $event)
     {
-        $this->experienciasRepository->createInscricaoExperiencia($event->experienciaID, $event->perfilID);
+        $this->experienciasRepository->confirmaInscricaoExperiencia($event->inscricao);
     }
 
 }

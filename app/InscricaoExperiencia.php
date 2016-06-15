@@ -5,8 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 class InscricaoExperiencia extends Model
 {
     protected $fillable = [
+        'status',
+        'data_pagamento',
+        'perfil_id',
         'experiencia_id',
-        'perfil_id'
+        'data_ocorrencia_experiencia_id'
     ];
 
 
@@ -36,9 +39,47 @@ class InscricaoExperiencia extends Model
      */
     public function dataExperiencia()
     {
-        return $this->belongsTo('App\DataOcorrenciaExperiencia');
+        return $this->belongsTo('App\DataOcorrenciaExperiencia', 'data_ocorrencia_experiencia_id');
     }
 
+    /**
+     * Definindo uma scope para as inscricoes pendentes
+     */
+    public function scopePendentes($query)
+    {
+        return $query->where('status', 'pendente');
+    }
 
+    /**
+     * Definindo uma scope para as inscricoes confirmadas
+     */
+    public function scopeConfirmadas($query)
+    {
+        return $query->where('status', 'confirmada');
+    }
+
+    /**
+     * Definindo uma scope para as inscricoes canceladas
+     */
+    public function scopeCanceladas($query)
+    {
+        return $query->where('status', 'cancelada');
+    }
+
+    /**
+     * Definindo uma scope para as inscricoes concluidas
+     */
+    public function scopeConcluidas($query)
+    {
+        return $query->where('status', 'concluida');
+    }
+
+    /**
+     * Definindo uma scope para as inscricoes expiradas
+     */
+    public function scopeExpiradas($query)
+    {
+        return $query->where('status', 'expirada');
+    }
 
 }
