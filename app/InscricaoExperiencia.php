@@ -5,8 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 class InscricaoExperiencia extends Model
 {
     protected $fillable = [
+        'status',
+        'data_pagamento',
+        'perfil_id',
         'experiencia_id',
-        'perfil_id'
+        'data_ocorrencia_experiencia_id'
     ];
 
 
@@ -36,7 +39,7 @@ class InscricaoExperiencia extends Model
      */
     public function dataExperiencia()
     {
-        return $this->belongsTo('App\DataOcorrenciaExperiencia');
+        return $this->belongsTo('App\DataOcorrenciaExperiencia', 'data_ocorrencia_experiencia_id');
     }
 
     /**

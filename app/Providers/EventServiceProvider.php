@@ -69,6 +69,7 @@ class EventServiceProvider extends ServiceProvider
 
         //Quando uma inscricao de experiencia for confirmada, avisar o candidato e a instituição
         'App\Events\InscricaoExperienciaConfirmada' => [
+            'App\Handlers\Events\Experiencias\ChecaPagamentoInscricaoExperiencia',
             'App\Handlers\Events\Experiencias\EnviaEmailInscricaoConfirmadaExperiencia'
         ],
 
