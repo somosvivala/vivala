@@ -136,17 +136,11 @@ class ExperienciasController extends Controller
     public function getCheckout(Request $request, $id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
-        // Testa se usuario está logado
-        if (Auth::user()) {
-            // Caso esteja logado exibe os métodos de pagamento
-            if(Agent::isDesktop()){
-                return view("experiencias.desktop.checkout", compact("Experiencia") );
-            } else {
-                return view("experiencias.checkout", compact("Experiencia") );
-            }
+
+        if(Agent::isDesktop()) {
+            return view("experiencias.desktop.checkout", compact("Experiencia") );
         } else {
-            // Caso não esteja logado redireciona pra tela de login
-            return redirect('/auth/login')->with(['redirectTo'=>'experiencias/checkout/'.$id]);;
+            return view("experiencias.checkout", compact("Experiencia") );
         }
 
     }

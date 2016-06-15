@@ -2,7 +2,12 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class InscricaoExperiencia extends Model {
+class InscricaoExperiencia extends Model
+{
+    protected $fillable = [
+        'experiencia_id',
+        'perfil_id'
+    ];
 
 
     /**

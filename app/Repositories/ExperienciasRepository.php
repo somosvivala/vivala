@@ -303,6 +303,20 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return $this->findOrFail($id)->delete();
     }
 
+    /**
+     * Metodo para criar novas inscricoesExperiencia
+     *
+     * @param $experienciaId - Id da experiencia que sera criada uma nova inscricao
+     * @param $perfilId - Id do perfil que se inscreveu na experiencia
+     */
+    public function createInscricaoExperiencia($experienciaId, $perfilId)
+    {
+        $inscricao = InscricaoExperiencia::create([
+            'experiencia_id' => $experienciaId,
+            'perfil_id' => $perfilId
+        ]);
 
+        return $inscricao;
+    }
 
 }

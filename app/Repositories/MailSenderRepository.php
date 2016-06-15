@@ -18,6 +18,9 @@ class MailSenderRepository
    */
    public function enviaEmailNovaInscricaoExperiencia()
    {
+       /* Comentado pois o 'use ()' sem a variavel que vai ser passada para a closure quebra o PHP,
+        * como esse arquivo esta sendo incluido em outros, tive que comentar
+        
       //Envia email para o CANDIDATO
       Mail::send('emails.experiencias.novainscricaocandidato', [], function ($message) use () {
         //se estiver em production, manda email para a live
@@ -39,6 +42,8 @@ class MailSenderRepository
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Inscrição da Experiência Plataforma');
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
+
+     */
    }
 
    /**
@@ -48,6 +53,10 @@ class MailSenderRepository
     */
    public function enviaEmailInscricaoConfirmadaExperiencia()
    {
+       /* Comentado pois o 'use ()' sem a variavel que vai ser passada para a closure quebra o PHP,
+        * como esse arquivo esta sendo incluido em outros, tive que comentar
+
+
      //Envia email para CANDIDATO
      Mail::send('emails.experiencias.inscricaoconfirmadacandidato', [], function ($message) use () {
         //se estiver em production, manda email para a live
@@ -69,6 +78,8 @@ class MailSenderRepository
         $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Experiência Confirmada para a Instituição');
       $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
+
+        */
    }
 
     /**
