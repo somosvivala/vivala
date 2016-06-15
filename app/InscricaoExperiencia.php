@@ -39,6 +39,44 @@ class InscricaoExperiencia extends Model
         return $this->belongsTo('App\DataOcorrenciaExperiencia');
     }
 
+    /**
+     * Definindo uma scope para as inscricoes pendentes
+     */
+    public function scopePendentes($query)
+    {
+        return $query->where('status', 'pendente');
+    }
 
+    /**
+     * Definindo uma scope para as inscricoes confirmadas
+     */
+    public function scopeConfirmadas($query)
+    {
+        return $query->where('status', 'confirmada');
+    }
+
+    /**
+     * Definindo uma scope para as inscricoes canceladas
+     */
+    public function scopeCanceladas($query)
+    {
+        return $query->where('status', 'cancelada');
+    }
+
+    /**
+     * Definindo uma scope para as inscricoes concluidas
+     */
+    public function scopeConcluidas($query)
+    {
+        return $query->where('status', 'concluida');
+    }
+
+    /**
+     * Definindo uma scope para as inscricoes expiradas
+     */
+    public function scopeExpiradas($query)
+    {
+        return $query->where('status', 'expirada');
+    }
 
 }
