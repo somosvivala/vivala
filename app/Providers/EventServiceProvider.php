@@ -55,7 +55,7 @@ class EventServiceProvider extends ServiceProvider
         /*
         * Experiencias - Todos os eventos relacionados a feature de Experiencias da plataforma
         */
-        
+
         //Quando acontecer um booking deslogado, guardar na sesssao a pagina para sabermos se houve desistencia no cadastro
         // 'App\Events\BookouDeslogado' => [
         //     'App\Handlers\Events\Experiencias\GuardaSessaoBooking'
@@ -72,6 +72,12 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\Experiencias\ChecaPagamentoInscricaoExperiencia',
             'App\Handlers\Events\Experiencias\EnviaEmailInscricaoConfirmadaExperiencia'
         ],
+
+        //Quando ocorrer uma experiencia (atualizar inscricoes)
+        'App\Events\ExperienciaOcorrendo' => [
+            'App\Handlers\Events\Experiencias\AtualizaInscricoesExperiencia',
+        ],
+
 
         //Quando uma inscricao for desconfirmada? (avisar a instituição?)
         // 'App\Events\InscricaoExperienciaDesConfirmada' => [
