@@ -362,7 +362,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
       * pendentes -> expiradas && confirmadas -> concluidas
       * @param $experiencia -  Uma instancia de Experiencia
      */
-    public function atualizaExperienciaRealizada(Experiencia $experiecia)
+    public function atualizaInscricoesExperiencia(Experiencia $experiecia)
     {
         $DataOcorrenciaExperiencia = $experiencia->proximaData;
         $ocorrencia_id = $DataOcorrenciaExperiencia ? $DataOcorrenciaExperiencia->id : null;

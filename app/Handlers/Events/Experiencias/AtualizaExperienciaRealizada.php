@@ -5,7 +5,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use App\Interfaces\ExperienciasRepositoryInterface;
 
-class AtualizaInscricoesExperiencia
+class AtualizaExperienciaRealizada
 {
 
     //instancia do repositorio de experiencias

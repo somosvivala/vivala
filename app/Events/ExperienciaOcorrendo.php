@@ -3,6 +3,7 @@
 use App\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
+use App\Experiencia;
 
 class ExperienciaOcorrendo extends Event
 {

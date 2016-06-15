@@ -75,7 +75,7 @@ class EventServiceProvider extends ServiceProvider
 
         //Quando ocorrer uma experiencia (atualizar inscricoes)
         'App\Events\ExperienciaOcorrendo' => [
-            'App\Handlers\Events\Experiencias\AtualizaInscricoesExperiencia',
+            'App\Handlers\Events\Experiencias\AtualizaExperienciaRealizada',
         ],
 
 
