@@ -362,9 +362,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
       * pendentes -> expiradas && confirmadas -> concluidas
       * @param $experiencia -  Uma instancia de Experiencia
      */
-    public function atualizaInscricoesExperiencia(Experiencia $experiecia)
+    public function atualizaInscricoesExperiencia(Experiencia $experiencia)
     {
-        $DataOcorrenciaExperiencia = $experiencia->proximaData;
+        $DataOcorrenciaExperiencia = $experiencia->proximaOcorrencia;
         $ocorrencia_id = $DataOcorrenciaExperiencia ? $DataOcorrenciaExperiencia->id : null;
 
         //atualizando inscricoes pendentes para expiradas
@@ -373,9 +373,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         });
 
         //atualizando inscricoes confirmadas para concluidas
-        $experiencia->inscricoes()->confirmadas()->get()->each(function ($inscricaoPendente) {
+        $experiencia->inscricoes()->confirmadas()->get()->each(function ($inscricaoPendente) use ($ocorrencia_id) {
             $inscricaoPendente->update([
-                'status' => 'concluidas',
+                'status' => 'concluida',
                 'data_ocorrencia_experiencia_id' => $ocorrencia_id
             ]);
         });
