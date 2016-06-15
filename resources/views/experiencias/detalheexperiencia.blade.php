@@ -19,22 +19,22 @@
 </a>
 <section class="experiencia">
     <div class="descricao">
-        <span class="col-xs-12 negrito-exp text-center"><i class="fa fa-map-marker"></i>{{ $Experiencia->local->nome}}</span>
-        <span class="col-xs-12 negrito-exp text-center">{{ $Experiencia->preco }}</span>
+        <span class="col-xs-12 negrito-exp text-center">R${{ $Experiencia->preco }}</span>
+        <span class="col-xs-12 negrito-exp text-center margin-b-1"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome}} - {{ $Experiencia->local->estado->sigla}}</span>
         <span class="descricao-inicial">{{ $Experiencia->descricao }}</span>
         <div class="owner text-center"><img alt="{{ $Experiencia->owner->nome }}" src="{{ $Experiencia->owner->avatar->path }}"><h4>{{ $Experiencia->owner->nome }}</h4></div>
     
-        <span class="col-xs-12 negrito-exp">Informações</span>
+        <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
         @foreach($Experiencia->informacoes as $Informacao)
         <div class="col-xs-12 informacoes">
             <div class="row">
-                <div class="col-xs-2"><i class="{{ $Informacao->icone }}"></i></div>
-                <div class="col-xs-10">{{ $Informacao->descricao }}</div>
+                <span class="icone-informacoes"><i class="{{ $Informacao->icone }}"></i></span>
+                <span class="descricao-informacoes">{{ $Informacao->descricao }}</span>
             </div>
         </div>
         @endforeach
         @if($Experiencia->descricao!="")
-        <span class="col-xs-12 negrito-exp">Detalhes da experiência</span>
+        <span class="col-xs-12 negrito-exp margin-t-1">Mais detalhes</span>
         <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
         @endif
     </div>
@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Se inscreva aqui</a>
+    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
 </section >
 </div>
 @endsection

@@ -2,6 +2,7 @@ body.mobile {
     font-size: 16px;
     font-family:@font-family-avenir-light;   
     height:100%;
+    color:@cor-cinza-escuro;
 }
 #mobile-html {
     height: 100%;
@@ -170,10 +171,10 @@ small.width20em {
     fill: currentColor;
     font-family:@font-family-avenir-black;
     font-size:1.8rem;
-    font-weight:bold;
-    padding: 0.8em 0 0.6em 0;
+    padding: 1em 0 0.6em 0;
     img {
         height:2em;
+        margin-top:-0.4em;
     }
     a {
         color:white;
@@ -186,16 +187,16 @@ small.width20em {
 .titulo-mobile {
     text-align:center;
     text-transform:uppercase;
-    font-size:2.5rem;
-    font-family:@font-family-futura-bt-bold;
+    font-size:2.3rem;
+    font-family:@font-family-avenir-black;
 }
 
 .link-voltar {
     position:fixed;
-    top:0;
+    top:0.1em;
     left:0;
     padding:0.2em;
-    font-size: 2.2em;
+    font-size: 2em;
     color:white;
 }
 
@@ -259,7 +260,10 @@ ul.lista-foto-descricao {
     }
     .foto {
         width:50%;
-        height:13em;
+        height:11em;
+        @media screen and (min-width: 600px) {
+            height:20em;
+        }
         .foto-img {
             height:100%;
             width:100%; 
@@ -273,13 +277,20 @@ ul.lista-foto-descricao {
     }
     .descricao {
         width:50%;
-        height:13em;
+        line-height:120%;
+        height:11em;
+        line-height:120%;
+        @media screen and (min-width: 600px) {
+            height:20em;
+        }
         .container {
             height:100%;
             width:100%; 
-            padding-top:2em;
+            padding-top:1.3em;
             background-color: white;
             text-align:center;
+            padding-right: 6px;
+            padding-left: 6px;
         }
     }
 }
@@ -289,12 +300,14 @@ ul.lista-foto-descricao {
     .icone {
         color:white;
         font-size:1.5em;
-        width:1.4em;
-        height:1.4em;
+        width:1.6em;
+        height:1.6em;
+        padding-top:0.1em;
         display: inline-block;
         text-align:center;
         border-radius:2em;
-        background-color:#e2e2e2;
+        background-color:transparent;
+        border:1px solid white;
         opacity:0.5;
         transition: opacity 0.5s;
         margin:0.2em 0 0 0.2em;
@@ -330,17 +343,16 @@ ul.lista-foto-descricao {
         width:90%;
         background-color:white;
         padding-top:18rem;
-        padding-bottom:2em;
-        font-size:0.9em;
+        padding-bottom:6em;
         .informacoes i {
-            font-size:2em;
+            font-size: 1.5em;
         }
         .descricao-inicial {
             width:66%;
             display:block;
             float:left;
-            text-align:justify;
             padding:0;
+            line-height:120%;
             padding-left:15px;
         }
         .owner {
@@ -348,19 +360,31 @@ ul.lista-foto-descricao {
             float:left;
             padding:0 0.5em;
         }
+        .icone-informacoes {
+            margin-left:15px;
+            margin-right:5px;
+        }
+        .descricao-informacoes {
+            text-transform: uppercase;
+        }
     }
 }
 
 .negrito-exp {
-    font-family:@font-family-futura-bt-bold;
+    font-family:@font-family-avenir-black;   
     font-size:1.1em;
     color:@cor-cinza-escuro;
+    line-height:100%;
+    &.cidade {
+        margin-top:0.3em;
+    }
 }
 h1.negrito-exp{
     font-size:1.4em;
     margin:0;
     padding-top: 0.5em;
 }
+
 
 .bg-checkout {
     background-color:@verde-sucesso;
