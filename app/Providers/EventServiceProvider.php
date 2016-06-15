@@ -55,7 +55,7 @@ class EventServiceProvider extends ServiceProvider
         /*
         * Experiencias - Todos os eventos relacionados a feature de Experiencias da plataforma
         */
-        
+
         //Quando acontecer um booking deslogado, guardar na sesssao a pagina para sabermos se houve desistencia no cadastro
         // 'App\Events\BookouDeslogado' => [
         //     'App\Handlers\Events\Experiencias\GuardaSessaoBooking'
@@ -64,22 +64,26 @@ class EventServiceProvider extends ServiceProvider
         //Quando acontecer uma nova inscricao de experiencia, mandar email para o candidato e para a vivalá
         'App\Events\NovaInscricaoExperiencia' => [
             'App\Handlers\Events\Experiencias\CriaInscricaoExperiencia',
-            'App\Handlers\Events\Experiencias\EnviaEmailNovaInscricaoExperiencia'
+            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaInscricaoCandidato',
+            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaInscricaoPlataforma'
         ],
 
         //Quando uma inscricao de experiencia for confirmada, avisar o candidato e a instituição
         'App\Events\InscricaoExperienciaConfirmada' => [
-            'App\Handlers\Events\Experiencias\EnviaEmailInscricaoConfirmadaExperiencia'
+            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoConfirmadaCandidato',
+            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoConfirmadaInstituicao'
         ],
 
         //Quando uma inscricao for desconfirmada? (avisar a instituição?)
         // 'App\Events\InscricaoExperienciaDesConfirmada' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailInscricaoDesConfirmadaInstituicao'
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoDesConfirmadaInstituicao'
         // ],
 
         //Quando uma experiencia estiver eminente, disparar emails para quem ainda nao confirmou, para quem confirmou e para a instiuicao
         // 'App\Events\ExperienciaEminente' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaEminente'
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteConfirmados',
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteDesConfirmados',
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteInstituicao'
         // ],
 
         //Quando uma inscricao for cancelada, ainda nao confirmada, tomar alguma ação?
@@ -94,7 +98,7 @@ class EventServiceProvider extends ServiceProvider
 
         //Quando alguem na plataforma clicar em 'propor exp', enviar email para a vivalá com os detalhes fornecidos por quem propôs
         // 'App\Events\NovaPropostaExperiencia' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailNovaPropostaExperiencia'
+        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaProposta'
         // ],
 
     ];

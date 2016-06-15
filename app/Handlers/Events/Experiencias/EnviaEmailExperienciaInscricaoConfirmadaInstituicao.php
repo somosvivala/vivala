@@ -1,12 +1,12 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
-use App\Events\NovaInscricaoExperiencia;
+use App\Events\InscricaoExperienciaConfirmada;
 
 use App\Repositories\MailSenderRepository;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
-class EnviaEmailNovaInscricaoVivala {
+class EnviaEmailExperienciaInscricaoConfirmadaInstituicao {
 
 	// Cria instância de mailSenderRepository para ser usada aqui
 	private $mailSenderRepository;
@@ -25,13 +25,13 @@ class EnviaEmailNovaInscricaoVivala {
 	/**
 	 * Handle the event.
 	 *
-	 * @param  NovaInscricaoExperiencia  $event
+	 * @param  InscricaoExperienciaConfirmada  $event
 	 * @return void
 	 */
-	public function handle(NovaInscricaoExperiencia $event)
+	public function handle(InscricaoExperienciaConfirmada $event)
 	{
-		//
-		$this->mailSenderRepository->enviaEmailExperienciaNovaInscricao($event);
+		// Usa o método enviaEmailExperienciaInscricaoConfirmadaInstituicao do mailSenderRepository para enviar o email
+		$this->mailSenderRepository->enviaEmailExperienciaInscricaoConfirmadaInstituicao($event);
 	}
 
 }

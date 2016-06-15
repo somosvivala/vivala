@@ -6,7 +6,7 @@ use App\Repositories\MailSenderRepository;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
-class EnviaEmailNovaInscricaoExperiencia {
+class EnviaEmailExperienciaNovaInscricaoPlataforma {
 
 	// Cria instância de mailSenderRepository para ser usada aqui
 	private $mailSenderRepository;
@@ -30,8 +30,8 @@ class EnviaEmailNovaInscricaoExperiencia {
 	 */
 	public function handle(NovaInscricaoExperiencia $event)
 	{
-		// Usa o método enviaEmailNovaInscricaoExperiencia do mailSenderRepository para enviar o email 
-		$this->mailSenderRepository->enviaEmailNovaInscricaoExperiencia($event);
+		// Usa o método enviaEmailExperienciaNovaInscricaoPlataforma do mailSenderRepository para enviar o email
+		$this->mailSenderRepository->enviaEmailExperienciaNovaInscricaoPlataforma($event);
 	}
 
 }
