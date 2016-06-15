@@ -109,4 +109,35 @@ class Experiencia extends Model
         return '/img/dummy-exp.jpg';
     }
 
+    /**
+      * Definindo uma scope para as Experiencias em 'analise'
+     */
+    public function scopeAnalise($query)
+    {
+        return $query->where('status', 'analise');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias publicadas
+     */
+    public function scopePublicadas($query)
+    {
+        return $query->where('status', 'publicada');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
+     */
+    public function scopeRealizadas($query)
+    {
+        return $query->where('status', 'realizada');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias com data
+     */
+    public function scopeComDataMarcada($query)
+    {
+        return $query->has('ocorrencias');
+    }
 }
