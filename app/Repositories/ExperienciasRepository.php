@@ -11,6 +11,7 @@ use App\Ong;
 use App\InformacaoExperiencia;
 use App\DataOcorrenciaExperiencia;
 use Carbon\Carbon;
+use App\InscricaoExperiencia;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias

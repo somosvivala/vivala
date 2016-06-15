@@ -1,17 +1,13 @@
 <?php namespace App\Http\Controllers;
 
+use Agent;
+use Auth;
+use App\Experiencia;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Requests\EditarFotoExperienciaRequest;
 use App\Http\Requests\EditExperienciaRequest;
 use App\Http\Requests\UpdateExperienciaRequest;
-
-use App\Http\Controllers\Controller;
-
-use Illuminate\Http\Request;
-use Agent;
-use Auth;
-use App\Interfaces\ExperienciasRepositoryInterface;
-use App\Experiencia;
 use App\Http\Requests\CreateExperienciaRequest;
 use App\Http\Requests\StoreExperienciaRequest;
 use App\Http\Requests\CreateInformacaoExperienciaRequest;
@@ -19,6 +15,9 @@ use App\Http\Requests\DeleteInformacaoExperienciaRequest;
 use App\Http\Requests\DestroyExperienciaRequest;
 use App\Http\Requests\CreateDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
+use App\Interfaces\ExperienciasRepositoryInterface;
+use App\Events\NovaInscricaoExperiencia;
+use App\Http\Controllers\Controller;
 
 class ExperienciasController extends Controller
 {
@@ -136,6 +135,7 @@ class ExperienciasController extends Controller
     public function getCheckout(Request $request, $id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
+        event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
 
         if(Agent::isDesktop()) {
             return view("experiencias.desktop.checkout", compact("Experiencia") );

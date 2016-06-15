@@ -6,6 +6,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use App\Experiencia;
 use App\Perfil;
+use App\Interfaces\ExperienciasRepositoryInterface;
 
 class CriaInscricaoExperiencia
 {
@@ -31,7 +32,7 @@ class CriaInscricaoExperiencia
      */
     public function handle(NovaInscricaoExperiencia $event)
     {
-        $this->experienciasRepository->createInscricaoExperiencia($event->experienciaID, $event->perfil);
+        $this->experienciasRepository->createInscricaoExperiencia($event->experienciaID, $event->perfilID);
     }
 
 }
