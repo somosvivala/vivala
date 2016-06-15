@@ -355,4 +355,33 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             return false;
         }
     }
+
+
+    /**
+      * Metodo para atualizar as inscricoes conforme ocorrer a Experiencia
+      * pendentes -> expiradas && confirmadas -> concluidas
+      * @param $experiencia -  Uma instancia de Experiencia
+     */
+    public function atualizaExperienciaRealizada(Experiencia $experiecia)
+    {
+        $DataOcorrenciaExperiencia = $experiencia->proximaData;
+        $ocorrencia_id = $DataOcorrenciaExperiencia ? $DataOcorrenciaExperiencia->id : null;
+
+        //atualizando inscricoes pendentes para expiradas
+        $experiencia->inscricoes()->pendentes()->get()->each(function ($inscricaoPendente) {
+            $inscricaoPendente->update(['status' => 'expirada']);
+        });
+
+        //atualizando inscricoes confirmadas para concluidas
+        $experiencia->inscricoes()->confirmadas()->get()->each(function ($inscricaoPendente) {
+            $inscricaoPendente->update([
+                'status' => 'concluidas',
+                'data_ocorrencia_experiencia_id' => $ocorrencia_id
+            ]);
+        });
+
+    }
+
+
+
 }
