@@ -38,5 +38,14 @@ class DataOcorrenciaExperiencia extends Model
         return $this->data_ocorrencia ? $this->data_ocorrencia->format('d/m/Y') : '';
     }
 
+    /**
+     * Definindo um acessor para saber se a data é hoje
+     */
+    public function getIsTodayAttribute()
+    {
+        return $this->data_ocorrencia ? $this->data_ocorrencia->isToday() :  false;
+    }
+
+
 
 }

@@ -140,4 +140,17 @@ class Experiencia extends Model
     {
         return $query->has('ocorrencias');
     }
+
+    /**
+     * Definindo um acessor para determinar se a experiencia esta acontecendo hoje
+     */
+    public function getAconteceHojeAttribute()
+    {
+        return $this->proximaOcorrencia->isToday;
+    }
+
+
+
+
+
 }
