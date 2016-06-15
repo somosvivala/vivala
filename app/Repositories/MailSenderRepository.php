@@ -16,7 +16,7 @@ class MailSenderRepository
     * o CANDIDATO que temos um novo pedido de experiência
     * @param $
     */
-    public function enviaEmailExperienciaInscricaoConfirmadaCandidato()
+    public function enviaEmailExperienciaNovaInscricaoCandidato()
     {
     /*
     Mail::send('emails.experiencias.novainscricaocandidato', [], function ($message) use () {
@@ -36,7 +36,7 @@ class MailSenderRepository
     * a EQUIPE DA VIVALÁ de que temos um novo pedido de experiência
     * @param $
     */
-    public function enviaEmailExperienciaInscricaoConfirmadaCandidato()
+    public function enviaEmailExperienciaNovaInscricaoPlataforma()
     {
     /*
     Mail::send('emails.experiencias.novainscricaoplataforma', [], function ($message) use () {

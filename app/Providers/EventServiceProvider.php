@@ -25,6 +25,9 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\SendMailsWhenPerfilHasVolunteered',
         ],
 
+        /*
+        * ClickBus
+        */
         //Quando alguem finaliza uma compra da Clickbus
         'App\Events\ClickBusCompraFinalizada' => [
             'App\Handlers\Events\ClickBus\EnviaEmailCompraFinalizada',
@@ -42,11 +45,17 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\ClickBus\EnviaEmailPagamentoConfirmado',
         ],
 
+        /*
+        * CotacaoViagem
+        */
         //Quando alguém finaliza a Cotação de uma Viagem
         'App\Events\NovaCotacaoViagem' => [
             'App\Handlers\Events\CotacaoViagem\EnviaEmailCotacaoViagem',
         ],
 
+        /*
+        * Logger
+        */
         //Quando ocorrer alguma acao que sera guardada no log
         'App\Events\NovaInteracaoPlataforma' => [
             'App\Handlers\Events\Logger\CriarLogInteracaoPlataforma',
@@ -55,7 +64,6 @@ class EventServiceProvider extends ServiceProvider
         /*
         * Experiencias - Todos os eventos relacionados a feature de Experiencias da plataforma
         */
-
         //Quando acontecer um booking deslogado, guardar na sesssao a pagina para sabermos se houve desistencia no cadastro
         // 'App\Events\BookouDeslogado' => [
         //     'App\Handlers\Events\Experiencias\GuardaSessaoBooking'
@@ -78,7 +86,6 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\ExperienciaOcorrendo' => [
             'App\Handlers\Events\Experiencias\AtualizaExperienciaRealizada',
         ],
-
 
         //Quando uma inscricao for desconfirmada? (avisar a instituição?)
         // 'App\Events\InscricaoExperienciaDesConfirmada' => [
