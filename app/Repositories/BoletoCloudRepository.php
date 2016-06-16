@@ -5,12 +5,43 @@
  */
 class BoletoCloudRepository
 {
+
+    //Informacoes sensiveis que serao pegas do env
+
+    public $BOLETOCLOUD_CONTA_BANCO;
+    public $BOLETOCLOUD_CONTA_AGENCIA;
+    public $BOLETOCLOUD_CONTA_NUMERO;
+    public $BOLETOCLOUD_CONTA_CARTEIRA;
+    public $BOLETOCLOUD_BENEFICIARIO_NOME;
+    public $BOLETOCLOUD_BENEFICIARIO_CPRF;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_CEP;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_UF;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOCALIDADE;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_BAIRRO;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOGRADOURO;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_NUMERO;
+    public $BOLETOCLOUD_BENEFICIARIO_ENDERECO_COMPLEMENTO;
+
+
     /**
      * Construtor obtendo informacoes necessarias do env
      */
     function __construct()
     {
-        //pegar informacoes sensiveis no enviroment (agencia, conta, etc..)
+
+        $this->BOLETOCLOUD_CONTA_BANCO                       = env('BOLETOCLOUD_CONTA_BANCO');
+        $this->BOLETOCLOUD_CONTA_AGENCIA                     = env('BOLETOCLOUD_CONTA_AGENCIA');
+        $this->BOLETOCLOUD_CONTA_NUMERO                      = env('BOLETOCLOUD_CONTA_NUMERO');
+        $this->BOLETOCLOUD_CONTA_CARTEIRA                    = env('BOLETOCLOUD_CONTA_CARTEIRA');
+        $this->BOLETOCLOUD_BENEFICIARIO_NOME                 = env('BOLETOCLOUD_BENEFICIARIO_NOME');
+        $this->BOLETOCLOUD_BENEFICIARIO_CPRF                 = env('BOLETOCLOUD_BENEFICIARIO_CPRF');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_CEP         = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_CEP');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_UF          = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_UF');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOCALIDADE  = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOCALIDADE');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_BAIRRO      = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_BAIRRO');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOGRADOURO  = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOGRADOURO');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_NUMERO      = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_NUMERO');
+        $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_COMPLEMENTO = env('BOLETOCLOUD_BENEFICIARIO_ENDERECO_COMPLEMENTO');
     }
 
 
@@ -41,19 +72,19 @@ class BoletoCloudRepository
         #Dados do boleto
 
         $fields = array(
-            'boleto.conta.banco'=> '237',
-            'boleto.conta.agencia'=> '1234-5',
-            'boleto.conta.numero'=> '123456-0',
-            'boleto.conta.carteira'=> '12',
-            'boleto.beneficiario.nome'=> 'DevAware Solutions',
-            'boleto.beneficiario.cprf'=> '15.719.277/0001-46',
-            'boleto.beneficiario.endereco.cep'=> '59020-000',
-            'boleto.beneficiario.endereco.uf'=> 'RN',
-            'boleto.beneficiario.endereco.localidade'=> 'Natal',
-            'boleto.beneficiario.endereco.bairro'=> 'Petrópolis',
-            'boleto.beneficiario.endereco.logradouro'=> 'Avenida Hermes da Fonseca',
-            'boleto.beneficiario.endereco.numero'=> '384',
-            'boleto.beneficiario.endereco.complemento'=> 'Sala 2A, segundo andar',
+            'boleto.conta.banco' => $this->BOLETOCLOUD_CONTA_BANCO,
+            'boleto.conta.agencia' => $this->BOLETOCLOUD_CONTA_AGENCIA,
+            'boleto.conta.numero' => $this->BOLETOCLOUD_CONTA_NUMERO,
+            'boleto.conta.carteira' => $this->BOLETOCLOUD_CONTA_CARTEIRA,
+            'boleto.beneficiario.nome' => $this->BOLETOCLOUD_BENEFICIARIO_NOME,
+            'boleto.beneficiario.cprf' => $this->BOLETOCLOUD_BENEFICIARIO_CPRF,
+            'boleto.beneficiario.endereco.cep' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_CEP,
+            'boleto.beneficiario.endereco.uf' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_UF,
+            'boleto.beneficiario.endereco.localidade' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOCALIDADE,
+            'boleto.beneficiario.endereco.bairro' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_BAIRRO,
+            'boleto.beneficiario.endereco.logradouro' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_LOGRADOURO,
+            'boleto.beneficiario.endereco.numero' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_NUMERO,
+            'boleto.beneficiario.endereco.complemento' => $this->BOLETOCLOUD_BENEFICIARIO_ENDERECO_COMPLEMENTO,
             'boleto.emissao'=> '2014-07-11',
             'boleto.vencimento'=> '2020-05-30',
             'boleto.documento'=> 'EX1',
