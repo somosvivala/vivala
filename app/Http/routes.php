@@ -27,7 +27,9 @@ Route::get('testeboleto', function() {
 });
 
 
-
+Route::group(['before' => 'auth'], function() {
+    Route::controller('notificacoes','NotificacaoController');
+});
 
 /**
  *  Essas rotas sao apenas para o desktop, portanto se forem acessadas
@@ -58,7 +60,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
     Route::get('postajax/{id}/{secao}', 'PostController@show');
     Route::controller('post','PostController');
     Route::controller('albums','AlbumController');
-    Route::controller('notificacoes','NotificacaoController');
     Route::controller('paginas','PaginaController');
     Route::controller('vagas','VagaController');
     Route::controller('busca','SearchController');
