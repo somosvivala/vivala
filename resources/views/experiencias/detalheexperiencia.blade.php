@@ -26,7 +26,15 @@
             <div class="round-foto-small">
                 <img alt="{{ $Experiencia->owner->nome }}" src="{{ $Experiencia->owner->avatar->path }}">
             </div>
-            <h4>{{ $Experiencia->owner->nome }}</h4>
+            <span>{{ $Experiencia->owner->nome }}</span>
+            <div class="row">
+                @if($Experiencia->owner->url_facebook)
+                <a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}"><i class="fa fa-facebook-square verde-sucesso"></i></a>
+                @endif
+                @if($Experiencia->owner->url_instagram)
+                <a href="http://instagram.com/{{ $Experiencia->owner->url_instagram }}"><i class="fa fa-instagram verde-sucesso"></i></a>
+                @endif
+            </div>
         </div>
     
         <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
