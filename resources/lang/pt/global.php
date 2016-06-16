@@ -153,6 +153,7 @@ return[
   'lbl_album_description' => 'Descrição do Álbum',
   'lbl_all_rights_reserved' => 'Todos os direitos reservados',
   'lbl_all_results_by' => 'Todos os resultados por:',
+  'lbl_and' => 'e',
   'lbl_any_preference_period_to_travel' => 'Algum período de sua preferência para viajar',
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
@@ -282,6 +283,7 @@ return[
   'lbl_company_send_' => 'Enviar Empresas',
   'lbl_company_update' => 'Atualizar página de Empresa',
   'lbl_company_update_' => 'Atualizar páginas de Empresas',
+  'lbl_connect' => 'Conectar',
   'lbl_connect_with_others' => 'Sugestão de Conexões',
   'lbl_connect_with_friends' => 'Conecte-se com amigos',
   'lbl_connect_with_volunteers' => 'Conecte-se com voluntários',
@@ -449,6 +451,7 @@ return[
   'lbl_login_keepme' => 'Mantenha-me conectado',
   'lbl_logout' => 'Sair',
   'lbl_lunch' => 'Almoço',
+  'lbl_management' => 'Gestão',
   'lbl_manifest' => 'Manifesto',
   'lbl_map' => 'Mapa',
   'lbl_map_' => 'Mapas',
@@ -522,6 +525,7 @@ return[
   'lbl_ong_slot_searching' => 'Buscando Vaga',
   'lbl_ong_slot_searching_' => 'Buscando Vagas',
   'lbl_optional' => 'Opcional',
+  'lbl_or' => 'Ou',
   'lbl_organization' => 'Organização',
   'lbl_organization_about' => 'Sobre a Organização',
   'lbl_page' => 'Página',
@@ -550,6 +554,7 @@ return[
   'lbl_passport' => 'Passaporte',
   'lbl_password' => 'Senha',
   'lbl_password_' => 'Senhas',
+  'lbl_password_confirm' => 'Confirmar Senha',
   'lbl_password_confirmation' => 'Confirmação de Senha',
   'lbl_password_forgot' => 'Esqueceu sua senha?',
   'lbl_password_recovery' => 'Recuperação de Senha',
@@ -608,7 +613,9 @@ return[
   'lbl_quiz_' => 'Questionários',
   'lbl_read_more' => 'Ler Mais',
   'lbl_register' => 'Registrar',
+  'lbl_register2' => 'Cadastrar',
   'lbl_registered' => 'Registrado',
+  'lbl_registered2' => 'Cadastrado',
   'lbl_remove' => 'Remover',
   'lbl_report_problem' => 'Nos reporte um Problema',
   'lbl_restaurant' => 'Restaurante',
@@ -922,16 +929,6 @@ return[
       'car_category_utilitary' => 'Utilitário',
       'car_category_pickup' => 'Pick-up',
 
-  /* View: Album [DONE] */
-
-  /* View: Auth [DONE] */
-
-  /* View: ChefsClub */
-
-  /* View: Conectar */
-
-  /* View: Configuracao [DONE] */
-
   /*------------------------------------------------------------------------------
   /  View : VIAJAR
   ------------------------------------------------------------------------------*/
@@ -1038,7 +1035,7 @@ return[
 
   /* View: Páginas */
     'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
-    'pages_by_clicking' => 'Ao clicar em Começar, você concorda com os',
+    'pages_by_clicking' => 'Ao clicar em começar, você concorda com os',
     'pages_terms_and_conditions' => 'Termos das Páginas da Vivalá',
 
   /* View: Perfil */
@@ -1103,10 +1100,6 @@ return[
       'quiz_nicesuggests' => 'Sugestões baseadas em seus interesses. Conecte-se!',
       'quiz_nosuggests' => 'Não encontramos nenhuma sugestão.',
 
-  /* View: Vendor */
-
-  /* View: Viajar */
-
   /* feed.blade */
       'feed_kinda_silence' => 'Pô, conta alguma coisa aí!',
 
@@ -1119,9 +1112,10 @@ return[
       'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar.',
 
     /* Política de Dados */
-      'welcome_aboutprivacy1' => 'Ao clicar em confirmar, você concorda com nossos',
+      'welcome_aboutprivacy1' => 'Ao clicar em confirmar você concorda com nossos',
       'welcome_aboutprivacy2' => 'e confirma que leu nossa',
-      'welcome_aboutprivacy3' => ', incluindo nosso',
+      'welcome_aboutprivacy3' => 'incluindo nosso',
+      'welcome_aboutprivacy4' => 'Ao se cadastrar, você concorda com nosso',
 
 /*------------------------------------------------------------------------------
 /  Traduções com BD-mixed

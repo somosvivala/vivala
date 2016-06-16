@@ -134,6 +134,7 @@ return[
   'lbl_album_without_photo' => 'Album without photos.',
   'lbl_all_rights_reserved' => 'All rights reserved',
   'lbl_all_results_by' => 'All results by:',
+  'lbl_and' => 'and',
   'lbl_any_preference_period_to_travel' => 'Any period you prefer to travel?',
   'lbl_app' => 'App',
   'lbl_app_' => 'Apps',
@@ -263,7 +264,7 @@ return[
   'lbl_create' => 'Create',
   'lbl_created_at' => 'Created on',
   'lbl_brazilian_culture' => 'Brazilian Culture',
-  'lbl_data_policy' => 'Data Policy,',
+  'lbl_data_policy' => 'Data Policy',
   'lbl_developer' => 'Developer',
   'lbl_description' => 'Description',
   'lbl_description_long' => 'Long Description',
@@ -413,6 +414,7 @@ return[
   'lbl_login_keepme' => 'Keep me connected',
   'lbl_logout' => 'Logout',
   'lbl_lunch' => 'Lunch',
+  'lbl_management' => 'Management',
   'lbl_manifest' => 'Manifesto',
   'lbl_manifest_our' => 'Our Manifesto',
   'lbl_map' => 'Map',
@@ -486,6 +488,7 @@ return[
   'lbl_ong_slot_search_' => 'Search Volunteer Jobs',
   'lbl_ong_slot_searching' => 'Searching Volunteer Job',
   'lbl_ong_slot_searching_' => 'Searching Volunteer Jobs',
+  'lbl_or' => 'Or',
   'lbl_optional' => 'Optional',
   'lbl_organization' => 'Organization',
   'lbl_organization_about' => 'About the Organization',
@@ -504,6 +507,7 @@ return[
   'lbl_passport' => 'Passport',
   'lbl_password' => 'Password',
   'lbl_password_' => 'Password',
+  'lbl_password_confirm' => 'Password Confirm',
   'lbl_password_confirmation' => 'Password Confirmation',
   'lbl_password_forgot' => 'Forgot your password?',
   'lbl_password_recovery' => 'Password recovery',
@@ -558,7 +562,9 @@ return[
   'lbl_quiz_' => 'Quiz',
   'lbl_read_more' => 'Read More',
   'lbl_register' => 'Register',
+  'lbl_register2' => 'Register',
   'lbl_registered' => 'Registered',
+  'lbl_registered2' => 'Registered',
   'lbl_report_problem' => 'Report a problem',
   'lbl_restaurant' => 'Restaurant',
   'lbl_restaurant_' => 'Restaurants',
@@ -1047,10 +1053,10 @@ return[
       'welcome_floatingballon3' => 'Connect with people from all over the world that want to travel and explore Brazil.',
 
     /* Política de Dados */
-      'welcome_aboutprivacy1' => ' By clickin Confirm, you agree with our',
-      'welcome_aboutprivacy2' => ' and confirm you have read our',
+      'welcome_aboutprivacy1' => 'By clickin confirm you agree with our',
+      'welcome_aboutprivacy2' => ' and agree that you have read our',
       'welcome_aboutprivacy3' => ' including our',
-
+      'welcome_aboutprivacy4' => 'By registering you agree with our',
 
 /*------------------------------------------------------------------------------
 //  Traduções com BD-mixed
