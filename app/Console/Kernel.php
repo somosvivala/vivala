@@ -68,6 +68,24 @@ class Kernel extends ConsoleKernel {
                     }
                 }
             })->everyFiveMinutes();
+
+
+            /**
+             * Jobs referentes as experiencias
+             */
+
+            //job para atualizar as inscricoes de uma experiencias que ocorre
+            $schedule->call(function() {
+                //dentre as experiencias ativas com data marcada
+                Experiencia::publicadas()->comDataMarcada()->get()->each(function ($experiencia) {
+                    //se a experiencia for acontecer hoje, disparar evento tomar providencias
+                    if ($experiencia->aconteceHoje) {
+                        event( new ExperienciaOcorrendo( $experiencia ));
+                    }
+                });;
+
+            })->dailyAt('4:19');
+
 	}
 
 }

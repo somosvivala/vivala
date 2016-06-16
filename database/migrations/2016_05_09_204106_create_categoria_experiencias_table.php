@@ -17,9 +17,8 @@ class CreateCategoriaExperienciasTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 
-      $table->string('nome')->nullable();
+      $table->string('nome')->unique()->nullable();
 
-      //url do icone?
       $table->string('icone')->nullable();
 
 		});

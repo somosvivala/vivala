@@ -2,14 +2,20 @@
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
+use App\InformacaoExperiencia;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Experiencia extends Model
 {
 
+    use SoftDeletes;
+
     //mass assigned fields
     protected $fillable = [
-        'titulo',
+        'descricao_na_listagem',
         'descricao',
+        'detalhes',
         'preco',
         'status'
     ];
@@ -47,6 +53,16 @@ class Experiencia extends Model
         return $this->hasMany('App\InscricaoExperiencia');
     }
 
+
+    /**
+     * Uma Experiencia tem muitas informacoes
+     */
+    public function informacoes()
+    {
+        return $this->hasMany('App\InformacaoExperiencia');
+    }
+
+
     /**
      * Uma Experiencia pertence a muitas CategoriaExperiencia 
      */
@@ -54,6 +70,32 @@ class Experiencia extends Model
     {
         return $this->belongsToMany('App\CategoriaExperiencia');
     }
+
+
+    /**
+     * Uma Experiencia tem muitas inscriçoes
+     */
+    public function ocorrencias()
+    {
+        return $this->hasMany('App\DataOcorrenciaExperiencia');
+    }
+
+
+    /**
+     * Acessor para a próxima ocorrencia a partir de hoje
+     */
+    public function getProximaOcorrenciaAttribute()
+    {
+        $existeOcorrencias = !$this->ocorrencias->isEmpty();
+
+        return $existeOcorrencias ?
+            $this->ocorrencias()
+            ->where('data_ocorrencia', '>=', Carbon::now())
+            ->orderBy('data_ocorrencia', 'asc')
+            ->first()
+            : null;
+    }
+
 
     /*
      * Acessor para retornar a url da fotoCapa
@@ -68,22 +110,46 @@ class Experiencia extends Model
     }
 
     /**
-     * Metodo para determinar se o usuario atualmente logado
-     * tem permissao para editar essa experiencia
-     *
-     * @param $user - Uma instancia do usuario que queremos testar
-     * a permissao
+      * Definindo uma scope para as Experiencias em 'analise'
      */
-    public function usuarioPodeEditar(User $user)
+    public function scopeAnalise($query)
     {
-        //Se a entidadeAtiva for a ong criadora da experiencia
-        $podeEditar = ($this->owner == $user->entidadeAtiva);
-
-        //ou se o usuario ativo for um admin
-        $podeEditar = $podeEditar || $user->isAdmin();
-
-        return $podeEditar;
+        return $query->where('status', 'analise');
     }
+
+    /**
+      * Definindo uma scope para as Experiencias publicadas
+     */
+    public function scopePublicadas($query)
+    {
+        return $query->where('status', 'publicada');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
+     */
+    public function scopeRealizadas($query)
+    {
+        return $query->where('status', 'realizada');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias com data
+     */
+    public function scopeComDataMarcada($query)
+    {
+        return $query->has('ocorrencias');
+    }
+
+    /**
+     * Definindo um acessor para determinar se a experiencia esta acontecendo hoje
+     */
+    public function getAconteceHojeAttribute()
+    {
+        return $this->proximaOcorrencia->isToday;
+    }
+
+
 
 
 

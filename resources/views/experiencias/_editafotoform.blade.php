@@ -1,15 +1,13 @@
-@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
+@extends(Auth::user() ? 'mobiletemplate' : 'templatedeslogado')
 
 @section('content')
+
 <div class="col-sm-12 pergunta quiz-2">
-    <span class="absolute-top-right laranja">
-        <a href="{{ url ('quiz')}}" class="absolute-top-left laranja">{{ trans("global.lbl_step_back") }}</a> | <a href="{{ url ('quiz/contemais')}}" class="laranja">{{ trans("global.lbl_step_skip") }}</a>
-    </span>
     <div class="row">
-      <div class="titulo col-sm-12 padding-b-1">
-        <h2 class="tour_quiz-2-step1">{{ trans("global.quiz_profile_customize") }}</h2>
-        <h3>{{ trans("global.quiz_photo_customize") }}</h3>
-      </div>
+        <div class="titulo col-sm-12 padding-b-1">
+            <h2 class="tour_quiz-2-step1">Atualize a foto da Experiência</h2>
+            <h3>Coloque uma foto nova para a experiência de {{ $experiencia->owner->nome }}</h3>
+        </div>
     </div>
     <a type="button" data-target="#cropper-quiz-modal" data-toggle="modal">
         <img class="tour_quiz-2-step2" class="quiz-foto-atual" src="{{ $foto ? $foto->path : '/img/interrogacao.png' }}"/>
@@ -27,9 +25,9 @@
         <div class="modal-dialog ">
             <div class="modal-content">
                 <div class="modal-body">
-                    {!! Form::open(['url' => ['foto/cropandsaveexperiencias',  $experiencia->id ], 'files' => true, 'data-redirect' => '/gestao/home', 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading']) !!}
+                    {!! Form::open(['url' => ['foto/cropandsaveexperiencias',  $experiencia->id ], 'files' => true, 'data-redirect' => '/experiencias/'.$experiencia->id, 'id'=>'quiz_foto_form', 'data-loading'=>'form-loading', 'class'=>'cropfoto-ajax']) !!}
 
-                    <h2 class="text-center">{{ trans("global.quiz_profile_customize") }}</h2>
+                    <h2 class="text-center">Atualize a foto da experiência</h2>
                     <label id="btn-upload-img-quiz" class="btn btn-acao btn-upload margin-b-1" for="input-quiz-foto-perfil" title="Upload image file">
                         <input class="sr-only" id="input-quiz-foto-perfil" name="file" accept="image/*" type="file">
                         <span data-original-title="Import image with Blob URLs" class="docs-tooltip" data-toggle="tooltip" title="">
@@ -40,7 +38,6 @@
                     <div id="cropper-quiz" class="cropper-img">
                         <img src="{{ '/img/nophoto.png' }}" />
                     </div>
-                    {!! Form::hidden("tipoEntidade",  "App\Perfil") !!}
                     {!! Form::hidden("x",  0, ['id' => 'x-quiz-perfil']) !!}
                     {!! Form::hidden("y",  0, ['id' => 'y-quiz-perfil']) !!}
                     {!! Form::hidden("w",  0, ['id' => 'w-quiz-perfil']) !!}

@@ -87,10 +87,23 @@ elixir(function(mix) {
       '../../assets/js/buscaPerfil.js',
       '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
+
+      /* Autocomplete de buscas de cidade */
+      '../../assets/js/autocompleteBuscas.js',
+      '../../assets/js/mobile.js',
+
+      /* Scripts das Experiencias */
+      '../../assets/js/info-form-experiencias.js',
+      '../../assets/js/data-ocorrencia-experiencias.js',
+      '../../assets/js/categoria-experiencia.js',
+      '../../assets/js/experiencias.js',
+
       /* ClickbusPayment Mercado Pago Gateway*/
       '../../assets/js/clickbus-payments.js',
+
       /* featureCotaViagem */
       '../../assets/js/cotacaoViagem.js',
+
 	], 'public/js/vendor.js');
 
   // Apenas da view de Welcome

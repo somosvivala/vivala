@@ -16,7 +16,8 @@ class Perfil extends Model {
         'cidade_atual',
         'ultimo_local',
         'descricao_curta',
-        'descricao_longa'
+        'descricao_longa',
+        'user_id'
     ];
 
 	protected $dates = ['aniversario'];

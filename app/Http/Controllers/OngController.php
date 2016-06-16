@@ -259,7 +259,7 @@ class OngController extends CuidarController {
 
             //Verificando se usuario logado é owner da ong atual
             //TODO: Model de permissoes.. 
-            if ($ong->user->id != $user->id) {
+            if ($ong->user->id != $user->id && !$user->isAdmin())  {
                 //Criar mensagens de erro padrão em configurações??
                 App::abort(403, 'Ops, aparentemente voce não tem permissão para editar as informações dessa Ong');
             }

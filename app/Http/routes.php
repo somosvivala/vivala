@@ -11,84 +11,165 @@
 |
 */
 
-use App\CompraClickbus;
-use App\Events\ClickBusCompraFinalizada;
+  /*
+  * Rotas de teste de Emails Experiencias
+  */
+  Route::get('/novainscricaocandidato', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.novainscricaocandidato', compact('experiencia'));
+    return view('emails.experiencias.novainscricaocandidato');
+  });
+  Route::get('/novainscricaoplataforma', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.novainscricaoplataforma', compact('experiencia'));
+    return view('emails.experiencias.novainscricaoplataforma');
+  });
+  Route::get('/inscricaoconfirmadacandidato', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.inscricaoconfirmadacandidato', compact('experiencia'));
+    return view('emails.experiencias.inscricaoconfirmadacandidato');
+  });
+  Route::get('/inscricaoconfirmadainstituicao', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('experiencia'));
+    return view('emails.experiencias.inscricaoconfirmadainstituicao');
+  });
 
 /*
  * Rotas
  */
-//Route::controller('cotarviagem', 'CotarViagensController');
-Route::post('cotarviagem', 'CotarViagensController@getForm');
-Route::post('cotarviagem/data', 'CotarViagensController@getData');
 
-Route::get('/', 'WelcomeController@index');
+//Rota que precisam de acesso sem  autenticacao e para qualquer device
 Route::get('fbLogin', 'FacebookController@fbLogin');
-Route::get('config', 'ConfigController@index');
-
 Route::resource('configuracao','ConfiguracaoController');
-Route::resource('ong','OngController');
-Route::resource('empresa','EmpresaController');
-Route::resource('perfil','PerfilController');
-Route::resource('post','PostController');
-Route::resource('albums','AlbumController');
-Route::resource('vagas','VagaController');
 
-// Mostra dados do post por ajax
-Route::get('postajax/{id}/{secao}', 'PostController@show');
-Route::controller('post','PostController');
-Route::controller('albums','AlbumController');
-Route::controller('notificacoes','NotificacaoController');
-Route::controller('paginas','PaginaController');
-Route::controller('vagas','VagaController');
-Route::controller('busca','SearchController');
-Route::controller('ong','OngController');
-Route::controller('restaurantes','ChefsclubController');
+//Testando geracao de boleto
+Route::get('testeboleto', function() {
+    $numeroSequencialBoleto = rand(1, 9999999);
+    $repo = new \App\Repositories\BoletoCloudRepository();
+    return $repo->gerarBoletoTeste($numeroSequencialBoleto);
+});
 
-// Rotas dos três pilares do sistema
-Route::resource('viajar','ViajarController');
-Route::resource('cuidar','CuidarController');
-Route::resource('conectar','ConectarController');
 
-/*
- * Rotas especificas das áreas internas
+Route::group(['before' => 'auth'], function() {
+    Route::controller('notificacoes','NotificacaoController');
+});
+
+/**
+ *  Essas rotas sao apenas para o desktop, portanto se forem acessadas
+ *  por mobile serao redirecionadas para /experiencias
+ */
+Route::group(['middleware' => 'desktop.only'], function() {
+    //raiz jogando para a tela de welcome
+    Route::get('/', 'WelcomeController@index');
+    Route::controller('home', 'HomeController');
+
+    // Rotas dos três pilares do sistema
+    Route::resource('viajar','ViajarController');
+    Route::resource('cuidar','CuidarController');
+    Route::resource('conectar','ConectarController');
+
+
+    Route::post('cotarviagem', 'CotarViagensController@getForm');
+    Route::post('cotarviagem/data', 'CotarViagensController@getData');
+
+    Route::resource('ong','OngController');
+    Route::resource('empresa','EmpresaController');
+    Route::resource('perfil','PerfilController');
+    Route::resource('post','PostController');
+    Route::resource('albums','AlbumController');
+    Route::resource('vagas','VagaController');
+
+    // Mostra dados do post por ajax
+    Route::get('postajax/{id}/{secao}', 'PostController@show');
+    Route::controller('post','PostController');
+    Route::controller('albums','AlbumController');
+    Route::controller('paginas','PaginaController');
+    Route::controller('vagas','VagaController');
+    Route::controller('busca','SearchController');
+    Route::controller('ong','OngController');
+    Route::controller('restaurantes','ChefsclubController');
+
+    Route::post('viajar/filtro','ViajarController@filtro');
+    Route::get('sugestoesviajantes','SugestaoController@getViajantes');
+    Route::get('sugestoesviajantes/{filtro}','SugestaoController@getViajantes');
+    Route::get('ongs/sobre/{id}','OngController@sobre');
+    Route::get('ongs','OngController@ongs');
+    Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
+    Route::get('ongs/sobre/{id}','OngController@sobre');
+    Route::controller('feed','FeedController');
+
+    Route::controller('foto', 'FotoController');
+    Route::controller('ajax', 'AjaxController');
+    Route::controller('perfilcontroller','PerfilController');
+    Route::controller('comentario', 'ComentariosController');
+    Route::controller('quiz', 'QuizController');
+
+    Route::post('quimera', 'QuimeraController@quimera');
+    Route::post('clickbus/place', 'ClickBusController@autocompletePlace');
+    Route::post('clickbus/trip', 'ClickBusController@getTrip');
+    Route::post('clickbus/trips', 'ClickBusController@getTrips');
+    Route::post('clickbus/detail', 'ClickBusController@getDetail');
+    Route::post('clickbus/selecionarpoltronas', 'ClickBusController@getSelecionarPoltronas');
+    Route::post('clickbus/removerpoltronas', 'ClickBusController@getRemoverpoltronas');
+    Route::post('clickbus/payment', 'ClickBusController@getPayment');
+    Route::post('clickbus/booking', 'ClickBusController@getBooking');
+    Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
+    Route::post('clickbus/success', 'ClickBusController@getSucess');
+
+    /**
+     * Aqui ficam as rotas que vao passar por autenticação. (filtro auth)
+     */
+    Route::group(['before' => 'auth'], function() {
+        Route::get('perfil', 'PerfilController@index');
+        Route::get('perfil/queryList', 'PerfilController@getQueryList');
+        Route::get('perfil/busca/{query}', 'PerfilController@getAllQueryList');
+        Route::get('editarPerfil', 'PerfilController@edit');
+        Route::post('editarPerfil/{id}', 'PerfilController@update');
+        Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
+        Route::post('cropPhotoPerfil/{id}', 'PerfilController@cropPhoto');
+        Route::post('cropPhotoOng/{id}', 'OngController@cropPhoto');
+        Route::post('cropPhotoEmpresa/{id}', 'EmpresaController@cropPhoto');
+        Route::post('cropPhotoPost/{id}', 'PostController@cropPhoto');
+    });
+
+});
+
+
+/**
+ * Rotas que nao sao especificas de desktop
  */
 Route::controller('gestao', 'GestaoController');
 
-// Rota para sugestoes de viajantes
-Route::post('viajar/filtro','ViajarController@filtro');
 
-Route::get('sugestoesviajantes','SugestaoController@getViajantes');
-Route::get('sugestoesviajantes/{filtro}','SugestaoController@getViajantes');
-Route::get('ongs/sobre/{id}','OngController@sobre');
-Route::get('ongs','OngController@ongs');
-Route::post('ongs','OngController@ongs'); // Precisa pro submit do form?
-Route::get('ongs/sobre/{id}','OngController@sobre');
-Route::controller('feed','FeedController');
+/**
+ *  Rotas referentes as experiencias
+ */
 
-Route::controller('home', 'HomeController');
-Route::controller('foto', 'FotoController');
-Route::controller('ajax', 'AjaxController');
-Route::controller('perfilcontroller','PerfilController');
-Route::controller('comentario', 'ComentariosController');
-Route::controller('quiz', 'QuizController');
+//rotas para lidar com as informacoes extras de uma experiecia
+Route::get('experiencias/addinformacaoextra', 'ExperienciasController@getAddinformacaoextra');
+Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDeleteinformacaoextra');
 
-Route::post('quimera', 'QuimeraController@quimera');
-Route::post('clickbus/place', 'ClickBusController@autocompletePlace');
-Route::post('clickbus/trip', 'ClickBusController@getTrip');
-Route::post('clickbus/trips', 'ClickBusController@getTrips');
-Route::post('clickbus/detail', 'ClickBusController@getDetail');
-Route::post('clickbus/selecionarpoltronas', 'ClickBusController@getSelecionarPoltronas');
-Route::post('clickbus/removerpoltronas', 'ClickBusController@getRemoverpoltronas');
-Route::post('clickbus/payment', 'ClickBusController@getPayment');
-Route::post('clickbus/booking', 'ClickBusController@getBooking');
-Route::post('clickbus/voucher', 'ClickBusController@getVoucher');
-Route::post('clickbus/success', 'ClickBusController@getSucess');
+//rotas para lidar com as datas de ocorrencia de uma experiencia
+Route::get('experiencias/adddataocorrencia', 'ExperienciasController@getAddDataOcorrencia');
+Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDeleteDataOcorrencia');
 
+//rotas complementares ao resource controller
+Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
+Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
+Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
+
+//rotas para lidar com resource controllers
 Route::resource('experiencias', 'ExperienciasController');
-Route::controller('experiencias', 'ExperienciasController');
+Route::resource('categorias/experiencias', 'CategoriaExperienciaController');
+
+//rotas complementares ao MobileAuthController
+Route::get('login', 'Auth\MobileAuthController@getLogin');
+Route::get('cadastro', 'Auth\MobileAuthController@getCadastro');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
+	'autenticacao' => 'Auth\MobileAuthController',
 	'password' => 'Auth\PasswordController',
 ]);
 
@@ -99,22 +180,6 @@ Route::bind('prettyURL', function($value, $route)
 {
 	$prettyUrl = App\PrettyUrl::all()->where('url', $value)->first();
 	return $prettyUrl;
-});
-
-/**
- * Aqui ficam as rotas que vao passar por autenticação. (filtro auth)
- */
-Route::group(['before' => 'auth'], function() {
-	Route::get('perfil', 'PerfilController@index');
-	Route::get('perfil/queryList', 'PerfilController@getQueryList');
-  Route::get('perfil/busca/{query}', 'PerfilController@getAllQueryList');
-	Route::get('editarPerfil', 'PerfilController@edit');
-	Route::post('editarPerfil/{id}', 'PerfilController@update');
-	Route::post('editarPerfilFoto/{id}', 'PerfilController@updatePhoto');
-	Route::post('cropPhotoPerfil/{id}', 'PerfilController@cropPhoto');
-	Route::post('cropPhotoOng/{id}', 'OngController@cropPhoto');
-	Route::post('cropPhotoEmpresa/{id}', 'EmpresaController@cropPhoto');
-	Route::post('cropPhotoPost/{id}', 'PostController@cropPhoto');
 });
 
 
@@ -152,7 +217,5 @@ Route::get('{prettyURL}', function($prettyUrl=null) {
 
 Route::get("perfil/{perfil}", "PerfilController@showUserProfile");
 Route::get("empresa/{empresa}", "EmpresaController@index");
-
-
 
 Route::controller('logger', 'LoggerController');

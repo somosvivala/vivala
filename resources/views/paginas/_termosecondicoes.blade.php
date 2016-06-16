@@ -1,9 +1,15 @@
-@extends('templatedeslogado')
+@extends('mobiletemplate')
 
 @section('content')
-<div class="container-fluid padding-b-2 text-justified fundo-termos-compromisso">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+  <div class="col-xs-12 fundo-laranja">
+        <div class="col-xs-12 text-center container-logo">
+            <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        </div>
+        <a href="#" class="link-voltar">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+
+    <div class="conteudo-mobile text-justified ">
       <div class="row">
         <h3 class="margin-b-2 text-center font-bold-upper">
             {!! trans('global.termsconditions_title') !!}

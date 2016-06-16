@@ -23,9 +23,10 @@ class CreateExperienciasTable extends Migration {
         $table->string('owner_type')->nullable();
 
         //campos com as informacoes da experiencias
-        $table->string('titulo')->nullable();
-        $table->string('descricao')->nullable();
         $table->decimal('preco', 7, 2)->nullable();
+        $table->text('descricao')->nullable();
+        $table->text('descricao_na_listagem')->nullable();
+        $table->text('detalhes')->nullable();
 
         //status da experiencia, se esta em analise, publicada, se já foi realizada (finalizada) etc..
         $table->enum('status', ['analise', 'publicada', 'finalizada'])->default('analise');

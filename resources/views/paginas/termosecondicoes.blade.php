@@ -1,8 +1,15 @@
-@extends('conectar')
+@extends('mobiletemplate')
 
 @section('content')
-<div class="container-fluid text-justified padding-b-2 fundo-cheio">
-    <div class="col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 col-lg-10">
+  <div class="col-xs-12 fundo-laranja">
+        <div class="col-xs-12 text-center container-logo">
+            <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        </div>
+        <a href="#" class="link-voltar">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+
+    <div class="conteudo-mobile">
       <div class="row">
         <h3 class="text-center margin-b-2 font-bold-upper">
             {!! trans('global.termsconditions_title') !!}
