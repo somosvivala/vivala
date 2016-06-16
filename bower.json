@@ -3,6 +3,7 @@
   "dependencies": {
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.4",
+    "font-awesome": "^4.6.3",
     "Jcrop": "~0.9.12",
     "jQuery-Mask-Plugin": "~1.13.4",
     "lightbox2": "~2.8.1",
@@ -20,6 +21,6 @@
     "tether-tooltip": "^1.2.0"
   },
   "resolutions": {
-    "font-awesome": "^4.6.3"
+    "font-awesome": "4.6.3"
   }
 }

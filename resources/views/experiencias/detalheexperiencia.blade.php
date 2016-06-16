@@ -14,7 +14,7 @@
 </div>
 @endif
 
-<a href="/experiencias" class="link-voltar">
+<a href="{{ url('experiencias') }}" class="link-voltar">
     <i class="fa fa-chevron-left"></i>
 </a>
 <section class="experiencia">
@@ -28,7 +28,7 @@
             </div>
             <h4>{{ $Experiencia->owner->nome }}</h4>
         </div>
-    
+
         <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
         @foreach($Experiencia->informacoes as $Informacao)
         <div class="col-xs-12 informacoes">

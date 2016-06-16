@@ -13,7 +13,7 @@ return[
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
   'join_vivala' => 'Join Vivalá and connect yourself to real Brazil.',
-  'description_vivala' => 'Vivalá is a global platform that connects people who are interested in traveling and transform Brazil.',
+  'description_vivala' => 'Vivalá is a global platform that connects people who are interested in traveling and transform Brazil. Join Vivalá and connect yourself to real Brazil!',
   'keywords_vivala' => 'Vivalá, Social Network, Tourism, Trip, Volunteering, Social Impact, Accomodation, Transport, Feeding, Entertainment',
 
 // Vertentes
@@ -26,6 +26,7 @@ return[
   ------------------------------------------------------------------------------*/
   'lbl_abs' => 'ABS',
   'lbl_about' => 'About',
+  'lbl_account' => 'Account',
   'lbl_acess_data' => 'Access Data',
   'lbl_activity_log' => 'Activities',
   'lbl_additional_info' => 'Additional Info',
@@ -95,6 +96,7 @@ return[
   'lbl_ads_submit_' => 'Submit Ads',
   'lbl_ads_update' => 'Update Ad',
   'lbl_ads_update_' => 'Update Ads',
+  'lbl_agency' => 'Agency',
   'lbl_airbag' => 'Airbag',
   'lbl_air_conditioning' => 'Air conditioning',
   'lbl_album' => 'Album',
@@ -138,6 +140,7 @@ return[
   'lbl_average_price_per_meal' => 'Average price per meal',
   'lbl_back' => 'Back',
   'lbl_balcony' => 'Balcony',
+  'lbl_bank' => 'Bank',
   'lbl_best_rank' => 'Best ranked',
   'lbl_birthday' => 'Date of birth',
   'lbl_birthday1' => 'Birthday',
@@ -306,6 +309,8 @@ return[
   'lbl_event_update_' => 'Update Events',
   'lbl_exit' => 'Exit',
   'lbl_exit_' => 'Exit',
+  'lbl_experience' => 'Experience',
+  'lbl_experience_' => 'Experiences',
   'lbl_extra_hosting' => 'Would you like some extra on your hosting',
   'lbl_explain_better_your_restriction' => 'Explain better your restriction',
   'lbl_feed' => 'Timeline',
