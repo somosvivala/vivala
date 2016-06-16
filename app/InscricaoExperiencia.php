@@ -43,6 +43,15 @@ class InscricaoExperiencia extends Model
     }
 
     /**
+     * As inscricoes podem ter um boleto
+     */
+    public function boleto()
+    {
+        return $this->hasOne('App\BoletoExperiencia');
+    }
+
+
+    /**
      * Definindo uma scope para as inscricoes pendentes
      */
     public function scopePendentes($query)

@@ -43,6 +43,16 @@
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::resource('configuracao','ConfiguracaoController');
 
+//Testando geracao de boleto
+Route::get('testeboleto', function() {
+    $numeroSequencialBoleto = rand(1, 9999999);
+    $repo = new \App\Repositories\BoletoCloudRepository();
+    return $repo->gerarBoletoTeste($numeroSequencialBoleto);
+});
+
+
+
+
 /**
  *  Essas rotas sao apenas para o desktop, portanto se forem acessadas
  *  por mobile serao redirecionadas para /experiencias

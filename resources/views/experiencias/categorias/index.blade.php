@@ -1,4 +1,4 @@
-@extends(Auth::user() ? 'mobilelogado' : 'mobiledeslogado')
+@extends(Auth::user() ? 'mobiletemplate' : 'templatedeslogado')
 
 @section('content')
 <div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio padding-b-2">
