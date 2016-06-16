@@ -11,6 +11,30 @@
 |
 */
 
+  /*
+  * Rotas de teste de Emails Experiencias
+  */
+  Route::get('/novainscricaocandidato', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.novainscricaocandidato', compact('experiencia'));
+    return view('emails.experiencias.novainscricaocandidato');
+  });
+  Route::get('/novainscricaoplataforma', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.novainscricaoplataforma', compact('experiencia'));
+    return view('emails.experiencias.novainscricaoplataforma');
+  });
+  Route::get('/inscricaoconfirmadacandidato', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.inscricaoconfirmadacandidato', compact('experiencia'));
+    return view('emails.experiencias.inscricaoconfirmadacandidato');
+  });
+  Route::get('/inscricaoconfirmadainstituicao', function() {
+    //$experiencia = Experiencia::all()->reverse()->first();
+    //return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('experiencia'));
+    return view('emails.experiencias.inscricaoconfirmadainstituicao');
+  });
+
 /*
  * Rotas
  */
