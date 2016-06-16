@@ -1,12 +1,14 @@
 body.mobile {
-    font-size: 16px;
-    font-family:@font-family-avenir-light;   
+    font-size: 100%;
+    font-family:@font-family-avenir-light;
     height:100%;
     color:@cor-cinza-escuro;
 }
+
 #mobile-html {
     height: 100%;
 }
+
 .conheca-vivala {
     position:fixed;
     width:100%;
@@ -27,7 +29,7 @@ body.mobile {
         top:0;
         opacity:1;
         transition: opacity 0.5s ease-out 0.2s, top 0.6s ease;
-        z-index:99; 
+        z-index:99;
     }
 }
 
@@ -71,6 +73,7 @@ body.mobile {
         padding-right: 0.5em;
     }
 }
+
 .btn-verde {
     color: @verde-sucesso;
     &:hover {
@@ -107,6 +110,7 @@ form input.form-mobile {
     background-color: @cor-fundo;
     width:20rem;
 }
+
 small.width20em {
     width:20rem;
     color:@cor-cinza-escuro;
@@ -114,6 +118,7 @@ small.width20em {
     font-size:0.8em;
     display:inline-block;
 }
+
 .form-mobile-error {
     position: absolute;
     width:100%;
@@ -127,6 +132,7 @@ small.width20em {
     text-transform:uppercase;
     background-color:#A32525;
 }
+
 .form-mobile-warning {
     position: absolute;
     width:100%;
@@ -140,6 +146,7 @@ small.width20em {
     text-transform:uppercase;
     background-color:@cor-cinza-escuro;
 }
+
 .desativa-conheca {
     position: absolute;
     right:0;
@@ -164,6 +171,7 @@ small.width20em {
         color:@verde-sucesso;
     }
 }
+
 .header-mobile {
     background-color:@cor-primaria;
     color:white;
@@ -215,7 +223,7 @@ small.width20em {
     width:3em;
     padding:0.5em;
     color:white;
-    font-size:0.8em; 
+    font-size:0.8em;
     i {
         font-size:3em;
     }
@@ -233,7 +241,7 @@ small.width20em {
     text-align:center;
     font-family:@font-family-avenir-black;
     text-transform:uppercase;
-    font-size:1.5em;
+    font-size:2rem;
     padding:0.5em;
     background-color:@verde-sucesso;
     transition:background-color 0.2s ease;
@@ -266,8 +274,8 @@ ul.lista-foto-descricao {
         }
         .foto-img {
             height:100%;
-            width:100%; 
-            background-position:center center; 
+            width:100%;
+            background-position:center center;
             background-repeat: no-repeat;
             background-size:cover;
         }
@@ -285,7 +293,7 @@ ul.lista-foto-descricao {
         }
         .container {
             height:100%;
-            width:100%; 
+            width:100%;
             padding-top:1.3em;
             background-color: white;
             text-align:center;
@@ -319,6 +327,7 @@ ul.lista-foto-descricao {
         }
     }
 }
+
 .experiencia {
     .foto-experiencia {
         .foto-img {
@@ -328,7 +337,7 @@ ul.lista-foto-descricao {
             width:@tamanhofoto;
             height:@tamanhofoto;
             position:absolute;
-            background-position: center; 
+            background-position: center;
             background-repeat: no-repeat;
             background-size:cover;
         }
@@ -371,7 +380,7 @@ ul.lista-foto-descricao {
 }
 
 .negrito-exp {
-    font-family:@font-family-avenir-black;   
+    font-family:@font-family-avenir-black;
     font-size:1.1em;
     color:@cor-cinza-escuro;
     line-height:100%;
@@ -379,12 +388,12 @@ ul.lista-foto-descricao {
         margin-top:0.3em;
     }
 }
+
 h1.negrito-exp{
-    font-size:1.4em;
+    font-size:2.2rem;
     margin:0;
     padding-top: 0.5em;
 }
-
 
 .bg-checkout {
     background-color:@verde-sucesso;
@@ -394,6 +403,8 @@ h1.negrito-exp{
     width:100%;
     height:100%;
     .popup-checkout {
+        z-index: -1;
+        overflow-y: scroll;
         margin:4%;
         position:absolute;
         width:92%;
@@ -405,40 +416,46 @@ h1.negrito-exp{
         .small {
             font-size:0.5em;
         }
+        div{
+          padding-top: 5vh;
+        }
         .dados-bancarios {
             display:inline-block;
             width:14em;
             background-color:@cor-fundo;
-            padding:0 0.2em;
+            padding:0.2em 0.2em;
         }
     }
 }
+
 i.round-icon-bg {
-    background-color:#8BA6AD;
+    background-color:@verde-sucesso;
     color:white;
     border-radius:1em;
     width:1.4em;
     height:1.4em;
     padding-top:0.2em;
     text-align:center;
-    font-size:3.9em;
+    font-size:5.5rem;
 }
+
 i.sqr-icon-bg {
-    background-color:@cor-cinza-escuro;
-    color:white;
+    background-color:white;
+    color:@verde-sucesso;
+    border: 1px solid @verde-sucesso;
     border-radius:0em;
     width:1.4em;
     height:1em;
-    padding-top:0.05em;
+    padding:0 0.05em;
     text-align:center;
-    font-size:5em;
+    font-size:4rem;
 }
 
 .separador {
     display:block;
     width:100%;
     float:left;
-    text-align:center;   
+    text-align:center;
     margin-top:0.4em;
     margin-bottom:1em;
     &::after{
@@ -474,6 +491,7 @@ i.x-preto {
         opacity:1;
     }
 }
+
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -499,4 +517,12 @@ div.round-foto-small {
         border-radius:50%;
         max-width:5em;
     }
+}
+
+span{
+  font-size: 1.2rem;
+}
+
+small{
+  font-size: 1rem;
 }
