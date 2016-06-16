@@ -37,7 +37,7 @@ class LoggerController extends Controller
         //usando da instancia de logger para recuperar os logs
         $Logs = $this->logger->getUltimosLogs();
         return [
-            'html' =>view('gestao._listalogs', compact('Logs'))->render()
+            'html' =>view('gestao.logger._listalogs', compact('Logs'))->render()
         ];
     }
 

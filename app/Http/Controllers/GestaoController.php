@@ -13,7 +13,7 @@ use App\Perfil;
 class GestaoController extends Controller {
 
     /**
-     * Retorna a view inicial de gestão 
+     * Retorna a view inicial de gestão
      *
      * @return View
      */
@@ -31,7 +31,7 @@ class GestaoController extends Controller {
             $data_inicio =  '2015-10-16 00:13:37'; //Dia do primeiro user
         }
         if(!$data_fim) {
-            $data_fim = date('Y-m-d H:i:s'); 
+            $data_fim = date('Y-m-d H:i:s');
         }
 
         if(Auth::user()->isAdmin()) {
@@ -49,4 +49,18 @@ class GestaoController extends Controller {
 
     }
 
+    public function getExperiencias()
+    {
+      return view('gestao.experiencias.index');
+    }
+
+    public function getLogger()
+    {
+      return view('gestao.logger.index');
+    }
+
+    public function getUsuarios()
+    {
+      return view('gestao.basededados.index');
+    }
 }

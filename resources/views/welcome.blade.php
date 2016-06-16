@@ -283,7 +283,7 @@
                             <span>{{ trans('global.welcome_aboutprivacy1') }}</span>
                               <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_legal_terms') }}</a></span>
                               <span>{{ trans('global.welcome_aboutprivacy2') }}</span>
-                              <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_data_policy') }}</a></span>
+                              <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_data_policy') }}</a>,</span>
                               <span>{{ trans('global.welcome_aboutprivacy3') }}</span>
                               <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_cookie_use') }}</a>.</span>
                           </p>

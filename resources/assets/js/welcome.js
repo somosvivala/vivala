@@ -14,8 +14,3 @@ function autoPlayYouTubeModal() {
         });
     });
 }
-/* OnChange da Linguagem, definir no futuro
-$('#idioma').change(function(){
-  window.location.reload();
-});
-*/

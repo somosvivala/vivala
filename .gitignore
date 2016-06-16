@@ -16,3 +16,4 @@ composer.lock
 /config/mail.php
 composer.phar
 tags
+/public/js/welcome.js
