@@ -9,7 +9,7 @@
 @else
 <div class="row text-center header-mobile">
     <a href="{{ url('/conhecavivala') }}">
-        <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        <span>{!! trans('global.lbl_know_the') !!}</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
      </a>
 </div>
 @endif
@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
 </section >
 </div>
 @endsection
