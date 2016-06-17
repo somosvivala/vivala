@@ -23,7 +23,7 @@
 		<div class="col-md-12 col-lg-12 fundo-cheio">
 			<div class="col-md-6 col-lg-6">
 			  @if(Auth::user()->isAdmin())
-		    	@include('experiencias.categorias.index')
+		    	{{--@include('gestao.experiencias.categorias.index')--}}
 			  @endif
 			</div>
 		</div>
