@@ -142,11 +142,27 @@ class Experiencia extends Model
     }
 
     /**
+     * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
+     * @return boolean - se vai acontecer em 3 dias ou nao
+     */
+    public function getAconteceEmTresDiasAttribute()
+    {
+        $proximaOcorrencia = $this->proximaOcorrencia;
+        if (!$proximaOcorrencia) {
+            return false;
+        }
+
+        //Calculando a diferenca de dias entre a proximaOcorrencia da experiencia e 3 dias a partir de hoje
+        $diferencaDias = $proximaOcorrencia->data_ocorrencia->diffInDays(Carbon::now()->addDays(3));
+        return ($diferencaDias == 0);
+    }
+
+    /**
      * Definindo um acessor para determinar se a experiencia esta acontecendo hoje
      */
     public function getAconteceHojeAttribute()
     {
-        return $this->proximaOcorrencia->isToday;
+        return $this->proximaOcorrencia ? $this->proximaOcorrencia->isToday : false;
     }
 
 
