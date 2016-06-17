@@ -8,16 +8,16 @@
         </span>
         <h1 class="col-xs-12 negrito-exp">Você está quase lá!</h1>
         <small class="col-xs-12">Te enviaremos um email com todos os detalhes.</small>
-        <span class="col-xs-12 margin-t-3">Para confirmar sua inscrição na experiência
+        <span class="col-xs-12 margin-t-3">Para confirmar sua inscrição na experiência da instituição
           <b class="texto-maiusculo">{{$Experiencia->owner->nome}}</b>,
           realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
         </span>
         <div class="col-xs-12">
             <div class="dados-bancarios margin-t-1">
-                <span class="row col-xs-12 text-left negrito-exp margin-t-0-5 margin-b-0-5">CONTA</span>
-                <span class="row col-xs-12 text-left negrito-exp margin-b-0-5">AGÊNCIA</span>
-                <span class="row col-xs-12 text-left negrito-exp margin-b-0-5">CNPJ</span>
-                <span class="row col-xs-12 text-left negrito-exp margin-b-0-5">BANCO DO BRASIL</span>
+                <span class="row col-xs-12 text-left margin-t-0-5 margin-b-0-5 negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}</span>
+                <span class="row col-xs-12 text-left margin-t-0-5 margin-b-0-5 negrito-exp texto-maiusculo">{!! trans('global.lbl_agency') !!}</span>
+                <span class="row col-xs-12 text-left margin-t-0-5 margin-b-0-5 negrito-exp texto-maiusculo">CNPJ</span>
+                <span class="row col-xs-12 text-left margin-t-0-5 margin-b-0-5 negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}</span>
             </div>
         </div>
         <div class="col-xs-12 separador">

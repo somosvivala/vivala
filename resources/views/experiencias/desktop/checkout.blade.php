@@ -56,10 +56,10 @@
                 <span class="col-xs-12 margin-t-1">Para confirmar sua inscrição na experiência <b>Cão Feliz</b>, realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:</span>
                 <div class="col-xs-12">
                     <div class="dados-bancarios margin-t-1">
-                        <span class="row text-left negrito-exp col-xs-12">CONTA</span>
-                        <span class="row text-left negrito-exp col-xs-12">AGÊNCIA</span>
-                        <span class="row text-left negrito-exp col-xs-12">CNPJ</span>
-                        <span class="row text-left negrito-exp col-xs-12">BANCO DO BRASIL</span>
+                        <span class="row col-xs-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">CNPJ: 26.349.956/0001-97</span>
+                        <span class="row col-xs-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}: 005.236.589-40</span>
+                        <span class="row col-xs-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_agency') !!}: 1004</span>
+                        <span class="row col-xs-12 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}: <span class="texto-capitalizado">Banco do Brasil</span></span>
                     </div>
                 </div>
                 <div class="col-xs-12 separador">
@@ -71,7 +71,7 @@
                 </span>
             </div>
             <div class="row text-center margin-t-1 margin-b-2">
-                <a class="btn btn-acao" href="/experiencias">Ver mais experiências</a>
+                <a class="btn btn-acao" href="{{ url('experiencias') }}">Ver mais experiências</a>
             </div>
         </div>
     </div>

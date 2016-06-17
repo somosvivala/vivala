@@ -34,14 +34,9 @@ body.mobile {
 }
 
 .conteudo-mobile {
-    margin-left:4%;
-    margin-bottom:4%;
-    position:relative;
-    float:left;
-    width:92%;
     background-color:white;
     text-align:center;
-    padding:1em;
+    padding:1rem;
 }
 
 .btn-mobile {
@@ -85,17 +80,29 @@ body.mobile {
 }
 
 .link-verde {
-    width:11em;
-    border: none;
-    color: white;
-    background-color: @verde-sucesso;
-    padding:0.2em;
-    font-family:@font-family-avenir-black;
-    display: inline-block;
-    font-size: 1em;
-    &:hover {
-        color :white;
-    }
+  border: none;
+  color: @verde-sucesso;
+  background-color: white;
+  font-family:@font-family-avenir-black;
+  display: inline-block;
+  font-size: 1rem;
+  &:hover {
+      color :white;
+  }
+}
+
+.link-verde2 {
+  width:11em;
+  border: none;
+  color: white;
+  background-color: @verde-sucesso;
+  padding:0.2em;
+  font-family:@font-family-avenir-black;
+  display: inline-block;
+  font-size: 1em;
+  &:hover {
+      color :white;
+  }
 }
 
 .fundo-laranja {
@@ -108,14 +115,12 @@ form input.form-mobile {
     font-family:@font-family-avenir-black;
     border:none;
     background-color: @cor-fundo;
-    width:20rem;
 }
 
-small.width20em {
-    width:20rem;
+small.forgot-password {
     color:@cor-cinza-escuro;
     margin-top:0.3em;
-    font-size:0.8em;
+    font-size:0.8rem;
     display:inline-block;
 }
 
@@ -302,9 +307,11 @@ ul.lista-foto-descricao {
         }
     }
 }
-
+i.verde-sucesso { color: @verde-sucesso; }
 .categorias-experiencia {
     width: 3em;
+    height: 100%;
+    background-image: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
     .icone {
         color:white;
         font-size:1.5em;
@@ -519,10 +526,6 @@ div.round-foto-small {
     }
 }
 
-span{
-  font-size: 1.2rem;
-}
-
-small{
-  font-size: 1rem;
-}
+textarea.sem-upper {
+ text-transform:none;
+ }

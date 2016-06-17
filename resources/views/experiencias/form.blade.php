@@ -17,15 +17,15 @@
 {{-- Secao de campos texto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     {!! Form::label('descricao_na_listagem', 'Descrição na listagem', ['class' => 'row col-sm-12']) !!}
-    {!! Form::textarea("descricao_na_listagem", null, ['id'=>'descricao_na_listagem', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input', 'rows' => 3]) !!}
+    {!! Form::textarea("descricao_na_listagem", null, ['id'=>'descricao_na_listagem', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
 </div>
 <div class="col-sm-12 margin-b-1">
     {!! Form::label('descricao', 'Descrição', ['class' => 'row col-sm-12']) !!}
-    {!! Form::textarea("descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input', 'rows' => 3]) !!}
+    {!! Form::textarea("descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
 </div>
 <div class="col-sm-12 margin-b-1">
     {!! Form::label('detalhes', 'Detalhes da experiencia', ['class' => 'row col-sm-12']) !!}
-    {!! Form::textarea("detalhes", null, ['id'=>'detalhes', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize ong-input', 'rows' => 3]) !!}
+    {!! Form::textarea("detalhes", null, ['id'=>'detalhes', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
 </div>
 <div class="col-sm-12 margin-b-1">
     {!! Form::label('preco', 'Preço', ['class' => 'row col-sm-12']) !!}
