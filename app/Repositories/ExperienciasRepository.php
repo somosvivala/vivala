@@ -322,38 +322,21 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
 
     /**
-     * Metodo para validar o pagamento de uma inscricao
-     * @param $inscricao - A inscricao que iremos validar
-     */
-    public function validaPagamentoInscricao(InscricaoExperiencia $inscricao)
-    {
-        //Logica de validacao de pagamento
-        //esse metodo existe prevendo algum tipo de integracao com o ambiente dos boletos
-        return true;
-    }
-
-    /**
-     * Metodo para confirmar o pagamento de uma inscricao
+     * Metodo para confirmar uma inscricao de experiencia
      * @param $inscricao - a inscricao que devemos confirmar
      */
     public function confirmaInscricaoExperiencia(InscricaoExperiencia $inscricao)
     {
-        //chamo o metodo responsavel pela validacao
-        $inscricaoFoiPaga = $this->validaPagamentoInscricao($inscricao);
         $dataPagamento = Carbon::now();
         $dataExperienciaID = $inscricao->experiencia->proximaOcorrencia ? $inscricao->experiencia->proximaOcorrencia->id : null;
 
-        if ($inscricaoFoiPaga) {
-            $fezUpdate =  $inscricao->update([
-                'status' => 'confirmada',
-                'data_pagamento' => $dataPagamento,
-                'data_ocorrencia_experiencia_id' => $dataExperienciaID
-            ]);
+        $fezUpdate =  $inscricao->update([
+            'status' => 'confirmada',
+            'data_pagamento' => $dataPagamento,
+            'data_ocorrencia_experiencia_id' => $dataExperienciaID
+        ]);
 
-            return $fezUpdate;
-        } else {
-            return false;
-        }
+        return $fezUpdate;
     }
 
 

@@ -83,6 +83,8 @@ class Experiencia extends Model
 
     /**
      * Acessor para a próxima ocorrencia a partir de hoje
+     *
+     * @return \Carbon\Carbon
      */
     public function getProximaOcorrenciaAttribute()
     {
@@ -94,6 +96,21 @@ class Experiencia extends Model
             ->orderBy('data_ocorrencia', 'asc')
             ->first()
             : null;
+    }
+
+    /**
+     * Acessor para a próxima ocorrencia a partir de hoje
+     *
+     * @return String - "dd/mm"
+     */
+    public function getDataProximaOcorrenciaAttribute()
+    {
+        $existeOcorrencias = $this->ocorrencias;
+        if($existeOcorrencias) {
+        $ProximaOcorrencia = $this->ocorrencias()->where('data_ocorrencia', '>=', Carbon::now()) ->orderBy('data_ocorrencia', 'asc')->first();
+        }
+
+        return $ProximaOcorrencia ? $ProximaOcorrencia->data_ocorrencia->format('d/m') : '';
     }
 
 

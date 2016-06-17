@@ -220,4 +220,13 @@ class ExperienciasController extends Controller
     }
 
 
+    /**
+     * Rota para confirmar uma inscricao de experiencia
+     */
+    public function postConfirmaInscricaoExperiencia(ConfirmaInscricaoExperienciaRequest $request)
+    {
+        return $this->experienciasRepository->confirmaInscricaoExperiencia($request);
+    }
+
+
 }
