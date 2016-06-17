@@ -38,13 +38,13 @@
               </div>
             {!! Form::close() !!}
             <div class="row margin-t-2">
-                <a href="{{ url('/autenticacao/cadastro') }}" class="btn-mobile" target="_self" rel="nofollow"> Cadastre-se </a>
+                <a href="{{ url('/autenticacao/cadastro') }}" class="btn-mobile" target="_self" rel="nofollow"> {!! trans('global.lbl_register_yourself') !!} </a>
             </div>
             <div class="row margin-t-1">
               <span class="texto-minusculo">{!! trans('global.lbl_or') !!}</span>
             </div>
             <div class="row margin-t-1">
-              <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> Conecte-se <span class="fa fa-facebook-square pull-right"></span> </a>
+              <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> {!! trans('global.lbl_connect_yourself') !!} <span class="fa fa-facebook-square pull-right"></span> </a>
             </div>
             <div class="row margin-t-4">
               <div class="col-xs-12 concorda-com">
