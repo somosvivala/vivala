@@ -314,7 +314,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-sm-12 text-center">
-              <span>{!! trans('global.title_vivala') !!}</span><i class="fa fa-copyright"></i><span>{{ $date->year }}</span>
+              <span>{!! trans('global.title_vivala') !!} </span><i class="fa fa-copyright"></i><span> {{ $date->year }}</span>
             </div>
           </div>
         </div>

@@ -46,7 +46,7 @@
             <div class="row margin-t-1">
               <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> {!! trans('global.lbl_connect_yourself') !!} <span class="fa fa-facebook-square pull-right"></span> </a>
             </div>
-            <div class="row margin-t-4">
+            <div class="row margin-t-2">
               <div class="col-xs-12 concorda-com">
                 <span>{!! trans('global.welcome_aboutprivacy4') !!} <a href="{{ url('/paginas/termosecondicoes') }}" class="link-verde">{!! trans('global.lbl_legal_terms') !!}</a> {!! trans('global.lbl_and') !!} <a href="{{ url('/paginas/termosecondicoes') }}" class="link-verde">{!! trans('global.lbl_data_policy') !!}</a>
               </div>

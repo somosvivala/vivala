@@ -87,10 +87,8 @@ elixir(function(mix) {
       '../../assets/js/buscaPerfil.js',
       '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
-
       /* Autocomplete de buscas de cidade */
       '../../assets/js/autocompleteBuscas.js',
-      '../../assets/js/mobile.js',
 
       /* Scripts das Experiencias */
       '../../assets/js/info-form-experiencias.js',
@@ -108,11 +106,22 @@ elixir(function(mix) {
 
   // Apenas da view de Welcome
   mix.scripts([
+    /* Scripts NPM-BOWER */
     '../../assets/bower/jquery/dist/jquery.js',
     '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
     '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
     /* Scripts Vivalá */
     '../../assets/js/welcome.js',
   ], 'public/js/welcome.js');
+
+  // Apenas do Mobile
+  mix.scripts([
+    /* Scripts NPM-BOWER */
+    '../../assets/bower/jquery/dist/jquery.js',
+    '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
+    /* Scripts Vivalá */
+    '../../assets/js/jquery.capslockstate.min.js',
+    '../../assets/js/mobile.js',
+  ], 'public/js/mobile.js');
 
 });

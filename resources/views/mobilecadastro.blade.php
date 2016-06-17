@@ -14,10 +14,16 @@
                 <span class="form-mobile-error">{{ $error }}</span>
                 @endforeach
             @endif
-            <span class="form-mobile-warning hide" id="senhas-nao-coincidem">
-              {!! trans('global.lbl_password_dont_match') !!}
-            </span>
-
+            <div class="row">
+              <div class="form-mobile-warning hide" id="senhas-nao-coincidem">
+                {!! trans('global.lbl_password_dont_match') !!}!
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-mobile-warning2 hide" id="capslock-ligado">
+                {!! trans('global.lbl_capslock_activated') !!}!
+              </div>
+            </div>
             {!! Form::open(['url' => '/autenticacao/register']) !!}
               <div class="row margin-t-1">
                 <div class="col-xs-10 col-xs-offset-1">
@@ -49,7 +55,7 @@
             <div class="row margin-t-1">
                 <a href="{{ url('/fbLogin') }}" class="btn-mobile btn-face" target="_self" rel="nofollow"> {!! trans('global.lbl_connect_yourself') !!} <span class="fa fa-facebook-square pull-right"></span> </a>
             </div>
-            <div class="row margin-t-4">
+            <div class="row margin-t-2">
               <div class="col-xs-12 concorda-com">
                 <span>{!! trans('global.welcome_aboutprivacy4') !!} <a href="{{ url('/paginas/termosecondicoes') }}" class="link-verde">{!! trans('global.lbl_legal_terms') !!}</a> {!! trans('global.lbl_and') !!} <a href="{{ url('/paginas/termosecondicoes') }}" class="link-verde">{!! trans('global.lbl_data_policy') !!}</a>
               </div>
