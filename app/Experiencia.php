@@ -147,7 +147,13 @@ class Experiencia extends Model
      */
     public function getAconteceEmTresDiasAttribute()
     {
-        $diferencaDias = $this->proximaOcorrencia->data_ocorrencia->diffInDays(Carbon::now()->addDays(3));
+        $proximaOcorrencia = $this->proximaOcorrencia;
+        if (!$proximaOcorrencia) {
+            return false;
+        }
+
+        //Calculando a diferenca de dias entre a proximaOcorrencia da experiencia e 3 dias a partir de hoje
+        $diferencaDias = $proximaOcorrencia->data_ocorrencia->diffInDays(Carbon::now()->addDays(3));
         return ($diferencaDias == 0);
     }
 
@@ -156,7 +162,7 @@ class Experiencia extends Model
      */
     public function getAconteceHojeAttribute()
     {
-        return $this->proximaOcorrencia->isToday;
+        return $this->proximaOcorrencia ? $this->proximaOcorrencia->isToday : false;
     }
 
 
