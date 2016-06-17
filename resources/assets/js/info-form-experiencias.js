@@ -19,22 +19,21 @@ var bindaInputsFontAwesome = function() {
         //console.log('inside bindaIcone: event : ');
         //console.log(event);
         tempoDigitando = setTimeout(function() {
-            testaRegexTrocaClassesFontAwesome(event.target);
+            testaClasseFontAwesome(event.target);
         }, 300);
     });
 };
 
 
 /**
- * Funcao para testar se o value do target 
- * se sim, substituo o font-awesome do icone com o do target
+ * Funcao para testar se as classes do input sao classes do fontAwesome
  */
-var testaRegexTrocaClassesFontAwesome = function(target) {
+var testaClasseFontAwesome = function(target) {
 
     //console.log('inside testaRegex: target : ');
     //console.log(target);
     //guardando matches da regex procurando por 'fa fa-*'
-    var isFontAwesome = fontAwesomeArray.indexOf($(target).val());
+    var isFontAwesome = fontAwesomeArray.indexOf($(target).val().trim());
 
     //se tiver encontrado algum indice com o valor do target é fontawesome
     if (isFontAwesome > -1) {
@@ -42,7 +41,7 @@ var testaRegexTrocaClassesFontAwesome = function(target) {
         //pegando novas classes para o icone
         var novasClasses = fontAwesomeArray[isFontAwesome];
 
-        
+
         var icone = $(target).parents('.container-campos-fontawesome').find('i.icone-show');
         var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
 
