@@ -99,6 +99,7 @@ elixir(function(mix) {
       '../../assets/js/info-form-experiencias.js',
       '../../assets/js/data-ocorrencia-experiencias.js',
       '../../assets/js/categoria-experiencia.js',
+      '../../assets/js/inscricoes-experiencia.js',
       '../../assets/js/experiencias.js',
 
       /* ClickbusPayment Mercado Pago Gateway*/

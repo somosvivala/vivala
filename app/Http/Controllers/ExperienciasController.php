@@ -18,6 +18,7 @@ use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -223,9 +224,9 @@ class ExperienciasController extends Controller
     /**
      * Rota para confirmar uma inscricao de experiencia
      */
-    public function postConfirmaInscricaoExperiencia(ConfirmaInscricaoExperienciaRequest $request)
+    public function postConfirmaInscricao(ConfirmaInscricaoExperienciaRequest $request)
     {
-        return $this->experienciasRepository->confirmaInscricaoExperiencia($request);
+        return ['result' => $this->experienciasRepository->confirmaInscricaoExperiencia($request)];
     }
 
 

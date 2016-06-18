@@ -26,8 +26,7 @@ class ConfirmaInscricaoExperienciaRequest extends Request
     public function rules()
     {
         return [
-            'experiencia_id' => 'required|exists:experiencias,id',
-            'inscricao_experiencia_id' => 'required|exists:inscricao_experiencias,id',
+            'id_inscricao' => 'required|exists:inscricao_experiencias,id',
         ];
     }
 

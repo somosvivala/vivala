@@ -158,6 +158,17 @@ class Experiencia extends Model
         return $query->has('ocorrencias');
     }
 
+
+    /**
+     * Definindo um acessor para as inscricoesAtivas (pendentes + confirmadas)
+     */
+    public function getInscricoesAtivasAttribute()
+    {
+        return $this->inscricoes()
+            ->whereIn('status', ['pendente', 'confirmada'])
+            ->get();
+    }
+
     /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
      * @return boolean - se vai acontecer em 3 dias ou nao

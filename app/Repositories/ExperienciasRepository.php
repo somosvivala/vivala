@@ -325,8 +325,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      * Metodo para confirmar uma inscricao de experiencia
      * @param $inscricao - a inscricao que devemos confirmar
      */
-    public function confirmaInscricaoExperiencia(InscricaoExperiencia $inscricao)
+    public function confirmaInscricaoExperiencia($request)
     {
+        $inscricao = InscricaoExperiencia::find($request->id_inscricao);
         $dataPagamento = Carbon::now();
         $dataExperienciaID = $inscricao->experiencia->proximaOcorrencia ? $inscricao->experiencia->proximaOcorrencia->id : null;
 

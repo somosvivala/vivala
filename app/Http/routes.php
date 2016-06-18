@@ -158,6 +158,8 @@ Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDelet
 Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
 Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
+Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfirmaInscricao');
+
 
 //rotas para lidar com resource controllers
 Route::resource('experiencias', 'ExperienciasController');
