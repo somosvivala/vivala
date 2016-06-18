@@ -51,8 +51,10 @@ Route::get('testeboleto', function() {
 });
 
 
-Route::group(['before' => 'auth'], function() {
+Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
+    Route::controller('gestao', 'GestaoController');
+
 });
 
 /**
@@ -136,10 +138,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
 });
 
 
-/**
- * Rotas que nao sao especificas de desktop
- */
-Route::controller('gestao', 'GestaoController');
 
 
 /**
