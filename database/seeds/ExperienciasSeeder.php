@@ -108,8 +108,8 @@ class ExperienciasSeeder extends Seeder {
     private function seedCategorias()
     {
         CategoriaExperiencia::create([
-            'nome' => 'Ecoturismo',
-            'icone' => 'fa fa-recicle',
+            'nome' => 'Reciclagem',
+            'icone' => 'fa fa-recycle',
         ]);
 
         CategoriaExperiencia::create([
@@ -118,8 +118,8 @@ class ExperienciasSeeder extends Seeder {
         ]);
 
         CategoriaExperiencia::create([
-            'nome' => 'Culinária',
-            'icone' => 'fa fa-pie-chart',
+            'nome' => 'Acessibilidade',
+            'icone' => 'fa fa-universal-access',
         ]);
 
         CategoriaExperiencia::create([

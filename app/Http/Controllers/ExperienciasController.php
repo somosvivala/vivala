@@ -19,6 +19,8 @@ use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
+use App\Http\Requests\DesativarExperienciaRequest;
+use App\Http\Requests\PublicarExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -190,6 +192,14 @@ class ExperienciasController extends Controller
         $this->experienciasRepository->delete($id);
     }
 
+    /**
+     * Rota para servir a view de conheca vivala
+     */
+    public function getConhecaVivala()
+    {
+        return view('conhecadeslogado');
+    }
+
 
     /**
      * Rota para criar uma nova DataOcorrencia para uma experiencia
@@ -212,14 +222,6 @@ class ExperienciasController extends Controller
         return ['result' => $this->experienciasRepository->deleteDataOcorrencia($request->all()) ];
     }
 
-    /**
-     * Rota para servir a view de conheca vivala
-     */
-    public function getConhecaVivala()
-    {
-        return view('conhecadeslogado');
-    }
-
 
     /**
      * Rota para confirmar uma inscricao de experiencia
@@ -229,5 +231,20 @@ class ExperienciasController extends Controller
         return ['result' => $this->experienciasRepository->confirmaInscricaoExperiencia($request)];
     }
 
+    /**
+     * Rota para publicar uma experiencia (passa a aparecer na listagem)
+     */
+    public function postPublicarExperiencia(PublicarExperienciaRequest $request)
+    {
+        return ['result' => $this->experienciasRepository->publicarExperiencia($request)];
+    }
+
+    /**
+     * Rota para desativar uma experiencia (Remove da listagem)
+     */
+    public function postDesativarExperiencia(DesativarExperienciaRequest $request)
+    {
+        return ['result' => $this->experienciasRepository->desativarExperiencia($request)];
+    }
 
 }

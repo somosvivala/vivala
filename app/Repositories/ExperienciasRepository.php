@@ -366,6 +366,28 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
     }
 
+    /**
+     * Metodo para publicar uma experiencia (Passa a ficar disponivel na listagem e avisamos owner)
+     * @param $request - PublicarExperienciaRequest
+     */
+    public function publicarExperiencia($request)
+    {
+        $experiencia = $this->findOrFail($request->id);
+        $fezUpdate = $experiencia->update(['status' => 'publicada']);
+        //event( new ExperienciaPublicada( $experiencia ) );
+        return $fezUpdate;
+    }
+
+    /**
+     * Metodo para desativar uma experiencia (Remover da listagem)
+     * @param $request - DesativarExperienciaRequest
+     */
+    public function desativarExperiencia($request)
+    {
+        $experiencia = $this->findOrFail($request->id);
+        $fezUpdate = $experiencia->update(['status' => 'analise']);
+        return $fezUpdate;
+    }
 
 
 }

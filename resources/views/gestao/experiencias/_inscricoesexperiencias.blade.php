@@ -6,6 +6,7 @@
 
         @foreach ($Experiencias as $experiencia)
 
+        <div class="col-xs-12 margin-t-1" style="background-color:#ebebeb">
             <h4 class="col-xs-12">Experiencia de: {{ $experiencia->owner->nome }}, Proxima Data: {{ $experiencia->dataProximaOcorrencia }} <br> Local: {{ $experiencia->local->nome }} - {{ $experiencia->local->estado->sigla }} </h3>
 
             <ul class="list-group col-xs-12">
@@ -31,7 +32,7 @@
                     <li class="list-group-item">Nenhuma inscricao</li>
                 @endforelse
             </ul>
-
+        </div>
 
         @endforeach
     </div>
