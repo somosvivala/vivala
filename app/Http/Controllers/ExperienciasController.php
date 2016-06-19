@@ -72,13 +72,21 @@ class ExperienciasController extends Controller
 
 
     /**
-     * Exibe detalhes da experiencia
+      * Exibe detalhes da experiencia
      *
      * @return view
      */
     public function show($id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
+
+        //Se a experiencia em questao nao estiver ativa
+        if (!$Experiencia->isAtiva) {
+            //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
+            $user = Auth::user();
+            if (!$user || !$user->isAdmin())
+                return redirect('/experiencias');
+        }
 
         if(Agent::isDesktop()){
             return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
@@ -138,6 +146,15 @@ class ExperienciasController extends Controller
     public function getCheckout(Request $request, $id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
+
+        //Se a experiencia em questao nao estiver ativa
+        if (!$Experiencia->isAtiva) {
+            //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
+            $user = Auth::user();
+            if (!$user || !$user->isAdmin())
+                return redirect('/experiencias');
+        }
+
         event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
 
         if(Agent::isDesktop()) {
