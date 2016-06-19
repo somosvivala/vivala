@@ -61,7 +61,7 @@ class ExperienciasController extends Controller
      */
     public function index()
     {
-        $experiencias = $this->experienciasRepository->getAll();
+        $experiencias = $this->experienciasRepository->getExperienciasAtivas();
 
         if(Agent::isDesktop()){
             return view("experiencias.desktop.listaexperiencias", compact("experiencias") );

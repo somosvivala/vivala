@@ -28,6 +28,15 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     }
 
     /*
+     * Metodo para pegar todas as experiencias
+     */
+    public function getExperienciasAtivas()
+    {
+        return Experiencia::publicadas()->get();
+    }
+
+
+    /*
      * Metodo para pegar todas as categorias das experiencias
      */
     public function getAllCategorias()

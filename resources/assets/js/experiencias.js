@@ -62,6 +62,7 @@ var ajaxDeleteExperiencia = function (target) {
 
             //mostrando sweetAlert de sucesso (user-friendly)
             sweetAlertSucessoDeleteExperiencia();
+            location.reload()
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -81,7 +82,7 @@ var sweetAlertSucessoDeleteExperiencia = function() {
         showCancelButton: false,
         width:240,
         confirmButtonClass: 'hide',
-        timer: 1100,
+        timer: 900,
     });
 };
 

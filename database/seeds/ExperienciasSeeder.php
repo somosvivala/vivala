@@ -43,6 +43,7 @@ class ExperienciasSeeder extends Seeder {
         $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(rand(0,3))]);
         $experiencia = Experiencia::create([
             'titulo' => 'Primeira Experiencia',
+            'status' => 'publicada',
             'descricao' => 'Essa é a descricao da primeira experiencia!',
             'descricao_na_listagem' => 'Venha conheçer a 1º Experiencia!!!',
             'detalhes' => "Esses são os detalhes, da experiencia \n  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -65,6 +66,7 @@ class ExperienciasSeeder extends Seeder {
         $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(rand(0,3))]);
         $experiencia = Experiencia::create([
             'titulo' => 'Segunda Experiencia',
+            'status' => 'publicada',
             'descricao' => 'Essa é a descricao da Segunda experiencia!',
             'descricao_na_listagem' => 'Venha conheçer a 2º Experiencia!!!',
             'detalhes' => "Esses são os detalhes, da experiencia de numero 2 \n  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",

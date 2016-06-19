@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-12 col-md-12 fundo-cheio">
     <div class="row" >
-        <h2> Listagem de experiencias </h2>
+        <h2> Gerenciamento das experiências </h2>
 
         <ul class="list-group">
             @foreach ($Experiencias as $experiencia)
@@ -55,7 +55,8 @@
                     </div>
                     <div class="col-xs-1 ">
                         {!! Form::label('status', 'Status') !!}
-                        <p> {{ $experiencia->status }} </p>
+                        <p> {{ strtoupper($experiencia->status) }} </p>
+
                     </div>
                 </li>
             @endforeach

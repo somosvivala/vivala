@@ -2,7 +2,7 @@
 
     {!! Form::hidden('_token', csrf_token()) !!}
     <div class="row" id="lista-experiencias">
-        <h2 class="col-sm-12">Listagem das inscrições</h2>
+        <h2 class="col-sm-12">Gerenciamento das inscrições</h2>
 
         @foreach ($Experiencias as $experiencia)
 
@@ -17,13 +17,17 @@
                                 Identificador da inscricao: {{ $inscricao->id }} <br>
                                 Nome do inscrito: {{ $inscricao->perfil->nome_completo }} <br>
                                 Email: {{ $inscricao->perfil->user->email }} <br>
-                                status: {{ $inscricao->status }}
+                                status: {{ strtoupper($inscricao->status) }}
                             </p>
                         </div>
                         <div class="col-xs-2 text-center">
                             @if ($inscricao->status == 'pendente')
                                 <a href="#" onclick="confirmaInscricaoExperiencia(event)" title="Confirmar Inscricao">
                                     <i class="margin-t-0-5 fa fa-check fa-3x"></i> Confirmar
+                                </a>
+                            @else
+                                <a href="#" style="color:#25A393;" title="Inscricao ja confirmada">
+                                    <i class="margin-t-0-5 fa fa-check fa-3x"></i>
                                 </a>
                             @endif
                         </div>
