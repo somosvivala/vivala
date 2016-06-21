@@ -111,40 +111,7 @@
       * ELEMENTOS
       ***************************************/
       a {
-        color: #348eda;
-      }
-      .btn-primary {
-        Margin-bottom: 10px;
-        width: auto !important;
-      }
-      .btn-primary td {
-        background-color: #348eda;
-        border-radius: 25px;
-        font-family: 'Avenir-Roman', Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 14px;
-        text-align: center;
-        vertical-align: top;
-      }
-      .btn-primary td a {
-        background-color: #348eda;
-        border: solid 1px #348eda;
-        border-radius: 25px;
-        border-width: 10px 20px;
-        display: inline-block;
-        color: #ffffff;
-        cursor: pointer;
-        font-weight: bold;
-        line-height: 2;
-        text-decoration: none;
-      }
-      .last {
-        margin-bottom: 0;
-      }
-      .first {
-        margin-top: 0;
-      }
-      .padding {
-        padding: 10px 0;
+        color: #F16F2B;
       }
       /***************************************
       * CORPO
@@ -159,10 +126,6 @@
       table.footer-wrap {
         clear: both !important;
         width: 100%;
-      }
-      .footer-wrap .container p {
-        color: #666666;
-        font-size: 12px;
       }
       table.footer-wrap a {
         color: transparent;
@@ -222,7 +185,7 @@
                 <tr align="center">
                   <td>
                     <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
-                      <img src="{{ asset('logo-branco.png') }}" alt="Vivalá" style="display:block; margin:auto;" border="0" width="100%" max-width="150px" height="100%" max-height="82px">
+                      <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" style="display:block; margin:auto;" border="0" width="100%" max-width="150px" height="100%" max-height="82px">
                     </a>
                   </td>
                 </tr>
@@ -274,17 +237,18 @@
                   <!-- Seção de INFOS BANCÁRIAS -->
                   <tr align="center">
                     <td>
-                      <p>Para confirmar sua inscrição na experiência da <strong>NOME INSTITUIÇÃO</strong></p>
-                      <p>realize o depósito de <strong>R$VAL.OR</strong> na conta a seguir:</p>
+                      <p>Para confirmar sua inscrição na experiência da <strong>{{ $Experiencia->owner->nome }}</strong></p>
+                      <p>realize o depósito de <strong>R${{ $Experiencia->preco }}</strong> na conta a seguir:</p>
                     </td>
                   </tr>
                   <tr align="center">
                     <td>
                       <div style="background-color:#ECEBEB; text-align:left; padding:10px; max-width:300px; margin-left:20px; margin-right:20px;">
-                        <p style="color:#545454;"><b>CONTA</b> <span>420.420.420-42</span></p>
-                        <p style="color:#545454;"><b>AGÊNCIA</b> <span>0420</span></p>
-                        <p style="color:#545454;"><b>CPF/CNPJ</b> <span>420.420.420-42</span></p>
-                        <p style="color:#545454;"><b>BANCO</b> <span>Banco dos BR</span></p>
+                        <p style="color:#545454;"><b>NOME</b> <span>{{ $ExperienciasRepository->depositFantasyName }}</span></p>
+                        <p style="color:#545454;"><b>CONTA</b> <span>{{ $ExperienciasRepository->depositCC }}</span></p>
+                        <p style="color:#545454;"><b>AGÊNCIA</b> <span>{{ $ExperienciasRepository->depositAG }}</span></p>
+                        <p style="color:#545454;"><b>CNPJ</b> <span>{{ $ExperienciasRepository->depositCNPJ }}</span></p>
+                        <p style="color:#545454;"><b>BANCO</b> <span>{{ $ExperienciasRepository->depositBank }}</span></p>
                       </div>
                     </td>
                   </tr>
@@ -336,18 +300,19 @@
                   <tr>
                     <td>
                       <p style="float:left; margin-right:20px;">
-                        <img src="{{ asset('img/dummy-exp.jpg') }}" width="220px" height="220px"/>
+                        <img src="{{ asset('img/dummy_ong-splash.png') }}" width="220px" height="220px"/>
                       </p>
                       <p>
                         <span><img src="{{ asset('/img/email/vivala-email-data-icone.png') }}"/></span>
-                        <span style="font-size:20px;"><strong>18 de Junho</strong></span>
+                        <span style="font-size:20px;"><strong>{{ $Experiencia->proximaOcorrencia->data_ocorrencia->format('d/m/y') }}</strong></span>
                       </p>
                       <p>
                         <span><img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}"/></span>
-                        <span style="font-size:16px;"><strong>Campinas - SP</strong></span>
+                        <span style="font-size:16px;"><strong>{{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</strong></span>
                       </p>
                       <p style="text-align:justify;">
-                        <span style="font-size:14px;">Venha conhecer a ONG Cão Feliz e ajude a alimentar cãezinhos abandonados! Escolha um final de semana e passe a tarde cuidando e alimentando cachorros. É a oportunidade perfeita para você que sente falta do seu companheiro e não pode adotar um em casa. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</span>
+                        <span style="font-size:14px;">{{ $Experiencia->descricao }}</span>
+                        <!--span style="font-size:14px;">Venha conhecer a ONG Cão Feliz e ajude a alimentar cãezinhos abandonados! Escolha um final de semana e passe a tarde cuidando e alimentando cachorros. É a oportunidade perfeita para você que sente falta do seu companheiro e não pode adotar um em casa. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</span-->
                       </p>
                     </td>
                   </tr>
@@ -394,18 +359,19 @@
                   <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr>
                     <td>
-                      <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; max-height:150px; max-width:400px; margin:20px auto 0;">
+                      <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; height:150px; max-height:150px; max-width:400px; margin:20px auto 0;">
                         <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px;">
-                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummyongemail.png') }}" width="75px" height="75px"/></p>
-                          <p style="margin-bottom: 0;">ONG Cão Feliz</p>
+                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummy_ong-icon.png') }}" width="65px" height="65px"/></p>
+                          <p style="margin-bottom: 0;">{{ $Experiencia->owner->nome }}</p>
                           <p style="margin-bottom: 0;">
-                            <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
-                            <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-ig-icone.png') }}"/></a></span>
-                            <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-site-icone.png') }}"/></a></span>
+                            <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
+                            <span><a href="https://instagram.com/{{ $Experiencia->owner->url_instagram }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-ig-icone.png') }}"/></a></span>
+                            <span><a href="http://{{ $Experiencia->owner->url_site }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-site-icone.png') }}"/></a></span>
                           </p>
                         </div>
                         <div style="position: relative; text-align: center; margin-top:25px;">
-                          <p>A ONG Cão feliz cuida de cãezinhos abandonados e de rua desde 2009. Realiza inúmeros projetos sociais em diversas cidades.</p>
+                          <p>{{ $Experiencia->owner->descricao }}</p>
+                          <!--p>A ONG Cão feliz cuida de cãezinhos abandonados e de rua desde 2009. Realiza inúmeros projetos sociais em diversas cidades.</p-->
                         </div>
                       </div>
                     </td>

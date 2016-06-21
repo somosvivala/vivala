@@ -17,9 +17,8 @@ class MailSenderRepository
     * @param $
     */
     public function enviaEmailExperienciaNovaInscricaoCandidato()
-    {
-    /*
-    Mail::send('emails.experiencias.novainscricaocandidato', [], function ($message) use () {
+    {/*
+    Mail::send('emails.experiencias.novainscricaocandidato', ['Experiencia' => $Experiencia], function ($message) use () {
       //se estiver em production, manda email para a live
       if(app()->environment('production'))
         $message->to($user->email, $user->username)->subject('Vivalá - Inscrição da Experiência realizada com sucesso!');
@@ -28,8 +27,7 @@ class MailSenderRepository
         $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Inscrição da Experiência Candidato');
       $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
-    */
-    }
+  */}
 
     /**
     * Método para disparar o email de nova experiência na plataforma, avisando

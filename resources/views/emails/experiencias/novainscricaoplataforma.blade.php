@@ -337,7 +337,7 @@
                   <tr>
                     <td>
                       <p style="float:left; margin-right:20px;">
-                        <img src="{{ asset('img/dummy-exp.jpg') }}" width="220px" height="220px"/>
+                        <img src="{{ asset('img/dummy_ong-splash.png') }}" width="220px" height="220px"/>
                       </p>
                       <p>
                         <span><img src="{{ asset('/img/email/vivala-email-data-icone.png') }}"/></span>
@@ -397,7 +397,7 @@
                     <td>
                       <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; max-height:150px; max-width:400px; margin:0 auto;">
                         <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px;">
-                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummyongemail.png') }}" width="75px" height="75px"/></p>
+                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummy_ong-icon.png') }}" width="65px" height="65px"/></p>
                           <p style="margin-bottom: 0;">ONG Cão Feliz</p>
                           <p style="margin-bottom: 0;">
                             <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
