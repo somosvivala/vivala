@@ -12,19 +12,22 @@ use App\Interfaces\ExperienciasRepositoryInterface;
 use Auth;
 use Input;
 use Request;
+use App\Interfaces\FotosRepositoryInterface;
 
 class FotoController extends VivalaBaseController {
 
     private $experienciasRepository;
+    private $fotosRepository;
 
     /**
      * construtor seguro.
      * @param $repository - Instancia do Repositorio que extend essa interface
      */
-    public function __construct(ExperienciasRepositoryInterface $repository){
+    public function __construct(ExperienciasRepositoryInterface $repository, FotosRepositoryInterface $fotoRepository){
         //Só passa se estiver logado
         $this->middleware('auth');
         $this->experienciasRepository = $repository;
+        $this->fotosRepository = $fotoRepository;
     }
 
     public function postCropandsave($id=0, CropPhotoRequest $request) {
@@ -136,44 +139,57 @@ class FotoController extends VivalaBaseController {
      *
      * @return App\Foto - instancia da foto criada
      */
-    public function postCropandsaveexperiencias(CropPhotoRequest $request, $experienciaId)
+    public function postCropandsaveexperiencia(CropPhotoRequest $request, $experienciaId=false)
     {
-        $file = Input::file('file');
-        if ($file && $file->isValid()) {
+        //Se experiencia nao existe, criar nova foto e devolver o id
+        if (!$experienciaId) {
+            $result = $this->fotosRepository->novaFoto($request);
+            return $result;
+        }
 
+        //Se existe experiencia entao estou editando e devo associar a nova foto a experiencia
+        else {
+
+            dd('veio $experienciaId, id:' . $experienciaId);
             $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
-            $destinationPath = public_path() . '/uploads/';
-            $extension = Input::file('file')->getClientOriginalExtension(); // Pega o formato da imagem
-
-            $widthCrop = round($request->input('w'));
-            $heightCrop = round($request->input('h'));
-            $xSuperior = round($request->input('x'));
-            $ySuperior = round($request->input('y'));
-
-            $fileName = $this->formatFileNameWithUserAndTimestamps($file->getClientOriginalName()).'.'.$extension;
-            $file = \Image::make( $file->getRealPath() )->crop($widthCrop, $heightCrop, $xSuperior, $ySuperior);
-            $upload_success = $file->save($destinationPath.$fileName);
-
-            //Se o upload da foto ocorreu com sucesso
-            if ($upload_success) {
-
-                //Se ja tiver uma foto de capa entao deletar a atual antes de subir a nova
-                //esta usando o softDelete, entao a foto nao é realmente deletada.
-                if ($experiencia->fotoCapa) {
-                    $experiencia->fotoCapa->delete();
-                }
-
-                //criar nova foto e associar a experiencia
-                $experiencia->fotoCapa()->save(Foto::create(['path' => $fileName]));
-                return ['success' => true];
-
-            } else {
-                return [
-                    'success' => false
-                ];
+            //Se ja tiver uma foto de capa entao deletar a atual antes de subir a nova
+            //esta usando o softDelete, entao a foto nao é realmente deletada.
+            //substituir por metodo no experienciasRepository trocaFotoCapa($exp, $foto)
+            if ($experiencia->fotoCapa) {
+                $experiencia->fotoCapa->delete();
             }
+
+            //criar nova foto e associar a experiencia
+            $experiencia->fotoCapa()->save(Foto::create(['path' => $fileName]));
         }
     }
+
+
+    /**
+     * Metodo para receber por POST uma CropPhotoRequest,
+     * croppar e devolver o id da foto para ser associada ao owner
+     *
+     * @param $request - Uma instancia de CropPhotoRequest, servida pelo laravel
+     * @param $experienciaId - o id da experiencia que iremos associar a foto
+     *
+     * @return App\Foto - instancia da foto criada
+     */
+    public function postCropandsaveownerexperiencia(CropPhotoRequest $request, $experienciaId=false)
+    {
+
+        //Se experiencia nao existe, criar nova foto e devolver o id
+        if (!$experienciaId) {
+            $result = $this->fotosRepository->novaFoto($request);
+            return $result;
+        }
+
+        //Se existe experiencia entao estou editando e devo associar a nova foto a experiencia
+        else {
+
+            dd('veio $experienciaId, id:' . $experienciaId);
+        }
+    }
+
 
 
 

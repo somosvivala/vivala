@@ -59,7 +59,13 @@ class AppServiceProvider extends ServiceProvider {
           'App\Repositories\LocaisRepository'
       );
 
-
+      //bindando a interface com a implementacao,
+      //assim o laravel servira automaticamente uma intancia
+      //de FotosRepository quando requisitada nos controllers
+      $this->app->bind(
+          'App\Interfaces\FotosRepositoryInterface',
+          'App\Repositories\FotosRepository'
+      );
 
 	}
 }

@@ -6,7 +6,7 @@ $(function() {
     });
 
     //Bindando o submit do form contido na modal de trocar foto
-    $('#owner-experiencia_foto_form').submit(function (ev) {
+    $('#experiencia_foto_form').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),
             dataForm = new FormData(this),
@@ -31,14 +31,14 @@ $(function() {
 
                     var foto = data.foto;
                     //Settando o tamanho do container para o tamanho da nova imagem
-                    $('#owner-experiencia-foto-id').val(foto.id);
-                    $('.owner-experiencia-foto-atual').attr('src',foto.path);
+                    $('#experiencia-foto-id').val(foto.id);
+                    $('.experiencia-foto-atual').attr('src',foto.path);
 
-                    $('.owner-experiencia-foto-atual').height('100px');
-                    $('.owner-experiencia-foto-atual').width('100px');
+                    $('.experiencia-foto-atual').height('100px');
+                    $('.experiencia-foto-atual').width('100px');
 
                     swal('Sucesso', "Foto recortada", 'success');
-                    $('#cropper-owner-experiencia-modal').modal('hide');
+                    $('#cropper-experiencia-modal').modal('hide');
                 }
 
 
@@ -54,12 +54,12 @@ $(function() {
         });
     });
 
-    // Ativa crop da owner-experiencia 
-    var $image = $('#cropper-owner-experiencia > img'),
+    // Ativa crop da experiencia 
+    var $image = $('#cropper-experiencia > img'),
         cropBoxData,
         canvasData;
 
-    var ativaFotoOwnerExperiencia = function (){
+    var ativaFotoExperiencia = function (){
         $image.cropper({
             aspectRatio: 1,
             built: function () {
@@ -69,11 +69,11 @@ $(function() {
             },
             guides: false,
             crop: function(e) {
-                $("#x-owner-experiencia-perfil").val(Math.round(e.x));
-                $("#y-owner-experiencia-perfil").val(Math.round(e.y));
-                $("#h-owner-experiencia-perfil").val(Math.round(e.height));
-                $("#w-owner-experiencia-perfil").val(Math.round(e.width));
-                $("#r-owner-experiencia-perfil").val(e.rotate);
+                $("#x-experiencia-perfil").val(Math.round(e.x));
+                $("#y-experiencia-perfil").val(Math.round(e.y));
+                $("#h-experiencia-perfil").val(Math.round(e.height));
+                $("#w-experiencia-perfil").val(Math.round(e.width));
+                $("#r-experiencia-perfil").val(e.rotate);
                 console.log(e);
             },
             built: function() {
@@ -83,7 +83,7 @@ $(function() {
     };
 
     //destroi o cropper quando fecha a modal
-    $('#cropper-owner-experiencia-modal').on('shown.bs.modal', function () {
+    $('#cropper-experiencia-modal').on('shown.bs.modal', function () {
     }).on('hidden.bs.modal', function () {
         cropBoxData = $image.cropper('getCropBoxData');
         canvasData = $image.cropper('getCanvasData');
@@ -91,14 +91,14 @@ $(function() {
     });
 
     //quando clica no botao de subir foto constroi o cropper
-    $('#btn-upload-img-owner-experiencia').on('click', function () {
+    $('#btn-upload-img-experiencia').on('click', function () {
         console.log('clicou upload foto owner exp');
-        ativaFotoOwnerExperiencia();
-        $('#btn-crop-photo-owner-experiencia').show();
+        ativaFotoExperiencia();
+        $('#btn-crop-photo-experiencia').show();
     });
 
     // Import image
-    var $inputImage = $('#input-owner-experiencia-foto-perfil');
+    var $inputImage = $('#input-experiencia-foto-perfil');
     var URL = window.URL || window.webkitURL;
     var blobURL;
 
@@ -106,7 +106,7 @@ $(function() {
       $inputImage.change(function () {
         var files = this.files;
         var file;
-        ativaFotoOwnerExperiencia();
+        ativaFotoExperiencia();
 
         if (!$image.data('cropper')) {
           return;
@@ -131,7 +131,7 @@ $(function() {
 
 
 
-    var submitBtn = $('#owner-experiencia-btn-submit input:submit'),
+    var submitBtn = $('#experiencia-btn-submit input:submit'),
         loading = submitBtn.next();
 
     //Escutando click no submit para mostrar o loading

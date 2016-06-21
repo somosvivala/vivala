@@ -61,6 +61,7 @@ Route::get('testeboleto', function() {
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
     Route::controller('gestao', 'GestaoController');
+    Route::controller('foto', 'FotoController');
 
 });
 
@@ -108,7 +109,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
     Route::get('ongs/sobre/{id}','OngController@sobre');
     Route::controller('feed','FeedController');
 
-    Route::controller('foto', 'FotoController');
     Route::controller('ajax', 'AjaxController');
     Route::controller('perfilcontroller','PerfilController');
     Route::controller('comentario', 'ComentariosController');

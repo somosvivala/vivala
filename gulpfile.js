@@ -96,6 +96,8 @@ elixir(function(mix) {
       '../../assets/js/fontAwesomeIconsArray.js',
 
 
+      '../../assets/js/cropFotoExperiencia.js',
+      '../../assets/js/cropFotoOwnerExperiencia.js',
       '../../assets/js/info-form-experiencias.js',
       '../../assets/js/data-ocorrencia-experiencias.js',
       '../../assets/js/categoria-experiencia.js',

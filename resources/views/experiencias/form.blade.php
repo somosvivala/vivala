@@ -23,6 +23,10 @@
 
 {{-- Secao de trocar foto do Projeto/Empresa responsavel --}}
 <div class="col-sm-12 margin-b-1">
+    {{-- Aqui insiro o input hidden que guardará o id da foto associada ao owner da experiencia --}}
+    {!! Form::hidden('owner-experiencia-foto-id', '', ['id' => 'owner-experiencia-foto-id']) !!}
+
+    {{-- Incluindo o conjunto (foto / botao troca foto), que dispara a modal contendo o form de trocar foto por ajax --}}
     @include('experiencias._owner_fotoform')
 </div>
 
@@ -31,6 +35,16 @@
 
 
 <h4 class= "margin-t-2 margin-b-1 col-xs-12">Informações da experiência</h4>
+
+{{-- Secao de trocar foto da experiencia --}}
+<div class="col-sm-12 margin-b-1">
+    {{-- Aqui insiro o input hidden que guardará o id da foto associada á experiencia --}}
+    {!! Form::hidden('experiencia-foto-id', '', ['id' => 'experiencia-foto-id']) !!}
+
+    {{-- Incluindo o conjunto (foto / botao troca foto), que dispara a modal contendo o form de trocar foto por ajax --}}
+    @include('experiencias._fotoform')
+</div>
+
 
 {{-- Secao de seleção do local da experiencia --}}
 <div class="col-sm-12 margin-b-1">
