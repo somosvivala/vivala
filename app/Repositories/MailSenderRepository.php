@@ -127,5 +127,4 @@ class MailSenderRepository
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }
->>>>>>> featureExperienciaAtualizada
 }
