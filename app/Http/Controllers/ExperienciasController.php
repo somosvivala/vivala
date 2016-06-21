@@ -83,8 +83,8 @@ class ExperienciasController extends Controller
         //Se a experiencia em questao nao estiver ativa
         if (!$Experiencia->isAtiva) {
             //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
-            $user = Auth::user();
-            if (!$user || !$user->isAdmin())
+            $podeAcessar = Auth::user() ? Auth::user()->isAdmin : false;
+            if ($podeAcessar)
                 return redirect('/experiencias');
         }
 
@@ -150,8 +150,8 @@ class ExperienciasController extends Controller
         //Se a experiencia em questao nao estiver ativa
         if (!$Experiencia->isAtiva) {
             //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
-            $user = Auth::user();
-            if (!$user || !$user->isAdmin())
+            $podeAcessar = Auth::user() ? Auth::user()->isAdmin : false;
+            if ($podeAcessar)
                 return redirect('/experiencias');
         }
 

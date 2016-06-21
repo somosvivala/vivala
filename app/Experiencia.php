@@ -194,6 +194,14 @@ class Experiencia extends Model
     }
 
 
+    /**
+     * Definindo um acessor para saber se a experiencia esta ativa
+     */
+    public function getIsAtivaAttribute()
+    {
+        return $this->status == 'publicada';
+    }
+
 
 
 
