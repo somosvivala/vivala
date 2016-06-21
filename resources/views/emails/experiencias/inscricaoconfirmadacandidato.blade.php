@@ -204,7 +204,7 @@
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
-                    <h3 style="color:#FFFFFF; margin-top:0;">Obrigado pela confiança, <strong>NOME DO USUÁRIO</strong>!</h3>
+                    <h3 style="color:#FFFFFF; margin-top:0;">Obrigado pela confiança, <strong>{{ ucfirst($Usuario->perfil->nome) }}</strong>!</h3>
                   </td>
                 </tr>
                 <!-- Fim do Título do EMAIL -->
@@ -242,7 +242,7 @@
                   <!-- Sub-título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <p style="color:#25A494;">Sua inscrição foi confirmada na experiência oferecida pela <strong>ONG CÃO FELIZ</strong>!</p>
+                      <p style="color:#25A494;">Sua inscrição foi confirmada na experiência oferecida pela <strong>{{ mb_strtoupper($Experiencia->owner->nome) }}</strong>!</p>
                     </td>
                   </tr>
                   <!-- Fim do Sub-título da Primeira Estrutura -->
@@ -296,10 +296,10 @@
                       </p>
                       <p>
                         <span><img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}"/></span>
-                        <span style="font-size:16px;"><strong>Campinas - SP</strong></span>
+                        <span style="font-size:16px;"><strong>{{ ucfirst($Experiencia->local->nome) }} - {{ strtoupper($Experiencia->local->estado->sigla) }}</strong></span>
                       </p>
                       <p style="text-align:justify;">
-                        <span style="font-size:14px;">Venha conhecer a ONG Cão Feliz e ajude a alimentar cãezinhos abandonados! Escolha um final de semana e passe a tarde cuidando e alimentando cachorros. É a oportunidade perfeita para você que sente falta do seu companheiro e não pode adotar um em casa. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</span>
+                        <span style="font-size:14px;">{{ $Experiencia->descricao }}</span>
                       </p>
                     </td>
                   </tr>
@@ -346,18 +346,18 @@
                   <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr>
                     <td>
-                      <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; max-height:150px; max-width:400px; margin:20px auto 0;">
+                      <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; height:150px; max-height:150px; max-width:400px; margin:20px auto 0;">
                         <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px;">
                           <p style="margin-bottom: 0;"><img src="{{ asset('img/dummy_ong-icon.png') }}" width="65px" height="65px"/></p>
-                          <p style="margin-bottom: 0;">ONG Cão Feliz</p>
+                          <p style="margin-bottom: 0;">{{ ucfirst($Experiencia->owner->nome) }}</p>
                           <p style="margin-bottom: 0;">
-                            <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
-                            <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-ig-icone.png') }}"/></a></span>
-                            <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-site-icone.png') }}"/></a></span>
+                            <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
+                            <span><a href="https://instagram.com/{{ $Experiencia->owner->url_instagram }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-ig-icone.png') }}"/></a></span>
+                            <span><a href="http://{{ $Experiencia->owner->url_site }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-site-icone.png') }}"/></a></span>
                           </p>
                         </div>
                         <div style="position: relative; text-align: center; margin-top:25px;">
-                          <p>A ONG Cão feliz cuida de cãezinhos abandonados e de rua desde 2009. Realiza inúmeros projetos sociais em diversas cidades. [...]</p>
+                          <p>{{ $Experiencia->owner->descricao }}</p>
                         </div>
                       </div>
                     </td>

@@ -16,16 +16,18 @@ use Mail;
 use App\Http\Requests\ContatoRequest;
 use App\Http\Requests\FeedbackRequest;
 
+use App\Repositories\MailSenderRepository;
+
 class PaginaController extends Controller {
 
     /**
-     * Create a new controller instance.
+     * Constructor recebendo instancias dos repositorios que ele necessita
      *
-     * @return void
+     * @param $emailRepository - Instancia de MailSenderRepository
      */
-    public function __construct() {
+    public function __construct(MailSenderRepository $emailRepository) {
         // Use middleware only on some functions
-        $this->middleware('auth', ['except' => [ 
+        $this->middleware('auth', ['except' => [
             'getTermosecondicoes',
             'getAssinaturapg',
             'getAssinaturadan',
@@ -33,6 +35,8 @@ class PaginaController extends Controller {
             'getAssinaturadib',
             'getAssinaturababi' ]
         ]);
+
+        $this->emailRepository = $emailRepository;
     }
 
     /**
@@ -125,10 +129,11 @@ class PaginaController extends Controller {
     public function postContato(ContatoRequest $request)
     {
         $request->user_id = Auth::user()->id;
-        Mail::send('emails.contato', ['request' => $request], function ($message)  {
-            $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pelo Formulário de Contato!');
-            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });
+        // Montando o Objeto formado pelo request de ContatoRequest + user_id
+        $FormContato = $request;
+
+        // Disparando evento para avisando que temos uma novo email de contato
+    		$this->emailRepository->enviaEmailFormularioContato($FormContato);
     }
 
     /**
@@ -233,34 +238,35 @@ class PaginaController extends Controller {
     {
         $request->email = Auth::user()->email;
         $request->nome = (Auth::user()->username != "" ? Auth::user()->username : Auth::user()->perfil->apelido);
-        Mail::send('emails.feedback', ['request' => $request], function ($message)  {
-            $message->to('contato@vivalabrasil.com.br',  'Vivalá')->subject('Feedback pela modal');
-            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });
+        // Montando o Objeto formado pelo request de ContatoRequest + user_email + user_nome
+        $FormFeedback = $request;
+
+        // Disparando evento para avisando que temos uma novo email de feedback
+        $this->emailRepository->enviaEmailFormularioFeedback($FormFeedback);
     }
 
 
-    public function getAssinaturadan() 
+    public function getAssinaturadan()
     {
         return view('paginas.assinaturas.assinaturadan');
     }
 
-    public function getAssinaturapg() 
+    public function getAssinaturapg()
     {
         return view('paginas.assinaturas.assinaturapg');
     }
 
-    public function getAssinaturaraissa() 
+    public function getAssinaturaraissa()
     {
         return view('paginas.assinaturas.assinaturaraissa');
     }
 
-    public function getAssinaturadib() 
+    public function getAssinaturadib()
     {
         return view('paginas.assinaturas.assinaturadib');
     }
-      
-    public function getAssinaturababi() 
+
+    public function getAssinaturababi()
     {
         return view('paginas.assinaturas.assinaturababi');
     }

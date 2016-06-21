@@ -15,26 +15,31 @@
   * Rotas de teste de Emails Experiencias
   */
   use App\Experiencia;
+  use App\Perfil;
   use App\Repositories\ExperienciasRepository;
   Route::get('/novainscricaocandidato', function() {
     $ExperienciasRepository = new ExperienciasRepository;
     $Experiencia = Experiencia::all()->reverse()->first();
-    return view('emails.experiencias.novainscricaocandidato', compact('ExperienciasRepository', 'Experiencia'));
+    $Usuario = Auth::user();
+    return view('emails.experiencias.novainscricaocandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/novainscricaoplataforma', function() {
     $ExperienciasRepository = new ExperienciasRepository;
     $Experiencia = Experiencia::all()->reverse()->first();
-    return view('emails.experiencias.novainscricaoplataforma', compact('ExperienciasRepository', 'Experiencia'));
+    $Usuario = Auth::user();
+    return view('emails.experiencias.novainscricaoplataforma', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/inscricaoconfirmadacandidato', function() {
     $ExperienciasRepository = new ExperienciasRepository;
     $Experiencia = Experiencia::all()->reverse()->first();
-    return view('emails.experiencias.inscricaoconfirmadacandidato', compact('ExperienciasRepository', 'Experiencia'));
+    $Usuario = Auth::user();
+    return view('emails.experiencias.inscricaoconfirmadacandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/inscricaoconfirmadainstituicao', function() {
     $ExperienciasRepository = new ExperienciasRepository;
     $Experiencia = Experiencia::all()->reverse()->first();
-    return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('ExperienciasRepository', 'Experiencia'));
+    $Usuario = Auth::user();
+    return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
 
 /*

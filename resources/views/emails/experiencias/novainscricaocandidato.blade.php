@@ -237,7 +237,7 @@
                   <!-- Seção de INFOS BANCÁRIAS -->
                   <tr align="center">
                     <td>
-                      <p>Para confirmar sua inscrição na experiência da <strong>{{ $Experiencia->owner->nome }}</strong></p>
+                      <p>Para confirmar sua inscrição na experiência da <strong>{{ mb_strtoupper($Experiencia->owner->nome) }}</strong></p>
                       <p>realize o depósito de <strong>R${{ $Experiencia->preco }}</strong> na conta a seguir:</p>
                     </td>
                   </tr>
@@ -308,7 +308,7 @@
                       </p>
                       <p>
                         <span><img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}"/></span>
-                        <span style="font-size:16px;"><strong>{{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</strong></span>
+                        <span style="font-size:16px;"><strong>{{ ucfirst($Experiencia->local->nome) }} - {{ strtoupper($Experiencia->local->estado->sigla) }}</strong></span>
                       </p>
                       <p style="text-align:justify;">
                         <span style="font-size:14px;">{{ $Experiencia->descricao }}</span>
@@ -362,7 +362,7 @@
                       <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; height:150px; max-height:150px; max-width:400px; margin:20px auto 0;">
                         <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px;">
                           <p style="margin-bottom: 0;"><img src="{{ asset('img/dummy_ong-icon.png') }}" width="65px" height="65px"/></p>
-                          <p style="margin-bottom: 0;">{{ $Experiencia->owner->nome }}</p>
+                          <p style="margin-bottom: 0;">{{ ucfirst($Experiencia->owner->nome) }}</p>
                           <p style="margin-bottom: 0;">
                             <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
                             <span><a href="https://instagram.com/{{ $Experiencia->owner->url_instagram }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-ig-icone.png') }}"/></a></span>
