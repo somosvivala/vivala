@@ -221,7 +221,7 @@
                 <!-- Logo da VIVALÁ -->
                 <tr align="center">
                   <td>
-                    <a href="https://vivala.com.br" target="_blank">
+                    <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
                       <img src="{{ asset('logo-branco.png') }}" alt="Vivalá" style="display:block; margin:auto;" border="0" width="100%" max-width="150px" height="100%" max-height="82px">
                     </a>
                   </td>
@@ -254,20 +254,20 @@
           <!-- Corpo do Email -->
           <td class="container" bgcolor="#FFFFFF">
             <div class="content">
-              <table style="padding-bottom:0; margin-top:20px;">
+              <table style="padding-bottom:0;">
                 <tbody>
                   <!-- Primeira SEÇÃO -->
                   <!-- Título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <h1 style="color:#FAA325;">Você está quase lá!</h1>
+                      <h1 style="color:#FAA325; margin-bottom:20px;">Você está quase lá!</h1>
                     </td>
                   </tr>
                   <!-- Fim do Título da Primeira Estrutura -->
                   <!-- Imagem da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <img src="{{ asset('img/email/vivala-pagamento-pendente-icone-2.png') }}" width="99px;" height="99px;"/>
+                      <img src="{{ asset('img/email/vivala-pagamento-pendente-icone-2.png') }}" width="99px;" height="99px;" style="margin-bottom:20px;"/>
                     </td>
                   </tr>
                   <!-- Fim da Imagem da Primeira Estrutura -->
@@ -325,8 +325,7 @@
                     </td>
                   </tr>
                   <!-- Fim do Divisor -->
-                  <!-- Fim da Primeira SEÇÃO -->
-                  <!-- Segunda SEÇÃO -->
+                  <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
                     <td>
                       <h4 style="color:#545454; margin-bottom:15px;">
@@ -352,8 +351,8 @@
                       </p>
                     </td>
                   </tr>
-                  <!-- Fim da Segunda SEÇÃO -->
-                  <!-- Terceira SEÇÃO -->
+                  <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                   <tr>
                     <td>
                       <h4 style="color:#545454; margin-top:15px; margin-bottom:15px;">
@@ -391,13 +390,13 @@
                       </p>
                     </td>
                   </tr>
-                  <!-- Fim da Terceira SEÇÃO -->
-                  <!-- Quarta SEÇÃO -->
+                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr>
                     <td>
-                      <div style="padding:10px 25px; background-color:#ECEBEB; border-radius:15px; height:100px;">
-                        <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px; ">
-                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummyongemail.png') }}" width="50px" height="50px"/></p>
+                      <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; max-height:150px; max-width:400px; margin:20px auto 0;">
+                        <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px;">
+                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummyongemail.png') }}" width="75px" height="75px"/></p>
                           <p style="margin-bottom: 0;">ONG Cão Feliz</p>
                           <p style="margin-bottom: 0;">
                             <span><a href="#" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
@@ -411,14 +410,15 @@
                       </div>
                     </td>
                   </tr>
-                  <!-- Fim da Quarta SEÇÃO -->
-                  <!-- Quinta SEÇÃO -->
+                  <!-- Fim da Seção INFORMAÇÕES DA ONG -->
+                  <!-- Seção ENVIE SUAS DÚVIDAS -->
                   <tr align="center">
                     <td>
-                      <p>Envie sua dúvida para <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a><p>
+                      <p style="margin-top:20px;">Envie sua dúvida para <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a><p>
                     </td>
                   </tr>
-                  <!-- Fim da Quinta SEÇÃO -->
+                  <!-- Fim da Seção ENVIE SUAS DÚVIDAS -->
+                  <!-- Fim da Primeira SEÇÃO -->
                 </tbody>
               </table>
             </div>
