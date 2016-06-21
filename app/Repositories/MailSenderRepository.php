@@ -154,10 +154,10 @@ class MailSenderRepository
       Mail::send('emails.feedback', ['FormFeedback' => $FormFeedback], function ($message)  {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pela Formuário de Feedback');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pelo Formulário de Feedback');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
-          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EMAIL DE FEEDBACK] Resposta pela Formuário de Feedback');
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EMAIL DE FEEDBACK] Resposta pelo Formulário de Feedback');
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }
