@@ -15,7 +15,7 @@ return[
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
   'join_vivala' => 'Junte-se a Vivalá e conecte-se ao Brasil de verdade.',
-  'description_vivala' => 'A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil.',
+  'description_vivala' => 'A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil. Junte-se a Vivalá e conecte-se ao Brasil de verdade!',
   'keywords_vivala' => 'Vivalá, Rede Social, Turismo, Viagem, Voluntariado, Impacto Social, Hospedagem, Transporte, Alimentação, Entretenimento',
 
 /* Pilares */
@@ -29,6 +29,7 @@ return[
   'lbl_about' => 'Sobre',
   'lbl_about_us' => 'Sobre Nós',
   'lbl_abs' => 'ABS',
+  'lbl_account' => 'Conta',
   'lbl_acess_data' => 'Dados de Acesso',
   'lbl_activity_log' => 'Log de Atividades',
   'lbl_additional_info' => 'Informação Adicional',
@@ -113,6 +114,7 @@ return[
   'lbl_ads_name' => 'Nome do Anúncio',
   'lbl_ads_price' => 'Preço do Anúncio',
   'lbl_ads_range' => 'Alcance do Anúncio',
+  'lbl_agency' => 'Agência',
   'lbl_airbag' => 'Airbag',
   'lbl_air_conditioning' => 'Ar condicionado',
   'lbl_album' => 'Álbum',
@@ -151,12 +153,14 @@ return[
   'lbl_album_description' => 'Descrição do Álbum',
   'lbl_all_rights_reserved' => 'Todos os direitos reservados',
   'lbl_all_results_by' => 'Todos os resultados por:',
+  'lbl_and' => 'e',
   'lbl_any_preference_period_to_travel' => 'Algum período de sua preferência para viajar',
   'lbl_app' => 'Aplicativo',
   'lbl_app_' => 'Aplicativos',
   'lbl_average_price_per_meal' => 'Preço Médio por refeição',
   'lbl_back' => 'Voltar',
   'lbl_balcony' => 'Varanda',
+  'lbl_bank' => 'Banco',
   'lbl_best_rank' => 'Melhor classificação',
   'lbl_birthday' => 'Data de Nascimento',
   'lbl_birthday1' => 'Data de Aniversário',
@@ -173,6 +177,8 @@ return[
   'lbl_build_your_trip_with_us' => 'Faça a cotação de sua viagem conosco',
   'lbl_build_my_trip' => 'Cotar viagem',
   'lbl_build_my_trip_difficulty' => 'Está tendo dificuldade para montar sua viagem ou não achou o que estava procurando? Nós podemos te ajudar!',
+  'lbl_capslock_activated' => 'Caps-Lock ligado',
+  'lbl_capslock_active' => 'Caps-Lock está ativo',
   'lbl_category' => 'Categoria',
   'lbl_category_' => 'Categorias',
   'lbl_category_add' => 'Adicionar Categoria',
@@ -279,9 +285,11 @@ return[
   'lbl_company_send_' => 'Enviar Empresas',
   'lbl_company_update' => 'Atualizar página de Empresa',
   'lbl_company_update_' => 'Atualizar páginas de Empresas',
+  'lbl_connect' => 'Conectar',
   'lbl_connect_with_others' => 'Sugestão de Conexões',
   'lbl_connect_with_friends' => 'Conecte-se com amigos',
   'lbl_connect_with_volunteers' => 'Conecte-se com voluntários',
+  'lbl_connect_yourself' => 'Conecte-se',
   'lbl_confirm' => 'Confirmar',
   'lbl_contact' => 'Contato',
   'lbl_contact_' => 'Contatos',
@@ -342,6 +350,8 @@ return[
   'lbl_event_update_' => 'Atualizar Eventos',
   'lbl_exit' => 'Saída',
   'lbl_exit_' => 'Saídas',
+  'lbl_experience' => 'Experiência',
+  'lbl_experience_' => 'Experiências',
   'lbl_extra_hosting' => 'Gostaria de algum adicional em sua hospedagem',
   'lbl_explain_better_your_restriction' => 'Explique melhor sua restrição',
   'lbl_feed' => 'Linha do Tempo',
@@ -427,7 +437,9 @@ return[
   'lbl_kitchen_vegetarian' => 'Vegetariana',
   'lbl_kitchen_vegan' => 'Vegana',
   'lbl_know_more' => 'Saiba Mais',
+  'lbl_know_more_accessing_by_desktop' => 'Saiba mais acessando pelo seu desktop',
   'lbl_know_more_things' => 'Saiba mais coisas',
+  'lbl_know_the' => 'Conheça a',
   'lbl_language' => 'Idioma',
   'lbl_latest_news' => 'Últimas Notícias',
   'lbl_legal_terms' => 'Termos de Uso',
@@ -441,9 +453,11 @@ return[
   'lbl_local' => 'Local',
   'lbl_localization' => 'Localização',
   'lbl_login' => 'Login',
+  'lbl_login_yourself' => 'Faça seu login',
   'lbl_login_keepme' => 'Mantenha-me conectado',
   'lbl_logout' => 'Sair',
   'lbl_lunch' => 'Almoço',
+  'lbl_management' => 'Gestão',
   'lbl_manifest' => 'Manifesto',
   'lbl_map' => 'Mapa',
   'lbl_map_' => 'Mapas',
@@ -517,6 +531,7 @@ return[
   'lbl_ong_slot_searching' => 'Buscando Vaga',
   'lbl_ong_slot_searching_' => 'Buscando Vagas',
   'lbl_optional' => 'Opcional',
+  'lbl_or' => 'Ou',
   'lbl_organization' => 'Organização',
   'lbl_organization_about' => 'Sobre a Organização',
   'lbl_page' => 'Página',
@@ -545,7 +560,9 @@ return[
   'lbl_passport' => 'Passaporte',
   'lbl_password' => 'Senha',
   'lbl_password_' => 'Senhas',
+  'lbl_password_confirm' => 'Confirmar Senha',
   'lbl_password_confirmation' => 'Confirmação de Senha',
+  'lbl_password_dont_match' => 'As senhas não coincidem',
   'lbl_password_forgot' => 'Esqueceu sua senha?',
   'lbl_password_recovery' => 'Recuperação de Senha',
   'lbl_password_recovery_link' => 'Link para recuperação de senha',
@@ -603,7 +620,10 @@ return[
   'lbl_quiz_' => 'Questionários',
   'lbl_read_more' => 'Ler Mais',
   'lbl_register' => 'Registrar',
+  'lbl_register2' => 'Cadastrar',
+  'lbl_register_yourself' => 'Cadastre-se',
   'lbl_registered' => 'Registrado',
+  'lbl_registered2' => 'Cadastrado',
   'lbl_remove' => 'Remover',
   'lbl_report_problem' => 'Nos reporte um Problema',
   'lbl_restaurant' => 'Restaurante',
@@ -652,6 +672,9 @@ return[
   'lbl_submit' => 'Enviar',
   'lbl_subject' => 'Assunto',
   'lbl_subject_feedback' => 'Assunto: Feedback',
+  'lbl_subscribe' => 'Inscreva-se',
+  'lbl_subscribe_here' => 'Inscreva-se aqui',
+  'lbl_subscribe_yourself' => 'Inscreva-se',
   'lbl_suggests' => 'Sugestões',
   'lbl_suggests_no' => 'Nenhuma sugestão.',
   'lbl_tag' => 'Marcação',
@@ -917,16 +940,6 @@ return[
       'car_category_utilitary' => 'Utilitário',
       'car_category_pickup' => 'Pick-up',
 
-  /* View: Album [DONE] */
-
-  /* View: Auth [DONE] */
-
-  /* View: ChefsClub */
-
-  /* View: Conectar */
-
-  /* View: Configuracao [DONE] */
-
   /*------------------------------------------------------------------------------
   /  View : VIAJAR
   ------------------------------------------------------------------------------*/
@@ -1033,7 +1046,7 @@ return[
 
   /* View: Páginas */
     'pages_join_people' => 'Junte-se as pessoas que apoiam você na Vivalá!',
-    'pages_by_clicking' => 'Ao clicar em Começar, você concorda com os',
+    'pages_by_clicking' => 'Ao clicar em começar, você concorda com os',
     'pages_terms_and_conditions' => 'Termos das Páginas da Vivalá',
 
   /* View: Perfil */
@@ -1098,10 +1111,6 @@ return[
       'quiz_nicesuggests' => 'Sugestões baseadas em seus interesses. Conecte-se!',
       'quiz_nosuggests' => 'Não encontramos nenhuma sugestão.',
 
-  /* View: Vendor */
-
-  /* View: Viajar */
-
   /* feed.blade */
       'feed_kinda_silence' => 'Pô, conta alguma coisa aí!',
 
@@ -1112,11 +1121,14 @@ return[
       'welcome_floatingballon1' => 'Planeje suas experiências e compre transporte, hospedagem e reserva de restaurantes em todo o Brasil.',
       'welcome_floatingballon2' => 'Conheça projetos de impacto de social e transforme o país através de voluntariado.',
       'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar.',
+      'welcome_floatingballon4' => 'A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil. Junte-se a nós!',
+      'welcome_floatingballon5' => 'A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil.',
 
     /* Política de Dados */
-      'welcome_aboutprivacy1' => 'Ao clicar em confirmar, você concorda com nossos',
+      'welcome_aboutprivacy1' => 'Ao clicar em confirmar você concorda com nossos',
       'welcome_aboutprivacy2' => 'e confirma que leu nossa',
-      'welcome_aboutprivacy3' => ', incluindo nosso',
+      'welcome_aboutprivacy3' => 'incluindo nosso',
+      'welcome_aboutprivacy4' => 'Ao se cadastrar, você concorda com nosso',
 
 /*------------------------------------------------------------------------------
 /  Traduções com BD-mixed

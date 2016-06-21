@@ -51,8 +51,10 @@ Route::get('testeboleto', function() {
 });
 
 
-Route::group(['before' => 'auth'], function() {
+Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
+    Route::controller('gestao', 'GestaoController');
+
 });
 
 /**
@@ -136,10 +138,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
 });
 
 
-/**
- * Rotas que nao sao especificas de desktop
- */
-Route::controller('gestao', 'GestaoController');
 
 
 /**
@@ -158,6 +156,10 @@ Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDelet
 Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
 Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
+Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfirmaInscricao');
+Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
+Route::post('experiencias/desativar', 'ExperienciasController@postDesativarExperiencia');
+
 
 //rotas para lidar com resource controllers
 Route::resource('experiencias', 'ExperienciasController');

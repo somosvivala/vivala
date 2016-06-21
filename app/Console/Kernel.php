@@ -76,13 +76,24 @@ class Kernel extends ConsoleKernel {
 
             //job para atualizar as inscricoes de uma experiencias que ocorre
             $schedule->call(function() {
+
                 //dentre as experiencias ativas com data marcada
                 Experiencia::publicadas()->comDataMarcada()->get()->each(function ($experiencia) {
-                    //se a experiencia for acontecer hoje, disparar evento tomar providencias
+
+                    //se a experiencia for acontecer hoje, disparar evento para tomar providencias
                     if ($experiencia->aconteceHoje) {
                         event( new ExperienciaOcorrendo( $experiencia ));
                     }
+
+                    //se a experiencia for acontecer daqui 3 dias (eminente), disparar evento para tomar providencias
+                    if ($experiencia->aconteceEmTresDias) {
+                        //event( new ExperienciaEminente( $experiencia ));
+                    }
+
                 });;
+
+
+
 
             })->dailyAt('4:19');
 

@@ -457,7 +457,7 @@ $(document).ready(function() {
 
 // ##### INTERNO
 // Se a variável for FALSE (setada pelo user), posso iniciar este Tour
-  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-viajar"))){
+  if((!parseInt(ligaIntroTour)) && ($("#tour-pilares").hasClass("pilar-viajar") || $("#tour-pilares").hasClass("pilar-conectar") || $("#tour-pilares").hasClass("pilar-cuidar"))){
 
     //console.log("Estou dentro da Vivalá, preciso mostrar a TOUR INICIAL");
     // TOUR INTERNO
@@ -595,7 +595,7 @@ $(document).ready(function() {
   }
 
 // ##### FEATURE COTACAO VIAGEM
-  if(parseInt(ligaIntroTour) && !parseInt(ligaCotarViagemTour)){
+  if(parseInt(ligaIntroTour) && !parseInt(ligaCotarViagemTour) && $("#tour-pilares").hasClass("pilar-viajar")){
     switch(linguaAtiva){
       case 'en':
         featureCotarViagemTour.setOptions({

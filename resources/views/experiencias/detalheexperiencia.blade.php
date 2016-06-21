@@ -9,12 +9,12 @@
 @else
 <div class="row text-center header-mobile">
     <a href="{{ url('/conhecavivala') }}">
-        <span>Conheça a</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
+        <span>{!! trans('global.lbl_know_the') !!}</span> <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
      </a>
 </div>
 @endif
 
-<a href="/experiencias" class="link-voltar">
+<a href="{{ url('experiencias') }}" class="link-voltar">
     <i class="fa fa-chevron-left"></i>
 </a>
 <section class="experiencia">
@@ -36,7 +36,7 @@
                 @endif
             </div>
         </div>
-    
+
         <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
         @foreach($Experiencia->informacoes as $Informacao)
         <div class="col-xs-12 informacoes">
@@ -64,7 +64,7 @@
             </div>
         </div>
     </div>
-    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
 </section >
 </div>
 @endsection

@@ -18,6 +18,9 @@ use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
+use App\Http\Requests\DesativarExperienciaRequest;
+use App\Http\Requests\PublicarExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -58,7 +61,7 @@ class ExperienciasController extends Controller
      */
     public function index()
     {
-        $experiencias = $this->experienciasRepository->getAll();
+        $experiencias = $this->experienciasRepository->getExperienciasAtivas();
 
         if(Agent::isDesktop()){
             return view("experiencias.desktop.listaexperiencias", compact("experiencias") );
@@ -69,13 +72,21 @@ class ExperienciasController extends Controller
 
 
     /**
-     * Exibe detalhes da experiencia
+      * Exibe detalhes da experiencia
      *
      * @return view
      */
     public function show($id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
+
+        //Se a experiencia em questao nao estiver ativa
+        if (!$Experiencia->isAtiva) {
+            //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
+            $user = Auth::user();
+            if (!$user || !$user->isAdmin())
+                return redirect('/experiencias');
+        }
 
         if(Agent::isDesktop()){
             return view("experiencias.desktop.detalheexperiencia", compact("Experiencia") );
@@ -135,6 +146,15 @@ class ExperienciasController extends Controller
     public function getCheckout(Request $request, $id)
     {
         $Experiencia = $this->experienciasRepository->findOrFail($id);
+
+        //Se a experiencia em questao nao estiver ativa
+        if (!$Experiencia->isAtiva) {
+            //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
+            $user = Auth::user();
+            if (!$user || !$user->isAdmin())
+                return redirect('/experiencias');
+        }
+
         event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
 
         if(Agent::isDesktop()) {
@@ -189,6 +209,14 @@ class ExperienciasController extends Controller
         $this->experienciasRepository->delete($id);
     }
 
+    /**
+     * Rota para servir a view de conheca vivala
+     */
+    public function getConhecaVivala()
+    {
+        return view('conhecadeslogado');
+    }
+
 
     /**
      * Rota para criar uma nova DataOcorrencia para uma experiencia
@@ -211,13 +239,29 @@ class ExperienciasController extends Controller
         return ['result' => $this->experienciasRepository->deleteDataOcorrencia($request->all()) ];
     }
 
+
     /**
-     * Rota para servir a view de conheca vivala
+     * Rota para confirmar uma inscricao de experiencia
      */
-    public function getConhecaVivala()
+    public function postConfirmaInscricao(ConfirmaInscricaoExperienciaRequest $request)
     {
-        return view('conhecadeslogado');
+        return ['result' => $this->experienciasRepository->confirmaInscricaoExperiencia($request)];
     }
 
+    /**
+     * Rota para publicar uma experiencia (passa a aparecer na listagem)
+     */
+    public function postPublicarExperiencia(PublicarExperienciaRequest $request)
+    {
+        return ['result' => $this->experienciasRepository->publicarExperiencia($request)];
+    }
+
+    /**
+     * Rota para desativar uma experiencia (Remove da listagem)
+     */
+    public function postDesativarExperiencia(DesativarExperienciaRequest $request)
+    {
+        return ['result' => $this->experienciasRepository->desativarExperiencia($request)];
+    }
 
 }

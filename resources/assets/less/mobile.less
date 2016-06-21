@@ -14,13 +14,13 @@ body.mobile {
     width:100%;
     height:100%;
     .container-logo {
-        height:3.5em;
+        height:6rem;
         padding: 0.5em 0;
         img {
          height:100%;
         }
     }
-    background-color:@cor-semi-transparente;
+    background-color:white;
     top:100%;
     left:0;
     opacity:0;
@@ -34,14 +34,9 @@ body.mobile {
 }
 
 .conteudo-mobile {
-    margin-left:4%;
-    margin-bottom:4%;
-    position:relative;
-    float:left;
-    width:92%;
     background-color:white;
     text-align:center;
-    padding:1em;
+    padding:1rem;
 }
 
 .btn-mobile {
@@ -85,17 +80,29 @@ body.mobile {
 }
 
 .link-verde {
-    width:11em;
-    border: none;
-    color: white;
-    background-color: @verde-sucesso;
-    padding:0.2em;
-    font-family:@font-family-avenir-black;
-    display: inline-block;
-    font-size: 1em;
-    &:hover {
-        color :white;
-    }
+  border: none;
+  color: @verde-sucesso;
+  background-color: white;
+  font-family:@font-family-avenir-black;
+  display: inline-block;
+  font-size: 1rem;
+  &:hover {
+      color :white;
+  }
+}
+
+.link-verde2 {
+  width:11em;
+  border: none;
+  color: white;
+  background-color: @verde-sucesso;
+  padding:0.2em;
+  font-family:@font-family-avenir-black;
+  display: inline-block;
+  font-size: 1em;
+  &:hover {
+      color :white;
+  }
 }
 
 .fundo-laranja {
@@ -108,14 +115,12 @@ form input.form-mobile {
     font-family:@font-family-avenir-black;
     border:none;
     background-color: @cor-fundo;
-    width:20rem;
 }
 
-small.width20em {
-    width:20rem;
+small.forgot-password {
     color:@cor-cinza-escuro;
     margin-top:0.3em;
-    font-size:0.8em;
+    font-size:0.8rem;
     display:inline-block;
 }
 
@@ -134,17 +139,23 @@ small.width20em {
 }
 
 .form-mobile-warning {
-    position: absolute;
-    width:100%;
-    top:2rem;
-    left:0;
-    padding:0.2em 0;
-    text-align:center;
     font-family:@font-family-avenir-black;
+    font-size:0.8rem;
     color:white;
-    font-size:0.8em;
+    text-align:center;
     text-transform:uppercase;
     background-color:@cor-cinza-escuro;
+    margin: 0 2%;
+}
+
+.form-mobile-warning2 {
+    font-family:@font-family-avenir-black;
+    font-size:0.8rem;
+    color:white;
+    text-align:center;
+    text-transform:uppercase;
+    background-color:@amarelo-aviso;
+    margin: 0 2%;
 }
 
 .desativa-conheca {
@@ -521,10 +532,10 @@ div.round-foto-small {
     }
 }
 
-span{
-  font-size: 1.2rem;
-}
+textarea.sem-upper {
+ text-transform:none;
+ }
 
-small{
-  font-size: 1rem;
-}
+ span.texto-conheca-vivala{
+   font-size: 1.2rem;
+ }
