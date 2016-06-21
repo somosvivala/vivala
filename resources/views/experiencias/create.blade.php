@@ -9,6 +9,10 @@
             {!! Form::open(['url' => 'experiencias']) !!}
                 @include('experiencias.form', ['textBtnSubmit' => 'Criar Experiência'])
             {!! Form::close() !!}
+
+            {{-- incluindo a modal que edita a foto do owner da experiencia apos o form --}
+            @include('experiencias._owner_fotoform_modal')
+
     </div>
 </div>
 @endsection

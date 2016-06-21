@@ -1,18 +1,48 @@
+<h4 class= "margin-t-2 margin-b-1 col-xs-12">Informações de quem promove a experiência</h4>
+
 {{-- Secao de selecao da ong/projeto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
+    <i class='fa fa-2x fa-question-circle-o' title='Esse é o campo que identifica a instituição responsavel'></i>
     {!! Form::label('projeto', 'Projeto responsavel', ['class' => 'row col-sm-12']) !!}
     {!! Form::select("projeto", $ongs, (isset($experiencia) ? $experiencia->owner->id : []), ['title' => trans('global.ong_selecione_ong'), 'placeholder' => trans('global.ong_selecione_ong'), 'class' => 'form-control', 'id' => 'ong_select']) !!}
 </div>
 
+{{-- Secao de insercao do nome do projeto/empresa responsavel --}}
+<div class="col-sm-12 margin-b-1">
+    <i class='fa fa-2x fa-question-circle-o' title='Esse é o nome que ira aparecer como a instituicao que está promovendo'></i>
+    {!! Form::label('owner_nome', 'Nome da empresa/instituição responsavel', ['class' => 'row col-sm-12']) !!}
+    {!! Form::text('owner_nome', null, ['placeholder' => '']) !!}
+</div>
 
-{{-- Secao de selecao da ong/projeto da experiencia --}}
+{{-- Secao de insercao da descricao do projeto/empresa responsavel (enviada no email) --}}
+<div class="col-sm-12 margin-b-1">
+    <i class='fa fa-2x fa-question-circle-o' title='Essa descrição aparecerá no email enviado ao candidato'></i>
+    {!! Form::label('owner_descricao', "Descricao da empresa/instituição responsavel ", ['class' => 'row col-sm-12']) !!}
+    {!! Form::text('owner_descricao', null, ['placeholder' => '']) !!}
+</div>
+
+{{-- Secao de trocar foto do Projeto/Empresa responsavel --}}
+<div class="col-sm-12 margin-b-1">
+    @include('experiencias._owner_fotoform')
+</div>
+
+
+
+
+
+<h4 class= "margin-t-2 margin-b-1 col-xs-12">Informações da experiência</h4>
+
+{{-- Secao de seleção do local da experiencia --}}
 <div class="col-sm-12 margin-b-1">
     <label class="row col-sm-12">Cidade</label>
     <input id="campo-autocomplete-cidades" autocomplete="off" class="autocomplete-cidades-ativo" type="text" placeholder="cidade" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
     <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden" value="{{ isset($experiencia) ? $experiencia->local->id : "" }}">
     <i class="fa fa-spin fa-spinner loading-search soft-hide laranja"></i>
 </div>
-
+<div class="col-sm-12 margin-b-1">
+    {!! Form::label('endereco_completo', "Endereço completo", ['class' => 'row col-sm-12']) !!}
+    {!! Form::text('endereco_completo', null, ['placeholder' => 'Rua Capitão Gomes Duarte, 9-50 - Vila Santa Clara']) !!}
+</div>
 
 {{-- Secao de campos texto da experiencia --}}
 <div class="col-sm-12 margin-b-1">
