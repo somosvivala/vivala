@@ -111,40 +111,7 @@
       * ELEMENTOS
       ***************************************/
       a {
-        color: #348eda;
-      }
-      .btn-primary {
-        Margin-bottom: 10px;
-        width: auto !important;
-      }
-      .btn-primary td {
-        background-color: #348eda;
-        border-radius: 25px;
-        font-family: 'Avenir-Roman', Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 14px;
-        text-align: center;
-        vertical-align: top;
-      }
-      .btn-primary td a {
-        background-color: #348eda;
-        border: solid 1px #348eda;
-        border-radius: 25px;
-        border-width: 10px 20px;
-        display: inline-block;
-        color: #ffffff;
-        cursor: pointer;
-        font-weight: bold;
-        line-height: 2;
-        text-decoration: none;
-      }
-      .last {
-        margin-bottom: 0;
-      }
-      .first {
-        margin-top: 0;
-      }
-      .padding {
-        padding: 10px 0;
+        color: #F16F2B;
       }
       /***************************************
       * CORPO
@@ -159,10 +126,6 @@
       table.footer-wrap {
         clear: both !important;
         width: 100%;
-      }
-      .footer-wrap .container p {
-        color: #666666;
-        font-size: 12px;
       }
       table.footer-wrap a {
         color: transparent;
@@ -237,7 +200,7 @@
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
-                    <h3 style="color:#FFFFFF; margin-top:0;">Falta apenas um passo para sua experiência acontecer!</h3>
+                    <h3 style="color:#FFFFFF; margin-top:0;">Sua experiência tem uma nova inscrição!</h3>
                   </td>
                 </tr>
                 <!-- Fim do Título do EMAIL -->
@@ -254,104 +217,35 @@
           <!-- Corpo do Email -->
           <td class="container" bgcolor="#FFFFFF">
             <div class="content">
-              <table style="padding-bottom:0; margin-top:20px;">
+              <table style="padding-bottom:0;">
                 <tbody>
                   <!-- Primeira SEÇÃO -->
-                  <!-- Título da Primeira Estrutura -->
-                  <tr align="center">
-                    <td>
-                      <h1 style="color:#FAA325;">Você está quase lá!</h1>
-                    </td>
-                  </tr>
-                  <!-- Fim do Título da Primeira Estrutura -->
-                  <!-- Imagem da Primeira Estrutura -->
-                  <tr align="center">
-                    <td>
-                      <img src="{{ asset('img/email/vivala-pagamento-pendente-icone-2.png') }}" width="99px;" height="99px;"/>
-                    </td>
-                  </tr>
-                  <!-- Fim da Imagem da Primeira Estrutura -->
-                  <!-- Seção de INFOS BANCÁRIAS -->
-                  <tr align="center">
-                    <td>
-                      <p>Para confirmar sua inscrição na experiência da <strong>NOME INSTITUIÇÃO</strong></p>
-                      <p>realize o depósito de <strong>R$VAL.OR</strong> na conta a seguir:</p>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <div style="background-color:#ECEBEB; text-align:left; padding:10px; max-width:300px; margin-left:20px; margin-right:20px;">
-                        <p style="color:#545454;"><b>CONTA</b> <span>420.420.420-42</span></p>
-                        <p style="color:#545454;"><b>AGÊNCIA</b> <span>0420</span></p>
-                        <p style="color:#545454;"><b>CPF/CNPJ</b> <span>420.420.420-42</span></p>
-                        <p style="color:#545454;"><b>BANCO</b> <span>Banco dos BR</span></p>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção de INFOS BANCÁRIAS -->
-                  <!-- Seção do DEPÓSITO -->
-                  <tr align="center">
-                    <td>
-                      <p style="margin-top:30px;">Não se esqueça de nos enviar o comprovante clicando no botão abaixo!</p>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <button style="font-family: Avenir Black; font-size: 20px; text-transform: uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px;">ENVIAR COMPROVANTE DE DEPÓSITO</button>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção do DEPÓSITO -->
-                  <!-- Seção do BOLETO BANCÁRIO -->
-                  <tr align="center">
-                    <td>
-                      <p style="margin-top:30px;">Ou pague com boleto bancário:</p>
-                    </td>
-                  </tr>
-                  <tr align="center">
-                    <td>
-                      <div style="padding:15px 30px; border:1px solid #25A494; max-width:200px;">
-                        <span>
-                          <img style="vertical-align:middle;" src="{{ asset('img/email/vivala-email-codigo-de-barras-icone.png') }}"/>
-                          <span style="font-family:Avenir Black; font-size:16px; color:#25A494; text-transform:uppercase; margin-left: 15px;">GERAR BOLETO</span>
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção do BOLETO BANCÁRIO -->
-                  <!-- Divisor -->
-                  <tr align="center">
-                    <td>
-                      <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
-                    </td>
-                  </tr>
-                  <!-- Fim do Divisor -->
-                  <!-- Fim da Primeira SEÇÃO -->
-                  <!-- Segunda SEÇÃO -->
                   <tr>
                     <td>
                       <h4 style="color:#545454; margin-bottom:15px;">
-                        Detalhes da experiência
+                        Comprovante de pagamento
                       </h4>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p style="float:left; margin-right:20px;">
-                        <img src="{{ asset('img/dummy_ong-splash.png') }}" width="220px" height="220px"/>
-                      </p>
-                      <p>
-                        <span><img src="{{ asset('/img/email/vivala-email-data-icone.png') }}"/></span>
-                        <span style="font-size:20px;"><strong>18 de Junho</strong></span>
-                      </p>
-                      <p>
-                        <span><img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}"/></span>
-                        <span style="font-size:16px;"><strong>Campinas - SP</strong></span>
-                      </p>
-                      <p style="text-align:justify;">
-                        <span style="font-size:14px;">Venha conhecer a ONG Cão Feliz e ajude a alimentar cãezinhos abandonados! Escolha um final de semana e passe a tarde cuidando e alimentando cachorros. É a oportunidade perfeita para você que sente falta do seu companheiro e não pode adotar um em casa. lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet.</span>
-                      </p>
+                      <p><img/><span>Nome</span> <span>Isis Luiza Gaona Machado</span></p>
+                      <p><img/><span>Email</span> <span>isis.gaona@gmail.com</span></p>
+                      <p><img/><span>Forma de Pagamento</span> <span>Boleto bancário</span></p>
+                      <p><img/><span>ID da inscrição</span> <span>9804985</span></p>
                     </td>
                   </tr>
+                  <!-- Separador -->
+                  <tr align="center">
+                    <td>
+                      <div style="border-bottom: 1px solid #D1D3D4;width: 300px;margin: 25px 0;"></div>
+                    </td>
+                  </tr>
+                  <!-- Fim do Separador -->
+
+                  <!-- Fim da Primeira SEÇÃO -->
+                  <!-- Segunda SEÇÃO -->
+
                   <!-- Fim da Segunda SEÇÃO -->
                   <!-- Terceira SEÇÃO -->
                   <tr>
