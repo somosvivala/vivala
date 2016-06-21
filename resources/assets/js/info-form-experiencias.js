@@ -19,38 +19,31 @@ var bindaInputsFontAwesome = function() {
         //console.log('inside bindaIcone: event : ');
         //console.log(event);
         tempoDigitando = setTimeout(function() {
-            testaRegexTrocaClassesFontAwesome(event.target);
+            testaClasseFontAwesome(event.target);
         }, 300);
     });
 };
 
 
 /**
- * Funcao para testar se o value do target é uma regex,
- * se for, substituo o font-awesome do icone com o do target
+ * Funcao para testar se as classes do input sao classes do fontAwesome
  */
-var testaRegexTrocaClassesFontAwesome = function(target) {
+var testaClasseFontAwesome = function(target) {
 
     //console.log('inside testaRegex: target : ');
     //console.log(target);
     //guardando matches da regex procurando por 'fa fa-*'
-    var regMatches = [];
-    regMatches[0] = $(target).val().match(/(fa\s*)fa/);
-    regMatches[1] = $(target).val().match(/fa-\w*/g);
+    var isFontAwesome = fontAwesomeArray.indexOf($(target).val().trim());
 
-    //console.log(regMatches);
-
-    //Se tiver encontrado os matches para 1 icone do font-awesome
-    if (regMatches[0] && regMatches[1]) {
-       // console.log(regMatches[0][1] + regMatches[1].join(' '));
+    //se tiver encontrado algum indice com o valor do target é fontawesome
+    if (isFontAwesome > -1) {
 
         //pegando novas classes para o icone
-        var novasClasses = regMatches[0][1] + regMatches[1].join(' ');
-        //console.log('novas classes font-awesome: ' + novasClasses);
+        var novasClasses = fontAwesomeArray[isFontAwesome];
 
-        //pegando as possiveis classes que o icone tenha alem do font-awesome (regex poderia ser melhorado)
+
         var icone = $(target).parents('.container-campos-fontawesome').find('i.icone-show');
-        var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*/g, '');
+        var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
 
         //console.log('classes do icone: ' + classesIcone);
         //settando as novas classes do icone

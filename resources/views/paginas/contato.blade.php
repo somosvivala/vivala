@@ -61,10 +61,10 @@
     </div>
     <div class="row col-sm-12 container-fluid margin-t-3">
         <div id="vivala-social-network" class="text-right">
-            <a href="https://facebook.com/somosvivala" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" target="_blank"><i class="fa fa-2x fa-facebook-square laranja"></i></a>
-            <a href="https://instagram.com/somosvivala" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" target="_blank"><i class="fa fa-2x fa-instagram laranja"></i></a>
-            <a href="https://www.youtube.com/channel/UCT8bbWeVmbaDDMxvWlI8bBA" alt="{{ trans('global.social_network_youtube_img_alt') }}" title="{{ trans('global.social_network_youtube_img_title') }}" target="_blank"><i class="fa fa-2x fa-youtube-square laranja"></i></a>
-            <a href="https://www.linkedin.com/company/6612965" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}"  target="_blank"><i class="fa fa-2x fa-linkedin-square laranja"></i></a>
+            <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" target="_blank"><i class="fa fa-2x fa-facebook-square laranja"></i></a>
+            <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" target="_blank"><i class="fa fa-2x fa-instagram laranja"></i></a>
+            <a href="{{ env('VIVALA_LINK_YOUTUBE') }}" alt="{{ trans('global.social_network_youtube_img_alt') }}" title="{{ trans('global.social_network_youtube_img_title') }}" target="_blank"><i class="fa fa-2x fa-youtube-square laranja"></i></a>
+            <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}"  target="_blank"><i class="fa fa-2x fa-linkedin-square laranja"></i></a>
         </div>
     </div>
 </div>

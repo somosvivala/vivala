@@ -1,10 +1,10 @@
 <body>
-    Email automático, contato pelo modal de feedback da vivalá<br> 
+    Email automático, contato pelo modal de feedback da vivalá<br>
     <br>
-    Nome: {{ $request->nome }} <br>
-    Email: {{ $request->email }} <br>
-    Tipo Feedback: {{ $request->tipo }} <br>
-    Mensagem: {{ $request->mensagem }} <br>
+    Nome: {{ $FormFeedback->nome }} <br>
+    Email: {{ $FormFeedback->email }} <br>
+    Tipo Feedback: {{ $FormFeedback->tipo }} <br>
+    Mensagem: {{ $FormFeedback->mensagem }} <br>
     <br>
     <br>
 </body>

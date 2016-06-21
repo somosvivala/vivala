@@ -18,6 +18,26 @@ use App\InscricaoExperiencia;
  */
 class ExperienciasRepository extends ExperienciasRepositoryInterface
 {
+    /**
+     * Settando propriedades que serao settadas no controller para torna-las dinamicas
+     */
+    public $depositBank;
+    public $depositAG;
+    public $depositCC;
+    public $depositCNPJ;
+    public $depositFantasyName;
+
+    /**
+     * Construtor que pega os valores do env.
+     */
+    function __construct()
+    {
+        $this->depositBank = env('VIVALA_BANK');
+        $this->depositAG = env('VIVALA_AG');
+        $this->depositCC = env('VIVALA_CC');
+        $this->depositCNPJ = env('VIVALA_CNPJ');
+        $this->depositFantasyName = env('VIVALA_FANTASY_NAME');
+    }
 
     /*
      * Metodo para pegar todas as experiencias
@@ -26,6 +46,15 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         return Experiencia::all();
     }
+
+    /*
+     * Metodo para pegar todas as experiencias
+     */
+    public function getExperienciasAtivas()
+    {
+        return Experiencia::publicadas()->get();
+    }
+
 
     /*
      * Metodo para pegar todas as categorias das experiencias
@@ -322,38 +351,22 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
 
     /**
-     * Metodo para validar o pagamento de uma inscricao
-     * @param $inscricao - A inscricao que iremos validar
-     */
-    public function validaPagamentoInscricao(InscricaoExperiencia $inscricao)
-    {
-        //Logica de validacao de pagamento
-        //esse metodo existe prevendo algum tipo de integracao com o ambiente dos boletos
-        return true;
-    }
-
-    /**
-     * Metodo para confirmar o pagamento de uma inscricao
+     * Metodo para confirmar uma inscricao de experiencia
      * @param $inscricao - a inscricao que devemos confirmar
      */
-    public function confirmaInscricaoExperiencia(InscricaoExperiencia $inscricao)
+    public function confirmaInscricaoExperiencia($request)
     {
-        //chamo o metodo responsavel pela validacao
-        $inscricaoFoiPaga = $this->validaPagamentoInscricao($inscricao);
+        $inscricao = InscricaoExperiencia::find($request->id_inscricao);
         $dataPagamento = Carbon::now();
         $dataExperienciaID = $inscricao->experiencia->proximaOcorrencia ? $inscricao->experiencia->proximaOcorrencia->id : null;
 
-        if ($inscricaoFoiPaga) {
-            $fezUpdate =  $inscricao->update([
-                'status' => 'confirmada',
-                'data_pagamento' => $dataPagamento,
-                'data_ocorrencia_experiencia_id' => $dataExperienciaID
-            ]);
+        $fezUpdate =  $inscricao->update([
+            'status' => 'confirmada',
+            'data_pagamento' => $dataPagamento,
+            'data_ocorrencia_experiencia_id' => $dataExperienciaID
+        ]);
 
-            return $fezUpdate;
-        } else {
-            return false;
-        }
+        return $fezUpdate;
     }
 
 
@@ -382,6 +395,28 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
     }
 
+    /**
+     * Metodo para publicar uma experiencia (Passa a ficar disponivel na listagem e avisamos owner)
+     * @param $request - PublicarExperienciaRequest
+     */
+    public function publicarExperiencia($request)
+    {
+        $experiencia = $this->findOrFail($request->id);
+        $fezUpdate = $experiencia->update(['status' => 'publicada']);
+        //event( new ExperienciaPublicada( $experiencia ) );
+        return $fezUpdate;
+    }
+
+    /**
+     * Metodo para desativar uma experiencia (Remover da listagem)
+     * @param $request - DesativarExperienciaRequest
+     */
+    public function desativarExperiencia($request)
+    {
+        $experiencia = $this->findOrFail($request->id);
+        $fezUpdate = $experiencia->update(['status' => 'analise']);
+        return $fezUpdate;
+    }
 
 
 }

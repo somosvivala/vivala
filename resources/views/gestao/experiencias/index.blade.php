@@ -9,12 +9,12 @@
 			<h1 class="laranja"><i class="fa fa-users"></i> Experiências</h1>
 		</div>
 		<div class="col-md-12 col-lg-12 fundo-cheio">
-			<div class="col-md-6 col-lg-7">
+			<div class="col-md-6 col-lg-6">
 			  @if(Auth::user()->isAdmin())
 		    	@include('gestao.experiencias._experiencias')
 			  @endif
 			</div>
-			<div class="col-md-6 col-lg-5">
+			<div class="col-md-6 col-lg-6">
 				@if(Auth::user()->isAdmin())
 		    	@include('gestao.experiencias._inscricoesexperiencias')
 			  @endif
@@ -23,11 +23,21 @@
 		<div class="col-md-12 col-lg-12 fundo-cheio">
 			<div class="col-md-6 col-lg-6">
 			  @if(Auth::user()->isAdmin())
-		    	@include('experiencias.categorias.index')
+		    	{{--@include('gestao.experiencias.categorias.index')--}}
 			  @endif
 			</div>
+    </div>
+
+    {{-- Seção de gerenciamento das experiencias --}}
+    <div class="col-md-12 col-lg-12 fundo-cheio">
+			  @if(Auth::user()->isAdmin())
+		    	@include('gestao.experiencias._listaexperiencias')
+			  @endif
 		</div>
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-b-1 fundo-cheio text-center">
+
+
+
+		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-b-1 fundo-cheio text-center padding-t-2">
 			<a href="{{ url('/gestao/home') }}">
 				<button class="btn btn-acao">Voltar ao Menu de Gestão</button>
 			</a>

@@ -14,25 +14,32 @@
   /*
   * Rotas de teste de Emails Experiencias
   */
+  use App\Experiencia;
+  use App\Perfil;
+  use App\Repositories\ExperienciasRepository;
   Route::get('/novainscricaocandidato', function() {
-    //$experiencia = Experiencia::all()->reverse()->first();
-    //return view('emails.experiencias.novainscricaocandidato', compact('experiencia'));
-    return view('emails.experiencias.novainscricaocandidato');
+    $ExperienciasRepository = new ExperienciasRepository;
+    $Experiencia = Experiencia::all()->reverse()->first();
+    $Usuario = Auth::user();
+    return view('emails.experiencias.novainscricaocandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/novainscricaoplataforma', function() {
-    //$experiencia = Experiencia::all()->reverse()->first();
-    //return view('emails.experiencias.novainscricaoplataforma', compact('experiencia'));
-    return view('emails.experiencias.novainscricaoplataforma');
+    $ExperienciasRepository = new ExperienciasRepository;
+    $Experiencia = Experiencia::all()->reverse()->first();
+    $Usuario = Auth::user();
+    return view('emails.experiencias.novainscricaoplataforma', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/inscricaoconfirmadacandidato', function() {
-    //$experiencia = Experiencia::all()->reverse()->first();
-    //return view('emails.experiencias.inscricaoconfirmadacandidato', compact('experiencia'));
-    return view('emails.experiencias.inscricaoconfirmadacandidato');
+    $ExperienciasRepository = new ExperienciasRepository;
+    $Experiencia = Experiencia::all()->reverse()->first();
+    $Usuario = Auth::user();
+    return view('emails.experiencias.inscricaoconfirmadacandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/inscricaoconfirmadainstituicao', function() {
-    //$experiencia = Experiencia::all()->reverse()->first();
-    //return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('experiencia'));
-    return view('emails.experiencias.inscricaoconfirmadainstituicao');
+    $ExperienciasRepository = new ExperienciasRepository;
+    $Experiencia = Experiencia::all()->reverse()->first();
+    $Usuario = Auth::user();
+    return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
 
 /*
@@ -51,8 +58,10 @@ Route::get('testeboleto', function() {
 });
 
 
-Route::group(['before' => 'auth'], function() {
+Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
+    Route::controller('gestao', 'GestaoController');
+
 });
 
 /**
@@ -136,10 +145,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
 });
 
 
-/**
- * Rotas que nao sao especificas de desktop
- */
-Route::controller('gestao', 'GestaoController');
 
 
 /**
@@ -158,6 +163,10 @@ Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDelet
 Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
 Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
+Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfirmaInscricao');
+Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
+Route::post('experiencias/desativar', 'ExperienciasController@postDesativarExperiencia');
+
 
 //rotas para lidar com resource controllers
 Route::resource('experiencias', 'ExperienciasController');

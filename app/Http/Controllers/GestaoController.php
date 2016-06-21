@@ -22,6 +22,41 @@ class GestaoController extends Controller {
         return view('gestao.index');
     }
 
+    /**
+     * Retorna o painel de gestão de EXPERIÊNCIAS
+     *
+     * @return View
+     */
+    public function getExperiencias()
+    {
+      return view('gestao.experiencias.index');
+    }
+
+    /**
+     * Retorna o painel de gestão do LOGGER
+     *
+     * @return View
+     */
+    public function getLogger()
+    {
+      return view('gestao.logger.index');
+    }
+
+    /**
+     * Retorna o painel de gestão de USUÁRIOS
+     *
+     * @return View
+     */
+    public function getUsuarios()
+    {
+      return view('gestao.basededados.index');
+    }
+
+    /**
+     * Retorna o JSON da base de dados dos usuários para ser mostrado
+     *
+     * @return JSON
+     */
     public function getUsers()
     {
         $data_inicio = Input::get('data_inicio');
@@ -46,21 +81,5 @@ class GestaoController extends Controller {
         $return->fim = $data_fim;
 
         return json_encode($return);
-
-    }
-
-    public function getExperiencias()
-    {
-      return view('gestao.experiencias.index');
-    }
-
-    public function getLogger()
-    {
-      return view('gestao.logger.index');
-    }
-
-    public function getUsuarios()
-    {
-      return view('gestao.basededados.index');
     }
 }

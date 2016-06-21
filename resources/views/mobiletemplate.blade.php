@@ -83,6 +83,6 @@
         @yield('content')
 
     {{-- Scripts de carregamento no fim do HTML --}}
-    <script src="{{ asset('/js/vendor.js') }}"></script>
+    <script src="{{ asset('/js/mobile.js') }}"></script>
 </body>
 </html>
