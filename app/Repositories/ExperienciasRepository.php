@@ -18,6 +18,26 @@ use App\InscricaoExperiencia;
  */
 class ExperienciasRepository extends ExperienciasRepositoryInterface
 {
+    /**
+     * Settando propriedades que serao settadas no controller para torna-las dinamicas
+     */
+    public $depositBank;
+    public $depositAG;
+    public $depositCC;
+    public $depositCNPJ;
+    public $depositFantasyName;
+
+    /**
+     * Construtor que pega os valores do env.
+     */
+    function __construct()
+    {
+        $this->depositBank = env('VIVALA_BANK');
+        $this->depositAG = env('VIVALA_AG');
+        $this->depositCC = env('VIVALA_CC');
+        $this->depositCNPJ = env('VIVALA_CNPJ');
+        $this->depositFantasyName = env('VIVALA_FANTASY_NAME');
+    }
 
     /*
      * Metodo para pegar todas as experiencias

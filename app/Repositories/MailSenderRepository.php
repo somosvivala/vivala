@@ -17,9 +17,8 @@ class MailSenderRepository
     * @param $
     */
     public function enviaEmailExperienciaNovaInscricaoCandidato()
-    {
-    /*
-    Mail::send('emails.experiencias.novainscricaocandidato', [], function ($message) use () {
+    {/*
+    Mail::send('emails.experiencias.novainscricaocandidato', ['Experiencia' => $Experiencia], function ($message) use () {
       //se estiver em production, manda email para a live
       if(app()->environment('production'))
         $message->to($user->email, $user->username)->subject('Vivalá - Inscrição da Experiência realizada com sucesso!');
@@ -28,8 +27,7 @@ class MailSenderRepository
         $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Inscrição da Experiência Candidato');
       $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
-    */
-    }
+  */}
 
     /**
     * Método para disparar o email de nova experiência na plataforma, avisando
@@ -112,7 +110,7 @@ class MailSenderRepository
 
     /**
     * Método para disparar o email de boas vindas a um novo usuário
-    * @param $user - Instancia de usuário para o qual queremos enviar o email
+    * @param $user - Instância de usuário para o qual queremos enviar o email
     * de boas vindas
     */
     public function enviaEmailBemVindo(User $user)
@@ -127,5 +125,40 @@ class MailSenderRepository
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }
->>>>>>> featureExperienciaAtualizada
+
+    /**
+    * Método para disparar o email de contato da Vivalá para a plataforma
+    * @param $FormContato - Objeto que contém informações da request do Formulário de Contato + user_id
+    * plataforma
+    */
+    public function enviaEmailFormularioContato($FormContato)
+    {
+      Mail::send('emails.contato', ['FormContato' => $FormContato], function ($message)  {
+        //se estiver em production, manda email para a live
+        if(app()->environment('production'))
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pelo Formulário de Contato');
+        //se estiver em development, manda o email para a sandbox
+        else if(app()->environment('development'))
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EMAIL DE CONTATO] Resposta pelo Formulário de Contato');
+        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+      });
+    }
+
+    /**
+    * Método para disparar o email de feedback da Vivalá para a plataforma
+    * @param $FormFeedback - Objeto que contém informações da request do Formulário de Feedback + user_email + user_nome
+    * plataforma
+    */
+    public function enviaEmailFormularioFeedback($FormFeedback)
+    {
+      Mail::send('emails.feedback', ['FormFeedback' => $FormFeedback], function ($message)  {
+        //se estiver em production, manda email para a live
+        if(app()->environment('production'))
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pela Formuário de Feedback');
+        //se estiver em development, manda o email para a sandbox
+        else if(app()->environment('development'))
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EMAIL DE FEEDBACK] Resposta pela Formuário de Feedback');
+        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+      });
+    }
 }

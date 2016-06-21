@@ -5,40 +5,89 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
-      /* -------------------------------------
-          GLOBAL
-      ------------------------------------- */
-      * {
-        font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-        font-size: 100%;
-        line-height: 1.6em;
-        margin: 0;
-        padding: 0;
+    /***************************************
+    * FONTES
+    ***************************************/
+      @font-face {
+        font-family: 'Avenir Light';
+        src: url('/fonts/avenir/Avenir-Light/Avenir-Light.eot');
+        src: url('/fonts/avenir/Avenir-Light/Avenir-Light?#iefix') format('embedded-opentype'),
+        url('/fonts/avenir/Avenir-Light/Avenir-Light.woff2') format('woff2'),
+        url('/fonts/avenir/Avenir-Light/Avenir-Light.woff') format('woff'),
+        url('/fonts/avenir/Avenir-Light/Avenir-Light.ttf') format('truetype'),
+        url('/fonts/avenir/Avenir-Light/Avenir-Light.svg#Avenir-Light') format('svg');
       }
-      img {
-        max-width: 600px;
-        width: auto;
+      @font-face{
+        font-family: 'Avenir Medium';
+        src: url('/fonts/avenir/Avenir-Medium/Avenir-Medium.eot');
+        src: url('/fonts/avenir/Avenir-Medium/Avenir-Medium?#iefix') format('embedded-opentype'),
+        url('/fonts/avenir/Avenir-Medium/Avenir-Medium.woff2') format('woff2'),
+        url('/fonts/avenir/Avenir-Medium/Avenir-Medium.woff') format('woff'),
+        url('/fonts/avenir/Avenir-Medium/Avenir-Medium.ttf') format('truetype'),
+        url('/fonts/avenir/Avenir-Medium/Avenir-Medium.svg#Avenir-Medium') format('svg');
       }
-      body {
-        -webkit-font-smoothing: antialiased;
-        height: 100%;
-        -webkit-text-size-adjust: none;
-        width: 100% !important;
+      @font-face{
+        font-family: 'Avenir Roman';
+        src: url('/fonts/avenir/Avenir-Roman/Avenir-Roman.eot');
+        src: url('/fonts/avenir/Avenir-Roman/Avenir-Roman?#iefix') format('embedded-opentype'),
+        url('/fonts/avenir/Avenir-Roman/Avenir-Roman.woff2') format('woff2'),
+        url('/fonts/avenir/Avenir-Roman/Avenir-Roman.woff') format('woff'),
+        url('/fonts/avenir/Avenir-Roman/Avenir-Roman.ttf') format('truetype'),
+        url('/fonts/avenir/Avenir-Roman/Avenir-Roman.svg#Avenir-Roman') format('svg');
       }
-      /* -------------------------------------
-          TIPOGRAFIA
-      ------------------------------------- */
+      @font-face{
+        font-family: 'Avenir Black';
+        src: url('/fonts/avenir/Avenir-Black/Avenir-Black.eot');
+        src: url('/fonts/avenir/Avenir-Black/Avenir-Black?#iefix') format('embedded-opentype'),
+        url('/fonts/avenir/Avenir-Black/Avenir-Black.woff2') format('woff2'),
+        url('/fonts/avenir/Avenir-Black/Avenir-Black.woff') format('woff'),
+        url('/fonts/avenir/Avenir-Black/Avenir-Black.ttf') format('truetype'),
+        url('/fonts/avenir/Avenir-Black/Avenir-Black.svg#Avenir-Black') format('svg');
+      }
+      @font-face{
+        font-family: 'FuturaBT Bold';
+        src: url('/fonts/futura/FuturaBT-Bold/Futura-BTBold.eot');
+        src: url('/fonts/futura/FuturaBT-Bold/Futura-BTBold?#iefix') format('embedded-opentype'),
+        url('/fonts/futura/FuturaBT-Bold/FuturaBT-Bold.woff2') format('woff2'),
+        url('/fonts/futura/FuturaBT-Bold/FuturaBT-Bold.woff') format('woff'),
+        url('/fonts/futura/FuturaBT-Bold/FuturaBT-Bold.ttf') format('truetype'),
+        url('/fonts/futura/FuturaBT-Bold/FuturaBT-Bold.svg#FuturaBT-Bold') format('svg');
+      }
+
+      /***************************************
+      * GLOBAL
+      ***************************************/
+        * {
+          font-family: "Avenir Roman", "Helvetica", Helvetica, Arial, sans-serif;
+          font-size: 100%;
+          line-height: 1.6em;
+          margin: 0;
+          padding: 0;
+        }
+        img {
+          max-width: 600px;
+          width: auto;
+        }
+        body {
+          -webkit-font-smoothing: antialiased;
+          height: 100%;
+          -webkit-text-size-adjust: none;
+          width: 100% !important;
+        }
+      /***************************************
+      * TIPOGRAFIA
+      ***************************************/
       h1,
       h2,
       h3 {
         color: #111111;
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-family: "FuturaBT Bold", Helvetica, Arial, "Lucida Grande", sans-serif;
         font-weight: 200;
         line-height: 1.2em;
         margin: 40px 0 10px;
       }
       h1 {
-        font-size: 36px;
+        font-size: 30px;
       }
       h2 {
         font-size: 28px;
@@ -58,58 +107,22 @@
         margin-left: 5px;
         list-style-position: inside;
       }
-      /* -------------------------------------
-          ELEMENTOS
-      ------------------------------------- */
+      /***************************************
+      * ELEMENTOS
+      ***************************************/
       a {
-        color: #348eda;
+        color: #F16F2B;
       }
-      .btn-primary {
-        Margin-bottom: 10px;
-        width: auto !important;
-      }
-      .btn-primary td {
-        background-color: #348eda;
-        border-radius: 25px;
-        font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-        font-size: 14px;
-        text-align: center;
-        vertical-align: top;
-      }
-      .btn-primary td a {
-        background-color: #348eda;
-        border: solid 1px #348eda;
-        border-radius: 25px;
-        border-width: 10px 20px;
-        display: inline-block;
-        color: #ffffff;
-        cursor: pointer;
-        font-weight: bold;
-        line-height: 2;
-        text-decoration: none;
-      }
-      .last {
-        margin-bottom: 0;
-      }
-      .first {
-        margin-top: 0;
-      }
-      .padding {
-        padding: 10px 0;
-      }
-      /* -------------------------------------
-          CORPO
-      ------------------------------------- */
+      /***************************************
+      * CORPO
+      ***************************************/
       table.body-wrap {
         padding: 20px;
         width: 100%;
       }
-      table.body-wrap .container {
-        border: 1px solid #f0f0f0;
-      }
-      /* -------------------------------------
-          RODAPÉ
-      ------------------------------------- */
+      /***************************************
+      * RODAPÉ
+      ***************************************/
       table.footer-wrap {
         clear: both !important;
         width: 100%;
@@ -117,17 +130,21 @@
       .footer-wrap .container p {
         color: #666666;
         font-size: 12px;
-
       }
       table.footer-wrap a {
         color: transparent;
       }
-
-      /* ---------------------------------------------------
-          RESPONSIVIDADE
-      ------------------------------------------------------ */
+      /***************************************
+      * RESPONSIVIDADE
+      ***************************************/
       /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
       .container {
+        clear: both !important;
+        display: block !important;
+        margin: 0 auto !important;
+        max-width: 600px !important;
+      }
+      .container-divisor {
         clear: both !important;
         display: block !important;
         margin: 0 auto !important;
@@ -137,11 +154,20 @@
       .body-wrap .container {
         padding: 20px;
       }
+      .body-wrap .container-divisor {
+        padding: 5px 20px;
+      }
       /* This should also be a block element, so that it will fill 100% of the .container */
       .content {
         display: block;
         margin: 0 auto;
         max-width: 600px;
+      }
+      .content-header {
+        display: block;
+        margin: 0 auto;
+        max-width: 600px;
+        margin-bottom:20px;
       }
       /* Let's make sure tables in the content area are 100% wide */
       .content table {
@@ -149,56 +175,239 @@
       }
       </style>
   </head>
-  <body bgcolor="#D1D3D4" style="padding-top:15px; padding-right:15px; padding-bottom:45px; padding-left:15px; ">
-    <!-- body -->
-    <table>
-      <table class="body-wrap" bgcolor="#F06F37" style="margin-bottom:10px;">
+  <body bgcolor="#D1D3D4">
+    <!-- Corpo -->
+    <table class="body-wrap" bgcolor="#D1D3D4" style="margin-bottom:10px;">
+      <tbody>
         <tr>
-          <td align-"center">
-            <a href="https://vivala.com.br" target="_blank">
-              <img src="{{ asset('logo-branco.png') }}" alt="Vivalá" style="display:block; margin:auto;" border="0" width="100%" max-width="150px" height="100%" max-height="82px">
-            </a>
+          <!-- Cabeçalho da Vivalá -->
+          <td class="container" bgcolor="#F06F37">
+            <div class="content">
+              <table>
+                <tbody>
+                <!-- Logo da VIVALÁ -->
+                <tr align="center">
+                  <td>
+                    <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
+                      <img src="{{ asset('logo-branco.png') }}" alt="Vivalá" style="display:block; margin:auto;" border="0" width="100%" max-width="150px" height="100%" max-height="82px">
+                    </a>
+                  </td>
+                </tr>
+                <!-- Fim do Logo da VIVALÁ -->
+                <!-- Divisor -->
+                <tr align="center">
+                  <td>
+                    <div style="border-bottom: 1px solid #FFFFFF;width: 300px;margin: 25px 0;"></div>
+                  </td>
+                </tr>
+                <!-- Fim do Divisor -->
+                <!-- Título do EMAIL -->
+                <tr align="center">
+                  <td>
+                    <h3 style="color:#FFFFFF; margin-top:0;">Obrigado pela confiança, <strong>{{ ucfirst($Usuario->perfil->nome) }}</strong>!</h3>
+                  </td>
+                </tr>
+                <!-- Fim do Título do EMAIL -->
+                </tbody>
+              </table>
+            </div>
           </td>
-        </tr>
-      </table>
-      <table class="body-wrap" bgcolor="#FFFFFF" style="margin-bottom:10px;">
-        <tr>
-          <td>
+          <!-- Fim do Cabeçalho da Vivalá -->
+          <!-- Separador -->
+          <td class="container-divisor" bgcolor="#D1D3D4">
+            <tr></tr>
           </td>
+          <!-- Fim do Separador -->
+          <!-- Corpo do Email -->
+          <td class="container" bgcolor="#FFFFFF">
+            <div class="content">
+              <table style="padding-bottom:0; margin-top:20px;">
+                <tbody>
+                  <!-- Primeira SEÇÃO -->
+                  <!-- Título da Primeira Estrutura -->
+                  <tr align="center">
+                    <td>
+                      <h1 style="color:#25A494; margin-bottom:20px;">Pagamento realizado com sucesso!</h1>
+                    </td>
+                  </tr>
+                  <!-- Fim do Título da Primeira Estrutura -->
+                  <!-- Imagem da Primeira Estrutura -->
+                  <tr align="center">
+                    <td>
+                      <img src="{{ asset('img/email/vivala-email-pagamento-sucesso-icone-1.png') }}" width="99px;" height="99px;" style="margin-bottom:20px;"/>
+                    </td>
+                  </tr>
+                  <!-- Fim da Imagem da Primeira Estrutura -->
+                  <!-- Seção de INFOS BANCÁRIAS -->
+                  <!-- Sub-título da Primeira Estrutura -->
+                  <tr align="center">
+                    <td>
+                      <p style="color:#25A494;">Sua inscrição foi confirmada na experiência oferecida pela <strong>{{ mb_strtoupper($Experiencia->owner->nome) }}</strong>!</p>
+                    </td>
+                  </tr>
+                  <!-- Fim do Sub-título da Primeira Estrutura -->
+                  <!-- Fim da Primeira SEÇÃO -->
+                </tbody>
+              </table>
+            </div>
+          </td>
+          <!-- Separador -->
+          <td class="container-divisor" bgcolor="#D1D3D4">
+            <tr></tr>
+          </td>
+          <!-- Fim do Separador -->
+          <td class="container" bgcolor="#FFFFFF">
+            <div class="content">
+              <table style="padding-bottom:0; margin-top:20px;">
+                <tbody>
+                  <!-- Segunda SEÇÃO -->
+                  <!-- Seção COMPROVANTE DE PAGAMENTO -->
+                  <tr>
+                    <td>
+                      <h4 style="color:#545454; margin-bottom:15px;">
+                        Comprovante de pagamento
+                      </h4>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção COMPROVANTE DE PAGAMENTO -->
+                  <!-- Divisor -->
+                  <tr align="center">
+                    <td>
+                      <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
+                    </td>
+                  </tr>
+                  <!-- Fim do Divisor -->
+                  <!-- Seção DETALHES DA EXPERIÊNCIA -->
+                  <tr>
+                    <td>
+                      <h4 style="color:#545454; margin-bottom:15px;">
+                        Detalhes da experiência
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px;">
+                        <img src="{{ asset('img/dummy_ong-splash.png') }}" width="220px" height="220px"/>
+                      </p>
+                      <p>
+                        <span><img src="{{ asset('/img/email/vivala-email-data-icone.png') }}"/></span>
+                        <span style="font-size:20px;"><strong>18 de Junho</strong></span>
+                      </p>
+                      <p>
+                        <span><img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}"/></span>
+                        <span style="font-size:16px;"><strong>{{ ucfirst($Experiencia->local->nome) }} - {{ strtoupper($Experiencia->local->estado->sigla) }}</strong></span>
+                      </p>
+                      <p style="text-align:justify;">
+                        <span style="font-size:14px;">{{ $Experiencia->descricao }}</span>
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <tr>
+                    <td>
+                      <h4 style="color:#545454; margin-top:15px; margin-bottom:15px;">
+                        Informações
+                      </h4>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px;">
+                        <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" width="19px" height="19px"/>
+                      </p>
+                      <p>
+                        Semanal
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px;">
+                        <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" width="19px" height="19px"/>
+                      </p>
+                      <p>
+                        Todos os domingos
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px;">
+                        <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" width="19px" height="19px"/>
+                      </p>
+                      <p>
+                        Grupos de 10 pessoas
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <!-- Seção INFORMAÇÕES DA ONG -->
+                  <tr>
+                    <td>
+                      <div style="padding:20px 25px; background-color:#ECEBEB; border-radius:15px; height:150px; max-height:150px; max-width:400px; margin:20px auto 0;">
+                        <div style="position: relative; float:left; border-right:1px solid #BCBEC0; text-align:center; padding-right:15px; margin-right:15px;">
+                          <p style="margin-bottom: 0;"><img src="{{ asset('img/dummy_ong-icon.png') }}" width="65px" height="65px"/></p>
+                          <p style="margin-bottom: 0;">{{ ucfirst($Experiencia->owner->nome) }}</p>
+                          <p style="margin-bottom: 0;">
+                            <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}"/></a></span>
+                            <span><a href="https://instagram.com/{{ $Experiencia->owner->url_instagram }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-ig-icone.png') }}"/></a></span>
+                            <span><a href="http://{{ $Experiencia->owner->url_site }}" target="_blank"><img src="{{ asset('img/email/vivala-email-terceiros-site-icone.png') }}"/></a></span>
+                          </p>
+                        </div>
+                        <div style="position: relative; text-align: center; margin-top:25px;">
+                          <p>{{ $Experiencia->owner->descricao }}</p>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção INFORMAÇÕES DA ONG -->
+                  <!-- Seção ENVIE SUAS DÚVIDAS -->
+                  <tr align="center">
+                    <td>
+                      <p style="margin-top:20px;">Envie sua dúvida para <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a><p>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção ENVIE SUAS DÚVIDAS -->
+                </tbody>
+              </table>
+            </div>
+          </td>
+          <!-- Fim do Corpo do Email -->
+          <!-- Assinatura do Email -->
+          <td class="container" bgcolor="#D1D3D4">
+            <div class="content">
+              <table>
+                <tr>
+                  <td align="center">
+                    <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank" style="color:transparent;">
+                      <img src="{{ asset('img/email/vivala-email-fb-cor-icone.png') }}"/>
+                    </a>
+                    <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank" style="color:transparent;">
+                      <img src="{{ asset('img/email/vivala-email-ig-cor-icone.png') }}"/>
+                    </a>
+                    <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank" style="color:transparent;">
+                      <img src="{{ asset('img/email/vivala-email-link-cor-icone.png') }}"/>
+                    </a>
+                    <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="color:transparent;">
+                      <img src="{{ asset('img/email/vivala-email-mail-cor-icone.png') }}"/>
+                    </a>
+                    <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank" style="color:transparent;">
+                      <img src="{{ asset('img/email/vivala-email-in-cor-icone.png') }}"/>
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </td>
+          <!-- Fim da Assinatura do Email -->
         </tr>
-      </table>
+      </tbody>
     </table>
-    <!-- /body -->
-    <!-- footer -->
-    <table class="footer-wrap">
-      <tr>
-        <td class="container">
-          <div class="content">
-            <table>
-              <tr>
-                <td align="center">
-                  <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank">
-                    <img src="{{ asset('img/email/vivala-email-fb-cor-icone.png') }}"/>
-                  </a>
-                  <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank">
-                    <img src="{{ asset('img/email/vivala-email-ig-cor-icone.png') }}"/>
-                  </a>
-                  <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
-                    <img src="{{ asset('img/email/vivala-email-link-cor-icone.png') }}"/>
-                  </a>
-                  <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top">
-                    <img src="{{ asset('img/email/vivala-email-mail-cor-icone.png') }}"/>
-                  </a>
-                  <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank">
-                    <img src="{{ asset('img/email/vivala-email-in-cor-icone.png') }}"/>
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-    </table>
-    <!-- /footer -->
+    <!-- Fim do Corpo -->
+    <!-- Rodapé -->
+    <table class="footer-wrap"></footer>
+    <!-- Fim do Rodapé -->
   </body>
 </html>
