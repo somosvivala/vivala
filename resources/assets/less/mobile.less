@@ -3,6 +3,9 @@ body.mobile {
     font-family:@font-family-avenir-light;
     height:100%;
     color:@cor-cinza-escuro;
+    small{
+        font-size: 1rem;
+    }
 }
 
 #mobile-html {
@@ -279,7 +282,7 @@ ul.lista-foto-descricao {
     }
     .foto {
         width:50%;
-        height:11em;
+        height:15em;
         @media screen and (min-width: 600px) {
             height:20em;
         }
@@ -290,15 +293,11 @@ ul.lista-foto-descricao {
             background-repeat: no-repeat;
             background-size:cover;
         }
-        &:hover .icone {
-            opacity:1;
-        }
     }
     .descricao {
         width:50%;
-        line-height:120%;
-        height:11em;
-        line-height:120%;
+        height:15em;
+        line-height:160%;
         @media screen and (min-width: 600px) {
             height:20em;
         }
@@ -310,6 +309,7 @@ ul.lista-foto-descricao {
             text-align:center;
             padding-right: 6px;
             padding-left: 6px;
+            font-size:1.5rem;
         }
     }
 }
@@ -321,17 +321,15 @@ i.verde-sucesso { color: @verde-sucesso; }
     .icone {
         color:white;
         font-size:1.5em;
-        width:1.6em;
-        height:1.6em;
-        padding-top:0.1em;
+        width:3rem;
+        height:3rem;
+        padding-top:0.25em;
         display: inline-block;
         text-align:center;
         border-radius:2em;
         background-color:transparent;
         border:1px solid white;
-        opacity:0.5;
-        transition: opacity 0.5s;
-        margin:0.2em 0 0 0.2em;
+        margin:0.4em 0 0 0.4em;
         float:left;
         span {
             position: absolute;
@@ -353,9 +351,6 @@ i.verde-sucesso { color: @verde-sucesso; }
             background-position: center;
             background-repeat: no-repeat;
             background-size:cover;
-        }
-        &:hover .icone {
-            opacity:1;
         }
     }
     .descricao {

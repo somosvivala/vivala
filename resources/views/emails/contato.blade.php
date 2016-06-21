@@ -1,11 +1,11 @@
 <body>
-    Email automático, contato pelo form da vivalá<br> 
+    Email automático, contato pelo form da vivalá<br>
     <br>
-    Nome: {{ $request->nome }} <br>
-    Assunto: {{ $request->assunto }} <br>
-    Mensagem: {{ $request->mensagem }} <br>
-    Email: {{ $request->email }} <br>
-    User_id: {{ $request->user_id }} <br>
+    Nome: {{ $FormContato->nome }} <br>
+    Assunto: {{ $FormContato->assunto }} <br>
+    Mensagem: {{ $FormContato->mensagem }} <br>
+    Email: {{ $FormContato->email }} <br>
+    User_id: {{ $FormContato->user_id }} <br>
     <br>
     <br>
 </body>

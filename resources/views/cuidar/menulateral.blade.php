@@ -34,10 +34,10 @@
 	{{-- Facebook --}}
 		<nav id="menu-fb" class="menu-lateral margin-t-2 text-center">
 			<h5 class="text-center texto-maiusculo">{{ trans('global.social_network_facebook') }}</h5>
-			<div class="fb-page" data-href="https://www.facebook.com/somosvivala" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+			<div class="fb-page" data-href="{{ env('VIVALA_LINK_FACEBOOK') }}" data-width="250" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
 				<div class="fb-xfbml-parse-ignore">
-					<blockquote cite="https://www.facebook.com/somosvivala">
-						<a href="https://www.facebook.com/somosvivala">{{ trans('global.lbl_vivala') }}</a>
+					<blockquote cite="{{ env('VIVALA_LINK_FACEBOOK') }}">
+						<a href="{{ env('VIVALA_LINK_FACEBOOK') }}">{{ trans('global.lbl_vivala') }}</a>
 					</blockquote>
 				</div>
 			</div>
@@ -45,7 +45,7 @@
 	{{-- Instagram --}}
 		<nav id="menu-ig" class="menu-lateral margin-t-2 text-center">
 			<h5 class="texto-maiusculo">{{ trans('global.social_network_instagram') }}</h5>
-			<a class="btn-ig-follow" href="https://instagram.com/somosvivala" target="_blank"><span class="btn btn-acao texto-maiusculo">{{ trans('global.lbl_follow') }}</span></a>
+			<a class="btn-ig-follow" href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank"><span class="btn btn-acao texto-maiusculo">{{ trans('global.lbl_follow') }}</span></a>
 			<p class="text-center ajuste-fonte-avenir-light">@somosvivala</p>
 			<div class="row">
 				<div id="instafeed" class="col-sm-12">
