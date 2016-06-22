@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Email de Feedback</title>
+    <title>{{ trans('global.title_vivala') }} - Email de Contato</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
+    @import url('https://vivala.com.br/fonts/avenir/avenir.css');
+    @import url('https://vivala.com.br/fonts/futura/futura.css');
     /***************************************
     * FONTES
     ***************************************/
       @font-face {
         font-family: 'Avenir Light';
-        src: url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.eot');
-        src: url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light?#iefix') format('embedded-opentype'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.woff2') format('woff2'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.woff') format('woff'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.ttf') format('truetype'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.svg#Avenir-Light') format('svg');
+        src: url('https:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.eot');
+        src: url('https:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light?#iefix') format('embedded-opentype'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.woff2') format('woff2'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.woff') format('woff'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.ttf') format('truetype'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Light/Avenir-Light.svg#Avenir-Light') format('svg');
       }
       @font-face{
         font-family: 'Avenir Medium';
-        src: url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.eot');
-        src: url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium?#iefix') format('embedded-opentype'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.woff2') format('woff2'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.woff') format('woff'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.ttf') format('truetype'),
-        url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.svg#Avenir-Medium') format('svg');
+        src: url('https:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.eot');
+        src: url('https:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium?#iefix') format('embedded-opentype'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.woff2') format('woff2'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.woff') format('woff'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.ttf') format('truetype'),
+        url('https:///vivala.com.br/fonts/avenir/Avenir-Medium/Avenir-Medium.svg#Avenir-Medium') format('svg');
       }
       @font-face{
         font-family: 'Avenir Roman';
-        src: url('https:///vivala.com.brhttps:///vivala.com.br/fonts/avenir/Avenir-Roman/Avenir-Roman.eot');
+        src: url('https:///vivala.com.br/fonts/avenir/Avenir-Roman/Avenir-Roman.eot');
         src: url('https:///vivala.com.br/fonts/avenir/Avenir-Roman/Avenir-Roman?#iefix') format('embedded-opentype'),
         url('https:///vivala.com.br/fonts/avenir/Avenir-Roman/Avenir-Roman.woff2') format('woff2'),
         url('https:///vivala.com.br/fonts/avenir/Avenir-Roman/Avenir-Roman.woff') format('woff'),
@@ -169,10 +171,9 @@
       .content table {
         width: 100%;
       }
-      .teste-gmail{
-        color: #00FF00;
-      }
       </style>
+      <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
+      <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
   <body bgcolor="#D1D3D4">
     <!-- Corpo -->
@@ -203,7 +204,7 @@
               <!-- Título do EMAIL -->
               <tr align="center">
                 <td>
-                  <h3 class="teste-gmail" style="margin-top:0;">[Email automático]</h3>
+                  <h3 style="color:#FFFFFF; margin-top:0;">[Email automático]</h3>
                   <h3 style="color:#FFFFFF; margin-top:0;">Formulário de feedback da plataforma</h3>
                 </td>
               </tr>
