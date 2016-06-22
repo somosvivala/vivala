@@ -42,6 +42,10 @@
     return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
+  Route::get('/emailteste', function() {
+    $user = Auth::user();
+    return view('emails.modelobasicovivala', compact('user'));
+  });
 
 /*
  * Rotas

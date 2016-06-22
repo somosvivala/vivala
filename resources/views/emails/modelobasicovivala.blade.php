@@ -204,7 +204,9 @@
               <!-- Título do EMAIL -->
               <tr align="center">
                 <td>
-                  <h1 style="color: #FFFFFF; font-size:22px; font-family: 'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-weight:200; line-height:1.2em; margin:40px 0 10px; margin-top:0;">TITULO DO EMAIL</h1>
+                  <h2 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#FFFFFF; font-size:22px; font-weight:200; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
+                    TITULO DO EMAIL
+                  </h2>
                 </td>
               </tr>
               <!-- Fim do Título do EMAIL -->
@@ -226,13 +228,10 @@
               <tbody>
                 <tr align="center">
                   <td>
-                    <p>Testando envio de mensagem com formatação:</p>
-                    <p>Olá, {{ $user->perfil->apelido }}</p>
-                    <br/>
+                    <p style="font-size:14px; font-weight:normal;">Testando envio de mensagem com formatação:</p>
+                    <p style="font-size:14px; font-weight:normal;">Olá, {{ $user->perfil->apelido }}</p>
                     <!--img src="<?php/* echo $message->embed($user->perfil->getAvatarUrl());*/ ?>"-->
-                    <br/>
-                    <br/>
-                    <p>Voce foi testado!</p>
+                    <p style="font-size: 14px; font-weight: normal;">Voce foi testado!</p>
                   </td>
                 </tr>
               </tbody>
@@ -243,7 +242,10 @@
                 <!-- Seção ENVIE SUA DÚVIDA  -->
                 <tr align="center">
                   <td>
-                    <p style="margin-top:20px;">Envie sua dúvida para <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a><p>
+                    <p style="font-size:14px; font-weight:normal; margin-top:20px;">
+                      Envie sua dúvida para
+                      <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a>
+                    <p>
                   </td>
                 </tr>
                 <!-- Fim da Seção ENVIE SUA DÚVIDA  -->
@@ -253,24 +255,24 @@
         </td>
         <!-- Fim do Corpo do Email -->
         <!-- Assinatura do Email -->
-        <td class="container" bgcolor="#D1D3D4" style="clear:both !important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
+        <td class="container" bgcolor="#D1D3D4" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
           <div class="content" style="display:block; margin:0 auto; max-width:600px;">
             <table style="width: 100%;">
               <tr>
                 <td align="center">
-                  <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank" style="color:transparent;">
+                  <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" style="color:transparent;">
                     <img src="{{ asset('img/email/vivala-email-fb-cor-icone.png') }}"/>
                   </a>
-                  <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank" style="color:transparent;">
+                  <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" style="color:transparent;">
                     <img src="{{ asset('img/email/vivala-email-ig-cor-icone.png') }}"/>
                   </a>
-                  <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank" style="color:transparent;">
+                  <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_site') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_site') }}" style="color:transparent;">
                     <img src="{{ asset('img/email/vivala-email-link-cor-icone.png') }}"/>
                   </a>
-                  <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="color:transparent;">
+                  <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_email') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_email') }}" style="color:transparent;">
                     <img src="{{ asset('img/email/vivala-email-mail-cor-icone.png') }}"/>
                   </a>
-                  <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank" style="color:transparent;">
+                  <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}" style="color:transparent;">
                     <img src="{{ asset('img/email/vivala-email-in-cor-icone.png') }}"/>
                   </a>
                 </td>
@@ -284,7 +286,27 @@
     </table>
     <!-- Fim do Corpo -->
     <!-- Rodapé -->
-    <table class="footer-wrap" style="clear:both!important; width:100%;"></footer>
+    <table class="footer-wrap" style="clear:both!important; width: 100%;">
+      <tbody>
+        <tr>
+          <td class="container" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:0 20px 20px 20px;">
+            <div class="content" style="display:block; margin:0 auto; max-width:600px;">
+              <table style="width: 100%;">
+                <tbody>
+                <tr align="center">
+                  <td>
+                    <h4 style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
+                      Feito com <3 pela Vivalá - Conecte-se ao Brasil de verdade
+                    </h4>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </footer>
     <!-- Fim do Rodapé -->
   </body>
 </html>

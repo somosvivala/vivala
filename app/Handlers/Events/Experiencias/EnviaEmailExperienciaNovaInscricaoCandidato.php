@@ -2,9 +2,11 @@
 
 use App\Events\NovaInscricaoExperiencia;
 
-use App\Repositories\MailSenderRepository;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use App\Experiencia;
+use App\Perfil;
+use App\Repositories\MailSenderRepository;
 
 class EnviaEmailExperienciaNovaInscricaoCandidato {
 

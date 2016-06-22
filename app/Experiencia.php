@@ -37,6 +37,7 @@ class Experiencia extends Model
         return $this->morphTo();
     }
 
+
     /**
      * Uma Experiencia tem uma foto.
      */
@@ -44,6 +45,7 @@ class Experiencia extends Model
     {
         return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
+
 
     /**
      * Uma Experiencia tem muitas inscriçoes
@@ -64,7 +66,7 @@ class Experiencia extends Model
 
 
     /**
-     * Uma Experiencia pertence a muitas CategoriaExperiencia 
+     * Uma Experiencia pertence a muitas CategoriaExperiencia
      */
     public function categorias()
     {
@@ -98,6 +100,7 @@ class Experiencia extends Model
             : null;
     }
 
+
     /**
      * Acessor para a próxima ocorrencia a partir de hoje
      *
@@ -126,6 +129,7 @@ class Experiencia extends Model
         return '/img/dummy-exp.jpg';
     }
 
+
     /**
       * Definindo uma scope para as Experiencias em 'analise'
      */
@@ -133,6 +137,7 @@ class Experiencia extends Model
     {
         return $query->where('status', 'analise');
     }
+
 
     /**
       * Definindo uma scope para as Experiencias publicadas
@@ -142,6 +147,7 @@ class Experiencia extends Model
         return $query->where('status', 'publicada');
     }
 
+
     /**
       * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
      */
@@ -149,6 +155,7 @@ class Experiencia extends Model
     {
         return $query->where('status', 'realizada');
     }
+
 
     /**
       * Definindo uma scope para as Experiencias com data
@@ -169,6 +176,7 @@ class Experiencia extends Model
             ->get();
     }
 
+
     /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
      * @return boolean - se vai acontecer em 3 dias ou nao
@@ -185,6 +193,7 @@ class Experiencia extends Model
         return ($diferencaDias == 0);
     }
 
+
     /**
      * Definindo um acessor para determinar se a experiencia esta acontecendo hoje
      */
@@ -192,9 +201,5 @@ class Experiencia extends Model
     {
         return $this->proximaOcorrencia ? $this->proximaOcorrencia->isToday : false;
     }
-
-
-
-
 
 }
