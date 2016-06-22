@@ -57,11 +57,11 @@
             <div role="tabpanel" class="tab-pane active" id="experiencias">
                 <h2>Experiências</h2>
 
-                <ul class="padding-b-1 lista-foto-descricao">
+                <ul class="padding-b-1 lista-exp-desktop row">
                     @foreach($experiencias as $k=>$Experiencia)
-                    <li class="row">
+                    <li class="col-xs-3">
                         <a href="/experiencias/{{ $Experiencia->id}}">
-                            <div class="{{ $k%2==0?'direita':'esquerda'}} foto">
+                            <div class="foto">
                                 <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
                                     <div class="categorias-experiencia">
                                         @foreach($Experiencia->categorias as $Categoria)
@@ -72,14 +72,11 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                {{-- <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}"> --}}
+                                <div class="descricao">{{ $Experiencia->descricao }}</div>
                             </div>
-                            <div class="{{ $k%2!=0?'direita':'esquerda'}} descricao">
-                                <div class="container">
-                                    <span class="col-xs-12 negrito-exp"><i class="fa fa-map-marker"></i> Sao Paulo</span>
-                                    <span class="col-xs-12 negrito-exp">R${{ $Experiencia->preco }}</span>
-                                    <span class="pull-left margin-t-1">{{ $Experiencia->descricao }}</span>
-                                </div>
+                            <div class="row text-center">
+                                <span class="col-xs-12 negrito-exp"><i class="fa fa-map-marker"></i> Sao Paulo</span>
+                                <span class="col-xs-12 negrito-exp">R${{ $Experiencia->preco }}</span>
                             </div>
                         </a>
                     </li>
