@@ -190,13 +190,13 @@
                   </td>
                 </tr>
                 <!-- Fim do Logo da VIVALÁ -->
-                <!-- Divisor -->
+                <!-- Separador -->
                 <tr align="center">
                   <td>
                     <div style="border-bottom: 1px solid #FFFFFF;width: 300px;margin: 25px 0;"></div>
                   </td>
                 </tr>
-                <!-- Fim do Divisor -->
+                <!-- Fim do Separador -->
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
