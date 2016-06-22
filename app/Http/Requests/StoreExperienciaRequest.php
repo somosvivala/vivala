@@ -35,7 +35,6 @@ class StoreExperienciaRequest extends Request
      */
     public function rules()
     {
-        dd('inside request',  Request::all());
 
         $rules = [
             'projeto'                   => "required|exists:ongs,id",

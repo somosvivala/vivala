@@ -8,7 +8,11 @@ class Foto extends Model
     use SoftDeletes;
 
     //campos que podem ser mass assigned
-    protected $fillable = ['path', 'tipo'];
+    protected $fillable = [
+        'path',
+        'tipo',
+        'foto_owner_experiencia'
+    ];
 
     //datas que vamos servir uma instancia do Carbon
     protected $dates = ['deleted_at'];

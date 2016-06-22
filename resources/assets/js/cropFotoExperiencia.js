@@ -1,5 +1,7 @@
 $(function() {
 
+    recuperaFotoSeErrouFormExperiencia();
+
     //token do laravel para ajax
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
@@ -32,6 +34,7 @@ $(function() {
                     var foto = data.foto;
                     //Settando o tamanho do container para o tamanho da nova imagem
                     $('#experiencia-foto-id').val(foto.id);
+                    $('#experiencia-foto-path').val(foto.path);
                     $('.experiencia-foto-atual').attr('src',foto.path);
 
                     $('.experiencia-foto-atual').height('100px');
@@ -145,3 +148,12 @@ $(function() {
     });
 
 });
+
+//Funcao para ser executada no carregamento do form para checar se preciso settar o path da foto manualmente
+var recuperaFotoSeErrouFormExperiencia = function(){
+    var path = $('#experiencia-foto-path').val();
+    if (path && path != '') {
+        $('.experiencia-foto-atual').attr('src',path);
+    }
+};
+

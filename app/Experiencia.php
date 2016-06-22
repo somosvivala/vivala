@@ -13,6 +13,9 @@ class Experiencia extends Model
 
     //mass assigned fields
     protected $fillable = [
+        'owner_nome',
+        'owner_descricao',
+        'endereco_completo',
         'descricao_na_listagem',
         'descricao',
         'detalhes',
@@ -38,12 +41,30 @@ class Experiencia extends Model
     }
 
     /**
-     * Uma Experiencia tem uma foto.
+     * Uma Experiencia tem 2 fotos (uma para sua capa e outra para quem a promove)
      */
-    public function fotoCapa()
+    public function fotos()
     {
-        return $this->morphOne('App\Foto', 'owner', 'owner_type', 'owner_id');
+        return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
+
+    /**
+     * Definindo um acessor para a foto de capa da experiencia
+     */
+    public function getFotoCapaAttribute()
+    {
+        return $this->fotos()->where('foto_owner_experiencia', false)->get();
+    }
+
+    /**
+     * Definindo um acessor para a foto do owner da experiencia
+     */
+    public function getFotoOwnerAttribute()
+    {
+        return $this->fotos()->where('foto_owner_experiencia', true)->get();
+    }
+
+
 
     /**
      * Uma Experiencia tem muitas inscriçoes

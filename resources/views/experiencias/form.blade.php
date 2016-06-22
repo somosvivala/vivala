@@ -4,6 +4,9 @@
         {{-- Aqui insiro o input hidden que guardará o id da foto associada ao owner da experiencia --}}
         {!! Form::hidden('owner-experiencia-foto-id', '', ['id' => 'owner-experiencia-foto-id']) !!}
 
+        {{-- Aqui insiro o input hidden que guardará o path da foto associada ao owner da experiencia (para caso erre o form) --}}
+        {!! Form::hidden('owner-experiencia-foto-path', '', ['id' => 'owner-experiencia-foto-path']) !!}
+
         {{-- Incluindo o conjunto (foto / botao troca foto), que dispara a modal contendo o form de trocar foto por ajax --}}
         @include('experiencias._owner_fotoform')
     </div>
@@ -38,6 +41,9 @@
     <div class="col-sm-12 margin-b-1">
         {{-- Aqui insiro o input hidden que guardará o id da foto associada á experiencia --}}
         {!! Form::hidden('experiencia-foto-id', '', ['id' => 'experiencia-foto-id']) !!}
+
+        {{-- Aqui insiro o input hidden que guardará o path da foto da experiencia (para caso erre o form) --}}
+        {!! Form::hidden('experiencia-foto-path', '', ['id' => 'experiencia-foto-path']) !!}
 
         {{-- Incluindo o conjunto (foto / botao troca foto), que dispara a modal contendo o form de trocar foto por ajax --}}
         @include('experiencias._fotoform')
