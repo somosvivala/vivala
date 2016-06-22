@@ -229,7 +229,7 @@
                     <p>Testando envio de mensagem com formatação:</p>
                     <p>Olá, {{ $user->perfil->apelido }}</p>
                     <br/>
-                    <img src="<?php echo $message->embed($user->perfil->getAvatarUrl()); ?>">
+                    <!--img src="<?php/* echo $message->embed($user->perfil->getAvatarUrl());*/ ?>"-->
                     <br/>
                     <br/>
                     <p>Voce foi testado!</p>
