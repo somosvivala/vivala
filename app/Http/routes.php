@@ -41,9 +41,7 @@
     $Usuario = Auth::user();
     return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
-  Route::get('/emailbase', function() {
-    return view('emails.modelobasicovivala');
-  });
+  Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
 
 /*
  * Rotas
@@ -64,7 +62,6 @@ Route::get('testeboleto', function() {
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
     Route::controller('gestao', 'GestaoController');
-
 });
 
 /**
