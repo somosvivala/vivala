@@ -6,8 +6,8 @@
 
         @foreach ($Experiencias as $experiencia)
 
-        <div class="col-xs-12 margin-t-1" style="background-color:#ebebeb">
-            <h4 class="col-xs-12">Experiencia de: {{ $experiencia->owner->nome }}, Proxima Data: {{ $experiencia->dataProximaOcorrencia }} <br> Local: {{ $experiencia->local->nome }} - {{ $experiencia->local->estado->sigla }} </h3>
+        <div class="col-xs-12 margin-t-1 fundo-cinza-com-borda">
+            {!! Form::label('', 'Experiencia de: '.$experiencia->owner->nome.' Proxima Data: '.$experiencia->dataProximaOcorrencia.' Local: '.$experiencia->local->nome.'  - '.$experiencia->local->estado->sigla, ['class' => 'col-xs-12']) !!}
 
             <ul class="list-group col-xs-12">
                 @forelse ($experiencia->inscricoesAtivas as $inscricao)

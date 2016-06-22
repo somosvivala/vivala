@@ -46,7 +46,11 @@ class StoreExperienciaRequest extends Request
             'preco'                     => "required|numeric",
             'informacao-extra'          => "array",
             'datas-ocorrencia'          => "array",
-            'categoria'                 => "array"
+            'categoria'                 => "array",
+            'experiencia-foto-id'       => "exists:fotos,id",
+            'owner-experiencia-foto-id' => "exists:fotos,id",
+            'owner_nome'                => "string|required",
+            'owner_descricao'           => "string|required"
         ];
 
         //iterando sob as informacoes que sao em forma de array
