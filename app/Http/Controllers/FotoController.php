@@ -141,27 +141,20 @@ class FotoController extends VivalaBaseController {
      */
     public function postCropandsaveexperiencia(CropPhotoRequest $request, $experienciaId=false)
     {
-        //Se experiencia nao existe, criar nova foto e devolver o id
-        if (!$experienciaId) {
-            $result = $this->fotosRepository->novaFoto($request);
-            return $result;
-        }
+        //criando nova foto
+        $result =  $this->fotosRepository->novaFoto($request);
 
         //Se existe experiencia entao estou editando e devo associar a nova foto a experiencia
-        else {
-
+        if ($experienciaId) {
             dd('veio $experienciaId, id:' . $experienciaId);
-            $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
-            //Se ja tiver uma foto de capa entao deletar a atual antes de subir a nova
-            //esta usando o softDelete, entao a foto nao é realmente deletada.
-            //substituir por metodo no experienciasRepository trocaFotoCapa($exp, $foto)
-            if ($experiencia->fotoCapa) {
-                $experiencia->fotoCapa->delete();
-            }
 
-            //criar nova foto e associar a experiencia
-            $experiencia->fotoCapa()->save(Foto::create(['path' => $fileName]));
+            $foto = $result['foto'];
+            $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
+            $this->experienciasRepository->atualizaFotoCapa($experiencia, $foto);
         }
+
+        //Se experiencia nao existe, entao só preciso devolver a nova foto
+        return $result;
     }
 
 
@@ -176,18 +169,20 @@ class FotoController extends VivalaBaseController {
      */
     public function postCropandsaveownerexperiencia(CropPhotoRequest $request, $experienciaId=false)
     {
+        //criando nova foto
+        $result =  $this->fotosRepository->novaFoto($request);
 
-        //Se experiencia nao existe, criar nova foto e devolver o id
-        if (!$experienciaId) {
-            $result = $this->fotosRepository->novaFoto($request);
-            return $result;
-        }
-
-        //Se existe experiencia entao estou editando e devo associar a nova foto a experiencia
-        else {
-
+        //Se existe experiencia entao estou editando e devo associar a nova foto ao owner da experiencia
+        if ($experienciaId) {
             dd('veio $experienciaId, id:' . $experienciaId);
+
+            $foto = $result['foto'];
+            $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
+            $this->experienciasRepository->atualizaFotoOwner($experiencia, $foto);
         }
+
+        //Se experiencia nao existe, entao só preciso devolver a nova foto
+        return $result;
     }
 
 

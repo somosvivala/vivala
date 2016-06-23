@@ -1,7 +1,7 @@
 <li class="container-campos-fontawesome col-xs-12 margin-b-1" data-id="{{ $informacao->id }}">
         <input type="hidden" name="informacao-extra[{{ $informacao->id }}][id]" value="{{ $informacao->id }}">
         <div class="col-xs-1">
-            <i name="icone-show" class="icone-show margin-t-2 {{ $informacao->icone }}"> </i>
+            <i name="icone-show" class="fa-2x icone-show margin-t-1 {{ $informacao->icone }}"> </i>
         </div>
         <div class="col-xs-3">
             {!! Form::label('classe_icone', 'Classes', ['class' => 'row col-sm-12']) !!}

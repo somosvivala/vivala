@@ -16,6 +16,9 @@ class ExperienciasServiceProvider extends ServiceProvider {
 
       view()->composer('gestao.experiencias._listaexperiencias', 'App\Repositories\ExperienciasRepository@injectAllExperiencias');
 
+      view()->composer('gestao.experiencias._categoriasexperiencias', 'App\Repositories\ExperienciasRepository@injectAllCategorias');
+
+
       //Bindando views que precisam de CategoriaExperiencia
       view()->composer('experiencias.form', 'App\Repositories\ExperienciasRepository@injectAllCategorias');
 

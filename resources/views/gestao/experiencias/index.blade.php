@@ -9,32 +9,17 @@
 			<h1 class="laranja"><i class="fa fa-users"></i> Experiências</h1>
 		</div>
 		<div class="col-md-12 col-lg-12 fundo-cheio">
-			<div class="col-md-6 col-lg-6">
-			  @if(Auth::user()->isAdmin())
-		    	@include('gestao.experiencias._experiencias')
-			  @endif
-			</div>
-			<div class="col-md-6 col-lg-6">
-				@if(Auth::user()->isAdmin())
-		    	@include('gestao.experiencias._inscricoesexperiencias')
-			  @endif
-			</div>
-		</div>
-		<div class="col-md-12 col-lg-12 fundo-cheio">
-			<div class="col-md-6 col-lg-6">
-			  @if(Auth::user()->isAdmin())
-		    	{{--@include('gestao.experiencias.categorias.index')--}}
-			  @endif
-			</div>
+
+        <ul class="list-inline menu-gestao-experiencias">
+            <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="/gestao/experiencias"> Home </a></li>
+            <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="/gestao/experiencias/createexperiencia"> Criar Experiencia </a></li>
+            <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="/gestao/experiencias/createcategoria"> Criar Categoria </a></li>
+        </ul>
+
+        {{-- Importando conteudo --}}
+        @yield('gestao.experiencias.content');
+
     </div>
-
-    {{-- Seção de gerenciamento das experiencias --}}
-    <div class="col-md-12 col-lg-12 fundo-cheio">
-			  @if(Auth::user()->isAdmin())
-		    	@include('gestao.experiencias._listaexperiencias')
-			  @endif
-		</div>
-
 
 
 		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-b-1 fundo-cheio text-center padding-t-2">

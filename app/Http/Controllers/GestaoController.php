@@ -29,8 +29,26 @@ class GestaoController extends Controller {
      */
     public function getExperiencias()
     {
-      return view('gestao.experiencias.index');
+      return view('gestao.experiencias._index');
     }
+
+    /*
+     * Rota para a view de create de experiencias
+     */
+    public function getCreateexperiencia()
+    {
+        return view('experiencias.create');
+    }
+
+    /*
+     * Rota para a view de create de categoria de experiencia
+     */
+    public function getCreatecategoria()
+    {
+        return view('experiencias.categorias.create');
+    }
+
+
 
     /**
      * Retorna o painel de gestão do LOGGER

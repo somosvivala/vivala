@@ -12,7 +12,6 @@
     </div>
 
 
-
     {{-- Secao de selecao da ong/projeto da experiencia --}}
     <div class="col-sm-12 margin-b-1">
         <i class='fa fa-2x fa-question-circle-o' title='Esse é o campo que identifica a instituição responsavel'></i>
@@ -31,10 +30,8 @@
     <div class="col-sm-12 margin-b-1">
         <i class='fa fa-2x fa-question-circle-o' title='Essa descrição aparecerá no email enviado ao candidato'></i>
         {!! Form::label('owner_descricao', "Descricao da empresa/instituição responsavel ", ['class' => 'row col-sm-12']) !!}
-        {!! Form::text('owner_descricao', null, ['placeholder' => '']) !!}
+        {!! Form::textarea("owner_descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 2]) !!}
     </div>
-
-
 
 
     {{-- Secao de trocar foto da experiencia --}}
@@ -83,7 +80,7 @@
 
     {{-- Secao de informacoes extras da experiencia --}}
     <div class="col-sm-12 margin-b-1">
-        {!! Form::label('', 'Informações extras', ['class' => 'row col-sm-12']) !!}
+        {!! Html::decode(Form::label('', 'Informações extras  <a target="_blank" href="http://fontawesome.io/icons/"> (lista de icones) </a>', ['class' => 'row col-sm-12'])) !!}
         <ul id="informacoes-container">
             @if (isset($experiencia))
             @foreach ($experiencia->informacoes as $informacao)
@@ -147,8 +144,10 @@
             </label>
         @endforeach
     </div>
-</div>
-<div class="col-sm-12 margin-b-1 margin-t-1">
+
+    <div class="col-sm-12 margin-b-1 margin-t-1">
         {!! Form::submit($textBtnSubmit, ['class' => 'btn btn-acao']) !!}
+    </div>
+
 </div>
 

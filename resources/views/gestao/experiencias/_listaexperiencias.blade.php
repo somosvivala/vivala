@@ -4,7 +4,7 @@
 
         <ul class="list-group">
             @foreach ($Experiencias as $experiencia)
-                <li class="list-group-item col-xs-12 experiencia-item padding-t-1 padding-b-1" data-id="{{ $experiencia->id }}">
+                <li class="list-group-item col-xs-12 experiencia-item padding-t-1 padding-b-1 fundo-cinza-com-borda" data-id="{{ $experiencia->id }}">
                     <div class="col-xs-2" style="">
                         <div class="col-xs-9" style="padding-left: 0px; padding-right: 0px;">
                             <a href="/experiencias/{{ $experiencia->id }}/edit">Editar Experiencia </a><br>

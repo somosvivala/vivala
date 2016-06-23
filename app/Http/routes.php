@@ -63,8 +63,12 @@ Route::get('testeboleto', function() {
 
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
+    Route::get('gestao/experiencias/createexperiencia', 'GestaoController@getCreateexperiencia');
+    Route::get('gestao/experiencias/createcategoria', 'GestaoController@getCreatecategoria');
     Route::controller('gestao', 'GestaoController');
     Route::controller('foto', 'FotoController');
+    Route::controller('busca','SearchController');
+
 
 });
 
@@ -99,7 +103,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
     Route::controller('albums','AlbumController');
     Route::controller('paginas','PaginaController');
     Route::controller('vagas','VagaController');
-    Route::controller('busca','SearchController');
     Route::controller('ong','OngController');
     Route::controller('restaurantes','ChefsclubController');
 

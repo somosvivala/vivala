@@ -12,6 +12,7 @@ use App\InformacaoExperiencia;
 use App\DataOcorrenciaExperiencia;
 use Carbon\Carbon;
 use App\InscricaoExperiencia;
+use App\Foto;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -146,6 +147,21 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         //pegando o id do owner e associando a experiencia
         $ong = Ong::findOrFail($arrayArgumentos['projeto']);
         $experiencia->owner()->associate($ong);
+
+        //checando se existe alguma foto para a capa dessa experiencia
+        $existeFotoCapa = array_key_exists('experiencia-foto-id', $arrayArgumentos);
+        if ($existeFotoCapa) {
+            $fotoCapa = Foto::findOrFail($arrayArgumentos['experiencia-foto-id']);
+            $this->atualizaFotoCapa($experiencia, $fotoCapa);
+        }
+
+        //checando se existe alguma foto para a capa dessa experiencia
+        $existeFotoOwner = array_key_exists('owner-experiencia-foto-id', $arrayArgumentos);
+        if ($existeFotoOwner) {
+            $fotoOwner = Foto::findOrFail($arrayArgumentos['owner-experiencia-foto-id']);
+            $this->atualizaFotoOwner($experiencia, $fotoOwner);
+        }
+
 
         $experiencia->push();
         return $experiencia;
@@ -417,6 +433,47 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $fezUpdate = $experiencia->update(['status' => 'analise']);
         return $fezUpdate;
     }
+
+    /**
+     * Metodo para atualizar a foto de Capa da experiencia
+     * @param $experiencia - Instancia da Experiencia que iremos atualizar a fotoCapa
+     * @param $foto - nova foto a ser inserida como fotoCapa
+     */
+    public function atualizaFotoCapa(Experiencia $experiencia, Foto $foto)
+    {
+        $fotoCapa = $experiencia->fotoCapa;
+
+        //Se tiver fotoCapa remover e entao settar uma nova
+        if ($fotoCapa) {
+            $fotoCapa->delete();
+        }
+
+        $experiencia->fotos()->save($foto);
+        $experiencia->push();
+    }
+
+    /**
+     * Metodo para atualizar a foto do Owner da experiencia
+     * @param $experiencia - Instancia da Experiencia que iremos atualizar a fotoOwner
+     * @param $foto - nova foto a ser inserida como fotoOwner
+     */
+    public function atualizaFotoOwner(Experiencia $experiencia, Foto $foto)
+    {
+        //settando o campo na foto que identifica que ela pertence ao owner da experiencia
+        $foto->update(['foto_owner_experiencia' => true]);
+
+        $fotoOwner = $experiencia->fotoOwner;
+        //Se tiver fotoOwner remover e entao settar uma nova
+        if ($fotoOwner) {
+            $fotoOwner->delete();
+        }
+
+        //salvando em foto pois o ->fotoOwner é só um acessor com ->where('foto_owner_experiencia', true)
+        $experiencia->fotos()->save($foto);
+        $experiencia->push();
+    }
+
+
 
 
 }

@@ -45,7 +45,13 @@ class UpdateExperienciaRequest extends Request
             'icone'                     => "array",
             'descricao_info'            => "array",
             'datas-ocorrencia'          => "array",
-            'categoria'                 => "array"
+            'categoria'                 => "array",
+            'experiencia-foto-id'       => "required|exists:fotos,id",
+            'owner-experiencia-foto-id' => "required|exists:fotos,id",
+            'owner_nome'                => "required|string|required",
+            'owner_descricao'           => "required|string|required",
+            'endereco_completo'         => "required|string|required"
+
         ];
 
 

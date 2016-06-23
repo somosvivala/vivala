@@ -45,6 +45,8 @@ var testaClasseFontAwesome = function(target) {
         var icone = $(target).parents('.container-campos-fontawesome').find('i.icone-show');
         var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
 
+        classesIcone += " fa-2x";
+
         //console.log('classes do icone: ' + classesIcone);
         //settando as novas classes do icone
         icone.attr('class', classesIcone + " " + novasClasses);

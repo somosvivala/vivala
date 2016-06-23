@@ -1,6 +1,6 @@
 <div class="container-campos-fontawesome col-xs-12 margin-b-3 margin-t-3">
-        <div class="col-xs-1">
-            <i name="icone-show" class="icone-show margin-t-2 @if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif"> </i>
+        <div class="col-xs-1 text-center">
+            <i name="icone-show" class="fa-2x icone-show margin-t-1 @if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif"> </i>
         </div>
         <div class="col-xs-3">
             {!! Form::label('classe_icone', 'Classes', ['class' => 'row col-sm-12']) !!}

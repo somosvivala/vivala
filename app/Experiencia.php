@@ -53,7 +53,7 @@ class Experiencia extends Model
      */
     public function getFotoCapaAttribute()
     {
-        return $this->fotos()->where('foto_owner_experiencia', false)->get();
+        return $this->fotos()->where('foto_owner_experiencia', false)->first();
     }
 
     /**
@@ -61,9 +61,8 @@ class Experiencia extends Model
      */
     public function getFotoOwnerAttribute()
     {
-        return $this->fotos()->where('foto_owner_experiencia', true)->get();
+        return $this->fotos()->where('foto_owner_experiencia', true)->first();
     }
-
 
 
     /**
@@ -146,6 +145,19 @@ class Experiencia extends Model
 
         return '/img/dummy-exp.jpg';
     }
+
+    /*
+     * Acessor para retornar a url da foto do owner da experiencia
+     */
+    public function getFotoOwnerUrlAttribute()
+    {
+        if ($this->fotoOwner) {
+            return $this->fotoOwner->path;
+        }
+
+        return '/img/dummy-exp.jpg';
+    }
+
 
     /**
       * Definindo uma scope para as Experiencias em 'analise'
