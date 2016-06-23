@@ -9,7 +9,7 @@
             <i class="fa fa-chevron-left"></i>
         </a>
 
-        <div class="conteudo-mobile col-xs-10 col-xs-offset-1 margin-t-1 margin-b-1">
+        <div class="conteudo-mobile pull-left">
            {!! Form::open(['url' => '/autenticacao/login', 'class' => 'form-horizontal form-login']) !!}
               @if (count($errors) > 0)
                   @foreach ($errors->all() as $error)

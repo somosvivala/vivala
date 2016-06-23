@@ -38,6 +38,14 @@
         </div>
 
         <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
+        @if($Experiencia->dataProximaOcorrencia)
+        <div class="col-xs-12 informacoes">
+            <div class="row padding-t-1">
+                <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+            </div>
+        </div>
+        @endif
         @foreach($Experiencia->informacoes as $Informacao)
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
