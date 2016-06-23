@@ -17,19 +17,23 @@
         </h3>
 
         <ul class="lista-border pesquisa-viajar margin-t-2 margin-b-3">
-            <li class="col-sm-4 tour-pilar-viajar-step3">
+            <li class="col-sm-3 tour-pilar-viajar-step3">
+                <a class="experiencias" href="/experiencias">
+                    Experiências
+                </a>
+            </li>
+            <li class="col-sm-3 tour-pilar-viajar-step3">
                 <a class="rodoviario logger-ativo" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                    {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
-
-            <li class="col-sm-5 tour-pilar-viajar-step4">
+            <li class="col-sm-4 tour-pilar-viajar-step4">
                 <a class="ativa-modal-quimera logger-ativo" data-tipo="abasviajar_tipo_quimera" data-desc="abasviajar_desc_quimera" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
                    {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
                 </a>
             </li>
 
-            <li class="col-sm-3 active tour-pilar-viajar-step5">
+            <li class="col-sm-2 active tour-pilar-viajar-step5">
                 <a class="restaurantes logger-ativo" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                     {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
@@ -68,111 +72,5 @@
         </div>
     </div>
 
-{{--
-    <!-- section class="secao-sem-bg text-center">
-        <h3 class="subtitulo col-sm-12">Explore novos ares e mares</h3>
-        <small class="col-sm-12">Descubra lugares novos e inspiradores</small>
-        <div class="col-sm-4">
-            <div class="foto-link">
-                <a href="/rio">
-                    <div class="cover">
-                        <img src="/img/dummy.jpg">
-                    </div>
-                    <h4>Brasília</h4>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="foto-fundo foto-link">
-                <a href="/rio">
-                    <div class="cover">
-                        <img src="/img/dummy.jpg">
-                    </div>
-                    <h4>Brasília</h4>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="foto-fundo foto-link">
-                <a href="/rio">
-                    <div class="cover">
-                        <img src="/img/dummy.jpg">
-                    </div>
-                    <h4>Brasília</h4>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section class="secao-sem-bg text-center">
-        <h3 class="col-sm-12">Roteiros populares</h3>
-        <small class="col-sm-12">Os mais curtidos, comentados e compartilhados da Vivalá</small>
-        <div class="col-sm-4">
-            <div class="foto-link">
-                <a href="/rio">
-                    <div class="cover">
-                        <img src="/img/dummy.jpg">
-                    </div>
-                    <h4>Brasília</h4>
-                    <div class="foto-comentario">
-                        <div class="col-sm-5">
-                            <div class="round foto">
-                                <div class="cover">
-                                    <img src="/img/dummy.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-7">
-                            Uma viagem para entrar em contato com a cultura local
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="foto-link">
-                <a href="/rio">
-                    <div class="cover">
-                        <img src="/img/dummy.jpg">
-                    </div>
-                    <h4>Brasília</h4>
-                    <div class="foto-comentario">
-                        <div class="col-sm-5">
-                            <div class="round foto">
-                                <div class="cover">
-                                    <img src="/img/dummy.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-7">
-                            Uma viagem para entrar em contato com a cultura local
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="foto-link">
-                <a href="/rio">
-                    <div class="cover">
-                        <img src="/img/dummy.jpg">
-                    </div>
-                    <h4>Brasília</h4>
-                    <div class="foto-comentario">
-                        <div class="col-sm-5">
-                            <div class="round foto">
-                                <div class="cover">
-                                    <img src="/img/dummy.jpg">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-7">
-                            Uma viagem para entrar em contato com a cultura local
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section-->
---}}
 </div>
 @endsection
