@@ -6,14 +6,34 @@
             @foreach ($Experiencias as $experiencia)
                 <li class="list-group-item col-xs-12 experiencia-item padding-t-1 padding-b-1 fundo-cinza-com-borda" data-id="{{ $experiencia->id }}">
                     <div class="col-xs-2" style="">
-                        <div class="col-xs-9" style="padding-left: 0px; padding-right: 0px;">
-                            <a href="/experiencias/{{ $experiencia->id }}/edit">Editar Experiencia </a><br>
-                            <a href="#" onclick="confirmaDeleteExperiencia(event)">Deletar Experiencia </a><br>
-                            @if ($experiencia->status == 'analise')
-                                <a href="#" onclick="confirmaPublicarExperiencia(event)">Publicar Experiencia </a>
-                            @else
-                                <a href="#" onclick="confirmaDesativarExperiencia(event)">Desativar Experiencia </a>
-                            @endif
+                        <div class="col-xs-9 margin-t-1" style="padding-left: 0px; padding-right: 0px;">
+                            <div class="col-xs-3" style="padding-left: 0px; padding-right: 0px;">
+                                <a title="Editar Experiencia" href="/experiencias/{{ $experiencia->id }}/edit"><i class="text-success fa fa-2x fa-pencil"></i></a> &nbsp;&nbsp;
+                            </div>
+                            <div class="col-xs-3" style="padding-left: 0px; padding-right: 0px;">
+                                <a title="Excluir Experiencia" href="#" onclick="confirmaDeleteExperiencia(event)"><i class="text-danger fa fa-2x fa-close"></i></a> &nbsp;&nbsp;
+                            </div>
+
+                            <div class="col-xs-3" style="padding-left: 0px; padding-right: 0px;">
+                                @if ($experiencia->status == 'analise')
+                                    <a href="#" title="Publicar Experiência" onclick="confirmaPublicarExperiencia(event)">
+                                        <span class="fa-stack">
+                                          <i class="fa fa-list fa-stack-2x"></i>
+                                          <i class="fa fa-check fa-stack-2x text-success icone-stacked-canto-direita-inferior"></i>
+                                        </span>
+                                    </a>
+                                @else
+                                    <a href="#" title="Desativar Experiencia" onclick="confirmaDesativarExperiencia(event)">
+                                        <span class="fa-stack">
+                                          <i class="fa fa-list fa-stack-2x"></i>
+                                          <i class="fa fa-ban fa-stack-2x text-danger icone-stacked-canto-direita-inferior"></i>
+                                        </span>
+                                    </a>
+                                @endif
+                            </div>
+
+                            <div class="col-xs-3"></div>
+
                         </div>
                         <div class="col-xs-3"  style="padding-left: 0px; padding-right: 0px;">
                             <div class="foto quadrado3em">

@@ -11,11 +11,11 @@
                     </div>
                     <div class="col-xs-2 text-center" style="border-left:1px solid #ddd;">
                         <a href="/categorias/experiencias/{{ $categoria->id }}/edit">
-                            <i class="fa-2x fa fa-pencil"></i>
+                            <i class="text-success fa-2x fa fa-pencil"></i>
                         </a>
                         &nbsp; - &nbsp;
                         <a href="#" onclick="confirmaDeleteCategoriaExperiencia(event)">
-                            <i class="fa-2x fa fa-close"></i>
+                            <i class="text-danger fa-2x fa fa-close"></i>
                         </a>
                         {!! Form::hidden('_token', csrf_token()) !!}
                     </div>
