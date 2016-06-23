@@ -8,7 +8,7 @@
         <a href="#" class="link-voltar">
             <i class="fa fa-chevron-left"></i>
         </a>
-        <div class="conteudo-mobile col-xs-10 col-xs-offset-1 margin-t-1 margin-b-1">
+        <div class="conteudo-mobile pull-left">
             @if (count($errors) > 0)
                 @foreach ($errors->all() as $error)
                 <span class="form-mobile-error">{{ $error }}</span>

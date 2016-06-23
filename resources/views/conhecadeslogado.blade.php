@@ -9,7 +9,7 @@
       <i class="fa fa-chevron-left"></i>
   </a>
 
-    <div class="conteudo-mobile col-xs-10 col-xs-offset-1 margin-t-1 margin-b-1">
+    <div class="conteudo-mobile col-xs-12">
         <span class="texto-conheca-vivala">{!! trans('global.welcome_floatingballon4') !!}</span>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/kaIRH4Uh7nw" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>

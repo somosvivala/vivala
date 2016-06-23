@@ -40,14 +40,14 @@
         <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
         @foreach($Experiencia->informacoes as $Informacao)
         <div class="col-xs-12 informacoes">
-            <div class="row">
+            <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="{{ $Informacao->icone }}"></i></span>
                 <span class="descricao-informacoes">{{ $Informacao->descricao }}</span>
             </div>
         </div>
         @endforeach
         @if($Experiencia->descricao!="")
-        <span class="col-xs-12 negrito-exp margin-t-1">Mais detalhes</span>
+        <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
         <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
         @endif
     </div>
