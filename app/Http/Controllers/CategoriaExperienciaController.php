@@ -30,18 +30,6 @@ class CategoriaExperienciaController extends Controller
     }
 
 
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return response
-     */
-    public function index()
-    {
-        $Categorias = CategoriaExperiencia::all();
-        return view('experiencias.categorias.index')->with('Categorias', $Categorias);
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -60,7 +48,7 @@ class CategoriaExperienciaController extends Controller
     public function store(StoreCategoriaExperienciaRequest $request)
     {
         CategoriaExperiencia::create($request->all());
-        return redirect('/categorias/experiencias');
+        return redirect('/gestao/experiencias');
     }
 
     /**
@@ -85,7 +73,7 @@ class CategoriaExperienciaController extends Controller
     {
         $Categoria = CategoriaExperiencia::findOrFail($id);
         $Categoria->update($request->all());
-        return redirect('categorias/experiencias');
+        return redirect('/gestao/experiencias');
     }
 
     /**

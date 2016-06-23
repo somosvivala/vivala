@@ -84,7 +84,7 @@ class ExperienciasController extends Controller
         //Se a experiencia em questao nao estiver ativa
         if (!$Experiencia->isAtiva) {
             //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
-            $podeAcessar = Auth::user() ? Auth::user()->isAdmin : false;
+            $podeAcessar = Auth::user() ? Auth::user()->isAdmin() : false;
             if ($podeAcessar)
                 return redirect('/experiencias');
         }
@@ -112,7 +112,8 @@ class ExperienciasController extends Controller
      */
     public function store(StoreExperienciaRequest $request)
     {
-        return $this->experienciasRepository->create($request->all());
+        $exp = $this->experienciasRepository->create($request->all());
+        return redirect('/experiencias/'.$exp->id);
     }
 
 
@@ -151,7 +152,7 @@ class ExperienciasController extends Controller
         //Se a experiencia em questao nao estiver ativa
         if (!$Experiencia->isAtiva) {
             //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
-            $podeAcessar = Auth::user() ? Auth::user()->isAdmin : false;
+            $podeAcessar = Auth::user() ? Auth::user()->isAdmin() : false;
             if ($podeAcessar)
                 return redirect('/experiencias');
         }

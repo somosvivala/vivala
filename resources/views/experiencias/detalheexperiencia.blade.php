@@ -24,9 +24,9 @@
         <span class="descricao-inicial">{{ $Experiencia->descricao }}</span>
         <div class="owner text-center">
             <div class="round-foto-small">
-                <img alt="{{ $Experiencia->owner->nome }}" src="{{ $Experiencia->owner->avatar->path }}">
+                <img alt="{{ $Experiencia->owner_nome }}" src="{{ $Experiencia->fotoOwnerUrl }}">
             </div>
-            <span>{{ $Experiencia->owner->nome }}</span>
+            <span>{{ $Experiencia->owner_nome }}</span>
             <div class="row">
                 @if($Experiencia->owner->url_facebook)
                 <a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}"><i class="fa fa-facebook-square verde-sucesso"></i></a>

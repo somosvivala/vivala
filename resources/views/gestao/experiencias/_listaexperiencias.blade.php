@@ -37,6 +37,9 @@
                         <div class="foto quadrado3em">
                             <div class="avatar-img" style="background-image:url('{{ $experiencia->fotoCapaUrl }}')"></div>
                         </div>
+                        <div class="text-center margin-t-0-5">
+                            {!! Form::label('identificador_experiencia', 'ID: '. $experiencia->id) !!}
+                        </div>
                     </div>
                 </div>
                  <div class="col-xs-2 text-center">
@@ -73,7 +76,12 @@
                 </div>
                 <div class="col-xs-1 ">
                     {!! Form::label('status', 'Status') !!}
-                    <p> {{ strtoupper($experiencia->status) }} </p>
+                    <p class="
+                        @if ($experiencia->status == 'publicada') 
+                            text-success 
+                        @else 
+                            text-warning 
+                        @endif"> {{ strtoupper($experiencia->status) }} </p>
 
                 </div>
             </li>

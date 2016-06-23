@@ -3,7 +3,7 @@
 <div class="col-sm-12">
     <div class="text-center">
         <a type="button" data-target="#cropper-experiencia-modal" data-toggle="modal">
-            <img class="experiencia-foto-atual" src="{{ isset($foto) ? $foto : '/img/interrogacao.png' }}"/>
+            <img class="experiencia-foto-atual" src="{{ isset($experiencia) ? $experiencia->fotoCapa->path : '/img/interrogacao.png' }}"/>
             <div class="row pointer margin-t-2">
                 <div class="file-upload">
                     <label for="image_file_upload">

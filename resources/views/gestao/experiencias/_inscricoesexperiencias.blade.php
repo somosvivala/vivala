@@ -17,12 +17,17 @@
                 @forelse ($experiencia->inscricoesAtivas as $inscricao)
                     <li class="list-group-item col-xs-12 inscricao-experiencia-item" data-id-inscricao="{{ $inscricao->id }}">
                         <div class="col-xs-9">
-                            <p>
-                                Identificador da inscricao: {{ $inscricao->id }} <br>
-                                Nome do inscrito: {{ $inscricao->perfil->nome_completo }} <br>
-                                Email: {{ $inscricao->perfil->user->email }} <br>
-                                status: {{ strtoupper($inscricao->status) }}
+                            <p> Identificador da inscricao: {{ $inscricao->id }} </p>
+                            <p> Nome do inscrito: {{ $inscricao->perfil->nome_completo }} </p>
+                            <p> Email: {{ $inscricao->perfil->user->email }} </p>
+                            <p class="
+                                @if ($inscricao->status == 'confirmada')
+                                    text-success
+                                @else
+                                    text-warning
+                                @endif"> {{ strtoupper($inscricao->status) }}
                             </p>
+
                         </div>
                         <div class="col-xs-3">
                             @if ($inscricao->status == 'pendente')

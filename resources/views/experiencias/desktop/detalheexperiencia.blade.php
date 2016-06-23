@@ -67,7 +67,7 @@
                     <span class="col-xs-12 negrito-exp text-center"><i class="fa fa-map-marker"></i>{{ $Experiencia->local->nome}}</span>
                     <span class="col-xs-12 negrito-exp text-center">{{ $Experiencia->preco }}</span>
                     <span class="descricao-inicial">{{ $Experiencia->descricao }}</span>
-                    <div class="owner text-center"><img alt="{{ $Experiencia->owner->nome }}" src="{{ $Experiencia->owner->avatar->path }}"><h4>{{ $Experiencia->owner->nome }}</h4></div>
+                    <div class="owner text-center"><img alt="{{ $Experiencia->owner_nome }}" src="{{ $Experiencia->fotoOwnerUrl }}"><h4>{{ $Experiencia->owner_nome }}</h4></div>
                 
                     <span class="col-xs-12 negrito-exp">Informações</span>
                     @foreach($Experiencia->informacoes as $Informacao)
