@@ -7,12 +7,16 @@
         @foreach ($Experiencias as $experiencia)
 
         <div class="col-xs-12 margin-t-1 fundo-cinza-com-borda">
-            {!! Form::label('', 'Experiencia de: '.$experiencia->owner->nome.' Proxima Data: '.$experiencia->dataProximaOcorrencia.' Local: '.$experiencia->local->nome.'  - '.$experiencia->local->estado->sigla, ['class' => 'col-xs-12']) !!}
+            {!! Html::decode(Form::label('',
+                '<br>ID da Experiencia: #' . $experiencia->id .
+                '<br>Promovida por: ' . $experiencia->owner->nome .
+                '<br>Proxima Data: ' . $experiencia->dataProximaOcorrencia .
+                '<br>Local: ' . $experiencia->local->nome .' - '. $experiencia->local->estado->sigla, ['class' => 'col-xs-12'])) !!}
 
             <ul class="list-group col-xs-12">
                 @forelse ($experiencia->inscricoesAtivas as $inscricao)
                     <li class="list-group-item col-xs-12 inscricao-experiencia-item" data-id-inscricao="{{ $inscricao->id }}">
-                        <div class="col-xs-10">
+                        <div class="col-xs-9">
                             <p>
                                 Identificador da inscricao: {{ $inscricao->id }} <br>
                                 Nome do inscrito: {{ $inscricao->perfil->nome_completo }} <br>
@@ -20,15 +24,27 @@
                                 status: {{ strtoupper($inscricao->status) }}
                             </p>
                         </div>
-                        <div class="col-xs-2 text-center">
+                        <div class="col-xs-3">
                             @if ($inscricao->status == 'pendente')
-                                <a href="#" onclick="confirmaInscricaoExperiencia(event)" title="Confirmar Inscricao">
-                                    <i class="margin-t-0-5 fa fa-check fa-3x"></i> Confirmar
-                                </a>
+                                <div class="col-xs-12 text-center">
+                                    <a href="#" onclick="confirmaInscricaoExperiencia(event)" title="Confirmar Inscrição">
+                                        <i class="margin-t-0-5 fa fa-check fa-3x"></i><br>Confirmar
+                                    </a>
+                                </div>
                             @else
-                                <a href="#" style="color:#25A393;" title="Inscricao ja confirmada">
-                                    <i class="margin-t-0-5 fa fa-check fa-3x"></i>
-                                </a>
+                                <div class="col-xs-6 text-center">
+                                    <a href="#" title="Inscrição ja confirmada">
+                                        <i class="margin-t-0-5 fa fa-check fa-3x text-success"></i>
+                                    </a>
+                                </div>
+
+                                <div class="col-xs-6 text-center">
+                                    <a href="#" onclick="confirmaCancelaInscricaoExperiencia(event)" title="Cancelar Inscrição">
+                                        <i class="margin-t-0-5 fa fa-ban fa-3x text-danger"></i>
+                                        Cancelar
+                                    </a>
+                                </div>
+
                             @endif
                         </div>
                     </li>

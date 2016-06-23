@@ -170,6 +170,7 @@ Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
 Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
 Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfirmaInscricao');
+Route::post('experiencias/cancelainscricao', 'ExperienciasController@postCancelaInscricao');
 Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
 Route::post('experiencias/desativar', 'ExperienciasController@postDesativarExperiencia');
 

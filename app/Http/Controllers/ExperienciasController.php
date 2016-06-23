@@ -21,6 +21,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
 use App\Http\Requests\DesativarExperienciaRequest;
 use App\Http\Requests\PublicarExperienciaRequest;
+use App\Http\Requests\CancelaInscricaoExperienciaRequest;
 
 class ExperienciasController extends Controller
 {
@@ -247,6 +248,15 @@ class ExperienciasController extends Controller
     {
         return ['result' => $this->experienciasRepository->confirmaInscricaoExperiencia($request)];
     }
+
+    /**
+     * Rota para cancelar uma inscricao de experiencia
+     */
+    public function postCancelaInscricao(CancelaInscricaoExperienciaRequest $request)
+    {
+        return ['result' => $this->experienciasRepository->cancelaInscricaoExperiencia($request)];
+    }
+
 
     /**
      * Rota para publicar uma experiencia (passa a aparecer na listagem)

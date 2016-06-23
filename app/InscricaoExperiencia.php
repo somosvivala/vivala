@@ -9,14 +9,18 @@ class InscricaoExperiencia extends Model
         'data_pagamento',
         'perfil_id',
         'experiencia_id',
-        'data_ocorrencia_experiencia_id'
+        'data_ocorrencia_experiencia_id',
+        'data_cancelamento'
     ];
 
 
     /**
      * Denotando os campos dates para que o laravel sirva uma instancia do Carbon
      */
-	  protected $dates = ['data_pagamento'];
+    protected $dates = [
+        'data_pagamento',
+        'data_cancelamento'
+    ];
 
     /**
      * Toda as inscricoes pertencem a uma experiencia especifica

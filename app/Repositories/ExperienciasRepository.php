@@ -385,6 +385,26 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return $fezUpdate;
     }
 
+    /**
+     * Metodo para cancelar uma inscricao de experiencia
+     * @param $inscricao - a inscricao que devemos cancelar
+     */
+    public function cancelaInscricaoExperiencia($request)
+    {
+        $inscricao = InscricaoExperiencia::find($request->id_inscricao);
+        $dataCancelamento = Carbon::now();
+        $dataExperienciaID = $inscricao->experiencia->proximaOcorrencia ? $inscricao->experiencia->proximaOcorrencia->id : null;
+
+        $fezUpdate =  $inscricao->update([
+            'status' => 'cancelada',
+            'data_cancelamento' => $dataCancelamento,
+            'data_ocorrencia_experiencia_id' => $dataExperienciaID
+        ]);
+
+        return $fezUpdate;
+    }
+
+
 
     /**
       * Metodo para atualizar as inscricoes conforme ocorrer a Experiencia

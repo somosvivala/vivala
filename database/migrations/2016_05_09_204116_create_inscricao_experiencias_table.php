@@ -18,6 +18,7 @@ class CreateInscricaoExperienciasTable extends Migration {
 			$table->timestamps();
 
       $table->date('data_pagamento')->nullable();
+      $table->date('data_cancelamento')->nullable();
 
       /**
        * quando se inscreve => pendente
