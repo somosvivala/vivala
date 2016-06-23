@@ -41,6 +41,9 @@
     $Usuario = Auth::user();
     return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
+  Route::get('/emailbase', function() {
+    return view('emails.modelobasicovivala');
+  });
 
 /*
  * Rotas
