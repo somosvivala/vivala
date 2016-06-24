@@ -159,6 +159,8 @@ return[
   'lbl_build_your_trip_with_us' => 'Build your trip here with us',
   'lbl_build_my_trip' => 'Build my trip',
   'lbl_build_my_trip_difficulty' => 'Is you having difficulty to build your trip or not found what you were looking for? We can help you!',
+  'lbl_cancel' => 'Cancel',
+  'lbl_canceled' => 'Canceled',
   'lbl_capslock_activated' => 'Caps-Lock activated',
   'lbl_capslock_active' => 'Caps-Lock is active',
   'lbl_category' => 'Category',

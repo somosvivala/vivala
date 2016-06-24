@@ -41,6 +41,12 @@
     $Usuario = Auth::user();
     return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
+  Route::get('/inscricaocanceladacandidato', function() {
+    $ExperienciasRepository = new ExperienciasRepository;
+    $Experiencia = Experiencia::all()->reverse()->first();
+    $Usuario = Auth::user();
+    return view('emails.experiencias.inscricaocanceladacandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
+  });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
   Route::get('/emailteste', function() {
     $user = Auth::user();

@@ -85,7 +85,7 @@
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
-                    <h2 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:22px; font-weight:200; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
+                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
                       Sua experiência tem uma nova inscrição!
                     </h2>
                   </td>
@@ -109,17 +109,33 @@
                   <!-- Primeira SEÇÃO -->
                   <tr>
                     <td>
-                      <h4 style="color:#545454; margin-bottom:15px;">
-                        Comprovante de pagamento
-                      </h4>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
+                        Comprovante de Pagamento
+                      </h3>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p><img/><span>Nome</span> <span>Isis Luiza Gaona Machado</span></p>
-                      <p><img/><span>Email</span> <span>isis.gaona@gmail.com</span></p>
-                      <p><img/><span>Forma de Pagamento</span> <span>Boleto bancário</span></p>
-                      <p><img/><span>ID da inscrição</span> <span>9804985</span></p>
+                      <p><img src="{{ asset('/img/email/vivala-email-pessoa-icone.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Nome</span>
+                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          Isis Luiza Gaona Machado
+                        </span>
+                      </p>
+                      <p><img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Email</span>
+                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          isis.gaona@gmail.com
+                        </span>
+                      </p>
+                      <p><img src="{{ asset('/img/email/vivala-email-cartao-icone.png') }}" alt="" title="" min-width="21px" width="21px" max-width="21px" min-height="14px" height="14px" max-height="14px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Forma de Pagamento</span>
+                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          Boleto bancário
+                        </span>
+                      </p>
+                      <p><img src="{{ asset('/img/email/vivala-email-jogo-da-velha-icone.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">ID da inscrição</span>
+                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          9804985
+                        </span>
+                      </p>
                     </td>
                   </tr>
                   <!-- Separador -->
@@ -132,30 +148,31 @@
                   <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
                     <td>
-                      <h3 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
                         Detalhes da experiência
                       </h3>
                     </td>
                   </tr>
                   <tr>
                     <td>
-                      <p style="float:left; margin-right:20px;">
+                      <p style="float:left;">
                         <img src="{{ asset('img/dummy_ong-splash.png') }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                        <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;">ID 004</span>
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
-                        <span style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ $Experiencia->proximaOcorrencia->data_ocorrencia->format('d/m/y') }}</strong>
                         </span>
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
-                        <span style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ ucfirst($Experiencia->local->nome) }} - {{ strtoupper($Experiencia->local->estado->sigla) }}</strong>
                         </span>
                       </p>
                       <p>
-                        <span style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ ucfirst($Experiencia->local->posicao) }}</strong>
                         </span>
                       </p>
@@ -165,7 +182,7 @@
                   <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                   <tr>
                     <td>
-                      <h3 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
                         Informações
                       </h3>
                     </td>
@@ -175,7 +192,7 @@
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
                         Semanal
                       </p>
                     </td>
@@ -185,7 +202,7 @@
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
                         Todos os domingos
                       </p>
                     </td>
@@ -195,7 +212,7 @@
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
                         Grupos de 10 pessoas
                       </p>
                     </td>
@@ -204,13 +221,12 @@
                   <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr>
                     <td>
-                      <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:150px; height:150px; max-height:150px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0;">
-
+                      <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:150px; height:150px; max-height:150px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0; overflow:hidden;">
                         <div style="display:inline-block; min-width:100px; width:100px; max-width:100px; border-right:1px solid #BCBEC0; text-align:center;">
                           <p style="margin-bottom: 0;">
                             <img src="{{ asset('img/dummy_ong-icon.png') }}" alt="{{ ucfirst($Experiencia->owner->nome) }}" title="{{ ucfirst($Experiencia->owner->nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px"/>
                           </p>
-                          <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; margin-top:0; margin-bottom:0;">
+                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0;">
                             {{ ucfirst($Experiencia->owner->nome) }}
                           </p>
                           <p style="margin-bottom: 0;">
@@ -226,7 +242,7 @@
                           </p>
                         </div>
                         <div style="display:inline-block; vertical-align:top; min-width:320px; width:320px; max-width:320px; margin-left:15px;">
-                          <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:14px; font-weight:normal; font-weight:200; color:#545454; text-align:justify; ">
+                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; font-weight:200; color:#545454; text-align:justify; ">
                             {{ $Experiencia->owner->descricao }}
                           </p>
                         </div>
@@ -237,7 +253,7 @@
                   <!-- Seção ENVIE SUA DÚVIDA  -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:14px; font-weight:normal; margin-top:20px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; margin-top:20px;">
                         Envie sua dúvida para
                         <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a>
                       <p>
@@ -290,7 +306,7 @@
                 <tbody>
                 <tr align="center">
                   <td>
-                    <h4 style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
+                    <h4 style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
                       Feito com <3 pela Vivalá - Conecte-se ao Brasil de verdade
                     </h4>
                   </td>

@@ -178,6 +178,8 @@ return[
   'lbl_build_your_trip_with_us' => 'Faça a cotação de sua viagem conosco',
   'lbl_build_my_trip' => 'Cotar viagem',
   'lbl_build_my_trip_difficulty' => 'Está tendo dificuldade para montar sua viagem ou não achou o que estava procurando? Nós podemos te ajudar!',
+  'lbl_cancel' => 'Cancelar',
+  'lbl_canceled' => 'Cancelado',
   'lbl_capslock_activated' => 'Caps-Lock ligado',
   'lbl_capslock_active' => 'Caps-Lock está ativo',
   'lbl_category' => 'Categoria',

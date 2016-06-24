@@ -297,7 +297,7 @@
                   </tr>
                   <tr align="center">
                     <td>
-                      <button style="font-family: Avenir Black; font-size: 20px; text-transform: uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px;">ENVIAR COMPROVANTE DE DEPÓSITO</button>
+                      <button style="font-family: Avenir Black, 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size: 20px; text-transform: uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px;">ENVIAR COMPROVANTE DE DEPÓSITO</button>
                     </td>
                   </tr>
                   <!-- Fim da Seção do DEPÓSITO -->
@@ -312,7 +312,7 @@
                       <div style="padding:15px 30px; border:1px solid #25A494; max-width:200px;">
                         <span>
                           <img style="vertical-align:middle;" src="{{ asset('img/email/vivala-email-codigo-de-barras-icone.png') }}"/>
-                          <span style="font-family:Avenir Black; font-size:16px; color:#25A494; text-transform:uppercase; margin-left: 15px;">GERAR BOLETO</span>
+                          <span style="font-family:Avenir Black, 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; color:#25A494; text-transform:uppercase; margin-left: 15px;">GERAR BOLETO</span>
                         </span>
                       </div>
                     </td>

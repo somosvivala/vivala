@@ -85,7 +85,7 @@
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
-                    <h2 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:22px; font-weight:200; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
+                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
                       Falta apenas um passo para sua experiência acontecer!
                     </h2>
                   </td>
@@ -97,7 +97,7 @@
           </td>
           <!-- Fim do Cabeçalho da Vivalá -->
           <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:7px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
@@ -110,7 +110,9 @@
                   <!-- Título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <h1 style="color:#FAA325; margin-bottom:20px;">Você está quase lá!</h1>
+                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:26px; font-weight:bold; color:#FAA325; margin-bottom:20px;">
+                        Você está quase lá!
+                      </h1>
                     </td>
                   </tr>
                   <!-- Fim do Título da Primeira Estrutura -->
@@ -124,10 +126,10 @@
                   <!-- Seção de INFOS BANCÁRIAS -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                         Para confirmar sua inscrição na experiência da <strong>{{ mb_strtoupper($Experiencia->owner->nome) }}</strong>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                         realize o depósito de <strong>R${{ $Experiencia->preco }}</strong> na conta a seguir:
                       </p>
                     </td>
@@ -135,19 +137,19 @@
                   <tr align="center">
                     <td>
                       <div style="background-color:#ECEBEB; text-align:left; padding:10px; max-width:300px; margin-left:20px; margin-right:20px;">
-                        <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                           <b>NOME</b> <span>{{ $ExperienciasRepository->depositFantasyName }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                           <b>CONTA</b> <span>{{ $ExperienciasRepository->depositCC }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                           <b>AGÊNCIA</b> <span>{{ $ExperienciasRepository->depositAG }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                           <b>CNPJ</b> <span>{{ $ExperienciasRepository->depositCNPJ }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454;">
                           <b>BANCO</b> <span>{{ $ExperienciasRepository->depositBank }}</span>
                         </p>
                       </div>
@@ -157,14 +159,14 @@
                   <!-- Seção do DEPÓSITO -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454; margin-top:30px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; margin-top:30px;">
                         Não se esqueça de nos enviar o comprovante clicando no botão abaixo!
                       </p>
                     </td>
                   </tr>
                   <tr align="center">
                     <td>
-                      <button style="font-family:'Avenir Black', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:20px; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px;">
+                      <button style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px;">
                         ENVIAR COMPROVANTE DE DEPÓSITO
                       </button>
                     </td>
@@ -173,7 +175,7 @@
                   <!-- Seção do BOLETO BANCÁRIO -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; color:#545454; margin-top:30px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; margin-top:30px;">
                         Ou pague com boleto bancário:
                       </p>
                     </td>
@@ -182,7 +184,7 @@
                     <td>
                       <div style="padding:15px 30px; border:1px solid #25A494; min-width:200px; width:200px; max-width:200px;">
                         <img style="display:inline-block; float:left; vertical-align:middle;" src="{{ asset('img/email/vivala-email-codigo-de-barras-icone.png') }}" min-width="55px" width="55px" max-width="55px" min-height="43px" height="43px" max-height="43px"/>
-                        <span style="display:block; font-family:'Avenir Black', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:18px; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:60px;">
+                        <span style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:60px;">
                           GERAR BOLETO
                         </span>
                       </div>
@@ -199,7 +201,7 @@
                   <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
                     <td>
-                      <h3 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
                         Detalhes da experiência
                       </h3>
                     </td>
@@ -211,17 +213,17 @@
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
-                        <span style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ $Experiencia->proximaOcorrencia->data_ocorrencia->format('d/m/y') }}</strong>
                         </span>
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
-                        <span style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ ucfirst($Experiencia->local->nome) }} - {{ strtoupper($Experiencia->local->estado->sigla) }}</strong>
                         </span>
                       </p>
-                      <p style="text-align:justify; font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
+                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
                         {{ $Experiencia->descricao }}
                       </p>
                     </td>
@@ -230,7 +232,7 @@
                   <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                   <tr>
                     <td>
-                      <h3 style="font-family:'FuturaBT Bold', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
                         Informações
                       </h3>
                     </td>
@@ -240,7 +242,7 @@
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
                         Semanal
                       </p>
                     </td>
@@ -250,7 +252,7 @@
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
                         Todos os domingos
                       </p>
                     </td>
@@ -260,7 +262,7 @@
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
                         Grupos de 10 pessoas
                       </p>
                     </td>
@@ -269,13 +271,12 @@
                   <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr>
                     <td>
-                      <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:150px; height:150px; max-height:150px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0;">
-
+                      <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:150px; height:150px; max-height:150px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0; overflow:hidden;">
                         <div style="display:inline-block; min-width:100px; width:100px; max-width:100px; border-right:1px solid #BCBEC0; text-align:center;">
                           <p style="margin-bottom: 0;">
                             <img src="{{ asset('img/dummy_ong-icon.png') }}" alt="{{ ucfirst($Experiencia->owner->nome) }}" title="{{ ucfirst($Experiencia->owner->nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px"/>
                           </p>
-                          <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; margin-top:0; margin-bottom:0;">
+                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0;">
                             {{ ucfirst($Experiencia->owner->nome) }}
                           </p>
                           <p style="margin-bottom: 0;">
@@ -291,7 +292,7 @@
                           </p>
                         </div>
                         <div style="display:inline-block; vertical-align:top; min-width:320px; width:320px; max-width:320px; margin-left:15px;">
-                          <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:14px; font-weight:normal; font-weight:200; color:#545454; text-align:justify; ">
+                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; font-weight:200; color:#545454; text-align:justify; margin-top:0;">
                             {{ $Experiencia->owner->descricao }}
                           </p>
                         </div>
@@ -302,7 +303,7 @@
                   <!-- Seção ENVIE SUA DÚVIDA  -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:14px; font-weight:normal; margin-top:20px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; margin-top:20px;">
                         Envie sua dúvida para
                         <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a>
                       <p>
@@ -356,7 +357,7 @@
                 <tbody>
                 <tr align="center">
                   <td>
-                    <h4 style="font-family:'Avenir Roman', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
+                    <h4 style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
                       Feito com <3 pela Vivalá - Conecte-se ao Brasil de verdade
                     </h4>
                   </td>
