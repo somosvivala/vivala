@@ -41,8 +41,16 @@
     $Usuario = Auth::user();
     return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
-  Route::get('/emailbase', function() {
-    return view('emails.modelobasicovivala');
+  Route::get('/inscricaocanceladacandidato', function() {
+    $ExperienciasRepository = new ExperienciasRepository;
+    $Experiencia = Experiencia::all()->reverse()->first();
+    $Usuario = Auth::user();
+    return view('emails.experiencias.inscricaocanceladacandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
+  });
+  Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
+  Route::get('/emailteste', function() {
+    $user = Auth::user();
+    return view('emails.modelobasicovivala', compact('user'));
   });
 
 /*
@@ -69,7 +77,6 @@ Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('foto', 'FotoController');
     Route::controller('busca','SearchController');
 
-
 });
 
 /**
@@ -85,7 +92,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
     Route::resource('viajar','ViajarController');
     Route::resource('cuidar','CuidarController');
     Route::resource('conectar','ConectarController');
-
 
     Route::post('cotarviagem', 'CotarViagensController@getForm');
     Route::post('cotarviagem/data', 'CotarViagensController@getData');

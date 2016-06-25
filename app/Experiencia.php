@@ -41,6 +41,7 @@ class Experiencia extends Model
         return $this->morphTo();
     }
 
+
     /**
      * Uma Experiencia tem 2 fotos (uma para sua capa e outra para quem a promove)
      */
@@ -48,6 +49,7 @@ class Experiencia extends Model
     {
         return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
+
 
     /**
      * Definindo um acessor para a foto de capa da experiencia
@@ -85,7 +87,7 @@ class Experiencia extends Model
 
 
     /**
-     * Uma Experiencia pertence a muitas CategoriaExperiencia 
+     * Uma Experiencia pertence a muitas CategoriaExperiencia
      */
     public function categorias()
     {
@@ -119,6 +121,7 @@ class Experiencia extends Model
             : null;
     }
 
+
     /**
      * Acessor para a próxima ocorrencia a partir de hoje
      *
@@ -147,6 +150,7 @@ class Experiencia extends Model
         return '/img/dummy-exp.jpg';
     }
 
+
     /*
      * Acessor para retornar a url da foto do owner da experiencia
      */
@@ -168,6 +172,7 @@ class Experiencia extends Model
         return $query->where('status', 'analise');
     }
 
+
     /**
       * Definindo uma scope para as Experiencias publicadas
      */
@@ -176,6 +181,7 @@ class Experiencia extends Model
         return $query->where('status', 'publicada');
     }
 
+
     /**
       * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
      */
@@ -183,6 +189,7 @@ class Experiencia extends Model
     {
         return $query->where('status', 'realizada');
     }
+
 
     /**
       * Definindo uma scope para as Experiencias com data
@@ -203,6 +210,7 @@ class Experiencia extends Model
             ->get();
     }
 
+
     /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
      * @return boolean - se vai acontecer em 3 dias ou nao
@@ -218,6 +226,7 @@ class Experiencia extends Model
         $diferencaDias = $proximaOcorrencia->data_ocorrencia->diffInDays(Carbon::now()->addDays(3));
         return ($diferencaDias == 0);
     }
+
 
     /**
      * Definindo um acessor para determinar se a experiencia esta acontecendo hoje
@@ -235,8 +244,6 @@ class Experiencia extends Model
     {
         return $this->status == 'publicada';
     }
-
-
 
 
 }

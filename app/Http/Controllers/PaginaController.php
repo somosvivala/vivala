@@ -113,7 +113,6 @@ class PaginaController extends Controller {
         }
     }
 
-
     /**
      * Retorna a blade da pagina de Contato
      */
@@ -122,22 +121,8 @@ class PaginaController extends Controller {
         return view('paginas.contato');
     }
 
-
     /**
-     * Recebe a request do form de contato e dispara o mail
-     */
-    public function postContato(ContatoRequest $request)
-    {
-        $request->user_id = Auth::user()->id;
-        // Montando o Objeto formado pelo request de ContatoRequest + user_id
-        $FormContato = $request;
-
-        // Disparando evento para avisando que temos uma novo email de contato
-    		$this->emailRepository->enviaEmailFormularioContato($FormContato);
-    }
-
-    /**
-     * Retorna a blade da pagina de ction getNossomanifesto
+     * Retorna a pagina Manifesto
      */
     public function getNossomanifesto()
     {
@@ -196,33 +181,6 @@ class PaginaController extends Controller {
         return view('paginas.porquecuidar');
     }
 
-    /**
-     * Retorna a blade da pagina do Presskit para Mídia
-     */
-    public function getPresskit()
-    {
-        return view('paginas.presskit');
-    }
-
-    /**
-     * Retorna a blade da pagina do Financiamento Coletivo
-     */
-    public function getFinanciamentocoletivo()
-    {
-        return view('paginas.financiamentocoletivo');
-    }
-
-    public function getTestesendmail()
-    {
-        $user = Auth::user();
-        Mail::send('emails.teste', ['user' => $user], function ($message) use ($user) {
-            $message->to($user->email, $user->name)->subject('Teste Email!');
-            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });
-
-        return "sended?";
-    }
-
     public function getUltimasnoticias()
     {
         $posts = Post::getUltimos()->keyBy('id');
@@ -232,7 +190,36 @@ class PaginaController extends Controller {
     }
 
     /**
+    * Recebe dados do usuário logado e envia um email teste com alguns dados pra conta SANDBOX
+    * @param emailRepository instância usada com método enviaEmailTeste
+    */
+    public function getTesteEnviaEmail()
+    {
+        $user = Auth::user();
+
+        // Disparando evento para avisando que temos uma novo email de feedback
+        $this->emailRepository->enviaEmailTeste($user);
+
+        return 'Testando?';
+    }
+
+    /**
+     * Recebe a request do form de contato e dispara o mail
+     * @param emailRepository instância usada com método enviaEmailFormularioContato
+     */
+    public function postContato(ContatoRequest $request)
+    {
+        $request->user_id = Auth::user()->id;
+        // Montando o Objeto formado pelo request de ContatoRequest + user_id
+        $FormContato = $request;
+
+        // Disparando evento para avisando que temos uma novo email de contato
+        $this->emailRepository->enviaEmailFormularioContato($FormContato);
+    }
+
+    /**
      * Recebe a request do form de feedback e dispara o mail
+     * @param emailRepository instância usada com método enviaEmailFormularioFeedback
      */
     public function postFeedback(FeedbackRequest $request)
     {

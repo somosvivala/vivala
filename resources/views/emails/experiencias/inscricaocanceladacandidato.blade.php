@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Confirmada</title>
+    <title>{{ trans('global.title_vivala') }} - Experiência Cancelada</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -86,7 +86,7 @@
                 <tr align="center">
                   <td>
                     <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
-                      Obrigado pela confiança, <strong>{{ ucfirst($Usuario->perfil->nome) }}</strong>!
+                      O seu pedido de cancelamento foi efetivado
                     </h2>
                   </td>
                 </tr>
@@ -110,8 +110,8 @@
                   <!-- Título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#25A494; margin-bottom:20px;">
-                        Pagamento realizado com sucesso!
+                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#D90011; margin-bottom:20px;">
+                        A sua inscrição foi cancelada
                       </h1>
                     </td>
                   </tr>
@@ -119,7 +119,7 @@
                   <!-- Imagem da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <img src="{{ asset('img/email/vivala-email-pagamento-sucesso-icone-1.png') }}" alt="{{ trans('global.lbl_success') }}" title="{{ trans('global.lbl_success') }}!" min-width="99px" width="auto" max-width="600px" min-height="99px" height="99px" max-height="99px" style="margin-bottom:20px;"/>
+                      <img src="{{ asset('img/email/vivala-email-pagamento-cancelado-icone-1.png') }}" alt="{{ trans('global.lbl_canceled') }}" title="{{ trans('global.lbl_canceled') }}!" min-width="99px" width="auto" max-width="600px" min-height="99px" height="99px" max-height="99px" style="margin-bottom:20px;"/>
                     </td>
                   </tr>
                   <!-- Fim da Imagem da Primeira Estrutura -->
@@ -127,8 +127,8 @@
                   <!-- Sub-título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#25A494;">
-                        Sua inscrição foi confirmada na experiência oferecida pela
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#D90011;">
+                        Sua inscrição foi cancelada na experiência oferecida pela
                         <strong>{{ mb_strtoupper($Experiencia->owner->nome) }}</strong>!
                       </p>
                     </td>
@@ -148,22 +148,6 @@
           <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
               <table style="width: 100%; padding-bottom:0; margin-top:20px;">
                 <tbody>
-                  <!-- Seção COMPROVANTE DE PAGAMENTO -->
-                  <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
-                        Comprovante de pagamento
-                      </h3>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção COMPROVANTE DE PAGAMENTO -->
-                  <!-- Divisor -->
-                  <tr align="center">
-                    <td>
-                      <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
-                    </td>
-                  </tr>
-                  <!-- Fim do Divisor -->
                   <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
                     <td>
@@ -195,45 +179,6 @@
                     </td>
                   </tr>
                   <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
-                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
-                  <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
-                        Informações
-                      </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        Semanal
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        Todos os domingos
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        Grupos de 10 pessoas
-                      </p>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                 </tbody>
               </table>
           </td>
