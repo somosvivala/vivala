@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Nova Inscrição na sua Experiência</title>
+    <title>{{ trans('global.title_vivala') }} - Inscrição Confirmada na sua Experiência</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -219,16 +219,18 @@
                   </tr>
                   <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                   <!-- Seção INFORMAÇÕES DA ONG -->
-                  <tr>
+                  <tr align="center">
                     <td>
                       <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:150px; height:150px; max-height:150px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0; overflow:hidden;">
                         <div style="display:inline-block; min-width:100px; width:100px; max-width:100px; border-right:1px solid #BCBEC0; text-align:center;">
-                          <p style="margin-bottom: 0;">
-                            <img src="{{ asset('img/dummy_ong-icon.png') }}" alt="{{ ucfirst($Experiencia->owner->nome) }}" title="{{ ucfirst($Experiencia->owner->nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px"/>
-                          </p>
-                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0;">
-                            {{ ucfirst($Experiencia->owner->nome) }}
-                          </p>
+                          <a href="{{ url('/ong/'.$Experiencia->owner->prettyUrl->url) }}" target="_blank" style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; text-decoration:none; color:#545454;">
+                            <p style="margin-bottom: 0;">
+                              <img src="{{ asset('img/dummy_ong-icon.png') }}" alt="{{ ucfirst($Experiencia->owner->nome) }}" title="{{ ucfirst($Experiencia->owner->nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px"/>
+                            </p>
+                            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0;">
+                                {{ ucfirst($Experiencia->owner->nome) }}
+                            </p>
+                          </a>
                           <p style="margin-bottom: 0;">
                             <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank" style="color:transparent!important;">
                               <img src="{{ asset('img/email/vivala-email-terceiros-fb-icone.png') }}" alt="{{ trans('global.social_network_facebook') }}" title="{{ trans('global.social_network_facebook') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
@@ -242,8 +244,8 @@
                           </p>
                         </div>
                         <div style="display:inline-block; vertical-align:top; min-width:320px; width:320px; max-width:320px; margin-left:15px;">
-                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; font-weight:200; color:#545454; text-align:justify; ">
-                            {{ $Experiencia->owner->descricao }}
+                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; text-align:justify; margin-top:0;">
+                            {{ $Experiencia->owner->descricao = (strlen($Experiencia->owner->descricao) > 13) ? substr($Experiencia->owner->descricao,0,260).' [...]' : $Experiencia->owner->descricao }}
                           </p>
                         </div>
                       </div>
