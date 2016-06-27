@@ -66,31 +66,31 @@
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tbody>
-                <!-- Logo da VIVALÁ -->
-                <tr align="center">
-                  <td>
-                    <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
-                      <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" border="0" min-width="107px" width="auto" max-width="600px" min-height="59px" height="59px" max-height="59px" style="display:block; margin:auto;">
-                    </a>
-                  </td>
-                </tr>
-                <!-- Fim do Logo da VIVALÁ -->
-                <!-- Separador -->
-                <tr align="center">
-                  <td>
-                    <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
-                  </td>
-                </tr>
-                <!-- Fim do Separador -->
-                <!-- Título do EMAIL -->
-                <tr align="center">
-                  <td>
-                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
-                      O seu pedido de cancelamento foi efetivado
-                    </h2>
-                  </td>
-                </tr>
-                <!-- Fim do Título do EMAIL -->
+                  <!-- Logo da VIVALÁ -->
+                  <tr align="center">
+                    <td>
+                      <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
+                        <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" border="0" min-width="107px" width="auto" max-width="600px" min-height="59px" height="59px" max-height="59px" style="display:block; margin:auto;">
+                      </a>
+                    </td>
+                  </tr>
+                  <!-- Fim do Logo da VIVALÁ -->
+                  <!-- Separador -->
+                  <tr align="center">
+                    <td>
+                      <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
+                    </td>
+                  </tr>
+                  <!-- Fim do Separador -->
+                  <!-- Título do EMAIL -->
+                  <tr align="center">
+                    <td>
+                      <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
+                        O seu pedido de cancelamento foi efetivado
+                      </h2>
+                    </td>
+                  </tr>
+                  <!-- Fim do Título do EMAIL -->
                 </tbody>
               </table>
             </div>
