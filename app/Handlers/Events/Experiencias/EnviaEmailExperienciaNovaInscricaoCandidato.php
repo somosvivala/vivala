@@ -33,7 +33,7 @@ class EnviaEmailExperienciaNovaInscricaoCandidato {
 	public function handle(NovaInscricaoExperiencia $event)
 	{
 		// Usa o método enviaEmailExperienciaNovaInscricaoCandidato do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaNovaInscricaoCandidato($event);
+		$this->mailSenderRepository->enviaEmailExperienciaNovaInscricaoCandidato($event->experienciaID, $event->perfilID);
 	}
 
 }
