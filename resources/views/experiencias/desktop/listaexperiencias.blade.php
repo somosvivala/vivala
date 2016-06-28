@@ -70,7 +70,7 @@
                                         @endforeach
                                     </div>
                                 </div>
-                                <div class="descricao">{{ $Experiencia->descricao }}</div>
+                                <div class="descricao">{{ $Experiencia->descricao_na_listagem }}</div>
                             </div>
                             <div class="row text-center margin-t-1">
                                 <span class="col-xs-12 negrito-exp">R$ {{ $Experiencia->preco }}</span>

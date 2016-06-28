@@ -38,7 +38,7 @@
                 <a class="restaurantes logger-ativo" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                     {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
-            </li>       
+            </li>
         </ul>
         <div class="tab-content">
             <div role="tabpanel" class="tab-pane" id="rodoviario">
@@ -88,9 +88,9 @@
                             <div class="col-xs-11">{{ $Informacao->descricao }}</div>
                     </div>
                     @endforeach
-                    @if($Experiencia->descricao!="")
+                    @if($Experiencia->detalhes!="")
                         <span class="col-xs-12 negrito-exp margin-t-1 margin-b-1">Detalhes da experiência</span>
-                        <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
+                        <span class="col-xs-12">{{ $Experiencia->detalhes }}</span>
                     @endif
                 </div>
                 <div class="row text-center padding-t-1">

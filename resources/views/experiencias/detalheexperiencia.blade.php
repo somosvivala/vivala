@@ -54,9 +54,9 @@
             </div>
         </div>
         @endforeach
-        @if($Experiencia->descricao!="")
+        @if($Experiencia->detalhes!="")
         <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
-        <span class="col-xs-12">{{ $Experiencia->descricao }}</span>
+        <span class="col-xs-12">{{ $Experiencia->detalhes }}</span>
         @endif
     </div>
 
