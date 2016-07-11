@@ -896,6 +896,7 @@ return[
     'wannatravel_subtitle' => 'Choose your transport and accommodation, book restaurants and search for entertainment',
     'wannatravel_trip_already_know' => 'Already know where to go?',
     'wannatravel_trip_setup' => 'Build your trip',
+    'wannatravel_trip_experiences' => 'Experiences',
     'wannatravel_trip_restaurants' => 'Restaurants',
     'wannatravel_trip_hotels_flights_packs' => 'Accommodation, Flights & Packages',
     'wannatravel_trip_bus_drive' => 'Bus road tickets',

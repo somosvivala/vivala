@@ -40,7 +40,7 @@ var ajaxChefsClub = function() {
             ajaxChefsClub();
         });
     });
-    
+
 };
 
 jQuery(document).ready(function($) {

@@ -333,7 +333,7 @@ div.foto {
     }
 }
 .lista-border{
-    padding: 0.5em;
+    padding: 0 0.5em;
     list-style: none;
     border: 1px solid @cor-primaria;
     display: block;
@@ -343,13 +343,25 @@ div.foto {
         float: left;
         text-align: center;
         +li{
-            border-left: 1px solid @cor-primaria;
+          border-left: 1px solid @cor-primaria;
+        }
+        &:active,
+        &:hover{
+          color: #FFF!important;
+          background-color: @cor-primaria;
         }
         a {
-            text-decoration: none;
+          display: block;
+          height: 100%;
+          text-decoration: none;
+          padding-top: 1rem;
+          padding-bottom: 1rem;
+          &:active,
+          &:hover{
+            color: #FFF;
+          }
         }
-
-    }
+      }
 }
 // Arredonda as bordas (usando nas fotos)
 .round {

@@ -951,6 +951,7 @@ return[
     'wannatravel_subtitle' => 'Encontre transporte, hospedagem e restaurantes para todo tipo de experiência!',
     'wannatravel_trip_already_know' => 'Já sabe para onde ir?',
     'wannatravel_trip_setup' => 'Monte sua viagem',
+    'wannatravel_trip_experiences' => 'Experiências',
     'wannatravel_trip_restaurants' => 'Restaurantes',
     'wannatravel_trip_hotels_flights_packs' => 'Vôos, Hospedagem e Pacotes',
     'wannatravel_trip_bus_drive' => 'Passagens rodoviárias',
