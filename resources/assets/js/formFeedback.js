@@ -1,3 +1,8 @@
+/*
+* Formulário de Feedback da Plataforma
+* ../paginas/contato#
+*/
+
 $(function() {
 
     //token do laravel para ajax
@@ -5,7 +10,7 @@ $(function() {
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
-    /** Funcões para Upload */
+    // Funcões para Upload
     $('#form-feedback').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),
@@ -14,8 +19,6 @@ $(function() {
             redirect = frm.data('redirect'),
             loading = frm.data('loading');
 
-        console.log("loading -> " + loading);
-
         if (loading && loading != "") {
             $('input:submit').hide();
             $('#'+loading).show();
@@ -23,7 +26,7 @@ $(function() {
 
         $.ajax({
             type: frm.attr('method'),
-            url: frm.attr('action'),    
+            url: frm.attr('action'),
             data: dataForm,
             contentType: false, //file
             processData: false,  //file
@@ -40,16 +43,14 @@ $(function() {
                 }
             },
             complete: function (data) {
-                
                 //Se tiver loading e tiver dado erro, voltar botao
                 if (loading && loading != "") {
                     $('input:submit').show();
                     $('#'+loading).hide();
                 }
-
             }
         });
+
     });
 
 });
-

@@ -1,7 +1,6 @@
-
 /**
- * Metodo para mostrar a sweetAlert de DELETE de InscricaoExperiencia
- */
+* Metodo para mostrar a sweetAlert de DELETE de InscricaoExperiencia
+*/
 var confirmaInscricaoExperiencia = function (ev) {
     ev.preventDefault();
 
@@ -27,10 +26,9 @@ var confirmaInscricaoExperiencia = function (ev) {
     });
 };
 
-
 /**
- * Metodo para disparar um Ajax de POST para confirmar uma InscricaoExperiencia
- */
+* Metodo para disparar um Ajax de POST para confirmar uma InscricaoExperiencia
+*/
 var ajaxConfirmaInscricaoExperiencia = function (target) {
 
     var parentLinha = $(target).parents('.inscricao-experiencia-item');
@@ -69,8 +67,8 @@ var ajaxConfirmaInscricaoExperiencia = function (target) {
 };
 
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertSucessoConfirmaInscricaoExperiencia = function() {
     swal({
         type: "success",
@@ -82,10 +80,9 @@ var sweetAlertSucessoConfirmaInscricaoExperiencia = function() {
     });
 };
 
-
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertErroConfirmaInscricaoExperiencia = function() {
     swal({
         type: "error",
@@ -95,11 +92,9 @@ var sweetAlertErroConfirmaInscricaoExperiencia = function() {
     });
 };
 
-
 /**
- * METODOS PARA DELETE
- */
-
+* METODOS PARA DELETE
+*/
 
 /**
  * Metodo para mostrar a sweetAlert de DELETE de InscricaoExperiencia
@@ -129,10 +124,9 @@ var confirmaCancelaInscricaoExperiencia = function (ev) {
     });
 };
 
-
 /**
- * Metodo para disparar um Ajax de POST para confirmar uma InscricaoExperiencia
- */
+* Metodo para disparar um Ajax de POST para confirmar uma InscricaoExperiencia
+*/
 var ajaxCancelaInscricaoExperiencia = function (target) {
 
     var parentLinha = $(target).parents('.inscricao-experiencia-item');
@@ -171,8 +165,8 @@ var ajaxCancelaInscricaoExperiencia = function (target) {
 };
 
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertSucessoCancelaInscricaoExperiencia = function() {
     swal({
         type: "success",
@@ -184,10 +178,9 @@ var sweetAlertSucessoCancelaInscricaoExperiencia = function() {
     });
 };
 
-
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertErroCancelaInscricaoExperiencia = function() {
     swal({
         type: "error",
@@ -196,7 +189,3 @@ var sweetAlertErroCancelaInscricaoExperiencia = function() {
         showCancelButton: false
     });
 };
-
-
-
-

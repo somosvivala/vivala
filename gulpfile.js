@@ -35,6 +35,7 @@ elixir(function(mix) {
 
   // De toda a plataforma
   mix.scripts([
+      /* Scripts NPM-BOWER */
       '../../assets/bower/jquery/dist/jquery.js',
       '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
       '../../assets/bower/outdated-browser/outdatedbrowser/outdatedbrowser.min.js',
@@ -55,9 +56,11 @@ elixir(function(mix) {
       '../../assets/bower/tether/dist/js/tether.min.js',
       '../../assets/bower/tether-drop/dist/js/drop.min.js',
       '../../assets/bower/tether-tooltip/dist/js/tooltip.min.js',
+      '../../assets/bower/rangeslider.js/dist/rangeslider.min.js',
+      /* Bibliotecas prontas não adicionadas por npm/bower */
+      '../../assets/js/bibliotecas/jquery.maskmoney.min.js',
       /* Logger antes dos outros */
       '../../assets/js/logger-config.js',
-      '../../assets/bower/rangeslider.js/dist/rangeslider.min.js',
       /* Scripts Vivalá */
       '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',
@@ -87,30 +90,21 @@ elixir(function(mix) {
       '../../assets/js/buscaPerfil.js',
       '../../assets/js/menu.js',
       '../../assets/js/mascaraCampos.js',
-      /* Autocomplete de buscas de cidade */
       '../../assets/js/autocompleteBuscas.js',
-
-      /* Scripts das Experiencias */
-
-      //array fontawesome
-      '../../assets/js/fontAwesomeIconsArray.js',
-
-
-      '../../assets/js/cropFotoExperiencia.js',
-      '../../assets/js/cropFotoOwnerExperiencia.js',
-      '../../assets/js/info-form-experiencias.js',
-      '../../assets/js/data-ocorrencia-experiencias.js',
-      '../../assets/js/categoria-experiencia.js',
-      '../../assets/js/inscricoes-experiencia.js',
-      '../../assets/js/status-experiencia.js',
-      '../../assets/js/experiencias.js',
-
-      /* ClickbusPayment Mercado Pago Gateway*/
-      '../../assets/js/clickbus-payments.js',
-
-      /* featureCotaViagem */
       '../../assets/js/cotacaoViagem.js',
 
+      /* Experiências */
+      '../../assets/js/fontAwesomeIconsArray.js',
+      '../../assets/js/experienciasCropFoto.js',
+      '../../assets/js/experienciasCropFotoOwner.js',
+      '../../assets/js/experienciasInfoForm.js',
+      '../../assets/js/experienciasDataOcorrencia.js',
+      '../../assets/js/experienciasCategoria.js',
+      '../../assets/js/experienciasInscricoes.js',
+      '../../assets/js/experienciasEstado.js',
+      '../../assets/js/experiencias.js',
+      /* ClickbusPayment Mercado Pago Gateway */
+      '../../assets/js/clickbus-payments.js',
 	], 'public/js/vendor.js');
 
   // Apenas da view de Welcome
@@ -128,8 +122,9 @@ elixir(function(mix) {
     /* Scripts NPM-BOWER */
     '../../assets/bower/jquery/dist/jquery.js',
     '../../assets/bower/bootstrap/dist/js/bootstrap.min.js',
+    /* Bibliotecas prontas não adicionadas por npm/bower */
+    '../../assets/js/bibliotecas/jquery.capslockstate.min.js',
     /* Scripts Vivalá */
-    '../../assets/js/jquery.capslockstate.min.js',
     '../../assets/js/mobile.js',
   ], 'public/js/mobile.js');
 

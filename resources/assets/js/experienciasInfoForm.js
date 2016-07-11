@@ -3,9 +3,8 @@ var tempoDigitando = null;
 
 // Shorthand for $( document ).ready()
 $(function() {
-
     bindaInputsFontAwesome();
-
+    bindaMascaraValorExperiencia();
 });
 
 /**
@@ -24,10 +23,9 @@ var bindaInputsFontAwesome = function() {
     });
 };
 
-
 /**
- * Funcao para testar se as classes do input sao classes do fontAwesome
- */
+* Funcao para testar se as classes do input sao classes do fontAwesome
+*/
 var testaClasseFontAwesome = function(target) {
 
     //console.log('inside testaRegex: target : ');
@@ -41,7 +39,6 @@ var testaClasseFontAwesome = function(target) {
         //pegando novas classes para o icone
         var novasClasses = fontAwesomeArray[isFontAwesome];
 
-
         var icone = $(target).parents('.container-campos-fontawesome').find('i.icone-show');
         var classesIcone = icone.attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
 
@@ -51,13 +48,12 @@ var testaClasseFontAwesome = function(target) {
         //settando as novas classes do icone
         icone.attr('class', classesIcone + " " + novasClasses);
     }
-
 }
 
 /**
- * Funcao para adicionar uma nova linha de InformacaoExperiencia
- * no formulario de create/edit de experiencias
- */
+* Funcao para adicionar uma nova linha de InformacaoExperiencia
+* no formulario de create/edit de experiencias
+*/
 var adicionaInfoExperiencia = function(ev) {
     ev.preventDefault();
 
@@ -90,14 +86,12 @@ var adicionaInfoExperiencia = function(ev) {
             //console.log('ajax error');
         }
     });
-
 };
 
-
 /**
- * Funcao para remover uma linha de InformacaoExperiencia
- * no formulario de create/edit de experiencias.
- */
+* Funcao para remover uma linha de InformacaoExperiencia
+* no formulario de create/edit de experiencias.
+*/
 var removeInfoExperiencia = function(ev) {
 
     ev.preventDefault();
@@ -130,8 +124,12 @@ var removeInfoExperiencia = function(ev) {
         error: function (jqXHR, textStatus, errorThrown) {
         }
     });
-
-
-
 };
 
+/**
+* Funcao para aplicar a mascara no campo VALOR do
+* formulario de create/edit de experiencias.
+*/
+var bindaMascaraValorExperiencia = function(){
+  $('#experiencia-valor').maskMoney({'prefix': 'R$'});
+}

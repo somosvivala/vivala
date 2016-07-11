@@ -1,7 +1,7 @@
 
 /**
- * Metodo para mostrar a sweetAlert de DELETE de CategoriaExperiencia
- */
+* Metodo para mostrar a sweetAlert de DELETE de CategoriaExperiencia
+*/
 var confirmaDeleteCategoriaExperiencia = function (ev) {
     ev.preventDefault();
 
@@ -27,10 +27,9 @@ var confirmaDeleteCategoriaExperiencia = function (ev) {
     });
 };
 
-
 /**
- * Metodo para disparar um Ajax de DELETE em uma CategoriaExperiencia
- */
+* Metodo para disparar um Ajax de DELETE em uma CategoriaExperiencia
+*/
 var ajaxDeleteCategoriaExperiencia = function (target) {
 
     var parentLinha = $(target).parents('.categoria-experiencia-item');
@@ -72,8 +71,8 @@ var ajaxDeleteCategoriaExperiencia = function (target) {
 };
 
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertSucessoDeleteCategoriaExperiencia = function() {
     swal({
         type: "success",
@@ -85,10 +84,9 @@ var sweetAlertSucessoDeleteCategoriaExperiencia = function() {
     });
 };
 
-
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertErroDeleteCategoriaExperiencia = function() {
     swal({
         type: "error",
@@ -97,4 +95,3 @@ var sweetAlertErroDeleteCategoriaExperiencia = function() {
         showCancelButton: false
     });
 };
-

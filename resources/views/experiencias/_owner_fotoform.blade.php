@@ -1,4 +1,4 @@
-{!! Form::label('foto_owner', 'Foto da empresa/projeto que promove a experiencia') !!}
+{!! Form::label('foto_owner', 'Foto da Empresa/Projeto que promove a Experiência') !!}
 {!! Form::hidden('foto_owner') !!}
 <div class="col-sm-12">
     <div class="text-center">

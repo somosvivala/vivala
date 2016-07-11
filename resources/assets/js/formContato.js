@@ -1,11 +1,15 @@
-$(function() {
+/*
+* Formulário de Contato da Plataforma
+* ../paginas/contato
+*/
 
+$(function() {
     //token do laravel para ajax
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
     });
 
-    /** Funcões para Upload */
+    // Funcões para Upload
     $('#form-contato').submit(function (ev) {
         ev.preventDefault();
         var frm = $(this),
@@ -21,7 +25,7 @@ $(function() {
 
         $.ajax({
             type: frm.attr('method'),
-            url: frm.attr('action'),    
+            url: frm.attr('action'),
             data: dataForm,
             contentType: false, //file
             processData: false,  //file
@@ -37,16 +41,14 @@ $(function() {
                 }
             },
             complete: function (data) {
-                
                 //Se tiver loading e tiver dado erro, voltar botao
                 if (loading && loading != "") {
                     $('input:submit').show();
                     $('#'+loading).hide();
                 }
-
             }
+
         });
     });
 
 });
-

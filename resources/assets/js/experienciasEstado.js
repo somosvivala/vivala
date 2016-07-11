@@ -1,7 +1,7 @@
 
 /**
- * Metodo para mostrar a sweetAlert de confirmacao de Publicar uma Experiencia
- */
+* Metodo para mostrar a sweetAlert de confirmacao de Publicar uma Experiencia
+*/
 var confirmaPublicarExperiencia = function (ev) {
     ev.preventDefault();
 
@@ -29,10 +29,9 @@ var confirmaPublicarExperiencia = function (ev) {
 
 
 /**
- * Metodo para disparar um POST para publicar uma experiencia
- */
+* Metodo para disparar um POST para publicar uma experiencia
+*/
 var ajaxPublicaExperiencia = function (target) {
-
     var parentLinha = $(target).parents('.experiencia-item');
 
     //sweetalert de loading :)
@@ -69,8 +68,8 @@ var ajaxPublicaExperiencia = function (target) {
 };
 
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertSucessoPublicaExperiencia = function() {
     swal({
         type: "success",
@@ -82,10 +81,9 @@ var sweetAlertSucessoPublicaExperiencia = function() {
     });
 };
 
-
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertErroPublicaExperiencia = function() {
     swal({
         type: "error",
@@ -95,17 +93,15 @@ var sweetAlertErroPublicaExperiencia = function() {
     });
 };
 
+/**
+* ------
+*  Metodos para desativar a Experiencia
+* ------
+*/
 
 /**
- * ------
- *  Metodos para desativar a Experiencia
- * ------
- */
-
-
-/**
- * Metodo para mostrar a sweetAlert de confirmacao de Desativar uma Experiencia
- */
+* Metodo para mostrar a sweetAlert de confirmacao de Desativar uma Experiencia
+*/
 var confirmaDesativarExperiencia = function (ev) {
     ev.preventDefault();
 
@@ -131,10 +127,9 @@ var confirmaDesativarExperiencia = function (ev) {
     });
 };
 
-
 /**
- * Metodo para disparar um POST para publicar uma experiencia
- */
+* Metodo para disparar um POST para publicar uma experiencia
+*/
 var ajaxDesativaExperiencia = function (target) {
 
     var parentLinha = $(target).parents('.experiencia-item');
@@ -173,8 +168,8 @@ var ajaxDesativaExperiencia = function (target) {
 };
 
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertSucessoDesativaExperiencia = function() {
     swal({
         type: "success",
@@ -186,10 +181,9 @@ var sweetAlertSucessoDesativaExperiencia = function() {
     });
 };
 
-
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertErroDesativaExperiencia = function() {
     swal({
         type: "error",
@@ -198,5 +192,3 @@ var sweetAlertErroDesativaExperiencia = function() {
         showCancelButton: false
     });
 };
-
-

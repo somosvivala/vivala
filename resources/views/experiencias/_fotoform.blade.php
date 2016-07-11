@@ -1,4 +1,4 @@
-{!! Form::label('foto_experiencia', 'Foto da experiencia') !!}
+{!! Form::label('foto_experiencia', 'Foto da Experiência') !!}
 {!! Form::hidden('foto_experiencia') !!}
 <div class="col-sm-12">
     <div class="text-center">

@@ -1,7 +1,6 @@
-
 /**
- * Metodo para mostrar a sweetAlert de DELETE de Experiencia
- */
+* Metodo para mostrar a sweetAlert de DELETE de Experiencia
+*/
 var confirmaDeleteExperiencia = function (ev) {
     ev.preventDefault();
 
@@ -27,12 +26,10 @@ var confirmaDeleteExperiencia = function (ev) {
     });
 };
 
-
 /**
- * Metodo para disparar um Ajax de DELETE em uma Experiencia
- */
+* Metodo para disparar um Ajax de DELETE em uma Experiencia
+*/
 var ajaxDeleteExperiencia = function (target) {
-
     var parentLinha = $(target).parents('.experiencia-item');
 
     //sweetalert de loading :)
@@ -73,8 +70,8 @@ var ajaxDeleteExperiencia = function (target) {
 };
 
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertSucessoDeleteExperiencia = function() {
     swal({
         type: "success",
@@ -86,10 +83,9 @@ var sweetAlertSucessoDeleteExperiencia = function() {
     });
 };
 
-
 /**
- * Funcao para mostrar uma sweetAlert de sucesso
- */
+* Funcao para mostrar uma sweetAlert de sucesso
+*/
 var sweetAlertErroDeleteExperiencia = function() {
     swal({
         type: "error",
@@ -98,4 +94,3 @@ var sweetAlertErroDeleteExperiencia = function() {
         showCancelButton: false
     });
 };
-

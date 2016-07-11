@@ -2,7 +2,7 @@
 
     {!! Form::hidden('_token', csrf_token()) !!}
     <div class="row" id="lista-experiencias">
-        <h2 class="col-sm-12">Gerenciamento das inscrições</h2>
+        <h2>Gerenciamento das inscrições</h2>
 
         @foreach ($Experiencias as $experiencia)
 
