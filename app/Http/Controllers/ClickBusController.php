@@ -627,7 +627,7 @@ class ClickBusController extends Controller
             $extra = new \stdClass();
             $extra->embarque = $retorno["ida_departure"];
             $extra->desembarque = $retorno["ida_arrival"];
-            $extra->data_embarque = $retorno["ida_date"];
+            $extra->data_embarque = $retorno["ida_data"];
             $extra->total = $retorno["total"];
 
             //disparando o evento avisando que ocorreu uma acao
