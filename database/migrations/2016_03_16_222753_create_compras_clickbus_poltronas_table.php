@@ -19,31 +19,27 @@ class CreateComprasClickbusPoltronasTable extends Migration
             $table->integer('compra_id')->nullable();
             $table->foreign('compra_id')
                 ->references('id')
-                ->on('compras_clickbus')
-                ->onDelete('cascade');
+                ->on('compras_clickbus');
 
             //fk para id em clickbusplaces, esse id é o nosso
             //id interno, nao o waypoint_id da clickbus
             $table->integer('departure_id')->nullable();
             $table->foreign('departure_id')
                 ->references('id')
-                ->on('ClickBusPlaces')
-                ->onDelete('cascade');
+                ->on('ClickBusPlaces');
 
             //fk para id em clickbusplaces, esse id é o nosso
             //id interno, nao o waypoint_id da clickbus
             $table->integer('arrival_id')->nullable();
             $table->foreign('arrival_id')
                 ->references('id')
-                ->on('ClickBusPlaces')
-                ->onDelete('cascade');
+                ->on('ClickBusPlaces');
 
             //fk para id em clickbuscompanies
             $table->integer('viacao_id')->nullable();
             $table->foreign('viacao_id')
                 ->references('id')
-                ->on('ClickBusCompanies')
-                ->onDelete('cascade');
+                ->on('ClickBusCompanies');
 
             $table->string('localizer')->nullable();
             $table->string('passenger_name')->nullable();
