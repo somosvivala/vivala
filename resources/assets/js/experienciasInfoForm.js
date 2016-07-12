@@ -153,7 +153,7 @@ function atualizaContador(maxlength, textContainer, msgContainer) {
     else if(faltando <= Math.trunc(maxlength/4)) cor = coralerta;
 
     jQuery(msgContainer).css('color', cor);
-    jQuery(msgContainer).text('Faltam ' + faltando + ' caracteres.');
+    jQuery(msgContainer).text('Falta(m) ' + faltando + ' caractere(s).');
 }
 
 /*
