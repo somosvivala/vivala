@@ -47,7 +47,6 @@ class ClickBusSeeder extends Seeder {
                 $array_insert['place_position'] = DB::raw("ST_GeomFromText('POINT({$place->place->longitude} {$place->place->latitude})', 4326)");
             }
             DB::table('ClickBusPlaces')->insert($array_insert);
-            echo "ID -> $place->id  em ClickbusPlaces \n";
         }
 
         DB::table('ClickBusCompanies')->delete();
@@ -65,7 +64,6 @@ class ClickBusSeeder extends Seeder {
                     'nome'     => $company->name,
                     'logo_url' => $company->logo->url
                 ));
-                echo "ID -> $company->id  em ClickBusCompanies \n";
             }
         }
     }
