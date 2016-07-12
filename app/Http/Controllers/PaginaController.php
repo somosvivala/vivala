@@ -41,9 +41,13 @@ class PaginaController extends Controller {
      */
     public function getMenu($view = null)
     {
-        $paginas = Auth::user()->paginas;
-        $paginas = $paginas->take(3);
-        // dd($paginas);
+        //Se estiver logado
+        if ( Auth::user() ) {
+            $paginas = Auth::user()->paginas->take(3);
+        } else {
+            $paginas = array();
+        }
+
         $view->with('paginas', $paginas);
     }
 
