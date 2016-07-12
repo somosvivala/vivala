@@ -131,5 +131,55 @@ var removeInfoExperiencia = function(ev) {
 * formulario de create/edit de experiencias.
 */
 var bindaMascaraValorExperiencia = function(){
-  $('#experiencia-valor').maskMoney({'prefix': 'R$'});
+  $('#experiencia-valor').maskMoney();
+}
+
+/*
+* Funcao para atualizar o contador de caracteres
+* @var maxlength = valor da maxlength da textarea
+* @var textContainer = textarea (container) de onde contarei os caracteres
+* @var msgContainer = container a onde vou reproduzir o texto de contagem,
+* use geralmente um span abaixo da caixa de texto
+*/
+function atualizaContador(maxlength, textContainer, msgContainer) {
+    var faltando = maxlength - jQuery(textContainer).val().length,
+        cor = '#000',
+        corpositiva = '#21A393',
+        cormedia = '#FAA324',
+        coralerta = '#CA161E';
+
+    if(faltando > Math.trunc(maxlength/2)) cor = corpositiva;
+    else if((faltando <= Math.trunc(maxlength/2)) && (faltando > Math.trunc(maxlength/4))) cor = cormedia;
+    else if(faltando <= Math.trunc(maxlength/4)) cor = coralerta;
+
+    jQuery(msgContainer).css('color', cor);
+    jQuery(msgContainer).text('Faltam ' + faltando + ' caracteres.');
+}
+
+/*
+* Funcao para contar o limite de caracteres da Descrição na Listagem
+* da Experiencia
+*/
+function contadorDescListagem(ev){
+  ev.preventDefault();
+
+  var textContainer = $('#experiencia-descricao-listagem'),
+      maxlength = textContainer.attr('maxlength'),
+      msgContainer = $('#experiencia-contador-descricao-listagem');
+
+  atualizaContador(maxlength, textContainer, msgContainer);
+}
+
+/*
+* Funcao para contar o limite de caracteres da Descrição Completa
+* da Experiencia
+*/
+function contadorDescCheia(ev){
+  ev.preventDefault();
+
+  var textContainer = $('#experiencia-descricao-cheia'),
+      maxlength = textContainer.attr('maxlength'),
+      msgContainer = $('#experiencia-contador-descricao-cheia');
+
+  atualizaContador(maxlength, textContainer, msgContainer);
 }

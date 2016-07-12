@@ -21,25 +21,39 @@
 
     {{-- Secao de selecao da ong/projeto da experiencia --}}
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        <i class='fa fa-2x fa-question-circle-o' title='Esse é o campo que identifica a instituição responsavel'></i>
-        {!! Form::label('projeto', 'Projeto Responsável', ['class' => 'row col-sm-12']) !!}
+        <div class="row">
+          {!! Form::label('projeto', 'Projeto Responsável', ['class' => 'col-lg-9']) !!}
+          <div class="col-lg-3 text-right">
+            <span>* Obrigatório</span>
+            <span> <abbr title="Esse é o campo que identifica o projeto responsável por esta experiência na plataforma."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+          </div>
+        </div>
         {!! Form::select('projeto', $ongs, (isset($experiencia) ? $experiencia->owner->id : []), ['id' => 'ong_select', 'class' => 'form-control']) !!}
     </div>
 
     {{-- Secao de insercao do nome do projeto/empresa responsavel --}}
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        <i class='fa fa-2x fa-question-circle-o' title='Esse é o nome que ira aparecer como a instituicao que está promovendo'></i>
-        {!! Form::label('owner_nome', 'Nome da empresa/Instituição responsável', ['class' => 'row col-sm-12']) !!}
+      <div class="row">
+        {!! Form::label('owner_nome', 'Nome da Empresa/Instituição Responsável', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Nome da Empresa/Instituição que está promovendo a experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
         {!! Form::text('owner_nome', null, ['placeholder' => 'Ex: Vivalá', 'class' => 'form-control']) !!}
     </div>
 
     {{-- Secao de insercao da descricao do projeto/empresa responsavel (enviada no email) --}}
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        <i class='fa fa-2x fa-question-circle-o' title='Essa descrição aparecerá no email enviado ao candidato'></i>
-        {!! Form::label('owner_descricao', 'Descrição da Empresa/Instituição responsável', ['class' => 'row col-sm-12']) !!}
-        {!! Form::textarea("owner_descricao", null, ['id'=>'descricao', 'placeholder'=> 'Ex: A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil. [...]', 'class' => 'form-control sem-resize sem-upper', 'rows' => 2]) !!}
+      <div class="row">
+        {!! Form::label('owner_descricao', 'Descrição da Empresa/Instituição responsável', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Descrição da Empresa/Instituição responsável que está promovendo a experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+      {!! Form::textarea("owner_descricao", null, ['id'=>'descricao-instituicao', 'placeholder'=> 'Ex: A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil. [...]', 'class' => 'form-control sem-resize sem-upper', 'rows' => 2]) !!}
     </div>
-
 
     {{-- Secao de trocar foto da experiencia --}}
     <div class="col-sm-12 margin-t-1 margin-b-1">
@@ -64,31 +78,71 @@
 
     {{-- Secao de seleção do local da experiencia --}}
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        {!! Form::label('campo-autocomplete-cidades', 'Cidade', ['class' => 'row col-sm-12']) !!}
-        <input id="campo-autocomplete-cidades" autocomplete="off" class="form-control autocomplete-cidades-ativo" type="text" placeholder="Ex: São Paulo" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
-        <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden" value="{{ isset($experiencia) ? $experiencia->local->id : "" }}">
-        <i class="fa fa-spin fa-spinner loading-search soft-hide laranja"></i>
+      <div class="row">
+        {!! Form::label('campo-autocomplete-cidades', 'Cidade', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Cidade onde a experiência será realizada."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+      <input id="campo-autocomplete-cidades" autocomplete="off" class="form-control autocomplete-cidades-ativo" type="text" placeholder="Ex: São Paulo" value="{{ isset($experiencia) ? $experiencia->local->nome : "" }}"/>
+      <input id="campo-autocomplete-cidades-hidden" name="cidade" autocomplete="off" type="hidden" value="{{ isset($experiencia) ? $experiencia->local->id : "" }}">
+      <i class="fa fa-spin fa-spinner loading-search soft-hide laranja"></i>
     </div>
+
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        {!! Form::label('endereco_completo', 'Endereço Completo', ['class' => 'row col-sm-12']) !!}
+      <div class="row">
+        {!! Form::label('endereco_completo', 'Endereço Completo', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Endereço onde a experiência será realizada."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
         {!! Form::text('endereco_completo', null, ['placeholder' => 'Ex: Rua do Rócio, 52, CJ 122, Vila Olímpia, São Paulo - SP', 'class' => 'form-control']) !!}
     </div>
 
     {{-- Secao de campos texto da experiencia --}}
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        {!! Form::label('descricao_na_listagem', 'Descrição na Listagem', ['class' => 'row col-sm-12']) !!}
-        {!! Form::textarea("descricao_na_listagem", null, ['id'=>'descricao_na_listagem', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
+      <div class="row">
+        {!! Form::label('descricao_na_listagem', 'Descrição na Listagem (máx: 85 caracteres)', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Descrição na listagem."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+      {!! Form::textarea("descricao_na_listagem", null, ['id'=>'experiencia-descricao-listagem', 'rows' => 3, 'maxlength' => 85, 'title'=> 'Descrição na Listagem', 'placeholder'=> 'Descrição na listagem', 'onkeyup' => 'contadorDescListagem(event)', 'onchange' => 'contadorDescListagem(event)', 'class' => 'form-control sem-resize sem-upper']) !!}
+      <div class="row margin-t-0-5 margin-r-0 text-right">
+        <span id="experiencia-contador-descricao-listagem"></span>
+      </div>
     </div>
+
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        {!! Form::label('descricao', 'Descrição', ['class' => 'row col-sm-12']) !!}
-        {!! Form::textarea("descricao", null, ['id'=>'descricao', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
+      <div class="row">
+        {!! Form::label('descricao', 'Descrição Completa (máx: 420 caracteres)', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Descrição completa."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+      {!! Form::textarea('descricao', null, ['id'=>'experiencia-descricao-cheia', 'rows' => 3, 'maxlength' => 420, 'title'=> 'Descrição', 'placeholder'=> 'Descrição', 'onkeyup' => 'contadorDescCheia(event)', 'onchange' => 'contadorDescCheia(event)', 'class' => 'form-control sem-resize sem-upper']) !!}
+      <div class="row margin-t-0-5 margin-r-0 text-right">
+        <span id="experiencia-contador-descricao-cheia"></span>
+      </div>
     </div>
+
     <div class="col-sm-12 margin-t-1 margin-b-1">
         {!! Form::label('detalhes', 'Detalhes da Experiência', ['class' => 'row col-sm-12']) !!}
-        {!! Form::textarea("detalhes", null, ['id'=>'detalhes', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
+        {!! Form::textarea('detalhes', null, ['id'=>'detalhes', 'title'=> trans('global.lbl_organization_about'), 'aria-label'=> trans('global.lbl_about'), 'placeholder'=> trans('global.lbl_organization_about'), 'class' => 'form-control sem-resize sem-upper', 'rows' => 3]) !!}
     </div>
     <div class="col-sm-12 margin-t-1 margin-b-1">
-        {!! Form::label('preco', 'Preço (em R$)', ['class' => 'row col-sm-12']) !!}
+      <div class="row">
+        {!! Form::label('preco', 'Preço (em R$)', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Preço/Valor da experiência que será realizada."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+
         {!! Form::text('preco', null, ['id' => 'experiencia-valor', 'placeholder' => 'Ex: 24.99', 'class' => 'form-control']) !!}
     </div>
 

@@ -17,7 +17,7 @@
         </ul>
 
         {{-- Importando conteudo --}}
-        @yield('gestao.experiencias.content');
+        @yield('gestao.experiencias.content')
 
     </div>
 
