@@ -22,6 +22,7 @@ class CompraClickbusPoltrona extends Model
     //Settando colunas que podem ser MassAssigned
     //AKA CompraClickBusPoltrona::create(['coluna' => 'valor']);
     protected $fillable = [
+        'id',
         'compra_id',
         'departure_id',
         'arrival_id',
