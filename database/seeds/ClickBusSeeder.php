@@ -4,6 +4,9 @@ use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use App\Configuracao;
 use App\Repositories\ClickBusRepository;
+use App\CompraClickbusPoltrona;
+use App\ClickBusCompany;
+use App\ClickBusPlace;
 
 class ClickBusSeeder extends Seeder {
 
@@ -19,6 +22,12 @@ class ClickBusSeeder extends Seeder {
 
     public function run()
     {
+        //pegando todas as poltronas que ja foram requisitadas
+        //elas tem fks para ClickBusPlaces e ClickBusCompanies, portanto precisam ser
+        //removidas antes do refresh dessas tabelas
+        $poltronas = CompraClickbusPoltrona::all();
+
+        DB::table('compras_clickbus_poltronas')->delete();
         DB::table('ClickBusPlaces')->delete();
 
         $clickbusPlaces = file_get_contents($this->clickBusRepository->url .'/places');
@@ -29,6 +38,7 @@ class ClickBusSeeder extends Seeder {
 
         foreach ($clickbusPlaces as $place) {
             $array_insert = array(
+                'id'               => $place->id,
                 'item_id'          => $place->id,
                 'station_id'       => $place->station_id,
                 'slug'             => $place->slug,
@@ -66,6 +76,21 @@ class ClickBusSeeder extends Seeder {
                 ));
             }
         }
+
+        //Aqui as inserções terminaram e as tabelas estao atualizadas
+        //hora de re-inserir as $poltronas
+
+        echo "\n\n === Insercoes finalizadas ";
+        echo "\n === Places: " . ClickBusPlace::count();
+        echo "\n === Companies: " . ClickBusCompany::count();
+
+        foreach ($poltronas as $poltrona) {
+            echo "re-inserindo poltrona: \n";
+            print_r($poltrona->toArray());
+            DB::table('compras_clickbus_poltronas')->insert($poltrona->toArray());
+        }
+
+
     }
 }
 
