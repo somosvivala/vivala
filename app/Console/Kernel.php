@@ -73,8 +73,8 @@ class Kernel extends ConsoleKernel
             }
         })->everyFiveMinutes();
 
-        //Fazendo refresh dos places e buscompanies da Clickbus semanalmente
-        $schedule->exec('php artisan db:seed --class="ClickBusSeeder" --force')->weeklyOn(6, '4:20');
+        //Fazendo refresh dos places e buscompanies da Clickbus diariamente
+        $schedule->exec('php artisan db:seed --class="ClickBusSeeder" --force')->dailyAt('4:25');
 
 
     }
