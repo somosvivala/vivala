@@ -145,11 +145,10 @@ class MailSenderRepository
     /*
     Mail::send('emails.experiencias.inscricaoconfirmadacandidato', [], function ($message) use () {
       //se estiver em production, manda email para a live
-      if(app()->environment('production'))
-        $message->to($user->email, $user->username)->subject('Vivalá - Experiência confirmada com sucesso!');
-      //se estiver em development, manda o email para a sandbox
-      else if(app()->environment('development'))
-        $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Experiência Confirmada para o Candidato');
+      if(env('APP_ENV') === 'production')
+        $message->to('cotacao@vivala.com.br', 'Vivalá')->subject('[COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
+      if(env('APP_ENV') === 'development')
+        $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
       $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
     });
     */
