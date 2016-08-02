@@ -58,7 +58,7 @@
                     {!! Form::label('proximas', 'Proximas Datas') !!}
                     <ul class="col-xs-12">
                     @foreach ($experiencia->ocorrencias as $ocorrencia)
-                        <li class="">
+                        <li>
                             <i class="fa fa-calendar"></i> &nbsp; {{ $ocorrencia->data_ocorrencia->format('d/m/Y') }}
                         </li>
                     @endforeach
@@ -77,15 +77,14 @@
                 <div class="col-xs-1 ">
                     {!! Form::label('status', 'Status') !!}
                     <p class="
-                        @if ($experiencia->status == 'publicada') 
-                            text-success 
-                        @else 
-                            text-warning 
-                        @endif"> {{ strtoupper($experiencia->status) }} </p>
+                        @if ($experiencia->status == 'publicada')
+                            text-success
+                        @else
+                            text-warning
+                        @endif"> <strong>{{ strtoupper($experiencia->status) }}</strong></p>
 
                 </div>
             </li>
         @endforeach
     </ul>
 </div>
-

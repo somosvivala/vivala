@@ -39,18 +39,18 @@ class StoreExperienciaRequest extends Request
         $rules = [
             'projeto'                   => "required|exists:ongs,id",
             'cidade'                    => "required|exists:cidades,id",
-            'descricao_na_listagem' 		=> "string|required|min:2",
-            'descricao'                 => "string|required|min:2",
-            'detalhes'                  => "string|required|min:2",
+            'descricao_na_listagem' 		=> "required|string|min:2|max:85",
+            'descricao'                 => "required|string|min:2|max:420",
+            'detalhes'                  => "required|string|min:2",
             'preco'                     => "required|numeric",
             'informacao-extra'          => "array",
             'datas-ocorrencia'          => "array",
             'categoria'                 => "array",
             'experiencia-foto-id'       => "required|exists:fotos,id",
             'owner-experiencia-foto-id' => "required|exists:fotos,id",
-            'owner_nome'                => "required|string|required",
-            'owner_descricao'           => "required|string|required",
-            'endereco_completo'         => "required|string|required"
+            'owner_nome'                => "required|string",
+            'owner_descricao'           => "required|string",
+            'endereco_completo'         => "required|string"
         ];
 
         //iterando sob as informacoes que sao em forma de array
