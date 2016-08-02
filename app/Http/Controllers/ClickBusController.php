@@ -562,9 +562,9 @@ class ClickBusController extends Controller
                 }
 
                 $departure_waypoint_id = $Trip->{"departure"}->{"waypoint"};
-                $departure_id = ClickBusPlace::where('item_id', $departure_waypoint_id)->get()->first()->id;
+                $departure_id = ClickBusPlace::find($departure_waypoint_id)->id;
                 $arrival_waypoint_id =  $Trip->{"arrival"}->{"waypoint"};
-                $arrival_id = ClickBusPlace::where('item_id', $arrival_waypoint_id)->get()->first()->id;
+                $arrival_id = ClickBusPlace::find($arrival_waypoint_id)->id;
 
                 $departure_trip_date = $Trip->{"departure"}->{"schedule"}->{"date"} . " " . $Trip->{"departure"}->{"schedule"}->{"time"} . ":00";
                 $arrival_trip_date = $Trip->{"arrival"}->{"schedule"}->{"date"} . " " . $Trip->{"arrival"}->{"schedule"}->{"time"} . ":00";
@@ -627,7 +627,7 @@ class ClickBusController extends Controller
             $extra = new \stdClass();
             $extra->embarque = $retorno["ida_departure"];
             $extra->desembarque = $retorno["ida_arrival"];
-            $extra->data_embarque = $retorno["ida_date"];
+            $extra->data_embarque = $retorno["ida_data"];
             $extra->total = $retorno["total"];
 
             //disparando o evento avisando que ocorreu uma acao
