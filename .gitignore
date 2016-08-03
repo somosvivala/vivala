@@ -17,3 +17,5 @@ composer.lock
 composer.phar
 tags
 /public/js/welcome.js
+public/js/mobile.js
+/public/js/mobile.js

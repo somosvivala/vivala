@@ -25,7 +25,9 @@
         </div>
         <span class="col-xs-12">Pague com boleto bancário:</span>
         <span class="col-xs-12 margin-t-1 margin-b-4">
-            <i class="fa fa-barcode sqr-icon-bg"></i>
+            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#modal-gerar-boleto">
+                <i class="fa fa-barcode sqr-icon-bg"></i>
+            </button>
         </span>
         <a href="{{ url('experiencias') . '/' . $Experiencia->id }}">
             <i class="fa fa-times x-preto"></i>
@@ -33,4 +35,30 @@
     </div>
     <a class="btn-full-bottom" href="{{ url('experiencias') }}">Ver mais experiências</a>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-gerar-boleto" tabindex="-1" role="dialog" aria-labelledby="modal-gerar-boleto" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">Preencha os campos para gerar o boleto</h4>
+      </div>
+      <div class="modal-body">
+
+        {!! Form::open(['url' => '/experiencias/gerarboleto/']) !!}
+            @include('experiencias._form_dadosboleto')
+        {!! Form::close() !!}
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-acao btn-primary">Gerar boleto</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 @endsection

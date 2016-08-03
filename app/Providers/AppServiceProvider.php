@@ -67,5 +67,12 @@ class AppServiceProvider extends ServiceProvider {
           'App\Repositories\FotosRepository'
       );
 
+      //bindando a interface com a implementacao,
+      //assim o laravel servira automaticamente uma intancia
+      //de BuscaCEPRepository quando requisitada nos controllers
+      $this->app->bind(
+          'App\Interfaces\BuscaCEPRepositoryInterface',
+          'App\Repositories\BuscaCEPRepository'
+      );
 	}
 }

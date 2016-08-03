@@ -1,9 +1,11 @@
 <?php namespace App\Repositories;
 
+use App\Interfaces\BuscaCEPRepositoryInterface;
+
 /**
  * Repositorio para buscar CEP online
  */
-class BuscaCEPRepository
+class BuscaCEPRepository extends BuscaCEPRepositoryInterface
 {
     public $URL = 'https://viacep.com.br/ws/';
     public $FLAG_RETORNO_JSON = '/json';
@@ -26,7 +28,7 @@ class BuscaCEPRepository
         $result = file_get_contents($this->URL.$cep.$this->FLAG_RETORNO_JSON, false, $context);
 
         //Testando o retorno para saber se deu erro
-        $deuErro = preg_match('/Bad Request/', $result);
+        $deuErro = ( preg_match('/Bad Request/', $result) || preg_match('/erro/', $result) );
 
         return $deuErro ? false : json_decode($result);
     }

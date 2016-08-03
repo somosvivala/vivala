@@ -13,6 +13,7 @@ use App\Ong;
 use App\Vaga;
 use App\Cidade;
 use App\Interfaces\LocaisRepositoryInterface;
+use App\Interfaces\BuscaCEPRepositoryInterface;
 
 use Illuminate\Database\Eloquent\Collection;
 
@@ -20,13 +21,15 @@ class SearchController extends Controller {
 
     //instancia de quem lida com os locais
     private $locaisRepository;
+    private $buscaCEPRepository;
 
     /**
      * Construtor recebendo instancia dos repositorios que ele precisa
      */
-    function __construct(LocaisRepositoryInterface $repository)
+    function __construct(LocaisRepositoryInterface $repository, BuscaCepRepositoryInterface $CEPRepository)
     {
         $this->locaisRepository = $repository;
+        $this->buscaCEPRepository = $CEPRepository;
     }
 
     //Metodo para pegar cidades de um estado
@@ -35,8 +38,6 @@ class SearchController extends Controller {
         $cidades = Estado::findOrFail($idEstado)->cidades;
         return Response::json(array('error' => 0, 'cidades' => $cidades));
     }
-    
-
 
     /**
      * Metodo para filtrar Ongs por POST,
@@ -51,15 +52,11 @@ class SearchController extends Controller {
         $cidade_id = Request::get('filtro_cidade');
         $ongs = new Collection();
 
- 
-        
         //Filtrando resultados pelas categorias
         if ($categoriaOng && $categoriaOng != "null") {
             $ongsByCategoria = CategoriaOng::findOrFail($categoriaOng)->ongs;
-            $ongs = $ongs->merge($ongsByCategoria);            
-        } 
-
-
+            $ongs = $ongs->merge($ongsByCategoria);
+        }
 
         //Fitrando resultados com base no nome
         if ($nome) {
@@ -206,6 +203,19 @@ class SearchController extends Controller {
         $Cidades =  $this->locaisRepository->getCidadesByQuery(Request::get('query'));
         return view('busca._autocompleteCidades')->with('Cidades', $Cidades);
     }
+
+    /**
+     * Metodo para buscar os detalhes de um cep
+     */
+    public function getCep()
+    {
+        $stringCEP = Request::get('stringCEP');
+
+        $retorno = $this->buscaCEPRepository->getCEP($stringCEP);
+
+        return ($retorno ? json_encode($retorno) : ['errorMsg' => 'CEP Inválido']);
+    }
+
 
 
 }

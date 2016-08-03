@@ -92,6 +92,7 @@ elixir(function(mix) {
       '../../assets/js/mascaraCampos.js',
       '../../assets/js/autocompleteBuscas.js',
       '../../assets/js/cotacaoViagem.js',
+      '../../assets/js/buscaCEP.js',
 
       /* Experiências */
       '../../assets/js/fontAwesomeIconsArray.js',
@@ -125,6 +126,7 @@ elixir(function(mix) {
     /* Bibliotecas prontas não adicionadas por npm/bower */
     '../../assets/js/bibliotecas/jquery.capslockstate.min.js',
     /* Scripts Vivalá */
+    '../../assets/js/buscaCEP.js',
     '../../assets/js/mobile.js',
   ], 'public/js/mobile.js');
 
