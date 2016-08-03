@@ -87,6 +87,12 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\Experiencias\AtualizaExperienciaRealizada',
         ],
 
+        //Quando o usuario fornece os dados para gerar boleto
+        'App\Events\NovoPedidoGeracaoBoletoExperiencia' => [
+            'App\Handlers\Events\Experiencias\AtualizaDadosUsuario',
+            'App\Handlers\Events\Experiencias\GeraBoletoInscricaoExperiencia',
+        ]
+
         //Quando uma inscricao for desconfirmada? (avisar a instituição?)
         // 'App\Events\InscricaoExperienciaDesConfirmada' => [
         //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoDesConfirmadaInstituicao'

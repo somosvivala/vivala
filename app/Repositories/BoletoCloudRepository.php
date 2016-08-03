@@ -3,11 +3,12 @@
 use app\User;
 use App\BoletoExperiencia;
 use App\InscricaoExperiencia;
+use App\Interfaces\BoletoCloudRepositoryInterface;
 
 /**
  * Classe para centralizar metodos referentes aos boletos da BoletoCloud
  */
-class BoletoCloudRepository
+class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 {
 
     //Informacoes sensiveis que serao pegas do env

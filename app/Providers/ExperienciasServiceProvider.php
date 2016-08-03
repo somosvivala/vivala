@@ -39,6 +39,13 @@ class ExperienciasServiceProvider extends ServiceProvider {
           'App\Repositories\ExperienciasRepository'
       );
 
+      //bindando a interface com a implementacao,
+      //assim o laravel servira automaticamente uma intancia
+      //de BoletoCloudRepository quando requisitada nos controllers
+      $this->app->bind(
+          'App\Interfaces\BoletoCloudRepositoryInterface',
+          'App\Repositories\BoletoCloudRepository'
+      );
 	}
 
 }
