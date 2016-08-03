@@ -281,9 +281,13 @@ class ExperienciasController extends Controller
     /**
      * Rota para gerar um boleto para uma inscricao
      */
-    public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request, $id)
+    public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request)
     {
-        
+
+        //fazer update dos dados do usuario
+        //gerar boleto do usuario
+        //retornar boleto em download
+
     }
 
 

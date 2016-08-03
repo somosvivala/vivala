@@ -21,9 +21,8 @@ class GerarBoletoInscricaoExperienciaRequest extends Request {
 	 */
 	public function rules()
 	{
-dd('chegou request', Request::all());
-
 		return [
+       'experiencia_id' => 'required|exists:experiencias,id',
        'cpf' => 'string|required',
        'endereco_cep' => 'string|required',
        'endereco_localidade' => 'string|required',

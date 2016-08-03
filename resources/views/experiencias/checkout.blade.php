@@ -46,9 +46,10 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Preencha os campos para gerar o boleto</h4>
       </div>
-        {!! Form::open(['url' => '/experiencias/gerarboleto/'.$Inscricao->id]) !!}
+        {!! Form::open(['url' => '/experiencias/gerarboleto/']) !!}
       <div class="modal-body">
 
+            {!! Form::hidden('experiencia_id', $Inscricao->experiencia->id) !!}
             @include('experiencias._form_dadosboleto')
 
       </div>

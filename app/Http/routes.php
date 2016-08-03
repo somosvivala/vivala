@@ -217,7 +217,7 @@ Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDelet
 Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');
 Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto');
-Route::post('experiencias/gerarboleto/{id}', 'ExperienciasController@postGerarBoleto');
+Route::post('experiencias/gerarboleto', 'ExperienciasController@postGerarBoleto');
 Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfirmaInscricao');
 Route::post('experiencias/cancelainscricao', 'ExperienciasController@postCancelaInscricao');
 Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
