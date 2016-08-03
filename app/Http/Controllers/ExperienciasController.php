@@ -18,6 +18,7 @@ use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\GerarBoletoInscricaoExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
+use App\Events\NovoPedidoGeracaoBoletoExperiencia;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
 use App\Http\Requests\DesativarExperienciaRequest;
@@ -283,10 +284,11 @@ class ExperienciasController extends Controller
      */
     public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request)
     {
+        $experiencia = $this->experienciasRepository->findOrFail($request->get('experiencia_id'));
 
-        //fazer update dos dados do usuario
-        //gerar boleto do usuario
-        //retornar boleto em download
+        event ( new NovoPedidoGeracaoBoletoExperiencia($experiencia, Auth::user(), $request->all()) );
+
+        return ['sucess' => '??'];
 
     }
 

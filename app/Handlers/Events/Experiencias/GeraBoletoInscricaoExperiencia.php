@@ -1,6 +1,7 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
 use App\Events\NovoPedidoGeracaoBoletoExperiencia;
+use App\Interfaces\BoletoCloudRepositoryInterface;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
@@ -28,7 +29,8 @@ class GeraBoletoInscricaoExperiencia
      */
     public function handle(NovoPedidoGeracaoBoletoExperiencia $event)
     {
-        //
+//        $this->boletoCloudRepository->geraBoletoTeste();
+
     }
 
 }

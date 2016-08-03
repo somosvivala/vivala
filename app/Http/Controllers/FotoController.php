@@ -146,8 +146,6 @@ class FotoController extends VivalaBaseController {
 
         //Se existe experiencia entao estou editando e devo associar a nova foto a experiencia
         if ($experienciaId) {
-            dd('veio $experienciaId, id:' . $experienciaId);
-
             $foto = $result['foto'];
             $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
             $this->experienciasRepository->atualizaFotoCapa($experiencia, $foto);
@@ -174,8 +172,6 @@ class FotoController extends VivalaBaseController {
 
         //Se existe experiencia entao estou editando e devo associar a nova foto ao owner da experiencia
         if ($experienciaId) {
-            dd('veio $experienciaId, id:' . $experienciaId);
-
             $foto = $result['foto'];
             $experiencia = $this->experienciasRepository->findOrFail($experienciaId);
             $this->experienciasRepository->atualizaFotoOwner($experiencia, $foto);

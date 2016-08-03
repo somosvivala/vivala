@@ -15,7 +15,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     public $BOLETOCLOUD_CONTA_TOKEN_API;
 
     /**
-     * Construtor obtendo informacoes necessarias do env
+      Construtor obtendo informacoes necessarias do env
      */
     function __construct()
     {
@@ -34,10 +34,19 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     /**
      * Metodo para testar a geracao de um boleto no sandbox
      */
-    public function gerarBoletoTeste($dadosBoleto, User $pagador, InscricaoExperiencia $inscricao)
+    public function gerarBoletoTeste(Experiencia $experiencia, User $pagador)
     {
+        $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->format('Y-m-d');
+        $dadosBoleto['data_vencimento'] = $experiencia->proximaOcorrencia->data_ocorrencia->addDays('-1')->format('Y-m-d');
+        $dadosBoleto['valor'] = $experiencia->preco;
+        $dadosBoleto['instrucao'] = array(
+            'Atenção! O pagamento desse boleto confirmará sua inscrição.',
+            'Dúvidas ou informações fale com agente em contato@vivala.com.br',
+            'Tenha uma ótima experiencia!'
+        );
+
         //Criando instancia no BD do boleto.
-        $boleto = $this->createBoletoExperiencia($dadosBoleto, $pagador, $inscricao);
+        $boleto = $this->createBoletoExperiencia($dadosBoleto, $experiencia, $pagador);
 
         #Dados do boleto
         $fields = [
@@ -158,8 +167,10 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
      * @param $dadosBoleto - Array com os possiveis indices ('valor', 'data_emissao', 'data_vencimento' e 'instrucoes')
      * @param $pagador - Instancia do User a qual o boleto é destinado
      */
-    public function createBoletoExperiencia($dadosBoleto, User $pagador, InscricaoExperiencia $inscricao)
+    public function createBoletoExperiencia($dadosBoleto, Experiencia $experiencia, User $pagador)
     {
+        $inscricao = $this->getInscricaoUsuario($experiencia, $pagador);
+
         $boleto = BoletoExperiencia::create($dadosBoleto);
         $boleto->pagador()->associate($pagador);
         $boleto->inscricao()->associate($inscricao);
