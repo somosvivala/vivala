@@ -494,6 +494,17 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     }
 
 
+    /**
+     * Metodo para recuperar a inscricao de um Usuario em uma experiencia
+     * @param $experiencia - Instancia de Experiencia
+     * @param $perfil - Instancia de Perfil
+     */
+    public function getInscricaoUsuario(Experiencia $experiencia, User $user)
+    {
+        return $experiencia->inscricoes()->where('perfil_id', $user->perfil->id)->first();
+    }
+
+
 
 
 }

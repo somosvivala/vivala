@@ -15,6 +15,7 @@ use App\Http\Requests\DeleteInformacaoExperienciaRequest;
 use App\Http\Requests\DestroyExperienciaRequest;
 use App\Http\Requests\CreateDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
+use App\Http\Requests\GerarBoletoInscricaoExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
 use App\Http\Controllers\Controller;
@@ -159,10 +160,12 @@ class ExperienciasController extends Controller
 
         event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
 
+        $Inscricao = $this->experienciasRepository->getInscricaoUsuario($Experiencia, Auth::user());
+
         if(Agent::isDesktop()) {
-            return view("experiencias.desktop.checkout", compact("Experiencia") );
+            return view("experiencias.desktop.checkout", compact("Experiencia", "Inscricao") );
         } else {
-            return view("experiencias.checkout", compact("Experiencia") );
+            return view("experiencias.checkout", compact("Experiencia", "Inscricao") );
         }
 
     }
@@ -274,5 +277,17 @@ class ExperienciasController extends Controller
     {
         return ['result' => $this->experienciasRepository->desativarExperiencia($request)];
     }
+
+    /**
+     * Rota para gerar um boleto para uma inscricao
+     */
+    public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request, $id)
+    {
+        
+    }
+
+
+
+
 
 }

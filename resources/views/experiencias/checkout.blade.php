@@ -46,16 +46,16 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Preencha os campos para gerar o boleto</h4>
       </div>
+        {!! Form::open(['url' => '/experiencias/gerarboleto/'.$Inscricao->id]) !!}
       <div class="modal-body">
 
-        {!! Form::open(['url' => '/experiencias/gerarboleto/']) !!}
             @include('experiencias._form_dadosboleto')
-        {!! Form::close() !!}
 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-acao btn-primary">Gerar boleto</button>
+        <button type="submit" class="btn btn-acao btn-primary">Gerar boleto</button>
       </div>
+        {!! Form::close() !!}
     </div>
   </div>
 </div>

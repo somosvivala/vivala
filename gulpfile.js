@@ -127,6 +127,8 @@ elixir(function(mix) {
     '../../assets/js/bibliotecas/jquery.capslockstate.min.js',
     /* Scripts Vivalá */
     '../../assets/js/buscaCEP.js',
+    '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
+    '../../assets/js/mascaraCampos.js',
     '../../assets/js/mobile.js',
   ], 'public/js/mobile.js');
 
