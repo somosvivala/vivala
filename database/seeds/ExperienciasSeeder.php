@@ -40,9 +40,13 @@ class ExperienciasSeeder extends Seeder {
             'descricao'=>'descricao a ver com bolinha',
             'icone' => 'fa fa-circle'
         ]);
-        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(rand(0,3))]);
+        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(8)]);
         $experiencia = Experiencia::create([
-            'titulo' => 'Primeira Experiencia',
+            'owner_nome' => $ong->nome,
+            'owner_descricao' => 'texto descritivo do owner que aparecera no email',
+            'endereco_completo' => 'Rua Capitão Gomes Duarte 9-50, Bauru, SP, 17014020',
+            'frequencia' => 'Evento único',
+            'tipo' => 'evento_unico',
             'status' => 'publicada',
             'descricao' => 'Essa é a descricao da primeira experiencia!',
             'descricao_na_listagem' => 'Venha conheçer a 1º Experiencia!!!',
@@ -63,17 +67,26 @@ class ExperienciasSeeder extends Seeder {
             'descricao'=>'descricao a ver com patinha',
             'icone' => 'fa fa-paw'
         ]);
-        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(rand(0,3))]);
+        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(15 - Carbon::now()->format('d'))]);
         $experiencia = Experiencia::create([
-            'titulo' => 'Segunda Experiencia',
+            'owner_nome' => $ong->nome,
+            'owner_descricao' => 'texto descritivo de quem provome a experiencia (aparecera no email)',
+            'endereco_completo' => 'Rua Capitão Gomes Duarte 9-50, Bauru, SP, 17014020',
+            'frequencia' => 'Todo dia 15',
+            'tipo' => 'evento_recorrente',
             'status' => 'publicada',
             'descricao' => 'Essa é a descricao da Segunda experiencia!',
             'descricao_na_listagem' => 'Venha conheçer a 2º Experiencia!!!',
             'detalhes' => "Esses são os detalhes, da experiencia de numero 2 \n  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-            'preco' => 223.44
+            'preco' => 23.44
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
         $experiencia->ocorrencias()->save($ocorrenciaExperiencia);
+        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(15 - Carbon::now()->format('d'))->addMonths(1)]);
+        $experiencia->ocorrencias()->save($ocorrenciaExperiencia);
+        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(15 - Carbon::now()->format('d'))->addMonths(2)]);
+        $experiencia->ocorrencias()->save($ocorrenciaExperiencia);
+
         $experiencia->informacoes()->save($informacaoExperiencia);
         $experiencia->local()->associate($localExperiencia);
         $experiencia->push();
@@ -86,16 +99,18 @@ class ExperienciasSeeder extends Seeder {
             'descricao'=>'Acessibilidade ',
             'icone' => 'fa fa-universal-access'
         ]);
-        $ocorrenciaExperiencia = DataOcorrenciaExperiencia::create(['data_ocorrencia' => Carbon::now()->addDays(rand(0,3))]);
         $experiencia = Experiencia::create([
-            'titulo' => 'Terceira Experiencia',
+            'owner_nome' => $ong->nome,
+            'owner_descricao' => 'texto descritivo de quem promove a experiencia (aparecera no email)',
+            'endereco_completo' => 'Rua Capitão Gomes Duarte 9-50, Bauru, SP, 17014020',
+            'frequencia' => 'Todos os dias, só agendar!',
+            'tipo' => 'evento_servico',
             'descricao' => 'Essa é a descricao da Terceira experiencia!',
             'descricao_na_listagem' => 'Nao perca, essa super mega 3º Experiencia!!!',
             'detalhes' => "Lorem ipsum dolor sittempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\n Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
             'preco' => 12.44
         ]);
         $experiencia->categorias()->save($categoriaExperiencia);
-        $experiencia->ocorrencias()->save($ocorrenciaExperiencia);
         $experiencia->informacoes()->save($informacaoExperiencia);
         $experiencia->local()->associate($localExperiencia);
         $experiencia->push();

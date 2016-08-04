@@ -21,17 +21,21 @@ class CreateExperienciasTable extends Migration {
         //assim experiencias podem pertencer a mais de 1 tipo de entidade
         $table->integer('owner_id')->nullable();
         $table->string('owner_type')->nullable();
-
         $table->string('owner_nome')->nullable();
         $table->text('owner_descricao')->nullable();
 
-
         //campos com as informacoes da experiencias
         $table->string('endereco_completo')->nullable();
+        $table->string('frequencia')->nullable();
         $table->decimal('preco', 7, 2)->nullable();
+
+        //descricoes e textos
         $table->text('descricao')->nullable();
         $table->text('descricao_na_listagem')->nullable();
         $table->text('detalhes')->nullable();
+
+        //tipo da experiencia
+        $table->enum('tipo', ['evento_unico', 'evento_recorrente', 'evento_servico'])->nullable();
 
         //status da experiencia, se esta em analise, publicada, se já foi realizada (finalizada) etc..
         $table->enum('status', ['analise', 'publicada', 'finalizada'])->default('analise');

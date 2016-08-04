@@ -20,6 +20,8 @@ class Experiencia extends Model
         'descricao',
         'detalhes',
         'preco',
+        'tipo',
+        'frequencia',
         'status'
     ];
 

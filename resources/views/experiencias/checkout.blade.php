@@ -25,8 +25,9 @@
         </div>
         <span class="col-xs-12">Pague com boleto bancário:</span>
         <span class="col-xs-12 margin-t-1 margin-b-4">
-            <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#modal-gerar-boleto">
-                <i class="fa fa-barcode sqr-icon-bg"></i>
+            <button type="button" class="btn btn-lg btn-gerar-boleto" data-toggle="modal" data-target="#modal-gerar-boleto">
+                <i class="fa fa-barcode"></i>
+                <span>Gerar<br>Boleto</span>
             </button>
         </span>
         <a href="{{ url('experiencias') . '/' . $Experiencia->id }}">
