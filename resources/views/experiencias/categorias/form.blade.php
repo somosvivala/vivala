@@ -1,22 +1,27 @@
-<div class="container-campos-fontawesome col-xs-12 margin-b-3 margin-t-3">
-  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-b-1">
-    <button type="button" class="btn btn-acao" data-toggle="modal" data-target="#modal-categoria-experiencias">
-      Selecionar Ícone
-    </button>
-  </div>
-  <div class="col-xs-1 text-center">
-    <i name="icone-show" class="fa-2x icone-show margin-t-1 @if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif"> </i>
-  </div>
-  <div class="col-xs-3">
-    {!! Form::label('classe_icone', 'Classes', ['class' => 'row col-sm-12']) !!}
-      <input type="text" name="icone" class='bind-icone-ativo' value="@if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif">
-  </div>
-  <div class="col-xs-6">
-    {!! Form::label('nome', 'Nome da Categoria', ['class' => 'row col-sm-12']) !!}
-    <input type="text" name="nome" value="@if ( isset($Categoria) ) {{ $Categoria->nome }} @endif">
-  </div>
-  <div class="col-xs-2">
-    {!! Form::label('', '&nbsp', ['class' => 'invisible row col-sm-12']) !!}
-    {!! Form::submit($textBtnSubmit, ['class' => 'btn btn-acao']) !!}
+<div class="col-lg-12 margin-b-3 margin-t-3 container-campos-fontawesome">
+
+  <div class="col-lg-12 text-center">
+    <div class="row text-center margin-b-4">
+      <div class="col-lg-12 padding-b-1">
+        <i name="icone-show" class="fa-5x icone-show margin-t-1 @if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif"> </i>
+      </div>
+      <div class="col-lg-12">
+        <button type="button" class="btn btn-acao" data-toggle="modal" data-target="#modal-iconpicker-fontawesome"> Selecionar Ícone </button>
+      </div>
+      <input type="hidden" name="icone" value="@if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif">
+    </div>
+
+    <div class="row text-center margin-b-2">
+      <div class="col-lg-4 col-lg-offset-4">
+        {!! Form::label('nome', 'Nome da Categoria', ['class' => 'row col-lg-12']) !!}
+        <input type="text" name="nome" value="@if ( isset($Categoria) ) {{ $Categoria->nome }} @endif">
+      </div>
+    </div>
+
+    <div class="row text-center">
+      {!! Form::label('', '&nbsp', ['class' => 'invisible row col-sm-12']) !!}
+      {!! Form::submit($textBtnSubmit, ['class' => 'btn btn-acao']) !!}
+    </div>
+
   </div>
 </div>

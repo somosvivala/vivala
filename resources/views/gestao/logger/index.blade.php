@@ -4,20 +4,25 @@
 	<nav class="navbar navbar-default menu-top header">
 		@include('header')
 	</nav>
-	<nav class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-t-1 margin-b-1">
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 fundo-cheio text-center">
+	<nav class="col-lg-12 margin-t-1 margin-b-1">
+
+		<div class="col-lg-12 fundo-cheio text-center">
 		  <h1 class="laranja"><i class="fa fa-gears"></i> Logger</h1>
 		</div>
-		@if(Auth::user()->isAdmin())
-				@include('gestao.logger._logger')
-		@endif
-		<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-b-1 fundo-cheio text-center">
-			<a href="{{ url('/gestao/home') }}">
-				<button class="btn btn-acao">Voltar ao Menu de Gestão</button>
-			</a>
+
+		<div class="col-lg-12 fundo-cheio">
+				<ul class="list-inline menu-gestao">
+						<li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="{{ url('/gestao/home') }}"> Voltar ao Menu de Gestão </a></li>
+				</ul>
 		</div>
+
+		@if(Auth::user()->isAdmin())
+			@include('gestao.logger._logger')
+		@endif
 	</nav>
+
 	<footer class="footer">
 		@include('footer')
 	</footer>
+
 @endsection

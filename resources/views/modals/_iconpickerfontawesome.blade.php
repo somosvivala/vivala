@@ -1,4 +1,4 @@
-<div id="modal-categoria-experiencias" class="modal fade" role="dialog">
+<div id="modal-iconpicker-fontawesome" class="modal fade" role="dialog">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -220,7 +220,7 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="roda" title="Estrada" alt="Estrada">
+              <span data-icon="road" title="Estrada" alt="Estrada">
                 <i class="fa fa-road fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
@@ -606,7 +606,7 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="setp-backward" title="Para Trás - Passo" alt="Para Trás - Passo">
+              <span data-icon="step-backward" title="Para Trás - Passo" alt="Para Trás - Passo">
                 <i class="fa fa-step-backward fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
@@ -881,7 +881,7 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="musica" title="Nota Musical" alt="Nota Musical">
+              <span data-icon="music" title="Nota Musical" alt="Nota Musical">
                 <i class="fa fa-music fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
@@ -1186,7 +1186,7 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="credit-card" title="Cartão de Crédito" alt="Cartão de Crédito">
+              <span data-icon="credit-card-alt" title="Cartão de Crédito" alt="Cartão de Crédito">
                 <i class="fa fa-credit-card-alt fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
