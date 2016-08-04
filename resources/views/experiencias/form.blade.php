@@ -142,7 +142,6 @@
           <span> <abbr title="Preço/Valor da experiência que será realizada."><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
         </div>
       </div>
-
         {!! Form::text('preco', null, ['id' => 'experiencia-valor', 'placeholder' => 'Ex: 24.99', 'class' => 'form-control']) !!}
     </div>
 
@@ -169,6 +168,36 @@
             </li>
 
         </ul>
+    </div>
+
+    <div class="col-sm-12 margin-t-1 margin-b-1">
+      <div class="row">
+        {!! Form::label('tipo', 'Tipo da Experiencia', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Tipo da Experiencia baseado em sua frequencia"><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+        <span> {!! Form::radio("tipo","evento_unico", false, ["id" => "tipo-evento-unico"]) !!}  Evento unico &nbsp;</span>
+        <span> {!! Form::radio("tipo","evento_recorrente", false, ["id" => "tipo-evento-recorrente"]) !!}  Evento recorrente &nbsp;</span>
+        <span> {!! Form::radio("tipo","evento_servico", false, ["id" => "tipo-evento-servico"]) !!}  Evento recorrente (serviço) &nbsp;</span>
+    </div>
+
+    <div class="col-sm-12 margin-t-1 margin-b-1">
+      <div class="row">
+        {!! Form::label('frequencia', 'Frequencia da experiencia', ['class' => 'col-lg-9']) !!}
+        <div class="col-lg-3 text-right">
+          <span>* Obrigatório</span>
+          <span> <abbr title="Texto que aparecerá na secao Data nos detalhes da experiencia"><i class='fa fa-2x fa-question-circle-o'></i></abbr></span>
+        </div>
+      </div>
+        <div class="col-xs-1">
+            <i class="fa-2x fa fa-clock-o"> </i>
+        </div>
+        <div class="col-xs-3">
+        {!! Form::text('frequencia', null, ['id' => 'experiencia-frequencia', 'placeholder' => 'Ex: Segunda á Sexta', 'class' => 'form-control']) !!}
+        </div>
+
     </div>
 
     {{-- Secao das datas que irao ocorrer a experiencia --}}

@@ -50,6 +50,8 @@ class StoreExperienciaRequest extends Request
             'owner-experiencia-foto-id' => "required|exists:fotos,id",
             'owner_nome'                => "required|string",
             'owner_descricao'           => "required|string",
+            'frequencia'                => "required|string",
+            'tipo_evento'               => "required|string",
             'endereco_completo'         => "required|string"
         ];
 
