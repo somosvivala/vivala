@@ -21,6 +21,7 @@ class Experiencia extends Model
         'detalhes',
         'preco',
         'tipo',
+        'tipo_servico_dias',
         'frequencia',
         'status'
     ];
@@ -91,6 +92,24 @@ class Experiencia extends Model
     /**
      * ### ACESSORS & MUTATORS
      */
+
+    /**
+     * Definindo um acessor para o campo tipo_servico_datas
+     * Esse campo guarda um array com os dias em que o servico é oferecido
+     */
+    public function getDiasOperacionaisDaSemanaAttribute()
+    {
+        return unserialize($this->tipo_servico_dias);
+    }
+
+    /**
+     * Definindo um mutator para o campo tipo_servico_dias
+     * Esse campo guarda um array com os dias em que o servico é oferecido
+     */
+    public function setTipoServicoDiasAttribute($value)
+    {
+        $this->attributes['tipo_servico_dias'] = serialize($value);
+    }
 
 
     /**

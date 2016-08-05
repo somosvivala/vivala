@@ -52,6 +52,7 @@ class UpdateExperienciaRequest extends Request
             'owner_descricao'           => "required|string",
             'frequencia'                => "required|string",
             'tipo'                      => "required|string",
+            'tipo_servico_dias'         => "required|array",
             'endereco_completo'         => "required|string"
 
         ];

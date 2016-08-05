@@ -34,6 +34,10 @@ class CreateExperienciasTable extends Migration {
         $table->text('descricao_na_listagem')->nullable();
         $table->text('detalhes')->nullable();
 
+        //campo para serializar os dias de operacao de um servico
+        //[Domingo, Segunda, Terça, Quarta, Quinta, Sexta, Sábado]
+        $table->string('tipo_servico_dias')->nullable();
+
         //tipo da experiencia
         $table->enum('tipo', ['evento_unico', 'evento_recorrente', 'evento_servico'])->nullable();
 

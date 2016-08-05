@@ -51,7 +51,8 @@ class StoreExperienciaRequest extends Request
             'owner_nome'                => "required|string",
             'owner_descricao'           => "required|string",
             'frequencia'                => "required|string",
-            'tipo_evento'               => "required|string",
+            'tipo'                      => "required|string",
+            'tipo_servico_dias'         => "required|array",
             'endereco_completo'         => "required|string"
         ];
 

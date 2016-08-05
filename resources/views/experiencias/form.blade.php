@@ -170,7 +170,7 @@
         </ul>
     </div>
 
-    <div class="col-sm-12 margin-t-1 margin-b-1">
+    <div class="col-sm-6 margin-t-1 margin-b-1">
       <div class="row">
         {!! Form::label('tipo', 'Tipo da Experiencia', ['class' => 'col-lg-9']) !!}
         <div class="col-lg-3 text-right">
@@ -183,7 +183,7 @@
         <span> {!! Form::radio("tipo","evento_servico", false, ["id" => "tipo-evento-servico"]) !!}  Evento recorrente (serviço) &nbsp;</span>
     </div>
 
-    <div class="col-sm-12 margin-t-1 margin-b-1">
+    <div class="col-sm-6 margin-t-1 margin-b-1">
       <div class="row">
         {!! Form::label('frequencia', 'Frequencia da experiencia', ['class' => 'col-lg-9']) !!}
         <div class="col-lg-3 text-right">
@@ -194,7 +194,7 @@
         <div class="col-xs-1">
             <i class="fa-2x fa fa-clock-o"> </i>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-9">
         {!! Form::text('frequencia', null, ['id' => 'experiencia-frequencia', 'placeholder' => 'Ex: Segunda á Sexta', 'class' => 'form-control']) !!}
         </div>
 
