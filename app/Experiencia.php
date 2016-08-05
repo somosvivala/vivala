@@ -27,6 +27,10 @@ class Experiencia extends Model
 
 
     /**
+     * ### RELACOES
+     */
+
+    /**
      * Uma Experiencia pode ser feito por ongs ou empresas
      */
     public function owner()
@@ -43,7 +47,6 @@ class Experiencia extends Model
         return $this->morphTo();
     }
 
-
     /**
      * Uma Experiencia tem 2 fotos (uma para sua capa e outra para quem a promove)
      */
@@ -51,6 +54,43 @@ class Experiencia extends Model
     {
         return $this->morphMany('App\Foto', 'owner', 'owner_type', 'owner_id');
     }
+
+    /**
+     * Uma Experiencia tem muitas inscriçoes
+     */
+    public function inscricoes()
+    {
+        return $this->hasMany('App\InscricaoExperiencia');
+    }
+
+    /**
+     * Uma Experiencia tem muitas informacoes
+     */
+    public function informacoes()
+    {
+        return $this->hasMany('App\InformacaoExperiencia');
+    }
+
+    /**
+     * Uma Experiencia pertence a muitas CategoriaExperiencia
+     */
+    public function categorias()
+    {
+        return $this->belongsToMany('App\CategoriaExperiencia');
+    }
+
+    /**
+     * Uma Experiencia tem muitas inscriçoes
+     */
+    public function ocorrencias()
+    {
+        return $this->hasMany('App\DataOcorrenciaExperiencia');
+    }
+
+
+    /**
+     * ### ACESSORS & MUTATORS
+     */
 
 
     /**
@@ -68,43 +108,6 @@ class Experiencia extends Model
     {
         return $this->fotos()->where('foto_owner_experiencia', true)->first();
     }
-
-
-    /**
-     * Uma Experiencia tem muitas inscriçoes
-     */
-    public function inscricoes()
-    {
-        return $this->hasMany('App\InscricaoExperiencia');
-    }
-
-
-    /**
-     * Uma Experiencia tem muitas informacoes
-     */
-    public function informacoes()
-    {
-        return $this->hasMany('App\InformacaoExperiencia');
-    }
-
-
-    /**
-     * Uma Experiencia pertence a muitas CategoriaExperiencia
-     */
-    public function categorias()
-    {
-        return $this->belongsToMany('App\CategoriaExperiencia');
-    }
-
-
-    /**
-     * Uma Experiencia tem muitas inscriçoes
-     */
-    public function ocorrencias()
-    {
-        return $this->hasMany('App\DataOcorrenciaExperiencia');
-    }
-
 
     /**
      * Acessor para a próxima ocorrencia a partir de hoje
@@ -139,7 +142,6 @@ class Experiencia extends Model
         return $ProximaOcorrencia ? $ProximaOcorrencia->data_ocorrencia->format('d/m') : '';
     }
 
-
     /*
      * Acessor para retornar a url da fotoCapa
      */
@@ -151,7 +153,6 @@ class Experiencia extends Model
 
         return '/img/dummy-exp.jpg';
     }
-
 
     /*
      * Acessor para retornar a url da foto do owner da experiencia
@@ -165,43 +166,6 @@ class Experiencia extends Model
         return '/img/dummy-exp.jpg';
     }
 
-
-    /**
-      * Definindo uma scope para as Experiencias em 'analise'
-     */
-    public function scopeAnalise($query)
-    {
-        return $query->where('status', 'analise');
-    }
-
-
-    /**
-      * Definindo uma scope para as Experiencias publicadas
-     */
-    public function scopePublicadas($query)
-    {
-        return $query->where('status', 'publicada');
-    }
-
-
-    /**
-      * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
-     */
-    public function scopeRealizadas($query)
-    {
-        return $query->where('status', 'realizada');
-    }
-
-
-    /**
-      * Definindo uma scope para as Experiencias com data
-     */
-    public function scopeComDataMarcada($query)
-    {
-        return $query->has('ocorrencias');
-    }
-
-
     /**
      * Definindo um acessor para as inscricoesAtivas (pendentes + confirmadas)
      */
@@ -211,7 +175,6 @@ class Experiencia extends Model
             ->whereIn('status', ['pendente', 'confirmada'])
             ->get();
     }
-
 
     /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
@@ -229,7 +192,6 @@ class Experiencia extends Model
         return ($diferencaDias == 0);
     }
 
-
     /**
      * Definindo um acessor para determinar se a experiencia esta acontecendo hoje
      */
@@ -237,7 +199,6 @@ class Experiencia extends Model
     {
         return $this->proximaOcorrencia ? $this->proximaOcorrencia->isToday : false;
     }
-
 
     /**
      * Definindo um acessor para saber se a experiencia esta ativa
@@ -247,5 +208,67 @@ class Experiencia extends Model
         return $this->status == 'publicada';
     }
 
+    /**
+     * Definindo um acessor para testar se tipo == evento_unico
+     */
+    public function getisEventoUnicoAttribute()
+    {
+        return $this->tipo == 'evento_unico';
+    }
+
+    /**
+     * Definindo um acessor para testar se tipo == evento_recorrente
+     */
+    public function getisEventoRecorrenteAttribute()
+    {
+        return $this->tipo == 'evento_recorrente';
+    }
+
+    /**
+     * Definindo um acessor para testar se tipo == evento_servico
+     */
+    public function getisEventoServicoAttribute()
+    {
+        return $this->tipo == 'evento_servico';
+    }
+
+
+
+    /**
+     * ### SCOPES
+     */
+
+
+    /**
+      * Definindo uma scope para as Experiencias em 'analise'
+     */
+    public function scopeAnalise($query)
+    {
+        return $query->where('status', 'analise');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias publicadas
+     */
+    public function scopePublicadas($query)
+    {
+        return $query->where('status', 'publicada');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
+     */
+    public function scopeRealizadas($query)
+    {
+        return $query->where('status', 'realizada');
+    }
+
+    /**
+      * Definindo uma scope para as Experiencias com data
+     */
+    public function scopeComDataMarcada($query)
+    {
+        return $query->has('ocorrencias');
+    }
 
 }
