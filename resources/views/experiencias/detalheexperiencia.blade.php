@@ -50,6 +50,8 @@
                 <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
                 <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
             </div>
+            <div class="clndr-container">
+            </div>
         </div>
         @endif
         @if($Experiencia->isEventoRecorrente)
