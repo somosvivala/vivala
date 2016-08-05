@@ -3,9 +3,31 @@ var tempoDigitando = null;
 
 // Shorthand for $( document ).ready()
 $(function() {
+    bindaIconPickerFontAwesome('.icone-show');
     bindaInputsFontAwesome();
     bindaMascaraValorExperiencia();
 });
+
+/**
+ * Binda a mudanca do icone conforme o icone selecionado na modal iconpicker
+ */
+var bindaIconPickerFontAwesome = function(container, input) {
+  var fontAwesomeIcon, classesIcone;
+
+  if($('#modal-iconpicker-fontawesome')){
+    $('.iconpicker-icone').click(function() {
+
+      // Pegando o valor do data-icon do icone clicado
+      //console.log($(this).parent().data('icon'));
+      fontAwesomeIcon = 'icone-show margin-t-1 fa-5x fa fa-' + $(this).parent().data('icon');
+      classesIcone = $(container).attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
+      $(container).attr('class', fontAwesomeIcon);
+
+       // Dá toggle e fecha a modal de iconpicker de seleção do icone
+       $('#modal-iconpicker-fontawesome').modal('toggle');
+    });
+  }
+}
 
 /**
  * Binda a mudanca do icone conforme o texto dos input's de informacao experiencia
