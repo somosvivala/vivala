@@ -259,10 +259,27 @@ small.forgot-password {
     background-color:@verde-sucesso;
     transition:background-color 0.2s ease;
     &:hover{
-        background-color:@verde-sucesso;
+        color: white;
+        background-color:darken(@verde-sucesso,10%);
     }
 }
-
+.btn-cancelar-inscricao {
+    color:@vermelho-sangue;
+    width: 100%;
+    padding: 2em 0 0;
+    text-align:center;
+    text-transform:uppercase;
+    &:hover{
+        color: @vermelho-sangue;
+    }
+}
+.btn-full-bottom-laranja {
+    .btn-full-bottom;
+    background-color: @amarelo-aviso;
+    &:hover{
+        background-color:darken(@amarelo-aviso,10%);
+    }
+}
 ul.lista-foto-descricao {
     padding:0;
     margin:0;

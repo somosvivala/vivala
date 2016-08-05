@@ -678,6 +678,7 @@ return[
   'lbl_subscribe' => 'Inscreva-se',
   'lbl_subscribe_here' => 'Inscreva-se aqui',
   'lbl_subscribe_yourself' => 'Inscreva-se',
+  'lbl_subscribed' => 'Você já se inscreveu',
   'lbl_success' => 'Sucesso',
   'lbl_suggests' => 'Sugestões',
   'lbl_suggests_no' => 'Nenhuma sugestão.',

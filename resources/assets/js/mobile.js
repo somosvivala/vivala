@@ -43,4 +43,6 @@ jQuery(document).ready(function($) {
         $("#capslock-ligado").addClass("hide");
       });
     }
+
+    $('.clndr-container').clndr();
 });
