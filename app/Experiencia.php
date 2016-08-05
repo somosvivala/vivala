@@ -5,6 +5,7 @@ use App\User;
 use App\InformacaoExperiencia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Carbon\Carbon;
+use Auth;
 
 class Experiencia extends Model
 {
@@ -251,6 +252,22 @@ class Experiencia extends Model
         return $this->tipo == 'evento_servico';
     }
 
+    /**
+     * Definindo um acessor para saber se um User está inscrito
+     */
+    public function getIsUsuarioAtualInscritoAttribute()
+    {
+        //Se nao tiver logado, false
+        if (!Auth::user())
+            return false;
+
+        //Se tiver logado pegar collection com query buscando o mesmo perfil
+        //e testar se collection tem alguma inscricao
+        return !($this->inscricoes()
+            ->where('perfil_id', Auth::user()->perfil->id)
+            ->get()
+            ->isEmpty());
+    }
 
 
     /**
