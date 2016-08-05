@@ -57,6 +57,8 @@ elixir(function(mix) {
       '../../assets/bower/tether-drop/dist/js/drop.min.js',
       '../../assets/bower/tether-tooltip/dist/js/tooltip.min.js',
       '../../assets/bower/rangeslider.js/dist/rangeslider.min.js',
+      '../../assets/bower/underscore/underscore-min.js',
+      '../../assets/bower/moment/min/moment-with-locales.min.js',
       '../../assets/bower/clndr/clndr.min.js',
       /* Bibliotecas prontas não adicionadas por npm/bower */
       '../../assets/js/bibliotecas/jquery.maskmoney.min.js',

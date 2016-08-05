@@ -95,7 +95,7 @@
         <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
         <span class="col-xs-12">{{ $Experiencia->detalhes }}</span>
         @endif
-        @if(Auth::user() || true)
+        @if($Experiencia->isUsuarioAtualInscrito)
             <a class="btn-cancelar-inscricao col-xs-12" href="/experiencias/checkout/{{ $Experiencia->id }}"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
         @endif
     </div>
@@ -112,7 +112,7 @@
             </div>
         </div>
     </div>
-    @if(Auth::user() || true)
+    @if($Experiencia->isUsuarioAtualInscrito)
         <a class="btn-full-bottom-laranja" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
     @else
         <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
