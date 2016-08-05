@@ -37,8 +37,14 @@
             </div>
         </div>
 
-        <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
-        @if($Experiencia->dataProximaOcorrencia)
+        <span class="col-xs-12 negrito-exp margin-t-1">Data</span>
+        @if($Experiencia->isEventoUnico)
+        <div class="col-xs-12 informacoes">
+            <div class="row padding-t-1">
+                <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
+                <span class="descricao-informacoes">EVENTO ÚNICO</span>
+            </div>
+        </div>
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
@@ -46,6 +52,35 @@
             </div>
         </div>
         @endif
+        @if($Experiencia->isEventoRecorrente)
+        <div class="col-xs-12 informacoes">
+            <div class="row padding-t-1">
+                <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
+                <span class="descricao-informacoes">EVENTO RECORRENTE</span>
+            </div>
+        </div>
+        <div class="col-xs-12 informacoes">
+            <div class="row padding-t-1">
+                <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+            </div>
+        </div>
+        @endif
+        @if($Experiencia->isEventoServico)
+        <div class="col-xs-12 informacoes">
+            <div class="row padding-t-1">
+                <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
+                <span class="descricao-informacoes">EVENTO SERVIÇO</span>
+            </div>
+        </div>
+        <div class="col-xs-12 informacoes">
+            <div class="row padding-t-1">
+                <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+            </div>
+        </div>
+        @endif
+        <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
         @foreach($Experiencia->informacoes as $Informacao)
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
@@ -57,6 +92,9 @@
         @if($Experiencia->detalhes!="")
         <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
         <span class="col-xs-12">{{ $Experiencia->detalhes }}</span>
+        @endif
+        @if(Auth::user() || true)
+            <a class="btn-cancelar-inscricao col-xs-12" href="/experiencias/checkout/{{ $Experiencia->id }}"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
         @endif
     </div>
 
@@ -72,7 +110,11 @@
             </div>
         </div>
     </div>
-    <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
+    @if(Auth::user() || true)
+        <a class="btn-full-bottom-laranja" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
+    @else
+        <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
+    @endif        
 </section >
 </div>
 @endsection
