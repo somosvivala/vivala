@@ -94,3 +94,61 @@ var sweetAlertErroDeleteExperiencia = function() {
         showCancelButton: false
     });
 };
+
+// Calendário da Experiencia
+moment.locale('pt-br');
+var thisMonth = moment().format('YYYY-MM');
+var eventArray = [];
+var _CalendarioExperiencia = null;
+var _CalendarioExperienciaEventos;
+var calendarioExperiencia  = function(container){
+  _CalendarioExperiencia = jQuery(container).clndr({
+      events: eventArray,
+      daysOfTheWeek: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+      clickEvents: {
+          click: function (target) {
+              console.log('Cal-1 clicked: ', target);
+          },
+          today: function () {
+              console.log('Cal-1 today');
+          },
+          nextMonth: function () {
+              console.log('Cal-1 next month');
+          },
+          previousMonth: function () {
+              console.log('Cal-1 previous month');
+          },
+          onMonthChange: function () {
+              console.log('Cal-1 month changed');
+          },
+          nextYear: function () {
+              console.log('Cal-1 next year');
+          },
+          previousYear: function () {
+              console.log('Cal-1 previous year');
+          },
+          onYearChange: function () {
+              console.log('Cal-1 year changed');
+          },
+          nextInterval: function () {
+              console.log('Cal-1 next interval');
+          },
+          previousInterval: function () {
+              console.log('Cal-1 previous interval');
+          },
+          onIntervalChange: function () {
+              console.log('Cal-1 interval changed');
+          }
+      },
+      multiDayEvents: {
+          singleDay: 'date',
+          endDate: 'endDate',
+          startDate: 'startDate'
+      },
+      showAdjacentMonths: true,
+      adjacentDaysChangeMonth: false
+  });
+}
+
+calendarioExperiencia('.clndr-container');
+

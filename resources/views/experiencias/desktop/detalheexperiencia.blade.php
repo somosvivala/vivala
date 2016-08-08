@@ -74,6 +74,51 @@
                         <span class="descricao-inicial">{{ $Experiencia->descricao }}</span>
                     </div>
                 </div>
+                <span class="col-xs-12 negrito-exp margin-t-1">Data</span>
+                @if($Experiencia->isEventoUnico)
+                <div class="col-xs-12 informacoes">
+                    <div class="row padding-t-1">
+                        <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
+                        <span class="descricao-informacoes">EVENTO ÚNICO</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 informacoes">
+                    <div class="row padding-t-1">
+                        <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                        <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                    </div>
+                    <div class="clndr-container cal1 cal2 cal3">
+                    </div>
+                </div>
+                @endif
+                @if($Experiencia->isEventoRecorrente)
+                <div class="col-xs-12 informacoes">
+                    <div class="row padding-t-1">
+                        <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
+                        <span class="descricao-informacoes">EVENTO RECORRENTE</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 informacoes">
+                    <div class="row padding-t-1">
+                        <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                        <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                    </div>
+                </div>
+                @endif
+                @if($Experiencia->isEventoServico)
+                <div class="col-xs-12 informacoes">
+                    <div class="row padding-t-1">
+                        <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
+                        <span class="descricao-informacoes">EVENTO SERVIÇO</span>
+                    </div>
+                </div>
+                <div class="col-xs-12 informacoes">
+                    <div class="row padding-t-1">
+                        <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                        <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                    </div>
+                </div>
+                @endif
                 <span class="col-xs-12 negrito-exp margin-t-2 margin-b-1">Informações</span>
                 <div class="row ">
                     @if($Experiencia->dataProximaOcorrencia)

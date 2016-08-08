@@ -1,0 +1,241 @@
+.clndr-container {
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+    .clearfix {
+        display: inline-block;
+    }
+
+
+    .noselect
+    {
+        -webkit-user-select: none; /* Chrome/Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* IE10+ */
+    }
+
+    .left-align
+    {
+        text-align: left;
+    }
+
+    .right-align
+    {
+        text-align: right;
+    }
+
+    //////////////////////////////////
+
+    @clndr-border: 3px solid white;
+
+    width:15em;
+    //  font-family: 'Droid Sans Mono';
+    border:0px solid white;
+    box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
+    position: absolute;
+    background-color: white;
+    z-index:2;
+    top: 1em;
+    left: 3em;
+    display:block;
+
+    .clndr
+    {
+        .clndr-controls
+        {
+            .clearfix;
+            width: 100%;
+            position: relative;
+            background: darken(@cor-primaria,20%);
+            color:white;
+
+            .month
+            {
+                float: left;
+                width: 33%;
+                text-align: center;
+            }
+
+
+            .clndr-control-button
+             {
+                float: left;
+                width: 33%;
+
+                &.rightalign
+                {
+                    text-align: right;
+                    width: 34%;
+                }
+                .clndr-next-button
+                {
+                    cursor: pointer;
+                    .noselect;
+                    &:hover { background: #ddd; }
+                    &.inactive
+                    {
+                        opacity: 0.5;
+                        &:hover
+                        {
+                            background: none;
+                            cursor: default;
+                        }
+                    }
+                }
+                .clndr-previous-button
+                {
+                    cursor: pointer;
+                    .noselect;
+                    &:hover { background: #ddd; }
+                    &.inactive
+                    {
+                        opacity: 0.5;
+                        &:hover
+                        {
+                            background: none;
+                            cursor: default;
+                        }
+                    }
+                }
+            }
+        }
+
+        .clndr-table
+        {
+            table-layout: fixed;
+            width: 100%;
+
+            .header-days
+            { 
+                background: @cor-primaria;
+                color:white;
+                height: 2em;
+                font-size: 1.6rem;
+
+                .header-day
+                 {
+                    vertical-align: middle;
+                    text-align: center;
+                    border-left: none;
+                    border-top: @clndr-border;
+                    color: #fff;
+                }
+            }
+
+            tr
+            { 
+                height: 1.7em;
+
+                td
+                {
+                    vertical-align: top;
+                }
+
+                .day
+                {
+                    border-left: @clndr-border;
+                    border-top: @clndr-border;
+                    width: 100%;
+                    height: inherit;
+                    text-align: center;
+                    cursor:pointer;
+
+                    &:hover { 
+                        background: @verde-sucesso;
+                        color: white;
+                    }
+
+
+                    &.today, &.my-today
+                    {
+                        background: @cor-cinza-claro;
+                        &:hover { background: darken(#9AD6E3, 10%); }
+                        &.event
+                        {
+                            background: mix(#B4E09F, #9AD6E3);
+                        }
+                    }
+
+                    &.event, &.my-event
+                    {
+                        background: #B4E09F;
+                        &:hover
+                        {
+                            background: darken(#B4E09F, 10%);
+                        }
+                    }
+
+                    &.inactive, &.my-inactive
+                    {
+                        background: #ddd;
+                    }
+
+                    &:last-child
+                    {
+                        border-right: @clndr-border;
+                    }
+
+                    .day-contents
+                    {
+                        box-sizing: border-box;
+                        // width: 100%;
+                        // height: 100%;
+                        padding: 8px;
+                        font-size: 12px;
+                    }
+                }
+
+                .empty, .adjacent-month, .my-empty, .my-adjacent-month
+                {
+                    border-left: @clndr-border;
+                    border-top: @clndr-border;
+                    width: 100%;
+                    height: inherit;
+                    background: #eee;
+
+                    &:hover { background: #ddd; }
+
+                    &:last-child
+                    {
+                        border-right: @clndr-border;
+                    }
+                }
+
+                &:last-child
+                {
+                    .day, .my-day
+                    {
+                        border-bottom: @clndr-border;
+                    }
+
+                    .empty, .my-empty
+                    {
+                        border-bottom: @clndr-border;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    @box-size: 25px;
+
+
+    .clndr-next-button, .clndr-previous-button, .clndr-next-year-button, .clndr-previous-year-button
+    {
+        .noselect;
+
+        &.inactive
+        {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+}
