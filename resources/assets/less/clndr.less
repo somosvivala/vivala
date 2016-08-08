@@ -41,9 +41,14 @@
     position: absolute;
     background-color: white;
     z-index:2;
-    top: 1em;
-    left: 3em;
-    display:block;
+    top: 2.5em;
+    left: 2em;
+    display: none;
+    opacity:0;
+    &.visivel {
+        display: block;
+        opacity:1;
+    }
 
     .clndr
     {
@@ -64,7 +69,7 @@
 
 
             .clndr-control-button
-             {
+            {
                 float: left;
                 width: 33%;
 
@@ -119,7 +124,7 @@
                 font-size: 1.6rem;
 
                 .header-day
-                 {
+                {
                     vertical-align: middle;
                     text-align: center;
                     border-left: none;
@@ -144,30 +149,29 @@
                     width: 100%;
                     height: inherit;
                     text-align: center;
-                    cursor:pointer;
 
                     &:hover { 
-                        background: @verde-sucesso;
-                        color: white;
                     }
 
 
                     &.today, &.my-today
                     {
-                        background: @cor-cinza-claro;
-                        &:hover { background: darken(#9AD6E3, 10%); }
+                        background: fade(@cor-cinza-claro,30%);
+                        &:hover {}
                         &.event
                         {
-                            background: mix(#B4E09F, #9AD6E3);
+                            background: mix(#B4E09F, fade(@cor-cinza-claro,30%));
                         }
                     }
 
                     &.event, &.my-event
-                    {
-                        background: #B4E09F;
+                    { 
+                        cursor:pointer;
+                        background: @verde-sucesso;
                         &:hover
                         {
-                            background: darken(#B4E09F, 10%);
+                            background: #B4E09F;
+                            color:white;
                         }
                     }
 

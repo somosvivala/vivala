@@ -98,7 +98,9 @@ var sweetAlertErroDeleteExperiencia = function() {
 // Calendário da Experiencia
 moment.locale('pt-br');
 var thisMonth = moment().format('YYYY-MM');
-var eventArray = [];
+console.log($('#json-eventos').val());
+var eventArray = jQuery.parseJSON($('#json-eventos').val());
+console.log(eventArray);
 var _CalendarioExperiencia = null;
 var _CalendarioExperienciaEventos;
 var calendarioExperiencia  = function(container){
@@ -107,7 +109,11 @@ var calendarioExperiencia  = function(container){
       daysOfTheWeek: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
       clickEvents: {
           click: function (target) {
-              console.log('Cal-1 clicked: ', target);
+              if(target.events.length) {
+                var dataEvento = target.events[0].date;
+                $(".clndr-picker").val(dataEvento);
+                $(".clndr-container").toggleClass('visivel');
+              }
           },
           today: function () {
               console.log('Cal-1 today');
@@ -151,4 +157,6 @@ var calendarioExperiencia  = function(container){
 }
 
 calendarioExperiencia('.clndr-container');
-
+$(".clndr-picker").click(function() {
+    $(".clndr-container").toggleClass('visivel');
+});
