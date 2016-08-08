@@ -99,10 +99,9 @@ var sweetAlertErroDeleteExperiencia = function() {
 moment.locale('pt-br');
 var thisMonth = moment().format('YYYY-MM');
 console.log($('#json-eventos').val());
-var eventArray = jQuery.parseJSON($('#json-eventos').val());
+var eventArray = $('#json-eventos').val()?jQuery.parseJSON($('#json-eventos').val()):[];
 console.log(eventArray);
 var _CalendarioExperiencia = null;
-var _CalendarioExperienciaEventos;
 var calendarioExperiencia  = function(container){
   _CalendarioExperiencia = jQuery(container).clndr({
       events: eventArray,
