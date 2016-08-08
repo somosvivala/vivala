@@ -79,7 +79,7 @@
                 <div class="col-xs-12 informacoes">
                     <div class="row padding-t-1">
                         <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                        <span class="descricao-informacoes">EVENTO ÚNICO</span>
+                        <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
                     </div>
                 </div>
                 <div class="col-xs-12 informacoes">
@@ -93,7 +93,7 @@
                 <div class="col-xs-12 informacoes">
                     <div class="row padding-t-1">
                         <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                        <span class="descricao-informacoes">EVENTO RECORRENTE</span>
+                        <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
                     </div>
                 </div>
                 <div class="col-xs-12 informacoes">
@@ -112,7 +112,7 @@
                 <div class="col-xs-12 informacoes">
                     <div class="row padding-t-1">
                         <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                        <span class="descricao-informacoes">EVENTO SERVIÇO</span>
+                        <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
                     </div>
                 </div>
                 <div class="col-xs-12 informacoes">

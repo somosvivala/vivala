@@ -42,15 +42,13 @@
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                <span class="descricao-informacoes">EVENTO ÚNICO</span>
+                <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
             </div>
         </div>
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
                 <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
-            </div>
-            <div class="clndr-container">
             </div>
         </div>
         @endif
@@ -58,27 +56,37 @@
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                <span class="descricao-informacoes">EVENTO RECORRENTE</span>
+                <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
             </div>
         </div>
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                <span class="descricao-informacoes">
+                    <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                    <div class="clndr-container">
+                    </div>
+                    <input type="hidden" id="json-eventos" value='[{"date":"2016-08-15"},{"date":"2016-09-15"}]'>
+                </span>
             </div>
         </div>
-        @endif
+        @endif       
         @if($Experiencia->isEventoServico)
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                <span class="descricao-informacoes">EVENTO SERVIÇO</span>
+                <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
             </div>
         </div>
         <div class="col-xs-12 informacoes">
             <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                <span class="descricao-informacoes">
+                    <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                    <div class="clndr-container">
+                    </div>
+                    <input type="hidden" id="json-eventos" value='[{"date":"2016-08-09"},{"date":"2016-08-19"}]'>
+                </span>
             </div>
         </div>
         @endif
