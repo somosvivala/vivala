@@ -118,7 +118,12 @@
                 <div class="col-xs-12 informacoes">
                     <div class="row padding-t-1">
                         <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                        <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                        <span class="descricao-informacoes">
+                            <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                            <div class="clndr-container">
+                            </div>
+                            <input type="hidden" id="json-eventos" value='[{"date":"2016-08-09"},{"date":"2016-08-19"}]'>
+                        </span>
                     </div>
                 </div>
                 @endif
