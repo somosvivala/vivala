@@ -20,15 +20,22 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     public $experienciasRepository;
 
     /**
-      Construtor obtendo informacoes necessarias do env
+      * Construtor obtendo informacoes necessarias do env
+      * @param $experienciasRepository - Instancia do Repositorio de Experiencias
      */
-    function __construct(ExperienciasRepositoryInterface $repository)
+    function __construct(ExperienciasRepositoryInterface $experienciasRepository)
     {
-        $this->BOLETOCLOUD_CONTA_TOKEN_API  = env('BOLETOCLOUD_CONTA_TOKEN_API');
-        $this->BOLETOCLOUD_AUTH_TOKEN       = env('BOLETOCLOUD_AUTH_TOKEN');
-        $this->experienciasRepository       = $repository;
-        //$this->BOLETOCLOUD_URL_BASE         = 'https://sandbox.boletocloud.com/api/v1';
-        $this->BOLETOCLOUD_URL_BASE         = 'https://app.boletocloud.com/api/v1';
+        $this->experienciasRepository       = $experienciasRepository;
+
+        $sufixo = '';
+        //se estivermos em development, adicionar suffixo aos valores do env
+        if (app()->environment('development')) {
+            $sufixo = '_DEV';
+        }
+
+        $this->BOLETOCLOUD_CONTA_TOKEN_API  = env('BOLETOCLOUD_CONTA_TOKEN_API'.$sufixo);
+        $this->BOLETOCLOUD_AUTH_TOKEN       = env('BOLETOCLOUD_AUTH_TOKEN'.$sufixo);
+        $this->BOLETOCLOUD_URL_BASE         = env('BOLETOCLOUD_URL_BASE'.$sufixo);
     }
 
 
