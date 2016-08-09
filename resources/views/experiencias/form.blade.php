@@ -1,4 +1,4 @@
-<div class="col-lg-12 fundo-cinza-com-borda padding-t-1 margin-b-2">
+<div class="col-lg-12 fundo-cinza-com-borda padding-t-1 margin-b-1">
 
     {{-- Seção TROCAR FOTO da INSTITUIÇÃO/EMPRESA responsável pela experiência --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
@@ -112,7 +112,7 @@
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Cidade/Local onde a experiência será realizada. Escreva uma cidade brasileira onde a experiência será realizada e espere a lista aparecer, selecione a cidade desejada."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><abbr title="Cidade da Experiência é onde a experiência será realizada, escreva uma cidade brasileira onde e espere a lista aparecer, selecione a cidade desejada."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -133,7 +133,7 @@
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Endereço Completo onde a experiência será realizada, seja bem específico usando as nomenclaturas rua/avenida/etc, especifique o número do endereço e tente separar os itens por vírgula ou traço."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><abbr title="Endereço Completo da Experiência é o lugar/local onde a experiência será realizada, seja bem específico usando as nomenclaturas rua/avenida/etc, especifique o número do endereço e tente separar os itens por vírgula ou traço."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -176,7 +176,7 @@
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Descrição completa da experiência, deve passar ao usuário tudo que ele está adquirindo, deve conter detalhadamente todo o 'produto' e também ser um texto atrativo/agradável e ao mesmo tempo não cansativo."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><abbr title="Descrição Completa da experiência a a descrição direta pro usuário, deve passar ao usuário tudo que ele está adquirindo, deve conter detalhadamente todo o 'produto' e também ser um texto atrativo/agradável e ao mesmo tempo não cansativo."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
             <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
             <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
@@ -200,7 +200,7 @@
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Detalhes da Experiência"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><abbr title="Detalhes da Experiência são os detalhes extras que dirão pontualmente ao usuário do que a experiência é composta."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
             <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
             <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
@@ -233,26 +233,36 @@
 
     {{-- Seção de INFORMAÇÕES EXTRAS da experiência --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
-        {!! Html::decode(Form::label('', 'Informações Extras da Experiência', ['class' => 'row col-sm-12'])) !!}
-        <ul id="informacoes-container">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('', 'Informações Extras da Experiência') !!}
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Informações Extras da Experiência"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <div class="col-lg-12">
+          <ul id="informacoes-container">
             @if (isset($experiencia))
             @foreach ($experiencia->informacoes as $informacao)
-                @include('experiencias._form_extra_item', ['informacao' => $informacao])
+              @include('experiencias._form_extra_item', ['informacao' => $informacao])
             @endforeach
             @endif
 
             {{-- Botao de adicionar novas Informacoes --}}
             <li class="col-xs-12 margin-b-1 container-campos-fontawesome">
-                <div class="col-xs-11"></div>
-                <div class="col-xs-1 text-center">
-                        <a href="#" onclick="adicionaInfoExperiencia(event)">
-                            <i class="fa fa-2x fa-plus margin-t-1" ></i>
-                            <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
-                        </a>
-                </div>
+              <div class="col-xs-11"></div>
+              <div class="col-xs-1 text-center">
+                <a href="#" title="Adicionar Nova Informação Extra" onclick="adicionaInfoExperiencia(event)">
+                  <i class="fa fa-2x fa-plus margin-t-1" ></i>
+                  <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
+                </a>
+              </div>
             </li>
-
-        </ul>
+          </ul>
+        </div>
+      </div>
     </div>
     {{-- Fim da Seção de INFORMAÇÕES EXTRAS da experiência --}}
 
@@ -298,9 +308,17 @@
     </div>
     {{-- Fim da Seção da FREQUÊNCIA da experiência --}}
 
-    {{-- Secao das datas que irao ocorrer a experiencia --}}
+    {{-- Seção das DATAS em que a experiência irá ocorrer --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
-        {!! Form::label('', 'Próximas Datas', ['class' => 'row col-sm-12']) !!}
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('', 'Próximas Datas') !!}
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Próximas Datas"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
         <ul id="data-ocorrencia-container">
             @if (isset($experiencia))
             @foreach ($experiencia->ocorrencias as $dataOcorrencia)
@@ -309,44 +327,53 @@
             @endif
 
             {{-- Botao de adicionar novas datas --}}
-            <li class="col-xs-12 margin-b-1 container-datas-ocorrencia">
-                <div class="col-xs-11"></div>
-                <div class="col-xs-1 text-center">
-                        <a href="#" onclick="adicionaDataOcorrenciaExperiencia(event)">
-                            <i class="fa fa-2x fa-plus margin-t-1" ></i>
-                            <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
-                        </a>
-                </div>
+            <li class="col-lg-12 margin-b-1 container-datas-ocorrencia">
+              <div class="col-lg-3 col-lg-offset-2 text-center">
+                <a href="#" title="Adicionar Nova Data" onclick="adicionaDataOcorrenciaExperiencia(event)">
+                  <i class="fa fa-2x fa-plus margin-t-1" ></i>
+                  <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
+                </a>
+              </div>
             </li>
-
         </ul>
+      </div>
     </div>
+    {{-- Fim da Seção das DATAS em que a experiência irá ocorrer --}}
 
     {{-- Seção das CATEGORIAS da experiência --}}
-    <div class="col-sm-12 margin-t-1 margin-b-1">
-        <label class="row col-xs-12">Categorias</label>
-        @foreach ($Categorias as $categoria)
-            <label class="col-xs-3">
-                <input type="checkbox" name="categoria[]"
-                    value="{{ $categoria->id }}"
-                    @if (isset($experiencia) && !$experiencia->categorias->isEmpty() && $experiencia->categorias->find($categoria->id) )
-                        checked="true"
-                    @endif
-                    ><span> {{ $categoria->nome }}</span>
-            </label>
-        @endforeach
+    <div class="col-lg-12 margin-t-1 margin-b-1">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('', 'Categorias da Experiência') !!}
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Categorias da Experiência"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <div class="col-lg-12">
+          @foreach ($Categorias as $categoria)
+              <label class="col-lg-3">
+                <input type="checkbox" name="categoria[]" value="{{ $categoria->id }}"
+                  @if (isset($experiencia) && !$experiencia->categorias->isEmpty() && $experiencia->categorias->find($categoria->id))
+                    checked="true"
+                  @endif
+                ><span> &nbsp; {{ $categoria->nome }}</span>
+              </label>
+          @endforeach
+        </div>
     </div>
     {{-- Fim da Seção das CATEGORIAS da experiência --}}
 
     {{-- Seção do botão ENVIAR do FORMULÁRIO --}}
-    <div class="col-lg-12 text-right margin-b-1 margin-t-1">
+    <div class="col-lg-12 text-right margin-b-1 margin-t-3">
       {!! Form::submit($textBtnSubmit, ['class' => 'btn btn-acao']) !!}
     </div>
     {{-- Fim da Seção do botão ENVIAR do FORMULÁRIO --}}
 
     {{-- Inclusão de todos os MODALS do tutorial --}}
-    @include('modals.tutoriais-internos.experiencias.desktop._formdescricaonalistagem')
-    @include('modals.tutoriais-internos.experiencias.mobile._formdescricaonalistagem')
+      @include('modals.tutoriais-internos.experiencias.desktop._formdescricaonalistagem')
+      @include('modals.tutoriais-internos.experiencias.mobile._formdescricaonalistagem')
     {{-- Fim da Inclusão de todos os MODALS do tutorial --}}
 
 </div>
