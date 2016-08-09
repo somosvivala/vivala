@@ -147,7 +147,12 @@
                     </div>
                 </div>
                 <div class="row text-center padding-b-2 padding-t-1">
-                    <a class="btn-verde btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+                    @if($Experiencia->isUsuarioAtualInscrito)
+                        <a class="btn-cancelar-inscricao col-xs-12" href="/experiencias/checkout/{{ $Experiencia->id }}"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
+                        <a class="btn-amarelo-aviso btn" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
+                    @else
+                        <a class="btn-verde btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+                    @endif        
                 </div>
             </div>
         </div>
