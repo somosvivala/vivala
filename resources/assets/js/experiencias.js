@@ -159,3 +159,35 @@ calendarioExperiencia('.clndr-container');
 $(".clndr-picker").click(function() {
     $(".clndr-container").toggleClass('visivel');
 });
+
+
+$('form#gera-boleto-experiencia').submit(function(e){
+    e.preventDefault();
+
+    var frm = $(this),
+        loading = frm.data('loading');
+
+    var params = frm.serialize();
+
+    $.ajax({
+        url: '/experiencias/gerarboleto/',
+        type: 'POST',
+        data: $.param(frm.serializeArray()),
+        complete: function (jqXHR, textStatus) {
+            console.log('complete:');
+            console.log(jqXHR);
+            console.log(textStatus);
+            // callback
+        },
+        success: function (data, textStatus, jqXHR) {
+            console.log('success');
+            console.log(data);
+            window.open(data.linkboleto, '_blank');
+            // success callback
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            // error callback
+        }
+    });
+});
+

@@ -89,7 +89,13 @@ Route::get('boletopdf', function() {
     $dadosPagador['endereco_numero'] = 's/n';
     $dadosPagador['endereco_complemento'] = '';
 
-    return event ( new \App\Events\NovoPedidoGeracaoBoletoExperiencia(\App\Experiencia::find(2), \Auth::user(), $dadosPagador) );
+    //disparando o evento
+    event ( new \App\Events\NovoPedidoGeracaoBoletoExperiencia(\App\Experiencia::find(2), \Auth::user(), $dadosPagador) );
+
+    $experienciasRepository = new \App\Repositories\ExperienciasRepository();
+    $inscricao = $experienciasRepository->getInscricaoUsuario(App\Experiencia::find(2), \Auth::user());
+
+    return redirect('https://sandbox.boletocloud.com/boleto/2via/download/'.$inscricao->boleto->token);
 
 });
 

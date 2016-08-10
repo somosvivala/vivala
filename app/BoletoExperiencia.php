@@ -84,5 +84,16 @@ class BoletoExperiencia extends Model
         return $this->data_vencimento->format('Y-m-d');
     }
 
+    /**
+     * Definindo um acessor para o link da 2 via do boleto
+     */
+    public function getLinkSegundaViaAttribute()
+    {
+        //sufixo para pegar a variavel correta dependendo do ambiente
+        $sufixo = (app()->enviroment('development') ? '_DEV' : '');
+        return env('BOLETOCLOUD_URL_BASE'.$sufixo) . '/boleto/2via/download/' . $this->token;
+    }
+
+
 
 }

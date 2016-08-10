@@ -284,11 +284,21 @@ class ExperienciasController extends Controller
      */
     public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request)
     {
+
         $experiencia = $this->experienciasRepository->findOrFail($request->get('experiencia_id'));
 
         event ( new NovoPedidoGeracaoBoletoExperiencia($experiencia, Auth::user(), $request->all()) );
 
-        return ['sucess' => '??'];
+        sleep(1);
+        $boleto = $this->experienciasRepository->getInscricaoUsuario($experiencia, Auth::user())->boleto;
+
+        dd($boleto);
+        if ($boleto->status == 'gerado') {
+            return ['linkboleto' => ($boleto->linkSegundaVia)];
+        }
+
+        //Se chegou aqui deu erro
+        return ['error' => '??'];
 
     }
 

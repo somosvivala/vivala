@@ -13,7 +13,7 @@ use App\Interfaces\ExperienciasRepositoryInterface;
 class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 {
 
-    //Informacoes sensiveis que serao pegas do env
+    //Propriedades e informacoes do Repositorio
     public $BOLETOCLOUD_AUTH_TOKEN;
     public $BOLETOCLOUD_CONTA_TOKEN_API;
     public $BOLETOCLOUD_URL_BASE;
@@ -38,21 +38,16 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         $this->BOLETOCLOUD_URL_BASE         = env('BOLETOCLOUD_URL_BASE'.$sufixo);
     }
 
-
     /**
-     * Metodo para gerar um boleto
+     * Metodo para realizar a geração de um boleto utilizando a API da BoletoCloud
+     * @param $experiencia - Uma instancia da Experiencia para a qual sera gerado um boleto
+     * @param $pagador - Uma instancia de User o qual sera destinado o boleto
+     *
+     * @return null
      */
-    public function gerarBoleto()
+    public function gerarBoleto(Experiencia $experiencia, User $pagador)
     {
-        //logica de geracao de boleto
-    }
-
-    /**
-     * Metodo para testar a geracao de um boleto no sandbox
-     */
-    public function gerarBoletoTeste(Experiencia $experiencia, User $pagador)
-    {
-        $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->format('Y-m-d');
+        $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->addDays(-1)->format('Y-m-d');
         $dadosBoleto['data_vencimento'] = $experiencia->proximaOcorrencia->data_ocorrencia->addDays('-1')->format('Y-m-d');
         $dadosBoleto['valor'] = $experiencia->preco;
         $dadosBoleto['instrucao'] = array(
@@ -98,15 +93,12 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
         $data = rtrim($fields_string, '&');
 
-        #Definindo conteúdo da requisição e tipos de respostas aceitas
-
         #Pode responder com o boleto ou mensagem de erro
         $accept_header = 'Accept: application/pdf, application/json';
 
         #Estou enviando esse formato de dados
         $content_type_header = 'Content-Type: application/x-www-form-urlencoded; charset=utf-8';
         $headers = array($accept_header, $content_type_header);
-
 
         #Configurações do envio
         $url = $this->BOLETOCLOUD_URL_BASE . '/boletos';
@@ -160,21 +152,20 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         }
 
         #Processando sucesso ou falha
-
         if($http_code == $created){
-            #Versão da plataforma: $boleto_cloud_version 
-            #Token do boleto disponibilizado: $boleto_cloud_token
-            #Localização do boleto na plataforma: $location
-            #Enviando boleto como resposta:
-            header('Content-type: application/pdf');
-            header('Content-Disposition: inline; filename=arquivo-api-boleto-post-teste.pdf');
-            return $body; #Visualização no navegador
-        }else{
-            #Versão da plataforma: $boleto_cloud_version 
-            #Códgio de erro HTTP: $http_code
-            #Enviando erro como resposta:
-            header('Content-Type: application/json; charset=utf-8');
-            echo $body; #Visualização no navegador
+
+            //Se deu tudo certo, salvar token do boleto para usar no link p/ 2via
+            $boleto->token = str_replace('X-BoletoCloud-Token: ', '', $boleto_cloud_token);
+            $boleto->status = 'gerado';
+            $boleto->save();
+
+            dd('fim pdf', $boleto);
+
+        } else{
+
+            //Erro e o boleto nao foi criado.
+            //portanto nao atualizar status do boleto
+
         }
     }
 
