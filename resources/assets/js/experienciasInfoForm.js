@@ -19,12 +19,17 @@ var bindaIconPickerFontAwesome = function(container, input) {
 
       // Pegando o valor do data-icon do icone clicado
       //console.log($(this).parent().data('icon'));
+
+      // Adicionando ele no hidden input
+      $('#icone-categoria-experiencia').val('fa fa-' + $(this).parent().data('icon'));
+
+      // Adicionando ele no modal, alterando visualmente
       fontAwesomeIcon = 'icone-show margin-t-1 fa-5x fa fa-' + $(this).parent().data('icon');
       classesIcone = $(container).attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
       $(container).attr('class', fontAwesomeIcon);
 
-       // Dá toggle e fecha a modal de iconpicker de seleção do icone
-       $('#modal-iconpicker-fontawesome').modal('toggle');
+      // Dá toggle e fecha a modal de iconpicker de seleção do icone
+      $('#modal-iconpicker-fontawesome').modal('toggle');
     });
   }
 }

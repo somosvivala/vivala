@@ -118,7 +118,12 @@
                 <div class="col-xs-12 informacoes">
                     <div class="row padding-t-1">
                         <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                        <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                        <span class="descricao-informacoes">
+                            <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                            <div class="clndr-container">
+                            </div>
+                            <input type="hidden" id="json-eventos" value='[{"date":"2016-08-09"},{"date":"2016-08-19"}]'>
+                        </span>
                     </div>
                 </div>
                 @endif
@@ -142,7 +147,12 @@
                     </div>
                 </div>
                 <div class="row text-center padding-b-2 padding-t-1">
-                    <a class="btn-verde btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+                    @if($Experiencia->isUsuarioAtualInscrito)
+                        <a class="btn-cancelar-inscricao col-xs-12" href="/experiencias/checkout/{{ $Experiencia->id }}"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
+                        <a class="btn-amarelo-aviso btn" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
+                    @else
+                        <a class="btn-verde btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+                    @endif        
                 </div>
             </div>
         </div>

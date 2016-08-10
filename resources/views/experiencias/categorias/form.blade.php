@@ -8,7 +8,7 @@
       <div class="col-lg-12">
         <button type="button" class="btn btn-acao" data-toggle="modal" data-target="#modal-iconpicker-fontawesome"> Selecionar Ícone </button>
       </div>
-      <input type="hidden" name="icone" value="@if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif">
+      <input id="icone-categoria-experiencia" type="hidden" name="icone" value="@if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif">
     </div>
 
     <div class="row text-center margin-b-2">
