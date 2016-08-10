@@ -103,7 +103,7 @@
                             <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
                             <div class="clndr-container">
                             </div>
-                            <input type="hidden" id="json-eventos" value='[{"date":"2016-08-09"},{"date":"2016-08-19"}]'>
+                            <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
                         </span>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                             <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
                             <div class="clndr-container">
                             </div>
-                            <input type="hidden" id="json-eventos" value='[{"date":"2016-08-09"},{"date":"2016-08-19"}]'>
+                            <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
                         </span>
                     </div>
                 </div>
@@ -148,11 +148,12 @@
                 </div>
                 <div class="row text-center padding-b-2 padding-t-1">
                     @if($Experiencia->isUsuarioAtualInscrito)
-                        <a class="btn-cancelar-inscricao col-xs-12" href="/experiencias/checkout/{{ $Experiencia->id }}"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
+                        {!! Form::hidden('_token', csrf_token()) !!}
+                        <a class="btn-cancelar-inscricao col-xs-12" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
                         <a class="btn-amarelo-aviso btn" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
                     @else
                         <a class="btn-verde btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
-                    @endif        
+                    @endif
                 </div>
             </div>
         </div>
