@@ -279,9 +279,9 @@
           </table>
         </div>
         <div class="col-lg-12">
-          <span> {!! Form::radio("tipo","evento_unico", false, ['id' => 'tipo-evento-unico', 'required' => 'required']) !!}  Evento único &nbsp;</span>
-          <span> {!! Form::radio("tipo","evento_recorrente", false, ['id' => 'tipo-evento-recorrente']) !!}  Evento recorrente &nbsp;</span>
-          <span> {!! Form::radio("tipo","evento_servico", false, ['id' => 'tipo-evento-servico']) !!}  Evento recorrente (Serviço) &nbsp;</span>
+          <span> {!! Form::radio("tipo","evento_unico", false, ['id' => 'tipo-evento-unico', 'required' => 'required', 'onclick' => 'mostraCamposPorTipo(this)']) !!}  Evento único &nbsp;</span>
+          <span> {!! Form::radio("tipo","evento_recorrente", false, ['id' => 'tipo-evento-recorrente', 'onclick' => 'mostraCamposPorTipo(this)']) !!}  Evento recorrente &nbsp;</span>
+          <span> {!! Form::radio("tipo","evento_servico", false, ['id' => 'tipo-evento-servico', 'onclick' => 'mostraCamposPorTipo(this)']) !!}  Evento recorrente (Serviço) &nbsp;</span>
         </div>
       </div>
     </div>
@@ -310,9 +310,38 @@
 
     {{-- Seção das DATAS em que a experiência irá ocorrer --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
-      <div class="row">
+        {{-- Dependendo do tipo da experiencia --}}
+        <div id="campos_evento_unico" class="row  toggle-tipo-experiencia">
         <div class="col-lg-9">
-          {!! Form::label('', 'Próximas Datas') !!}
+          {!! Form::label('', 'Selecione a data que ocorrerá o evento') !!}
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Próximas Datas"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <ul id="data-ocorrencia-container">
+            @if (isset($experiencia))
+            @foreach ($experiencia->ocorrencias as $dataOcorrencia)
+                @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
+            @endforeach
+            @endif
+
+            {{-- Botao de adicionar novas datas --}}
+            <li class="col-lg-12 margin-b-1 container-datas-ocorrencia">
+              <div class="col-lg-3 col-lg-offset-2 text-center">
+                <a href="#" title="Adicionar Data" onclick="adicionaDataEventoUnicoExperiencia(event)">
+                  <i class="fa fa-2x fa-plus margin-t-1" ></i>
+                  <i class="fa fa-2x fa-spin margin-t-1 fa-spinner loading-icon soft-hide laranja"></i>
+                </a>
+              </div>
+            </li>
+
+        </ul>
+      </div>
+        <div id="campos_evento_recorrente" class="row toggle-tipo-experiencia">
+        <div class="col-lg-9">
+          {!! Form::label('', 'Próximas datas em que a experiencia vai acontecer') !!}
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
@@ -336,6 +365,35 @@
               </div>
             </li>
         </ul>
+      </div>
+      <div id="campos_evento_servico" class="row  toggle-tipo-experiencia">
+        <div class="col-lg-9">
+          {!! Form::label('', 'Selecione os dias em que será possivel realizar a experiência') !!}
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Próximas Datas"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+
+        <div class="col-lg-12">
+            @foreach ($arrayDias as $key => $dia)
+              <label class="col-lg-3">
+                <input type="checkbox" name="tipo_servico_dias[]" value="{{ $dia }}"
+                  @if (isset($experiencia) 
+                    && count($experiencia->diasOperacionaisDaSemana) 
+                    && in_array($dia, (array)$experiencia->diasOperacionaisDaSemana)) 
+                    checked="true"
+                  @endif
+                  ><span> &nbsp; {{ "$dia" }}</span>
+              </label>
+            @endforeach
+        </div>
+
+
+
+
+
       </div>
     </div>
     {{-- Fim da Seção das DATAS em que a experiência irá ocorrer --}}

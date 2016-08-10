@@ -29,8 +29,7 @@ class GeraBoletoInscricaoExperiencia
      */
     public function handle(NovoPedidoGeracaoBoletoExperiencia $event)
     {
-//        $this->boletoCloudRepository->geraBoletoTeste();
-
+        $this->boletoCloudRepository->gerarBoleto($event->experiencia, $event->user);
     }
 
 }

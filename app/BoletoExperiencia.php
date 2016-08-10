@@ -10,7 +10,7 @@ class BoletoExperiencia extends Model
         'data_emissao',
         'data_vencimento',
         'valor',
-        'boleto_instrucao',
+        'instrucao',
         'status',
         'token',
     ];
@@ -49,9 +49,9 @@ class BoletoExperiencia extends Model
     /**
      * Definindo um mutator para o campo boleto_instrucoes (inserindo array serializado)
      */
-    public function setBoletoInstrucoesAttribute($value)
+    public function setInstrucaoAttribute($value)
     {
-        $this->attributes['boleto_instrucoes'] = serialize($value);
+        $this->attributes['instrucao'] = serialize($value);
     }
 
 
@@ -63,10 +63,37 @@ class BoletoExperiencia extends Model
     /**
      * Definindo um acessor para campo boleto_instrucoes (des-serializando a string array)
      */
-    public function getBoletoInstrucoesAttribute($value)
+    public function getInstrucaoAttribute($value)
     {
         return unserialize($value);
     }
+
+    /**
+     * Definindo um acessor para o campo data_emissao
+     */
+    public function getDataEmissaoFormatadaAttribute()
+    {
+        return $this->data_emissao->format('Y-m-d');
+    }
+
+    /**
+     * Definindo um acessor para o campo data_vencimento
+     */
+    public function getDataVencimentoFormatadaAttribute()
+    {
+        return $this->data_vencimento->format('Y-m-d');
+    }
+
+    /**
+     * Definindo um acessor para o link da 2 via do boleto
+     */
+    public function getLinkSegundaViaAttribute()
+    {
+        //sufixo para pegar a variavel correta dependendo do ambiente
+        $sufixo = (env('APP_ENV') == 'development' ? '_DEV' : '');
+        return env('BOLETOCLOUD_URL_BASE'.$sufixo) . '/boleto/2via/download/' . $this->token;
+    }
+
 
 
 }

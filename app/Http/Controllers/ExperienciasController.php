@@ -18,7 +18,7 @@ use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\GerarBoletoInscricaoExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
-use App\Events\NovoPedidoGeracaoBoletoExperiencia;
+use App\Events\NovosDadosUsuario;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
 use App\Http\Requests\DesativarExperienciaRequest;
@@ -284,12 +284,21 @@ class ExperienciasController extends Controller
      */
     public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request)
     {
+
         $experiencia = $this->experienciasRepository->findOrFail($request->get('experiencia_id'));
 
-        event ( new NovoPedidoGeracaoBoletoExperiencia($experiencia, Auth::user(), $request->all()) );
+        //Disparando o evento para atualizar as novas informacoes do usuario
+        event ( new NovosDadosUsuario(Auth::user(), $request->all()) );
 
-        return ['sucess' => '??'];
+        //gerando boleto
+        $boleto = $this->experienciasRepository->gerarBoleto($experiencia, Auth::user());
 
+        if ($boleto && $boleto->status == 'gerado') {
+            return ['linkboleto' => ($boleto->linkSegundaVia)];
+        }
+
+        //Se chegou aqui deu erro
+        return ['error' => '??'];
     }
 
 

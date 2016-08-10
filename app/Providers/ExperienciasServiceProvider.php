@@ -22,6 +22,10 @@ class ExperienciasServiceProvider extends ServiceProvider {
       //Bindando views que precisam de CategoriaExperiencia
       view()->composer('experiencias.form', 'App\Repositories\ExperienciasRepository@injectAllCategorias');
 
+      //Bindando views que precisam de CategoriaExperiencia
+      view()->composer('experiencias.form', 'App\Repositories\ExperienciasRepository@injectAllDiasDaSemana');
+
+
       //Bindando views que precisam de Ongs
       view()->composer('experiencias.form', 'App\Repositories\OngRepository@injectOngsParaSelect');
 	}

@@ -78,38 +78,6 @@ Route::get('boletobd', function() {
     return $repo->createBoletoExperiencia($dadosBoleto, $perfil->user);
 });
 
-Route::get('boletopdf', function() {
-
-    $perfil = App\Perfil::find(13);
-
-    $dadosPagador['cpf'] = '392.267.658-80';
-    $dadosPagador['enderecoCep'] = '17014-020';
-    $dadosPagador['enderecoUf'] = 'SP';
-    $dadosPagador['enderecoLocalidade'] = 'Bauru';
-    $dadosPagador['enderecoBairro'] = 'VL. Santa Clara';
-    $dadosPagador['enderecoLogradouro'] = 'Rua Capitão Gomes Duarte';
-    $dadosPagador['enderecoNumero'] = 's/n';
-    $dadosPagador['enderecoComplemento'] = '';
-
-    $perfil->update($dadosPagador);
-
-    $dadosBoleto['data_vencimento'] = \Carbon\Carbon::now()->addDays(1)->format('Y-m-d');
-    $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->format('Y-m-d');
-    $dadosBoleto['valor'] = '1.00';
-    $dadosBoleto['instrucao'] = array(
-        'Atenção! O pagamento desse boleto confirmará sua inscrição.',
-        'Dúvidas ou informações fale com agente em contato@vivala.com.br',
-        'Tenha uma ótima experiencia!'
-    );
-
-    $inscricao = App\InscricaoExperiencia::first();
-
-    $repo = new \App\Repositories\BoletoCloudRepository();
-    return $repo->gerarBoletoTeste($dadosBoleto, $perfil->user, $inscricao);
-
-});
-
-
 
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
@@ -222,6 +190,9 @@ Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfir
 Route::post('experiencias/cancelainscricao', 'ExperienciasController@postCancelaInscricao');
 Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
 Route::post('experiencias/desativar', 'ExperienciasController@postDesativarExperiencia');
+
+//Rota para criacao do arquivos remessa dos boletos gerados
+Route::get('gestao/gerararquivoremessa', 'GestaoController@getGerararquivoremessa');
 
 
 //rotas para lidar com resource controllers
