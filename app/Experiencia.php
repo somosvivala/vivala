@@ -112,6 +112,81 @@ class Experiencia extends Model
         $this->attributes['tipo_servico_dias'] = serialize($value);
     }
 
+    /**
+     * Definindo um acessor para os dias operacionais da semana em formato JSON
+     * para ser usado por experiencias do tipo evento_servico
+     */
+    public function getDiasOperacionaisJSONAttribute()
+    {
+        $arrayDatas=[];
+        $arrayDias = $this->diasOperacionaisDaSemana ?  $this->diasOperacionaisDaSemana : [];
+
+        //Caso a experiencia nao tenha diasOperacionais entao retornar array vazio
+        if (!$arrayDias) {
+            return [];
+        }
+
+        //iterando sob os dias da semana para pegar as datas correspondentes
+        foreach ($arrayDias as $diaSemana) {
+            switch ($diaSemana) {
+                case 'Domingo' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this sunday');
+                    break;
+                case 'Segunda' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this monday');
+                    break;
+                case 'Terca' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this tuesday');
+                    break;
+                case 'Quarta' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this wednesday');
+                    break;
+                case 'Quinta' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this thursday');
+                    break;
+                case 'Sexta' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this friday');
+                    break;
+                case 'Sabado' :
+                    $arrayDatas[] = \Carbon\Carbon::parse('this saturday');
+                    break;
+            }
+        }
+
+        //iterando sob os dias de funcionamento e criando datas para as proximas 10 semanas
+        $arrayAux = $arrayDatas;
+        foreach ($arrayAux as $dataOperacional) {
+            for ($i = 1; $i <= 3; $i++) {
+                $arrayDatas[] = $dataOperacional->copy()->addDays(7*$i);
+            }
+        }
+
+        //formatando da maneira que o calendario compreende
+        foreach ($arrayDatas as $key => $data) {
+            $jsonObj[$key] = new \stdClass();
+            $jsonObj[$key]->date = $data->format('Y-m-d');
+        }
+
+        return  json_encode($jsonObj);
+
+    }
+
+    /**
+     * Definindo um acessor para as proximas Ocorrencias de uma Experiencia em JSON
+     * para ser usado por experiencias do tipo evento_recorrente
+     */
+    public function getProximasOcorrenciasJSONAttribute()
+    {
+        $obj=[];
+        //iterando sobre as ocorrencias futuras e formatando elas no formato do calendario
+        $this->futurasOcorrencias->each(function ($dataOcorrencia) use (&$obj) {
+            $std = new \stdClass();
+            $std->date = $dataOcorrencia->data_ocorrencia->format('Y-m-d');
+            $obj[] = $std;
+        });
+
+        return json_encode($obj);
+    }
 
     /**
      * Definindo um acessor para a foto de capa da experiencia
@@ -145,6 +220,24 @@ class Experiencia extends Model
             ->first()
             : null;
     }
+
+    /**
+     * Acessor para a próxima ocorrencia a partir de hoje
+     *
+     * @return \Carbon\Carbon
+     */
+    public function getFuturasOcorrenciasAttribute()
+    {
+        $existeOcorrencias = !$this->ocorrencias->isEmpty();
+
+        return $existeOcorrencias ?
+            $this->ocorrencias()
+            ->where('data_ocorrencia', '>=', Carbon::now())
+            ->orderBy('data_ocorrencia', 'asc')
+            ->get()
+            : null;
+    }
+
 
 
     /**
