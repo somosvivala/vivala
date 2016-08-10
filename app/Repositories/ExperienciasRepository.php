@@ -519,6 +519,16 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     }
 
 
+    /**
+     * Metodo para retornar injetar os dias da semana no form de edit de experiencias
+     */
+    public function injectAllDiasDaSemana($view)
+    {
+        $arrayDias = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo', 'Feriados'];
+        return $view->with('arrayDias', $arrayDias);
+    }
+
+
 
 
 }

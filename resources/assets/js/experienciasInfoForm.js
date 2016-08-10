@@ -210,3 +210,25 @@ function contadorDescCheia(ev){
 
   atualizaContador(maxlength, textContainer, msgContainer);
 }
+
+
+/**
+ * Funcao para bindar o campo tipo da experiencia no formulario
+ */
+var mostraCamposPorTipo = function(el) {
+    var tipo = $(el).val();
+
+    //escondendo as outras divs e dando disable nos inputs que podem estar lá por garantia
+    $('.toggle-tipo-experiencia').hide();
+    $('.toggle-tipo-experiencia input').attr('disabled','true');
+
+    //mostrando a div do tipo certo e habilitando seus campos caso estejam desabilitados
+    $('#campos_'+tipo+' input').removeAttr('disabled');
+    $('#campos_'+tipo).show();
+};
+
+//Chamando a funcao para atualizar as divs conforme o tipo no ready
+$(function () {
+    var tipoExp = $("input[name='tipo']:checked");
+    mostraCamposPorTipo(tipoExp);
+});
