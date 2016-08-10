@@ -25,9 +25,14 @@ class ExperienciasServiceProvider extends ServiceProvider {
       //Bindando views que precisam de CategoriaExperiencia
       view()->composer('experiencias.form', 'App\Repositories\ExperienciasRepository@injectAllDiasDaSemana');
 
-
       //Bindando views que precisam de Ongs
       view()->composer('experiencias.form', 'App\Repositories\OngRepository@injectOngsParaSelect');
+
+      //Bindando views do /viajar que precisam de informacoes
+      view()->composer('chefsclub.buscarestaurantes', 'App\Http\Controllers\ViajarController@getInjectInformacoesViajar');
+
+      //todo pegar outas informacoes necessarias para a ong
+
 	}
 
 	/**
