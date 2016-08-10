@@ -578,7 +578,7 @@ class ClickBusController extends Controller
                     ? $request['extra']['ida-slug'] : null;
 
                 //Comparando o local de embarque para saber determinar a viacao
-                if ($idaSlug == ClickBusPlace::find($departure_id)->slug) {
+                if ($Trip->{"context"} == 'departure') {
                     $viacao_id = $request['extra']['ida-company-id'];
                 }
 
