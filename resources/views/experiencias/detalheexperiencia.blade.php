@@ -66,7 +66,7 @@
                     <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
                     <div class="clndr-container">
                     </div>
-                    <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
+                    <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
                 </span>
             </div>
         </div>

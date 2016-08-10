@@ -114,6 +114,7 @@ class Experiencia extends Model
 
     /**
      * Definindo um acessor para os dias operacionais da semana em formato JSON
+     * para ser usado por experiencias do tipo evento_servico
      */
     public function getDiasOperacionaisJSONAttribute()
     {
@@ -160,16 +161,32 @@ class Experiencia extends Model
             }
         }
 
+        //formatando da maneira que o calendario compreende
         foreach ($arrayDatas as $key => $data) {
             $jsonObj[$key] = new \stdClass();
-            $jsonObj[$key]->data = $data->format('Y-m-d');
+            $jsonObj[$key]->date = $data->format('Y-m-d');
         }
 
         return  json_encode($jsonObj);
 
     }
 
+    /**
+     * Definindo um acessor para as proximas Ocorrencias de uma Experiencia em JSON
+     * para ser usado por experiencias do tipo evento_recorrente
+     */
+    public function getProximasOcorrenciasJSONAttribute()
+    {
+        $obj=[];
+        //iterando sobre as ocorrencias futuras e formatando elas no formato do calendario
+        $this->futurasOcorrencias->each(function ($dataOcorrencia) use (&$obj) {
+            $std = new \stdClass();
+            $std->date = $dataOcorrencia->data_ocorrencia->format('Y-m-d');
+            $obj[] = $std;
+        });
 
+        return json_encode($obj);
+    }
 
     /**
      * Definindo um acessor para a foto de capa da experiencia
@@ -203,6 +220,24 @@ class Experiencia extends Model
             ->first()
             : null;
     }
+
+    /**
+     * Acessor para a próxima ocorrencia a partir de hoje
+     *
+     * @return \Carbon\Carbon
+     */
+    public function getFuturasOcorrenciasAttribute()
+    {
+        $existeOcorrencias = !$this->ocorrencias->isEmpty();
+
+        return $existeOcorrencias ?
+            $this->ocorrencias()
+            ->where('data_ocorrencia', '>=', Carbon::now())
+            ->orderBy('data_ocorrencia', 'asc')
+            ->get()
+            : null;
+    }
+
 
 
     /**
