@@ -1,6 +1,6 @@
 {{-- Quero Cuidar - Menu Principal --}}
 <nav class="menu-lateral">
-	<h4 class="suave tour-pilar-cuidar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_volunteer') }}!</h4>
+	<h4 class="suave tour-pilar-cuidar-step1">{{ trans('global.lbl_you_are_in')}}<br>{{ trans('global.lbl_wanna_volunteer') }}!</h4>
 	<ul>
 		<li class="tour-pilar-cuidar-step2"><a href="/ongs" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-coracao-caridoso vi"></i>{{ trans('global.lbl_project_') }}</a></li>
     <li class="tour-pilar-cuidar-step3"><a href="/vagas" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-bandeira vi"></i>{{ trans('global.lbl_ong_slot_') }}</a></li>

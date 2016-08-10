@@ -1,7 +1,7 @@
 'use strict';
 
 jQuery(document).ready(function($) {
-  
+
     $('a[aria-controls=rodoviario]').on('shown.bs.tab', function() {
         $('#origem-rodoviario').focus();
     });
@@ -297,24 +297,6 @@ var bindaPoltronas = function(){
             "sessionId": $(this).find('input#session-id').val(),
         } ;
 
-        //Tradução
-        var linguaAtiva = $("meta[name=language]").attr("content");
-        var arrayLingua = [];
-
-        switch(linguaAtiva){
-            case 'en':
-                arrayLingua[1] = 'Ops!';
-                arrayLingua[2] = 'There was a problem during the booking of your seat!';
-            break;
-            case 'pt':
-                arrayLingua[1] = 'Opa!';
-                arrayLingua[2] = 'Ocorreu um problema durante a reserva da sua poltrona!';
-            break;
-            default:
-                arrayLingua[1] = 'Opa!';
-                arrayLingua[2] = 'Ocorreu um problema durante a reserva da sua poltrona!';
-        }
-
         // Envia ajax de validaçao, caso seja bem sucedido marca como
          // selecionada a poltrona
         ajaxPoltronas(params, function(data_obj) {
@@ -322,11 +304,11 @@ var bindaPoltronas = function(){
             //se tiver dado erro
             if (data_obj.errors) {
                 swal({
-                    title: arrayLingua[1],
-                    html: arrayLingua[2]+"<br/><br/>"+data_obj.errors,
-                    type: "error",
-                    confirmButtonColor: "#FF5B00",
-                    confirmButtonText: "OK",
+                    title: lingua[26],
+                    html: "<br><p>"+lingua[37]+"</p><p>"+data_obj.errors+"</p>",
+                    type: 'error',
+                    confirmButtonColor: corLaranjaPrimario,
+                    confirmButtonText: 'OK',
                     closeOnConfirm: true,
                 },
                 function() {
@@ -765,15 +747,15 @@ var bindaFormPagamento = function() {
 
             if (data.errors) {
                 swal({
-                    title: "Ooops!",
-                    html: "Ocorreu um problema com seu voucher:<br>"+data.errors,
-                    type: "error",
-                    confirmButtonColor: "#F16F2B",
-                    confirmButtonText: "OK",
+                    title: lingua[39],
+                    html: "<br><p>"+lingua[40]+":</p><p>"+data.errors+"</p>",
+                    type: 'error',
+                    confirmButtonColor: corVermelhoPrimario,
+                    confirmButtonText: 'OK',
                     closeOnConfirm: true,
                 });
 
-                $("#usar-voucher-desconto").html("USAR CUPOM");
+                $("#usar-voucher-desconto").html(lingua[41]);
                 atualizaValorParcelas();
             } else {
 
@@ -790,12 +772,12 @@ var bindaFormPagamento = function() {
                 $("#desconto-fixo").val(descontoFixo);
                 $("#desconto-servico").val(descontoServico);
 
-                $("#usar-voucher-desconto").html("USAR CUPOM");
+                $("#usar-voucher-desconto").html(lingua[41]);
                 atualizaValorParcelas();
             }
 
         }).error(function() {
-            $("#usar-voucher-desconto").html("USAR CUPOM");
+            $("#usar-voucher-desconto").html(lingua[41]);
             atualizaValorParcelas();
         });
 
@@ -813,13 +795,13 @@ var checaQuantidadePoltronas =  function(ev) {
     if (qntIda > 0 && qntVolta > 0 && qntIda != qntVolta) {
         //caso qnts diferentes
         swal({
-            title: "Atenção",
-            text: "Voce selecionou um numero diferente de passagens de ida e volta. Deseja continuar mesmo assim?",
-            type: "warning",
+            title: lingua[42],
+            text: "<br><p>"+lingua[43]+"</p>",
+            type: 'warning',
             showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Sim, continuar!",
-            cancelButtonText: "Não, corrigir!",
+            confirmButtonColor: corAmareloPrimario,
+            confirmButtonText: lingua[44],
+            cancelButtonText: lingua[45],
             closeOnConfirm: true,
             closeOnCancel: true
             },
@@ -828,7 +810,7 @@ var checaQuantidadePoltronas =  function(ev) {
                    funcaoSubmitPoltronas(this);
 
                 } else {
-                    //nao fazer nada
+                    // nao fazer nada (?)
                 }
         });
 
@@ -837,13 +819,13 @@ var checaQuantidadePoltronas =  function(ev) {
         if (temVolta) {
             //caso sem volta
             swal({
-                title: "Atenção",
-                text: "Voce não selecionou uma passagem de volta. Deseja continuar assim mesmo?",
-                type: "warning",
+                title: lingua[42],
+                text: "<br><p>"+lingua[46]+"</p>",
+                type: 'warning',
                 showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Sim, continuar!",
-                cancelButtonText: "Não, corrigir!",
+                confirmButtonColor: corAmareloPrimario,
+                confirmButtonText: lingua[44],
+                cancelButtonText: lingua[45],
                 closeOnConfirm: true,
                 closeOnCancel: true
                 },
@@ -851,7 +833,7 @@ var checaQuantidadePoltronas =  function(ev) {
                     if (confirmed) {
                         funcaoSubmitPoltronas(this);
                     } else {
-                        //nao fazer nada
+                        //nao fazer nada (?)
                     }
             });
         } else {
@@ -861,11 +843,11 @@ var checaQuantidadePoltronas =  function(ev) {
     } else if (qntIda == 0) {
        //caso nao selecionou Ida
        swal({
-            title: "Ops, ocorreu um problema",
-            text: "Voce não selecionou uma passagem de ida!",
-            type: "warning",
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Ok",
+            title: lingua[47],
+            text: "<br><p>"+lingua[48]+"</p>",
+            type: 'warning',
+            confirmButtonColor: corAmareloPrimario,
+            confirmButtonText: 'OK',
             closeOnConfirm: true
         });
 

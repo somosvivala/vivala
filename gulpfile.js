@@ -64,6 +64,10 @@ elixir(function(mix) {
       '../../assets/js/bibliotecas/jquery.maskmoney.min.js',
       /* Logger antes dos outros */
       '../../assets/js/logger-config.js',
+      /* Váriaveis Globais - antes dos outros */
+      '../../assets/js/bibliotecas/vivala.variaveisGlobais.js',
+      /* Arquivos de Tradução Globais - antes dos outros */
+      '../../assets/js/lang/vivala.traducaoGlobal.js',
       /* Scripts Vivalá */
       '../../assets/js/outdatedbrowser.js',
       '../../assets/js/comentaPost.js',
@@ -96,7 +100,6 @@ elixir(function(mix) {
       '../../assets/js/autocompleteBuscas.js',
       '../../assets/js/cotacaoViagem.js',
       '../../assets/js/buscaCEP.js',
-
       /* Experiências */
       '../../assets/js/fontAwesomeIconsArray.js',
       '../../assets/js/experienciasCropFoto.js',

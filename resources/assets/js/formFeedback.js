@@ -33,8 +33,14 @@ $(function() {
             success: function (data) {
                 // Executa uma função de javascript
                 if(callbackFunction) {
-                   swal('Muito obrigado', "Seu feedback foi enviado. Entraremos em contato assim que possivel. ", 'success');
-                   document.getElementById("form-feedback").reset()
+                   swal({
+                     title: lingua[3],
+                     html: "<p>"+lingua[4]+"</p><p>"+lingua[5]+"</p>",
+                     type: 'success',
+                     showCancelButton: false,
+                     confirmButtonColor: corVerdePrimario,
+                   });
+                   document.getElementById("form-feedback").reset();
                    $('#modal-feedback').modal('hide');
                 }
                 // Redireciona para outra pagina

@@ -1,64 +1,5 @@
 "use strict";
 
-// Pegando a lingua ativa na view no momento
-var linguaAtiva = $("meta[name=language]").attr("content");
-var lingua = [];
-switch(linguaAtiva){
-  case 'en':
-    lingua[0] = 'Trip estimate send with success!',
-    lingua[1] = 'Our team will do everything to find the trip that fits more with you!',
-    lingua[2] = 'A reply email about your trip is coming soon, stay tuned to your mailbox.',
-    lingua[3] = 'It wasn\'t possible to estimate your trip',
-    lingua[4] = 'An error occurred in our system and your trip estimate can\'t be send!',
-    lingua[5] = 'We apologize for the inconvenience and ask you to try again later.',
-    lingua[6] = 'If you choose <strong style="color:#FF5B00;">FLIGHTS + HOSTING</strong> option we can get a <strong>35%</strong> discount on CAR rental amount.'
-    lingua[7] = 'Very Little',
-    lingua[8] = 'Little',
-    lingua[9] = 'Moderate',
-    lingua[10] = 'Much',
-    lingua[11] = 'Very Much',
-    lingua[12] = 'Child',
-    lingua[13] = 'Some months',
-    lingua[14] = 'year',
-    lingua[15] = 'years'
-  break;
-  case 'pt':
-    lingua[0] = 'Cotação enviada com sucesso!',
-    lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
-    lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.',
-    lingua[3] = 'Não foi possível realizar a sua cotação',
-    lingua[4] = 'Um erro ocorreu em nosso sistema e sua cotação não pode ser enviada!',
-    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.',
-    lingua[6] = 'Caso você faça a cotação de <strong style="color:#FF5B00;">VÔOS + HOSPEDAGEM</strong> conseguimos um desconto de <strong>35%</strong> no valor do aluguel do CARRO!'
-    lingua[7] = 'Pouquíssimo',
-    lingua[8] = 'Pouco',
-    lingua[9] = 'Moderado',
-    lingua[10] = 'Muito',
-    lingua[11] = 'Muitíssimo',
-    lingua[12] = 'Criança',
-    lingua[13] = 'Alguns meses',
-    lingua[14] = 'ano',
-    lingua[15] = 'anos'
-  break;
-  default:
-    lingua[0] = 'Cotação enviada com sucesso!',
-    lingua[1] = 'Nosso time fará de tudo para encontrar a viagem que mais se encaixa com você!',
-    lingua[2] = 'Um email de resposta sobre sua viagem chegará em breve, fique atento à sua caixa de email.',
-    lingua[3] = 'Não foi possível realizar a sua cotação',
-    lingua[4] = 'Um erro ocorreu em nosso sistema e sua cotação não pode ser enviada!',
-    lingua[5] = 'Pedimos desculpas pelo transtorno e pedimos que tente novamente mais tarde.',
-    lingua[6] = 'Caso você faça a cotação de <strong style="color:#FF5B00;">VÔOS + HOSPEDAGEM</strong> conseguimos um desconto de <strong>35%</strong> no valor do aluguel do CARRO!'
-    lingua[7] = 'Pouquíssimo',
-    lingua[8] = 'Pouco',
-    lingua[9] = 'Moderado',
-    lingua[10] = 'Muito',
-    lingua[11] = 'Muitíssimo',
-    lingua[12] = 'Criança',
-    lingua[13] = 'Alguns meses',
-    lingua[14] = 'ano',
-    lingua[15] = 'anos'
-}
-
 // Aplicando mascara nos campos de date para funcionar melhor com o calendário
 $('.mascara-data').mask("00/00/0000");
 
@@ -279,7 +220,7 @@ var bindaFormCotaViagem = function() {
         if(nroCriancas >= 1){
           $(adicionalCrianca).removeClass('hidden');
           for(i=1; i<=nroCriancas; i++) {
-            $(idadeCrianca).append('<li class="margin-b-1"><select id="basico-idade-criancas" name="basico-idade-criancas[]" id="" class="form-control" required><option disabled="true" selected>'+lingua[12]+' '+i+'</option><option value="Alguns Meses">'+lingua[13]+'</option><option value="1">1 '+lingua[14]+'</option><option value="2">2 '+lingua[15]+'</option><option value="3">3 '+lingua[15]+'</option><option value="4">4 '+lingua[15]+'</option><option value="5">5 '+lingua[15]+'</option><option value="6">6 '+lingua[15]+'</option><option value="7">7 '+lingua[15]+'</option><option value="8">8 '+lingua[15]+'</option><option value="9">9 '+lingua[15]+'</option><option value="10">10 '+lingua[15]+'</option><option value="11">11 '+lingua[15]+'</option></select></li>');
+            $(idadeCrianca).append('<li class="margin-b-1"><select id="basico-idade-criancas" name="basico-idade-criancas[]" id="" class="form-control" required><option disabled="true" selected>'+lingua[18]+' '+i+'</option><option value="Alguns Meses">'+lingua[19]+'</option><option value="1">1 '+lingua[20]+'</option><option value="2">2 '+lingua[21]+'</option><option value="3">3 '+lingua[21]+'</option><option value="4">4 '+lingua[21]+'</option><option value="5">5 '+lingua[21]+'</option><option value="6">6 '+lingua[21]+'</option><option value="7">7 '+lingua[21]+'</option><option value="8">8 '+lingua[21]+'</option><option value="9">9 '+lingua[21]+'</option><option value="10">10 '+lingua[21]+'</option><option value="11">11 '+lingua[21]+'</option></select></li>');
           }
         }
         else if($(basicoNroCriancas).val() <= 0){
@@ -316,19 +257,19 @@ var bindaFormCotaViagem = function() {
     value = value || context.value;
     switch(value){
       case 1:
-        text = lingua[7];
+        text = lingua[13];
         break;
       case 2:
-        text = lingua[8];
+        text = lingua[14];
         break;
       case 3:
-        text = lingua[9];
+        text = lingua[15];
         break;
       case 4:
-        text = lingua[10];
+        text = lingua[16];
         break;
       case 5:
-        text = lingua[11];
+        text = lingua[17];
         break;
       default:
         'N/A';
@@ -494,8 +435,9 @@ var bindaFormCotaViagem = function() {
 }
 
 jQuery(document).ready(function($) {
-  var informeCotacaoCarros = '#informe-cotacao-carros';
-  bindaTooltipsDesativados(informeCotacaoCarros, lingua[6]);
+  var informeCotacaoCarros = '#informe-cotacao-carros',
+      arrayLingua = lingua[12];
+  bindaTooltipsDesativados(informeCotacaoCarros, arrayLingua);
   bindaFormCotaViagem();
 
   // Token do laravel para Ajax
@@ -541,11 +483,11 @@ jQuery(document).ready(function($) {
         success: function (data) {
             if(callbackFunction) {
               swal({
-                  title: lingua[0],
-                  html: lingua[1]+"<br/>"+lingua[2],
-                  type: "success",
-                  confirmButtonColor: "#FF5B00",
-                  confirmButtonText: "OK",
+                  title: lingua[6],
+                  html: "<p>"+lingua[7]+"</p><p>"+lingua[8]+"</p>",
+                  type: 'success',
+                  confirmButtonColor: corVerdePrimario,
+                  confirmButtonText: 'OK',
                   closeOnConfirm: true,
               });
               document.getElementById("form-cotar-viagens").reset();
@@ -558,11 +500,11 @@ jQuery(document).ready(function($) {
         error: function (data) {
           if(callbackFunction) {
             swal({
-                title: lingua[3],
-                html: lingua[4]+"<br/>"+lingua[5],
-                type: "error",
-                confirmButtonColor: "#FF5B00",
-                confirmButtonText: "OK",
+                title: lingua[9],
+                html: "<p>"+lingua[10]+"</p><p>"+lingua[11]+"</p>",
+                type: 'error',
+                confirmButtonColor: corVermelhoPrimario,
+                confirmButtonText: 'OK',
                 closeOnConfirm: true,
             });
             document.getElementById("form-cotar-viagens").reset();

@@ -1,7 +1,7 @@
 {{-- Quero Viajar - Menu Principal --}}
 <nav class="menu-lateral">
 	<h4 class="suave tour-pilar-viajar-step1">
-		{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_travel') }}!
+		{{ trans('global.lbl_you_are_in')}}<br>{{ trans('global.lbl_wanna_travel') }}!
 	</h4>
 	{{-- DESATIVADO TEMPORARIAMENTE
 	<ul>

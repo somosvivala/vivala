@@ -49,7 +49,7 @@
                     @include('chefsclub.buscarestaurantes')
                 </div>
                 <div>
-                    @include('modals._listarestaurantes')
+                    @include('chefsclub.listarestaurantes')
                 </div>
             </div>
         </div>

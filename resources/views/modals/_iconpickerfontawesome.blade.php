@@ -1,18 +1,15 @@
-<div id="modal-iconpicker-fontawesome" class="modal fade" role="dialog">
+<div id="modal-iconpicker-fontawesome" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal-iconpicker-fontawesome" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="{!! trans('lbl_close') !!}">
-          <span aria-hidden="true"><i class="fa fa-close"></i></span>
+          <span aria-hidden="true"><i class="fa fa-1-5x fa-close"></i></span>
         </button>
-        <h3 class="modal-title" class="modal-title">
-          <div class="font-bold-upper text-center laranja">
-            Selecione o Ícone
-          </div>
+        <h3 class="modal-title text-center font-bold-upper laranja">
+          Selecione o Ícone
         </h3>
       </div>
       <div class="modal-body">
-
         {{-- Icones de USUARIO --}}
         <div class="row margin-b-2">
           <div class="col-md-12 col-lg-12 text-center padding-b-1">

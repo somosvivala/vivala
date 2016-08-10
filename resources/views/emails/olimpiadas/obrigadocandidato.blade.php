@@ -495,24 +495,24 @@
                                                                             <span style="font-family:trebuchet ms,lucida grande,lucida sans unic
                                                                                 ode,lucida sans,tahoma,sans-serif"><span style="font-size:14px">
                 Para você concluir sua inscrição, <a style="color:#FF6D20" href="https://portaldovoluntario.rio2016.com/ESIREG/NewFormRequest.do?language=1&formId=1">Clique Aqui</a> e insira o código INT111 no momento de cadastro, para sabermos que você veio da Vivalá!
-<br/>
-<br/>
+<br>
+<br>
 Feito esse cadastro, você será direcionado para um formulário que lhe pedirá uma série de informações pessoais. Cheque tudo para garantir que não ficaram campos em branco para concluir a sua inscrição! 
-<br/>
-<br/>
+<br>
+<br>
 Depois, é só aguardar que em alguns dias o Comitê Organizador entrará em contato para te entrevistar!
-<br/>
-<br/>
+<br>
+<br>
 As vagas de voluntariado estão divididas nas categorias: Serviços de Saúde, Esportes, Imprensa e Comunicação, Apoio Operacional, Protocolo e idiomas, Transportes, Atendimento ao público, Tecnologia e Cerimônias de Premiação e você poderá sinalizar as três áreas que mais tem interesse!
-<br/>
-<br/>
+<br>
+<br>
 Fique ligado nos próximos dias e lembre‐se que a Vivalá está à disposição para te ajudar no que for necessário respondendo este e‐mail ou através do telefone (11) 2645 2632 ou por inbox em nosso <a style="color:#FF6D20" href="https://www.facebook.com/SomosVivala/?fref=ts">Facebook</a>!
-<br/>
-<br/>
+<br>
+<br>
 <strong><span>Viva as experiências transformadoras,</span></strong>
-<br/>
+<br>
 <strong><span>Viva os Jogos Olímpicos e Paralímpicos do Rio 2016,</span></strong>
-<br/>
+<br>
 <img alt="" src="http://vivala.com.br/email/logo.png" style="max-width: 180px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage" align="middle" width="180">
 
                 </span></span><br>

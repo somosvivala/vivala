@@ -47,10 +47,11 @@
             </div>
             <div role="tabpanel" class="tab-pane " id="restaurantes">
                 <div>
-                {{--   @include('chefsclub.buscarestaurantes')
+                {{--
+                  @include('chefsclub.buscarestaurantes')
                 </div>
                 <div>
-                    @include('modals._listarestaurantes')
+                  @include('modals._listarestaurantes')
                 --}}
                 </div>
             </div>

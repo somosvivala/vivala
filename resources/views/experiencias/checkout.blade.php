@@ -43,16 +43,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="fa fa-times"></i></span>
         </button>
         <h4 class="modal-title" id="myModalLabel">Preencha os campos para gerar o boleto</h4>
       </div>
         {!! Form::open(['url' => '/experiencias/gerarboleto/', 'class'=>'gerar-boleto-experiencia']) !!}
       <div class="modal-body">
-
             {!! Form::hidden('experiencia_id', $Inscricao->experiencia->id) !!}
             @include('experiencias._form_dadosboleto')
-
       </div>
       <div class="modal-footer">
         <button type="submit" class="submit btn btn-acao btn-primary">Gerar boleto</button>

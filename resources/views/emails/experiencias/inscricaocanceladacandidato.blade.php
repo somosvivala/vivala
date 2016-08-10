@@ -277,8 +277,11 @@
                 <tbody>
                 <tr align="center">
                   <td>
+                    Caso necessário entre em contato com a Vivalá através do email <span>contato@vivala.com.br</span>
+                  </td>
+                  <td>
                     <h4 style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
-                      Feito com <3 pela Vivalá - Conecte-se ao Brasil de verdade
+                      Feito com carinho pela Vivalá - Conecte-se ao Brasil de verdade
                     </h4>
                   </td>
                 </tr>
