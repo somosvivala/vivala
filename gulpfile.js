@@ -130,12 +130,14 @@ elixir(function(mix) {
     '../../assets/bower/underscore/underscore-min.js',
     '../../assets/bower/moment/min/moment-with-locales.min.js',
     '../../assets/bower/clndr/clndr.min.js',
+    '../../assets/bower/sweetalert2/dist/sweetalert2.min.js',
     /* Bibliotecas prontas não adicionadas por npm/bower */
     '../../assets/js/bibliotecas/jquery.capslockstate.min.js',
     /* Scripts Vivalá */
     '../../assets/js/buscaCEP.js',
     '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
     '../../assets/js/mascaraCampos.js',
+    '../../assets/js/experienciasInscricoes.js',
     '../../assets/js/form-boleto-experiencias.js',
     '../../assets/js/mobile.js',
   ], 'public/js/mobile.js');

@@ -125,6 +125,73 @@ var confirmaCancelaInscricaoExperiencia = function (ev) {
 };
 
 /**
+ * Metodo para mostrar a sweetAlert de CANCELAMENTO de InscricaoExperiencia p/ USER
+ */
+var confirmaUsuarioCancelaInscricaoExperiencia = function (ev) {
+    ev.preventDefault();
+
+    //pegando a linha da ul que devemos remover
+    var target = $(ev.target);
+
+    //disparando sweetalert para confirmar a exclusao de uma inscricao
+    swal({
+        title: "Atenção",
+        html: "Sua inscrição será removida e nao conseguiremos avisar de novas ocorrencias da experiencia. Tem certeza que deseja continuar?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Sim, cancelar!",
+        cancelButtonText: "Não",
+        closeOnConfirm: true,
+        closeOnCancel: true
+        },
+        function(confirmed){
+            if (confirmed) {
+                ajaxUsuarioCancelaInscricaoExperiencia(target);
+            }
+    });
+};
+
+/**
+* Metodo para disparar um Ajax de POST para confirmar uma InscricaoExperiencia
+*/
+var ajaxUsuarioCancelaInscricaoExperiencia = function (target) {
+
+    var target = $(target);
+
+    //sweetalert de loading :)
+    swal({
+        html : '<br><i class="fa fa-3x fa-pulse fa-spin fa-spinner laranja"></i> <br><br> <h4>Processando</h4>',
+        showCancelButton: false,
+        width:240,
+        confirmButtonClass: 'hide'
+    });
+
+    //inserindo o token manualmente
+    //@TODO inserir uma meta no header das versoes mobile logadas
+    var params = {
+        id_inscricao : target.data('id-inscricao'),
+        _token: $('input[name="_token"]').val()
+    };
+
+    $.ajax({
+        url: '/experiencias/cancelainscricao',
+        type: 'POST',
+        data: params,
+        success: function (data, textStatus, jqXHR) {
+            //mostrando sweetAlert de sucesso (user-friendly)
+            sweetAlertSucessoCancelaInscricaoExperiencia();
+
+            location.reload(true);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+
+            //mostrando sweetAlert de erro (user-friendly)
+            sweetAlertErroCancelaInscricaoExperiencia();
+        }
+    });
+};
+/**
 * Metodo para disparar um Ajax de POST para confirmar uma InscricaoExperiencia
 */
 var ajaxCancelaInscricaoExperiencia = function (target) {
