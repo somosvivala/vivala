@@ -347,8 +347,10 @@ div.foto {
         }
         &:active,
         &:hover{
-          color: #FFF!important;
           background-color: @cor-primaria;
+          a{
+            color: #FFF;
+          }
         }
         a {
           display: block;
@@ -356,10 +358,6 @@ div.foto {
           text-decoration: none;
           padding-top: 1rem;
           padding-bottom: 1rem;
-          &:active,
-          &:hover{
-            color: #FFF;
-          }
         }
       }
 }

@@ -17,22 +17,22 @@
         </h3>
 
         <ul class="lista-border pesquisa-viajar margin-t-2 margin-b-3">
-            <li class="col-sm-3">
+            <li class="col-sm-3 tour-pilar-viajar-step3">
               <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
                 {{ trans('global.wannatravel_trip_experiences') }}
               </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step3">
+            <li class="col-sm-3 tour-pilar-viajar-step4">
               <a class="rodoviario" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                {{ trans('global.wannatravel_trip_bus_drive') }}
               </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step4">
+            <li class="col-sm-3 tour-pilar-viajar-step5">
               <a class="ativa-modal-quimera" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
                 {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
               </a>
             </li>
-            <li class="col-sm-3 active tour-pilar-viajar-step5">
+            <li class="col-sm-3 active tour-pilar-viajar-step6">
               <a class="restaurantes" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                 {{ trans('global.wannatravel_trip_restaurants') }}
               </a>
