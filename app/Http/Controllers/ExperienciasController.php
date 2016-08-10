@@ -159,9 +159,11 @@ class ExperienciasController extends Controller
                 return redirect('/experiencias');
         }
 
-        event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
-
-        $Inscricao = $this->experienciasRepository->getInscricaoUsuario($Experiencia, Auth::user());
+        $Inscricao = $Experiencia->getInscricaoUsuario(Auth::user());
+        if (!$Inscricao) {
+            $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id);
+            event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
+        }
 
         if(Agent::isDesktop()) {
             return view("experiencias.desktop.checkout", compact("Experiencia", "Inscricao") );

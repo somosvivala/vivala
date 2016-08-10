@@ -71,7 +71,6 @@ class EventServiceProvider extends ServiceProvider
 
         //Quando acontecer uma nova inscricao de experiencia, mandar email para o candidato e para a vivalá
         'App\Events\NovaInscricaoExperiencia' => [
-            'App\Handlers\Events\Experiencias\CriaInscricaoExperiencia',
             'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaInscricaoCandidato',
             'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaInscricaoPlataforma'
         ],

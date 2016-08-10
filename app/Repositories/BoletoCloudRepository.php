@@ -49,6 +49,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     public function gerarBoleto(Experiencia $experiencia, User $pagador)
     {
         $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->addDays(-1)->format('Y-m-d');
+        //todo pegar data conforme o tipo do evento
         $dadosBoleto['data_vencimento'] = $experiencia->proximaOcorrencia->data_ocorrencia->addDays('-1')->format('Y-m-d');
         $dadosBoleto['valor'] = $experiencia->preco;
         $dadosBoleto['instrucao'] = array(
