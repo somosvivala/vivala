@@ -16,6 +16,7 @@
             <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="{{ url('/gestao/experiencias') }}"> Gestão de Experiências </a></li>
             <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="{{ url('/gestao/experiencias/createexperiencia') }}"> Criar Experiencia </a></li>
             <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="{{ url('/gestao/experiencias/createcategoria') }}"> Criar Categoria </a></li>
+            <li><a class="inline btn btn-acao margin-t-1 margin-b-1" href="{{ url('/gestao/gerararquivoremessa') }}" target="_blank"> Gerar Arquivo Remessa </a></li>
 				</ul>
 
         {{-- Importando conteudo --}}

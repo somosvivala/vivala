@@ -78,28 +78,6 @@ Route::get('boletobd', function() {
     return $repo->createBoletoExperiencia($dadosBoleto, $perfil->user);
 });
 
-Route::get('boletopdf', function() {
-
-    $dadosPagador['cpf'] = '392.267.658-80';
-    $dadosPagador['endereco_cep'] = '17014-020';
-    $dadosPagador['endereco_uf'] = 'SP';
-    $dadosPagador['endereco_localidade'] = 'Bauru';
-    $dadosPagador['endereco_bairro'] = 'VL. Santa Clara';
-    $dadosPagador['endereco_logradouro'] = 'Rua Capitão Gomes Duarte';
-    $dadosPagador['endereco_numero'] = 's/n';
-    $dadosPagador['endereco_complemento'] = '';
-
-    //disparando o evento
-    event ( new \App\Events\NovoPedidoGeracaoBoletoExperiencia(\App\Experiencia::find(2), \Auth::user(), $dadosPagador) );
-
-    $experienciasRepository = new \App\Repositories\ExperienciasRepository();
-    $inscricao = $experienciasRepository->getInscricaoUsuario(App\Experiencia::find(2), \Auth::user());
-
-    return redirect('https://sandbox.boletocloud.com/boleto/2via/download/'.$inscricao->boleto->token);
-
-});
-
-
 
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
@@ -212,6 +190,9 @@ Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfir
 Route::post('experiencias/cancelainscricao', 'ExperienciasController@postCancelaInscricao');
 Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
 Route::post('experiencias/desativar', 'ExperienciasController@postDesativarExperiencia');
+
+//Rota para criacao do arquivos remessa dos boletos gerados
+Route::get('gestao/gerararquivoremessa', 'GestaoController@getGerararquivoremessa');
 
 
 //rotas para lidar com resource controllers

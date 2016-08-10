@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Http\Requests\GerarRemessaBoletosRequest;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
@@ -9,8 +10,22 @@ use Auth;
 use Input;
 use DB;
 use App\Perfil;
+use App\Interfaces\BoletoCloudRepositoryInterface;
 
 class GestaoController extends Controller {
+
+    public $boletosRepository;
+
+    /**
+     * Construtor recebendo dependencias
+     */
+    function __construct(BoletoCloudRepositoryInterface $boletosRepository)
+    {
+        $this->boletosRepository = $boletosRepository;
+    }
+
+
+
 
     /**
      * Retorna a view inicial de gestão
@@ -100,4 +115,19 @@ class GestaoController extends Controller {
 
         return json_encode($return);
     }
+
+
+
+    /**
+     * Rota para gerar o arquivo remessa dos boletos gerados
+     * @param $request - Request para que apenas admins possam fazer essa acao
+     */
+    public function getGerararquivoremessa(GerarRemessaBoletosRequest $request)
+    {
+        return $this->boletosRepository->gerarArquivoRemessa();
+    }
+
+
+
+
 }
