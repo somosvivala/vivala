@@ -107,6 +107,7 @@ elixir(function(mix) {
       '../../assets/js/experienciasInscricoes.js',
       '../../assets/js/experienciasEstado.js',
       '../../assets/js/experiencias.js',
+      '../../assets/js/form-boleto-experiencias.js',
       /* ClickbusPayment Mercado Pago Gateway */
       '../../assets/js/clickbus-payments.js',
 	], 'public/js/vendor.js');
@@ -135,6 +136,7 @@ elixir(function(mix) {
     '../../assets/js/buscaCEP.js',
     '../../assets/bower/jQuery-Mask-Plugin/src/jquery.mask.js',
     '../../assets/js/mascaraCampos.js',
+    '../../assets/js/form-boleto-experiencias.js',
     '../../assets/js/mobile.js',
   ], 'public/js/mobile.js');
 

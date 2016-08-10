@@ -13,6 +13,7 @@ use App\DataOcorrenciaExperiencia;
 use Carbon\Carbon;
 use App\InscricaoExperiencia;
 use App\Foto;
+use App\Interfaces\BoletoCloudRepositoryInterface;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -28,16 +29,20 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     public $depositCNPJ;
     public $depositFantasyName;
 
+    public $repositorioBoletos;
+
     /**
      * Construtor que pega os valores do env.
      */
-    function __construct()
+    function __construct(BoletoCloudRepositoryInterface $boletoRepo)
     {
         $this->depositBank = env('VIVALA_BANK');
         $this->depositAG = env('VIVALA_AG');
         $this->depositCC = env('VIVALA_CC');
         $this->depositCNPJ = env('VIVALA_CNPJ');
         $this->depositFantasyName = env('VIVALA_FANTASY_NAME');
+
+        $this->repositorioBoletos = $boletoRepo;
     }
 
     /*
@@ -502,6 +507,15 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     public function getInscricaoUsuario(Experiencia $experiencia, User $user)
     {
         return $experiencia->inscricoes()->where('perfil_id', $user->perfil->id)->first();
+    }
+
+
+    /**
+     * Metodo para gerar um Boleto para uma Experiencia
+     */
+    public function gerarBoleto(Experiencia $experiencia, User $pagador)
+    {
+        return $this->repositorioBoletos->gerarBoleto($experiencia, $pagador);
     }
 
 

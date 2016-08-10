@@ -88,9 +88,8 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         //Quando o usuario fornece os dados para gerar boleto
-        'App\Events\NovoPedidoGeracaoBoletoExperiencia' => [
-            'App\Handlers\Events\Experiencias\AtualizaDadosUsuario',
-            'App\Handlers\Events\Experiencias\GeraBoletoInscricaoExperiencia',
+        'App\Events\NovosDadosUsuario' => [
+            'App\Handlers\Events\Experiencias\AtualizaDadosUsuario'
         ]
 
         //Quando uma inscricao for desconfirmada? (avisar a instituição?)

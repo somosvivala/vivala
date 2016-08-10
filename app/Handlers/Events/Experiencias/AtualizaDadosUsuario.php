@@ -1,6 +1,6 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
-use App\Events\NovoPedidoGeracaoBoletoExperiencia;
+use App\Events\NovosDadosUsuario;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
@@ -24,7 +24,7 @@ class AtualizaDadosUsuario
      * @param  NovoPedidoGeracaoBoletoExperiencia  $event
      * @return void
      */
-    public function handle(NovoPedidoGeracaoBoletoExperiencia $event)
+    public function handle(NovosDadosUsuario $event)
     {
         //fazendo update dos novos dados do usuario (cpf , cep, dados do endereco)
         $event->user->update($event->novosDadosUsuario);

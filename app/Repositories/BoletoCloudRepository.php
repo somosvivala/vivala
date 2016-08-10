@@ -17,16 +17,14 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     public $BOLETOCLOUD_AUTH_TOKEN;
     public $BOLETOCLOUD_CONTA_TOKEN_API;
     public $BOLETOCLOUD_URL_BASE;
-    public $experienciasRepository;
+    public $BOLETOCLOUD_API_ROUTE;
 
     /**
       * Construtor obtendo informacoes necessarias do env
       * @param $experienciasRepository - Instancia do Repositorio de Experiencias
      */
-    function __construct(ExperienciasRepositoryInterface $experienciasRepository)
+    function __construct()
     {
-        $this->experienciasRepository       = $experienciasRepository;
-
         $sufixo = '';
         //se estivermos em development, adicionar suffixo aos valores do env
         if (app()->environment('development')) {
@@ -36,6 +34,9 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         $this->BOLETOCLOUD_CONTA_TOKEN_API  = env('BOLETOCLOUD_CONTA_TOKEN_API'.$sufixo);
         $this->BOLETOCLOUD_AUTH_TOKEN       = env('BOLETOCLOUD_AUTH_TOKEN'.$sufixo);
         $this->BOLETOCLOUD_URL_BASE         = env('BOLETOCLOUD_URL_BASE'.$sufixo);
+
+        //essa variavel independe do ambiente
+        $this->BOLETOCLOUD_API_ROUTE         = env('BOLETOCLOUD_API_ROUTE');
     }
 
     /**
@@ -73,8 +74,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
             'boleto.pagador.endereco.localidade'=> $boleto->pagador->endereco_localidade,
             'boleto.pagador.endereco.bairro'=> $boleto->pagador->endereco_bairro,
             'boleto.pagador.endereco.logradouro'=> $boleto->pagador->endereco_logradouro,
-            'boleto.pagador.endereco.numero'=> $boleto->pagador->endereco_numero,
-            'boleto.pagador.endereco.complemento'=> $boleto->pagador->endereco_complemento,
+            'boleto.pagador.endereco.numero'=> 's/n',
             'boleto.instrucao'=> $boleto->instrucao
         ];
 
@@ -101,7 +101,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         $headers = array($accept_header, $content_type_header);
 
         #Configurações do envio
-        $url = $this->BOLETOCLOUD_URL_BASE . '/boletos';
+        $url = $this->BOLETOCLOUD_URL_BASE . $this->BOLETOCLOUD_API_ROUTE . '/boletos';
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -159,12 +159,13 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
             $boleto->status = 'gerado';
             $boleto->save();
 
-            dd('fim pdf', $boleto);
+            return $boleto;
 
         } else{
 
             //Erro e o boleto nao foi criado.
             //portanto nao atualizar status do boleto
+            return false;
 
         }
     }
@@ -173,11 +174,12 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
      * Metodo para criacao de uma instancia de BoletoExperiencia
      *
      * @param $dadosBoleto - Array com os possiveis indices ('valor', 'data_emissao', 'data_vencimento' e 'instrucoes')
+     * @param $experiencia - Instancia da Experiencia a qual o boleto é destinado
      * @param $pagador - Instancia do User a qual o boleto é destinado
      */
     public function createBoletoExperiencia($dadosBoleto, Experiencia $experiencia, User $pagador)
     {
-        $inscricao = $this->experienciasRepository->getInscricaoUsuario($experiencia, $pagador);
+        $inscricao = $experiencia->inscricoes()->where('perfil_id', $pagador->perfil->id)->first();
 
         $boleto = BoletoExperiencia::create($dadosBoleto);
         $boleto->pagador()->associate($pagador);
