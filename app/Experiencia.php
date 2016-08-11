@@ -178,7 +178,7 @@ class Experiencia extends Model
     public function getProximasOcorrenciasJSONAttribute()
     {
         if (!$this->futurasOcorrencias) {
-            return [];
+            return '';
         }
 
         $obj=[];
