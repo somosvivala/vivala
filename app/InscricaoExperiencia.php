@@ -95,4 +95,12 @@ class InscricaoExperiencia extends Model
         return $query->where('status', 'expirada');
     }
 
+    /**
+     * Definindo uma scope para as inscricoes ativas
+     */
+    public function scopeAtivas($query)
+    {
+        return $query->whereIn('status', ['pendente', 'confirmada']);
+    }
+
 }

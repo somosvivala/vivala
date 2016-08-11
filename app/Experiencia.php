@@ -357,6 +357,7 @@ class Experiencia extends Model
         //Se tiver logado pegar collection com query buscando o mesmo perfil
         //e testar se collection tem alguma inscricao
         return !($this->inscricoes()
+            ->ativas()
             ->where('perfil_id', Auth::user()->perfil->id)
             ->get()
             ->isEmpty());
@@ -399,5 +400,20 @@ class Experiencia extends Model
     {
         return $query->has('ocorrencias');
     }
+
+
+    /*
+     * ### METODOS
+     */
+
+    /**
+     * Metodo para pegar a inscricao de um Usuario
+     */
+    public function getInscricaoUsuario(User $user)
+    {
+        return $this->inscricoes()->ativas()->where('perfil_id', $user->perfil->id)->first();
+    }
+
+
 
 }

@@ -104,7 +104,8 @@
         <span class="col-xs-12">{{ $Experiencia->detalhes }}</span>
         @endif
         @if($Experiencia->isUsuarioAtualInscrito)
-            <a class="btn-cancelar-inscricao col-xs-12" href="/experiencias/checkout/{{ $Experiencia->id }}"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
+            {!! Form::hidden('_token', csrf_token()) !!}
+            <a class="btn-cancelar-inscricao col-xs-12" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
         @endif
     </div>
 
@@ -121,7 +122,7 @@
         </div>
     </div>
     @if($Experiencia->isUsuarioAtualInscrito)
-        <a class="btn-full-bottom-laranja" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
+        <a class="btn-full-bottom-laranja" href="#" onclick="event.preventDefault();">{!! trans('global.lbl_subscribed') !!}</a>
     @else
         <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
     @endif        

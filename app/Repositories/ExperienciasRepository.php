@@ -506,7 +506,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function getInscricaoUsuario(Experiencia $experiencia, User $user)
     {
-        return $experiencia->inscricoes()->where('perfil_id', $user->perfil->id)->first();
+        return $experiencia->inscricoes()->ativas()->where('perfil_id', $user->perfil->id)->first();
     }
 
 
@@ -526,6 +526,15 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $arrayDias = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo', 'Feriados'];
         return $view->with('arrayDias', $arrayDias);
+    }
+
+
+    /**
+     * Metodo para checar se o usuario pode cancelar a inscricao
+     */
+    public function userPodeCancelarInscricao($inscricao_id, User $user)
+    {
+        return InscricaoExperiencia::findOrFail($inscricao_id)->perfil->id == $user->perfil->id;
     }
 
 
