@@ -177,6 +177,10 @@ class Experiencia extends Model
      */
     public function getProximasOcorrenciasJSONAttribute()
     {
+        if (!$this->futurasOcorrencias) {
+            return [];
+        }
+
         $obj=[];
         //iterando sobre as ocorrencias futuras e formatando elas no formato do calendario
         $this->futurasOcorrencias->each(function ($dataOcorrencia) use (&$obj) {
