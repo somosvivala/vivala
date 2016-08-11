@@ -1,26 +1,31 @@
 @extends('gestao.experiencias.index')
-@section('gestao.experiencias.content')
-
 
 {{-- Seção de gerenciamento das experiencias --}}
-<div class="col-md-12 col-lg-12 fundo-cheio">
+@section('gestao.experiencias.content')
+<div class="col-lg-12 fundo-cheio margin-b-2">
     @if(Auth::user()->isAdmin())
       @include('gestao.experiencias._listaexperiencias')
     @endif
 </div>
+{{-- Fim da Seção de gerenciamento das experiencias --}}
 
-{{-- Seção de gerenciamento das inscricoes --}}
-<div class="col-md-6 col-lg-6 fundo-cheio">
-@if(Auth::user()->isAdmin())
-  @include('gestao.experiencias._inscricoesexperiencias')
-@endif
+{{-- Segunda Seção de gerenciamento das experiencias --}}
+<div class="col-lg-12 fundo-cheio margin-b-4">
+  {{-- Seção de gerenciamento das inscricoes das experiencias --}}
+  <div class="col-lg-6 fundo-cheio">
+  @if(Auth::user()->isAdmin())
+    @include('gestao.experiencias._inscricoesexperiencias')
+  @endif
+  </div>
+  {{-- Fim da Seção de gerenciamento das inscricoes das experiencias --}}
+
+  {{-- Seção de gerenciamento das categorias das experiencias --}}
+  <div class="col-lg-6 fundo-cheio">
+  @if(Auth::user()->isAdmin())
+    @include('gestao.experiencias._categoriasexperiencias')
+  @endif
+  </div>
+  {{-- Fim da Seção de gerenciamento das categorias das experiencias --}}
 </div>
-
-{{-- Seção de gerenciamento das categorias das experiencias --}}
-<div class="col-md-6 col-lg-6 fundo-cheio">
-@if(Auth::user()->isAdmin())
-  @include('gestao.experiencias._categoriasexperiencias')
-@endif
-</div>
-
+{{-- Fim da Segunda Seção de gerenciamento das experiencias --}}
 @endsection

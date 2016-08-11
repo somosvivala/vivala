@@ -20,44 +20,44 @@
             </p>
             <p class="text-left margin-b-2 ajuste-fonte-avenir-light">
                 {{ trans('global.manifest_first_paragraph_1') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_first_paragraph_2') }}
             </p>
             <p class="text-left margin-b-2 ajuste-fonte-avenir-light">
                 {{ trans('global.manifest_second_paragraph_1') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_second_paragraph_2') }}
             </p>
             <p class="text-left margin-b-2 ajuste-fonte-avenir-light">
                 {{ trans('global.manifest_fourth_paragraph_1') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_fourth_paragraph_2') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_fourth_paragraph_3') }}
                 <br>
                 {{ trans('global.manifest_fourth_paragraph_4') }}
             </p>
             <p class="text-left margin-b-2 ajuste-fonte-avenir-light">
                 {{ trans('global.manifest_fifth_paragraph_1') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_fifth_paragraph_2') }}
             </p>
             <p class="text-left margin-b-2 ajuste-fonte-avenir-light">
                 {{ trans('global.manifest_sixth_paragraph_1') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_sixth_paragraph_2') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_sixth_paragraph_3') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_sixth_paragraph_4') }}
             </p>
             <p class="text-left margin-b-2 ajuste-fonte-avenir-light">
                 {{ trans('global.manifest_seventh_paragraph_1') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_seventh_paragraph_2') }}
-                <br/>
+                <br>
                 {{ trans('global.manifest_seventh_paragraph_3') }}
-                <br/>
+                <br>
                 <i class="icon-manifesto icon-vivala-logo vi" alt="{{ trans('global.lbl_vivala') }}" title="{{ trans('global.lbl_vivala') }}"></i>
             </p>
         <div>

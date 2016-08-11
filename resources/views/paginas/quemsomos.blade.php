@@ -23,7 +23,7 @@
                     </span>
                 </div>
                 <p class="text-justify ajuste-fonte-avenir-light">
-                    {{ trans('global.aboutus_our_mission_text') }}<br/><br/><br/>
+                    {{ trans('global.aboutus_our_mission_text') }}<br><br><br>
                 </p>
             </div>
         </div>

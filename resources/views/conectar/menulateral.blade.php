@@ -1,6 +1,6 @@
 {{-- Quero Conectar - Menu Principal --}}
 <nav class="menu-lateral">
-	<h4 class="suave tour-pilar-conectar-step1">{{ trans('global.lbl_you_are_in')}}<br/>{{ trans('global.lbl_wanna_connect') }}!</h4>
+	<h4 class="suave tour-pilar-conectar-step1">{{ trans('global.lbl_you_are_in')}}<br>{{ trans('global.lbl_wanna_connect') }}!</h4>
 	<ul>
 		<li class="tour-pilar-conectar-step3"><a href="/perfil" class="click-img-no-border"><i class="icon-menu-lateral icon-vivala-relogio vi"></i>{{ trans('global.lbl_timeline') }}</a></li>
 		{{-- DESATIVADO TEMPORARIAMENTE

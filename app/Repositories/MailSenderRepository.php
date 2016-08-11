@@ -49,7 +49,7 @@ class MailSenderRepository
     */
     public function enviaEmailFormularioContato($FormContato)
     {
-      Mail::send('emails.contato', ['FormContato' => $FormContato], function ($message)  {
+      Mail::send('emails.contato.novo-contato', ['FormContato' => $FormContato], function ($message)  {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pelo Formulário de Contato');
@@ -67,7 +67,7 @@ class MailSenderRepository
     */
     public function enviaEmailFormularioFeedback($FormFeedback)
     {
-      Mail::send('emails.feedback', ['FormFeedback' => $FormFeedback], function ($message)  {
+      Mail::send('emails.feedback.novo-feedback', ['FormFeedback' => $FormFeedback], function ($message)  {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pelo Formulário de Feedback');
@@ -86,7 +86,7 @@ class MailSenderRepository
     */
     public function enviaEmailCotacaoViagem($CotacaoViagem)
     {
-      Mail::send('emails.cotacaoviagens.sucesso', ['CotacaoViagem' => $CotacaoViagem], function ($message) use ($CotacaoViagem) {
+      Mail::send('emails.cotacaoviagem.novo-cotacao', ['CotacaoViagem' => $CotacaoViagem], function ($message) use ($CotacaoViagem) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[COTAÇÃO DE VIAGEM] Enviado pela Plataforma');

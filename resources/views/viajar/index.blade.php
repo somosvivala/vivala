@@ -17,22 +17,22 @@
         </h3>
         <ul class="lista-border pesquisa-viajar">
           <div class="row row-eq-height">
-            <li class="col-sm-3">
+            <li class="col-sm-3 tour-pilar-viajar-step3">
                 <a class="experiencias" href="{{ url('experiencias') }}">
                   {{ trans('global.wannatravel_trip_experiences') }}
                 </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step3">
+            <li class="col-sm-3 tour-pilar-viajar-step4">
                 <a class="rodoviario logger-ativo" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                  {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step4">
+            <li class="col-sm-3 tour-pilar-viajar-step5">
                 <a class="ativa-modal-quimera logger-ativo" data-tipo="abasviajar_tipo_quimera" data-desc="abasviajar_desc_quimera" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
                    {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
                 </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step5 active">
+            <li class="col-sm-3 tour-pilar-viajar-step6 active">
                 <a class="restaurantes logger-ativo" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                     {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
@@ -49,7 +49,7 @@
                     @include('chefsclub.buscarestaurantes')
                 </div>
                 <div>
-                    @include('modals._listarestaurantes')
+                    @include('chefsclub.listarestaurantes')
                 </div>
             </div>
         </div>

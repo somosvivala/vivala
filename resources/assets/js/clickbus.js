@@ -1,7 +1,4 @@
 'use strict';
-// Pegando a lingua ativa no momento
-var linguaAtiva = $("meta[name=language]").attr("content");
-var lingua = [];
 
 //guardando instancia global do obj que gera o token do Mercado Pago
 var clickBusPaymentObj = null;
@@ -27,41 +24,6 @@ var mercadoPagoErros = {
     "325" : "Revise a data.",
     "326" : "Revise a data."
 };
-
-switch(linguaAtiva){
-  case 'en':
-    lingua[0] = 'Ops, something went wrong, do the search again please.',
-    lingua[1] = 'Purchase successfully completed. Your travel from ',
-    lingua[2] = ' to ',
-    lingua[3] = 'is guaranteed. For more questions please contact us by email ',
-    lingua[4] = 'Payment data successfully confirmed.',
-    lingua[5] = 'Your travel from ',
-    lingua[6] = 'We will redirect you to finalize your purchase, if that doesn\'t happen click ',
-    lingua[7] = 'here',
-    lingua[8] = 'Success'
-  break;
-  case 'pt':
-    lingua[0] = 'Ops, algo saiu errado, por favor faça a busca novamente.',
-    lingua[1] = 'Compra realizada com sucesso. Sua viagem de ',
-    lingua[2] = ' para ',
-    lingua[3] = 'está garantida. Em caso de dúvidas entre em contato pelo email '
-    lingua[4] = 'Confirmaço de dados realizada com sucesso.',
-    lingua[5] = 'Sua viagem de ',
-    lingua[6] = 'Iremos redirecioná-lo para finalizar sua compra, se isso nao acontecer clique ',
-    lingua[7] = 'aqui',
-    lingua[8] = 'Sucesso'
-  break;
-  default:
-    lingua[0] = 'Ops, algo saiu errado, por favor faça a busca novamente.',
-    lingua[1] = 'Compra realizada com sucesso. Sua viagem de ',
-    lingua[2] = ' para ',
-    lingua[3] = 'está garantida. Em caso de dúvidas entre em contato pelo email ',
-    lingua[4] = 'Confirmaço de dados realizada com sucesso.',
-    lingua[5] = 'Sua viagem de ',
-    lingua[6] = 'Iremos redirecioná-lo para finalizar sua compra, se isso nao acontecer clique em ',
-    lingua[7] = 'aqui',
-    lingua[8] = 'Successo'
-}
 
 $.ajaxSetup({
     headers: {
@@ -160,10 +122,10 @@ var ajaxTrips = function(params) {
             $('#clickbus-resultado-busca').html("");
             swal({
                 title: json.errors1,
-                html: json.errors2+"<br/><br/>"+json.errors,
-                type: "error",
-                confirmButtonColor: "#FF5B00",
-                confirmButtonText: "OK",
+                html: "<br><p>"+json.errors2+"</p><p>"+json.errors+"</p>",
+                type: 'error',
+                confirmButtonColor: corVermelhoPrimario,
+                confirmButtonText: 'OK',
                 closeOnConfirm: true,
             },
             function() {
@@ -178,7 +140,7 @@ var ajaxTrips = function(params) {
     })
     .fail(function() {
         // [TODO] Ver como tratar esta mensagem para multilinguagem
-        $('#clickbus-resultado-busca').html(lingua[0]);
+        $('#clickbus-resultado-busca').html(lingua[28]);
     });
 
 };
@@ -217,10 +179,10 @@ var ajaxTrip = function(viagens) {
             $('#clickbus-resultado-busca').html("");
             swal({
                 title: json.errors1,
-                html: json.errors4+"<br/><br/>"+json.errors,
-                type: "error",
-                confirmButtonColor: "#FF5B00",
-                confirmButtonText: "OK",
+                html: "<br><p>"+json.errors4+"</p><p>"+json.errors+"</p>",
+                type: 'error',
+                confirmButtonColor: corVermelhoPrimario,
+                confirmButtonText: 'OK',
                 closeOnConfirm: true,
             },
             function() {
@@ -242,7 +204,7 @@ var ajaxTrip = function(viagens) {
     })
     .fail(function() {
         // [TODO] Ver como tratar esta mensagem para multilinguagem
-        $('#clickbus-resultado-busca').html(lingua[0]);
+        $('#clickbus-resultado-busca').html(lingua[28]);
     });
 
 };
@@ -426,27 +388,25 @@ var tripPayment = function(request, frm) {
 
         swal({
             title: json.errors1,
-            html: json.errors5+"<br/><br/>"+json.errors,
-            type: "error",
-            confirmButtonColor: "#FF5B00",
-            confirmButtonText: "OK",
+            html: "<br><p>"+json.errors5+"</p><p>"+json.errors+"</p>",
+            type: 'error',
+            confirmButtonColor: corVermelhoPrimario,
+            confirmButtonText: 'OK',
             closeOnConfirm: true,
         },
         function() {
         });
     })
     .done(function(json) {
-        if (json.errors) {
-            swal({
-                title: json.errors1,
-                html: json.errors6+"<br/<br/>"+json.errors,
-                type: "error",
-                confirmButtonColor: "#FF5B00",
-                confirmButtonText: "OK",
-                closeOnConfirm: true,
-            },
-            function() {
-            });
+        if(json.errors){
+          swal({
+              title: json.errors1,
+              html: "<br><p>"+json.errors6+"</p><p>"+json.errors+"</p>",
+              type: 'error',
+              confirmButtonColor: corVermelhoPrimario,
+              confirmButtonText: 'OK',
+              closeOnConfirm: true,
+          });
         //Se estiver tudo ok.
         } else {
             $('#clickbus-resultado-busca').html(json.html);
@@ -508,15 +468,12 @@ console.log(request);
 
         swal({
             title: json.errors1,
-            html: json.errors7+"<br/><br/>"+json.errors,
-            type: "error",
-            confirmButtonColor: "#F16F2B",
-            confirmButtonText: "OK",
+            html: "<br><p>"+json.errors7+"</p><p>"+json.errors+"</p>",
+            type: 'error',
+            confirmButtonColor: corVermelhoPrimario,
+            confirmButtonText: 'OK',
             closeOnConfirm: true,
-            },
-            function() {
-                //console.log(data);
-            });
+        });
     })
     .done(function(data) {
 
@@ -526,20 +483,15 @@ console.log(request);
         } catch(error) {}
 
         //se tiver dado erro
-        if (json.errors) {
-            swal({
-                title: json.errors1,
-                html: json.errors7+"<br/><br/>"+json.errors,
-                type: "error",
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "OK",
-                closeOnConfirm: true,
-            },
-            function() {
-                //console.log('clicou botao swal error data:');
-                //console.log(data);
-            });
-
+        if(json.errors){
+          swal({
+              title: json.errors1,
+              html: "<br><p>"+json.errors7+"</p><p>"+json.errors+"</p>",
+              type: 'error',
+              confirmButtonColor: corVermelhoPrimario,
+              confirmButtonText: 'OK',
+              closeOnConfirm: true,
+          });
         //Se estiver tudo ok..
         } else {
 
@@ -556,8 +508,8 @@ console.log(request);
 
             //substituindo sweetalert de loading pela de sucesso com timer
             swal({
-                type: "success",
-                html: '<h4>Sucesso</h4>',
+                html: '<h4>'+lingua[36]+'!</h4>',
+                type: 'success',
                 showCancelButton: false,
                 width:240,
                 confirmButtonClass: 'hide',
@@ -637,18 +589,13 @@ var generateMercadoPagoToken = function(params) {
             console.log("============== deu ruim no generateToken");
             console.log(errors);
             swal({
-                title: 'Opa!',
-                html: "<br><p>" + getMensagemErroMercadoPago(errors[0].code) + "</p></br>",
-                type: "error",
-                confirmButtonColor: "#FF5B00",
-                confirmButtonText: "OK",
+                title: lingua[26],
+                html: "<br><p>"+getMensagemErroMercadoPago(errors[0].code)+"</p><br>",
+                type: 'error',
+                confirmButtonColor: corVermelhoPrimario,
+                confirmButtonText: 'OK',
                 closeOnConfirm: true,
-            },
-            function() {
-                //console.log('clicou botao swal error data:');
-                //console.log(data);
             });
-
 
         }).call();
 }

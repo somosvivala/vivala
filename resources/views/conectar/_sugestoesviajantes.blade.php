@@ -31,5 +31,5 @@
 		{{ trans('global.lbl_seemore') }}
 	</a>
 </div>
-<br/>
+<br>
 @endif

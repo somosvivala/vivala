@@ -18,16 +18,16 @@
             <div class="col-sm-12">
                 <p class="text-justify ajuste-fonte-avenir-light">
                     {{ trans('global.partners_main_text') }}
-                    <br/>
-                    <br/>
+                    <br>
+                    <br>
                     {{ trans('global.partners_text_1') }}
-                    <br/>
+                    <br>
                     {{ trans('global.partners_text_2') }}
-                    <br/>
+                    <br>
                     {{ trans('global.partners_text_3') }}
-                    <br/>
+                    <br>
                     {{ trans('global.partners_text_4') }}
-                    <br/>
+                    <br>
                     {{ trans('global.partners_text_5') }}
                 </p>
             </div>

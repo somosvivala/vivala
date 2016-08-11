@@ -1,8 +1,6 @@
 'use strict';
 
 jQuery(document).ready(function($) {
-  // Tradução
-  var linguaAtiva = $("meta[name=language]").attr("content");
 
   var bindUpDown = function(element, evt) {
 
@@ -123,17 +121,6 @@ jQuery(document).ready(function($) {
                   }
                   // Se a busca não retornou perfil algum
                   else{
-                    var arrayLingua = [];
-                    switch(linguaAtiva){
-                        case 'en':
-                            arrayLingua[0] = 'Your search has returned no profiles!'
-                        break;
-                        case 'pt':
-                            arrayLingua[0] = 'Sua busca não retornou perfil algum!'
-                        break;
-                        default:
-                            arrayLingua[0] = 'Sua busca não retornou perfil algum!'
-                    }
                     var element = document.createElement('ul');
                     $(element).addClass('list-group perfil-list')
                         .css('top', pos[0])
@@ -143,7 +130,7 @@ jQuery(document).ready(function($) {
                         .css('background-color', '#FFF')
                         .css('border', '1px solid #ddd');
 
-                    $(element).append(arrayLingua[0]);
+                    $(element).append(lingua[22]);
 
                     // Coloco a lista dentro do target, que é a Barra de Busca
                     $(target).append(element);

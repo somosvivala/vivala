@@ -1,41 +1,4 @@
 $(document).ready(function() {
-
-  var linguaAtiva = $("meta[name=language]").attr("content"),
-      arrayLingua = [];
-
-  // Tradução
-  switch(linguaAtiva){
-      case 'en':
-          arrayLingua[0] = ' Likes',
-          arrayLingua[1] = ' Like',
-          arrayLingua[2] = ' Like',
-          arrayLingua[3] = 'Do you want to share this post?',
-          arrayLingua[4] = 'Yes, wanna share!',
-          arrayLingua[5] = 'No',
-          arrayLingua[6] = "Ops!",
-          arrayLingua[7] = "You can't share your own post!"
-      break;
-      case 'pt':
-          arrayLingua[0] = ' Curtidas',
-          arrayLingua[1] = ' Curtida',
-          arrayLingua[2] = ' Curtir',
-          arrayLingua[3] = 'Você quer compartilhar esse post?',
-          arrayLingua[4] = 'Sim, compartilhar!',
-          arrayLingua[5] = 'Não',
-          arrayLingua[6] = "Opa!",
-          arrayLingua[7] = "Você não pode compartilhar seu próprio post!"
-      break;
-      default:
-          arrayLingua[0] = ' Curtidas',
-          arrayLingua[1] = ' Curtida',
-          arrayLingua[2] = ' Curtir',
-          arrayLingua[3] = 'Você quer compartilhar esse post?',
-          arrayLingua[4] = 'Sim, compartilhar!',
-          arrayLingua[5] = 'Não',
-          arrayLingua[6] = "Opa!",
-          arrayLingua[7] = "Você não pode compartilhar seu próprio post!"
-  }
-
   //Like
   $(".like-btn-post").click(function() {
     var href = $(this).prop("hash"),
@@ -63,16 +26,16 @@ $(document).ready(function() {
            $("#barra-post-"+idPost+" .like-btn-post i").removeClass('fa-heart').addClass('fa-heart-o');
         }
         if (qtdLikes > 1)
-          msgQtdCurtidas = qtdLikes + arrayLingua[0];
+          msgQtdCurtidas = qtdLikes + lingua[0];
         else if (qtdLikes == 1)
-          msgQtdCurtidas = qtdLikes + arrayLingua[1];
+          msgQtdCurtidas = qtdLikes + lingua[1];
         else
-          msgQtdCurtidas = arrayLingua[2];
+          msgQtdCurtidas = lingua[2];
         //Atualiza a quantidade de likes no span logo depois
         $("#barra-post-"+idPost).find(".like-btn-post+span.qtd-likes").html(msgQtdCurtidas);
       })
       .fail(function(data) {
-        console.log('Erro no ajax de like-post');
+        console.log('[ERRO] Erro no ajax de like-post');
       });
   });
 
@@ -85,14 +48,14 @@ $(document).ready(function() {
                   idPost = urlArray[2];
 
                   swal({
-                      title: arrayLingua[3],
-                      type: "warning",
-                      showCancelButton: true,
-                      confirmButtonColor: "#14CC74",
-                      confirmButtonText: arrayLingua[4],
-                      cancelButtonText: arrayLingua[5],
-                      closeOnConfirm: true,
-                      closeOnCancel: true
+                    title: lingua[23],
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: corAmareloPrimario,
+                    confirmButtonText: lingua[24],
+                    cancelButtonText: lingua[25],
+                    closeOnConfirm: true,
+                    closeOnCancel: true
                   },
                   function(isConfirm){
                       if (isConfirm) {
@@ -105,11 +68,11 @@ $(document).ready(function() {
                           })
                            .fail(function(data) {
                                swal({
-                                  title: arrayLingua[6],
-                                  text: arrayLingua[7],
-                                  type: "error",
-                                  confirmButtonColor: "#DD6B55",
-                                  confirmButtonText: "OK"
+                                  title: lingua[26],
+                                  text: lingua[27],
+                                  type: 'error',
+                                  confirmButtonColor: corVermelhoPrimario,
+                                  confirmButtonText: 'OK'
                               });
                           });
 

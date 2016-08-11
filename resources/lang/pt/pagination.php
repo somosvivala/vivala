@@ -10,7 +10,7 @@ return [
   | you want to customize your views to better match your application.
   |
   */
-    'next'     => 'Próxima &raquo;',
+    'next'     => 'Próximo &raquo;',
     'previous' => '&laquo; Anterior',
 ];
 ?>

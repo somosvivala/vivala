@@ -208,7 +208,7 @@
                   <div class="container-fluid">
                     <div class="row">
                       <div id="modal-manifesto">
-                        <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#videoModal" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                        <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                           {{ trans('global.lbl_our_essence') }}
                         </a>
                       </div>

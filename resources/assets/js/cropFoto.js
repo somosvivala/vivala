@@ -25,11 +25,11 @@ $(function() {
                 console.log(errorThrown);
 
                 swal({
-                    title: 'Opa',
-                    html: "<p>A imagem nao pode conter um tamanho superior a 12MB</p></br>",
+                    title: lingua[26],
+                    html: "<p>"+lingua[38]+"</p>",
                     type: "error",
-                    confirmButtonColor: "#FF5B00",
-                    confirmButtonText: "OK",
+                    confirmButtonColor: corLaranjaPrimario,
+                    confirmButtonText: 'OK',
                     closeOnConfirm: true,
                 });
             },

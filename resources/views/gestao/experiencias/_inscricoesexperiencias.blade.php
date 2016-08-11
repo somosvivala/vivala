@@ -32,7 +32,7 @@
                         <div class="col-xs-3">
                             @if ($inscricao->status == 'pendente')
                                 <div class="col-xs-12 text-center">
-                                    <a href="#" onclick="confirmaInscricaoExperiencia(event)" title="Confirmar Inscrição">
+                                    <a href="#" class="botao-confirma" onclick="confirmaInscricaoExperiencia(event)" title="Confirmar Inscrição">
                                         <i class="margin-t-0-5 fa fa-check fa-3x"></i><br>Confirmar
                                     </a>
                                 </div>

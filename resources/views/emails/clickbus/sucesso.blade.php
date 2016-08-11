@@ -241,7 +241,7 @@
                 </tbody>
               </table>
               @endforeach
-              <br/>
+              <br>
 
             </td>
           </tr>
@@ -373,7 +373,7 @@
               <p style="font-size:14px;font-family:Arial" align="center">
                 {!! trans('clickbus.clickbus_email-request-number') !!}
                 <span style="font-weight:800!important;color:#FF3B10!important">{{ $Compra->localizer }}</span>.
-                <br/>
+                <br>
               </p>
             </td>
           </tr>
@@ -405,11 +405,11 @@
 
                     <td style="border-right:solid thin #999999">
                       <img style="width: 100px; height:100px;" src="https://vivala.com.br/img/clickbus/icon_clickbus-passagem.png">
-                      <br/>
+                      <br>
                     </td>
 
                     <td>
-                      <img style="width: 100px; height:100px;" src="https://vivala.com.br/img/clickbus/icon_clickbus-impressora.png"><br/>
+                      <img style="width: 100px; height:100px;" src="https://vivala.com.br/img/clickbus/icon_clickbus-impressora.png"><br>
                     </td>
                   </tr>
 
@@ -500,9 +500,9 @@
           <tr>
             <td style="padding:10px 10px 10px 10px;text-align:justify;font-family:'Arial',sans-serif;font-weight:400;font-size:12px">
               {!! trans('clickbus.clickbus_email-rules-text1') !!}
-            <br/><br/>
+            <br><br>
               {!! trans('clickbus.clickbus_email-rules-text2') !!}
-            <br/><br/>
+            <br><br>
               {!! trans('clickbus.clickbus_email-rules-text3') !!}
             </td>
           </tr>

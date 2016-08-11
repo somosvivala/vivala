@@ -36,14 +36,14 @@
                   </div>
                   <p class="ajuste-fonte-avenir-medium text-left margin-t-1">
                     {{ trans('global.lbl_name') }}: {{ $perfil['nome_completo'] }}
-                    <br/>
+                    <br>
                     {{ trans('global.lbl_nickname') }}:
                     @if($perfil['apelido'] !== NULL)
                       {{ $perfil['apelido'] }}
                     @else
                       {{ trans('global.lbl_n-a') }}
                     @endif
-                    <br/>
+                    <br>
                     {{ trans('global.address_city') }}:
                     @if($perfil['cidade_atual'] !== NULL)
                       {{ $perfil['cidade_atual'] }}

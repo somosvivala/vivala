@@ -17,22 +17,22 @@
         </h3>
 
         <ul class="lista-border pesquisa-viajar margin-t-2 margin-b-3">
-            <li class="col-sm-3">
+            <li class="col-sm-3 tour-pilar-viajar-step3">
               <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
                 {{ trans('global.wannatravel_trip_experiences') }}
               </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step3">
+            <li class="col-sm-3 tour-pilar-viajar-step4">
               <a class="rodoviario" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
                {{ trans('global.wannatravel_trip_bus_drive') }}
               </a>
             </li>
-            <li class="col-sm-3 tour-pilar-viajar-step4">
+            <li class="col-sm-3 tour-pilar-viajar-step5">
               <a class="ativa-modal-quimera" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
                 {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
               </a>
             </li>
-            <li class="col-sm-3 active tour-pilar-viajar-step5">
+            <li class="col-sm-3 active tour-pilar-viajar-step6">
               <a class="restaurantes" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
                 {{ trans('global.wannatravel_trip_restaurants') }}
               </a>
@@ -85,9 +85,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+          <span aria-hidden="true"><i class="fa fa-close"></i></span>
         </button>
-        <h4 class="modal-title" id="myModalLabel">Preencha os campos para gerar o boleto</h4>
+        <h4 class="modal-title text-center font-bold-upper laranja">Preencha os campos para gerar o boleto</h4>
       </div>
         {!! Form::open(['url' => '/experiencias/gerarboleto/', 'class'=>'gerar-boleto-experiencia']) !!}
       <div class="modal-body">

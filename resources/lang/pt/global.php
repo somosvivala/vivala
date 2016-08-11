@@ -646,6 +646,7 @@ return[
   'lbl_select' => 'Selecione',
   'lbl_seemore' => 'Ver Mais',
   'lbl_seemore1' => 'Ver Mais...',
+  'lbl_seemore_posts' => 'Ver Mais Publicações',
   'lbl_setting' => 'Configuração',
   'lbl_setting_' => 'Configurações',
   'lbl_setting_add' => 'Adicionar Configuração',

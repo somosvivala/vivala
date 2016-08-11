@@ -593,6 +593,7 @@ return[
   'lbl_search_recent_' => 'Recent search',
   'lbl_seemore' => 'See More',
   'lbl_seemore1' => 'See More...',
+  'lbl_seemore_posts' => 'See More Posts',
   'lbl_select' => 'Select',
   'lbl_setting' => 'Setting',
   'lbl_setting_' => 'Settings',

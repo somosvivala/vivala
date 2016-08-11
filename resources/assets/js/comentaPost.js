@@ -3,27 +3,6 @@
   Envia o comentario por ajax e atualiza o conteúdo da div,
   com todos os comentários do post.
 */
-var linguaAtiva = $("meta[name=language]").attr("content"),
-    arrayLingua = [];
-
-    // Tradução
-    switch(linguaAtiva){
-        case 'en':
-            arrayLingua[0] = ' Likes',
-            arrayLingua[1] = ' Like',
-            arrayLingua[2] = ' Like'
-        break;
-        case 'pt':
-            arrayLingua[0] = ' Curtidas',
-            arrayLingua[1] = ' Curtida',
-            arrayLingua[2] = ' Curtir'
-        break;
-        default:
-            arrayLingua[0] = ' Curtidas',
-            arrayLingua[1] = ' Curtida',
-            arrayLingua[2] = ' Curtir'
-    }
-
 
 var bindaLikeComentario = function() {
     //ajax para like do comentario
@@ -44,7 +23,7 @@ var bindaLikeComentario = function() {
               qtdLikes = data.qtdLikes,
               tipoLikeUser = data.tipoLikeUser;
 
-          //testar se like/unlike e settar o icone correto
+          //Testar se like/unlike e setar o icone correto
           if(tipoLikeUser){
             $("#barra-comentario-"+idComentario+" .like-btn-comentario").addClass('liked');
             $("#barra-comentario-"+idComentario+" .like-btn-comentario i").removeClass('fa-heart-o').addClass('fa-heart');
@@ -54,16 +33,19 @@ var bindaLikeComentario = function() {
             $("#barra-comentario-"+idComentario+" .like-btn-comentario i").removeClass('fa-heart').addClass('fa-heart-o');
           }
           if(qtdLikes > 1)
-            msgQtdCurtidas = qtdLikes + arrayLingua[0];
+            // Curtidas
+            msgQtdCurtidas = qtdLikes + lingua[0];
           else if(qtdLikes == 1)
-            msgQtdCurtidas = qtdLikes + arrayLingua[1];
+            // Curtida
+            msgQtdCurtidas = qtdLikes + lingua[1];
           else
-            msgQtdCurtidas = arrayLingua[2];
+            // Curtir
+            msgQtdCurtidas = lingua[2];
           //Atualiza a quantidade de likes no span logo depois
           $("#barra-comentario-"+idComentario).find(".like-btn-comentario+span.qtd-likes").html(msgQtdCurtidas);
         })
         .fail(function(data) {
-           console.log('Erro no ajax de like-comentário');
+           console.log('[ERRO]: Erro no ajax de like-comentário');
         });
     });
 };
@@ -75,7 +57,7 @@ var commentPost = function(idPost) {
     .done(function(data) {
       document.getElementById("form-comentario-post-"+idPost).reset();
       var comentariosWrapper = $('li.post[data-id="'+idPost+'"] div.comentarios').parent();
-      console.log('li.post[data-id="'+idPost+'"]');
+      //console.log('li.post[data-id="'+idPost+'"]');
       comentariosWrapper.html(data);
       bindaLikeComentario();
     });

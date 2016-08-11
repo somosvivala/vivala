@@ -17,35 +17,27 @@
   use App\Experiencia;
   use App\Perfil;
   use App\Repositories\ExperienciasRepository;
-  Route::get('/novainscricaocandidato', function() {
+  Route::get('/testaemailexperiencia', function() {
     $ExperienciasRepository = new ExperienciasRepository;
     $Experiencia = Experiencia::all()->reverse()->first();
     $Usuario = Auth::user();
-    return view('emails.experiencias.novainscricaocandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
-  });
-  Route::get('/novainscricaoplataforma', function() {
-    $ExperienciasRepository = new ExperienciasRepository;
-    $Experiencia = Experiencia::all()->reverse()->first();
-    $Usuario = Auth::user();
-    return view('emails.experiencias.novainscricaoplataforma', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
-  });
-  Route::get('/inscricaoconfirmadacandidato', function() {
-    $ExperienciasRepository = new ExperienciasRepository;
-    $Experiencia = Experiencia::all()->reverse()->first();
-    $Usuario = Auth::user();
-    return view('emails.experiencias.inscricaoconfirmadacandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
-  });
-  Route::get('/inscricaoconfirmadainstituicao', function() {
-    $ExperienciasRepository = new ExperienciasRepository;
-    $Experiencia = Experiencia::all()->reverse()->first();
-    $Usuario = Auth::user();
-    return view('emails.experiencias.inscricaoconfirmadainstituicao', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
-  });
-  Route::get('/inscricaocanceladacandidato', function() {
-    $ExperienciasRepository = new ExperienciasRepository;
-    $Experiencia = Experiencia::all()->reverse()->first();
-    $Usuario = Auth::user();
-    return view('emails.experiencias.inscricaocanceladacandidato', compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
+    $ViewsDeTeste = [
+      // CANDIDATO
+      'emails.experiencias.candidato.inscricao-cancelada',
+      'emails.experiencias.candidato.inscricao-confirmada-experiencia-eminente',
+      'emails.experiencias.candidato.inscricao-confirmada',
+      'emails.experiencias.candidato.inscricao-nova.blade',
+      'emails.experiencias.candidato.inscricao-pendente-experiencia-eminente',
+      // INSTITUIÇÃO/ONG/EMPRESA
+      'emails.experiencias.instituicao.experiencia-eminente',
+      'emails.experiencias.instituicao.experiencia-hoje',
+      'emails.experiencias.instituicao.inscricao-candidato-cancelada',
+      'emails.experiencias.instituicao.inscricao-candidato-confirmada',
+      // PLATAFORMA
+      'emails.experiencias.plataforma.inscricao-nova'
+    ];
+    // Alterar pelo ARRAY aqui
+    return view($ViewsDeTeste[6], compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
   Route::get('/emailteste', function() {

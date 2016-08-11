@@ -180,7 +180,7 @@
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ $Experiencia->proximaOcorrencia->data_ocorrencia->format('d/m/y') }}</strong>
+                          <strong>{{-- $Experiencia->proximaOcorrencia->data_ocorrencia->format('d/m/y') --}}</strong>
                         </span>
                       </p>
                       <p>
@@ -275,16 +275,16 @@
                     </td>
                   </tr>
                   <!-- Fim da Seção INFORMAÇÕES DA ONG -->
-                  <!-- Seção ENVIE SUA DÚVIDA  -->
+                  <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; margin-top:20px;">
-                        Envie sua dúvida para
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; margin-top:50px; margin-bottom:0px;">
+                        Envie sua dúvida ou sugestão para
                         <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a>
                       <p>
                     </td>
                   </tr>
-                  <!-- Fim da Seção ENVIE SUA DÚVIDA  -->
+                  <!-- Fim da Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
                 </tbody>
               </table>
             </div>
@@ -333,7 +333,7 @@
                 <tr align="center">
                   <td>
                     <h4 style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
-                      Feito com <3 pela Vivalá - Conecte-se ao Brasil de verdade
+                      Feito com carinho pela Vivalá - Conecte-se ao Brasil de verdade
                     </h4>
                   </td>
                 </tr>
