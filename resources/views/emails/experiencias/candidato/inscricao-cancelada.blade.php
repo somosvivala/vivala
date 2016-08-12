@@ -85,7 +85,7 @@
                   <!-- Título do EMAIL -->
                   <tr align="center">
                     <td>
-                      <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0; line-height:40px;">
+                      <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; margin:40px 0 10px; margin-top:0; line-height:40px;">
                         O seu pedido de cancelamento foi efetivado
                       </h2>
                     </td>

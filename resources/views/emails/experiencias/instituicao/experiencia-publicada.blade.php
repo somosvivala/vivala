@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Eminente</title>
+    <title>{{ trans('global.title_vivala') }} - Experiência Publicada</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -86,7 +86,7 @@
                 <tr align="center">
                   <td>
                     <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; margin:40px 0 10px; margin-top:0; line-height:40px;">
-                      A sua Experiência está quase chegando!
+                      Temos uma novidade pra você!
                     </h2>
                   </td>
                 </tr>
@@ -107,24 +107,32 @@
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%; padding-bottom:0; margin-top:20px; padding-bottom:0;">
                 <tbody>
+                  <!-- Título da Primeira Estrutura -->
+                  <tr align="center">
+                    <td>
+                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#3EA790; margin-bottom:20px;">
+                        Sua Experiência foi publicada!
+                      </h1>
+                    </td>
+                  </tr>
+                  <!-- Fim do Título da Primeira Estrutura -->
                   <!-- Imagem da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <img src="{{ asset('img/icones/png/laranja-atencao-vazio.png') }}" alt="{{ trans('global.lbl_info_') }}" title="{{ trans('global.lbl_info_') }}!" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
+                      <img src="{{ asset('img/icones/png/verde-lista-vazio.png') }}" alt="{{ trans('global.lbl_info_') }}" title="{{ trans('global.lbl_info_') }}!" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
                     </td>
                   </tr>
                   <!-- Fim da Imagem da Primeira Estrutura -->
+                  <!-- Seção de INFOS BANCÁRIAS -->
                   <!-- Sub-título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#F89916;">
-                        Confira os detalhes da Experiência e algumas dicas da<br>
-                        Vivalá para que tudo corra bem!
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#3EA790;">
+                        Agradecemos a sua contribuição em nossa listagem de Experiências. Confira abaixo todos os detalhes!
                       </p>
                     </td>
                   </tr>
                   <!-- Fim do Sub-título da Primeira Estrutura -->
-
                 </tbody>
               </table>
             </div>
@@ -136,93 +144,10 @@
           </td>
           <!-- Fim do Separador -->
           <!-- Segunda SEÇÃO -->
-          <!-- Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
-          <td bgcolor="#3EA790" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
-            <div style="display:block; margin:0 auto; max-width:600px;">
-              <table style="width: 100%; margin-top:0; padding-bottom:0;">
-                <tbody>
-                  <tr align="left">
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin: 5px 0 0 0;">Dicas</h3>
-                      <ul>
-                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                          Tenha certeza de que todos os equipamentos necessários para a realização da experiência estejam disponíveis.
-                        </li>
-                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                          Disponibilize telefones para contato caso haja alguma emergência.
-                        </li>
-                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                          A sua Experiência é a céu aberto? Garanta protetores solares e capas de chuva para seus convidados!
-                        </li>
-                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto">
-                          Não se esqueça: Gentileza gera gentileza :)
-                        </li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </td>
-          <!-- Fim da Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
-          <!-- Fim da Segunda SEÇÃO -->
-          <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
-            <tr></tr>
-          </td>
-          <!-- Fim do Separador -->
-          <!-- Terceira SEÇÃO -->
           <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
-              <table style="width: 100%; padding-bottom:0; margin-top:20px; padding-bottom:0;">
+              <table style="width: 100%; padding-bottom:0; margin-top:0; padding-bottom:0;">
                 <tbody>
-                  <!-- Seção USUÁRIOS INSCRITOS -->
-                  <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:0;">
-                        Usuários inscritos
-                      </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td style="border: 1px solid #E58807; padding: 0 10px;">
-                      <p>
-                        <img src="{{ asset('/img/email/vivala-email-pessoa-icone.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                          Nome
-                        </span>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          Isis Luiza Gaona Machado
-                        </span>
-                      </p>
-                      <p>
-                        <img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                          Email
-                        </span>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          isis.gaona@gmail.com
-                        </span>
-                      </p>
-                      <p>
-                        <img src="{{ asset('/img/email/vivala-email-jogo-da-velha-icone.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                          ID da inscrição
-                        </span>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          9804985
-                        </span>
-                      </p>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção USUÁRIOS INSCRITOS -->
-                  <!-- Separador -->
-                  <tr align="center">
-                    <td>
-                      <div style="border-bottom: 1px solid #D1D3D4; width:300px; margin:25px 0;"></div>
-                    </td>
-                  </tr>
-                  <!-- Fim do Separador -->
                   <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
                     <td>
@@ -313,7 +238,7 @@
               </table>
             </div>
           </td>
-          <!-- Fim da Terceira SEÇÃO -->
+          <!-- Fim da Segunda SEÇÃO -->
           <!-- Separador -->
           <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
             <tr></tr>
