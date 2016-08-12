@@ -85,8 +85,8 @@
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
-                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
-                      A Experiência que você se inscreveu está quase chegando!
+                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; margin:40px 0 10px; margin-top:0; line-height:40px;">
+                      A experiência que você se inscreveu está quase chegando!
                     </h2>
                   </td>
                 </tr>

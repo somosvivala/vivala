@@ -30,18 +30,20 @@
       'emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
       // [PENDENTE]
-      //'emails.experiencias.candidato.inscricao-pagamento-confirmado-dia-da-experiencia',
+      'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-hoje',
       'emails.experiencias.candidato.inscricao-cancelada',
       // INSTITUIÇÃO/ONG/EMPRESA
+      'emails.experiencias.instituicao.experiencia-publicada',
+      'emails.experiencias.instituicao.inscricao-candidato-confirmado',
+      // [PENDENTE]
+      'emails.experiencias.instituicao.inscricao-candidato-cancelado',
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
-      'emails.experiencias.instituicao.inscricao-candidato-cancelada',
-      'emails.experiencias.instituicao.inscricao-candidato-confirmada',
       // PLATAFORMA
       'emails.experiencias.plataforma.inscricao-nova'
     ];
     // Alterar pelo ARRAY aqui
-    return view($ViewsDeTeste[5], compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
+    return view($ViewsDeTeste[11], compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
   Route::get('/emailteste', function() {
@@ -161,9 +163,6 @@ Route::group(['middleware' => 'desktop.only'], function() {
     });
 
 });
-
-
-
 
 /**
  *  Rotas referentes as experiencias
