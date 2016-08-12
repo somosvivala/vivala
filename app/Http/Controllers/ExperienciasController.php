@@ -304,8 +304,4 @@ class ExperienciasController extends Controller
         return ['error' => '??'];
     }
 
-
-
-
-
 }

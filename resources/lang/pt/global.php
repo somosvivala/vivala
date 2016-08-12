@@ -154,6 +154,7 @@ return[
   'lbl_all_rights_reserved' => 'Todos os direitos reservados',
   'lbl_all_results_by' => 'Todos os resultados por:',
   'lbl_almost_there' => 'Quase lá',
+  'lbl_analysis_in' => 'Em análise',
   'lbl_and' => 'e',
   'lbl_any_preference_period_to_travel' => 'Algum período de sua preferência para viajar',
   'lbl_app' => 'Aplicativo',

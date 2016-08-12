@@ -8,7 +8,7 @@
     <div class ="row margin-b-10">
         <div class="col-sm-4">
             <div class="box-criar">
-                <img src="/img/icones/iconcriarempresa.png" alt="{{ trans('global.lbl_company_create') }}" title="{{ trans('global.lbl_company_create') }}">
+                <img src="/img/icones/png/maleta.png" alt="{{ trans('global.lbl_company_create') }}" title="{{ trans('global.lbl_company_create') }}">
                 <h4>
                     {{ trans('global.lbl_company') }}
                 </h4>
@@ -51,7 +51,7 @@
         </div>
         <div class="col-sm-4">
             <div class="box-criar">
-                <img src="/img/icones/iconcriarong.png" alt="{{ trans('global.lbl_ong_create') }}" title"{{ trans('global.lbl_ong_create') }}">
+                <img src="/img/icones/png/maos-dadas.png" alt="{{ trans('global.lbl_ong_create') }}" title"{{ trans('global.lbl_ong_create') }}">
                 <h4>{{ trans('global.lbl_ong') }}</h4>
                 <div class="form-criar">
                     {!! Form::open(array('url' => array('ong/create'), 'method' => 'GET' ))!!}
@@ -80,7 +80,7 @@
         </div>
         <div class="col-sm-4">
             <div class="box-criar">
-                <img src="/img/icones/iconcriarcultura.png" alt="{{ trans('global.lbl_culture_foment') }}" title="{{ trans('global.lbl_culture_foment') }}">
+                <img src="/img/icones/png/mascaras.png" alt="{{ trans('global.lbl_culture_foment') }}" title="{{ trans('global.lbl_culture_foment') }}">
                 <h4>{{ trans('global.lbl_culture') }}</h4>
             </div>
         </div>

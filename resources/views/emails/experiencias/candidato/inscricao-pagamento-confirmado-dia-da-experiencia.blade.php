@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Cancelada</title>
+    <title>{{ trans('global.title_vivala') }} - É Hoje!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -56,9 +56,9 @@
     <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
     <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
-  <body bgcolor="#D1D3D4" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
-    <!-- Corpo -->
-    <table bgcolor="#D1D3D4" style="padding:20px 20px 0 20px; width:100%;">
+    <body bgcolor="#D1D3D4" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
+      <!-- Corpo -->
+      <table bgcolor="#D1D3D4" style="padding:20px 20px 0 20px; width:100%;">
       <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
@@ -66,31 +66,31 @@
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tbody>
-                  <!-- Logo da VIVALÁ -->
-                  <tr align="center">
-                    <td>
-                      <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
-                        <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" border="0" min-width="107px" width="auto" max-width="600px" min-height="59px" height="59px" max-height="59px" style="display:block; margin:auto;">
-                      </a>
-                    </td>
-                  </tr>
-                  <!-- Fim do Logo da VIVALÁ -->
-                  <!-- Separador -->
-                  <tr align="center">
-                    <td>
-                      <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
-                    </td>
-                  </tr>
-                  <!-- Fim do Separador -->
-                  <!-- Título do EMAIL -->
-                  <tr align="center">
-                    <td>
-                      <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0; line-height:40px;">
-                        O seu pedido de cancelamento foi efetivado
-                      </h2>
-                    </td>
-                  </tr>
-                  <!-- Fim do Título do EMAIL -->
+                <!-- Logo da VIVALÁ -->
+                <tr align="center">
+                  <td>
+                    <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
+                      <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" border="0" min-width="107px" width="auto" max-width="600px" min-height="59px" height="59px" max-height="59px" style="display:block; margin:auto;">
+                    </a>
+                  </td>
+                </tr>
+                <!-- Fim do Logo da VIVALÁ -->
+                <!-- Separador -->
+                <tr align="center">
+                  <td>
+                    <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
+                  </td>
+                </tr>
+                <!-- Fim do Separador -->
+                <!-- Título do EMAIL -->
+                <tr align="center">
+                  <td>
+                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
+                      A Experiência que você se inscreveu é hoje!
+                    </h2>
+                  </td>
+                </tr>
+                <!-- Fim do Título do EMAIL -->
                 </tbody>
               </table>
             </div>
@@ -101,51 +101,75 @@
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
-          <!-- Corpo do Email -->
+          <!-- Corpo do Email 1 -->
           <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%; padding-bottom:0; margin-top:20px;">
                 <tbody>
                   <!-- Primeira SEÇÃO -->
+                  <!-- Imagem da Primeira Estrutura -->
+                  <tr align="center">
+                    <td>
+                      <img src="{{ asset('img/icones/png/laranja-info-vazio.png') }}" alt="{{ trans('global.lbl_info_') }}" title="{{ trans('global.lbl_info_') }}" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:0px;"/>
+                    </td>
+                  </tr>
+                  <!-- Fim da Imagem da Primeira Estrutura -->
                   <!-- Título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#D90011; margin-bottom:20px;">
-                        A sua inscrição foi cancelada
+                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#FAA325; margin-bottom:20px; line-height:40px;">
+                        Confira os detalhes da Experiência e algumas dicas da Vivalá para que tudo corra bem!
                       </h1>
                     </td>
                   </tr>
                   <!-- Fim do Título da Primeira Estrutura -->
-                  <!-- Imagem da Primeira Estrutura -->
-                  <tr align="center">
-                    <td>
-                      <img src="{{ asset('img/icones/png/vermelho-cancelado-vazio.png') }}" alt="{{ trans('global.lbl_canceled') }}" title="{{ trans('global.lbl_canceled') }}!" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
-                    </td>
-                  </tr>
-                  <!-- Fim da Imagem da Primeira Estrutura -->
-                  <!-- Seção de INFOS BANCÁRIAS -->
-                  <!-- Sub-título da Primeira Estrutura -->
-                  <tr align="center">
-                    <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#D90011;">
-                        Sua inscrição foi cancelada na experiência oferecida pela
-                        <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong>!
-                      </p>
-                    </td>
-                  </tr>
-                  <!-- Fim do Sub-título da Primeira Estrutura -->
-                  <!-- Fim da Primeira SEÇÃO -->
                 </tbody>
               </table>
             </div>
           </td>
+          <!-- Fim do Corpo do Email 1 -->
           <!-- Separador -->
           <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:7px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
-          <!-- Seção de Informações -->
+          <!-- Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
+          <td bgcolor="#3EA790" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+            <div style="display:block; margin:0 auto; max-width:600px;">
+              <table style="width: 100%; margin-top:0; padding-bottom:0;">
+                <tbody>
+                  <tr align="left">
+                    <td>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin: 5px 0 0 0;">Dicas</h3>
+                      <ul>
+                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                          Tenha certeza de que todos os equipamentos necessários para a realização da experiência estejam disponíveis.
+                        </li>
+                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                          Disponibilize telefones para contato caso haja alguma emergência.
+                        </li>
+                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                          A sua Experiência é a céu aberto? Garanta protetores solares e capas de chuva para seus convidados!
+                        </li>
+                        <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto">
+                          Não se esqueça: Gentileza gera gentileza :)
+                        </li>
+                      </ul>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </td>
+          <!-- Fim da Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
+          <!-- Separador -->
+          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:7px 20px;">
+            <tr></tr>
+          </td>
+          <!-- Fim do Separador -->
+          <!-- Corpo do Email 2 -->
           <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
+            <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%; padding-bottom:0; margin-top:20px;">
                 <tbody>
                   <!-- Seção DETALHES DA EXPERIÊNCIA -->
@@ -179,13 +203,45 @@
                     </td>
                   </tr>
                   <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
-                </tbody>
-              </table>
-          </td>
-          <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
-            <div style="display:block; margin:0 auto; max-width:600px;">
-              <table style="width: 100%; padding-bottom:0; margin-top:20px;">
-                <tbody>
+                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <tr>
+                    <td>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
+                        Informações
+                      </h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                        ACESSOR DO TIPO (???)
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                        ACESSOR DA FREQUENCIA (???)
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                        ACESSOR DAS INFORMAÇÕES EXTRAS (???)
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                   <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr align="center">
                     <td>
@@ -230,12 +286,12 @@
                     </td>
                   </tr>
                   <!-- Fim da Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
+                  <!-- Fim da Primeira SEÇÃO -->
                 </tbody>
               </table>
             </div>
           </td>
-          <!-- Fim da Seção de Informações -->
-          <!-- Fim do Corpo do Email -->
+          <!-- Fim do Corpo do Email 2 -->
           <!-- Assinatura do Email -->
           <td bgcolor="#D1D3D4" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
             <div style="display:block; margin:0 auto; max-width:600px;">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Cancelada</title>
+    <title>{{ trans('global.title_vivala') }} - Experiência Confirmada</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -66,31 +66,31 @@
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tbody>
-                  <!-- Logo da VIVALÁ -->
-                  <tr align="center">
-                    <td>
-                      <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
-                        <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" border="0" min-width="107px" width="auto" max-width="600px" min-height="59px" height="59px" max-height="59px" style="display:block; margin:auto;">
-                      </a>
-                    </td>
-                  </tr>
-                  <!-- Fim do Logo da VIVALÁ -->
-                  <!-- Separador -->
-                  <tr align="center">
-                    <td>
-                      <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
-                    </td>
-                  </tr>
-                  <!-- Fim do Separador -->
-                  <!-- Título do EMAIL -->
-                  <tr align="center">
-                    <td>
-                      <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0; line-height:40px;">
-                        O seu pedido de cancelamento foi efetivado
-                      </h2>
-                    </td>
-                  </tr>
-                  <!-- Fim do Título do EMAIL -->
+                <!-- Logo da VIVALÁ -->
+                <tr align="center">
+                  <td>
+                    <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank">
+                      <img src="{{ asset('logo-branco.png') }}" alt="{{ trans('global.alt_vivala') }}" title="{{ trans('global.title_vivala') }}" border="0" min-width="107px" width="auto" max-width="600px" min-height="59px" height="59px" max-height="59px" style="display:block; margin:auto;">
+                    </a>
+                  </td>
+                </tr>
+                <!-- Fim do Logo da VIVALÁ -->
+                <!-- Separador -->
+                <tr align="center">
+                  <td>
+                    <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
+                  </td>
+                </tr>
+                <!-- Fim do Separador -->
+                <!-- Título do EMAIL -->
+                <tr align="center">
+                  <td>
+                    <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0; line-height:40px;">
+                      Obrigado pela confiança, <strong>{{ ucfirst(trim($Usuario->perfil->nome)) }}</strong>!
+                    </h2>
+                  </td>
+                </tr>
+                <!-- Fim do Título do EMAIL -->
                 </tbody>
               </table>
             </div>
@@ -110,8 +110,8 @@
                   <!-- Título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#D90011; margin-bottom:20px;">
-                        A sua inscrição foi cancelada
+                      <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#25A494; margin-bottom:20px;">
+                        Pagamento realizado com sucesso!
                       </h1>
                     </td>
                   </tr>
@@ -119,7 +119,7 @@
                   <!-- Imagem da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <img src="{{ asset('img/icones/png/vermelho-cancelado-vazio.png') }}" alt="{{ trans('global.lbl_canceled') }}" title="{{ trans('global.lbl_canceled') }}!" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
+                      <img src="{{ asset('img/icones/png/verde-sucesso-vazio.png') }}" alt="{{ trans('global.lbl_success') }}" title="{{ trans('global.lbl_success') }}!" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
                     </td>
                   </tr>
                   <!-- Fim da Imagem da Primeira Estrutura -->
@@ -127,8 +127,8 @@
                   <!-- Sub-título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#D90011;">
-                        Sua inscrição foi cancelada na experiência oferecida pela
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#25A494;">
+                        Sua inscrição foi confirmada na experiência oferecida pela
                         <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong>!
                       </p>
                     </td>
@@ -148,6 +148,22 @@
           <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
               <table style="width: 100%; padding-bottom:0; margin-top:20px;">
                 <tbody>
+                  <!-- Seção COMPROVANTE DE PAGAMENTO -->
+                  <tr>
+                    <td>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
+                        Comprovante de pagamento
+                      </h3>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção COMPROVANTE DE PAGAMENTO -->
+                  <!-- Divisor -->
+                  <tr align="center">
+                    <td>
+                      <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
+                    </td>
+                  </tr>
+                  <!-- Fim do Divisor -->
                   <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
                     <td>
@@ -159,7 +175,7 @@
                   <tr>
                     <td>
                       <p style="float:left; margin-right:20px;">
-                        <img src="{{ $Experiencia->getFotoCapaUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                        <img src="{{ $Experiencia->getFotoOwnerUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
@@ -170,15 +186,54 @@
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}</strong>
+                          <strong>{{ ucfirst($Experiencia->local->nome) }} - {{ strtoupper($Experiencia->local->estado->sigla) }}</strong>
                         </span>
                       </p>
                       <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
-                        {{ trim($Experiencia->descricao) }}
+                        {{ $Experiencia->descricao }}
                       </p>
                     </td>
                   </tr>
                   <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <tr>
+                    <td>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
+                        Informações
+                      </h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                        ACESSOR DO TIPO (???)
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                        ACESSOR DA FREQUENCIA (???)
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
+                        ACESSOR DAS INFORMAÇÕES EXTRAS (???)
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                 </tbody>
               </table>
           </td>

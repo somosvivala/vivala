@@ -135,6 +135,7 @@ return[
   'lbl_all_rights_reserved' => 'All rights reserved',
   'lbl_all_results_by' => 'All results by:',
   'lbl_almost_there' => 'Almost there',
+  'lbl_analysis_in' => 'In analysis',
   'lbl_and' => 'and',
   'lbl_any_preference_period_to_travel' => 'Any period you prefer to travel?',
   'lbl_app' => 'App',

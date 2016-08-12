@@ -19,15 +19,19 @@
   use App\Repositories\ExperienciasRepository;
   Route::get('/testaemailexperiencia', function() {
     $ExperienciasRepository = new ExperienciasRepository;
-    $Experiencia = Experiencia::all()->reverse()->first();
+    //$Experiencia = Experiencia::all()->reverse()->first();
+    $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
     $ViewsDeTeste = [
       // CANDIDATO
+      'emails.experiencias.candidato.inscricao-pagamento-pendente',
+      'emails.experiencias.candidato.inscricao-pagamento-analise',
+      'emails.experiencias.candidato.inscricao-pagamento-confirmado',
+      'emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente',
+      'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
+      // [PENDENTE]
+      //'emails.experiencias.candidato.inscricao-pagamento-confirmado-dia-da-experiencia',
       'emails.experiencias.candidato.inscricao-cancelada',
-      'emails.experiencias.candidato.inscricao-confirmada-experiencia-eminente',
-      'emails.experiencias.candidato.inscricao-confirmada',
-      'emails.experiencias.candidato.inscricao-nova.blade',
-      'emails.experiencias.candidato.inscricao-pendente-experiencia-eminente',
       // INSTITUIÇÃO/ONG/EMPRESA
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
@@ -37,7 +41,7 @@
       'emails.experiencias.plataforma.inscricao-nova'
     ];
     // Alterar pelo ARRAY aqui
-    return view($ViewsDeTeste[6], compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
+    return view($ViewsDeTeste[5], compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
   });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
   Route::get('/emailteste', function() {
