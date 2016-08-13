@@ -20,10 +20,10 @@ class FeedbackRequest extends Request {
 	 * @return array
 	 */
 	public function rules()
-        {
-            return [
-                'mensagem'                      => "string|required|min:8"
-                ];
+  {
+  	return [
+			'mensagem' => "string|required|min:8"
+  	];
 	}
 
 }

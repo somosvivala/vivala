@@ -14,29 +14,29 @@
         <p class="margin-b-2 ajuste-fonte-avenir-light">{{ trans('global.contact_text_3') }}</p>
         <hr style="border: 0; height: 0; border-top: 2px solid rgba(0, 0, 0, 0.1); border-bottom: 1px solid rgba(255, 255, 255, 0.3);">
         <div class="row padding-t-2 padding-b-2 ">
-            <div class="col-sm-12">
-                <span class="ajuste-fonte-avenir-light">
-                  {{ trans('global.contact_our_email') }}
-                </span>
-            </div>
-            <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="mailto:contato@vivalabrasil.com.br">contato@vivalabrasil.com.br</a>
-            </div>
+          <div class="col-lg-12">
+            <span class="ajuste-fonte-avenir-light">
+              {{ trans('global.contact_our_email') }}
+            </span>
+          </div>
+          <div class="col-lg-12">
+            <a class="laranja font-bold-upper" href="mailto:{{ env('VIVALA_LINK_EMAIL') }}">{{ env('VIVALA_LINK_EMAIL') }}</a>
+          </div>
         </div>
         <div class="row padding-t-2 padding-b-2 ">
-            <div class="col-sm-12">
+            <div class="col-lg-12">
               <span class="ajuste-fonte-avenir-light">
                 {{ trans('global.contact_our_phone') }}
               </span>
             </div>
-            <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="tel:+55 11 2645 2632">(11) 2645-2632</a>
+            <div class="col-lg-12">
+                <a class="laranja font-bold-upper" href="tel:{{ env('VIVALA_LINK_TELEFONE_CONTATO') }}">{{ env('VIVALA_LINK_TELEFONE_CONTATO') }}</a>
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="tel:+55 11 98204 1821">(11) 98204-1821</a>
+                <a class="laranja font-bold-upper" href="tel:{{ env('VIVALA_LINK_TELEFONE_CONTATO2') }}">{{ env('VIVALA_LINK_TELEFONE_CONTATO2') }}</a>
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" href="tel:+55 11 99131 6658">(11) 99131-6658</a>
+                <a class="laranja font-bold-upper" href="tel:{{ env('VIVALA_LINK_TELEFONE_CONTATO3') }}">{{ env('VIVALA_LINK_TELEFONE_CONTATO3') }}</a>
             </div>
         </div>
         <div class="row padding-t-2 ">
@@ -46,11 +46,11 @@
               </span>
             </div>
             <div class="col-sm-12">
-                <a class="laranja font-bold-upper" title="Clique para abrir no Google Maps" href="https://www.google.com.br/maps/place/R.+do+Rocio,+52+-+Vila+Olímpia,+São+Paulo+-+SP/@-23.5934738,-46.6865075,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5745f024b5fd:0x992ad154f9e9ed01?hl=pt-BR" target="_blank">Rua do Rócio, 52, cj 122.<br> Vila Olímpia, São Paulo - SP</a>
+                <a class="laranja font-bold-upper" title="Clique para abrir no Google Maps" href="https://www.google.com.br/maps/place/R.+do+Rocio,+52+-+Vila+Olímpia,+São+Paulo+-+SP/@-23.5934738,-46.6865075,17z/data=!3m1!4b1!4m2!3m1!1s0x94ce5745f024b5fd:0x992ad154f9e9ed01?hl=pt-BR" target="_blank">{{ env('VIVALA_LINK_ENDERECO') }}</a>
             </div>
         </div>
     </div>
-    <div class="col-sm-7 form-borda-preta">
+    <div class="col-sm-7">
         {!! Form::open(['url' => '/paginas/contato', 'method' => 'POST', 'id' => 'form-contato', 'data-callback' => 'retornoFormContato', 'data-loading'=>'form-loading']) !!}
             {!! Form::text("nome", '', ['title' => trans('global.lbl_name'), 'placeholder' => trans('global.lbl_name'), 'class' => 'form-control margin-b-1']) !!}
             {!! Form::text("email", '', ['title' => trans('global.lbl_email'), 'placeholder' => trans('global.lbl_email'), 'class' => 'form-control margin-b-1']) !!}

@@ -4,7 +4,6 @@
 */
 
 $(function() {
-
     //token do laravel para ajax
     $.ajaxSetup({
         headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
@@ -35,10 +34,12 @@ $(function() {
                 if(callbackFunction) {
                    swal({
                      title: lingua[3],
+                     imageUrl: 'https://vivala.com.br/img/icones/svg/vivala-icon-mensagem-enviada.svg',
+                     imageWidth: 58,
+                     imageHeight: 53,
                      html: "<p>"+lingua[4]+"</p><p>"+lingua[5]+"</p>",
-                     type: 'success',
                      showCancelButton: false,
-                     confirmButtonColor: corVerdePrimario,
+                     confirmButtonColor: corLaranjaPrimario,
                    });
                    document.getElementById("form-feedback").reset();
                    $('#modal-feedback').modal('hide');

@@ -228,7 +228,7 @@ class PaginaController extends Controller {
     public function postFeedback(FeedbackRequest $request)
     {
         $request->email = Auth::user()->email;
-        $request->nome = (Auth::user()->username != "" ? Auth::user()->username : Auth::user()->perfil->apelido);
+        $request->nome = (!empty(Auth::user()->username) ? Auth::user()->username : Auth::user()->perfil->apelido);
         // Montando o Objeto formado pelo request de ContatoRequest + user_email + user_nome
         $FormFeedback = $request;
 
