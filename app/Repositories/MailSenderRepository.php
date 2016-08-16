@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use Mail;
 use App\User;
+use App\Experiencia;
 
 /**
  * Classe para concentrar os triggers de envio de email da plataforma,
@@ -102,9 +103,10 @@ class MailSenderRepository
     * o CANDIDATO que temos um novo pedido de experiência
     * @param $
     */
-    public function enviaEmailExperienciaNovaInscricaoCandidato($experienciaID, $perfilID)
-    {/*
-      Mail::send('emails.experiencias.novainscricaocandidato', ['Experiencia' => $Experiencia], function ($message) use () {
+    public function enviaEmailExperienciaCandidatoPagamentoPendente(Experiencia $Experiencia, User $Usuario)
+    {
+      $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
+      Mail::send('emails.experiencias.candidato.inscricao-pagamento-pendente', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to($user->email, $user->username)->subject('Vivalá - Inscrição da Experiência realizada com sucesso!');
@@ -113,7 +115,7 @@ class MailSenderRepository
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Inscrição da Experiência Candidato');
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
-    */}
+    }
 
     /**
     * Método para disparar o email de nova experiência na plataforma, avisando
