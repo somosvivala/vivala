@@ -53,10 +53,15 @@
                   <div class="foto">
                     <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
                       <div class="categorias-experiencia">
+                        <?php $contadorCategorias = 0; ?>
                         @foreach($Experiencia->categorias as $Categoria)
                           <div class="icone">
                             <i class="{{ $Categoria->icone }}"></i>
                           </div>
+                          {{-- A img do desktop/listagem só comporta 4 ícones por vez --}}
+                          @if(++$contadorCategorias === 4)
+                            <?php break; ?>
+                          @endif
                         @endforeach
                       </div>
                     </div>
