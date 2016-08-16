@@ -36,12 +36,6 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     function __construct(BoletoCloudRepositoryInterface $boletoRepo)
     {
-        $this->depositBank = env('VIVALA_BANK');
-        $this->depositAG = env('VIVALA_AG');
-        $this->depositCC = env('VIVALA_CC');
-        $this->depositCNPJ = env('VIVALA_CNPJ');
-        $this->depositFantasyName = env('VIVALA_FANTASY_NAME');
-
         $this->repositorioBoletos = $boletoRepo;
     }
 

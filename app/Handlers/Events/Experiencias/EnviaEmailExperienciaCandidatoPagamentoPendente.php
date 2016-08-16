@@ -6,9 +6,10 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 use App\Experiencia;
 use App\Perfil;
+use App\User;
 use App\Repositories\MailSenderRepository;
 
-class EnviaEmailExperienciaNovaInscricaoCandidato {
+class EnviaEmailExperienciaCandidatoPagamentoPendente {
 
 	// Cria instância de mailSenderRepository para ser usada aqui
 	private $mailSenderRepository;
@@ -33,7 +34,7 @@ class EnviaEmailExperienciaNovaInscricaoCandidato {
 	public function handle(NovaInscricaoExperiencia $event)
 	{
 		// Usa o método enviaEmailExperienciaNovaInscricaoCandidato do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaNovaInscricaoCandidato($event->experienciaID, $event->perfilID);
+		$this->mailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($event->experiencia, $event->usuario);
 	}
 
 }

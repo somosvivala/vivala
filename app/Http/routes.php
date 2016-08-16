@@ -14,13 +14,18 @@
   /*
   * Rotas de teste de Emails Experiencias
   */
+  use App\User;
   use App\Experiencia;
   use App\Perfil;
-  use App\Repositories\ExperienciasRepository;
+  //use App\Repositories\ExperienciasRepository;
+
   Route::get('/testaemailexperiencia/{indice}', function($indice) {
+
     //$Experiencia = Experiencia::all()->reverse()->first();
     $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
+    event(new App\Events\NovaInscricaoExperiencia($Experiencia, $Usuario));
+
     $ViewsDeTeste = [
       // CANDIDATO
       'emails.experiencias.candidato.inscricao-pagamento-pendente',
