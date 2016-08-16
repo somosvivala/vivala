@@ -23,12 +23,6 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     /**
      * Settando propriedades que serao settadas no controller para torna-las dinamicas
      */
-    public $depositBank;
-    public $depositAG;
-    public $depositCC;
-    public $depositCNPJ;
-    public $depositFantasyName;
-
     public $repositorioBoletos;
 
     /**

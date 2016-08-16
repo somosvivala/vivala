@@ -4,9 +4,7 @@ use App\Events\NovaInscricaoExperiencia;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use App\Experiencia;
-use App\Perfil;
-use App\User;
+use App\InscricaoExperiencia;
 use App\Repositories\MailSenderRepository;
 
 class EnviaEmailExperienciaCandidatoPagamentoPendente {
@@ -33,8 +31,9 @@ class EnviaEmailExperienciaCandidatoPagamentoPendente {
 	 */
 	public function handle(NovaInscricaoExperiencia $event)
 	{
-		// Usa o método enviaEmailExperienciaNovaInscricaoCandidato do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($event->experiencia, $event->usuario);
+		// Usa o método enviaEmailExperienciaCandidatoPagamentoPendente do mailSenderRepository para enviar o email
+		$Inscricao = $event->experiencia->getInscricaoUsuario($event->usuario);
+		$this->mailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($Inscricao);
 	}
 
 }
