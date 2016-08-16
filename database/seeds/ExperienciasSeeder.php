@@ -24,7 +24,6 @@ class ExperienciasSeeder extends Seeder {
 
         $this->seedCategorias();
         $this->seedExperiencias();
-        $this->seedInscricoes();
 
     }
 
@@ -146,24 +145,5 @@ class ExperienciasSeeder extends Seeder {
         ]);
     }
 
-    /**
-     * Funcao para seedar algumas inscricoes nas experiencias dummy
-     */
-    private function seedInscricoes()
-    {
-        //inserindo 5 inscricoes
-        for ($i = 0; $i < 5; $i++) {
-
-            //cria nova nova inscricao
-            $inscricao = InscricaoExperiencia::create([]);
-
-            //associa a inscricao a uma experiencia e a um perfil
-            $inscricao->experiencia()->associate(Experiencia::orderByRaw('RANDOM()')->first());
-            $inscricao->perfil()->associate(Perfil::orderByRaw('RANDOM()')->first());
-
-            //persiste a instancia no bd fazendo update das relacoes
-            $inscricao->push();
-        }
-    }
 
 }

@@ -22,6 +22,9 @@
         <span class="col-xs-12 negrito-exp text-center">R${{ $Experiencia->preco }}</span>
         <span class="col-xs-12 negrito-exp text-center margin-b-1"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome}} - {{ $Experiencia->local->estado->sigla}}</span>
         <span class="descricao-inicial">{{ $Experiencia->descricao }}</span>
+        {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
+        {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
+        {!! Form::hidden('_token', csrf_token()) !!}
         <div class="owner text-center">
             <div class="round-foto-small">
                 <img alt="{{ $Experiencia->owner_nome }}" src="{{ $Experiencia->fotoOwnerUrl }}">
@@ -124,7 +127,7 @@
     @if($Experiencia->isUsuarioAtualInscrito)
         <a class="btn-full-bottom-laranja" href="#" onclick="event.preventDefault();">{!! trans('global.lbl_subscribed') !!}</a>
     @else
-        <a class="btn-full-bottom" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
+        <a class="btn-full-bottom btn-inscrevase-experiencia" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribe_yourself') !!}</a>
     @endif        
 </section >
 </div>

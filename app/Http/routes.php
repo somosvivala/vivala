@@ -176,6 +176,8 @@ Route::put('experiencias/deleteinformacaoextra', 'ExperienciasController@putDele
 Route::get('experiencias/adddataocorrencia', 'ExperienciasController@getAddDataOcorrencia');
 Route::put('experiencias/deletedataocorrencia', 'ExperienciasController@putDeleteDataOcorrencia');
 
+Route::post('experiencias/createinscricaoexperiencia', 'ExperienciasController@postCreateInscricaoExperiencia');
+
 //rotas complementares ao resource controller
 Route::get('conhecavivala', 'ExperienciasController@getConhecaVivala');
 Route::get('experiencias/checkout/{id}', 'ExperienciasController@getCheckout');

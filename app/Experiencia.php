@@ -226,9 +226,9 @@ class Experiencia extends Model
     }
 
     /**
-     * Acessor para a próxima ocorrencia a partir de hoje
+     * Acessor para as ocorrencia futuras da experiencia a partir de hoje
      *
-     * @return \Carbon\Carbon
+     * @return Collection<\Carbon\Carbon>
      */
     public function getFuturasOcorrenciasAttribute()
     {

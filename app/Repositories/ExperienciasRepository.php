@@ -360,11 +360,17 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      * @param $experienciaId - Id da experiencia que sera criada uma nova inscricao
      * @param $perfilId - Id do perfil que se inscreveu na experiencia
      */
-    public function createInscricaoExperiencia($experienciaId, $perfilId)
+    public function createInscricaoExperiencia($experienciaId, $perfilId, $dataInscricao=null)
     {
+        $Experiencia = $this->findOrFail($experienciaId);
+
+        //Se nao tiver vindo uma data de inscricao, entao é um evento tipo unico. com uma unica data possivel
+        $dataInscricao = $dataInscricao ? $dataInscricao : $Experiencia->proximaOcorrencia->data_ocorrencia;
+
         $inscricao = InscricaoExperiencia::create([
             'experiencia_id' => $experienciaId,
-            'perfil_id' => $perfilId
+            'perfil_id' => $perfilId,
+            'data_ocorrencia_experiencia' => $dataInscricao
         ]);
 
         return $inscricao;

@@ -9,7 +9,7 @@ class InscricaoExperiencia extends Model
         'data_pagamento',
         'perfil_id',
         'experiencia_id',
-        'data_ocorrencia_experiencia_id',
+        'data_ocorrencia_experiencia',
         'data_cancelamento'
     ];
 
@@ -19,8 +19,15 @@ class InscricaoExperiencia extends Model
      */
     protected $dates = [
         'data_pagamento',
+        'data_ocorrencia_experiencia',
         'data_cancelamento'
     ];
+
+
+    /*
+     * ### Relações entre as entidades ###
+     */
+
 
     /**
      * Toda as inscricoes pertencem a uma experiencia especifica
@@ -39,14 +46,6 @@ class InscricaoExperiencia extends Model
     }
 
     /**
-     * As inscricoes podem ter relacao com uma DataOcorrenciaExperiencia
-     */
-    public function dataExperiencia()
-    {
-        return $this->belongsTo('App\DataOcorrenciaExperiencia', 'data_ocorrencia_experiencia_id');
-    }
-
-    /**
      * As inscricoes podem ter um boleto
      */
     public function boleto()
@@ -54,6 +53,25 @@ class InscricaoExperiencia extends Model
         return $this->hasOne('App\BoletoExperiencia');
     }
 
+
+
+    /**
+     * ### Acessors (modificacoes que executarão após recuperar o campo do BD) ###
+     * ### (antes de devolver) ###
+     */
+
+    /**
+     * Definindo um acessor para o dia em que ocorrera a experiencia
+     */
+    public function getDataExperienciaAttribute()
+    {
+        return $this->data_ocorrencia_experiencia;
+    }
+
+
+    /**
+     * ### Scopes -- 'queries' que serao executadas para filtrar as inscricoes de maneira legivel
+     */
 
     /**
      * Definindo uma scope para as inscricoes pendentes

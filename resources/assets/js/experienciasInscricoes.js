@@ -246,7 +246,7 @@ var sweetAlertSucessoCancelaInscricaoExperiencia = function() {
 };
 
 /**
-* Funcao para mostrar uma sweetAlert de sucesso
+* Funcao para mostrar uma sweetAlert de erro
 */
 var sweetAlertErroCancelaInscricaoExperiencia = function() {
     swal({

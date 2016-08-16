@@ -16,6 +16,7 @@ use App\Http\Requests\DestroyExperienciaRequest;
 use App\Http\Requests\CreateDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\GerarBoletoInscricaoExperienciaRequest;
+use App\Http\Requests\NovaInscricaoExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
 use App\Events\NovaInscricaoExperiencia;
 use App\Events\NovosDadosUsuario;
@@ -171,6 +172,31 @@ class ExperienciasController extends Controller
         } else {
             return view("experiencias.checkout", compact("Experiencia", "Inscricao") );
         }
+
+    }
+
+    /**
+     * Faz o checkout da experiencia
+     *
+     * @return view
+     */
+    public function postCreateInscricaoExperiencia(NovaInscricaoExperienciaRequest $request)
+    {
+        $Experiencia = $this->experienciasRepository->findOrFail($request->id_experiencia);
+
+        //Se a experiencia em questao nao estiver ativa
+        if (!$Experiencia->isAtiva) {
+            //e o usuario nao for admin (caso queria ver como ficou a experiencia em analise)
+            $podeAcessar = Auth::user() ? Auth::user()->isAdmin() : false;
+            if (!$podeAcessar)
+                return redirect('/experiencias');
+        }
+
+        $data_inscricao = $request->data_inscricao;
+        $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id, $data_inscricao );
+        event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
+
+        return ['success' => true];
 
     }
 

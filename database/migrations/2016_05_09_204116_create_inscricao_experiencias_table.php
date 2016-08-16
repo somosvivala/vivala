@@ -19,6 +19,7 @@ class CreateInscricaoExperienciasTable extends Migration {
 
       $table->date('data_pagamento')->nullable();
       $table->date('data_cancelamento')->nullable();
+      $table->date('data_ocorrencia_experiencia')->nullable();
 
       /**
        * quando se inscreve => pendente
@@ -47,13 +48,6 @@ class CreateInscricaoExperienciasTable extends Migration {
 			$table->foreign('perfil_id')
 				->references('id')
 				->on('perfils')
-				->onDelete('cascade');
-
-      //FK para a data de ocorrencia da experiencia
-			$table->integer('data_ocorrencia_experiencia_id')->unsigned()->nullable();
-			$table->foreign('data_ocorrencia_experiencia_id')
-				->references('id')
-				->on('data_ocorrencia_experiencias')
 				->onDelete('cascade');
 
 		});
