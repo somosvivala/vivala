@@ -17,8 +17,7 @@
   use App\Experiencia;
   use App\Perfil;
   use App\Repositories\ExperienciasRepository;
-  Route::get('/testaemailexperiencia', function() {
-    $ExperienciasRepository = new ExperienciasRepository;
+  Route::get('/testaemailexperiencia/{indice}', function($indice) {
     //$Experiencia = Experiencia::all()->reverse()->first();
     $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
@@ -43,7 +42,7 @@
       'emails.experiencias.plataforma.inscricao-nova'
     ];
     // Alterar pelo ARRAY aqui
-    return view($ViewsDeTeste[11], compact('Usuario', 'ExperienciasRepository', 'Experiencia'));
+    return view($ViewsDeTeste[$indice], compact('Usuario', 'Experiencia'));
   });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
   Route::get('/emailteste', function() {
