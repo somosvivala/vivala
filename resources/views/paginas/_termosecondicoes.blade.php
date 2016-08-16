@@ -5,7 +5,7 @@
         <div class="col-xs-12 text-center container-logo">
             <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
         </div>
-        <a href="#" class="link-voltar">
+        <a href="#" class="link-voltar history-back">
             <i class="fa fa-chevron-left"></i>
         </a>
 
