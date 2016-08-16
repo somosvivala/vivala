@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
             $('#conheca-vivala').addClass('ativo');
         });
 
-        $('.link-voltar').on('click', function() {
+        $('.history-back').on('click', function() {
             window.history.back();
         });
 

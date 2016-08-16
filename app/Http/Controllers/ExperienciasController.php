@@ -162,6 +162,7 @@ class ExperienciasController extends Controller
 
         //Checando se o usuario atual ja esta inscrito , se nao estiver entao criar nova inscricao
         $Inscricao = $Experiencia->getInscricaoUsuario(Auth::user());
+dd($Inscricao);
         if (!$Inscricao) {
             $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id);
             event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
