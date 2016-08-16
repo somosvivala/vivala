@@ -27,24 +27,24 @@
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step4">
-            <a class="rodoviario logger-ativo" href="#rodoviario" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="rodoviario" role="tab" data-toggle="tab">
+            <a class="rodoviario logger-ativo" href="/viajar#rodoviario" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="rodoviario" role="tab" data-toggle="tab">
               {{ trans('global.wannatravel_trip_bus_drive') }}
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step5">
-            <a class="ativa-modal-quimera logger-ativo" href="#quimera" data-tipo="abasviajar_tipo_quimera" data-desc="abasviajar_desc_quimera" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" data-url="https://www.e-agencias.com.br/vivala">
+            <a class="ativa-modal-quimera logger-ativo" href="/viajar#quimera" data-tipo="abasviajar_tipo_quimera" data-desc="abasviajar_desc_quimera" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" data-url="https://www.e-agencias.com.br/vivala">
               {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step6">
-            <a class="restaurantes logger-ativo" href="#restaurantes" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="restaurantes" role="tab" data-toggle="tab">
+            <a class="restaurantes logger-ativo" href="/viajar#restaurantes" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="restaurantes" role="tab" data-toggle="tab">
               {{ trans('global.wannatravel_trip_restaurants') }}
             </a>
           </li>
         </div>
       </ul>
       <div class="tab-content">
-        <div id="experiencias" class="tab-pane text-center active" role="tabpanel">
+        <div id="experiencias" class="checkout-exp tab-pane text-center active" role="tabpanel">
           <span class="col-lg-12">
             <i class="fa fa-envelope round-icon-bg"></i>
           </span>
@@ -52,7 +52,7 @@
             <span class="col-lg-12">Te enviaremos um email com todos os detalhes.</span>
             <span class="col-lg-12 margin-t-1 margin-b-2">Para confirmar sua inscrição na experiência <b>{{ $Experiencia->owner_nome }}</b>, realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:</span>
             <div class="col-lg-12">
-              <div class="dados-bancarios margin-t-1">
+              <div class="dados-bancarios">
                 <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_name') !!}: {{ env('VIVALA_FANTASY_NAME') }}</span>
                 <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}: {{ env('VIVALA_CC') }}</span>
                 <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_agency') !!}: {{ env('VIVALA_AG') }}</span>

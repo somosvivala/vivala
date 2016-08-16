@@ -129,7 +129,6 @@ ul.lista-exp-desktop {
     .descricao-informacoes {
         text-transform: uppercase;
     }
-
     .clndr-picker {
         width:12em;
         display: inline-block;
@@ -140,5 +139,34 @@ ul.lista-exp-desktop {
         text-transform: uppercase;
         color: @cor-primaria;
         text-align:center;
+    }
+}
+.checkout-exp {
+    .btn-gerar-boleto {
+        background-color:white;
+        border: 1px solid fade(@verde-sucesso,50);
+        color: @verde-sucesso;
+        text-transform: uppercase;
+        display:inline-block;
+        padding: 4px 14px;
+        i {
+            color:@verde-sucesso;
+            font-size:6rem;
+            position:relative;
+            float:left;
+        }
+        span {
+            position:relative;
+            float:left;
+            padding-left: .5em;
+            padding-top: .2em;
+            text-align:left;
+        }
+    }
+    .dados-bancarios {
+        display:inline-block;
+        width:28em;
+        background-color:@cor-fundo;
+        padding:1em 0.2em;
     }
 }
