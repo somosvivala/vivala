@@ -22,7 +22,7 @@
   Route::get('/testaemailexperiencia/{indice}', function($indice) {
 
     //$Experiencia = Experiencia::all()->reverse()->first();
-    $Experiencia = Experiencia::all()->first();
+    $Experiencia = Experiencia::find(3);
     $Usuario = Auth::user();
     event(new App\Events\NovaInscricaoExperiencia($Experiencia, $Usuario));
 

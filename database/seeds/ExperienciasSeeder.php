@@ -91,7 +91,8 @@ class ExperienciasSeeder extends Seeder {
         $experiencia->push();
         $ong->experiencias()->save($experiencia);
 
-        $ong = Ong::orderByRaw('RANDOM()')->first();
+        //3 experiencia sera da vivala quando tiver ela no bd
+        $ong = Ong::find(17) ? Ong::find(17) : Ong::orderByRaw('RANDOM()')->first();
         $categoriaExperiencia = CategoriaExperiencia::orderByRaw('RANDOM()')->first();
         $localExperiencia = Cidade::orderByRaw('RANDOM()')->first();
         $informacaoExperiencia = InformacaoExperiencia::create([
@@ -107,6 +108,7 @@ class ExperienciasSeeder extends Seeder {
             'tipo_servico_dias' => array('Terça','Quarta','Sexta'),
             'descricao' => 'Essa é a descricao da Terceira experiencia!',
             'descricao_na_listagem' => 'Nao perca, essa super mega 3º Experiencia!!!',
+            'status' => 'publicada',
             'detalhes' => "Lorem ipsum dolor sittempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. \n\n Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident",
             'preco' => 12.44
         ]);

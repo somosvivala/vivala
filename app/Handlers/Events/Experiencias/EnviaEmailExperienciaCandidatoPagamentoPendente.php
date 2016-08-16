@@ -34,7 +34,7 @@ class EnviaEmailExperienciaCandidatoPagamentoPendente {
 	public function handle(NovaInscricaoExperiencia $event)
 	{
 		// Usa o método enviaEmailExperienciaNovaInscricaoCandidato do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($event->experiencia, $event->usuario);
+		$this->mailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($event->inscricao);
 	}
 
 }

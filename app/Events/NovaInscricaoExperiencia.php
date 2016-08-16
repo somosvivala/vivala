@@ -11,10 +11,7 @@ class NovaInscricaoExperiencia extends Event
     use SerializesModels;
 
     // Informaçãoos que o evento precisa propagar
-    //public $experienciaID;
-    //public $perfilID;
-    public $experiencia;
-    public $usuario;
+    public $Inscricao;
 
 
     /**
@@ -24,13 +21,9 @@ class NovaInscricaoExperiencia extends Event
      * @param $perfilID - ID do perfil que se inscreveu
      * @return void
      */
-    //public function __construct($experienciaID, $perfilID)
-    public function __construct(Experiencia $experiencia, User $usuario)
+    public function __construct(Inscricao $inscricao)
     {
-        //$this->experienciaID = $experienciaID;
-        //$this->perfilID = $perfilID;
-        $this->experiencia = $experiencia;
-        $this->usuario = $usuario;
+        $this->Inscricao = $inscricao;
     }
 
 }

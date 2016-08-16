@@ -194,7 +194,7 @@ class ExperienciasController extends Controller
 
         $data_inscricao = $request->data_inscricao;
         $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id, $data_inscricao );
-        event(new NovaInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id));
+        event(new NovaInscricaoExperiencia($Inscricao));
 
         return ['success' => true];
 

@@ -5,6 +5,7 @@ namespace App\Repositories;
 use Mail;
 use App\User;
 use App\Experiencia;
+use App\InscricaoExperiencia;
 
 /**
  * Classe para concentrar os triggers de envio de email da plataforma,
@@ -103,7 +104,7 @@ class MailSenderRepository
     * o CANDIDATO que temos um novo pedido de experiência
     * @param $
     */
-    public function enviaEmailExperienciaCandidatoPagamentoPendente(Experiencia $Experiencia, User $Usuario)
+    public function enviaEmailExperienciaCandidatoPagamentoPendente(InscricaoExperiencia $inscricao)
     {
       $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
       Mail::send('emails.experiencias.candidato.inscricao-pagamento-pendente', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
