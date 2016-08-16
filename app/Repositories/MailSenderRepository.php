@@ -104,9 +104,8 @@ class MailSenderRepository
     * o CANDIDATO que temos um novo pedido de experiência
     * @param $
     */
-    public function enviaEmailExperienciaCandidatoPagamentoPendente(InscricaoExperiencia $inscricao)
+    public function enviaEmailExperienciaCandidatoPagamentoPendente(InscricaoExperiencia $Inscricao)
     {
-      $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
       Mail::send('emails.experiencias.candidato.inscricao-pagamento-pendente', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))

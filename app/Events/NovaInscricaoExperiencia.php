@@ -17,8 +17,8 @@ class NovaInscricaoExperiencia extends Event
     /**
      * Create a new event instance.
      *
-     * @param $experienciaID - ID da experiencia que recebeu uma nova inscricao
-     * @param $perfilID - ID do perfil que se inscreveu
+     * @param $Experiencia - Experiencia que recebeu uma nova inscricao
+     * @param $Usuario - Usuario que se inscreveu
      * @return void
      */
     public function __construct(Inscricao $inscricao)
