@@ -294,6 +294,17 @@ class Experiencia extends Model
     }
 
     /**
+     * Definindo um acessor para as inscricoes confirmadas
+     */
+    public function getInscricoesConfirmadasAttribute()
+    {
+        return $this->inscricoes()
+            ->whereIn('status', ['confirmada'])
+            ->get();
+    }
+
+
+    /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
      * @return boolean - se vai acontecer em 3 dias ou nao
      */
