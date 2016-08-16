@@ -380,9 +380,9 @@
             @foreach ($arrayDias as $key => $dia)
               <label class="col-lg-3">
                 <input type="checkbox" name="tipo_servico_dias[]" value="{{ $dia }}"
-                  @if (isset($experiencia) 
-                    && count($experiencia->diasOperacionaisDaSemana) 
-                    && in_array($dia, (array)$experiencia->diasOperacionaisDaSemana)) 
+                  @if (isset($experiencia)
+                    && count($experiencia->diasOperacionaisDaSemana)
+                    && in_array($dia, (array)$experiencia->diasOperacionaisDaSemana))
                     checked="true"
                   @endif
                   ><span> &nbsp; {{ "$dia" }}</span>
@@ -406,7 +406,7 @@
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Categorias da Experiência"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><abbr title="Categorias da Experiência são as tags que descrevem a experiência mais resumidamente, para facilitar o entendimento do usuário sobre determinada Experiência, como por exemplo: 'Jardinagem', 'Programação' ou 'Edição de Vídeo' - ATENÇÃO: Poderão ser adicionadas quantas categorias se quiser, mas na listagem de Experiências do Desktop serão mostradas apenas as primeiras 4 categorias, na interna da Experiência do Desktop serão mostradas apenas as primeiras 7 categorias. Já na listagem de Experiências do Mobile serão mostradas apenas as primeiras 5 categorias e na interna da Experiência do Mobile serão mostradas apenas as primeiras 5 categorias. Logo, um bom número MÁXIMO de categorias a se usar é 4, que cobre todos os casos."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
           </table>
         </div>
         <div class="col-lg-12">

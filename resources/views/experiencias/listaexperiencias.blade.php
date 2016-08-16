@@ -21,12 +21,16 @@
               <div class="{{ $k%2==0?'direita':'esquerda'}} foto">
                   <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
                       <div class="categorias-experiencia">
-                          @foreach($Experiencia->categorias as $Categoria)
-                              <div class="icone">
-                                  <i class="fa fa-{{ $Categoria->icone }}"></i>
-                                  {{-- <span>{{ $Categoria->nome }}</span> --}}
-                              </div>
-                          @endforeach
+                        <?php $contadorCategorias = 0; ?>
+                        @foreach($Experiencia->categorias as $Categoria)
+                          <div class="icone">
+                            <i class="{{ $Categoria->icone }}"></i>
+                          </div>
+                          {{-- A img do mobile só comporta 6 ícones por vez na listagem --}}
+                          @if(++$contadorCategorias === 6)
+                            <?php break; ?>
+                          @endif
+                        @endforeach
                       </div>
                   </div>
                   {{-- <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}"> --}}
