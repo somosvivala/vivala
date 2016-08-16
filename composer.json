@@ -13,8 +13,8 @@
 		"intervention/image": "^2.2",
 		"jenssegers/date": "^3.0",
 		"phaza/laravel-postgis": "^2.13",
-		"jenssegers/agent": "^2.3"
-    "guzzlehttp/guzzle ~5.0",
+		"jenssegers/agent": "^2.3",
+    "guzzlehttp/guzzle ~5.0"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",
