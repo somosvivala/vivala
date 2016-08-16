@@ -63,6 +63,11 @@
                   <span class="col-lg-12"><i class="fa fa-fw fa-map-marker"></i> {{ $Experiencia->local->nome}} - {{ $Experiencia->local->estado->sigla }}</span>
                   <span class="col-lg-12"><i class="fa fa-fw fa-money"></i> R${{ $Experiencia->preco }}</span>
                   <span class="col-lg-12">{{ $Experiencia->descricao }}</span>
+                    {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
+                    {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
+                    {!! Form::hidden('_token', csrf_token()) !!}
+
+
                 </div>
               </div>
             </div>
@@ -162,10 +167,10 @@
               <div class="row text-center padding-t-1 padding-b-2">
                 @if($Experiencia->isUsuarioAtualInscrito)
                   {!! Form::hidden('_token', csrf_token()) !!}
-                  <a class="btn btn-amarelo-aviso" href="/experiencias/checkout/{{ $Experiencia->id }}">{!! trans('global.lbl_subscribed') !!}</a>
+                  <a class="btn btn-amarelo-aviso" href="/experiencias/checkout/{{ $Experiencia->id }}" onclick="event.preventDefault();">{!! trans('global.lbl_subscribed') !!}</a>
                   <a class="btn-cancelar-inscricao col-lg-12" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)"><i class="fa fa-times-circle-o"></i> Cancelar Inscrição</a>
                 @else
-                  <a class="btn-verde btn" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
+                  <a class="btn-verde btn btn-inscrevase-experiencia" href="/experiencias/checkout/{{ $Experiencia->id }}">Inscreva-se aqui</a>
                 @endif
               </div>
             </div>

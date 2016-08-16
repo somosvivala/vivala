@@ -10,39 +10,35 @@ $(function () {
 
             if (!dataInscricao) {
                 mostrarSweetAlertDataInscricaoNecessaria();
-            }
-
-            //Se tivermos uma data de inscricao entao podemos prosseguir
-            else {
-
-               var idExperiencia = $('input[name=experiencia_id]').val();
-               var params = {
-                    _token: $('input[name="_token"]').val(),
-                    data_inscricao: dataInscricao,
-                    id_experiencia: idExperiencia
-               };
-
-               //fazendo ajax para criacao de uma inscricao de experiencia
-                $.ajax({
-                    url: '/experiencias/createinscricaoexperiencia',
-                    type: 'POST',
-                    data: params,
-                    complete: function (jqXHR, textStatus) {
-                        // callback
-                    },
-                    success: function (data, textStatus, jqXHR) {
-                        console.log('succeso create inscricao');
-                        if (data.success) {
-                            window.location.href = "/experiencias/checkout/" + idExperiencia;
-                        }
-                    },
-                    error: function (jqXHR, textStatus, errorThrown) {
-                    }
-                });
-
+                return;
             }
         }
 
+       var idExperiencia = $('input[name=experiencia_id]').val();
+       var params = {
+            _token: $('input[name="_token"]').val(),
+            data_inscricao: dataInscricao,
+            tipo_experiencia: tipoExperiencia,
+            id_experiencia: idExperiencia
+       };
+
+       //fazendo ajax para criacao de uma inscricao de experiencia
+        $.ajax({
+            url: '/experiencias/createinscricaoexperiencia',
+            type: 'POST',
+            data: params,
+            complete: function (jqXHR, textStatus) {
+                // callback
+            },
+            success: function (data, textStatus, jqXHR) {
+                console.log('succeso create inscricao');
+                if (data.success) {
+                    window.location.href = "/experiencias/checkout/" + idExperiencia;
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+            }
+        });
     });
 });
 

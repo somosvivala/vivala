@@ -49,7 +49,8 @@ class NovaInscricaoExperienciaRequest extends Request
     {
         return [
             'id_experiencia'       => "required|exists:experiencias,id",
-            'data_inscricao'       => "required|date",
+            'tipo_experiencia'     => "string",
+            'data_inscricao'       => "requiredif:tipo_experiencia,evento_recorrente,evento_servico|date"
         ];
     }
 
