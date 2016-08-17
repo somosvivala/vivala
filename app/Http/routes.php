@@ -21,6 +21,7 @@
   Route::get('/testaemailexperiencia/{indice}', function($indice) {
     $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
+    $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
     event(new App\Events\NovaInscricaoExperiencia($Inscricao));
 
     $ViewsDeTeste = [

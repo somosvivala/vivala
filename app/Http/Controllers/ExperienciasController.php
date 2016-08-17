@@ -165,6 +165,7 @@ class ExperienciasController extends Controller
         if (!$Inscricao) {
             $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id);
             event(new NovaInscricaoExperiencia($Inscricao);
+            return redirect('/experiencias');
         }
 
         if(Agent::isDesktop()) {
