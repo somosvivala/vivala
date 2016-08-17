@@ -342,6 +342,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function delete($id)
     {
+        //event(new ExperienciaRemovida($experiencia));
         return $this->findOrFail($id)->delete();
     }
 
@@ -450,7 +451,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'analise']);
-        event(new ExperienciaDesativada($experiencia));
+        //event(new ExperienciaDesativada($experiencia));
         return $fezUpdate;
     }
 
