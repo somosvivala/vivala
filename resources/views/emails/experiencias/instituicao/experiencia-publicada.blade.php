@@ -148,53 +148,84 @@
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%; padding-bottom:0; margin-top:0; padding-bottom:0;">
                 <tbody>
-                  <!-- Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
                   <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
-                        Detalhes da experiência
+                    <td style="padding-bottom:30px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Informações da Experiência
                       </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left;">
+                      <p style="float:left; margin-top:0; margin-bottom:0;">
                         <img src="{{ $Experiencia->getFotoOwnerUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                         <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
                       </p>
-                      <p>
+                      <p style="margin-top:0; margin-bottom:0;">
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>ACESSOR DA DATA (ENTRE AS DATAS DE OCORRENCIA) EM QUE CANDIDATO SE CANDIDATOU PRA EXPERIENCIA (???)</strong>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          TIPO DE EXPERIÊNCIA
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          @if($Experiencia->tipo = 'evento_unico')
+                            Evento Único
+                          @elseif ($Experiencia->tipo = 'evento_recorrente')
+                            Evento Recorrente
+                          @elseif ($Experiencia->tipo = 'evento_servico')
+                            Evento Serviço
+                          @endif
                         </span>
                       </p>
-                      <p style="margin-bottom:5px;">
+                      <p>
                         <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}</strong>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          LOCAL DA EXPERIÊNCIA
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}
                         </span>
                       </p>
-                      <p style="margin-top:0;">
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst($Experiencia->endereco_completo) }}</strong>
+                      <p>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          ENDEREÇO DA EXPERIÊNCIA
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          {{ ucfirst($Experiencia->endereco_completo) }}
                         </span>
                       </p>
-                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção INFORMAÇÕES DA EXPERIÊNCIA -->
+                  <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+                  <tr>
+                    <td style="padding-bottom:30px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Descrição da Experiência
+                      </h3>
+                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
                         {{ trim($Experiencia->descricao) }}
                       </p>
                     </td>
                   </tr>
-                  <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
-                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <!-- Fim da Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+                  <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
-                        Informações
+                    <td style="padding-bottom:30px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Detalhes da Experiência
                       </h3>
+                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
+                        {{ trim($Experiencia->detalhes) }}
+                      </p>
                     </td>
                   </tr>
+                  <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção DETALHES EXTRAS DA EXPERIÊNCIA -->
                   <tr>
                     <td>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Detalhes Extras da Experiência
+                      </h3>
                       <p style="float:left; margin-right:20px; margin-bottom:0px;">
                         <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
                       </p>
@@ -223,13 +254,13 @@
                       </p>
                     </td>
                   </tr>
-                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
                   <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
                   <tr align="center">
                     <td>
                       <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; margin-top:50px; margin-bottom:0px;">
                         Envie sua dúvida ou sugestão para
-                        <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a>
+                        <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">{{ env('VIVALA_LINK_EMAIL') }}</a>
                       <p>
                     </td>
                   </tr>

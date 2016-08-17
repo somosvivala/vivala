@@ -435,7 +435,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'publicada']);
-        event(new ExperienciaPublicada($experiencia));
+        event(new Experiencia\ExperienciaPublicada($experiencia));
         return $fezUpdate;
     }
 
@@ -447,7 +447,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'analise']);
-        //event(new ExperienciaDesativada($experiencia));
+        //event(new Experiencia\ExperienciaDesativada($experiencia));
         return $fezUpdate;
     }
 

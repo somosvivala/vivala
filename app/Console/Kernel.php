@@ -86,12 +86,12 @@ class Kernel extends ConsoleKernel
 
                 //se a experiencia for acontecer hoje, disparar evento para tomar providencias
                 if ($experiencia->aconteceHoje) {
-                    event( new ExperienciaOcorrendo( $experiencia ));
+                  event(new Experiencia\ExperienciaOcorrendo($experiencia));
                 }
 
                 //se a experiencia for acontecer daqui 3 dias (eminente), disparar evento para tomar providencias
                 if ($experiencia->aconteceEmTresDias) {
-                    //event( new ExperienciaEminente( $experiencia ));
+                    //event(new Experiencia\ExperienciaEminente($experiencia));
                 }
 
             });

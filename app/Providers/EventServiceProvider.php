@@ -70,13 +70,12 @@ class EventServiceProvider extends ServiceProvider
         // ],
 
         /*
-        * Quando uma Experiência for Aprovada pela Vivalá e
-        * passar a ficar visível para todos os candidatos,
-        * temos que avisar a Instituição que tudo está ok
+        * Quando uma Experiência for Aprovada pela Vivalá
+        * e passar a ficar visível para todos os candidatos
         */
         'App\Events\Experiencias\ExperienciaPublicada' => [
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada',
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',
+          'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',
+          'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada'
         ],
 
         /*
@@ -86,51 +85,55 @@ class EventServiceProvider extends ServiceProvider
         // ],
 
         /*
-        * Quando acontecer uma nova Inscrição de Experiência
-        * mandar email para o Candidato e para a Vivalá,
-        * não é enviado para Instituição enquanto o
-        * candidato não pagar a Experiência (for confirmado)
+        * Quando uma Inscrição de Experiência acontecer (Nova Inscricao)
         */
         'App\Events\Experiencias\NovaInscricaoExperiencia' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'
+          'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',
+          'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'
         ],
 
         /*
-        * Quando uma Inscrição de Experiencia for confirmada
-        * isto é, o candidato pagou, mandar um email
-        * avisando o candidato e a instituição
+        * Quando uma Inscrição de Experiencia for Confirmada
         */
         'App\Events\Experiencias\InscricaoExperienciaConfirmada' => [
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'
+          //'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoConfirmada',
+          'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',
+          'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'
         ],
 
-        //Quando uma inscricao for cancelada, ainda nao confirmada, tomar alguma ação?
+        /*
+        * Quando uma Inscricao de Experiência for Cancelada
+        */
          'App\Events\Experiencias\InscricaoExperienciaCancelada' => [
-             'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoInscricaoCancelada',
-             'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada',
-             'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoCancelada'
+           //'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoCancelada',
+           'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoInscricaoCancelada',
+           'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada'
         ],
 
-        //Quando ocorrer uma experiencia (atualizar inscricoes)
+        /*
+        * Quando ocorrer uma experiencia (atualizar inscricoes)
+        */
         'App\Events\Experiencias\ExperienciaOcorrendo' => [
-            'App\Handlers\Events\Experiencias\AtualizaExperienciaRealizada',
+          'App\Handlers\Events\Experiencias\AtualizaExperienciaRealizada',
         ],
 
-        //Quando o usuario fornece os dados para gerar boleto
+        /*
+        * Quando o usuario fornece os dados para gerar boleto
+        */
         'App\Events\Experiencias\NovosDadosUsuario' => [
-            'App\Handlers\Events\Experiencias\AtualizaDadosUsuario'
+          'App\Handlers\Events\Experiencias\AtualizaDadosUsuario'
         ],
 
         //Quando uma experiencia estiver eminente, disparar emails para quem ainda nao confirmou, para quem confirmou e para a instiuicao
-        // 'App\Events\ExperienciaEminente' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteConfirmados',
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteDesConfirmados',
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteInstituicao'
-        // ],
+        'App\Events\Experiencias\ExperienciaEminente' => [
+          //'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteConfirmados',
+          //'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteDesConfirmados',
+          //'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteInstituicao'
+        ],
 
-        //Quando alguem na plataforma clicar em 'propor exp', enviar email para a vivalá com os detalhes fornecidos por quem propôs
+        /*
+        * Quando alguem na plataforma clicar em 'propor exp', enviar email para a vivalá com os detalhes fornecidos por quem propôs
+        */
         'App\Events\Experiencias\NovaPropostaExperiencia' => [
           'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaNovaProposta'
         ]

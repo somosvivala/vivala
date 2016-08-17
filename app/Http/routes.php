@@ -22,7 +22,7 @@
     $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
     $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
-    event(new App\Events\NovaInscricaoExperiencia($Inscricao));
+    //event(new App\Events\NovaInscricaoExperiencia($Inscricao));
 
     $ViewsDeTeste = [
       // CANDIDATO
@@ -40,6 +40,7 @@
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
       // PLATAFORMA
+      'emails.experiencias.plataforma.experiencia-publicada',
       'emails.experiencias.plataforma.inscricao-nova'
     ];
     // Alterar pelo ARRAY aqui

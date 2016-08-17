@@ -101,7 +101,7 @@ class MailSenderRepository
 
     /**
     * Método enviaEmailExperienciaPlataformaExperienciaPublicada
-    * @param $Experiencia - Instância de Experiência
+    * @param $Experiencia - Instância da Experiência que será enviada para Plataforma
     */
     public function enviaEmailExperienciaPlataformaExperienciaPublicada(Experiencia $Experiencia)
     {
@@ -111,14 +111,14 @@ class MailSenderRepository
           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi aprovada na plataforma');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
-          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Aprovada - Plataforma');
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Aprovada/Publicada - Plataforma');
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }
 
     /**
     * Método enviaEmailExperienciaInstituicaoExperienciaPublicada
-    * @param $Experiencia - Instância de Experiência
+    * @param $Experiencia - Instância da Experiência que será enviada para Instituição
     */
     public function enviaEmailExperienciaInstituicaoExperienciaPublicada(Experiencia $Experiencia)
     {
@@ -128,14 +128,14 @@ class MailSenderRepository
           $message->to($Experiencia->owner->email_contato, $Experiencia->owner->nome)->subject('Vivalá Experiências - Sua Experiência foi aprovada na Vivalá!');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
-          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Aprovada - Instituição');
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Aprovada/Publicada - Instituição');
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }
 
     /**
     * Método enviaEmailExperienciaPlataformaNovaInscricao
-    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario)
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Plataforma
     */
     public function enviaEmailExperienciaPlataformaNovaInscricao(InscricaoExperiencia $Inscricao)
     {
@@ -152,14 +152,14 @@ class MailSenderRepository
 
     /**
     * Método enviaEmailExperienciaCandidatoPagamentoPendente
-    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario)
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Candidato
     */
     public function enviaEmailExperienciaCandidatoPagamentoPendente(InscricaoExperiencia $Inscricao)
     {
       Mail::send('emails.experiencias.candidato.inscricao-pagamento-pendente', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to($Inscricao->perfil->user->email, $Inscricao->perfil->apelido)->subject('Vivalá Experiências - Sua inscrição na experiência foi feita!');
+          $message->to($Inscricao->perfil->user->email, $Inscricao->perfil->apelido)->subject('Vivalá Experiências - Você se inscreveu na experiência com sucesso!');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Pendente - Candidato');
@@ -169,7 +169,7 @@ class MailSenderRepository
 
    /**
     * Método enviaEmailExperienciaCandidatoPagamentoConfirmado
-    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario)
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Candidato
     */
     public function enviaEmailExperienciaCandidatoPagamentoConfirmado(InscricaoExperiencia $Inscricao)
     {
@@ -185,36 +185,69 @@ class MailSenderRepository
     }
 
     /**
-     * Método EnviaEmailExperienciaInstituicaoInscricaoConfirmada
-     * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario)
+     * Método enviaEmailExperienciaInstituicaoInscricaoConfirmada
+     * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Instituição
      */
      public function enviaEmailExperienciaInstituicaoInscricaoConfirmada(InscricaoExperiencia $Inscricao)
      {
-       Mail::send('emails.experiencias.instituicao.inscricao-pagamento-confirmado', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
+       Mail::send('emails.experiencias.instituicao.inscricao-candidato-confirmada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
          //se estiver em production, manda email para a live
          if(app()->environment('production'))
-           $message->to($Inscricao->perfil->user->email, $Inscricao->perfil->apelido)->subject('Vivalá Experiências - Sua experiência foi confirmada!');
+           $message->to($Inscricao->experiencia->owner->email_contato, $Inscricao->experiencia->owner->nome)->subject('Vivalá Experiências - Sua experiência foi confirmada!');
          //se estiver em development, manda o email para a sandbox
          else if(app()->environment('development'))
-           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Confirmada - Candidato');
+           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Confirmada - Instituição');
          $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
        });
      }
 
     /**
-    * Método para disparar o email de experiência confirmada na plataforma, avisando
-    * a INSTITUIÇÃO que temos uma experiência confirmada com sucesso
-    * @param $
+    * Método enviaEmailExperienciaPlataformaInscricaoCancelada
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Plataforma
     */
-    public function enviaEmailExperienciaCandidatoConfirmadaInstituicao(InscricaoExperiencia $Inscricao)
+    public function enviaEmailExperienciaPlataformaInscricaoCancelada(InscricaoExperiencia $Inscricao)
     {
-      Mail::send('emails.experiencias..inscricaoconfirmadainstituicao', [], function ($message) use () {
+      Mail::send('emails.experiencias.plataforma.inscricao-cancelada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to($user->email, $user->username)->subject('Vivalá - Experiência confirmada com sucesso!');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma inscrição de experiência foi cancelada');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
-          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIA] Experiência Confirmada para a Instituição');
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Cancelada - Plataforma');
+        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+      });
+    }
+
+    /**
+    * Método enviaEmailExperienciaCandidatoInscricaoCancelada
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Candidato
+    */
+    public function enviaEmailExperienciaCandidatoInscricaoCancelada(InscricaoExperiencia $Inscricao)
+    {
+      Mail::send('emails.experiencias.candidato.inscricao-cancelada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
+        //se estiver em production, manda email para a live
+        if(app()->environment('production'))
+          $message->to($Inscricao->perfil->user->email, $Inscricao->perfil->apelido)->subject('Vivalá Experiências - Sua inscrição na experiência foi cancelada');
+        //se estiver em development, manda o email para a sandbox
+        else if(app()->environment('development'))
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Cancelada - Candidato');
+        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+      });
+    }
+
+    /**
+    * Método enviaEmailExperienciaCandidatoInscricaoCancelada
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Candidato
+    */
+    public function enviaEmailExperienciaInstituicaoInscricaoCancelada(InscricaoExperiencia $Inscricao)
+    {
+      Mail::send('emails.experiencias.instituicao.inscricao-candidato-cancelada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
+        //se estiver em production, manda email para a live
+        if(app()->environment('production'))
+          $message->to($Inscricao->experiencia->owner->email_contato, $Inscricao->experiencia->owner->nome)->subject('Vivalá Experiências - Uma inscrição na sua experiência foi cancelada');
+        //se estiver em development, manda o email para a sandbox
+        else if(app()->environment('development'))
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Cancelada - Instituição');
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }

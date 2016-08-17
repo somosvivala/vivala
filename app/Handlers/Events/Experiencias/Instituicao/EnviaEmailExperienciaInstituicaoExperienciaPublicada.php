@@ -33,7 +33,7 @@ class EnviaEmailExperienciaInstituicaoExperienciaPublicada
 	public function handle(ExperienciaPublicada $event)
 	{
 		// Usa o método enviaEmailExperienciaPlataformaExperienciaPublicada do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaPlataformaExperienciaPublicada($event);
+		$this->mailSenderRepository->enviaEmailExperienciaPlataformaExperienciaPublicada($event->Experiencia);
 	}
 
 }

@@ -20,7 +20,7 @@ class InscricaoExperienciaConfirmada extends Event
   */
   public function __construct(InscricaoExperiencia $inscricao)
   {
-      $this->Inscricao = $inscricao;
+    $this->Inscricao = $inscricao;
   }
 
 }
