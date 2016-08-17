@@ -1,4 +1,4 @@
-<?php namespace App\Handlers\Events\Experiencias;
+<?php namespace App\Handlers\Events\Experiencias\Candidato;
 
 use App\Events\Experiencias\NovaInscricaoExperiencia;
 

@@ -18,13 +18,13 @@ use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\GerarBoletoInscricaoExperienciaRequest;
 use App\Http\Requests\NovaInscricaoExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
-use App\Events\NovaInscricaoExperiencia;
 use App\Events\NovosDadosUsuario;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
 use App\Http\Requests\DesativarExperienciaRequest;
 use App\Http\Requests\PublicarExperienciaRequest;
 use App\Http\Requests\CancelaInscricaoExperienciaRequest;
+use App\Events\Experiencias\NovaInscricaoExperiencia;
 
 class ExperienciasController extends Controller
 {
@@ -164,7 +164,7 @@ class ExperienciasController extends Controller
         $Inscricao = $Experiencia->getInscricaoUsuario(Auth::user());
         if (!$Inscricao) {
             $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id);
-            event(new Experiencias\NovaInscricaoExperiencia($Inscricao));
+            event(new NovaInscricaoExperiencia($Inscricao));
             return redirect('/experiencias');
         }
 
