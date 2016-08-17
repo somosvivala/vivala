@@ -8,10 +8,10 @@ use Illuminate\Contracts\Queue\ShouldBeQueued;
 use App\InscricaoExperiencia;
 use App\Repositories\MailSenderRepository;
 
-class EnviaEmailExperienciaCandidatoPagamentoPendente {
-
+class EnviaEmailExperienciaCandidatoPagamentoPendente
+{
 	// Cria instância de mailSenderRepository para ser usada aqui
-	private $mailSenderRepository;
+	private $MailSenderRepository;
 
 	/**
 	* Create the event handler.
@@ -21,7 +21,7 @@ class EnviaEmailExperienciaCandidatoPagamentoPendente {
 	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-		$this->mailSenderRepository = $repository;
+		$this->MailSenderRepository = $repository;
 	}
 
 	/**
@@ -33,7 +33,7 @@ class EnviaEmailExperienciaCandidatoPagamentoPendente {
 	public function handle(NovaInscricaoExperiencia $event)
 	{
 		// Usa o método enviaEmailExperienciaCandidatoPagamentoPendente do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($event->Inscricao);
+		$this->MailSenderRepository->enviaEmailExperienciaCandidatoPagamentoPendente($event->Inscricao);
 	}
 
 }

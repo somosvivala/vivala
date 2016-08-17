@@ -7,12 +7,11 @@ use Illuminate\Queue\SerializesModels;
 
 class NovosDadosUsuario extends Event
 {
-
     use SerializesModels;
 
-    public $experiencia;
-    public $novosDadosUsuario;
-    public $user;
+    public $Experiencia;
+    public $NovosDadosUsuario;
+    public $User;
 
 
     /**
@@ -24,8 +23,8 @@ class NovosDadosUsuario extends Event
      */
     public function __construct(User $user, $novosDadosUsuario)
     {
-        $this->user = $user;
-        $this->novosDadosUsuario = $novosDadosUsuario;
+        $this->User = $user;
+        $this->NovosDadosUsuario = $novosDadosUsuario;
     }
 
 }

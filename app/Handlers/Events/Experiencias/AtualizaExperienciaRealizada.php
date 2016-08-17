@@ -1,15 +1,16 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
 use App\Events\ExperienciaOcorrendo;
+
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+
 use App\Interfaces\ExperienciasRepositoryInterface;
 
 class AtualizaExperienciaRealizada
 {
-
-    //instancia do repositorio de experiencias
-    private $experienciasRepository;
+    //Instancia do repositorio de Experiencias
+    private $ExperienciasRepository;
 
     /**
      * Create the event handler.
@@ -18,7 +19,7 @@ class AtualizaExperienciaRealizada
      */
     public function __construct(ExperienciasRepositoryInterface $repository)
     {
-        $this->experienciasRepository = $repository;
+      $this->ExperienciasRepository = $repository;
     }
 
     /**
@@ -29,8 +30,10 @@ class AtualizaExperienciaRealizada
      */
     public function handle(ExperienciaOcorrendo $event)
     {
-        // chamando o metodo do repositorio de experiencias para atualizar as inscricoes
-        $this->experienciasRepository->atualizaInscricoesExperiencia($event->experiencia);
+      // Chamando o metodo atualizaInscricoesExperiencia
+      // do repositorio de experiencias para
+      // atualizar as inscricoes
+      $this->ExperienciasRepository->atualizaInscricoesExperiencia($event->Experiencia);
     }
 
 }

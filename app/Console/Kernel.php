@@ -9,6 +9,9 @@ use App\Events\ClickBusPassagemCancelada;
 use Carbon\Carbon;
 use App\CompraClickbus;
 
+use App\Events\Experiencias\ExperienciaEminente;
+use App\Events\Experiencias\ExperienciaOcorrendo;
+
 class Kernel extends ConsoleKernel
 {
 
@@ -86,12 +89,12 @@ class Kernel extends ConsoleKernel
 
                 //se a experiencia for acontecer hoje, disparar evento para tomar providencias
                 if ($experiencia->aconteceHoje) {
-                  event(new Experiencia\ExperienciaOcorrendo($experiencia));
+                  event(new ExperienciaOcorrendo($experiencia));
                 }
 
                 //se a experiencia for acontecer daqui 3 dias (eminente), disparar evento para tomar providencias
                 if ($experiencia->aconteceEmTresDias) {
-                    //event(new Experiencia\ExperienciaEminente($experiencia));
+                  //event(new ExperienciaEminente($experiencia));
                 }
 
             });

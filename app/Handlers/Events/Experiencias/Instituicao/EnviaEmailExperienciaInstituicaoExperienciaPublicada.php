@@ -1,17 +1,17 @@
-<?php namespace App\Handlers\Events\Experiencias;
+<?php namespace App\Handlers\Events\Experiencias\Instituicao;
 
 use App\Events\Experiencias\ExperienciaPublicada;
-
-use App\Experiencia;
-use App\Repositories\MailSenderRepository;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
+use App\Experiencia;
+use App\Repositories\MailSenderRepository;
+
 class EnviaEmailExperienciaInstituicaoExperienciaPublicada
 {
 	// Cria instância de mailSenderRepository para ser usada aqui
-	private $mailSenderRepository;
+	private $MailSenderRepository;
 
 	/**
 	* Create the event handler.
@@ -21,7 +21,7 @@ class EnviaEmailExperienciaInstituicaoExperienciaPublicada
 	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-		$this->mailSenderRepository = $repository;
+		$this->MailSenderRepository = $repository;
 	}
 
 	/**
@@ -33,7 +33,7 @@ class EnviaEmailExperienciaInstituicaoExperienciaPublicada
 	public function handle(ExperienciaPublicada $event)
 	{
 		// Usa o método enviaEmailExperienciaPlataformaExperienciaPublicada do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaPlataformaExperienciaPublicada($event->Experiencia);
+		$this->MailSenderRepository->enviaEmailExperienciaPlataformaExperienciaPublicada($event->Experiencia);
 	}
 
 }

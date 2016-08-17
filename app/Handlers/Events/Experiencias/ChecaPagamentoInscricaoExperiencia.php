@@ -4,12 +4,13 @@ use App\Events\InscricaoExperienciaConfirmada;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+
 use App\Interfaces\ExperienciasRepositoryInterface;
 
 class ChecaPagamentoInscricaoExperiencia
 {
-    //instancia do repositorio de experiencias
-    private $experienciasRepository;
+    //Instancia do repositorio de Experiencias
+    private $ExperienciasRepository;
 
     /**
      * Create the event handler.
@@ -18,7 +19,7 @@ class ChecaPagamentoInscricaoExperiencia
      */
     public function __construct(ExperienciasRepositoryInterface $repository)
     {
-        $this->experienciasRepository = $repository;
+        $this->ExperienciasRepository = $repository;
     }
 
     /**
@@ -29,7 +30,10 @@ class ChecaPagamentoInscricaoExperiencia
      */
     public function handle(InscricaoExperienciaConfirmada $event)
     {
-        $this->experienciasRepository->confirmaInscricaoExperiencia($event->inscricao);
+      // Chamando o metodo confirmaInscricaoExperiencia
+      // do repositorio de experiencias para
+      // atualizar as inscricoes
+      $this->ExperienciasRepository->confirmaInscricaoExperiencia($event->Inscricao);
     }
 
 }

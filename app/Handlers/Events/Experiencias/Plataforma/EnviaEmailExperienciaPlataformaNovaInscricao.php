@@ -11,7 +11,7 @@ use App\Repositories\MailSenderRepository;
 class EnviaEmailExperienciaPlataformaNovaInscricao
 {
 	// Cria instância de mailSenderRepository para ser usada aqui
-	private $mailSenderRepository;
+	private $MailSenderRepository;
 
 	/**
 	* Create the event handler.
@@ -21,7 +21,7 @@ class EnviaEmailExperienciaPlataformaNovaInscricao
 	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-		$this->mailSenderRepository = $repository;
+		$this->MailSenderRepository = $repository;
 	}
 
 	/**
@@ -33,7 +33,7 @@ class EnviaEmailExperienciaPlataformaNovaInscricao
 	public function handle(NovaInscricaoExperiencia $event)
 	{
 		// Usa o método enviaEmailExperienciaPlataformaNovaInscricao do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaPlataformaNovaInscricao($event->Inscricao);
+		$this->MailSenderRepository->enviaEmailExperienciaPlataformaNovaInscricao($event->Inscricao);
 	}
 
 }
