@@ -64,37 +64,64 @@ class EventServiceProvider extends ServiceProvider
         /*
         * Experiencias - Todos os eventos relacionados a feature de Experiencias da plataforma
         */
-        //Quando acontecer um booking deslogado, guardar na sesssao a pagina para sabermos se houve desistencia no cadastro
+        // Quando acontecer um booking deslogado, guardar na sesssao a pagina para sabermos se houve desistencia no cadastro
         // 'App\Events\BookouDeslogado' => [
         //     'App\Handlers\Events\Experiencias\GuardaSessaoBooking'
         // ],
 
-        //Quando acontecer uma nova inscricao de experiencia, mandar email para o candidato e para a vivalá
-        'App\Events\NovaInscricaoExperiencia' => [
-            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaCandidatoPagamentoPendente',
-            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaInscricaoPlataforma'
+        /*
+        * Quando uma Experiência for Aprovada pela Vivalá e
+        * passar a ficar visível para todos os candidatos,
+        * temos que avisar a Instituição que tudo está ok
+        */
+        'App\Events\Experiencias\ExperienciaPublicada' => [
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada',
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',
         ],
 
-        //Quando uma inscricao de experiencia for confirmada, avisar o candidato e a instituição
-        'App\Events\InscricaoExperienciaConfirmada' => [
-            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoConfirmadaCandidato',
-            'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoConfirmadaInstituicao'
+        /*
+        * Quando uma Experiência for Desativada pela Vivalá
+        */
+        // 'App\Events\Experiencias\ExperienciaDesativada' => [
+        // ],
+
+        /*
+        * Quando acontecer uma nova Inscrição de Experiência
+        * mandar email para o Candidato e para a Vivalá,
+        * não é enviado para Instituição enquanto o
+        * candidato não pagar a Experiência (for confirmado)
+        */
+        'App\Events\Experiencias\NovaInscricaoExperiencia' => [
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'
+        ],
+
+        /*
+        * Quando uma Inscrição de Experiencia for confirmada
+        * isto é, o candidato pagou, mandar um email
+        * avisando o candidato e a instituição
+        */
+        'App\Events\Experiencias\InscricaoExperienciaConfirmada' => [
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'
+        ],
+
+        //Quando uma inscricao for cancelada, ainda nao confirmada, tomar alguma ação?
+         'App\Events\Experiencias\InscricaoExperienciaCancelada' => [
+             'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoInscricaoCancelada',
+             'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada',
+             'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoCancelada'
         ],
 
         //Quando ocorrer uma experiencia (atualizar inscricoes)
-        'App\Events\ExperienciaOcorrendo' => [
+        'App\Events\Experiencias\ExperienciaOcorrendo' => [
             'App\Handlers\Events\Experiencias\AtualizaExperienciaRealizada',
         ],
 
         //Quando o usuario fornece os dados para gerar boleto
-        'App\Events\NovosDadosUsuario' => [
+        'App\Events\Experiencias\NovosDadosUsuario' => [
             'App\Handlers\Events\Experiencias\AtualizaDadosUsuario'
-        ]
-
-        //Quando uma inscricao for desconfirmada? (avisar a instituição?)
-        // 'App\Events\InscricaoExperienciaDesConfirmada' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaInscricaoDesConfirmadaInstituicao'
-        // ],
+        ],
 
         //Quando uma experiencia estiver eminente, disparar emails para quem ainda nao confirmou, para quem confirmou e para a instiuicao
         // 'App\Events\ExperienciaEminente' => [
@@ -103,20 +130,10 @@ class EventServiceProvider extends ServiceProvider
         //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaDataEminenteInstituicao'
         // ],
 
-        //Quando uma inscricao for cancelada, ainda nao confirmada, tomar alguma ação?
-        // 'App\Events\InscricaoExperiencaCancelada' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaCancelada'
-        // ],
-
-        //Quando uma experiencia for aprovada pela vivalá e passar a ficar visivel para os candidatos (avisar instituição)
-        // 'App\Events\ExperienciaAprovada' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaAprovada'
-        // ],
-
         //Quando alguem na plataforma clicar em 'propor exp', enviar email para a vivalá com os detalhes fornecidos por quem propôs
-        // 'App\Events\NovaPropostaExperiencia' => [
-        //     'App\Handlers\Events\Experiencias\EnviaEmailExperienciaNovaProposta'
-        // ],
+        'App\Events\Experiencias\NovaPropostaExperiencia' => [
+          'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaNovaProposta'
+        ]
 
     ];
 

@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace App\Events\Experiencias;
 
 use App\Events\Event;
 use App\User;

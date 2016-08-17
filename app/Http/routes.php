@@ -16,15 +16,12 @@
   */
   use App\User;
   use App\Experiencia;
-  use App\Perfil;
-  //use App\Repositories\ExperienciasRepository;
+  use App\InscricaoExperiencia;
 
   Route::get('/testaemailexperiencia/{indice}', function($indice) {
-
-    //$Experiencia = Experiencia::all()->reverse()->first();
-    $Experiencia = Experiencia::find(3);
+    $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
-    event(new App\Events\NovaInscricaoExperiencia($Experiencia->getInscricaoUsuario($Usuario)));
+    event(new App\Events\NovaInscricaoExperiencia($Inscricao));
 
     $ViewsDeTeste = [
       // CANDIDATO
@@ -33,13 +30,11 @@
       'emails.experiencias.candidato.inscricao-pagamento-confirmado',
       'emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
-      // [PENDENTE]
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-hoje',
       'emails.experiencias.candidato.inscricao-cancelada',
       // INSTITUIÇÃO/ONG/EMPRESA
       'emails.experiencias.instituicao.experiencia-publicada',
       'emails.experiencias.instituicao.inscricao-candidato-confirmado',
-      // [PENDENTE]
       'emails.experiencias.instituicao.inscricao-candidato-cancelado',
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',

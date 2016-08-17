@@ -364,7 +364,6 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return $inscricao;
     }
 
-
     /**
      * Metodo para confirmar uma inscricao de experiencia
      * @param $inscricao - a inscricao que devemos confirmar
@@ -403,8 +402,6 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         return $fezUpdate;
     }
 
-
-
     /**
       * Metodo para atualizar as inscricoes conforme ocorrer a Experiencia
       * pendentes -> expiradas && confirmadas -> concluidas
@@ -438,7 +435,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'publicada']);
-        //event( new ExperienciaPublicada( $experiencia ) );
+        event(new ExperienciaPublicada($experiencia));
         return $fezUpdate;
     }
 
@@ -450,6 +447,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'analise']);
+        //event(new ExperienciaDesativada($experiencia));
         return $fezUpdate;
     }
 
