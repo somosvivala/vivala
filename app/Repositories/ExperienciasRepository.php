@@ -15,6 +15,8 @@ use App\InscricaoExperiencia;
 use App\Foto;
 use App\Interfaces\BoletoCloudRepositoryInterface;
 
+use App\Events\Experiencias;
+
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
  */
@@ -435,7 +437,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'publicada']);
-        event(new Experiencia\ExperienciaPublicada($experiencia));
+        event(new Experiencias\ExperienciaPublicada($experiencia));
         return $fezUpdate;
     }
 
