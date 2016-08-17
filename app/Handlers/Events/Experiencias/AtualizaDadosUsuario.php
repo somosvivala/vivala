@@ -1,9 +1,9 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
-use App\Events\NovosDadosUsuario;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use App\Events\Experiencias\NovosDadosUsuario;
 
 class AtualizaDadosUsuario
 {

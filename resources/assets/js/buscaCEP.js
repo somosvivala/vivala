@@ -46,7 +46,7 @@ $(function() {
     var buscaCepTimeout,
         origemVal = '';
 
-        $('.busca-cep-ativo').on('blur', function(e) {
+        $('.busca-cep-ativo').bind('keypress blur', function(e) {
 
             if ($(this).val().length >= 4) {
                 if ($(this).val() !== origemVal) {

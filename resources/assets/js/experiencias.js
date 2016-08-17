@@ -98,9 +98,7 @@ var sweetAlertErroDeleteExperiencia = function() {
 // Calendário da Experiencia
 moment.locale('pt-br');
 var thisMonth = moment().format('YYYY-MM');
-console.log($('#json-eventos').val());
 var eventArray = $('#json-eventos').val()?jQuery.parseJSON($('#json-eventos').val()):[];
-console.log(eventArray);
 var _CalendarioExperiencia = null;
 var calendarioExperiencia  = function(container){
   _CalendarioExperiencia = jQuery(container).clndr({
@@ -155,7 +153,11 @@ var calendarioExperiencia  = function(container){
   });
 }
 
-calendarioExperiencia('.clndr-container');
+//apenas instanciando o calendario se ele estiver presente
+if ( $('.clndr-container').length ) {
+    calendarioExperiencia('.clndr-container');
+}
+
 $(".clndr-picker").click(function() {
     $(".clndr-container").toggleClass('visivel');
 });

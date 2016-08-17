@@ -18,13 +18,13 @@ use App\Http\Requests\DeleteDataOcorrenciaExperienciaRequest;
 use App\Http\Requests\GerarBoletoInscricaoExperienciaRequest;
 use App\Http\Requests\NovaInscricaoExperienciaRequest;
 use App\Interfaces\ExperienciasRepositoryInterface;
-use App\Events\NovosDadosUsuario;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ConfirmaInscricaoExperienciaRequest;
 use App\Http\Requests\DesativarExperienciaRequest;
 use App\Http\Requests\PublicarExperienciaRequest;
 use App\Http\Requests\CancelaInscricaoExperienciaRequest;
 use App\Events\Experiencias\NovaInscricaoExperiencia;
+use App\Events\Experiencias\NovosDadosUsuario;
 
 class ExperienciasController extends Controller
 {
@@ -315,14 +315,23 @@ class ExperienciasController extends Controller
     public function postGerarBoleto(GerarBoletoInscricaoExperienciaRequest $request)
     {
 
-        $experiencia = $this->experienciasRepository->findOrFail($request->get('experiencia_id'));
+        $Experiencia = $this->experienciasRepository->findOrFail($request->get('experiencia_id'));
+        $Inscricao = $Experiencia->getInscricaoUsuario(Auth::user());
 
         //Disparando o evento para atualizar as novas informacoes do usuario
         event ( new NovosDadosUsuario(Auth::user(), $request->all()) );
 
-        //gerando boleto
-        $boleto = $this->experienciasRepository->gerarBoleto($experiencia, Auth::user());
+        //checando se ja existe um boleto
+        if (!$Inscricao->boleto()->get()->isEmpty()) {
+            $boleto = $Inscricao->boleto;
+        }
 
+        //Se nao tiver um boleto entao gerar
+        else {
+            $boleto = $this->experienciasRepository->gerarBoleto($Experiencia, Auth::user());
+        }
+
+        //Se tiver gerado o boleto com sucesso
         if ($boleto && $boleto->status == 'gerado') {
             return ['linkboleto' => ($boleto->linkSegundaVia)];
         }
@@ -330,5 +339,6 @@ class ExperienciasController extends Controller
         //Se chegou aqui deu erro
         return ['error' => '??'];
     }
+
 
 }
