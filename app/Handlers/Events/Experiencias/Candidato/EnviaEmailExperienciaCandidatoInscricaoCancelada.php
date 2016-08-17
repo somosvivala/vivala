@@ -1,14 +1,17 @@
-<?php namespace App\Handlers\Events\Experiencias;
+<?php namespace App\Handlers\Events\Experiencias\Candidato;
 
 use App\Events\Experiencias\InscricaoExperienciaCancelada;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
+use App\InscricaoExperiencia;
+use App\Repositories\MailSenderRepository;
+
 class EnviaEmailExperienciaCandidatoInscricaoCancelada
 {
 	// Cria instância de mailSenderRepository para ser usada aqui
-	private $mailSenderRepository;
+	private $MailSenderRepository;
 
 	/**
 	* Create the event handler.
@@ -18,7 +21,7 @@ class EnviaEmailExperienciaCandidatoInscricaoCancelada
 	public function __construct()
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-		$this->mailSenderRepository = $repository;
+		$this->MailSenderRepository = $repository;
 	}
 
 	/**

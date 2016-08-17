@@ -5,7 +5,10 @@ use App\Events\Experiencias\NovaPropostaExperiencia;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
-class EnviaEmailExperienciaNovaProposta {
+class EnviaEmailExperienciaNovaProposta
+{
+	// Cria instância de mailSenderRepository para ser usada aqui
+	private $MailSenderRepository;
 
 	/**
 	 * Create the event handler.

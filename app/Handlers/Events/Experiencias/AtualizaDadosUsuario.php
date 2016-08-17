@@ -26,8 +26,9 @@ class AtualizaDadosUsuario
      */
     public function handle(NovosDadosUsuario $event)
     {
-        //fazendo update dos novos dados do usuario (cpf , cep, dados do endereco)
-        $event->user->update($event->novosDadosUsuario);
+      //Fazendo update dos novos dados do usuario
+      // (CPF, CEP, dados do endereco)
+      $event->user->update($event->novosDadosUsuario);
     }
 
 }

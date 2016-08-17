@@ -1,15 +1,16 @@
 <?php namespace App\Handlers\Events\Experiencias;
 
 use App\Events\NovoPedidoGeracaoBoletoExperiencia;
-use App\Interfaces\BoletoCloudRepositoryInterface;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
+use App\Interfaces\BoletoCloudRepositoryInterface;
+
 class GeraBoletoInscricaoExperiencia
 {
-
-    private $boletoCloudRepository;
+    //Instancia do repositorio de Boletos
+    private $BoletoCloudRepository;
 
     /**
      * Create the event handler.
@@ -18,7 +19,7 @@ class GeraBoletoInscricaoExperiencia
      */
     public function __construct(BoletoCloudRepositoryInterface $boletoRepository)
     {
-        $this->boletoCloudRepository = $boletoRepository;
+      $this->BoletoCloudRepository = $boletoRepository;
     }
 
     /**
@@ -29,7 +30,10 @@ class GeraBoletoInscricaoExperiencia
      */
     public function handle(NovoPedidoGeracaoBoletoExperiencia $event)
     {
-        $this->boletoCloudRepository->gerarBoleto($event->experiencia, $event->user);
+      // Chamando o metodo gerarBoleto
+      // do repositorio de boletos para
+      // gerar boleto da experiencia
+      $this->BoletoCloudRepository->gerarBoleto($event->Experiencia, $event->User);
     }
 
 }

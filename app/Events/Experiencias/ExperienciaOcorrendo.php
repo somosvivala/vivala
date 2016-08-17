@@ -10,7 +10,7 @@ class ExperienciaOcorrendo extends Event
   use SerializesModels;
 
   //Informações que o evento precisa propagar
-  public $experiencia;
+  public $Experiencia;
 
   /**
   * Create a new event instance.
@@ -19,7 +19,7 @@ class ExperienciaOcorrendo extends Event
   */
   public function __construct(Experiencia $experiencia)
   {
-    $this->experiencia = $experiencia;
+    $this->Experiencia = $experiencia;
   }
 
 }

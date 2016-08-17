@@ -10,7 +10,7 @@ class ExperienciaPublicada extends Event
 	use SerializesModels;
 
   //Informações que o evento precisa propagar
-	public $experiencia;
+	public $Experiencia;
 
 	/**
 	* Create a new event instance.

@@ -15,7 +15,8 @@ use App\InscricaoExperiencia;
 use App\Foto;
 use App\Interfaces\BoletoCloudRepositoryInterface;
 
-use App\Events\Experiencias;
+use App\Events\Experiencias\ExperienciaPublicada;
+use App\Events\Experiencias\ExperienciaDesativada;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -341,6 +342,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function delete($id)
     {
+        //event(new ExperienciaRemovida($experiencia));
         return $this->findOrFail($id)->delete();
     }
 
@@ -437,7 +439,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'publicada']);
-        event(new Experiencias\ExperienciaPublicada($experiencia));
+        event(new ExperienciaPublicada($experiencia));
         return $fezUpdate;
     }
 
@@ -449,7 +451,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'analise']);
-        //event(new Experiencia\ExperienciaDesativada($experiencia));
+        //event(new ExperienciaDesativada($experiencia));
         return $fezUpdate;
     }
 

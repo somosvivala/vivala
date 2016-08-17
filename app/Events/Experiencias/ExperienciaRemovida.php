@@ -3,9 +3,8 @@
 use App\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
-use App\Experiencia;
 
-class ExperienciaEminente extends Event {
+class ExperienciaRemovida extends Event {
 
 	use SerializesModels;
 

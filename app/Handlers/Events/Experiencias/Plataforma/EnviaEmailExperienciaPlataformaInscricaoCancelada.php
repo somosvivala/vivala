@@ -1,4 +1,4 @@
-<?php namespace App\Handlers\Events\Experiencias;
+<?php namespace App\Handlers\Events\Experiencias\Plataforma;
 
 use App\Events\Experiencias\InscricaoExperienciaCancelada;
 
@@ -11,7 +11,7 @@ use App\Repositories\MailSenderRepository;
 class EnviaEmailExperienciaPlataformaInscricaoCancelada
 {
 	// Cria instância de mailSenderRepository para ser usada aqui
-	private $mailSenderRepository;
+	private $MailSenderRepository;
 
 	/**
 	* Create the event handler.
@@ -21,7 +21,7 @@ class EnviaEmailExperienciaPlataformaInscricaoCancelada
 	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-		$this->mailSenderRepository = $repository;
+		$this->MailSenderRepository = $repository;
 	}
 
 	/**
@@ -33,7 +33,7 @@ class EnviaEmailExperienciaPlataformaInscricaoCancelada
 	public function handle(InscricaoExperienciaCancelada $event)
 	{
 		// Usa o método enviaEmailExperienciaPlataformaInscricaoCancelada do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaPlataformaInscricaoCancelada($event->Inscricao);
+		$this->MailSenderRepository->enviaEmailExperienciaPlataformaInscricaoCancelada($event->Inscricao);
 	}
 
 }

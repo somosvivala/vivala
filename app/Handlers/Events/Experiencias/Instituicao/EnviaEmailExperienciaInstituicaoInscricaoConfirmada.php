@@ -1,17 +1,17 @@
-<?php namespace App\Handlers\Events\Experiencias;
+<?php namespace App\Handlers\Events\Experiencias\Instituicao;
 
 use App\Events\Experiencias\InscricaoExperienciaConfirmada;
-
-use App\InscricaoExperiencia;
-use App\Repositories\MailSenderRepository;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
+use App\InscricaoExperiencia;
+use App\Repositories\MailSenderRepository;
+
 class EnviaEmailExperienciaInstituicaoInscricaoConfirmada
 {
 	// Cria instância de mailSenderRepository para ser usada aqui
-	private $mailSenderRepository;
+	private $MailSenderRepository;
 
 	/**
 	* Create the event handler.
@@ -21,19 +21,19 @@ class EnviaEmailExperienciaInstituicaoInscricaoConfirmada
 	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-		$this->mailSenderRepository = $repository;
+		$this->MailSenderRepository = $repository;
 	}
 
 	/**
-	 * Handle the event.
-	 *
-	 * @param  InscricaoExperienciaConfirmada  $event
-	 * @return void
-	 */
+	* Handle the event.
+	*
+	* @param  InscricaoExperienciaConfirmada  $event
+	* @return void
+	*/
 	public function handle(InscricaoExperienciaConfirmada $event)
 	{
 		// Usa o método enviaEmailExperienciaInstituicaoInscricaoConfirmada do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaInstituicaoInscricaoConfirmada($event);
+		$this->MailSenderRepository->enviaEmailExperienciaInstituicaoInscricaoConfirmada($event->Inscricao);
 	}
 
 }

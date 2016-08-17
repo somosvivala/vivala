@@ -80,9 +80,17 @@ class EventServiceProvider extends ServiceProvider
 
         /*
         * Quando uma Experiência for Desativada pela Vivalá
+        * e some da listagem para todos os usuários (Não é uma exclusão)
         */
-        // 'App\Events\Experiencias\ExperienciaDesativada' => [
-        // ],
+         'App\Events\Experiencias\ExperienciaDesativada' => [
+        ],
+
+        /*
+        * Quando uma Experiência for Removida pela Vivalá
+        * A experiência é Deletada
+        */
+         'App\Events\Experiencias\ExperienciaRemovida' => [
+        ],
 
         /*
         * Quando uma Inscrição de Experiência acontecer (Nova Inscricao)
