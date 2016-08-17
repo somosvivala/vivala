@@ -9,9 +9,12 @@ class NovosDadosUsuario extends Event
 {
     use SerializesModels;
 
+    //Objetos
     public $Experiencia;
-    public $NovosDadosUsuario;
     public $User;
+
+    //variaveis
+    public $novosDadosUsuario;
 
 
     /**
@@ -24,7 +27,7 @@ class NovosDadosUsuario extends Event
     public function __construct(User $user, $novosDadosUsuario)
     {
         $this->User = $user;
-        $this->NovosDadosUsuario = $novosDadosUsuario;
+        $this->novosDadosUsuario = $novosDadosUsuario;
     }
 
 }

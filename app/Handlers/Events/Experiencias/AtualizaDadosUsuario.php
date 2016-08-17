@@ -28,7 +28,7 @@ class AtualizaDadosUsuario
     {
       //Fazendo update dos novos dados do usuario
       // (CPF, CEP, dados do endereco)
-      $event->user->update($event->novosDadosUsuario);
+      $event->User->update($event->novosDadosUsuario);
     }
 
 }
