@@ -37,7 +37,7 @@ class InformacaoExperiencia extends Model {
      */
     public function getPathIconePNGAttribute()
     {
-        return url('/public/fapng/'.$this->iconeShortName.'.png');
+        return url('/fapng/'.$this->iconeShortName.'.png');
     }
 
 }
