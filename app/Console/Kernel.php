@@ -100,21 +100,22 @@ class Kernel extends ConsoleKernel
                     //Se estiver no pré-experiencia:
                     //1-Pegar os inscritos para esse dia
                     //2-Iterar sob inscritos disparando o email conforme o tipo da inscricao (pendente x confirmada)
-                    //3-Disparar email de experiecia eminente para o owner
+                    //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
 
                     //Checar se a data atual é um dia de ocorrencia da experiencia (== dia de ocorrencia)
                     //Se for um dia de ocorrencia
                     //1-Pegar inscritos confirmados para esse dia
-                    //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia?
-                    //3-Disparar email com lista de inscritos confirmados para o owner
-                    //4-Disparar email para a vivalá notificando a ocorrencia da experiencia
+                    //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia
+                    //3-Disparar email com lista de inscritos confirmados para o owner (neste caso será que ñ é valido fechar a experiencia de inscricoes - n pode fazer inscrição - 1 dia antes/12 horas antes e envio email com prioridade maxima pro ultimo dia?)
+                    // * Quando as inscriçṍes são interrompidas pra determinada experiencia? Podiamos setar umas 12 horas antes e pendentes -> expiradas ?
+                    //4-Disparar email para a vivalá notificando a ocorrencia da experiencia, com lista total de inscritos confirmados e quem está coordenando (instituicao responsavel)
                     //5-Atualizar lista de inscricoes (confirmadas -> concluidas && pendentes -> expiradas && canceladas -> expiradas?)
                     //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida (**problema, a experiencia nao estaria nessa query para o pós experiencia)
 
                     //Checar se a data atual é pós experiencia (== 2 dias após acontecer)
                     //Se estiver no pós-experiencia
                     //1-Pegar inscritos concluidos desse dia
-                    //2-Iterar sob os inscritos disparando o email de feedback dos candidatos
+                    //2-Iterar sob os inscritos disparando o email de feedback/agradecimentos aos candidatos
                     //3-Disparar email de feedback para o owner
 
                 }
