@@ -160,11 +160,10 @@ class ExperienciasController extends Controller
                 return redirect('/experiencias');
         }
 
-        //Checando se o usuario atual ja esta inscrito , se nao estiver entao criar nova inscricao
+        //Checando se o usuario atual ja esta inscrito
         $Inscricao = $Experiencia->getInscricaoUsuario(Auth::user());
         if (!$Inscricao) {
-            $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id);
-            event(new NovaInscricaoExperiencia($Inscricao));
+            //se nao existir uma inscricao entao nao mostrar view de checkout
             return redirect('/experiencias');
         }
 
