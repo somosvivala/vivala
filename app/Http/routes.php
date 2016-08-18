@@ -22,8 +22,7 @@
     $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
     $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
-
-    //event(new App\Events\NovaInscricaoExperiencia($Inscricao));
+    //event(new App\Events\Experiencias\NovaInscricaoExperiencia($Inscricao));
 
     $ViewsDeTeste = [
       // CANDIDATO

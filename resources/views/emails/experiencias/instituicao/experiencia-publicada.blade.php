@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Publicada</title>
+    <title>{{ trans('global.title_vivala') }} - Sua experiência foi publicada com sucesso!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -152,44 +152,54 @@
                   <tr>
                     <td style="padding-bottom:30px;">
                       <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                        Informações da Experiência
+                        Informações da sua Experiência
                       </h3>
                       <p style="float:left; margin-top:0; margin-bottom:0;">
-                        <img src="{{ $Experiencia->getFotoOwnerUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                        <img src="{{ $Experiencia->FotoOwnerUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                         <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
                       </p>
-                      <p style="margin-top:0; margin-bottom:0;">
-                        <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
+                      <p style="margin-top:10px; margin-bottom:10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                          TIPO DE EXPERIÊNCIA
+                          TIPO/FREQUÊNCIA
                         </span>
                         <br>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          @if($Experiencia->tipo = 'evento_unico')
-                            Evento Único
-                          @elseif ($Experiencia->tipo = 'evento_recorrente')
-                            Evento Recorrente
-                          @elseif ($Experiencia->tipo = 'evento_servico')
-                            Evento Serviço
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          @if($Experiencia->isEventoUnico) Evento Único
+                          @elseif ($Experiencia->isEventoRecorrente) Evento Recorrente
+                          @elseif ($Experiencia->isEventoServico) Evento Serviço
                           @endif
                         </span>
                       </p>
-                      <p>
-                        <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
+                      {{-- NECESSÁRIO (???)
+                      <p style="margin-top:10px; margin-bottom: 10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                          LOCAL DA EXPERIÊNCIA
+                          PREÇO
                         </span>
                         <br>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          R${{ $Experiencia->preco }}
+                        </span>
+                      </p>
+                      --}}
+                      <p style="margin-top:10px; margin-bottom: 10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          LOCAL
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
                           {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}
                         </span>
                       </p>
-                      <p>
+                      <p style="margin-top:10px; margin-bottom: 10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                          ENDEREÇO DA EXPERIÊNCIA
+                          ENDEREÇO
                         </span>
                         <br>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
                           {{ ucfirst($Experiencia->endereco_completo) }}
                         </span>
                       </p>
@@ -200,7 +210,7 @@
                   <tr>
                     <td style="padding-bottom:30px;">
                       <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                        Descrição da Experiência
+                        Descrição da sua Experiência
                       </h3>
                       <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
                         {{ trim($Experiencia->descricao) }}
@@ -212,7 +222,7 @@
                   <tr>
                     <td style="padding-bottom:30px;">
                       <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                        Detalhes da Experiência
+                        Detalhes da sua Experiência
                       </h3>
                       <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
                         {{ trim($Experiencia->detalhes) }}
@@ -224,36 +234,22 @@
                   <tr>
                     <td>
                       <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                        Detalhes Extras da Experiência
+                        Informações Extras da sua Experiência
                       </h3>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        Semanal
-                      </p>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        Todos os domingos
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        Grupos de 10 pessoas
-                      </p>
-                    </td>
-                  </tr>
+                  @foreach($Experiencia->informacoes as $Informacao)
+                    <tr>
+                      <td>
+                        <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
+                          <img src="{{ $Informacao->PathIconePNG }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
+                        </p>
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
+                          {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
+                        </p>
+                      </td>
+                    </tr>
+                  @endforeach
                   <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
                   <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
                   <tr align="center">
