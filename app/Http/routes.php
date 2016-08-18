@@ -22,6 +22,7 @@
     $Experiencia = Experiencia::all()->first();
     $Usuario = Auth::user();
     $Inscricao = $Experiencia->getInscricaoUsuario($Usuario);
+
     //event(new App\Events\NovaInscricaoExperiencia($Inscricao));
 
     $ViewsDeTeste = [
@@ -41,10 +42,11 @@
       'emails.experiencias.instituicao.experiencia-hoje',
       // PLATAFORMA
       'emails.experiencias.plataforma.experiencia-publicada',
-      'emails.experiencias.plataforma.inscricao-nova'
+      'emails.experiencias.plataforma.inscricao-nova',
+      'emails.experiencias.plataforma.inscricao-cancelada'
     ];
     // Alterar pelo ARRAY aqui
-    return view($ViewsDeTeste[$indice], compact('Usuario', 'Experiencia'));
+    return view($ViewsDeTeste[$indice], compact('Usuario', 'Experiencia', 'Inscricao'));
   });
   Route::get('/mandaemailteste', 'PaginaController@getTesteEnviaEmail');
   Route::get('/emailteste', function() {
