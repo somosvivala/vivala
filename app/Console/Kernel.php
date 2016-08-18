@@ -81,23 +81,44 @@ class Kernel extends ConsoleKernel
          * Jobs referentes as experiencias
          */
 
-        //job para atualizar as inscricoes de uma experiencias que ocorre
+        //Job do fluxo de uma experiencia
         $schedule->call(function() {
 
-            //dentre as experiencias ativas com data marcada
-            Experiencia::publicadas()->comDataMarcada()->get()->each(function ($experiencia) {
+            //Pré-experiencia
+            $experiencias = Experiencia::publicadas()->get();
 
-                //se a experiencia for acontecer hoje, disparar evento para tomar providencias
-                if ($experiencia->aconteceHoje) {
-                  event(new ExperienciaOcorrendo($experiencia));
+            //iterando sob as experiencias publicadas
+            foreach ($experiencias as $Experiencia) {
+
+                //pegando as datas em que a experiencia vai ocorrer
+                $datasOcorrenciaExperiencia = $Experiencia->ocorrencias;
+
+                //Para cada data de ocorrencia
+                foreach ($datasOcorrenciaExperiencia as $DataOcorrenciaExperiencia) {
+
+                    //Checar se essa data atual é pré-experiencia (== 4 dias p/ acontecer)
+                    //Se estiver no pré-experiencia:
+                    //1-Pegar os inscritos para esse dia
+                    //2-Iterar sob inscritos disparando o email conforme o tipo da inscricao (pendente x confirmada)
+                    //3-Disparar email de experiecia eminente para o owner
+
+                    //Checar se a data atual é um dia de ocorrencia da experiencia (== dia de ocorrencia)
+                    //Se for um dia de ocorrencia
+                    //1-Pegar inscritos confirmados para esse dia
+                    //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia?
+                    //3-Disparar email com lista de inscritos confirmados para o owner
+                    //4-Disparar email para a vivalá notificando a ocorrencia da experiencia
+                    //5-Atualizar lista de inscricoes (confirmadas -> concluidas && pendentes -> expiradas && canceladas -> expiradas?)
+                    //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida (**problema, a experiencia nao estaria nessa query para o pós experiencia)
+
+                    //Checar se a data atual é pós experiencia (== 2 dias após acontecer)
+                    //Se estiver no pós-experiencia
+                    //1-Pegar inscritos concluidos desse dia
+                    //2-Iterar sob os inscritos disparando o email de feedback dos candidatos
+                    //3-Disparar email de feedback para o owner
+
                 }
-
-                //se a experiencia for acontecer daqui 3 dias (eminente), disparar evento para tomar providencias
-                if ($experiencia->aconteceEmTresDias) {
-                  //event(new ExperienciaEminente($experiencia));
-                }
-
-            });
+            }
         })->dailyAt('4:19');
 
         //Fazendo refresh dos places e buscompanies da Clickbus diariamente
