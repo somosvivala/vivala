@@ -19,6 +19,8 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     public $BOLETOCLOUD_URL_BASE;
     public $BOLETOCLOUD_API_ROUTE;
 
+    public $TARIFA_EMISSAO_BOLETO;
+
     /**
       * Construtor obtendo informacoes necessarias do env
       * @param $experienciasRepository - Instancia do Repositorio de Experiencias
@@ -37,6 +39,8 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
         //essa variavel independe do ambiente
         $this->BOLETOCLOUD_API_ROUTE         = env('BOLETOCLOUD_API_ROUTE');
+
+        $this->TARIFA_EMISSAO_BOLETO         = env('TARIFA_EMISSAO_BOLETO') ? env('TARIFA_EMISSAO_BOLETO') : '6.54';
     }
 
     /**
@@ -51,7 +55,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         $Inscricao = $experiencia->getInscricaoUsuario($pagador);
         $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->addDays(-1)->format('Y-m-d');
         $dadosBoleto['data_vencimento'] = $Inscricao->dataExperiencia->format('Y-m-d');
-        $dadosBoleto['valor'] = $experiencia->preco;
+        $dadosBoleto['valor'] = $experiencia->preco + $this->TARIFA_EMISSAO_BOLETO;
         $dadosBoleto['instrucao'] = array(
             'Atenção! O pagamento desse boleto confirmará sua inscrição.',
             'Dúvidas ou informações fale com agente em contato@vivala.com.br',
