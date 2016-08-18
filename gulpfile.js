@@ -101,7 +101,6 @@ elixir(function(mix) {
       '../../assets/js/cotacaoViagem.js',
       '../../assets/js/buscaCEP.js',
       /* Experiências */
-      '../../assets/js/fontAwesomeIconsArray.js',
       '../../assets/js/experienciasCropFoto.js',
       '../../assets/js/experienciasCropFotoOwner.js',
       '../../assets/js/experienciasInfoForm.js',

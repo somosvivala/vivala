@@ -44,14 +44,14 @@
     <div class="col-lg-12 margin-t-1 margin-b-1">
       <div class="row">
         <div class="col-lg-9">
-          {!! Form::label('owner_nome', 'Nome do Projeto responsável') !!}
+          {!! Form::label('owner_nome', 'Nome do Projeto Responsável (Instituição/ONG/Empresa)') !!}
           <span class="campo-obrigatorio">* Obrigatório</span>
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Nome do Projeto da Instituição/Empresa que será veiculado como responsável pela experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
-            <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
-            <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><abbr title="Nome do Projeto (Instituição/ONG/Empresa) que será veiculado como responsável pela experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-nome-projeto-responsavel"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-nome-projeto-responsavel"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -65,14 +65,14 @@
     <div class="col-lg-12 margin-t-1 margin-b-1">
       <div class="row">
         <div class="col-lg-9">
-          {!! Form::label('descricao-instituicao', 'Descrição da Instituição/Empresa responsável') !!}
+          {!! Form::label('descricao-instituicao', 'Descrição do Projeto Responsável (Instituição/ONG/Empresa)') !!}
           <span class="campo-obrigatorio">* Obrigatório</span>
         </div>
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
-            <td><abbr title="Descrição da Empresa/Instituição responsável que está promovendo a experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
-            <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
-            <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><abbr title="Descrição do Projeto (Instituição/ONG/Empresa) responsável que está promovendo a experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-descricao-projeto-responsavel"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-descricao-projeto-responsavel"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -153,8 +153,8 @@
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
             <td><abbr title="A Descrição na Listagem da experiência é a descrição que aparece na lista de todas as esperiências, é menor em caracteres e uma espécie de chamada, portanto deve ser sucinta e direta para atrair a atenção do usuário para a experiência."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
-            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-descricaolistagem"><i class='fa fa-2x fa-desktop'></i></a></td>
-            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-descricaolistagem"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-descricao-listagem"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-descricao-listagem"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -322,11 +322,10 @@
         </div>
         <ul id="data-ocorrencia-container">
             @if (isset($experiencia))
-            @foreach ($experiencia->ocorrencias as $dataOcorrencia)
+              @foreach ($experiencia->ocorrencias as $dataOcorrencia)
                 @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
-            @endforeach
+              @endforeach
             @endif
-
             {{-- Botao de adicionar novas datas --}}
             <li class="col-lg-12 margin-b-1 container-datas-ocorrencia">
               <div class="col-lg-3 col-lg-offset-2 text-center">
@@ -336,7 +335,6 @@
                 </a>
               </div>
             </li>
-
         </ul>
       </div>
         <div id="campos_evento_recorrente" class="row toggle-tipo-experiencia">
@@ -350,9 +348,9 @@
         </div>
         <ul id="data-ocorrencia-container">
             @if (isset($experiencia))
-            @foreach ($experiencia->ocorrencias as $dataOcorrencia)
+              @foreach ($experiencia->ocorrencias as $dataOcorrencia)
                 @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
-            @endforeach
+              @endforeach
             @endif
 
             {{-- Botao de adicionar novas datas --}}
@@ -389,11 +387,6 @@
               </label>
             @endforeach
         </div>
-
-
-
-
-
       </div>
     </div>
     {{-- Fim da Seção das DATAS em que a experiência irá ocorrer --}}
@@ -416,7 +409,7 @@
                   @if (isset($experiencia) && !$experiencia->categorias->isEmpty() && $experiencia->categorias->find($categoria->id))
                     checked="true"
                   @endif
-                ><span> &nbsp; {{ $categoria->nome }}</span>
+                ><span> &nbsp; <i class="fa-1-5x {{ $categoria->icone }}"></i> {{ $categoria->nome }}</span>
               </label>
           @endforeach
         </div>
@@ -430,8 +423,14 @@
     {{-- Fim da Seção do botão ENVIAR do FORMULÁRIO --}}
 
     {{-- Inclusão de todos os MODALS do tutorial --}}
-      @include('modals.tutoriais-internos.experiencias.desktop._formdescricaonalistagem')
-      @include('modals.tutoriais-internos.experiencias.mobile._formdescricaonalistagem')
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-nome-projeto-responsavel')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-nome-projeto-responsavel')
+
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-projeto-responsavel')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-projeto-responsavel')
+
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-listagem')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-listagem')
     {{-- Fim da Inclusão de todos os MODALS do tutorial --}}
 
 </div>
