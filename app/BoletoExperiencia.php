@@ -95,5 +95,14 @@ class BoletoExperiencia extends Model
     }
 
 
+    /**
+     * Definindo um acessor para saber se o boleto é valido
+     */
+    public function getIsValidoAttribute()
+    {
+        return $this->status == 'gerado';
+    }
+
+
 
 }

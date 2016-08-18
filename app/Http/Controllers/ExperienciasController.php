@@ -321,8 +321,8 @@ class ExperienciasController extends Controller
         //Disparando o evento para atualizar as novas informacoes do usuario
         event ( new NovosDadosUsuario(Auth::user(), $request->all()) );
 
-        //checando se ja existe um boleto
-        if (!$Inscricao->boleto()->get()->isEmpty()) {
+        //checando se ja existe um boleto e se ele é valido (foi gerado com sucesso)
+        if (!$Inscricao->boleto()->get()->isEmpty() && $Inscricao->boleto->isValido) {
             $boleto = $Inscricao->boleto;
         }
 
