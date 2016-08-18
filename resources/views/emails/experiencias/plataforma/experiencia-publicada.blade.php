@@ -127,7 +127,7 @@
                   <tr align="center">
                     <td>
                       <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#3EA790;">
-                        A Experiência da <strong>{{ $Experiencia->owner_nome }}</strong> foi publicada na Vivalá com sucesso!
+                        A Experiência da <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong> foi publicada na Vivalá com sucesso!
                       </p>
                     </td>
                   </tr>
@@ -187,7 +187,7 @@
                         </span>
                         <br>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}
+                          {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla)) }}
                         </span>
                       </p>
                       <p style="margin-top:10px; margin-bottom: 10px;">

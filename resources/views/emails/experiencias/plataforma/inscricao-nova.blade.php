@@ -86,7 +86,7 @@
                 <tr align="center">
                   <td>
                     <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
-                      A experiência da <strong>{{ $Inscricao->experiencia->owner_nome }}</strong> tem uma nova inscrição
+                      A experiência da <strong>{{ mb_strtoupper(trim($Inscricao->experiencia->owner_nome)) }}</strong> tem uma nova inscrição
                     </h2>
                   </td>
                 </tr>
@@ -187,7 +187,7 @@
                         </span>
                         <br>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          {{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}
+                          {{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}
                         </span>
                       </p>
                       <p style="margin-top:10px; margin-bottom: 10px;">
