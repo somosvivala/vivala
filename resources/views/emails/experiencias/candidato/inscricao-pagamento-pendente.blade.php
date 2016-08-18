@@ -137,19 +137,19 @@
                   <tr align="center">
                     <td>
                       <div style="background-color:#ECEBEB; text-align:left; padding:5px 25px; max-width:300px; margin-left:20px; margin-right:20px;">
-                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:14; margin-top:0;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0;">
                           <b>NOME</b> <span>{{ env('VIVALA_FANTASY_NAME') }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px;">
                           <b>CONTA</b> <span>{{ env('VIVALA_CC') }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px;">
                           <b>AGÊNCIA</b> <span>{{ env('VIVALA_AG') }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px;">
                           <b>CNPJ</b> <span>{{ env('VIVALA_CNPJ') }}</span>
                         </p>
-                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16; margin-bottom:0;">
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-bottom:0;">
                           <b>BANCO</b> <span>{{ env('VIVALA_BANK') }}</span>
                         </p>
                       </div>
@@ -159,7 +159,7 @@
                   <!-- Seção do DEPÓSITO -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:14; margin-top:30px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:14px; margin-top:30px;">
                         Não se esqueça de nos enviar o comprovante clicando no botão abaixo!
                       </p>
                     </td>
@@ -167,9 +167,9 @@
                   <tr align="center">
                     <td>
                       <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=[VIVALÁ EXPERIÊNCIAS] Envio de Comprovante de Depósito" target="_top" style="text-decoration:none; cursor:pointer;">
-                        <div style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px; cursor:pointer;">
+                        <button style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px; cursor:pointer;">
                           ENVIAR COMPROVANTE DE DEPÓSITO
-                        </div>
+                        </button>
                       </a>
                     </td>
                   </tr>
@@ -177,7 +177,7 @@
                   <!-- Seção do BOLETO BANCÁRIO -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:14; margin-top:30px;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:14px; margin-top:30px;">
                         Ou pague com boleto bancário:
                       </p>
                     </td>
@@ -187,9 +187,9 @@
                       <a href="{{ env('VIVALA_LINK_SITE') }}/experiencias/checkout/{{ $Inscricao->experiencia->id }}" target="_blank" style="text-decoration:none; cursor:pointer;">
                         <div style="padding:15px 30px; border:1px solid #25A494; min-width:200px; width:200px; max-width:200px; cursor:pointer;">
                           <img style="display:inline-block; float:left; vertical-align:middle;" src="{{ asset('img/icones/png/verde-codebar.png') }}" min-width="55px" width="55px" max-width="55px" min-height="43px" height="43px" max-height="43px"/>
-                          <span style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:60px;">
+                          <button style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:60px;">
                             GERAR BOLETO
-                          </span>
+                          </button>
                         </div>
                       </a>
                     </td>
@@ -216,13 +216,13 @@
                         <img src="{{ $Inscricao->experiencia->FotoCapaUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                       </p>
                       <p>
-                        <img src="{{ asset('/img/icones/png/cinza-calendario-certo.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
+                        <img src="{{ asset('/img/icones/png/cinza-calendario-certo.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="224px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ trim($Inscricao->dataExperiencia->format('d/m/Y')) }}</strong>
                         </span>
                       </p>
                       <p>
-                        <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
+                        <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}</strong>
                         </span>
@@ -244,7 +244,7 @@
                   <tr>
                     <td>
                       <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
+                        <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                       </p>
                       <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
                         {{ ucfirst(strtolower(trim($Inscricao->experiencia->frequencia))) }}
@@ -256,7 +256,7 @@
                       <tr>
                         <td>
                           <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
-                            <img src="{{ $Informacao->PathIconePNG }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
+                            <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                           </p>
                           <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
                             {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
