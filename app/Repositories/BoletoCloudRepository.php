@@ -196,7 +196,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         $Boleto->load('pagador');
         $Boleto->load('inscricao');
 
-        return $boleto;
+        return $Boleto;
     }
 
 
