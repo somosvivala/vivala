@@ -24,9 +24,10 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
+    /*
 
-		$this->call('ConfiguracaoSeeder');
-		$this->call('UserSeeder');
+        $this->call('ConfiguracaoSeeder');
+        $this->call('UserSeeder');
         $this->call('PerfilSeeder');
         $this->call('CategoriasOngSeeder');
         $this->call('CategoriasVagaSeeder');
@@ -36,7 +37,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('PrettyUrlSeeder');
         $this->call('FotoSeeder');
         $this->call('InteresseSeeder');
-
+     */
 	}
 }
 
