@@ -116,7 +116,7 @@ class ExperienciasController extends Controller
     public function store(StoreExperienciaRequest $request)
     {
         $exp = $this->experienciasRepository->create($request->all());
-        return redirect('/experiencias/'.$exp->id);
+        return redirect('/gestao/experiencias/');
     }
 
 

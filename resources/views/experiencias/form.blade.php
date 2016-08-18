@@ -267,7 +267,7 @@
     {{-- Fim da Seção de INFORMAÇÕES EXTRAS da experiência --}}
 
     {{-- Seção do TIPO da experiência --}}
-    <div class="col-lg-6 margin-t-1 margin-b-1">
+    <div class="{{ $classesFormularioEdicao }} col-lg-6 margin-t-1 margin-b-1">
       <div class="row">
         <div class="col-lg-8">
           {!! Form::label('tipo-evento-unico', 'Tipo da Experiencia') !!}
@@ -311,7 +311,7 @@
     {{-- Seção das DATAS em que a experiência irá ocorrer --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
         {{-- Dependendo do tipo da experiencia --}}
-        <div id="campos_evento_unico" class="row  toggle-tipo-experiencia">
+        <div id="campos_evento_unico" class="{{ $classesFormularioEdicao }} row  toggle-tipo-experiencia">
         <div class="col-lg-9">
           {!! Form::label('', 'Selecione a data que ocorrerá o evento') !!}
         </div>
@@ -337,7 +337,7 @@
             </li>
         </ul>
       </div>
-        <div id="campos_evento_recorrente" class="row toggle-tipo-experiencia">
+        <div id="campos_evento_recorrente" class="{{ $classesFormularioEdicao }} row toggle-tipo-experiencia">
         <div class="col-lg-9">
           {!! Form::label('', 'Próximas datas em que a experiencia vai acontecer') !!}
         </div>
@@ -364,7 +364,7 @@
             </li>
         </ul>
       </div>
-      <div id="campos_evento_servico" class="row  toggle-tipo-experiencia">
+      <div id="campos_evento_servico" class="{{ $classesFormularioEdicao }} row  toggle-tipo-experiencia">
         <div class="col-lg-9">
           {!! Form::label('', 'Selecione os dias em que será possivel realizar a experiência') !!}
         </div>

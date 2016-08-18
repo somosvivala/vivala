@@ -145,14 +145,14 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $experiencia->owner()->associate($ong);
 
         //checando se existe alguma foto para a capa dessa experiencia
-        $existeFotoCapa = array_key_exists('experiencia-foto-id', $arrayArgumentos);
+        $existeFotoCapa = array_key_exists('experiencia-foto-id', $arrayArgumentos) && $arrayArgumentos['experiencia-foto-id'];
         if ($existeFotoCapa) {
             $fotoCapa = Foto::findOrFail($arrayArgumentos['experiencia-foto-id']);
             $this->atualizaFotoCapa($experiencia, $fotoCapa);
         }
 
         //checando se existe alguma foto para a capa dessa experiencia
-        $existeFotoOwner = array_key_exists('owner-experiencia-foto-id', $arrayArgumentos);
+        $existeFotoOwner = array_key_exists('owner-experiencia-foto-id', $arrayArgumentos) && $arrayArgumentos['owner-experiencia-foto-id'];
         if ($existeFotoOwner) {
             $fotoOwner = Foto::findOrFail($arrayArgumentos['owner-experiencia-foto-id']);
             $this->atualizaFotoOwner($experiencia, $fotoOwner);

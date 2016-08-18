@@ -9,7 +9,7 @@
 
             {!! Form::model($experiencia, ['method' => 'PATCH', 'action' => ['ExperienciasController@update', $experiencia->id] ]) !!}
 
-                @include('experiencias.form', ['textBtnSubmit' => 'Atualizar'])
+                @include('experiencias.form', ['textBtnSubmit' => 'Atualizar', 'classesFormularioEdicao' => 'hidden'])
 
             {!! Form::close() !!}
 

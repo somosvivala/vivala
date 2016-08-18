@@ -8,7 +8,7 @@
             @include('errors.list')
 
             {!! Form::open(['url' => 'experiencias']) !!}
-                @include('experiencias.form', ['textBtnSubmit' => 'Criar Experiência'])
+                @include('experiencias.form', ['textBtnSubmit' => 'Atualizar', 'classesFormularioEdicao' => ''])
             {!! Form::close() !!}
 
     </div>
