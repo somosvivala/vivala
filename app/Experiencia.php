@@ -271,6 +271,8 @@ class Experiencia extends Model
         return '/img/dummy-exp.jpg';
     }
 
+
+
     /*
      * Acessor para retornar a url da foto do owner da experiencia
      */
@@ -282,6 +284,32 @@ class Experiencia extends Model
 
         return '/img/dummy-exp.jpg';
     }
+
+    /*
+     * Acessor para retornar a url publica da foto do owner da experiencia
+     */
+    public function getFotoOwnerUrlPublicaAttribute()
+    {
+        if ($this->fotoOwner) {
+            return url($this->fotoOwner->path);
+        }
+
+        return url('/img/dummy-exp.jpg');
+    }
+
+    /*
+     * Acessor para retornar a url publica da foto de capa da experiencia
+     */
+    public function getFotoCapaUrlPublicaAttribute()
+    {
+        if ($this->fotoCapa) {
+            return url($this->fotoCapa->path);
+        }
+
+        return url('/img/dummy-exp.jpg');
+    }
+
+
 
     /**
      * Definindo um acessor para as inscricoesAtivas (pendentes + confirmadas)
