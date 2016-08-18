@@ -178,17 +178,23 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
      * @param $experiencia - Instancia da Experiencia a qual o boleto é destinado
      * @param $pagador - Instancia do User a qual o boleto é destinado
      */
-    public function createBoletoExperiencia($dadosBoleto, Experiencia $experiencia, User $pagador)
+    public function createBoletoExperiencia($dadosBoleto, Experiencia $Experiencia, User $pagador)
     {
-        $inscricao = $experiencia->inscricoes()->where('perfil_id', $pagador->perfil->id)->first();
+        $Inscricao = $Experiencia->inscricoes()->where('perfil_id', $pagador->perfil->id)->first();
 
-        $boleto = BoletoExperiencia::create($dadosBoleto);
-        $boleto->pagador()->associate($pagador);
-        $boleto->inscricao()->associate($inscricao);
-        $boleto->push();
+        //checando se existe algum boleto gerado (se existir entao a primeira tentativa falhou)
+        if ($Inscricao->boleto && !$Inscricao->boleto->isValido) {
+            //deletando o boleto que falhou para gerar um novo e nao ficar com a relacao (hasOne com fila)
+            $Inscricao->boleto->delete();
+        }
 
-        $boleto->load('pagador');
-        $boleto->load('inscricao');
+        $Boleto = BoletoExperiencia::create($dadosBoleto);
+        $Boleto->pagador()->associate($pagador);
+        $Boleto->inscricao()->associate($Inscricao);
+        $Boleto->push();
+
+        $Boleto->load('pagador');
+        $Boleto->load('inscricao');
 
         return $boleto;
     }
