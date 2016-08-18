@@ -1,6 +1,6 @@
 // Shorthand for $( document ).ready()
 $(function() {
-    bindaInputsFontAwesome();
+    //bindaInputsFontAwesome();
 });
 
 var adicionaDataEventoUnicoExperiencia = function(ev) {
