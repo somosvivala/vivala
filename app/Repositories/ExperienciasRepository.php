@@ -356,8 +356,24 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $Experiencia = $this->findOrFail($experienciaId);
 
+        //Se $dataInscricao nao vier null entao precisamos checar se
+        //a experiencia ja possui uma data_ocorrencia para esse dia
+        if ($dataInscricao) {
+
+            //Se nao houver uma dataOcorrencia para esse dia criar uma
+            if ($Experiencia->ocorrencias()->where('data_ocorrencia', $dataInscricao)->get()->isEmpty()) {
+                $dataOcorrencia = $this->createDataOcorrencia([
+                    'experiencia_id' => $Experiencia->id,
+                    'data_ocorrencia' => $dataInscricao
+                ]);
+                $Experiencia->ocorrencias()->save($dataOcorrencia);
+            }
+        }
+
         //Se nao tiver vindo uma data de inscricao, entao é um evento tipo unico. com uma unica data possivel
-        $dataInscricao = $dataInscricao ? $dataInscricao : $Experiencia->proximaOcorrencia->data_ocorrencia;
+        else {
+            $dataInscricao = $dataInscricao ? $dataInscricao : $Experiencia->proximaOcorrencia->data_ocorrencia;
+        }
 
         $inscricao = InscricaoExperiencia::create([
             'experiencia_id' => $experienciaId,
