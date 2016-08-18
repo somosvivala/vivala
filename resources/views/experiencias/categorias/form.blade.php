@@ -6,7 +6,7 @@
         <i name="icone-show" class="fa-5x icone-show margin-t-1 @if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif"> </i>
       </div>
       <div class="col-lg-12">
-        <button type="button" class="btn btn-acao" data-toggle="modal" data-target="#modal-iconpicker-fontawesome"> Selecionar Ícone </button>
+        <button type="button" class="btn btn-acao" data-toggle="modal" data-target="#modal-iconpicker-fontawesome">Selecionar Ícone</button>
       </div>
       <input id="icone-categoria-experiencia" type="hidden" name="icone" value="@if ( isset($Categoria) ) {{ $Categoria->icone }} @else fa fa-star @endif">
     </div>

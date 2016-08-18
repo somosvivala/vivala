@@ -1,4 +1,4 @@
-<div id="modal-tutoriais-internos-experiencias-mobile-descricaolistagem" class="modal fade" role="dialog">
+<div id="modal-tutoriais-internos-experiencias-mobile-nome-projeto-responsavel" class="modal fade" role="dialog">
 
   <div class="modal-dialog modal-lg">
 
@@ -9,14 +9,14 @@
         </button>
         <h3 class="modal-title" class="modal-title">
           <div class="font-bold-upper text-center laranja">
-            Descrição na Listagem da Experiência - Mobile
+            Nome do Projeto Responsável - Mobile
           </div>
         </h3>
       </div>
       <div class="modal-body">
         <div class="row">
           <div class="col-lg-12">
-            <img src="{{ asset('img/internas-tutorial/experiencias/mobile/tutorial-experiencias-mobile-descricao-listagem.png') }}" class="img-responsive img-tutorial"></img>
+            <img src="{{ asset('img/internas-tutorial/experiencias/mobile/tutorial-experiencias-mobile-nome-projeto-responsavel.png') }}" class="img-responsive img-tutorial"></img>
           </div>
         </div>
       </div>
