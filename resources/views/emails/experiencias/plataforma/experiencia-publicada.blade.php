@@ -235,7 +235,7 @@
                       </h3>
                     </td>
                   </tr>
-                  @foreach($Inscricao->Experiencia->informacoes as $Informacao)
+                  @foreach($Experiencia->informacoes as $Informacao)
                     <tr>
                       <td>
                         <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
