@@ -86,7 +86,7 @@
                 <tr align="center">
                   <td>
                     <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
-                      A experiência <strong>{{ $Inscricao->Experiencia->owner_nome }}</strong> tem uma nova inscrição
+                      A experiência <strong>{{ $Inscricao->experiencia->owner_nome }}</strong> tem uma nova inscrição
                     </h2>
                   </td>
                 </tr>
@@ -119,12 +119,12 @@
                     <td>
                       <p><img src="{{ asset('/img/email/vivala-email-pessoa-icone.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Nome</span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          {{ $Inscricao->Perfil->nome_completo }}
+                          {{ $Inscricao->perfil->nome_completo }}
                         </span>
                       </p>
                       <p><img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Email</span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          {{ $Inscricao->Perfil->User->email }}
+                          {{ $Inscricao->perfil->User->email }}
                         </span>
                       </p>
                       <p><img src="{{ asset('/img/email/vivala-email-cartao-icone.png') }}" alt="" title="" min-width="21px" width="21px" max-width="21px" min-height="14px" height="14px" max-height="14px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Forma de Pagamento</span>
@@ -173,8 +173,8 @@
                   <tr>
                     <td>
                       <p style="float:left;">
-                        <img src="{{ $Experiencia->getFotoOwnerUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
-                        <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
+                        <img src="{{ $Inscricao->experiencia->getFotoOwnerUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                        <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Inscricao->experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
@@ -185,16 +185,16 @@
                       <p style="margin-bottom:5px;">
                         <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}</strong>
+                          <strong>{{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}</strong>
                         </span>
                       </p>
                       <p style="margin-top:0;">
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst($Experiencia->endereco_completo) }}</strong>
+                          <strong>{{ ucfirst($Inscricao->experiencia->endereco_completo) }}</strong>
                         </span>
                       </p>
                       <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
-                        {{ trim($Experiencia->descricao) }}
+                        {{ trim($Inscricao->experiencia->descricao) }}
                       </p>
                     </td>
                   </tr>
@@ -243,29 +243,29 @@
                     <td>
                       <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:170px; height:170px; max-height:170px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0; overflow:hidden;">
                         <div style="display:inline-block; min-width:100px; width:100px; max-width:100px; border-right:1px solid #BCBEC0; text-align:center; padding-right:10px;">
-                          <a href="{{ url('/experiencias/'.$Experiencia->id) }}" target="_blank" style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; text-decoration:none; color:#545454;">
+                          <a href="{{ url('/experiencias/'.$Inscricao->experiencia->id) }}" target="_blank" style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; text-decoration:none; color:#545454;">
                             <p style="margin-bottom: 0;">
-                              <img src="{{ $Experiencia->getFotoOwnerUrlAttribute() }}" alt="{{ ucfirst($Experiencia->owner_nome) }}" title="{{ ucfirst($Experiencia->owner_nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px" style="border-radius:50%;"/>
+                              <img src="{{ $Inscricao->experiencia->getFotoOwnerUrlAttribute() }}" alt="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" title="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px" style="border-radius:50%;"/>
                             </p>
                             <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0; font-size:14px; line-height:18px;">
-                              {{ $Experiencia->owner_nome = (strlen(trim($Experiencia->owner_nome)) > 30) ? ucfirst(substr(trim($Experiencia->owner_nome),0,30)) . '[...]' : ucfirst(trim($Experiencia->owner_nome)) }}
+                              {{ $Inscricao->experiencia->owner_nome = (strlen(trim($Inscricao->experiencia->owner_nome)) > 30) ? ucfirst(substr(trim($Inscricao->experiencia->owner_nome),0,30)) . '[...]' : ucfirst(trim($Inscricao->experiencia->owner_nome)) }}
                             </p>
                           </a>
                           <p style="margin-top:10px; margin-bottom: 0;">
-                            <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank" style="color:transparent!important;">
+                            <span><a href="https://facebook.com/{{ $Inscricao->experiencia->owner->url_facebook }}" target="_blank" style="color:transparent!important;">
                               <img src="{{ asset('img/icones/png/cinza-mini-fb-circulo.png') }}" alt="{{ trans('global.social_network_facebook') }}" title="{{ trans('global.social_network_facebook') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                             </a></span>
-                            <span><a href="https://instagram.com/{{ $Experiencia->owner->url_instagram }}" target="_blank" style="color:transparent!important;">
+                            <span><a href="https://instagram.com/{{ $Inscricao->experiencia->owner->url_instagram }}" target="_blank" style="color:transparent!important;">
                               <img src="{{ asset('img/icones/png/cinza-mini-ig-circulo.png') }}" alt="{{ trans('global.social_network_instagram') }}" title="{{ trans('global.social_network_instagram') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                             </a></span>
-                            <span><a href="http://{{ $Experiencia->owner->url_site = preg_replace('#^www\.(.+\.)#i', '$1', $Experiencia->owner->url_site) }}" target="_blank" min-width="17px" style="color:transparent!important;">
+                            <span><a href="http://{{ $Inscricao->experiencia->owner->url_site = preg_replace('#^www\.(.+\.)#i', '$1', $Inscricao->experiencia->owner->url_site) }}" target="_blank" min-width="17px" style="color:transparent!important;">
                               <img src="{{ asset('img/icones/png/cinza-mini-link-circulo.png') }}" alt="{{ trans('global.lbl_website') }}" title="{{ trans('global.lbl_website') }}" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                             </a></span>
                           </p>
                         </div>
                         <div style="display:inline-block; vertical-align:top; min-width:320px; width:320px; max-width:320px; margin-left:15px;">
                           <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; text-align:justify; margin-top:0;">
-                            {{ $Experiencia->owner_descricao = (strlen(trim($Experiencia->owner_descricao)) > 260) ? substr(trim($Experiencia->owner_descricao),0,260): trim($Experiencia->owner_descricao) }}
+                            {{ $Inscricao->experiencia->owner_descricao = (strlen(trim($Inscricao->experiencia->owner_descricao)) > 260) ? substr(trim($Inscricao->experiencia->owner_descricao),0,260): trim($Inscricao->experiencia->owner_descricao) }}
                           </p>
                         </div>
                       </div>
