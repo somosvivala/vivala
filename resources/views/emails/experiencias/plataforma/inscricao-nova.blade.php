@@ -86,7 +86,7 @@
                 <tr align="center">
                   <td>
                     <h2 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; line-height:1.2em; margin:40px 0 10px; margin-top:0;">
-                      A experiência <strong>{{ $Inscricao->experiencia->owner_nome }}</strong> tem uma nova inscrição
+                      A experiência da <strong>{{ $Inscricao->experiencia->owner_nome }}</strong> tem uma nova inscrição
                     </h2>
                   </td>
                 </tr>
@@ -124,37 +124,17 @@
                       </p>
                       <p><img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Email</span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          {{ $Inscricao->perfil->User->email }}
-                        </span>
-                      </p>
-                      <p><img src="{{ asset('/img/email/vivala-email-cartao-icone.png') }}" alt="" title="" min-width="21px" width="21px" max-width="21px" min-height="14px" height="14px" max-height="14px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Forma de Pagamento</span>
-                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          Boleto bancário
+                          {{ $Inscricao->perfil->user->email }}
                         </span>
                       </p>
                       <p><img src="{{ asset('/img/email/vivala-email-jogo-da-velha-icone.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">ID da inscrição</span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                          {{ $Inscricao->id }}
+                          {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
                         </span>
                       </p>
                     </td>
                   </tr>
                   <!-- Fim da Seção DADOS DO USUÁRIO -->
-                  <!-- Separador -->
-                  <tr align="center">
-                    <td>
-                      <div style="border-bottom: 1px solid #D1D3D4; width:300px; margin:25px 0;"></div>
-                    </td>
-                  </tr>
-                  <!-- Fim do Separador -->
-                  <!-- Seção DADOS DO USUÁRIO -->
-                  <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:0;">
-                        Comprovante de Pagamento
-                      </h3>
-                    </td>
-                  </tr>
                   <!-- Separador -->
                   <tr align="center">
                     <td>
@@ -173,13 +153,13 @@
                   <tr>
                     <td>
                       <p style="float:left;">
-                        <img src="{{ $Inscricao->experiencia->getFotoOwnerUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                        <img src="{{ $Inscricao->experiencia->FotoCapaUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                         <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Inscricao->experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
                       </p>
                       <p>
                         <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>ACESSOR DA DATA (ENTRE AS DATAS DE OCORRENCIA) EM QUE CANDIDATO SE CANDIDATOU PRA EXPERIENCIA (???)</strong>
+                          <strong></strong>
                         </span>
                       </p>
                       <p style="margin-bottom:5px;">
