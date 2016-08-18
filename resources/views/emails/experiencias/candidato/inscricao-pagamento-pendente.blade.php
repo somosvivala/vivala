@@ -166,10 +166,10 @@
                   </tr>
                   <tr align="center">
                     <td>
-                      <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=[VIVALÁ EXPERIÊNCIAS] Envio de Comprovante de Depósito" target="_top" style="text-decoration:none; cursor:pointer;">
-                        <button style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px; cursor:pointer;">
+                      <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=[VIVALÁ EXPERIÊNCIAS] Envio de Comprovante de Depósito" target="_top" style="cursor:pointer;">
+                        <div style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px; cursor:pointer;">
                           ENVIAR COMPROVANTE DE DEPÓSITO
-                        </button>
+                        </div>
                       </a>
                     </td>
                   </tr>
@@ -184,12 +184,12 @@
                   </tr>
                   <tr align="center">
                     <td>
-                      <a href="{{ env('VIVALA_LINK_SITE') }}/experiencias/checkout/{{ $Inscricao->experiencia->id }}" target="_blank" style="text-decoration:none; cursor:pointer;">
+                      <a href="{{ env('VIVALA_LINK_SITE') }}/experiencias/checkout/{{ $Inscricao->experiencia->id }}" target="_blank" style="cursor:pointer;">
                         <div style="padding:15px 30px; border:1px solid #25A494; min-width:200px; width:200px; max-width:200px; cursor:pointer;">
                           <img style="display:inline-block; float:left; vertical-align:middle;" src="{{ asset('img/icones/png/verde-codebar.png') }}" min-width="55px" width="55px" max-width="55px" min-height="43px" height="43px" max-height="43px"/>
-                          <button style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:60px;">
+                          <div style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:60px;">
                             GERAR BOLETO
-                          </button>
+                          </div>
                         </div>
                       </a>
                     </td>
