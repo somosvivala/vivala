@@ -291,7 +291,7 @@ class Experiencia extends Model
     public function getFotoOwnerUrlPublicaAttribute()
     {
         if ($this->fotoOwner) {
-            return url($this->fotoOwner->path);
+            return $this->fotoOwner->pathPublico;
         }
 
         return url('/img/dummy-exp.jpg');
@@ -303,7 +303,7 @@ class Experiencia extends Model
     public function getFotoCapaUrlPublicaAttribute()
     {
         if ($this->fotoCapa) {
-            return url($this->fotoCapa->path);
+            return $this->fotoCapa->pathPublico;
         }
 
         return url('/img/dummy-exp.jpg');

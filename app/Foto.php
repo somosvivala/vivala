@@ -43,6 +43,15 @@ class Foto extends Model
     }
 
 
+    /**
+     * Accessor para a propriedade Path Publico, passando o caminho do public
+     */
+    public function getPathPublicoAttribute()
+    {
+        $urlBase = 'uploads/';
+        $fotoPath = str_replace('../../..','',$this->attributes['path']);
+        return url($urlBase.$fotoPath);
+    }
 
 
 
