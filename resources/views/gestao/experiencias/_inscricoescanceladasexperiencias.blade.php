@@ -2,7 +2,7 @@
 
     {!! Form::hidden('_token', csrf_token()) !!}
     <div class="row" id="lista-experiencias">
-        <h2>Inscrições ativas</h2>
+        <h2>Inscrições canceladas</h2>
 
         @foreach ($Experiencias as $experiencia)
 
@@ -14,7 +14,7 @@
                 '<br>Local: ' . $experiencia->local->nome .' - '. $experiencia->local->estado->sigla, ['class' => 'col-xs-12'])) !!}
 
             <ul class="list-group col-xs-12">
-                @forelse ($experiencia->inscricoesAtivas as $inscricao)
+                @forelse ($experiencia->inscricoesCanceladas as $inscricao)
                     <li class="list-group-item col-xs-12 inscricao-experiencia-item" data-id-inscricao="{{ $inscricao->id }}">
                         <div class="col-xs-9">
                             <p> Identificador da inscricao: {{ $inscricao->id }} </p>

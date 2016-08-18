@@ -303,6 +303,17 @@ class Experiencia extends Model
             ->get();
     }
 
+    /**
+     * Definindo um acessor para as inscricoes canceladas
+     */
+    public function getInscricoesCanceladasAttribute()
+    {
+        return $this->inscricoes()
+            ->whereIn('status', ['cancelada'])
+            ->get();
+    }
+
+
 
     /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
