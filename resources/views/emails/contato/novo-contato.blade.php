@@ -56,9 +56,9 @@
     <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
     <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
-  <body bgcolor="#D1D3D4" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
+  <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
     <!-- Corpo -->
-    <table bgcolor="#D1D3D4" style="padding:20px 20px 0 20px; width:100%; margin-bottom:10px;">
+    <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%; margin-bottom:10px;">
       <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
@@ -100,7 +100,7 @@
           </td>
           <!-- Fim do Cabeçalho da Vivalá -->
           <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:7px 20px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:7px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
@@ -149,7 +149,7 @@
           </td>
           <!-- Fim do Corpo do Email -->
           <!-- Assinatura do Email -->
-          <td bgcolor="#D1D3D4" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
+          <td bgcolor="#ECEBEB" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tr>

@@ -175,9 +175,9 @@
       <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
       <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
-  <body bgcolor="#D1D3D4" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
+  <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
     <!-- Corpo -->
-    <table class="body-wrap" bgcolor="#D1D3D4" style="margin-bottom:10px; padding:20px; width:100%;">
+    <table class="body-wrap" bgcolor="#ECEBEB" style="margin-bottom:10px; padding:20px; width:100%;">
       <tbody>
         <tr>
         <!-- Cabeçalho da Vivalá -->
@@ -216,7 +216,7 @@
         </td>
         <!-- Fim do Cabeçalho da Vivalá -->
         <!-- Separador -->
-        <td class="container-divisor" bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+        <td class="container-divisor" bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
           <tr></tr>
         </td>
         <!-- Fim do Separador -->
@@ -255,7 +255,7 @@
         </td>
         <!-- Fim do Corpo do Email -->
         <!-- Assinatura do Email -->
-        <td class="container" bgcolor="#D1D3D4" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
+        <td class="container" bgcolor="#ECEBEB" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
           <div class="content" style="display:block; margin:0 auto; max-width:600px;">
             <table style="width: 100%;">
               <tr>

@@ -56,9 +56,9 @@
     <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
     <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
-  <body bgcolor="#D1D3D4" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
+  <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
     <!-- Corpo -->
-    <table bgcolor="#D1D3D4" style="padding:20px 20px 0 20px; width:100%;">
+    <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;">
     <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
@@ -97,7 +97,7 @@
           </td>
           <!-- Fim do Cabeçalho da Vivalá -->
           <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
@@ -138,7 +138,7 @@
           </td>
           <!-- Fim da Primeira SEÇÃO -->
           <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
@@ -228,14 +228,15 @@
                   </tr>
                   <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
                   <!-- Seção DETALHES EXTRAS DA EXPERIÊNCIA -->
-                  <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                        Informações Extras
-                      </h3>
-                    </td>
-                  </tr>
-                  @foreach($Experiencia->informacoes as $Informacao)
+                  @if(!empty($Experiencia->informacoes))
+                    <tr>
+                      <td>
+                        <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                          Informações Extras
+                        </h3>
+                      </td>
+                    </tr>
+                    @foreach($Experiencia->informacoes as $Informacao)
                     <tr>
                       <td>
                         <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
@@ -246,7 +247,8 @@
                         </p>
                       </td>
                     </tr>
-                  @endforeach
+                    @endforeach
+                  @endif
                   <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
                   <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
                   <tr align="center">
@@ -264,13 +266,13 @@
           </td>
           <!-- Fim da Segunda SEÇÃO -->
           <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
           <!-- Fim do Corpo do Email -->
           <!-- Assinatura do Email -->
-          <td bgcolor="#D1D3D4" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
+          <td bgcolor="#ECEBEB" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tr>

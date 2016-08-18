@@ -56,9 +56,9 @@
     <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
     <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
-  <body bgcolor="#D1D3D4" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
+  <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
     <!-- Corpo -->
-    <table bgcolor="#D1D3D4" style="padding:20px 20px 0 20px; width:100%;">
+    <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;">
     <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
@@ -97,7 +97,7 @@
           </td>
           <!-- Fim do Cabeçalho da Vivalá -->
           <!-- Separador -->
-          <td bgcolor="#D1D3D4" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
@@ -117,19 +117,24 @@
                   </tr>
                   <tr>
                     <td>
-                      <p><img src="{{ asset('/img/email/vivala-email-pessoa-icone.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Nome</span>
+                      <p><img src="{{ asset('/img/icones/png/cinza-usuario.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Nome: </span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
                           {{ $Inscricao->perfil->nome_completo }}
                         </span>
                       </p>
-                      <p><img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Email</span>
+                      <p><img src="{{ asset('/img/icones/png/cinza-envelope.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Email: </span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
                           {{ $Inscricao->perfil->user->email }}
                         </span>
                       </p>
-                      <p><img src="{{ asset('/img/email/vivala-email-jogo-da-velha-icone.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">ID da inscrição</span>
+                      <p><img src="{{ asset('/img/icones/png/cinza-hashtag.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">ID da Inscrição: </span>
                         <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
                           {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
+                        </span>
+                      </p>
+                      <p><img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Data da Inscrição: </span>
+                        <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
                         </span>
                       </p>
                     </td>
@@ -138,120 +143,113 @@
                   <!-- Separador -->
                   <tr align="center">
                     <td>
-                      <div style="border-bottom: 1px solid #D1D3D4; width:300px; margin:25px 0;"></div>
+                      <div style="border-bottom: 1px solid #ECEBEB; width:300px; margin:25px 0;"></div>
                     </td>
                   </tr>
                   <!-- Fim do Separador -->
-                  <!-- Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
                   <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
-                        Detalhes da experiência
+                    <td style="padding-bottom:30px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Informações da Experiência
                       </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left;">
-                        <img src="{{ $Inscricao->experiencia->FotoCapaUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                      <p style="float:left; margin-top:0; margin-bottom:0;">
+                        <img src="{{ $Inscricao->experiencia->FotoOwnerUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                         <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Inscricao->experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
                       </p>
-                      <p>
-                        <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong></strong>
+                      <p style="margin-top:10px; margin-bottom:10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          TIPO/FREQUÊNCIA
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          @if($Inscricao->experiencia->isEventoUnico) Evento Único
+                          @elseif ($Inscricao->experiencia->isEventoRecorrente) Evento Recorrente
+                          @elseif ($Inscricao->experiencia->isEventoServico) Evento Serviço
+                          @endif
                         </span>
                       </p>
-                      <p style="margin-bottom:5px;">
-                        <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}</strong>
+                      <p style="margin-top:10px; margin-bottom: 10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          PREÇO
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          R${{ $Inscricao->experiencia->preco }}
                         </span>
                       </p>
-                      <p style="margin-top:0;">
-                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>{{ ucfirst($Inscricao->experiencia->endereco_completo) }}</strong>
+                      <p style="margin-top:10px; margin-bottom: 10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          LOCAL
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          {{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}
                         </span>
                       </p>
-                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
+                      <p style="margin-top:10px; margin-bottom: 10px;">
+                        <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
+                          ENDEREÇO
+                        </span>
+                        <br>
+                        <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                          {{ ucfirst($Inscricao->experiencia->endereco_completo) }}
+                        </span>
+                      </p>
+                    </td>
+                  </tr>
+                  <!-- Fim da Seção INFORMAÇÕES DA EXPERIÊNCIA -->
+                  <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+                  <tr>
+                    <td style="padding-bottom:30px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Descrição Completa
+                      </h3>
+                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
                         {{ trim($Inscricao->experiencia->descricao) }}
                       </p>
                     </td>
                   </tr>
-                  <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
-                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <!-- Fim da Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+                  <!-- Seção DETALHES DA EXPERIÊNCIA -->
                   <tr>
-                    <td>
-                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
-                        Informações
+                    <td style="padding-bottom:30px;">
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                        Detalhes
                       </h3>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-agenda-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        ACESSOR DO TIPO (???)
+                      <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
+                        {{ trim($Inscricao->experiencia->detalhes) }}
                       </p>
                     </td>
                   </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-hora-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        ACESSOR DA FREQUENCIA (???)
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p style="float:left; margin-right:20px; margin-bottom:0px;">
-                        <img src="{{ asset('img/email/vivala-email-pessoas-icone.png') }}" min-width="19px" width="19px" max-width="19px" min-height="19px" height="19px" max-height="19px"/>
-                      </p>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-bottom:0px;">
-                        ACESSOR DAS INFORMAÇÕES EXTRAS (???)
-                      </p>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
-                  <!-- Seção INFORMAÇÕES DA ONG -->
-                  <tr align="center">
-                    <td>
-                      <div style="padding:20px 15px; background-color:#ECEBEB; border-radius:15px; min-height:170px; height:170px; max-height:170px; min-width:450px; width:450px; max-width:450px; margin:40px auto 0; overflow:hidden;">
-                        <div style="display:inline-block; min-width:100px; width:100px; max-width:100px; border-right:1px solid #BCBEC0; text-align:center; padding-right:10px;">
-                          <a href="{{ url('/experiencias/'.$Inscricao->experiencia->id) }}" target="_blank" style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; text-decoration:none; color:#545454;">
-                            <p style="margin-bottom: 0;">
-                              <img src="{{ $Inscricao->experiencia->getFotoOwnerUrlAttribute() }}" alt="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" title="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px" style="border-radius:50%;"/>
-                            </p>
-                            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0; font-size:14px; line-height:18px;">
-                              {{ $Inscricao->experiencia->owner_nome = (strlen(trim($Inscricao->experiencia->owner_nome)) > 30) ? ucfirst(substr(trim($Inscricao->experiencia->owner_nome),0,30)) . '[...]' : ucfirst(trim($Inscricao->experiencia->owner_nome)) }}
-                            </p>
-                          </a>
-                          <p style="margin-top:10px; margin-bottom: 0;">
-                            <span><a href="https://facebook.com/{{ $Inscricao->experiencia->owner->url_facebook }}" target="_blank" style="color:transparent!important;">
-                              <img src="{{ asset('img/icones/png/cinza-mini-fb-circulo.png') }}" alt="{{ trans('global.social_network_facebook') }}" title="{{ trans('global.social_network_facebook') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
-                            </a></span>
-                            <span><a href="https://instagram.com/{{ $Inscricao->experiencia->owner->url_instagram }}" target="_blank" style="color:transparent!important;">
-                              <img src="{{ asset('img/icones/png/cinza-mini-ig-circulo.png') }}" alt="{{ trans('global.social_network_instagram') }}" title="{{ trans('global.social_network_instagram') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
-                            </a></span>
-                            <span><a href="http://{{ $Inscricao->experiencia->owner->url_site = preg_replace('#^www\.(.+\.)#i', '$1', $Inscricao->experiencia->owner->url_site) }}" target="_blank" min-width="17px" style="color:transparent!important;">
-                              <img src="{{ asset('img/icones/png/cinza-mini-link-circulo.png') }}" alt="{{ trans('global.lbl_website') }}" title="{{ trans('global.lbl_website') }}" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
-                            </a></span>
-                          </p>
-                        </div>
-                        <div style="display:inline-block; vertical-align:top; min-width:320px; width:320px; max-width:320px; margin-left:15px;">
-                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; text-align:justify; margin-top:0;">
-                            {{ $Inscricao->experiencia->owner_descricao = (strlen(trim($Inscricao->experiencia->owner_descricao)) > 260) ? substr(trim($Inscricao->experiencia->owner_descricao),0,260): trim($Inscricao->experiencia->owner_descricao) }}
-                          </p>
-                        </div>
-                      </div>
-                    </td>
-                  </tr>
-                  <!-- Fim da Seção INFORMAÇÕES DA ONG -->
+                  <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+                  <!-- Seção DETALHES EXTRAS DA EXPERIÊNCIA -->
+                  @if(!empty($Inscricao->experiencia->informacoes))
+                    <tr>
+                      <td>
+                        <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
+                          Informações Extras
+                        </h3>
+                      </td>
+                    </tr>
+                    @foreach($Inscricao->experiencia->informacoes as $Informacao)
+                    <tr>
+                      <td>
+                        <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
+                          <img src="{{ $Informacao->PathIconePNG }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
+                        </p>
+                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
+                          {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
+                        </p>
+                      </td>
+                    </tr>
+                    @endforeach
+                  @endif
+                  <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
                   <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
                   <tr align="center">
                     <td>
@@ -268,7 +266,7 @@
           </td>
           <!-- Fim do Corpo do Email -->
           <!-- Assinatura do Email -->
-          <td bgcolor="#D1D3D4" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
+          <td bgcolor="#ECEBEB" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tr>
