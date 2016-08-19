@@ -94,40 +94,22 @@ class Kernel extends ConsoleKernel
                 //Para cada data de ocorrencia
                 foreach ($datasOcorrenciaExperiencia as $DataOcorrenciaExperiencia) {
 
-                    $dataFormatada = $DataOcorrenciaExperiencia->data_ocorrencia->format('Y-m-d');
 
                     //Pré-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
-
-                        //Pegando as inscricoes ativas para esse dia (inscricoes pendentes + confirmadas)
-                        $inscricoesAtivasNessaData = $Experiencia->inscricoes()->ativas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //Pegando as inscricoes confirmadas para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //Iterando sob os inscritos disparando o email conforme o status da inscricao
-                        foreach ($inscricoesAtivasNessaData as $Inscricao) {
-                            //Se a inscricao tiver sido confirmada
-                            if($Inscricao->isConfirmada) {
-                                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao confirmada
-                            }
-                            else if ($Inscricao->isPendente) {
-                                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao pendente
-                            }
-                        }
-
-                        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
-                        //$this->mailSenderRepository-> envia email experiencia eminente p/ Owner ($inscricoesConfirmadasNessaData)
+                        //Disparando evento para tomar as acoes necessarias
+                        event ( new ExperienciaEminente($Experiencia, $DataOcorrenciaExperiencia) );
                     }
 
                     //Dia da Experiencia
                     if ($DataOcorrenciaExperiencia->aconteceHoje) {
                         //Pegando as inscricoes confirmadas para esse dia
                         $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
+                            ->where('data_ocorrencia_experiencia', $dataFormatada)
+                            ->get();
+
+                        //Pegando as inscricoes pendentes para esse dia
+                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->pendentes()
                             ->where('data_ocorrencia_experiencia', $dataFormatada)
                             ->get();
 

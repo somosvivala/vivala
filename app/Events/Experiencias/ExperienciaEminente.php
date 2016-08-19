@@ -4,19 +4,26 @@ use App\Events\Event;
 
 use Illuminate\Queue\SerializesModels;
 use App\Experiencia;
+use App\DataOcorrenciaExperiencia;
 
-class ExperienciaEminente extends Event {
+class ExperienciaEminente extends Event
+{
 
-	use SerializesModels;
+    use SerializesModels;
 
-	/**
-	 * Create a new event instance.
-	 *
-	 * @return void
-	 */
-	public function __construct()
-	{
-		//
-	}
+    //Informacoes que o evento vai propagar
+    public $Experiencia;
+    public $DataOcorrencia;
+
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct(Experiencia $experiencia, DataOcorrenciaExperiencia $dataOcorrencia)
+    {
+        $this->Experiencia = $experiencia;
+        $this->DataOcorrenciaExperiencia = $dataOcorrencia;
+    }
 
 }
