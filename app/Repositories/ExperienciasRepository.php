@@ -553,7 +553,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     /**
      * Metodo para atualizar o status das inscricoes de confirmada para concluida
      */
-    public function atualizaInscricoesConfirmadas($inscricoes)
+    public function atualizaInscricoesConfirmadasParaConcluidas($inscricoes)
     {
         $inscricoes->each(function($Inscricao) {
             $Inscricao->update(['status' => 'concluida']);

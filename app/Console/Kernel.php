@@ -82,9 +82,10 @@ class Kernel extends ConsoleKernel
          */
 
         $schedule->call(function() {
+            //Pegando as exps ativas e finalizadas para contemplar todo o fluxo das experiencias
             $experienciasAtivasOuFinalizadas= Experiencia::ativasOuFinalizadas()->get();
 
-            //iterando sob as experiencias publicadas
+            //iterando sob as experiencias ativas ou finalizadas
             foreach ($experienciasAtivasOuFinalizadas as $Experiencia) {
 
                 //pegando as datas em que a experiencia vai ocorrer
@@ -141,8 +142,9 @@ class Kernel extends ConsoleKernel
                         //4-Disparar email para a vivalá notificando a ocorrencia da experiencia,
                         //$this->mailSenderRepository-> envia email dia da experiencia p/ Vivalá ($inscricoesConfirmadasNessaData)
 
-                        //5-Atualizar lista de inscricoes (confirmadas -> concluidas)
-                        $this->experienciasRepository->atualizaInscricoesConfirmadas($inscricoesConfirmadasNessaData);
+                        //5-Atualizar lista de inscricoes (confirmadas -> concluidas) && (pendentes -> expiradas)
+                        $this->experienciasRepository->atualizaInscricoesConfirmadasParaConcluidas($inscricoesConfirmadasNessaData);
+                        $this->experienciasRepository->atualizaInscricoesPendentesParaExpiradas($inscricoesPendentesNessaData);
 
                         //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida
                         $this->experienciasRepository->finalizaExperienciaEventoUnico($Experiencia);
@@ -168,10 +170,6 @@ class Kernel extends ConsoleKernel
                 }
 
             }
-
-
-
-
         })->dailyAt('4:19');
 
         //Fazendo refresh dos places e buscompanies da Clickbus diariamente
