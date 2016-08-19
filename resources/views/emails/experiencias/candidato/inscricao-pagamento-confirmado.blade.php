@@ -127,7 +127,7 @@
                   <!-- Sub-título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#25A494;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:#25A494;">
                         Sua inscrição foi confirmada na experiência <br>
                         oferecida pela <strong>{{ mb_strtoupper(trim($Inscricao->experiencia->owner_nome)) }}</strong>!
                       </p>
@@ -146,6 +146,7 @@
           <!-- Fim do Separador -->
           <!-- Seção de Informações -->
           <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
+            <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%; padding-bottom:0; margin-top:20px;">
                 <tbody>
                   <!-- Seção COMPROVANTE DE PAGAMENTO -->
