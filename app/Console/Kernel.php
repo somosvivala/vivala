@@ -87,13 +87,11 @@ class Kernel extends ConsoleKernel
 
             //iterando sob as experiencias ativas ou finalizadas
             foreach ($experienciasAtivasOuFinalizadas as $Experiencia) {
-
                 //pegando as datas em que a experiencia vai ocorrer
                 $datasOcorrenciaExperiencia = $Experiencia->ocorrencias;
 
                 //Para cada data de ocorrencia
                 foreach ($datasOcorrenciaExperiencia as $DataOcorrenciaExperiencia) {
-
 
                     //Pré-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
@@ -109,20 +107,9 @@ class Kernel extends ConsoleKernel
 
                     //Pós-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceuFazDoisDias) {
-                        //Pegando as inscricoes confirmadas para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //2-Iterar sob os inscritos disparando o email de feedback sobre a experiencia
-                        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
-                            //$this-mailSenderRepository->envia email feedback no pós experiencia p/ candidato
-                        }
-
-                        //3-Disparar email de feedback para o owner
-                        //$this->mailSenderRepository-> envia email feedback no pós experiencia p/ Owner
+                        //Disparando evento para tomar as acoes necessarias
+                        event ( new ExperienciaAconteceuRecentemente($Experiencia, $DataOcorrenciaExperiencia) );
                     }
-
                 }
 
             }
