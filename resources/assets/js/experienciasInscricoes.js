@@ -10,7 +10,7 @@ var confirmaInscricaoExperiencia = function (ev) {
     //disparando sweetalert para confirmar a exclusao de uma inscricao
     swal({
         title: "Atenção",
-        html: "Essa Inscricao será confirmada e emails serão disparados para o candidato e para a institição. <br> Tem certeza que deseja continuar?",
+        html: "Essa Inscriçãoo será confirmada e emails serão disparados para o candidato e para a institição. <br> Tem certeza que deseja continuar?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",
@@ -35,7 +35,7 @@ var ajaxConfirmaInscricaoExperiencia = function (target) {
 
     //sweetalert de loading :)
     swal({
-        html : '<br><i class="fa fa-3x fa-pulse fa-spin fa-spinner laranja"></i> <br><br> <h4>Processando</h4>',
+        html : '<br><i class="fa fa-3x fa-pulse fa-spin fa-spinner laranja"></i> <br><br> <h4>Processando...</h4>',
         showCancelButton: false,
         width:240,
         confirmButtonClass: 'hide'
@@ -72,7 +72,7 @@ var ajaxConfirmaInscricaoExperiencia = function (target) {
 var sweetAlertSucessoConfirmaInscricaoExperiencia = function() {
     swal({
         type: "success",
-        html: '<h4>Sucesso</h4> <p>Inscricao confirmada! Recarregando...</p>',
+        html: '<h4>Sucesso</h4> <p>Inscrição confirmada! Recarregando...</p>',
         showCancelButton: false,
         width:240,
         confirmButtonClass: 'hide',
@@ -86,7 +86,7 @@ var sweetAlertSucessoConfirmaInscricaoExperiencia = function() {
 var sweetAlertErroConfirmaInscricaoExperiencia = function() {
     swal({
         type: "error",
-        html: '<h4>Opa..</h4> <br> <p> Ocorreu um erro e nao foi possivel confirmar a inscricao. !</p><br>',
+        html: '<h4>Opa!</h4> <br> <p> Ocorreu um erro e nao foi possivel confirmar a Inscrição!</p><br>',
         confirmButtonColor: "#DD6B55",
         showCancelButton: false
     });
@@ -108,7 +108,7 @@ var confirmaCancelaInscricaoExperiencia = function (ev) {
     //disparando sweetalert para confirmar a exclusao de uma inscricao
     swal({
         title: "Atenção",
-        html: "Essa Inscricao será cancelada e emails serão disparados para o candidato e para a institição. <br> Tem certeza que deseja continuar?",
+        html: "Essa Inscrição será cancelada e emails serão disparados para o candidato e para a institição. <br> Tem certeza que deseja continuar?",
         type: "warning",
         showCancelButton: true,
         confirmButtonColor: "#DD6B55",

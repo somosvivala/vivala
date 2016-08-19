@@ -17,6 +17,12 @@ use App\Interfaces\BoletoCloudRepositoryInterface;
 
 use App\Events\Experiencias\ExperienciaPublicada;
 use App\Events\Experiencias\ExperienciaDesativada;
+use App\Events\Experiencias\ExperienciaRemovida;
+//use App\Events\Experiencias\ExperienciaEminente;
+//use App\Events\Experiencias\ExperienciaOcorrendo;
+
+use App\Events\Experiencias\InscricaoExperienciaConfirmada;
+use App\Events\Experiencias\InscricaoExperienciaCancelada;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -342,7 +348,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function delete($id)
     {
-        //event(new ExperienciaRemovida($experiencia));
+        // Chama o Evento de Experiencia Removida
+        //event(new ExperienciaRemovida($this->findOrFail($id)));
+
         return $this->findOrFail($id)->delete();
     }
 
@@ -400,6 +408,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             'data_ocorrencia_experiencia_id' => $dataExperienciaID
         ]);
 
+        // Chama o Evento de Inscrição Confirmada
+        event(new InscricaoExperienciaConfirmada($inscricao));
+
         return $fezUpdate;
     }
 
@@ -418,6 +429,9 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
             'data_cancelamento' => $dataCancelamento,
             'data_ocorrencia_experiencia_id' => $dataExperienciaID
         ]);
+
+        // Chama o Evento de Inscrição Cancelada
+        //event(new InscricaoExperienciaCancelada($inscricao));
 
         return $fezUpdate;
     }
@@ -455,6 +469,8 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'publicada']);
+
+        // Chama o Evento de Experiencia Publicada
         event(new ExperienciaPublicada($experiencia));
         return $fezUpdate;
     }
@@ -467,6 +483,8 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $experiencia = $this->findOrFail($request->id);
         $fezUpdate = $experiencia->update(['status' => 'analise']);
+
+        // Chama o Evento de Experiencia Desativada
         //event(new ExperienciaDesativada($experiencia));
         return $fezUpdate;
     }
