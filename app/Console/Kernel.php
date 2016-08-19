@@ -83,9 +83,8 @@ class Kernel extends ConsoleKernel
 
         //Job do fluxo de uma experiencia
         $schedule->call(function() {
-
-            //Pré-experiencia
             $experiencias = Experiencia::publicadas()->get();
+
 
             //iterando sob as experiencias publicadas
             foreach ($experiencias as $Experiencia) {
@@ -98,7 +97,7 @@ class Kernel extends ConsoleKernel
 
                     $dataFormatada = $DataOcorrenciaExperiencia->data_ocorrencia->format('Y-m-d');
 
-                    //Checar se essa data é pré-experiencia (== 4 dias p/ acontecer)
+                    //Pré-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
 
                         //Pegando as inscricoes ativas para esse dia (inscricoes pendentes + confirmadas)
@@ -124,19 +123,36 @@ class Kernel extends ConsoleKernel
 
                         //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
                         //$this->mailSenderRepository-> envia email experiencia eminente p/ Owner ($inscricoesConfirmadasNessaData)
+                    }
+
+                    //Checar se a data atual é um dia de ocorrencia da experiencia (== dia de ocorrencia)
+                    if ($DataOcorrenciaExperiencia->aconteceHoje) {
+                        //Pegando as inscricoes confirmadas para esse dia
+                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
+                            ->where('data_ocorrencia_experiencia', $dataFormatada)
+                            ->get();
+
+                        //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia
+                        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
+                            //$this-mailSenderRepository->envia email dia da experiencia p/ candidato
+                        }
+
+                        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
+                        //$this->mailSenderRepository-> envia email dia da experiencia p/ Owner ($inscricoesConfirmadasNessaData)
+
+                        //4-Disparar email para a vivalá notificando a ocorrencia da experiencia,
+                        //$this->mailSenderRepository-> envia email dia da experiencia p/ Vivalá ($inscricoesConfirmadasNessaData)
+
+                        //5-Atualizar lista de inscricoes (confirmadas -> concluidas)
+                        $this->experienciasRepository->atualizaInscricoesConfirmadas($inscricoesConfirmadasNessaData);
+
+                        //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida
+                        $this->experienciasRepository->finalizaExperienciaEventoUnico($Experiencia);
 
                     }
 
-
-                    //Checar se a data atual é um dia de ocorrencia da experiencia (== dia de ocorrencia)
-                    //Se for um dia de ocorrencia
-                    //1-Pegar inscritos confirmados para esse dia
-                    //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia
-                    //3-Disparar email com lista de inscritos confirmados para o owner (neste caso será que ñ é valido fechar a experiencia de inscricoes - n pode fazer inscrição - 1 dia antes/12 horas antes e envio email com prioridade maxima pro ultimo dia?)
                     // * Quando as inscriçṍes são interrompidas pra determinada experiencia? Podiamos setar umas 12 horas antes e pendentes -> expiradas ?
-                    //4-Disparar email para a vivalá notificando a ocorrencia da experiencia, com lista total de inscritos confirmados e quem está coordenando (instituicao responsavel)
-                    //5-Atualizar lista de inscricoes (confirmadas -> concluidas && pendentes -> expiradas && canceladas -> expiradas?)
-                    //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida (**problema, a experiencia nao estaria nessa query para o pós experiencia)
+
 
                     //Checar se a data atual é pós experiencia (== 2 dias após acontecer)
                     //Se estiver no pós-experiencia

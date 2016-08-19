@@ -550,6 +550,28 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     }
 
 
+    /**
+     * Metodo para atualizar o status das inscricoes de confirmada para concluida
+     */
+    public function atualizaInscricoesConfirmadas($inscricoes)
+    {
+        $inscricoes->each(function($Inscricao) {
+            $Inscricao->update(['status' => 'concluida']);
+            $Inscricao->push();
+        });
+    }
+
+    /**
+     * Metodo para atualizar o status de uma experiencia tipo evento_unico para finalizada
+     */
+    public function finalizaExperienciaEventoUnico(Experiencia $Experiencia)
+    {
+        $Experiencia->update(['status' => 'finalizada']);
+        $Experiencia->push();
+    }
+
+
+
 
 
 }
