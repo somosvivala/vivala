@@ -122,7 +122,6 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada'
         ],
 
-
         /*
          * Quando o usuario fornece os dados para gerar boleto
          */
@@ -151,6 +150,13 @@ class EventServiceProvider extends ServiceProvider
             'App\Handlers\Events\Experiencias\EnviaEmailsExperienciaAconteceHoje',
             'App\Handlers\Events\Experiencias\AtualizaStatusInscricoes',
             'App\Handlers\Events\Experiencias\AtualizaStatusExperiencia',
+        ],
+
+        /**
+         * Pós-Experiencia, quando a experiencia aconteceu a pouco tempo, momento para pedir feedback
+         */
+        'App\Events\Experiencias\ExperienciaAconteceuRecentemente' => [
+            'App\Handlers\Events\Experiencias\EnviaEmailsPosExperiencia',
         ],
 
     ];

@@ -103,34 +103,8 @@ class Kernel extends ConsoleKernel
 
                     //Dia da Experiencia
                     if ($DataOcorrenciaExperiencia->aconteceHoje) {
-                        //Pegando as inscricoes confirmadas para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //Pegando as inscricoes pendentes para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->pendentes()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia
-                        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
-                            //$this-mailSenderRepository->envia email dia da experiencia p/ candidato
-                        }
-
-                        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
-                        //$this->mailSenderRepository-> envia email dia da experiencia p/ Owner ($inscricoesConfirmadasNessaData)
-
-                        //4-Disparar email para a vivalá notificando a ocorrencia da experiencia,
-                        //$this->mailSenderRepository-> envia email dia da experiencia p/ Vivalá ($inscricoesConfirmadasNessaData)
-
-                        //5-Atualizar lista de inscricoes (confirmadas -> concluidas) && (pendentes -> expiradas)
-                        $this->experienciasRepository->atualizaInscricoesConfirmadasParaConcluidas($inscricoesConfirmadasNessaData);
-                        $this->experienciasRepository->atualizaInscricoesPendentesParaExpiradas($inscricoesPendentesNessaData);
-
-                        //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida
-                        $this->experienciasRepository->finalizaExperienciaEventoUnico($Experiencia);
-
+                        //Disparando evento para tomar as acoes necessarias
+                        event ( new ExperienciaAconteceHoje($Experiencia, $DataOcorrenciaExperiencia) );
                     }
 
                     //Pós-experiencia
