@@ -27,7 +27,7 @@
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step4">
-            <a class="rodoviario logger-ativo" href="#rodoviario" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}">
+            <a class="rodoviario logger-ativo" href="#rodoviario" aria-controls="rodoviario"  data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}">
               {{ trans('global.wannatravel_trip_bus_drive') }}
             </a>
           </li>
