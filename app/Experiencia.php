@@ -447,20 +447,14 @@ class Experiencia extends Model
     }
 
     /**
-      * Definindo uma scope para as Experiencias realizadas (finalizadas? / nao vao mais acontecer)
+      * Definindo uma scope para as Experiencias ativas ou finalizadas
      */
-    public function scopeRealizadas($query)
+    public function scopeAtivasOuFinalizadas($query)
     {
-        return $query->where('status', 'realizada');
+        return $query->whereIn('status', ['publicada', 'finalizada']);
     }
 
-    /**
-      * Definindo uma scope para as Experiencias com data
-     */
-    public function scopeComDataMarcada($query)
-    {
-        return $query->has('ocorrencias');
-    }
+
 
 
     /*
@@ -473,17 +467,6 @@ class Experiencia extends Model
     public function getInscricaoUsuario(User $user)
     {
         return $this->inscricoes()->ativas()->where('perfil_id', $user->perfil->id)->first();
-    }
-
-    /**
-     * Metodo para pegar os inscritos em uma dataOcorrencia
-     */
-    public function getInscritosParaData(DataOcorrenciaExperiencia $DataOcorrenciaExp)
-    {
-        $dataFormatada = $DataOcorrenciaExp->data_ocorrencia->format('Y-m-d');
-        return $this->inscricoesAtivas
-            ->where('data_ocorrencia_experiencia', $dataFormatada)
-            ;
     }
 
 

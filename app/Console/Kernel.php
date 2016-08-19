@@ -81,13 +81,11 @@ class Kernel extends ConsoleKernel
          * Jobs referentes as experiencias
          */
 
-        //Job do fluxo de uma experiencia
         $schedule->call(function() {
-            $experiencias = Experiencia::publicadas()->get();
-
+            $experienciasAtivasOuFinalizadas= Experiencia::ativasOuFinalizadas()->get();
 
             //iterando sob as experiencias publicadas
-            foreach ($experiencias as $Experiencia) {
+            foreach ($experienciasAtivasOuFinalizadas as $Experiencia) {
 
                 //pegando as datas em que a experiencia vai ocorrer
                 $datasOcorrenciaExperiencia = $Experiencia->ocorrencias;
@@ -125,7 +123,7 @@ class Kernel extends ConsoleKernel
                         //$this->mailSenderRepository-> envia email experiencia eminente p/ Owner ($inscricoesConfirmadasNessaData)
                     }
 
-                    //Checar se a data atual é um dia de ocorrencia da experiencia (== dia de ocorrencia)
+                    //Dia da Experiencia
                     if ($DataOcorrenciaExperiencia->aconteceHoje) {
                         //Pegando as inscricoes confirmadas para esse dia
                         $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
@@ -151,17 +149,29 @@ class Kernel extends ConsoleKernel
 
                     }
 
-                    // * Quando as inscriçṍes são interrompidas pra determinada experiencia? Podiamos setar umas 12 horas antes e pendentes -> expiradas ?
+                    //Pós-experiencia
+                    if ($DataOcorrenciaExperiencia->aconteceuFazDoisDias) {
+                        //Pegando as inscricoes confirmadas para esse dia
+                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
+                            ->where('data_ocorrencia_experiencia', $dataFormatada)
+                            ->get();
 
+                        //2-Iterar sob os inscritos disparando o email de feedback sobre a experiencia
+                        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
+                            //$this-mailSenderRepository->envia email feedback no pós experiencia p/ candidato
+                        }
 
-                    //Checar se a data atual é pós experiencia (== 2 dias após acontecer)
-                    //Se estiver no pós-experiencia
-                    //1-Pegar inscritos concluidos desse dia
-                    //2-Iterar sob os inscritos disparando o email de feedback/agradecimentos aos candidatos
-                    //3-Disparar email de feedback para o owner
+                        //3-Disparar email de feedback para o owner
+                        //$this->mailSenderRepository-> envia email feedback no pós experiencia p/ Owner
+                    }
 
                 }
+
             }
+
+
+
+
         })->dailyAt('4:19');
 
         //Fazendo refresh dos places e buscompanies da Clickbus diariamente
