@@ -191,8 +191,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         //checando se existe algum boleto gerado (se existir entao a primeira tentativa falhou)
         if ($Inscricao->boleto && !$Inscricao->boleto->isValido) {
             //deletando o boleto que falhou para gerar um novo e nao ficar com a relacao (hasOne com fila)
-            BoletoExperiencia::destroy($Inscricao->boleto->id);
-            
+            $Inscricao->boleto()->delete();
         }
 
         $Boleto = BoletoExperiencia::create($dadosBoleto);
