@@ -168,6 +168,8 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
         } else{
 
+            //caso erro geracao boleto:
+            //dd($response);
             //Erro e o boleto nao foi criado.
             //portanto nao atualizar status do boleto
             return false;
@@ -189,7 +191,8 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
         //checando se existe algum boleto gerado (se existir entao a primeira tentativa falhou)
         if ($Inscricao->boleto && !$Inscricao->boleto->isValido) {
             //deletando o boleto que falhou para gerar um novo e nao ficar com a relacao (hasOne com fila)
-            $Inscricao->boleto->delete();
+            BoletoExperiencia::destroy($Inscricao->boleto->id);
+            
         }
 
         $Boleto = BoletoExperiencia::create($dadosBoleto);

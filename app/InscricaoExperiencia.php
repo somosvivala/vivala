@@ -1,9 +1,12 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class InscricaoExperiencia extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = [
         'status',
         'data_pagamento',
@@ -20,7 +23,8 @@ class InscricaoExperiencia extends Model
     protected $dates = [
         'data_pagamento',
         'data_ocorrencia_experiencia',
-        'data_cancelamento'
+        'data_cancelamento',
+        'deleted_at'
     ];
 
 

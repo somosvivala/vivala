@@ -1,9 +1,11 @@
 <?php namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BoletoExperiencia extends Model
 {
+    use SoftDeletes;
 
     //campos permitidos mass-assignment (create / update)
     protected $fillable = [
@@ -18,7 +20,8 @@ class BoletoExperiencia extends Model
     //campos que sao datas, assim recebemos uma instancia do Carbon
     protected $dates = [
         'data_emissao',
-        'data_vencimento'
+        'data_vencimento',
+        'deleted_at'
     ];
 
     /*
