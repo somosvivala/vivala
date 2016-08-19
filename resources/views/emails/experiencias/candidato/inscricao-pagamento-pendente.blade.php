@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Sua experiência está em andamento!</title>
+    <title>{{ trans('global.title_vivala') }} - Sua experiência está em andamento</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>

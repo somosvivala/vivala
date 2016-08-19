@@ -80,16 +80,20 @@ class EventServiceProvider extends ServiceProvider
 
         /*
         * Quando uma Experiência for Desativada pela Vivalá
-        * e some da listagem para todos os usuários (Não é uma exclusão)
+        * e some da listagem para todos os usuários (Não é exclusão)
         */
          'App\Events\Experiencias\ExperienciaDesativada' => [
+           //'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaDesativada',
+           //'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaDesativada'
         ],
 
         /*
         * Quando uma Experiência for Removida pela Vivalá
-        * A experiência é Deletada
+        * A experiência é Deletada (exclusão)
         */
          'App\Events\Experiencias\ExperienciaRemovida' => [
+           //'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaRemovida',
+           //'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaRemovida'
         ],
 
         /*

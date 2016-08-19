@@ -36,7 +36,7 @@
       // INSTITUIÇÃO/ONG/EMPRESA
       'emails.experiencias.instituicao.experiencia-publicada',//FINALIZADA
       'emails.experiencias.instituicao.inscricao-candidato-confirmada',
-      'emails.experiencias.instituicao.inscricao-candidato-cancelado',
+      'emails.experiencias.instituicao.inscricao-candidato-cancelada',
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
       // PLATAFORMA

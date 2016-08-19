@@ -236,8 +236,8 @@ class MailSenderRepository
     }
 
     /**
-    * Método enviaEmailExperienciaCandidatoInscricaoCancelada
-    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Candidato
+    * Método enviaEmailExperienciaInstituicaoInscricaoCancelada
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para Instituição
     */
     public function enviaEmailExperienciaInstituicaoInscricaoCancelada(InscricaoExperiencia $Inscricao)
     {

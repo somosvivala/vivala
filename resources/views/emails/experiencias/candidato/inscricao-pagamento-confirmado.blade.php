@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Confirmada</title>
+    <title>{{ trans('global.title_vivala') }} - A sua experiência foi confirmada com sucesso!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -128,7 +128,8 @@
                   <tr align="center">
                     <td>
                       <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:#25A494;">
-                        Sua inscrição foi confirmada na experiência <br>
+                        Sua inscrição foi confirmada na experiência
+                        <br>
                         oferecida pela <strong>{{ mb_strtoupper(trim($Inscricao->experiencia->owner_nome)) }}</strong>!
                       </p>
                     </td>

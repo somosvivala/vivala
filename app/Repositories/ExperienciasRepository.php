@@ -18,11 +18,10 @@ use App\Interfaces\BoletoCloudRepositoryInterface;
 use App\Events\Experiencias\ExperienciaPublicada;
 use App\Events\Experiencias\ExperienciaDesativada;
 use App\Events\Experiencias\ExperienciaRemovida;
-//use App\Events\Experiencias\ExperienciaEminente;
-//use App\Events\Experiencias\ExperienciaOcorrendo;
-
 use App\Events\Experiencias\InscricaoExperienciaConfirmada;
 use App\Events\Experiencias\InscricaoExperienciaCancelada;
+//use App\Events\Experiencias\ExperienciaEminente;
+//use App\Events\Experiencias\ExperienciaOcorrendo;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -431,7 +430,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         ]);
 
         // Chama o Evento de Inscrição Cancelada
-        //event(new InscricaoExperienciaCancelada($inscricao));
+        event(new InscricaoExperienciaCancelada($inscricao));
 
         return $fezUpdate;
     }

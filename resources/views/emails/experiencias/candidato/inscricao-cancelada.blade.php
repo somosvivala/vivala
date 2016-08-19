@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - Experiência Cancelada</title>
+    <title>{{ trans('global.title_vivala') }} - A sua inscrição na experiêcia foi cancelada</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -127,8 +127,9 @@
                   <!-- Sub-título da Primeira Estrutura -->
                   <tr align="center">
                     <td>
-                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#D90011;">
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#D90011; font-size:14px;">
                         Sua inscrição foi cancelada na experiência oferecida pela
+                        <br>
                         <strong>{{ mb_strtoupper(trim($Inscricao->experiencia->owner_nome)) }}</strong>!
                       </p>
                     </td>
@@ -159,16 +160,16 @@
                   <tr>
                     <td>
                       <p style="float:left; margin-right:20px;">
-                        <img src="{{ $Inscricao->experiencia->getFotoCapaUrlAttribute() }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                        <img src="{{ $Inscricao->experiencia->FotoCapaUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
                       </p>
                       <p>
-                        <img src="{{ asset('/img/email/vivala-email-data-icone.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="23px" width="23px" max-width="23px" min-height="25px" height="25px" max-height="25px"/>
+                        <img src="{{ asset('/img/icones/png/cinza-calendario-certo.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="224px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1.2em;">
-                          <strong>ACESSOR DA DATA (ENTRE AS DATAS DE OCORRENCIA) EM QUE CANDIDATO SE CANDIDATOU PRA EXPERIENCIA (???)</strong>
+                          <strong>{{ trim($Inscricao->dataExperiencia->format('d/m/Y')) }}</strong>
                         </span>
                       </p>
                       <p>
-                        <img src="{{ asset('/img/email/vivala-email-marcador-mapa-icone.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="11px" width="11px" max-width="11px" min-height="16px" height="16px" max-height="16px"/>
+                        <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                         <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
                           <strong>{{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}</strong>
                         </span>
@@ -179,13 +180,39 @@
                     </td>
                   </tr>
                   <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
-                </tbody>
-              </table>
-          </td>
-          <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
-            <div style="display:block; margin:0 auto; max-width:600px;">
-              <table style="width: 100%; padding-bottom:0; margin-top:20px;">
-                <tbody>
+                  <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+                  <tr>
+                    <td>
+                      <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
+                        Informações
+                      </h3>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
+                        <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                      </p>
+                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
+                        {{ ucfirst(strtolower(trim($Inscricao->experiencia->frequencia))) }}
+                      </p>
+                    </td>
+                  </tr>
+                  @if(!empty($Inscricao->experiencia->informacoes))
+                    @foreach($Inscricao->experiencia->informacoes as $Informacao)
+                      <tr>
+                        <td>
+                          <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
+                            <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                          </p>
+                          <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
+                            {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
+                          </p>
+                        </td>
+                      </tr>
+                    @endforeach
+                  @endif
+                  <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
                   <!-- Seção INFORMAÇÕES DA ONG -->
                   <tr align="center">
                     <td>
@@ -193,7 +220,7 @@
                         <div style="display:inline-block; min-width:100px; width:100px; max-width:100px; border-right:1px solid #BCBEC0; text-align:center; padding-right:10px;">
                           <a href="{{ url('/experiencias/'.$Inscricao->experiencia->id) }}" target="_blank" style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; text-decoration:none; color:#545454;">
                             <p style="margin-bottom: 0;">
-                              <img src="{{ $Inscricao->experiencia->getFotoOwnerUrlAttribute() }}" alt="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" title="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px" style="border-radius:50%;"/>
+                              <img src="{{ $Inscricao->experiencia->FotoOwnerUrlPublica }}" alt="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" title="{{ ucfirst($Inscricao->experiencia->owner_nome) }}" min-width="65px" width="65px" max-width="65px" min-height="65px" height="65px" max-height="65px" style="border-radius:50%;"/>
                             </p>
                             <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; margin-top:0; margin-bottom:0; font-size:14px; line-height:18px;">
                               {{ $Inscricao->experiencia->owner_nome = (strlen(trim($Inscricao->experiencia->owner_nome)) > 30) ? ucfirst(substr(trim($Inscricao->experiencia->owner_nome),0,30)) . '[...]' : ucfirst(trim($Inscricao->experiencia->owner_nome)) }}
@@ -213,7 +240,7 @@
                         </div>
                         <div style="display:inline-block; vertical-align:top; min-width:320px; width:320px; max-width:320px; margin-left:15px;">
                           <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; text-align:justify; margin-top:0;">
-                            {{ $Inscricao->experiencia->owner_descricao = (strlen(trim($Inscricao->experiencia->owner_descricao)) > 260) ? substr(trim($Inscricao->experiencia->owner_descricao),0,260): trim($Inscricao->experiencia->owner_descricao) }}
+                            {{ $Inscricao->experiencia->owner_descricao = (strlen(trim($Inscricao->experiencia->owner_descricao)) > 260) ? substr(trim($Inscricao->experiencia->owner_descricao),0,260) . ' [...]' : trim($Inscricao->experiencia->owner_descricao) }}
                           </p>
                         </div>
                       </div>
