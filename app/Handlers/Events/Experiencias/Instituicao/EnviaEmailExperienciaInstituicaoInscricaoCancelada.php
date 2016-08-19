@@ -27,13 +27,13 @@ class EnviaEmailExperienciaInstituicaoInscricaoCancelada
 	/**
 	 * Handle the event.
 	 *
-	 * @param  InscricaoExperienciaCancelada  $event
+	 * @param  InscricaoExperienciaCancelada $event
 	 * @return void
 	 */
 	public function handle(InscricaoExperienciaCancelada $event)
 	{
-		// Usa o método enviaEmailExperienciaInstituicaoInscricaoConfirmada do mailSenderRepository para enviar o email
-		$this->MailSenderRepository->enviaEmailExperienciaInstituicaoInscricaoConfirmada($event->Inscricao);
+		// Usa o método enviaEmailExperienciaInstituicaoInscricaoCancelada do mailSenderRepository para enviar o email
+		$this->MailSenderRepository->enviaEmailExperienciaInstituicaoInscricaoCancelada($event->Inscricao);
 	}
 
 }
