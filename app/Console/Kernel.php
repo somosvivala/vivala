@@ -87,86 +87,29 @@ class Kernel extends ConsoleKernel
 
             //iterando sob as experiencias ativas ou finalizadas
             foreach ($experienciasAtivasOuFinalizadas as $Experiencia) {
-
                 //pegando as datas em que a experiencia vai ocorrer
                 $datasOcorrenciaExperiencia = $Experiencia->ocorrencias;
 
                 //Para cada data de ocorrencia
                 foreach ($datasOcorrenciaExperiencia as $DataOcorrenciaExperiencia) {
 
-                    $dataFormatada = $DataOcorrenciaExperiencia->data_ocorrencia->format('Y-m-d');
-
                     //Pré-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
-
-                        //Pegando as inscricoes ativas para esse dia (inscricoes pendentes + confirmadas)
-                        $inscricoesAtivasNessaData = $Experiencia->inscricoes()->ativas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //Pegando as inscricoes confirmadas para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //Iterando sob os inscritos disparando o email conforme o status da inscricao
-                        foreach ($inscricoesAtivasNessaData as $Inscricao) {
-                            //Se a inscricao tiver sido confirmada
-                            if($Inscricao->isConfirmada) {
-                                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao confirmada
-                            }
-                            else if ($Inscricao->isPendente) {
-                                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao pendente
-                            }
-                        }
-
-                        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
-                        //$this->mailSenderRepository-> envia email experiencia eminente p/ Owner ($inscricoesConfirmadasNessaData)
+                        //Disparando evento para tomar as acoes necessarias
+                        event ( new ExperienciaEminente($Experiencia, $DataOcorrenciaExperiencia) );
                     }
 
                     //Dia da Experiencia
                     if ($DataOcorrenciaExperiencia->aconteceHoje) {
-                        //Pegando as inscricoes confirmadas para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //2-Iterar sob os inscritos disparando o email avisando sobre a ocorencia da experiencia
-                        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
-                            //$this-mailSenderRepository->envia email dia da experiencia p/ candidato
-                        }
-
-                        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
-                        //$this->mailSenderRepository-> envia email dia da experiencia p/ Owner ($inscricoesConfirmadasNessaData)
-
-                        //4-Disparar email para a vivalá notificando a ocorrencia da experiencia,
-                        //$this->mailSenderRepository-> envia email dia da experiencia p/ Vivalá ($inscricoesConfirmadasNessaData)
-
-                        //5-Atualizar lista de inscricoes (confirmadas -> concluidas) && (pendentes -> expiradas)
-                        $this->experienciasRepository->atualizaInscricoesConfirmadasParaConcluidas($inscricoesConfirmadasNessaData);
-                        $this->experienciasRepository->atualizaInscricoesPendentesParaExpiradas($inscricoesPendentesNessaData);
-
-                        //6-Atualizar status da experiencia caso tipo evento_unico status -> concluida
-                        $this->experienciasRepository->finalizaExperienciaEventoUnico($Experiencia);
-
+                        //Disparando evento para tomar as acoes necessarias
+                        event ( new ExperienciaAconteceHoje($Experiencia, $DataOcorrenciaExperiencia) );
                     }
 
                     //Pós-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceuFazDoisDias) {
-                        //Pegando as inscricoes confirmadas para esse dia
-                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
-                            ->where('data_ocorrencia_experiencia', $dataFormatada)
-                            ->get();
-
-                        //2-Iterar sob os inscritos disparando o email de feedback sobre a experiencia
-                        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
-                            //$this-mailSenderRepository->envia email feedback no pós experiencia p/ candidato
-                        }
-
-                        //3-Disparar email de feedback para o owner
-                        //$this->mailSenderRepository-> envia email feedback no pós experiencia p/ Owner
+                        //Disparando evento para tomar as acoes necessarias
+                        event ( new ExperienciaAconteceuRecentemente($Experiencia, $DataOcorrenciaExperiencia) );
                     }
-
                 }
 
             }

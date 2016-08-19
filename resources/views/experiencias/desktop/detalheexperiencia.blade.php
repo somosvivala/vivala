@@ -22,7 +22,7 @@
       <ul class="margin-t-2 margin-b-3 lista-border pesquisa-viajar">
         <div class="row row-eq-height">
           <li class="col-lg-3 tour-pilar-viajar-step3 active">
-            <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
+            <a class="experiencias" href="/experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
               {{ trans('global.wannatravel_trip_experiences') }}
             </a>
           </li>

@@ -163,7 +163,10 @@ $(".clndr-picker").click(function() {
 });
 
 
-
+$('ul.pesquisa-viajar li a').click(function (e) {
+  $('ul.pesquisa-viajar li.active').removeClass('active')
+  $(this).parent('li').addClass('active')
+})
 
 
 

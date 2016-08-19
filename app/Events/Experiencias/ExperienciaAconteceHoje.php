@@ -6,9 +6,8 @@ use Illuminate\Queue\SerializesModels;
 use App\Experiencia;
 use App\DataOcorrenciaExperiencia;
 
-class ExperienciaEminente extends Event
+class ExperienciaAconteceHoje extends Event
 {
-
     use SerializesModels;
 
     //Informacoes que o evento vai propagar
