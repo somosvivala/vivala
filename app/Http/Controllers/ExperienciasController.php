@@ -193,7 +193,11 @@ class ExperienciasController extends Controller
         }
 
         $data_inscricao = $request->data_inscricao;
-        $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id, $data_inscricao );
+
+        // Crio a Inscrição do Usuário
+        $Inscricao = $this->experienciasRepository->createInscricaoExperiencia($Experiencia->id, Auth::user()->perfil->id, $data_inscricao);
+
+        // Chama o Evento de Nova Inscrição
         event(new NovaInscricaoExperiencia($Inscricao));
 
         return ['success' => true];
@@ -213,7 +217,6 @@ class ExperienciasController extends Controller
         return view('experiencias._editafotoform', compact('experiencia', 'foto'));
 
     }
-
 
     /**
      * Rota para criar novas InformacaoExperiencia
@@ -252,7 +255,6 @@ class ExperienciasController extends Controller
         return view('conhecadeslogado');
     }
 
-
     /**
      * Rota para criar uma nova DataOcorrencia para uma experiencia
      *
@@ -274,7 +276,6 @@ class ExperienciasController extends Controller
         return ['result' => $this->experienciasRepository->deleteDataOcorrencia($request->all()) ];
     }
 
-
     /**
      * Rota para confirmar uma inscricao de experiencia
      */
@@ -290,7 +291,6 @@ class ExperienciasController extends Controller
     {
         return ['result' => $this->experienciasRepository->cancelaInscricaoExperiencia($request)];
     }
-
 
     /**
      * Rota para publicar uma experiencia (passa a aparecer na listagem)
@@ -318,7 +318,7 @@ class ExperienciasController extends Controller
         $Inscricao = $Experiencia->getInscricaoUsuario(Auth::user());
 
         //Disparando o evento para atualizar as novas informacoes do usuario
-        event ( new NovosDadosUsuario(Auth::user(), $request->all()) );
+        event (new NovosDadosUsuario(Auth::user(), $request->all()));
 
         //checando se ja existe um boleto e se ele é valido (foi gerado com sucesso)
         if (!$Inscricao->boleto()->get()->isEmpty() && $Inscricao->boleto->isValido) {

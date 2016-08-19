@@ -26,22 +26,22 @@
 
     $ViewsDeTeste = [
       // CANDIDATO
-      'emails.experiencias.candidato.inscricao-pagamento-pendente',
-      'emails.experiencias.candidato.inscricao-pagamento-analise',
+      'emails.experiencias.candidato.inscricao-pagamento-pendente',//FINALIZADA
+      'emails.experiencias.candidato.inscricao-pagamento-analise',// ?????
       'emails.experiencias.candidato.inscricao-pagamento-confirmado',
       'emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-hoje',
       'emails.experiencias.candidato.inscricao-cancelada',
       // INSTITUIÇÃO/ONG/EMPRESA
-      'emails.experiencias.instituicao.experiencia-publicada',
-      'emails.experiencias.instituicao.inscricao-candidato-confirmado',
+      'emails.experiencias.instituicao.experiencia-publicada',//FINALIZADA
+      'emails.experiencias.instituicao.inscricao-candidato-confirmada',
       'emails.experiencias.instituicao.inscricao-candidato-cancelado',
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
       // PLATAFORMA
-      'emails.experiencias.plataforma.experiencia-publicada',
-      'emails.experiencias.plataforma.inscricao-nova',
+      'emails.experiencias.plataforma.experiencia-publicada',//FINALIZADA
+      'emails.experiencias.plataforma.inscricao-nova',//FINALIZADA
       'emails.experiencias.plataforma.inscricao-cancelada'
     ];
     // Alterar pelo ARRAY aqui
