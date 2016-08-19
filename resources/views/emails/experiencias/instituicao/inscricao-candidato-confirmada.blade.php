@@ -59,7 +59,7 @@
   <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
     <!-- Corpo -->
     <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;">
-    <tbody>
+      <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
           <td bgcolor="#F06F37" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
@@ -334,7 +334,7 @@
           </td>
         </tr>
       </tbody>
-    </footer>
+    </table>
     <!-- Fim do Rodapé -->
   </body>
 </html>

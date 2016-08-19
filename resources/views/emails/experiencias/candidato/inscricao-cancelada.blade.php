@@ -316,7 +316,7 @@
           </td>
         </tr>
       </tbody>
-    </footer>
+    </table>
     <!-- Fim do Rodapé -->
   </body>
 </html>

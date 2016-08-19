@@ -56,9 +56,9 @@
     <link href='https://vivala.com.br/fonts/avenir/avenir.css' rel='stylesheet' type='text/css'>
     <link href='https://vivala.com.br/fonts/futura/futura.css' rel='stylesheet' type='text/css'>
   </head>
-    <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
-      <!-- Corpo -->
-      <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;">
+  <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
+    <!-- Corpo -->
+    <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;">
       <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
@@ -344,7 +344,7 @@
           </td>
         </tr>
       </tbody>
-    </footer>
+    </table>
     <!-- Fim do Rodapé -->
   </body>
 </html>
