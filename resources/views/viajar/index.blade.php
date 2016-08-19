@@ -40,11 +40,11 @@
           </div>
         </ul>
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="rodoviario">
+            <div role="tabpanel" class="tab-pane" id="rodoviario">
                 @include('clickbus.buscar')
                 <div class="lista-rodoviario"></div>
             </div>
-            <div role="tabpanel" class="tab-pane " id="restaurantes">
+            <div role="tabpanel" class="tab-pane active" id="restaurantes">
                 <div>
                     @include('chefsclub.buscarestaurantes')
                 </div>
