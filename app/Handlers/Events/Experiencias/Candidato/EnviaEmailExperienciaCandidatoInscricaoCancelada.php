@@ -18,7 +18,7 @@ class EnviaEmailExperienciaCandidatoInscricaoCancelada
 	*
 	* @return void
 	*/
-	public function __construct()
+	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
 		$this->MailSenderRepository = $repository;
@@ -33,7 +33,7 @@ class EnviaEmailExperienciaCandidatoInscricaoCancelada
 	public function handle(InscricaoExperienciaCancelada $event)
 	{
 		// Usa o método enviaEmailExperienciaCandidatoInscricaoCancelada do mailSenderRepository para enviar o email
-		$this->mailSenderRepository->enviaEmailExperienciaCandidatoInscricaoCancelada($event->Inscricao);
+		$this->MailSenderRepository->enviaEmailExperienciaCandidatoInscricaoCancelada($event->Inscricao);
 	}
 
 }

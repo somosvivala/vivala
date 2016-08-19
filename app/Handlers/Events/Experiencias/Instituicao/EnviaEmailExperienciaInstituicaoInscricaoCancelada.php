@@ -14,15 +14,15 @@ class EnviaEmailExperienciaInstituicaoInscricaoCancelada
 	private $MailSenderRepository;
 
 	/**
-	 * Create the event handler.
-	 *
-	 * @return void
-	 */
-		public function __construct(MailSenderRepository $repository)
-		{
-			// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
-			$this->MailSenderRepository = $repository;
-		}
+	* Create the event handler.
+	*
+	* @return void
+	*/
+	public function __construct(MailSenderRepository $repository)
+	{
+		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
+		$this->MailSenderRepository = $repository;
+	}
 
 	/**
 	 * Handle the event.
