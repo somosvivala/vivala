@@ -96,11 +96,37 @@ class Kernel extends ConsoleKernel
                 //Para cada data de ocorrencia
                 foreach ($datasOcorrenciaExperiencia as $DataOcorrenciaExperiencia) {
 
-                    //Checar se essa data atual é pré-experiencia (== 4 dias p/ acontecer)
-                    //Se estiver no pré-experiencia:
-                    //1-Pegar os inscritos para esse dia
-                    //2-Iterar sob inscritos disparando o email conforme o tipo da inscricao (pendente x confirmada)
-                    //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
+                    $dataFormatada = $DataOcorrenciaExperiencia->data_ocorrencia->format('Y-m-d');
+
+                    //Checar se essa data é pré-experiencia (== 4 dias p/ acontecer)
+                    if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
+
+                        //Pegando as inscricoes ativas para esse dia (inscricoes pendentes + confirmadas)
+                        $inscricoesAtivasNessaData = $Experiencia->inscricoes()->ativas()
+                            ->where('data_ocorrencia_experiencia', $dataFormatada)
+                            ->get();
+
+                        //Pegando as inscricoes confirmadas para esse dia
+                        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
+                            ->where('data_ocorrencia_experiencia', $dataFormatada)
+                            ->get();
+
+                        //Iterando sob os inscritos disparando o email conforme o status da inscricao
+                        foreach ($inscricoesAtivasNessaData as $Inscricao) {
+                            //Se a inscricao tiver sido confirmada
+                            if($Inscricao->isConfirmada) {
+                                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao confirmada
+                            }
+                            else if ($Inscricao->isPendente) {
+                                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao pendente
+                            }
+                        }
+
+                        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
+                        //$this->mailSenderRepository-> envia email experiencia eminente p/ Owner ($inscricoesConfirmadasNessaData)
+
+                    }
+
 
                     //Checar se a data atual é um dia de ocorrencia da experiencia (== dia de ocorrencia)
                     //Se for um dia de ocorrencia

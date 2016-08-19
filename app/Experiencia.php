@@ -418,6 +418,13 @@ class Experiencia extends Model
     }
 
 
+
+
+
+
+
+
+
     /**
      * ### SCOPES
      */
@@ -467,6 +474,19 @@ class Experiencia extends Model
     {
         return $this->inscricoes()->ativas()->where('perfil_id', $user->perfil->id)->first();
     }
+
+    /**
+     * Metodo para pegar os inscritos em uma dataOcorrencia
+     */
+    public function getInscritosParaData(DataOcorrenciaExperiencia $DataOcorrenciaExp)
+    {
+        $dataFormatada = $DataOcorrenciaExp->data_ocorrencia->format('Y-m-d');
+        return $this->inscricoesAtivas
+            ->where('data_ocorrencia_experiencia', $dataFormatada)
+            ;
+    }
+
+
 
 
 
