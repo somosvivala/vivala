@@ -96,19 +96,19 @@ class Kernel extends ConsoleKernel
                     //Pré-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
                         //Disparando evento para tomar as acoes necessarias
-                        event ( new ExperienciaEminente($Experiencia, $DataOcorrenciaExperiencia) );
+                        event (new ExperienciaEminente($Experiencia, $DataOcorrenciaExperiencia));
                     }
 
                     //Dia da Experiencia
                     if ($DataOcorrenciaExperiencia->aconteceHoje) {
                         //Disparando evento para tomar as acoes necessarias
-                        event ( new ExperienciaAconteceHoje($Experiencia, $DataOcorrenciaExperiencia) );
+                        event (new ExperienciaAconteceHoje($Experiencia, $DataOcorrenciaExperiencia));
                     }
 
                     //Pós-experiencia
                     if ($DataOcorrenciaExperiencia->aconteceuFazDoisDias) {
                         //Disparando evento para tomar as acoes necessarias
-                        event ( new ExperienciaAconteceuRecentemente($Experiencia, $DataOcorrenciaExperiencia) );
+                        event (new ExperienciaAconteceuRecentemente($Experiencia, $DataOcorrenciaExperiencia));
                     }
                 }
 

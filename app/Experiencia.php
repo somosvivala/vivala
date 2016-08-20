@@ -309,8 +309,6 @@ class Experiencia extends Model
         return url('/img/dummy-exp.jpg');
     }
 
-
-
     /**
      * Definindo um acessor para as inscricoesAtivas (pendentes + confirmadas)
      */
@@ -328,6 +326,16 @@ class Experiencia extends Model
     {
         return $this->inscricoes()
             ->whereIn('status', ['confirmada'])
+            ->get();
+    }
+
+    /**
+     * Definindo um acessor para as inscricoes pendentes
+     */
+    public function getInscricoesPendentesAttribute()
+    {
+        return $this->inscricoes()
+            ->whereIn('status', ['pendente'])
             ->get();
     }
 
@@ -351,9 +359,6 @@ class Experiencia extends Model
             ->comPagamentoConfirmado()
             ->get();
     }
-
-
-
 
     /**
      * Definindo um acessor para saber se a experiencia está eminente (tem uma proxima data daqui 3 dias)
@@ -465,9 +470,6 @@ class Experiencia extends Model
     {
         return $query->whereIn('status', ['publicada', 'finalizada']);
     }
-
-
-
 
     /*
      * ### METODOS

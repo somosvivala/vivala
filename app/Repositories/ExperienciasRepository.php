@@ -20,8 +20,6 @@ use App\Events\Experiencias\ExperienciaDesativada;
 use App\Events\Experiencias\ExperienciaRemovida;
 use App\Events\Experiencias\InscricaoExperienciaConfirmada;
 use App\Events\Experiencias\InscricaoExperienciaCancelada;
-//use App\Events\Experiencias\ExperienciaEminente;
-//use App\Events\Experiencias\ExperienciaOcorrendo;
 
 /**
  * Repositorio para centralizar a lógica interna referente as Experiencias
@@ -56,7 +54,6 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         return Experiencia::publicadas()->get();
     }
-
 
     /*
      * Metodo para pegar todas as categorias das experiencias
@@ -383,6 +380,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         }
 
         $inscricao = InscricaoExperiencia::create([
+            'status' => 'pendente',
             'experiencia_id' => $experienciaId,
             'perfil_id' => $perfilId,
             'data_ocorrencia_experiencia' => $dataInscricao
@@ -483,7 +481,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
 
         // Chama o Evento de Experiencia Desativada
         event(new ExperienciaDesativada($experiencia));
-        
+
         return $fezUpdate;
     }
 
