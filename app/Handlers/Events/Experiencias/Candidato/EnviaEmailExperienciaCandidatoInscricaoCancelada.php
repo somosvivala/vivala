@@ -18,7 +18,7 @@ class EnviaEmailExperienciaCandidatoInscricaoCancelada
 	*
 	* @return void
 	*/
-	public function __construct()
+	public function __construct(MailSenderRepository $repository)
 	{
 		// A instância criada aqui (this) recebe o repositório tipo MailSenderRepository
 		$this->MailSenderRepository = $repository;
