@@ -1,81 +1,81 @@
 @include('emails._header', [
-  'emailCabecalho' => 'Nova Inscrição na Experiência',
-  'emailTitulo' => 'A experiência da <strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong><br>tem uma nova inscrição'
+  'emailCabecalho' => 'A sua experiência foi removida com sucesso!',
+  'emailTitulo' => 'A sua experiência foi removida'
 ])
 
   <!-- Primeira SEÇÃO -->
   <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
     <div style="display:block; margin:0 auto; max-width:600px;">
-      <table style="width: 100%; padding-bottom:0; margin-top:0px; padding-bottom:0;">
+      <table style="width: 100%; padding-bottom:0; margin-top:20px; padding-bottom:0;">
         <tbody>
-          <!-- Seção DADOS DO USUÁRIO -->
-          <tr>
-            <td>
-              <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:0;">
-                Dados do usuário
-              </h3>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <p><img src="{{ asset('/img/icones/png/cinza-usuario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" max-height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Nome: </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ $Inscricao->perfil->nome_completo }}
-                </span>
-              </p>
-              <p><img src="{{ asset('/img/icones/png/cinza-envelope.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Email: </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ $Inscricao->perfil->user->email }}
-                </span>
-              </p>
-              <p><img src="{{ asset('/img/icones/png/cinza-hashtag.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">ID da Inscrição: </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
-                </span>
-              </p>
-              <p><img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Data da Inscrição: </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
-                </span>
-              </p>
-              <p><img src="{{ asset('/img/icones/png/cinza-asterisco.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Status da Inscrição: </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  <strong style="color:#F89916;">{{ mb_strtoupper(trim($Inscricao->status)) }}</strong>
-                </span>
-              </p>
-            </td>
-          </tr>
-          <!-- Fim da Seção DADOS DO USUÁRIO -->
-          <!-- Separador -->
+          <!-- Título da Primeira Estrutura -->
           <tr align="center">
             <td>
-              <div style="border-bottom: 1px solid #ECEBEB; width:300px; margin:25px 0;"></div>
+              <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#CB171E; margin-bottom:20px;">
+                Sua Experiência foi removida da Vivalá!
+              </h1>
             </td>
           </tr>
-          <!-- Fim do Separador -->
+          <!-- Fim do Título da Primeira Estrutura -->
+          <!-- Imagem da Primeira Estrutura -->
+          <tr align="center">
+            <td>
+              <img src="{{ asset('img/icones/png/vermelho-cancelado-vazio.png') }}" alt="" title="" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
+            </td>
+          </tr>
+          <!-- Fim da Imagem da Primeira Estrutura -->
+          <!-- Seção de INFOS BANCÁRIAS -->
+          <!-- Sub-título da Primeira Estrutura -->
+          <tr align="center">
+            <td>
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#CB171E;">
+                Sua experiência foi removida da Vivalá por algum motivo,<br>
+                para saber melhor o que ocorreu entre em contato conosco<br>
+                através do email <strong>{{ env('VIVALA_LINK_EMAIL') }}</strong><br>
+                ou pelo telefone <strong>{{ env('VIVALA_LINK_TELEFONE_CONTATO2') }}
+              </p>
+            </td>
+          </tr>
+          <!-- Fim do Sub-título da Primeira Estrutura -->
+        </tbody>
+      </table>
+    </div>
+  </td>
+  <!-- Fim da Primeira SEÇÃO -->
+  <!-- Separador -->
+  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+    <tr></tr>
+  </td>
+  <!-- Fim do Separador -->
+  <!-- Segunda SEÇÃO -->
+  <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
+    <div style="display:block; margin:0 auto; max-width:600px;">
+      <table style="width: 100%; padding-bottom:0; margin-top:0; padding-bottom:0;">
+        <tbody>
           <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
           <tr>
             <td style="padding-bottom:30px;">
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                Informações da Experiência
+                Informações da sua Experiência
               </h3>
               <p style="float:left; margin-top:0; margin-bottom:0;">
-                <img src="{{ $Inscricao->experiencia->FotoOwnerUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
-                <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Inscricao->experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
+                <img src="{{ $Experiencia->FotoOwnerUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
+                <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; position:relative; right:40px; bottom:190px; color:#FFFFFF; background-color:#F06F37; padding: 5px 15px;" title="ID da Experiência">ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}</span>
               </p>
               <p style="margin-top:10px; margin-bottom:10px;">
                 <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                  TIPO/FREQUÊNCIA
+                  TIPO
                 </span>
                 <br>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  @if($Inscricao->experiencia->isEventoUnico) Evento Único
-                  @elseif ($Inscricao->experiencia->isEventoRecorrente) Evento Recorrente
-                  @elseif ($Inscricao->experiencia->isEventoServico) Evento Serviço
+                  @if($Experiencia->isEventoUnico) Evento Único
+                  @elseif ($Experiencia->isEventoRecorrente) Evento Recorrente
+                  @elseif ($Experiencia->isEventoServico) Evento Serviço
                   @endif
                 </span>
               </p>
+              {{-- NECESSÁRIO (???)
               <p style="margin-top:10px; margin-bottom: 10px;">
                 <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
@@ -83,9 +83,10 @@
                 </span>
                 <br>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  R${{ $Inscricao->experiencia->preco }}
+                  R${{ $Experiencia->preco }}
                 </span>
               </p>
+              --}}
               <p style="margin-top:10px; margin-bottom: 10px;">
                 <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
@@ -93,7 +94,7 @@
                 </span>
                 <br>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}
+                  {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla)) }}
                 </span>
               </p>
               <p style="margin-top:10px; margin-bottom: 10px;">
@@ -103,7 +104,7 @@
                 </span>
                 <br>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ ucfirst($Inscricao->experiencia->endereco_completo) }}
+                  {{ ucfirst($Experiencia->endereco_completo) }}
                 </span>
               </p>
             </td>
@@ -113,22 +114,22 @@
           <tr>
             <td style="padding-bottom:30px;">
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                Descrição Completa
+                Descrição da sua Experiência
               </h3>
               <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
-                {{ trim($Inscricao->experiencia->descricao) }}
+                {{ trim($Experiencia->descricao) }}
               </p>
             </td>
           </tr>
           <!-- Fim da Seção DESCRIÇÃO DA EXPERIÊNCIA -->
           <!-- Seção DETALHES DA EXPERIÊNCIA -->
           <tr>
-            <td style="padding-bottom:30px;">
+            <td style="padding-bottom:0px;">
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                Detalhes
+                Detalhes da sua Experiência
               </h3>
               <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
-                {{ trim($Inscricao->experiencia->detalhes) }}
+                {{ trim($Experiencia->detalhes) }}
               </p>
             </td>
           </tr>
@@ -138,7 +139,7 @@
             <tr>
               <td>
                 <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                  Informações Extras
+                  Informações Extras da sua Experiência
                 </h3>
               </td>
             </tr>
@@ -154,21 +155,6 @@
               </td>
             </tr>
             @endforeach
-          @else
-            <tr>
-              <td>
-                <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:0px;">
-                  Informações Extras
-                </h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:30px;">
-                  Não há informações extras a serem exibidas.
-                </p>
-              </td>
-            </tr>
           @endif
           <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
           <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
@@ -181,10 +167,15 @@
             </td>
           </tr>
           <!-- Fim da Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
-        <tbody>
+        </tbody>
       </table>
     </div>
   </td>
-  <!-- Fim da Primeira SEÇÃO -->
+  <!-- Fim da Segunda SEÇÃO -->
+  <!-- Separador -->
+  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+    <tr></tr>
+  </td>
+  <!-- Fim do Separador -->
 
 @include('emails._footer')

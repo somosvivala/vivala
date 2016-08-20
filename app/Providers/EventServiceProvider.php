@@ -71,45 +71,45 @@ class EventServiceProvider extends ServiceProvider
 
         /*
          * Quando uma Experiência for Aprovada pela Vivalá
-         * e passar a ficar visível para todos os candidatos
+         * e passar a ficar visível para os usuários
          */
         'App\Events\Experiencias\ExperienciaPublicada' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',//OK
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada'
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',//FINALIZADA
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada'//FINALIZADA
         ],
 
         /*
          * Quando uma Experiência for Desativada pela Vivalá
-         * e some da listagem para todos os usuários (Não é exclusão)
+         * e some da listagem para os usuários (exclusão lógica)
          */
         'App\Events\Experiencias\ExperienciaDesativada' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaDesativada',//OK
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaDesativada',//FINALIZADA
         ],
 
         /*
          * Quando uma Experiência for Removida pela Vivalá
-         * A experiência é Deletada (exclusão)
+         * e a experiência é deletada (exclusão física)
          */
         'App\Events\Experiencias\ExperienciaRemovida' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaRemovida',
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaRemovida'
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaRemovida',//FINALIZADA
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaRemovida'//FINALIZADA
         ],
 
         /*
-         * Quando uma Inscrição de Experiência acontecer (nova inscricao)
+         * Quando uma Nova Inscrição de Experiência acontecer (nova inscricao)
          */
         'App\Events\Experiencias\NovaInscricaoExperiencia' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',//FINALIZADA
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'//FINALIZADA
         ],
 
         /*
          * Quando uma Inscrição de Experiencia for Confirmada
          */
         'App\Events\Experiencias\InscricaoExperienciaConfirmada' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoConfirmada',
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoConfirmada',//FINALIZADA
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',//FINALIZADA
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'//FINALIZADA
         ],
 
         /*

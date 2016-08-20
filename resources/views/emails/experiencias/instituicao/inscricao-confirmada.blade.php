@@ -1,12 +1,12 @@
 @include('emails._header', [
-  'emailCabecalho' => 'Nova Inscrição na Experiência',
-  'emailTitulo' => 'A experiência da <strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong><br>tem uma nova inscrição'
+  'emailCabecalho' => 'Uma inscrição foi confirmada com sucesso na sua experiência!',
+  'emailTitulo' => 'Sua experiência tem uma nova inscrição!'
 ])
 
   <!-- Primeira SEÇÃO -->
-  <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
+  <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
     <div style="display:block; margin:0 auto; max-width:600px;">
-      <table style="width: 100%; padding-bottom:0; margin-top:0px; padding-bottom:0;">
+      <table style="width: 100%; padding-bottom:0; margin-top:20px; padding-bottom:0;">
         <tbody>
           <!-- Seção DADOS DO USUÁRIO -->
           <tr>
@@ -40,7 +40,7 @@
               </p>
               <p><img src="{{ asset('/img/icones/png/cinza-asterisco.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Status da Inscrição: </span>
                 <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  <strong style="color:#F89916;">{{ mb_strtoupper(trim($Inscricao->status)) }}</strong>
+                  <strong>{{ mb_strtoupper(trim($Inscricao->status)) }}</strong>
                 </span>
               </p>
             </td>
@@ -53,11 +53,26 @@
             </td>
           </tr>
           <!-- Fim do Separador -->
+          <!-- Seção DADOS DO USUÁRIO -->
+          <tr>
+            <td>
+              <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:0;">
+                Comprovante de Pagamento
+              </h3>
+            </td>
+          </tr>
+          <!-- Separador -->
+          <tr align="center">
+            <td>
+              <div style="border-bottom: 1px solid #ECEBEB; width:300px; margin:25px 0;"></div>
+            </td>
+          </tr>
+          <!-- Fim do Separador -->
           <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
           <tr>
             <td style="padding-bottom:30px;">
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                Informações da Experiência
+                Informações da sua Experiência
               </h3>
               <p style="float:left; margin-top:0; margin-bottom:0;">
                 <img src="{{ $Inscricao->experiencia->FotoOwnerUrlPublica }}" min-width="220px" width="auto" max-width="600px" min-height="220px" height="220px" max-height="220px"/>
@@ -66,7 +81,7 @@
               <p style="margin-top:10px; margin-bottom:10px;">
                 <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                  TIPO/FREQUÊNCIA
+                  TIPO
                 </span>
                 <br>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
@@ -76,6 +91,7 @@
                   @endif
                 </span>
               </p>
+              {{-- NECESSÁRIO (???)
               <p style="margin-top:10px; margin-bottom: 10px;">
                 <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
@@ -86,6 +102,7 @@
                   R${{ $Inscricao->experiencia->preco }}
                 </span>
               </p>
+              --}}
               <p style="margin-top:10px; margin-bottom: 10px;">
                 <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
@@ -113,7 +130,7 @@
           <tr>
             <td style="padding-bottom:30px;">
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                Descrição Completa
+                Descrição da sua Experiência
               </h3>
               <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
                 {{ trim($Inscricao->experiencia->descricao) }}
@@ -125,7 +142,7 @@
           <tr>
             <td style="padding-bottom:30px;">
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                Detalhes
+                Detalhes da sua Experiência
               </h3>
               <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
                 {{ trim($Inscricao->experiencia->detalhes) }}
@@ -134,15 +151,15 @@
           </tr>
           <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
           <!-- Seção DETALHES EXTRAS DA EXPERIÊNCIA -->
-          @if(!empty($Experiencia->informacoes))
+          @if(!empty($Inscricao->experiencia->informacoes))
             <tr>
               <td>
                 <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:5px;">
-                  Informações Extras
+                  Informações Extras da sua Experiência
                 </h3>
               </td>
             </tr>
-            @foreach($Experiencia->informacoes as $Informacao)
+            @foreach($Inscricao->experiencia->informacoes as $Informacao)
             <tr>
               <td>
                 <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
@@ -154,21 +171,6 @@
               </td>
             </tr>
             @endforeach
-          @else
-            <tr>
-              <td>
-                <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:0px;">
-                  Informações Extras
-                </h3>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:30px;">
-                  Não há informações extras a serem exibidas.
-                </p>
-              </td>
-            </tr>
           @endif
           <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
           <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
@@ -181,7 +183,7 @@
             </td>
           </tr>
           <!-- Fim da Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
-        <tbody>
+        </tbody>
       </table>
     </div>
   </td>

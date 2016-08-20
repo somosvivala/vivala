@@ -28,23 +28,25 @@
       // CANDIDATO [0]
       'emails.experiencias.candidato.inscricao-pagamento-pendente',//FINALIZADA
       'emails.experiencias.candidato.inscricao-pagamento-analise',// ?????
-      'emails.experiencias.candidato.inscricao-pagamento-confirmado',
+      'emails.experiencias.candidato.inscricao-pagamento-confirmado',//FINALIZADA
       'emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-hoje',
-      'emails.experiencias.candidato.inscricao-cancelada',
+      'emails.experiencias.candidato.inscricao-cancelada',//NÃO
       // INSTITUIÇÃO/ONG/EMPRESA [7]
       'emails.experiencias.instituicao.experiencia-publicada',//FINALIZADA
-      'emails.experiencias.instituicao.inscricao-candidato-confirmada',
-      'emails.experiencias.instituicao.inscricao-candidato-cancelada',
+      'emails.experiencias.instituicao.experiencia-removida',//FINALIZADA
+      'emails.experiencias.instituicao.inscricao-confirmada',//FINALIZADA
+      'emails.experiencias.instituicao.inscricao-cancelada',//NÃO
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
-      // PLATAFORMA [12]
+      // PLATAFORMA [13]
       'emails.experiencias.plataforma.experiencia-publicada',//FINALIZADA
-      'emails.experiencias.plataforma.experiencia-desativa',
-      'emails.experiemcias.plataforma.experiencia-removida',
+      'emails.experiencias.plataforma.experiencia-desativada',//FINALIZADA
+      'emails.experiencias.plataforma.experiencia-removida',//FINALIZADA
       'emails.experiencias.plataforma.inscricao-nova',//FINALIZADA
-      'emails.experiencias.plataforma.inscricao-cancelada'
+      'emails.experiencias.plataforma.inscricao-confirmada',//FINALIZADA
+      'emails.experiencias.plataforma.inscricao-cancelada'//NÃO
     ];
     // Alterar pelo ARRAY aqui
     return view($ViewsDeTeste[$indice], compact('Usuario', 'Experiencia', 'Inscricao'));

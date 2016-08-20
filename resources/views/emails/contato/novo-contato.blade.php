@@ -1,10 +1,9 @@
-<?php
-  $emailCabecalho = 'Email de Contato';
-  $emailTitulo = '<strong>[Email automático]</strong><br>Formulário de Contato';
-?>
+@include('emails._header', [
+  'emailCabecalho' => 'Email de Contato',
+  'emailTitulo' => 'Formulário de Contato'
+])
 
-@include('emails._header', ['emailCabecalho' => $emailCabecalho, 'emailTitulo' => $emailTitulo])
-
+  <!-- Primeira SEÇÃO -->
   <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
     <div style="display:block; margin:0 auto; max-width:600px;">
       <table style="width: 100%; padding-bottom:0; margin-top:20px;">
@@ -57,5 +56,6 @@
       </table>
     </div>
   </td>
-  
+  <!-- Fim da Primeira SEÇÃO -->
+
 @include('emails._footer')
