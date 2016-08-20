@@ -421,12 +421,10 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     {
         $inscricao = InscricaoExperiencia::find($request->id_inscricao);
         $dataCancelamento = Carbon::now();
-        $dataExperienciaID = $inscricao->experiencia->proximaOcorrencia ? $inscricao->experiencia->proximaOcorrencia->id : null;
 
         $fezUpdate =  $inscricao->update([
             'status' => 'cancelada',
-            'data_cancelamento' => $dataCancelamento,
-            'data_ocorrencia_experiencia_id' => $dataExperienciaID
+            'data_cancelamento' => $dataCancelamento
         ]);
 
         // Chama o Evento de Inscrição Cancelada
