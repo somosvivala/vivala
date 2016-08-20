@@ -101,11 +101,15 @@ class MailSenderRepository
 
     /**
     * Método enviaEmailExperienciaPlataformaExperienciaPublicada
-    * @param $Experiencia - Instância da Experiência que será enviada para Plataforma
+    * @param $Experiencia - Instância da Experiência PUBLICADA que será enviada para PLATAFORMA
     */
     public function enviaEmailExperienciaPlataformaExperienciaPublicada(Experiencia $Experiencia)
     {
-      Mail::send('emails.experiencias.plataforma.experiencia-publicada', ['Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
+      $emailConfig = [
+        'titulo-navegador' => 'Experiência Publicada',
+        'titulo-corpo' => 'Uma experiência foi publicada na Vivalá'
+      ];
+      Mail::send('emails.experiencias.plataforma.experiencia-publicada', ['EmailConfig' => $emailConfig, 'Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi aprovada na plataforma');
@@ -118,7 +122,7 @@ class MailSenderRepository
 
     /**
     * Método enviaEmailExperienciaInstituicaoExperienciaPublicada
-    * @param $Experiencia - Instância da Experiência que será enviada para Instituição
+    * @param $Experiencia - Instância da Experiência PUBLICADA que será enviada para INSTITUIÇÃO
     */
     public function enviaEmailExperienciaInstituicaoExperienciaPublicada(Experiencia $Experiencia)
     {
@@ -132,6 +136,56 @@ class MailSenderRepository
         $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
       });
     }
+
+    /**
+    * Método enviaEmailExperienciaPlataformaExperienciaDesativada
+    * @param $Experiencia - Instância da Experiência DESATIVADA que será enviada para PLATAFORMA
+    */
+    public function enviaEmailExperienciaPlataformaExperienciaDesativada(Experiencia $Experiencia)
+    {
+      $emailConfig = [
+        'titulo-navegador' => 'Experiência Desativada',
+        'titulo-corpo' => 'Uma experiência foi desativada na Vivalá'
+      ];
+      Mail::send('emails.experiencias.plataforma.experiencia-desativada', ['EmailConfig' => $emailConfig, 'Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
+        //se estiver em production, manda email para a live
+        if(app()->environment('production'))
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi desativada na plataforma');
+        //se estiver em development, manda o email para a sandbox
+        else if(app()->environment('development'))
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Desativada - Plataforma');
+        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+      });
+    }
+
+    /**
+    * Método enviaEmailExperienciaPlataformaExperienciaRemovida
+    * @param $Experiencia - Instância da Experiência REMOVIDA que será enviada para PLATAFORMA
+    */
+    public function enviaEmailExperienciaPlataformaExperienciaRemovida(Experiencia $Experiencia)
+    {
+      $emailConfig = [
+        'titulo-navegador' => 'Experiência Removida',
+        'titulo-corpo' => 'Uma experiência foi removida da Vivalá'
+      ];
+      Mail::send('emails.experiencias.plataforma.experiencia-removida', ['EmailConfig' => $emailConfig, 'Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
+        //se estiver em production, manda email para a live
+        if(app()->environment('production'))
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi removida na plataforma');
+        //se estiver em development, manda o email para a sandbox
+        else if(app()->environment('development'))
+          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Removida - Plataforma');
+        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
+      });
+    }
+
+    /**
+    * Método enviaEmailExperienciaInstituicaoExperienciaRemovida
+    * @param $Experiencia - Instância da Experiência REMOVIDA que será enviada para INSTITUIÇÃO
+    */
+    public function enviaEmailExperienciaInstituicaoExperienciaRemovida(Experiencia $Experiencia)
+    {}
+
 
     /**
     * Método enviaEmailExperienciaPlataformaNovaInscricao

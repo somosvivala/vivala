@@ -13,7 +13,7 @@ class NovosDadosUsuario extends Event
     public $Experiencia;
     public $User;
 
-    //variaveis
+    //Variáveis
     public $novosDadosUsuario;
 
 

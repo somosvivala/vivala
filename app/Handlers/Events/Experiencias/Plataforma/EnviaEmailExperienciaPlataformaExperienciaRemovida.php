@@ -1,12 +1,16 @@
 <?php namespace App\Handlers\Events\Experiencias\Plataforma;
 
-use App\Events\Experiencias\NovaPropostaExperiencia;
+use App\Events\Experiencias\ExperienciaRemovida;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
-class EnviaEmailExperienciaNovaProposta
+use App\Experiencias;
+use App\Repositories\MailSenderRepository;
+
+class EnviaEmailExperienciaPlataformaExperienciaRemovida
 {
+
 	// Cria instância de mailSenderRepository para ser usada aqui
 	private $MailSenderRepository;
 
@@ -24,12 +28,13 @@ class EnviaEmailExperienciaNovaProposta
 	/**
 	 * Handle the event.
 	 *
-	 * @param  NovaPropostaExperiencia  $event
+	 * @param  ExperienciaRemovida  $event
 	 * @return void
 	 */
-	public function handle(NovaPropostaExperiencia $event)
+	public function handle(ExperienciaRemovida $event)
 	{
-		//
+		// Usa o método enviaEmailExperienciaPlataformaExperienciaRemovida do mailSenderRepository para enviar o email
+		$this->MailSenderRepository->enviaEmailExperienciaPlataformaExperienciaRemovida($event->Experiencia);
 	}
 
 }

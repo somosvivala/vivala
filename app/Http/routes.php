@@ -25,7 +25,7 @@
     //event(new App\Events\Experiencias\NovaInscricaoExperiencia($Inscricao));
 
     $ViewsDeTeste = [
-      // CANDIDATO
+      // CANDIDATO [0]
       'emails.experiencias.candidato.inscricao-pagamento-pendente',//FINALIZADA
       'emails.experiencias.candidato.inscricao-pagamento-analise',// ?????
       'emails.experiencias.candidato.inscricao-pagamento-confirmado',
@@ -33,14 +33,16 @@
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-hoje',
       'emails.experiencias.candidato.inscricao-cancelada',
-      // INSTITUIÇÃO/ONG/EMPRESA
+      // INSTITUIÇÃO/ONG/EMPRESA [7]
       'emails.experiencias.instituicao.experiencia-publicada',//FINALIZADA
       'emails.experiencias.instituicao.inscricao-candidato-confirmada',
       'emails.experiencias.instituicao.inscricao-candidato-cancelada',
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
-      // PLATAFORMA
+      // PLATAFORMA [12]
       'emails.experiencias.plataforma.experiencia-publicada',//FINALIZADA
+      'emails.experiencias.plataforma.experiencia-desativa',
+      'emails.experiemcias.plataforma.experiencia-removida',
       'emails.experiencias.plataforma.inscricao-nova',//FINALIZADA
       'emails.experiencias.plataforma.inscricao-cancelada'
     ];

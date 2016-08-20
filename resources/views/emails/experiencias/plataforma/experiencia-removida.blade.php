@@ -9,7 +9,7 @@
         <tr align="center">
           <td>
             <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#3EA790; margin-bottom:20px;">
-              Experiência publicada na plataforma!
+              Experiência removida da plataforma!
             </h1>
           </td>
         </tr>
@@ -17,15 +17,15 @@
         <!-- Imagem da Primeira Estrutura -->
         <tr align="center">
           <td>
-            <img src="{{ asset('img/icones/png/verde-sucesso-cheio.png') }}" alt="" title="" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
+            <img src="{{ asset('img/icones/png/vermelho-cancelado-cheio.png') }}" alt="" title="" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
           </td>
         </tr>
         <!-- Fim da Imagem da Primeira Estrutura -->
         <!-- Sub-título da Primeira Estrutura -->
         <tr align="center">
           <td>
-            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#3EA790;">
-              A Experiência da <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong> foi <strong>PUBLICADA</strong> da Vivalá com sucesso!
+            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#CB171E;">
+              A Experiência da <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong> foi <strong>REMOVIDA</strong> da Vivalá com sucesso!
             </p>
           </td>
         </tr>
