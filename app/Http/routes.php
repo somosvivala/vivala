@@ -61,24 +61,6 @@
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::resource('configuracao','ConfiguracaoController');
 
-//Testando geracao de boleto
-Route::get('boletobd', function() {
-
-   $dadosBoleto['data_vencimento'] = \Carbon\Carbon::now()->addDays(1)->format('Y-m-d');
-   $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->format('Y-m-d');
-   $dadosBoleto['valor'] = '1.00';
-   $dadosBoleto['instrucao'] = array(
-        'Atenção! O pagamento desse boleto confirmará sua inscrição.',
-        'Dúvidas ou informações fale com agente em contato@vivala.com.br',
-        'Tenha uma ótima experiencia!'
-    );
-
-    $perfil = Perfil::find(13);
-    $repo = new \App\Repositories\BoletoCloudRepository();
-    return $repo->createBoletoExperiencia($dadosBoleto, $perfil->user);
-});
-
-
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
     Route::get('gestao/experiencias/createexperiencia', 'GestaoController@getCreateexperiencia');
@@ -187,6 +169,7 @@ Route::get('experiencias/editafoto/{id}', 'ExperienciasController@getEditaFoto')
 Route::post('experiencias/gerarboleto', 'ExperienciasController@postGerarBoleto');
 Route::post('experiencias/confirmainscricao', 'ExperienciasController@postConfirmaInscricao');
 Route::post('experiencias/cancelainscricao', 'ExperienciasController@postCancelaInscricao');
+Route::post('experiencias/cancelainscricaoconfirmada', 'ExperienciasController@postDeletaInscricaoComPagamentoConfirmado');
 Route::post('experiencias/publicar', 'ExperienciasController@postPublicarExperiencia');
 Route::post('experiencias/desativar', 'ExperienciasController@postDesativarExperiencia');
 

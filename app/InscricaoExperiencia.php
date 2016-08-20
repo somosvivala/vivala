@@ -72,6 +72,24 @@ class InscricaoExperiencia extends Model
         return $this->data_ocorrencia_experiencia;
     }
 
+    /**
+     * Definindo um acessor para saber se a inscricao teve pagamento confirmado
+     */
+    public function getTemPagamentoConfirmadoAttribute()
+    {
+        return $this->data_pagamento ? true : false;
+    }
+
+    /**
+     * Definindo um acessor para para saber se a experiencia esta pendente
+     */
+    public function getIsPendenteAttribute()
+    {
+        return $this->status == 'pendente';
+    }
+
+
+
 
     /**
      * ### Scopes -- 'queries' que serao executadas para filtrar as inscricoes de maneira legivel
@@ -124,5 +142,14 @@ class InscricaoExperiencia extends Model
     {
         return $query->whereIn('status', ['pendente', 'confirmada']);
     }
+
+    /**
+     * Definindo uma scope para as inscricoes com pagamento confirmado
+     */
+    public function scopeComPagamentoConfirmado($query)
+    {
+        return $query->whereNotNull('data_pagamento');
+    }
+
 
 }

@@ -341,6 +341,18 @@ class Experiencia extends Model
             ->get();
     }
 
+    /**
+     * Definindo um acessor para as inscricoes canceladas
+     */
+    public function getInscricoesCanceladasComPagamentoConfirmadoAttribute()
+    {
+        return $this->inscricoes()
+            ->canceladas()
+            ->comPagamentoConfirmado()
+            ->get();
+    }
+
+
 
 
     /**

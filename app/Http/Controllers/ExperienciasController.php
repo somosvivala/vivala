@@ -25,6 +25,8 @@ use App\Http\Requests\PublicarExperienciaRequest;
 use App\Http\Requests\CancelaInscricaoExperienciaRequest;
 use App\Events\Experiencias\NovaInscricaoExperiencia;
 use App\Events\Experiencias\NovosDadosUsuario;
+use App\Http\Requests\DeleteInscricaoExperienciaRequest;
+use App\InscricaoExperiencia;
 
 class ExperienciasController extends Controller
 {
@@ -337,6 +339,24 @@ class ExperienciasController extends Controller
 
         //Se chegou aqui deu erro
         return ['error' => '??'];
+    }
+
+
+    /**
+     * Rota por POST para deletar uma inscricao de experiencia
+     */
+    public function postDeletaInscricaoComPagamentoConfirmado(DeleteInscricaoExperienciaRequest $request)
+    {
+        $Inscricao = InscricaoExperiencia::findOrFail($request->id);
+        $deletou = $this->experienciasRepository->deleteInscricaoExperiencia($Inscricao);
+
+        if ($deletou) {
+            // Chama o Evento de Inscrição Cancelada para disparar os emails para candidato e para o responsavel da experiencia
+            event(new InscricaoExperienciaCancelada($Inscricao));
+            return ['sucesso' => true];
+        }
+
+        return false;
     }
 
 

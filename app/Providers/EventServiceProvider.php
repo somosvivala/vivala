@@ -117,9 +117,7 @@ class EventServiceProvider extends ServiceProvider
          * Quando uma Inscricao de Experiência for Cancelada
          */
         'App\Events\Experiencias\InscricaoExperienciaCancelada' => [
-            //'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoCancelada',
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoInscricaoCancelada',
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada'
+            'App\Handlers\Events\Experiencias\EnviaEmailsInscricaoExperienciaCancelada',
         ],
 
         /*

@@ -2,7 +2,7 @@
 
     {!! Form::hidden('_token', csrf_token()) !!}
     <div class="row" id="lista-experiencias">
-        <h2>Inscrições canceladas</h2>
+        <h2>Inscrições canceladas <span class="small laranja">(com pagamento confirmado)</span></h2>
 
         @foreach ($Experiencias as $experiencia)
 
@@ -10,47 +10,29 @@
             {!! Html::decode(Form::label('',
                 '<br>ID da Experiencia: #' . $experiencia->id .
                 '<br>Promovida por: ' . $experiencia->owner->nome .
-                '<br>Proxima Data: ' . $experiencia->dataProximaOcorrencia .
-                '<br>Local: ' . $experiencia->local->nome .' - '. $experiencia->local->estado->sigla, ['class' => 'col-xs-12'])) !!}
+                '<br>Local: ' . $experiencia->local->nome .' - '. $experiencia->local->estado->sigla .
+                '<br>STATUS: ' . strtoupper($experiencia->status), ['class' => 'col-xs-12'])) !!}
 
             <ul class="list-group col-xs-12">
-                @forelse ($experiencia->inscricoesCanceladas as $inscricao)
+                @forelse ($experiencia->inscricoesCanceladasComPagamentoConfirmado as $inscricao)
                     <li class="list-group-item col-xs-12 inscricao-experiencia-item" data-id-inscricao="{{ $inscricao->id }}">
                         <div class="col-xs-9">
-                            <p> Identificador da inscricao: {{ $inscricao->id }} </p>
-                            <p> Nome do inscrito: {{ $inscricao->perfil->nome_completo }} </p>
-                            <p> Email: {{ $inscricao->perfil->user->email }} </p>
-                            <p class="
-                                @if ($inscricao->status == 'confirmada')
-                                    text-success
-                                @else
-                                    text-warning
-                                @endif"> {{ strtoupper($inscricao->status) }}
-                            </p>
+                            <p> <span class="texto-negrito">ID da inscrição:</span> {{ $inscricao->id }} </br>
+                                <span class="texto-negrito">Nome do inscrito:</span> {{ $inscricao->perfil->nome_completo }} </br>
+                                <span class="texto-negrito">Email:</span> {{ $inscricao->perfil->user->email }} </br>
+                                <span class="texto-negrito">Boleto:</span> {{ $inscricao->boleto ? 'SIM' : 'NÃO' }} </br>
+                                <span class="texto-negrito">Data de pagamento:</span> {{ $inscricao->data_pagamento->format('d-m-Y') }} </br>
+                                <span class="texto-negrito">Data de cancelamento:</span> {{ $inscricao->data_cancelamento->format('d-m-Y') }} </br>
 
                         </div>
                         <div class="col-xs-3">
-                            @if ($inscricao->status == 'pendente')
-                                <div class="col-xs-12 text-center">
-                                    <a href="#" class="botao-confirma" onclick="confirmaInscricaoExperiencia(event)" title="Confirmar Inscrição">
-                                        <i class="margin-t-0-5 fa fa-check fa-3x"></i><br>Confirmar
-                                    </a>
-                                </div>
-                            @else
-                                <div class="col-xs-6 text-center">
-                                    <a href="#" title="Inscrição ja confirmada">
-                                        <i class="margin-t-0-5 fa fa-check fa-3x text-success"></i>
-                                    </a>
-                                </div>
-
-                                <div class="col-xs-6 text-center">
-                                    <a href="#" onclick="confirmaCancelaInscricaoExperiencia(event)" title="Cancelar Inscrição">
-                                        <i class="margin-t-0-5 fa fa-ban fa-3x text-danger"></i>
-                                        Cancelar
-                                    </a>
-                                </div>
-
-                            @endif
+                            <div class="col-xs-6 text-center">
+                                <a href="#" onclick="confirmaCancelamentoInscricaoExperienciaComPagamentoConfirmado(event)" title="Confirmar cancelamento">
+                                    <i class="margin-t-0-5 fa fa-times fa-3x text-danger">
+                                        <span class="fonte-rem">Cancelar</span>
+                                    </i>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 @empty

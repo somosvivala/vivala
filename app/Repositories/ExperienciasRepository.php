@@ -587,6 +587,12 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $Experiencia->push();
     }
 
+    /**
+     * Metodo para deletar as inscricoes canceladas de uma experiencia
+     */
+    public function deleteInscricaoExperiencia(InscricaoExperiencia $Inscricao) {
+        return $Inscricao->delete();
+    }
 
 
 

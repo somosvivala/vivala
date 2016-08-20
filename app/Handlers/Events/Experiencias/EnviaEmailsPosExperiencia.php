@@ -4,6 +4,7 @@ use App\Events\Experiencias\ExperienciaAconteceuRecentemente;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use App\Repositories\MailSenderRepository;
 
 class EnviaEmailsPosExperiencia
 {

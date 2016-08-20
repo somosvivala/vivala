@@ -2,6 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 use App\InscricaoExperiencia;
+use App\Experiencia;
 
 class ExperienciasServiceProvider extends ServiceProvider {
 
