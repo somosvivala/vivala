@@ -23,13 +23,13 @@
                 </a>
             </li>
             <li class="col-sm-3 tour-pilar-viajar-step4">
-                <a class="rodoviario logger-ativo" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
-                 {{ trans('global.wannatravel_trip_bus_drive') }}
+                <a class="ativa-modal-quimera logger-ativo" data-tipo="abasviajar_tipo_quimera" data-desc="abasviajar_desc_quimera" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
+                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
                 </a>
             </li>
             <li class="col-sm-3 tour-pilar-viajar-step5">
-                <a class="ativa-modal-quimera logger-ativo" data-tipo="abasviajar_tipo_quimera" data-desc="abasviajar_desc_quimera" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#quimera" data-url="https://www.e-agencias.com.br/vivala">
-                   {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
+                <a class="rodoviario logger-ativo" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#rodoviario" aria-controls="rodoviario" role="tab" data-toggle="tab">
+                 {{ trans('global.wannatravel_trip_bus_drive') }}
                 </a>
             </li>
             <li class="col-sm-3 tour-pilar-viajar-step6 active">

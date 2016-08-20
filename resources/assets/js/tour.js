@@ -754,12 +754,12 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step4',
-                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br>Search here on your next trip and hit the road!</p>',
+                intro: '<p class="text-center">In <span class="laranja">Accommodation, Flights & Packages</span> you can find air tickets to over 140 countries and accommodation in more than 160 countries.<br>We have the best prices and market partners.<br><span class="laranja">Create packages with the possibility to add a rented car and earn up to 35% off!</span></p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">In <span class="laranja">Accommodation, Flights & Packages</span> you can find air tickets to over 140 countries and accommodation in more than 160 countries.<br>We have the best prices and market partners.<br><span class="laranja">Create packages with the possibility to add a rented car and earn up to 35% off!</span></p>',
+                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br>Search here on your next trip and hit the road!</p>',
                 position: 'bottom'
               },
               {
@@ -791,12 +791,12 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step4',
-                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br>Busque aqui em sua próxima viagem e pé na estrada!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Pacotes</span> você encontra passagens aéreas para mais de 140 países e hospedagem em mais de 160 países.<br>Temos os melhores preços e parceiros do mercado.<br><span class="laranja">Crie pacotes com a possibilidade de adicionar aluguel de carro, e ganhe até 35% de desconto!</span></p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Hospedagem, Vôos e Pacotes</span> você encontra passagens aéreas para mais de 140 países e hospedagem em mais de 160 países.<br>Temos os melhores preços e parceiros do mercado.<br><span class="laranja">Crie pacotes com a possibilidade de adicionar aluguel de carro, e ganhe até 35% de desconto!</span></p>',
+                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br>Busque aqui em sua próxima viagem e pé na estrada!</p>',
                 position: 'bottom'
               },
               {
