@@ -74,8 +74,8 @@ class EventServiceProvider extends ServiceProvider
          * e passar a ficar visível para os usuários
          */
         'App\Events\Experiencias\ExperienciaPublicada' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',//FINALIZADA
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada'//FINALIZADA
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaPublicada',
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaPublicada'
         ],
 
         /*
@@ -83,7 +83,7 @@ class EventServiceProvider extends ServiceProvider
          * e some da listagem para os usuários (exclusão lógica)
          */
         'App\Events\Experiencias\ExperienciaDesativada' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaDesativada',//FINALIZADA
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaDesativada',
         ],
 
         /*
@@ -91,25 +91,25 @@ class EventServiceProvider extends ServiceProvider
          * e a experiência é deletada (exclusão física)
          */
         'App\Events\Experiencias\ExperienciaRemovida' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaRemovida',//FINALIZADA
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaRemovida'//FINALIZADA
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaRemovida',
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaRemovida'
         ],
 
         /*
          * Quando uma Nova Inscrição de Experiência acontecer (nova inscricao)
          */
         'App\Events\Experiencias\NovaInscricaoExperiencia' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',//FINALIZADA
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'//FINALIZADA
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaNovaInscricao',
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoPendente'
         ],
 
         /*
          * Quando uma Inscrição de Experiencia for Confirmada
          */
         'App\Events\Experiencias\InscricaoExperienciaConfirmada' => [
-            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoConfirmada',//FINALIZADA
-            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',//FINALIZADA
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'//FINALIZADA
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoConfirmada',
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoPagamentoConfirmado',
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoConfirmada'
         ],
 
         /*
@@ -118,7 +118,7 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Experiencias\InscricaoExperienciaCancelada' => [
             'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaInscricaoCancelada',
             'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoInscricaoCancelada',
-            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada',
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoInscricaoCancelada'
         ],
 
         /*
@@ -147,7 +147,9 @@ class EventServiceProvider extends ServiceProvider
          * Quando uma experiencia acontecer hoje (disparar emails e atualizar inscricoes)
          */
         'App\Events\Experiencias\ExperienciaAconteceHoje' => [
-            'App\Handlers\Events\Experiencias\EnviaEmailsExperienciaAconteceHoje',
+            'App\Handlers\Events\Experiencias\Plataforma\EnviaEmailExperienciaPlataformaExperienciaAconteceHoje',
+            'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoExperienciaAconteceHoje',
+            'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaAconteceHoje',
             'App\Handlers\Events\Experiencias\AtualizaStatusInscricoes',
             'App\Handlers\Events\Experiencias\AtualizaStatusExperiencia',
         ],
@@ -158,7 +160,7 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Experiencias\ExperienciaAconteceuRecentemente' => [
           'App\Handlers\Events\Experiencias\Candidato\EnviaEmailExperienciaCandidatoExperienciaAconteceuRecentemente',
           'App\Handlers\Events\Experiencias\Instituicao\EnviaEmailExperienciaInstituicaoExperienciaAconteceuRecentemente'
-        ],
+        ]
 
     ];
 

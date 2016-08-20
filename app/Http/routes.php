@@ -32,12 +32,12 @@
       'emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-eminente',
       'emails.experiencias.candidato.inscricao-pagamento-confirmado-experiencia-hoje',
-      'emails.experiencias.candidato.inscricao-cancelada',//NÃO
+      'emails.experiencias.candidato.inscricao-cancelada',//FINALIZADA
       // INSTITUIÇÃO/ONG/EMPRESA [7]
       'emails.experiencias.instituicao.experiencia-publicada',//FINALIZADA
       'emails.experiencias.instituicao.experiencia-removida',//FINALIZADA
       'emails.experiencias.instituicao.inscricao-confirmada',//FINALIZADA
-      'emails.experiencias.instituicao.inscricao-cancelada',//NÃO
+      'emails.experiencias.instituicao.inscricao-cancelada',//FINALIZADA
       'emails.experiencias.instituicao.experiencia-eminente',
       'emails.experiencias.instituicao.experiencia-hoje',
       // PLATAFORMA [13]
@@ -46,7 +46,7 @@
       'emails.experiencias.plataforma.experiencia-removida',//FINALIZADA
       'emails.experiencias.plataforma.inscricao-nova',//FINALIZADA
       'emails.experiencias.plataforma.inscricao-confirmada',//FINALIZADA
-      'emails.experiencias.plataforma.inscricao-cancelada'//NÃO
+      'emails.experiencias.plataforma.inscricao-cancelada'//FINALIZADA
     ];
     // Alterar pelo ARRAY aqui
     return view($ViewsDeTeste[$indice], compact('Usuario', 'Experiencia', 'Inscricao'));

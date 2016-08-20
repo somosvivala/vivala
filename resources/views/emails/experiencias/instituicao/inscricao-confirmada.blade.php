@@ -38,11 +38,6 @@
                   {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
                 </span>
               </p>
-              <p><img src="{{ asset('/img/icones/png/cinza-asterisco.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Status da Inscrição: </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  <strong>{{ mb_strtoupper(trim($Inscricao->status)) }}</strong>
-                </span>
-              </p>
             </td>
           </tr>
           <!-- Fim da Seção DADOS DO USUÁRIO -->
@@ -53,7 +48,7 @@
             </td>
           </tr>
           <!-- Fim do Separador -->
-          <!-- Seção DADOS DO USUÁRIO -->
+          <!-- Seção COMPROVANTE DE PAGAMENTO -->
           <tr>
             <td>
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:0;">
@@ -61,6 +56,7 @@
               </h3>
             </td>
           </tr>
+          <!-- Fim da Seção COMPROVANTE DE PAGAMENTO -->
           <!-- Separador -->
           <tr align="center">
             <td>
@@ -91,18 +87,6 @@
                   @endif
                 </span>
               </p>
-              {{-- NECESSÁRIO (???)
-              <p style="margin-top:10px; margin-bottom: 10px;">
-                <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
-                <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                  PREÇO
-                </span>
-                <br>
-                <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  R${{ $Inscricao->experiencia->preco }}
-                </span>
-              </p>
-              --}}
               <p style="margin-top:10px; margin-bottom: 10px;">
                 <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
