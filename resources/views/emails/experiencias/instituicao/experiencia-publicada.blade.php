@@ -20,7 +20,7 @@
           <!-- Imagem da Primeira Estrutura -->
           <tr align="center">
             <td>
-              <img src="{{ asset('img/icones/png/verde-lista-vazio.png') }}" alt="{{ trans('global.lbl_info_') }}" title="{{ trans('global.lbl_info_') }}!" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
+              <img src="{{ asset('img/icones/png/verde-lista-vazio.png') }}" alt="" title="" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
             </td>
           </tr>
           <!-- Fim da Imagem da Primeira Estrutura -->

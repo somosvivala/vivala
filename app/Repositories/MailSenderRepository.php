@@ -309,7 +309,7 @@ class MailSenderRepository
     */
     public function enviaEmailExperienciaInstituicaoInscricaoCancelada(InscricaoExperiencia $Inscricao)
     {
-      Mail::send('emails.experiencias.instituicao.inscricao-candidato-cancelada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
+      Mail::send('emails.experiencias.instituicao.inscricao-cancelada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to($Inscricao->experiencia->owner->email_contato, $Inscricao->experiencia->owner->nome)->subject('Vivalá Experiências - Uma inscrição na sua experiência foi cancelada');

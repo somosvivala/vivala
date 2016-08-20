@@ -31,8 +31,8 @@
               <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#CB171E;">
                 Sua experiência foi removida da Vivalá por algum motivo,<br>
                 para saber melhor o que ocorreu entre em contato conosco<br>
-                através do email <strong>{{ env('VIVALA_LINK_EMAIL') }}</strong><br>
-                ou pelo telefone <strong>{{ env('VIVALA_LINK_TELEFONE_CONTATO2') }}
+                através do email <strong><a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none;">{{ env('VIVALA_LINK_EMAIL') }}</a></strong><br>
+                ou pelo telefone <strong><a href="tel:{{ env('VIVALA_LINK_TELEFONE_CONTATO2') }}" target="_top" style="text-decoration:none;">{{ env('VIVALA_LINK_TELEFONE_CONTATO2') }}</a>
               </p>
             </td>
           </tr>
@@ -75,18 +75,6 @@
                   @endif
                 </span>
               </p>
-              {{-- NECESSÁRIO (???)
-              <p style="margin-top:10px; margin-bottom: 10px;">
-                <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
-                <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                  PREÇO
-                </span>
-                <br>
-                <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  R${{ $Experiencia->preco }}
-                </span>
-              </p>
-              --}}
               <p style="margin-top:10px; margin-bottom: 10px;">
                 <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
