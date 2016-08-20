@@ -32,8 +32,16 @@ $(function() {
             success: function (data) {
                 // Executa uma função de javascript
                 if(callbackFunction) {
-                   swal('Muito obrigado', "Entraremos em contato assim que possivel. ", 'success');
-                   document.getElementById("form-contato").reset()
+                   swal({
+                     title: lingua[3],
+                     imageUrl: 'https://vivala.com.br/img/icones/svg/vivala-icon-mensagem-enviada.svg',
+                     imageWidth: 58,
+                     imageHeight: 53,
+                     html: "<p>"+lingua[5]+"</p>",
+                     showCancelButton: false,
+                     confirmButtonColor: corLaranjaPrimario
+                   });
+                   document.getElementById("form-contato").reset();
                 }
                 // Redireciona para outra pagina
                 if(redirect) {

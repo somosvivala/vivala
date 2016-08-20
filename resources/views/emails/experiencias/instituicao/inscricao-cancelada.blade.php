@@ -13,9 +13,7 @@
           <tr align="center">
             <td>
               <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#D90011; margin-bottom:20px;">
-                A sua experiência tem uma
-                <br>
-                inscrição cancelada
+                A sua experiência tem uma inscrição cancelada
               </h1>
             </td>
           </tr>
@@ -190,5 +188,5 @@
     </div>
   </td>
   <!-- Fim da Segunda SEÇÃO -->
-  
+
 @include('emails._footer')

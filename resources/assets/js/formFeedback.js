@@ -39,7 +39,7 @@ $(function() {
                      imageHeight: 53,
                      html: "<p>"+lingua[4]+"</p><p>"+lingua[5]+"</p>",
                      showCancelButton: false,
-                     confirmButtonColor: corLaranjaPrimario,
+                     confirmButtonColor: corLaranjaPrimario
                    });
                    document.getElementById("form-feedback").reset();
                    $('#modal-feedback').modal('hide');
