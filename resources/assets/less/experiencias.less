@@ -17,9 +17,17 @@ ul.lista-exp-desktop {
             width:100%;
             position:absolute;
             top:100%;
-            transition:top 0.3s ease;
             left:0;
-            background-color:rgba(0,0,0,0.7);
+            transition:top 0.3s ease;
+            .ajuste-fonte-avenir-light;
+            background: rgba(255,168,61,.7);
+            background: -moz-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,168,61,.8)), color-stop(25%, rgba(241,104,30,0.78)), color-stop(100%, rgba(241,104,30,0.65)));
+            background: -webkit-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
+            background: -o-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
+            background: -ms-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
+            background: linear-gradient(to right, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa83d', endColorstr='#f1681e', GradientType=1 );
             color:white;
             line-height:120%;
             font-size:1.2em;
@@ -51,95 +59,110 @@ ul.lista-exp-desktop {
             }
         }
     }
+    .descricao-listagem-titulo-preco{
+      .ajuste-fonte-avenir-black;
+      font-size: 1.4rem;
+      color: @cor-cinza-escuro;
+    }
+    .descricao-listagem-titulo-pago{
+      .ajuste-fonte-avenir-black;
+      font-size: 1.4rem;
+      color: @verde-sucesso;
+    }
+    .descricao-listagem-lugar{
+      .ajuste-fonte-avenir-medium;
+      font-size: 1.2rem;
+      color: @cor-cinza-claro;
+    }
 }
 #experiencia {
-    font-size:1.8em;
-    .foto-img-desktop {
-        width:100%;
-        height:30rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size:cover;
-        .categorias-experiencia {
-            width: 3em;
-            height: 100%;
-            .icone {
-                color:white;
-                font-size:1.2rem;
-                width:3rem;
-                height:3rem;
-                padding-top:0.4em;
-                display: inline-block;
-                text-align:center;
-                border-radius:2em;
-                background-color:transparent;
-                border:1px solid white;
-                margin:0.4em 0 0 0.4em;
-                float:left;
-            }
-        }
-
-    }
-    .foto-img-interna-desktop {
+  font-size:1.8em;
+  .foto-img-desktop {
       width:100%;
       height:30rem;
       background-position: center;
       background-repeat: no-repeat;
       background-size:cover;
       .categorias-experiencia {
-        width: 4rem;
-        height: 100%;
-        float: right;
-        background-color: rgba(0,0,0,0.1);
-        .icone {
-          color:white;
-          font-size:1.2rem;
-          width:3rem;
-          height:3rem;
-          padding-top:0.4em;
-          display: inline-block;
-          text-align:center;
-          border-radius:2em;
-          background-color:transparent;
-          border:1px solid white;
-          margin:0.4em 0 .5em 0.4em;
-          float:left;
-        }
+          width: 3em;
+          height: 100%;
+          .icone {
+              color:white;
+              font-size:1.2rem;
+              width:3rem;
+              height:3rem;
+              padding-top:0.4em;
+              display: inline-block;
+              text-align:center;
+              border-radius:2em;
+              background-color:transparent;
+              border:1px solid white;
+              margin:0.4em 0 0 0.4em;
+              float:left;
+          }
+      }
+
+  }
+  .foto-img-interna-desktop {
+    width:100%;
+    height:30rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    .categorias-experiencia {
+      width: 4rem;
+      height: 100%;
+      float: left;
+      background-color: rgba(0,0,0,0.1);
+      .icone {
+        color:white;
+        font-size:1.2rem;
+        width:3rem;
+        height:3rem;
+        padding-top:0.4em;
+        display: inline-block;
+        text-align:center;
+        border-radius:2em;
+        background-color:transparent;
+        border:1px solid white;
+        margin:0.4em 0 .5em 0.4em;
+        float:left;
       }
     }
-    .local-big {
-        font-size:1.5em;
-    }
-    .owner-adesivo {
-        display: inline-block;
-        width:10em;
-        background-color:#EDF0F0;
-        border-radius:1em;
-        text-align:center;
-        overflow: hidden;
-        img {
-            max-width:100%;
-        }
-    }
-    .icone-informacoes {
-        margin-left:15px;
-        margin-right:5px;
-        float:left;
-    }
-    .descricao-informacoes {
-        text-transform: uppercase;
-    }
-    .clndr-picker {
-        width:12em;
-        display: inline-block;
-        float:left;
-        border: 1px solid @cor-primaria;
-        cursor:pointer;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        color: @cor-primaria;
-        text-align:center;
-    }
+  }
+  .local-big {
+      font-size:1.5em;
+  }
+  .owner-adesivo {
+      display: inline-block;
+      width:10em;
+      background-color:#EDF0F0;
+      border-radius:1em;
+      text-align:center;
+      overflow: hidden;
+      img {
+          max-width:100%;
+      }
+  }
+  .icone-informacoes {
+      margin-left:15px;
+      margin-right:5px;
+      float:left;
+  }
+  .descricao-informacoes {
+      text-transform: uppercase;
+  }
+  .clndr-picker {
+      width:12em;
+      display: inline-block;
+      float:left;
+      border: 1px solid @cor-primaria;
+      cursor:pointer;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      color: @cor-primaria;
+      text-align:center;
+  }
 }
 .checkout-exp {
     .btn-gerar-boleto {
@@ -170,7 +193,6 @@ ul.lista-exp-desktop {
         padding:1em 0.2em;
     }
 }
-
 .fonte-rem {
     font-size:@font-size-rem;
 }
