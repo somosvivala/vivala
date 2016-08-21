@@ -141,7 +141,7 @@ class ExperienciasController extends Controller
     public function update(UpdateExperienciaRequest $request, $experienciaId)
     {
         $this->experienciasRepository->update($request->all(), $experienciaId);
-        return redirect('/experiencias/'.$experienciaId);
+        return redirect('gestao/experiencias/');
     }
 
 

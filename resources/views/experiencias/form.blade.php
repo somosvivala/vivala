@@ -82,6 +82,83 @@
     </div>
     {{-- Fim da Seção de DESCRIÇÃO DA INSTITUIÇÃO/EMPRESA responsável (enviada no email) pela experiência --}}
 
+    {{-- Seção EMAIL do PROJETO RESPONSÁVEL pela experiência --}}
+    <div class="col-lg-6 margin-t-1 margin-b-1">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('email_responsavel', 'Email do responsável ') !!}
+          <span class="campo-obrigatorio">* Obrigatório</span>
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Email do Projeto (Instituição/ONG/Empresa) para onde serao disparados os emails das experiencias"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <div class="col-lg-12">
+          {!! Form::text('email_responsavel', null, ['placeholder' => 'Ex: exemplo@ongresponsavel.com.br', 'class' => 'form-control', 'required' => 'required']) !!}
+        </div>
+      </div>
+    </div>
+    {{-- Fim da EMAIL do PROJETO RESPONSÁVEL pela experiência --}}
+
+    {{-- Seção URL FACEBOOK do PROJETO RESPONSÁVEL pela experiência --}}
+    <div class="col-lg-6 margin-t-1 margin-b-1">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('url_facebook_responsavel', 'Facebook do projeto responsável ') !!}
+          <span class="campo-obrigatorio">* Obrigatório</span>
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Facebook do Projeto (Instituição/ONG/Empresa) "><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <div class="col-lg-12">
+          {!! Form::text('url_facebook_responsavel', null, ['placeholder' => 'Ex: https://www.facebook.com/SomosVivala/', 'class' => 'form-control', 'required' => 'required']) !!}
+        </div>
+      </div>
+    </div>
+    {{-- Fim da URL FACEBOOK do PROJETO RESPONSÁVEL pela experiência --}}
+
+    {{-- Seção URL INSTAGRAM do PROJETO RESPONSÁVEL pela experiência --}}
+    <div class="col-lg-6 margin-t-1 margin-b-1">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('url_instagram_responsavel', 'Instagram do projeto responsável ') !!}
+          <span class="campo-obrigatorio">* Obrigatório</span>
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Instagram do Projeto (Instituição/ONG/Empresa) "><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <div class="col-lg-12">
+          {!! Form::text('url_instagram_responsavel', null, ['placeholder' => 'Ex: https://www.instagram.com/somosvivala/', 'class' => 'form-control', 'required' => 'required']) !!}
+        </div>
+      </div>
+    </div>
+    {{-- Fim da URL INSTAGRAM do PROJETO RESPONSÁVEL pela experiência --}}
+
+    {{-- Seção URL SITE PROPRIO do PROJETO RESPONSÁVEL pela experiência --}}
+    <div class="col-lg-6 margin-t-1 margin-b-1">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('url_externa_responsavel', 'Link para site do projeto responsável ') !!}
+          <span class="campo-obrigatorio">* Obrigatório</span>
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Link para site do Projeto (Instituição/ONG/Empresa) "><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+        <div class="col-lg-12">
+          {!! Form::text('url_externa_responsavel', null, ['placeholder' => 'Ex: https://www.vivala.com.br', 'class' => 'form-control', 'required' => 'required']) !!}
+        </div>
+      </div>
+    </div>
+    {{-- Fim da URL SITE PROPRIO do PROJETO RESPONSÁVEL pela experiência --}}
+
+
     {{-- Seção TROCAR FOTO da experiência --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
         {{-- Aqui insiro o input hidden que guardará o id da foto associada á experiencia --}}
