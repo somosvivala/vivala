@@ -281,13 +281,13 @@
                             </p>
                           </a>
                           <p style="margin-top:10px; margin-bottom: 0;">
-                            <span><a href="https://facebook.com/{{ $Experiencia->owner->url_facebook }}" target="_blank" style="color:transparent!important;">
+                            <span><a href="https://facebook.com/{{ $Experiencia->url_facebook_responsavel }}" target="_blank" style="color:transparent!important;">
                               <img src="{{ asset('img/icones/png/cinza-mini-fb-circulo.png') }}" alt="{{ trans('global.social_network_facebook') }}" title="{{ trans('global.social_network_facebook') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                             </a></span>
-                            <span><a href="https://instagram.com/{{ $Experiencia->owner->url_instagram }}" target="_blank" style="color:transparent!important;">
+                            <span><a href="https://instagram.com/{{ $Experiencia->url_instagram_responsavel }}" target="_blank" style="color:transparent!important;">
                               <img src="{{ asset('img/icones/png/cinza-mini-ig-circulo.png') }}" alt="{{ trans('global.social_network_instagram') }}" title="{{ trans('global.social_network_instagram') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                             </a></span>
-                            <span><a href="http://{{ $Experiencia->owner->url_site = preg_replace('#^www\.(.+\.)#i', '$1', $Experiencia->owner->url_site) }}" target="_blank" min-width="17px" style="color:transparent!important;">
+                            <span><a href="http://{{ $Experiencia->url_externa_responsavel = preg_replace('#^www\.(.+\.)#i', '$1', $Experiencia->url_externa_responsavel) }}" target="_blank" min-width="17px" style="color:transparent!important;">
                               <img src="{{ asset('img/icones/png/cinza-mini-link-circulo.png') }}" alt="{{ trans('global.lbl_website') }}" title="{{ trans('global.lbl_website') }}" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                             </a></span>
                           </p>

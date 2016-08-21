@@ -24,7 +24,11 @@ class Experiencia extends Model
         'tipo',
         'tipo_servico_dias',
         'frequencia',
-        'status'
+        'status',
+        'email_responsavel',
+        'url_facebook_responsavel',
+        'url_instagram_responsavel',
+        'url_externa_responsavel'
     ];
 
 
@@ -135,7 +139,7 @@ class Experiencia extends Model
                 case 'Segunda' :
                     $arrayDatas[] = \Carbon\Carbon::parse('this monday');
                     break;
-                case 'Terca' :
+                case 'Terça' :
                     $arrayDatas[] = \Carbon\Carbon::parse('this tuesday');
                     break;
                 case 'Quarta' :
