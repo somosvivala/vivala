@@ -60,6 +60,9 @@
                 <span class="col-lg-12 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}: {{ env('VIVALA_BANK') }}</span>
               </div>
             </div>
+
+{{-- Secao de geracao de boleto para experiencia, só aparece se existe tempo habil para validar o pagamento --}}
+@if ($Inscricao->temTempoValidoParaCriarBoleto)
             <div class="col-lg-12 separador">
                 <span>ou</span>
             </div>
@@ -70,6 +73,8 @@
                   <span>Gerar<br>Boleto</span>
                 </button>
             </span>
+@endif
+
         </div>
         <div class="row text-center margin-t-1 margin-b-2">
             <a class="btn btn-acao" href="{{ url('experiencias') }}">Ver mais experiências</a>

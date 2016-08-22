@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class InscricaoExperiencia extends Model
 {
@@ -88,7 +89,15 @@ class InscricaoExperiencia extends Model
         return $this->status == 'pendente';
     }
 
-
+    /**
+     * Definindo um acessor para saber se ainda existe tempo valido para criar um boleto
+     */
+    public function getTemTempoValidoParaCriarBoletoAttribute()
+    {
+        $temTempo = $this->dataExperiencia->isFuture();
+        $temTempo = $temTempo && (Carbon::now()->addDays(2)->diffInHours($this->dataExperiencia) > 48);
+        return $temTempo;
+    }
 
 
     /**

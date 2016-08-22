@@ -19,18 +19,6 @@ $(function () {
                     window.open(data.linkboleto, '_blank');
                     frm.parents('.modal').modal('hide');
 
-                    swal({
-                        type: "success",
-                        html: '<h4>Boleto gerado com sucesso</h4> <br><p>Se o download nao começar automaticamente, acesse o <a href="'+data.linkboleto+'" target="_blank" class="laranja laranja-hover texto-negrito"> link para 2º via </a></p><br><br>',
-                        showCancelButton: false,
-                        confirmButtonText: "VER MAIS EXPERIÊNCIAS",
-                        confirmButtonClass: "texto-negrito",
-                        confirmButtonColor: "#27a493"
-                    },
-                    function() {
-                        window.location.href = "/experiencias";
-                    }
-                        );
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -42,6 +30,21 @@ $(function () {
     checaDisabledFormBoletoExperiencia();
 
 });
+
+var mostraSweetAlertSucessoGeracaoBoletoExperiencias = function() {
+    swal({
+        type: "success",
+        html: '<h4>Boleto gerado com sucesso</h4> <br><p>Se o download nao começar automaticamente, acesse o <a href="'+data.linkboleto+'" target="_blank" class="laranja laranja-hover texto-negrito"> link para 2º via </a></p><br><br>',
+        showCancelButton: false,
+        confirmButtonText: "VER MAIS EXPERIÊNCIAS",
+        confirmButtonClass: "texto-negrito",
+        confirmButtonColor: "#27a493"
+    },
+    function() {
+        window.location.href = "/experiencias";
+    });
+}
+
 
 /**
  * Funcao para remover o disabled do form se o user ja tiver fornecido esses dados em outra vez

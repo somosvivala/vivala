@@ -329,7 +329,17 @@ class ExperienciasController extends Controller
 
         //Se nao tiver um boleto entao gerar
         else {
-            $boleto = $this->experienciasRepository->gerarBoleto($Experiencia, Auth::user());
+            if ($Inscricao->temTempoValidoParaCriarBoleto) {
+                $boleto = $this->experienciasRepository->gerarBoleto($Experiencia, Auth::user());
+            } else {
+
+                //Se chegou aqui entao estamos tentando criar um boleto que nao vamos ter tempo suficiente
+                //para confirmar a compensação do pagamento.
+                return ['erro' => true, 'status' => 'pouco-tempo-boleto-nao-gerado'];
+
+            }
+
+
         }
 
         //Se tiver gerado o boleto com sucesso

@@ -53,8 +53,8 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
     public function gerarBoleto(Experiencia $experiencia, User $pagador)
     {
         $Inscricao = $experiencia->getInscricaoUsuario($pagador);
-        $dadosBoleto['data_emissao'] = \Carbon\Carbon::now()->addDays(-1)->format('Y-m-d');
-        $dadosBoleto['data_vencimento'] = $Inscricao->dataExperiencia->format('Y-m-d');
+        $dadosBoleto['data_emissao'] = \Carbon\Carbon::now('America/Sao_Paulo')->format('Y-m-d');
+        $dadosBoleto['data_vencimento'] = $Inscricao->dataExperiencia->copy()->addDays(-2)->format('Y-m-d');
         $dadosBoleto['valor'] = $experiencia->preco + $this->TARIFA_EMISSAO_BOLETO;
         $dadosBoleto['instrucao'] = array(
             'Atenção! O pagamento desse boleto confirmará sua inscrição.',

@@ -20,6 +20,9 @@
                 <span class="row col-xs-12 text-left margin-t-0-5 margin-b-0-5 negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}</span>
             </div>
         </div>
+
+@if ($Inscricao->temTempoValidoParaCriarBoleto)
+
         <div class="col-xs-12 separador">
             <span>ou</span>
         </div>
@@ -30,6 +33,10 @@
                 <span>Gerar<br>Boleto</span>
             </button>
         </span>
+
+@endif
+
+
         <a href="{{ url('experiencias') . '/' . $Experiencia->id }}">
             <i class="fa fa-times x-preto"></i>
         </a>
