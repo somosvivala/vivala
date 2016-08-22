@@ -206,33 +206,53 @@ ul.lista-exp-desktop {
   }
 }
 .checkout-exp {
-    .btn-gerar-boleto {
-        background-color:white;
-        border: 1px solid fade(@verde-sucesso,50);
-        color: @verde-sucesso;
-        text-transform: uppercase;
-        display:inline-block;
-        padding: 4px 14px;
-        i {
-            color:@verde-sucesso;
-            font-size:6rem;
-            position:relative;
-            float:left;
-        }
-        span {
-            position:relative;
-            float:left;
-            padding-left: .5em;
-            padding-top: .2em;
-            text-align:left;
-        }
+  .texto-titulo-checkout{
+    font-size:3rem;
+  }
+  .texto-subtitulo-checkout{
+    font-size:2rem;
+  }
+  .texto-descricao-checkout{
+    font-size:1.6rem;
+  }
+  .fa-checkout-stack{
+    width: 8em;
+    height: 8em;
+    line-height: 8em;
+    .fa-checkout-borda{
+      font-size: 8em;
     }
-    .dados-bancarios {
-        display:inline-block;
-        width:28em;
-        background-color:@cor-fundo;
-        padding:1em 0.2em;
+    .fa-checkout-icone{
+      font-size: 4em;
     }
+  }
+  .btn-gerar-boleto {
+      background-color:white;
+      border: 1px solid fade(@verde-sucesso,50);
+      color: @verde-sucesso;
+      text-transform: uppercase;
+      display:inline-block;
+      padding: 4px 14px;
+      i {
+          color:@verde-sucesso;
+          font-size:6rem;
+          position:relative;
+          float:left;
+      }
+      span {
+          position:relative;
+          float:left;
+          padding-left: .5em;
+          padding-top: .2em;
+          text-align:left;
+      }
+  }
+  .dados-bancarios {
+      display:inline-block;
+      width:28em;
+      background-color:@cor-fundo;
+      padding:1em 0.2em;
+  }
 }
 .fonte-rem {
     font-size:@font-size-rem;
