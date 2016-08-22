@@ -52,8 +52,10 @@
                 <a href="/experiencias/{{ $Experiencia->id}}">
                   <div class="foto">
                     <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
+                      <?php /* NÃO CONTEMPLADO NO LAYOUT
                       <div class="categorias-experiencia">
                         <?php $contadorCategorias = 0; ?>
+                        {{--
                         @foreach($Experiencia->categorias as $Categoria)
                           <div class="icone">
                             <i class="{{ $Categoria->icone }}"></i>
@@ -63,17 +65,25 @@
                             <?php break; ?>
                           @endif
                         @endforeach
+                        --}}
                       </div>
+                      */ ?>
                     </div>
                     <div class="descricao">{{ $Experiencia->descricao_na_listagem }}</div>
                   </div>
                   <div class="row text-center margin-t-1">
                     @if($Experiencia->isUsuarioAtualInscrito)
-                      <span class="col-lg-12 descricao-listagem-titulo-pago">JÁ ME INSCREVI</span>
+                      @if(Auth::user()->genero === 'masculino')
+                        <span class="col-lg-12 descricao-listagem-titulo-pago">INSCRITO</span>
+                      @elseif(Auth::user()->genero === 'feminino')
+                        <span class="col-lg-12 descricao-listagem-titulo-pago">INSCRITA</span>
+                      @else
+                        <span class="col-lg-12 descricao-listagem-titulo-pago">INSCRITO(A)</span>
+                      @endif
                     @else
                       <span class="col-lg-12 descricao-listagem-titulo-preco">R$ {{ $Experiencia->preco }}</span>
                     @endif
-                    <span class="col-lg-12 descricao-listagem-lugar"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
+                    <span class="col-lg-12 descricao-listagem-lugar"><i class="fa fa-1-5x fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
                   </div>
                 </a>
               </li>
