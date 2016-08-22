@@ -69,11 +69,11 @@
                   </div>
                   <div class="row text-center margin-t-1">
                     @if($Experiencia->isUsuarioAtualInscrito)
-                      <span class="col-lg-12">INSCRITO</span>
+                      <span class="col-lg-12 descricao-listagem-titulo-pago">JÁ ME INSCREVI</span>
                     @else
-                      <span class="col-lg-12">R$ {{ $Experiencia->preco }}</span>
+                      <span class="col-lg-12 descricao-listagem-titulo-preco">R$ {{ $Experiencia->preco }}</span>
                     @endif
-                    <span class="col-lg-12"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
+                    <span class="col-lg-12 descricao-listagem-lugar"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
                   </div>
                 </a>
               </li>
