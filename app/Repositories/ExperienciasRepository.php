@@ -428,7 +428,14 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         // Chama o Evento de Inscrição Cancelada
         event(new InscricaoExperienciaCancelada($inscricao));
 
-        return $fezUpdate;
+        //Se a inscricao tem pagamento confirmado entao devemos retornar um feedback para o usuario
+        if ($inscricao->temPagamentoConfirmado) {
+            return [
+                'status' => 'pendente'
+            ];
+        }
+
+        return ['status' => $fezUpdate ? 'cancelada' : ''];
     }
 
     /**

@@ -31,13 +31,15 @@ class EnviaEmailsExperienciaAconteceuRecentemente
         $Experiencia = $event->Experiencia;
         $dataFormatada = $event->DataOcorrencia->data_ocorrencia->format('Y-m-d');
 
-        //Pegando as inscricoes confirmadas para esse dia
-        $inscricoesConfirmadasNessaData = $Experiencia->inscricoes()->confirmadas()
+        //Pegando as inscricoes concluidas (que de fato foram) para esse dia
+        //atualmente todas as inscricoes confirmadas se tornam concluidas no dia da experiencia
+        //mas o status concluida serve para possibilitar um estagio intermediario de aprovacao de quem de fato compareceu.
+        $inscricoesConcluidasNessaData = $Experiencia->inscricoes()->concluidas()
             ->where('data_ocorrencia_experiencia', $dataFormatada)
             ->get();
 
         //2-Iterar sob os inscritos disparando o email de feedback sobre a experiencia
-        foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
+        foreach ($inscricoesConcluidasNessaData as $Inscricao) {
             //$this-mailSenderRepository->envia email feedback no pós experiencia p/ candidato
         }
 

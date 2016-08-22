@@ -291,7 +291,7 @@ class ExperienciasController extends Controller
      */
     public function postCancelaInscricao(CancelaInscricaoExperienciaRequest $request)
     {
-        return ['result' => $this->experienciasRepository->cancelaInscricaoExperiencia($request)];
+        return $this->experienciasRepository->cancelaInscricaoExperiencia($request);
     }
 
     /**

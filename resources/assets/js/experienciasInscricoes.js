@@ -179,10 +179,17 @@ var ajaxUsuarioCancelaInscricaoExperiencia = function (target) {
         type: 'POST',
         data: params,
         success: function (data, textStatus, jqXHR) {
-            //mostrando sweetAlert de sucesso (user-friendly)
-            sweetAlertSucessoCancelaInscricaoExperiencia();
 
-            location.reload(true);
+            console.log(data);
+            if (data.status =='pendente') {
+                sweetAlertCancelamentoPendenteInscricaoExperiencia();
+            }
+
+            else if (data.status == 'cancelada') {
+                //mostrando sweetAlert de sucesso (user-friendly)
+                sweetAlertSucessoCancelaInscricaoExperiencia();
+                location.reload(true);
+            }
         },
         error: function (jqXHR, textStatus, errorThrown) {
 
@@ -254,6 +261,21 @@ var sweetAlertErroCancelaInscricaoExperiencia = function() {
         html: '<h4>Opa..</h4> <br> <p> Ocorreu um erro e nao foi possivel cancelar a inscricao. !</p><br>',
         confirmButtonColor: "#DD6B55",
         showCancelButton: false
+    });
+};
+
+/**
+* Funcao para mostrar uma sweetAlert de warning que a inscricao ja teve pagamento confirmado e portando o cancelamento passara por uma análise
+*/
+var sweetAlertCancelamentoPendenteInscricaoExperiencia = function() {
+    swal({
+        type: "warning",
+        html: '<h4>Atenção!</h4> <br> <p> Como já confirmamos sua inscrição, o cancelamento passará por uma análise de reembolso. Após esse processo, você receberá um email notificando sobre o cancelamento de sua inscrição!</p><br>',
+        confirmButtonColor: "#F9A325",
+        showCancelButton: false
+    },
+    function (){
+        location.reload();
     });
 };
 
