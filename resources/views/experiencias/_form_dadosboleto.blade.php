@@ -37,7 +37,7 @@
   </div>
 
   {{-- Secao para insercao do complemento do inscrito --}}
-  <div class="col-xs-12 col-lg-12 margin-b-1">
+  <div class="col-xs-12 col-lg-12 margin-b-1 hidden">
       {!! Form::label('endereco_complemento', trans('global.address_additional'), ['class'=>'row col-xs-12 col-lg-12']) !!}
     {!! Form::text("endereco_complemento", null, ['id'=>'endereco_complemento', 'class' => 'form-control', 'disabled' => true]) !!}
   </div>
