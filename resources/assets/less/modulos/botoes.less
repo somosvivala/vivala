@@ -4,7 +4,7 @@
 @import "cores";
 @import "fontes";
 
-.btn-acao-1{
+.btn-acao-laranja-cheio{
   display:inline-block;
   cursor:pointer;
   text-align:center;
@@ -34,7 +34,7 @@
   }
 }
 
-.btn-acao-2{
+.btn-acao-laranja-vazio{
   display:inline-block;
   cursor:pointer;
   text-align:center;
@@ -66,7 +66,7 @@
   }
 }
 
-.btn-acao-3{
+.btn-acao-verde-cheio{
   display:inline-block;
   cursor:pointer;
   text-align:center;
@@ -76,27 +76,37 @@
   border:1px solid transparent;
   border-radius:0;
   background-image:none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 5px 10px;
-  padding: 0.315rem 0.625rem;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
   // Podem ser alterados daqui em diante
-  font-familiy:'Gotham Black';
-  font-weight:bolder;
+  font-family: @font-family-avenir-black;
+  font-weight:normal;
   color:@cor-branco;
-  background-color:@cor-cinza-primario;
+  background-color:@cor-verde-primario;
   &:hover,
   &:focus{
-    background-color:@cor-laranja-primario-4;
+    color:@cor-branco;
+    background-color:@cor-verde-primario-5;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    -ms-transition: background-color 1s ease;
   }
   &:active{
-    background-color:@cor-laranja-primario-5;
+    color:@cor-branco;
+    background-color:@cor-verde-primario-6;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    -ms-transition: background-color 1s ease;
   }
 }
 
-.btn-acao-4{
+.btn-acao-vermelho-cheio{
   display:inline-block;
   cursor:pointer;
   text-align:center;
@@ -106,24 +116,32 @@
   border:1px solid transparent;
   border-radius:0;
   background-image:none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  padding: 5px 10px;
-  padding: 0.315rem 0.625rem;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
   // Podem ser alterados daqui em diante
-  font-familiy:'Gotham Black';
+  font-family: @font-family-avenir-black;
   font-weight:normal;
-  color:@cor-preto;
-  background-color:@cor-branco;
+  color:@cor-branco;
+  background-color:@cor-vermelho-primario;
   &:hover,
   &:focus{
     color:@cor-branco;
-    background-color:@cor-laranja-primario-5;
+    background-color:@cor-vermelho-primario-5;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    -ms-transition: background-color 1s ease;
   }
   &:active{
     color:@cor-branco;
-    background-color:@cor-laranja-primario-5;
+    background-color:@cor-vermelho-primario-6;
+    transition: background-color 1s ease;
+    -webkit-transition: background-color 1s ease;
+    -moz-transition: background-color 1s ease;
+    -o-transition: background-color 1s ease;
+    -ms-transition: background-color 1s ease;
   }
 }

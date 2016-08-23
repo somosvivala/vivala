@@ -20,14 +20,7 @@ ul.lista-exp-desktop {
             left:0;
             transition:top 0.3s ease;
             .ajuste-fonte-avenir-light;
-            background: rgba(255,168,61,.7);
-            background: -moz-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
-            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,168,61,.8)), color-stop(25%, rgba(241,104,30,0.78)), color-stop(100%, rgba(241,104,30,0.65)));
-            background: -webkit-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
-            background: -o-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
-            background: -ms-linear-gradient(left, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
-            background: linear-gradient(to right, rgba(255,168,61,.8) 0%, rgba(241,104,30,0.78) 25%, rgba(241,104,30,0.65) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffa83d', endColorstr='#f1681e', GradientType=1 );
+            background: rgba(0,0,0,.7);
             color:white;
             line-height:120%;
             font-size:1.2em;
@@ -60,19 +53,19 @@ ul.lista-exp-desktop {
         }
     }
     .descricao-listagem-titulo-preco{
-      .ajuste-fonte-avenir-black;
-      font-size: 1.4rem;
+      .ajuste-fonte-futura-bold;
+      font-size: 1.5rem;
       color: @cor-cinza-escuro;
     }
     .descricao-listagem-titulo-pago{
-      .ajuste-fonte-avenir-black;
-      font-size: 1.4rem;
+      .ajuste-fonte-futura-bold;
+      font-size: 1.5rem;
       color: @verde-sucesso;
     }
     .descricao-listagem-lugar{
-      .ajuste-fonte-avenir-medium;
-      font-size: 1.2rem;
-      color: @cor-cinza-claro;
+      .ajuste-fonte-futura-bold;
+      font-size: 1.3rem;
+      color: @cor-cinza-escuro;
     }
 }
 #experiencia {
@@ -112,8 +105,7 @@ ul.lista-exp-desktop {
     .categorias-experiencia {
       width: 4rem;
       height: 100%;
-      float: left;
-      background-color: rgba(0,0,0,0.1);
+      float: right;
       .icone {
         color:white;
         font-size:1.2rem;
@@ -152,6 +144,9 @@ ul.lista-exp-desktop {
   .descricao-informacoes {
       text-transform: uppercase;
   }
+  .ajuda-data{
+    font-size: 1.4rem;
+  }
   .clndr-picker {
       width:12em;
       display: inline-block;
@@ -163,35 +158,101 @@ ul.lista-exp-desktop {
       color: @cor-primaria;
       text-align:center;
   }
+  .fundo-instituicao{
+    background-color: @cor-fundo;
+    padding: 15px 0px;
+    border-radius: 10%;
+    .instituicao-secao-infos{
+      .instituicao-secao-fotos{
+        text-decoration: none;
+        .instituicao-nome{
+          font-size: 2rem;
+        }
+      }
+      .instituicao-secao-rede-social{
+        .instituicao-rede-social{
+          text-decoration: none;
+          .instituicao-rede-social-fundo{
+            color: @cor-cinza-claro;
+          }
+          .instituicao-rede-social-icone{
+            color: @cor-branco;
+          }
+        }
+      }
+    }
+    .instituicao-secao-texto{
+      .instituicao-descricao{
+        height: 100%;
+        padding-left: 15px;
+        border-left: 1px solid @cor-cinza-claro;
+        p{
+          font-size: 1.8rem;
+          padding-top: 3rem;
+          text-align: justify;
+        }
+      }
+    }
+
+  }
+  .btn-inscrever-desktop{
+    padding: 10px 30%;
+    text-decoration: none;
+    font-size: 2.5rem;
+  }
+  .btn-cancelar-desktop{
+    padding: 10px 15%;
+    text-decoration: none;
+  }
 }
 .checkout-exp {
-    .btn-gerar-boleto {
-        background-color:white;
-        border: 1px solid fade(@verde-sucesso,50);
-        color: @verde-sucesso;
-        text-transform: uppercase;
-        display:inline-block;
-        padding: 4px 14px;
-        i {
-            color:@verde-sucesso;
-            font-size:6rem;
-            position:relative;
-            float:left;
-        }
-        span {
-            position:relative;
-            float:left;
-            padding-left: .5em;
-            padding-top: .2em;
-            text-align:left;
-        }
+  .texto-titulo-checkout{
+    font-size:3rem;
+  }
+  .texto-subtitulo-checkout{
+    font-size:2rem;
+  }
+  .texto-descricao-checkout{
+    font-size:1.6rem;
+  }
+  .fa-checkout-stack{
+    width: 8em;
+    height: 8em;
+    line-height: 8em;
+    .fa-checkout-borda{
+      font-size: 8em;
     }
-    .dados-bancarios {
-        display:inline-block;
-        width:28em;
-        background-color:@cor-fundo;
-        padding:1em 0.2em;
+    .fa-checkout-icone{
+      font-size: 4em;
     }
+  }
+  .btn-gerar-boleto {
+      background-color:white;
+      border: 1px solid fade(@verde-sucesso,50);
+      color: @verde-sucesso;
+      text-transform: uppercase;
+      display:inline-block;
+      padding: 4px 14px;
+      i {
+          color:@verde-sucesso;
+          font-size:6rem;
+          position:relative;
+          float:left;
+      }
+      span {
+          position:relative;
+          float:left;
+          padding-left: .5em;
+          padding-top: .2em;
+          text-align:left;
+      }
+  }
+  .dados-bancarios {
+      display:inline-block;
+      width:28em;
+      background-color:@cor-fundo;
+      padding:1em 0.2em;
+  }
 }
 .fonte-rem {
     font-size:@font-size-rem;
