@@ -599,6 +599,17 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     }
 
 
+    /**
+     * Metodo para injetar todas as experiencias ativas em uma View
+     *
+     */
+    public function injectAllExperienciasAtivas($view)
+    {
+        $experiencias = $this->getExperienciasAtivas();
+        return $view->with('experiencias', $experiencias);
+    }
+
+
 
 
 }

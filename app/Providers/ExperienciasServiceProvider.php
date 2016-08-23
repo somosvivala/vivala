@@ -61,6 +61,7 @@ class ExperienciasServiceProvider extends ServiceProvider {
       view()->composer('gestao.experiencias._inscricoesexperiencias', 'App\Repositories\ExperienciasRepository@injectAllExperiencias');
       view()->composer('gestao.experiencias._inscricoescanceladasexperiencias', 'App\Repositories\ExperienciasRepository@injectAllExperiencias');
       view()->composer('gestao.experiencias._listaexperiencias', 'App\Repositories\ExperienciasRepository@injectAllExperiencias');
+      view()->composer('viajar.index', 'App\Repositories\ExperienciasRepository@injectAllExperienciasAtivas');
 
       //Bindando views que precisam de CategoriaExperiencia
       view()->composer('gestao.experiencias._categoriasexperiencias', 'App\Repositories\ExperienciasRepository@injectAllCategorias');
