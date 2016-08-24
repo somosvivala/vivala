@@ -129,6 +129,7 @@
                       {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
                       {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
                       {!! Form::hidden('_token', csrf_token()) !!}
+                      {!! Form::hidden('user_logged_in', (Auth::user() != '') ) !!}
                   </div>
                 </div>
               {{-- Fim da Seção de INFORMAÇÕES BÁSICAS --}}

@@ -22,6 +22,7 @@
         {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
         {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
         {!! Form::hidden('_token', csrf_token()) !!}
+        {!! Form::hidden('user_logged_in', (Auth::user() != '') ) !!}
       <div class="descricao">
           <span class="col-xs-12 negrito-exp text-center">
             R${{ $Experiencia->preco }}

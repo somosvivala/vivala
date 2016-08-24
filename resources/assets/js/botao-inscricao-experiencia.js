@@ -1,6 +1,13 @@
 $(function () {
     $('a.btn-inscrevase-experiencia').click(function(e) {
         e.preventDefault();
+        var userLogado = $('input[name=user_logged_in]').val();
+        var idExperiencia = $('input[name=experiencia_id]').val();
+
+        if (!userLogado) {
+            location.href = "/experiencias/checkout/"+idExperiencia;
+            return;
+        }
 
         var tipoExperiencia = $('input[name=experiencia_tipo]').val();
 
@@ -14,7 +21,6 @@ $(function () {
             }
         }
 
-       var idExperiencia = $('input[name=experiencia_id]').val();
        var params = {
             _token: $('input[name="_token"]').val(),
             data_inscricao: dataInscricao,
@@ -37,6 +43,7 @@ $(function () {
                 }
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                
             }
         });
     });
