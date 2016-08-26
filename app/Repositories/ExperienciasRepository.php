@@ -69,8 +69,12 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      * @param $id - id da experiencia
      * @return Experiencia || null
      */
-    public function find($id)
+    public function find($id, $withTrashed=false)
     {
+        if($withTrashed) {
+            return Experiencia::withTrashed()->findOrFail($id);
+        }
+
         return Experiencia::find($id);
     }
 
@@ -80,8 +84,12 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      * @param $id - id da experiencia
      * @return Experiencia
      */
-    public function findOrFail($id)
+    public function findOrFail($id, $withTrashed=false)
     {
+        if($withTrashed) {
+            return Experiencia::withTrashed()->findOrFail($id);
+        }
+
         return Experiencia::findOrFail($id);
     }
 
