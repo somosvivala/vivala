@@ -358,7 +358,7 @@ class ExperienciasController extends Controller
      */
     public function postDeletaInscricaoComPagamentoConfirmado(DeleteInscricaoExperienciaRequest $request)
     {
-        $Inscricao = InscricaoExperiencia::findOrFail($request->id, $request);
+        $Inscricao = InscricaoExperiencia::withTrashed()->findOrFail($request->id);
         $deletou = $this->experienciasRepository->deleteInscricaoExperiencia($Inscricao);
 
         if ($deletou) {
