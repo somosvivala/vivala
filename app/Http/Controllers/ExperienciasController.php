@@ -27,6 +27,7 @@ use App\Events\Experiencias\NovaInscricaoExperiencia;
 use App\Events\Experiencias\NovosDadosUsuario;
 use App\Http\Requests\DeleteInscricaoExperienciaRequest;
 use App\InscricaoExperiencia;
+use App\Events\Experiencias\InscricaoExperienciaCancelada;
 
 class ExperienciasController extends Controller
 {
