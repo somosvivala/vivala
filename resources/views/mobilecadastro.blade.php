@@ -5,14 +5,16 @@
         <div class="col-xs-12 margin-t-1 margin-b-2 text-center container-logo">
             <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
         </div>
-        <a href="#" class="link-voltar history-back">
+        <a href="{{ url('experiencias') }}" class="link-voltar">
             <i class="fa fa-chevron-left"></i>
         </a>
         <div class="conteudo-mobile pull-left">
             @if (count($errors) > 0)
+            <div class="row">
                 @foreach ($errors->all() as $error)
                 <span class="form-mobile-error">{{ $error }}</span>
                 @endforeach
+            </div>
             @endif
             <div class="row">
               <div class="form-mobile-warning hide" id="senhas-nao-coincidem">
