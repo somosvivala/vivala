@@ -23,7 +23,7 @@
       <ul class="margin-t-2 margin-b-3 lista-border pesquisa-viajar">
         <div class="row row-eq-height">
           <li class="col-lg-3 tour-pilar-viajar-step3 active">
-            <a class="experiencias" href="/experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
+            <a class="experiencias" href="/experiencias">
               {{ trans('global.wannatravel_trip_experiences') }}
             </a>
           </li>
@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step6">
-            <a class="restaurantes logger-ativo" href="#restaurantes" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="restaurantes" role="tab" data-toggle="tab">
+            <a class="restaurantes logger-ativo" href="/viajar#restaurantes" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}">
               {{ trans('global.wannatravel_trip_restaurants') }}
             </a>
           </li>

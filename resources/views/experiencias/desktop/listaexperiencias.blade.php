@@ -73,17 +73,11 @@
                   </div>
                   <div class="row text-center margin-t-1">
                     @if($Experiencia->isUsuarioAtualInscrito)
-                      @if(Auth::user()->genero === 'masculino')
-                        <span class="col-lg-12 descricao-listagem-titulo-pago">INSCRITO</span>
-                      @elseif(Auth::user()->genero === 'feminino')
-                        <span class="col-lg-12 descricao-listagem-titulo-pago">INSCRITA</span>
-                      @else
-                        <span class="col-lg-12 descricao-listagem-titulo-pago">INSCRITO(A)</span>
-                      @endif
+                      <span class="col-lg-12 descricao-listagem-titulo-pago">JÁ ME INSCREVI</span>
                     @else
                       <span class="col-lg-12 descricao-listagem-titulo-preco">R$ {{ $Experiencia->preco }}</span>
                     @endif
-                    <span class="col-lg-12 descricao-listagem-lugar"><i class="fa fa-1-5x fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
+                    <span class="col-lg-12 descricao-listagem-lugar"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
                   </div>
                 </a>
               </li>
