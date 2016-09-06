@@ -56,6 +56,7 @@
                   <div class="preco-interna-desktop">
                     R${{ $Experiencia->preco }}
                   </div>
+                  {{-- Temporariamente desativado
                   <div class="categorias-interna-desktop">
                     <?php $contadorCategorias = 0; ?>
                     @foreach($Experiencia->categorias as $Categoria)
@@ -68,16 +69,17 @@
                       @endif
                     @endforeach
                   </div>
+                  --}}
                 </div>
               </div>
               <div class="col-lg-7">
                 <div class="row infos-basicas-interna-desktop">
                   <div class="col-lg-12 text-left">
                     <p class="row margin-b-0">
-                      <span class="col-lg-2 text-center padding-l-0 padding-r-0">
+                      <span class="col-lg-1 text-center padding-l-0 padding-r-0 margin-r-0-5">
                         <i class="fa fa-fw fa-calendar-check-o experiencia-desktop-data-ocorrencia-icone"></i>
                       </span>
-                      <span class="col-lg-10 ajuste-fonte-avenir-roman padding-l-0 experiencia-desktop-data-ocorrencia">
+                      <span class="col-lg-11 ajuste-fonte-avenir-roman padding-l-0 experiencia-desktop-data-ocorrencia">
                         @if($Experiencia->isEventoUnico)
                           {{ $Experiencia->dataProximaOcorrencia }}
                         @elseif($Experiencia->isEventoRecorrente)
@@ -88,18 +90,18 @@
                       </span>
                     </p>
                     <p class="row margin-b-0">
-                      <span class="col-lg-2 text-center padding-l-0 padding-r-0">
+                      <span class="col-lg-1 text-center padding-l-0 padding-r-0 margin-r-0-5">
                         <i class="fa fa-fw fa-map-marker experiencia-desktop-local-icone"></i>
                       </span>
-                      <span class="col-lg-10 ajuste-fonte-futura-bold padding-l-0 experiencia-desktop-local">
+                      <span class="col-lg-11 ajuste-fonte-futura-bold padding-l-0 experiencia-desktop-local">
                         {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}
                       </span>
                     </p>
                     <p class="row margin-b-0">
-                      <span class="col-lg-2 text-center padding-l-0 padding-r-0">
+                      <span class="col-lg-1 text-center padding-l-0 padding-r-0 margin-r-0-5">
                         <i class="fa fa-fw fa-street-view experiencia-desktop-endereco-completo-icone"></i>
                       </span>
-                      <span class="col-lg-10 ajuste-fonte-avenir-roman padding-l-0 experiencia-desktop-endereco-completo">
+                      <span class="col-lg-11 ajuste-fonte-avenir-roman padding-l-0 experiencia-desktop-endereco-completo">
                         {{ $Experiencia->endereco_completo }}
                       </span>
                     </p>
