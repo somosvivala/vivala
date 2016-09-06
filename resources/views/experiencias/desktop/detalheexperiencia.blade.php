@@ -90,63 +90,67 @@
               <div class="col-lg-12 text-left margin-b-0-5">
                 <span class="ajuste-fonte-futura-bold">Informações</span>
               </div>
-              {{-- Seção de INFORMAÇÕES BÁSICAS --}}
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="col-lg-6">
-                      <i class="fa fa-fw fa-money"></i>
-                      <span class="ajuste-fonte-avenir-roman">R${{ $Experiencia->preco }}</span>
-                    </div>
-                    <div class="col-lg-6">
-                      <i class="fa fa-fw fa-calendar-o pull-left"></i>
-                      @if($Experiencia->isEventoUnico)
-                        <span class="ajuste-fonte-avenir-roman">{{ $Experiencia->dataProximaOcorrencia }}</span>
-                      </div>
-                      @endif
-                      @if($Experiencia->isEventoRecorrente)
-                        <span class="descricao-informacoes">
-                          <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                          <div class="clndr-container"></div>
-                          <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
-                        </span>
-                        <p class="row col-lg-12 ajuste-fonte-avenir-light">
-                          <span class="ajuda-data">Selecione uma data disponível</span>
-                        </p>
-                      </div>
-                      @endif
-                      @if($Experiencia->isEventoServico)
-                        <span class="descricao-informacoes">
-                          <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                          <div class="clndr-container">
-                          </div>
-                          <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
-                        </span>
-                        <p class="row col-lg-12 ajuste-fonte-avenir-light">
-                          <span class="ajuda-data">Selecione uma data disponível</span>
-                        </p>
-                      </div>
-                      @endif
-                      {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
-                      {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
-                      {!! Form::hidden('_token', csrf_token()) !!}
-                      {!! Form::hidden('user_logged_in', (Auth::user() != '') ) !!}
-                  </div>
-                </div>
-              {{-- Fim da Seção de INFORMAÇÕES BÁSICAS --}}
-              {{-- Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
-                @if(!empty($Experiencia->informacoes))
-                  <div class="row">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="row row-eq-height margin-b-1">
                     <div class="col-lg-12">
+                      {{-- Seção de INFORMAÇÕES BÁSICAS --}}
+                        <div class="col-lg-6">
+                          <i class="fa fa-fw fa-money"></i>
+                          <span class="ajuste-fonte-avenir-roman">R${{ $Experiencia->preco }}</span>
+                        </div>
+                        @if($Experiencia->isEventoUnico)
+                          <div class="col-lg-6">
+                            <i class="fa fa-fw fa-calendar-o pull-left"></i>
+                            <span class="ajuste-fonte-avenir-roman">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                          </div>
+                        @endif
+                        @if($Experiencia->isEventoRecorrente)
+                          <div class="col-lg-6">
+                            <i class="fa fa-fw fa-calendar-o pull-left"></i>
+                            <span class="descricao-informacoes">
+                              <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                              <div class="clndr-container"></div>
+                              <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
+                            </span>
+                            <p class="row col-lg-12 ajuste-fonte-avenir-light">
+                              <span class="ajuda-data">Selecione uma data disponível</span>
+                            </p>
+                          </div>
+                        @endif
+                        @if($Experiencia->isEventoServico)
+                          <div class="col-lg-6">
+                            <i class="fa fa-fw fa-calendar-o pull-left"></i>
+                            <span class="descricao-informacoes">
+                              <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                              <div class="clndr-container">
+                              </div>
+                              <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
+                            </span>
+                            <p class="row col-lg-12 ajuste-fonte-avenir-light">
+                              <span class="ajuda-data">Selecione uma data disponível</span>
+                            </p>
+                          </div>
+                        @endif
+                        {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
+                        {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
+                        {!! Form::hidden('_token', csrf_token()) !!}
+                        {!! Form::hidden('user_logged_in', (Auth::user() != '') ) !!}
+                      {{-- Fim da Seção de INFORMAÇÕES BÁSICAS --}}
+                    </div>
+                  </div>
+                  {{-- Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
+                    @if($Experiencia->informacoes)
                       @foreach($Experiencia->informacoes as $Informacao)
-                        <div class="col-lg-6 informacoes">
-                          <i class="fa fa-fw {{ $Informacao->icone }}"></i></div>
+                        <div class="col-lg-6 margin-b-1">
+                          <i class="fa fa-fw {{ $Informacao->icone }}"></i>
                           <span class="ajuste-fonte-avenir-roman">{{ $Informacao->descricao }}</span>
                         </div>
                       @endforeach
-                    </div>
-                  </div>
-                @endif
-              {{-- Fim da Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
+                    @endif
+                  {{-- Fim da Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
+                </div>
+              </div>
             </div>
           {{-- Fim da Seção de INFORMAÇÕES DA EXPERIÊNCIA --}}
 
