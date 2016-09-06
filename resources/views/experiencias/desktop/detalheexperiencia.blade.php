@@ -49,11 +49,14 @@
       <div class="tab-content">
         <div id="experiencia" class="tab-pane active" role="tabpanel">
 
-          {{-- Seção de DESCRIÇÃO DA EXPERIÊNCIA --}}
-            <div class="row row-eq-height margin-b-2">
+          {{-- Seção de PREÇO/FREQUENCIA-DATAOCORRENCIA/LOCAL/ENDEREÇO EXPERIÊNCIA --}}
+            <div class="row row-eq-height margin-b-1">
               <div class="col-lg-5">
                 <div class="foto-img-interna-desktop" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
-                  <div class="categorias-experiencia">
+                  <div class="preco-interna-desktop">
+                    R${{ $Experiencia->preco }}
+                  </div>
+                  <div class="categorias-interna-desktop">
                     <?php $contadorCategorias = 0; ?>
                     @foreach($Experiencia->categorias as $Categoria)
                       <div class="icone">
@@ -68,19 +71,50 @@
                 </div>
               </div>
               <div class="col-lg-7">
-                <div class="row">
+                <div class="row infos-basicas-interna-desktop">
                   <div class="col-lg-12 text-left">
-                    <p class="">
-                      <i class="fa fa-fw fa-1-5x fa-calendar-check-o"></i>
-                      <span class="ajuste-fonte-avenir-roman">{{ $Experiencia->frequencia }}</span>
+                    <p class="row margin-b-0">
+                      <span class="col-lg-2 text-center padding-l-0 padding-r-0">
+                        <i class="fa fa-fw fa-calendar-check-o experiencia-desktop-data-ocorrencia-icone"></i>
+                      </span>
+                      <span class="col-lg-10 ajuste-fonte-avenir-roman padding-l-0 experiencia-desktop-data-ocorrencia">
+                        @if($Experiencia->isEventoUnico)
+                          {{ $Experiencia->dataProximaOcorrencia }}
+                        @elseif($Experiencia->isEventoRecorrente)
+                          {{ $Experiencia->frequencia }}
+                        @elseif($Experiencia->isEventoServico)
+                          {{ $Experiencia->frequencia }}
+                        @endif
+                      </span>
                     </p>
-                    <p>
-                      <i class="fa fa-fw fa-map-marker"></i>
-                      <span class="ajuste-fonte-futura-bold">{{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
+                    <p class="row margin-b-0">
+                      <span class="col-lg-2 text-center padding-l-0 padding-r-0">
+                        <i class="fa fa-fw fa-map-marker experiencia-desktop-local-icone"></i>
+                      </span>
+                      <span class="col-lg-10 ajuste-fonte-futura-bold padding-l-0 experiencia-desktop-local">
+                        {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}
+                      </span>
                     </p>
-                    <p class="ajuste-fonte-avenir-roman">{{ $Experiencia->descricao }}</p>
+                    <p class="row margin-b-0">
+                      <span class="col-lg-2 text-center padding-l-0 padding-r-0">
+                        <i class="fa fa-fw fa-street-view experiencia-desktop-endereco-completo-icone"></i>
+                      </span>
+                      <span class="col-lg-10 ajuste-fonte-avenir-roman padding-l-0 experiencia-desktop-endereco-completo">
+                        {{ $Experiencia->endereco_completo }}
+                      </span>
+                    </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          {{-- Fim da Seção de PREÇO/FREQUENCIA-DATAOCORRENCIA/LOCAL/ENDEREÇO EXPERIÊNCIA --}}
+
+          {{-- Seção de DESCRIÇÃO DA EXPERIÊNCIA --}}
+            <div class="row margin-b-1">
+              <div class="col-lg-12">
+                <p class="text-justify margin-t-0 margin-b-0">
+                  {{ $Experiencia->descricao }}
+                </p>
               </div>
             </div>
           {{-- Fim da Seção de DESCRIÇÃO DA EXPERIÊNCIA --}}
@@ -95,14 +129,12 @@
                   <div class="row row-eq-height margin-b-1">
                     <div class="col-lg-12">
                       {{-- Seção de INFORMAÇÕES BÁSICAS --}}
-                        <div class="col-lg-6">
-                          <i class="fa fa-fw fa-money"></i>
-                          <span class="ajuste-fonte-avenir-roman">R${{ $Experiencia->preco }}</span>
-                        </div>
                         @if($Experiencia->isEventoUnico)
                           <div class="col-lg-6">
                             <i class="fa fa-fw fa-calendar-o pull-left"></i>
-                            <span class="ajuste-fonte-avenir-roman">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                            <span class="ajuste-fonte-avenir-roman">
+                              {{ $Experiencia->frequencia }}
+                            </span>
                           </div>
                         @endif
                         @if($Experiencia->isEventoRecorrente)
@@ -132,6 +164,16 @@
                             </p>
                           </div>
                         @endif
+                        {{-- Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
+                          @if($Experiencia->informacoes)
+                            @foreach($Experiencia->informacoes as $Informacao)
+                              <div class="col-lg-6">
+                                <i class="fa fa-fw {{ $Informacao->icone }}"></i>
+                                <span class="ajuste-fonte-avenir-roman">{{ $Informacao->descricao }}</span>
+                              </div>
+                            @endforeach
+                          @endif
+                        {{-- Fim da Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
                         {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
                         {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
                         {!! Form::hidden('_token', csrf_token()) !!}
@@ -139,16 +181,6 @@
                       {{-- Fim da Seção de INFORMAÇÕES BÁSICAS --}}
                     </div>
                   </div>
-                  {{-- Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
-                    @if($Experiencia->informacoes)
-                      @foreach($Experiencia->informacoes as $Informacao)
-                        <div class="col-lg-6 margin-b-1">
-                          <i class="fa fa-fw {{ $Informacao->icone }}"></i>
-                          <span class="ajuste-fonte-avenir-roman">{{ $Informacao->descricao }}</span>
-                        </div>
-                      @endforeach
-                    @endif
-                  {{-- Fim da Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
                 </div>
               </div>
             </div>
