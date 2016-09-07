@@ -21,4 +21,9 @@
 {{-- incluindo a modal que edita a foto da experiencia apos o form --}}
 @include('experiencias._fotoform_modal')
 
+{{-- Modal IconPicker FontAwesome --}}
+  @include('modals._iconpickerfontawesome')
+{{-- Fim do Modal IconPicker FontAwesome --}}
+
+
 @endsection

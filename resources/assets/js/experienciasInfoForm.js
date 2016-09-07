@@ -1,5 +1,6 @@
 //variavel para controlar o timeout
 var tempoDigitando = null;
+var botaoQueChamouModal = null;
 
 // Shorthand for $( document ).ready()
 $(function() {
@@ -13,23 +14,38 @@ $(function() {
 var bindaIconPickerFontAwesome = function(container, input) {
   var fontAwesomeIcon, classesIcone;
 
+  //Se a modal de selecionar icones estiver presente
   if($('#modal-iconpicker-fontawesome')){
-    $('.iconpicker-icone').click(function() {
+      //Quando alguem selecionar um icone
+      $('.iconpicker-icone').click(function() {
 
-      // Pegando o valor do data-icon do icone clicado
-      //console.log($(this).parent().data('icon'));
+          //Se tiver esse botao, entao o icone veio de informacao experiencia, e tem um target especifico
+          if (botaoQueChamouModal) {
+              //usando dessa variavel botaoTrigger para determinar qual informacao extra devemos alterar o icone preview
+              var botaoTrigger = botaoQueChamouModal[0];
+              var input = $(botaoTrigger).parent().find('input')[0];
+              var iconePreview = $(botaoTrigger).parents(".container-campos-fontawesome").find('i.icone-show')[0];
+              $(input).attr('value', 'fa fa-' + $(this).parent().data('icon'));
 
-      // Adicionando ele no hidden input
-      $('#icone-categoria-experiencia').val('fa fa-' + $(this).parent().data('icon'));
+              // Adicionando ele no modal, alterando visualmente
+              fontAwesomeIcon = 'icone-show margin-t-1 fa-2x fa fa-' + $(this).parent().data('icon');
+              $(iconePreview).attr('class', fontAwesomeIcon);
+          }
 
-      // Adicionando ele no modal, alterando visualmente
-      fontAwesomeIcon = 'icone-show margin-t-1 fa-5x fa fa-' + $(this).parent().data('icon');
-      classesIcone = $(container).attr('class').replace(/fa\s*/g, '').replace(/fa-\w*-*\w*-*\w*/g, '');
-      $(container).attr('class', fontAwesomeIcon);
+          //se nao veio de informacaoexperiencia entao é uma categoria e ja sabemos o target
+          else {
+              // Adicionando ele no hidden input
+              $('#icone-categoria-experiencia').val('fa fa-' + $(this).parent().data('icon'));
 
-      // Dá toggle e fecha a modal de iconpicker de seleção do icone
-      $('#modal-iconpicker-fontawesome').modal('toggle');
-    });
+              // Adicionando ele no modal, alterando visualmente
+              fontAwesomeIcon = 'icone-show margin-t-1 fa-5x fa fa-' + $(this).parent().data('icon');
+              $(container).attr('class', fontAwesomeIcon);
+          }
+
+          // Dá toggle e fecha a modal de iconpicker de seleção do icone
+          $('#modal-iconpicker-fontawesome').modal('toggle');
+
+      });
   }
 }
 
@@ -60,9 +76,6 @@ var adicionaInfoExperiencia = function(ev) {
 
             //inserindo antes da linha do botao add
             novaLinha.insertBefore(parentLinha);
-
-            //chamando funcao para bindar a mudanca de icone conforme o texto do botao
-            bindaInputsFontAwesome();
 
         },
         error: function (jqXHR, textStatus, errorThrown) {
@@ -188,3 +201,8 @@ $(function () {
     var tipoExp = $("input[name='tipo']:checked");
     mostraCamposPorTipo(tipoExp);
 });
+
+
+var mostraModalIconesInformacaoExperiencia = function(target) {
+    botaoQueChamouModal = $(target);
+};
