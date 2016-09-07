@@ -399,10 +399,11 @@
         </div>
         <ul id="data-ocorrencia-container">
             @if (isset($experiencia))
-              @foreach ($experiencia->ocorrencias as $dataOcorrencia)
+              @foreach ($experiencia->futurasOcorrencias as $dataOcorrencia)
                 @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
               @endforeach
             @endif
+
             {{-- Botao de adicionar novas datas --}}
             <li class="col-lg-12 margin-b-1 container-datas-ocorrencia">
               <div class="col-lg-3 col-lg-offset-2 text-center">
