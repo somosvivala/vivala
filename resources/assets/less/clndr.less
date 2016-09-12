@@ -32,14 +32,14 @@
 
     //////////////////////////////////
 
-    @clndr-border: 3px solid white;
+    @clndr-border: 3px solid #F4F4F4;
 
     width:15em;
     //  font-family: 'Droid Sans Mono';
     border:0px solid white;
     box-shadow: 0 0 5px 5px rgba(0,0,0,0.3);
     position: absolute;
-    background-color: white;
+    background-color: #F4F4F4;
     z-index:2;
     top: 2.5em;
     left: 2em;
@@ -57,8 +57,9 @@
             .clearfix;
             width: 100%;
             position: relative;
-            background: darken(@cor-primaria,20%);
+            background: #8ba5ac;
             color:white;
+            padding: 3px;
 
             .month
             {
@@ -69,7 +70,7 @@
 
 
             .clndr-control-button
-            {
+            { 
                 float: left;
                 width: 33%;
 
@@ -79,7 +80,7 @@
                     width: 34%;
                 }
                 .clndr-next-button
-                {
+                  {
                     cursor: pointer;
                     .noselect;
                     &:hover { background: #ddd; }
@@ -115,10 +116,12 @@
         {
             table-layout: fixed;
             width: 100%;
+            border-bottom: 3px solid #8BA5AC;
+            color: #B7c6c9;
 
             .header-days
             { 
-                background: @cor-primaria;
+                background: #b7c6c9;
                 color:white;
                 height: 2em;
                 font-size: 1.6rem;
@@ -144,8 +147,6 @@
 
                 .day
                 {
-                    border-left: @clndr-border;
-                    border-top: @clndr-border;
                     width: 100%;
                     height: inherit;
                     text-align: center;
@@ -156,33 +157,29 @@
 
                     &.today, &.my-today
                     {
-                        background: fade(@cor-cinza-claro,30%);
                         &:hover {}
                         &.event
                         {
-                            background: mix(#B4E09F, fade(@cor-cinza-claro,30%));
                         }
                     }
 
                     &.event, &.my-event
                     { 
                         cursor:pointer;
-                        background: @verde-sucesso;
+                        color: black;
                         &:hover
                         {
-                            background: #B4E09F;
-                            color:white;
+                            background: transparent;
+                            color: #555157;
                         }
                     }
 
                     &.inactive, &.my-inactive
                     {
-                        background: #ddd;
                     }
 
                     &:last-child
                     {
-                        border-right: @clndr-border;
                     }
 
                     .day-contents
@@ -197,17 +194,12 @@
 
                 .empty, .adjacent-month, .my-empty, .my-adjacent-month
                 {
-                    border-left: @clndr-border;
-                    border-top: @clndr-border;
                     width: 100%;
                     height: inherit;
-                    background: #eee;
-
-                    &:hover { background: #ddd; }
+                    color: #c8cbcc;
 
                     &:last-child
                     {
-                        border-right: @clndr-border;
                     }
                 }
 
@@ -215,12 +207,10 @@
                 {
                     .day, .my-day
                     {
-                        border-bottom: @clndr-border;
                     }
 
                     .empty, .my-empty
                     {
-                        border-bottom: @clndr-border;
                     }
                 }
             }
