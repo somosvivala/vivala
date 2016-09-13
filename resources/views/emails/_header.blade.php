@@ -62,7 +62,7 @@
       <tbody>
         <tr>
           <!-- Cabeçalho da Vivalá -->
-          <td bgcolor="#F06F37" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px;">
+          <td bgcolor="#F06F37" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:30px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tbody>
@@ -85,7 +85,7 @@
                 <!-- Título do EMAIL -->
                 <tr align="center">
                   <td>
-                    <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; font-weight:normal; color:#FFFFFF; margin:40px 0 10px; margin-top:0; line-height:40px;">
+                    <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:26px; font-weight:normal; color:#FFFFFF; margin:40px 0 10px; margin-top:0; line-height:40px;">
                       {!! $emailTitulo !!}
                     </h1>
                   </td>
@@ -97,7 +97,7 @@
           </td>
           <!-- Fim do Cabeçalho da Vivalá -->
           <!-- Separador -->
-          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->
