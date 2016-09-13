@@ -74,33 +74,26 @@
                 <div class="col-lg-7">
                   <div class="row infos-basicas-interna-desktop">
                     <div class="col-lg-12 text-left">
-                      <p class="row margin-b-0">
-                        <span class="col-lg-1 text-center padding-l-0 padding-r-0">
-                          <i class="fa fa-fw fa-calendar-check-o experiencia-desktop-data-ocorrencia-icone"></i>
-                        </span>
-                        <span class="col-lg-11 ajuste-fonte-avenir-roman padding-l-0-5 experiencia-desktop-data-ocorrencia">
-                          @if($Experiencia->isEventoUnico)
-                            {{ $Experiencia->dataProximaOcorrencia }}
-                          @elseif($Experiencia->isEventoRecorrente)
-                            {{ $Experiencia->frequencia }}
-                          @elseif($Experiencia->isEventoServico)
-                            {{ $Experiencia->frequencia }}
-                          @endif
-                        </span>
-                      </p>
+                        @if($Experiencia->isEventoUnico)
+                        <p class="row margin-b-0">
+                            <span class="col-lg-12 ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
+                                {{ $Experiencia->dataProximaOcorrencia }}
+                            </span>
+                        </p>
+                        @endif
                       <p class="row margin-b-0">
                         <span class="col-lg-1 text-center padding-l-0 padding-r-0">
                           <i class="fa fa-fw fa-map-marker experiencia-desktop-local-icone"></i>
                         </span>
-                        <span class="col-lg-11 ajuste-fonte-futura-bold padding-l-0-5 experiencia-desktop-local">
+                        <span class="col-lg-11 ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
                           {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}
                         </span>
                       </p>
                       <p class="row margin-b-0">
-                        <span class="col-lg-1 text-center padding-l-0 padding-r-0">
+                        <!--<span class="col-lg-1 text-center padding-l-0 padding-r-0">
                           <i class="fa fa-fw fa-street-view experiencia-desktop-endereco-completo-icone"></i>
-                        </span>
-                        <span class="col-lg-11 ajuste-fonte-avenir-roman padding-l-0-5 experiencia-desktop-endereco-completo">
+                      </span>-->
+                        <span class="col-lg-11 ajuste-fonte-avenir padding-l-0-5 experiencia-desktop-endereco-completo">
                           {{ $Experiencia->endereco_completo }}
                         </span>
                       </p>
@@ -130,41 +123,12 @@
                     <div class="row row-eq-height margin-b-1">
                       <div class="col-lg-12">
                         {{-- Seção de INFORMAÇÕES BÁSICAS --}}
-                          @if($Experiencia->isEventoUnico)
-                            <div class="col-lg-6">
-                              <i class="fa fa-fw fa-calendar-o pull-left"></i>
-                              <span class="ajuste-fonte-avenir-roman">
+                        <div class="col-lg-6">
+                            <i class="fa fa-fw fa-calendar-o pull-left"></i>
+                            <span class="ajuste-fonte-avenir-roman">
                                 {{ $Experiencia->frequencia }}
-                              </span>
-                            </div>
-                          @endif
-                          @if($Experiencia->isEventoRecorrente)
-                            <div class="col-lg-6">
-                              <i class="fa fa-fw fa-calendar-o pull-left"></i>
-                              <span class="descricao-informacoes">
-                                <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                                <div class="clndr-container"></div>
-                                <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
-                              </span>
-                              <p class="row col-lg-12 ajuste-fonte-avenir-light">
-                                <span class="ajuda-data">Selecione uma data disponível</span>
-                              </p>
-                            </div>
-                          @endif
-                          @if($Experiencia->isEventoServico)
-                            <div class="col-lg-6">
-                              <i class="fa fa-fw fa-calendar-o pull-left"></i>
-                              <span class="descricao-informacoes">
-                                <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                                <div class="clndr-container">
-                                </div>
-                                <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
-                              </span>
-                              <p class="row col-lg-12 ajuste-fonte-avenir-light">
-                                <span class="ajuda-data">Selecione uma data disponível</span>
-                              </p>
-                            </div>
-                          @endif
+                            </span>
+                        </div>
                           {{-- Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
                             @if($Experiencia->informacoes)
                               @foreach($Experiencia->informacoes as $Informacao)
@@ -191,7 +155,7 @@
               @if($Experiencia->detalhes)
                 <div class="row margin-t-1 margin-b-2">
                   <div class="col-lg-12 text-left margin-b-0-5">
-                    <span class="ajuste-fonte-futura-bold">Detalhes</span>
+                    <span class="ajuste-fonte-futura-bold">Mais Detalhes</span>
                   </div>
                   <div class="col-lg-12">
                     <span class="ajuste-fonte-avenir-roman">{{ $Experiencia->detalhes }}</span>

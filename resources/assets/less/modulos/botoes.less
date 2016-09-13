@@ -73,7 +73,6 @@
   vertical-align: middle;
   text-transform:uppercase;
   white-space: nowrap;
-  border:1px solid transparent;
   border-radius:0;
   background-image:none;
   -webkit-user-select:none;
@@ -83,26 +82,23 @@
   // Podem ser alterados daqui em diante
   font-family: @font-family-avenir-black;
   font-weight:normal;
-  color:@cor-branco;
-  background-color:@cor-verde-primario;
+  color: #27a493;
+  border: 3px solid #13a89e;
+  background-color: white;
+  transition: background-color 1s ease;
+  -webkit-transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
+  -o-transition: background-color 1s ease;
+  -ms-transition: background-color 1s ease;
+
   &:hover,
   &:focus{
     color:@cor-branco;
-    background-color:@cor-verde-primario-5;
-    transition: background-color 1s ease;
-    -webkit-transition: background-color 1s ease;
-    -moz-transition: background-color 1s ease;
-    -o-transition: background-color 1s ease;
-    -ms-transition: background-color 1s ease;
+    background-color: #13a89e;
   }
   &:active{
     color:@cor-branco;
-    background-color:@cor-verde-primario-6;
-    transition: background-color 1s ease;
-    -webkit-transition: background-color 1s ease;
-    -moz-transition: background-color 1s ease;
-    -o-transition: background-color 1s ease;
-    -ms-transition: background-color 1s ease;
+    background-color: #13a89e;
   }
 }
 
