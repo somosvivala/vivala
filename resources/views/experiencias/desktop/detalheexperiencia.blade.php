@@ -81,6 +81,29 @@
                             </span>
                         </p>
                         @endif
+                        @if($Experiencia->isEventoRecorrente)
+                        <div class="row padding-t-1 calendario-row">
+                            <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                            <span class="descricao-informacoes">
+                                <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                                <div class="clndr-container">
+                                </div>
+                                <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
+                            </span>
+                        </div>
+                        @endif
+                        @if($Experiencia->isEventoServico)                        <div class="col-xs-12 informacoes">
+                            <div class="row padding-t-1i calendario-row">
+                                <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                                <span class="descricao-informacoes">
+                                    <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                                    <div class="clndr-container">
+                                    </div>
+                                    <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
+                                </span>
+                            </div>
+                        </div>
+                        @endif
                       <p class="row margin-b-0">
                         <span class="col-lg-1 text-center padding-l-0 padding-r-0">
                           <i class="fa fa-fw fa-map-marker experiencia-desktop-local-icone"></i>
@@ -235,7 +258,7 @@
                       <a class="btn btn-amarelo-aviso" href="/experiencias/checkout/{{ $Experiencia->id }}" onclick="event.preventDefault();">{!! trans('global.lbl_subscribed') !!}</a>
                     </div>
                     <div class="col-lg-12">
-                      <a class="btn btn-acao-vermelho-cheio btn-cancelar-desktop btn-cancelar-inscricao" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)">
+                      <a class="btn btn-cancelar-desktop btn-cancelar-inscricao" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)">
                         <i class="fa fa-times-circle-o"></i>
                         Cancelar Inscrição
                       </a>
