@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use Laravel\Socialite\Contracts\Factory as Socialite; 
+use Laravel\Socialite\Contracts\Factory as Socialite;
 use Auth;
 use App\User;
 use App\FacebookData;
@@ -78,7 +78,9 @@ class FacebookController extends Controller {
             $perfil = new Perfil;
             $perfil->nome_completo = $userData->name;
             $perfil->genero = trans("fb.".$userData->{'user'}['gender']);
-            $perfil->apelido = $userData->{'user'}['first_name'];
+
+            $perfil->apelido = array_key_exists('first_name', $userData->{'user'}) ? $userData->{'user'}['first_name'] : $userData->name;
+
             $perfil->user_id = $user->id;
             $perfil->save();
 
