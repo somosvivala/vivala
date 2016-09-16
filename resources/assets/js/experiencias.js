@@ -109,6 +109,7 @@ var calendarioExperiencia  = function(container){
               if(target.events.length) {
                 var dataEvento = target.events[0].date;
                 $(".clndr-picker").val(dataEvento);
+                $(".calendario-row").addClass('cor-laranja');
                 $(".clndr-container").toggleClass('visivel');
               }
           },
