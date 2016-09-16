@@ -90,15 +90,23 @@
                         </p>
                         @endif
                         @if($Experiencia->isEventoRecorrente)
-                        <div class="row padding-t-1 calendario-row">
-                            <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                            <span class="descricao-informacoes">
-                                <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                                <div class="clndr-container">
+                            @if($Experiencia->isUsuarioAtualInscrito)
+                            <p class="row margin-b-0">
+                                <span class="col-lg-12 data-inscrito ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
+                                    {{ $Experiencia->dataProximaOcorrencia }}
+                                </span>
+                            </p>
+                            @else
+                                <div class="row padding-t-1 calendario-row">
+                                    <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                                    <span class="descricao-informacoes">
+                                        <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                                        <div class="clndr-container">
+                                        </div>
+                                        <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
+                                    </span>
                                 </div>
-                                <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
-                            </span>
-                        </div>
+                            @endif
                         @endif
                         @if($Experiencia->isEventoServico)                        <div class="col-xs-12 informacoes">
                             <div class="row padding-t-1i calendario-row">
