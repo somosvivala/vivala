@@ -1,50 +1,31 @@
-@include('emails._header', [
+@extends('emails._base', [
   'emailCabecalho' => 'Experiência Desativada',
   'emailTitulo' => 'Uma experiência foi desativada na Vivalá'
 ])
 
-  <!-- Primeira SEÇÃO -->
-  <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
-    <div style="display:block; margin:0 auto; max-width:600px;">
-      <table style="width: 100%; padding-bottom:0; margin-top:20px; padding-bottom:0;">
-        <tbody>
-          <!-- Título da Primeira Estrutura -->
-          <tr align="center">
-            <td>
-              <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:26px; color:#F89916; margin-bottom:20px;">
-                Experiência desativada da plataforma
-              </h1>
-            </td>
-          </tr>
-          <!-- Fim do Título da Primeira Estrutura -->
-          <!-- Imagem da Primeira Estrutura -->
-          <tr align="center">
-            <td>
-              <img src="{{ asset('img/icones/png/laranja-atencao-cheio.png') }}" alt="" title="" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px" style="margin-bottom:20px;"/>
-            </td>
-          </tr>
-          <!-- Fim da Imagem da Primeira Estrutura -->
-          <!-- Sub-título da Primeira Estrutura -->
-          <tr align="center">
-            <td>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; color:#F89916;">
-                A Experiência da <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong> foi <strong>DESATIVADA</strong> da Vivalá com sucesso!
-              </p>
-            </td>
-          </tr>
-          <!-- Fim do Sub-título da Primeira Estrutura -->
-        </tbody>
-      </table>
-    </div>
-  </td>
-  <!-- Fim da Primeira SEÇÃO -->
+  <!-- Primeira SEÇÃO [Exclusivo de experiências] -->
+  <?php
+    $expTextoBaixo = 'A Experiência da'.mb_strtoupper(trim($Experiencia->owner_nome)).' foi <strong>DESATIVADA</strong> da Vivalá com sucesso!';
+  ?>
+  @include('emails.experiencias._experiencias_img-cabecalho', [
+    'expCorTextos' => '#F89916',
+    'expTextoCima' => 'Experiência desativada da plataforma',
+    'expTextoBaixo' => $expTextoBaixo,
+    'expLinkImagem' => 'img/icones/png/laranja-atencao-cheio.png',
+    'expAltImagem' => 'Experiência Desativada',
+    'expTitleImagem' => 'Experiência Desativada'
+  ])
+  <!-- Fim da Primeira SEÇÃO [Exclusivo de experiências] -->
+
   <!-- Separador -->
-  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
     <tr></tr>
   </td>
   <!-- Fim do Separador -->
+
   <!-- Segunda SEÇÃO -->
-  <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 20px 0 20px;">
+  @section('email-conteudo')
+  <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
     <div style="display:block; margin:0 auto; max-width:600px;">
       <table style="width: 100%; padding-bottom:0; margin-top:0; padding-bottom:0;">
         <tbody>
@@ -180,11 +161,5 @@
       </table>
     </div>
   </td>
+  @stop
   <!-- Fim da Segunda SEÇÃO -->
-  <!-- Separador -->
-  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
-    <tr></tr>
-  </td>
-  <!-- Fim do Separador -->
-
-@include('emails._footer')

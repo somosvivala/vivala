@@ -22,10 +22,16 @@
 
   <!-- Segunda SEÇÃO -->
   {{--
-  @section('email-corpo')
+  @section('email-conteudo')
     @include('emails.experiencias._experiencias_info-instituicao', [
       'Experiencia' => $Experiencia
     ])
   --}}
   <!-- Fim da Segunda SEÇÃO -->
-@stop
+  
+  <!-- Separador -->
+  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+    <tr></tr>
+  </td>
+  <!-- Fim do Separador -->
+  @stop
