@@ -1,4 +1,4 @@
-<td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px; border: 2px solid {{ isset($expCorTextos) ? $expCorTextos : '#FFF' }};">
+<td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px; border: 2px solid @if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif;">
   <div style="display:block; margin:0 auto; max-width:600px;">
     <table style="width: 100%; padding-bottom:0;">
       <tbody>
@@ -6,7 +6,7 @@
         @if(!empty($textoCima))
         <tr align="center">
           <td>
-            <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:31px; color:{{ $corTextos }}; margin-top:40px; margin-bottom:40px;">
+            <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:31px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin-top:40px; margin-bottom:40px;">
               {!! isset($expTextoCima) ? $expTextoCima : '[ERRO] Texto não encontrado.' !!}
             </h1>
           </td>
@@ -24,7 +24,7 @@
         <!-- Sub-título da Primeira Estrutura -->
         <tr align="center">
           <td>
-            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; color:{{ $corTextos }}; margin-top:40px; margin-bottom:40px;">
+            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin-top:40px; margin-bottom:40px;">
               {!! isset($expTextoBaixo) ?  $expTextoBaixo : '[ERRO] Texto não encontrado.' !!}
             </p>
           </td>

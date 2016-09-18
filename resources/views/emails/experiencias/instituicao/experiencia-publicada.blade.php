@@ -21,17 +21,9 @@
   <!-- Fim do Separador -->
 
   <!-- Segunda SEÇÃO -->
-  {{--
   @section('email-conteudo')
     @include('emails.experiencias._experiencias_info-instituicao', [
       'Experiencia' => $Experiencia
     ])
-  --}}
   <!-- Fim da Segunda SEÇÃO -->
-  
-  <!-- Separador -->
-  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
-    <tr></tr>
-  </td>
-  <!-- Fim do Separador -->
   @stop
