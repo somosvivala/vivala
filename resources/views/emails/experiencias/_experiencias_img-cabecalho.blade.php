@@ -20,7 +20,6 @@
           </td>
         </tr>
         <!-- Fim da Imagem da Primeira Estrutura -->
-        <!-- Seção de INFOS BANCÁRIAS -->
         <!-- Sub-título da Primeira Estrutura -->
         <tr align="center">
           <td>
@@ -34,3 +33,8 @@
     </table>
   </div>
 </td>
+<!-- Separador -->
+<td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
+  <tr></tr>
+</td>
+<!-- Fim do Separador -->
