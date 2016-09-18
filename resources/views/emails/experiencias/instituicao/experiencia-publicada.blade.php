@@ -15,15 +15,15 @@
   <!-- Fim da Primeira SEÇÃO [Exclusivo de experiências] -->
 
   <!-- Separador -->
-  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+  <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
     <tr></tr>
   </td>
   <!-- Fim do Separador -->
 
   <!-- Segunda SEÇÃO -->
   @section('email-conteudo')
-    @include('emails.experiencias._experiencias_info-instituicao', [
+    @include('emails.experiencias._info-experiencia-instituicao', [
       'Experiencia' => $Experiencia
     ])
-  <!-- Fim da Segunda SEÇÃO -->
   @stop
+  <!-- Fim da Segunda SEÇÃO -->

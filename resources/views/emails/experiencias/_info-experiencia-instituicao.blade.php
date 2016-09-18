@@ -99,29 +99,19 @@
             </td>
           </tr>
           @foreach($Experiencia->informacoes as $Informacao)
-          <tr>
-            <td>
-              <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
-                <img src="{{ $Informacao->PathIconePNG }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
-              </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
-                {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
-              </p>
-            </td>
-          </tr>
+            <tr>
+              <td>
+                <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
+                  <img src="{{ $Informacao->PathIconePNG }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
+                </p>
+                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
+                  {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
+                </p>
+              </td>
+            </tr>
           @endforeach
         @endif
         <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
-        <!-- Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
-        <tr align="center">
-          <td>
-            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; margin-top:50px; margin-bottom:0px;">
-              Envie sua dúvida ou sugestão para
-              <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">{{ env('VIVALA_LINK_EMAIL') }}</a>
-            <p>
-          </td>
-        </tr>
-        <!-- Fim da Seção ENVIE SUA DÚVIDA OU SUGESTÃO  -->
       </tbody>
     </table>
   </div>

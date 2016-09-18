@@ -3,11 +3,11 @@
     <table style="width: 100%; padding-bottom:0;">
       <tbody>
         <!-- Título da Primeira Estrutura -->
-        @if(!empty($textoCima))
+        @if(!empty($expTextoCima))
         <tr align="center">
           <td>
             <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-weight:bold; font-size:31px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin-top:40px; margin-bottom:40px;">
-              {!! isset($expTextoCima) ? $expTextoCima : '[ERRO] Texto não encontrado.' !!}
+              {!! $expTextoCima !!}
             </h1>
           </td>
         </tr>
@@ -25,7 +25,7 @@
         <tr align="center">
           <td>
             <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin-top:40px; margin-bottom:40px;">
-              {!! isset($expTextoBaixo) ?  $expTextoBaixo : '[ERRO] Texto não encontrado.' !!}
+              {!! $expTextoBaixo !!}
             </p>
           </td>
         </tr>

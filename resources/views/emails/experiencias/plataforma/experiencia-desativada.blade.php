@@ -5,7 +5,7 @@
 
   <!-- Primeira SEÇÃO [Exclusivo de experiências] -->
   <?php
-    $expTextoBaixo = 'A Experiência da'.mb_strtoupper(trim($Experiencia->owner_nome)).' foi <strong>DESATIVADA</strong> da Vivalá com sucesso!';
+    $expTextoBaixo = 'A Experiência da <strong>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</strong> foi <strong>DESATIVADA</strong> da Vivalá com sucesso!';
   ?>
   @include('emails.experiencias._experiencias_img-cabecalho', [
     'expCorTextos' => '#F89916',
@@ -25,7 +25,7 @@
 
   <!-- Segunda SEÇÃO -->
   @section('email-conteudo')
-    @include('emails.experiencias._experiencias_info-instituicao', [
+    @include('emails.experiencias._info-experiencia-plataforma', [
       'Experiencia' => $Experiencia
     ])
   @stop
