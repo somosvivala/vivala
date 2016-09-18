@@ -1,4 +1,4 @@
-@extends('emails._base'[
+@extends('emails._base', [
   'emailCabecalho' => 'Email de Feedback',
   'emailTitulo' => 'Formulário de Feedback'
 ])
