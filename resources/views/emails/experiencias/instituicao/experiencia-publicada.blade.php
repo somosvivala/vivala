@@ -1,4 +1,4 @@
-@extends('emails._base'[
+@extends('emails._base', [
   'emailCabecalho' => 'A sua experiência foi publicada com sucesso!',
   'emailTitulo' => 'Temos uma novidade pra você!'
 ])

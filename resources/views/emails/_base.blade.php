@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>{{ trans('global.title_vivala') }} - {{ isset($emailCabecalho) }}</title>
+    <title>{{ trans('global.title_vivala') }} - {{ isset($emailCabecalho) ? $emailCabecalho : '[ERRO] Cabeçalho não encontrado'  }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <style>
@@ -84,11 +84,11 @@
                   </tr>
                   <!-- Fim do Separador -->
                   <!-- Título do EMAIL -->
-                  @if(isset($emailTitulo))
+                  @if(!empty($emailTitulo))
                     <tr align="center">
                       <td>
                         <h1 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:26px; font-weight:normal; color:#FFFFFF; margin:40px 0 10px; margin-top:0; line-height:40px;">
-                          {!! $emailTitulo !!}
+                          {!! isset($emailTitulo) ? $emailTitulo : '[ERRO] TÍTULO do email não encontrado!' !!}
                         </h1>
                       </td>
                     </tr>
