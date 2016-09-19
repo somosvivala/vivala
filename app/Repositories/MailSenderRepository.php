@@ -341,23 +341,6 @@ class MailSenderRepository
     * Método enviaEmailExperienciaCandidatoInscricaoPendenteExperienciaEminente
     * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para CANDIDATO
     */
-    public function enviaEmailExperienciaCandidatoInscricaoPendenteExperienciaEminente(InscricaoExperiencia $Inscricao)
-    {
-      Mail::send('emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
-        //se estiver em production, manda email para a live
-        if(app()->environment('production'))
-          $message->to($Inscricao->experiencia->email_responsavel, $Inscricao->experiencia->owner_nome)->subject('Vivalá Experiências - Última chamada para esta incrível experiência!');
-        //se estiver em development, manda o email para a sandbox
-        else if(app()->environment('development'))
-          $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Pendente | Experiência Eminente - Candidato');
-        $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-      });
-    }
-
-    /**
-    * Método enviaEmailExperienciaCandidatoInscricaoPendenteExperienciaEminente
-    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para CANDIDATO
-    */
     public function enviaEmailExperienciaCandidatoInscricaoConfirmadaExperienciaEminente(InscricaoExperiencia $Inscricao)
     {
       Mail::send('emails.experiencias.candidato.inscricao-pagamento-pendente-experiencia-eminente', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
