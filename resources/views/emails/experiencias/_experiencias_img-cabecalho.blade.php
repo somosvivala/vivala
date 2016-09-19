@@ -21,6 +21,7 @@
         </tr>
         <!-- Fim da Imagem da Primeira Estrutura -->
         <!-- Sub-título da Primeira Estrutura -->
+        @if(!empty($expTextoBaixo))
         <tr align="center">
           <td>
             <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin-top:40px; margin-bottom:40px;">
@@ -28,6 +29,7 @@
             </p>
           </td>
         </tr>
+        @endif
         <!-- Fim do Sub-título da Primeira Estrutura -->
       </tbody>
     </table>
