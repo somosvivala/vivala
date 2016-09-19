@@ -591,6 +591,19 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
     }
 
     /**
+     * Metodo para atualizar o status das inscricoes de pendentes para expiradas
+     */
+    public function atualizaInscricoesPendentesParaExpiradas($inscricoes)
+    {
+        $inscricoes->each(function($Inscricao) {
+            $Inscricao->update(['status' => 'expirada']);
+            $Inscricao->push();
+        });
+    }
+
+
+
+    /**
      * Metodo para atualizar o status de uma experiencia tipo evento_unico para finalizada
      */
     public function finalizaExperienciaEventoUnico(Experiencia $Experiencia)
