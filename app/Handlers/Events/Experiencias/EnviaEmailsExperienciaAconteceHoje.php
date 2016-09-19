@@ -37,14 +37,17 @@ class EnviaEmailsExperienciaAconteceHoje
 
         //Iterando sob os inscritos disparando o email avisando sobre a ocorencia da experiencia
         foreach ($inscricoesConfirmadasNessaData as $Inscricao) {
-            //$this-mailSenderRepository->envia email dia da experiencia p/ candidato
+            $this->mailSenderRepository->enviaEmailExperienciaCandidatoInscricaoConfirmadaExperienciaHoje($Inscricao);
         }
 
-        //3-Disparar email de experiecia acontece hoje para o owner com a lista de inscritos confirmados
-        //$this->mailSenderRepository-> envia email dia da experiencia p/ Owner ($inscricoesConfirmadasNessaData)
+        //Se tiver de fato pessoas confirmadas entao enviamos a lista de pessoas para a Instituicao
+        if ( ! $inscricoesConfirmadasNessaData->isEmpty() ) {
+            //Disparar email de experiecia acontece hoje para o owner com a lista de inscritos confirmados
+            $this->mailSenderRepository->enviaEmailExperienciaInstituicaoExperienciaHoje($inscricoesConfirmadasNessaData);
 
-        //4-Disparar email para a vivalá notificando a ocorrencia da experiencia,
-        //$this->mailSenderRepository-> envia email dia da experiencia p/ Vivalá ($inscricoesConfirmadasNessaData)
+            //Disparar email para a vivalá notificando a ocorrencia da experiencia,
+            //$this->mailSenderRepository-> envia email dia da experiencia p/ Vivalá ($inscricoesConfirmadasNessaData)
+        }
 
     }
 }

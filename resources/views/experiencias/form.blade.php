@@ -426,7 +426,7 @@
         </div>
         <ul id="data-ocorrencia-container">
             @if (isset($experiencia))
-              @foreach ($experiencia->ocorrencias as $dataOcorrencia)
+              @foreach ($experiencia->futurasOcorrencias as $dataOcorrencia)
                 @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
               @endforeach
             @endif
