@@ -42,6 +42,7 @@ class EnviaEmailsInscricaoExperienciaCancelada
 
         //se foi confirmado o pagamento, entao só podemos disparar emails quando a inscricao for deletada pelo admin
         else if ($Inscricao->deleted_at) {
+            $this->mailSenderRepository->enviaEmailExperienciaPlataformaInscricaoCancelada($Inscricao);
             $this->mailSenderRepository->enviaEmailExperienciaCandidatoInscricaoCancelada($Inscricao);
             $this->mailSenderRepository->enviaEmailExperienciaInstituicaoInscricaoCancelada($Inscricao);
         }
