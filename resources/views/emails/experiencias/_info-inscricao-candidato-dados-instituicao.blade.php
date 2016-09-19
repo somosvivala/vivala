@@ -16,10 +16,10 @@
                   </p>
                 </a>
                 <p style="margin-top:10px; margin-bottom: 0;">
-                  <span><a href="https://facebook.com/{{ $Inscricao->experiencia->url_facebook_responsavel }}" target="_blank" style="color:transparent!important;">
+                  <span><a href="https://{{ $Inscricao->experiencia->url_facebook_responsavel }}" target="_blank" style="color:transparent!important;">
                     <img src="{{ asset('img/icones/png/cinza-mini-fb-circulo.png') }}" alt="{{ trans('global.social_network_facebook') }}" title="{{ trans('global.social_network_facebook') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                   </a></span>
-                  <span><a href="https://instagram.com/{{ $Inscricao->experiencia->url_instagram_responsavel }}" target="_blank" style="color:transparent!important;">
+                  <span><a href="https://{{ $Inscricao->experiencia->url_instagram_responsavel }}" target="_blank" style="color:transparent!important;">
                     <img src="{{ asset('img/icones/png/cinza-mini-ig-circulo.png') }}" alt="{{ trans('global.social_network_instagram') }}" title="{{ trans('global.social_network_instagram') }}" min-width="17px" width="17px" max-width="17px" min-height="18px" height="18px" max-height="18px"/>
                   </a></span>
                   <span><a href="http://{{ $Inscricao->experiencia->url_externa_responsavel = preg_replace('#^www\.(.+\.)#i', '$1', $Inscricao->experiencia->url_externa_responsavel) }}" target="_blank" min-width="17px" style="color:transparent!important;">

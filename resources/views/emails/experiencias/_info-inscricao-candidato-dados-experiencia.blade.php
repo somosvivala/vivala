@@ -5,8 +5,8 @@
         <!-- Seção DETALHES DA EXPERIÊNCIA -->
         <tr>
           <td>
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:15px;">
-              Detalhes da experiência
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
+              Informações da experiência
             </h3>
           </td>
         </tr>
@@ -33,11 +33,23 @@
           </td>
         </tr>
         <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+        <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+        <tr>
+          <td style="padding-bottom:30px;">
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
+              Detalhes
+            </h3>
+            <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
+              {{ trim($Inscricao->experiencia->detalhes) }}
+            </p>
+          </td>
+        </tr>
+        <!-- Fim da Seção DESCRIÇÃO DA EXPERIÊNCIA -->
         <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td>
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#545454; line-height:1.2em; margin-top:15px; margin-bottom:15px;">
-              Informações
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
+              Informações Extras
             </h3>
           </td>
         </tr>

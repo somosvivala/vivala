@@ -1,5 +1,5 @@
 <?php
-  $emailTitulo = 'Obrigado pela confiança,<strong>'.ucfirst(trim($Inscricao->perfil->nome)).'</strong>!';
+  $emailTitulo = 'Obrigado pela confiança, <strong>'.ucfirst(trim($Inscricao->perfil->nome)).'</strong>!';
 ?>
 @extends('emails.experiencias._base-experiencias', [
   'emailCabecalho' => 'Sua experiência foi confirmada com sucesso!',
