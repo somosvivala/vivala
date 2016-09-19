@@ -44,15 +44,15 @@ class EnviaEmailsExperienciaEminente
         foreach ($inscricoesAtivasNessaData as $Inscricao) {
             //Se a inscricao tiver sido confirmada
             if($Inscricao->isConfirmada) {
-                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao confirmada
+                $this->mailSenderRepository->enviaEmailExperienciaCandidatoInscricaoConfirmadaExperienciaEminente($Inscricao);
             }
             else if ($Inscricao->isPendente) {
-                //$this->mailSenderRepository->envia email experiencia eminente p/ inscricao pendente
+                $this->mailSenderRepository->enviaEmailExperienciaCandidatoInscricaoPendenteExperienciaEminente($Inscricao);
             }
         }
 
-        //3-Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
-        //$this->mailSenderRepository-> envia email experiencia eminente p/ Owner ($inscricoesConfirmadasNessaData)
+        //Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
+        $this->mailSenderRepository->enviaEmailExperienciaInstituicaoExperienciaEminente($inscricoesConfirmadasNessaData);
     }
 
 }
