@@ -64,14 +64,14 @@
           </td>
         </tr>
         <!-- Fim da Seção do BOLETO BANCÁRIO -->
+        <!-- Divisor -->
+        <tr align="center">
+          <td>
+            <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
+          </td>
+        </tr>
+        <!-- Fim do Divisor -->
       </tbody>
     </table>
   </div>
 </td>
-<!-- Divisor -->
-<tr align="center">
-  <td>
-    <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
-  </td>
-</tr>
-<!-- Fim do Divisor -->
