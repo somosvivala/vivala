@@ -34,7 +34,9 @@
             </p>
             <p><img src="{{ asset('/img/icones/png/cinza-asterisco.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Status da Inscrição: </span>
               <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                <strong style="color:#F89916;">{{ mb_strtoupper(trim($Inscricao->status)) }}</strong>
+                <strong style="color:@if($Inscricao->isPendente) #F89916; @elseif($Inscricao->isConfirmada) #25A494; @elseif($Inscricao->isCancelada) #CB171E; @endif">
+                  {{ mb_strtoupper(trim($Inscricao->status)) }}
+                </strong>
               </span>
             </p>
           </td>
