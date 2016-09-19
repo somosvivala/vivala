@@ -377,7 +377,7 @@ class MailSenderRepository
     */
     public function enviaEmailExperienciaInstituicaoExperienciaEminente($Inscricoes)
     {
-      Mail::send('emails.experiencias.instituicao.experiencia-eminente', ['Inscricao' => $Inscricoes], function ($message) use ($Inscricoes) {
+      Mail::send('emails.experiencias.instituicao.experiencia-eminente', ['Inscricoes' => $Inscricoes], function ($message) use ($Inscricoes) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to($Inscricoes->first()->experiencia->email_responsavel, $Inscricoes->first()->experiencia->owner_nome)->subject('Vivalá Experiências - Sua experiência está chegando! Veja nossas dicas!');
