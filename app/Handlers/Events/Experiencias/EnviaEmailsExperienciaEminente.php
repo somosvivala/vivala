@@ -51,8 +51,11 @@ class EnviaEmailsExperienciaEminente
             }
         }
 
-        //Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
-        $this->mailSenderRepository->enviaEmailExperienciaInstituicaoExperienciaEminente($inscricoesConfirmadasNessaData);
+        //Checando se existem inscricoes confirmadas para disparar o email pra instituicao
+        if ( ! $inscricoesConfirmadasNessaData->isEmpty() ) {
+            //Disparar email de experiecia eminente para o owner com a lista de inscritos confirmados
+            $this->mailSenderRepository->enviaEmailExperienciaInstituicaoExperienciaEminente($inscricoesConfirmadasNessaData);
+        }
     }
 
 }
