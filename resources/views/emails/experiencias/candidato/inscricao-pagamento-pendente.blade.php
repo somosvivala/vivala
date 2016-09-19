@@ -17,12 +17,10 @@
   @stop
 
   @section('email-experiencia-conteudo')
-
     {{-- SEÇÃO de PAGAMENTOS do CANDIDATO --}}
     @include('emails.experiencias._info-inscricao-candidato-dados-pagamento', [
       'Inscricao' => $Inscricao
     ])
-    @stop
 
     {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-inscricao-candidato-dados-experiencia', [

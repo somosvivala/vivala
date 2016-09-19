@@ -7,7 +7,6 @@
   ])
 
   @section('email-experiencia-conteudo')
-
     {{-- SEÇÃO de DADOS do USUÁRIO INSCRITO --}}
     @include('emails.experiencias._info-inscricao-plataforma-dados-candidato', [
       'Inscricao' => $Inscricao
@@ -16,6 +15,5 @@
     {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-experiencia-plataforma', [
       'Experiencia' => $Inscricao->experiencia
-    ])
-    
+    ])  
   @stop

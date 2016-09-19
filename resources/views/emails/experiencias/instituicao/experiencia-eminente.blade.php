@@ -16,6 +16,7 @@
 
   @section('email-experiencia-conteudo')
     @include('emails.experiencias._info-experiencia-eminente-instituicao', [
-      'Experiencia' => $Experiencia
+      'Experiencia' => $Inscricoes->first()->experiencia,
+      'Inscricoes' => $Inscricoes
     ])
   @stop

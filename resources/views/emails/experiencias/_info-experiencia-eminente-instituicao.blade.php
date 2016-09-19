@@ -45,39 +45,39 @@
             </h3>
           </td>
         </tr>
-        {{-- FAZER O @FOR DE USUÁRIOS INSCRITOS E CONFIRMADOS NA EXPERIÊNCIA --}}
-        <tr>
-          <td style="border: 1px solid #E58807; padding: 0 10px;">
-            <p>
-              <img src="{{ asset('/img/email/vivala-email-pessoa-icone.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                Nome
-              </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                Isis Luiza Gaona Machado
-              </span>
-            </p>
-            <p>
-              <img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                Email
-              </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                isis.gaona@gmail.com
-              </span>
-            </p>
-            <p>
-              <img src="{{ asset('/img/email/vivala-email-jogo-da-velha-icone.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                ID da inscrição
-              </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                9804985
-              </span>
-            </p>
-          </td>
-        </tr>
-        {{-- FIM DO @FOR DE USUÁRIOS INSCRITOS E CONFIRMADOS NA EXPERIÊNCIA --}}
+        @foreach($Inscricoes as $Inscricao)
+          <tr>
+            <td style="border: 1px solid #E58807; padding: 0 10px;">
+              <p>
+                <img src="{{ asset('/img/email/vivala-email-pessoa-icone.png') }}" alt="" title="" min-width="16px" width="16px" max-width="16px" min-height="17px" height="17px" max-height="17px" style="margin-right:10px;"/>
+                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
+                  Nome
+                </span>
+                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                  {{ $Inscricao->perfil->nome_completo }}
+                </span>
+              </p>
+              <p>
+                <img src="{{ asset('/img/email/vivala-email-envelope-icone.png') }}" alt="" title="" min-width="20px" width="20px" max-width="20px" min-height="15px" height="15px" max-height="15px" style="margin-right:10px;"/>
+                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
+                  Email
+                </span>
+                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                  {{ $Inscricao->perfil->user->email }}
+                </span>
+              </p>
+              <p>
+                <img src="{{ asset('/img/email/vivala-email-jogo-da-velha-icone.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/>
+                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
+                  ID da inscrição
+                </span>
+                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
+                  {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
+                </span>
+              </p>
+            </td>
+          </tr>
+        @endforeach
         <!-- Fim da Seção USUÁRIOS INSCRITOS -->
         <!-- Separador -->
         <tr align="center">
