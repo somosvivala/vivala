@@ -41,7 +41,7 @@ class AtualizaStatusInscricoes
             ->where('data_ocorrencia_experiencia', $dataFormatada)
             ->get();
 
-        //5-Atualizar lista de inscricoes (confirmadas -> concluidas) && (pendentes -> expiradas)
+        //Atualizar lista de inscricoes (confirmadas -> concluidas) && (pendentes -> expiradas)
         $this->experienciasRepository->atualizaInscricoesConfirmadasParaConcluidas($inscricoesConfirmadasNessaData);
         $this->experienciasRepository->atualizaInscricoesPendentesParaExpiradas($inscricoesPendentesNessaData);
     }

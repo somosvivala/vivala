@@ -22,7 +22,7 @@ class ExperienciaAconteceHoje extends Event
     public function __construct(Experiencia $experiencia, DataOcorrenciaExperiencia $dataOcorrencia)
     {
         $this->Experiencia = $experiencia;
-        $this->DataOcorrenciaExperiencia = $dataOcorrencia;
+        $this->DataOcorrencia = $dataOcorrencia;
     }
 
 }
