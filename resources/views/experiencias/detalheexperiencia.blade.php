@@ -40,17 +40,17 @@
             <span>{{ $Experiencia->owner_nome }}</span>
             <div class="row">
               @if($Experiencia->owner->url_facebook)
-                <a href="{{ url('$Experiencia->owner->url_facebook') }}">
+                <a href="http://{{ $Experiencia->owner->url_facebook }}">
                   <i class="fa fa-facebook-square verde-sucesso"></i>
                 </a>
               @endif
               @if($Experiencia->owner->url_instagram)
-                <a href="{{ url('$Experiencia->owner->url_instagram') }}">
+                <a href="http://{{ $Experiencia->owner->url_instagram }}">
                   <i class="fa fa-instagram verde-sucesso"></i>
                 </a>
               @endif
               @if($Experiencia->owner->url_site)
-              <span><a href="{{ url('$Experiencia->owner->url_site') = preg_replace('#^www\.(.+\.)#i', '$1', $Experiencia->owner->url_site) }}" target="_blank">
+              <span><a href="http://{{ $Experiencia->owner->url_site = preg_replace('#^www\.(.+\.)#i', '$1', $Experiencia->owner->url_site) }}" target="_blank">
                 <i class="fa fa-link verde-sucesso"></i>
               </a></span>
               @endif
