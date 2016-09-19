@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'url' => 'http://dev.vivalabrasil.com.br',
+	'url' => 'http://dev.vivala.com.br',
 
 	/*
 	|--------------------------------------------------------------------------
