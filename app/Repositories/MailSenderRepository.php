@@ -338,7 +338,7 @@ class MailSenderRepository
     }
 
     /**
-    * Método enviaEmailExperienciaCandidatoInscricaoPendenteExperienciaEminente
+    * Método enviaEmailExperienciaCandidatoInscricaoConfirmadaExperienciaEminente
     * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para CANDIDATO
     */
     public function enviaEmailExperienciaCandidatoInscricaoConfirmadaExperienciaEminente(InscricaoExperiencia $Inscricao)
