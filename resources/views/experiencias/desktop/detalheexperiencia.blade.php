@@ -271,7 +271,7 @@
                   @if($Experiencia->isUsuarioAtualInscrito)
                     {!! Form::hidden('_token', csrf_token()) !!}
                     <div class="col-lg-12 margin-b-1">
-                      <a class="btn btn-preto" href="/experiencias/checkout/{{ $Experiencia->id }}" onclick="event.preventDefault();">Confira novamente os dados para pagamento</a>
+                      <a class="btn btn-preto" href="/experiencias/checkout/{{ $Experiencia->id }}">Confira novamente os dados para pagamento</a>
                     </div>
                     <div class="col-lg-12">
                       <a class="btn btn-cancelar-desktop btn-cancelar-inscricao" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)">
