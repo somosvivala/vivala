@@ -9,7 +9,7 @@
               Informações da Experiência
             </h3>
             <p style="float:left; margin-top:0; margin-bottom:0;">
-              <img src="{{ $Experiencia->fotoOCapaUrlPublica }}" min-width="240px" width="auto" max-width="600px" min-height="300px" height="300px" max-height="300px" style="margin-right:20px;"/>
+              <img src="{{ $Experiencia->fotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="600px" min-height="300px" height="300px" max-height="300px" style="margin-right:20px;"/>
             </p>
             <p style="margin-top:10px; margin-bottom:10px;">
               <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
