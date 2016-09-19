@@ -439,13 +439,6 @@ class Experiencia extends Model
     }
 
 
-
-
-
-
-
-
-
     /**
      * ### SCOPES
      */
