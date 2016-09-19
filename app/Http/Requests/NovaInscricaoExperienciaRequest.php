@@ -33,8 +33,7 @@ class NovaInscricaoExperienciaRequest extends Request
         }
 
         //Checando se ja existe uma inscricao ativa para esse usuario
-        $existeInscricao = $this->experienciasRepository
-                            ->getInscricaoUsuario($experiencia, Auth::user());
+        $existeInscricao = $experiencia->getInscricaoUsuario(Auth::user());
 
         //Se existir uma inscricao entao nao pode criar outra :)
         return $existeInscricao ? false : true;
