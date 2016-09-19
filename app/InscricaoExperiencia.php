@@ -82,11 +82,43 @@ class InscricaoExperiencia extends Model
     }
 
     /**
-     * Definindo um acessor para para saber se a experiencia esta pendente
+     * Definindo um acessor para para saber se a inscricao esta pendente
      */
     public function getIsPendenteAttribute()
     {
         return $this->status == 'pendente';
+    }
+
+    /**
+     * Definindo um acessor para para saber se a inscricao esta confirmada
+     */
+    public function getIsConfirmadaAttribute()
+    {
+        return $this->status == 'confirmada';
+    }
+
+    /**
+     * Definindo um acessor para para saber se a inscricao esta cancelada
+     */
+    public function getIsCanceladaAttribute()
+    {
+        return $this->status == 'cancelada';
+    }
+
+    /**
+     * Definindo um acessor para para saber se a inscricao esta concluida (finalizada / ja ocorreu)
+     */
+    public function getIsConcluidaAttribute()
+    {
+        return $this->status == 'concluida';
+    }
+
+    /**
+     * Definindo um acessor para para saber se a inscricao esta expirada
+     */
+    public function getIsExpiradaAttribute()
+    {
+        return $this->status == 'expirada';
     }
 
     /**
