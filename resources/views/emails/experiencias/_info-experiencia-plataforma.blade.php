@@ -6,7 +6,7 @@
         <tr>
           <td style="padding-bottom:40px;">
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Informações da sua Experiência
+              Informações da Experiência
             </h3>
             <p style="float:left; margin-top:0; margin-bottom:0;">
               <img src="{{ $Experiencia->FotoOwnerUrlPublica }}" min-width="240px" width="auto" max-width="600px" min-height="300px" height="300px" max-height="300px" style="margin-right:20px;"/>
@@ -57,7 +57,7 @@
                 R${{ $Experiencia->preco }}
               </span>
             </p>
-            <p style="margin-top:10px; margin-bottom: 15px;">
+            <p style="margin-top:30px; margin-bottom: 15px;">
               <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px;" title="ID da Experiência">
                 ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
               </span>
@@ -69,7 +69,7 @@
         <tr>
           <td style="padding-bottom:30px;">
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Descrição da sua Experiência
+              Descrição Completa
             </h3>
             <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
               {{ trim($Experiencia->descricao) }}
@@ -81,7 +81,7 @@
         <tr>
           <td style="padding-bottom:30px;">
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Detalhes da sua Experiência
+              Detalhes
             </h3>
             <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
               {{ trim($Experiencia->detalhes) }}
@@ -94,7 +94,7 @@
           <tr>
             <td>
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-                Informações Extras da sua Experiência
+                Informações Extras
               </h3>
             </td>
           </tr>

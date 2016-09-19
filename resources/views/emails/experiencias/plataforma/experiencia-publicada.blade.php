@@ -5,7 +5,7 @@
 
   @section('email-experiencia-cabecalho')
     <?php
-      $expTextoBaixo = 'A Experiência da <strong>'.mb_strtoupper(trim($Experiencia->owner_nome)).'</strong>foi <strong>PUBLICADA</strong> na Vivalá com sucesso!';
+      $expTextoBaixo = 'A Experiência da <strong>'.mb_strtoupper(trim($Experiencia->owner_nome)).'</strong> foi <strong>PUBLICADA</strong> na Vivalá com sucesso!';
     ?>
     @include('emails.experiencias._experiencias_img-cabecalho', [
       'expCorTextos' => '#3EA790',
