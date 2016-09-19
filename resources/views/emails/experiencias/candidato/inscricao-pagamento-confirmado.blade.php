@@ -21,7 +21,7 @@
   @stop
 
   @section('email-experiencia-conteudo')
-    @include('emails.experiencias._experiencias_info-candidato', [
+    @include('emails.experiencias._info-inscricao-candidato', [
       'Inscricao' => $Inscricao,
       'divisor' => true
     ])
