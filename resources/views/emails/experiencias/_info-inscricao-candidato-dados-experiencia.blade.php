@@ -1,6 +1,6 @@
 <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
   <div style="display:block; margin:0 auto; max-width:600px;">
-    <table style="width: 100%; padding-bottom:0; margin-top:20px;">
+    <table style="width: 100%; padding-bottom:0;">
       <tbody>
         <!-- Seção DETALHES DA EXPERIÊNCIA -->
         <tr>

@@ -67,7 +67,7 @@
         <!-- Divisor -->
         <tr align="center">
           <td>
-            <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:50px 0;"></div>
+            <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:30px 0;"></div>
           </td>
         </tr>
         <!-- Fim do Divisor -->

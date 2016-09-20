@@ -122,23 +122,28 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="hourglass-1" title="Ampulheta Metade de Cima" alt="Ampulheta Metade de Cima">
-                <i class="fa fa-hourglass-1 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="hourglass-start" title="Ampulheta Metade de Cima" alt="Ampulheta Metade de Cima">
+                <i class="fa fa-hourglass-start fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="hourglass-2" title="Ampulheta Meio a Meio" alt="Ampulheta Meio a Meio">
-                <i class="fa fa-hourglass-2 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="hourglass-half" title="Ampulheta Meio a Meio" alt="Ampulheta Meio a Meio">
+                <i class="fa fa-hourglass-half fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="hourglass-3" title="Ampulheta Metade de Baixo" alt="Ampulheta Metade de Baixo">
-                <i class="fa fa-hourglass-3 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="hourglass-end" title="Ampulheta Metade de Baixo" alt="Ampulheta Metade de Baixo">
+                <i class="fa fa-hourglass-end fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
               <span data-icon="sun-o" title="Sol" alt="Sol">
                 <i class="fa fa-sun-o fa-3x iconpicker-icone" aria-hidden="true"></i>
+              </span>
+            </li>
+            <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
+              <span data-icon="hourglass" title="Ampulheta Cheia" alt="Ampulheta Cheia">
+                <i class="fa fa-hourglass fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
@@ -164,6 +169,11 @@
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
               <span data-icon="star-half-o" title="Estrela Meio a Meio" alt="Estrela Meio a Meio">
                 <i class="fa fa-star-half-o fa-3x iconpicker-icone" aria-hidden="true"></i>
+              </span>
+            </li>
+            <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
+              <span data-icon="star-half" title="Meia Estrela" alt="Meia Estrela">
+                <i class="fa fa-star-half fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
@@ -348,8 +358,8 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="soccer-ball-o" title="Bola de Futebol/Esporte" alt="Bola de Futebol/Esporte">
-                <i class="fa fa-soccer-ball-o fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="futbol-o" title="Bola de Futebol/Esporte" alt="Bola de Futebol/Esporte">
+                <i class="fa fa-futbol-o fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
@@ -393,28 +403,28 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="battery-0" title="Bateria Vazia" alt="Bateria Vazia">
-                <i class="fa fa-battery-0 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="battery-empty" title="Bateria Vazia" alt="Bateria Vazia">
+                <i class="fa fa-battery-empty fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="battery-1" title="Bateria 25%" alt="Bateria 25%">
-                <i class="fa fa-battery-1 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="battery-quarter" title="Bateria 25%" alt="Bateria 25%">
+                <i class="fa fa-battery-quarter fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="battery-2" title="Bateria 50%" alt="Bateria 50%">
-                <i class="fa fa-battery-2 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="battery-half" title="Bateria 50%" alt="Bateria 50%">
+                <i class="fa fa-battery-half fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="battery-3" title="Bateria 75%" alt="Bateria 75%">
-                <i class="fa fa-battery-3 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="battery-three-quarters" title="Bateria 75%" alt="Bateria 75%">
+                <i class="fa fa-battery-three-quarters fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="battery-4" title="Bateria 100%" alt="Bateria 100%">
-                <i class="fa fa-battery-4 fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="battery-full" title="Bateria 100%" alt="Bateria 100%">
+                <i class="fa fa-battery-full fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
@@ -593,8 +603,8 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="image" title="Imagem" alt="Imagem">
-                <i class="fa fa-image fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="picture-o" title="Imagem" alt="Imagem">
+                <i class="fa fa-picture-o fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
@@ -1123,8 +1133,8 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="intersex" title="Interssexual" alt="Interssexual">
-                <i class="fa fa-intersex fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="transgender" title="Interssexual" alt="Interssexual">
+                <i class="fa fa-transgender fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
@@ -1247,18 +1257,18 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="bitcoin" title="Bitcoin" alt="Bitcoin">
-                <i class="fa fa-bitcoin fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="btc" title="Bitcoin" alt="Bitcoin">
+                <i class="fa fa-btc fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="dollar" title="Dólar Americano" alt="Dólar Americano">
-                <i class="fa fa-dollar fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="usd" title="Dólar Americano" alt="Dólar Americano">
+                <i class="fa fa-usd fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="euro" title="Euro" alt="Euro">
-                <i class="fa fa-euro fa-3x iconpicker-icone" aria-hidden="true"></i>
+              <span data-icon="eur" title="Euro" alt="Euro">
+                <i class="fa fa-eur fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
