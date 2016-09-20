@@ -189,7 +189,11 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
         $experiencia->update($arrayArgumentos);
         $experiencia->local()->associate($cidade)->save();
         $experiencia->owner()->associate($ong)->save();
-        $experiencia->categorias()->sync($arrayArgumentos['categoria']);
+
+        //Checando se existe de fato um indice de categorias
+        if ( array_key_exists('categoria', $arrayArgumentos) ) {
+            $experiencia->categorias()->sync($arrayArgumentos['categoria']);
+        }
 
         //checando se existe alguma informacaoExtra nessa experiencia
         $informacaoExtra = array_key_exists('informacao-extra', $arrayArgumentos) ? $arrayArgumentos['informacao-extra'] : [];

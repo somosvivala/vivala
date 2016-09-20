@@ -470,7 +470,7 @@
     {{-- Fim da Seção das DATAS em que a experiência irá ocorrer --}}
 
     {{-- Seção das CATEGORIAS da experiência --}}
-    <div class="col-lg-12 margin-t-1 margin-b-1">
+    <div class="col-lg-12 margin-t-1 margin-b-1 hide">
       <div class="row">
         <div class="col-lg-9">
           {!! Form::label('', 'Categorias da Experiência') !!}
@@ -491,6 +491,7 @@
               </label>
           @endforeach
         </div>
+    </div>
     </div>
     {{-- Fim da Seção das CATEGORIAS da experiência --}}
 
