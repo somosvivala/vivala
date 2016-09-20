@@ -41,10 +41,12 @@
             <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES BÁSICAS:</h3><br>
             <?php echo('- Quanto este cliente pretende gastar nesta cotação (Em uma escala de 1 - Pouquíssimo a 5 - Muitíssimo) ? '); ?>
             <strong style="color:#F16F2B;">{{ $CotacaoViagem['cotacao_obj']['basico']['qto-gastar'] }}</strong><br>
-            <?php echo('- Quais cotações este cliente pediu? '); ?>
-            @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipo_cotacao)
-              <?php echo('<strong style="color:#F16F2B;">' . $tipo_cotacao . '</strong>; '); ?>
+            <?php// echo('- Quais cotações este cliente pediu? '); ?>
+            {{--
+              @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipo_cotacao)
+              <?php// echo('<strong style="color:#F16F2B;">' . $tipo_cotacao . '</strong>; '); ?>
             @endforeach
+            --}}
             <br>
             º De <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['origem'] }}</strong> para <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['destino'] }}</strong><br>
             º Data da IDA: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['data-ida'] }}</strong><br>
