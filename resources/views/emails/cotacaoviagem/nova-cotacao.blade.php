@@ -5,9 +5,9 @@
 
   @section('email-conteudo')
     <!-- Seção de INFORMAÇÕES BÁSICAS -->
-    <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+    <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 20px 30px;">
       <div style="display:block; margin:0 auto; max-width:600px;">
-        <table style="width: 100%; padding-bottom:0; margin-top:20px;">
+        <table style="width: 100%; padding-bottom:0;">
           <tbody>
             <tr align="left">
               <td>
@@ -38,6 +38,19 @@
                 </p>
               </td>
             </tr>
+          </tbody>
+        </table>
+      </div>
+    </td>
+    <!-- Separador -->
+    <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
+      <tr></tr>
+    </td>
+    <!-- Fim do Separador -->
+    <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 20px 30px;">
+      <div style="display:block; margin:0 auto; max-width:600px;">
+        <table style="width: 100%; padding-bottom:0;">
+          <tbody>
             <tr align="left">
               <td>
                 <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES BÁSICAS:</h3>
@@ -46,7 +59,7 @@
                   <strong style="color:#F16F2B;">{{ $CotacaoViagem['cotacao_obj']['basico']['qto-gastar'] }}</strong><br>
                 </p>
                 <p style="margin-bottom:0px;">
-                  <span>- Quais cotações este cliente pediu?</span>
+                  <span>- Quais cotações este cliente pediu?</span><br>
                   @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipoCotacao)
                     <strong style="color:#F16F2B;"> {{ $tipoCotacao }}</strong><br>
                   @endforeach
@@ -82,7 +95,7 @@
                   <p style="margin-bottom:0px;">
                       <span>º Prefere viajar de:</span>
                       @foreach($CotacaoViagem['cotacao_obj']['basico']['pref-tempo'] as $preferenciaTempo)
-                        <strong>{{ $preferenciaTempo }}</strong>
+                        <strong>{{ $preferenciaTempo }}</strong><br>
                       @endforeach
                       <br>
                   </p>
@@ -108,9 +121,9 @@
         <tr></tr>
       </td>
       <!-- Fim do Separador -->
-      <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+      <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 20px 30px;">
         <div style="display:block; margin:0 auto; max-width:600px;">
-          <table style="width: 100%; padding-bottom:0; margin-top:20px;">
+          <table style="width: 100%; padding-bottom:0;">
             <tr align="left">
               <td>
                   <h3 style="font-size:14px; color:#F16F2B; margin-bottom:20px;">INFORMAÇÕES REFERENTES A HOSPEDAGEM:</h3>
@@ -121,9 +134,9 @@
                   @endif
                   @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel']))
                     <p style="margin-bottom:0px;">
-                      <span>º Adicionais do Hotel que o cliente gostaria de ter:</span>
+                      <span>º Adicionais do Hotel que o cliente gostaria de ter:</span><br>
                       @foreach($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel'] as $adicionaisHotel)
-                        <strong>{{ $adicionaisHotel }}</strong>
+                        <strong>{{ $adicionaisHotel }}</strong><br>
                       @endforeach
                       <br>
                     </p>
@@ -153,9 +166,9 @@
         <tr></tr>
       </td>
       <!-- Fim do Separador -->
-      <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+      <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 20px 30px;">
         <div style="display:block; margin:0 auto; max-width:600px;">
-          <table style="width: 100%; padding-bottom:0; margin-top:20px;">
+          <table style="width: 100%; padding-bottom:0;">
             <tbody>
               <tr align="left">
                 <td>
@@ -164,7 +177,7 @@
                       <p style="margin-bottom:0px;">
                         <span>º Tipos de refeição escolhida pelo cliente:</span><br>
                         @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['tipo-refeicao'] as $tipoRefeicao)
-                          <strong>{{ $tipoRefeicao }}</strong>
+                          <strong>{{ $tipoRefeicao }}</strong><br>
                         @endforeach
                         <br>
                       </p>
@@ -173,7 +186,7 @@
                       <p style="margin-bottom:0px;">
                         <span>º Tipos de cozinha escolhidas pelo cliente:</span><br>
                         @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha'] as $opcaoCozinha)
-                          <strong>{{ $opcaoCozinha }}</strong>
+                          <strong>{{ $opcaoCozinha }}</strong><br>
                         @endforeach
                         <br>
                       </p>
@@ -182,7 +195,7 @@
                       <p style="margin-bottom:0px;">
                         <span>º O cliente gostaria de curtir esses momentos de alimentação com: </span>
                         @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['momento'] as $momento)
-                          <strong>{{ $momento }}</strong>
+                          <strong>{{ $momento }}</strong><br>
                         @endforeach
                         <br>
                       </p>
@@ -190,8 +203,8 @@
                     @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato']))
                       <p style="margin-bottom:0px;">
                         <span>º Preço(s) médio(s) por prato que o cliente gostaria de pagar: </span>
-                        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] as $tipoCozinha)
-                          <strong>{{ $tipoCozinha }}</strong>
+                        @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] as $precoMedioPrato)
+                          <strong>{{ $precoMedioPrato }}</strong><br>
                         @endforeach
                         <br>
                       </p>
@@ -213,9 +226,9 @@
       </td>
       <!-- Fim do Separador -->
       <!-- Seção de CARROS -->
-      <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+      <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 20px 30px;">
         <div style="display:block; margin:0 auto; max-width:600px;">
-          <table style="width: 100%; padding-bottom:0; margin-top:20px;">
+          <table style="width: 100%; padding-bottom:0;">
             <tbody>
               <tr align="left">
                 <td>
@@ -230,7 +243,7 @@
                       <p style="margin-bottom:0px;">
                         <span>º Adicionais que o cliente gostaria que o carro alugado tivesse: </span>
                         @foreach($CotacaoViagem['cotacao_obj']['carros']['adicionais'] as $adicionaisCarros)
-                          <strong>{{ $adicionaisCarros }}</strong>
+                          <strong>{{ $adicionaisCarros }}</strong><br>
                         @endforeach
                         <br>
                       </p>
