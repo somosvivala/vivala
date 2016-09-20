@@ -41,12 +41,10 @@
             <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES BÁSICAS:</h3><br>
             <?php echo('- Quanto este cliente pretende gastar nesta cotação (Em uma escala de 1 - Pouquíssimo a 5 - Muitíssimo) ? '); ?>
             <strong style="color:#F16F2B;">{{ $CotacaoViagem['cotacao_obj']['basico']['qto-gastar'] }}</strong><br>
-            <?php// echo('- Quais cotações este cliente pediu? '); ?>
-            {{--
-              @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipo_cotacao)
-              <?php// echo('<strong style="color:#F16F2B;">' . $tipo_cotacao . '</strong>; '); ?>
+            <?php echo('- Quais cotações este cliente pediu? '); ?>
+            @foreach($CotacaoViagem['cotacao_obj']['basico']['cotacao'] as $tipoCotacao)
+              <strong style="color:#F16F2B;"> {{ $tipoCotacao }}</strong>
             @endforeach
-            --}}
             <br>
             º De <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['origem'] }}</strong> para <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['destino'] }}</strong><br>
             º Data da IDA: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['data-ida'] }}</strong><br>
@@ -54,18 +52,18 @@
             <strong style="color:red;">* Datas flexíveis?</strong> <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['datas-flexiveis'] }}</strong><br>
             º Número de ADULTOS: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['numero-adultos'] }}</strong><br>
             º Número de CRIANÇAS: <strong>{{ $CotacaoViagem['cotacao_obj']['basico']['numero-criancas'] }}</strong><br>
-            @if(isset($CotacaoViagem['cotacao_obj']['basico']['idade-criancas']))
+            @if( isset($CotacaoViagem['cotacao_obj']['basico']['idade-criancas']) && !is_null($CotacaoViagem['cotacao_obj']['basico']['idade-criancas']) )
               <?php echo('º Idade das CRIANÇAS: '); ?>
-              @foreach($CotacaoViagem['cotacao_obj']['basico']['idade-criancas'] as $idade_criancas)
-                <?php echo('<strong>' . $idade_criancas . '</strong>, '); ?>
+              @foreach($CotacaoViagem['cotacao_obj']['basico']['idade-criancas'] as $idadeCriancas)
+                <strong>{{ $idadeCriancas }}</strong>
               @endforeach
               <?php echo('<br>'); ?>
             @endif
 
             @if(isset($CotacaoViagem['cotacao_obj']['basico']['pref-tempo']))
               <?php echo('º Prefere viajar de: '); ?>
-              @foreach($CotacaoViagem['cotacao_obj']['basico']['pref-tempo'] as $preferencia_tempo)
-                <?php echo('<strong>' . $preferencia_tempo . '</strong>; '); ?>
+              @foreach($CotacaoViagem['cotacao_obj']['basico']['pref-tempo'] as $preferenciaTempo)
+                <strong>{{ $preferenciaTempo }}</strong>
               @endforeach
               <?php echo('<br>'); ?>
             @endif
@@ -86,8 +84,8 @@
 
               @if(isset($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel']))
                 <?php echo('º Adicionais do Hotel que o cliente gostaria de ter: '); ?>
-                @foreach($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel'] as $adicionais_hotel)
-                  <?php echo('<strong>' . $adicionais_hotel . '</strong>; ') ?>
+                @foreach($CotacaoViagem['cotacao_obj']['hospedagem']['adicionais-hotel'] as $adicionaisHotel)
+                  <strong>{{ $adicionaisHotel }}</strong>
                 @endforeach
                 <?php echo('<br>') ?>
               @endif
@@ -107,16 +105,16 @@
               <h3 style="font-size:14px; color:#F16F2B">INFORMAÇÕES REFERENTES A ALIMENTAÇÃO:</h3><br>
               @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['tipo-refeicao']))
                 <?php echo('º Tipos de refeição escolhida pelo cliente:<br>'); ?>
-                @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['tipo-refeicao'] as $tipo_refeicao)
-                  <?php echo('<strong>' . $tipo_refeicao . '</strong>; ') ?>
+                @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['tipo-refeicao'] as $tipoRefeicao)
+                  <strong>{{ $tipoRefeicao }}</strong>
                 @endforeach
                 <?php echo('<br>') ?>
               @endif
 
               @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha']))
                 <?php echo('º Tipos de cozinha escolhidas pelo cliente:<br>'); ?>
-                @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha'] as $opcao_cozinha)
-                  <?php echo('<strong>' . $opcao_cozinha . '</strong>; ') ?>
+                @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['opcao-cozinha'] as $opcaoCozinha)
+                  <strong>{{ $opcaoCozinha }}</strong>
                 @endforeach
                 <?php echo('<br>') ?>
               @endif
@@ -124,15 +122,15 @@
               @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['momento']))
                 <?php echo('º O cliente gostaria de curtir esses momentos de alimentação com: '); ?>
                 @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['momento'] as $momento)
-                  <?php echo('<strong>' . $momento . '</strong>; ') ?>
+                  <strong>{{ $momento }}</strong>
                 @endforeach
                 <?php echo('<br>') ?>
               @endif
 
               @if(isset($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato']))
                 <?php echo('º Preço(s) médio(s) por prato que o cliente gostaria de pagar: '); ?>
-                @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] as $tipo_cozinha)
-                  <?php echo('<strong>' . $tipo_cozinha . '</strong>; ') ?>
+                @foreach($CotacaoViagem['cotacao_obj']['alimentacao']['preco-medio-prato'] as $tipoCozinha)
+                  <strong>{{ $tipoCozinha }}</strong>
                 @endforeach
                 <?php echo('<br>') ?>
               @endif
@@ -150,8 +148,8 @@
 
               @if(isset($CotacaoViagem['cotacao_obj']['carros']['adicionais']))
                 <?php echo('º Adicionais que o cliente gostaria que o carro alugado tivesse: '); ?>
-                @foreach($CotacaoViagem['cotacao_obj']['carros']['adicionais'] as $adicionais_carros)
-                  <?php echo('<strong>' . $adicionais_carros . '</strong>; ') ?>
+                @foreach($CotacaoViagem['cotacao_obj']['carros']['adicionais'] as $adicionaisCarros)
+                  <strong>{{ $adicionaisCarros }}</strong>
                 @endforeach
                 <?php echo('<br>') ?>
               @endif

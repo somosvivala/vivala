@@ -64,6 +64,10 @@ class CotarViagensController extends Controller {
 		// JSON que será salvo no BD na table de cotações
 		$json = json_encode($CotacaoViagem);
 
+		//
+		// var_dump($CotacaoViagem);
+		// dd();
+		//
 		// Disparando evento para avisando que temos uma nova cotação
 		event(new NovaCotacaoViagem($CotacaoViagem));
 

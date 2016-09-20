@@ -50,7 +50,7 @@
         <div id="experiencia" class="tab-pane active" role="tabpanel">
             @if($Experiencia->isUsuarioAtualInscrito)
             <div class="row">
-            <div class="warning-laranja col-xs-12 margin-b-1"> 
+            <div class="warning-laranja col-xs-12 margin-b-1">
                 {!! trans('global.lbl_subscribed') !!}
             </div>
             </div>
@@ -270,17 +270,17 @@
                 <div class="col-lg-12 text-center">
                   @if($Experiencia->isUsuarioAtualInscrito)
                     {!! Form::hidden('_token', csrf_token()) !!}
-                    <div class="col-lg-12 margin-b-1">
+                    <div class="row margin-b-1">
                       <a class="btn btn-preto" href="/experiencias/checkout/{{ $Experiencia->id }}">Confira novamente os dados para pagamento</a>
                     </div>
-                    <div class="col-lg-12">
+                    <div class="row">
                       <a class="btn btn-cancelar-desktop btn-cancelar-inscricao" data-id-inscricao="{{ $Experiencia->getInscricaoUsuario(Auth::user())->id }}" href="#" onclick="confirmaUsuarioCancelaInscricaoExperiencia(event)">
                         <i class="fa fa-times-circle-o"></i>
                         Cancelar Inscrição
                       </a>
                     </div>
                   @else
-                    <div class="col-lg-12">
+                    <div class="row">
                       <a class="btn btn-acao-verde-cheio btn-inscrever-desktop btn-inscrevase-experiencia" href="/experiencias/checkout/{{ $Experiencia->id }}">
                         Inscreva-se aqui
                       </a>
