@@ -54,7 +54,7 @@ class MailSenderRepository
       Mail::send('emails.contato.novo-contato', ['FormContato' => $FormContato], function ($message)  {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pelo Formulário de Contato');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ - CONTATO] Resposta pelo Formulário de Contato');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EMAIL DE CONTATO] Resposta pelo Formulário de Contato');
@@ -72,7 +72,7 @@ class MailSenderRepository
       Mail::send('emails.feedback.novo-feedback', ['FormFeedback' => $FormFeedback], function ($message)  {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ] Resposta pelo Formulário de Feedback');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ - FEEDBACK] Resposta pelo Formulário de Feedback');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EMAIL DE FEEDBACK] Resposta pelo Formulário de Feedback');
@@ -91,7 +91,7 @@ class MailSenderRepository
       Mail::send('emails.cotacaoviagem.novo-cotacao', ['CotacaoViagem' => $CotacaoViagem], function ($message) use ($CotacaoViagem) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ - COTAÇÃO DE VIAGEM] Resposta pelo Formulário de Cotação de Viagens');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - COTAÇÃO DE VIAGEM] Enviado pela Plataforma');
@@ -108,7 +108,7 @@ class MailSenderRepository
       Mail::send('emails.experiencias.plataforma.experiencia-publicada', ['Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi aprovada na plataforma');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ EXPERIÊNCIAS] Uma Experiência foi aprovada na plataforma');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Aprovada/Publicada - Plataforma');
@@ -142,7 +142,7 @@ class MailSenderRepository
       Mail::send('emails.experiencias.plataforma.experiencia-desativada', ['Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi desativada na plataforma');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ EXPERIÊNCIAS] Uma Experiência foi desativada na plataforma');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Desativada - Plataforma');
@@ -159,7 +159,7 @@ class MailSenderRepository
       Mail::send('emails.experiencias.plataforma.experiencia-removida', ['Experiencia' => $Experiencia], function ($message) use ($Experiencia) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma Experiência foi removida na plataforma');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ EXPERIÊNCIAS] Uma Experiência foi removida na plataforma');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Removida - Plataforma');
@@ -227,7 +227,7 @@ class MailSenderRepository
        Mail::send('emails.experiencias.plataforma.inscricao-confirmada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
          //se estiver em production, manda email para a live
          if(app()->environment('production'))
-           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma inscrição de experiência foi confirmada');
+           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ EXPERIÊNCIAS] Uma inscrição de experiência foi confirmada');
          //se estiver em development, manda o email para a sandbox
          else if(app()->environment('development'))
            $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Confirmada - Plataforma');
@@ -278,7 +278,7 @@ class MailSenderRepository
       Mail::send('emails.experiencias.plataforma.inscricao-cancelada', ['Inscricao' => $Inscricao], function ($message) use ($Inscricao) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma inscrição de experiência foi cancelada');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ EXPERIÊNCIAS] Uma inscrição de experiência foi cancelada');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Inscrição de Experiência Cancelada - Plataforma');
@@ -390,14 +390,14 @@ class MailSenderRepository
 
     /**
     * Método enviaEmailExperienciaPlataformaExperienciaHoje
-    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para INSTITUIÇÃO
+    * @param $Inscricao - Instância de Inscrição (Experiencia x Usuario) que será enviada para PLATAFORMA
     */
     public function enviaEmailExperienciaPlataformaExperienciaHoje($Inscricoes)
     {
       Mail::send('emails.experiencias.plataforma.experiencia-hoje', ['Inscricoes' => $Inscricoes], function ($message) use ($Inscricoes) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
-          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('Vivalá Experiências - Uma experiência vai acontecer hoje');
+          $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ EXPERIÊNCIAS] Uma experiência vai acontecer hoje');
         //se estiver em development, manda o email para a sandbox
         else if(app()->environment('development'))
           $message->to('teste@vivalabrasil.com.br', 'Vivalá')->subject('[SANDBOX - EXPERIÊNCIAS] Experiência Hoje - Plataforma');
