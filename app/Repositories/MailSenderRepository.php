@@ -88,7 +88,7 @@ class MailSenderRepository
     */
     public function enviaEmailCotacaoViagem($CotacaoViagem)
     {
-      Mail::send('emails.cotacaoviagem.novo-cotacao', ['CotacaoViagem' => $CotacaoViagem], function ($message) use ($CotacaoViagem) {
+      Mail::send('emails.cotacaoviagem.nova-cotacao', ['CotacaoViagem' => $CotacaoViagem], function ($message) use ($CotacaoViagem) {
         //se estiver em production, manda email para a live
         if(app()->environment('production'))
           $message->to('contato@vivalabrasil.com.br', 'Vivalá')->subject('[VIVALÁ - COTAÇÃO DE VIAGEM] Resposta pelo Formulário de Cotação de Viagens');
