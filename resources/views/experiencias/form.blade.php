@@ -405,7 +405,7 @@
             @endif
 
             {{-- Botao de adicionar novas datas --}}
-            <li class="col-lg-12 margin-b-1 container-datas-ocorrencia">
+            <li class="col-lg-12 margin-b-1 container-datas-ocorrencia {{ $classesFormularioEdicao }} ">
               <div class="col-lg-3 col-lg-offset-2 text-center">
                 <a href="#" title="Adicionar Data" onclick="adicionaDataEventoUnicoExperiencia(event)">
                   <i class="fa fa-2x fa-plus margin-t-1" ></i>
