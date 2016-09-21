@@ -6,8 +6,8 @@
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
       'expCorTextos' => '#CB171E',
-      'expTextoCima' => 'A sua experiência tem uma inscrição cancelada',
-      'expTextoBaixo' => '',
+      'expTextoCima' => '',
+      'expTextoBaixo' => 'A sua experiência tem uma inscrição cancelada',
       'expLinkImagem' => 'img/icones/png/vermelho-cancelado-vazio.png',
       'expAltImagem' => 'Inscrição Cancelada',
       'expTitleImagem' => 'Inscrição Cancelada'

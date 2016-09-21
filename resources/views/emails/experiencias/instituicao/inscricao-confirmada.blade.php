@@ -6,8 +6,8 @@
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
       'expCorTextos' => '#25A494',
-      'expTextoCima' => 'A sua experiência tem uma inscrição confirmada',
-      'expTextoBaixo' => '',
+      'expTextoCima' => '',
+      'expTextoBaixo' => 'A sua experiência tem uma inscrição confirmada',
       'expLinkImagem' => 'img/icones/png/verde-sucesso-vazio.png',
       'expAltImagem' => 'Inscrição Confirmada',
       'expTitleImagem' => 'Inscrição Confirmada'
