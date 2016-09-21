@@ -131,7 +131,7 @@
 
       <div class="foto-experiencia margin-t-1">
           <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
-              <div class="categorias-experiencia">
+              <div class="categorias-experiencia hide">
                 <?php $contadorCategorias = 0; ?>
                 @foreach($Experiencia->categorias as $Categoria)
                   <div class="icone">
