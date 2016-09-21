@@ -160,7 +160,7 @@ class Experiencia extends Model
         //iterando sob os dias de funcionamento e criando datas para as proximas 10 semanas
         $arrayAux = $arrayDatas;
         foreach ($arrayAux as $dataOperacional) {
-            for ($i = 1; $i <= 3; $i++) {
+            for ($i = 1; $i <= 10; $i++) {
                 $arrayDatas[] = $dataOperacional->copy()->addDays(7*$i);
             }
         }

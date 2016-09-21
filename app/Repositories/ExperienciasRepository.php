@@ -569,7 +569,7 @@ class ExperienciasRepository extends ExperienciasRepositoryInterface
      */
     public function injectAllDiasDaSemana($view)
     {
-        $arrayDias = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo', 'Feriados'];
+        $arrayDias = ['Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado', 'Domingo'];
         return $view->with('arrayDias', $arrayDias);
     }
 
