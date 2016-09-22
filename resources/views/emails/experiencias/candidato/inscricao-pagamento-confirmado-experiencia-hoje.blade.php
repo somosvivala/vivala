@@ -13,11 +13,11 @@
       'expTitleImagem' => 'Experiência Hoje!'
     ])
   @stop
-  
+
   @section('email-experiencia-conteudo')
 
     {{-- SEÇÃO de DICAS PARA O CANDIDATO --}}
-    @include('emails.experiencias._info-inscricao-candidato-experiencia-eminente', [
+    @include('emails.experiencias._info-inscricao-candidato-dicas-experiencia-hoje', [
       'Inscricao' => $Inscricao
     ])
 

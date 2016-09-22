@@ -1,5 +1,5 @@
-<!-- Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
-<td bgcolor="#3EA790" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:5px 20px;">
+<!-- Seção DICAS PARA O CANDIDATO SOBRE A EXPERIÊNCIA  -->
+<td bgcolor="#3EA790" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px 0 30px;">
   <div style="display:block; margin:0 auto; max-width:600px;">
     <table style="width: 100%; margin-top:0; padding-bottom:0;">
       <tbody>
@@ -26,4 +26,9 @@
     </table>
   </div>
 </td>
-<!-- Fim da Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
+<!-- Fim da Seção DICAS PARA O CANDIDATO SOBRE A EXPERIÊNCIA  -->
+<!-- Separador -->
+<td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
+  <tr></tr>
+</td>
+<!-- Fim do Separador -->
