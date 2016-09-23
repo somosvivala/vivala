@@ -82,6 +82,7 @@ ul.lista-exp-desktop {
 }
 #experiencia {
   font-size:1.8em;
+  .ajuste-fonte-avenir-roman;
   .foto-img-desktop {
       width:100%;
       height:30rem;
@@ -115,14 +116,14 @@ ul.lista-exp-desktop {
     background-repeat: no-repeat;
     background-size:cover;
     .preco-interna-desktop{
-      .ajuste-fonte-futura-bold;
-      position: absolute;
-
-      right: -14%;
-      top: 5%;
-      color: white;
-      background-color: #F16F2B;
-      padding: 1% 1em;
+        .ajuste-fonte-avenir-black; 
+        position: absolute;
+        font-size: 1.7rem;
+        right: -14%;
+        top: 5%;
+        color: white;
+        background-color: #F16F2B;
+        padding: 0.2em 1.2em 0.1em;
     }
     .categorias-interna-desktop {
       width: 4rem;
@@ -160,6 +161,12 @@ ul.lista-exp-desktop {
           max-width:100%;
       }
   }
+  .icone-calendario,
+  .icone-local{
+    width: 3rem;
+    text-align:center;
+    float:left;
+  }
   .icone-informacoes {
       margin-left:15px;
       margin-right:5px;
@@ -181,6 +188,10 @@ ul.lista-exp-desktop {
           cursor:pointer;
           font-size: 1.5rem;
           color: inherit;
+          height: 1.9em;
+          margin-top: 0.1em;
+          margin-left: 0.5rem;
+          padding: 0.4rem 1rem;
       }
       &.selecionado {
           color: @cor-primaria;
@@ -189,6 +200,31 @@ ul.lista-exp-desktop {
           }
       }
   }
+
+  .instituicao-nome{
+      font-size: 1.5rem;
+      .ajuste-fonte-avenir-roman;
+      color: @cor-cinza-escuro;
+      padding-bottom:0;
+      margin-bottom: 0; 
+      padding-top: 0.5rem;
+  }
+  .descricao-experiencia,
+  .informacoes-experiencia,  
+  .mais-detalhes-experiencia {
+      font-size: 1.8rem;
+  
+  }
+  .informacao-experiencia {
+    margin-bottom: 0.5em;
+  }
+
+  .sub-titulo-experiencia {
+      .ajuste-fonte-futura-bold;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+  }
+
   .fundo-instituicao{
     background-color: @cor-fundo;
     padding: 15px 0px;
@@ -196,9 +232,6 @@ ul.lista-exp-desktop {
     .instituicao-secao-infos{
       .instituicao-secao-fotos{
         text-decoration: none;
-        .instituicao-nome{
-          font-size: 2rem;
-        }
       }
       .instituicao-secao-rede-social{
         .instituicao-rede-social{
@@ -213,13 +246,12 @@ ul.lista-exp-desktop {
       }
     }
     .instituicao-secao-texto{
+        border-left: 1px solid #BBBDBF;
       .instituicao-descricao{
         height: 100%;
-        padding-left: 15px;
-        border-left: 1px solid @cor-cinza-claro;
         p{
           font-size: 1.8rem;
-          padding-top: 3rem;
+          padding-top: 0rem;
           text-align: justify;
         }
       }
@@ -227,13 +259,37 @@ ul.lista-exp-desktop {
 
   }
   .btn-inscrever-desktop{
-    padding: 10px 30%;
+      width:71%;
+      margin: 0 14.5%;
+    padding: 0.5rem;
     text-decoration: none;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
+    .ajuste-fonte-avenir-black;
   }
   .btn-cancelar-desktop{
     padding: 10px 15%;
     text-decoration: none;
+  }
+  .round-icone {
+      display: inline-block;
+      width: 2.5rem;
+      height: 2.5rem;
+      line-height: 2.7rem;
+      vertical-align: middle;
+      background-color: #BBBDBF;
+      border-radius: 100%;
+      font-size: 1.5rem; 
+      &.icone-instagram {
+        line-height: 2.6rem;
+      }
+  }
+  .adesivo-instituicao {
+    width:70%;
+    margin: 0 15%;
+    img {
+        max-width:60%;
+        margin: 0 20%;
+    }
   }
 }
 .checkout-exp {

@@ -98,7 +98,7 @@
                             </p>
                             @else
                                 <div class="row padding-t-1 calendario-row">
-                                    <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                                    <span class="icone-calendario"><i class="fa fa-calendar"></i></span>
                                     <span class="descricao-informacoes">
                                         <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
                                         <div class="clndr-container">
@@ -121,10 +121,10 @@
                         </div>
                         @endif
                       <p class="row margin-b-0">
-                        <span class="col-lg-1 text-center padding-l-0 padding-r-0">
-                          <i class="fa fa-fw fa-map-marker experiencia-desktop-local-icone"></i>
+                        <span class="icone-local text-center padding-l-0 padding-r-0">
+                          <i class="fa fa-map-marker experiencia-desktop-local-icone"></i>
                         </span>
-                        <span class="col-lg-11 ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
+                        <span class="ajuste-fonte-avenir-black experiencia-desktop-local">
                           {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}
                         </span>
                       </p>
@@ -132,7 +132,7 @@
                         <!--<span class="col-lg-1 text-center padding-l-0 padding-r-0">
                           <i class="fa fa-fw fa-street-view experiencia-desktop-endereco-completo-icone"></i>
                       </span>-->
-                        <span class="col-lg-11 ajuste-fonte-avenir padding-l-0-5 experiencia-desktop-endereco-completo">
+                        <span class="col-lg-11 ajuste-fonte-avenir experiencia-desktop-endereco-completo">
                           {{ $Experiencia->endereco_completo }}
                         </span>
                       </p>
@@ -145,7 +145,7 @@
             {{-- Seção de DESCRIÇÃO DA EXPERIÊNCIA --}}
               <div class="row margin-b-1">
                 <div class="col-lg-12">
-                  <p class="text-justify margin-t-0 margin-b-0">
+                  <p class="text-justify margin-t-0 margin-b-0 descricao-experiencia">
                     {{ $Experiencia->descricao }}
                   </p>
                 </div>
@@ -153,17 +153,17 @@
             {{-- Fim da Seção de DESCRIÇÃO DA EXPERIÊNCIA --}}
 
             {{-- Seção de INFORMAÇÕES DA EXPERIÊNCIA --}}
-              <div class="row margin-t-1 margin-b-2">
-                <div class="col-lg-12 text-left margin-b-0-5">
-                  <span class="ajuste-fonte-futura-bold">Informações</span>
+              <div class="row margin-t-1 ">
+                <div class="col-lg-12 text-left sub-titulo-experiencia">
+                  <span>Informações</span>
                 </div>
                 <div class="row">
-                  <div class="col-lg-12">
+                  <div class="col-lg-12 informacoes-experiencia">
                     <div class="row row-eq-height margin-b-1">
                       <div class="col-lg-12">
                         {{-- Seção de INFORMAÇÕES BÁSICAS --}}
-                        <div class="col-lg-6">
-                            <i class="fa fa-fw fa-calendar-o pull-left"></i>
+                        <div class="col-lg-6 informacao-experiencia">
+                            <i class="fa fa-fw fa-calendar-o"></i>
                             <span class="ajuste-fonte-avenir-roman">
                                 {{ $Experiencia->frequencia }}
                             </span>
@@ -171,7 +171,7 @@
                           {{-- Seção de INFORMAÇÕES EXTRAS DA EXPERIÊNCIA [Opcional] --}}
                             @if($Experiencia->informacoes)
                               @foreach($Experiencia->informacoes as $Informacao)
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 informacao-experiencia">
                                   <i class="fa fa-fw {{ $Informacao->icone }}"></i>
                                   <span class="ajuste-fonte-avenir-roman">{{ $Informacao->descricao }}</span>
                                 </div>
@@ -192,12 +192,12 @@
 
             {{-- Seção de DETALHES DA EXPERIÊNCIA [Opcional] --}}
               @if($Experiencia->detalhes)
-                <div class="row margin-t-1 margin-b-2">
-                  <div class="col-lg-12 text-left margin-b-0-5">
-                    <span class="ajuste-fonte-futura-bold">Mais Detalhes</span>
+                <div class="row margin-b-2">
+                  <div class="col-lg-12 text-left sub-titulo-experiencia">
+                    <span>Mais Detalhes</span>
                   </div>
-                  <div class="col-lg-12">
-                    <span class="ajuste-fonte-avenir-roman">{{ $Experiencia->detalhes }}</span>
+                  <div class="col-lg-12 ajuste-fonte-avenir-roman mais-detalhes-experiencia">
+                    {{ $Experiencia->detalhes }}
                   </div>
                 </div>
               @endif
@@ -205,58 +205,49 @@
 
             {{-- Seção de DETALHES DA INSTITUIÇÃO/ONG/EMPRESA --}}
               <div class="row margin-b-2">
-                <div class="col-lg-12">
-                  <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-lg-12 text-center">
+                  <div class="adesivo-instituicao">
                       <div class="row row-eq-height fundo-instituicao">
                         <div class="col-lg-4 text-center instituicao-secao-infos">
                           <div class="row">
                             <div class="col-lg-12 instituicao-secao-foto">
                               <a href="{{ url('/experiencias/'.$Experiencia->id) }}" target="_blank">
                                 <img src="{{ $Experiencia->getFotoOwnerUrlAttribute() }}" alt="{{ ucfirst($Experiencia->owner_nome) }}" title="{{ ucfirst($Experiencia->owner_nome) }}" class="img-responsive img-circle"/>
-                                <p class="padding-t-0-5 ajuste-fonte-avenir-light instituicao-nome">{{ $Experiencia->owner_nome }}</p>
+                                <p class="instituicao-nome">{{ $Experiencia->owner_nome }}</p>
                               </a>
                             </div>
                           </div>
                           @if($Experiencia->url_facebook_responsavel || $Experiencia->url_instagram_responsavel || $Experiencia->url_externa_responsavel)
                             <div class="row">
-                              <div class="col-lg-12 instituicao-secao-rede-social">
+                              <div class="col-lg-12 instituicao-secao-rede-social text-center">
                                 @if($Experiencia->url_facebook_responsavel)
-                                  <div class="col-lg-4">
                                     <a class="instituicao-rede-social" href="{{ $Experiencia->url_facebook_responsavel }}" target="_blank">
-                                      <span class="fa-stack">
-                                        <i class="fa fa-circle fa-stack-2x instituicao-rede-social-fundo"></i>
-                                        <i class="fa fa-facebook fa-stack-1x fa-inverse instituicao-rede-social-icone"></i>
+                                      <span class="round-icone">
+                                        <i class="fa fa-facebook fa-inverse instituicao-rede-social-icone"></i>
                                       </span>
                                     </a>
-                                  </div>
                                 @endif
                                 @if($Experiencia->url_instagram_responsavel)
-                                  <div class="col-lg-4">
                                     <a class="instituicao-rede-social" href="{{ $Experiencia->url_instagram_responsavel }}" target="_blank">
-                                      <span class="fa-stack">
-                                        <i class="fa fa-circle fa-stack-2x instituicao-rede-social-fundo"></i>
-                                        <i class="fa fa-instagram fa-stack-1x fa-inverse instituicao-rede-social-icone"></i>
+                                        <span class="round-icone icone-instagram">
+                                        <i class="fa fa-instagram fa-inverse instituicao-rede-social-icone"></i>
                                       </span>
                                     </a>
-                                  </div>
                                 @endif
                                 @if($Experiencia->url_externa_responsavel)
-                                  <div class="col-lg-4">
                                     <a class="instituicao-rede-social" href="{{ $Experiencia->url_externa_responsavel }}" target="_blank">
-                                      <span class="fa-stack">
-                                        <i class="fa fa-circle fa-stack-2x instituicao-rede-social-fundo"></i>
-                                        <i class="fa fa-link fa-stack-1x fa-inverse instituicao-rede-social-icone"></i>
+                                      <span class="round-icone">
+                                        <i class="fa fa-link fa-inverse instituicao-rede-social-icone"></i>
                                       </span>
                                     </a>
-                                  </div>
                                 @endif
                               </div>
                             </div>
                           @endif
                         </div>
                         <div class="col-lg-8 instituicao-secao-texto">
-                          <div class="col-lg-12 instituicao-descricao">
-                            <p class="ajuste-fonte-avenir-light">{{ $Experiencia->owner_descricao }}</p>
+                          <div class="instituicao-descricao">
+                            <p class="ajuste-fonte-avenir-roman">{{ $Experiencia->owner_descricao }}</p>
                           </div>
                         </div>
                       </div>
