@@ -1,6 +1,6 @@
 @extends('emails.experiencias._base-experiencias', [
-  'emailCabecalho' => 'A sua experiência confirmada está chegando!',
-  'emailTitulo' => 'A experiência que você se inscreveu está quase chegando!'
+  'emailCabecalho' => 'Sua experiência está chegando!',
+  'emailTitulo' => 'Confira os detalhes da sua experiência!'
 ])
 
   @section('email-experiencia-cabecalho')
@@ -16,10 +16,11 @@
 
   @section('email-experiencia-conteudo')
 
-    {{-- SEÇÃO de DICAS PARA O CANDIDATO --}}
+    {{-- SEÇÃO de DICAS PARA O CANDIDATO
     @include('emails.experiencias._info-inscricao-candidato-experiencia-eminente', [
       'Inscricao' => $Inscricao
     ])
+    --}}
 
     {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-inscricao-candidato-dados-experiencia', [

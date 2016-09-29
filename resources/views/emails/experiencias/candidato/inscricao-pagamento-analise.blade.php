@@ -1,6 +1,9 @@
+<?php
+  $emailTitulo = 'Falta apenas 1 passo para confirmar sua participação na experiência da '.ucfirst(trim($Inscricao->experiencia->owner_nome));
+?>
 @extends('emails.experiencias._base-experiencias', [
   'emailCabecalho' => 'Pagamento em análise',
-  'emailTitulo' => 'Falta pouco para sua experiência acontecer!'
+  'emailTitulo' => $emailTitulo
 ])
 
   @section('email-experiencia-cabecalho')

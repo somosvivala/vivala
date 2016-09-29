@@ -1,5 +1,5 @@
 @extends('emails.experiencias._base-experiencias', [
-  'emailCabecalho' => 'Uma inscrição foi cancelada na sua experiência',
+  'emailCabecalho' => 'Um cliente cancelou sua participação em sua Experiência',
   'emailTitulo' => 'Houve um cancelamento na sua Experiência'
 ])
 

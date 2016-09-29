@@ -20,10 +20,11 @@
       'Inscricao' => $Inscricao
     ])
 
-    {{-- SEÇÃO de COMPROVANTE DE PAGAMENTO --}}
+    {{-- SEÇÃO de COMPROVANTE DE PAGAMENTO
     @include('emails.experiencias._info-inscricao-instituicao-comprovante-pagamento', [
       'Inscricao' => $Inscricao
     ])
+    --}}
 
     {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-experiencia-instituicao', [
