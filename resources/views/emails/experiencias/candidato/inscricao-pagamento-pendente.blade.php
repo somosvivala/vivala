@@ -10,7 +10,7 @@
       'expCorTextos' => '#FAA325',
       'expTextoCima' => 'Você está quase lá!',
       'expTextoBaixo' => $expTextoBaixo,
-      'expLinkImagem' => 'img/icones/png/laranja-pagamento-cartao-vazio.png',
+      'expLinkImagem' => 'img/icones/png/laranja-pagamento-dinheiro-vazio.png',
       'expAltImagem' => 'Pagamento em Análise',
       'expTitleImagem' => 'Pagamento em Análise'
     ])

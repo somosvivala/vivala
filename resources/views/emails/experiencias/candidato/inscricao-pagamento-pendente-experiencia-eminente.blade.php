@@ -10,7 +10,7 @@
       'expCorTextos' => '#FAA325',
       'expTextoCima' => 'Falta apenas um passo para confirmar sua inscrição!',
       'expTextoBaixo' => $expTextoBaixo,
-      'expLinkImagem' => 'img/icones/png/laranja-pagamento-cartao-vazio.png',
+      'expLinkImagem' => 'img/icones/png/laranja-pagamento-dinheiro-vazio.png',
       'expAltImagem' => 'Pagamento Pendente',
       'expTitleImagem' => 'Pagamento Pendente'
     ])

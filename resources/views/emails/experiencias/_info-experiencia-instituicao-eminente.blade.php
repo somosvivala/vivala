@@ -8,16 +8,22 @@
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin: 5px 0 0 0;">Dicas</h3>
             <ul>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                Tenha certeza de que todos os equipamentos necessários para a realização da experiência estejam disponíveis.
+                Verifique o número de participantes da sua experiência neste email. Tenha em mente que o número de participantes ainda pode aumentar até lá.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                Disponibilize telefones para contato caso haja alguma emergência.
+                Tenha certeza de que todos os equipamentos necessários para a realização da experiência estejam disponíveis para todos os participantes durante a experiência.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                A sua Experiência é a céu aberto? Garanta protetores solares e capas de chuva para seus convidados!
+                Disponibilize seus telefones de contato para os participantes, isso cria um elo inicial e mantém os participantes mais confiantes sobre a experiência.
+              </li>
+              <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                Sua experiência é a céu aberto? Verifique as previsões do tempo e a informe aos seus participantes na chegada, isso os dá maior segurança.
+              </li>
+              <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                Lembre-se que a Vivalá é sua parceira número um nesta experiência, então não hesite em entrar em contato conosco por email ou telefone para sanar suas dúvidas.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto">
-                Não se esqueça: Gentileza gera gentileza :)
+                E não se esqueça: Gentileza gera gentileza :)
               </li>
             </ul>
           </td>
