@@ -60,7 +60,7 @@ class DataOcorrenciaExperiencia extends Model
      */
     public function getAconteceEmQuatroDiasAttribute()
     {
-        return $this->data_ocorrencia->format('d-m-Y') == Carbon::now()->addDays(14)->format('d-m-Y');
+        return $this->data_ocorrencia->format('d-m-Y') == Carbon::now()->addDays(4)->format('d-m-Y');
     }
 
     /**
@@ -68,7 +68,7 @@ class DataOcorrenciaExperiencia extends Model
      */
     public function getAconteceEmUmDiaAttribute()
     {
-        return $this->data_ocorrencia->format('d-m-Y') == Carbon::now()->addDays(10)->format('d-m-Y');
+        return $this->data_ocorrencia->format('d-m-Y') == Carbon::now()->addDays(1)->format('d-m-Y');
     }
 
     /**

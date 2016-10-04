@@ -41,6 +41,7 @@ class UpdateExperienciaRequest extends Request
             'descricao_na_listagem' 		=> "string|required|min:2",
             'descricao'                 => "string|required|min:2",
             'detalhes'                  => "string|required|min:2",
+            'nome'                      => "required|string|min:2|max:50",
             'preco'                     => "required|numeric",
             'icone'                     => "array",
             'descricao_info'            => "array",

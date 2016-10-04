@@ -11,6 +11,9 @@ use App\CompraClickbus;
 
 use App\Events\Experiencias\ExperienciaEminente;
 use App\Events\Experiencias\ExperienciaOcorrendo;
+use App\Events\Experiencias\ExperienciaAconteceHoje;
+use App\Events\Experiencias\ExperienciaAconteceAmanha;
+use App\Events\Experiencias\ExperienciaAconteceuRecentemente;
 
 class Kernel extends ConsoleKernel
 {
