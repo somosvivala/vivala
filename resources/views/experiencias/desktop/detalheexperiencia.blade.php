@@ -57,6 +57,14 @@
             @endif
 
           <div class="col-lg-12">
+            {{-- Seção do NOME DA EXPERIÊNCIA --}}
+              <div class="row margin-b-1">
+                <h2 class="ajuste-fonte-avenir-black experiencia-desktop-local text-center">
+                  {{ $Experiencia->nome }}
+                </h2>
+              </div>
+            {{-- Fim da Seção do NOME DA EXPERIÊNCIA --}}
+
             {{-- Seção de PREÇO/FREQUENCIA-DATAOCORRENCIA/LOCAL/ENDEREÇO EXPERIÊNCIA --}}
               <div class="row row-eq-height margin-b-1">
                 <div class="col-lg-5">

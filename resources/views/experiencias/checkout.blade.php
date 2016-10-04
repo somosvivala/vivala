@@ -8,8 +8,11 @@
         </span>
         <h1 class="col-xs-12 negrito-exp">Você está quase lá!</h1>
         <small class="col-xs-12">Te enviaremos um email com todos os detalhes.</small>
-        <span class="col-xs-12 margin-t-1">Para confirmar sua inscrição na experiência da instituição
-          <b class="texto-maiusculo">{{$Experiencia->owner->nome}}</b>,
+        <span class="col-xs-12 margin-t-1">
+          Para confirmar sua inscrição na experiência <b class="texto-maiusculo">{{ $Experiencia->nome }}</b>
+          <br />
+          oferecida pela instituição <b class="texto-maiusculo">{{$Experiencia->owner->nome}}</b>,
+          <br />
           realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
         </span>
         <div class="col-xs-12">

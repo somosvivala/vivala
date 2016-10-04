@@ -72,6 +72,11 @@
                     <div class="descricao">{{ $Experiencia->descricao_na_listagem }}</div>
                   </div>
                   <div class="row text-center margin-t-1">
+                    <h3 class="col-lg-12 nome-listagem">
+                      {{ $Experiencia->nome }}
+                    </h3>
+                  </div>
+                  <div class="row text-center margin-t-1">
                     @if($Experiencia->isUsuarioAtualInscrito)
                       <span class="col-lg-12 descricao-listagem-titulo-pago">JÁ ME INSCREVI</span>
                     @else

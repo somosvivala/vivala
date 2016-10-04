@@ -158,6 +158,24 @@
     </div>
     {{-- Fim da URL SITE PROPRIO do PROJETO RESPONSÁVEL pela experiência --}}
 
+    {{-- Seção NOME da experiência --}}
+    <div class="col-lg-12 margin-t-1 margin-b-1">
+      <div class="row">
+        <div class="col-lg-9">
+          {!! Form::label('experiencia-nome', 'Nome da Experiência') !!}
+          <span class="campo-obrigatorio">* Obrigatório</span>
+        </div>
+        <div class="col-lg-3 text-right">
+          <table class="col-lg-6 col-lg-offset-6 text-right">
+            <td><abbr title="Nome da Experiência é a principal chamada da experiência, use este campo de forma sucinta e direta, fazendo a melhor propaganda do que será oferecido!"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+          </table>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        {!! Form::text('nome', null, ['placeholder' => 'Ex: Mergulho no Céu', 'class' => 'form-control', 'required' => 'required']) !!}
+      </div>
+    </div>
+    {{-- Fim da Seção NOME da experiência --}}
 
     {{-- Seção TROCAR FOTO da experiência --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
@@ -235,7 +253,7 @@
           </table>
         </div>
         <div class="col-lg-12">
-          {!! Form::textarea("descricao_na_listagem", null, ['id'=>'experiencia-descricao-listagem', 'rows' => 3, 'maxlength' => 85, 'title'=> 'Descrição na Listagem', 'placeholder'=> 'Descrição na listagem', 'onkeyup' => 'contadorDescListagem(event)', 'onchange' => 'contadorDescListagem(event)', 'class' => 'form-control sem-resize sem-upper', 'required' => 'required']) !!}
+          {!! Form::textarea('descricao_na_listagem', null, ['id'=>'experiencia-descricao-listagem', 'rows' => 3, 'maxlength' => 85, 'title'=> 'Descrição na Listagem', 'placeholder'=> 'Descrição na listagem', 'onkeyup' => 'contadorDescListagem(event)', 'onchange' => 'contadorDescListagem(event)', 'class' => 'form-control sem-resize sem-upper', 'required' => 'required']) !!}
           <div class="row margin-t-0-5 margin-r-0 text-right">
             <span id="experiencia-contador-descricao-listagem"></span>
           </div>
@@ -379,7 +397,7 @@
           </table>
         </div>
         <div class="col-lg-12">
-        {!! Form::text('frequencia', null, ['id' => 'experiencia-frequencia', 'placeholder' => 'Ex: Segunda á Sexta', 'class' => 'form-control', 'required' => 'required']) !!}
+        {!! Form::text('frequencia', null, ['id' => 'experiencia-frequencia', 'placeholder' => 'Ex: Segunda à Sexta', 'class' => 'form-control', 'required' => 'required']) !!}
         </div>
       </div>
     </div>

@@ -23,12 +23,19 @@
         {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
         {!! Form::hidden('_token', csrf_token()) !!}
         {!! Form::hidden('user_logged_in', (Auth::user() != '') ) !!}
+
+      <div class="nome-experiencia">
+        <h1 class="col-xs-12 text-center">
+          {{ strtoupper(trim($Experiencia->nome)) }}
+        </h1>
+      </div>
+
       <div class="descricao">
           <span class="col-xs-12 negrito-exp text-center">
-            R${{ $Experiencia->preco }}
+            R${{ trim($Experiencia->preco) }}
           </span>
           <span class="col-xs-12 negrito-exp text-center margin-b-1">
-            <i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome}} - {{ $Experiencia->local->estado->sigla}}
+            <i class="fa fa-map-marker"></i> {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}
           </span>
           <span class="descricao-inicial">
             {{ $Experiencia->descricao }}
@@ -37,7 +44,7 @@
             <div class="round-foto-small">
               <img alt="{{ $Experiencia->owner_nome }}" src="{{ $Experiencia->fotoOwnerUrl }}">
             </div>
-            <span>{{ $Experiencia->owner_nome }}</span>
+            <span>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</span>
             <div class="row">
               @if($Experiencia->owner->url_facebook)
                 <a href="{{ $Experiencia->url_facebook_responsavel }}">
@@ -145,6 +152,7 @@
               </div>
           </div>
       </div>
+
       @if($Experiencia->isUsuarioAtualInscrito)
           <a class="btn-full-bottom-laranja" href="#" onclick="event.preventDefault();">{!! trans('global.lbl_subscribed') !!}</a>
       @else
