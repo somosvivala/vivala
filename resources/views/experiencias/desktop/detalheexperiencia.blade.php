@@ -72,19 +72,20 @@
                       <div class="preco-interna-desktop">
                         R${{ $Experiencia->preco }}
                       </div>
-                      {{-- TEMPORARIAMENTE DESATIVADO - ATÉ IMPLEMENTAÇÃO DO FILTRO DE CATEGORIAS --}}
-                      <div class="categorias-interna-desktop">
-                        <?php $contadorCategorias = 0; ?>
-                        {{-- @foreach($Experiencia->categorias as $Categoria) --}}
-                          <div class="icone">
-                            <i class="fa-1-5x hide {{-- $Categoria->icone --}}" title="{{-- $Categoria->nome --}}" alt="{{-- $Categoria->nome --}}"></i>
-                          </div>
-                          {{-- A img do desktop/listagem só comporta 4 ícones por vez --}}
-                          {{-- @if(++$contadorCategorias === 7) --}}
-                            <?php break; ?>
-                          {{-- @endif --}}
-                        {{-- @endforeach --}}
-                      </div-->
+                      {{-- DESATIVADO TEMPORARIAMENTE - ATÉ IMPLEMENTAÇÃO DO FILTRO DE CATEGORIAS --}}
+                        <div class="categorias-interna-desktop hide">
+                          <?php $contadorCategorias = 0; ?>
+                          @foreach($Experiencia->categorias as $Categoria)
+                            <div class="icone">
+                              <i class="fa-1-5x {{ $Categoria->icone }}" title="{{ $Categoria->nome }}" alt="{{ $Categoria->nome }}"></i>
+                            </div>
+                            {{-- A img do desktop/listagem só comporta 4 ícones por vez --}}
+                            @if(++$contadorCategorias === 7)
+                              <?php break; ?>
+                            @endif
+                          @endforeach
+                        </div>
+                      {{-- DESATIVADO TEMPORARIAMENTE - ATÉ IMPLEMENTAÇÃO DO FILTRO DE CATEGORIAS --}}
                     </div>
                   </div>
                   <div class="col-lg-7">
