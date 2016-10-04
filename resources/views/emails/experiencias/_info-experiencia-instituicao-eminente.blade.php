@@ -8,16 +8,22 @@
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin: 5px 0 0 0;">Dicas</h3>
             <ul>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                Tenha certeza de que todos os equipamentos necessários para a realização da experiência estejam disponíveis.
+                Verifique o número de participantes da sua experiência neste email. Tenha em mente que o número de participantes ainda pode aumentar até lá.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                Disponibilize telefones para contato caso haja alguma emergência.
+                Tenha certeza de que todos os equipamentos necessários para a realização da experiência estejam disponíveis para todos os participantes durante a experiência.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                A sua Experiência é a céu aberto? Garanta protetores solares e capas de chuva para seus convidados!
+                Disponibilize seus telefones de contato para os participantes, isso cria um elo inicial e mantém os participantes mais confiantes sobre a experiência.
+              </li>
+              <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                Sua experiência é a céu aberto? Verifique as previsões do tempo e a informe aos seus participantes na chegada, isso os dá maior segurança.
+              </li>
+              <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
+                Lembre-se que a Vivalá é sua parceira número um nesta experiência, então não hesite em entrar em contato conosco por email ou telefone para sanar suas dúvidas.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto">
-                Não se esqueça: Gentileza gera gentileza :)
+                E não se esqueça: Gentileza gera gentileza :)
               </li>
             </ul>
           </td>
@@ -40,8 +46,8 @@
         <!-- Seção USUÁRIOS INSCRITOS -->
         <tr>
           <td>
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Usuários Inscritos
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+              Usuários Inscritos na sua Experiência
             </h3>
           </td>
         </tr>
@@ -66,15 +72,6 @@
                   {{ $Inscricao->perfil->user->email }}
                 </span>
               </p>
-              <p>
-                <img src="{{ asset('/img/icones/png/cinza-hashtag.png') }}" alt="" title="" min-width="19px" width="19px" max-width="19px" min-height="16px" height="16px" max-height="16px" style="margin-right:10px;"/>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">
-                  ID da inscrição
-                </span>
-                <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                  {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
-                </span>
-              </p>
             </td>
           </tr>
         @endforeach
@@ -89,8 +86,8 @@
         <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
         <tr>
           <td style="padding-bottom:40px;">
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Informações da sua Experiência
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+              Resumo da Experiência
             </h3>
             <p style="float:left; margin-top:0; margin-bottom:0;">
               <img src="{{ $Experiencia->FotoOwnerUrlPublica }}" min-width="240px" width="auto" max-width="600px" min-height="300px" height="300px" max-height="300px" style="margin-right:20px;"/>
@@ -141,19 +138,14 @@
                 R${{ $Experiencia->preco }}
               </span>
             </p>
-            <p style="margin-top:30px; margin-bottom: 15px;">
-              <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px;" title="ID da Experiência">
-                ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
-              </span>
-            </p>
           </td>
         </tr>
         <!-- Fim da Seção INFORMAÇÕES DA EXPERIÊNCIA -->
         <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td style="padding-bottom:30px;">
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Descrição Completa da sua Experiência
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+              Descrição
             </h3>
             <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
               {{ trim($Experiencia->descricao) }}
@@ -164,8 +156,8 @@
         <!-- Seção DETALHES DA EXPERIÊNCIA -->
         <tr>
           <td style="padding-bottom:30px;">
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-              Detalhes da sua Experiência
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+              Detalhes
             </h3>
             <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:0;">
               {{ trim($Experiencia->detalhes) }}
@@ -177,8 +169,8 @@
         @if($Experiencia->informacoes)
           <tr>
             <td>
-              <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:20px;">
-                Informações Extras da sua Experiência
+              <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+                Informações Extras
               </h3>
             </td>
           </tr>

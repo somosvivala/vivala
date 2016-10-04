@@ -1,23 +1,23 @@
 @extends('emails.experiencias._base-experiencias', [
-  'emailCabecalho' => 'Sua experiência está chegando!',
-  'emailTitulo' => 'Confira os detalhes da sua experiência!'
+  'emailCabecalho' => 'A sua experiência é amanhã!',
+  'emailTitulo' => 'A experiência que você se inscreveu é amanhã!'
 ])
 
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
       'expCorTextos' => '#3EA790',
-      'expTextoCima' => '',
-      'expTextoBaixo' => 'Confira os detalhes da Experiência e algumas dicas da Vivalá para que tudo corra bem!',
+      'expTextoCima' => 'Sua experiência é amanhã!',
+      'expTextoBaixo' => 'Confira os detalhes da Experiência para que tudo corra bem!',
       'expLinkImagem' => 'img/icones/png/verde-sucesso-vazio.png',
-      'expAltImagem' => 'Pagamento Confirmado',
-      'expTitleImagem' => 'Pagamento Confirmado'
+      'expAltImagem' => 'Experiência Amanhã',
+      'expTitleImagem' => 'Experiência Amanhã!'
     ])
   @stop
 
   @section('email-experiencia-conteudo')
 
     {{-- SEÇÃO de DICAS PARA O CANDIDATO
-    @include('emails.experiencias._info-inscricao-candidato-experiencia-eminente', [
+    @include('emails.experiencias._info-inscricao-candidato-dicas-experiencia-hoje', [
       'Inscricao' => $Inscricao
     ])
     --}}

@@ -1,21 +1,21 @@
 @extends('emails.experiencias._base-experiencias', [
-  'emailCabecalho' => 'A sua experiência é hoje!',
-  'emailTitulo' => 'Chegou o dia da sua Experiência!'
+  'emailCabecalho' => 'A sua experiência é amanhã!',
+  'emailTitulo' => 'Amanhã é a sua Experiência!'
 ])
 
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
       'expCorTextos' => '##3EA790',
       'expTextoCima' => '',
-      'expTextoBaixo' => 'Confira abaixo a lista final de usuários inscritos<br>em sua Experiência!',
+      'expTextoBaixo' => 'Confira abaixo a lista de usuários inscritos<br>em sua Experiência!',
       'expLinkImagem' => 'img/icones/png/verde-usuarios-vazio.png',
-      'expAltImagem' => 'Experiência é Hoje',
-      'expTitleImagem' => 'Experiência é Hoje'
+      'expAltImagem' => 'Sua experiência é Amanhã',
+      'expTitleImagem' => 'Sua experiência é Amanhã'
     ])
   @stop
 
   @section('email-experiencia-conteudo')
-    @include('emails.experiencias._info-experiencia-instituicao-hoje', [
+    @include('emails.experiencias._info-experiencia-instituicao-amanha', [
       'Experiencia' => $Inscricoes->first()->experiencia,
       'Inscricoes' => $Inscricoes
     ])

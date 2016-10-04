@@ -122,8 +122,8 @@
                   <tr align="center">
                     <td>
                       <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; margin-top:20px;">
-                        Envie sua dúvida para
-                        <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivalabrasil.com.br</a>
+                        Caso tenha ficado alguma dúvida, fale com a gente pelo
+                        <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" style="text-decoration:none; color:#F06F37;">contato@vivala.com.br</a>
                       <p>
                     </td>
                   </tr>
@@ -174,7 +174,7 @@
                   <tr align="center">
                     <td>
                       <h4 style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:10px; font-weight:200; line-height:1.2em; margin-top:0;">
-                        Feito com carinho pela Vivalá - Conecte-se ao Brasil de verdade
+                        Feito com carinho pela Vivalá - Conheça o mundo à sua maneira
                       </h4>
                     </td>
                   </tr>

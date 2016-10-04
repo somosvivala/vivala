@@ -17,6 +17,7 @@ class Experiencia extends Model
         'owner_nome',
         'owner_descricao',
         'endereco_completo',
+        'nome',
         'descricao_na_listagem',
         'descricao',
         'detalhes',

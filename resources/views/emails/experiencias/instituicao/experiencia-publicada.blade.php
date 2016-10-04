@@ -1,5 +1,5 @@
 @extends('emails.experiencias._base-experiencias', [
-  'emailCabecalho' => 'A sua experiência foi publicada com sucesso!',
+  'emailCabecalho' => 'Agora sua experiência faz  parte da rede da Vivalá!',
   'emailTitulo' => 'Temos uma novidade pra você!'
 ])
 

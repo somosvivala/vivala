@@ -93,7 +93,7 @@
                 @endif
                 @if(isset($CotacaoViagem['cotacao_obj']['basico']['pref-tempo']))
                   <p style="margin-bottom:0px;">
-                      <span>º Prefere viajar de:</span>
+                      <span>º Prefere viajar de:</span><br>
                       @foreach($CotacaoViagem['cotacao_obj']['basico']['pref-tempo'] as $preferenciaTempo)
                         <strong>{{ $preferenciaTempo }}</strong><br>
                       @endforeach
@@ -241,7 +241,7 @@
                     @endif
                     @if(isset($CotacaoViagem['cotacao_obj']['carros']['adicionais']))
                       <p style="margin-bottom:0px;">
-                        <span>º Adicionais que o cliente gostaria que o carro alugado tivesse: </span>
+                        <span>º Adicionais que o cliente gostaria que o carro alugado tivesse: </span><br>
                         @foreach($CotacaoViagem['cotacao_obj']['carros']['adicionais'] as $adicionaisCarros)
                           <strong>{{ $adicionaisCarros }}</strong><br>
                         @endforeach

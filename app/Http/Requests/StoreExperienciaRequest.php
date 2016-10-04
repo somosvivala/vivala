@@ -39,6 +39,7 @@ class StoreExperienciaRequest extends Request
         $rules = [
             'projeto'                   => "required|exists:ongs,id",
             'cidade'                    => "required|exists:cidades,id",
+            'nome'                      => "required|string|min:2|max:50",
             'descricao_na_listagem' 		=> "required|string|min:2|max:85",
             'descricao'                 => "required|string|min:2|max:420",
             'detalhes'                  => "required|string|min:2",

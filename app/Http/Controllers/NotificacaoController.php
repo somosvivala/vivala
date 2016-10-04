@@ -66,7 +66,11 @@ class NotificacaoController extends Controller {
 	 */
     public function getNotificacoesfollow($view = null)
     {
-        $notificacoes = Auth::user()->entidadeAtiva->notificacoesFollow->take(20);
+        if(Auth::user()) {
+            $notificacoes = Auth::user()->entidadeAtiva->notificacoesFollow->take(20);
+        }else {
+            $notificacoes = [];
+        }
         if(Request::ajax()) {
             return view('_notificacoesFollow')->with('notificacoes', $notificacoes);
         }
@@ -94,7 +98,11 @@ class NotificacaoController extends Controller {
      */
     public function getNotificacoesgeral($view = null)
     {
-        $notificacoes = Auth::user()->entidadeAtiva->notificacoesWarning->take(20);
+        if(Auth::user()) {
+            $notificacoes = Auth::user()->entidadeAtiva->notificacoesWarning->take(20);
+        }else {
+            $notificacoes = [];
+        }
 
         if(Request::ajax()) {
             return view('_notificacoesGeral')->with('notificacoes', $notificacoes);

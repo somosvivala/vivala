@@ -58,9 +58,17 @@ class DataOcorrenciaExperiencia extends Model
     /**
      * Definindo um acessor para saber se essa essa dataOcorrencia é daqui 4 dias
      */
-    public function getAconteceDaquiQuatroDiasAttribute()
+    public function getAconteceEmQuatroDiasAttribute()
     {
         return $this->data_ocorrencia->format('d-m-Y') == Carbon::now()->addDays(14)->format('d-m-Y');
+    }
+
+    /**
+     * Definindo um acessor para saber se essa essa dataOcorrencia é daqui 1 dia
+     */
+    public function getAconteceEmUmDiaAttribute()
+    {
+        return $this->data_ocorrencia->format('d-m-Y') == Carbon::now()->addDays(10)->format('d-m-Y');
     }
 
     /**

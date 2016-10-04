@@ -6,20 +6,20 @@
         <tr align="center">
           <td>
             <div style="background-color:#ECEBEB; text-align:left; padding:5px 25px; max-width:300px; margin-left:20px; margin-right:20px;">
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
                 <b>NOME</b> <span>{{ env('VIVALA_FANTASY_NAME') }}</span>
               </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px;">
-                <b>CONTA</b> <span>{{ env('VIVALA_CC') }}</span>
-              </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px;">
-                <b>AGÊNCIA</b> <span>{{ env('VIVALA_AG') }}</span>
-              </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
                 <b>CNPJ</b> <span>{{ env('VIVALA_CNPJ') }}</span>
               </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-bottom:0;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
                 <b>BANCO</b> <span>{{ env('VIVALA_BANK') }}</span>
+              </p>
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
+                <b>AGÊNCIA</b> <span>{{ env('VIVALA_AG') }}</span>
+              </p>
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
+                <b>CONTA</b> <span>{{ env('VIVALA_CC') }}</span>
               </p>
             </div>
           </td>

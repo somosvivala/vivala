@@ -52,26 +52,29 @@
                 <a href="/experiencias/{{ $Experiencia->id}}">
                   <div class="foto">
                     <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
-                      <?php /* NÃO CONTEMPLADO NO LAYOUT
-                      <div class="categorias-experiencia">
-                        <?php $contadorCategorias = 0; ?>
-                        {{--
-                        @foreach($Experiencia->categorias as $Categoria)
-                          <div class="icone">
-                            <i class="{{ $Categoria->icone }}"></i>
-                          </div>
-                          {{-- A img do desktop/listagem só comporta 4 ícones por vez --}}
-                          @if(++$contadorCategorias === 4)
-                            <?php break; ?>
-                          @endif
-                        @endforeach
-                        --}}
-                      </div>
-                      */ ?>
+                      {{-- DESATIVADO TEMPORARIAMENTE - ATÉ IMPLEMENTAÇÃO DO FILTRO DE CATEGORIAS --}}
+                        <div class="categorias-experiencia hide">
+                          <?php $contadorCategorias = 0; ?>
+                          @foreach($Experiencia->categorias as $Categoria)
+                            <div class="icone">
+                              <i class="{{ $Categoria->icone }}"></i>
+                            </div>
+                            {{-- A img do desktop/listagem só comporta 4 ícones por vez --}}
+                            @if(++$contadorCategorias === 4)
+                              <?php break; ?>
+                            @endif
+                          @endforeach
+                        </div>
+                      {{-- DESATIVADO TEMPORARIAMENTE - ATÉ IMPLEMENTAÇÃO DO FILTRO DE CATEGORIAS --}}
                     </div>
                     <div class="descricao">{{ $Experiencia->descricao_na_listagem }}</div>
                   </div>
-                  <div class="row text-center margin-t-1">
+                  <div class="row text-center margin-t-1 margin-b-0">
+                    <h4 class="col-lg-12 margin-t-0 margin-b-0 nome-listagem">
+                      {{ ucfirst(trim($Experiencia->nome)) }}
+                    </h4>
+                  </div>
+                  <div class="row text-center margin-t-0-5">
                     @if($Experiencia->isUsuarioAtualInscrito)
                       <span class="col-lg-12 descricao-listagem-titulo-pago">JÁ ME INSCREVI</span>
                     @else

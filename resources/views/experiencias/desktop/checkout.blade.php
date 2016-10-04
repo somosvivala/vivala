@@ -67,7 +67,9 @@
               </div>
               <div class="col-lg-12 text-center margint-t-3 margin-b-1">
                 <p class="ajuste-fonte-avenir-roman texto-descricao-checkout">
-                  Para confirmar sua inscrição na experiência <b>{{ strtoupper(trim($Experiencia->owner_nome)) }}</b>,
+                  Para confirmar sua inscrição na experiência <b>{{ strtoupper(trim($Experiencia->nome)) }}</b>
+                  <br/>
+                  oferecida pela instituição <b>{{ strtoupper(trim($Experiencia->owner_nome)) }}</b>,
                   <br>
                   realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
                 </p>
@@ -77,8 +79,8 @@
                   <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_name') !!}: {{ env('VIVALA_FANTASY_NAME') }}</span>
                   <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">CNPJ: {{ env('VIVALA_CNPJ') }}</span>
                   <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}: {{ env('VIVALA_BANK') }}</span>
-                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}: {{ env('VIVALA_CC') }}</span>
                   <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_agency') !!}: {{ env('VIVALA_AG') }}</span>
+                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}: {{ env('VIVALA_CC') }}</span>
                 </div>
               </div>
             </div>

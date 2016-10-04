@@ -93,10 +93,16 @@ class Kernel extends ConsoleKernel
                 //Para cada data de ocorrencia
                 foreach ($datasOcorrenciaExperiencia as $DataOcorrenciaExperiencia) {
 
-                    //Pré-experiencia
+                    //Pré-experiencia - 4 dias antes da Experiência
                     if ($DataOcorrenciaExperiencia->aconteceEmQuatroDias) {
                         //Disparando evento para tomar as acoes necessarias
                         event (new ExperienciaEminente($Experiencia, $DataOcorrenciaExperiencia));
+                    }
+
+                    //Pré-experiência - 1 dia antes da Experiência
+                    if ($DataOcorrenciaExperiencia->aconteceEmUmDia) {
+                        //Disparando evento para tomar as acoes necessarias
+                        event (new ExperienciaAconteceAmanha($Experiencia, $DataOcorrenciaExperiencia));
                     }
 
                     //Dia da Experiencia
