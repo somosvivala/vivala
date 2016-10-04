@@ -153,6 +153,19 @@ function atualizaContador(maxlength, textContainer, msgContainer) {
 }
 
 /*
+* Funcao para contar o limite de caracteres do Nome da Experiência
+*/
+function contadorNome(ev){
+  ev.preventDefault();
+
+  var textContainer = $('#experiencia-nome'),
+      maxlength = textContainer.attr('maxlength'),
+      msgContainer = $('#experiencia-contador-nome');
+
+  atualizaContador(maxlength, textContainer, msgContainer);
+}
+
+/*
 * Funcao para contar o limite de caracteres da Descrição na Listagem
 * da Experiencia
 */

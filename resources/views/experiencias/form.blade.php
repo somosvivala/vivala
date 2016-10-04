@@ -162,7 +162,7 @@
     <div class="col-lg-12 margin-t-1 margin-b-1">
       <div class="row">
         <div class="col-lg-9">
-          {!! Form::label('experiencia-nome', 'Nome da Experiência') !!}
+          {!! Form::label('experiencia-nome', 'Nome da Experiência (máx: 50 caracteres)') !!}
           <span class="campo-obrigatorio">* Obrigatório</span>
         </div>
         <div class="col-lg-3 text-right">
@@ -171,8 +171,13 @@
           </table>
         </div>
       </div>
-      <div class="col-lg-12">
-        {!! Form::text('nome', null, ['placeholder' => 'Ex: Mergulho no Céu', 'class' => 'form-control', 'required' => 'required']) !!}
+      <div class="row">
+        <div class="col-lg-12">
+          {!! Form::text('nome', null, ['id'=>'experiencia-nome', 'placeholder' => 'Ex: Mergulho no Céu', 'onkeyup' => 'contadorNome(event)', 'onchange' => 'contadorNome(event)', 'class' => 'form-control', 'required' => 'required']) !!}
+          <div class="row margin-t-0-5 margin-r-0 text-right">
+            <span id="experiencia-contador-nome"></span>
+          </div>
+        </div>
       </div>
     </div>
     {{-- Fim da Seção NOME da experiência --}}
