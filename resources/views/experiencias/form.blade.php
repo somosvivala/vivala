@@ -173,7 +173,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12">
-          {!! Form::text('nome', null, ['id'=>'experiencia-nome', 'placeholder' => 'Ex: Mergulho no Céu', 'onkeyup' => 'contadorNome(event)', 'onchange' => 'contadorNome(event)', 'class' => 'form-control', 'required' => 'required']) !!}
+          {!! Form::textarea('nome', null, ['id'=>'experiencia-nome', 'placeholder' => 'Ex: Mergulho no Céu', 'rows' => 1, 'maxlength' => 50, 'onkeyup' => 'contadorNome(event)', 'onchange' => 'contadorNome(event)', 'class' => 'form-control', 'required' => 'required']) !!}
           <div class="row margin-t-0-5 margin-r-0 text-right">
             <span id="experiencia-contador-nome"></span>
           </div>
