@@ -158,6 +158,27 @@
     </div>
     {{-- Fim da URL SITE PROPRIO do PROJETO RESPONSÁVEL pela experiência --}}
 
+    {{-- Seção TROCAR FOTO da experiência --}}
+    <div class="col-lg-12 margin-t-1 margin-b-1">
+        {{-- Aqui insiro o input hidden que guardará o id da foto associada á experiencia --}}
+        {!!
+            Form::hidden('experiencia-foto-id',
+               isset($experiencia) ? ($experiencia->fotoCapa ?  $experiencia->fotoCapa->id : '') : '',
+               ['id' => 'experiencia-foto-id'])
+        !!}
+
+        {{-- Aqui insiro o input hidden que guardará o path da foto associada á experiencia --}}
+        {!!
+            Form::hidden('experiencia-foto-path',
+               isset($experiencia) ? ($experiencia->fotoCapa ?  $experiencia->fotoCapa->path : '') : '',
+               ['path' => 'experiencia-foto-path'])
+        !!}
+
+        {{-- Incluindo o conjunto (foto / botao troca foto), que dispara a modal contendo o form de trocar foto por ajax --}}
+        @include('experiencias._fotoform')
+    </div>
+    {{-- Fim da Seção TROCAR FOTO da experiência --}}
+
     {{-- Seção NOME da experiência --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">
       <div class="row">
@@ -181,27 +202,6 @@
       </div>
     </div>
     {{-- Fim da Seção NOME da experiência --}}
-
-    {{-- Seção TROCAR FOTO da experiência --}}
-    <div class="col-lg-12 margin-t-1 margin-b-1">
-        {{-- Aqui insiro o input hidden que guardará o id da foto associada á experiencia --}}
-        {!!
-            Form::hidden('experiencia-foto-id',
-               isset($experiencia) ? ($experiencia->fotoCapa ?  $experiencia->fotoCapa->id : '') : '',
-               ['id' => 'experiencia-foto-id'])
-        !!}
-
-        {{-- Aqui insiro o input hidden que guardará o path da foto associada á experiencia --}}
-        {!!
-            Form::hidden('experiencia-foto-path',
-               isset($experiencia) ? ($experiencia->fotoCapa ?  $experiencia->fotoCapa->path : '') : '',
-               ['path' => 'experiencia-foto-path'])
-        !!}
-
-        {{-- Incluindo o conjunto (foto / botao troca foto), que dispara a modal contendo o form de trocar foto por ajax --}}
-        @include('experiencias._fotoform')
-    </div>
-    {{-- Fim da Seção TROCAR FOTO da experiência --}}
 
     {{-- Seção CIDADE/LOCAL da experiência --}}
     <div class="col-lg-12 margin-t-1 margin-b-1">

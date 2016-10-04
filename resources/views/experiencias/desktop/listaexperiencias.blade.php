@@ -69,8 +69,8 @@
                     </div>
                     <div class="descricao">{{ $Experiencia->descricao_na_listagem }}</div>
                   </div>
-                  <div class="row text-center margin-t-1 margin-b-0">
-                    <h4 class="col-lg-12 margin-t-0 margin-b-0 nome-listagem">
+                  <div class="row text-center margin-t-1 margin-b-0-5">
+                    <h4 class="col-lg-12 nome-listagem">
                       {{ ucfirst(trim($Experiencia->nome)) }}
                     </h4>
                   </div>
