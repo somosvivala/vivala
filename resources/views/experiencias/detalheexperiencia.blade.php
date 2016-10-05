@@ -3,7 +3,6 @@
 @section('content')
 
 <div class="col-xs-12">
-  {{-- --}}
   @if(Auth::user())
     @include('_conhecalogado')
   @else
@@ -25,8 +24,8 @@
         {!! Form::hidden('user_logged_in', (Auth::user() != '') ) !!}
 
       <div class="nome-experiencia">
-        <h1 class="col-xs-12 text-center">
-          {{ strtoupper(trim($Experiencia->nome)) }}
+        <h1 class="col-xs-12 text-center negrito-exp">
+          {{ mb_strtoupper(trim($Experiencia->nome)) }}
         </h1>
       </div>
 
@@ -35,7 +34,7 @@
             R${{ trim($Experiencia->preco) }}
           </span>
           <span class="col-xs-12 negrito-exp text-center margin-b-1">
-            <i class="fa fa-map-marker"></i> {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ strtoupper(trim($Experiencia->local->estado->sigla)) }}
+            <i class="fa fa-map-marker"></i> {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla)) }}
           </span>
           <span class="descricao-inicial">
             {{ $Experiencia->descricao }}
@@ -65,70 +64,58 @@
           </div>
 
           <span class="col-xs-12 negrito-exp margin-t-1">Data</span>
-          @if($Experiencia->isEventoUnico)
           <div class="col-xs-12 informacoes">
               <div class="row padding-t-1">
                   <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                  <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
+                  <span class="descricao-informacoes">{{ ucfirst(trim($Experiencia->frequencia)) }}</span>
               </div>
           </div>
-          <div class="col-xs-12 informacoes">
-              <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                  <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
-              </div>
-          </div>
+          @if($Experiencia->isEventoUnico)
+            <div class="col-xs-12 informacoes">
+                <div class="row padding-t-1">
+                    <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                    <span class="descricao-informacoes">{{ $Experiencia->dataProximaOcorrencia }}</span>
+                </div>
+            </div>
           @endif
           @if($Experiencia->isEventoRecorrente)
-          <div class="col-xs-12 informacoes">
-              <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                  <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
-              </div>
-          </div>
-          <div class="col-xs-12 informacoes">
-              <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                  <span class="descricao-informacoes">
-                      <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                      <div class="clndr-container">
-                      </div>
-                      <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
-                  </span>
-              </div>
-          </div>
+            <div class="col-xs-12 informacoes">
+                <div class="row padding-t-1">
+                    <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                    <span class="descricao-informacoes">
+                        <input name="data-escolhida" placeholder="Escolha uma data" type="text" onfocus="(this.type='date')" class="clndr-picker" readonly>
+                        <div class="clndr-container">
+                        </div>
+                        <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
+                    </span>
+                </div>
+            </div>
           @endif
           @if($Experiencia->isEventoServico)
-          <div class="col-xs-12 informacoes">
-              <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="fa fa-clock-o"></i></span>
-                  <span class="descricao-informacoes">{{ $Experiencia->frequencia }}</span>
-              </div>
-          </div>
-          <div class="col-xs-12 informacoes">
-              <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                  <span class="descricao-informacoes">
-                      <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                      <div class="clndr-container">
-                      </div>
-                      <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
-                  </span>
-              </div>
-          </div>
+            <div class="col-xs-12 informacoes">
+                <div class="row padding-t-1">
+                    <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                    <span class="descricao-informacoes">
+                        <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                        <div class="clndr-container">
+                        </div>
+                        <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
+                    </span>
+                </div>
+            </div>
           @endif
           <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
           @foreach($Experiencia->informacoes as $Informacao)
-          <div class="col-xs-12 informacoes">
-              <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="{{ $Informacao->icone }}"></i></span>
-                  <span class="descricao-informacoes">{{ $Informacao->descricao }}</span>
-              </div>
-          </div>
+            <div class="col-xs-12 informacoes">
+                <div class="row padding-t-1">
+                    <span class="icone-informacoes"><i class="{{ $Informacao->icone }}"></i></span>
+                    <span class="descricao-informacoes">{{ ucfirst(trim($Informacao->descricao)) }}</span>
+                </div>
+            </div>
           @endforeach
           @if($Experiencia->detalhes!="")
-          <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
-          <span class="col-xs-12">{{ $Experiencia->detalhes }}</span>
+            <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
+            <span class="col-xs-12">{{ trim($Experiencia->detalhes) }}</span>
           @endif
           @if($Experiencia->isUsuarioAtualInscrito)
               {!! Form::hidden('_token', csrf_token()) !!}
@@ -136,7 +123,7 @@
           @endif
       </div>
 
-      <div class="foto-experiencia margin-t-1">
+      <div class="foto-experiencia margin-t-6">
           <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
               <div class="categorias-experiencia hide">
                 <?php $contadorCategorias = 0; ?>

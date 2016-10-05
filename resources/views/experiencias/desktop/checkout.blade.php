@@ -69,9 +69,9 @@
                 <p class="ajuste-fonte-avenir-roman texto-descricao-checkout">
                   Para confirmar sua inscrição na experiência <b>{{ strtoupper(trim($Experiencia->nome)) }}</b>
                   <br/>
-                  oferecida pela instituição <b>{{ strtoupper(trim($Experiencia->owner_nome)) }}</b>,
+                  oferecida pela instituição <b>{{ strtoupper(trim($Experiencia->owner_nome)) }}</b>, realize o depósito
                   <br>
-                  realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
+                  de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
                 </p>
               </div>
               <div class="col-lg-12">
