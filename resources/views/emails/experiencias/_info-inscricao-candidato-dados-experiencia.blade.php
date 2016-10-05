@@ -17,7 +17,7 @@
             </p>
             <p style="margin-top:10px; margin-bottom:10px; text-align: center;">
               <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1.2em;">
-                {{ mb_strtoupper(trim($Experiencia->nome)) }}
+                {{ mb_strtoupper(trim($Inscricao->experiencia->nome)) }}
               </span>
             </p>
             <p>
