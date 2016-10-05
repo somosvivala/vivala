@@ -104,7 +104,7 @@
                 </div>
             </div>
           @endif
-          <span class="col-xs-12 negrito-exp margin-t-1">Informações</span>
+          <span class="col-xs-12 negrito-exp margin-t-2">Informações</span>
           @foreach($Experiencia->informacoes as $Informacao)
             <div class="col-xs-12 informacoes">
                 <div class="row padding-t-1">
@@ -113,9 +113,11 @@
                 </div>
             </div>
           @endforeach
-          @if($Experiencia->detalhes!="")
+          @if($Experiencia->detalhes)
             <span class="col-xs-12 negrito-exp margin-t-2">Mais detalhes</span>
-            <span class="col-xs-12">{{ trim($Experiencia->detalhes) }}</span>
+            <span class="col-xs-12 padding-t-1">
+              {{ ucfirst(trim($Experiencia->detalhes)) }}
+            </span>
           @endif
           @if($Experiencia->isUsuarioAtualInscrito)
               {!! Form::hidden('_token', csrf_token()) !!}
