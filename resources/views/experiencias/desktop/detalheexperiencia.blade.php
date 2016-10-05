@@ -109,7 +109,7 @@
                                     <div class="row padding-t-1 calendario-row">
                                         <span class="icone-calendario"><i class="fa fa-calendar"></i></span>
                                         <span class="descricao-informacoes">
-                                            <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                                            <input name="data-escolhida" type="text" onfocus="(this.type='date')" placeholder="Escolha uma data" class="clndr-picker" readonly>
                                             <div class="clndr-container">
                                             </div>
                                             <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
