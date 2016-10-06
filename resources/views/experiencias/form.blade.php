@@ -543,8 +543,8 @@
     @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-listagem')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-listagem')
 
-    @include('modals.tutoriais-internos.experiencias.desktop.modal-tutoriais-internos-experiencias-desktop-descricao-completa')
-    @include('modals.tutoriais-internos.experiencias.mobile.modal-tutoriais-internos-experiencias-mobile-descricao-completa')
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-completa')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-completa')
 
     @include('modals.tutoriais-internos.experiencias.dektop.modal-experiencia-detalhes')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-detalhes')
