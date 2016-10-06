@@ -50,6 +50,11 @@
               @foreach($experiencias as $k=>$Experiencia)
               <li class="col-lg-3">
                 <a href="/experiencias/{{ $Experiencia->id}}">
+                  <div class="row text-center margin-t-0 margin-b-0-5">
+                    <h4 class="col-lg-12 nome-listagem">
+                      {{ ucfirst(trim($Experiencia->nome)) }}
+                    </h4>
+                  </div>
                   <div class="foto">
                     <div class="foto-img" style="background-image:url('{{ $Experiencia->fotoCapaUrl}}')">
                       {{-- DESATIVADO TEMPORARIAMENTE - ATÉ IMPLEMENTAÇÃO DO FILTRO DE CATEGORIAS --}}
@@ -69,16 +74,13 @@
                     </div>
                     <div class="descricao">{{ $Experiencia->descricao_na_listagem }}</div>
                   </div>
-                  <div class="row text-center margin-t-1 margin-b-1">
-                    <h4 class="col-lg-12 nome-listagem">
-                      {{ ucfirst(trim($Experiencia->nome)) }}
-                    </h4>
-                  </div>
                   <div class="row text-center margin-t-0-5">
                     @if($Experiencia->isUsuarioAtualInscrito)
                       <span class="col-lg-12 descricao-listagem-titulo-pago">JÁ ME INSCREVI</span>
+                    {{--
                     @else
                       <span class="col-lg-12 descricao-listagem-titulo-preco">R$ {{ $Experiencia->preco }}</span>
+                    --}}
                     @endif
                     <span class="col-lg-12 descricao-listagem-lugar"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</span>
                   </div>

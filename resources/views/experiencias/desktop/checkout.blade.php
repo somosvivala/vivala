@@ -76,11 +76,11 @@
               </div>
               <div class="col-lg-12">
                 <div class="dados-bancarios">
-                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_name') !!}: {{ env('VIVALA_FANTASY_NAME') }}</span>
-                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">CNPJ: {{ env('VIVALA_CNPJ') }}</span>
-                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}: {{ env('VIVALA_BANK') }}</span>
-                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_agency') !!}: {{ env('VIVALA_AG') }}</span>
-                  <span class="col-lg-12 margin-b-0-5 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}: {{ env('VIVALA_CC') }}</span>
+                  <span class="col-lg-12 margin-b-1 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_name') !!}: {{ env('VIVALA_FANTASY_NAME') }}</span>
+                  <span class="col-lg-12 margin-b-1 text-left negrito-exp texto-maiusculo">CNPJ: {{ env('VIVALA_CNPJ') }}</span>
+                  <span class="col-lg-12 margin-b-1 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_bank') !!}: {{ env('VIVALA_BANK') }}</span>
+                  <span class="col-lg-12 margin-b-1 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_agency') !!}: {{ env('VIVALA_AG') }}</span>
+                  <span class="col-lg-12 margin-b-0 text-left negrito-exp texto-maiusculo">{!! trans('global.lbl_account') !!}: {{ env('VIVALA_CC') }}</span>
                 </div>
               </div>
             </div>
@@ -88,7 +88,7 @@
 
           {{-- Secao de GERAÇÃO DE BOLETO - só aparece se existe tempo habil para validar o pagamento --}}
           @if ($Inscricao->temTempoValidoParaCriarBoleto)
-            <div class="row margin-t-1">
+            <div class="row margin-t-0-5">
               <div class="col-lg-12 text-center">
                   <span class="ajuste-fonte-avenir-roman texto-descricao-checkout">ou</span>
               </div>

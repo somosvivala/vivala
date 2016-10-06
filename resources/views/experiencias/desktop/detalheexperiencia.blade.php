@@ -51,7 +51,7 @@
             <div id="experiencia" class="tab-pane active" role="tabpanel">
               @if($Experiencia->isUsuarioAtualInscrito)
                 <div class="row">
-                  <div class="warning-laranja col-xs-12 margin-b-1">
+                  <div class="warning-laranja col-xs-12">
                       {!! trans('global.lbl_subscribed') !!}
                   </div>
                 </div>

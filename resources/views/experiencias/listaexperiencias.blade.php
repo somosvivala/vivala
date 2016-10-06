@@ -42,8 +42,10 @@
               </div>
               <div class="{{ $k%2!=0?'direita':'esquerda'}} descricao">
                   <div class="container">
-                      <div class="row negrito-exp">R${{ trim($Experiencia->preco) }}</div>
-                      <div class="row cidade negrito-exp"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->estado->nome }}</div>
+                      {{-- DESATIVADO
+                        <div class="row negrito-exp">R${{ trim($Experiencia->preco) }}</div>
+                      --}}
+                      <div class="row cidade negrito-exp"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->estado->nome }} - {{ $Experiencia->local->estado->sigla }}</div>
                       <span class="pull-left margin-t-1">{{ $Experiencia->descricao_na_listagem }}</span>
                   </div>
               </div>
