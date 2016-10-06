@@ -546,10 +546,10 @@
     @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-completa')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-completa')
 
-    @include('modals.tutoriais-internos.experiencias.dektop.modal-experiencia-detalhes')
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-detalhes')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-detalhes')
 
-    @include('modals.tutoriais-internos.experiencias.dektop.modal-experiencia-frequencia')
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-frequencia')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-frequencia')
     {{-- Fim da Inclusão de todos os MODALS do tutorial --}}
 
