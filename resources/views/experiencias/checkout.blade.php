@@ -8,43 +8,41 @@
         </span>
         <h1 class="col-xs-12 negrito-exp">Você está quase lá!</h1>
         <small class="col-xs-12">Te enviaremos um email com todos os detalhes.</small>
-        <span class="col-xs-12 margin-t-1">
+        <span class="col-xs-12 margin-t-1 dados-experiencia">
           Para confirmar sua inscrição na experiência
           <br />
           <b class="texto-maiusculo">{{ $Experiencia->nome }}</b>
           <br />
-          oferecida pela instituição
-          <br />
-          <b class="texto-maiusculo">{{$Experiencia->owner->nome}}</b>,
+          oferecida pela instituição <b class="texto-maiusculo">{{$Experiencia->owner->nome}}</b>,
           <br />
           realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
         </span>
         <div class="col-xs-12">
-            <div class="dados-bancarios margin-t-1">
+            <div class="margin-t-1 dados-bancarios">
                 <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
-                  <span class="text-left">{!! trans('global.lbl_name') !!}:</span>
+                  <div class="text-left">{!! trans('global.lbl_name') !!}:</div>
                   <br />
-                  <span class="text-center">{{ env('VIVALA_FANTASY_NAME') }}</span>
+                  <div class="text-center">{{ env('VIVALA_FANTASY_NAME') }}</div>
                 </span>
                 <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
-                  <span class="text-left">CNPJ:</span>
+                  <div class="text-left">CNPJ:</div>
                   <br />
-                  <span class="text-center">{{ env('VIVALA_CNPJ') }}</span>
+                  <div class="text-center">{{ env('VIVALA_CNPJ') }}</div>
                 </span>
                 <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
-                  <span class="text-left">{!! trans('global.lbl_bank') !!}:</span>
+                  <div class="text-left">{!! trans('global.lbl_bank') !!}:</div>
                   <br />
-                  <span class="text-center">{{ env('VIVALA_BANK') }}</span>
+                  <div class="text-center">{{ env('VIVALA_BANK') }}</div>
                 </span>
                 <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
-                  <span class="text-left">{!! trans('global.lbl_agency') !!}:</span>
+                  <div class="text-left">{!! trans('global.lbl_agency') !!}:</div>
                   <br />
-                  <span class="text-center">{{ env('VIVALA_AG') }}</span>
+                  <div class="text-center">{{ env('VIVALA_AG') }}</div>
                 </span>
                 <span class="row col-xs-12 text-center margin-t-0-5 margin-b-0-5 texto-maiusculo negrito-exp">
-                  <span class="text-left">{!! trans('global.lbl_account') !!}:</span>
+                  <div class="text-left">{!! trans('global.lbl_account') !!}:</div>
                   <br />
-                  <span class="text-center">{{ env('VIVALA_CC') }}</span>
+                  <div class="text-center">{{ env('VIVALA_CC') }}</div>
                 </span>
             </div>
         </div>
