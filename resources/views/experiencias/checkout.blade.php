@@ -21,28 +21,23 @@
             <div class="margin-t-1 dados-bancarios">
                 <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
                   <div class="text-left">{!! trans('global.lbl_name') !!}:</div>
-                  <br />
-                  <div class="text-center">{{ env('VIVALA_FANTASY_NAME') }}</div>
+                  <div class="text-center margin-t-0-5">{{ env('VIVALA_FANTASY_NAME') }}</div>
                 </span>
-                <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
+                <span class="row col-xs-12 margin-t-1 texto-maiusculo negrito-exp">
                   <div class="text-left">CNPJ:</div>
-                  <br />
-                  <div class="text-center">{{ env('VIVALA_CNPJ') }}</div>
+                  <div class="text-center margin-t-0-5">{{ env('VIVALA_CNPJ') }}</div>
                 </span>
-                <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
+                <span class="row col-xs-12 margin-t-1 texto-maiusculo negrito-exp">
                   <div class="text-left">{!! trans('global.lbl_bank') !!}:</div>
-                  <br />
-                  <div class="text-center">{{ env('VIVALA_BANK') }}</div>
+                  <div class="text-center margin-t-0-5">{{ env('VIVALA_BANK') }}</div>
                 </span>
-                <span class="row col-xs-12 margin-t-0-5 texto-maiusculo negrito-exp">
+                <span class="row col-xs-12 margin-t-1 texto-maiusculo negrito-exp">
                   <div class="text-left">{!! trans('global.lbl_agency') !!}:</div>
-                  <br />
-                  <div class="text-center">{{ env('VIVALA_AG') }}</div>
+                  <div class="text-center margin-t-0-5">{{ env('VIVALA_AG') }}</div>
                 </span>
-                <span class="row col-xs-12 text-center margin-t-0-5 margin-b-0-5 texto-maiusculo negrito-exp">
+                <span class="row col-xs-12 margin-t-1 margin-b-0-5 texto-maiusculo negrito-exp">
                   <div class="text-left">{!! trans('global.lbl_account') !!}:</div>
-                  <br />
-                  <div class="text-center">{{ env('VIVALA_CC') }}</div>
+                  <div class="text-center margin-t-0-5">{{ env('VIVALA_CC') }}</div>
                 </span>
             </div>
         </div>
