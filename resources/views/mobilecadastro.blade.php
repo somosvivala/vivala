@@ -12,15 +12,17 @@
             @if (count($errors) > 0)
             <div class="row">
                 @foreach ($errors->all() as $error)
-                <span class="form-mobile-error">{{ $error }}</span>
+                <div class="form-mobile-error">{{ $error }}</div>
                 @endforeach
             </div>
             @endif
+            {{-- DESATIVADO
             <div class="row">
               <div class="form-mobile-warning hide" id="senhas-nao-coincidem">
                 {!! trans('global.lbl_password_dont_match') !!}!
               </div>
             </div>
+            --}}
             <div class="row">
               <div class="form-mobile-warning2 hide" id="capslock-ligado">
                 {!! trans('global.lbl_capslock_activated') !!}!

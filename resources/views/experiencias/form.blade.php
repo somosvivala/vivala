@@ -189,6 +189,10 @@
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
             <td><abbr title="Nome da Experiência é a principal chamada da experiência, use este campo de forma sucinta e direta, fazendo a melhor propaganda do que será oferecido!"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-nome-listagem"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-nome"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-nome-listagem"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-nome"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
       </div>
@@ -277,8 +281,8 @@
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
             <td><abbr title="Descrição Completa da experiência a a descrição direta pro usuário, deve passar ao usuário tudo que ele está adquirindo, deve conter detalhadamente todo o 'produto' e também ser um texto atrativo/agradável e ao mesmo tempo não cansativo."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
-            <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
-            <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-descricao-completa"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-descricao-completa"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -301,8 +305,8 @@
         <div class="col-lg-3 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
             <td><abbr title="Detalhes da Experiência são os detalhes extras que dirão pontualmente ao usuário do que a experiência é composta."><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
-            <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
-            <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-detalhes"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-detalhes"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -397,8 +401,8 @@
         <div class="col-lg-4 text-right">
           <table class="col-lg-6 col-lg-offset-6 text-right">
             <td><abbr title="Texto que aparecerá na secao Data nos detalhes da experiencia"><i class='fa fa-2x fa-question-circle-o'></i></abbr></td>
-            <td><a href="#"><i class='fa fa-2x fa-desktop'></i></a></td>
-            <td><a href="#"><i class='fa fa-2x fa-mobile'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-desktop-frequencia"><i class='fa fa-2x fa-desktop'></i></a></td>
+            <td><a href="#" data-toggle="modal" data-target="#modal-tutoriais-internos-experiencias-mobile-frequencia"><i class='fa fa-2x fa-mobile'></i></a></td>
           </table>
         </div>
         <div class="col-lg-12">
@@ -531,8 +535,22 @@
     @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-projeto-responsavel')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-projeto-responsavel')
 
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-nome-listagem')
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-nome')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-nome-listagem')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-nome')
+
     @include('modals.tutoriais-internos.experiencias.desktop.modal-experiencia-descricao-listagem')
     @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-descricao-listagem')
+
+    @include('modals.tutoriais-internos.experiencias.desktop.modal-tutoriais-internos-experiencias-desktop-descricao-completa')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-tutoriais-internos-experiencias-mobile-descricao-completa')
+
+    @include('modals.tutoriais-internos.experiencias.dektop.modal-experiencia-detalhes')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-detalhes')
+
+    @include('modals.tutoriais-internos.experiencias.dektop.modal-experiencia-frequencia')
+    @include('modals.tutoriais-internos.experiencias.mobile.modal-experiencia-frequencia')
     {{-- Fim da Inclusão de todos os MODALS do tutorial --}}
 
 </div>

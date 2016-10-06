@@ -50,7 +50,7 @@
               @foreach($experiencias as $k=>$Experiencia)
               <li class="col-lg-3">
                 <a href="/experiencias/{{ $Experiencia->id}}">
-                  <div class="row text-center margin-t-0 margin-b-0-5">
+                  <div class="row text-center margin-t-1 margin-b-0-5">
                     <h4 class="col-lg-12 nome-listagem">
                       {{ ucfirst(trim($Experiencia->nome)) }}
                     </h4>
