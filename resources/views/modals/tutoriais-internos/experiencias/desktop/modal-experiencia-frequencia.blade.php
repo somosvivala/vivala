@@ -16,7 +16,7 @@
       <div class="modal-body">
         <div class="row">
           <div class="col-lg-12">
-            <img src="{{ asset('img/internas-tutorial/experiencias/desktop/tutorial-experiencias-frequencia.png') }}" class="img-responsive img-tutorial"></img>
+            <img src="{{ asset('img/internas-tutorial/experiencias/desktop/tutorial-experiencias-desktop-frequencia.png') }}" class="img-responsive img-tutorial"></img>
           </div>
         </div>
       </div>
