@@ -1,0 +1,28 @@
+<?php namespace App\Events\Experiencias;
+
+use App\Events\Event;
+
+use Illuminate\Queue\SerializesModels;
+use App\Experiencia;
+use App\DataOcorrenciaExperiencia;
+
+class ExperienciaAconteceAmanha extends Event
+{
+    use SerializesModels;
+
+    //Informacoes que o evento vai propagar
+    public $Experiencia;
+    public $DataOcorrencia;
+
+    /**
+     * Create a new event instance.
+     *
+     * @return void
+     */
+    public function __construct(Experiencia $experiencia, DataOcorrenciaExperiencia $dataOcorrencia)
+    {
+        $this->Experiencia = $experiencia;
+        $this->DataOcorrencia = $dataOcorrencia;
+    }
+
+}
