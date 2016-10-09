@@ -14,6 +14,7 @@ use App\Events\Experiencias\ExperienciaOcorrendo;
 use App\Events\Experiencias\ExperienciaAconteceHoje;
 use App\Events\Experiencias\ExperienciaAconteceAmanha;
 use App\Events\Experiencias\ExperienciaAconteceuRecentemente;
+use App\Experiencia;
 
 class Kernel extends ConsoleKernel
 {
@@ -89,7 +90,7 @@ class Kernel extends ConsoleKernel
 
         $schedule->call(function() {
             //Pegando as exps ativas e finalizadas para contemplar todo o fluxo das experiencias
-            $experienciasAtivasOuFinalizadas= Experiencia::ativasOuFinalizadas()->get();
+            $experienciasAtivasOuFinalizadas = Experiencia::ativasOuFinalizadas()->get();
 
             //iterando sob as experiencias ativas ou finalizadas
             foreach ($experienciasAtivasOuFinalizadas as $Experiencia) {
@@ -125,7 +126,7 @@ class Kernel extends ConsoleKernel
                 }
 
             }
-        })->dailyAt('4:19');
+        })->everyFiveMinutes();
 
         //Fazendo refresh dos places e buscompanies da Clickbus diariamente
         $schedule->exec('php artisan db:seed --class="ClickBusSeeder" --force')->dailyAt('4:25');
