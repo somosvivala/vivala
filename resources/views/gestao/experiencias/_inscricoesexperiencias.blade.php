@@ -19,6 +19,7 @@
                         <div class="col-xs-9">
                             <p> Identificador da inscricao: {{ $inscricao->id }} </p>
                             <p> Nome do inscrito: {{ $inscricao->perfil->nome_completo }} </p>
+                            <p> Data da inscrição: {{ $inscricao->dataExperiencia->format('d/m/Y') }} </p>
                             <p> Email: {{ $inscricao->perfil->user->email }} </p>
                             <p class="
                                 @if ($inscricao->status == 'confirmada')
