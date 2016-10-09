@@ -425,7 +425,7 @@
           </table>
         </div>
         <ul id="data-ocorrencia-container">
-            @if (isset($experiencia) && property_exists($experiencia, 'futurasOcorrencias') )
+            @if (isset($experiencia) )
               @foreach ($experiencia->futurasOcorrencias as $dataOcorrencia)
                 @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
               @endforeach
@@ -452,7 +452,7 @@
           </table>
         </div>
         <ul id="data-ocorrencia-container">
-            @if (isset($experiencia) && property_exists( $experiencia, 'futurasOcorrencias') )
+            @if (isset($experiencia) )
               @foreach ($experiencia->futurasOcorrencias as $dataOcorrencia)
                 @include('experiencias._form_data_ocorrencia', ['dataOcorrencia' => $dataOcorrencia])
               @endforeach
