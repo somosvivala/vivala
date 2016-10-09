@@ -12,13 +12,22 @@ use App\Interfaces\ExperienciasRepositoryInterface;
  */
 class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 {
+    /** Flag booleana obtida do .env para determinar qual ambiente utilizar **/
+    public $IS_PRODUCTION;
 
-    //Propriedades e informacoes do Repositorio
+    /** Token de autenticacao fornecido pela BoletoCloud, obtido do .env no construtor  **/
     public $BOLETOCLOUD_AUTH_TOKEN;
+
+    /** Token identificador da conta correte dentro da BoletoCloud, obtido do .env no construtor **/
     public $BOLETOCLOUD_CONTA_TOKEN_API;
+
+    /** Base da url para consumo da API, obtido do .env no construtor **/
     public $BOLETOCLOUD_URL_BASE;
+
+    /** Rota de consumo da API, obtido do .env no construtor **/
     public $BOLETOCLOUD_API_ROUTE;
 
+    /** Valor da taxa de emissao de boletos atual, é incrementada no valor final do boleto **/
     public $TARIFA_EMISSAO_BOLETO;
 
     /**
@@ -27,9 +36,11 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
      */
     function __construct()
     {
+        $this->IS_PRODUCTION = env('BOLETOCLOUD_IS_PRODUCTION');
+
         $sufixo = '';
         //se estivermos em development, adicionar suffixo aos valores do env
-        if (app()->environment('development')) {
+        if ( !$this->IS_PRODUCTION ) {
             $sufixo = '_DEV';
         }
 
@@ -207,15 +218,14 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
 
     /**
-     * Metodo para gerar o arquivo remessa dos boletos gerados 
+     * Metodo para gerar o arquivo remessa dos boletos gerados
      */
     public function gerarArquivoRemessa()
     {
 
         #Token da conta bancária cadastrada
         $fields = array(
-        'remessa.conta.token'=> $this->BOLETOCLOUD_CONTA_TOKEN_API
-
+            'remessa.conta.token'=> $this->BOLETOCLOUD_CONTA_TOKEN_API
         );
 
 

@@ -93,7 +93,7 @@ class BoletoExperiencia extends Model
     public function getLinkSegundaViaAttribute()
     {
         //sufixo para pegar a variavel correta dependendo do ambiente
-        $sufixo = (env('APP_ENV') == 'development' ? '_DEV' : '');
+        $sufixo = ( (! env('BOLETOCLOUD_IS_PRODUCTION')) ? '_DEV' : '');
         return env('BOLETOCLOUD_URL_BASE'.$sufixo) . '/boleto/2via/download/' . $this->token;
     }
 
