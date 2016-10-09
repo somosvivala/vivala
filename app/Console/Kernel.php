@@ -66,15 +66,18 @@ class Kernel extends ConsoleKernel
                     //Obtendo os details dessa compra pendente
                     $respostaClickbus = $clickBusRepository->getOrder($Compra->clickbus_order_id);
 
-                    //Se pagamento confirmado, disparar evento para tomar as medidas necessarias
-                    if ($clickBusRepository->confirmaPagamentoFinalizado($Compra, $respostaClickbus)) {
-                        event(new ClickBusPagamentoConfirmado($Compra));
-                    }
+                    if ($respostaClickbus) {
 
-                    //Se a passagem foi cancelada, disparar evento para tomar as medidas necessarias
-                    if ($clickBusRepository->confirmaPassagemCancelada($respostaClickbus)) {
-                        event(new ClickBusPassagemCancelada($Compra));
-                    }
+                        //Se pagamento confirmado, disparar evento para tomar as medidas necessarias
+                        if ($clickBusRepository->confirmaPagamentoFinalizado($Compra, $respostaClickbus)) {
+                            event(new ClickBusPagamentoConfirmado($Compra));
+                        }
+
+                        //Se a passagem foi cancelada, disparar evento para tomar as medidas necessarias
+                        if ($clickBusRepository->confirmaPassagemCancelada($respostaClickbus)) {
+                            event(new ClickBusPassagemCancelada($Compra));
+                        }
+                     }
                 }
             }
         })->everyFiveMinutes();
@@ -90,7 +93,7 @@ class Kernel extends ConsoleKernel
 
             //iterando sob as experiencias ativas ou finalizadas
             foreach ($experienciasAtivasOuFinalizadas as $Experiencia) {
-                //pegando as datas em que a experiencia vai ocorrer
+                //pegando as datas em que a experiencia vai ocorrer ou ocorreu
                 $datasOcorrenciaExperiencia = $Experiencia->ocorrencias;
 
                 //Para cada data de ocorrencia

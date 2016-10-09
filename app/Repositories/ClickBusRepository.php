@@ -172,7 +172,8 @@ class ClickBusRepository
         $result = file_get_contents($this->url.'/order/'.$idOrder, false, $context);
         $decoded = json_decode($result);
 
-        return $decoded->content;
+        $retorno = preg_match('/content/', $result) ? $decoded->content : false;
+        return $retorno;
     }
 
     /**
