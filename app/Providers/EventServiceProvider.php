@@ -144,9 +144,7 @@ class EventServiceProvider extends ServiceProvider
          * Quando uma experiencia acontecer daqui 1 dia (disparar emails e atualizar inscricoes)
          */
         'App\Events\Experiencias\ExperienciaAconteceAmanha' => [
-            'App\Handlers\Events\Experiencias\EnviaEmailsExperienciaAconteceAmanha',
-            'App\Handlers\Events\Experiencias\AtualizaStatusInscricoes',
-            'App\Handlers\Events\Experiencias\AtualizaStatusExperiencia',
+            'App\Handlers\Events\Experiencias\EnviaEmailsExperienciaAconteceAmanha'
         ],
 
         /*
