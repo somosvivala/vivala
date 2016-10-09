@@ -5,6 +5,11 @@
 
   @section('email-experiencia-cabecalho')
     <?php
+        //Obtendo a experiencia atraves das inscricoes
+        if ( !isset($Experiencia) ) {
+            $Experiencia = $Inscricoes->first()->experiencia;
+        }
+
       $expTextoBaixo = 'A Experiência da <strong>'.mb_strtoupper(trim($Experiencia->owner_nome)).'</strong> acontece <strong>HOJE</strong> na Vivalá!';
     ?>
     @include('emails.experiencias._experiencias_img-cabecalho', [
