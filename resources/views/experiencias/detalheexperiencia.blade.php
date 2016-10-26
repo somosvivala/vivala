@@ -17,7 +17,7 @@
     <i class="fa fa-chevron-left"></i>
   </a>
 
-  <section class="experiencia" id="experiencia">
+  <section class="experiencia">
         {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
         {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
         {!! Form::hidden('_token', csrf_token()) !!}
@@ -30,7 +30,7 @@
       </div>
 
       <div class="descricao">
-          <span class="col-xs-12 negrito-exp text-center">
+          <span class="col-xs-12 negrito-exp text-center preco-experiencia-mobile">
             R${{ trim($Experiencia->preco) }}
           </span>
           <span class="col-xs-12 negrito-exp text-center margin-b-1">
@@ -43,7 +43,7 @@
             <div class="round-foto-small">
               <img alt="{{ $Experiencia->owner_nome }}" src="{{ $Experiencia->fotoOwnerUrl }}">
             </div>
-            <span>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</span>
+            <span class="nome-owner">{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</span>
             <div class="row">
 
               @if($Experiencia->owner)
@@ -113,10 +113,10 @@
                 </div>
             </div>
           @endif
-          <span class="col-xs-12 negrito-exp margin-t-2">Informações</span>
+          <span class="col-xs-12 negrito-exp margin-t-2  margin-b-0-5">Informações</span>
           @foreach($Experiencia->informacoes as $Informacao)
             <div class="col-xs-12 informacoes">
-                <div class="row padding-t-1">
+                <div class="row padding-t-0-5">
                     <span class="icone-informacoes"><i class="{{ $Informacao->icone }}"></i></span>
                     <span class="descricao-informacoes">{{ ucfirst(trim($Informacao->descricao)) }}</span>
                 </div>
