@@ -4,7 +4,7 @@
 ])
 
   <?php
-    $expTextoBaixo = 'Sua inscrição foi cancelada na experiência oferecida pela<br><strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong>!';
+    $expTextoBaixo = 'Sua inscrição foi cancelada na experiência oferecida pela <strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong>!';
   ?>
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
@@ -18,7 +18,6 @@
   @stop
 
   @section('email-experiencia-conteudo')
-
     {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-inscricao-candidato-dados-experiencia', [
       'Inscricao' => $Inscricao

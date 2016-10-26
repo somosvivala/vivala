@@ -63,7 +63,7 @@
             <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
               <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
             </p>
-            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
+            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:5px; margin-bottom:0px;">
               {{ ucfirst(strtolower(trim($Inscricao->experiencia->frequencia))) }}
             </p>
           </td>
