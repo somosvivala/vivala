@@ -1,5 +1,5 @@
 <?php
-  $emailTitulo = 'Candidato(a) confirmado(a) na experiência da<br><strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong><br>';
+  $emailTitulo = 'Candidato(a) confirmado(a) na experiência do(a)<br><strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong><br>';
 ?>
 @extends('emails.experiencias._base-experiencias', [
   'emailCabecalho' => 'Inscrição Confirmada na Experiência',

@@ -1,13 +1,13 @@
 @extends('emails.experiencias._base-experiencias', [
   'emailCabecalho' => 'Uma inscrição foi confirmada com sucesso na sua experiência!',
-  'emailTitulo' => 'Sua experiência tem uma nova inscrição!'
+  'emailTitulo' => 'Sua experiência tem uma nova inscrição'
 ])
 
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
       'expCorTextos' => '#25A494',
       'expTextoCima' => '',
-      'expTextoBaixo' => 'A sua experiência tem uma inscrição confirmada',
+      'expTextoBaixo' => 'A sua experiência tem uma inscrição confirmada!',
       'expLinkImagem' => 'img/icones/png/verde-sucesso-vazio.png',
       'expAltImagem' => 'Inscrição Confirmada',
       'expTitleImagem' => 'Inscrição Confirmada'
