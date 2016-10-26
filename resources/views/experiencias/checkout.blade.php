@@ -13,7 +13,7 @@
           <br />
           <b class="texto-maiusculo">{{ $Experiencia->nome }}</b>
           <br />
-          oferecida pela instituição <b class="texto-maiusculo">{{$Experiencia->owner->nome}}</b>,
+          oferecida pela instituição <b class="texto-maiusculo">{{$Experiencia->owner_nome}}</b>,
           <br />
           realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
         </span>
