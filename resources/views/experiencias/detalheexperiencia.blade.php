@@ -17,7 +17,7 @@
     <i class="fa fa-chevron-left"></i>
   </a>
 
-  <section class="experiencia">
+  <section class="experiencia" id="experiencia">
         {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
         {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
         {!! Form::hidden('_token', csrf_token()) !!}
@@ -45,21 +45,28 @@
             </div>
             <span>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</span>
             <div class="row">
+
               @if($Experiencia->owner)
-                @if($Experiencia->owner->url_facebook)
-                  <a href="{{ $Experiencia->url_facebook_responsavel }}">
-                    <i class="fa fa-facebook-square verde-sucesso"></i>
+                @if($Experiencia->url_facebook_responsavel)
+                  <a class="instituicao-rede-social" href="{{ $Experiencia->url_facebook_responsavel }}" target="_blank">
+                    <span class="round-icone">
+                      <i class="fa fa-facebook fa-inverse instituicao-rede-social-icone"></i>
+                    </span>
                   </a>
                 @endif
-                @if($Experiencia->owner->url_instagram)
-                  <a href="{{ $Experiencia->owner->url_instagram_responsavel }}">
-                    <i class="fa fa-instagram verde-sucesso"></i>
+                @if($Experiencia->url_instagram_responsavel)
+                  <a class="instituicao-rede-social" href="{{ $Experiencia->url_instagram_responsavel }}" target="_blank">
+                      <span class="round-icone icone-instagram">
+                      <i class="fa fa-instagram fa-inverse instituicao-rede-social-icone"></i>
+                    </span>
                   </a>
                 @endif
-                @if($Experiencia->owner->url_site)
-                <span><a href="{{ $Experiencia->url_externa_responsavel }}" target="_blank">
-                  <i class="fa fa-link verde-sucesso"></i>
-                </a></span>
+                @if($Experiencia->url_externa_responsavel)
+                  <a class="instituicao-rede-social" href="{{ $Experiencia->url_externa_responsavel }}" target="_blank">
+                    <span class="round-icone">
+                      <i class="fa fa-link fa-inverse instituicao-rede-social-icone"></i>
+                    </span>
+                  </a>
                 @endif
               @endif
             </div>
