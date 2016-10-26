@@ -19,26 +19,26 @@
         </span>
         <div class="col-xs-12">
             <div class="margin-t-1 text-left dados-bancarios">
-                <span class="col-xs-12 margin-t-0-5 texto-maiusculo ">
+                <div class="margin-t-0-5 texto-maiusculo ">
                   <span class="negrito-exp">{!! trans('global.lbl_name') !!}:</span>
                   <span class="margin-t-0-5">{{ env('VIVALA_FANTASY_NAME') }}</span>
-                </span>
-                <span class="col-xs-12 margin-t-1 texto-maiusculo ">
+                </div>
+                <div class="margin-t-0-5 texto-maiusculo ">
                   <span class="negrito-exp">CNPJ:</span>
                   <span class="margin-t-0-5">{{ env('VIVALA_CNPJ') }}</span>
-                </span>
-                <span class="col-xs-12 margin-t-1 texto-maiusculo ">
+                </div>
+                <div class="margin-t-0-5 texto-maiusculo ">
                   <span class="negrito-exp">{!! trans('global.lbl_bank') !!}:</span>
                   <span class="margin-t-0-5">{{ env('VIVALA_BANK') }}</span>
-                </span>
-                <span class="col-xs-12 margin-t-1 texto-maiusculo ">
+                </div>
+                <div class="margin-t-0-5 texto-maiusculo ">
                   <span class="negrito-exp">{!! trans('global.lbl_agency') !!}:</span>
                   <span class="margin-t-0-5">{{ env('VIVALA_AG') }}</span>
-                </span>
-                <span class="col-xs-12 margin-t-1 margin-b-0-5 texto-maiusculo ">
+                </div>
+                <div class="margin-t-0-5 margin-b-0-5 texto-maiusculo ">
                   <span class="negrito-exp">{!! trans('global.lbl_account') !!}:</span>
                   <span class="margin-t-0-5">{{ env('VIVALA_CC') }}</span>
-                </span>
+                </div>
             </div>
         </div>
 
