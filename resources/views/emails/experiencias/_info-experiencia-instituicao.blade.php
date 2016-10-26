@@ -95,7 +95,7 @@
         </tr>
         <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
         <!-- Seção DETALHES EXTRAS DA EXPERIÊNCIA -->
-        @if($Experiencia->informacoes)
+        @if(!empty($Experiencia->informacoes))
           <tr>
             <td>
               <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
@@ -113,7 +113,6 @@
             </p>
           </td>
         </tr>
-        @if(!empty($Experiencia->informacoes))
           @foreach($Experiencia->informacoes as $Informacao)
             <tr>
               <td>
