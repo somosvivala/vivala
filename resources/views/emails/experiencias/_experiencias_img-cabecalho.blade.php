@@ -16,7 +16,7 @@
         <!-- Imagem da Primeira Estrutura -->
         <tr align="center">
           <td style="vertical-align:middle">
-            <img src="{{ asset($expLinkImagem) }}" alt="{{ $expAltImagem }}" title="{{ $expTitleImagem }}" min-width="99px" width="auto" max-width="600px" min-height="150px" height="150px" max-height="150px"/>
+            <img src="{{ asset($expLinkImagem) }}" alt="{{ $expAltImagem }}" title="{{ $expTitleImagem }}" min-width="99px" width="auto" max-width="600px" min-height="120px" height="120px" max-height="120px"/>
           </td>
         </tr>
         <!-- Fim da Imagem da Primeira Estrutura -->
@@ -24,7 +24,7 @@
         @if(!empty($expTextoBaixo))
         <tr align="center">
           <td>
-            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:22px; line-height:30px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin:16px 0px 5px;">
+            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; line-height:30px; color:@if($expCorTextos) {{ $expCorTextos }} @else '#FFF' @endif; margin:16px 0px 5px;">
               {!! $expTextoBaixo !!}
             </p>
           </td>
