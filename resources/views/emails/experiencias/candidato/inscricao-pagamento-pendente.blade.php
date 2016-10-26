@@ -3,7 +3,7 @@
   'emailTitulo' => 'Falta apenas um passo para sua Experiência acontecer!'
 ])
 <?php
-  $expTextoBaixo = 'Para confirmar sua inscrição na experiência da<br/><strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong>,<br/>realize o depósito de <strong>R$'.trim($Inscricao->experiencia->preco).'</strong> na conta a seguir:';
+  $expTextoBaixo = 'Para confirmar sua inscrição na experiência da <strong>'.mb_strtoupper(trim($Inscricao->experiencia->owner_nome)).'</strong>, realize o depósito de <strong>R$'.trim($Inscricao->experiencia->preco).'</strong> na conta a seguir:';
 ?>
   @section('email-experiencia-cabecalho')
     @include('emails.experiencias._experiencias_img-cabecalho', [
