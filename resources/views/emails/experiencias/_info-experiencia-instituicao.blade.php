@@ -113,7 +113,7 @@
             </p>
           </td>
         </tr>
-        @if(!empty($Inscricao->experiencia->informacoes))
+        @if(!empty($Experiencia->informacoes))
           @foreach($Experiencia->informacoes as $Informacao)
             <tr>
               <td>
