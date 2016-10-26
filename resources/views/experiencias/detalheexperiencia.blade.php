@@ -45,20 +45,22 @@
             </div>
             <span>{{ mb_strtoupper(trim($Experiencia->owner_nome)) }}</span>
             <div class="row">
-              @if($Experiencia->owner->url_facebook)
-                <a href="{{ $Experiencia->url_facebook_responsavel }}">
-                  <i class="fa fa-facebook-square verde-sucesso"></i>
-                </a>
-              @endif
-              @if($Experiencia->owner->url_instagram)
-                <a href="{{ $Experiencia->owner->url_instagram_responsavel }}">
-                  <i class="fa fa-instagram verde-sucesso"></i>
-                </a>
-              @endif
-              @if($Experiencia->owner->url_site)
-              <span><a href="{{ $Experiencia->url_externa_responsavel }}" target="_blank">
-                <i class="fa fa-link verde-sucesso"></i>
-              </a></span>
+              @if($Experiencia->owner)
+                @if($Experiencia->owner->url_facebook)
+                  <a href="{{ $Experiencia->url_facebook_responsavel }}">
+                    <i class="fa fa-facebook-square verde-sucesso"></i>
+                  </a>
+                @endif
+                @if($Experiencia->owner->url_instagram)
+                  <a href="{{ $Experiencia->owner->url_instagram_responsavel }}">
+                    <i class="fa fa-instagram verde-sucesso"></i>
+                  </a>
+                @endif
+                @if($Experiencia->owner->url_site)
+                <span><a href="{{ $Experiencia->url_externa_responsavel }}" target="_blank">
+                  <i class="fa fa-link verde-sucesso"></i>
+                </a></span>
+                @endif
               @endif
             </div>
           </div>

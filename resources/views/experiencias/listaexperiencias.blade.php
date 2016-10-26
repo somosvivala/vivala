@@ -32,9 +32,6 @@
                           @endif
                         @endforeach
                       </div>
-                      <div class="nome-experiencia">
-                        <span>{{ mb_strtoupper(trim($Experiencia->nome)) }}</span>
-                      </div>
                   </div>
                   {{-- DESATIVADO
                     <img class="col-sm-6" src="{{ $Experiencia->foto }}" alt="{{ $Experiencia->titulo }}">
@@ -45,6 +42,9 @@
                       {{-- DESATIVADO
                         <div class="row negrito-exp">R${{ trim($Experiencia->preco) }}</div>
                       --}}
+                      <div class="row nome-experiencia">
+                        <span>{{ mb_strtoupper(trim($Experiencia->nome)) }}</span>
+                      </div>
                       <div class="row cidade negrito-exp"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->estado->nome }} - {{ $Experiencia->local->estado->sigla }}</div>
                       <span class="pull-left margin-t-1">{{ $Experiencia->descricao_na_listagem }}</span>
                   </div>
