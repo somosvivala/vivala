@@ -17,7 +17,7 @@
     <i class="fa fa-chevron-left"></i>
   </a>
 
-  <section class="experiencia">
+  <section class="experiencia" id="experiencia">
         {!! Form::hidden('experiencia_tipo', $Experiencia->tipo) !!}
         {!! Form::hidden('experiencia_id', $Experiencia->id) !!}
         {!! Form::hidden('_token', csrf_token()) !!}
