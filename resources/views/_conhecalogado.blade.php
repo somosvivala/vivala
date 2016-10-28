@@ -4,11 +4,8 @@
    </a>
 </div>
 <div id="conheca-vivala" class="conheca-vivala">
-    <a href="#" class="desativa-conheca">
-        <i class="fa fa-times laranja"></i>
-    </a>
 
-    <div class="conteudo-mobile margin-t-3">
+    <div class="conteudo-mobile">
         <div class="col-xs-12 text-center container-logo margin-b-1">
             <img src="{{ asset('vivala-logo.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
         </div>
@@ -22,4 +19,7 @@
             <a href="https://vivala.com.br" class="link-verde2">vivala.com.br</a>
         </div>
     </div>
+    <a href="#" class="desativa-conheca">
+        <i class="fa fa-times laranja"></i>
+    </a>
 </div>
