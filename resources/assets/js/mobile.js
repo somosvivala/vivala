@@ -109,3 +109,50 @@ $(".clndr-picker").click(function() {
     $(".clndr-container").toggleClass('visivel');
 });
 });
+
+/**
+ * Funcao para realizar o submit de um form por ajax
+ */
+function mobileAjaxSubmitForm(form, containerErros, callback) {
+    console.log('inside mobileAjaxSubmitForm');
+    console.log(form);
+    console.log(containerErros);
+    console.log(callback);
+
+    //Executa a ajax request
+    //$.ajax({
+        //url: 'mydomain.com/url',
+        //type: 'POST',
+        //dataType: 'xml/html/script/json',
+        //data: $.param( $('Element or Expression') ),
+        //complete: function (jqXHR, textStatus) {
+            //console.log('complete');
+            //// callback
+        //},
+        //success: function (data, textStatus, jqXHR) {
+            //console.log('success');
+            //// success callback
+        //},
+        //error: function (jqXHR, textStatus, errorThrown) {
+            //console.log('error');
+            //// error callback
+        //}
+    //});
+}
+
+/**
+ * Funcao para bindar submit de forms por ajax
+ */
+function bindaSubmitFormAjax() {
+    console.log('chamou binda submit');
+     $(".form-por-ajax").on('submit', function(event) {
+         event.preventDefault()
+         event.stopPropagation()
+         console.log('bindando input');
+         console.log(event);
+     });;
+}
+
+jQuery(document).ready(function($) {
+    bindaSubmitFormAjax();
+});

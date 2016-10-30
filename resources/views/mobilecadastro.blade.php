@@ -9,13 +9,10 @@
             <i class="fa fa-chevron-left"></i>
         </a>
         <div class="conteudo-mobile pull-left">
-            @if (count($errors) > 0)
-            <div class="row">
-                @foreach ($errors->all() as $error)
-                <div class="form-mobile-error">{{ $error }}</div>
-                @endforeach
-            </div>
-            @endif
+
+            {{-- Incluindo listagem de erros --}}
+            @include('errors.mobile-list')
+
             {{-- DESATIVADO
             <div class="row">
               <div class="form-mobile-warning hide" id="senhas-nao-coincidem">
@@ -28,7 +25,7 @@
                 {!! trans('global.lbl_capslock_activated') !!}!
               </div>
             </div>
-            {!! Form::open(['url' => '/autenticacao/register']) !!}
+            {!! Form::open(['url' => '/autenticacao/register', 'class' => 'form-por-ajax', 'onsubmit'=>'return']) !!}
               <div class="row margin-t-1">
                 <div class="col-xs-10 col-xs-offset-1">
                   {!! Form::text("username", null, ['required'=>'required', 'class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
