@@ -2,13 +2,13 @@
 
 @section('content')
 <div class="col-xs-12 fundo-laranja">
-    <div class="col-xs-12 text-center container-logo">
+    <div class="col-xs-12 padding-t-1 padding-b-1 text-center container-logo">
         <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
     </div>
-    <a href="#" class="link-voltar history-back">
+    <a href="#" class="link-voltar history-back padding-t-1">
         <i class="fa fa-chevron-left"></i>
     </a>
-    <div class="conteudo-mobile text-justified ">
+    <div class="conteudo-mobile margin-b-1 text-justified width-100">
         <div class="row">
             <h3 class="margin-b-2 text-center font-bold-upper">
                 {!! trans('global.termsconditions_title') !!}
@@ -17,8 +17,7 @@
             </small>
             </h3>
         </div>
-        <section class="container">
-          <div class="row">
+        <section class="container row">
             <p class="col-md-12 col-lg-12 ajuste-fonte-avenir-light">
                 {!! trans('global.termsconditions_intro_text') !!}
             </p>
@@ -102,7 +101,6 @@
                     {!! trans('global.termsconditions_modifications_policy_text') !!}
                 </p>
             </div>
-          </div>
         </section>
         <div class="row margin-t-2 text-center">
             <a href="{{ url('home') }}" target="_self" rel="" class="btn btn-acao">
