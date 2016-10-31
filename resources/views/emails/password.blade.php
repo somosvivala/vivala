@@ -78,7 +78,7 @@
                   <!-- Separador -->
                   <tr align="center">
                     <td>
-                      <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
+                      <div style="border-bottom:2px solid #FFFFFF; width:300px; margin:10px 0;"></div>
                     </td>
                   </tr>
                   <!-- Fim do Separador -->

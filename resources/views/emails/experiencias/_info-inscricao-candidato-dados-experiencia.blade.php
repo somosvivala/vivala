@@ -28,7 +28,7 @@
             </p>
             <p>
               <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top; padding-right:6px; padding-left:3px;" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" max-height="20px"/>
-              <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; vertical-align:middle;">
+              <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.3em; vertical-align:middle;">
                 <strong>{{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla)) }}</strong>
               </span>
             </p>
@@ -75,7 +75,7 @@
                 <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
                   <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 </p>
-                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:5px; margin-bottom: 5px;">
+                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:6px; margin-bottom: 5px;">
                   {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
                 </p>
               </td>
