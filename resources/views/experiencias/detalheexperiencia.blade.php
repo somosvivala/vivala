@@ -92,7 +92,7 @@
                 <div class="row padding-t-1">
                     <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
                     <span class="descricao-informacoes">
-                        <input name="data-escolhida" placeholder="Escolha uma data" type="text" onfocus="(this.type='date')" class="clndr-picker" readonly>
+                        <input name="data-escolhida" placeholder="Escolha uma data" type="text" class="clndr-picker" readonly>
                         <div class="clndr-container">
                         </div>
                         <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
@@ -105,7 +105,7 @@
                 <div class="row padding-t-1">
                     <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
                     <span class="descricao-informacoes">
-                        <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                        <input type="text" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
                         <div class="clndr-container">
                         </div>
                         <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
