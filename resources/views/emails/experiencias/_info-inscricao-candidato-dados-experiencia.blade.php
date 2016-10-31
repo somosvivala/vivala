@@ -29,7 +29,7 @@
             <p>
               <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" style="vertical-align:top; padding-right:6px; padding-left:3px;" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" max-height="20px"/>
               <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.3em; vertical-align:middle;">
-                <strong>{{ ucfirst(trim($Inscricao->experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla), 'utf-8') }}</strong>
+                <strong>{{ ucfirst(mb_strtoupper(trim($Inscricao->experiencia->local->nome), 'utf-8')) }} - {{ mb_strtoupper(trim($Inscricao->experiencia->local->estado->sigla), 'utf-8') }}</strong>
               </span>
             </p>
             <p style="text-align:justify; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em;">
