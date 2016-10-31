@@ -45,7 +45,7 @@
                       <div class="row nome-experiencia">
                         <span class="col-xs-12">{{ trim($Experiencia->nome) }}</span>
                       </div>
-                      <div class="row cidade negrito-exp"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->estado->nome }} - {{ $Experiencia->local->estado->sigla }}</div>
+                      <div class="row cidade negrito-exp"><i class="fa fa-map-marker"></i> {{ $Experiencia->local->nome }} - {{ $Experiencia->local->estado->sigla }}</div>
                       <span class="pull-left margin-t-1">{{ $Experiencia->descricao_na_listagem }}</span>
                   </div>
               </div>
