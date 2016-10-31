@@ -155,4 +155,21 @@ function bindaSubmitFormAjax() {
 
 jQuery(document).ready(function($) {
     bindaSubmitFormAjax();
+
+
+  jQuery('.informacoes span.descricao-informacoes input.clndr-picker').click(function(event){
+      event.stopPropagation();
+      console.log('inpput');
+      //jQuery('.informacoes span.descricao-informacoes div.clndr-container').toggleClass('visivel');
+  });
+  jQuery('.informacoes span.descricao-informacoes div.clndr-container').click(function(event){
+      event.stopPropagation();
+      console.log('container');
+      jQuery('.informacoes span.descricao-informacoes div.clndr-container').addClass('visivel');
+  });
+  jQuery(window).click(function() {
+
+      console.log('all');
+      jQuery('.informacoes span.descricao-informacoes div.clndr-container').removeClass('visivel');
+  });
 });
