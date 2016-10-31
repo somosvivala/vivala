@@ -13,7 +13,7 @@
             </p>
             <p style="margin-top:10px; margin-bottom:10px; text-align: center;">
               <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1.2em;">
-                {{ mb_strtoupper(trim($Experiencia->nome)) }}
+                {{ mb_strtoupper(trim($Experiencia->nome), 'utf-8') }}
               </span>
             </p>
             <p style="margin-top:10px; margin-bottom:10px;">
@@ -39,7 +39,7 @@
               </span>
               <br>
               <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla)) }}
+                {{ ucfirst(mb_strtolower(trim($Experiencia->local->nome), 'utf-8')) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla), 'utf-8') }}
               </span>
             </p>
             <p style="margin-top:10px; margin-bottom: 10px;">
@@ -49,7 +49,7 @@
               </span>
               <br>
               <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                {{ ucfirst($Experiencia->endereco_completo) }}
+                {{ ucfirst(mb_strtoupper(trim($Experiencia->endereco_completo), 'utf-8')) }}
               </span>
             </p>
             <p style="margin-top:10px; margin-bottom: 10px;">
@@ -94,29 +94,39 @@
           </td>
         </tr>
         <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
-        <!-- Seção DETALHES EXTRAS DA EXPERIÊNCIA -->
+        <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
+        <tr>
+          <td>
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+              Informações Extras
+            </h3>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
+              <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+            </p>
+            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:5px; margin-bottom:0px;">
+              {{ ucfirst(mb_strtolower(trim($Experiencia->frequencia), 'utf-8')) }}
+            </p>
+          </td>
+        </tr>
         @if($Experiencia->informacoes)
-          <tr>
-            <td>
-              <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
-                Informações Extras
-              </h3>
-            </td>
-          </tr>
           @foreach($Experiencia->informacoes as $Informacao)
             <tr>
               <td>
                 <p style="float:left; margin-top:0px; margin-right:20px; margin-bottom:0px;">
-                  <img src="{{ $Informacao->PathIconePNG }}" min-width="32px" width="32px" max-width="32px" min-height="32px" height="32px" max-height="32px"/>
+                  <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                 </p>
-                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1.2em; margin-top:7px; margin-bottom:0px;">
-                  {{ ucfirst(strtolower(trim($Informacao->descricao))) }}
+                <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:6px; margin-bottom: 5px;">
+                  {{ ucfirst(mb_strtolower(trim($Informacao->descricao), 'utf-8')) }}
                 </p>
               </td>
             </tr>
           @endforeach
         @endif
-        <!-- Fim da Seção de DETALHES EXTRAS DA EXPERIÊNCIA -->
+        <!-- Fim da Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
       </tbody>
     </table>
   </div>

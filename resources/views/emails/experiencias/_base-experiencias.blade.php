@@ -79,7 +79,7 @@
                   <!-- Separador -->
                   <tr align="center">
                     <td>
-                      <div style="border-bottom:1px solid #FFFFFF; width:300px; margin:25px 0;"></div>
+                      <div style="border-bottom:2px solid #FFFFFF; width:300px; margin:10px 0;"></div>
                     </td>
                   </tr>
                   <!-- Fim do Separador -->
@@ -100,7 +100,7 @@
           </td>
           <!-- Fim do Cabeçalho da Vivalá -->
           <!-- Separador -->
-          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
+          <td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:0px 30px;">
             <tr></tr>
           </td>
           <!-- Fim do Separador -->

@@ -6,16 +6,16 @@
         <tr align="center">
           <td>
             <div style="background-color:#ECEBEB; text-align:left; padding:5px 25px; max-width:300px; margin-left:20px; margin-right:20px;">
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:5px;">
                 <b>NOME</b> <span>{{ env('VIVALA_FANTASY_NAME') }}</span>
               </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:5px;">
                 <b>CNPJ</b> <span>{{ env('VIVALA_CNPJ') }}</span>
               </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:5px;">
                 <b>BANCO</b> <span>{{ env('VIVALA_BANK') }}</span>
               </p>
-              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
+              <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:5px;">
                 <b>AGÊNCIA</b> <span>{{ env('VIVALA_AG') }}</span>
               </p>
               <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:0;">
@@ -56,7 +56,7 @@
             <a href="{{ env('VIVALA_LINK_SITE') }}/experiencias/checkout/{{ $Inscricao->experiencia->id }}" target="_blank" style="cursor:pointer; text-decoration:none;">
               <div style="padding:15px 0px; border:1px solid #25A494; min-width:175px; width:175px; max-width:175px; cursor:pointer; height:43px;">
                 <img style="display:inline-block; float:left; vertical-align:middle; padding-left: 20px;" src="{{ asset('img/icones/png/verde-codebar.png') }}" min-width="55px" width="55px" max-width="55px" min-height="43px" height="43px" max-height="43px"/>
-                <div style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bold; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:95px; text-align:left; width:80px;">
+                <div style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bold; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:95px; padding-top: 1px; text-align:left; width:80px;">
                   GERAR<br/>BOLETO
                 </div>
               </div>
