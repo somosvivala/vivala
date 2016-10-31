@@ -40,11 +40,23 @@ class ExperienciasRegistrar implements RegistrarContract
      */
     public function validator(array $data)
     {
-        return Validator::make($data, [
-            'username' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+
+        /** Criando instancia de um Validator especificando suas regras */
+        $validator = Validator::make($data, [
+            'username' => 'required|string|max:60',
+            'email' => 'required|email|max:100|unique:users',
             'password' => 'required|min:6|confirmed'
         ]);
+
+        /* Usando metodo setAttributeNames do Validator para mostrar 'nice names' nas mensagens de erro */
+        $validator->setAttributeNames([
+            'username' => 'nome',
+            'email' => 'email',
+            'password' => 'senha'
+        ]);
+
+
+        return $validator;
     }
 
     /**
