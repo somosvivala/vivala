@@ -1,6 +1,6 @@
-<td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+<td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:10px 30px 0 30px;">
   <div style="display:block; margin:0 auto; max-width:600px;">
-    <table style="width: 100%; padding-bottom:0; margin-top:20px;">
+    <table style="width: 100%; padding:0; margin:0px;">
       <tbody>
         <!-- Seção DADOS DO USUÁRIO -->
         <tr>
@@ -118,6 +118,12 @@
           </td>
         </tr>
         <!-- Fim da Seção DADOS DO USUÁRIO -->
+      </tbody>
+    </table>
+  </div>
+  <div style="display:block; margin:0 auto; max-width:600px;">
+    <table style="width: 100%; padding:0; margin:0px;">
+      <tbody>
         <!-- Separador -->
         <tr align="center">
           <td>
