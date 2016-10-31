@@ -64,6 +64,7 @@
 //Rota que precisam de acesso sem  autenticacao e para qualquer device
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::resource('configuracao','ConfiguracaoController');
+Route::get('paginas/termosecondicoes','PaginaController@getTermosecondicoes');
 
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');
