@@ -7,7 +7,7 @@
             <i class="fa fa-envelope round-icon-bg"></i>
         </span>
         <h1 class="col-xs-12 negrito-exp">Você está quase lá!</h1>
-        <small class="col-xs-12">Te enviaremos um email com todos os detalhes.</small>
+        <small class="col-xs-12 margin-t-0-5">Te enviaremos um email com todos os detalhes.</small>
         <span class="col-xs-12 margin-t-1 dados-experiencia">
           Para confirmar sua inscrição na experiência
           <br />
@@ -18,7 +18,7 @@
           realize o depósito de <b>R${{$Experiencia->preco}}</b> na conta a seguir:
         </span>
         <div class="col-xs-12">
-            <div class="margin-t-1 text-left dados-bancarios">
+            <div class="margin-t-2 text-left dados-bancarios">
                 <div class="margin-t-0-5 texto-maiusculo ">
                   <span class="negrito-exp">{!! trans('global.lbl_name') !!}:</span>
                   <span class="margin-t-0-5">{{ env('VIVALA_FANTASY_NAME') }}</span>
