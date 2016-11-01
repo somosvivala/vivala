@@ -44,70 +44,70 @@ jQuery(document).ready(function($) {
       });
     }
 
-// Calendário da Experiencia
-moment.locale('pt-br');
-var thisMonth = moment().format('YYYY-MM');
-console.log($('#json-eventos').val());
-var eventArray = $('#json-eventos').val()?jQuery.parseJSON($('#json-eventos').val()):[];
-console.log(eventArray);
-var _CalendarioExperiencia = null;
-var calendarioExperiencia  = function(container){
-  _CalendarioExperiencia = jQuery(container).clndr({
-      events: eventArray,
-      daysOfTheWeek: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-      clickEvents: {
-          click: function (target) {
-              if(target.events.length) {
-                var dataEvento = target.events[0].date;
-                $(".clndr-picker").val(dataEvento);
-                $(".clndr-container").toggleClass('visivel');
-              }
-          },
-          today: function () {
-              console.log('Cal-1 today');
-          },
-          nextMonth: function () {
-              console.log('Cal-1 next month');
-          },
-          previousMonth: function () {
-              console.log('Cal-1 previous month');
-          },
-          onMonthChange: function () {
-              console.log('Cal-1 month changed');
-          },
-          nextYear: function () {
-              console.log('Cal-1 next year');
-          },
-          previousYear: function () {
-              console.log('Cal-1 previous year');
-          },
-          onYearChange: function () {
-              console.log('Cal-1 year changed');
-          },
-          nextInterval: function () {
-              console.log('Cal-1 next interval');
-          },
-          previousInterval: function () {
-              console.log('Cal-1 previous interval');
-          },
-          onIntervalChange: function () {
-              console.log('Cal-1 interval changed');
-          }
-      },
-      multiDayEvents: {
-          singleDay: 'date',
-          endDate: 'endDate',
-          startDate: 'startDate'
-      },
-      showAdjacentMonths: true,
-      adjacentDaysChangeMonth: false
-  });
-}
+  // Calendário da Experiencia
+  moment.locale('pt-br');
+  var thisMonth = moment().format('YYYY-MM');
+  console.log($('#json-eventos').val());
+  var eventArray = $('#json-eventos').val()?jQuery.parseJSON($('#json-eventos').val()):[];
+  console.log(eventArray);
+  var _CalendarioExperiencia = null;
+  var calendarioExperiencia  = function(container){
+    _CalendarioExperiencia = jQuery(container).clndr({
+        events: eventArray,
+        daysOfTheWeek: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        clickEvents: {
+            click: function (target) {
+                if(target.events.length) {
+                  var dataEvento = target.events[0].date;
+                  $(".clndr-picker").val(dataEvento);
+                  $(".clndr-container").toggleClass('visivel');
+                }
+            },
+            today: function () {
+                console.log('Cal-1 today');
+            },
+            nextMonth: function () {
+                console.log('Cal-1 next month');
+            },
+            previousMonth: function () {
+                console.log('Cal-1 previous month');
+            },
+            onMonthChange: function () {
+                console.log('Cal-1 month changed');
+            },
+            nextYear: function () {
+                console.log('Cal-1 next year');
+            },
+            previousYear: function () {
+                console.log('Cal-1 previous year');
+            },
+            onYearChange: function () {
+                console.log('Cal-1 year changed');
+            },
+            nextInterval: function () {
+                console.log('Cal-1 next interval');
+            },
+            previousInterval: function () {
+                console.log('Cal-1 previous interval');
+            },
+            onIntervalChange: function () {
+                console.log('Cal-1 interval changed');
+            }
+        },
+        multiDayEvents: {
+            singleDay: 'date',
+            endDate: 'endDate',
+            startDate: 'startDate'
+        },
+        showAdjacentMonths: true,
+        adjacentDaysChangeMonth: false
+    });
+  }
 
-calendarioExperiencia('.clndr-container');
-$(".clndr-picker").click(function() {
-    $(".clndr-container").toggleClass('visivel');
-});
+  calendarioExperiencia('.clndr-container');
+  $(".clndr-picker").click(function() {
+      $(".clndr-container").toggleClass('visivel');
+  });
 });
 
 /**
@@ -165,7 +165,7 @@ jQuery(document).ready(function($) {
   jQuery('.informacoes span.descricao-informacoes div.clndr-container').click(function(event){
       event.stopPropagation();
       console.log('container');
-      jQuery('.informacoes span.descricao-informacoes div.clndr-container').addClass('visivel');
+      //jQuery('.informacoes span.descricao-informacoes div.clndr-container').addClass('visivel');
   });
   jQuery(window).click(function() {
 
