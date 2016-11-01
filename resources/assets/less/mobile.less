@@ -299,6 +299,12 @@ small.forgot-password {
         background-color:darken(@amarelo-aviso,10%);
     }
 }
+.descricao-listagem-exp {
+    line-height: 100%;
+    @media screen and ( min-width: 550px ) {
+        line-height: 180%;
+    }
+}
 ul.lista-foto-descricao {
     padding:0;
     margin:0;
@@ -483,6 +489,10 @@ h1.negrito-exp{
     padding-top: 0.5em;
 }
 
+.error-container {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
 .bg-checkout {
     background-color:@verde-sucesso;
     position:fixed;
@@ -493,9 +503,9 @@ h1.negrito-exp{
     .popup-checkout {
         z-index: -1;
         overflow-y: scroll;
-        margin:4%;
+        margin:0%;
         position:absolute;
-        width:92%;
+        width:100%;
         height:100%;
         padding-bottom:3em;
         background-color:white;
@@ -506,11 +516,15 @@ h1.negrito-exp{
         }
         .dados-experiencia{
           font-size: 1.4rem;
+            b{
+                font-family:@font-family-avenir-black;
+                font-weight:normal;
+            }
         }
         .dados-bancarios {
             display:inline-block;
             width:22em;
-            background-color:@cor-fundo;    
+            background-color:#ebebeb;    
             padding: 0.2em 0.6em;
             font-size: 1.2rem;
         }
@@ -570,12 +584,12 @@ i.sqr-icon-bg {
     margin-bottom:1em;
     &::after{
         display:inline-block;
-        border-bottom:1px solid @cor-cinza-claro;
+        border-bottom:1px solid #8ba6ad;
         width:15em;
         content:'';
     }
     span{
-        color:@cor-cinza-escuro;
+        color:#8ba6ad;
         background-color:white;
         display:block;
         white-space:pre;
