@@ -90,20 +90,21 @@
           @if($Experiencia->isEventoRecorrente)
             <div class="col-xs-12 informacoes">
             @if($Experiencia->isUsuarioAtualInscrito)
-                <div class="row padding-t-1">
+              <div class="row padding-t-1">
                 <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
                 <span class="col-lg-12 data-inscrito ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
                     {{ $Experiencia->getInscricaoUsuario(Auth::user())->dataExperiencia->format("d/m") }}
                 </span>
+              </div>
             @else
               <div class="row padding-t-1">
-                  <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                  <span class="descricao-informacoes">
-                      <input name="data-escolhida" placeholder="Escolha uma data" type="text" class="clndr-picker" readonly>
-                      <div class="clndr-container">
-                      </div>
-                      <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
-                  </span>
+                <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                <span class="descricao-informacoes">
+                    <input name="data-escolhida" placeholder="Escolha uma data" type="text" class="clndr-picker" readonly>
+                    <div class="clndr-container">
+                    </div>
+                    <input type="hidden" id="json-eventos" value='{{ $Experiencia->proximasOcorrenciasJSON }}'>
+                </span>
               </div>
             @endif
             </div>
