@@ -25,7 +25,7 @@ return [
         "array"   => "O campo :attribute precisar ter entre :min - :max itens.",
     ],
     "boolean"          => "O campo :attribute deverá ter o valor verdadeiro ou falso.",
-    "confirmed"        => "Os campos para :attribute não batem.",
+    "confirmed"        => ":attributes diferentes, digite novamente.",
     "date"             => "O campo :attribute não contém uma data válida.",
     "date_format"      => "A data indicada para o campo :attribute não respeita o formato :format.",
     "different"        => "Os campos :attribute e :other deverão conter valores diferentes.",

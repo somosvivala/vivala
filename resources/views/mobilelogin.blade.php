@@ -1,15 +1,15 @@
 @extends('mobiletemplate')
 
 @section('content')
-    <div class="col-xs-12 fundo-laranja">
+    <div class="col-xs-12 text-center fundo-laranja">
         <div class="col-xs-12 margin-t-1 margin-b-2 text-center container-logo">
             <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
         </div>
-        <a href="#" class="link-voltar history-back">
+        <a href="#" class="link-voltar padding-t-1 history-back">
             <i class="fa fa-chevron-left"></i>
         </a>
 
-        <div class="conteudo-mobile pull-left">
+        <div class="conteudo-mobile margin-b-2">
            {!! Form::open(['url' => '/autenticacao/login', 'class' => 'form-horizontal form-login']) !!}
               @if (count($errors) > 0)
                   @foreach ($errors->all() as $error)

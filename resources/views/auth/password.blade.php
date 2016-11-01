@@ -1,14 +1,14 @@
 @extends('mobiletemplate')
 
 @section('content')
-<div class="col-xs-12 fundo-laranja">
-    <div class="col-xs-12 text-center container-logo">
+<div class="col-xs-12 text-center fundo-laranja">
+    <div class="col-xs-12 text-center container-logo padding-t-1">
         <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
     </div>
-    <a href="#" class="link-voltar history-back">
+    <a href="#" class="link-voltar history-back padding-t-1">
         <i class="fa fa-chevron-left"></i>
     </a>
-    <div class="conteudo-mobile text-center">
+    <div class="conteudo-mobile margin-t-3 margin-b-2 text-center">
         <div class="col-md-12">
             <h3 class="text-left">{{ trans('global.lbl_password_forgot') }}</h3>
         </div>

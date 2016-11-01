@@ -2,14 +2,14 @@
 
 @section('content')
 <div class="col-xs-12 fundo-laranja">
-  <div class="col-xs-12 margin-t-1 margin-b-2 text-center container-logo">
+  <div class="col-xs-12 margin-t-1 margin-b-1 text-center container-logo">
       <img src="{{ asset('vivala-logo-branco.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" />
   </div>
-  <a href="#" class="link-voltar history-back">
+  <a href="#" class="link-voltar history-back padding-t-1">
       <i class="fa fa-chevron-left"></i>
   </a>
 
-    <div class="conteudo-mobile col-xs-12">
+    <div class="conteudo-mobile margin-b-1 col-xs-12">
         <span class="texto-conheca-vivala">{!! trans('global.welcome_floatingballon4') !!}</span>
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/kaIRH4Uh7nw" frameborder="0" allowfullscreen="allowfullscreen" mozallowfullscreen="mozallowfullscreen" msallowfullscreen="msallowfullscreen" oallowfullscreen="oallowfullscreen" webkitallowfullscreen="webkitallowfullscreen"></iframe>
