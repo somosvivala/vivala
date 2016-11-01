@@ -138,41 +138,43 @@
               <table style="width: 100%;">
                 <tbody>
                   <tr align="center" style="text-align:center;">
-                    <td align="center" style="text-align:center;">
+                    <td width="37.5%" style="width=37.5%;"></td>
+                    <td align="center" width="5%" style="text-align:center;width:5%">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-fb-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" style="text-align:center";>
+                    <td align="center" width="5%" style="text-align:center;width:5%">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-ig-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" style="text-align:center";>
+                    <td align="center" width="5%" style="text-align:center;width:5%">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_site') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_site') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-vivala-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" style="text-align:center;">
+                    <td align="center" width="5%" style="text-align:center;width:5%">
                       <div style="width:30px; height:30px;">
                         <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_email') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_email') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-email-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" style="text-align:center;">
+                    <td align="center" width="5%" style="text-align:center;width:5%">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-in-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
+                    <td width="37.5%" style="width=37.5%;"></td>
                   </tr>
                 </tbody>
               </table>
