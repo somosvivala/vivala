@@ -82,7 +82,7 @@
                   <!-- Separador -->
                   <tr align="center">
                     <td align="center" style="text-align:center;">
-                      <div style="border-bottom:2px solid #FFFFFF; width:300px; margin:10px 0;"></div>
+                      <p style="border-bottom:2px solid #FFFFFF; width:300px; margin:10px auto;"></p>
                     </td>
                   </tr>
                   <!-- Fim do Separador -->
@@ -138,29 +138,29 @@
               <table style="width: 100%;">
                 <tbody>
                   <tr align="center">
-                    <td align="center" style="text-align:center;">
+                    <td align="center" style="text-align:center;" width="30px">
                       <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" style="color:transparent;">
-                        <img src="{{ asset('img/icones/png/colorido-fb-circulo.png') }}"/>
+                        <img src="{{ asset('img/icones/png/colorido-fb-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                       </a>
                     </td>
-                    <td align="center" style="text-align:center;">
+                    <td align="center" style="text-align:center;" width="30px">
                       <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" style="color:transparent;">
-                        <img src="{{ asset('img/icones/png/colorido-ig-circulo.png') }}"/>
+                        <img src="{{ asset('img/icones/png/colorido-ig-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                       </a>
                     </td>
-                    <td align="center" style="text-align:center;">
+                    <td align="center" style="text-align:center;" width="30px">
                       <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_site') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_site') }}" style="color:transparent;">
-                        <img src="{{ asset('img/icones/png/colorido-vivala-circulo.png') }}"/>
+                        <img src="{{ asset('img/icones/png/colorido-vivala-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                       </a>
                     </td>
-                    <td align="center" style="text-align:center;">
+                    <td align="center" style="text-align:center;" width="30px">
                       <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_email') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_email') }}" style="color:transparent;">
-                        <img src="{{ asset('img/icones/png/colorido-email-circulo.png') }}"/>
+                        <img src="{{ asset('img/icones/png/colorido-email-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                       </a>
                     </td>
-                    <td align="center" style="text-align:center;">
+                    <td align="center" style="text-align:center;" width="30px">
                       <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}" style="color:transparent;">
-                        <img src="{{ asset('img/icones/png/colorido-in-circulo.png') }}"/>
+                        <img src="{{ asset('img/icones/png/colorido-in-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                       </a>
                     </td>
                   </tr>

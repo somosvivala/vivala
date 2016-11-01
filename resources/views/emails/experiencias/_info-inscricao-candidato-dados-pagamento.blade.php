@@ -6,7 +6,7 @@
         <!-- Seção de INFOS BANCÁRIAS -->
         <tr align="center">
           <td align="center" style="text-align:center;">
-            <div style="background-color:#ECEBEB; text-align:left; padding:5px 25px; max-width:300px; margin-left:20px; margin-right:20px;">
+            <div style="background-color:#ECEBEB; text-align:left; padding:5px 25px; max-width:300px; margin:0 auto;">
               <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:5px;">
                 <b>NOME</b> <span>{{ env('VIVALA_FANTASY_NAME') }}</span>
               </p>
@@ -57,7 +57,7 @@
         <tr align="center">
           <td align="center" style="text-align:center;">
             <a href="{{ env('VIVALA_LINK_SITE') }}/experiencias/checkout/{{ $Inscricao->experiencia->id }}" target="_blank" style="cursor:pointer; text-decoration:none;">
-              <div style="padding:15px 0px; border:1px solid #25A494; min-width:175px; width:175px; max-width:175px; cursor:pointer; height:43px;">
+              <div style="padding:15px 0px; border:1px solid #25A494; min-width:175px; width:175px; max-width:175px; cursor:pointer; height:43px; margin: 0 auto;">
                 <img style="display:inline-block; float:left; vertical-align:middle; padding-left: 20px;" src="{{ asset('img/icones/png/verde-codebar.png') }}" min-width="55px" width="55px" max-width="55px" min-height="43px" height="43px" max-height="43px"/>
                 <div style="display:block; font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:18px; font-weight:bold; color:#25A494; text-transform:uppercase; display:block; word-break:break-word; word-wrap:break-word; padding-left:95px; padding-top: 1px; text-align:left; width:80px;">
                   GERAR<br/>BOLETO
@@ -68,13 +68,13 @@
         </tr>
         <!-- Fim da Seção do BOLETO BANCÁRIO -->
 
-        <!-- Divisor -->
+        <!-- Separador -->
         <tr align="center">
           <td>
             <div style="border-bottom:1px solid #DCDEDF; width:500px; margin:30px 0;"></div>
           </td>
         </tr>
-        <!-- Fim do Divisor -->
+        <!-- Fim do Separador -->
         
       </tbody>
     </table>
