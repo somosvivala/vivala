@@ -299,6 +299,12 @@ small.forgot-password {
         background-color:darken(@amarelo-aviso,10%);
     }
 }
+.descricao-listagem-exp {
+    line-height: 100%;
+    @media screen and ( min-width: 550px ) {
+        line-height: 180%;
+    }
+}
 ul.lista-foto-descricao {
     padding:0;
     margin:0;
@@ -510,11 +516,15 @@ h1.negrito-exp{
         }
         .dados-experiencia{
           font-size: 1.4rem;
+            b{
+                font-family:@font-family-avenir-black;
+                font-weight:normal;
+            }
         }
         .dados-bancarios {
             display:inline-block;
             width:22em;
-            background-color:@cor-fundo;    
+            background-color:#ebebeb;    
             padding: 0.2em 0.6em;
             font-size: 1.2rem;
         }
