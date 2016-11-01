@@ -2,7 +2,7 @@
   <div style="display:block; margin:0 auto; max-width:600px;">
     <table style="width: 100%; padding-bottom:0;">
       <tbody>
-      
+
         <!-- Seção RESUMO DA EXPERIÊNCIA -->
         <tr align="left" style="text-align:left;">
           <td align="left" style="text-align:left;">
@@ -84,10 +84,10 @@
                       <tbody>
                         <tr valign="middle" style="vertical-align:middle;">
                           <td>
-                            <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:20px;"/>
+                            <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
                           </td>
                           <td>
-                            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em;">
+                            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:0px; margin-bottom:0px;">
                               {{ ucfirst(mb_strtolower(trim($Inscricao->experiencia->frequencia), 'utf-8')) }}
                             </p>
                           </td>
@@ -104,10 +104,10 @@
                         @foreach($Inscricao->experiencia->informacoes as $Informacao)
                         <tr valign="middle" style="vertical-align:middle;">
                           <td>
-                            <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:20px;"/>
+                            <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
                           </td>
                           <td>
-                            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em;">
+                            <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:0px; margin-bottom:0px;">
                               {{ ucfirst(mb_strtolower(trim($Informacao->descricao), 'utf-8')) }}
                             </p>
                           </td>
