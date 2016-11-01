@@ -2,9 +2,10 @@
   <div style="display:block; margin:0 auto; max-width:600px;">
     <table style="width: 100%; padding-bottom:0; margin-top:20px;">
       <tbody>
+
         <!-- Seção de INFOS BANCÁRIAS -->
         <tr align="center">
-          <td>
+          <td align="center" style="text-align:center;">
             <div style="background-color:#ECEBEB; text-align:left; padding:5px 25px; max-width:300px; margin-left:20px; margin-right:20px;">
               <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:0; margin-bottom:5px;">
                 <b>NOME</b> <span>{{ env('VIVALA_FANTASY_NAME') }}</span>
@@ -25,17 +26,18 @@
           </td>
         </tr>
         <!-- Fim da Seção de INFOS BANCÁRIAS -->
+
         <!-- Seção do DEPÓSITO -->
         <tr align="center">
-          <td>
+          <td align="center" style="text-align:center;">
             <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:30px;">
               Não se esqueça de nos enviar o comprovante clicando no botão abaixo!
             </p>
           </td>
         </tr>
         <tr align="center">
-          <td>
-            <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=[VIVALÁ EXPERIÊNCIAS - #{{ $Inscricao->id }}] Envio de Comprovante de Depósito" target="_top" style="cursor:pointer; text-decoration:none;">
+          <td align="center" style="text-align:center;">
+            <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=Comprovante Depósito Experiências - [{{ $Inscricao->perfil->nome }}] [{{ $Inscricao->data_ocorrencia_experiencia }}]" target="_top" style="cursor:pointer; text-decoration:none;">
               <div style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px; cursor:pointer;">
                 ENVIAR COMPROVANTE DE DEPÓSITO
               </div>
@@ -43,16 +45,17 @@
           </td>
         </tr>
         <!-- Fim da Seção do DEPÓSITO -->
+
         <!-- Seção do BOLETO BANCÁRIO -->
         <tr align="center">
-          <td>
+          <td align="center" style="text-align:center;">
             <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; color:#545454; font-size:16px; margin-top:30px;">
               Ou pague com boleto bancário:
             </p>
           </td>
         </tr>
         <tr align="center">
-          <td>
+          <td align="center" style="text-align:center;">
             <a href="{{ env('VIVALA_LINK_SITE') }}/experiencias/checkout/{{ $Inscricao->experiencia->id }}" target="_blank" style="cursor:pointer; text-decoration:none;">
               <div style="padding:15px 0px; border:1px solid #25A494; min-width:175px; width:175px; max-width:175px; cursor:pointer; height:43px;">
                 <img style="display:inline-block; float:left; vertical-align:middle; padding-left: 20px;" src="{{ asset('img/icones/png/verde-codebar.png') }}" min-width="55px" width="55px" max-width="55px" min-height="43px" height="43px" max-height="43px"/>
@@ -64,6 +67,7 @@
           </td>
         </tr>
         <!-- Fim da Seção do BOLETO BANCÁRIO -->
+
         <!-- Divisor -->
         <tr align="center">
           <td>
@@ -71,6 +75,7 @@
           </td>
         </tr>
         <!-- Fim do Divisor -->
+        
       </tbody>
     </table>
   </div>
