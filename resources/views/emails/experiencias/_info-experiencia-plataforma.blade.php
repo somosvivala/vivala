@@ -1,34 +1,34 @@
 <td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
   <div style="display:block; margin:0 auto; max-width:600px;">
+    <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
     <table style="width: 100%; padding-bottom:0; margin-top:0;">
       <tbody>
-        <!-- Seção INFORMAÇÕES DA EXPERIÊNCIA -->
-        <tr>
-          <td style="padding-bottom:40px;">
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
+        <tr width="600px" style="width:600px;">
+          <td width="600px" style="width:600px; padding:0px; margin:0px; margin-bottom:10px;">
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin:0px; padding:0px;">
               Resumo da Experiência
             </h3>
           </td>
         </tr>
-        <tr>
-          <td>
-            <p style="margin-top:0; margin-bottom:0;">
-              <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="600px" min-height="300px" height="300px" max-height="300px" style="margin-right:20px;"/>
+        <tr width="600px" style="width:600px;">
+          <td width="300px" style="width:300px;">
+            <p style="padding:0px; margin:0px;">
+              <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="300px" min-height="300px" height="300px" max-height="300px"/>
             </p>
           </td>
-          <td>
+          <td width="300px" style="width:300px;">
             <table>
               <tbody>
-                <tr>
+                <tr width="300px" style="width:300px;">
                   <td>
                     <p style="margin-top:10px; margin-bottom:10px; text-align: center;">
-                      <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1.2em;">
+                      <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1em;">
                         {{ mb_strtoupper(trim($Experiencia->nome), 'utf-8') }}
                       </span>
                     </p>
                   </td>
                 </tr>
-                <tr>
+                <tr width="300px" style="width:300px;">
                   <td>
                     <table>
                       <tbody>
@@ -61,7 +61,7 @@
                     </table>
                   </td>
                 </tr>
-                <tr>
+                <tr width="300px" style="width:300px;">
                   <td>
                     <table>
                       <tbody>
@@ -88,7 +88,7 @@
                     </table>
                   </td>
                 </tr>
-                <tr>
+                <tr width="300px" style="width:300px;">
                   <td>
                     <table>
                       <tbody>
@@ -115,7 +115,7 @@
                     </table>
                   </td>
                 </tr>
-                <tr>
+                <tr width="300px" style="width:300px;">
                   <td>
                     <table>
                       <tbody>
@@ -146,18 +146,19 @@
             </table>
           </td>
         </tr>
-        <tr>
-          <td>
-            <p style="margin-top:15px; margin-bottom: 15px;">
-              <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px;" title="ID da Experiência">
+        <tr width="600px" style="width:600px;">
+          <td width="300px" style="width:300px;">
+            <p style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px;" title="ID da Experiência">
                 ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
-              </span>
             </p>
           </td>
-          <td></td>
         </tr>
-        <!-- Fim da Seção INFORMAÇÕES DA EXPERIÊNCIA -->
-        <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+      </tbody>
+    </table>
+    <!-- Fim da Seção INFORMAÇÕES DA EXPERIÊNCIA -->
+    <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+    <table style="width: 100%; padding-bottom:0; margin-top:0;">
+      <tbody>
         <tr>
           <td style="padding-bottom:30px;">
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
@@ -168,8 +169,12 @@
             </p>
           </td>
         </tr>
-        <!-- Fim da Seção DESCRIÇÃO DA EXPERIÊNCIA -->
-        <!-- Seção DETALHES DA EXPERIÊNCIA -->
+      </tbody>
+    </table>
+    <!-- Fim da Seção DESCRIÇÃO DA EXPERIÊNCIA -->
+    <!-- Seção DETALHES DA EXPERIÊNCIA -->
+    <table style="width: 100%; padding-bottom:0; margin-top:0;">
+      <tbody>
         <tr>
           <td style="padding-bottom:30px;">
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
@@ -180,7 +185,13 @@
             </p>
           </td>
         </tr>
-        <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+      </tbody>
+    </table>
+    <!-- Fim da Seção DETALHES DA EXPERIÊNCIA -->
+        
+
+
+
         <!-- Seção de INFORMAÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td>
