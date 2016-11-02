@@ -193,7 +193,7 @@
     <!-- Fim do CORPO TOTAL -->
 
     <!-- RODAPÉ -->
-    <table style="clear:both!important; width: 100%;" width="100%">
+    <table style="clear:both!important; padding:0px 20px 0 20px; width: 100%;">
       <tbody>
         <tr>
           <td style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:0 30px 20px 30px;">
