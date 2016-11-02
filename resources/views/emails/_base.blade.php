@@ -61,7 +61,7 @@
   <body bgcolor="#ECEBEB" style="font-size: 100%; line-height: 1.6em; margin:0; padding:0; -webkit-font-smoothing:antialiased; height: 100%; -webkit-text-size-adjust:none; width: 100%!important;">
     
     <!-- CORPO TOTAL do Email -->
-    <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;">
+    <table bgcolor="#ECEBEB" style="padding:20px 20px 0 20px; width:100%;" width="100%">
       <tbody>
         <tr>
 
@@ -193,7 +193,7 @@
         <tr>
           <td style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:0 30px 20px 30px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
-              <table style="width: 100%;">
+              <table style="width: 100%;" width="100%">
                 <tbody>
                   <tr align="center">
                     <td align="center" style="text-align:center;">

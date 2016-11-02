@@ -72,11 +72,11 @@
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:7%; text-align:left;" width="7%">
+                                                  <td style="width:10%; text-align:left;" width="10%">
                                                     <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
-                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding:0px; margin:0px;">
                                                       TIPO
                                                     </p>
                                                   </td>
@@ -109,11 +109,11 @@
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:7%; text-align:left;" width="7%">
+                                                  <td style="width:10%; text-align:left;" width="10%">
                                                     <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
-                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding:0px; margin:0px;">
                                                       LOCAL
                                                     </p>
                                                   </td>
@@ -140,11 +140,11 @@
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:7%; text-align:left;" width="7%">
+                                                  <td style="width:10%; text-align:left;" width="10%">
                                                     <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align:left;" width="85%">
-                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding:0px; margin:0px;">
                                                       ENDEREÇO
                                                     </p>
                                                   </td>
@@ -156,7 +156,7 @@
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td style="width:100%; text-align: left;" width="100%">
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
-                                                      {{ ucfirst(mb_strtoupper(trim($Experiencia->endereco_completo), 'utf-8')) }}
+                                                      {{ ucwords(mb_strtolower(trim($Experiencia->endereco_completo), 'utf-8')) }}
                                                     </p>
                                                   </td>
                                                 </tr>
@@ -171,11 +171,11 @@
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:7%; text-align: left;" width="7%">
+                                                  <td style="width:10%; text-align: left;" width="10%">
                                                     <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}"  min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
-                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding:0px; margin:0px;">
                                                       VALOR
                                                     </p>
                                                   </td>
