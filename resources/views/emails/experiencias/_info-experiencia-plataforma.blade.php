@@ -20,19 +20,19 @@
                     <tbody>
                       <tr>
                         <td>
-                          <table style="width:50%" width="50%">
+                          <table style="width:35%" width="35%">
                             <tbody>
                               <tr>
                                 <td width="100%" style="width:100%">
                                   <table>
-                                    <tr>
+                                    <tr valign="bottom" style="vertical-align:bottom;">
                                       <td>
-                                        <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="280px" width="auto" max-width="280px" min-height="280px" height="280px" max-height="280px" style="padding:0px; margin:0px;"/>
+                                        <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="240px" min-height="240px" height="240px" max-height="240px" style="padding:0px; margin:0px;"/>
                                       </td>
                                     </tr>
                                     <tr>
-                                      <td width="50%" style="width:50%">
-                                        <p style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px;" title="ID da Experiência">
+                                      <td>
+                                        <p style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px; margin:0px; text-align:center;" title="ID da Experiência">
                                             ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
                                         </p>
                                       </td>
@@ -44,7 +44,7 @@
                           </table>
                         </td>
                         <td>
-                          <table style="width:50%" width="50%">
+                          <table style="width:65%" width="65">
                             <tbody>
                               <tr>
                                 <td width="100%" style="width:100%;">
@@ -64,7 +64,7 @@
                                               <div style="margin-top:10px; margin-bottom:10px;">
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td>
-                                                    <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
+                                                    <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                   </td>
                                                   <td>
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
@@ -97,7 +97,7 @@
                                               <div style="margin-top:10px; margin-bottom:10px;">
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td>
-                                                    <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:bottom;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
+                                                    <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                   </td>
                                                   <td>
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
@@ -124,7 +124,7 @@
                                               <div style="margin-top:10px; margin-bottom:10px;">
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td>
-                                                    <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:bottom;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
+                                                    <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                   </td>
                                                   <td>
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
@@ -151,7 +151,7 @@
                                               <div style="margin-top:10px; margin-bottom:10px;">
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td>
-                                                    <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:bottom;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
+                                                    <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}"  min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                   </td>
                                                   <td>
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
