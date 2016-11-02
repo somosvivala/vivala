@@ -18,11 +18,11 @@
                 <tr>
                   <table style="width:100%" width="100%">
                     <tbody>
-                      <tr>
+                      <tr valign="top" style="vertical-align:top;">
                         <td>
                           <table style="width:35%" width="35%">
                             <tbody>
-                              <tr valign="top" style="vertical-align:top;">
+                              <tr>
                                 <td width="100%" style="width:100%">
                                   <table>
                                     <tr valign="bottom" style="vertical-align:bottom;">
@@ -44,11 +44,11 @@
                           </table>
                         </td>
                         <td>
-                          <table style="width:65%" width="65">
+                          <table style="width:100%" width="100%">
                             <tbody>
                               <tr>
                                 <td width="100%" style="width:100%;">
-                                  <table>
+                                  <table style="width:100%" width="100%">
                                     <tbody>
                                       <tr>
                                         <td>
@@ -59,7 +59,7 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <table>
+                                          <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
                                                 <td>
@@ -72,7 +72,7 @@
                                                 </td>
                                               </tr>
                                               <tr>
-                                                <td>
+                                                <td style="width:100%" width="100%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
                                                     @if($Experiencia->isEventoUnico)
                                                       Evento Único
@@ -90,7 +90,7 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <table>
+                                          <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
                                                 <td>
@@ -103,7 +103,7 @@
                                                 </td>
                                               </tr>
                                               <tr>
-                                                <td>
+                                                <td style="width:100%" width="100%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
                                                     {{ ucfirst(mb_strtolower(trim($Experiencia->local->nome), 'utf-8')) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla), 'utf-8') }}
                                                   </p>
@@ -115,20 +115,20 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <table>
+                                          <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
-                                                <td>
+                                                <td style="width:10%" width="10%">
                                                   <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                 </td>
-                                                <td>
+                                                <td style="width:90%" width="90%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
                                                     ENDEREÇO
                                                   </p>
                                                 </td>
                                               </tr>
                                               <tr>
-                                                <td>
+                                                <td style="width:100%" width="100%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
                                                     {{ ucfirst(mb_strtoupper(trim($Experiencia->endereco_completo), 'utf-8')) }}
                                                   </p>
@@ -140,7 +140,7 @@
                                       </tr>
                                       <tr>
                                         <td>
-                                          <table>
+                                          <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
                                                 <td>
@@ -153,7 +153,7 @@
                                                 </td>
                                               </tr>
                                               <tr>
-                                                <td>
+                                                <td style="width:100%" width="100%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
                                                     R${{ $Experiencia->preco }}
                                                   </p>
@@ -179,7 +179,17 @@
           </td>
         </tr>
         <!-- Fim da Seção RESUMO DA EXPERIÊNCIA -->
-        
+
+      </tbody>
+    </table>
+  </div>
+</td>
+
+<td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+  <div style="display:block; margin:0 auto; max-width:600px;">
+    <table style="width: 100%; padding-bottom:0; margin-top:0;">
+      <tbody>
+      
         <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td>
