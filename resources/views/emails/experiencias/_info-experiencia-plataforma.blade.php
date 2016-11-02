@@ -23,20 +23,22 @@
                           <table style="width:35%" width="35%">
                             <tbody>
                               <tr>
-                                <td width="100%" style="width:100%">
-                                  <table>
-                                    <tr valign="bottom" style="vertical-align:bottom;">
-                                      <td style="padding:0px;">
-                                        <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="240px" min-height="240px" height="240px" max-height="240px" style="padding:0px; margin:0px; vertical-align:bottom;"/>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td style="padding:0px;">
-                                        <p style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px; margin:0px; text-align:center;" title="ID da Experiência">
-                                            ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
-                                        </p>
-                                      </td>
-                                    </tr>
+                                <td>
+                                  <table style="width:100%" width="100%">
+                                    <tbody>
+                                      <tr valign="bottom" style="vertical-align:bottom;">
+                                        <td style="padding:0px;">
+                                          <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="240px" min-height="240px" height="240px" max-height="240px" style="padding:0px; margin:0px; vertical-align:bottom;"/>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td style="padding:0px;">
+                                          <p style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px; margin:0px; text-align:center;" title="ID da Experiência">
+                                              ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
+                                          </p>
+                                        </td>
+                                      </tr>
+                                    </tbody>                
                                   </table>
                                 </td>  
                               </tr>
@@ -62,10 +64,10 @@
                                           <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
-                                                <td>
+                                                <td style="width:15%" width="15%">
                                                   <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                 </td>
-                                                <td>
+                                                <td style="width:85%" width="85%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
                                                     TIPO
                                                   </p>
@@ -93,10 +95,10 @@
                                           <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
-                                                <td>
+                                                <td style="width:15%" width="15%">
                                                   <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                 </td>
-                                                <td>
+                                                <td style="width:85%" width="85%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
                                                     LOCAL
                                                   </p>
@@ -118,10 +120,10 @@
                                           <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
-                                                <td style="width:10%" width="10%">
+                                                <td style="width:15%" width="15%">
                                                   <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                 </td>
-                                                <td style="width:90%" width="90%">
+                                                <td style="width:85%" width="85%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
                                                     ENDEREÇO
                                                   </p>
@@ -143,10 +145,10 @@
                                           <table style="width:100%" width="100%">
                                             <tbody>
                                               <tr valign="middle" style="vertical-align:middle;">
-                                                <td>
+                                                <td style="width:15%" width="15%">
                                                   <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}"  min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-right:10px;"/>
                                                 </td>
-                                                <td>
+                                                <td style="width:85%" width="85%">
                                                   <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px;">
                                                     VALOR
                                                   </p>
@@ -179,17 +181,7 @@
           </td>
         </tr>
         <!-- Fim da Seção RESUMO DA EXPERIÊNCIA -->
-
-      </tbody>
-    </table>
-  </div>
-</td>
-
-<td bgcolor="#FFFFFF" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
-  <div style="display:block; margin:0 auto; max-width:600px;">
-    <table style="width: 100%; padding-bottom:0; margin-top:0;">
-      <tbody>
-      
+        
         <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td>
