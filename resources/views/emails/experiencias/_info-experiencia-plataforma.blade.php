@@ -67,12 +67,12 @@
                                         </tr>
                                         <!-- Fim do NOME DA EXPERIÊNCIA -->
                                         <!-- TIPO -->
-                                        <tr>
+                                        <tr style="line-height:1em;">
                                           <td>
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:10%; text-align:left;" width="10%">
+                                                  <td style="width:7%; text-align:left;" width="7%">
                                                     <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
@@ -83,7 +83,7 @@
                                                 </tr>
                                               </tbody>
                                             </table>
-                                            <table style="width:100%; table-layout:fixed;" width="100%">
+                                            <table style="width:100%; table-layout:fixed; margin-bottom:5px;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td style="width:100%" width="100%">
@@ -104,12 +104,12 @@
                                         </tr>
                                         <!-- Fim do TIPO -->
                                         <!-- LOCAL -->
-                                        <tr>
+                                        <tr style="line-height:1em;">
                                           <td>
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:10%; text-align:left;" width="10%">
+                                                  <td style="width:7%; text-align:left;" width="7%">
                                                     <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
@@ -120,12 +120,12 @@
                                                 </tr>
                                               </tbody>
                                             </table>
-                                            <table style="width:100%; table-layout:fixed;" width="100%">
+                                            <table style="width:100%; table-layout:fixed; margin-bottom:5px;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td style="width:100%" width="100%">
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
-                                                      {{ ucfirst(mb_strtolower(trim($Experiencia->local->nome), 'utf-8')) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla), 'utf-8') }}
+                                                      {{ ucwords(mb_strtolower(trim($Experiencia->local->nome), 'utf-8')) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla), 'utf-8') }}
                                                     </p>
                                                   </td>
                                                 </tr>
@@ -135,12 +135,12 @@
                                         </tr>
                                         <!-- Fim do LOCAL -->
                                         <!-- ENDEREÇO -->
-                                        <tr>
+                                        <tr style="line-height:1em;">
                                           <td>
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:10%; text-align:left;" width="10%">
+                                                  <td style="width:7%; text-align:left;" width="7%">
                                                     <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align:left;" width="85%">
@@ -151,7 +151,7 @@
                                                 </tr>
                                               </tbody>
                                             </table>
-                                            <table style="width:100%; table-layout:fixed;" width="100%">
+                                            <table style="width:100%; table-layout:fixed; margin-bottom:5px;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td style="width:100%; text-align: left;" width="100%">
@@ -166,12 +166,12 @@
                                         </tr>
                                         <!-- Fim do ENDEREÇO -->
                                         <!-- VALOR -->
-                                        <tr>
+                                        <tr style="line-height:1em;">
                                           <td>
-                                            <table style="width:100%" width="100%">
+                                            <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:10%; text-align: left;" width="10%">
+                                                  <td style="width:7%; text-align: left;" width="7%">
                                                     <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}"  min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
@@ -182,7 +182,7 @@
                                                 </tr>
                                               </tbody>
                                             </table>
-                                            <table style="width:100%" width="100%">
+                                            <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
                                                   <td style="width:100%; text-align: left;" width="100%">
@@ -296,7 +296,7 @@
                             </h3>
                           </td>
                         </tr>
-                        <tr>
+                        <tr style="line-height:1em;">
                           <td>
                             <table>
                               <tbody>
@@ -315,7 +315,7 @@
                           </td>
                         </tr>
                         @if($Experiencia->informacoes)
-                        <tr>
+                        <tr style="line-height:1em;">
                           <td>
                             <table>
                               <tbody>

@@ -97,7 +97,7 @@
                             </h3>
                           </td>
                         </tr>
-                        <tr>
+                        <tr style="line-height:1em;">
                           <td>
                             <table>
                               <tbody>
@@ -116,7 +116,7 @@
                           </td>
                         </tr>
                         @if($Inscricao->experiencia->informacoes)
-                        <tr>
+                        <tr style="line-height:1em;">
                           <td>
                             <table>
                               <tbody>

@@ -6,78 +6,183 @@
         <!-- Seção RESUMO DA EXPERIÊNCIA -->
         <tr>
           <td>
-            <table>
-              <tr>
-                <td style="padding-bottom:40px;">
-                  <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin-top:0; margin-bottom:10px;">
-                    Resumo da Experiência
-                  </h3>
-                  <p style="float:left; margin-top:0; margin-bottom:0;">
-                    <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="600px" min-height="300px" height="300px" max-height="300px" style="margin-right:20px;"/>
-                  </p>
-                  <p style="margin-top:10px; margin-bottom:10px; text-align: center;">
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1.2em; padding-right: 20px;">
-                      {{ mb_strtoupper(trim($Experiencia->nome)) }}
-                    </span>
-                  </p>
-                  <p style="margin-top:10px; margin-bottom:10px;">
-                    <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:top;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em;">
-                      TIPO
-                    </span>
-                    <br>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em;">
-                      @if($Experiencia->isEventoUnico)
-                        Evento Único
-                      @elseif ($Experiencia->isEventoRecorrente)
-                        Evento Recorrente
-                      @elseif ($Experiencia->isEventoServico)
-                        Evento Serviço
-                      @endif
-                    </span>
-                  </p>
-                  <p style="margin-top:10px; margin-bottom: 10px;">
-                    <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:bottom;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                      LOCAL
-                    </span>
-                    <br>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                      {{ ucfirst(trim($Experiencia->local->nome)) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla)) }}
-                    </span>
-                  </p>
-                  <p style="margin-top:10px; margin-bottom: 10px;">
-                    <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:bottom;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                      ENDEREÇO
-                    </span>
-                    <br>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                      {{ ucfirst($Experiencia->endereco_completo) }}
-                    </span>
-                  </p>
-                  <p style="margin-top:10px; margin-bottom: 10px;">
-                    <img src="{{ asset('/img/icones/png/cinza-dinheiro.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" style="vertical-align:bottom;" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                      VALOR
-                    </span>
-                    <br>
-                    <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1.2em; vertical-align:bottom;">
-                      R${{ $Experiencia->preco }}
-                    </span>
-                  </p>
-                  <p style="margin-top:15px; margin-bottom: 15px;">
-                    <span style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px;" title="ID da Experiência">
-                      ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
-                    </span>
-                  </p>
-                </td>
-              </tr>
+            <table style="width:100%; padding-bottom:0; margin-top:0;">
+              <tbody>
+                <tr>
+                  <td style="padding:0px; margin:0px;">
+                    <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bolder; color:#545454; line-height:1.2em; margin:0px; padding:0px; margin-bottom:10px;">
+                      Resumo da Experiência
+                    </h3>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <table style="width:100%" width="100%">
+                      <tbody>
+                        <tr valign="top" style="vertical-align:top;">
+                          <td>
+                            <table style="width:35%" width="35%">
+                              <tbody>
+                                <tr>
+                                  <td>
+                                    <table style="width:100%" width="100%">
+                                      <tbody>
+                                        <!-- FOTO DA EXPERIÊNCIA -->
+                                        <tr valign="bottom" style="vertical-align:bottom;">
+                                          <td style="padding:0px;">
+                                            <img src="{{ $Experiencia->FotoCapaUrlPublica }}" min-width="240px" width="auto" max-width="240px" min-height="240px" height="240px" max-height="240px" style="padding:0px; margin:0px; vertical-align:bottom;"/>
+                                          </td>
+                                        </tr>
+                                        <!-- Fim da FOTO DA EXPERIÊNCIA -->
+                                        <!-- ID DA EXPERIÊNCIA -->
+                                        <tr>
+                                          <td style="padding:0px;">
+                                            <p style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:19px; font-weight:bold; color:#FFFFFF; background-color:#F06F37; padding: 4px 15px; margin:0px; text-align:center;" title="ID da Experiência">
+                                                ID {{ str_pad(trim($Experiencia->id), 3, '0', STR_PAD_LEFT) }}
+                                            </p>
+                                          </td>
+                                        </tr>
+                                        <!-- Fim do ID DA EXPERIÊNCIA -->
+                                      </tbody>                
+                                    </table>
+                                  </td>  
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td>
+                            <table style="width:100%" width="100%">
+                              <tbody>
+                                <tr>
+                                  <td width="100%" style="width:100%;">
+                                    <table style="width:100%" width="100%">
+                                      <tbody>
+                                        <!-- NOME DA EXPERIÊNCIA -->
+                                        <tr>
+                                          <td>
+                                            <p style="margin-top:0px; margin-bottom:10px; text-align:center; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1em;">
+                                                {{ mb_strtoupper(trim($Experiencia->nome), 'utf-8') }}
+                                            </p>
+                                          </td>
+                                        </tr>
+                                        <!-- Fim do NOME DA EXPERIÊNCIA -->
+                                        <!-- TIPO -->
+                                        <tr style="line-height:1em;">
+                                          <td>
+                                            <table style="width:100%; table-layout:fixed;" width="100%">
+                                              <tbody>
+                                                <tr valign="middle" style="vertical-align:middle;">
+                                                  <td style="width:7%; text-align:left;" width="7%">
+                                                    <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                                                  </td>
+                                                  <td style="width:85%; text-align: left;" width="85%">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                      TIPO
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table style="width:100%; table-layout:fixed; margin-bottom:5px;" width="100%">
+                                              <tbody>
+                                                <tr valign="middle" style="vertical-align:middle;">
+                                                  <td style="width:100%" width="100%">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
+                                                      @if($Experiencia->isEventoUnico)
+                                                        Evento Único
+                                                      @elseif ($Experiencia->isEventoRecorrente)
+                                                        Evento Recorrente
+                                                      @elseif ($Experiencia->isEventoServico)
+                                                        Evento Serviço
+                                                      @endif
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <!-- Fim do TIPO -->
+                                        <!-- LOCAL -->
+                                        <tr style="line-height:1em;">
+                                          <td>
+                                            <table style="width:100%; table-layout:fixed;" width="100%">
+                                              <tbody>
+                                                <tr valign="middle" style="vertical-align:middle;">
+                                                  <td style="width:7%; text-align:left;" width="7%">
+                                                    <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                                                  </td>
+                                                  <td style="width:85%; text-align: left;" width="85%">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                      LOCAL
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table style="width:100%; table-layout:fixed; margin-bottom:5px;" width="100%">
+                                              <tbody>
+                                                <tr valign="middle" style="vertical-align:middle;">
+                                                  <td style="width:100%" width="100%">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
+                                                      {{ ucwords(mb_strtolower(trim($Experiencia->local->nome), 'utf-8')) }} - {{ mb_strtoupper(trim($Experiencia->local->estado->sigla), 'utf-8') }}
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <!-- Fim do LOCAL -->
+                                        <!-- ENDEREÇO -->
+                                        <tr style="line-height:1em;">
+                                          <td>
+                                            <table style="width:100%; table-layout:fixed;" width="100%">
+                                              <tbody>
+                                                <tr valign="middle" style="vertical-align:middle;">
+                                                  <td style="width:7%; text-align:left;" width="7%">
+                                                    <img src="{{ asset('/img/icones/png/cinza-streetview.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
+                                                  </td>
+                                                  <td style="width:85%; text-align:left;" width="85%">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bolder; color:#545454; line-height:1em; padding-bottom:5px; margin:0px;">
+                                                      ENDEREÇO
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                            <table style="width:100%; table-layout:fixed; margin-bottom:5px;" width="100%">
+                                              <tbody>
+                                                <tr valign="middle" style="vertical-align:middle;">
+                                                  <td style="width:100%; text-align: left;" width="100%">
+                                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">
+                                                      {{ ucfirst(mb_strtoupper(trim($Experiencia->endereco_completo), 'utf-8')) }}
+                                                    </p>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                        <!-- Fim do ENDEREÇO -->
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
             </table>
           </td>
         </tr>
         <!-- Fim da Seção RESUMO DA EXPERIÊNCIA -->
-
+        
         <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td>
@@ -160,7 +265,7 @@
                             </h3>
                           </td>
                         </tr>
-                        <tr>
+                        <tr style="line-height:1em;">
                           <td>
                             <table>
                               <tbody>
@@ -179,7 +284,7 @@
                           </td>
                         </tr>
                         @if($Experiencia->informacoes)
-                        <tr>
+                        <tr style="line-height:1em;">
                           <td>
                             <table>
                               <tbody>
@@ -203,7 +308,7 @@
                       </tbody>
                     </table>
                   </td>
-                </tr>
+                </tr>   
               </tbody>
             </table>
           </td>
