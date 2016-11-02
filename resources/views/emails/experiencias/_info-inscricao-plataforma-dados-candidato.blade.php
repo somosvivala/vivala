@@ -19,12 +19,12 @@
                     <img src="{{ asset('/img/icones/png/cinza-usuario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" max-height="20px" style="margin-right:10px;"/>
                   </td>
                   <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em; padding-bottom:5px;">Nome:</span>
-                  </td>
-                  <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em; padding-bottom:5px;">
-                      {{ $Inscricao->perfil->nome_completo }}
-                    </span>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Nome:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ $Inscricao->perfil->nome_completo }}
+                      </span>
+                    </p>
                   </td>
                 </tr>
               </tbody>
@@ -40,12 +40,12 @@
                     <img src="{{ asset('/img/icones/png/cinza-envelope.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
                   </td>
                   <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em; padding-bottom:5px;">Email:</span>
-                  </td>
-                  <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em; padding-bottom:5px;">
-                      {{ $Inscricao->perfil->user->email }}
-                    </span>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Email:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ $Inscricao->perfil->user->email }}
+                      </span>
+                    </p>
                   </td>
                 </tr>
               </tbody>
@@ -61,12 +61,12 @@
                     <img src="{{ asset('/img/icones/png/cinza-hashtag.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
                   </td>
                   <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em; padding-bottom:5px;">ID da Inscrição:</span>
-                  </td>
-                  <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em; padding-bottom:5px;">
-                      {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
-                    </span>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">ID da Inscrição:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
+                      </span>
+                    </p>
                   </td>
                 </tr>
               </tbody>
@@ -82,12 +82,12 @@
                     <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
                   </td>    
                   <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em; padding-bottom:5px;">Data da Inscrição:</span>
-                  </td>
-                  <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em; padding-bottom:5px;">
-                      {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
-                    </span>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Data da Inscrição:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
+                      </span>
+                    </p>
                   </td>
                 </tr>
               </tbody>
@@ -103,14 +103,14 @@
                     <img src="{{ asset('/img/icones/png/cinza-asterisco.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
                   </td>
                   <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em; padding-bottom:5px;">Status da Inscrição:</span>
-                  </td>
-                  <td>
-                    <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em; padding-bottom:5px;">
-                      <strong style="color:@if($Inscricao->isPendente) #F89916; @elseif($Inscricao->isConfirmada) #25A494; @elseif($Inscricao->isCancelada) #CB171E; @endif">
-                        {{ mb_strtoupper(trim($Inscricao->status)) }}
-                      </strong>
-                    </span>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Status da Inscrição:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        <strong style="color:@if($Inscricao->isPendente) #F89916; @elseif($Inscricao->isConfirmada) #25A494; @elseif($Inscricao->isCancelada) #CB171E; @endif">
+                          {{ mb_strtoupper(trim($Inscricao->status)) }}
+                        </strong>
+                      </span>
+                    </p>
                   </td>
                 </tr>
               </tbody>

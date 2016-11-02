@@ -186,10 +186,10 @@
                                 @foreach($Experiencia->informacoes as $Informacao)
                                 <tr valign="middle" style="vertical-align:middle;">
                                   <td>
-                                    <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; padding-bottom:5px; margin-top:0px; margin-bottom:0px;"/>
+                                    <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
                                   </td>
                                   <td>
-                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; margin-top:0px; margin-bottom:5px;">
+                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; padding-bottom:5px; margin-top:0px; margin-bottom:0px;">
                                       {{ ucfirst(mb_strtolower(trim($Informacao->descricao), 'utf-8')) }}
                                     </p>
                                   </td>
