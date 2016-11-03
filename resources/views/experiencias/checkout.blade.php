@@ -84,7 +84,7 @@
             @include('experiencias._form_dadosboleto')
       </div>
       <div class="modal-footer">
-        <input type="submit" class="submit btn btn-acao btn-primary">Gerar boleto</button>
+        {!! Form::submit( 'Gerar Boleto', ['class' => 'submit btn btn-acao btn-primary btn-mobile']) !!}
         <p class="ajax-loading text-center hidden"><i class='fa fa-1-5x fa-spin fa-pulse fa-spinner laranja'></i></p>
       </div>
         {!! Form::close() !!}
