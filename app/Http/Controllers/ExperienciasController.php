@@ -348,7 +348,7 @@ class ExperienciasController extends Controller
 
         //Se chegou aqui deu erro
         $errors = [ 'responseJSON' => $boleto ];
-        return new JsonResponse(422, $errors);
+        return new JsonResponse($errors, 422);
     }
 
 
