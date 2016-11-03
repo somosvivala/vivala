@@ -28,6 +28,7 @@ use App\Events\Experiencias\NovosDadosUsuario;
 use App\Http\Requests\DeleteInscricaoExperienciaRequest;
 use App\InscricaoExperiencia;
 use App\Events\Experiencias\InscricaoExperienciaCancelada;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class ExperienciasController extends Controller
 {
