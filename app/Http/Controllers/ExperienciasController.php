@@ -341,12 +341,13 @@ class ExperienciasController extends Controller
         }
 
         //Se tiver gerado o boleto com sucesso
-        if ($boleto && $boleto->status == 'gerado') {
+        if ($boleto && $boleto instanceof BoletoExperiencia && $boleto->status == 'gerado') {
             return ['linkboleto' => ($boleto->linkSegundaVia)];
         }
 
         //Se chegou aqui deu erro
-        return ['responseJSON' => $boleto];
+        $errors = [ 'responseJSON' => $boleto ];
+        return new JsonResponse(422, $errors);
     }
 
 
