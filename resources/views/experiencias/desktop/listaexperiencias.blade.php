@@ -46,9 +46,14 @@
       <div class="tab-content">
         <div id="experiencias" class="tab-pane active" role="tabpanel">
           @if((isset($experiencias)) && (count($experiencias) >=1))
-            <ul class="row padding-b-1 lista-exp-desktop">
+            <ul class="row padding-b-1 lista-exp-desktop ">
+            <?php $contadorExp = 0 ?>
               @foreach($experiencias as $k=>$Experiencia)
-              <li class="col-lg-3">
+               
+               @if($contadorExp%4 == 0)
+               <div class="row row-eq-height">
+               @endif
+              <li class="col-xs-12 col-sm-3">
                 <a href="/experiencias/{{ $Experiencia->id}}">
                   <div class="row text-center margin-t-1 margin-b-0-5">
                     <h4 class="col-lg-12 nome-listagem">
@@ -86,7 +91,15 @@
                   </div>
                 </a>
               </li>
+
+              <?php $contadorExp++; ?>
+               @if($contadorExp%4 == 0)
+               </div>
+               @endif
               @endforeach
+               @if($contadorExp%4 != 0)
+               </div>
+               @endif
             </ul>
           @else
             <div class="col-lg-12 text-center padding-b-1">
