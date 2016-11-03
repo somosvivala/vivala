@@ -102,7 +102,7 @@
                                 @if($Experiencia->isUsuarioAtualInscrito)
                                 <p class="row margin-b-0">
                                     <span class="col-lg-12 data-inscrito ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
-                                        {{ $Experiencia->dataProximaOcorrencia }}
+                                        {{ $Experiencia->getInscricaoUsuario(Auth::user()) }}
                                     </span>
                                 </p>
                                 @else
@@ -117,17 +117,26 @@
                                     </div>
                                 @endif
                             @endif
-                            @if($Experiencia->isEventoServico)                        <div class="col-xs-12 informacoes">
-                                <div class="row padding-t-1i calendario-row">
-                                    <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
-                                    <span class="descricao-informacoes">
-                                        <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
-                                        <div class="clndr-container">
-                                        </div>
-                                        <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
-                                    </span>
-                                </div>
-                            </div>
+                            @if($Experiencia->isEventoServico)    
+                              @if($Experiencia->isUsuarioAtualInscrito)
+                              <p class="row margin-b-0">
+                                  <span class="col-lg-12 data-inscrito ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
+                                      {{ $Experiencia->getInscricaoUsuario(Auth::user()) }}
+                                  </span>
+                              </p>
+                              @else                    
+                              <div class="col-xs-12 informacoes">
+                                  <div class="row padding-t-1i calendario-row">
+                                      <span class="icone-informacoes"><i class="fa fa-calendar"></i></span>
+                                      <span class="descricao-informacoes">
+                                          <input type="date" class="clndr-picker" placeholder="Escolha uma data" name="data-escolhida" readonly>
+                                          <div class="clndr-container">
+                                          </div>
+                                          <input type="hidden" id="json-eventos" value='{{ $Experiencia->diasOperacionaisJSON }}'>
+                                      </span>
+                                  </div>
+                              </div>
+                              @endif
                             @endif
                           <p class="row margin-b-0">
                             <span class="icone-local text-center padding-l-0 padding-r-0">

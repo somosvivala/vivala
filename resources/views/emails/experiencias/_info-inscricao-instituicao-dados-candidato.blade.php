@@ -12,32 +12,95 @@
         </tr>
         <tr>
           <td>
-            <p><img src="{{ asset('/img/icones/png/cinza-usuario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" max-height="20px" style="margin-right:10px;"/>
-            <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.2em;">Nome: </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.5em; vertical-align:top;">
-                {{ $Inscricao->perfil->nome_completo }}
-              </span>
-            </p>
-            <p><img src="{{ asset('/img/icones/png/cinza-envelope.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
-            <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.5em; vertical-align:top;">Email: </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.2em;">
-                {{ $Inscricao->perfil->user->email }}
-              </span>
-            </p>
-            <p><img src="{{ asset('/img/icones/png/cinza-hashtag.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
-            <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.5em; vertical-align:top;">ID da Inscrição: </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.5em; vertical-align:top;">
-                {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
-              </span>
-            </p>
-            <p><img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/><span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1.5em; vertical-align:top;">Data da Inscrição: </span>
-              <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1.5em; vertical-align:top;">
-                {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
-              </span>
-            </p>
+            <table>
+              <tbody>
+                <tr valign="middle" style="vertical-align:middle;">
+                  <td>
+                    <img src="{{ asset('/img/icones/png/cinza-usuario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" max-height="20px" style="margin-right:10px;"/>
+                  </td>
+                  <td>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Nome:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ $Inscricao->perfil->nome_completo }}
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr valign="middle" style="vertical-align:middle;">
+                  <td>
+                    <img src="{{ asset('/img/icones/png/cinza-envelope.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
+                  </td>
+                  <td>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Email:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ $Inscricao->perfil->user->email }}
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>  
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr valign="middle" style="vertical-align:middle;">
+                  <td>
+                    <img src="{{ asset('/img/icones/png/cinza-hashtag.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
+                  </td>
+                  <td>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">ID da Inscrição:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ str_pad(trim($Inscricao->id), 4, '0', STR_PAD_LEFT) }}
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>    
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <table>
+              <tbody>
+                <tr valign="middle" style="vertical-align:middle;">
+                  <td>
+                    <img src="{{ asset('/img/icones/png/cinza-calendario.png') }}" min-width="20px" width="20px" max-width="20px" min-height="20px" height="20px" style="margin-right:10px;"/>
+                  </td>    
+                  <td>
+                    <p style="margin:0px; padding:0px; padding-bottom:5px;">
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:bold; color:#545454; line-height:1em;">Data da Inscrição:</span>
+                      <span style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; font-weight:normal; color:#545454; line-height:1em;">
+                        {{ $Inscricao->dataExperiencia->format('d/m/Y') }}
+                      </span>
+                    </p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </td>
         </tr>
         <!-- Fim da Seção DADOS DO USUÁRIO -->
+      </tbody>
+    </table>
+  </div>
+  <div style="display:block; margin:0 auto; max-width:600px;">
+    <table style="width: 100%; padding:0; margin:0px;">
+      <tbody>
         <!-- Separador -->
         <tr align="center">
           <td>
@@ -49,3 +112,4 @@
     </table>
   </div>
 </td>
+

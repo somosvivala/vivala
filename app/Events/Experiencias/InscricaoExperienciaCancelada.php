@@ -10,7 +10,7 @@ class InscricaoExperienciaCancelada extends Event
 	use SerializesModels;
 
 	//Informações que o evento precisa propagar
-  public $Inscricao;
+  	public $Inscricao;
 
 	/**
 	* Create a new event instance.
