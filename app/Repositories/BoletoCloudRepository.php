@@ -196,7 +196,7 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
             }
 
-            return $retorno ? $retorno : false;
+            return isset($retorno) ? $retorno : false;
 
         }
     }
