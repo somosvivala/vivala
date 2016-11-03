@@ -53,7 +53,7 @@
                @if($contadorExp%4 == 0)
                <div class="row row-eq-height">
                @endif
-              <li class="col-lg-3 ">
+              <li class="col-xs-12 col-sm-3">
                 <a href="/experiencias/{{ $Experiencia->id}}">
                   <div class="row text-center margin-t-1 margin-b-0-5">
                     <h4 class="col-lg-12 nome-listagem">
