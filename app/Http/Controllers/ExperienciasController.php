@@ -342,7 +342,7 @@ class ExperienciasController extends Controller
         }
 
         //Se tiver gerado o boleto com sucesso
-        if ($boleto && $boleto instanceof BoletoExperiencia && $boleto->status == 'gerado') {
+        if ($boleto && !is_array($boleto) && $boleto->status == 'gerado') {
             return ['linkboleto' => ($boleto->linkSegundaVia)];
         }
 

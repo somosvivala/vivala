@@ -1,37 +1,11 @@
 $(function () {
-    $('form.gerar-boleto-experiencia').submit(function(e) {
-        e.preventDefault();
-
-        var frm = $(this),
-            loading = frm.data('loading');
-
-        var params = frm.serialize();
-
-        $.ajax({
-            url: '/experiencias/gerarboleto/',
-            type: 'POST',
-            data: $.param(frm.serializeArray()),
-            complete: function (jqXHR, textStatus) {
-                // callback
-            },
-            success: function (data, textStatus, jqXHR) {
-                if (data.linkboleto) {
-                    window.open(data.linkboleto, '_blank');
-                    frm.parents('.modal').modal('hide');
-
-                }
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-            }
-        });
-    });
-
     //disparando funcao para checar os inputs disabled
     checaDisabledFormBoletoExperiencia();
-
 });
 
-var mostraSweetAlertSucessoGeracaoBoletoExperiencias = function() {
+var callbackSucessoGeracaoBoletoExperiencias = function(data) {
+    window.open(data.linkboleto, '_blank');
+
     swal({
         type: "success",
         html: '<h4>Boleto gerado com sucesso</h4> <br><p>Se o download nao começar automaticamente, acesse o <a href="'+data.linkboleto+'" target="_blank" class="laranja laranja-hover texto-negrito"> link para 2º via </a></p><br><br>',
