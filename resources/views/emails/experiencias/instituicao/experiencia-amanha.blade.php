@@ -15,6 +15,10 @@
   @stop
 
   @section('email-experiencia-conteudo')
+    {{-- SEÇÃO de DICAS EXP. AMANHÃ PARA INSTITUIÇÃO --}}
+    @include('emails.experiencias._info-experiencia-instituicao-dicas-experiencia-amanha')
+
+    {{-- SEÇÃO de INFOS DE USUÁRIOS + SEÇÃO de INFOS DA EXPERIÊNCIA --}}
     @include('emails.experiencias._info-experiencia-instituicao-amanha', [
       'Experiencia' => $Inscricoes->first()->experiencia,
       'Inscricoes' => $Inscricoes
