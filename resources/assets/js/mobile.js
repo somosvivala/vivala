@@ -104,16 +104,20 @@ var calendarioExperiencia  = function(container){
   });
 }
 
-calendarioExperiencia('.clndr-container');
-$(".clndr-picker").click(function() {
-    $(".clndr-container").toggleClass('visivel');
-});
+/** Apenas bindando o calendario se ele estiver presente */
+if ( $('.clndr-container').length ) {
+    calendarioExperiencia('.clndr-container');
+    $(".clndr-picker").click(function() {
+        $(".clndr-container").toggleClass('visivel');
+    });
+}
+
 });
 
 /**
  * Funcao para realizar o submit de um form por ajax
  */
-function mobileAjaxSubmitForm(form, containerErros, callback) {
+function mobileAjaxSubmitForm(form) {
     console.log('inside mobileAjaxSubmitForm');
     console.log(form);
     console.log(containerErros);
@@ -144,18 +148,56 @@ function mobileAjaxSubmitForm(form, containerErros, callback) {
  * Funcao para bindar submit de forms por ajax
  */
 function bindaSubmitFormAjax() {
-    console.log('chamou binda submit');
-     $(".form-por-ajax").on('submit', function(event) {
+     $(".form-por-ajax").submit(function(event) {
          event.preventDefault()
-         event.stopPropagation()
-         console.log('bindando input');
-         console.log(event);
-     });;
+
+         var target = $(event.target);
+         var callbackFunction = target.data('callback');
+         var loadingElement = target.data('loading');
+         var errorContainer = target.data('errors');
+
+         $.ajax({
+             url: target.attr('action'),
+             type: target.attr('method'),
+             dataType: 'json',
+             data: $.param( target.serializeArray() ),
+             beforeSend: function() {
+                 console.log('beforeSend');
+             },
+             complete: function (jqXHR, textStatus) {
+                 console.log('complete');
+             },
+             success: function (data, textStatus, jqXHR) {
+                 console.log('success');
+             },
+             error: function (jqXHR, textStatus, errorThrown) {
+                 console.log('error');
+
+                 var arrayErros = [];
+                 /** Iterando sob o objeto que contem os erros **/
+                 $.each(jqXHR.responseJSON, function (Objkey, campoErro) {
+
+                     /** Iterando sob cada indice do objeto de erros que contem as mensagens de erro */
+                     $.each(campoErro, function(key, mensagem) {
+
+                         /** Formatando erros para inserilos no container **/
+                         arrayErros.push("<div class='form-mobile-error'>" + mensagem + "</div>");
+                     });
+                 });
+
+                 var htmlErros = arrayErros.join("");
+                 console.log(arrayErros);
+                 console.log(htmlErros);
+                 $(errorContainer).html(htmlErros);
+             }
+         });
+
+
+     });
 }
 
 jQuery(document).ready(function($) {
-    bindaSubmitFormAjax();
-
+  bindaSubmitFormAjax();
 
   jQuery('.informacoes span.descricao-informacoes input.clndr-picker').click(function(event){
       event.stopPropagation();

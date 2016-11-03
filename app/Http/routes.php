@@ -65,6 +65,7 @@
 Route::get('fbLogin', 'FacebookController@fbLogin');
 Route::resource('configuracao','ConfiguracaoController');
 Route::get('paginas/termosecondicoes','PaginaController@getTermosecondicoes');
+Route::controller('auth', 'Auth\AuthController');
 
 Route::group(['middleware' => 'auth.mobile'], function() {
     Route::controller('notificacoes','NotificacaoController');

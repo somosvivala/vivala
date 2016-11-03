@@ -25,7 +25,7 @@
                 {!! trans('global.lbl_capslock_activated') !!}!
               </div>
             </div>
-            {!! Form::open(['url' => '/autenticacao/register', 'class' => 'form-por-ajax', 'onsubmit'=>'return']) !!}
+            {!! Form::open(['url' => '/autenticacao/register', 'class' => 'form-por-ajax', 'data-callback' => 'funcaoCallback', 'data-loading' => 'loading-element', 'data-errors' => '#container-erros-mobile']) !!}
               <div class="row margin-t-1">
                 <div class="col-xs-10 col-xs-offset-1">
                   {!! Form::text("username", null, ['required'=>'required', 'class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
