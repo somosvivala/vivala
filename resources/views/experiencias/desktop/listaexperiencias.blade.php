@@ -92,11 +92,14 @@
                 </a>
               </li>
 
+              <?php $contadorExp++; ?>
                @if($contadorExp%4 == 0)
                </div>
                @endif
-              <?php $contadorExp++; ?>
               @endforeach
+               @if($contadorExp%4 != 0)
+               </div>
+               @endif
             </ul>
           @else
             <div class="col-lg-12 text-center padding-b-1">
