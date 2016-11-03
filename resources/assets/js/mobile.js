@@ -115,37 +115,10 @@ if ( $('.clndr-container').length ) {
 });
 
 /**
- * Funcao para realizar o submit de um form por ajax
- */
-function mobileAjaxSubmitForm(form) {
-    console.log('inside mobileAjaxSubmitForm');
-    console.log(form);
-    console.log(containerErros);
-    console.log(callback);
-
-    //Executa a ajax request
-    //$.ajax({
-        //url: 'mydomain.com/url',
-        //type: 'POST',
-        //dataType: 'xml/html/script/json',
-        //data: $.param( $('Element or Expression') ),
-        //complete: function (jqXHR, textStatus) {
-            //console.log('complete');
-            //// callback
-        //},
-        //success: function (data, textStatus, jqXHR) {
-            //console.log('success');
-            //// success callback
-        //},
-        //error: function (jqXHR, textStatus, errorThrown) {
-            //console.log('error');
-            //// error callback
-        //}
-    //});
-}
-
-/**
- * Funcao para bindar submit de forms por ajax
+ * Funcao para bindar submit de forms que contenham a classe 'form-por-ajax'.
+ * Obtendo as informacoes necessarias do elemento form (data-callback, data-loading, data-errors)
+ *
+ * Se der erro insere o html ja formatado no container de erros, se der tudo certo executa a funcao de callback
  */
 function bindaSubmitFormAjax() {
      $(".form-por-ajax").submit(function(event) {
@@ -156,23 +129,41 @@ function bindaSubmitFormAjax() {
          var loadingElement = target.data('loading');
          var errorContainer = target.data('errors');
 
+         //token do laravel para ajax
+         $.ajaxSetup({
+             headers: { 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value') }
+         });
+
          $.ajax({
              url: target.attr('action'),
              type: target.attr('method'),
              dataType: 'json',
              data: $.param( target.serializeArray() ),
              beforeSend: function() {
-                 console.log('beforeSend');
+
+                 /** Antes de enviar o ajax, limpamos os erros, escondemos o botao e mostramos o loading **/
+                 $(errorContainer).html('');
+                 $(loadingElement).toggleClass('hidden');
+                 target.find('input[type=submit]').toggleClass('hidden');
              },
              complete: function (jqXHR, textStatus) {
-                 console.log('complete');
+
+                 /** Escondendo o loading e voltando o botao de submit **/
+                 $(loadingElement).toggleClass('hidden');
+                 target.find('input[type=submit]').toggleClass('hidden');
              },
              success: function (data, textStatus, jqXHR) {
-                 console.log('success');
+
+                 /** Se tiver ocorrido tudo certo, verificar se existe um callback **/
+                 if ( data.success ) {
+
+                     /** Chamando funcao de callback caso exista uma **/
+                     if ( callbackFunction ) {
+                         eval(callbackFunction);
+                     }
+                 }
              },
              error: function (jqXHR, textStatus, errorThrown) {
-                 console.log('error');
-
                  var arrayErros = [];
                  /** Iterando sob o objeto que contem os erros **/
                  $.each(jqXHR.responseJSON, function (Objkey, campoErro) {
@@ -185,16 +176,35 @@ function bindaSubmitFormAjax() {
                      });
                  });
 
+                 /** Gerando/Inserindo string com o html dos erros **/
                  var htmlErros = arrayErros.join("");
-                 console.log(arrayErros);
-                 console.log(htmlErros);
                  $(errorContainer).html(htmlErros);
              }
          });
-
-
      });
 }
+
+/**
+ * Funcao para executar caso o cadastro mobile ocorra com sucesso
+ */
+function callbackCadastroMobile() {
+    location.reload();
+}
+
+/**
+ * Funcao para executar caso o login do mobile ocorra com sucesso
+ */
+function callbackLoginMobile(data) {
+
+    //Se tiver um redirectPath, redirecionar para lá
+    if ( data.redirectPath ) {
+        location.href = data.redirectPath;
+    }
+
+    location.reload();
+}
+
+
 
 jQuery(document).ready(function($) {
   bindaSubmitFormAjax();

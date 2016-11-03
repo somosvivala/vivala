@@ -25,7 +25,7 @@
                 {!! trans('global.lbl_capslock_activated') !!}!
               </div>
             </div>
-            {!! Form::open(['url' => '/autenticacao/register', 'class' => 'form-por-ajax', 'data-callback' => 'funcaoCallback', 'data-loading' => 'loading-element', 'data-errors' => '#container-erros-mobile']) !!}
+            {!! Form::open(['url' => '/autenticacao/register', 'class' => 'form-por-ajax', 'data-callback' => 'callbackCadastroMobile()', 'data-loading' => '.ajax-loading', 'data-errors' => '.error-container']) !!}
               <div class="row margin-t-1">
                 <div class="col-xs-10 col-xs-offset-1">
                   {!! Form::text("username", null, ['required'=>'required', 'class' => 'form-mobile', 'placeholder' => trans('global.lbl_name')]) !!}
@@ -48,6 +48,7 @@
               </div>
               <div class="row margin-t-2">
                   {!! Form::submit( trans('global.lbl_register2') , ['class' => 'btn-mobile']) !!}
+                  <p class="ajax-loading text-center hidden"><i class='fa fa-1-5x fa-spin fa-pulse fa-spinner laranja'></i></p>
               </div>
             {!! Form::close() !!}
             <div class="row margin-t-1">

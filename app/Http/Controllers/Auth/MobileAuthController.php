@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\Guard;
 use App\Services\ExperienciasRegistrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Support\Facades\Session;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class MobileAuthController extends Controller
 {
@@ -68,9 +69,49 @@ class MobileAuthController extends Controller
         Session::put('entidadeAtiva_id', $user->perfil->id);
         Session::put('entidadeAtiva_tipo', "perfil");
 
+        /** Se for um ajax entao retornar um json **/
+        if ( $request->ajax() ) {
+            return ['success' => true];
+        }
+
         return redirect($this->redirectPath());
     }
 
+    /**
+     * Handle a login request to the application.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function postLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email' => 'required|email|exists:users',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if ($this->auth->attempt($credentials, $request->has('remember')))
+        {
+            /** Se for uma request por ajax **/
+            if ( $request->ajax() ) {
+                return [
+                    'success' => true,
+                    'redirectPath' => $this->redirectPath()
+                ];
+            }
+
+            return redirect()->intended($this->redirectPath());
+        }
+
+        $errors = [ 'responseJSON' => [
+            'email' => 'Dados incorretos'
+        ]];
+
+        return new JsonResponse($errors, 422);
+
+    }
 
     /**
      * Metodo que recebe a request de Logout

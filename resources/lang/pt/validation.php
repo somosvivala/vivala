@@ -32,7 +32,7 @@ return [
     "digits"           => "O campo :attribute deverá conter :digits dígitos.",
     "digits_between"   => "O campo :attribute deverá conter entre :min a :max dígitos.",
     "email"            => "Endereço de :attribute inválido.",
-    "exists"           => "O valor selecionado para o campo :attribute é inválido.",
+    "exists"           => ":attribute inválido.",
     "filled"           => "O campo :attribute é obrigatório.",
     "image"            => "O campo :attribute deverá conter uma imagem.",
     "in"               => "O campo :attribute não contém um valor válido.",
@@ -49,7 +49,7 @@ return [
     "min"              => [
         "numeric" => "O campo :attribute deverá ter um valor superior ou igual a :min.",
         "file"    => "O campo :attribute deverá ter no mínimo :min kilobytes.",
-        "string"  => "O campo :attribute deve ter no mínimo :min caracteres.",
+        "string"  => ":attribute deve ter no mínimo :min caracteres.",
         "array"   => "O campo :attrmbute deve ter no mínimo :min itens.",
     ],
     "not_in"           => "O campo :attribute contém um valor inválido.",
@@ -70,7 +70,7 @@ return [
     ],
     "string"           => "O campo :attribute deve ser uma string.",
     "timezone"         => "O campo :attribute deverá ter um fuso horário válido.",
-    "unique"           => "O valor indicado para o campo :attribute já se encontra utilizado.",
+    "unique"           => "Esse :attribute já está cadastrado.",
     "url"              => "O formato do URL indicado para o campo :attribute é inválido.",
 
   /*

@@ -10,11 +10,11 @@
         </a>
 
         <div class="conteudo-mobile margin-b-2">
-           {!! Form::open(['url' => '/autenticacao/login', 'class' => 'form-horizontal form-login']) !!}
-              
+           {!! Form::open(['url' => '/autenticacao/login', 'class' => 'form-horizontal form-login form-por-ajax', 'data-callback' => 'callbackLoginMobile(data)', 'data-loading' => '.ajax-loading', 'data-errors' => '.error-container']) !!}
+
             {{-- Incluindo listagem de erros --}}
             @include('errors.mobile-list')
-            
+
               <div class="row margin-t-1">
                 <div class="col-xs-10 col-xs-offset-1">
                   {!! Form::email("email", old('email'), ['required'=>'required','class' => 'form-mobile', 'placeholder' => trans('global.lbl_email') ]) !!}
@@ -34,6 +34,7 @@
               </div>
               <div class="row margin-t-2">
                   <input type="submit" class="btn-mobile btn-verde" value="Login">
+                  <p class="ajax-loading text-center hidden"><i class='fa fa-1-5x fa-spin fa-pulse fa-spinner laranja'></i></p>
               </div>
             {!! Form::close() !!}
             <div class="row margin-t-2">
