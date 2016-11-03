@@ -102,7 +102,7 @@
                                 @if($Experiencia->isUsuarioAtualInscrito)
                                 <p class="row margin-b-0">
                                     <span class="col-lg-12 data-inscrito ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
-                                        {{ $Experiencia->getInscricaoUsuario(Auth::user()) }}
+                                        {{ $Experiencia->getInscricaoUsuario(Auth::user())->dataExperiencia->format("d/m") }}
                                     </span>
                                 </p>
                                 @else
@@ -121,7 +121,7 @@
                               @if($Experiencia->isUsuarioAtualInscrito)
                               <p class="row margin-b-0">
                                   <span class="col-lg-12 data-inscrito ajuste-fonte-avenir-black padding-l-0-5 experiencia-desktop-local">
-                                      {{ $Experiencia->getInscricaoUsuario(Auth::user()) }}
+                                      {{ $Experiencia->getInscricaoUsuario(Auth::user())->dataExperiencia->format("d/m") }}
                                   </span>
                               </p>
                               @else                    
