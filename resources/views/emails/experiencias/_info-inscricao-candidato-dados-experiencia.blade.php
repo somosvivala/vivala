@@ -63,7 +63,7 @@
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:10%; text-align:left;" width="10%">
+                                                  <td style="width:10%; text-align:center;" width="10%">
                                                    <img src="{{ asset('/img/icones/png/cinza-calendario-certo.png') }}" alt="{{ trans('global.date_date') }}" title="{{ trans('global.date_date') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
@@ -83,8 +83,8 @@
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
                                                 <tr valign="middle" style="vertical-align:middle;">
-                                                  <td style="width:10%; text-align:left;" width="10%">
-                                                    <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" min-width="22px" width="22px" max-width="22px" min-height="22px" height="22px" max-height="22px"/>
+                                                  <td style="width:10%; text-align:center;" width="10%">
+                                                    <img src="{{ asset('/img/icones/png/cinza-marcador-mapa.png') }}" alt="{{ trans('global.lbl_localization') }}" title="{{ trans('global.lbl_localization') }}" min-width="18px" width="18px" max-width="18px" min-height="18px" height="18px" max-height="18px"/>
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
                                                     <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:normal; color:#545454; line-height:1em; margin:0px; padding:0px;">

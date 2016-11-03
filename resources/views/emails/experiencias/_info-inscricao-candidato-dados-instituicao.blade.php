@@ -2,6 +2,7 @@
   <div style="display:block; margin:0 auto; max-width:600px;">
     <table style="width: 100%; padding-bottom:0; margin-top:0px;">
       <tbody>
+
         <!-- Seção INFORMAÇÕES DA ONG -->
         <tr align="center">
           <td>
@@ -36,6 +37,7 @@
           </td>
         </tr>
         <!-- Fim da Seção INFORMAÇÕES DA ONG -->
+        
       </tbody>
     </table>
   </div>
