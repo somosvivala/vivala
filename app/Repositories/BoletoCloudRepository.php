@@ -185,10 +185,10 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
             switch ($codErro)  {
                 case 'C817B194':
-                    $retorno = ['erro' => 'CPF inválido'];
+                    $retorno[] = 'CPF inválido';
                     break;
                 case '97D2874C':
-                    $retorno = ['erro' => 'CEP inválido'];
+                    $retorno[] = 'CEP inválido';
                     break;
             }
 
