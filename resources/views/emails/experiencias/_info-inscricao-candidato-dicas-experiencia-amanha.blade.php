@@ -8,7 +8,7 @@
             <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1em; margin: 5px 0 0 0;">Dicas</h3>
             <ul>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
-                Tenha certeza de que todos os equipamentos necessários para a realização da sua experiência estão disponíveis.
+                Tenha certeza de que todos os equipamentos necessários para a realização da sua experiência estarão disponíveis.
               </li>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
                 Disponibilize telefones para contato próximos, caso haja alguma emergência.

@@ -1,11 +1,11 @@
 <!-- Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
 <td bgcolor="#3EA790" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
   <div style="display:block; margin:0 auto; max-width:600px;">
-    <table style="width: 100%; margin-top:0; padding-bottom:0;">
+    <table style="width: 100%; margin:0; padding:0 30px;">
       <tbody>
         <tr align="left">
           <td>
-            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1.2em; margin: 5px 0 0 0;">Dicas</h3>
+            <h3 style="font-family:'FuturaBT Bold', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; color:#FFFFFF; line-height:1em; margin: 5px 0 0 0;">Dicas</h3>
             <ul>
               <li style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:14px; color:white; margin:0 auto; padding-bottom:15px;">
                 Verifique o número total de participantes da sua experiência neste email, esta é a lista final com todos os nomes, então o ideal é ter uma versão impressa para possíveis consultas.
