@@ -179,11 +179,15 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
 
         } else{
 
-            //caso erro geracao boleto:
-            //dd($response);
-            //Erro e o boleto nao foi criado.
-            //portanto nao atualizar status do boleto
-            return false;
+            //caso erro geracao boleto
+            $body = json_decode($body);
+            $codErro = $body->erro->causas[0]->codigo;
+
+            if ( $codErro == 'C817B194' ) {
+                $retorno = ['erro' => 'CPF inválido'];
+            }
+
+            return $retorno;
 
         }
     }

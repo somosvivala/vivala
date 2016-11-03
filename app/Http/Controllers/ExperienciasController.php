@@ -337,10 +337,7 @@ class ExperienciasController extends Controller
                 //Se chegou aqui entao estamos tentando criar um boleto que nao vamos ter tempo suficiente
                 //para confirmar a compensação do pagamento.
                 return ['erro' => true, 'status' => 'pouco-tempo-boleto-nao-gerado'];
-
             }
-
-
         }
 
         //Se tiver gerado o boleto com sucesso
@@ -349,7 +346,7 @@ class ExperienciasController extends Controller
         }
 
         //Se chegou aqui deu erro
-        return ['error' => '??'];
+        return ['responseJSON' => $boleto];
     }
 
 
