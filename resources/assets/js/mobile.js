@@ -204,12 +204,6 @@ function callbackLoginMobile(data) {
     location.reload();
 }
 
-function callbackGerarBoletoExperiencia(data) {
-    console.log('callbackGerarBoletoExperiencia');
-    console.log(data);
-}
-
-
 jQuery(document).ready(function($) {
   bindaSubmitFormAjax();
 
