@@ -75,13 +75,17 @@
         </button>
         <h4 class="modal-title" id="myModalLabel">Preencha os campos para gerar o boleto</h4>
       </div>
-        {!! Form::model(Auth::user(), ['url' => '/experiencias/gerarboleto/', 'class'=>'gerar-boleto-experiencia']) !!}
+        {!! Form::model(Auth::user(), ['url' => '/experiencias/gerarboleto/', 'class'=>'gerar-boleto-experiencia form-por-ajax', 'data-callback' => 'callbackGerarBoletoExperiencia(data)', 'data-loading' => '.ajax-loading', 'data-errors' => '.error-container']) !!}
       <div class="modal-body">
+            {{-- Incluindo listagem de erros --}}
+            @include('errors.mobile-list')
+
             {!! Form::hidden('experiencia_id', $Inscricao->experiencia->id) !!}
             @include('experiencias._form_dadosboleto')
       </div>
       <div class="modal-footer">
-        <button type="submit" class="submit btn btn-acao btn-primary">Gerar boleto</button>
+        <input type="submit" class="submit btn btn-acao btn-primary">Gerar boleto</button>
+        <p class="ajax-loading text-center hidden"><i class='fa fa-1-5x fa-spin fa-pulse fa-spinner laranja'></i></p>
       </div>
         {!! Form::close() !!}
     </div>
