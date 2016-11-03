@@ -93,7 +93,7 @@
               </li>
 
                @if($contadorExp%4 == 0)
-               </div">
+               </div>
                @endif
               <?php $contadorExp++; ?>
               @endforeach
