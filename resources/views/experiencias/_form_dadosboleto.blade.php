@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row margin-t-1">
   {{-- Secao com o input do CPF do usuario --}}
   <div class="col-xs-12 col-lg-12 margin-b-1">
     {!! Form::label('cpf', 'CPF', ['class'=>'row col-xs-12 col-lg-12']) !!}

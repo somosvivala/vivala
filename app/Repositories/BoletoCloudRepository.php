@@ -183,11 +183,16 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
             $body = json_decode($body);
             $codErro = $body->erro->causas[0]->codigo;
 
-            if ( $codErro == 'C817B194' ) {
-                $retorno = ['erro' => 'CPF inválido'];
+            switch ($codErro)  {
+                case 'C817B194':
+                    $retorno = ['erro' => 'CPF inválido'];
+                    break;
+                case '97D2874C':
+                    $retorno = ['erro' => 'CEP inválido'];
+                    break;
             }
 
-            return $retorno;
+            return $retorno ? $retorno : false;
 
         }
     }

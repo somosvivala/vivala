@@ -33,4 +33,17 @@ class GerarBoletoInscricaoExperienciaRequest extends Request {
 		];
 	}
 
+  /**
+   * Tentando dar override nas messages
+   */
+  public function attributes()
+  {
+      return[
+          'endereco_cep' => 'cep',
+          'endereco_localidade' => 'cidade',
+          'endereco_uf' => 'estado',
+          'endereco_logradouro' => 'logradouro',
+          'endereco_bairro' => 'bairro'
+      ];
+  }
 }
