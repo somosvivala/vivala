@@ -190,6 +190,10 @@ class BoletoCloudRepository extends BoletoCloudRepositoryInterface
                 case '97D2874C':
                     $retorno[] = 'CEP inválido';
                     break;
+                case '81BF0CF5':
+                    $retorno[] = 'ESTADO inválido';
+                    break;
+
             }
 
             return $retorno ? $retorno : false;

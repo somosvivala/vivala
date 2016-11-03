@@ -3,7 +3,10 @@ $(function () {
     checaDisabledFormBoletoExperiencia();
 });
 
-var callbackSucessoGeracaoBoletoExperiencias = function(data) {
+/**
+ * Funcao para ser executada caso um boleto seja gerado com sucesso
+ */
+function callbackSucessoGeracaoBoletoExperiencias(data) {
     window.open(data.linkboleto, '_blank');
 
     swal({
