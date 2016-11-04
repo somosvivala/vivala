@@ -66,6 +66,7 @@
                     @endforeach
                     </ul>
                 </div>
+                {{-- LISTAGEM DE CATEGORIAS
                  <div class="col-xs-2 text-center">
                     {!! Form::label('categorias', 'Categorias') !!}
                     <ul class="col-xs-12">
@@ -76,7 +77,8 @@
                     @endforeach
                     </ul>
                 </div>
-                <div class="col-xs-1 ">
+               FIM LISTAGEM CATEGORIAS --}}
+                <div class="col-xs-3 ">
                     {!! Form::label('status', 'Status') !!}
                     <p class="
                         @if ($experiencia->status == 'publicada')
