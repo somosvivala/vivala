@@ -18,6 +18,8 @@
   @stop
 
   @section('email-experiencia-conteudo')
+
+    {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-experiencia-plataforma', [
       'Experiencia' => $Experiencia
     ])

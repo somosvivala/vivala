@@ -272,7 +272,7 @@
               </span>
             </li>
             <li class="col-md-2 col-lg-1 text-center padding-b-1 padding-t-1 iconpicker-borda-icone">
-              <span data-icon="extinguisher" title="Extintor/Segurança contra Incêndio" alt="Extintor/Segurança contra Incêndio">
+              <span data-icon="fire-extinguisher" title="Extintor/Segurança contra Incêndio" alt="Extintor/Segurança contra Incêndio">
                 <i class="fa fa-fire-extinguisher fa-3x iconpicker-icone" aria-hidden="true"></i>
               </span>
             </li>

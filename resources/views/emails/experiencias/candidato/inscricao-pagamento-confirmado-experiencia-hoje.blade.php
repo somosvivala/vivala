@@ -17,10 +17,7 @@
   @section('email-experiencia-conteudo')
 
     {{-- SEÇÃO de DICAS PARA O CANDIDATO
-    @include('emails.experiencias._info-inscricao-candidato-dicas-experiencia-hoje', [
-      'Inscricao' => $Inscricao
-    ])
-    --}}
+    @include('emails.experiencias._info-inscricao-candidato-dicas-experiencia-hoje' )
 
     {{-- SEÇÃO de INFOS da EXPERIÊNCIA --}}
     @include('emails.experiencias._info-inscricao-candidato-dados-experiencia', [
