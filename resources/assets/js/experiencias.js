@@ -159,12 +159,12 @@ if ( $('.clndr-container').length ) {
     calendarioExperiencia('.clndr-container');
 }
 
-$(".clndr-picker").click(function() {
+$(".clndr-picker").bind("click touchstart", function() {
     $(".clndr-container").toggleClass('visivel');
 });
 
 
-$('ul.pesquisa-viajar li a').click(function (e) {
+$('ul.pesquisa-viajar li a').bind("click touchstart", function() {
   $('ul.pesquisa-viajar li.active').removeClass('active');
   $('.pilar-viajar .tab-content div.active').removeClass('active');
   $(this).parent('li').addClass('active');
