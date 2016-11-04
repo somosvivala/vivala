@@ -6,6 +6,7 @@
 
         @foreach ($Experiencias as $experiencia)
 
+        @if ( $experiencia->inscricoesAtivas ) 
         <div class="col-xs-12 margin-t-1 fundo-cinza-com-borda">
             {!! Html::decode(Form::label('',
                 '<br>ID da Experiencia: #' . $experiencia->id .
@@ -59,6 +60,7 @@
                 @endforelse
             </ul>
         </div>
+        @endif
 
         @endforeach
     </div>
