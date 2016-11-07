@@ -10,7 +10,7 @@
         </h3>
       </div>
       <div class="modal-body">
-        {!! Form::model(Auth::user(), ['url' => '/experiencias/gerarboleto/', 'class'=>'gerar-boleto-experiencia']) !!}
+        {!! Form::model(Auth::user(), ['url' => '/experiencias/gerarboleto/', 'class'=>'gerar-boleto-experiencia form-por-ajax', 'data-callback' => 'callbackSucessoGeracaoBoletoExperiencias(data)', 'data-loading' => '.ajax-loading', 'data-errors' => '.error-container']) !!}
           {!! Form::hidden('experiencia_id', $Inscricao->experiencia->id) !!}
           @include('experiencias._form_dadosboleto')
       </div>
