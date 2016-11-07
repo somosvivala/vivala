@@ -47,6 +47,7 @@ function bindaSubmitFormAjax() {
                  /** Se tiver ocorrido tudo certo, verificar se existe um callback **/
                  if ( data.success ) {
 
+
                      /** Chamando funcao de callback caso exista uma **/
                      if ( callbackFunction ) {
                          eval(callbackFunction);
@@ -81,7 +82,11 @@ function bindaSubmitFormAjax() {
  */
 function callbackSucessoGeracaoBoletoExperiencias(data) {
     window.open(data.linkboleto, '_blank');
-    $('#modal-experiencia-gerar-boleto').modal('hide');
+
+    setTimeout(function() {
+        /** Escondendo modal de gerar boleto **/
+        $('#modal-experiencia-gerar-boleto').modal('hide');
+    }, 100);
 
     swal({
         type: "success",
