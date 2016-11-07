@@ -59,13 +59,14 @@
                  <div class="col-xs-2 text-center">
                     {!! Form::label('proximas', 'Proximas Datas') !!}
                     <ul class="col-xs-12">
-                    @foreach ($experiencia->ocorrencias as $ocorrencia)
+                    @foreach ($experiencia->futurasOcorrencias as $ocorrencia)
                         <li>
                             <i class="fa fa-calendar"></i> &nbsp; {{ $ocorrencia->data_ocorrencia->format('d/m/Y') }}
                         </li>
                     @endforeach
                     </ul>
                 </div>
+                {{-- LISTAGEM DE CATEGORIAS
                  <div class="col-xs-2 text-center">
                     {!! Form::label('categorias', 'Categorias') !!}
                     <ul class="col-xs-12">
@@ -76,7 +77,8 @@
                     @endforeach
                     </ul>
                 </div>
-                <div class="col-xs-1 ">
+               FIM LISTAGEM CATEGORIAS --}}
+                <div class="col-xs-3 ">
                     {!! Form::label('status', 'Status') !!}
                     <p class="
                         @if ($experiencia->status == 'publicada')

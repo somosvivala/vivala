@@ -8,7 +8,7 @@
         <a href="{{ url('experiencias') }}" class="link-voltar padding-t-1 history-back">
             <i class="fa fa-chevron-left"></i>
         </a>
-        <div class="conteudo-mobile ">
+        <div class="conteudo-mobile margin-b-1">
 
             {{-- Incluindo listagem de erros --}}
             @include('errors.mobile-list')

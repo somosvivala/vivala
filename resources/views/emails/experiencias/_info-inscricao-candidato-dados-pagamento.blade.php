@@ -37,7 +37,7 @@
         </tr>
         <tr align="center">
           <td align="center" style="text-align:center;">
-            <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=Comprovante Depósito Experiências - [{{ $Inscricao->perfil->nome }}] [{{ $Inscricao->data_ocorrencia_experiencia }}]" target="_top" style="cursor:pointer; text-decoration:none;">
+            <a href="mailto:{{ env('VIVALA_LINK_EMAIL')}}?subject=Comprovante Depósito Experiências - [{{ $Inscricao->perfil->nome }}] [{{ $Inscricao->data_ocorrencia_experiencia }}-ID:{{ $Inscricao->id }}]&body=Segue em anexo o comprovante de deposito:" target="_top" style="cursor:pointer; text-decoration:none;">
               <div style="font-family:'Avenir Black', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; text-transform:uppercase; color:#F06F37; background-color:#FFFFFF; padding:15px 30px; border:1px solid #F06F37; margin-left:20px; margin-right:20px; cursor:pointer;">
                 ENVIAR COMPROVANTE DE DEPÓSITO
               </div>

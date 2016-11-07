@@ -6,6 +6,8 @@
 
         @foreach ($Experiencias as $experiencia)
 
+        {{-- Apenas iterando sob experiencias que tiverem inscricoes canceladas com pagamento confirmado --}}
+        @if ( !$experiencia->inscricoesCanceladasComPagamentoConfirmado->isEmpty() )
         <div class="col-xs-12 margin-t-1 fundo-cinza-com-borda">
             {!! Html::decode(Form::label('',
                 '<br>ID da Experiencia: #' . $experiencia->id .
@@ -41,6 +43,7 @@
             </ul>
         </div>
 
+        @endif
         @endforeach
     </div>
 </div>
