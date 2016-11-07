@@ -244,7 +244,7 @@ class Experiencia extends Model
             ->where('data_ocorrencia', '>=', Carbon::now())
             ->orderBy('data_ocorrencia', 'asc')
             ->get()
-            : null;
+            : [];
     }
 
 
