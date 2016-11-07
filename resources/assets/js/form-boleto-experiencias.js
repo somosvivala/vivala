@@ -81,6 +81,7 @@ function bindaSubmitFormAjax() {
  */
 function callbackSucessoGeracaoBoletoExperiencias(data) {
     window.open(data.linkboleto, '_blank');
+    $('#modal-experiencia-gerar-boleto').modal('hide');
 
     swal({
         type: "success",
