@@ -66,7 +66,7 @@
         <tr>
 
           <!-- Cabeçalho da Vivalá -->
-          <td bgcolor="#F06F37" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:30px;">
+          <td bgcolor="#F06F37" style="clear:both!important; display:block!important; margin:0 auto!important; max-width:600px!important; padding:25px 30px 30px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tbody>
@@ -82,7 +82,7 @@
                   <!-- Separador -->
                   <tr align="center">
                     <td align="center" style="text-align:center;">
-                      <p style="border-bottom:2px solid #FFFFFF; width:300px; margin:10px auto;"></p>
+                      <p style="border-bottom:1px solid #FFFFFF; width:250px; margin:10px auto;"></p>
                     </td>
                   </tr>
                   <!-- Fim do Separador -->
@@ -133,48 +133,48 @@
           <!-- Fim da Seção ENVIE SUA DÚVIDA  -->
 
           <!-- ASSINATURA do Email -->
-          <td bgcolor="#ECEBEB" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:20px 30px 0 30px;">
+          <td bgcolor="#ECEBEB" style="clear:both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:15px 30px 15px 30px;">
             <div style="display:block; margin:0 auto; max-width:600px;">
               <table style="width: 100%;">
                 <tbody>
                   <tr align="center" style="text-align:center;">
-                    <td width="32.5%" style="width=32.5%;"></td>
-                    <td align="center" width="7%" style="text-align:center;width:7%;">
+                    <td width="35%" style="width=35%;"></td>
+                    <td align="center" width="6%" style="text-align:center;width:6%;">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_FACEBOOK') }}" target="_blank" alt="{{ trans('global.social_network_facebook_img_alt') }}" title="{{ trans('global.social_network_facebook_img_title') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-fb-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" width="7%" style="text-align:center;width:7%;">
+                    <td align="center" width="6%" style="text-align:center;width:6%;">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_INSTAGRAM') }}" target="_blank" alt="{{ trans('global.social_network_instagram_img_alt') }}" title="{{ trans('global.social_network_instagram_img_title') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-ig-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" width="7%" style="text-align:center;width:7%;">
+                    <td align="center" width="6%" style="text-align:center;width:6%;">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_SITE') }}" target="_blank" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_site') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_site') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-vivala-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" width="7%" style="text-align:center;width:7%;">
+                    <td align="center" width="6%" style="text-align:center;width:6%;">
                       <div style="width:30px; height:30px;">
                         <a href="mailto:{{ env('VIVALA_LINK_EMAIL') }}" target="_top" alt="{{ trans('global.alt_vivala') }} {{ trans('global.lbl_email') }}" title="{{ trans('global.title_vivala') }} {{ trans('global.lbl_email') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-email-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td align="center" width="7%" style="text-align:center;width:7%;">
+                    <td align="center" width="6%" style="text-align:center;width:6%;">
                       <div style="width:30px; height:30px;">
                         <a href="{{ env('VIVALA_LINK_LINKEDIN') }}" target="_blank" alt="{{ trans('global.social_network_linkedin_img_alt') }}" title="{{ trans('global.social_network_linkedin_img_title') }}" style="color:transparent; width:100%; height:100%;">
                           <img src="{{ asset('img/icones/png/colorido-in-circulo.png') }}" min-width="29px" width="29px" max-width="29px" min-height="29px" height="29px" max-height="29px"/>
                         </a>
                       </div>
                     </td>
-                    <td width="32.5%" style="width=32.5%;"></td>
+                    <td width="35%" style="width=35%;"></td>
                   </tr>
                 </tbody>
               </table>

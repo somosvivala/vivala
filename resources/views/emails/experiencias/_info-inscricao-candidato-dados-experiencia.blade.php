@@ -51,7 +51,7 @@
                                         <!-- NOME DA EXPERIÊNCIA -->
                                         <tr>
                                           <td>
-                                            <p style="margin-top:0px; margin-bottom:10px; text-align:center; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1em;">
+                                            <p style="margin-top:0px; margin-bottom:10px; text-align:left; font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:bold; color:#F06F37; line-height:1em;">
                                                 {{ mb_strtoupper(trim($Inscricao->experiencia->nome), 'utf-8') }}
                                             </p>
                                           </td>
@@ -185,42 +185,36 @@
                           <td>
                             <table>
                               <tbody>
-                                <tr valign="middle" style="vertical-align:middle;">
-                                  <td style="padding:0px;">
-                                    <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
-                                  </td>
-                                  <td style="padding:0px;">
-                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; padding-bottom:5px; margin-top:0px; margin-bottom:0px;">
-                                      {{ ucfirst(mb_strtolower(trim($Inscricao->experiencia->frequencia), 'utf-8')) }}
-                                    </p>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>      
-                          </td>
-                        </tr>
-                        @if($Inscricao->experiencia->informacoes)
-                        <tr style="line-height:1em;">
-                          <td>
-                            <table>
-                              <tbody>
-                                @foreach($Inscricao->experiencia->informacoes as $Informacao)
-                                <tr valign="middle" style="vertical-align:middle;">
-                                  <td>
-                                    <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
-                                  </td>
-                                  <td>
-                                    <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; padding-bottom:5px; margin-top:0px; margin-bottom:0px;">
-                                      {{ ucfirst(mb_strtolower(trim($Informacao->descricao), 'utf-8')) }}
-                                    </p>
-                                  </td>
-                                </tr>
-                                @endforeach
+                                @if($Inscricao->experiencia->frequencia)
+                                  <tr valign="middle" style="vertical-align:middle;">
+                                    <td style="padding:0px;">
+                                      <img src="{{ asset('img/icones/png/cinza-calendario.png') }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
+                                    </td>
+                                    <td style="padding:0px;">
+                                      <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; padding-bottom:5px; margin-top:0px; margin-bottom:0px;">
+                                        {{ ucfirst(mb_strtolower(trim($Inscricao->experiencia->frequencia), 'utf-8')) }}
+                                      </p>
+                                    </td>
+                                  </tr>
+                                @endif
+                                @if($Inscricao->experiencia->informacoes)
+                                  @foreach($Inscricao->experiencia->informacoes as $Informacao)
+                                    <tr valign="middle" style="vertical-align:middle;">
+                                      <td>
+                                        <img src="{{ $Informacao->PathIconePNG }}" min-width="24px" width="24px" max-width="24px" min-height="24px" height="24px" max-height="24px" style="margin-top:0px; margin-bottom:5px; margin-right:20px;"/>
+                                      </td>
+                                      <td>
+                                        <p style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:16px; font-weight:200; color:#545454; line-height:1em; padding-bottom:5px; margin-top:0px; margin-bottom:0px;">
+                                          {{ ucfirst(mb_strtolower(trim($Informacao->descricao), 'utf-8')) }}
+                                        </p>
+                                      </td>
+                                    </tr>
+                                    @endforeach
+                                  @endif
                               </tbody>
                             </table>
                           </td>
                         </tr>
-                        @endif
                       </tbody>
                     </table>
                   </td>

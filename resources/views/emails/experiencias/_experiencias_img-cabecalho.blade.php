@@ -39,8 +39,9 @@
     </table>
   </div>
 </td>
-<!-- Separador -->
-<td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
+
+<!-- Divisor -->
+<td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:0px 30px;">
   <tr></tr>
 </td>
-<!-- Fim do Separador -->
+<!-- Fim do Divisor -->
