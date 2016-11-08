@@ -67,7 +67,7 @@
                                         </tr>
                                         <!-- Fim do NOME DA EXPERIÊNCIA -->
                                         <!-- TIPO -->
-                                        <tr style="line-height:1em;">
+                                        <tr style="line-height:0.8em;">
                                           <td>
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
@@ -104,7 +104,7 @@
                                         </tr>
                                         <!-- Fim do TIPO -->
                                         <!-- LOCAL -->
-                                        <tr style="line-height:1em;">
+                                        <tr style="line-height:0.8em;">
                                           <td>
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
@@ -135,7 +135,7 @@
                                         </tr>
                                         <!-- Fim do LOCAL -->
                                         <!-- ENDEREÇO -->
-                                        <tr style="line-height:1em;">
+                                        <tr style="line-height:0.8em">
                                           <td>
                                             <table style="width:100%; table-layout:fixed;" width="100%">
                                               <tbody>
