@@ -299,7 +299,6 @@
                             </table>
                           </td>
                         </tr>
-                        @endif
                       </tbody>
                     </table>
                   </td>
