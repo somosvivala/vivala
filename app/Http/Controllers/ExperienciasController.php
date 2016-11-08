@@ -285,7 +285,8 @@ class ExperienciasController extends Controller
      */
     public function postConfirmaInscricao(ConfirmaInscricaoExperienciaRequest $request)
     {
-        return ['result' => $this->experienciasRepository->confirmaInscricaoExperiencia($request)];
+        $retorno = ['result' => $this->experienciasRepository->confirmaInscricaoExperiencia($request)];
+        return new JsonResponse($retorno, 200);
     }
 
     /**
