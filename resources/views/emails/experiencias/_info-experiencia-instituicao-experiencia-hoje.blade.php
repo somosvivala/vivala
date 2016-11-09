@@ -108,9 +108,9 @@
                                           </td>
                                         </tr>
                                         <!-- Fim do ID DA EXPERIÊNCIA -->
-                                      </tbody>                
+                                      </tbody>
                                     </table>
-                                  </td>  
+                                  </td>
                                 </tr>
                               </tbody>
                             </table>
@@ -179,7 +179,7 @@
                                                   </td>
                                                   <td style="width:85%; text-align: left;" width="85%">
                                                     <span style="font-family:'Avenir Roman', 'Trebuchet MS', Helvetica, Arial, sans-serif; font-size:20px; font-weight:200; color:#545454; line-height:1em; vertical-align:middle;">
-                                                    <strong>{{ trim($Experiencia->dataExperiencia->format('d/m/Y')) }}</strong>
+                                                    <strong>{{ trim($Inscricoes->first()->dataExperiencia->format('d/m/Y')) }}</strong>
                                                   </span>
                                                   </td>
                                                 </tr>
@@ -267,7 +267,7 @@
           </td>
         </tr>
         <!-- Fim da Seção RESUMO DA EXPERIÊNCIA -->
-        
+
         <!-- Seção DESCRIÇÃO DA EXPERIÊNCIA -->
         <tr>
           <td>
@@ -365,7 +365,7 @@
                                   </td>
                                 </tr>
                               </tbody>
-                            </table>      
+                            </table>
                           </td>
                         </tr>
                         @if($Experiencia->informacoes)
@@ -393,7 +393,7 @@
                       </tbody>
                     </table>
                   </td>
-                </tr>   
+                </tr>
               </tbody>
             </table>
           </td>
