@@ -28,7 +28,7 @@
 </td>
 <!-- Fim da Seção DICAS PARA A INSTITUIÇÃO SOBRE A EXPERIÊNCIA  -->
 <!-- Divisor -->
-<td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:5px 30px;">
+<td bgcolor="#ECEBEB" style="clear: both!important; display: block!important; margin:0 auto!important; max-width:600px!important; padding:1px 30px;">
   <tr></tr>
 </td>
 <!-- Fim do Divisor -->
