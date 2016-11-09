@@ -58,12 +58,22 @@ class FotosRepository extends FotosRepositoryInterface
 
 
     /**
-     * Metodo para formatar o nome da foto com o timestamp atual
+     * Metodo para formatar uma string removendo os espacos e adicionando um timestamp
+     *
+     * @param $fileName - string - nome original do arquivo
+     *
+     * @return string - filename formatado
      */
     public function formatStringWithCurrentTimestamp($filename)
     {
-        $timestamp = Carbon::now()->getTimestamp() . '_';
-        return $timestamp.trim($filename);
+        //Removendo espaços dos nome do arquivo para evitar problemas com encoding de urls
+        $filename = str_replace(' ', '', $filename);
+
+        //gerando timestamp e concatenando com nome do arquivo modificado
+        $novoFilename = Carbon::now()->getTimestamp() . '_' . $filename;
+
+        //retornando novo filename
+        return $novoFilename;
     }
 
 
