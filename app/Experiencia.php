@@ -135,25 +135,25 @@ class Experiencia extends Model
         foreach ($arrayDias as $diaSemana) {
             switch ($diaSemana) {
                 case 'Domingo' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this sunday');
+                    $arrayDatas[] = ( ! \Carbon\Carbon::parse('this sunday')->isToday() ? \Carbon\Carbon::parse('this sunday') :  \Carbon\Carbon::parse('next sunday') );
                     break;
                 case 'Segunda' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this monday');
+                    $arrayDatas[] =  ( ! \Carbon\Carbon::parse('this monday')->isToday() ? \Carbon\Carbon::parse('this monday') :  \Carbon\Carbon::parse('next monday') );
                     break;
                 case 'Terça' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this tuesday');
+                    $arrayDatas[] =  ( ! \Carbon\Carbon::parse('this tuesday')->isToday() ? \Carbon\Carbon::parse('this tuesday') :  \Carbon\Carbon::parse('next tuesday') );
                     break;
                 case 'Quarta' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this wednesday');
+                    $arrayDatas[] =  ( ! \Carbon\Carbon::parse('this wednesday')->isToday() ? \Carbon\Carbon::parse('this wednesday') :  \Carbon\Carbon::parse('next wednesday') );
                     break;
                 case 'Quinta' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this thursday');
+                    $arrayDatas[] =  ( ! \Carbon\Carbon::parse('this thursday')->isToday() ? \Carbon\Carbon::parse('this thursday') :  \Carbon\Carbon::parse('next thursday') );
                     break;
                 case 'Sexta' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this friday');
+                    $arrayDatas[] =  ( ! \Carbon\Carbon::parse('this friday')->isToday() ? \Carbon\Carbon::parse('this friday') :  \Carbon\Carbon::parse('next friday') );
                     break;
                 case 'Sabado' :
-                    $arrayDatas[] = \Carbon\Carbon::parse('this saturday');
+                    $arrayDatas[] =  ( ! \Carbon\Carbon::parse('this saturday')->isToday() ? \Carbon\Carbon::parse('this saturday') :  \Carbon\Carbon::parse('next saturday') );
                     break;
             }
         }
@@ -164,6 +164,10 @@ class Experiencia extends Model
             for ($i = 1; $i <= 10; $i++) {
                 $arrayDatas[] = $dataOperacional->copy()->addDays(7*$i);
             }
+        }
+
+        if ( $arrayDatas[0]->isToday() ) {
+            array_shift($arrayDatas);
         }
 
         //formatando da maneira que o calendario compreende
@@ -224,7 +228,7 @@ class Experiencia extends Model
 
         return $existeOcorrencias ?
             $this->ocorrencias()
-            ->where('data_ocorrencia', '>=', Carbon::now())
+            ->where('data_ocorrencia', '>', Carbon::now())
             ->orderBy('data_ocorrencia', 'asc')
             ->first()
             : null;
@@ -241,7 +245,7 @@ class Experiencia extends Model
 
         return $existeOcorrencias ?
             $this->ocorrencias()
-            ->where('data_ocorrencia', '>=', Carbon::now())
+            ->where('data_ocorrencia', '>', Carbon::now())
             ->orderBy('data_ocorrencia', 'asc')
             ->get()
             : [];
