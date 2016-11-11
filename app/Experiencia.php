@@ -118,6 +118,16 @@ class Experiencia extends Model
     }
 
     /**
+     * Definindo um mutator para o campo preco
+     * Removendo virgulas que podem vir da mascara de preco
+     */
+    public function setPrecoAttribute($value)
+    {
+        $this->attributes['preco'] = str_replace(',', '', $value);
+    }
+
+
+    /**
      * Definindo um acessor para os dias operacionais da semana em formato JSON
      * para ser usado por experiencias do tipo evento_servico
      */

@@ -43,7 +43,7 @@ class StoreExperienciaRequest extends Request
             'descricao_na_listagem' 		=> "required|string|min:2|max:85",
             'descricao'                 => "required|string|min:2|max:420",
             'detalhes'                  => "required|string|min:2",
-            'preco'                     => "required|numeric",
+            'preco'                     => "required",
             'informacao-extra'          => "array",
             'datas-ocorrencia'          => "array",
             'categoria'                 => "array",

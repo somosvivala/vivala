@@ -42,7 +42,7 @@ class UpdateExperienciaRequest extends Request
             'descricao'                 => "string|required|min:2",
             'detalhes'                  => "string|required|min:2",
             'nome'                      => "required|string|min:2|max:50",
-            'preco'                     => "required|numeric",
+            'preco'                     => "required",
             'icone'                     => "array",
             'descricao_info'            => "array",
             'datas-ocorrencia'          => "array",
