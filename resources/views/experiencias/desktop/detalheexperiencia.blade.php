@@ -22,9 +22,9 @@
       {{-- Seção MENU SUPERIOR --}}
         <ul class="margin-t-2 margin-b-3 lista-border pesquisa-viajar">
           <div class="row row-eq-height">
-            <li class="col-lg-3 tour-pilar-viajar-step3 active">
-              <a class="experiencias" href="/experiencias">
-                {{ trans('global.wannatravel_trip_experiences') }}
+            <li class="col-lg-3 tour-pilar-viajar-step3">
+              <a class="rodoviario logger-ativo" href="#rodoviario" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="rodoviario" role="tab" data-toggle="tab">
+                {{ trans('global.wannatravel_trip_bus_drive') }}
               </a>
             </li>
             <li class="col-lg-3 tour-pilar-viajar-step4">
@@ -32,9 +32,9 @@
                 {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
               </a>
             </li>
-            <li class="col-lg-3 tour-pilar-viajar-step5">
-              <a class="rodoviario logger-ativo" href="#rodoviario" data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" aria-controls="rodoviario" role="tab" data-toggle="tab">
-                {{ trans('global.wannatravel_trip_bus_drive') }}
+            <li class="col-lg-3 tour-pilar-viajar-step5 active">
+              <a class="experiencias" href="/experiencias">
+                {{ trans('global.wannatravel_trip_experiences') }}
               </a>
             </li>
             <li class="col-lg-3 tour-pilar-viajar-step6">
@@ -47,8 +47,15 @@
       {{-- Fim da Seção MENU SUPERIOR --}}
 
       <div class="tab-content">
+        {{-- Tab de RODOVIÁRIO --}}
+          <div role="tabpanel" id="rodoviario" class="tab-pane">
+            @include('clickbus.buscar')
+            <div class="lista-rodoviario"></div>
+          </div>
+        {{-- Fim da Tab de RODOVIÁRIO --}}
+
         {{-- Tab de EXPERIÊNCIAS --}}
-            <div id="experiencia" class="tab-pane active" role="tabpanel">
+            <div role="tabpanel" id="experiencia" class="tab-pane active">
               @if($Experiencia->isUsuarioAtualInscrito)
                 <div class="row">
                   <div class="warning-laranja col-xs-12">
@@ -302,15 +309,8 @@
             </div>
         {{-- Fim da Tab de EXPERIÊNCIAS --}}
 
-        {{-- Tab de RODOVIÁRIO --}}
-          <div id="rodoviario" class="tab-pane" role="tabpanel">
-            @include('clickbus.buscar')
-            <div class="lista-rodoviario"></div>
-          </div>
-        {{-- Fim da Tab de RODOVIÁRIO --}}
-
         {{-- Tab de RESTAURANTES --}}
-          <div id="restaurantes" class="tab-pane" role="tabpanel">
+          <div role="tabpanel" id="restaurantes" class="tab-pane">
             {{-- @include('chefsclub.buscarestaurantes') --}}
             {{-- @include('modals._listarestaurantes') --}}
           </div>
