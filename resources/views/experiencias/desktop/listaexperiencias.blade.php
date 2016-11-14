@@ -22,8 +22,8 @@
       <ul class="margin-t-2 margin-b-3 lista-border pesquisa-viajar">
         <div class="row row-eq-height">
           <li class="col-lg-3 tour-pilar-viajar-step3 active">
-            <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
-              {{ trans('global.wannatravel_trip_experiences') }}
+            <a class="rodoviario logger-ativo" href="#rodoviario" aria-controls="rodoviario"  data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}">
+              {{ trans('global.wannatravel_trip_bus_drive') }}
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step4">
@@ -32,8 +32,8 @@
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step5">
-            <a class="rodoviario logger-ativo" href="#rodoviario" aria-controls="rodoviario"  data-tipo="abasviajar_tipo_onibus" data-desc="abasviajar_desc_onibus" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}">
-              {{ trans('global.wannatravel_trip_bus_drive') }}
+            <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
+              {{ trans('global.wannatravel_trip_experiences') }}
             </a>
           </li>
           <li class="col-lg-3 tour-pilar-viajar-step6">
@@ -44,7 +44,11 @@
         </div>
       </ul>
       <div class="tab-content">
-        <div id="experiencias" class="tab-pane active" role="tabpanel">
+        <div role="tabpanel" id="rodoviario" class="tab-pane active">
+          @include('clickbus.buscar')
+          <div class="lista-rodoviario"></div>
+        </div>
+        <div role="tabpanel" id="experiencias" class="tab-pane">
           @if((isset($experiencias)) && (count($experiencias) >=1))
             <ul class="row padding-b-1 lista-exp-desktop ">
             <?php $contadorExp = 0 ?>
@@ -107,11 +111,8 @@
             </div>
           @endif
         </div>
-        <div id="rodoviario" class="tab-pane" role="tabpanel">
-          @include('clickbus.buscar')
-          <div class="lista-rodoviario"></div>
-        </div>
-        <div id="restaurantes" class="tab-pane" role="tabpanel">
+        
+        <div role="tabpanel" id="restaurantes" class="tab-pane">
           {{-- @include('chefsclub.buscarestaurantes') --}}
           {{-- @include('modals._listarestaurantes') --}}
         </div>

@@ -17,9 +17,9 @@ return[
   'keywords_vivala' => 'Vivalá, Social Network, Tourism, Trip, Volunteering, Social Impact, Accomodation, Transport, Feeding, Entertainment',
 
 // Vertentes
-  'lbl_wanna_travel' => 'Quero Viajar',
-  'lbl_wanna_connect' => 'Quero me Conectar',
-  'lbl_wanna_volunteer' => 'Quero Cuidar',
+  'lbl_wanna_travel' => 'Vivalá Trips',
+  'lbl_wanna_connect' => 'Social Network',
+  'lbl_wanna_volunteer' => 'Vivalá Institute',
 
   /*------------------------------------------------------------------------------
   /  Termos Globais
@@ -894,8 +894,8 @@ return[
   /*------------------------------------------------------------------------------
   /  View : VIAJAR
   ------------------------------------------------------------------------------*/
-    'wannatravel_title' => 'Meet Brazil',
-    'wannatravel_subtitle' => 'Choose your transport and accommodation, book restaurants and search for entertainment',
+    'wannatravel_title' => 'Vivalá in World',
+    'wannatravel_subtitle' => 'Find transport, accommodation, book restaurants and search for experiences all around the world!',
     'wannatravel_trip_already_know' => 'Already know where to go?',
     'wannatravel_trip_setup' => 'Build your trip',
     'wannatravel_trip_experiences' => 'Experiences',

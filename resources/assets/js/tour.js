@@ -478,17 +478,17 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br>All in one place for you to stay quiet when traveling!</p>',
+              intro: '<p class="text-center"><span class="laranja">Vivalá Trips</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br>All in one place for you to stay quiet when traveling!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> it is the social network pillar for you to connect with people who loves to travel and do volunteer work.<br>Share more your experiences!</p>',
+              intro: '<p class="text-center"><span class="laranja">Social Network</span> it the pillar for you to connect with people who loves to travel and do volunteer work.<br>Share more your experiences!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step5',
-              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> is our pillar for big changes! Here you can find NGO\'s and Social Projects that need help throughout Brazil.<br>By entries in volunteer jobs you can live a unique experience, transforming yourself and the reality around you!</p>',
+              intro: '<p class="text-center"><span class="laranja">Vivalá Institute</span> is our pillar for big changes! Here you can find NGO\'s and Social Projects that need help throughout Brazil.<br>By entries in volunteer jobs you can live a unique experience, transforming yourself and the reality around you!</p>',
               position: 'bottom'
             },
             {
@@ -537,17 +537,17 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Quero Viajar</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
+              intro: '<p class="text-center"><span class="laranja">Vivalá Viagens</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step4',
-              intro: '<p class="text-center"><span class="laranja">Quero me Conectar</span> é o pilar da rede social, para você se conectar com pessoas que amam viajar e fazer voluntariado.<br>Compartilhe mais suas experiências!</p>',
+              intro: '<p class="text-center"><span class="laranja">Rede Social</span> é o pilar da rede social, para você se conectar com pessoas que amam viajar e fazer voluntariado.<br>Compartilhe mais suas experiências!</p>',
               position: 'bottom'
             },
             {
               element: '.tour-pilares-step5',
-              intro: '<p class="text-center"><span class="laranja">Quero Cuidar</span> é o nosso pilar para grandes transformações!<br>Aqui você encontra ONG\'s e Projetos Sociais que precisam de ajuda espalhados pelo Brasil.<br>Através de inscrições em vagas de voluntariado você poderá viver uma experiência única, transformando você mesmo e a realidade ao seu redor!</p>',
+              intro: '<p class="text-center"><span class="laranja">Instituto Vivalá</span> é o nosso pilar para grandes transformações!<br>Aqui você encontra ONG\'s e Projetos Sociais que precisam de ajuda espalhados pelo Brasil.<br>Através de inscrições em vagas de voluntariado você poderá viver uma experiência única, transformando você mesmo e a realidade ao seu redor!</p>',
               position: 'bottom'
             },
             {
@@ -646,7 +646,7 @@ $(document).ready(function() {
               // CONECTAR
               {
                 element: '.tour-pilar-conectar-step1',
-                intro: '<p class="text-center">You are in <span class="laranja">Quero me Conectar</span>.<br>Here is the place to interact with thousands of people around the world, sharing travel and volunteer experiences!</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Social Network</span>.<br>Here is the place to interact with thousands of people around the world, sharing travel and volunteer experiences!</p>',
                 position: 'bottom'
               },
               {
@@ -688,7 +688,7 @@ $(document).ready(function() {
               // CONECTAR
               {
                 element: '.tour-pilar-conectar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero me Conectar</span>.<br>Aqui é o lugar para interagir com milhares de pessoas do mundo, compartilhando experiências de viagem e voluntariado!</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Rede Social</span>.<br>Aqui é o lugar para interagir com milhares de pessoas do mundo, compartilhando experiências de viagem e voluntariado!</p>',
                 position: 'bottom'
               },
               {
@@ -739,7 +739,7 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center">You are in <span class="laranja">Quero Viajar</span>.<br>Here you will find everything you need for traveling in Brazil and around the world.<br>Buy airline tickets, bus tickets, rent a car, lodging and get discounts up to 50% in renowned restaurants!<br>Explore the possibilities and travel with us!</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Vivalá Trips</span>.<br>Here you will find everything you need for traveling in Brazil and around the world.<br>Buy airline tickets, bus tickets, rent a car, lodging and get discounts up to 50% in renowned restaurants!<br>Explore the possibilities and travel with us!</p>',
                 position: 'bottom'
               },
               {
@@ -749,8 +749,8 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step3',
-                intro: '<p class="text-center">In <span class="laranja">Experiences</span> you will find <span class="laranja">wonderful discoveries and sensations</span> never before experienced. There are several experiences in various parts of the country to you live!',
-                position: 'bottom',
+                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br>Search here on your next trip and hit the road!</p>',
+                position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step4',
@@ -759,8 +759,8 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">In <span class="laranja">Bus Tickets</span> you can find <span class="laranja">bus tickets to 3,000 destinations in Brazil</span>, operated by more than 60 traffic road companies!<br>Search here on your next trip and hit the road!</p>',
-                position: 'bottom'
+                intro: '<p class="text-center">In <span class="laranja">Experiences</span> you will find <span class="laranja">wonderful discoveries and sensations</span> never before experienced. There are several experiences in various parts of the country to you live!',
+                position: 'bottom',
               },
               {
                 element: '.tour-pilar-viajar-step6',
@@ -776,7 +776,7 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero Viajar</span>.<br>Aqui você encontrará tudo que precisa para viajar no Brasil e mundo afora.<br>Compre passagens aéreas, rodoviárias, aluguel de carro, hospedagem e tenha descontos de até 50% em restaurantes renomados!<br>Explore as possibilidades e viaje conosco!</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Vivalá Viagens</span>.<br>Aqui você encontrará tudo que precisa para viajar no Brasil e mundo afora.<br>Compre passagens aéreas, rodoviárias, aluguel de carro, hospedagem e tenha descontos de até 50% em restaurantes renomados!<br>Explore as possibilidades e viaje conosco!</p>',
                 position: 'bottom'
               },
               {
@@ -832,7 +832,7 @@ $(document).ready(function() {
               // CUIDAR
               {
                 element: '.tour-pilar-cuidar-step1',
-                intro: '<p class="text-center">You are in <span class="laranja">Quero Cuidar</span>. You can find volunteer jobs in various NGOs and social impact projects throughout Brazil.<br>Register your NGO or project and arrange volunteers, or help big projects to change realities in Brazil!</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Vivalá Institute</span>. You can find volunteer jobs in various NGOs and social impact projects throughout Brazil.<br>Register your NGO or project and arrange volunteers, or help big projects to change realities in Brazil!</p>',
                 position: 'bottom'
               },
               {
@@ -864,7 +864,7 @@ $(document).ready(function() {
               // CUIDAR
               {
                 element: '.tour-pilar-cuidar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Quero Cuidar</span>. Aqui você pode encontrar vagas de voluntariado em diversas ONGs e Projetos de impacto social espalhadas pelo Brasil.<br>Inscreva sua ONG ou Projeto e arrume voluntários ou ajude grandes projetos a mudar realidades no Brasil!</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Instituto Vivalá</span>. Aqui você pode encontrar vagas de voluntariado em diversas ONGs e Projetos de impacto social espalhadas pelo Brasil.<br>Inscreva sua ONG ou Projeto e arrume voluntários ou ajude grandes projetos a mudar realidades no Brasil!</p>',
                 position: 'bottom'
               },
               {
