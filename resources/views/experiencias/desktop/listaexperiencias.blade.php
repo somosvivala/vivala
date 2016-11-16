@@ -52,7 +52,7 @@
         {{-- Fim da Tab de RODOVIÁRIO --}}
 
         {{-- Tab de EXPERIÊNCIAS --}}
-          <div role="tabpanel" id="experiencias" class="tab-pane">
+          <div role="tabpanel" id="experiencias" class="tab-pane active">
             @if((isset($experiencias)) && (count($experiencias) >=1))
               <ul class="row padding-b-1 lista-exp-desktop ">
               <?php $contadorExp = 0 ?>
@@ -118,7 +118,7 @@
         {{-- Fim da Tab de EXPERIÊNCIAS --}}
 
         {{-- Tab de RESTAURANTES --}}  
-          <div role="tabpanel" id="restaurantes" class="tab-pane active">
+          <div role="tabpanel" id="restaurantes" class="tab-pane">
             {{-- @include('chefsclub.buscarestaurantes') --}}
             {{-- @include('modals._listarestaurantes') --}}
           </div>
