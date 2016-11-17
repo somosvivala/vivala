@@ -10,8 +10,8 @@
     <div class="col-sm-3">
       @if(isset($categorias))
       <select name="filtro_categoria" id="categoria_select" class="form-control form-control-fix" title="{{ trans('global.lbl_category') }}" placeholder="{{ trans('global.lbl_category') }}">
-          @forelse($categorias as $Categoria)
-            <option value="{{ trans($Categoria) }}">{{ trans($Categoria) }}</option>
+          @forelse($categorias as $key => $Categoria)
+            <option value="{{ $key }}">{{ trans($Categoria) }}</option>
           @empty
             <option>{{ trans('global.lbl_category_no_') }}</option>
           @endforelse
