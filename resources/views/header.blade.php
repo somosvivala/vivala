@@ -8,10 +8,7 @@
 <div class="menu-principal">
 	<div class="hidden-xs hidden-sm col-lg-4">
 		{{-- BARRA BUSCA - TEMPORÁRIO pra mostrar só em CONECTAR, mandar uma variável pra view pra dizer em qual pilar estamos seria o mais ideal --}}
-		@if(Request::url() === url('/') . '/home')
-			<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
-				<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
-		@elseif(Request::url() === url('/') . '/conectar')
+		@if(Request::url() === url('/') . '/conectar')
 			<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
 				<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
 		@elseif(Request::url() === url('/') . '/perfil')

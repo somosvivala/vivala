@@ -84,7 +84,7 @@ Route::group(['middleware' => 'auth.mobile'], function() {
 Route::group(['middleware' => 'desktop.only'], function() {
     //raiz jogando para a tela de welcome
     Route::get('/', 'WelcomeController@index');
-    Route::controller('home', 'HomeController');
+    Route::get('home', 'ViajarController@index');
 
     // Rotas dos três pilares do sistema
     Route::resource('viajar','ViajarController');
