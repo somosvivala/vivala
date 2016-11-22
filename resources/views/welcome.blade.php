@@ -138,7 +138,7 @@
                   </a>
               </div>
               <div class="col-md-7 col-lg-7">
-                  <div class="col-md-10 col-lg-10">
+                  <div class="col-md-11 col-lg-11">
                       {!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal form-login']) !!}
                       <div class="row">
                           {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
@@ -215,7 +215,7 @@
                   --}}
                   <div class="container-fluid">
                     <div class="row">
-                      <div id="modal-manifesto">
+                      <div id="modal-manifesto" class="text-center">
                         <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                           {{ trans('global.lbl_our_essence') }}
                         </a>
@@ -321,7 +321,7 @@
                           </div>
                         --}}
                         <div class="col-md-4 col-lg-4 pull-right padding-r-0">
-                            {!!Form::submit( trans('global.lbl_confirm'), ['class' => 'btn btn-acao-branco-vazio']) !!}
+                            {!!Form::submit( trans('global.lbl_confirm'), ['class' => 'btn btn-default']) !!}
                         </div>
                       </div>
                     </div>
@@ -334,11 +334,9 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12 col-lg-12 text-center">
-                    <div class="col-md-6 col-md-offset-1">
-                      <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
-                          <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
-                      </a>
-                    </div>
+                    <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
+                        {{ trans('global.lbl_connect_yourself') }} <span class="fa fa-facebook"></span>
+                    </a>
                   </div> 
                 </div>
               </div>
