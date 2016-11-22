@@ -328,7 +328,7 @@
                     {!! Form::close() !!}
                   </div>
                 <div class="row">
-                  <div class="col-md-12 col-lg-12 text-center">
+                  <div class="col-md-11 col-lg-11 margin-t-2 margin-b-2 text-center">
                     <span class="form-cadastro-ou">{{ trans('global.lbl_or') }}</span>
                   </div>
                 </div>

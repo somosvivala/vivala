@@ -240,7 +240,7 @@
 			&:hover{
 				color: @cor-cinza-escuro;
 				background-color: white;
-				border: 1px solid white;
+				border: 2px solid white;
 			}
 		}
 	}
@@ -259,14 +259,23 @@
 		font-weight: bold;
 		text-transform: uppercase;
 		color: white;
-		&:after,
-		&:before{
+		&:before.
+		&:after{
 			content: " ";
+			position:relative;
 			display: inline-table;
-			width: 33%;
+			width: 42%;
 			height: 1px;
 			color: white;
-			border-bottom: 1px solid white;
+			border-bottom: 2px solid white;
+		}
+		&:before{
+			top: -5px;
+			right: 20px;
+		}
+		&:after{
+			top: -5px;
+			left: 20px;
 		}
 	}
 }
