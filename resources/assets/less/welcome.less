@@ -233,10 +233,12 @@
 			padding: 0.5rem;
 			font-size:1.2rem;
 			width: 100%;
+			text-shadow: 1px 1px 2px #000;
 			&:hover{
 				color: @cor-cinza-escuro;
 				background-color: white;
 				border: 2px solid white;
+				text-shadow: none;
 			}
 		}
 	}
@@ -362,23 +364,6 @@
 @media only screen and (min-width:1280px){
 	#welcome-html body{
 		background-image: url("../../img/welcome/welcome-bg-1280-1.png");
-		background-size: cover;
-		background-position: center -28vh;
-		background-repeat: no-repeat;
-		#welcome-mobile-warning{
-			display:none;
-		}
-		#welcome-header,
-		#welcome-content{
-		  display: block;
-		}
-	}
-}
-
-/* 1280 x 800 and up */
-@media only screen and (min-width:1280px) and (min-height:800px){
-	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-1280-2.png");
 		background-size: cover;
 		background-position: center -28vh;
 		background-repeat: no-repeat;
