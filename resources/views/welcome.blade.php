@@ -222,14 +222,14 @@
                       </div>
                     </div>
                   --}}
-                  <div class="row">
-                    <div id="modal-manifesto" class="text-center">
+                  <div id="modal-manifesto" class="row">
+                    <div class="text-center">
                       <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                         {{ trans('global.lbl_our_essence') }}
                       </a>
                     </div>
                   </div>
-                  <div class="row">
+                  <div id="row-baloes" class="row">
                     <div class="col-md-4 col-lg-4">
                       <div class="balao-flutuante-aniversario balao-aniversario-1">
                           <span>{{ trans('global.welcome_birthdayfloatingballon1') }}</span>
