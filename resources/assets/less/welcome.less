@@ -156,6 +156,13 @@
 			right:5vw;
 		}
 	}
+	#modal-manifesto{
+		position: relative;
+		top: 50vh;
+		.btn-acao{
+			padding: 2px 5px!important;
+		}
+	}
 	form input[type="email"].form-control,
 	form input[type="password"].form-control,
 	form input[type="text"].form-control{
@@ -210,7 +217,7 @@
 		font-weight: bold;
 		color: @cor-cinza-escuro;
 		text-transform: uppercase;
-		background-color: rgba(255, 255, 255, 0.25);
+		background-color: rgba(255, 255, 255, 0.9);
 		border: 0px;
 		border-radius: 0px;
 		padding: 0 0.5em;
@@ -247,14 +254,17 @@
 	}
 	.form-cadastro-ou{
 		font-family: @font-family-avenir-roman;
+		font-weight: bold;
+		text-transform: uppercase;
 		color: white;
 		&:after,
 		&:before{
 			content: " ";
-			display: block;
-			width: 90px;
+			display: inline-table;
+			width: 33%;
 			height: 1px;
 			color: white;
+			border-bottom: 1px solid white;
 		}
 	}
 }

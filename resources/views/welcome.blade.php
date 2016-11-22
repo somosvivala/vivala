@@ -191,7 +191,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-7 col-lg-7">
-                <div class="col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
+                <div class="col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1 text-center">
                   {{-- SVG do mapa WELCOME - Agora com tradução --}}
                     {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                     <div id="brasilwelcome">
