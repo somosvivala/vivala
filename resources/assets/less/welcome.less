@@ -160,16 +160,16 @@
 	form input[type="password"].form-control,
 	form input[type="text"].form-control{
 	    &::-webkit-input-placeholder {
-	       color: white;
+	       color: @cor-cinza-escuro;
 	    }
 	    &:-moz-placeholder {  /* Firefox 18- */
-	       color: white;
+	       color: @cor-cinza-escuro;
 	    }
 	    &::-moz-placeholder {  /* Firefox 19+ */
-	       color: white;
+	       color: @cor-cinza-escuro;
 	    }
 	    &:-ms-input-placeholder {
-	       color: white;
+	       color: @cor-cinza-escuro;
 	    }
 	    opacity: 1;
 	    border: 0px solid transparent;
@@ -238,10 +238,23 @@
 		}
 	}
 	.welcome-privacy{
-		font-family: @font-family-avenir-medium;
+		font-family: @font-family-avenir-roman;
 		a {
-		font-family: @font-family-avenir-medium;
-			color: @cor-primaria;
+		font-family: @font-family-avenir-roman;
+			color: @white;
+			text-decoration: underline;
+		}
+	}
+	.form-cadastro-ou{
+		font-family: @font-family-avenir-roman;
+		color: white;
+		&:after,
+		&:before{
+			content: " ";
+			display: block;
+			width: 90px;
+			height: 1px;
+			color: white;
 		}
 	}
 }

@@ -327,15 +327,19 @@
                     </div>
                     {!! Form::close() !!}
                   </div>
-              </div>
-              <div class="col-md-5 col-lg-5 padding-b-2">
-                <span>{{ trans('global.lbl_or') }}</span>
-              </div>
-              <div class="col-md-5 col-lg-5 padding-b-2">
-                <div class="col-md-6 col-md-offset-1">
-                  <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
-                      <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
-                  </a>
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 text-center">
+                    <span class="form-cadastro-ou">{{ trans('global.lbl_or') }}</span>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 col-lg-12 text-center">
+                    <div class="col-md-6 col-md-offset-1">
+                      <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
+                          <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
+                      </a>
+                    </div>
+                  </div> 
                 </div>
               </div>
             </div>
