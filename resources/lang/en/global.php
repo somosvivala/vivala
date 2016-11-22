@@ -17,7 +17,7 @@ return[
   'keywords_vivala' => 'Vivalá, Social Network, Tourism, Trip, Volunteering, Social Impact, Accomodation, Transport, Feeding, Entertainment',
 
 // Vertentes
-  'lbl_wanna_travel' => 'Vivalá Trips',
+  'lbl_wanna_travel' => 'Trips',
   'lbl_wanna_connect' => 'Social Network',
   'lbl_wanna_volunteer' => 'Vivalá Institute',
 

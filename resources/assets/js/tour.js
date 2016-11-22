@@ -478,7 +478,7 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Vivalá Trips</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br>All in one place for you to stay quiet when traveling!</p>',
+              intro: '<p class="text-center"><span class="laranja">Trips</span> is the pillar made ​​for you who wants to explore the world! Here, we offer air tickets, lodging, car rental, bus tickets and alimentation with incredible discounts.<br>All in one place for you to stay quiet when traveling!</p>',
               position: 'bottom'
             },
             {
@@ -537,7 +537,7 @@ $(document).ready(function() {
             },
             {
               element: '.tour-pilares-step3',
-              intro: '<p class="text-center"><span class="laranja">Vivalá Viagens</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
+              intro: '<p class="text-center"><span class="laranja">Viagens</span> é o pilar feito pra você que quer explorar o mundo! Por aqui, oferecemos avião, hospedagem, aluguel de carro, ônibus e alimentação com descontos incríveis.<br>Tudo em um único lugar pra você ficar tranquilo na hora de viajar!</p>',
               position: 'bottom'
             },
             {
@@ -739,7 +739,7 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center">You are in <span class="laranja">Vivalá Trips</span>.<br>Here you will find everything you need for traveling in Brazil and around the world.<br>Buy airline tickets, bus tickets, rent a car, lodging and get discounts up to 50% in renowned restaurants!<br>Explore the possibilities and travel with us!</p>',
+                intro: '<p class="text-center">You are in <span class="laranja">Trips</span>.<br>Here you will find everything you need for traveling in Brazil and around the world.<br>Buy airline tickets, bus tickets, rent a car, lodging and get discounts up to 50% in renowned restaurants!<br>Explore the possibilities and travel with us!</p>',
                 position: 'bottom'
               },
               {
@@ -776,7 +776,7 @@ $(document).ready(function() {
               // VIAJAR
               {
                 element: '.tour-pilar-viajar-step1',
-                intro: '<p class="text-center">Você está em <span class="laranja">Vivalá Viagens</span>.<br>Aqui você encontrará tudo que precisa para viajar no Brasil e mundo afora.<br>Compre passagens aéreas, rodoviárias, aluguel de carro, hospedagem e tenha descontos de até 50% em restaurantes renomados!<br>Explore as possibilidades e viaje conosco!</p>',
+                intro: '<p class="text-center">Você está em <span class="laranja">Viagens</span>.<br>Aqui você encontrará tudo que precisa para viajar no Brasil e mundo afora.<br>Compre passagens aéreas, rodoviárias, aluguel de carro, hospedagem e tenha descontos de até 50% em restaurantes renomados!<br>Explore as possibilidades e viaje conosco!</p>',
                 position: 'bottom'
               },
               {

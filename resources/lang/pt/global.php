@@ -19,7 +19,7 @@ return[
   'keywords_vivala' => 'Vivalá, Rede Social, Turismo, Viagem, Voluntariado, Impacto Social, Hospedagem, Transporte, Alimentação, Entretenimento',
 
 /* Pilares */
-  'lbl_wanna_travel' => 'Vívalá Viagens',
+  'lbl_wanna_travel' => 'Viagens',
   'lbl_wanna_connect' => 'Rede Social',
   'lbl_wanna_volunteer' => 'Instituto Vivalá',
 

@@ -141,19 +141,23 @@
                   <div class="col-md-10 col-lg-10">
                       {!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal form-login']) !!}
                       <div class="row">
+                          {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                           <div class="col-md-4 col-lg-4">
                               {!! Form::label('idioma', trans('global.lbl_language'), ['class' => 'titulo']) !!}
                           </div>
-                          <div class="col-md-3 col-lg-3">
+                          --}}
+                          <div class="col-md-3 col-md-offset-4 col-lg-3 col-lg-offset-4">
                               {!! Form::label('email', trans('global.lbl_login'), ['class' => 'titulo']) !!}
                           </div>
                       </div>
-
+                      
                       <div class="row">
+                          {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                           <div class="col-md-4 col-lg-4">
                               {!! Form::select('idioma', ['pt' => trans('global.lang_pt-br'), 'en' => trans('global.lang_en-us')], 'pt') !!}
                           </div>
-                          <div class="col-md-4 col-lg-4">
+                          --}}
+                          <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
                               {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email') ]) !!}
                           </div>
                           <div class="col-md-4 col-lg-4">
@@ -189,6 +193,7 @@
               <div class="col-md-7 col-lg-7">
                 <div class="col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
                   {{-- SVG do mapa WELCOME - Agora com tradução --}}
+                    {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                     <div id="brasilwelcome">
                         @if (Config::get('app.locale') === 'pt')
                           <img src="{{ asset('/img/welcome/mapa-vivala-ptbr.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.join_vivala') }}" width="100%" height="100%" />
@@ -196,6 +201,8 @@
                           <img src="{{ asset('/img/welcome/mapa-vivala-en.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.join_vivala') }}" width="100%" height="100%" />
                         @endif
                     </div>
+                    --}}
+                  {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                   <div class="balao-flutuante balao-1">
                       {{ trans('global.welcome_floatingballon1') }}
                   </div>
@@ -205,6 +212,7 @@
                   <div class="balao-flutuante balao-3">
                       {{ trans('global.welcome_floatingballon3') }}
                   </div>
+                  --}}
                   <div class="container-fluid">
                     <div class="row">
                       <div id="modal-manifesto">
