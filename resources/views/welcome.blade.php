@@ -225,114 +225,117 @@
                 </div>
               </div>
               <div class="col-md-5 col-lg-5 padding-b-2 form-cadastro-wrapper">
+                {!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
+                  <div id="welcome-cadastrar">
 
-              {!! Form::open(['url' => '/auth/register', 'class' => 'form-horizontal']) !!}
-                <div id="welcome-cadastrar">
-
-                  <div class="row">
-                    <div class="col-md-12 col-lg-12">
-                      <div class="col-md-5 padding-l-no"><h3>{{ trans('global.lbl_signup1') }}</h3></div>
-                      <div class="col-md-6 col-md-offset-1">
-                          <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
-                              <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
-                          </a>
+                    <div class="row">
+                      <div class="col-md-12 col-lg-12">
+                        <div class="col-md-5 padding-l-no">
+                          <h3>{{ trans('global.lbl_signup1') }}</h3>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class=row>
-                    <div class="col-md-11 col-lg-11 margin-t-2">
-                      @if (count($errors) > 0)
-                        <div class="row">
-                            <div class="col-md-12 col-lg-12">
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
+                    <div class=row>
+                      <div class="col-md-11 col-lg-11 margin-t-2">
+                        @if (count($errors) > 0)
+                          <div class="row">
+                              <div class="col-md-12 col-lg-12">
+                                  <div class="alert alert-danger">
+                                      <ul>
+                                          @foreach ($errors->all() as $error)
+                                          <li>{{ $error }}</li>
+                                          @endforeach
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div>
+                        @endif
+
+                        <div class="form-group">
+                            <div class="col-md-6 col-lg-6">
+                                {!! Form::text("username", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name')]) !!}
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                {!! Form::text("username_last", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name_last')]) !!}
                             </div>
                         </div>
-                      @endif
+                        {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
+                          <div class="form-group">
+                              <div class="col-md-6 col-lg-6">
+                                  <label class="radio-button radio-hidden">
+                                      {!! Form::radio("genero", "masculino") !!}
+                                      <span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_male') }}</span>
+                                  </label>
+                              </div>
+                              <div class="col-md-6 col-lg-6">
+                                  <label class="radio-button radio-hidden">
+                                      {!! Form::radio("genero", "feminino") !!}
+                                      <span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_female') }}</span>
+                                  </label>
+                              </div>
+                          </div>
+                        --}}
+                        {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
+                          <div class="form-group">
+                              <div class="col-md-12 col-lg-12">
+                                  <input type="text" name='aniversario' class="mascara-data form-control text-uppercase" placeholder='{{ trans("global.lbl_birthday") }}'>
+                              </div>
+                          </div>
+                        --}}
+                        <div class="form-group">
+                            <div class="col-md-6 col-lg-6">
+                                {!! Form::password("password", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password')]) !!}
+                            </div>
+                            <div class="col-md-6 col-lg-6">
+                                {!! Form::password("password_confirmation", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password_confirmation') ]) !!}
+                            </div>
+                        </div>
 
-                      <div class="form-group">
-                          <div class="col-md-6 col-lg-6">
-                              {!! Form::text("username", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name')]) !!}
-                          </div>
-                          <div class="col-md-6 col-lg-6">
-                              {!! Form::text("username_last", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name_last')]) !!}
-                          </div>
-                      </div>
-                      {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
-                      <div class="form-group">
-                          <div class="col-md-6 col-lg-6">
-                              <label class="radio-button radio-hidden">
-                                  {!! Form::radio("genero", "masculino") !!}
-                                  <span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_male') }}</span>
-                              </label>
-                          </div>
-                          <div class="col-md-6 col-lg-6">
-                              <label class="radio-button radio-hidden">
-                                  {!! Form::radio("genero", "feminino") !!}
-                                  <span class="text-uppercase">{{ trans('sexorient-gender.gen_opt_female') }}</span>
-                              </label>
-                          </div>
-                      </div>
-                      --}}
-                      {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
-                      <div class="form-group">
-                          <div class="col-md-12 col-lg-12">
-                              <input type="text" name='aniversario' class="mascara-data form-control text-uppercase" placeholder='{{ trans("global.lbl_birthday") }}'>
-                          </div>
-                      </div>
-                      --}}
-                      <div class="form-group">
-                          <div class="col-md-12 col-lg-12">
-                              {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email')]) !!}
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-md-12 col-lg-12">
-                              {!! Form::password("password", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password')]) !!}
-                          </div>
-                      </div>
-
-                      <div class="form-group">
-                          <div class="col-md-12 col-lg-12">
-                              {!! Form::password("password_confirmation", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password_confirmation') ]) !!}
-                          </div>
+                        <div class="form-group">
+                            <div class="col-md-12 col-lg-12">
+                                {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email')]) !!}
+                            </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div class="row">
-                      <div class="col-md-11 col-lg-11 welcome-privacy">
-                          <p>
-                            <span>{{ trans('global.welcome_aboutprivacy1') }}</span>
-                              <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_legal_terms') }}</a></span>
-                              <span>{{ trans('global.welcome_aboutprivacy2') }}</span>
-                              <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_data_policy') }}</a>,</span>
-                              <span>{{ trans('global.welcome_aboutprivacy3') }}</span>
-                              <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_cookie_use') }}</a>.</span>
-                          </p>
-                      </div>
-                  </div>
+                    <div class="row">
+                        <div class="col-md-11 col-lg-11 welcome-privacy">
+                            <p>
+                              <span>{{ trans('global.welcome_aboutprivacy1') }}</span>
+                                <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_legal_terms') }}</a></span>
+                                <span>{{ trans('global.welcome_aboutprivacy2') }}</span>
+                                <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_data_policy') }}</a>,</span>
+                                <span>{{ trans('global.welcome_aboutprivacy3') }}</span>
+                                <span> <a href="/paginas/termosecondicoes" target="_self" rel="license">{{ trans('global.lbl_cookie_use') }}</a>.</span>
+                            </p>
+                        </div>
+                    </div>
 
-                  <div class="row">
-                    <div class="col-md-11 col-lg-11">
-                      {{-- Tour OFFLINE - Desativado atualmente
-                      <!--div class="col-md-11 col-lg-11">
-                          <a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
-                      </div-->
-                      --}}
-                      <div class="col-md-4 col-lg-4 pull-right padding-r-0">
-                          {!!Form::submit( trans('global.lbl_confirm'), ['class' => 'btn btn-default']) !!}
+                    <div class="row">
+                      <div class="col-md-11 col-lg-11">
+                        {{-- Tour OFFLINE - Desativado atualmente
+                          <div class="col-md-11 col-lg-11">
+                              <a href="{{ url('/auth/login') }}" class="anchor-tour">Fazer um tour pela Vivalá, sem se cadastrar.</a>
+                          </div>
+                        --}}
+                        <div class="col-md-4 col-lg-4 pull-right padding-r-0">
+                            {!!Form::submit( trans('global.lbl_confirm'), ['class' => 'btn btn-default']) !!}
+                        </div>
                       </div>
                     </div>
+                    {!! Form::close() !!}
                   </div>
-                  {!! Form::close() !!}
+              </div>
+              <div class="col-md-5 col-lg-5 padding-b-2">
+                <span>{{ trans('global.lbl_or') }}</span>
+              </div>
+              <div class="col-md-5 col-lg-5 padding-b-2">
+                <div class="col-md-6 col-md-offset-1">
+                  <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
+                      <span class="fa fa-facebook"></span> {{ trans('global.fb_login') }}
+                  </a>
                 </div>
               </div>
             </div>
