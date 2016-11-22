@@ -17,7 +17,7 @@ return[
   'keywords_vivala' => 'Vivalá, Social Network, Tourism, Trip, Volunteering, Social Impact, Accomodation, Transport, Feeding, Entertainment',
 
 // Vertentes
-  'lbl_wanna_travel' => 'Trips',
+  'lbl_wanna_travel' => 'Vivalá Trips',
   'lbl_wanna_connect' => 'Social Network',
   'lbl_wanna_volunteer' => 'Vivalá Institute',
 
@@ -895,7 +895,7 @@ return[
   /  View : VIAJAR
   ------------------------------------------------------------------------------*/
     'wannatravel_title' => 'Vivalá in World',
-    'wannatravel_subtitle' => 'Find transport, accommodation, book restaurants and search for experiences all around the world!',
+    'wannatravel_subtitle' => 'Find transportation, lodging, restaurants and experiences for over 160 countries around the world!',
     'wannatravel_trip_already_know' => 'Already know where to go?',
     'wannatravel_trip_setup' => 'Build your trip',
     'wannatravel_trip_experiences' => 'Experiences',
