@@ -12,7 +12,7 @@
 }
 
 #welcome-header{
-	background-color: @cor-menu-welcome;
+	background-color: rgba(255,255,255,.9);
 	font-size:@font-size-rem*0.9;
 	font-family:@font-family-sans-serif;
 	font-weight:normal;
@@ -26,7 +26,7 @@
 		}
 	}
 	a {
-		color: @cor-primaria;
+		color: black;
 	}
 	label.titulo {
 		margin: 1em 0 0;
@@ -49,7 +49,7 @@
 	}
 	.rememberme {
 		word-wrap:break-word;
-		color: @cor-primaria;
+		color: black;
 		label {
 			padding:0.2em;
 		}
@@ -63,7 +63,7 @@
 		height: 1em;
 		margin:0;
 		border:0px solid white;
-		background-color: @cor-primaria;
+		background-color: black;
 		//corrigindo o desnivel com o label
 		margin-top:-0.2em;
 
@@ -250,8 +250,9 @@
 @media only screen and (min-width:@screen-lg-min){
 	#welcome-html body{
 		background-image: url("../../img/welcome/welcome-bg-lg.png");
-		background-position: center center;
+		background-position: center -28vh;
 		background-size: cover;
+		background-repeat: no-repeat;
 		#welcome-mobile-warning{
 			display:none;
 		}

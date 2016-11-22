@@ -264,7 +264,7 @@
                               {!! Form::text("username_last", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name_last')]) !!}
                           </div>
                       </div>
-
+                      {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                       <div class="form-group">
                           <div class="col-md-6 col-lg-6">
                               <label class="radio-button radio-hidden">
@@ -279,13 +279,14 @@
                               </label>
                           </div>
                       </div>
-
+                      --}}
+                      {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                       <div class="form-group">
                           <div class="col-md-12 col-lg-12">
                               <input type="text" name='aniversario' class="mascara-data form-control text-uppercase" placeholder='{{ trans("global.lbl_birthday") }}'>
                           </div>
                       </div>
-
+                      --}}
                       <div class="form-group">
                           <div class="col-md-12 col-lg-12">
                               {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email')]) !!}
