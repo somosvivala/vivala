@@ -1,7 +1,7 @@
 <div id="logo-vivala" class="logo-menu tour-pilares-step1">
 	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}">
   	{{-- SVG da logo VIVALÁ --}}
-    @if(Request::url() === url('/cuidar' || '/instituto'))
+    @if(Request::url() === (url('/cuidar') || url('/instituto')))
     <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
     @else
     <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
