@@ -191,7 +191,7 @@
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-7 col-lg-7">
-                <div class="col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1 text-center">
+                <div class="col-md-11 col-md-offset-1 col-lg-11 col-lg-offset-1">
                   {{-- SVG do mapa WELCOME - Agora com tradução --}}
                     {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
                     <div id="brasilwelcome">
@@ -321,7 +321,7 @@
                           </div>
                         --}}
                         <div class="col-md-4 col-lg-4 pull-right padding-r-0">
-                            {!!Form::submit( trans('global.lbl_confirm'), ['class' => 'btn btn-default']) !!}
+                            {!!Form::submit( trans('global.lbl_confirm'), ['class' => 'btn btn-acao-branco-vazio']) !!}
                         </div>
                       </div>
                     </div>
