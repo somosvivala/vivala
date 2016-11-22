@@ -231,18 +231,24 @@
                   </div>
                   <div id="row-baloes" class="row">
                     <div class="col-md-4 col-lg-4">
-                      <div class="balao-flutuante-aniversario balao-aniversario-1">
-                          <span>{{ trans('global.welcome_birthdayfloatingballon1') }}</span>
+                      <div class="balao-flutuante-aniversario-externo">
+                        <div class="balao-flutuante-aniversario balao-aniversario-1">
+                            <span>{{ trans('global.welcome_birthdayfloatingballon1') }}</span>
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-4 col-lg-4">
-                      <div class="balao-flutuante-aniversario balao-aniversario-2">
-                          <span>{{ trans('global.welcome_birthdayfloatingballon2') }}</span>
+                      <div class="balao-flutuante-aniversario-externo">
+                        <div class="balao-flutuante-aniversario balao-aniversario-2">
+                            <span>{{ trans('global.welcome_birthdayfloatingballon2') }}</span>
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-4 col-lg-4">
-                      <div class="balao-flutuante-aniversario balao-aniversario-3">
-                          <span>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
+                      <div class="balao-flutuante-aniversario-externo">
+                        <div class="balao-flutuante-aniversario balao-aniversario-3">
+                            <span>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
