@@ -290,13 +290,97 @@
 	    }
 	}
 }
-
-/* LG - Large Devices, Wide Screens (1200px and up) */
-@media only screen and (min-width:@screen-lg-min){
+/* 1920 x 1080 and up */
+@media only screen and (min-width:1920px){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-lg.png");
-		background-position: center -28vh;
+		background-image: url("../../img/welcome/welcome-bg-1920.png");
 		background-size: cover;
+		background-position: center -28vh;
+		background-repeat: no-repeat;
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
+	}
+}
+
+/* 1600 x 900 and up */
+@media only screen and (min-width:1600px){
+	#welcome-html body{
+		background-image: url("../../img/welcome/welcome-bg-1600.png");
+		background-size: cover;
+		background-position: center -28vh;
+		background-repeat: no-repeat;
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
+	}
+}
+
+/* 1440 x 900 and up */
+@media only screen and (min-width:1440px){
+	#welcome-html body{
+		background-image: url("../../img/welcome/welcome-bg-1440.png");
+		background-size: cover;
+		background-position: center -28vh;
+		background-repeat: no-repeat;
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
+	}
+}
+
+/* 1366 x 768 and up */
+@media only screen and (min-width:1366px){
+	#welcome-html body{
+		background-image: url("../../img/welcome/welcome-bg-1366.png");
+		background-size: cover;
+		background-position: center -28vh;
+		background-repeat: no-repeat;
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
+	}
+}
+
+/* 1280 x 1024 and up */
+@media only screen and (min-width:1280px) and (min-height:1024px){
+	#welcome-html body{
+		background-image: url("../../img/welcome/welcome-bg-1280-1.png");
+		background-size: cover;
+		background-position: center -28vh;
+		background-repeat: no-repeat;
+		#welcome-mobile-warning{
+			display:none;
+		}
+		#welcome-header,
+		#welcome-content{
+		  display: block;
+		}
+	}
+}
+
+/* 1280 x 800 and up */
+@media only screen and (min-width:1280px) and (min-height:800px){
+	#welcome-html body{
+		background-image: url("../../img/welcome/welcome-bg-1280-2.png");
+		background-size: cover;
+		background-position: center -28vh;
 		background-repeat: no-repeat;
 		#welcome-mobile-warning{
 			display:none;
@@ -328,7 +412,7 @@
 /* SM - Small Devices, Tablets (768px and up) */
 @media only screen and (min-width:@screen-sm-min) and (max-width:@screen-sm-max){
 	#welcome-html body{
-	  //background-image:url("../../img/welcome/welcome-bg-sm.png");
+	  	//background-image:url("../../img/welcome/welcome-bg-sm.png");
 		background-image:none;
 		background-color:#FFF;
 
