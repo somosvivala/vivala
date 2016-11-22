@@ -334,7 +334,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12 col-lg-12 text-center">
-                    <a href="{{ url('/fbLogin') }}" class="btn btn-social btn-facebook margin-t-1" target="_self" rel="nofollow">
+                    <a href="{{ url('/fbLogin') }}" class="btn btn-face margin-t-1" target="_self" rel="nofollow">
                         {{ trans('global.lbl_connect_yourself') }} <span class="fa fa-facebook"></span>
                     </a>
                   </div> 
