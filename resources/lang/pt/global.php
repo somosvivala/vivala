@@ -1131,6 +1131,10 @@ return[
       'welcome_floatingballon3' => 'Conecte-se com pessoas de todo o mundo que querem viajar.',
       'welcome_floatingballon4' => 'A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil. Junte-se a nós!',
       'welcome_floatingballon5' => 'A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil.',
+    /* Feature de Aniversário de 1 Ano da Vivalá */
+      'welcome_birthdayfloatingballon1' => '',
+      'welcome_birthdayfloatingballon2' => '',
+      'welcome_birthdayfloatingballon3' => '',
 
     /* Política de Dados */
       'welcome_aboutprivacy1' => 'Ao clicar em confirmar você concorda com nossos',
