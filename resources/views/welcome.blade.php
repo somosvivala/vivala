@@ -244,7 +244,7 @@
                     <div class="col-md-3 col-lg-4 col-xl-3">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-3">
-                            <span><br/>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
+                            <span>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
                         </div>
                       </div>
                     </div>
