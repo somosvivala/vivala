@@ -131,11 +131,16 @@
     {{-- Header da Welcome --}}
       <div id="welcome-header" class="hidden-xs hidden-sm">
           <div class="container-fluid">
-              <div class="col-md-5 col-lg-5 text-center">
+              <div class="col-md-2 col-lg-2 text-center">
                   <a class="navbar-brand nav-logo col-md-4 col-md-offset-1 col-lg-4 col-lg-offset-1" href="{{ url('home') }}" target="_self" rel="{{ trans('global.title_vivala') }}">
                       {{-- SVG da logo VIVALÁ --}}
                         <img src="{{ asset('vivala-logo.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" width="100%" height="100%" />
                   </a>
+              </div>
+              <div class="col-md-3 col-lg-3">
+                <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                  {{ trans('global.lbl_our_essence') }}
+                </a>
               </div>
               <div class="col-md-7 col-lg-7">
                   <div class="col-md-11 col-lg-11">
@@ -220,13 +225,6 @@
                     </div>
                   --}}
                   <div id="row-baloes" class="row">
-                    <div class="col-md-12 col-lg-12 col-xl-12">
-                      <div class="col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-4 col-xl-4 col-xl-offset-4 text-center margin-b-2">
-                        <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
-                          {{ trans('global.lbl_our_essence') }}
-                        </a>
-                      </div>
-                    </div>
                     <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-1">
