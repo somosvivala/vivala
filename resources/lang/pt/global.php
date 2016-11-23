@@ -1132,9 +1132,9 @@ return[
       'welcome_floatingballon4' => 'A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil. Junte-se a nós!',
       'welcome_floatingballon5' => 'A plataforma para pessoas de todo o mundo que têm interesse em viajar e transformar o Brasil.',
     /* Feature de Aniversário de 1 Ano da Vivalá */
-      'welcome_birthdayfloatingballon1' => 'Pesquise e compre transporte, hospedagem, desconto, em restaurantes e entretenimento em 164 países do mundo',
+      'welcome_birthdayfloatingballon1' => 'Pesquise e compre transporte, hospedagem, desconto em restaurantes e entretenimento em 164 países do mundo',
       'welcome_birthdayfloatingballon2' => 'Conecte-se com milhares de viajantes em nossa rede social e troque dicas e informações sobre destinos!',
-      'welcome_birthdayfloatingballon3' => 'Seja voluntário junto ao Instituto Vivalá e ajude projetos de impacto social a transformar a realidade pelo Brasil',
+      'welcome_birthdayfloatingballon3' => 'Seja voluntário junto ao Instituto Vivalá e ajude projetos de impacto social a transformar realidades pelo Brasil',
 
     /* Política de Dados */
       'welcome_aboutprivacy1' => 'Ao clicar em confirmar você concorda com nossos',
