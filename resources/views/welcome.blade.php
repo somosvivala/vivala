@@ -138,9 +138,11 @@
                   </a>
               </div>
               <div class="col-md-3 col-lg-3">
-                <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
-                  {{ trans('global.lbl_our_essence') }}
-                </a>
+                <div class="margin-t-2">
+                  <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                    {{ trans('global.lbl_our_essence') }}
+                  </a>
+                </div>
               </div>
               <div class="col-md-7 col-lg-7">
                   <div class="col-md-11 col-lg-11">
