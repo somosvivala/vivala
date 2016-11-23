@@ -3,7 +3,7 @@
   	{{-- SVG da logo VIVALÁ --}}
     @if(Request::url() === url('/cuidar'))
     <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
-    @elseif(Request::url() === url('/instituto'))
+    @elseif(Request::url() === url('/institutovivala'))
     <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
     @else
     <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>

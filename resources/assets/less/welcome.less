@@ -9,6 +9,9 @@
 #welcome-html{
 	position: relative;
 	min-height: 100%;
+	body{
+		background-image: url("../../img/welcome/welcome-bg.png");
+	}
 }
 
 #welcome-header{
@@ -175,16 +178,9 @@
 			right:5vw;
 		}
 	}
-	#modal-manifesto{
-		position: relative;
-		top: 50vh;
-		.btn-acao{
-			padding: 2px 5px!important;
-		}
-	}
 	#row-baloes{
 		position: relative;
-		top: 53vh;
+		top: 50vh;
 		.balao-flutuante-aniversario-externo{
 			background-color: transparent;
 			border-radius: 50%;
@@ -202,12 +198,12 @@
 				text-align: center;
 				span{
 					display: block;
-					max-width: 75%;
+					max-width: 80%;
 					color:white;
 					font-size:1.3rem;
-					font-family: @font-family-futura-bt-bold;
+					font-family: @font-family-avenir-black;
 					position: relative;
-					top: 15%;
+					top: 20%;
 					left: 12%;
 				}
 			}
@@ -346,7 +342,6 @@
 /* 1920 x 1080 and up */
 @media only screen and (min-width:1920px){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-1920.png");
 		background-size: cover;
 		background-position: center center;
 		background-repeat: no-repeat;
@@ -363,9 +358,8 @@
 /* 1600 x 900 and up */
 @media only screen and (min-width:1600px) and (max-width:1919px){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-1600.png");
-		background-size: cover;
-		background-position: center center;
+		background-size: 100% auto;
+		background-position: center top;
 		background-repeat: no-repeat;
 		#welcome-mobile-warning{
 			display:none;
@@ -380,9 +374,8 @@
 /* 1440 x 900 and up */
 @media only screen and (min-width:1440px) and (max-width:1599px){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-1440.png");
-		background-size: cover;
-		background-position: center center;
+		background-size: 100% auto;
+		background-position: center top;
 		background-repeat: no-repeat;
 		#welcome-mobile-warning{
 			display:none;
@@ -397,9 +390,8 @@
 /* 1366 x 768 and up */
 @media only screen and (min-width:1366px) and (max-width:1439px){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-1366.png");
-		background-size: cover;
-		background-position: center center;
+		background-size: 100% auto;
+		background-position: center top;
 		background-repeat: no-repeat;
 		#welcome-mobile-warning{
 			display:none;
@@ -414,9 +406,8 @@
 /* 1280 x 1024 and up */
 @media only screen and (min-width:1280px) and (max-width:1365px){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-1280.png");
 		background-size: cover;
-		background-position: center center;
+		background-position: center top;
 		background-repeat: no-repeat;
 		#welcome-mobile-warning{
 			display:none;
@@ -431,7 +422,6 @@
 /* MD - Medium Devices, Desktops (992px and up) */
 @media only screen and (min-width:@screen-md-min) and (max-width:@screen-md-max){
 	#welcome-html body{
-		background-image: url("../../img/welcome/welcome-bg-md.png");
 		background-position: center center;
 		background-size: cover;
 
@@ -448,7 +438,6 @@
 /* SM - Small Devices, Tablets (768px and up) */
 @media only screen and (min-width:@screen-sm-min) and (max-width:@screen-sm-max){
 	#welcome-html body{
-	  	//background-image:url("../../img/welcome/welcome-bg-sm.png");
 		background-image:none;
 		background-color:#FFF;
 
@@ -468,7 +457,6 @@
 /* XS - Extra Small Devices, Phones (480px and up) */
 @media only screen and (min-width:@screen-xs-min) and (max-width:@screen-xs-max){
 	#welcome-html body{
-		//background-image:url("../../img/welcome/welcome-bg-xs.png");
 		background-image:none;
 		background-color:white;
 

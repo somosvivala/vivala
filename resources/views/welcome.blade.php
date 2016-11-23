@@ -168,10 +168,7 @@
                           </div>
                       </div>
                       <div class="row">
-                          <div class="col-md-4 col-lg-4">
-                              &nbsp;
-                          </div>
-                          <div class="col-md-4 col-lg-4">
+                          <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
                               <label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">&#8192;{{ trans('global.lbl_login_keepme') }}</label>
                           </div>
                           <div class="col-md-4 col-lg-4">
@@ -222,32 +219,32 @@
                       </div>
                     </div>
                   --}}
-                  <div id="modal-manifesto" class="row">
-                    <div class="text-center">
-                      <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
-                        {{ trans('global.lbl_our_essence') }}
-                      </a>
-                    </div>
-                  </div>
                   <div id="row-baloes" class="row">
-                    <div class="col-md-4 col-lg-4">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                      <div class="col-md-3 col-md-offset-3 col-lg-3 col-lg-offset-4 col-xl-4 col-xl-offset-4 text-center margin-b-2">
+                        <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                          {{ trans('global.lbl_our_essence') }}
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-1">
                             <span>{{ trans('global.welcome_birthdayfloatingballon1') }}</span>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4 col-lg-4">
+                    <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-2">
                             <span>{{ trans('global.welcome_birthdayfloatingballon2') }}</span>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-4 col-lg-4">
+                    <div class="col-md-3 col-lg-4 col-xl-3">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-3">
-                            <span>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
+                            <span><br/>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
                         </div>
                       </div>
                     </div>
