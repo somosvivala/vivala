@@ -222,14 +222,14 @@
                       </div>
                     </div>
                   --}}
-                  <div id="modal-manifesto" class="row">
-                    <div class="text-center">
-                      <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
-                        {{ trans('global.lbl_our_essence') }}
-                      </a>
-                    </div>
-                  </div>
                   <div id="row-baloes" class="row">
+                    <div class="col-md-12 col-lg-12 col-xl-12">
+                      <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
+                        <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                          {{ trans('global.lbl_our_essence') }}
+                        </a>
+                      </div>
+                    </div>
                     <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-1">
