@@ -131,15 +131,15 @@
     {{-- Header da Welcome --}}
       <div id="welcome-header" class="hidden-xs hidden-sm">
           <div class="container-fluid">
-              <div class="col-md-2 col-lg-2 text-center">
+              <div class="col-md-2 col-lg-2 padding-r-0 text-center">
                   <a class="navbar-brand nav-logo col-md-4 col-md-offset-1 col-lg-4 col-lg-offset-1" href="{{ url('home') }}" target="_self" rel="{{ trans('global.title_vivala') }}">
                       {{-- SVG da logo VIVALÁ --}}
                         <img src="{{ asset('vivala-logo.svg') }}" alt="{{ trans('global.title_vivala') }}" title="{{ trans('global.title_vivala') }}" width="100%" height="100%" />
                   </a>
               </div>
-              <div class="col-md-3 col-lg-3">
+              <div class="col-md-3 col-lg-3 padding-l-0">
                 <div class="margin-t-2">
-                  <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
+                  <a href="#" class="btn btn-acao-laranja-vazio" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                     {{ trans('global.lbl_our_essence') }}
                   </a>
                 </div>
