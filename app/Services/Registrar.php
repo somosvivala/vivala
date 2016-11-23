@@ -7,9 +7,29 @@ use App\PrettyUrl;
 use Carbon\Carbon;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
-use Mail;
+use App\Repositories\MailSenderRepository;
+use App\Repositories\PostsRepository;
 
-class Registrar implements RegistrarContract {
+class Registrar implements RegistrarContract
+{
+
+    /* instancia do repositorio de emails para enviar o email de welcome */
+    private $emailRepository;
+
+    /* instancia do repositorio de posts para criar o post de bem vindo */
+    private $postRepository;
+
+    /**
+     * Constructor recebendo instancias dos repositorios que ele necessita
+     *
+     * @param $emailRepository - Instancia de MailSenderRepository
+     * @param $postsRepository - Instancia de PostsRepository
+     */
+    function __construct(MailSenderRepository $emailRepository, PostsRepository $postsRepository)
+    {
+        $this->emailRepository = $emailRepository;
+        $this->postRepository = $postsRepository;
+    }
 
     /**
      * Get a validator for an incoming registration request.
@@ -52,54 +72,29 @@ class Registrar implements RegistrarContract {
         $user = User::create([
             'username' => $nome,
             'email' => $data['email'],
-            'genero' => $data['genero'],
             'password' => bcrypt($data['password'])
         ]);
 
-
-        //Criando perfil usando as informações da tela de registro.
+        /* Criando perfil e salvando as informacoes do cadastro */
         $perfil = new Perfil;
         $perfil->user_id = $user->id;
         $perfil->nome_completo = $nome .' '. $sobrenome;
         $perfil->apelido = $nome;
-        $perfil->aniversario = Carbon::createFromFormat('d/m/Y', $data['aniversario']);
         $perfil->save();
 
-
-        //Criando uma prettyUrl para o novo usuario (username_currentTimestamp)
+        /* Criando uma prettyUrl para o novo usuario (username_currentTimestamp) */
         $prettyUrl = new PrettyUrl();
         $prettyUrl->url = str_replace(" ", "", $user->username) . '_' . Carbon::now()->getTimestamp();
         $prettyUrl->tipo = 'usuario';
         $perfil->prettyUrl()->save($prettyUrl);
 
-        // Envia um email de boas vindas
-        Mail::send('emails.bemvindo', ['user' => $user], function ($message) use ($user) {
-            $message->to($user->email, $user->username)->subject('Bem vindo à Vivalá');
-            $message->from('noreply@vivalabrasil.com.br', 'Vivalá');
-        });  
+        /* Usando do PostsRepository para fazer o post de boas vindas */
+        $postBemVindo = $this->postRepository->getPostBemVindo($user);
+        $perfil->posts()->save($postBemVindo);
 
-        // Faz um post de criação de perfil numerado caso seja < 300
-        // e não numerado (só com o welcome) caso seja > 300
-        if($user->genero == 'fb.female' || $user->genero == 'feminino')
-            $welcome = "Bem vinda!";
-        else
-            $welcome = "Bem vindo!";
-
-        $novoPost = new Post();
-
-        if($perfil->id <= 300)
-            $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." é a ".$perfil->id."ª pessoa a se juntar à Vivalá. ".$welcome;
-        else
-            $novoPost->descricao = "<h1><i class='fa fa-star'></i></h1>".$perfil->apelido." se juntou à Vivalá. ".$welcome;
-
-        $novoPost->tipo_post = 'acontecimento';
-        $novoPost->relevancia = 999;
-        $novoPost->relevancia_rate = 10;
-
-        //Salvando novoPost para entidadeAtiva
-        $perfil->posts()->save($novoPost);
+        /* Usando do MailSenderRepository para enviar o email de boas vindas */
+        $this->emailRepository->enviaEmailBemVindo($user);
 
         return $user;
     }
-
 }
