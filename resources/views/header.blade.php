@@ -43,7 +43,7 @@
 				</a>
 			</li>
 			<li id="menu-cuidar" class="menu-cuidar tour-pilares-step5">
-				<a href="{{ url('/cuidar') }}" class="click-img-no-border">
+				<a href="{{ url('/institutovivala') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-transformar vi"></i>
 					<span>{!! trans('global.lbl_wanna_volunteer') !!}</span>
 				</a>

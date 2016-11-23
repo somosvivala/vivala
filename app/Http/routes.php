@@ -88,8 +88,10 @@ Route::group(['middleware' => 'desktop.only'], function() {
 
     // Rotas dos três pilares do sistema
     Route::resource('viajar','ViajarController');
-    Route::resource('cuidar','CuidarController');
     Route::resource('conectar','ConectarController');
+
+    /** rota para o instituto vivala (antigo /cuidar) **/
+    Route::get('institutovivala','CuidarController@index');
 
     Route::post('cotarviagem', 'CotarViagensController@getForm');
     Route::post('cotarviagem/data', 'CotarViagensController@getData');
