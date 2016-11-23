@@ -90,11 +90,10 @@ class AuthController extends Controller {
 
         if ($validator->fails())
         {
+
             return redirect('auth/login')
-					->withInput($request->only('email', 'remember'))
-					->withErrors([
-						'email' => 'Não encontramos um usuário com essas credencias'
-					]);
+                ->withInput($request->only('email', 'remember'))
+                ->withErrors($validator->messages());
         }
 
 		$credentials = $request->only('email', 'password');
@@ -103,6 +102,15 @@ class AuthController extends Controller {
 		{
 			return redirect()->intended($this->redirectPath());
 		}
+
+
+        /* Se chegou aqui entao o login/user estao errados */
+        return redirect('auth/login')
+            ->withInput($request->only('email', 'remember'))
+            ->withErrors([
+                'email' => 'Não encontramos um usuário com essas credencias'
+            ]);
+
 	}
 
 

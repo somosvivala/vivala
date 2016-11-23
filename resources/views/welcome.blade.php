@@ -165,10 +165,10 @@
                           </div>
                           --}}
                           <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
-                              {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email') ]) !!}
+                              {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email'), 'required' ]) !!}
                           </div>
                           <div class="col-md-4 col-lg-4">
-                              {!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('global.lbl_password') ]) !!}
+                              {!! Form::password("password", ['class' => 'form-control', "placeholder" => trans('global.lbl_password') , 'required' ]) !!}
                               <span class="btn-submit">
                                   {!! Form::submit( trans('global.lbl_ok'), ['class' => 'btn-default btn loginbtn']) !!}
                               </span>

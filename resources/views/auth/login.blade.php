@@ -13,7 +13,7 @@
 				<div class="panel-body">
 					@if (count($errors) > 0)
 						<div class="alert alert-danger">
-							<strong>{{ trans('global.error_whops') }}</strong> {{ trans('global.error_input_problem') }}<br>{{ trans('global.error_input_again') }}<br><br>
+							<strong>{{ trans('global.error_whops') }}</strong> {{ trans('global.error_input_problem') }} {{ trans('global.error_input_again') }}<br><br>
 							<ul>
 								@foreach ($errors->all() as $error)
 									<li>{{ $error }}</li>
