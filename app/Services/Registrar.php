@@ -19,13 +19,22 @@ class Registrar implements RegistrarContract {
      */
     public function validator(array $data)
     {
-        return Validator::make($data, [
+        /* Criando uma instancia de validator com as regras da request */
+        $validator = Validator::make($data, [
             'username' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'genero' => 'required',
-            'aniversario' => 'required|date_format:"d/m/Y"'
         ]);
+
+        /* Usando metodo setAttributeNames do Validator para mostrar 'nice names' nas mensagens de erro */
+        $validator->setAttributeNames([
+            'username' => 'nome',
+            'email' => 'email',
+            'password' => 'senha'
+        ]);
+
+        return $validator;
+
     }
 
     /**
