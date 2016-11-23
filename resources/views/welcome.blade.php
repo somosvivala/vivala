@@ -257,7 +257,7 @@
 
                     <div class="row">
                       <div class="col-md-12 col-lg-12">
-                        <div class="col-md-5 padding-l-no">
+                        <div class="col-md-12 padding-l-no">
                           <h3>{{ trans('global.lbl_signup1') }}</h3>
                         </div>
                       </div>
