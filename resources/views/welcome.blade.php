@@ -271,23 +271,21 @@
                         @if (count($errors) > 0)
                           <div class="row">
                               <div class="col-md-12 col-lg-12">
-                                  <div class="alert alert-danger">
-                                      <ul>
-                                          @foreach ($errors->all() as $error)
-                                          <li>{{ $error }}</li>
-                                          @endforeach
-                                      </ul>
-                                  </div>
+                                  <ul class="lista-erros-welcome">
+                                      @foreach ($errors->all() as $error)
+                                      <li class="item-erros-welcome">{{ $error }}</li>
+                                      @endforeach
+                                  </ul>
                               </div>
                           </div>
                         @endif
 
                         <div class="form-group">
                             <div class="col-md-6 col-lg-6">
-                                {!! Form::text("username", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name')]) !!}
+                                {!! Form::text("username", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name'), 'required']) !!}
                             </div>
                             <div class="col-md-6 col-lg-6">
-                                {!! Form::text("username_last", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name_last')]) !!}
+                                {!! Form::text("username_last", null, ['class' => 'form-control text-uppercase', 'placeholder' => trans('global.lbl_name_last'), 'required']) !!}
                             </div>
                         </div>
                         {{-- REMOVIDO DURANTE A FEATURE DE ANIVERSÁRIO DE 1 ANO
@@ -315,16 +313,16 @@
                         --}}
                         <div class="form-group">
                             <div class="col-md-6 col-lg-6">
-                                {!! Form::password("password", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password')]) !!}
+                                {!! Form::password("password", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password'), 'required']) !!}
                             </div>
                             <div class="col-md-6 col-lg-6">
-                                {!! Form::password("password_confirmation", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password_confirmation') ]) !!}
+                                {!! Form::password("password_confirmation", ['class' => 'form-control text-uppercase', "placeholder" => trans('global.lbl_password_confirmation'), 'required' ]) !!}
                             </div>
                         </div>
 
                         <div class="form-group">
                             <div class="col-md-12 col-lg-12">
-                                {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email')]) !!}
+                                {!! Form::email("email", old('email'), ['class' => 'form-control', 'placeholder' => trans('global.lbl_email'), 'required']) !!}
                             </div>
                         </div>
                       </div>
