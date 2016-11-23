@@ -51,8 +51,8 @@ Route::group(['middleware' => 'desktop.only'], function() {
     Route::resource('viajar','ViajarController');
     Route::resource('conectar','ConectarController');
 
-    /** rota para o instituto vivala (antigo /cuidar) **/
-    Route::get('institutovivala','CuidarController@index');
+    /** rota para o instituto (antigo /cuidar) **/
+    Route::get('instituto','CuidarController@index');
 
     Route::post('cotarviagem', 'CotarViagensController@getForm');
     Route::post('cotarviagem/data', 'CotarViagensController@getData');

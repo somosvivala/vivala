@@ -20,9 +20,11 @@ class AppServiceProvider extends ServiceProvider {
       view()->composer('_notificacoesMsg', 'App\Http\Controllers\NotificacaoController@getNotificacoesMsg');
       view()->composer('_notificacoesGeral', 'App\Http\Controllers\NotificacaoController@getNotificacoesgeral');
 
-      // Passa outras páginas do usuario e dados da entidade ativa no
-      // momento
+      // Passa outras páginas do usuario e dados da entidade ativa no momento
       view()->composer('header', 'App\Http\Controllers\PaginaController@getMenu');
+
+      /* Pegando a lista de todas as rotas do instituto para controlar o logo */
+      view()->composer('header', 'App\Repositories\OngRepository@injectArrayRotasInstituto');
 
 	}
 

@@ -14,6 +14,7 @@ return[
   'lbl_vivala' => 'Vivalá',
   'ph_vivala' => 'Vivalá',
   'title_vivala' => 'Vivalá',
+  'title_instituto' => 'Instituto Vivalá',
   'join_vivala' => 'Junte-se a Vivalá e conecte-se ao Brasil de verdade.',
   'description_vivala' => 'A Vivalá é uma plataforma global que conecta pessoas que têm interesse em viajar e transformar o Brasil. Junte-se a Vivalá e conecte-se ao Brasil de verdade!',
   'keywords_vivala' => 'Vivalá, Rede Social, Turismo, Viagem, Voluntariado, Impacto Social, Hospedagem, Transporte, Alimentação, Entretenimento',

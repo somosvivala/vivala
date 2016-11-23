@@ -90,6 +90,27 @@ class Ong extends Model {
     }
 
     /**
+     * Definindo um acessor para a prettyURL da ong
+     */
+    public function getUrlAttribute()
+    {
+        if($this->prettyUrl()->first())
+            return url('ong/'.rawurlencode($this->prettyUrl()->first()->url));
+        else
+            return url("ong/".$this->id);
+    }
+
+    /**
+     * Definindo um acessor para a url de edicao da ong
+     */
+    public function getUrlEdicaoAttribute()
+    {
+        return url("ong/".$this->id.'/edit');
+    }
+
+
+
+    /**
      * Accessor para a propriedade avatar
      */
     public function getAvatarAttribute() 

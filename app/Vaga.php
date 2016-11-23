@@ -215,5 +215,22 @@ class Vaga extends Model {
         return Post::where('descricao', 'ILIKE', "%vagas/".$this->id."%")->get();
     }
 
+    /**
+     * Definindo um acessor para a url da Vaga
+     */
+    public function getUrlAttribute()
+    {
+        return url('vagas/'.$this->id);
+    }
+
+    /**
+     * Definindo um acessor para a url de edicao da ong
+     */
+    public function getUrlEdicaoAttribute()
+    {
+        return url("vagas/".$this->id.'/edit');
+    }
+
+
 
 }

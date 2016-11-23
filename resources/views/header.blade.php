@@ -1,14 +1,14 @@
 <div id="logo-vivala" class="logo-menu tour-pilares-step1">
-	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}">
   	{{-- SVG da logo VIVALÁ --}}
-    @if(Request::url() === url('/cuidar'))
-    <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
-    @elseif(Request::url() === url('/institutovivala'))
-    <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
+    @if( in_array(Request::url(), $arrayRotasInstituto) )
+	<a class="navbar-brand logo click-img-no-border" href="{{ url('home') }}">
+        <img src="{{ asset('vivala-instituto-logo-135x50.png') }}" width="100%" height="100%" title="{{ trans('global.title_instituto') }}" alt="{{ trans('global.title_instituto') }}"/>
+    <a>
     @else
-    <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
-    @endif
+	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}">
+        <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
 	</a>
+    @endif
 </div>
 
 <div class="menu-principal">
@@ -43,7 +43,7 @@
 				</a>
 			</li>
 			<li id="menu-cuidar" class="menu-cuidar tour-pilares-step5">
-				<a href="{{ url('/institutovivala') }}" class="click-img-no-border">
+				<a href="{{ url('/instituto') }}" class="click-img-no-border">
 					<i class="icon-menu-principal icon-vivala-quero-transformar vi"></i>
 					<span>{!! trans('global.lbl_wanna_volunteer') !!}</span>
 				</a>
