@@ -1,7 +1,7 @@
 <div id="logo-vivala" class="logo-menu tour-pilares-step1">
   	{{-- SVG da logo VIVALÁ --}}
     @if( in_array(Request::url(), $arrayRotasInstituto) )
-	<a class="navbar-brand logo click-img-no-border" href="{{ url('home') }}">
+	<a class="navbar-brand logo click-img-no-border" href="{{ url('instituto') }}">
         <img src="{{ asset('vivala-instituto-logo-135x50.png') }}" width="100%" height="100%" title="{{ trans('global.title_instituto') }}" alt="{{ trans('global.title_instituto') }}"/>
     <a>
     @else
