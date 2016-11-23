@@ -1,20 +1,26 @@
 <div id="logo-vivala" class="logo-menu tour-pilares-step1">
 	<a class="navbar-brand logo beta click-img-no-border" href="{{ url('home') }}">
   	{{-- SVG da logo VIVALÁ --}}
+    @if(Request::url() === url('/cuidar'))
+    <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
+    @elseif(Request::url() === url('/instituto'))
+    <img src="{{ asset('vivala-instituto-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
+    @else
     <img src="{{ asset('vivala-logo.svg') }}" width="100%" height="100%" title="{{ trans('global.title_vivala') }}" alt="{{ trans('global.alt_vivala') }}"/>
+    @endif
 	</a>
 </div>
 
 <div class="menu-principal">
 	<div class="hidden-xs hidden-sm col-lg-4">
 		{{-- BARRA BUSCA - TEMPORÁRIO pra mostrar só em CONECTAR, mandar uma variável pra view pra dizer em qual pilar estamos seria o mais ideal --}}
-		@if(Request::url() === url('/') . '/conectar')
+		@if(Request::url() === url('/conectar'))
 			<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
 				<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
-		@elseif(Request::url() === url('/') . '/perfil')
+		@elseif(Request::url() === url('/perfil'))
 			<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
 				<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
-		@elseif(Request::url() === url('/') . '/paginas/ultimasnoticias')
+		@elseif(Request::url() === url('/paginas/ultimasnoticias'))
 			<input data-url="{{ url() }}" id="busca-geral-menu" class="busca-geral-menu" placeholder="{{ trans('global.lbl_search_type_here') }}" type="search">
 				<i class="fa fa-spinner fa-pulse loading-search soft-hide laranja" aria-hidden="true"></i>
 		@endif
@@ -54,12 +60,12 @@
 	    @include('_notificacoesFollow')
 	</div>
 	{{-- DESATIVADO TEMPORARIAMENTE
-		<!-- button type="button" id="notificacoes-msg" class="tour-pilares-step7" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
+		<button type="button" id="notificacoes-msg" class="tour-pilares-step7" data-unread="0" title='{{ trans("global.lbl_message_") }}'>
 			<i class="icon-menu-notificacao icon-vivala-menu-chat vi" alt='{{ trans("global.lbl_message_") }}'></i>
     </button>
     <div class="notificacoes-msg">
           @include('_notificacoesMsg')
-    </div-->
+    </div>
   --}}
     <button type="button" id="notificacoes-geral" class="tour-pilares-step8" data-unread="0" title='{{ trans("global.lbl_notification_") }}'>
       <i class="icon-menu-notificacao icon-vivala-menu-brasil vi" alt='{{ trans("global.lbl_notification_") }}'></i>
