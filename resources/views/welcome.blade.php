@@ -138,7 +138,7 @@
                   </a>
               </div>
               <div class="col-md-3 col-lg-3 padding-l-0">
-                <div class="margin-t-2">
+                <div id="btn-entenda-essencia">
                   <a href="#" class="btn btn-acao-laranja-vazio" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                     {{ trans('global.lbl_our_essence') }}
                   </a>
