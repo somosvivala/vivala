@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Validator;
 
 use Illuminate\Support\Facades\Session;
 
@@ -66,5 +67,45 @@ class AuthController extends Controller {
     {
     	$request->session()->flush();
     }
+
+	/**
+	 * Overriding no postLogin para conseguir redirecionar para a rota correta
+	 *
+	 * @param  \Illuminate\Http\Request  $request
+	 * @return \Illuminate\Http\Response
+	 */
+	public function postLogin(Request $request)
+	{
+         /** Criando instancia de um Validator especificando suas regras */
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        /* Usando metodo setAttributeNames do Validator para mostrar 'nice names' nas mensagens de erro */
+        $validator->setAttributeNames([
+            'email' => 'email',
+            'password' => 'senha'
+        ]);
+
+        if ($validator->fails())
+        {
+            return redirect('auth/login')
+					->withInput($request->only('email', 'remember'))
+					->withErrors([
+						'email' => 'Não encontramos um usuário com essas credencias'
+					]);
+        }
+
+		$credentials = $request->only('email', 'password');
+
+		if ($this->auth->attempt($credentials, $request->has('remember')))
+		{
+			return redirect()->intended($this->redirectPath());
+		}
+	}
+
+
+
 
 }
