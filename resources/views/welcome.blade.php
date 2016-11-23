@@ -224,7 +224,7 @@
                   --}}
                   <div id="row-baloes" class="row">
                     <div class="col-md-12 col-lg-12 col-xl-12">
-                      <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
+                      <div class="col-md-3 col-md-offset-3 col-lg-4 col-lg-offset-4 col-xl-4 col-xl-offset-4 margin-b-2">
                         <a href="#" class="btn btn-acao" data-toggle="modal" data-target="#modal-video-manifesto" data-theVideo="https://www.youtube.com/embed/kaIRH4Uh7nw" data-backdrop="static">
                           {{ trans('global.lbl_our_essence') }}
                         </a>
