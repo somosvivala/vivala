@@ -168,10 +168,7 @@
                           </div>
                       </div>
                       <div class="row">
-                          <div class="col-md-4 col-lg-4">
-                              &nbsp;
-                          </div>
-                          <div class="col-md-4 col-lg-4">
+                          <div class="col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4">
                               <label class="rememberme" for="remember"><input type="checkbox" name="remember" id="remember">&#8192;{{ trans('global.lbl_login_keepme') }}</label>
                           </div>
                           <div class="col-md-4 col-lg-4">
@@ -240,14 +237,14 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 col-xl-offset-1">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-2">
-                            <span>{{ trans('global.welcome_birthdayfloatingballon2') }}</span>
+                            <span><br/>{{ trans('global.welcome_birthdayfloatingballon2') }}</span>
                         </div>
                       </div>
                     </div>
                     <div class="col-md-3 col-lg-4 col-xl-3">
                       <div class="balao-flutuante-aniversario-externo">
                         <div class="balao-flutuante-aniversario balao-aniversario-3">
-                            <span>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
+                            <span><br/>{{ trans('global.welcome_birthdayfloatingballon3') }}</span>
                         </div>
                       </div>
                     </div>
