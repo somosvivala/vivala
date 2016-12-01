@@ -757,15 +757,15 @@ $(document).ready(function() {
                 intro: '<p class="text-center">In <span class="laranja">Accommodation, Flights & Packages</span> you can find air tickets to over 140 countries and accommodation in more than 160 countries.<br>We have the best prices and market partners.<br><span class="laranja">Create packages with the possibility to add a rented car and earn up to 35% off!</span></p>',
                 position: 'bottom'
               },
-              {
+                            {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">In <span class="laranja">Experiences</span> you will find <span class="laranja">wonderful discoveries and sensations</span> never before experienced. There are several experiences in various parts of the country to you live!',
-                position: 'bottom',
+                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.700 restaurants spread across 12 Brazilian states</span>.<br>Join the club and delight yourself!</p>',
+                position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step6',
-                intro: '<p class="text-center">In <span class="laranja">Restaurants</span> we have an advantage club with <span class="laranja">discounts up to 5 % in more than 1.700 restaurants spread across 12 Brazilian states</span>.<br>Join the club and delight yourself!</p>',
-                position: 'bottom'
+                intro: '<p class="text-center">In <span class="laranja">Experiences</span> you will find <span class="laranja">wonderful discoveries and sensations</span> never before experienced. There are several experiences in various parts of the country to you live!',
+                position: 'bottom',
               }
             ]
           });
@@ -786,7 +786,7 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step3',
-                intro: '<p class="text-center">Em <span class="laranja">Experiências</span> você irá encontrar <span class="laranja">descobertas maravilhosas e sensações</span> nunca antes sentidas. São diversas experiências nas mais diversas partes do país para você viver!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br>Busque aqui em sua próxima viagem e pé na estrada!</p>',
                 position: 'bottom'
               },
               {
@@ -796,12 +796,12 @@ $(document).ready(function() {
               },
               {
                 element: '.tour-pilar-viajar-step5',
-                intro: '<p class="text-center">Em <span class="laranja">Passagens Rodoviárias</span> você encontra <span class="laranja">passagens de ônibus para 3.000 destinos no Brasil</span>, operados por mais de 60 viações rodoviárias!<br>Busque aqui em sua próxima viagem e pé na estrada!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.700 restaurantes espalhados por 12 estados brasileiros</span>.<br>Entre para o clube e delicie-se!</p>',
                 position: 'bottom'
               },
               {
                 element: '.tour-pilar-viajar-step6',
-                intro: '<p class="text-center">Em <span class="laranja">Restaurantes</span> temos um clube de vantagens com <span class="laranja">descontos de até 50% em mais de 1.700 restaurantes espalhados por 12 estados brasileiros</span>.<br>Entre para o clube e delicie-se!</p>',
+                intro: '<p class="text-center">Em <span class="laranja">Experiências</span> você irá encontrar <span class="laranja">descobertas maravilhosas e sensações</span> nunca antes sentidas. São diversas experiências nas mais diversas partes do país para você viver!</p>',
                 position: 'bottom'
               }
             ]

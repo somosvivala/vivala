@@ -32,14 +32,14 @@
                 {{ trans('global.wannatravel_trip_hotels_flights_packs') }}
               </a>
             </li>
-            <li class="col-lg-3 tour-pilar-viajar-step5 active">
-              <a class="experiencias" href="/experiencias">
-                {{ trans('global.wannatravel_trip_experiences') }}
-              </a>
-            </li>
-            <li class="col-lg-3 tour-pilar-viajar-step6">
+            <li class="col-lg-3 tour-pilar-viajar-step5">
               <a class="restaurantes logger-ativo" href="/viajar#restaurantes" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}">
                 {{ trans('global.wannatravel_trip_restaurants') }}
+              </a>
+            </li>
+            <li class="col-lg-3 tour-pilar-viajar-step6 active">
+              <a class="experiencias" href="/experiencias">
+                {{ trans('global.wannatravel_trip_experiences') }}
               </a>
             </li>
           </div>

@@ -28,13 +28,13 @@
                 </a>
             </li>
             <li class="col-sm-3 tour-pilar-viajar-step5">
-                <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
-                  {{ trans('global.wannatravel_trip_experiences') }}
+                <a class="restaurantes logger-ativo" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
+                    {{ trans('global.wannatravel_trip_restaurants') }}
                 </a>
             </li>
             <li class="col-sm-3 tour-pilar-viajar-step6">
-                <a class="restaurantes logger-ativo" data-tipo="abasviajar_tipo_restaurantes" data-desc="abasviajar_desc_restaurantes" data-loggerurl="{{ $_SERVER['REQUEST_URI'] }}" href="#restaurantes" aria-controls="restaurantes" role="tab" data-toggle="tab">
-                    {{ trans('global.wannatravel_trip_restaurants') }}
+                <a class="experiencias" href="#experiencias" aria-controls="experiencias" role="tab" data-toggle="tab">
+                  {{ trans('global.wannatravel_trip_experiences') }}
                 </a>
             </li>
           </div>
