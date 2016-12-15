@@ -76,10 +76,16 @@ class ClickBusSeeder extends Seeder
                 'state_name'       => $place->place->state->name
             );
 
+            /**
+             * Removido obtencao da latitude/longitude dos places da Clickbus, estavam vindo fora de formato.
+             *
+
             //Se estiver usando postgres, e o place tiver um campo lat / long, entao adicionar geoponto
             if (strcasecmp(env('DB_DRIVER'), 'pgsql') == 0 && count($place->place->longitude) > 0 && count($place->place->latitude) > 0) {
                 $array_insert['place_position'] = DB::raw("ST_GeomFromText('POINT({$place->place->longitude} {$place->place->latitude})', 4326)");
             }
+
+            **/
 
             //Inserindo coluna.
             DB::table('ClickBusPlaces')->insert($array_insert);
