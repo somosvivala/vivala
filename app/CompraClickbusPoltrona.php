@@ -100,7 +100,7 @@ class CompraClickbusPoltrona extends Model
      */
     public function getDataDesembarqueAttribute()
     {
-        return $this->arrival_time->format('d/m/Y');
+        return $this->arrival_time ? $this->arrival_time->format('d/m/Y') : 'INDEFINIDO';
     }
 
     /**

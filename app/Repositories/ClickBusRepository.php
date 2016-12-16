@@ -5,6 +5,10 @@ namespace app\Repositories;
 use Jenssegers\Date\Date;
 use App\RelatorioClickbus;
 use App\CompraClickbus;
+use App\CompraClickbusPoltrona;
+use App\ClickBusPlace;
+use Carbon\Carbon;
+
 
 class ClickBusRepository
 {
@@ -171,6 +175,8 @@ class ClickBusRepository
         $context = stream_context_create($context);
         $result = file_get_contents($this->url.'/order/'.$idOrder, false, $context);
         $decoded = json_decode($result);
+
+        
 
         $retorno = preg_match('/content/', $result) ? $decoded->content : false;
         return $retorno;
@@ -361,4 +367,45 @@ class ClickBusRepository
         return false;
 
     }
+
+
+    /**
+     * Metodo para fazer update de uma compra, obtendo as passagens viacoes etc..
+     *
+     * @param $compra - instancia do model App\CompraClickbus.php
+     */
+    public function recuperaPoltronas(CompraClickbus $compra)
+    {
+        $retorno = $this->getOrder($compra->clickbus_order_id);
+
+        if ( !$retorno  || count($retorno->order_items) < 1 ) {
+            echo "== Retorno getOrders invalido";
+            return;
+        }
+
+        /* iterando sob as poltronas dessa compra **/
+        foreach ( $retorno->order_items as $poltrona ) {
+            $departure_id = ClickBusPlace::where('place_name', $poltrona->origin_station_name)->first()->id;
+            $arrival_id = ClickBusPlace::where('place_name', $poltrona->destination_station_name)->first()->id;
+
+            $compra->poltronas()->save(CompraClickbusPoltrona::create([
+                'departure_id' => $departure_id,
+                'arrival_id' => $arrival_id,
+                //'viacao_id' => $viacao_id,
+                'localizer' => $poltrona->localizer,
+                'passenger_name' => $poltrona->passenger_firstname . " " . $poltrona->passenger_lastname,
+                'passenger_document_number' => $poltrona->passenger_document,
+                'seat_number' => $poltrona->seat_reference,
+                'passenger_email' => $poltrona->passenger_email,
+                'departure_time' => new Carbon($poltrona->departure_datetime),
+                //'arrival_time' => $poltrona->arrival_trip_date,
+                'subtotal' => $poltrona->subtotal
+            ]));
+        }
+
+        $compra->push();
+        return;
+    }
+
+
 }
